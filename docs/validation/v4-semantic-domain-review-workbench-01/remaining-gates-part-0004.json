@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "remaining-gates-part-0004.json.gz",
+  "payloadHash": "63a8898f4cd8911d7ecf0b8356bda69693f5b6ac2eb01127fe795375be1180a5",
+  "logicalJsonHash": "8357325c21b49119df3ffef295629657e6cc2e45e6ad2e99c13f438d1187c10f",
+  "uncompressedBytes": 7288733
+}

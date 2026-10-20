@@ -1,0 +1,19 @@
+/* Explicit offline composition root. No runtime import or approval provider. */
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import Module,{createRequire}from'node:module';import{execFileSync}from'node:child_process';import{pathToFileURL}from'node:url';import ts from'typescript';
+const root=process.cwd(),folder='docs/validation/v4-global-source-domain-resolution-01',base='d288dd1ae54e5f1663ced1644d9d8132daff1a08',out=path.resolve(process.argv[2]||folder),sha=b=>crypto.createHash('sha256').update(b).digest('hex'),json=f=>JSON.parse(fs.readFileSync(path.join(root,f),'utf8'));
+if(process.argv.length>3||['src','tools','scripts'].some(p=>out.startsWith(path.join(root,p)))||out===root||out!==path.resolve(folder)&&fs.existsSync(out)&&fs.readdirSync(out).length)throw Error('UNSAFE_OR_NONEMPTY_RESOLUTION_OUTPUT');
+execFileSync('git',['merge-base','--is-ancestor',base,'HEAD'],{cwd:root,stdio:'pipe'});
+const frozen=json(folder+'/original-file-hashes.json'),ownInputs=json(folder+'/source-input-hashes.json'),verify=()=>{for(const[f,h]of Object.entries({...frozen,...ownInputs}))if(sha(fs.readFileSync(path.join(root,f)))!==h)throw Error('FROZEN_SOURCE_CHANGED:'+f);};verify();
+const require=createRequire(import.meta.url),resolve=Module._resolveFilename,load=Module._load;
+Module._resolveFilename=function(n,...a){return resolve.call(this,n.startsWith('@/')?path.join(root,'src',n.slice(2)):n,...a)};Module._load=function(n,...a){return n==='server-only'?{}:load.call(this,n,...a)};
+Module._extensions['.ts']=Module._extensions['.tsx']=(m,f)=>{const rel=path.relative(root,f),b=fs.readFileSync(f);if(rel.startsWith('..')||!rel.includes('global-source-domain-resolution/')&&(!frozen[rel]||sha(b)!==frozen[rel]))throw Error('UNREVIEWED_RESOLUTION_MODULE:'+rel);m._compile(ts.transpileModule(b.toString('utf8').replaceAll('import.meta.url',JSON.stringify(pathToFileURL(f).href)),{fileName:f,compilerOptions:{jsx:ts.JsxEmit.ReactJSX,module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true,resolveJsonModule:true}}).outputText,f)};
+global.fetch=async()=>{throw Error('OFFLINE_RESOLUTION_NETWORK_DISABLED')};for(const n of ['node:http','node:https']){const h=require(n);h.get=h.request=()=>{throw Error('OFFLINE_RESOLUTION_NETWORK_DISABLED')}}
+const own='src/lib/report-knowledge/knowledge-integration-foundation/global-source-domain-resolution/';
+const{SourceReader}=require('../../src/lib/report-knowledge/knowledge-integration-foundation/sourceReader.ts'),{DeterministicArtifactWriter}=require('../../src/lib/report-knowledge/knowledge-integration-foundation/global-specialist-integration/deterministicArtifacts.ts'),{GlobalSourceDomainResolution}=require('../../'+own+'engine.ts');
+const config=json('docs/validation/v4-knowledge-unified-catalog-01/compiler-config.json'),sv=json('docs/validation/v4-knowledge-source-verification-01/verification-config.json'),forbidden=new Set(),writer=new DeterministicArtifactWriter(out,forbidden),reader=new SourceReader(root,async f=>require(f),[...config.knownSourceVersions,sv.baseSha,base]);
+const engine=new GlobalSourceDomainResolution(root,reader,new Map(Object.entries(frozen)),writer),prepared=await engine.prepare();
+process.stderr.write('source resolution examined='+prepared.overlay.length+' proven='+prepared.overlay.filter(o=>o.newTechnicalAssessment==='PROVEN_TECHNICAL_RESOLUTION').length+'\n');
+// Inspection-only invocation is reserved for authoring direct-reading packets.
+if(process.env.GYEOL_RESOLUTION_INSPECT_ONLY==='1'){verify();process.stdout.write(JSON.stringify({inspectionOnly:true,out})+'\n');}else{
+ const{runReevaluation}=require('./reevaluation.ts');await runReevaluation({root,out,folder,engine,prepared,writer,forbidden,require,runFoundation:()=>import(pathToFileURL(path.join(root,"tools/product-specialist-foundation/verify.mjs")).href),verify});
+}

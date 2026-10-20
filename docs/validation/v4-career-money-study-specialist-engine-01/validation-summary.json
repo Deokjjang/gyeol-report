@@ -1,0 +1,34 @@
+{
+  "newTests": {
+    "pass": 78,
+    "fail": 0
+  },
+  "originalRelatedTestsIncludingComprehensive": {
+    "pass": 344,
+    "fail": 0
+  },
+  "existing16FailedFiles": {
+    "pass": 5837,
+    "fail": 46,
+    "signaturesUnchanged": true
+  },
+  "typescript": {
+    "base": 0,
+    "after": 0,
+    "new": 0
+  },
+  "lint": "PASS",
+  "build": "PASS",
+  "buildWarnings": 0,
+  "diffCheck": "PASS",
+  "books": 17,
+  "digests": 102,
+  "preview": {
+    "implementationCommitSha": "5f18ee5da8b5ee6376155846088127e8dff1cf54",
+    "readyState": "READY",
+    "deploymentId": "dpl_9dqY5ZwpV7AcChT246QAiy3Rk4RW",
+    "url": "https://gyeol-report-l298olc8e-gyeol-report-s-projects.vercel.app",
+    "exactShaBranchProjectAndPreviewTargetVerified": true,
+    "finalDocumentationHead": "Verified separately in the final report and external validation receipt; avoids a self-referential commit SHA."
+  }
+}

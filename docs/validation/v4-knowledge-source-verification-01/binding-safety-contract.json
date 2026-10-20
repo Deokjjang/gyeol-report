@@ -1,0 +1,81 @@
+[
+  {
+    "id": "CHILDREN_ANCESTRY",
+    "identifyWith": [
+      "all ancestor domains",
+      "relationship category",
+      "original domain policy"
+    ],
+    "futureGate": "ALL_ANCESTOR_DOMAINS",
+    "sourceVerificationCannotApproveActualUse": true
+  },
+  {
+    "id": "BUSINESS_DOMAIN_TRANSFER",
+    "identifyWith": [
+      "businessPartner policy",
+      "WORK/CAREER/MONEY/INVESTMENT source domain"
+    ],
+    "futureGate": "PRODUCT_AND_DOMAIN_APPROVAL",
+    "sourceVerificationCannotApproveActualUse": true
+  },
+  {
+    "id": "PAIR_REFERENCE_AS_PERSONAL_TRAIT",
+    "identifyWith": [
+      "source kind",
+      "MBTI sourceType/targetType",
+      "actual owner"
+    ],
+    "futureGate": "ACTUAL_PERSONAL_SOURCE",
+    "sourceVerificationCannotApproveActualUse": true
+  },
+  {
+    "id": "DEFINITION_AS_CALCULATED_PAIR",
+    "identifyWith": [
+      "calculation definition",
+      "producer",
+      "actual emitted Pair ID"
+    ],
+    "futureGate": "ACTUAL_CALCULATED_FACT",
+    "sourceVerificationCannotApproveActualUse": true
+  },
+  {
+    "id": "NATAL_AS_PERIOD_EVENT",
+    "identifyWith": [
+      "origin layer",
+      "requested period",
+      "original effective interval"
+    ],
+    "futureGate": "ACTUAL_PERIOD_FACT_AND_TIME_INTERSECTION",
+    "sourceVerificationCannotApproveActualUse": true
+  },
+  {
+    "id": "MIXED_TRANSITION_WINDOWS",
+    "identifyWith": [
+      "all source intervals",
+      "transition certainty",
+      "excluded windows"
+    ],
+    "futureGate": "CONFIRMED_COMPATIBLE_INTERVALS",
+    "sourceVerificationCannotApproveActualUse": true
+  },
+  {
+    "id": "FUSION_WITHOUT_ROOTS",
+    "identifyWith": [
+      "same-owner natal source",
+      "same-owner MBTI source",
+      "original hashes"
+    ],
+    "futureGate": "ALL_FUSION_ROOTS",
+    "sourceVerificationCannotApproveActualUse": true
+  },
+  {
+    "id": "REPEATED_FACT_ROOT",
+    "identifyWith": [
+      "canonical fact roots",
+      "reference reuse",
+      "source ancestry"
+    ],
+    "futureGate": "INDEPENDENT_FACT_ROOT_ACCOUNTING",
+    "sourceVerificationCannotApproveActualUse": true
+  }
+]

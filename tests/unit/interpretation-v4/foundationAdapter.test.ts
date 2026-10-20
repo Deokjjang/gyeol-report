@@ -1,5 +1,6 @@
-import { readFileSync, readdirSync } from "node:fs";
-import { join } from "node:path";
+import moduleContract from "../../fixtures/technical-stabilization-01/module-contract.json";
+import { layerImports, readModuleGraph, runtimeImports } from "../../helpers/moduleDependencyGraph";
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { calculateSaju } from "../../../src/lib/saju/calculateSaju";
 import { FOUNDATION_ELEMENTS } from "../../../src/lib/interpretation-v4/foundationElements";
@@ -96,29 +97,18 @@ describe("Phase13D-1A stays off all six product paths", () => {
     // 13D-2A shares only the 36-axis vocabulary. It may not consume actual
     // Myeongli foundation evidence/profiles, and foundation remains MBTI-free.
     const mbtiAxisOnly = new Set(["mbtiSemanticCore.ts", "mbtiDimensionPriors.ts", "mbtiSemanticAnnotations.ts", "mbtiSemanticProfile.ts", "narrativeCore.ts", "narrativeVocabulary.ts", "narrativeSceneCore.ts", "narrativeHumanOutcome.ts", "narrativeMeaningSignature.ts", "narrativePositiveReward.ts", "comprehensiveManuscriptPolish.ts", "operatingRuleRegistry.ts", "narrativeCausality.ts", "narrativeHumanSurface.ts"]);
-    const fusionBoundary = new Set(["fusionCore.ts", "fusionContext.ts", "fusionMeanings.ts", "fusionComplementRegistry.ts", "fusionProfileAdapter.ts", "fusionTension.ts", "fusionRanking.ts", "fusionDiagnostics.ts", "fusionSemanticProfile.ts"]);
-    const claimBoundary = new Set(["claimCore.ts", "claimEvidence.ts", "claimEvaluator.ts", "claimDiagnostics.ts", "claimProfile.ts"]);
-    const resonanceBoundary = new Set(["personalResonanceCore.ts", "personalResonanceRules.ts", "personalResonanceEvidence.ts", "personalResonanceDiagnostics.ts", "personalResonanceProfile.ts", "guidanceCore.ts", "guidanceProblems.ts", "guidanceEvidence.ts", "comprehensivePlanCore.ts", "comprehensiveCandidateAdapter.ts", "comprehensiveSectionContracts.ts", "comprehensiveConflictGraph.ts"]);
-    function files(dir: string): string[] {
-      return readdirSync(dir, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? files(join(dir, entry.name)) : /\.tsx?$/.test(entry.name) ? [join(dir, entry.name)] : []);
+    const graph = readModuleGraph();
+    expect(layerImports(graph, [...allowed].map(name => name.slice(0, -3)))).toEqual(moduleContract.layers.foundation);
+    for (const name of mbtiAxisOnly) {
+      expect(graph[`src/lib/interpretation-v4/${name}`].specifiers.join("\n"), name).not.toMatch(/\/foundation/);
     }
-    const consumers = files("src").filter(file => /["'][^"']*\/(?:semanticCore|foundationYinYang|foundationElements|foundationSynthesis|foundationProfile|foundationPillars|foundationTenGods|foundationTenGodSynthesis|foundationNatalProfile|foundationRelations|foundationTwelveStages|foundationShinsal|foundationShinsalFamilies|foundationSupplement|foundationIntegratedProfile|foundationRanking|foundationTension|foundationDiagnostics)["']/.test(readFileSync(file, "utf8")));
-    expect(consumers.length).toBeGreaterThan(0);
-    for (const file of consumers) {
-      const name = file.split("/").at(-1)!;
-      if (mbtiAxisOnly.has(name)) {
-        expect(file).toBe(`src/lib/interpretation-v4/${name}`);
-        expect(readFileSync(file, "utf8")).not.toMatch(/from ["'][^"']*\/foundation[^"']*["']/);
-      } else if (["narrativeTerminology.ts", "comprehensiveNarrativeAdapter.ts"].includes(name)) {
-        expect(file).toBe(`src/lib/interpretation-v4/${name}`);
-        expect(readFileSync(file, "utf8")).not.toMatch(/from ["'][^"']*\/(?:foundationProfile|foundationIntegratedProfile|calculateSaju)["']/);
-      } else if (["comprehensiveProductAdapter.ts", "careerProductAdapter.ts", "careerProductNarrative.ts", "careerProductSelection.ts", "relationshipProductView.ts", "relationshipProductNarrative.ts", "compatibilityProductView.ts", "timeProductContext.ts"].includes(name) || fusionBoundary.has(name) || claimBoundary.has(name) || resonanceBoundary.has(name)) expect(file).toBe(`src/lib/interpretation-v4/${name}`);
-      else expect(allowed.has(name), file).toBe(true);
+    for (const name of ["narrativeTerminology", "comprehensiveNarrativeAdapter"]) {
+      expect(graph[`src/lib/interpretation-v4/${name}.ts`].specifiers.join("\n"), name).not.toMatch(/\/(?:foundationProfile|foundationIntegratedProfile|calculateSaju)$/);
     }
     for (const name of allowed) {
       const text = readFileSync(`src/lib/interpretation-v4/${name}`, "utf8");
       expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|analyzeFullElements\(/);
-      expect(text).not.toMatch(/from ["'][^"']*(?:mbti|runtimeShadow|Composer|renderer|bookProjection)/i);
+      expect(runtimeImports(text, name).specifiers.join("\n")).not.toMatch(/mbti|runtimeShadow|Composer|renderer|bookProjection/i);
     }
   });
 });

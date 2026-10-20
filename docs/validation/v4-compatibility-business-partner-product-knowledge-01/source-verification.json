@@ -1,0 +1,53 @@
+{
+  "baseSha": "6bcd8c733a6c7e924b2a59e98d8cdd23a6ba6eaf",
+  "existingFilesMatched": 3073,
+  "inheritedRecordsResolved": 2991,
+  "inheritedFamilies": {
+    "composite": 301,
+    "completion": 173,
+    "deep": 838,
+    "mbtiIndividual": 531,
+    "mbtiPair": 279,
+    "relation": 246,
+    "foundation": 213,
+    "temporal": 410
+  },
+  "primaryTraitsResolved": 1213,
+  "traitCoverage": {
+    "direct": 938,
+    "inferred": 275
+  },
+  "selectedLocators": 46,
+  "sourceKinds": {
+    "individual_mbti": 20,
+    "external_context": 12,
+    "relation_definition": 2,
+    "mbti_pair_reference": 2,
+    "natal_definition": 8,
+    "individual_fusion_research": 2
+  },
+  "semanticFacetsAvailable": 109,
+  "semanticAxesAvailable": 36,
+  "fusionRulesPreserved": [
+    44,
+    96
+  ],
+  "fusionResearchPreserved": 164,
+  "priorProductResearchPreserved": {
+    "comprehensive-product-research": 179,
+    "career-product-research": 192,
+    "love-product-research": 164,
+    "compatibility-love-research": 80,
+    "compatibility-marriage-research": 112,
+    "compatibility-parent-child-research": 120,
+    "compatibility-coworker-research": 172,
+    "compatibility-manager-report-research": 96
+  },
+  "historicalExternalSourcesReaccessed": false,
+  "newExternalContextSourcesActuallyAccessed": 12,
+  "externalSearchCachedArticleRead": 0,
+  "newTraditionalFacts": 0,
+  "newEmpiricalFacts": 0,
+  "sourceVerification": "repository locator/hash/state verified; no new historical lineage or MBTI predictive validation",
+  "populationSelectionSkew": "UNVERIFIED: no runtime binding"
+}

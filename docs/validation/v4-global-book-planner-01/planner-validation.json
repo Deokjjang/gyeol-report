@@ -1,0 +1,550 @@
+{
+  "negative": [
+    {
+      "engine": "comprehensive",
+      "name": "forged approval",
+      "rejected": true
+    },
+    {
+      "engine": "comprehensive",
+      "name": "wrong product",
+      "rejected": true
+    },
+    {
+      "engine": "comprehensive",
+      "name": "changed question",
+      "rejected": true
+    },
+    {
+      "engine": "comprehensive",
+      "name": "source hash",
+      "rejected": true
+    },
+    {
+      "engine": "comprehensive",
+      "name": "owner",
+      "rejected": true
+    },
+    {
+      "engine": "comprehensive",
+      "name": "direction",
+      "rejected": true
+    },
+    {
+      "engine": "comprehensive",
+      "name": "fact root",
+      "rejected": true
+    },
+    {
+      "engine": "comprehensive",
+      "name": "meaning",
+      "rejected": true
+    },
+    {
+      "engine": "comprehensive",
+      "name": "source groups",
+      "rejected": true
+    },
+    {
+      "engine": "career",
+      "name": "forged approval",
+      "rejected": true
+    },
+    {
+      "engine": "career",
+      "name": "wrong product",
+      "rejected": true
+    },
+    {
+      "engine": "career",
+      "name": "changed question",
+      "rejected": true
+    },
+    {
+      "engine": "career",
+      "name": "source hash",
+      "rejected": true
+    },
+    {
+      "engine": "career",
+      "name": "owner",
+      "rejected": true
+    },
+    {
+      "engine": "career",
+      "name": "direction",
+      "rejected": true
+    },
+    {
+      "engine": "career",
+      "name": "fact root",
+      "rejected": true
+    },
+    {
+      "engine": "career",
+      "name": "meaning",
+      "rejected": true
+    },
+    {
+      "engine": "career",
+      "name": "source groups",
+      "rejected": true
+    },
+    {
+      "engine": "love",
+      "name": "forged approval",
+      "rejected": true
+    },
+    {
+      "engine": "love",
+      "name": "wrong product",
+      "rejected": true
+    },
+    {
+      "engine": "love",
+      "name": "changed question",
+      "rejected": true
+    },
+    {
+      "engine": "love",
+      "name": "source hash",
+      "rejected": true
+    },
+    {
+      "engine": "love",
+      "name": "owner",
+      "rejected": true
+    },
+    {
+      "engine": "love",
+      "name": "direction",
+      "rejected": true
+    },
+    {
+      "engine": "love",
+      "name": "fact root",
+      "rejected": true
+    },
+    {
+      "engine": "love",
+      "name": "meaning",
+      "rejected": true
+    },
+    {
+      "engine": "love",
+      "name": "source groups",
+      "rejected": true
+    },
+    {
+      "engine": "major-fortune",
+      "name": "forged approval",
+      "rejected": true
+    },
+    {
+      "engine": "major-fortune",
+      "name": "wrong product",
+      "rejected": true
+    },
+    {
+      "engine": "major-fortune",
+      "name": "changed question",
+      "rejected": true
+    },
+    {
+      "engine": "major-fortune",
+      "name": "source hash",
+      "rejected": true
+    },
+    {
+      "engine": "major-fortune",
+      "name": "owner",
+      "rejected": true
+    },
+    {
+      "engine": "major-fortune",
+      "name": "direction",
+      "rejected": true
+    },
+    {
+      "engine": "major-fortune",
+      "name": "fact root",
+      "rejected": true
+    },
+    {
+      "engine": "major-fortune",
+      "name": "meaning",
+      "rejected": true
+    },
+    {
+      "engine": "major-fortune",
+      "name": "source groups",
+      "rejected": true
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "forged approval",
+      "rejected": true
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "wrong product",
+      "rejected": true
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "changed question",
+      "rejected": true
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "source hash",
+      "rejected": true
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "owner",
+      "rejected": true
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "direction",
+      "rejected": true
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "fact root",
+      "rejected": true
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "meaning",
+      "rejected": true
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "source groups",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "forged approval",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "wrong product",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "changed question",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "source hash",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "owner",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "direction",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "fact root",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "meaning",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "source groups",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "forged approval",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "wrong product",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "changed question",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "source hash",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "owner",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "direction",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "fact root",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "meaning",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "source groups",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "forged approval",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "wrong product",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "changed question",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "source hash",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "owner",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "direction",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "fact root",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "meaning",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "source groups",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "forged approval",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "wrong product",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "changed question",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "source hash",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "owner",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "direction",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "fact root",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "meaning",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "source groups",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "forged approval",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "wrong product",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "changed question",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "source hash",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "owner",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "direction",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "fact root",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "meaning",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "source groups",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "forged approval",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "wrong product",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "changed question",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "source hash",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "owner",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "direction",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "fact root",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "meaning",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "source groups",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "forged approval",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "wrong product",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "changed question",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "source hash",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "owner",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "direction",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "fact root",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "meaning",
+      "rejected": true
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "source groups",
+      "rejected": true
+    }
+  ],
+  "negativePassed": 108,
+  "hardGateViolations": 0,
+  "originalResearchApprovalsAdded": 0,
+  "customerClaims": 0,
+  "realWriterChanges": 0,
+  "optimalityOnlyWhenSearchComplete": true
+}

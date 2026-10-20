@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "classification": "SYNTHETIC_BROWSER_TEST_DRAFT",
+  "actualDownloadedFile": "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/synthetic-browser-downloaded-draft.json",
+  "sha256": "20a008aef44f4c8d2b9a4cf2ae453caf03eaf94c895fc48fa4319fae23f14ac1",
+  "actualBrowserFileDownload": true,
+  "actualBrowserFileImport": true,
+  "notesChecksDecisionRestored": true,
+  "independentCLI": {
+    "ok": true,
+    "errors": [],
+    "gatePromotions": 0,
+    "approvalRecordsIssued": 0
+  },
+  "actualOperatorDraftsCollected": 0,
+  "rawDraftCommitted": false
+}

@@ -1,0 +1,702 @@
+[
+  {
+    "candidate": "synthetic:friendship:material:CH01.P1.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P1.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P1.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P1.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P2.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P2.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P2.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P2.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P3.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P3.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P3.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P3.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P4.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P4.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P4.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P4.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P1",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P1.S1",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P1.S2",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P1.S3",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P1.S4",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P2",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P2.S1",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P2.S2",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P2.S3",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P2.S4",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P3",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P3.S1",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P3.S2",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P3.S3",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P3.S4",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P4",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P4.S1",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P4.S2",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P4.S3",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P4.S4",
+    "owner": "synthetic:friendship:owner:A",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P1",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P1.S1",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P1.S2",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P1.S3",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P1.S4",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P2",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P2.S1",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P2.S2",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P2.S3",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P2.S4",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P3",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P3.S1",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P3.S2",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P3.S3",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P3.S4",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P4",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P4.S1",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P4.S2",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P4.S3",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P4.S4",
+    "owner": "synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P1.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P1.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P1.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P1.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P2.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P2.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P2.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P2.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P3.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P3.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P3.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P3.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P4.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P4.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P4.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P4.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P1.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P1.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P1.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P1.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P2.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P2.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P2.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P2.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P3.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P3.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P3.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P3.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P4.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P4.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P4.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P4.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "A_TO_B"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P1.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P1.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P1.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P1.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P2.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P2.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P2.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P2.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P3.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P3.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P3.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P3.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P4.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P4.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P4.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P4.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": "B_TO_A"
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P1.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P1.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P1.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P1.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P2.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P2.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P2.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P2.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P3.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P3.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P3.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P3.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P4.S1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P4.S2",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P4.S3",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P4.S4",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P1",
+    "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+    "direction": null
+  }
+]

@@ -19,6 +19,8 @@ vi.mock("../../../../src/lib/payment/paidReportReliabilityStore", () => ({
 }));
 vi.mock("../../../../src/lib/payment/tossConfirmClient", () => ({ confirmTossPayment: mocks.confirm }));
 
+// These persisted legacy paid fixtures exercise the canonical reader after owner authorization.
+vi.mock("../../../../src/lib/book/ownerAccess", () => ({ loadOwnedTicketBook: async () => ({ kind: "absent" }), canReadPurchasedBook: async () => true }));
 import ReportResultPage from "../../../../src/app/reports/[reportId]/page";
 import TossPaymentSuccessPage from "../../../../src/app/payments/toss/success/page";
 import TossPaymentSuccessLoading from "../../../../src/app/payments/toss/success/loading";
@@ -71,7 +73,9 @@ describe("post-payment canonical route, mock transport only", () => {
       expect(html).not.toContain('href="/report/new');
       expect(html).not.toContain("리포트를 찾을 수 없습니다");
       expect(html).toContain('role="status"');
-      expect(html).toContain('focusable="false"');
+      expect(html).not.toContain("<svg");
+      if (["QUEUED", "GENERATING", "RETRYING"].includes(status)) expect(html).toContain('data-publishing="preparing"');
+      else expect(html).not.toContain("data-publishing");
     }
     // Optional local-only visual fixture export. No app route or transport is added.
     const directory = process.env.POSTPAYMENT_QA_DIR;
@@ -84,11 +88,11 @@ describe("post-payment canonical route, mock transport only", () => {
 
   it("distinguishes automatic recovery from manual attention honestly", async () => {
     const waiting = await renderState("RETRYING");
-    expect(waiting).toContain("평소보다 시간이 조금 더 걸리고 있습니다");
+    expect(waiting).toContain("평소보다 조금 더 걸리고 있습니다");
     expect(waiting).toContain("페이지를 닫아도 준비는 계속됩니다");
     expect(visibleText(waiting)).not.toMatch(/실패|재시도|오류/u);
     const attention = await renderState("FAILED_REQUIRES_ATTENTION");
-    expect(attention).toContain("결제가 정상적으로 완료되었습니다");
+    expect(attention).not.toContain("결제가 정상적으로 완료되었습니다");
     expect(attention).toContain("확인이 필요합니다");
     expect(attention).not.toContain("준비는 계속됩니다");
     expect(attention).toContain('href="tel:050-6664-8562"');
@@ -206,7 +210,7 @@ describe("status refresh lifecycle", () => {
     expect(mocks.effects).toHaveLength(0);
   });
 
-  it("uses reduced motion, visible focus and a small decorative orbit without fake progress", () => {
+  it("uses reduced motion, visible focus and existing paper press without fake progress", () => {
     const css = readFileSync("src/components/report/reportStatus.module.css", "utf8");
     expect(css).toContain("prefers-reduced-motion: reduce");
     expect(css).toContain("animation: none; transform: none");

@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { createInMemoryReportPersistenceAdapter } from "../../../src/lib/persistence/inMemoryReportPersistenceAdapter";
 import { fulfillPaidProductReport } from "../../../src/lib/payment/paidProductReportFulfillment";
 import type { PaymentOrderRecord } from "../../../src/lib/payment/paymentOrderPersistenceTypes";
-import type { ReportInputPayload } from "../../../src/lib/report-generation/reportInputTypes";
+import type { SinglePersonReportInputPayload } from "../../../src/lib/report-generation/reportInputTypes";
 import type { ReportWriterRuntime } from "../../../src/lib/report-generation/reportWriterRuntime";
 
 const createdAt = "2099-01-01T00:00:00.000Z";
@@ -13,7 +13,7 @@ const writerRuntimeDisabled: ReportWriterRuntime = {
   reason: "flag_disabled",
 };
 
-const careerPayload: ReportInputPayload = {
+const careerPayload: SinglePersonReportInputPayload = {
   productKey: "career_money_study",
   productSlug: "career-money-study",
   person: {
@@ -93,6 +93,7 @@ describe("paid product report fulfillment", () => {
     }
 
     expect(stored.record.snapshotKind).toBe("product_preview");
+    if (stored.record.snapshotKind !== "product_preview") return expect.unreachable();
     expect(stored.record.productPreview.productType).toBe("career_money_study");
     expect(stored.record.status).toBe("paid_unlocked");
     expect(stored.record.accessMode).toBe("paid");

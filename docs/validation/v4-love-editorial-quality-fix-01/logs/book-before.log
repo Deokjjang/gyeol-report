@@ -1,0 +1,8 @@
+
+ RUN  v4.1.5 /Users/Deokmin/Dev/projects/gyeol-report
+
+
+ Test Files  1 passed (1)
+      Tests  31 passed (31)
+   Start at  19:32:29
+   Duration  84.45s (transform 3.49s, setup 20ms, import 4.28s, tests 80.02s, environment 0ms)

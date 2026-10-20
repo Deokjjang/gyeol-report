@@ -1,0 +1,368 @@
+{
+  "strict": [
+    {
+      "engine": "comprehensive",
+      "fixture": "fixture-comprehensive-A",
+      "originalPlanHash": "9678d6670041cec8e688dfb3c63176edc3358c1fdee241d527fe905bc349ed2c",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 200
+    },
+    {
+      "engine": "comprehensive",
+      "fixture": "fixture-comprehensive-F",
+      "originalPlanHash": "1b07db2873cc929be63419ef70f08d1f3786c00a3c4a7104b98ebf857d8d2c8d",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 200
+    },
+    {
+      "engine": "career",
+      "fixture": "fixture-career-A",
+      "originalPlanHash": "3fa4ed9c97415f424c195413f17759d149f65f57ca8bd053cf13749dd7a0cd7a",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 268
+    },
+    {
+      "engine": "career",
+      "fixture": "fixture-career-F",
+      "originalPlanHash": "601707724953fe8995c8296c9a58b58ff03feffaa7b0d13760cee17dad556ee7",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 268
+    },
+    {
+      "engine": "love",
+      "fixture": "fixture-love-A",
+      "originalPlanHash": "e92efc05193420566937432b6e6535b4f093bf9297d79703f66e7f44405b787c",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 170
+    },
+    {
+      "engine": "love",
+      "fixture": "fixture-love-F",
+      "originalPlanHash": "dd86189b5ca843de4e7936365f9559fdc555854a7b31aa8741ab9f2beeea5ac3",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 170
+    },
+    {
+      "engine": "compatibility-love",
+      "fixture": "fixture-compatibility-A",
+      "originalPlanHash": "710bd776b3dcb191ac6b7933c6409d3d19d3d1fd0978fccc55ff0c7b48ead445",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 190
+    },
+    {
+      "engine": "compatibility-marriage",
+      "fixture": "fixture-compatibility-marriage",
+      "originalPlanHash": "eaf621c1fee2bd51d8387152a5579afe38be035a00c88359db4899510bcc5088",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 222
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "fixture": "fixture-compatibility-parentChild",
+      "originalPlanHash": "87913cfd37e91389e1175a945285bc93ac9a0eeec0c6ae9948a47b5536820d9a",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 235
+    },
+    {
+      "engine": "compatibility-coworker",
+      "fixture": "fixture-compatibility-coworker",
+      "originalPlanHash": "09450ad79746ab451d72564102feb212cc16d374c3dd0dd48b138dfa370a96a0",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 335
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "fixture": "fixture-compatibility-managerReport",
+      "originalPlanHash": "f817e37023991b6e928b1a4d1100bd52f90f78e44fa0418406b4456007fd96ce",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 275
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "fixture": "fixture-compatibility-businessPartner",
+      "originalPlanHash": "fa20b5163f887d6a86b0652cc1a5e025f82fa5ccb777ef7bf242e0f54a033567",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 317
+    },
+    {
+      "engine": "compatibility-friendship",
+      "fixture": "fixture-compatibility-friendship",
+      "originalPlanHash": "89699379f5dbed2427cb33f11a3c009d2f88b81a5ef835f6fc7094615199ac61",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 173
+    },
+    {
+      "engine": "major-fortune",
+      "fixture": "fixture-major-A",
+      "originalPlanHash": "4f1757c0c16cffd50e185d2f2356bc714d5c4fbc544d83d06df40453c4db1997",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 89
+    },
+    {
+      "engine": "major-fortune",
+      "fixture": "fixture-major-F",
+      "originalPlanHash": "ffe5c7d8ab43ecca43aabb8932040fb98dbf77f71756c74a1a95af56ae181d28",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 89
+    },
+    {
+      "engine": "annual-fortune",
+      "fixture": "fixture-annual-A",
+      "originalPlanHash": "15e7a192e4cc07feceab342b59be4372de4d09294305a227780381fb507698d4",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 109
+    },
+    {
+      "engine": "annual-fortune",
+      "fixture": "fixture-annual-F",
+      "originalPlanHash": "7d5b60a6be45940bed94d46d40393b9af2d0f6e57487ba9cd716107063336dd1",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 109
+    },
+    {
+      "engine": "major-fortune",
+      "fixture": "fixture-major-transition-C",
+      "originalPlanHash": "89b02030d29c122a6a41b5e7207bd2667022a3185d5a8cbc5da30baa96e916d3",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 89
+    },
+    {
+      "engine": "annual-fortune",
+      "fixture": "fixture-annual-transition-C2028",
+      "originalPlanHash": "d575ede68f65cdfc27d01c22cbb568d4c92d33a8fe7c4bc53e61e783bf1cf249",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 109
+    },
+    {
+      "engine": "compatibility-love",
+      "fixture": "fixture-compatibility-unknown-both",
+      "originalPlanHash": "836f7200b6394da9b3be1636302184141554a025df07dcdc2a2a0ec6e910c4f8",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 190
+    },
+    {
+      "engine": "compatibility-love",
+      "fixture": "fixture-compatibility-slot-swap",
+      "originalPlanHash": "8150a1b4db8dad8b7eb4bfdbfd377f5911438ceac5b8f8f21f46980a4bbb2801",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 190
+    },
+    {
+      "engine": "comprehensive",
+      "fixture": "fixture-same-natal-different-mbti",
+      "originalPlanHash": "f871fb6720710558115c80fef65e490a3e249ca540dbbc2278f801fff61ac812",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 200
+    },
+    {
+      "engine": "comprehensive",
+      "fixture": "fixture-same-mbti-different-natal",
+      "originalPlanHash": "aa99dc0fa4472786e5234ae8aeb3322bf2ec1b842ba78b0183dce8b70edeace9",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 200
+    },
+    {
+      "engine": "career",
+      "fixture": "fixture-same-natal-career",
+      "originalPlanHash": "3741cbc6c371ec3fe5dc93c539b5089ec0f395fb932a24ca62cce04e3ba44752",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 268
+    },
+    {
+      "engine": "annual-fortune",
+      "fixture": "fixture-annual-ranged-transition",
+      "originalPlanHash": "b28857dbd9f849c873fd5fa10dd3c8f9b313f6cfcdd8639aafd0897fea411b4b",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 109
+    },
+    {
+      "engine": "annual-fortune",
+      "fixture": "fixture-annual-before-first-dayun",
+      "originalPlanHash": "82208af421acacf377c0f09a68910b8f8f9c8b4483c689d572dd999694c54ddf",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 109
+    },
+    {
+      "engine": "compatibility-love",
+      "fixture": "fixture-compatibility-no-detected-pair",
+      "originalPlanHash": "2c78254ae4622f0e4607a30b97360104953abb1722f17f2c1799782b5d803da0",
+      "sentences": 0,
+      "claims": 0,
+      "bookAllocations": 0,
+      "allTwelveGatesUnchanged": true,
+      "originalEvaluations": 190
+    }
+  ],
+  "synthetic": [
+    {
+      "engine": "comprehensive",
+      "display": false,
+      "originalPlanHash": "938fd1c68b3b02bde7c31d387750a06a6f24bf11eedf9f21e66b017f3295e2c7",
+      "originalHandoffHash": "61e022f9a2557d70756977015d610e67b8fc634af2ca9b4cdf6a8302e0240318",
+      "nativeAssignments": 4
+    },
+    {
+      "engine": "career",
+      "display": false,
+      "originalPlanHash": "5a17aa3e9b8520dc96e25beed5d13ca43a74fb8dccdcb80c0b534066fc0b1cf8",
+      "originalHandoffHash": "290570842787914f262858370e773f5583a72fdb93f7a36e50331394b8692fbf",
+      "nativeAssignments": 5
+    },
+    {
+      "engine": "love",
+      "display": false,
+      "originalPlanHash": "7324153584ef64af3c7086f36e423330f6a86bba602d4123125cdbc19225d2c6",
+      "originalHandoffHash": "d47267b3adaf1f8acfbc91f2900457b01312e8bcf3511ea0d26d8beb88e7a897",
+      "nativeAssignments": 7
+    },
+    {
+      "engine": "major-fortune",
+      "display": false,
+      "originalPlanHash": "fd814f1b19c5664c4755604ad531613285436af419c574d7f34ca73b2a4a5c3e",
+      "originalHandoffHash": "450c95ac882abe48addbbdfa52f06a1418fd94c7abe47e01e70c805edb8fa00b",
+      "nativeAssignments": 17
+    },
+    {
+      "engine": "annual-fortune",
+      "display": false,
+      "originalPlanHash": "50fad97870018c90ddca2fc024e3d8fa95f96a56d223314900c810200e067d67",
+      "originalHandoffHash": "5cd4b11b7797390967244dc4b02819365c170c13cda6b40e6f3578026f223d74",
+      "nativeAssignments": 12
+    },
+    {
+      "engine": "compatibility-love",
+      "display": false,
+      "originalPlanHash": "1f780161c5deb60ac05e8fd74de9a021500c62366ca51387ff5ced06668bdb55",
+      "originalHandoffHash": "828ed656c0b4ae638d814c00d897592993958d4f36eccf45e78a720012d99554",
+      "nativeAssignments": 160
+    },
+    {
+      "engine": "compatibility-marriage",
+      "display": false,
+      "originalPlanHash": "ca6a6a6041c3bae4cf0ce179c0f6b2d19df785d619c95be087c8f02ae8642610",
+      "originalHandoffHash": "5216b749f580e22ca63c69429bca223d0ea575c2a2fe976ce0d7caccc04f8ec0",
+      "nativeAssignments": 160
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "display": false,
+      "originalPlanHash": "f9e475e909db0cec35d012ed7c67cca4c543b3784a7d30f8f98d8d66850fa06d",
+      "originalHandoffHash": "018103984cc007438d17de221c80e9a29331ad5b95d3eb6d7e2745af574544b0",
+      "nativeAssignments": 160
+    },
+    {
+      "engine": "compatibility-coworker",
+      "display": false,
+      "originalPlanHash": "94e787dbe5f9a08f6b044e562de87a4bd1db3ac210a17e7365754efec027e18e",
+      "originalHandoffHash": "4de18ad6d2a0c2553f7cd20b00c7a53d09f760e05f85aeaa1aadeeef70333802",
+      "nativeAssignments": 140
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "display": false,
+      "originalPlanHash": "8bdea2a7c619567636000f4b50a5d1b90e077f3a42c4c03bc9902a2b090ae5ee",
+      "originalHandoffHash": "ad2e59b338ca5e9b082bc94010515fc180bcb08ae00713cfa004aaada1d5e3cd",
+      "nativeAssignments": 140
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "display": false,
+      "originalPlanHash": "f3cd84ccafbd37f9e714ed86cadd1dfaed49e5c6429d420c5431abec40433cdb",
+      "originalHandoffHash": "2b62764988933257d9bbfe9841210ac4e9894e91cdc6495b8fbcd9126b6bd3d7",
+      "nativeAssignments": 140
+    },
+    {
+      "engine": "compatibility-friendship",
+      "display": false,
+      "originalPlanHash": "1a086e04c977b0b72cebcaf23a9c66ba1f344e7d8d0d014fe8dbe10791742345",
+      "originalHandoffHash": "9a4c7c2fbd2e3e3afec998b9b4bf216fb89b86e6bf51fc085cdaef3bf70a8ec3",
+      "nativeAssignments": 140
+    },
+    {
+      "engine": "compatibility-friendship",
+      "display": true,
+      "originalPlanHash": "8302a7617b98e69e3106943e6232d8631e6c8a8b3b1ae23c0b7058c573efa3ed",
+      "originalHandoffHash": "7806149d60b5f34228eef359ca3988fd5505aaa83bfe79b1c9a41ef42f78e251",
+      "nativeAssignments": 180
+    }
+  ],
+  "newReaderBridges": 0
+}

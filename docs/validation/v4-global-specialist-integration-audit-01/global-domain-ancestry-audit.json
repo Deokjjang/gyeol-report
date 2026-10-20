@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-domain-ancestry-audit.json.gz",
+  "payloadHash": "fae89bd2c26d3ab81779c69e40e03269fb6cbabbeb12cd20f74e0ef85012328a",
+  "logicalJsonHash": "56e49f6e5fc59f04743b8813b51678086d4a93c6b699a52cb43c8413e049256d",
+  "uncompressedBytes": 26633616
+}

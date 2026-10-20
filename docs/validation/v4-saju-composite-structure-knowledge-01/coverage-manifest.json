@@ -1,0 +1,3493 @@
+{
+  "baseSha": "7ff6aba0c9e0abd74284a388369b20ff6229be38",
+  "structureCount": 29,
+  "domainCount": 8,
+  "totalCells": 232,
+  "reviewedCells": 232,
+  "modernApplicationBundles": 176,
+  "unverifiedBoundaryReviews": 56,
+  "approvedCustomerApplications": 0,
+  "connectedToRuntime": false,
+  "cells": [
+    {
+      "id": "foundation:structure:jaeda_sinyak::personality",
+      "targetId": "foundation:structure:jaeda_sinyak",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaeda_sinyak",
+        "csr:application:jaeda_sinyak:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 요청량·거절 권한",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaeda_sinyak::career",
+      "targetId": "foundation:structure:jaeda_sinyak",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaeda_sinyak",
+        "csr:application:jaeda_sinyak:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 업무·인력·권한",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaeda_sinyak::money",
+      "targetId": "foundation:structure:jaeda_sinyak",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaeda_sinyak",
+        "csr:application:jaeda_sinyak:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "수입·부채·현금 흐름",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaeda_sinyak::study",
+      "targetId": "foundation:structure:jaeda_sinyak",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaeda_sinyak",
+        "csr:application:jaeda_sinyak:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 학습 일정·도움",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaeda_sinyak::love",
+      "targetId": "foundation:structure:jaeda_sinyak",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaeda_sinyak",
+        "csr:application:jaeda_sinyak:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·상호 동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaeda_sinyak::marriage",
+      "targetId": "foundation:structure:jaeda_sinyak",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaeda_sinyak",
+        "csr:application:jaeda_sinyak:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·예산",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaeda_sinyak::family",
+      "targetId": "foundation:structure:jaeda_sinyak",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaeda_sinyak",
+        "csr:application:jaeda_sinyak:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 요청·부양 관계",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaeda_sinyak::relationships",
+      "targetId": "foundation:structure:jaeda_sinyak",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaeda_sinyak",
+        "csr:application:jaeda_sinyak:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 모임·역할 동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:gwansal_honjob::personality",
+      "targetId": "foundation:structure:gwansal_honjob",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:gwansal_honjob",
+        "csr:application:gwansal_honjob:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 복수 요구",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:gwansal_honjob::career",
+      "targetId": "foundation:structure:gwansal_honjob",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:gwansal_honjob",
+        "csr:application:gwansal_honjob:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 지시·권한",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:gwansal_honjob::money",
+      "targetId": "foundation:structure:gwansal_honjob",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:gwansal_honjob",
+        "csr:application:gwansal_honjob:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 자금·합의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:gwansal_honjob::study",
+      "targetId": "foundation:structure:gwansal_honjob",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:gwansal_honjob",
+        "csr:application:gwansal_honjob:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 과목·채점",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:gwansal_honjob::love",
+      "targetId": "foundation:structure:gwansal_honjob",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:gwansal_honjob",
+        "csr:application:gwansal_honjob:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·상호 동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:gwansal_honjob::marriage",
+      "targetId": "foundation:structure:gwansal_honjob",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:gwansal_honjob",
+        "csr:application:gwansal_honjob:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:gwansal_honjob::family",
+      "targetId": "foundation:structure:gwansal_honjob",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:gwansal_honjob",
+        "csr:application:gwansal_honjob:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 요청",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:gwansal_honjob::relationships",
+      "targetId": "foundation:structure:gwansal_honjob",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:gwansal_honjob",
+        "csr:application:gwansal_honjob:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 집단·의무",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:siksang_saengjae::personality",
+      "targetId": "foundation:structure:siksang_saengjae",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:siksang_saengjae",
+        "csr:application:siksang_saengjae:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 산출·수용자",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:siksang_saengjae::career",
+      "targetId": "foundation:structure:siksang_saengjae",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:siksang_saengjae",
+        "csr:application:siksang_saengjae:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "업무·고객·계약",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:siksang_saengjae::money",
+      "targetId": "foundation:structure:siksang_saengjae",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:siksang_saengjae",
+        "csr:application:siksang_saengjae:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 판매·가격·비용",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:siksang_saengjae::study",
+      "targetId": "foundation:structure:siksang_saengjae",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:siksang_saengjae",
+        "csr:application:siksang_saengjae:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 과목·과제",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:siksang_saengjae::love",
+      "targetId": "foundation:structure:siksang_saengjae",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:siksang_saengjae",
+        "csr:application:siksang_saengjae:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·선호",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:siksang_saengjae::marriage",
+      "targetId": "foundation:structure:siksang_saengjae",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:siksang_saengjae",
+        "csr:application:siksang_saengjae:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·역할",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:siksang_saengjae::family",
+      "targetId": "foundation:structure:siksang_saengjae",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:siksang_saengjae",
+        "csr:application:siksang_saengjae:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 요청",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:siksang_saengjae::relationships",
+      "targetId": "foundation:structure:siksang_saengjae",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:siksang_saengjae",
+        "csr:application:siksang_saengjae:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 협업·계약",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaesaenggwan::personality",
+      "targetId": "foundation:structure:jaesaenggwan",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaesaenggwan",
+        "csr:application:jaesaenggwan:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 성과·역할",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaesaenggwan::career",
+      "targetId": "foundation:structure:jaesaenggwan",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaesaenggwan",
+        "csr:application:jaesaenggwan:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 조직·결정권",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaesaenggwan::money",
+      "targetId": "foundation:structure:jaesaenggwan",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaesaenggwan",
+        "csr:application:jaesaenggwan:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 출자·계약",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaesaenggwan::study",
+      "targetId": "foundation:structure:jaesaenggwan",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaesaenggwan",
+        "csr:application:jaesaenggwan:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 자격·진로",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaesaenggwan::love",
+      "targetId": "foundation:structure:jaesaenggwan",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaesaenggwan",
+        "csr:application:jaesaenggwan:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·지출",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaesaenggwan::marriage",
+      "targetId": "foundation:structure:jaesaenggwan",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaesaenggwan",
+        "csr:application:jaesaenggwan:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·예산",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaesaenggwan::family",
+      "targetId": "foundation:structure:jaesaenggwan",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaesaenggwan",
+        "csr:application:jaesaenggwan:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 요청",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:jaesaenggwan::relationships",
+      "targetId": "foundation:structure:jaesaenggwan",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:jaesaenggwan",
+        "csr:application:jaesaenggwan:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 집단·후원",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:salin_sangsaeng::personality",
+      "targetId": "foundation:structure:salin_sangsaeng",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:salin_sangsaeng",
+        "csr:application:salin_sangsaeng:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 제약·지원",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:salin_sangsaeng::career",
+      "targetId": "foundation:structure:salin_sangsaeng",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:salin_sangsaeng",
+        "csr:application:salin_sangsaeng:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 직무·훈련·안전",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:salin_sangsaeng::money",
+      "targetId": "foundation:structure:salin_sangsaeng",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:salin_sangsaeng",
+        "csr:application:salin_sangsaeng:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 계약·검토 가능성",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:salin_sangsaeng::study",
+      "targetId": "foundation:structure:salin_sangsaeng",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:salin_sangsaeng",
+        "csr:application:salin_sangsaeng:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 시험·지원",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:salin_sangsaeng::love",
+      "targetId": "foundation:structure:salin_sangsaeng",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:salin_sangsaeng",
+        "csr:application:salin_sangsaeng:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·요청",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:salin_sangsaeng::marriage",
+      "targetId": "foundation:structure:salin_sangsaeng",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:salin_sangsaeng",
+        "csr:application:salin_sangsaeng:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동 문제·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:salin_sangsaeng::family",
+      "targetId": "foundation:structure:salin_sangsaeng",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:salin_sangsaeng",
+        "csr:application:salin_sangsaeng:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 문제·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:salin_sangsaeng::relationships",
+      "targetId": "foundation:structure:salin_sangsaeng",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:salin_sangsaeng",
+        "csr:application:salin_sangsaeng:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 집단 문제·권한",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:singang::personality",
+      "targetId": "foundation:structure:singang",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:singang",
+        "csr:application:singang:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 의사결정·지원 형태",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:singang::career",
+      "targetId": "foundation:structure:singang",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:singang",
+        "csr:application:singang:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 업무·수요·지원",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:singang::money",
+      "targetId": "foundation:structure:singang",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:singang",
+        "csr:application:singang:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 자산·위험 수용",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:singang::study",
+      "targetId": "foundation:structure:singang",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:singang",
+        "csr:application:singang:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 숙련·과목·피드백",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:singang::love",
+      "targetId": "foundation:structure:singang",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:singang",
+        "csr:application:singang:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·선호",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:singang::marriage",
+      "targetId": "foundation:structure:singang",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:singang",
+        "csr:application:singang:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 동거·합의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:singang::family",
+      "targetId": "foundation:structure:singang",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:singang",
+        "csr:application:singang:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 지원·조건",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:singang::relationships",
+      "targetId": "foundation:structure:singang",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:singang",
+        "csr:application:singang:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 집단·결정 과정",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sinyak::personality",
+      "targetId": "foundation:structure:sinyak",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sinyak",
+        "csr:application:sinyak:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 부담·가능한 지원",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sinyak::career",
+      "targetId": "foundation:structure:sinyak",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sinyak",
+        "csr:application:sinyak:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "업무·교육·권한",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sinyak::money",
+      "targetId": "foundation:structure:sinyak",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sinyak",
+        "csr:application:sinyak:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 계약·소득·부채",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sinyak::study",
+      "targetId": "foundation:structure:sinyak",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sinyak",
+        "csr:application:sinyak:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 과목·학습 기록",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sinyak::love",
+      "targetId": "foundation:structure:sinyak",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sinyak",
+        "csr:application:sinyak:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sinyak::marriage",
+      "targetId": "foundation:structure:sinyak",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sinyak",
+        "csr:application:sinyak:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·자원",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sinyak::family",
+      "targetId": "foundation:structure:sinyak",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sinyak",
+        "csr:application:sinyak:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 상황",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sinyak::relationships",
+      "targetId": "foundation:structure:sinyak",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sinyak",
+        "csr:application:sinyak:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 집단·합의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_resource::personality",
+      "targetId": "foundation:structure:no_resource",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_resource",
+        "csr:application:no_resource:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 학습 경험",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_resource::career",
+      "targetId": "foundation:structure:no_resource",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_resource",
+        "csr:application:no_resource:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 직무·지원",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_resource::money",
+      "targetId": "foundation:structure:no_resource",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_resource",
+        "csr:application:no_resource:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 계약·이해 수준",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_resource::study",
+      "targetId": "foundation:structure:no_resource",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_resource",
+        "csr:application:no_resource:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 학습 기록",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_resource::love",
+      "targetId": "foundation:structure:no_resource",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_resource",
+        "csr:application:no_resource:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·대화",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_resource::marriage",
+      "targetId": "foundation:structure:no_resource",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_resource",
+        "csr:application:no_resource:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·지식",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_resource::family",
+      "targetId": "foundation:structure:no_resource",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_resource",
+        "csr:application:no_resource:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 경험·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_resource::relationships",
+      "targetId": "foundation:structure:no_resource",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_resource",
+        "csr:application:no_resource:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 관계·지원",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_output::personality",
+      "targetId": "foundation:structure:no_output",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_output",
+        "csr:application:no_output:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 표현 경험",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_output::career",
+      "targetId": "foundation:structure:no_output",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_output",
+        "csr:application:no_output:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 직무·포트폴리오",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_output::money",
+      "targetId": "foundation:structure:no_output",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_output",
+        "csr:application:no_output:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 거래·대화",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_output::study",
+      "targetId": "foundation:structure:no_output",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_output",
+        "csr:application:no_output:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 과목·숙련",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_output::love",
+      "targetId": "foundation:structure:no_output",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_output",
+        "csr:application:no_output:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·반응",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_output::marriage",
+      "targetId": "foundation:structure:no_output",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_output",
+        "csr:application:no_output:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·대화",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_output::family",
+      "targetId": "foundation:structure:no_output",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_output",
+        "csr:application:no_output:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 대화",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:no_output::relationships",
+      "targetId": "foundation:structure:no_output",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:no_output",
+        "csr:application:no_output:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 집단·선호",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:toda_maegeum::personality",
+      "targetId": "foundation:structure:toda_maegeum",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:toda_maegeum",
+        "csr:application:toda_maegeum:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 지원·판단 과정",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:toda_maegeum::career",
+      "targetId": "foundation:structure:toda_maegeum",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:toda_maegeum",
+        "csr:application:toda_maegeum:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 업무·절차",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:toda_maegeum::money",
+      "targetId": "foundation:structure:toda_maegeum",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:toda_maegeum",
+        "csr:application:toda_maegeum:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 자산·유동성",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:toda_maegeum::study",
+      "targetId": "foundation:structure:toda_maegeum",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:toda_maegeum",
+        "csr:application:toda_maegeum:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 과목·자료",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:toda_maegeum::love",
+      "targetId": "foundation:structure:toda_maegeum",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:toda_maegeum",
+        "csr:application:toda_maegeum:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:toda_maegeum::marriage",
+      "targetId": "foundation:structure:toda_maegeum",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:toda_maegeum",
+        "csr:application:toda_maegeum:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·규칙",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:toda_maegeum::family",
+      "targetId": "foundation:structure:toda_maegeum",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:toda_maegeum",
+        "csr:application:toda_maegeum:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 지원·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:toda_maegeum::relationships",
+      "targetId": "foundation:structure:toda_maegeum",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:toda_maegeum",
+        "csr:application:toda_maegeum:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 집단·권한",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:geumda_mokjeol::personality",
+      "targetId": "foundation:structure:geumda_mokjeol",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:geumda_mokjeol",
+        "csr:application:geumda_mokjeol:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 시도·평가",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:geumda_mokjeol::career",
+      "targetId": "foundation:structure:geumda_mokjeol",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:geumda_mokjeol",
+        "csr:application:geumda_mokjeol:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 직무·숙련",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:geumda_mokjeol::money",
+      "targetId": "foundation:structure:geumda_mokjeol",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:geumda_mokjeol",
+        "csr:application:geumda_mokjeol:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 예산·사업 입력",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:geumda_mokjeol::study",
+      "targetId": "foundation:structure:geumda_mokjeol",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:geumda_mokjeol",
+        "csr:application:geumda_mokjeol:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 학습·피드백",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:geumda_mokjeol::love",
+      "targetId": "foundation:structure:geumda_mokjeol",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:geumda_mokjeol",
+        "csr:application:geumda_mokjeol:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:geumda_mokjeol::marriage",
+      "targetId": "foundation:structure:geumda_mokjeol",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:geumda_mokjeol",
+        "csr:application:geumda_mokjeol:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·역량",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:geumda_mokjeol::family",
+      "targetId": "foundation:structure:geumda_mokjeol",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:geumda_mokjeol",
+        "csr:application:geumda_mokjeol:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:geumda_mokjeol::relationships",
+      "targetId": "foundation:structure:geumda_mokjeol",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:geumda_mokjeol",
+        "csr:application:geumda_mokjeol:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 집단·평가",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mokda_hwasik::personality",
+      "targetId": "foundation:structure:mokda_hwasik",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mokda_hwasik",
+        "csr:boundary:mokda_hwasik:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "목생화 강화와 소멸을 구별할 전통 성립식 미확정",
+      "requirements": "목·화·수·조습의 조건 및 실제 준비·실행 기록",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mokda_hwasik::career",
+      "targetId": "foundation:structure:mokda_hwasik",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mokda_hwasik",
+        "csr:boundary:mokda_hwasik:career"
+      ],
+      "approvedApplication": false,
+      "reason": "영문 feeds_fire와 내부 출력 약화 풀이의 방향 충돌",
+      "requirements": "업무의 입력·완료 과정과 화의 기반을 함께 확인",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mokda_hwasik::money",
+      "targetId": "foundation:structure:mokda_hwasik",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mokda_hwasik",
+        "csr:boundary:mokda_hwasik:money"
+      ],
+      "approvedApplication": false,
+      "reason": "목·화만으로 재성 경로와 경제적 회수 확인 불가",
+      "requirements": "실제 원가·수요·회수와 식상생재 성립 여부",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mokda_hwasik::study",
+      "targetId": "foundation:structure:mokda_hwasik",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mokda_hwasik",
+        "csr:boundary:mokda_hwasik:study"
+      ],
+      "approvedApplication": false,
+      "reason": "자료량과 학습 결과의 인과를 명리로 입증하지 못함",
+      "requirements": "학습 시간·이해·연습 자료 및 명칭 교감",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mokda_hwasik::love",
+      "targetId": "foundation:structure:mokda_hwasik",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mokda_hwasik",
+        "csr:boundary:mokda_hwasik:love"
+      ],
+      "approvedApplication": false,
+      "reason": "화의 소멸과 감정 표현 사이 직접 전거 없음",
+      "requirements": "실제 대화·표현 선호 및 확정된 구조 정의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mokda_hwasik::marriage",
+      "targetId": "foundation:structure:mokda_hwasik",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mokda_hwasik",
+        "csr:boundary:mokda_hwasik:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "계획·실행 비유는 기존 편집 가설로만 존재",
+      "requirements": "실제 공동생활의 일정·역할 및 원국 조건",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mokda_hwasik::family",
+      "targetId": "foundation:structure:mokda_hwasik",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mokda_hwasik",
+        "csr:boundary:mokda_hwasik:family"
+      ],
+      "approvedApplication": false,
+      "reason": "목을 가족 지원으로 고정할 근거 없음",
+      "requirements": "가족 요청·동의·실제 도움과 명칭 성립 확인",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mokda_hwasik::relationships",
+      "targetId": "foundation:structure:mokda_hwasik",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mokda_hwasik",
+        "csr:boundary:mokda_hwasik:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "관계 행동과 목화 역전의 연결 미검증",
+      "requirements": "실제 모임의 입력·산출·참여 기록",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:suda_mokbu::personality",
+      "targetId": "foundation:structure:suda_mokbu",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:suda_mokbu",
+        "csr:application:suda_mokbu:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 입력·결정 경험",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:suda_mokbu::career",
+      "targetId": "foundation:structure:suda_mokbu",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:suda_mokbu",
+        "csr:application:suda_mokbu:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 업무·변경 기록",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:suda_mokbu::money",
+      "targetId": "foundation:structure:suda_mokbu",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:suda_mokbu",
+        "csr:application:suda_mokbu:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 자산·목표",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:suda_mokbu::study",
+      "targetId": "foundation:structure:suda_mokbu",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:suda_mokbu",
+        "csr:application:suda_mokbu:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공부·숙련",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:suda_mokbu::love",
+      "targetId": "foundation:structure:suda_mokbu",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:suda_mokbu",
+        "csr:application:suda_mokbu:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·대화",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:suda_mokbu::marriage",
+      "targetId": "foundation:structure:suda_mokbu",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:suda_mokbu",
+        "csr:application:suda_mokbu:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·변경",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:suda_mokbu::family",
+      "targetId": "foundation:structure:suda_mokbu",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:suda_mokbu",
+        "csr:application:suda_mokbu:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 대화",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:suda_mokbu::relationships",
+      "targetId": "foundation:structure:suda_mokbu",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:suda_mokbu",
+        "csr:application:suda_mokbu:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 집단·일정",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sanggwan_gyeongwan::personality",
+      "targetId": "foundation:structure:sanggwan_gyeongwan",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sanggwan_gyeongwan",
+        "csr:application:sanggwan_gyeongwan:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 규칙·의견",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sanggwan_gyeongwan::career",
+      "targetId": "foundation:structure:sanggwan_gyeongwan",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sanggwan_gyeongwan",
+        "csr:application:sanggwan_gyeongwan:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 권한·규정",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sanggwan_gyeongwan::money",
+      "targetId": "foundation:structure:sanggwan_gyeongwan",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sanggwan_gyeongwan",
+        "csr:application:sanggwan_gyeongwan:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 계약·전문 검토",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sanggwan_gyeongwan::study",
+      "targetId": "foundation:structure:sanggwan_gyeongwan",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sanggwan_gyeongwan",
+        "csr:application:sanggwan_gyeongwan:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 과목·평가",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sanggwan_gyeongwan::love",
+      "targetId": "foundation:structure:sanggwan_gyeongwan",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sanggwan_gyeongwan",
+        "csr:application:sanggwan_gyeongwan:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·대화",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sanggwan_gyeongwan::marriage",
+      "targetId": "foundation:structure:sanggwan_gyeongwan",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sanggwan_gyeongwan",
+        "csr:application:sanggwan_gyeongwan:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sanggwan_gyeongwan::family",
+      "targetId": "foundation:structure:sanggwan_gyeongwan",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sanggwan_gyeongwan",
+        "csr:application:sanggwan_gyeongwan:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 관행·가족 동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:sanggwan_gyeongwan::relationships",
+      "targetId": "foundation:structure:sanggwan_gyeongwan",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:sanggwan_gyeongwan",
+        "csr:application:sanggwan_gyeongwan:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 집단·규칙",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:bigeop_many::personality",
+      "targetId": "foundation:structure:bigeop_many",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:bigeop_many",
+        "csr:application:bigeop_many:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 동료·결정 방식",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:bigeop_many::career",
+      "targetId": "foundation:structure:bigeop_many",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:bigeop_many",
+        "csr:application:bigeop_many:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 협업·평가",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:bigeop_many::money",
+      "targetId": "foundation:structure:bigeop_many",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:bigeop_many",
+        "csr:application:bigeop_many:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동 자금",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:bigeop_many::study",
+      "targetId": "foundation:structure:bigeop_many",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:bigeop_many",
+        "csr:application:bigeop_many:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 학습 모임",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:bigeop_many::love",
+      "targetId": "foundation:structure:bigeop_many",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:bigeop_many",
+        "csr:application:bigeop_many:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·선호",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:bigeop_many::marriage",
+      "targetId": "foundation:structure:bigeop_many",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:bigeop_many",
+        "csr:application:bigeop_many:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:bigeop_many::family",
+      "targetId": "foundation:structure:bigeop_many",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:bigeop_many",
+        "csr:application:bigeop_many:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 구성·여력",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:bigeop_many::relationships",
+      "targetId": "foundation:structure:bigeop_many",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:bigeop_many",
+        "csr:application:bigeop_many:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 집단·목표",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:resource_many::personality",
+      "targetId": "foundation:structure:resource_many",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:resource_many",
+        "csr:application:resource_many:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 자료·실행",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:resource_many::career",
+      "targetId": "foundation:structure:resource_many",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:resource_many",
+        "csr:application:resource_many:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 직무·자료 수용",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:resource_many::money",
+      "targetId": "foundation:structure:resource_many",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:resource_many",
+        "csr:application:resource_many:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 계약·정보 출처",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:resource_many::study",
+      "targetId": "foundation:structure:resource_many",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:resource_many",
+        "csr:application:resource_many:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 과목·학습 기록",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:resource_many::love",
+      "targetId": "foundation:structure:resource_many",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:resource_many",
+        "csr:application:resource_many:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·대화",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:resource_many::marriage",
+      "targetId": "foundation:structure:resource_many",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:resource_many",
+        "csr:application:resource_many:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:resource_many::family",
+      "targetId": "foundation:structure:resource_many",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:resource_many",
+        "csr:application:resource_many:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 지원",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:resource_many::relationships",
+      "targetId": "foundation:structure:resource_many",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:resource_many",
+        "csr:application:resource_many:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 요청·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_resource::personality",
+      "targetId": "foundation:structure:officer_resource",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_resource",
+        "csr:application:officer_resource:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 규칙·자료",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_resource::career",
+      "targetId": "foundation:structure:officer_resource",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_resource",
+        "csr:application:officer_resource:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "직무·교육·피드백",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_resource::money",
+      "targetId": "foundation:structure:officer_resource",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_resource",
+        "csr:application:officer_resource:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 금융 계약·자료",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_resource::study",
+      "targetId": "foundation:structure:officer_resource",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_resource",
+        "csr:application:officer_resource:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 과목·평가 기준",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_resource::love",
+      "targetId": "foundation:structure:officer_resource",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_resource",
+        "csr:application:officer_resource:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·대화",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_resource::marriage",
+      "targetId": "foundation:structure:officer_resource",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_resource",
+        "csr:application:officer_resource:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_resource::family",
+      "targetId": "foundation:structure:officer_resource",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_resource",
+        "csr:application:officer_resource:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 관행·가족 의견",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_resource::relationships",
+      "targetId": "foundation:structure:officer_resource",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_resource",
+        "csr:application:officer_resource:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 집단·규칙",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:output_heavy::personality",
+      "targetId": "foundation:structure:output_heavy",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:output_heavy",
+        "csr:application:output_heavy:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 산출·피드백",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:output_heavy::career",
+      "targetId": "foundation:structure:output_heavy",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:output_heavy",
+        "csr:application:output_heavy:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 직무·수용자",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:output_heavy::money",
+      "targetId": "foundation:structure:output_heavy",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:output_heavy",
+        "csr:application:output_heavy:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 판매·비용",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:output_heavy::study",
+      "targetId": "foundation:structure:output_heavy",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:output_heavy",
+        "csr:application:output_heavy:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 과목·숙련",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:output_heavy::love",
+      "targetId": "foundation:structure:output_heavy",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:output_heavy",
+        "csr:application:output_heavy:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·연락",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:output_heavy::marriage",
+      "targetId": "foundation:structure:output_heavy",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:output_heavy",
+        "csr:application:output_heavy:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·시간",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:output_heavy::family",
+      "targetId": "foundation:structure:output_heavy",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:output_heavy",
+        "csr:application:output_heavy:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 의사",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:output_heavy::relationships",
+      "targetId": "foundation:structure:output_heavy",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:output_heavy",
+        "csr:application:output_heavy:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 집단·대화",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:wealth_heavy::personality",
+      "targetId": "foundation:structure:wealth_heavy",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:wealth_heavy",
+        "csr:application:wealth_heavy:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 선택·관리 경험",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:wealth_heavy::career",
+      "targetId": "foundation:structure:wealth_heavy",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:wealth_heavy",
+        "csr:application:wealth_heavy:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 직무·자원",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:wealth_heavy::money",
+      "targetId": "foundation:structure:wealth_heavy",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:wealth_heavy",
+        "csr:application:wealth_heavy:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 재무 자료",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:wealth_heavy::study",
+      "targetId": "foundation:structure:wealth_heavy",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:wealth_heavy",
+        "csr:application:wealth_heavy:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 과목·비용",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:wealth_heavy::love",
+      "targetId": "foundation:structure:wealth_heavy",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:wealth_heavy",
+        "csr:application:wealth_heavy:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·선호",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:wealth_heavy::marriage",
+      "targetId": "foundation:structure:wealth_heavy",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:wealth_heavy",
+        "csr:application:wealth_heavy:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·예산",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:wealth_heavy::family",
+      "targetId": "foundation:structure:wealth_heavy",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:wealth_heavy",
+        "csr:application:wealth_heavy:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 요청·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:wealth_heavy::relationships",
+      "targetId": "foundation:structure:wealth_heavy",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:wealth_heavy",
+        "csr:application:wealth_heavy:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 모임·거래",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_heavy::personality",
+      "targetId": "foundation:structure:officer_heavy",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_heavy",
+        "csr:application:officer_heavy:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 평가·역할",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_heavy::career",
+      "targetId": "foundation:structure:officer_heavy",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_heavy",
+        "csr:application:officer_heavy:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 직무·권한",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_heavy::money",
+      "targetId": "foundation:structure:officer_heavy",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_heavy",
+        "csr:application:officer_heavy:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 계약·재무",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_heavy::study",
+      "targetId": "foundation:structure:officer_heavy",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_heavy",
+        "csr:application:officer_heavy:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 시험·목표",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_heavy::love",
+      "targetId": "foundation:structure:officer_heavy",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_heavy",
+        "csr:application:officer_heavy:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_heavy::marriage",
+      "targetId": "foundation:structure:officer_heavy",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_heavy",
+        "csr:application:officer_heavy:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_heavy::family",
+      "targetId": "foundation:structure:officer_heavy",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_heavy",
+        "csr:application:officer_heavy:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족·부양",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:officer_heavy::relationships",
+      "targetId": "foundation:structure:officer_heavy",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:officer_heavy",
+        "csr:application:officer_heavy:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 모임·책임",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_output::personality",
+      "targetId": "foundation:structure:weak_output",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_output",
+        "csr:application:weak_output:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 산출·지원",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_output::career",
+      "targetId": "foundation:structure:weak_output",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_output",
+        "csr:application:weak_output:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 마감·분업",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_output::money",
+      "targetId": "foundation:structure:weak_output",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_output",
+        "csr:application:weak_output:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 판매·비용",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_output::study",
+      "targetId": "foundation:structure:weak_output",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_output",
+        "csr:application:weak_output:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공부 시간·숙련",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_output::love",
+      "targetId": "foundation:structure:weak_output",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_output",
+        "csr:application:weak_output:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·연락",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_output::marriage",
+      "targetId": "foundation:structure:weak_output",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_output",
+        "csr:application:weak_output:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활·시간",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_output::family",
+      "targetId": "foundation:structure:weak_output",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_output",
+        "csr:application:weak_output:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 요청",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_output::relationships",
+      "targetId": "foundation:structure:weak_output",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_output",
+        "csr:application:weak_output:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 모임·역할",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_officer::personality",
+      "targetId": "foundation:structure:weak_officer",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_officer",
+        "csr:application:weak_officer:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 평가 상황",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_officer::career",
+      "targetId": "foundation:structure:weak_officer",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_officer",
+        "csr:application:weak_officer:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 직무·교육",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_officer::money",
+      "targetId": "foundation:structure:weak_officer",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_officer",
+        "csr:application:weak_officer:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 계약·채무",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_officer::study",
+      "targetId": "foundation:structure:weak_officer",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_officer",
+        "csr:application:weak_officer:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 시험·성적",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_officer::love",
+      "targetId": "foundation:structure:weak_officer",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_officer",
+        "csr:application:weak_officer:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·안전",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_officer::marriage",
+      "targetId": "foundation:structure:weak_officer",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_officer",
+        "csr:application:weak_officer:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_officer::family",
+      "targetId": "foundation:structure:weak_officer",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_officer",
+        "csr:application:weak_officer:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족·부양",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:weak_officer::relationships",
+      "targetId": "foundation:structure:weak_officer",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:weak_officer",
+        "csr:application:weak_officer:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 단체·평가",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:fire_metal::personality",
+      "targetId": "foundation:structure:fire_metal",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:fire_metal",
+        "csr:application:fire_metal:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 대상·피드백",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:fire_metal::career",
+      "targetId": "foundation:structure:fire_metal",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:fire_metal",
+        "csr:application:fire_metal:career"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 직무·검증",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:fire_metal::money",
+      "targetId": "foundation:structure:fire_metal",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:fire_metal",
+        "csr:application:fire_metal:money"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 예산·효용",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:fire_metal::study",
+      "targetId": "foundation:structure:fire_metal",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:fire_metal",
+        "csr:application:fire_metal:study"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 과목·숙련",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:fire_metal::love",
+      "targetId": "foundation:structure:fire_metal",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:fire_metal",
+        "csr:application:fire_metal:love"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 교제·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:fire_metal::marriage",
+      "targetId": "foundation:structure:fire_metal",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:fire_metal",
+        "csr:application:fire_metal:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 공동생활",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:fire_metal::family",
+      "targetId": "foundation:structure:fire_metal",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:fire_metal",
+        "csr:application:fire_metal:family"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 가족 요청",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:fire_metal::relationships",
+      "targetId": "foundation:structure:fire_metal",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "D_MODERN_APPLICATION",
+      "researchRefs": [
+        "csr:profile:fire_metal",
+        "csr:application:fire_metal:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "실제 성립·맥락을 전제로 한 현대 적용 질문. 전통 확정 명제·계산 증거 아님.",
+      "requirements": "실제 집단·권한",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:water_weak::personality",
+      "targetId": "foundation:structure:water_weak",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:water_weak",
+        "csr:boundary:water_weak:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "물 부족→유연성 부족의 직접 전거 미확보",
+      "requirements": "실제 판단 행동과 전체 생극·계절 조건",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:water_weak::career",
+      "targetId": "foundation:structure:water_weak",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:water_weak",
+        "csr:boundary:water_weak:career"
+      ],
+      "approvedApplication": false,
+      "reason": "오행 비중을 직업 능력으로 환산할 근거 없음",
+      "requirements": "직무 경험·역량·관심과 실제 필요한 구조",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:water_weak::money",
+      "targetId": "foundation:structure:water_weak",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:water_weak",
+        "csr:boundary:water_weak:money"
+      ],
+      "approvedApplication": false,
+      "reason": "수와 현금 흐름을 동일시하는 연결 미검증",
+      "requirements": "실제 재무 자료·재성 및 전달 경로",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:water_weak::study",
+      "targetId": "foundation:structure:water_weak",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:water_weak",
+        "csr:boundary:water_weak:study"
+      ],
+      "approvedApplication": false,
+      "reason": "수→지능·기억의 개인화 연결 미검증",
+      "requirements": "실제 학습 기록과 전체 십성·구조",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:water_weak::love",
+      "targetId": "foundation:structure:water_weak",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:water_weak",
+        "csr:boundary:water_weak:love"
+      ],
+      "approvedApplication": false,
+      "reason": "물상과 애정 표현 사이 직접 근거 없음",
+      "requirements": "실제 표현·선호·상대 반응",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:water_weak::marriage",
+      "targetId": "foundation:structure:water_weak",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:water_weak",
+        "csr:boundary:water_weak:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "오행 보충을 동거의 조절 처방으로 번역 불가",
+      "requirements": "실제 공동생활·합의 및 전체 한난조습 검토",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:water_weak::family",
+      "targetId": "foundation:structure:water_weak",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:water_weak",
+        "csr:boundary:water_weak:family"
+      ],
+      "approvedApplication": false,
+      "reason": "수와 특정 가족 지원의 실제 존재를 연결 불가",
+      "requirements": "실제 가족 경험·지원 요청·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:water_weak::relationships",
+      "targetId": "foundation:structure:water_weak",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:water_weak",
+        "csr:boundary:water_weak:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "수와 사교·중재 역량의 직접 연결 미검증",
+      "requirements": "실제 역할·대화 방식·공동 작업 기록",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:season_command::personality",
+      "targetId": "foundation:structure:season_command",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:season_command",
+        "csr:boundary:season_command:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "월령은 판단의 환경이지 독립 성격형이 아님",
+      "requirements": "월령·통근·투출·생극과 실제 행동",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:season_command::career",
+      "targetId": "foundation:structure:season_command",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:season_command",
+        "csr:boundary:season_command:career"
+      ],
+      "approvedApplication": false,
+      "reason": "계절 권한만으로 구체적 업무 역량 확인 불가",
+      "requirements": "주객이 구분된 구조와 직무·숙련·권한",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:season_command::money",
+      "targetId": "foundation:structure:season_command",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:season_command",
+        "csr:boundary:season_command:money"
+      ],
+      "approvedApplication": false,
+      "reason": "월령 재성의 권한과 현실 자산은 다른 층위",
+      "requirements": "재성 경로·일간 여력·실제 재무",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:season_command::study",
+      "targetId": "foundation:structure:season_command",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:season_command",
+        "csr:boundary:season_command:study"
+      ],
+      "approvedApplication": false,
+      "reason": "계절의 기세를 과목 적성으로 바꿀 근거 없음",
+      "requirements": "학습 목표·경험과 적용 가능한 십성 흐름",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:season_command::love",
+      "targetId": "foundation:structure:season_command",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:season_command",
+        "csr:boundary:season_command:love"
+      ],
+      "approvedApplication": false,
+      "reason": "월령과 실제 표현 방식 사이 독립 연결 없음",
+      "requirements": "실제 교제·소통과 전체 배합",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:season_command::marriage",
+      "targetId": "foundation:structure:season_command",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:season_command",
+        "csr:boundary:season_command:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "성립 조건일 뿐 결혼 양식의 독립 근거가 아님",
+      "requirements": "실제 생활 합의·구조·부담 경로",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:season_command::family",
+      "targetId": "foundation:structure:season_command",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:season_command",
+        "csr:boundary:season_command:family"
+      ],
+      "approvedApplication": false,
+      "reason": "월주 위치 상징과 가족 사건은 구분해야 함",
+      "requirements": "실제 가족 구성·경험·동의",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:season_command::relationships",
+      "targetId": "foundation:structure:season_command",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:season_command",
+        "csr:boundary:season_command:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "같은 계절에 다른 원국·생활 맥락이 존재",
+      "requirements": "기타 기둥·십성 연결과 실제 집단 역할",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:support_restraint::personality",
+      "targetId": "foundation:structure:support_restraint",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:support_restraint",
+        "csr:boundary:support_restraint:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "명리의 강약 대상과 실제 능력은 다름",
+      "requirements": "부억 대상·예외 및 실제 행동의 어려움",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:support_restraint::career",
+      "targetId": "foundation:structure:support_restraint",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:support_restraint",
+        "csr:boundary:support_restraint:career"
+      ],
+      "approvedApplication": false,
+      "reason": "부억은 원국 조절 원리이며 업무 조언이 아님",
+      "requirements": "직무 병목과 검증된 구조의 조절 대상",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:support_restraint::money",
+      "targetId": "foundation:structure:support_restraint",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:support_restraint",
+        "csr:boundary:support_restraint:money"
+      ],
+      "approvedApplication": false,
+      "reason": "명리 균형과 자산 배분의 타당성은 별개",
+      "requirements": "실제 위험·유동성·목표와 재무 근거",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:support_restraint::study",
+      "targetId": "foundation:structure:support_restraint",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:support_restraint",
+        "csr:boundary:support_restraint:study"
+      ],
+      "approvedApplication": false,
+      "reason": "부억의 도움과 학습 보충은 의미 층위가 다름",
+      "requirements": "실제 학습 약점·과목 목표·지원 방식",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:support_restraint::love",
+      "targetId": "foundation:structure:support_restraint",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:support_restraint",
+        "csr:boundary:support_restraint:love"
+      ],
+      "approvedApplication": false,
+      "reason": "부억 대상을 상대에게 투사하는 연결 미지원",
+      "requirements": "실제 관계 동의·양쪽 계산·관계 계약",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:support_restraint::marriage",
+      "targetId": "foundation:structure:support_restraint",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:support_restraint",
+        "csr:boundary:support_restraint:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "부억 원리로 혼인의 필요·결과를 추론 불가",
+      "requirements": "실제 공동생활 조건과 별도 관계 근거",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:support_restraint::family",
+      "targetId": "foundation:structure:support_restraint",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:support_restraint",
+        "csr:boundary:support_restraint:family"
+      ],
+      "approvedApplication": false,
+      "reason": "생조 기호와 실제 가족 역할을 동일시 불가",
+      "requirements": "실제 가족의 의사·자원·도움 요청",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:support_restraint::relationships",
+      "targetId": "foundation:structure:support_restraint",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:support_restraint",
+        "csr:boundary:support_restraint:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "오행 조절과 사회적 관계의 상호성은 별개",
+      "requirements": "실제 관계의 동의·목적·역할",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:temperature::personality",
+      "targetId": "foundation:structure:temperature",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:temperature",
+        "csr:boundary:temperature:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "한난은 작용 환경이며 실제 친절·냉정의 값이 아님",
+      "requirements": "전체 한난 배합과 실제 행동·감정 자료",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:temperature::career",
+      "targetId": "foundation:structure:temperature",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:temperature",
+        "csr:boundary:temperature:career"
+      ],
+      "approvedApplication": false,
+      "reason": "조후 기호와 산업·현장 온도를 연결 불가",
+      "requirements": "실제 직무·환경·역량과 승인된 조후 판단",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:temperature::money",
+      "targetId": "foundation:structure:temperature",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:temperature",
+        "csr:boundary:temperature:money"
+      ],
+      "approvedApplication": false,
+      "reason": "기후 조건과 거래·재산 결과의 직접 연결 없음",
+      "requirements": "실제 재무 및 재성 작용의 검증된 경로",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:temperature::study",
+      "targetId": "foundation:structure:temperature",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:temperature",
+        "csr:boundary:temperature:study"
+      ],
+      "approvedApplication": false,
+      "reason": "전통 작용 환경을 기억·집중 수치로 환산 불가",
+      "requirements": "실제 학습 기록·지원·전체 구조",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:temperature::love",
+      "targetId": "foundation:structure:temperature",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:temperature",
+        "csr:boundary:temperature:love"
+      ],
+      "approvedApplication": false,
+      "reason": "한난과 실제 관계의 감정 표현은 다름",
+      "requirements": "실제 소통·선호 및 별도 관계 근거",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:temperature::marriage",
+      "targetId": "foundation:structure:temperature",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:temperature",
+        "csr:boundary:temperature:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "조후와 공동생활 성패의 인과 미검증",
+      "requirements": "실제 생활 조건·동의·개별 관계 해석",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:temperature::family",
+      "targetId": "foundation:structure:temperature",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:temperature",
+        "csr:boundary:temperature:family"
+      ],
+      "approvedApplication": false,
+      "reason": "물상과 실제 가족 정서 사이 근거 부족",
+      "requirements": "실제 가족 경험과 현재 지원",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:temperature::relationships",
+      "targetId": "foundation:structure:temperature",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:temperature",
+        "csr:boundary:temperature:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "계절 조건과 사회적 거리의 직접 연결 없음",
+      "requirements": "실제 집단 역할·대화·선호",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:moisture::personality",
+      "targetId": "foundation:structure:moisture",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:moisture",
+        "csr:boundary:moisture:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "조습은 감정량이나 성격 척도가 아님",
+      "requirements": "조습 판단과 실제 행동을 분리한 자료",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:moisture::career",
+      "targetId": "foundation:structure:moisture",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:moisture",
+        "csr:boundary:moisture:career"
+      ],
+      "approvedApplication": false,
+      "reason": "물상과 직무 적성의 직접 근거 없음",
+      "requirements": "실제 업무·숙련·환경과 전체 배합",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:moisture::money",
+      "targetId": "foundation:structure:moisture",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:moisture",
+        "csr:boundary:moisture:money"
+      ],
+      "approvedApplication": false,
+      "reason": "습함→돈 정체 같은 은유의 명리 근거 부족",
+      "requirements": "실제 유동성·계약과 별도 재성 흐름",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:moisture::study",
+      "targetId": "foundation:structure:moisture",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:moisture",
+        "csr:boundary:moisture:study"
+      ],
+      "approvedApplication": false,
+      "reason": "원국 환경과 학습 방식의 개인화 연결 없음",
+      "requirements": "실제 과목·이해·연습 자료",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:moisture::love",
+      "targetId": "foundation:structure:moisture",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:moisture",
+        "csr:boundary:moisture:love"
+      ],
+      "approvedApplication": false,
+      "reason": "관계 은유와 명리 조습은 다른 개념",
+      "requirements": "실제 교제·대화·표현 자료",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:moisture::marriage",
+      "targetId": "foundation:structure:moisture",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:moisture",
+        "csr:boundary:moisture:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "조습을 생활·배우자 처방으로 번역 불가",
+      "requirements": "전체 배합과 실제 생활의 동의·필요",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:moisture::family",
+      "targetId": "foundation:structure:moisture",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:moisture",
+        "csr:boundary:moisture:family"
+      ],
+      "approvedApplication": false,
+      "reason": "명리 물상과 실제 가족 경험을 연결하지 못함",
+      "requirements": "실제 경험·가족 의사·지원 자료",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:moisture::relationships",
+      "targetId": "foundation:structure:moisture",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:moisture",
+        "csr:boundary:moisture:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "기호 환경과 유대 강도 사이 근거 없음",
+      "requirements": "실제 집단의 신뢰·경계·역할",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mediation::personality",
+      "targetId": "foundation:structure:mediation",
+      "domain": "personality",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mediation",
+        "csr:boundary:mediation:personality"
+      ],
+      "approvedApplication": false,
+      "reason": "통관 원리만으로 개인의 중재 성향은 미확정",
+      "requirements": "양 작용·중개·방해의 경로와 실제 행동",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mediation::career",
+      "targetId": "foundation:structure:mediation",
+      "domain": "career",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mediation",
+        "csr:boundary:mediation:career"
+      ],
+      "approvedApplication": false,
+      "reason": "중개 오행의 존재와 실무 프로세스는 별개",
+      "requirements": "실제 병목·권한과 검증된 명리 경로",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mediation::money",
+      "targetId": "foundation:structure:mediation",
+      "domain": "money",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mediation",
+        "csr:boundary:mediation:money"
+      ],
+      "approvedApplication": false,
+      "reason": "상생 연결과 수익·유동성은 다른 층위",
+      "requirements": "실제 거래·비용·책임 및 재성 흐름",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mediation::study",
+      "targetId": "foundation:structure:mediation",
+      "domain": "study",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mediation",
+        "csr:boundary:mediation:study"
+      ],
+      "approvedApplication": false,
+      "reason": "통관을 학습 능력으로 환산할 직접 근거 부족",
+      "requirements": "실제 막힌 개념·설명 효과와 별도 구조",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mediation::love",
+      "targetId": "foundation:structure:mediation",
+      "domain": "love",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mediation",
+        "csr:boundary:mediation:love"
+      ],
+      "approvedApplication": false,
+      "reason": "원국의 중개와 실제 관계 중재는 별개",
+      "requirements": "당사자 동의·문제·중재의 적합성",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mediation::marriage",
+      "targetId": "foundation:structure:mediation",
+      "domain": "marriage",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mediation",
+        "csr:boundary:mediation:marriage"
+      ],
+      "approvedApplication": false,
+      "reason": "통관만으로 갈등 해결 조건을 확정 불가",
+      "requirements": "실제 안전·권한·동의와 문제 경로",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mediation::family",
+      "targetId": "foundation:structure:mediation",
+      "domain": "family",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mediation",
+        "csr:boundary:mediation:family"
+      ],
+      "approvedApplication": false,
+      "reason": "통관을 가족 중재 의무로 바꿀 근거 없음",
+      "requirements": "실제 가족의 의사·경계·책임",
+      "runtimeConnected": false
+    },
+    {
+      "id": "foundation:structure:mediation::relationships",
+      "targetId": "foundation:structure:mediation",
+      "domain": "relationships",
+      "before": "COMPOSITE_HANDOFF_ONLY",
+      "after": "E_UNVERIFIED",
+      "researchRefs": [
+        "csr:profile:mediation",
+        "csr:boundary:mediation:relationships"
+      ],
+      "approvedApplication": false,
+      "reason": "오행 연결과 사회적 중재의 효과는 미검증",
+      "requirements": "실제 양측 목표·권한·방해 조건",
+      "runtimeConnected": false
+    }
+  ]
+}

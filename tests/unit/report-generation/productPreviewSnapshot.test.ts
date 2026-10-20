@@ -201,7 +201,7 @@ describe("product preview snapshot contract", () => {
         draft: {
           ...compatibilityDraft,
           productType: "annual_fortune",
-        } as ProductPreviewSnapshotDraft,
+        } as unknown as ProductPreviewSnapshotDraft,
       }),
     ).toEqual({
       ok: false,
@@ -217,7 +217,7 @@ describe("product preview snapshot contract", () => {
         draft: {
           ...compatibilityDraft,
           productVersion: "",
-        } as ProductPreviewSnapshotDraft,
+        } as unknown as ProductPreviewSnapshotDraft,
       }),
     ).toEqual({
       ok: false,

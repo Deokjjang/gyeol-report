@@ -1,0 +1,12 @@
+{
+  "freshExecutions": 2,
+  "generatedFilesCompared": 64,
+  "allBytesEqual": true,
+  "outputDigest": "8573d01e416e0421f98d3768467900103c40ff4a04565cfac02765357d45620e",
+  "runOne": "external final-rebuild-one",
+  "runTwo": "default output folder",
+  "timingsExcluded": true,
+  "primaryCandidateFixturePairs": 5073,
+  "originalGraphGeneratedJsonComparedPerRun": 105,
+  "originalBinderGeneratedJsonComparedPerRun": 83
+}

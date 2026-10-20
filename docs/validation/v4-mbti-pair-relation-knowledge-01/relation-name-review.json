@@ -1,0 +1,1694 @@
+[
+  {
+    "name": "Activity",
+    "directions": 13,
+    "termFamily": "activation",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Activity"
+    ],
+    "definition": "활동을 자극한다는 관계 모형",
+    "limit": "실제 활동량이나 만족도를 보장하지 않는다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Activity vs Structure",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Activity vs Structure"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Benefit",
+    "directions": 21,
+    "termFamily": "benefit",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "asymmetric_family_roles_unverified",
+    "aliasesObservedInLocalSource": [
+      "Benefit"
+    ],
+    "definition": "요청자와 수신자가 구분되는 비대칭 모형",
+    "limit": "원천 이름만으로 어느 쪽이 요청자인지 정할 수 없다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Beta Comfort",
+    "directions": 3,
+    "termFamily": null,
+    "system": "quadra_style_label_not_pair_relation",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Beta Comfort"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Beta comfort",
+    "directions": 3,
+    "termFamily": null,
+    "system": "quadra_style_label_not_pair_relation",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Beta comfort"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Comparative",
+    "directions": 7,
+    "termFamily": "kindred",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Kindred",
+      "Comparative"
+    ],
+    "definition": "가까운 가족 같은 거리로 소개되는 모형",
+    "limit": "실제 가족 역할을 뜻하지 않는다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Complementary",
+    "directions": 5,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Complementary"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Conflict",
+    "directions": 11,
+    "termFamily": "conflict",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Conflicting",
+      "Conflict"
+    ],
+    "definition": "긴장이 누적된다는 관계 모형",
+    "limit": "불행·실패·이별 예측에 쓰지 않는다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Conflicting",
+    "directions": 4,
+    "termFamily": "conflict",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Conflicting",
+      "Conflict"
+    ],
+    "definition": "긴장이 누적된다는 관계 모형",
+    "limit": "불행·실패·이별 예측에 쓰지 않는다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Contrary",
+    "directions": 6,
+    "termFamily": "extinguishment",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Contrary",
+      "Extinguishment"
+    ],
+    "definition": "거리의 안정성 문제를 다루는 관계 모형",
+    "limit": "거리가 실제로 불안정하다고 진단하지 않는다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Control and Freedom",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Control and Freedom"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Cooperation",
+    "directions": 1,
+    "termFamily": "business",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Look-a-like",
+      "Look-alike",
+      "Cooperation"
+    ],
+    "definition": "동등한 협력으로 기술되는 관계 모형",
+    "limit": "유사 영어 명칭의 정리이며 원천 계보는 미확인.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Different Leadership Values",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Different Leadership Values"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Duality",
+    "directions": 11,
+    "termFamily": "duality",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Duality"
+    ],
+    "definition": "서로의 기능적 필요를 보완한다는 이론 모형",
+    "limit": "MBTI의 최적 상대·성공 보장으로 옮기지 않는다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Duality / TRUITY complementary",
+    "directions": 1,
+    "termFamily": null,
+    "system": "mixed_named_sources_unverified",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Duality / TRUITY complementary"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Duty and Feeling",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Duty and Feeling"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Execution and Ideas",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Execution and Ideas"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Extinguishment",
+    "directions": 2,
+    "termFamily": "extinguishment",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Contrary",
+      "Extinguishment"
+    ],
+    "definition": "거리의 안정성 문제를 다루는 관계 모형",
+    "limit": "거리가 실제로 불안정하다고 진단하지 않는다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "False Identical",
+    "directions": 2,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "False Identical"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Freedom and Control",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Freedom and Control"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Friendly",
+    "directions": 2,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Friendly"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Friendly / Gamma",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Friendly / Gamma"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Identical",
+    "directions": 13,
+    "termFamily": "identity",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Identical",
+      "Identity"
+    ],
+    "definition": "같은 유형 구조를 공유한다는 관계 모형",
+    "limit": "개인의 동일한 경험·필요를 보장하지 않는다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Identity",
+    "directions": 1,
+    "termFamily": "identity",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Identical",
+      "Identity"
+    ],
+    "definition": "같은 유형 구조를 공유한다는 관계 모형",
+    "limit": "개인의 동일한 경험·필요를 보장하지 않는다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Illusionary",
+    "directions": 10,
+    "termFamily": "mirage",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Illusionary"
+    ],
+    "definition": "사업 계획의 상호 제동으로 요약된 모형",
+    "limit": "관계 실패나 업무 능력 판단에 쓰지 않는다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Active Sensory Resonance",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Active Sensory Resonance"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Active-Feeling Tension",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Active-Feeling Tension"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Analytic Kinship",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Analytic Kinship"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Care-Activity Complement",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Care-Activity Complement"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Care-Autonomy Tension",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Care-Autonomy Tension"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Depth-Expression Complement",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Depth-Expression Complement"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Execution Partnership",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Execution Partnership"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Execution Pressure",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Execution Pressure"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Execution-Debate Tension",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Execution-Debate Tension"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Executive Complement",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Executive Complement"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Executive Drive",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Executive Drive"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Executive-Field Tension",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Executive-Field Tension"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Experimental Debate",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Experimental Debate"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Experimental-Practical Bond",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Experimental-Practical Bond"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Expressive Possibility Bond",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Expressive Possibility Bond"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Idea Rivalry",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Idea Rivalry"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Idea-Expression Stimulation",
+    "directions": 2,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Idea-Expression Stimulation"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Idea-Field Activity",
+    "directions": 2,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Idea-Field Activity"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Intellectual Tension",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Intellectual Tension"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Intuitive Spark Bond",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Intuitive Spark Bond"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Logic-Action Stimulation",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Logic-Action Stimulation"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Management-Expression Tension",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Management-Expression Tension"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Practical-Procedure Tension",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Practical-Procedure Tension"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Procedure-Joy Tension",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Procedure-Joy Tension"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Procedure-Spontaneity Tension",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Procedure-Spontaneity Tension"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Quiet-Care Tension",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Quiet-Care Tension"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Sensory Activity Complement",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Sensory Activity Complement"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Sensory-Practical Bond",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Sensory-Practical Bond"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Sensory-Value Complement",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Sensory-Value Complement"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Social-Care Tension",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Social-Care Tension"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Stability-Stimulation Balance",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Stability-Stimulation Balance"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Strategic Tension",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Strategic Tension"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Strategic-Field Tension",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Strategic-Field Tension"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Strategic-Practical Complement",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Strategic-Practical Complement"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Value-Debate Tension",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Value-Debate Tension"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Value-Joy Balance",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Value-Joy Balance"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Inferred Value-Practice Complement",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Inferred Value-Practice Complement"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Interesting",
+    "directions": 2,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Interesting"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Interesting / Alpha-Opposite",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Interesting / Alpha-Opposite"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Kindred",
+    "directions": 1,
+    "termFamily": "kindred",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Kindred",
+      "Comparative"
+    ],
+    "definition": "가까운 가족 같은 거리로 소개되는 모형",
+    "limit": "실제 가족 역할을 뜻하지 않는다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Leadership Clash",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Leadership Clash"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Logic but Different Lifestyle",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Logic but Different Lifestyle"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Look-a-like",
+    "directions": 4,
+    "termFamily": "business",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Look-a-like",
+      "Look-alike",
+      "Cooperation"
+    ],
+    "definition": "동등한 협력으로 기술되는 관계 모형",
+    "limit": "유사 영어 명칭의 정리이며 원천 계보는 미확인.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Look-alike",
+    "directions": 5,
+    "termFamily": "business",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Look-a-like",
+      "Look-alike",
+      "Cooperation"
+    ],
+    "definition": "동등한 협력으로 기술되는 관계 모형",
+    "limit": "유사 영어 명칭의 정리이며 원천 계보는 미확인.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Mirror",
+    "directions": 12,
+    "termFamily": "mirror",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Mirror"
+    ],
+    "definition": "상호 비평을 통한 수정이라는 관계 모형",
+    "limit": "고객의 반론 의도나 수용은 따로 확인한다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Opposing Values Growth",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Opposing Values Growth"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Opposite Strengths",
+    "directions": 3,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Opposite Strengths"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Order and Innovation",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Order and Innovation"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Pedagogy",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Pedagogy"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Planning vs Spontaneity",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Planning vs Spontaneity"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Quasi-Identical",
+    "directions": 6,
+    "termFamily": "quasi_identity",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Quasi-Identical",
+      "Quasi-Identity"
+    ],
+    "definition": "함께 있어도 이해 기준이 다르다는 관계 모형",
+    "limit": "마음의 불일치를 MBTI 법칙으로 확정하지 않는다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Quasi-Identity",
+    "directions": 4,
+    "termFamily": "quasi_identity",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Quasi-Identical",
+      "Quasi-Identity"
+    ],
+    "definition": "함께 있어도 이해 기준이 다르다는 관계 모형",
+    "limit": "마음의 불일치를 MBTI 법칙으로 확정하지 않는다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Responsibility Pair",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Responsibility Pair"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Same Standards",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Same Standards"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Semi-Duality",
+    "directions": 10,
+    "termFamily": "semi_duality",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Semi-Duality"
+    ],
+    "definition": "부분적 보완으로 소개되는 관계 모형",
+    "limit": "일상적 보완이라는 말과 구분한다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Stability and Possibility",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Stability and Possibility"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Stable Complement",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Stable Complement"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Super-Ego",
+    "directions": 10,
+    "termFamily": "superego",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "symmetric_within_socionics_only",
+    "aliasesObservedInLocalSource": [
+      "Super-Ego"
+    ],
+    "definition": "상호 존중으로 소개되는 관계 모형",
+    "limit": "실제 존중 여부는 유형으로 알 수 없다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Supervision",
+    "directions": 14,
+    "termFamily": "supervision",
+    "system": "socionics_term_family",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "asymmetric_family_roles_unverified",
+    "aliasesObservedInLocalSource": [
+      "Supervision"
+    ],
+    "definition": "감독자와 대상자가 구분되는 비대칭 모형",
+    "limit": "실제 상사·부모 권한이나 서열을 부여하지 않는다.",
+    "sourceRefs": [
+      "shs:relations",
+      "iis:basic",
+      "gulenko:systems",
+      "wikisocion:terms"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "Supplement",
+    "directions": 1,
+    "termFamily": null,
+    "system": "source_local_unresolved",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "Supplement"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  },
+  {
+    "name": "inferred",
+    "directions": 11,
+    "termFamily": null,
+    "system": "source_local_inference_label",
+    "originalGenealogy": "unverified",
+    "mbtiMapping": "not_established",
+    "directionality": "unknown",
+    "aliasesObservedInLocalSource": [
+      "inferred"
+    ],
+    "definition": "고유 체계·정의가 확인되지 않은 원천 명칭; 직관적으로 정규화하지 않음",
+    "limit": "다른 분류와 동치화하지 않고 개인 trait 비교 후보와 분리",
+    "sourceRefs": [
+      "user-source:local",
+      "gulenko:systems"
+    ],
+    "aliasStatus": "terminology_candidate_not_original_lineage"
+  }
+]

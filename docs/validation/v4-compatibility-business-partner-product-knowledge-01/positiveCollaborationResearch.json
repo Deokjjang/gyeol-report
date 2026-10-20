@@ -1,0 +1,178 @@
+[
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH04.P1:shared-proof-before-investment",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH04.P1:shared-proof-before-investment",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH04.P1:shared-scope-repeatability",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH04.P1:shared-scope-repeatability",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH04.P2:exploration-delivery-interface",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH04.P2:exploration-delivery-interface",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH04.P2:trial-and-contract-boundary",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH04.P2:trial-and-contract-boundary",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH04.P3:customer-signal-product-adjustment",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH04.P3:customer-signal-product-adjustment",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH04.P3:crisis-information-two-views",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH04.P3:crisis-information-two-views",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH04.P4:repeatable-operation-value",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH04.P4:repeatable-operation-value",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH04.P4:contribution-recognition-without-shares",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH04.P4:contribution-recognition-without-shares",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH09.P1:recall-market-and-scope",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH09.P1:recall-market-and-scope",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH09.P1:recall-customer-and-risk",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH09.P1:recall-customer-and-risk",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH09.P2:recall-directional-contribution",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH09.P2:recall-directional-contribution",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH09.P2:recall-contribution-without-value-price",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH09.P2:recall-contribution-without-value-price",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH09.P3:recall-consent-principle",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH09.P3:recall-consent-principle",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH09.P3:recall-scope-and-stop-principle",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH09.P3:recall-scope-and-stop-principle",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH09.P4:recall-business-value-with-boundary",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH09.P4:recall-business-value-with-boundary",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "bppr:view:positiveCollaborationResearch:material:CH09.P4:recall-hold-and-safe-exit",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "bppr:material:CH09.P4:recall-hold-and-safe-exit",
+    "notAdditionalIndependentFact": true
+  }
+]

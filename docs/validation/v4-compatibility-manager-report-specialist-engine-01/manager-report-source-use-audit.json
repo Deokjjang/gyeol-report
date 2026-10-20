@@ -1,0 +1,50 @@
+[
+  {
+    "sourceUse": "own_entered_type_only",
+    "count": 133,
+    "adapterRecognized": true,
+    "grouping": "ORIGINAL_EXPLICIT_AND_AND_COMPATIBLE_DISPLAY_GROUPS"
+  },
+  {
+    "sourceUse": "directed_reference_only",
+    "count": 2,
+    "adapterRecognized": true,
+    "grouping": "ORIGINAL_EXPLICIT_AND_AND_COMPATIBLE_DISPLAY_GROUPS"
+  },
+  {
+    "sourceUse": "actual_canonical_membership_required",
+    "count": 8,
+    "adapterRecognized": true,
+    "grouping": "ORIGINAL_EXPLICIT_AND_AND_COMPATIBLE_DISPLAY_GROUPS"
+  },
+  {
+    "sourceUse": "both_same_person_roots_required",
+    "count": 4,
+    "adapterRecognized": true,
+    "grouping": "ORIGINAL_EXPLICIT_AND_AND_COMPATIBLE_DISPLAY_GROUPS"
+  },
+  {
+    "sourceUse": "recipient_direction_definition",
+    "count": 18,
+    "adapterRecognized": true,
+    "grouping": "ORIGINAL_EXPLICIT_AND_AND_COMPATIBLE_DISPLAY_GROUPS"
+  },
+  {
+    "sourceUse": "actual_natal_condition_required",
+    "count": 5,
+    "adapterRecognized": true,
+    "grouping": "ORIGINAL_EXPLICIT_AND_AND_COMPATIBLE_DISPLAY_GROUPS"
+  },
+  {
+    "sourceUse": "context_guidance_not_person_fact",
+    "count": 110,
+    "adapterRecognized": true,
+    "grouping": "ORIGINAL_EXPLICIT_AND_AND_COMPATIBLE_DISPLAY_GROUPS"
+  },
+  {
+    "sourceUse": "unsupported_comparison_only",
+    "count": 2,
+    "adapterRecognized": true,
+    "grouping": "ORIGINAL_EXPLICIT_AND_AND_COMPATIBLE_DISPLAY_GROUPS"
+  }
+]

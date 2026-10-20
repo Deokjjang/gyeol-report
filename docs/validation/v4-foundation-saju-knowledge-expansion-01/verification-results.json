@@ -1,0 +1,771 @@
+{
+  "baseSha": "be4054671d166b3a11127c5bf013b77eab5cd919",
+  "tests": [
+    {
+      "source": "targeted-final-results.json",
+      "passed": 81,
+      "failed": 0,
+      "pending": 0,
+      "assertions": [
+        {
+          "file": "sajuBranchSymbolKnowledge.test.ts",
+          "name": "saju branch symbol knowledge covers all twelve branches with animal element and season symbols",
+          "status": "passed"
+        },
+        {
+          "file": "sajuBranchSymbolKnowledge.test.ts",
+          "name": "saju branch symbol knowledge keeps key branch symbol meanings vivid but not deterministic",
+          "status": "passed"
+        },
+        {
+          "file": "sajuBranchSymbolKnowledge.test.ts",
+          "name": "saju branch symbol knowledge contains no unsafe claims",
+          "status": "passed"
+        },
+        {
+          "file": "sajuDayPillarKnowledge.test.ts",
+          "name": "saju day pillar knowledge contains all 60 day pillars",
+          "status": "passed"
+        },
+        {
+          "file": "sajuDayPillarKnowledge.test.ts",
+          "name": "saju day pillar knowledge keeps every day pillar entry useful and non-placeholder",
+          "status": "passed"
+        },
+        {
+          "file": "sajuDayPillarKnowledge.test.ts",
+          "name": "saju day pillar knowledge has richer specific anchors for key example day pillars",
+          "status": "passed"
+        },
+        {
+          "file": "sajuDayPillarKnowledge.test.ts",
+          "name": "saju day pillar knowledge maps day pillars to topics, polarity, vividness, and bridge needs",
+          "status": "passed"
+        },
+        {
+          "file": "sajuDayPillarKnowledge.test.ts",
+          "name": "saju day pillar knowledge keeps unsafe claims and English residue out of day pillar fields",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFeatureTaxonomy.test.ts",
+          "name": "saju feature taxonomy contains required REPORT-15A seed entries",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFeatureTaxonomy.test.ts",
+          "name": "saju feature taxonomy keeps vivid symbolic descriptions for narrative report use",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFeatureTaxonomy.test.ts",
+          "name": "saju feature taxonomy contains required nobleman and bridge entries",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFeatureTaxonomy.test.ts",
+          "name": "saju feature taxonomy covers expanded sinsal gwiin gilshin labels for REPORT-15B",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFeatureTaxonomy.test.ts",
+          "name": "saju feature taxonomy expands vivid readings for major gilsin and warning features",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFeatureTaxonomy.test.ts",
+          "name": "saju feature taxonomy assigns useful polarity vividness topic and MBTI bridge metadata",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFeatureTaxonomy.test.ts",
+          "name": "saju feature taxonomy keeps unsafe advertising claims out of taxonomy phrase fields",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFoundationKnowledge.test.ts",
+          "name": "unconnected Saju foundation knowledge inventories legacy IDs, aliases, fields, rules and exact content digests",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFoundationKnowledge.test.ts",
+          "name": "unconnected Saju foundation knowledge records exact legacy repetition while preserving all materials",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFoundationKnowledge.test.ts",
+          "name": "unconnected Saju foundation knowledge reports every filled and deferred field without equating identity with interpretation coverage",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFoundationKnowledge.test.ts",
+          "name": "unconnected Saju foundation knowledge covers finite canonical classifications exactly once",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFoundationKnowledge.test.ts",
+          "name": "unconnected Saju foundation knowledge keeps IDs and category-qualified aliases unambiguous",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFoundationKnowledge.test.ts",
+          "name": "unconnected Saju foundation knowledge resolves every historical and internal reference at its actual review level",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFoundationKnowledge.test.ts",
+          "name": "unconnected Saju foundation knowledge resolves legacy IDs and related concepts without repurposing old IDs",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFoundationKnowledge.test.ts",
+          "name": "unconnected Saju foundation knowledge covers every existing day pillar, shinsal/gwiin and structure taxonomy record",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFoundationKnowledge.test.ts",
+          "name": "unconnected Saju foundation knowledge preserves hidden-stem composition and exposes it as internal rather than authenticated ancient weights",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFoundationKnowledge.test.ts",
+          "name": "unconnected Saju foundation knowledge separates hypothetical editorial applications and keeps missing domains explicitly deferred",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFoundationKnowledge.test.ts",
+          "name": "unconnected Saju foundation knowledge keeps source conflicts and uncertain domains visible",
+          "status": "passed"
+        },
+        {
+          "file": "sajuFoundationKnowledge.test.ts",
+          "name": "unconnected Saju foundation knowledge has no runtime import, export, dynamic load or lookup connection to the new DB",
+          "status": "passed"
+        },
+        {
+          "file": "sajuKnowledgeBase.test.ts",
+          "name": "saju knowledge base contains all five elements",
+          "status": "passed"
+        },
+        {
+          "file": "sajuKnowledgeBase.test.ts",
+          "name": "saju knowledge base contains all ten gods",
+          "status": "passed"
+        },
+        {
+          "file": "sajuKnowledgeBase.test.ts",
+          "name": "saju knowledge base contains required patterns, sinsal, noblemen, day master, and day pillar seeds",
+          "status": "passed"
+        },
+        {
+          "file": "sajuKnowledgeBase.test.ts",
+          "name": "saju knowledge base expands all five elements with topic interpretations and balance hints",
+          "status": "passed"
+        },
+        {
+          "file": "sajuKnowledgeBase.test.ts",
+          "name": "saju knowledge base expands all ten gods with required topic interpretations",
+          "status": "passed"
+        },
+        {
+          "file": "sajuKnowledgeBase.test.ts",
+          "name": "saju knowledge base includes all ten day masters and required day pillar seed set",
+          "status": "passed"
+        },
+        {
+          "file": "sajuKnowledgeBase.test.ts",
+          "name": "saju knowledge base keeps 갑신일주 high-detail pressure leadership and sharpness concepts",
+          "status": "passed"
+        },
+        {
+          "file": "sajuKnowledgeBase.test.ts",
+          "name": "saju knowledge base maps key seed entries to required interpretation tags",
+          "status": "passed"
+        },
+        {
+          "file": "sajuKnowledgeBase.test.ts",
+          "name": "saju knowledge base keeps day pillar model open for future 60-gapja expansion",
+          "status": "passed"
+        },
+        {
+          "file": "sajuPillarFeaturePlacement.test.ts",
+          "name": "saju pillar feature placement builds deterministic ten-god rows for the external parity fixture",
+          "status": "passed"
+        },
+        {
+          "file": "sajuPillarFeaturePlacement.test.ts",
+          "name": "saju pillar feature placement uses canonical engine hidden stems and keeps twelve-life-stage parity",
+          "status": "passed"
+        },
+        {
+          "file": "sajuPillarFeaturePlacement.test.ts",
+          "name": "saju pillar feature placement renders explicit production placements under the correct pillar only",
+          "status": "passed"
+        },
+        {
+          "file": "sajuPillarFeaturePlacement.test.ts",
+          "name": "saju pillar feature placement keeps diagnostic-only placements out of confirmed table rows",
+          "status": "passed"
+        },
+        {
+          "file": "sajuPillarFeaturePlacement.test.ts",
+          "name": "saju pillar feature placement builds production placements only from production feature ids",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju calculates full Saju with known birth time",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju includes structure analysis result",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju includes deterministic structure analysis evidence keys",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju does not expose long float artifacts in structure analysis",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju returns deterministic structure analysis through calculateSaju",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju omits hour pillar when birth time is unknown",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju rejects uncertain year and month instead of a noon surrogate",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju uses new year and month after the IPCHUN boundary with known birth time",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju uses verified calendar engine pillars for broad-year production input",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju uses verified calendar engine year month and day when 1996 birth time is unknown",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju uses canonical pillars after 2024 IPCHUN",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju handles 1996 Asia/Seoul time-pillar boundary smoke cases",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju does not add unsafe broad-year source markers",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju throws for lunar calendar",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju throws for non-Korea timezone",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju throws when known birth time is missing",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju propagates invalid birth date errors",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju propagates invalid birth time errors",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju returns relation values as string arrays",
+          "status": "passed"
+        },
+        {
+          "file": "calculateSaju.test.ts",
+          "name": "calculateSaju returns deterministic full Saju results",
+          "status": "passed"
+        },
+        {
+          "file": "hiddenStems.test.ts",
+          "name": "hidden stem analysis returns hidden stems in deterministic order",
+          "status": "passed"
+        },
+        {
+          "file": "hiddenStems.test.ts",
+          "name": "hidden stem analysis uses fractional weights in hidden Ten God distribution",
+          "status": "passed"
+        },
+        {
+          "file": "hiddenStems.test.ts",
+          "name": "hidden stem analysis excludes hour branch hidden stems when hour is missing",
+          "status": "passed"
+        },
+        {
+          "file": "hiddenStems.test.ts",
+          "name": "weighted element analysis includes visible elements and hidden stem weights",
+          "status": "passed"
+        },
+        {
+          "file": "hiddenStems.test.ts",
+          "name": "weighted element analysis uses visible counts and weighted counts for full element analysis",
+          "status": "passed"
+        },
+        {
+          "file": "hiddenStems.test.ts",
+          "name": "full Ten Gods analysis combines visible and hidden Ten God distributions",
+          "status": "passed"
+        },
+        {
+          "file": "hiddenStems.test.ts",
+          "name": "hidden stem analysis determinism returns deterministic analysis results",
+          "status": "passed"
+        },
+        {
+          "file": "structureAnalysis.test.ts",
+          "name": "analyzeSajuStructure produces day master strength analysis",
+          "status": "passed"
+        },
+        {
+          "file": "structureAnalysis.test.ts",
+          "name": "analyzeSajuStructure uses clean score formatting",
+          "status": "passed"
+        },
+        {
+          "file": "structureAnalysis.test.ts",
+          "name": "analyzeSajuStructure detects expected fixture patterns",
+          "status": "passed"
+        },
+        {
+          "file": "structureAnalysis.test.ts",
+          "name": "analyzeSajuStructure returns pattern labels, summaries, confidence, and evidence",
+          "status": "passed"
+        },
+        {
+          "file": "structureAnalysis.test.ts",
+          "name": "analyzeSajuStructure includes strength and pattern keywords in summary",
+          "status": "passed"
+        },
+        {
+          "file": "structureAnalysis.test.ts",
+          "name": "analyzeSajuStructure includes structure analysis notice",
+          "status": "passed"
+        },
+        {
+          "file": "structureAnalysis.test.ts",
+          "name": "analyzeSajuStructure avoids unsafe wording in serialized output",
+          "status": "passed"
+        },
+        {
+          "file": "structureAnalysis.test.ts",
+          "name": "analyzeSajuStructure returns deterministic output",
+          "status": "passed"
+        },
+        {
+          "file": "tenGods.test.ts",
+          "name": "Ten Gods mapping maps all target stems for 甲 day stem",
+          "status": "passed"
+        },
+        {
+          "file": "tenGods.test.ts",
+          "name": "Ten Gods mapping maps all target stems for 乙 day stem",
+          "status": "passed"
+        },
+        {
+          "file": "tenGods.test.ts",
+          "name": "Ten Gods mapping maps all target stems for 丙 day stem",
+          "status": "passed"
+        },
+        {
+          "file": "tenGods.test.ts",
+          "name": "Ten Gods mapping produces valid Ten Gods for every day stem and target stem",
+          "status": "passed"
+        },
+        {
+          "file": "tenGods.test.ts",
+          "name": "Ten Gods mapping returns deterministic results",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "source": "six-product-results.json",
+      "passed": 64,
+      "failed": 0,
+      "pending": 0,
+      "assertions": [
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'comprehensive'/'A' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'comprehensive'/'B' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'comprehensive'/'C' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'comprehensive'/'D' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'comprehensive'/'E' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'comprehensive'/'F' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'comprehensive'/'cross-6' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'comprehensive'/'legacy-clock' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'career'/'A' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'career'/'B' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'career'/'C' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'career'/'D' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'career'/'E' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'career'/'F' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'career'/'cross-6' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'career'/'cross-7' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'career'/'legacy-clock' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'love'/'A' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'love'/'B' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'love'/'C' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'love'/'D' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'love'/'E' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'love'/'F' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'love'/'cross-6' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'love'/'legacy-clock' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'compatibility'/'A' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'compatibility'/'B' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'compatibility'/'C' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'compatibility'/'D' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'compatibility'/'E' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'compatibility'/'F' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'compatibility'/'marriage' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'compatibility'/'parentChild' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'compatibility'/'coworker' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'compatibility'/'managerReport' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'compatibility'/'businessPartner' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'compatibility'/'friendship' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'compatibility'/'cross-12' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'compatibility'/'cross-13' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'major'/'A' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'major'/'B' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'major'/'C' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'major'/'D' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'major'/'E' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'major'/'F' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'major'/'S' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'major'/'S-mbti' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'major'/'S-time' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'major'/'S-both' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'major'/'cross-10' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'annual'/'A' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'annual'/'B' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'annual'/'C' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'annual'/'D' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'annual'/'E' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'annual'/'F' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'annual'/'H' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'annual'/'H2025' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'annual'/'H2027' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'annual'/'C2028' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'annual'/'H-employee' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'annual'/'H-freelancer' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'annual'/'H-business_owner' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        },
+        {
+          "file": "sixProductIntegration.test.ts",
+          "name": "'annual'/'cross-13' preserves source evidence, structure and saved reader",
+          "status": "passed"
+        }
+      ]
+    }
+  ],
+  "totalPassed": 145,
+  "typescriptDiagnostics": 0,
+  "lint": "PASS",
+  "productionWebpackBuild": "PASS",
+  "initialBuildFailure": "Google Fonts DNS ENOTFOUND in sandbox; no source workaround; identical network-enabled build passed",
+  "preservation": {
+    "existingWorktrees": 11,
+    "exactFileHashesAndHeadsAndStatusesMatch": true,
+    "originalDirtyFileCount": 11,
+    "existingTrackedFilesModified": 0,
+    "runtimeConnection": false
+  },
+  "buildFlags": {
+    "OPENAI_REPORT_WRITER_ENABLED": "0",
+    "TOSS_CONFIRM_API_ENABLED": "0",
+    "PAID_REPORT_RELIABILITY_ENABLED": "0"
+  },
+  "productionBuildExitCode": 0,
+  "productionStaticPages": 47,
+  "productionBuildWarnings": 0,
+  "sourceDataReviewCounts": {
+    "source_checked": 156,
+    "repository_only": 57
+  },
+  "diffCheck": "PASS; staged diff rechecked before commit"
+}

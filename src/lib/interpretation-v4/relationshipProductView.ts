@@ -37,11 +37,11 @@ export function buildRelationshipProfiles(input: NarrativeInput) {
 
 /** Read-only product projection. No weights, annotations, thresholds or new
  * semantics. Pair references and parent/child traits cannot license a person. */
-export function projectRelationshipView(profiles: RelationshipProfiles, romantic = true) {
-  const domains = romantic ? RELATIONSHIP_DOMAINS : RELATIONSHIP_DOMAINS.filter(d => d !== "LOVE" && d !== "MARRIAGE");
+export function projectRelationshipView(profiles: RelationshipProfiles, romantic = true, professionalContext?: "work" | "business") {
+  const domains: readonly MbtiSourceDomain[] = professionalContext ? [...RELATIONSHIP_DOMAINS.filter(d => d !== "LOVE" && d !== "MARRIAGE"), "WORK", "CAREER", ...(professionalContext === "business" ? ["MONEY" as const] : [])] : romantic ? RELATIONSHIP_DOMAINS : RELATIONSHIP_DOMAINS.filter(d => d !== "LOVE" && d !== "MARRIAGE");
   const nodes = profiles.mbti.sourceNodes.filter(n => n.classification === "SCORING_SEMANTIC" && n.sourceDomain && domains.includes(n.sourceDomain));
   const ids = new Set(nodes.map(n => n.id));
-  const contexts: InterpretationContext[] = romantic ? ["love", "social", "recovery"] : ["social", "recovery"];
+  const contexts: InterpretationContext[] = romantic ? ["love", "social", "recovery"] : professionalContext === "business" ? ["social", "recovery", "work", "money"] : professionalContext === "work" ? ["social", "recovery", "work"] : ["social", "recovery"];
   const candidates = collectComprehensiveCandidates(profiles).filter(c => c.primaryEligible && !c.invalidReasons.length && c.sourceType !== "CORE_GYEOL"
     && c.contexts.some(x => contexts.includes(x)) && (c.primaryAxes.some(a => RELATIONSHIP_AXES.includes(a)) || c.fortune)
     && (!c.mbtiSourceNodeIds.length || c.mbtiSourceNodeIds.some(id => ids.has(id)))

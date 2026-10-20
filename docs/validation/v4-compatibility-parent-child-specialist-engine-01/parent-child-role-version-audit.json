@@ -1,0 +1,19 @@
+[
+  {
+    "fixtureId": "fixture-compatibility-parentChild",
+    "role": {
+      "state": "V4_FIXED_ROLE_ACCEPTED",
+      "roles": {
+        "A": "부모",
+        "B": "자녀"
+      },
+      "actualParentage": "UNVERIFIED_ROLE_ASSIGNMENT",
+      "legalAuthority": "UNKNOWN",
+      "originalError": null
+    },
+    "actualParentage": "UNKNOWN",
+    "guardianship": "UNKNOWN",
+    "authority": "UNKNOWN",
+    "inferFromBirthOrder": false
+  }
+]

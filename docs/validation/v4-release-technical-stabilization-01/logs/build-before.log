@@ -1,0 +1,16 @@
+
+> gyeol-report@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.2.4 (webpack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 10.4s
+  Running TypeScript ...
+Failed to type check.
+
+src/app/report/new/page.tsx
+Type error: Page "src/app/report/new/page.tsx" does not match the required types of a Next.js Page.
+  "getAsiaSeoulCurrentYear" is not a valid Page export field.
+
+Next.js build worker exited with code: 1 and signal: null

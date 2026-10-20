@@ -1,0 +1,322 @@
+[
+  {
+    "id": "sar:audit:precision-boundary",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:foundationRanking"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "축 사이",
+    "refs": [
+      "repo:foundationRanking"
+    ],
+    "difference": "PRECISION의 오류 판단과 BOUNDARY의 동의·범위 판단은 다른 대상",
+    "loss": "같은 기준 확인 조언은 동의와 권한을 지움",
+    "requirement": "오류 대상과 동의 주체를 별도 보존",
+    "currentDefectConfirmed": false
+  },
+  {
+    "id": "sar:audit:care-duty",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:foundationTenGods"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "축 사이",
+    "refs": [
+      "repo:foundationTenGods"
+    ],
+    "difference": "CARE는 필요한 지원, DUTY는 합의한 역할 이행",
+    "loss": "둘 다 책임감으로 합치면 원치 않는 돌봄과 불공정 책임을 놓침",
+    "requirement": "요청·동의·역할·부담을 분리",
+    "currentDefectConfirmed": false
+  },
+  {
+    "id": "sar:audit:goal-expansion",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:foundationSynthesis"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "축 사이",
+    "refs": [
+      "repo:foundationSynthesis"
+    ],
+    "difference": "GOAL_DRIVE는 완료 기준, EXPANSION은 범위 확대",
+    "loss": "성장이라는 말은 확장을 줄여 완수하는 선택을 삭제",
+    "requirement": "범위·완료·유지 여력 각각 확인",
+    "currentDefectConfirmed": false
+  },
+  {
+    "id": "sar:audit:private-space",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:materialRegistry"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "축 내부·태그",
+    "refs": [
+      "repo:materialRegistry"
+    ],
+    "difference": "solitude의 내부 처리·사적 공간·몰입·회복은 같지 않음",
+    "loss": "혼자 쉬라는 조언 하나로 질문 이유와 관계 경계를 잃음",
+    "requirement": "에너지·관계·깊이·부하의 원천을 보존",
+    "currentDefectConfirmed": false
+  },
+  {
+    "id": "sar:audit:help-direction",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "태그·축",
+    "refs": [
+      "repo:fusionRules"
+    ],
+    "difference": "귀인의 도움 수혜와 CARE의 도움 제공은 방향이 다름",
+    "loss": "help overlap을 CARE 강화로 재해석하면 수혜가 도덕성으로 바뀜",
+    "requirement": "주는 사람·받는 사람과 실제 연결 근거 필요",
+    "currentDefectConfirmed": false
+  },
+  {
+    "id": "sar:audit:wealth-outcome",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:materialRegistry"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "태그·축",
+    "refs": [
+      "repo:materialRegistry"
+    ],
+    "difference": "재물 상징과 자원 배분 행동·실제 부는 다름",
+    "loss": "wealth를 RESOURCE_SENSE로 정확 매핑하면 부나 수익을 과장",
+    "requirement": "관리 행동·재물 상징·실제 결과 별도 층위",
+    "currentDefectConfirmed": false
+  },
+  {
+    "id": "sar:audit:empty-theme",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:foundationRanking"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "Theme 분류",
+    "refs": [
+      "repo:foundationRanking"
+    ],
+    "difference": "broadTheme([])는 동률 정렬로 ACTION_AND_INITIATIVE를 반환",
+    "loss": "축 근거 없는 후보가 행동 Theme를 얻을 수 있음; 고객 영향은 개별 경로 추적 필요",
+    "requirement": "후속 작업에서 빈 축 명시 상태 검토; 이번 변경 금지",
+    "currentDefectConfirmed": true
+  },
+  {
+    "id": "sar:audit:theme-tie",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:foundationRanking"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "Theme 분류",
+    "refs": [
+      "repo:foundationRanking"
+    ],
+    "difference": "여러 Theme 동률은 의미 중요도보다 사전순으로 결정",
+    "loss": "독립성·돌봄이 섞인 후보의 일부 의미가 단일 Theme에 가려질 수 있음",
+    "requirement": "전체 축·조건·하위 의미를 버리지 않는 후속 계약",
+    "currentDefectConfirmed": true
+  },
+  {
+    "id": "sar:audit:transitive-overlap",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:foundationRanking"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "중복 그룹",
+    "refs": [
+      "repo:foundationRanking"
+    ],
+    "difference": "0.5 Theme +0.3 축 Jaccard +0.2 max(근거 Jaccard, family Jaccard)와 연결 그룹은 실제 주장 동등성이 아님",
+    "loss": "A~B~C 연결이 모든 주장·기간·방향의 중복을 뜻하지 않음",
+    "requirement": "canonical fact와 editorial meaning을 분리해 검토",
+    "currentDefectConfirmed": false
+  },
+  {
+    "id": "sar:audit:source-confidence",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:mbtiSemanticAnnotations"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "원천 상태",
+    "refs": [
+      "repo:mbtiSemanticAnnotations"
+    ],
+    "difference": "annotationConfidence direct는 로컬 원천 존재·주석 상태",
+    "loss": "실증 검증이나 고객 개인 적합성으로 오독 가능",
+    "requirement": "원천 direct와 empiricalValidation 별도 필드",
+    "currentDefectConfirmed": false
+  },
+  {
+    "id": "sar:audit:pair-to-trait",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "primary:mbti-relationships"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "관계→개인",
+    "refs": [
+      "primary:mbti-relationships"
+    ],
+    "difference": "관계 페어는 두 자료의 조건부 비교",
+    "loss": "페어의 불편을 A의 고정 성격으로 점수화하면 B·역할·동의가 사라짐",
+    "requirement": "A/B·방향·상호조건 보존; 개인 annotation 자동 생성 금지",
+    "currentDefectConfirmed": false
+  },
+  {
+    "id": "sar:audit:time-to-natal",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:temporalResearch"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "기간→성격",
+    "refs": [
+      "repo:temporalResearch"
+    ],
+    "difference": "원국 불변 구조와 기간 조건의 적용 구간은 다름",
+    "loss": "올해의 조정 질문을 타고난 성격으로 일반화",
+    "requirement": "정확한 전환 시각·구간·참여 출처 보존",
+    "currentDefectConfirmed": false
+  },
+  {
+    "id": "sar:audit:positive-risk-collapse",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:contentSynthesis"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "문장 압축",
+    "refs": [
+      "repo:contentSynthesis"
+    ],
+    "difference": "같은 행동도 이익·비용·환경 조건이 다름",
+    "loss": "강점과 위험을 모두 조심하라는 말로 끝내면 새 정보가 없음",
+    "requirement": "무엇이 유리하고 언제 비용이 커지는지 대상·조건 보존",
+    "currentDefectConfirmed": false
+  },
+  {
+    "id": "sar:audit:stale-runtime-comment",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:semanticCore"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "사용 상태",
+    "refs": [
+      "repo:semanticCore"
+    ],
+    "difference": "현재 writer 미사용 주석과 상품 adapter 실제 import가 다름",
+    "loss": "주석만 믿고 신규 registry를 기존 경로에 붙일 위험",
+    "requirement": "실제 import graph 기준 감사; 신규 자료는 완전 격리",
+    "currentDefectConfirmed": true
+  },
+  {
+    "id": "sar:audit:marker-precision",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:deepMarkers"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "전통→현대",
+    "refs": [
+      "repo:deepMarkers"
+    ],
+    "difference": "현침의 자형 전통과 정밀함이라는 현대 응용은 근거 층위가 다름",
+    "loss": "기존 Material precision을 새 연구의 전통 사실로 승격 불가",
+    "requirement": "기존 자료는 보존하되 신규 연결은 조건·출처 검증 전 보류",
+    "currentDefectConfirmed": false
+  },
+  {
+    "id": "sar:audit:pair-category-vocabulary",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "follow_up_required",
+    "sourceRefs": [
+      "repo:mbtiPairResearch"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "topic": "관계 enum",
+    "refs": [
+      "repo:mbtiPairResearch"
+    ],
+    "difference": "새 pair 연구 parent_child/coworkers/manager_team/business/friends와 실제 enum parentChild/coworker/managerReport/businessPartner/friendship이 다름",
+    "loss": "문자열 일치 lookup은 일부 관계를 누락하거나 잘못 연결할 수 있음",
+    "requirement": "명시적인 후속 adapter와 관계 역할 검증 필요; 지금은 문서 대응만",
+    "currentDefectConfirmed": true
+  }
+]

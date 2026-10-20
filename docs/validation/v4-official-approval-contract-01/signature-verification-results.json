@@ -1,0 +1,11 @@
+{
+  "algorithm": "Ed25519",
+  "nativeCrypto": true,
+  "verifiedFourSeparateSignatures": true,
+  "domainSeparation": true,
+  "canonicalSourceScopeHash": "7c349e4f10bfe1b44178d461d806d41f292d49477992fbbdb4dcf8b427263d65",
+  "canonicalSignedPayloadSameInputStable": true,
+  "fullSignedApprovalHashVerifiedWithinProcess": true,
+  "sameInputReceiptByteEquality": true,
+  "ephemeralPublicKeysAndSignatureDependentHashesNotPersisted": true
+}

@@ -1,0 +1,158 @@
+{
+  "autoMerged": false,
+  "items": [
+    {
+      "id": "rr:conflict:hap_detection_vs_transformation",
+      "kind": "hap_detection_vs_transformation",
+      "sourceIds": [
+        "repo",
+        "sm2",
+        "zp5"
+      ],
+      "difference": "천간합5쌍은 현행 전 자리 대칭 검출이나 합화는 계절·통근·격간·쟁합 등 별도 조건이다.",
+      "approvalRestriction": "합 검출을 합화·오행 소실·직업·혼인 결과로 승인하지 않는다."
+    },
+    {
+      "id": "rr:conflict:yukhap_overlap",
+      "kind": "yukhap_overlap",
+      "sourceIds": [
+        "repo",
+        "sm2",
+        "pa"
+      ],
+      "difference": "寅亥·巳申은 육합과 파가, 巳申은 형도 겹친다.",
+      "approvalRestriction": "동일 실제 쌍에 여러 분류가 붙은 것을 독립 효력·시간 순서로 병합하지 않는다."
+    },
+    {
+      "id": "rr:conflict:half_policy",
+      "kind": "half_policy",
+      "sourceIds": [
+        "repo",
+        "half",
+        "sm2"
+      ],
+      "difference": "현행 반합12쌍과 왕지 포함8쌍/생고4쌍의 미채택·약화 견해가 다르다.",
+      "approvalRestriction": "12쌍 판정을 고치지 않으며 왕지 없는4쌍의 해석 승인은 보류한다."
+    },
+    {
+      "id": "rr:conflict:same_name_half",
+      "kind": "same_name_half",
+      "sourceIds": [
+        "zp5",
+        "half"
+      ],
+      "difference": "자평진전 五의 원거리 천간 半合과 지지 삼합 일부인 반합은 대상이 다르다.",
+      "approvalRestriction": "같은 한자를 같은 foundation ID로 합치지 않는다."
+    },
+    {
+      "id": "rr:conflict:hyeong_direction",
+      "kind": "hyeong_direction",
+      "sourceIds": [
+        "sm2",
+        "repo"
+      ],
+      "difference": "고전 순환형은 방향을 열거하지만 현행 기간 함수는 역순도 같은 쌍으로 검출한다.",
+      "approvalRestriction": "고전 방향을 새 producer·점수·가해자/피해자 판정으로 만들지 않는다."
+    },
+    {
+      "id": "rr:conflict:hyeong_group_labels",
+      "kind": "hyeong_group_labels",
+      "sourceIds": [
+        "sm2",
+        "zp7"
+      ],
+      "difference": "삼명통회 본론과 인용한 三車一覧은 無恩·恃勢의 그룹 이름이 서로 바뀌며 자평진전은 유래를 의심한다.",
+      "approvalRestriction": "정의·출처를 보존하고 한 이름을 전승 전체의 정답으로 자동 승인하지 않는다."
+    },
+    {
+      "id": "rr:conflict:self_multiplicity",
+      "kind": "self_multiplicity",
+      "sourceIds": [
+        "sm2",
+        "repo"
+      ],
+      "difference": "辰辰·午午·酉酉·亥亥는 실제2자리 반복이며 단일 지지의 존재만으로 자형이 되지 않는다.",
+      "approvalRestriction": "한 기호를 복제해 실제 관계 Evidence를 만들지 않는다."
+    },
+    {
+      "id": "rr:conflict:historical_group_outside_runtime",
+      "kind": "historical_group_outside_runtime",
+      "sourceIds": [
+        "sm2",
+        "repo"
+      ],
+      "difference": "寅巳申·丑戌未 전체 삼형은 연구 조합2건이며 현행 쌍11개 표와 별도다. 고전 四庫土局는4자리로 현행4삼합3자리 밖이다.",
+      "approvalRestriction": "2연결만 보고3자 전체를 완성하지 않으며4자리 토국을5번째 삼합으로 추가하지 않는다."
+    },
+    {
+      "id": "rr:conflict:hui_name",
+      "kind": "hui_name",
+      "sourceIds": [
+        "zp7",
+        "sm2"
+      ],
+      "difference": "子平真詮 七 전사의 會/三會가 申子辰을 가리키는 용례는 현대 방합 분류와 일치하지 않는다.",
+      "approvalRestriction": "전사 표기 차이는 보류하고 현대 방합 새 지식으로 합치지 않는다."
+    },
+    {
+      "id": "rr:conflict:pa_lineage",
+      "kind": "pa_lineage",
+      "sourceIds": [
+        "pa",
+        "repo"
+      ],
+      "difference": "파6쌍의 현대 표는 확인했으나 고전 직접 전거·독립 작용·효력 강도는 미확인이다.",
+      "approvalRestriction": "구성 차이를 관찰 자료로 남기고 고유 사건·성격·강도는 승인하지 않는다."
+    },
+    {
+      "id": "rr:conflict:wonjin_projection",
+      "kind": "wonjin_projection",
+      "sourceIds": [
+        "repo",
+        "wonjin",
+        "kci"
+      ],
+      "difference": "현행 원국 원진은 원진살 투영이고 matched pair 미노출. 현대 저자 인접 조건과 전체쌍 정책이 다르다. 월운 확장은 실제 쌍 ref를 별도로 가진다.",
+      "approvalRestriction": "원진살과 관계를 독립 증거로 세지 않고 원국의 쌍을 추측하지 않는다."
+    },
+    {
+      "id": "rr:conflict:wonjin_cross_scope",
+      "kind": "wonjin_cross_scope",
+      "sourceIds": [
+        "repo",
+        "wonjin"
+      ],
+      "difference": "현대 저자는 교차 일지 원진을 쓰지만 현행 궁합 producer는 미지원이다. 귀문4쌍·해2쌍 중복도 있다.",
+      "approvalRestriction": "각자의 신살을 교차 원진으로 만들거나 정신·애증 위험을 가산하지 않는다."
+    },
+    {
+      "id": "rr:conflict:cross_first_ref",
+      "kind": "cross_first_ref",
+      "sourceIds": [
+        "repo"
+      ],
+      "difference": "교차 삼합·반합은 지지별 첫 ref만 고른 후 두 소유자를 검사한다. 중복 지지에서 가능한 다른 교차 배치가 누락될 수 있다.",
+      "approvalRestriction": "기존 알고리즘을 이번에 고치지 않는다. 미검출을 실제 교차 관계 부재로 단정하지 않는다."
+    },
+    {
+      "id": "rr:conflict:legacy_mixed_period_provenance",
+      "kind": "legacy_mixed_period_provenance",
+      "sourceIds": [
+        "repo"
+      ],
+      "difference": "majorFortuneEvidence 보조4경로는 [currentCycle.branch,...natalBranches]를 원국 배열 매개변수로 전달한다. 최신 decadeReading은 대운/원국을 분리한다.",
+      "approvalRestriction": "혼합 결과의 ordinal 위치를 실제 원국 위치로 승인하지 않는다. 기존 근거·원고를 고치지 않고 후속 provenance 검토로 넘긴다."
+    },
+    {
+      "id": "rr:conflict:strength_ranking_not_calculated",
+      "kind": "strength_ranking_not_calculated",
+      "sourceIds": [
+        "repo",
+        "dt",
+        "sm2"
+      ],
+      "difference": "support/friction 분류·관계 수는 실제 길흉·강도 계산이 아니다. 왕쇠·용도·계절 조건과 다르다.",
+      "approvalRestriction": "관계 수로 성공·피해·운세 점수를 새로 만들지 않는다."
+    }
+  ]
+}

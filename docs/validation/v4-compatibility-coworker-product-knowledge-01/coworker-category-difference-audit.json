@@ -1,0 +1,72 @@
+[
+  {
+    "category": "coworker",
+    "question": "공동 업무·분담·결과·인계",
+    "role": "A/B·symmetric",
+    "unknown": "실제 직급·회사·팀·협업 이력·승인자 UNKNOWN",
+    "boundary": "작업 지원과 담당·권한의 경계",
+    "result": "합의한 결과·정보·수신 확인",
+    "source": "src/lib/report-generation/reportInputTypes.ts + compatibilityReleaseMaterials/Applications + compatibilityCategoryCopy.ts",
+    "newCategoryEngine": false
+  },
+  {
+    "category": "managerReport",
+    "question": "지시·보고·평가·위임",
+    "role": "V4 A상사/B팀원 역할 선언",
+    "unknown": "실제 조직의 권한 범위는 별도 확인",
+    "boundary": "평가·지시 권한을 coworker에 복사하지 않음",
+    "result": "현재 역할 계약만 비교; 전문 연구 시작 안 함",
+    "source": "src/lib/report-generation/reportInputTypes.ts + compatibilityReleaseMaterials/Applications + compatibilityCategoryCopy.ts",
+    "newCategoryEngine": false
+  },
+  {
+    "category": "businessPartner",
+    "question": "자본·계약·손실·사업 의사결정",
+    "role": "A/B·symmetric",
+    "unknown": "지분·투자·계약·손실 분배 UNKNOWN",
+    "boundary": "공동 작업을 공동 출자·법적 책임으로 승격하지 않음",
+    "result": "현재 category 맥락만 비교; 전문 연구 시작 안 함",
+    "source": "src/lib/report-generation/reportInputTypes.ts + compatibilityReleaseMaterials/Applications + compatibilityCategoryCopy.ts",
+    "newCategoryEngine": false
+  },
+  {
+    "category": "love",
+    "question": "호감·표현·연락·친밀감",
+    "role": "A/B·symmetric",
+    "unknown": "실제 연애 상태·경험 UNKNOWN",
+    "boundary": "연락의 관심 확인을 업무 수락으로 전용하지 않음",
+    "result": "선행80항목 원천·의미 보존",
+    "source": "src/lib/report-generation/reportInputTypes.ts + compatibilityReleaseMaterials/Applications + compatibilityCategoryCopy.ts",
+    "newCategoryEngine": false
+  },
+  {
+    "category": "marriage",
+    "question": "공동생활·돈·가사·휴식·친족",
+    "role": "A/B·symmetric",
+    "unknown": "실제 혼인·동거·재정 UNKNOWN",
+    "boundary": "가사 완결과 조직의 담당·권한은 다름",
+    "result": "선행112항목 보존; 인계라는 공통 의미도 적용 조건 분리",
+    "source": "src/lib/report-generation/reportInputTypes.ts + compatibilityReleaseMaterials/Applications + compatibilityCategoryCopy.ts",
+    "newCategoryEngine": false
+  },
+  {
+    "category": "parentChild",
+    "question": "성인의 보호 책임·자녀 선택·단계",
+    "role": "V4 A부모/B자녀 역할 선언",
+    "unknown": "실제 발달·지원 필요 UNKNOWN",
+    "boundary": "비대칭 보호 책임을 성인 동료에게 전이하지 않음",
+    "result": "선행120항목 보존",
+    "source": "src/lib/report-generation/reportInputTypes.ts + compatibilityReleaseMaterials/Applications + compatibilityCategoryCopy.ts",
+    "newCategoryEngine": false
+  },
+  {
+    "category": "friendship",
+    "question": "일상 관계·간격·공통 활동",
+    "role": "A/B·symmetric",
+    "unknown": "실제 친분·과거 UNKNOWN",
+    "boundary": "자발적 만남과 업무 담당 수락의 구별",
+    "result": "기존 category 격리만 확인; 전문 연구 시작 안 함",
+    "source": "src/lib/report-generation/reportInputTypes.ts + compatibilityReleaseMaterials/Applications + compatibilityCategoryCopy.ts",
+    "newCategoryEngine": false
+  }
+]

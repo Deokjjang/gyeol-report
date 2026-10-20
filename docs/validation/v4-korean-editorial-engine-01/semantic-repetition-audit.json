@@ -1,0 +1,2734 @@
+[
+  {
+    "engine": "comprehensive",
+    "displayFixture": false,
+    "audit": [
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "7fec2c83b1bb5648431414bc10fd69c917c4e83cc492dbeaf7be4f453597bf7c",
+        "occurrences": [
+          "kee:sentence:517fca6beefaf3846940f89b342f71383caef9386a5fc3f951a6c13f2b12f12d",
+          "kee:sentence:031e2458900508fb56141f906ea02a3d547d3c37dca5869403c3e4b80c99c8c9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "7a7fd555f16f00bfc81d0658068147b28d7b1a6d0cb340ef3bd69db83f7bb6cd",
+        "occurrences": [
+          "kee:sentence:517fca6beefaf3846940f89b342f71383caef9386a5fc3f951a6c13f2b12f12d",
+          "kee:sentence:031e2458900508fb56141f906ea02a3d547d3c37dca5869403c3e4b80c99c8c9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "811aa0fb81e8c396ce8bf1f16b9c3e4cfa523be4f2307c8c447fa4b6474c4be7",
+        "occurrences": [
+          "kee:sentence:517fca6beefaf3846940f89b342f71383caef9386a5fc3f951a6c13f2b12f12d",
+          "kee:sentence:031e2458900508fb56141f906ea02a3d547d3c37dca5869403c3e4b80c99c8c9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "be623c61ab9d57319f4fa4900232814e7df00bd43d9db993344360abc3314a4e",
+        "occurrences": [
+          "kee:sentence:517fca6beefaf3846940f89b342f71383caef9386a5fc3f951a6c13f2b12f12d",
+          "kee:sentence:031e2458900508fb56141f906ea02a3d547d3c37dca5869403c3e4b80c99c8c9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "340a293150e8f7c1622b4272a2ad9d4d535832c6a94bc2d704fcf6cd42de1cac",
+        "occurrences": [
+          "kee:sentence:517fca6beefaf3846940f89b342f71383caef9386a5fc3f951a6c13f2b12f12d",
+          "kee:sentence:031e2458900508fb56141f906ea02a3d547d3c37dca5869403c3e4b80c99c8c9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "ad0b7b214756f4e0e5724ed479a2e19fd2ded08ef0a65e4807c0a35c6a6d90b8",
+        "occurrences": [
+          "kee:sentence:0037e0b4ba0992a0e69603ca1a78814fa757b0d56aa86858ccd21cc5a15b66c8",
+          "kee:sentence:0a1ab81b3f8c8ef6a92d4c96107a3764efc42cc0f7d6d7701350f9d60a69d435",
+          "kee:sentence:9653dd664cd952bbb9d8f10c25563f442bb77b4d34d304574bea4e0743f92e67"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "e05655273e84eccc21d2ced6d469058dee1d07157743e02b88e78ed2a29ec64c",
+        "occurrences": [
+          "kee:sentence:517fca6beefaf3846940f89b342f71383caef9386a5fc3f951a6c13f2b12f12d",
+          "kee:sentence:031e2458900508fb56141f906ea02a3d547d3c37dca5869403c3e4b80c99c8c9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "71ba0d15776a07d71130ee599a1ada69fd9d64c01fbfb501f2c887188895117e",
+        "occurrences": [
+          "kee:sentence:517fca6beefaf3846940f89b342f71383caef9386a5fc3f951a6c13f2b12f12d",
+          "kee:sentence:031e2458900508fb56141f906ea02a3d547d3c37dca5869403c3e4b80c99c8c9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "6e0df48d4a2ea82d8360ce5dd6a78b2fe925ed49adb1b5968757850f7fcaad77",
+        "occurrences": [
+          "kee:sentence:517fca6beefaf3846940f89b342f71383caef9386a5fc3f951a6c13f2b12f12d",
+          "kee:sentence:031e2458900508fb56141f906ea02a3d547d3c37dca5869403c3e4b80c99c8c9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "31365cae263d331eb541c56a7d65278856f1a0738f9fc282eca020dd245c3cc5",
+        "occurrences": [
+          "kee:sentence:517fca6beefaf3846940f89b342f71383caef9386a5fc3f951a6c13f2b12f12d",
+          "kee:sentence:031e2458900508fb56141f906ea02a3d547d3c37dca5869403c3e4b80c99c8c9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "a82d13cee37a7a4328278f86984f959a49aa87997645e8ee6414cceaf9700c78",
+        "occurrences": [
+          "kee:sentence:0037e0b4ba0992a0e69603ca1a78814fa757b0d56aa86858ccd21cc5a15b66c8",
+          "kee:sentence:0a1ab81b3f8c8ef6a92d4c96107a3764efc42cc0f7d6d7701350f9d60a69d435",
+          "kee:sentence:9653dd664cd952bbb9d8f10c25563f442bb77b4d34d304574bea4e0743f92e67"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "aee622d378e614c7defccdc19c367ff06e82a78fb92d475b2cd9bfde7965b350",
+        "occurrences": [
+          "kee:sentence:517fca6beefaf3846940f89b342f71383caef9386a5fc3f951a6c13f2b12f12d",
+          "kee:sentence:031e2458900508fb56141f906ea02a3d547d3c37dca5869403c3e4b80c99c8c9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "5cef3d6870da5b66e1893593ca7ca68c3fb0903bb9c4408e845e89bc140ad5a2",
+        "occurrences": [
+          "kee:sentence:517fca6beefaf3846940f89b342f71383caef9386a5fc3f951a6c13f2b12f12d",
+          "kee:sentence:031e2458900508fb56141f906ea02a3d547d3c37dca5869403c3e4b80c99c8c9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "e357c8ebf2d967af0b3c1add7f74a6ee72ea25cdc74b1800846265f55d254f20",
+        "occurrences": [
+          "kee:sentence:517fca6beefaf3846940f89b342f71383caef9386a5fc3f951a6c13f2b12f12d",
+          "kee:sentence:031e2458900508fb56141f906ea02a3d547d3c37dca5869403c3e4b80c99c8c9"
+        ],
+        "blocked": false
+      }
+    ]
+  },
+  {
+    "engine": "career",
+    "displayFixture": false,
+    "audit": [
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "192013288ad5466837836f92d002d9d396165a311ec9c577005076176cd24400",
+        "occurrences": [
+          "kee:sentence:ca026ccfc1e466fc27375fe153ecf60eb970931a51431743900b5c330c4d5b65",
+          "kee:sentence:5291a37cf8a581b34bbaa823f8a2d5a5de03df869cf39cb55153877b8aace68a"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "3d18b1f30c07a4d01c3fbf0298d7abcd167dcf8f938c44a97450e2aa68f8d45a",
+        "occurrences": [
+          "kee:sentence:ca026ccfc1e466fc27375fe153ecf60eb970931a51431743900b5c330c4d5b65",
+          "kee:sentence:5291a37cf8a581b34bbaa823f8a2d5a5de03df869cf39cb55153877b8aace68a"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "4587d979407239f7cda5b8feebea765c7bd4f5b8d4a4bb45f9562f15e7ee5150",
+        "occurrences": [
+          "kee:sentence:ca026ccfc1e466fc27375fe153ecf60eb970931a51431743900b5c330c4d5b65",
+          "kee:sentence:5291a37cf8a581b34bbaa823f8a2d5a5de03df869cf39cb55153877b8aace68a"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "9d01f2e3043beadece5f4b1066a7c48b5e31aeb058d637f9b952d3374f1ed67a",
+        "occurrences": [
+          "kee:sentence:ca026ccfc1e466fc27375fe153ecf60eb970931a51431743900b5c330c4d5b65",
+          "kee:sentence:5291a37cf8a581b34bbaa823f8a2d5a5de03df869cf39cb55153877b8aace68a"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "3f463b02279ea6a0484f0552f94ef9ae1ebac4c610cdec79a6de5db790556f95",
+        "occurrences": [
+          "kee:sentence:ca026ccfc1e466fc27375fe153ecf60eb970931a51431743900b5c330c4d5b65",
+          "kee:sentence:5291a37cf8a581b34bbaa823f8a2d5a5de03df869cf39cb55153877b8aace68a"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "8de445a54d5d9a69ec07dc212fea399980c0f3e5cd75fad53efe8d087b9fb857",
+        "occurrences": [
+          "kee:sentence:ca026ccfc1e466fc27375fe153ecf60eb970931a51431743900b5c330c4d5b65",
+          "kee:sentence:5291a37cf8a581b34bbaa823f8a2d5a5de03df869cf39cb55153877b8aace68a"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "cd10fc483fc478c963018c0a685f90665f56da0264a3b1f44c53fbaa9cad8f25",
+        "occurrences": [
+          "kee:sentence:ca026ccfc1e466fc27375fe153ecf60eb970931a51431743900b5c330c4d5b65",
+          "kee:sentence:5291a37cf8a581b34bbaa823f8a2d5a5de03df869cf39cb55153877b8aace68a"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "4e37f8ceb1621fbf73a6c774a210f018b66282ccde13bd288b514f74dfa45c11",
+        "occurrences": [
+          "kee:sentence:ca026ccfc1e466fc27375fe153ecf60eb970931a51431743900b5c330c4d5b65",
+          "kee:sentence:5291a37cf8a581b34bbaa823f8a2d5a5de03df869cf39cb55153877b8aace68a"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "45c4ddb821c191ed39e359cdd56df338623660748558581cb2dd9a3a9550963c",
+        "occurrences": [
+          "kee:sentence:ca026ccfc1e466fc27375fe153ecf60eb970931a51431743900b5c330c4d5b65",
+          "kee:sentence:5291a37cf8a581b34bbaa823f8a2d5a5de03df869cf39cb55153877b8aace68a",
+          "kee:sentence:798ca01cb9639950c61d928fcfb5f1eb1714e9555dcf4dac8a443153030a0d8e"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "ed90fe654d09f11abc1c874f2a3afa3a8e8b07f9455aae58013a2eeed7822e8b",
+        "occurrences": [
+          "kee:sentence:ca026ccfc1e466fc27375fe153ecf60eb970931a51431743900b5c330c4d5b65",
+          "kee:sentence:5291a37cf8a581b34bbaa823f8a2d5a5de03df869cf39cb55153877b8aace68a"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "5281811320f4a58333e289786b477119fb84f97c94847eed41981c2a5dce9e51",
+        "occurrences": [
+          "kee:sentence:ca026ccfc1e466fc27375fe153ecf60eb970931a51431743900b5c330c4d5b65",
+          "kee:sentence:5291a37cf8a581b34bbaa823f8a2d5a5de03df869cf39cb55153877b8aace68a"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "1e60e1a15b05133bb336262ebf1b58ca7ff21dd08a6af3321800fa19918570d5",
+        "occurrences": [
+          "kee:sentence:ca026ccfc1e466fc27375fe153ecf60eb970931a51431743900b5c330c4d5b65",
+          "kee:sentence:5291a37cf8a581b34bbaa823f8a2d5a5de03df869cf39cb55153877b8aace68a"
+        ],
+        "blocked": false
+      }
+    ]
+  },
+  {
+    "engine": "love",
+    "displayFixture": false,
+    "audit": [
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "a260ccff98bb9f0aa8da4b03e906b5d41050a6d9d897ef22ce479f2a51ccbedf",
+        "occurrences": [
+          "kee:sentence:c1ee9d6629983d187a967feaa82b8e1a8d6bac2e07c7b641588410de849dcde5",
+          "kee:sentence:d6192c5bbd775361c130f40f1efa40706c83cf32cb5e421de6507d52808b1b32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "be85504696936d1d2dcc78472db9776f4c80335eeff42dfaa8cbabf30a532c79",
+        "occurrences": [
+          "kee:sentence:c1ee9d6629983d187a967feaa82b8e1a8d6bac2e07c7b641588410de849dcde5",
+          "kee:sentence:d6192c5bbd775361c130f40f1efa40706c83cf32cb5e421de6507d52808b1b32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "65648b45d643ae245b12cca35c44613aa932ac96b064d2274f72e61df2e69e7f",
+        "occurrences": [
+          "kee:sentence:c1ee9d6629983d187a967feaa82b8e1a8d6bac2e07c7b641588410de849dcde5",
+          "kee:sentence:d6192c5bbd775361c130f40f1efa40706c83cf32cb5e421de6507d52808b1b32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "e466aee1b784bd0185c997dda6c0de644a295a6230081309a99b3f7797d0af62",
+        "occurrences": [
+          "kee:sentence:c1ee9d6629983d187a967feaa82b8e1a8d6bac2e07c7b641588410de849dcde5",
+          "kee:sentence:d6192c5bbd775361c130f40f1efa40706c83cf32cb5e421de6507d52808b1b32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "46b9cb8eaf7fee53095615e31492797b25480d0301b2c84f6fb90e7b57073984",
+        "occurrences": [
+          "kee:sentence:c1ee9d6629983d187a967feaa82b8e1a8d6bac2e07c7b641588410de849dcde5",
+          "kee:sentence:d6192c5bbd775361c130f40f1efa40706c83cf32cb5e421de6507d52808b1b32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "ffe5c05797437ebddfcc30febfa1aa5a0239add8b2d0e74e5ade7cad5ec03441",
+        "occurrences": [
+          "kee:sentence:c1ee9d6629983d187a967feaa82b8e1a8d6bac2e07c7b641588410de849dcde5",
+          "kee:sentence:d6192c5bbd775361c130f40f1efa40706c83cf32cb5e421de6507d52808b1b32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "5893bb0e2eb1a885333dc6c46a4e4088f79cd5944ed5c51680d7f94a50f27197",
+        "occurrences": [
+          "kee:sentence:c1ee9d6629983d187a967feaa82b8e1a8d6bac2e07c7b641588410de849dcde5",
+          "kee:sentence:d6192c5bbd775361c130f40f1efa40706c83cf32cb5e421de6507d52808b1b32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "e510509e5cad46c9d8ff71fc3d4857df09c49f9560ca507771c8c16afba3e211",
+        "occurrences": [
+          "kee:sentence:c1ee9d6629983d187a967feaa82b8e1a8d6bac2e07c7b641588410de849dcde5",
+          "kee:sentence:d6192c5bbd775361c130f40f1efa40706c83cf32cb5e421de6507d52808b1b32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "520f4ff4f7774ab617b25aaea3b71b1a0b6daa50bf7f2ee3df1df8efb2fd0b74",
+        "occurrences": [
+          "kee:sentence:c1ee9d6629983d187a967feaa82b8e1a8d6bac2e07c7b641588410de849dcde5",
+          "kee:sentence:d6192c5bbd775361c130f40f1efa40706c83cf32cb5e421de6507d52808b1b32",
+          "kee:sentence:88ed421a094af5e9fa84a4917be3bf5bd555b106c3e419c31822d88dc44dcb4d"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "0a415f67548dbfe9ee28e6b9014c118b03835cc96894f4049a38f0acad484b4b",
+        "occurrences": [
+          "kee:sentence:c1ee9d6629983d187a967feaa82b8e1a8d6bac2e07c7b641588410de849dcde5",
+          "kee:sentence:d6192c5bbd775361c130f40f1efa40706c83cf32cb5e421de6507d52808b1b32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "450367009852bdf01962439fbc094462e0e3c8733f64b7946b71e42c899a66c3",
+        "occurrences": [
+          "kee:sentence:c1ee9d6629983d187a967feaa82b8e1a8d6bac2e07c7b641588410de849dcde5",
+          "kee:sentence:d6192c5bbd775361c130f40f1efa40706c83cf32cb5e421de6507d52808b1b32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "7f3467725022d2064fcf3685ece3ef60ccff307ac6a11d71469e3d8eb6ef42ff",
+        "occurrences": [
+          "kee:sentence:c1ee9d6629983d187a967feaa82b8e1a8d6bac2e07c7b641588410de849dcde5",
+          "kee:sentence:d6192c5bbd775361c130f40f1efa40706c83cf32cb5e421de6507d52808b1b32"
+        ],
+        "blocked": false
+      }
+    ]
+  },
+  {
+    "engine": "major-fortune",
+    "displayFixture": false,
+    "audit": [
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "2366697c025aedfab91606b2fd30e1a6cb38cc0bbeb9ea4c1415cf66458e2ffd",
+        "occurrences": [
+          "kee:sentence:5d6796a69d2993abc1340b4b0e45ea6181760a3e995e0bde7718c31a6d32f49d",
+          "kee:sentence:4556968ca72f519238b7593104e17c8c878b36abf150d25e686ecedbf7d0f7c4"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "0d0a212624ec3faa40e66269abbfae8f6cc6e6013953947844994fd2841dcadb",
+        "occurrences": [
+          "kee:sentence:7c0272c6920314e8ffa707363a4410aba6a5ecf8c1a4ef68a6369f63267ed8a1",
+          "kee:sentence:74ed26521724322a111ea11bdce1c4bf4adf0b69d721e6ab8e0f573bf9c66663"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "1e80d3bbb91a3c1c5c10dcfd71f3fe40371dfa8134614f05a63c52c793626762",
+        "occurrences": [
+          "kee:sentence:5d6796a69d2993abc1340b4b0e45ea6181760a3e995e0bde7718c31a6d32f49d",
+          "kee:sentence:4556968ca72f519238b7593104e17c8c878b36abf150d25e686ecedbf7d0f7c4"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "229f59ab210aeeed2f712be32369885b04b6934df9257552dd560fa4cbb5d965",
+        "occurrences": [
+          "kee:sentence:7c0272c6920314e8ffa707363a4410aba6a5ecf8c1a4ef68a6369f63267ed8a1",
+          "kee:sentence:74ed26521724322a111ea11bdce1c4bf4adf0b69d721e6ab8e0f573bf9c66663"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "d4624eb5eed33ec6385b13d3938af8bcf2d0ff9fe38d9c0a2ce308344ee294eb",
+        "occurrences": [
+          "kee:sentence:5d6796a69d2993abc1340b4b0e45ea6181760a3e995e0bde7718c31a6d32f49d",
+          "kee:sentence:4556968ca72f519238b7593104e17c8c878b36abf150d25e686ecedbf7d0f7c4"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "0e5dded25760cc89e58d88f96fdee60dc02e2a591a02f05bbd3b6333020602d9",
+        "occurrences": [
+          "kee:sentence:7c0272c6920314e8ffa707363a4410aba6a5ecf8c1a4ef68a6369f63267ed8a1",
+          "kee:sentence:74ed26521724322a111ea11bdce1c4bf4adf0b69d721e6ab8e0f573bf9c66663"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "cfb069a209a5ffa63825eaca0e557b2761cb1b69e307f9dd696faff6789eb186",
+        "occurrences": [
+          "kee:sentence:5d6796a69d2993abc1340b4b0e45ea6181760a3e995e0bde7718c31a6d32f49d",
+          "kee:sentence:4556968ca72f519238b7593104e17c8c878b36abf150d25e686ecedbf7d0f7c4"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "745feef316c2aa5fd006a0542c832eb6663924f3a1477f46e3540069817353b8",
+        "occurrences": [
+          "kee:sentence:7c0272c6920314e8ffa707363a4410aba6a5ecf8c1a4ef68a6369f63267ed8a1",
+          "kee:sentence:74ed26521724322a111ea11bdce1c4bf4adf0b69d721e6ab8e0f573bf9c66663"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "1d8922709cb169b813ab76efe1b753517927c355d52e72d89fd1bb75640a0f46",
+        "occurrences": [
+          "kee:sentence:5d6796a69d2993abc1340b4b0e45ea6181760a3e995e0bde7718c31a6d32f49d",
+          "kee:sentence:4556968ca72f519238b7593104e17c8c878b36abf150d25e686ecedbf7d0f7c4"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "4d81d3ce260cc7b48d65a2f15a9b22ae7c1288b4146adb2b97a565cc30211191",
+        "occurrences": [
+          "kee:sentence:7c0272c6920314e8ffa707363a4410aba6a5ecf8c1a4ef68a6369f63267ed8a1",
+          "kee:sentence:74ed26521724322a111ea11bdce1c4bf4adf0b69d721e6ab8e0f573bf9c66663"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "ca8930b5a747da1573694fda078df261b9f7d42d4f2080be6f5181d66188a27e",
+        "occurrences": [
+          "kee:sentence:5d6796a69d2993abc1340b4b0e45ea6181760a3e995e0bde7718c31a6d32f49d",
+          "kee:sentence:4556968ca72f519238b7593104e17c8c878b36abf150d25e686ecedbf7d0f7c4"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "a3f3430b8e528ee5faeb6289b303e066c38f2f289c93fc3001f88e9a2541d33d",
+        "occurrences": [
+          "kee:sentence:7c0272c6920314e8ffa707363a4410aba6a5ecf8c1a4ef68a6369f63267ed8a1",
+          "kee:sentence:74ed26521724322a111ea11bdce1c4bf4adf0b69d721e6ab8e0f573bf9c66663"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "382579176a1a7218211353e5f680f99a3c98aba801dcc5a85d18c47d7b56f350",
+        "occurrences": [
+          "kee:sentence:5d6796a69d2993abc1340b4b0e45ea6181760a3e995e0bde7718c31a6d32f49d",
+          "kee:sentence:4556968ca72f519238b7593104e17c8c878b36abf150d25e686ecedbf7d0f7c4"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "76fdeb84917408eabef85e57d6a346005cd8fbede9bac02cced6c774cd227878",
+        "occurrences": [
+          "kee:sentence:7c0272c6920314e8ffa707363a4410aba6a5ecf8c1a4ef68a6369f63267ed8a1",
+          "kee:sentence:74ed26521724322a111ea11bdce1c4bf4adf0b69d721e6ab8e0f573bf9c66663"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "67ca476e85cf9ecbaed853c2d587c43292c9cb1cab66888222a273182dadb445",
+        "occurrences": [
+          "kee:sentence:5d6796a69d2993abc1340b4b0e45ea6181760a3e995e0bde7718c31a6d32f49d",
+          "kee:sentence:4556968ca72f519238b7593104e17c8c878b36abf150d25e686ecedbf7d0f7c4"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "d21cd47149eaf9f30139fcfe60bd4e60ae0cf880092aae782ab7c3278eee1d6d",
+        "occurrences": [
+          "kee:sentence:7c0272c6920314e8ffa707363a4410aba6a5ecf8c1a4ef68a6369f63267ed8a1",
+          "kee:sentence:74ed26521724322a111ea11bdce1c4bf4adf0b69d721e6ab8e0f573bf9c66663"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "ed302f6fe77f3e91fcf4f3237f917acf67b4fa83e2131ed2433dffaed21c20c4",
+        "occurrences": [
+          "kee:sentence:5d6796a69d2993abc1340b4b0e45ea6181760a3e995e0bde7718c31a6d32f49d",
+          "kee:sentence:4556968ca72f519238b7593104e17c8c878b36abf150d25e686ecedbf7d0f7c4"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "758725f7ea296631bba95bf0a664e0b7dfe22a072b101349cea87d7cea5a8ddb",
+        "occurrences": [
+          "kee:sentence:7c0272c6920314e8ffa707363a4410aba6a5ecf8c1a4ef68a6369f63267ed8a1",
+          "kee:sentence:74ed26521724322a111ea11bdce1c4bf4adf0b69d721e6ab8e0f573bf9c66663"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "21ac1d60d8231f2ee3b832b613251e11a5c789642a173838c41560651ea6d9ea",
+        "occurrences": [
+          "kee:sentence:5d6796a69d2993abc1340b4b0e45ea6181760a3e995e0bde7718c31a6d32f49d",
+          "kee:sentence:4556968ca72f519238b7593104e17c8c878b36abf150d25e686ecedbf7d0f7c4"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "529c46b88bcf6dfb6e7c71a41742d9ccad3c2aded95d979760e3d61a0784049c",
+        "occurrences": [
+          "kee:sentence:7c0272c6920314e8ffa707363a4410aba6a5ecf8c1a4ef68a6369f63267ed8a1",
+          "kee:sentence:74ed26521724322a111ea11bdce1c4bf4adf0b69d721e6ab8e0f573bf9c66663"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "96eb31f43b216d15aa88d5ecf3838867647a92f684ae7ab99f4c7d16745ef575",
+        "occurrences": [
+          "kee:sentence:5d6796a69d2993abc1340b4b0e45ea6181760a3e995e0bde7718c31a6d32f49d",
+          "kee:sentence:4556968ca72f519238b7593104e17c8c878b36abf150d25e686ecedbf7d0f7c4"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "4f42788173caaea99ae64ab7b9a565e73e5cdc3808e5d52e3f23d751ef7471f3",
+        "occurrences": [
+          "kee:sentence:7c0272c6920314e8ffa707363a4410aba6a5ecf8c1a4ef68a6369f63267ed8a1",
+          "kee:sentence:74ed26521724322a111ea11bdce1c4bf4adf0b69d721e6ab8e0f573bf9c66663"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "541643ee8f25493b2e555c4d5007020178a1652e3bcc04a4f97eb5acb5a3db55",
+        "occurrences": [
+          "kee:sentence:5d6796a69d2993abc1340b4b0e45ea6181760a3e995e0bde7718c31a6d32f49d",
+          "kee:sentence:4556968ca72f519238b7593104e17c8c878b36abf150d25e686ecedbf7d0f7c4"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "38439aaa7de03b61381dc0b0a82248ae49321144f2ae402be4a51c64fd9f2734",
+        "occurrences": [
+          "kee:sentence:7c0272c6920314e8ffa707363a4410aba6a5ecf8c1a4ef68a6369f63267ed8a1",
+          "kee:sentence:74ed26521724322a111ea11bdce1c4bf4adf0b69d721e6ab8e0f573bf9c66663"
+        ],
+        "blocked": false
+      }
+    ]
+  },
+  {
+    "engine": "annual-fortune",
+    "displayFixture": false,
+    "audit": [
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "87a1082e2b0c4a7a46ea64e09ef1c3b2a433bfe03717466d5d9af98526413e2d",
+        "occurrences": [
+          "kee:sentence:7ad437042477e52fd1e4f4c0e3cca63e10de0d12d04e7e08a96dd035e498d041",
+          "kee:sentence:af3bc25d36eb3bd9b965c57668f25071d42fd1d98075259a939abd1a76f97247"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "c44f5ba82165b6961b086a43288a09ddb50ad32fa5863b4069112ab39e7ff325",
+        "occurrences": [
+          "kee:sentence:be99367745a915c5b8ef3b9bbb0d7b545fc7f2172e2b6a70028465329bf16c3e",
+          "kee:sentence:dfb0c140f36f4c2345711497ee0968d6dfb9be868ad7462169a450a78c444055"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "9c9b0d29a0f3432b9fe1f915fa3690985e6e8fa9810aa10e7a7ecf56e8f73d63",
+        "occurrences": [
+          "kee:sentence:7ad437042477e52fd1e4f4c0e3cca63e10de0d12d04e7e08a96dd035e498d041",
+          "kee:sentence:af3bc25d36eb3bd9b965c57668f25071d42fd1d98075259a939abd1a76f97247"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "715e8c26069b66999dd9e5d6f0eadda95abc20274e180a3cb592fc18b32d36f4",
+        "occurrences": [
+          "kee:sentence:be99367745a915c5b8ef3b9bbb0d7b545fc7f2172e2b6a70028465329bf16c3e",
+          "kee:sentence:dfb0c140f36f4c2345711497ee0968d6dfb9be868ad7462169a450a78c444055"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "3bceab99cd82073fecb3db0328490d4866e3e40d549da1ef7968119146d98742",
+        "occurrences": [
+          "kee:sentence:7ad437042477e52fd1e4f4c0e3cca63e10de0d12d04e7e08a96dd035e498d041",
+          "kee:sentence:af3bc25d36eb3bd9b965c57668f25071d42fd1d98075259a939abd1a76f97247"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "7eec53b65d3f4d42aa3c9a9718f4c6cf3f0bf4ba6dfab070ddc8cd2dd43c72b3",
+        "occurrences": [
+          "kee:sentence:be99367745a915c5b8ef3b9bbb0d7b545fc7f2172e2b6a70028465329bf16c3e",
+          "kee:sentence:dfb0c140f36f4c2345711497ee0968d6dfb9be868ad7462169a450a78c444055"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "6826d004c039ee61d07c054dbd4e992dbecb50e05aaf87c1fbd93663b34227f2",
+        "occurrences": [
+          "kee:sentence:7ad437042477e52fd1e4f4c0e3cca63e10de0d12d04e7e08a96dd035e498d041",
+          "kee:sentence:af3bc25d36eb3bd9b965c57668f25071d42fd1d98075259a939abd1a76f97247"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "31febc9ebc9b5426c45d805a206043d8af6b5f687f1a3d6ecc5595bd66f46e16",
+        "occurrences": [
+          "kee:sentence:be99367745a915c5b8ef3b9bbb0d7b545fc7f2172e2b6a70028465329bf16c3e",
+          "kee:sentence:dfb0c140f36f4c2345711497ee0968d6dfb9be868ad7462169a450a78c444055"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "9b62f5c8a4e41019c17740ba0981f644f470e943cf7f066acd983123f429182f",
+        "occurrences": [
+          "kee:sentence:7ad437042477e52fd1e4f4c0e3cca63e10de0d12d04e7e08a96dd035e498d041",
+          "kee:sentence:af3bc25d36eb3bd9b965c57668f25071d42fd1d98075259a939abd1a76f97247"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "d1c5a96786f6b248956ebb05e5c2ee4796823d8d25b2517a4231568a44e31594",
+        "occurrences": [
+          "kee:sentence:be99367745a915c5b8ef3b9bbb0d7b545fc7f2172e2b6a70028465329bf16c3e",
+          "kee:sentence:dfb0c140f36f4c2345711497ee0968d6dfb9be868ad7462169a450a78c444055"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "cc9d4c30de24625ad9dd765b6147cd9462f83d5ac44529c62025e6b9a070f88f",
+        "occurrences": [
+          "kee:sentence:7ad437042477e52fd1e4f4c0e3cca63e10de0d12d04e7e08a96dd035e498d041",
+          "kee:sentence:af3bc25d36eb3bd9b965c57668f25071d42fd1d98075259a939abd1a76f97247"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "426e4863a2ac7955a8848d0c009160f98fee5bd397af6b1c02771c135cc4e000",
+        "occurrences": [
+          "kee:sentence:be99367745a915c5b8ef3b9bbb0d7b545fc7f2172e2b6a70028465329bf16c3e",
+          "kee:sentence:dfb0c140f36f4c2345711497ee0968d6dfb9be868ad7462169a450a78c444055"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "fbd9470d7296412131601356bfbc926973f756a162a8f775350a9ce36c5a4f5d",
+        "occurrences": [
+          "kee:sentence:7ad437042477e52fd1e4f4c0e3cca63e10de0d12d04e7e08a96dd035e498d041",
+          "kee:sentence:af3bc25d36eb3bd9b965c57668f25071d42fd1d98075259a939abd1a76f97247"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "d091411adc77befd0815192bfa23289b322fd9b2f98b0cffe92ff760665b5afa",
+        "occurrences": [
+          "kee:sentence:be99367745a915c5b8ef3b9bbb0d7b545fc7f2172e2b6a70028465329bf16c3e",
+          "kee:sentence:dfb0c140f36f4c2345711497ee0968d6dfb9be868ad7462169a450a78c444055"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "419aa119d837375f6c30852aa775a613cb0e721780a2b9261ee92148dd627d7b",
+        "occurrences": [
+          "kee:sentence:7ad437042477e52fd1e4f4c0e3cca63e10de0d12d04e7e08a96dd035e498d041",
+          "kee:sentence:af3bc25d36eb3bd9b965c57668f25071d42fd1d98075259a939abd1a76f97247"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "ca7d1cab2b83333fc0c34081b899537d3dc91e41335404b23f27e3a4d9b3dee5",
+        "occurrences": [
+          "kee:sentence:be99367745a915c5b8ef3b9bbb0d7b545fc7f2172e2b6a70028465329bf16c3e",
+          "kee:sentence:dfb0c140f36f4c2345711497ee0968d6dfb9be868ad7462169a450a78c444055"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "9d14f6fc3737f8f7485cb4e7a398381238db343aadcf4988a11908dc73f98749",
+        "occurrences": [
+          "kee:sentence:7ad437042477e52fd1e4f4c0e3cca63e10de0d12d04e7e08a96dd035e498d041",
+          "kee:sentence:af3bc25d36eb3bd9b965c57668f25071d42fd1d98075259a939abd1a76f97247"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "ef2ab6045dc8830f1b7a8ed2f97eabc6a01a9258250bbef3018297f6e3a97413",
+        "occurrences": [
+          "kee:sentence:be99367745a915c5b8ef3b9bbb0d7b545fc7f2172e2b6a70028465329bf16c3e",
+          "kee:sentence:dfb0c140f36f4c2345711497ee0968d6dfb9be868ad7462169a450a78c444055"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "b5ed2d67bebdf4090981c52803149c5b624acdf1d906d4a9aa51843e02e0c095",
+        "occurrences": [
+          "kee:sentence:7ad437042477e52fd1e4f4c0e3cca63e10de0d12d04e7e08a96dd035e498d041",
+          "kee:sentence:af3bc25d36eb3bd9b965c57668f25071d42fd1d98075259a939abd1a76f97247"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "42806bcdc868f7e021a7d15e8072d3b81e60e3d38345f335f78d055d26247d8e",
+        "occurrences": [
+          "kee:sentence:be99367745a915c5b8ef3b9bbb0d7b545fc7f2172e2b6a70028465329bf16c3e",
+          "kee:sentence:dfb0c140f36f4c2345711497ee0968d6dfb9be868ad7462169a450a78c444055"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "ee94d57548134e907b2382760675e26e7bccd9240143040464e7ae78468b8536",
+        "occurrences": [
+          "kee:sentence:7ad437042477e52fd1e4f4c0e3cca63e10de0d12d04e7e08a96dd035e498d041",
+          "kee:sentence:af3bc25d36eb3bd9b965c57668f25071d42fd1d98075259a939abd1a76f97247"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "4cef4473238816f7881afcaac3067703d1d7e346da7473adbf0ad39582855d6f",
+        "occurrences": [
+          "kee:sentence:be99367745a915c5b8ef3b9bbb0d7b545fc7f2172e2b6a70028465329bf16c3e",
+          "kee:sentence:dfb0c140f36f4c2345711497ee0968d6dfb9be868ad7462169a450a78c444055"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "84903667e73d1bca276f1e70e50a4d258ebcfd710b2aff2474d7580ddd782d80",
+        "occurrences": [
+          "kee:sentence:7ad437042477e52fd1e4f4c0e3cca63e10de0d12d04e7e08a96dd035e498d041",
+          "kee:sentence:af3bc25d36eb3bd9b965c57668f25071d42fd1d98075259a939abd1a76f97247"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "c68a8940ea66e0fa3befcc91cda7664f0ba918a5ca03d6fdb69fd5fe58ef3ca0",
+        "occurrences": [
+          "kee:sentence:be99367745a915c5b8ef3b9bbb0d7b545fc7f2172e2b6a70028465329bf16c3e",
+          "kee:sentence:dfb0c140f36f4c2345711497ee0968d6dfb9be868ad7462169a450a78c444055"
+        ],
+        "blocked": false
+      }
+    ]
+  },
+  {
+    "engine": "compatibility-love",
+    "displayFixture": false,
+    "audit": [
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "16f319800b7e83ea44b040f9e361c800c5fff68d7fd0cf452716679dfeca34d9",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "4d440a2e2e38eeab7ac54e235169169b0b123615d3ea121c26ccd8f276b214c7",
+        "occurrences": [
+          "kee:sentence:3d73f13500b3e217108d11f5d4ae6080e84d3e02fdff3062d3691107bc31bcee",
+          "kee:sentence:a44583164ef6a5c83db083f17346767f657142ec83c1c31b35e3584f313e0383"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "3abb862f262ec955f55ee9873a2e865e89703bbcfe5d2b83f9e2e96e406c6a95",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "3fdcd46571930dbb5ee36231b142d651da2dbb194398f055f112ad37b25e55c7",
+        "occurrences": [
+          "kee:sentence:3d73f13500b3e217108d11f5d4ae6080e84d3e02fdff3062d3691107bc31bcee",
+          "kee:sentence:a44583164ef6a5c83db083f17346767f657142ec83c1c31b35e3584f313e0383"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "e029da392811cd8f921619b230124f2d932603429a860940c5eec061247c8844",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "16293335587ede89e9f3155e62144a4dc89e7bdb5fa569034d5f49689106fe76",
+        "occurrences": [
+          "kee:sentence:3d73f13500b3e217108d11f5d4ae6080e84d3e02fdff3062d3691107bc31bcee",
+          "kee:sentence:a44583164ef6a5c83db083f17346767f657142ec83c1c31b35e3584f313e0383"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "0c9e699b8c3d809f41fc1d8376f98392ff8456be730840ede37366b93ac03470",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "5fc2ea797e533bcc0c296752f712ab96a473c13bb66e677c558b8eddfc1a06dc",
+        "occurrences": [
+          "kee:sentence:3d73f13500b3e217108d11f5d4ae6080e84d3e02fdff3062d3691107bc31bcee",
+          "kee:sentence:a44583164ef6a5c83db083f17346767f657142ec83c1c31b35e3584f313e0383"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLOSING",
+        "key": "e72c990d08387df19da8019b3958b02d6c6f56d89f93e4c5c837dd4543feb696",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "db99b2c5c0c15f291e7ec87558e5d9ddb7d00991efe7b3805e3f0b3f14a4fc08",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "1cab204f610807b39308319bbeee6d09ca740c6199d38bfe10cba8bb050e74e6",
+        "occurrences": [
+          "kee:sentence:3d73f13500b3e217108d11f5d4ae6080e84d3e02fdff3062d3691107bc31bcee",
+          "kee:sentence:a44583164ef6a5c83db083f17346767f657142ec83c1c31b35e3584f313e0383"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "2a6995e53cd4ea13136f65921158e0a67e4eef89a0f224c513a6e855e11141f3",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "3f1bb50ad455f21d6b2b342d95f07bed23d282dbc4f693d1eb1d05922d41a424",
+        "occurrences": [
+          "kee:sentence:3d73f13500b3e217108d11f5d4ae6080e84d3e02fdff3062d3691107bc31bcee",
+          "kee:sentence:a44583164ef6a5c83db083f17346767f657142ec83c1c31b35e3584f313e0383"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "f89508f6aeb99e7fe6e858e8aa2195993e92a2fbf788330300adaad44d20fa0c",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "37fcb8e54dae8ef418273f364a5da00b68289f1c286753b6227699008b3dfa1e",
+        "occurrences": [
+          "kee:sentence:3d73f13500b3e217108d11f5d4ae6080e84d3e02fdff3062d3691107bc31bcee",
+          "kee:sentence:a44583164ef6a5c83db083f17346767f657142ec83c1c31b35e3584f313e0383"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "ffd75998b7f9d7f23d535d658c899ca9d569f97556e00859a84006ef136624e9",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "533f6e961392639b47cf2970add9b7190d3e8f42be86d37d762e032baed35e14",
+        "occurrences": [
+          "kee:sentence:3d73f13500b3e217108d11f5d4ae6080e84d3e02fdff3062d3691107bc31bcee",
+          "kee:sentence:a44583164ef6a5c83db083f17346767f657142ec83c1c31b35e3584f313e0383"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLOSING",
+        "key": "f1567f6b5e458620f5a478527ed3d9aac0277154c31833fa5b71a6938061acb1",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "f43e038457393a34e6b39316eec0d37349eff9c2e5465271233d501b566cf002",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "4835cc086b9b3008f2fb60908962b4f78fdf83fbdb94f7c5556d0b08ac1bf292",
+        "occurrences": [
+          "kee:sentence:3d73f13500b3e217108d11f5d4ae6080e84d3e02fdff3062d3691107bc31bcee",
+          "kee:sentence:a44583164ef6a5c83db083f17346767f657142ec83c1c31b35e3584f313e0383"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "a4fcba9bd4a416c9d5784a2e9b36f424ff4f691c274c0de0382b12fdd3b75746",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "6ed5c77aed7305830d1b6f2a8bcfb96e99842cc88b2fcbc34a947e0e50528b0a",
+        "occurrences": [
+          "kee:sentence:3d73f13500b3e217108d11f5d4ae6080e84d3e02fdff3062d3691107bc31bcee",
+          "kee:sentence:a44583164ef6a5c83db083f17346767f657142ec83c1c31b35e3584f313e0383"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "a341c3b6a2c4231bcde435c8028fda75074fe0eda08960469b9ada2c9830b80e",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "42b1515608edf75819008a8cfd7af1427edc1f2253343e88b377ec3f8d5d268f",
+        "occurrences": [
+          "kee:sentence:3d73f13500b3e217108d11f5d4ae6080e84d3e02fdff3062d3691107bc31bcee",
+          "kee:sentence:a44583164ef6a5c83db083f17346767f657142ec83c1c31b35e3584f313e0383"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "795ca5b7272a335cc99a51bdcb716878917c792c8ecd0082297657be4214e0b7",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "3a34a8cb8c931413eb65f137261a3e8e2e436cad9667413c96779888c3acb997",
+        "occurrences": [
+          "kee:sentence:3d73f13500b3e217108d11f5d4ae6080e84d3e02fdff3062d3691107bc31bcee",
+          "kee:sentence:a44583164ef6a5c83db083f17346767f657142ec83c1c31b35e3584f313e0383"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLOSING",
+        "key": "a033fe6ad40fdcf459880d235682968f7cd63aa847d1a83a5332cac79862ccf2",
+        "occurrences": [
+          "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+          "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+        ],
+        "blocked": false
+      }
+    ]
+  },
+  {
+    "engine": "compatibility-marriage",
+    "displayFixture": false,
+    "audit": [
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "782482da75ec222b49fc40d7709ca3c6d51f2165ccff0bda89e9cf8bfdfc10b5",
+        "occurrences": [
+          "kee:sentence:6927e99606eb61b1fa81cc95962359033e4ed429669a02c4cf0c3d2c840347c9",
+          "kee:sentence:63c09d84ba44ee0b75e234d9ec619e57ba1d69e936e3e988ad9110d82daa0e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "b48cad7d3cdcfad6005a877e6b017691eda092db4af88f2c92df57a87609f6f3",
+        "occurrences": [
+          "kee:sentence:85b6ef1eb3790a81534d73cce5d253f943fa9de804c72d53dd38a543a909f372",
+          "kee:sentence:f8f2ba609577973c0f69ce64cfe202e8aa95e15db0cb4101674ba4070a5cabe1"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "41c0cad29df771487fbbeb8d2e355e66e0165d6bdc0cf0e8c48b667cfc557c21",
+        "occurrences": [
+          "kee:sentence:6927e99606eb61b1fa81cc95962359033e4ed429669a02c4cf0c3d2c840347c9",
+          "kee:sentence:63c09d84ba44ee0b75e234d9ec619e57ba1d69e936e3e988ad9110d82daa0e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "dfb695d58c6c48af7505d0c42544cef52e6a6fbfa66300c5a47958cf05f82770",
+        "occurrences": [
+          "kee:sentence:85b6ef1eb3790a81534d73cce5d253f943fa9de804c72d53dd38a543a909f372",
+          "kee:sentence:f8f2ba609577973c0f69ce64cfe202e8aa95e15db0cb4101674ba4070a5cabe1"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "3c3699e3f69d513d1023583e4b33375d6cad9aab77aa841554fe7338ca435871",
+        "occurrences": [
+          "kee:sentence:6927e99606eb61b1fa81cc95962359033e4ed429669a02c4cf0c3d2c840347c9",
+          "kee:sentence:63c09d84ba44ee0b75e234d9ec619e57ba1d69e936e3e988ad9110d82daa0e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "914d5b2b74f2b233c4322c37161bd80d7dbf7f9f0235285328abbb50ff5fd75b",
+        "occurrences": [
+          "kee:sentence:85b6ef1eb3790a81534d73cce5d253f943fa9de804c72d53dd38a543a909f372",
+          "kee:sentence:f8f2ba609577973c0f69ce64cfe202e8aa95e15db0cb4101674ba4070a5cabe1"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "f59938b9a57814d4a4268bd419b5769956af16330f0b83468c4fd9861629ea8d",
+        "occurrences": [
+          "kee:sentence:6927e99606eb61b1fa81cc95962359033e4ed429669a02c4cf0c3d2c840347c9",
+          "kee:sentence:63c09d84ba44ee0b75e234d9ec619e57ba1d69e936e3e988ad9110d82daa0e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "fcc564cdd31261d3786511cf894bb2497fe3f3e764b69994c469e701b5c76304",
+        "occurrences": [
+          "kee:sentence:85b6ef1eb3790a81534d73cce5d253f943fa9de804c72d53dd38a543a909f372",
+          "kee:sentence:f8f2ba609577973c0f69ce64cfe202e8aa95e15db0cb4101674ba4070a5cabe1"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "fbcc573c8fa0ae795d507b450da115797e2db5a9686e5accdaf7d62cc8e8bddc",
+        "occurrences": [
+          "kee:sentence:6927e99606eb61b1fa81cc95962359033e4ed429669a02c4cf0c3d2c840347c9",
+          "kee:sentence:63c09d84ba44ee0b75e234d9ec619e57ba1d69e936e3e988ad9110d82daa0e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "b31ced8aaa9926cbd26142731ea60263b7a661b90d8d56fface37f5004ffb8d3",
+        "occurrences": [
+          "kee:sentence:85b6ef1eb3790a81534d73cce5d253f943fa9de804c72d53dd38a543a909f372",
+          "kee:sentence:f8f2ba609577973c0f69ce64cfe202e8aa95e15db0cb4101674ba4070a5cabe1"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "16f9c81af18724dc68b6dee5964f6ea1dc38029bb79ef472143b8d176c8a8303",
+        "occurrences": [
+          "kee:sentence:6927e99606eb61b1fa81cc95962359033e4ed429669a02c4cf0c3d2c840347c9",
+          "kee:sentence:63c09d84ba44ee0b75e234d9ec619e57ba1d69e936e3e988ad9110d82daa0e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "c70ca45a69ef24f03f891dbac32b4bd8c7751221614537ed75ca50e5a59b9f21",
+        "occurrences": [
+          "kee:sentence:85b6ef1eb3790a81534d73cce5d253f943fa9de804c72d53dd38a543a909f372",
+          "kee:sentence:f8f2ba609577973c0f69ce64cfe202e8aa95e15db0cb4101674ba4070a5cabe1"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "359b376e76cf432aa76d1b91ec70cf57d801ca548706d2bc6d5e75b7ba1e95e5",
+        "occurrences": [
+          "kee:sentence:6927e99606eb61b1fa81cc95962359033e4ed429669a02c4cf0c3d2c840347c9",
+          "kee:sentence:63c09d84ba44ee0b75e234d9ec619e57ba1d69e936e3e988ad9110d82daa0e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "4649307806ce2b3eac9bc826076ccadb114b38dd07f820aae050f4c1c56d9008",
+        "occurrences": [
+          "kee:sentence:85b6ef1eb3790a81534d73cce5d253f943fa9de804c72d53dd38a543a909f372",
+          "kee:sentence:f8f2ba609577973c0f69ce64cfe202e8aa95e15db0cb4101674ba4070a5cabe1"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "3153ac45bc12e1daa7f8b65cd1f75adf29ab5764ca285d5aa8b41f885b75faea",
+        "occurrences": [
+          "kee:sentence:6927e99606eb61b1fa81cc95962359033e4ed429669a02c4cf0c3d2c840347c9",
+          "kee:sentence:63c09d84ba44ee0b75e234d9ec619e57ba1d69e936e3e988ad9110d82daa0e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "f3b16ecf44ec6645135fe25ee93d60cf05b494366aa78f39017e50fb76ece1d7",
+        "occurrences": [
+          "kee:sentence:85b6ef1eb3790a81534d73cce5d253f943fa9de804c72d53dd38a543a909f372",
+          "kee:sentence:f8f2ba609577973c0f69ce64cfe202e8aa95e15db0cb4101674ba4070a5cabe1"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "a0faac1f78d58729519990cbfc01c8bc81ad55d4c9ee1ac15c06f0811d32b5a9",
+        "occurrences": [
+          "kee:sentence:6927e99606eb61b1fa81cc95962359033e4ed429669a02c4cf0c3d2c840347c9",
+          "kee:sentence:63c09d84ba44ee0b75e234d9ec619e57ba1d69e936e3e988ad9110d82daa0e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "d40c2617336ef14901cc83d42f5fd1de9e17892b6366a8a75690bbff2eb19ea5",
+        "occurrences": [
+          "kee:sentence:85b6ef1eb3790a81534d73cce5d253f943fa9de804c72d53dd38a543a909f372",
+          "kee:sentence:f8f2ba609577973c0f69ce64cfe202e8aa95e15db0cb4101674ba4070a5cabe1"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "45c1000765520238d3ec426800c3174fca571c11b162d0d7f6b4a408f191795c",
+        "occurrences": [
+          "kee:sentence:6927e99606eb61b1fa81cc95962359033e4ed429669a02c4cf0c3d2c840347c9",
+          "kee:sentence:63c09d84ba44ee0b75e234d9ec619e57ba1d69e936e3e988ad9110d82daa0e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "5b1991824051eb47ff27096bfa791a0636200a5422029af5de05e2cbeffb4f96",
+        "occurrences": [
+          "kee:sentence:85b6ef1eb3790a81534d73cce5d253f943fa9de804c72d53dd38a543a909f372",
+          "kee:sentence:f8f2ba609577973c0f69ce64cfe202e8aa95e15db0cb4101674ba4070a5cabe1"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "8fca3c0d15cf692df42fd36f6eba56521c3a2aa3495d793e19bf6eefda008e06",
+        "occurrences": [
+          "kee:sentence:6927e99606eb61b1fa81cc95962359033e4ed429669a02c4cf0c3d2c840347c9",
+          "kee:sentence:63c09d84ba44ee0b75e234d9ec619e57ba1d69e936e3e988ad9110d82daa0e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "5be2a5304bdc7fa2ac1284644c883bbec6ffa04c09fd0917a637bf3b56c533ba",
+        "occurrences": [
+          "kee:sentence:85b6ef1eb3790a81534d73cce5d253f943fa9de804c72d53dd38a543a909f372",
+          "kee:sentence:f8f2ba609577973c0f69ce64cfe202e8aa95e15db0cb4101674ba4070a5cabe1"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "0150e4b3b0f655b13ce212e51237e70d0a15466c2353a7166fb564213e47eb73",
+        "occurrences": [
+          "kee:sentence:6927e99606eb61b1fa81cc95962359033e4ed429669a02c4cf0c3d2c840347c9",
+          "kee:sentence:63c09d84ba44ee0b75e234d9ec619e57ba1d69e936e3e988ad9110d82daa0e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "3bed80a5137f9f3676b08db885eb327b15abaf00605922099beecd1ba5feffa8",
+        "occurrences": [
+          "kee:sentence:85b6ef1eb3790a81534d73cce5d253f943fa9de804c72d53dd38a543a909f372",
+          "kee:sentence:f8f2ba609577973c0f69ce64cfe202e8aa95e15db0cb4101674ba4070a5cabe1"
+        ],
+        "blocked": false
+      }
+    ]
+  },
+  {
+    "engine": "compatibility-parent-child",
+    "displayFixture": false,
+    "audit": [
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "fa494b98aa2c5ffa73ef15b10294e0b0053b8f0445ae2657ba75fc2cc073020f",
+        "occurrences": [
+          "kee:sentence:2d0d87e298c5e12a2673dcd8b916d3d9d41f515d9164d4822b64b0a727dbbd24",
+          "kee:sentence:f576f5ef59fabaf22022cfdb638b23beb0f3beafd767caae0c18b5d53d1e4e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "f1e849151a04c45f24e2d082f8dff76d8ad556a798453d1d2d1c33b7ef9be4fb",
+        "occurrences": [
+          "kee:sentence:1d1a09a475a39eec6032c7a9087c43da0e7e22fc2709ba99d252f2b02b7e4d32",
+          "kee:sentence:b56617a1ec8891a1fe2e79ab979b4a4048854516b7ef60f286c99454181a4f66"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "b5fe91b4aa59b71bce72d8db8d346b25e89c0c0974f4873813b16bc32faccd25",
+        "occurrences": [
+          "kee:sentence:2d0d87e298c5e12a2673dcd8b916d3d9d41f515d9164d4822b64b0a727dbbd24",
+          "kee:sentence:f576f5ef59fabaf22022cfdb638b23beb0f3beafd767caae0c18b5d53d1e4e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "c98e9d8e8b27543f37742401673b98b2782f1c56bd70e61a14a5513a5a650b60",
+        "occurrences": [
+          "kee:sentence:1d1a09a475a39eec6032c7a9087c43da0e7e22fc2709ba99d252f2b02b7e4d32",
+          "kee:sentence:b56617a1ec8891a1fe2e79ab979b4a4048854516b7ef60f286c99454181a4f66"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "390db1b6278d65617cb1ac97bbfd1abdc6146c53285be1853fb30857eba5be48",
+        "occurrences": [
+          "kee:sentence:2d0d87e298c5e12a2673dcd8b916d3d9d41f515d9164d4822b64b0a727dbbd24",
+          "kee:sentence:f576f5ef59fabaf22022cfdb638b23beb0f3beafd767caae0c18b5d53d1e4e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "0204baca9ce4203cea9bcb07848c4cf8c5a804672ffcf3e27657900a154723fa",
+        "occurrences": [
+          "kee:sentence:1d1a09a475a39eec6032c7a9087c43da0e7e22fc2709ba99d252f2b02b7e4d32",
+          "kee:sentence:b56617a1ec8891a1fe2e79ab979b4a4048854516b7ef60f286c99454181a4f66"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "f9a36ba62d0b800b10c918546bd85a66189c0a72e769728ba9d402ca89cde1d7",
+        "occurrences": [
+          "kee:sentence:2d0d87e298c5e12a2673dcd8b916d3d9d41f515d9164d4822b64b0a727dbbd24",
+          "kee:sentence:f576f5ef59fabaf22022cfdb638b23beb0f3beafd767caae0c18b5d53d1e4e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "d69aafa84d718b7bdcb4c32737e0d53e2e8accb7c4885cfb79eaf570e89afcb5",
+        "occurrences": [
+          "kee:sentence:1d1a09a475a39eec6032c7a9087c43da0e7e22fc2709ba99d252f2b02b7e4d32",
+          "kee:sentence:b56617a1ec8891a1fe2e79ab979b4a4048854516b7ef60f286c99454181a4f66"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "bac9ae2b2e885e266e806247bf0db0c77eb5cbfd0876f2e3969aa68f10f8b0c0",
+        "occurrences": [
+          "kee:sentence:2d0d87e298c5e12a2673dcd8b916d3d9d41f515d9164d4822b64b0a727dbbd24",
+          "kee:sentence:f576f5ef59fabaf22022cfdb638b23beb0f3beafd767caae0c18b5d53d1e4e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "cbbff000df7f3da05dd4deed0cd9d6c2127fe69fe8e8d6ebe846f50b871e5600",
+        "occurrences": [
+          "kee:sentence:1d1a09a475a39eec6032c7a9087c43da0e7e22fc2709ba99d252f2b02b7e4d32",
+          "kee:sentence:b56617a1ec8891a1fe2e79ab979b4a4048854516b7ef60f286c99454181a4f66"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "6313d87eb2e4e99a9a4daf7ea08fbfdd8a468350dafd0f0d96431a86da404d0c",
+        "occurrences": [
+          "kee:sentence:2d0d87e298c5e12a2673dcd8b916d3d9d41f515d9164d4822b64b0a727dbbd24",
+          "kee:sentence:f576f5ef59fabaf22022cfdb638b23beb0f3beafd767caae0c18b5d53d1e4e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "8279849d034f764be6c16670b8000bbd07e31df3afb2e6abcc414c56caa770c7",
+        "occurrences": [
+          "kee:sentence:1d1a09a475a39eec6032c7a9087c43da0e7e22fc2709ba99d252f2b02b7e4d32",
+          "kee:sentence:b56617a1ec8891a1fe2e79ab979b4a4048854516b7ef60f286c99454181a4f66"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "3e2ca4c62fe50454807d231eb9324f8c286f0a5fb415274ba8057467d5be4d10",
+        "occurrences": [
+          "kee:sentence:2d0d87e298c5e12a2673dcd8b916d3d9d41f515d9164d4822b64b0a727dbbd24",
+          "kee:sentence:f576f5ef59fabaf22022cfdb638b23beb0f3beafd767caae0c18b5d53d1e4e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "b7ea412439274b33c52fa0d26265bc46c50daf40c013158c23686ccca6d67115",
+        "occurrences": [
+          "kee:sentence:1d1a09a475a39eec6032c7a9087c43da0e7e22fc2709ba99d252f2b02b7e4d32",
+          "kee:sentence:b56617a1ec8891a1fe2e79ab979b4a4048854516b7ef60f286c99454181a4f66"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "f8e40948023d0d22b8318d3c101e3f8fab09859e82c1d82b9aea2f26feb0dc46",
+        "occurrences": [
+          "kee:sentence:2d0d87e298c5e12a2673dcd8b916d3d9d41f515d9164d4822b64b0a727dbbd24",
+          "kee:sentence:f576f5ef59fabaf22022cfdb638b23beb0f3beafd767caae0c18b5d53d1e4e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "270a4de6ca474d87c17d26c8510d4384d394cfa9dfdd3049fedabbb979c40a6f",
+        "occurrences": [
+          "kee:sentence:1d1a09a475a39eec6032c7a9087c43da0e7e22fc2709ba99d252f2b02b7e4d32",
+          "kee:sentence:b56617a1ec8891a1fe2e79ab979b4a4048854516b7ef60f286c99454181a4f66"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "e77fe4ccf287ef9ff12bba52a2db2faf28dec8b3e47ced7be01708fda41f9e61",
+        "occurrences": [
+          "kee:sentence:2d0d87e298c5e12a2673dcd8b916d3d9d41f515d9164d4822b64b0a727dbbd24",
+          "kee:sentence:f576f5ef59fabaf22022cfdb638b23beb0f3beafd767caae0c18b5d53d1e4e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "a2ab7309cf9a01502175e3b0cb5edb094f7ac06512ef3984b374ee9000a8de3e",
+        "occurrences": [
+          "kee:sentence:1d1a09a475a39eec6032c7a9087c43da0e7e22fc2709ba99d252f2b02b7e4d32",
+          "kee:sentence:b56617a1ec8891a1fe2e79ab979b4a4048854516b7ef60f286c99454181a4f66"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "01c0e0fe7880512b332f75e29632144216a1372110456361cb5a1524e5f7331f",
+        "occurrences": [
+          "kee:sentence:2d0d87e298c5e12a2673dcd8b916d3d9d41f515d9164d4822b64b0a727dbbd24",
+          "kee:sentence:f576f5ef59fabaf22022cfdb638b23beb0f3beafd767caae0c18b5d53d1e4e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "64306b2b7dbc8c13deb898079135eaa0ad521d95c418a683bdef9fd90c51ee4b",
+        "occurrences": [
+          "kee:sentence:1d1a09a475a39eec6032c7a9087c43da0e7e22fc2709ba99d252f2b02b7e4d32",
+          "kee:sentence:b56617a1ec8891a1fe2e79ab979b4a4048854516b7ef60f286c99454181a4f66"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "24ee35a49a0b05cf6f4c8b2b6b7d4fd505efc9d2dc043a925fad488c8fb2d440",
+        "occurrences": [
+          "kee:sentence:2d0d87e298c5e12a2673dcd8b916d3d9d41f515d9164d4822b64b0a727dbbd24",
+          "kee:sentence:f576f5ef59fabaf22022cfdb638b23beb0f3beafd767caae0c18b5d53d1e4e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "2f93960746ab2ceb49dae2af4fc2a6f2d8b977aafb6d7cc8f5b5a50d453154ae",
+        "occurrences": [
+          "kee:sentence:1d1a09a475a39eec6032c7a9087c43da0e7e22fc2709ba99d252f2b02b7e4d32",
+          "kee:sentence:b56617a1ec8891a1fe2e79ab979b4a4048854516b7ef60f286c99454181a4f66"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "f54fb838b3286f570f236029758f2d00ead064299ca23c4aa3e523233932c98a",
+        "occurrences": [
+          "kee:sentence:2d0d87e298c5e12a2673dcd8b916d3d9d41f515d9164d4822b64b0a727dbbd24",
+          "kee:sentence:f576f5ef59fabaf22022cfdb638b23beb0f3beafd767caae0c18b5d53d1e4e56"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "3f17db79756a58dea61f3163ef99ec514c345e2b964525e74c9f14fbbc3044e1",
+        "occurrences": [
+          "kee:sentence:1d1a09a475a39eec6032c7a9087c43da0e7e22fc2709ba99d252f2b02b7e4d32",
+          "kee:sentence:b56617a1ec8891a1fe2e79ab979b4a4048854516b7ef60f286c99454181a4f66"
+        ],
+        "blocked": false
+      }
+    ]
+  },
+  {
+    "engine": "compatibility-coworker",
+    "displayFixture": false,
+    "audit": [
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "ba0c784708bab65b567749361516d5afcdaaa17a3de58d7c1effa15fa8a5efdb",
+        "occurrences": [
+          "kee:sentence:d12a71fd5bb4c9545dc9faccc30c5e782ee74fc125cca07043f981179c474b88",
+          "kee:sentence:00a10640400f114260ae7e4c90880fb3334cbb318d69a78c48a0f7147dfc85a6"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "c8fafb26daf1189e30c20357ddb7da47087e5d338c0f4fcacec59df6d0658a90",
+        "occurrences": [
+          "kee:sentence:d18af0b49ca003aeb4c54925d05ebb44dfe70b99494f38003c35360304e2e691",
+          "kee:sentence:6c334ae4b0e5141b5aff71ae717d441d9b8c30c2c02df5fc2679dc194467de50"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "7ae0d6928f6388ad4cc780c28a5a6d1a28ddf98a0a84e0466343c83251744ca3",
+        "occurrences": [
+          "kee:sentence:d12a71fd5bb4c9545dc9faccc30c5e782ee74fc125cca07043f981179c474b88",
+          "kee:sentence:00a10640400f114260ae7e4c90880fb3334cbb318d69a78c48a0f7147dfc85a6"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "b851bf13fb2e50f2898c7d99fce6108ac514ea818fd1023a767b7f19cce46615",
+        "occurrences": [
+          "kee:sentence:d18af0b49ca003aeb4c54925d05ebb44dfe70b99494f38003c35360304e2e691",
+          "kee:sentence:6c334ae4b0e5141b5aff71ae717d441d9b8c30c2c02df5fc2679dc194467de50"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "af795503203840c19c761386d0fcb2da086d8b28b3af1ecf7db8713f2ba0bff8",
+        "occurrences": [
+          "kee:sentence:d12a71fd5bb4c9545dc9faccc30c5e782ee74fc125cca07043f981179c474b88",
+          "kee:sentence:00a10640400f114260ae7e4c90880fb3334cbb318d69a78c48a0f7147dfc85a6"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "5df037cc28a85bbf04cfabc3e2b531d2aed2f816a7c015b6b3c7733ef2153919",
+        "occurrences": [
+          "kee:sentence:d18af0b49ca003aeb4c54925d05ebb44dfe70b99494f38003c35360304e2e691",
+          "kee:sentence:6c334ae4b0e5141b5aff71ae717d441d9b8c30c2c02df5fc2679dc194467de50"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "70c52139f52a6caf2b8ad6430fcd6b3c369e4114edf671056404d2c585748774",
+        "occurrences": [
+          "kee:sentence:d12a71fd5bb4c9545dc9faccc30c5e782ee74fc125cca07043f981179c474b88",
+          "kee:sentence:00a10640400f114260ae7e4c90880fb3334cbb318d69a78c48a0f7147dfc85a6"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "655fcfcbd4228b966f77474711f7ef178178b3673460175480077c6ac95d9ddf",
+        "occurrences": [
+          "kee:sentence:d18af0b49ca003aeb4c54925d05ebb44dfe70b99494f38003c35360304e2e691",
+          "kee:sentence:6c334ae4b0e5141b5aff71ae717d441d9b8c30c2c02df5fc2679dc194467de50"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "ad2576f92a896ab4196df51d0eacd2db84e68adb38cc9a05e6fd0b91a1b6a428",
+        "occurrences": [
+          "kee:sentence:d12a71fd5bb4c9545dc9faccc30c5e782ee74fc125cca07043f981179c474b88",
+          "kee:sentence:00a10640400f114260ae7e4c90880fb3334cbb318d69a78c48a0f7147dfc85a6"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "2c8b8ec0863a8393a1fa09183f2a84480c87cc1b9d6ff3971032d18c681abd69",
+        "occurrences": [
+          "kee:sentence:d18af0b49ca003aeb4c54925d05ebb44dfe70b99494f38003c35360304e2e691",
+          "kee:sentence:6c334ae4b0e5141b5aff71ae717d441d9b8c30c2c02df5fc2679dc194467de50"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "e36805ef9c9948072b1b5bc5a49d4341e74bffe8ce97d70be43bded9001477da",
+        "occurrences": [
+          "kee:sentence:d12a71fd5bb4c9545dc9faccc30c5e782ee74fc125cca07043f981179c474b88",
+          "kee:sentence:00a10640400f114260ae7e4c90880fb3334cbb318d69a78c48a0f7147dfc85a6"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "31ee518b880724944f693be24aa2c0ad3b9ea03db93b64edbdda0ef17fbf5f66",
+        "occurrences": [
+          "kee:sentence:d18af0b49ca003aeb4c54925d05ebb44dfe70b99494f38003c35360304e2e691",
+          "kee:sentence:6c334ae4b0e5141b5aff71ae717d441d9b8c30c2c02df5fc2679dc194467de50"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "7729bcae0f47c790e88f844e1ac57256bd72a910b9819ce0718a87ed05ae5f2a",
+        "occurrences": [
+          "kee:sentence:d12a71fd5bb4c9545dc9faccc30c5e782ee74fc125cca07043f981179c474b88",
+          "kee:sentence:00a10640400f114260ae7e4c90880fb3334cbb318d69a78c48a0f7147dfc85a6"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "a467d1b4729a4df58d9094f0e1f2c75afa9e79b9f8960eafcbb9d1b9557b4324",
+        "occurrences": [
+          "kee:sentence:d18af0b49ca003aeb4c54925d05ebb44dfe70b99494f38003c35360304e2e691",
+          "kee:sentence:6c334ae4b0e5141b5aff71ae717d441d9b8c30c2c02df5fc2679dc194467de50"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "0797e4b46d6da1afd20d2a71da0444abc7be755b8602a3e1e3a4271e6846bd6b",
+        "occurrences": [
+          "kee:sentence:d12a71fd5bb4c9545dc9faccc30c5e782ee74fc125cca07043f981179c474b88",
+          "kee:sentence:00a10640400f114260ae7e4c90880fb3334cbb318d69a78c48a0f7147dfc85a6"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "6566850a05581d0c495b3005a25f747b965a58d8fbcf198f0e4a99408dad3a24",
+        "occurrences": [
+          "kee:sentence:d18af0b49ca003aeb4c54925d05ebb44dfe70b99494f38003c35360304e2e691",
+          "kee:sentence:6c334ae4b0e5141b5aff71ae717d441d9b8c30c2c02df5fc2679dc194467de50"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "505a65c18f28771f86743b94978e72d8463776f5c8af209e593c73a9cd25b3cb",
+        "occurrences": [
+          "kee:sentence:d12a71fd5bb4c9545dc9faccc30c5e782ee74fc125cca07043f981179c474b88",
+          "kee:sentence:00a10640400f114260ae7e4c90880fb3334cbb318d69a78c48a0f7147dfc85a6"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "4da5f0da9ccc22457a3bb4b0543b914f43071422de9158f5fd5452735a01d0b7",
+        "occurrences": [
+          "kee:sentence:d18af0b49ca003aeb4c54925d05ebb44dfe70b99494f38003c35360304e2e691",
+          "kee:sentence:6c334ae4b0e5141b5aff71ae717d441d9b8c30c2c02df5fc2679dc194467de50"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "ad7a69cf9a9d85c5c47a13ae5cbbd259cc15a8807b5221b34a42423c30b65864",
+        "occurrences": [
+          "kee:sentence:d12a71fd5bb4c9545dc9faccc30c5e782ee74fc125cca07043f981179c474b88",
+          "kee:sentence:00a10640400f114260ae7e4c90880fb3334cbb318d69a78c48a0f7147dfc85a6"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "64637c028c66717316d0900c61a13034f8b19eaa81cbecb62b3b0f31ededbda4",
+        "occurrences": [
+          "kee:sentence:d18af0b49ca003aeb4c54925d05ebb44dfe70b99494f38003c35360304e2e691",
+          "kee:sentence:6c334ae4b0e5141b5aff71ae717d441d9b8c30c2c02df5fc2679dc194467de50"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "d38e68fea7f10b00a51593ca29146d9fb8dee7875f0b869223ca0f3463791307",
+        "occurrences": [
+          "kee:sentence:d12a71fd5bb4c9545dc9faccc30c5e782ee74fc125cca07043f981179c474b88",
+          "kee:sentence:00a10640400f114260ae7e4c90880fb3334cbb318d69a78c48a0f7147dfc85a6"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "c2d5589da2197508cfe990862a08c9d4dd3f6572c7761257680faa2610969b59",
+        "occurrences": [
+          "kee:sentence:d18af0b49ca003aeb4c54925d05ebb44dfe70b99494f38003c35360304e2e691",
+          "kee:sentence:6c334ae4b0e5141b5aff71ae717d441d9b8c30c2c02df5fc2679dc194467de50"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "8b71e2904257632c223c7c21fcf76866fb591b01a800666d944d4226792dcbad",
+        "occurrences": [
+          "kee:sentence:d12a71fd5bb4c9545dc9faccc30c5e782ee74fc125cca07043f981179c474b88",
+          "kee:sentence:00a10640400f114260ae7e4c90880fb3334cbb318d69a78c48a0f7147dfc85a6"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "bd15bbccf0d675f638e49bb95bfe5e2f7278e05c5832f8a1e6543bb934351827",
+        "occurrences": [
+          "kee:sentence:d18af0b49ca003aeb4c54925d05ebb44dfe70b99494f38003c35360304e2e691",
+          "kee:sentence:6c334ae4b0e5141b5aff71ae717d441d9b8c30c2c02df5fc2679dc194467de50"
+        ],
+        "blocked": false
+      }
+    ]
+  },
+  {
+    "engine": "compatibility-manager-report",
+    "displayFixture": false,
+    "audit": [
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "7a676030d17898b019668834258e17a07e5840aaf0352911590ab1b2c21d360d",
+        "occurrences": [
+          "kee:sentence:8b7a94232f4ac732d86faab1908adb56b19adfc8cd539e89dd9e59ae885100f0",
+          "kee:sentence:c4d9bee85f1e9d252924bdb2237d6a435b75c3365f4a89fe35d52c30c88108d9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "5f291bbd28e88029cee8be9922f42a5302a0f6537bd9413ff83bb086bafd3378",
+        "occurrences": [
+          "kee:sentence:9caa0ed7f889665008b7ab252ebb9139a15cd66223d752097b3c791ed24b70e6",
+          "kee:sentence:fdfae0f8cc835737526837735a2d3567bce8ac2a970f38bf379cdcd5c3e44614"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "acf7656477ad85d4c0df8eeaf97ed77b0198b3c6c03b4991f184c92cc1d337b6",
+        "occurrences": [
+          "kee:sentence:8b7a94232f4ac732d86faab1908adb56b19adfc8cd539e89dd9e59ae885100f0",
+          "kee:sentence:c4d9bee85f1e9d252924bdb2237d6a435b75c3365f4a89fe35d52c30c88108d9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "b132e8285e73c2abbdedf5d13b2154937fa8c9be3e642c0021d55c7dcbb2e8aa",
+        "occurrences": [
+          "kee:sentence:9caa0ed7f889665008b7ab252ebb9139a15cd66223d752097b3c791ed24b70e6",
+          "kee:sentence:fdfae0f8cc835737526837735a2d3567bce8ac2a970f38bf379cdcd5c3e44614"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "796799f59a54621bead7b7e802cfd71db9a9dfbc4b3854dd359ea8de9ab38c38",
+        "occurrences": [
+          "kee:sentence:8b7a94232f4ac732d86faab1908adb56b19adfc8cd539e89dd9e59ae885100f0",
+          "kee:sentence:c4d9bee85f1e9d252924bdb2237d6a435b75c3365f4a89fe35d52c30c88108d9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "9e5ec9cbaab81da221b80d0ed83c18d72b34aaeec8ab5fce1489b8153f9c7e64",
+        "occurrences": [
+          "kee:sentence:9caa0ed7f889665008b7ab252ebb9139a15cd66223d752097b3c791ed24b70e6",
+          "kee:sentence:fdfae0f8cc835737526837735a2d3567bce8ac2a970f38bf379cdcd5c3e44614"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "afa465061f6417e6a731e718464f2e9e69970e941bb60ecc8fac4a894aeab8d6",
+        "occurrences": [
+          "kee:sentence:8b7a94232f4ac732d86faab1908adb56b19adfc8cd539e89dd9e59ae885100f0",
+          "kee:sentence:c4d9bee85f1e9d252924bdb2237d6a435b75c3365f4a89fe35d52c30c88108d9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "f32a1ce5c091e7894a8ed49bddc9cd141a1bcc62ae76e20acb267ffe4d8c3075",
+        "occurrences": [
+          "kee:sentence:9caa0ed7f889665008b7ab252ebb9139a15cd66223d752097b3c791ed24b70e6",
+          "kee:sentence:fdfae0f8cc835737526837735a2d3567bce8ac2a970f38bf379cdcd5c3e44614"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "313efa5f5a407e5db4ac7b570d632d942a757c68527289fd86da1aae0010619e",
+        "occurrences": [
+          "kee:sentence:8b7a94232f4ac732d86faab1908adb56b19adfc8cd539e89dd9e59ae885100f0",
+          "kee:sentence:c4d9bee85f1e9d252924bdb2237d6a435b75c3365f4a89fe35d52c30c88108d9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "681d7dd877f7f71eb98a0eb88aef917bb2199619ddcce6502beeefa7b2e4b96a",
+        "occurrences": [
+          "kee:sentence:9caa0ed7f889665008b7ab252ebb9139a15cd66223d752097b3c791ed24b70e6",
+          "kee:sentence:fdfae0f8cc835737526837735a2d3567bce8ac2a970f38bf379cdcd5c3e44614"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "b16f05b9a4e685adbde390ae63db831bc81424608dadd5ce53ba2af363dc9923",
+        "occurrences": [
+          "kee:sentence:8b7a94232f4ac732d86faab1908adb56b19adfc8cd539e89dd9e59ae885100f0",
+          "kee:sentence:c4d9bee85f1e9d252924bdb2237d6a435b75c3365f4a89fe35d52c30c88108d9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "2c85b30fcf254e4a765fd0f4021d1f3337856712d05c45634c5ddec80f242960",
+        "occurrences": [
+          "kee:sentence:9caa0ed7f889665008b7ab252ebb9139a15cd66223d752097b3c791ed24b70e6",
+          "kee:sentence:fdfae0f8cc835737526837735a2d3567bce8ac2a970f38bf379cdcd5c3e44614"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "83a436e214a948a61e0786a5e97f95acd8ea2c635863d10004068df851a9c358",
+        "occurrences": [
+          "kee:sentence:8b7a94232f4ac732d86faab1908adb56b19adfc8cd539e89dd9e59ae885100f0",
+          "kee:sentence:c4d9bee85f1e9d252924bdb2237d6a435b75c3365f4a89fe35d52c30c88108d9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "6799eb33d711fbfdc029e288e451d5aa5bc4bccafba844a793944d28c1579463",
+        "occurrences": [
+          "kee:sentence:9caa0ed7f889665008b7ab252ebb9139a15cd66223d752097b3c791ed24b70e6",
+          "kee:sentence:fdfae0f8cc835737526837735a2d3567bce8ac2a970f38bf379cdcd5c3e44614"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "c3fac00167ddb5abfaab1864aaa928af7dea8c8073c0a580a50384b0a64740e1",
+        "occurrences": [
+          "kee:sentence:8b7a94232f4ac732d86faab1908adb56b19adfc8cd539e89dd9e59ae885100f0",
+          "kee:sentence:c4d9bee85f1e9d252924bdb2237d6a435b75c3365f4a89fe35d52c30c88108d9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "2f0b1410ab7f75d6eca02e09fe2d7739d9e6361005ebecc04ce7228af6866536",
+        "occurrences": [
+          "kee:sentence:9caa0ed7f889665008b7ab252ebb9139a15cd66223d752097b3c791ed24b70e6",
+          "kee:sentence:fdfae0f8cc835737526837735a2d3567bce8ac2a970f38bf379cdcd5c3e44614"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "4c59c444b82b7bb6dc0bd68bf1a5ec6875d4e9726843f2675a56d44c11f93237",
+        "occurrences": [
+          "kee:sentence:8b7a94232f4ac732d86faab1908adb56b19adfc8cd539e89dd9e59ae885100f0",
+          "kee:sentence:c4d9bee85f1e9d252924bdb2237d6a435b75c3365f4a89fe35d52c30c88108d9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "19cc51260fd83346b30c9eb6cd3f15d0265045a56bf0845dd52c2bd1448c811b",
+        "occurrences": [
+          "kee:sentence:9caa0ed7f889665008b7ab252ebb9139a15cd66223d752097b3c791ed24b70e6",
+          "kee:sentence:fdfae0f8cc835737526837735a2d3567bce8ac2a970f38bf379cdcd5c3e44614"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "846c283eb11a25d4e879555f370a3b96fe3cc7e97bc75c569025d57b2f9fbc28",
+        "occurrences": [
+          "kee:sentence:8b7a94232f4ac732d86faab1908adb56b19adfc8cd539e89dd9e59ae885100f0",
+          "kee:sentence:c4d9bee85f1e9d252924bdb2237d6a435b75c3365f4a89fe35d52c30c88108d9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "11606572c974efacba04429ec918e4fe6826ce6dc6a81a1e8131dc3c506a7206",
+        "occurrences": [
+          "kee:sentence:9caa0ed7f889665008b7ab252ebb9139a15cd66223d752097b3c791ed24b70e6",
+          "kee:sentence:fdfae0f8cc835737526837735a2d3567bce8ac2a970f38bf379cdcd5c3e44614"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "4da6c5b1dcd7cb3c4e0829308ff2f5db0c796e1c480b19569d3314c59dd0920f",
+        "occurrences": [
+          "kee:sentence:8b7a94232f4ac732d86faab1908adb56b19adfc8cd539e89dd9e59ae885100f0",
+          "kee:sentence:c4d9bee85f1e9d252924bdb2237d6a435b75c3365f4a89fe35d52c30c88108d9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "787b309ae4451b05738bec727dafda0f3dfd51ecab67b3bd2d177ba16ff1f2eb",
+        "occurrences": [
+          "kee:sentence:9caa0ed7f889665008b7ab252ebb9139a15cd66223d752097b3c791ed24b70e6",
+          "kee:sentence:fdfae0f8cc835737526837735a2d3567bce8ac2a970f38bf379cdcd5c3e44614"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "1ce9acf809e8dab01d70762f20a8b9c02af4d2cab668bc01a91ee018bc7cdc86",
+        "occurrences": [
+          "kee:sentence:8b7a94232f4ac732d86faab1908adb56b19adfc8cd539e89dd9e59ae885100f0",
+          "kee:sentence:c4d9bee85f1e9d252924bdb2237d6a435b75c3365f4a89fe35d52c30c88108d9"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "38c3d17ac2269e8a8bcf41cbfede6c0368105bb81427aec9c167a8afc51c2a84",
+        "occurrences": [
+          "kee:sentence:9caa0ed7f889665008b7ab252ebb9139a15cd66223d752097b3c791ed24b70e6",
+          "kee:sentence:fdfae0f8cc835737526837735a2d3567bce8ac2a970f38bf379cdcd5c3e44614"
+        ],
+        "blocked": false
+      }
+    ]
+  },
+  {
+    "engine": "compatibility-business-partner",
+    "displayFixture": false,
+    "audit": [
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "d9419cabdc0da013da9a6b27d487510c2f6911eeacef5b8134af4e8dfa3744ed",
+        "occurrences": [
+          "kee:sentence:2dc6d55e43bb4b1e6d88d7f9ad6970de83781e9c63354b520b9871502576a1d3",
+          "kee:sentence:e5f3be4ad4e256fa748f9f4c1d389b3e4f825629a74cb728744b75666e3ead32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "552d8b7ebb4861756fbe668642f119ecf805a2d593cae30a6385a533b54f3fb7",
+        "occurrences": [
+          "kee:sentence:b87e9e56ffc0de320dc49672962cbc6ea1a08ea2d45bb222703b73c73dad9494",
+          "kee:sentence:4771402cb49307da573f73a6d3ba659dbe18fcb80d0c8f16f9a50bea4540fe77"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "a340b7d1515ed7ca5fcdb01ca54755c8f0dbffda15436526393f211ab1d0dcf1",
+        "occurrences": [
+          "kee:sentence:2dc6d55e43bb4b1e6d88d7f9ad6970de83781e9c63354b520b9871502576a1d3",
+          "kee:sentence:e5f3be4ad4e256fa748f9f4c1d389b3e4f825629a74cb728744b75666e3ead32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "ac616fbf3157222e1c5b18e37b9451fe32c4d151bf173f7249e095e3e3ccf0d4",
+        "occurrences": [
+          "kee:sentence:b87e9e56ffc0de320dc49672962cbc6ea1a08ea2d45bb222703b73c73dad9494",
+          "kee:sentence:4771402cb49307da573f73a6d3ba659dbe18fcb80d0c8f16f9a50bea4540fe77"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "410a013295d04007e3bb8bc3bcc2738a24750014604d32eb7476281ca5121148",
+        "occurrences": [
+          "kee:sentence:2dc6d55e43bb4b1e6d88d7f9ad6970de83781e9c63354b520b9871502576a1d3",
+          "kee:sentence:e5f3be4ad4e256fa748f9f4c1d389b3e4f825629a74cb728744b75666e3ead32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "bfa9b03a1218a54bd7bba6ae7ea3c4ae74e60f45e58ac654313000d685449d8d",
+        "occurrences": [
+          "kee:sentence:b87e9e56ffc0de320dc49672962cbc6ea1a08ea2d45bb222703b73c73dad9494",
+          "kee:sentence:4771402cb49307da573f73a6d3ba659dbe18fcb80d0c8f16f9a50bea4540fe77"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "18c5f44c3982aa800f6e5d54ac0d843315bbc21552d866f2bff547dc36bcacbc",
+        "occurrences": [
+          "kee:sentence:2dc6d55e43bb4b1e6d88d7f9ad6970de83781e9c63354b520b9871502576a1d3",
+          "kee:sentence:e5f3be4ad4e256fa748f9f4c1d389b3e4f825629a74cb728744b75666e3ead32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "fcda15331defc5ed769b50fb02278e834ab10de7da2267645bd322b2a261083e",
+        "occurrences": [
+          "kee:sentence:b87e9e56ffc0de320dc49672962cbc6ea1a08ea2d45bb222703b73c73dad9494",
+          "kee:sentence:4771402cb49307da573f73a6d3ba659dbe18fcb80d0c8f16f9a50bea4540fe77"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "9ed040d73e8828ff3207a32016dfa2465d613f66bf85e90bfd8f4eaed2b81e2e",
+        "occurrences": [
+          "kee:sentence:2dc6d55e43bb4b1e6d88d7f9ad6970de83781e9c63354b520b9871502576a1d3",
+          "kee:sentence:e5f3be4ad4e256fa748f9f4c1d389b3e4f825629a74cb728744b75666e3ead32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "29728951d5dec62450745a0b1bff312b72ad053134d992e79aa393659e0cec04",
+        "occurrences": [
+          "kee:sentence:b87e9e56ffc0de320dc49672962cbc6ea1a08ea2d45bb222703b73c73dad9494",
+          "kee:sentence:4771402cb49307da573f73a6d3ba659dbe18fcb80d0c8f16f9a50bea4540fe77"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "36cb7b79bf12a0c8fe8332f8fd2d3def1274954c7f2455dadc7f3c108b943855",
+        "occurrences": [
+          "kee:sentence:2dc6d55e43bb4b1e6d88d7f9ad6970de83781e9c63354b520b9871502576a1d3",
+          "kee:sentence:e5f3be4ad4e256fa748f9f4c1d389b3e4f825629a74cb728744b75666e3ead32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "46d90506bc566b4ed09b4529e6e93857c21738674a45fbf2d2d69f5c204994e7",
+        "occurrences": [
+          "kee:sentence:b87e9e56ffc0de320dc49672962cbc6ea1a08ea2d45bb222703b73c73dad9494",
+          "kee:sentence:4771402cb49307da573f73a6d3ba659dbe18fcb80d0c8f16f9a50bea4540fe77"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "7d6111cba104fba8323047ade3a4287b99eaeb6788e5b9d9c205ecf749a4f0cc",
+        "occurrences": [
+          "kee:sentence:2dc6d55e43bb4b1e6d88d7f9ad6970de83781e9c63354b520b9871502576a1d3",
+          "kee:sentence:e5f3be4ad4e256fa748f9f4c1d389b3e4f825629a74cb728744b75666e3ead32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "15a7dbb1c85559e5ab1fed5d246fde7852a5e3ab206241ca3796597ef81e8385",
+        "occurrences": [
+          "kee:sentence:b87e9e56ffc0de320dc49672962cbc6ea1a08ea2d45bb222703b73c73dad9494",
+          "kee:sentence:4771402cb49307da573f73a6d3ba659dbe18fcb80d0c8f16f9a50bea4540fe77"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "f33e1a50033b5bd46995faa70c6bc176b3d1da2375567000ce6b76df251632a4",
+        "occurrences": [
+          "kee:sentence:2dc6d55e43bb4b1e6d88d7f9ad6970de83781e9c63354b520b9871502576a1d3",
+          "kee:sentence:e5f3be4ad4e256fa748f9f4c1d389b3e4f825629a74cb728744b75666e3ead32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "8f88fff76c023552ac786c1fe008672541145719aabf00ef5c79feeaceb0f035",
+        "occurrences": [
+          "kee:sentence:b87e9e56ffc0de320dc49672962cbc6ea1a08ea2d45bb222703b73c73dad9494",
+          "kee:sentence:4771402cb49307da573f73a6d3ba659dbe18fcb80d0c8f16f9a50bea4540fe77"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "f744f83809502849569716fd6c536b8bb5674d5b296fe4228dd0a946c89caf29",
+        "occurrences": [
+          "kee:sentence:2dc6d55e43bb4b1e6d88d7f9ad6970de83781e9c63354b520b9871502576a1d3",
+          "kee:sentence:e5f3be4ad4e256fa748f9f4c1d389b3e4f825629a74cb728744b75666e3ead32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "1260a46d57b0673797c5b9a2db890dc5a9c3ed42aff4c05e307529f799362818",
+        "occurrences": [
+          "kee:sentence:b87e9e56ffc0de320dc49672962cbc6ea1a08ea2d45bb222703b73c73dad9494",
+          "kee:sentence:4771402cb49307da573f73a6d3ba659dbe18fcb80d0c8f16f9a50bea4540fe77"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "84d10adb9a6790c934a4c64e5095e9ee11622b865186224df8ab2e5ec86ae0c2",
+        "occurrences": [
+          "kee:sentence:2dc6d55e43bb4b1e6d88d7f9ad6970de83781e9c63354b520b9871502576a1d3",
+          "kee:sentence:e5f3be4ad4e256fa748f9f4c1d389b3e4f825629a74cb728744b75666e3ead32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "8f34164edf6872a18f4d78db79472a1a2e4ca2a406b56cf5f9991660cf11cda8",
+        "occurrences": [
+          "kee:sentence:b87e9e56ffc0de320dc49672962cbc6ea1a08ea2d45bb222703b73c73dad9494",
+          "kee:sentence:4771402cb49307da573f73a6d3ba659dbe18fcb80d0c8f16f9a50bea4540fe77"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "19e66f51315701db39266d4b4b9b71ecb6672087b4569fab1e61175586001eb1",
+        "occurrences": [
+          "kee:sentence:2dc6d55e43bb4b1e6d88d7f9ad6970de83781e9c63354b520b9871502576a1d3",
+          "kee:sentence:e5f3be4ad4e256fa748f9f4c1d389b3e4f825629a74cb728744b75666e3ead32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "f3a7491e2e7e9617d79873f02da35f8336c4b68779a619e130a622bfb6885786",
+        "occurrences": [
+          "kee:sentence:b87e9e56ffc0de320dc49672962cbc6ea1a08ea2d45bb222703b73c73dad9494",
+          "kee:sentence:4771402cb49307da573f73a6d3ba659dbe18fcb80d0c8f16f9a50bea4540fe77"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "475051632e590fd7a8b8731ce30dddb840a8a107b8776a964a9d957278050a31",
+        "occurrences": [
+          "kee:sentence:2dc6d55e43bb4b1e6d88d7f9ad6970de83781e9c63354b520b9871502576a1d3",
+          "kee:sentence:e5f3be4ad4e256fa748f9f4c1d389b3e4f825629a74cb728744b75666e3ead32"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "a2f8bd70746d2e35227bde0abd238b775ff5d6d982c746ec9f1467aa0a10dfc5",
+        "occurrences": [
+          "kee:sentence:b87e9e56ffc0de320dc49672962cbc6ea1a08ea2d45bb222703b73c73dad9494",
+          "kee:sentence:4771402cb49307da573f73a6d3ba659dbe18fcb80d0c8f16f9a50bea4540fe77"
+        ],
+        "blocked": false
+      }
+    ]
+  },
+  {
+    "engine": "compatibility-friendship",
+    "displayFixture": false,
+    "audit": [
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "1e503b496fd925ebf17b3bc177b89ac020bf984b7e0e1d4027c4076611be3197",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "fe7f4ce49aa3e54d95b51b016eaa860c82efeb1a5d418a32ad5d619a502ae5d4",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "53b114a87197c3e6270ca96c0db4505d7d0147a3a05570b960c758484963fddf",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "1c60a394a33afc65c140f40066ea6cf19730599b1bfb1f5753c53b04f2f67fd8",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "2646dac35d63d300cd5971757fa8af21a2d885598b62d96559cbb990c707d30e",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "0e44a68903ddc6d34024391cdef00ac899597cb55642c89f3382f86bff4df173",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "6ea66e9a49fc8ef72200793c58f056b40b83c7f543b2f1897d724c52f800e404",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "ff79bd3ba1c5c55f39a050bb0695310f87ab72ec0b4bfbf33498f8459dc1cee5",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "44daac1b577603ed9d01949aa9f3986e193bb81f68c788c46bd78325cc13c907",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "32711eb01321b0273842d0dff9d04904a6db413bf3ee59a868426c63aa644147",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "175aa94ba1bb2260a0a512f0374ae91e774a2e5d941d0440803f705486c2681f",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "7244c60b3b45c04198fdb1001ebc9ab1c5f71082d892e8a153ab2e4c4334ca70",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLOSING",
+        "key": "aaa28e99e282bd17539f3aa160f97e3628cb7786d3cbf34b71697d37532b4a92",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:4b491129990705575d77014c12ba15ec807b5bb2d228b6fafd1512d82e62c0c2"
+        ],
+        "blocked": false
+      }
+    ]
+  },
+  {
+    "engine": "compatibility-friendship",
+    "displayFixture": true,
+    "audit": [
+      {
+        "scope": "PARAGRAPH",
+        "kind": "ROOT",
+        "key": "1e503b496fd925ebf17b3bc177b89ac020bf984b7e0e1d4027c4076611be3197",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "CLAIM",
+        "key": "fe7f4ce49aa3e54d95b51b016eaa860c82efeb1a5d418a32ad5d619a502ae5d4",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "MEANING",
+        "key": "53b114a87197c3e6270ca96c0db4505d7d0147a3a05570b960c758484963fddf",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "PARAGRAPH",
+        "kind": "OPENING",
+        "key": "1c60a394a33afc65c140f40066ea6cf19730599b1bfb1f5753c53b04f2f67fd8",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "ROOT",
+        "key": "2646dac35d63d300cd5971757fa8af21a2d885598b62d96559cbb990c707d30e",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "CLAIM",
+        "key": "0e44a68903ddc6d34024391cdef00ac899597cb55642c89f3382f86bff4df173",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "MEANING",
+        "key": "6ea66e9a49fc8ef72200793c58f056b40b83c7f543b2f1897d724c52f800e404",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "CHAPTER",
+        "kind": "OPENING",
+        "key": "ff79bd3ba1c5c55f39a050bb0695310f87ab72ec0b4bfbf33498f8459dc1cee5",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "44daac1b577603ed9d01949aa9f3986e193bb81f68c788c46bd78325cc13c907",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ROOT",
+        "key": "d72d52bc65be5fcaea67a88929f3b3e10156c93ebb11c2196cdf00c4bceaa5d5",
+        "occurrences": [
+          "kee:sentence:3fd737da9d75afd208b0bbc66aedc33caecf093eee51911c86244d3591f5b41f",
+          "kee:sentence:641b6881b963fd9bf7907cef08a98e33c2e1aaafe24b5b7ad672b5b4e1f2b868"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "32711eb01321b0273842d0dff9d04904a6db413bf3ee59a868426c63aa644147",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLAIM",
+        "key": "c8f83d91bf4512feceb7ae141c60ab9add8530183ecc31a9af396ee1a285c5a3",
+        "occurrences": [
+          "kee:sentence:3fd737da9d75afd208b0bbc66aedc33caecf093eee51911c86244d3591f5b41f",
+          "kee:sentence:641b6881b963fd9bf7907cef08a98e33c2e1aaafe24b5b7ad672b5b4e1f2b868"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "175aa94ba1bb2260a0a512f0374ae91e774a2e5d941d0440803f705486c2681f",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "MEANING",
+        "key": "8a092d53abc1acdd80e9ad54ac1546fdc0710771872f3669911a6aeb3fde9024",
+        "occurrences": [
+          "kee:sentence:3fd737da9d75afd208b0bbc66aedc33caecf093eee51911c86244d3591f5b41f",
+          "kee:sentence:641b6881b963fd9bf7907cef08a98e33c2e1aaafe24b5b7ad672b5b4e1f2b868"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "7244c60b3b45c04198fdb1001ebc9ab1c5f71082d892e8a153ab2e4c4334ca70",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "OPENING",
+        "key": "91a665e50ea94e14d7472d40228cf86358e6dead8576dcf2d8bd2d623e185d25",
+        "occurrences": [
+          "kee:sentence:3fd737da9d75afd208b0bbc66aedc33caecf093eee51911c86244d3591f5b41f",
+          "kee:sentence:641b6881b963fd9bf7907cef08a98e33c2e1aaafe24b5b7ad672b5b4e1f2b868"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLOSING",
+        "key": "aaa28e99e282bd17539f3aa160f97e3628cb7786d3cbf34b71697d37532b4a92",
+        "occurrences": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:4b491129990705575d77014c12ba15ec807b5bb2d228b6fafd1512d82e62c0c2"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "CLOSING",
+        "key": "0f7987125c86b75b373d97f93abdc99c8e51db640dd7a0744d54e2633eac5b5d",
+        "occurrences": [
+          "kee:sentence:3fd737da9d75afd208b0bbc66aedc33caecf093eee51911c86244d3591f5b41f",
+          "kee:sentence:83043b8710427925a11b86760df41e4670c37dc600fd9723d47e3873a47c7f5b"
+        ],
+        "blocked": false
+      },
+      {
+        "scope": "BOOK",
+        "kind": "ADVICE",
+        "key": "527d105b786c37aec4a4db5580d09952ef1c6fe95aea0890cdf341498510e949",
+        "occurrences": [
+          "kee:sentence:3fd737da9d75afd208b0bbc66aedc33caecf093eee51911c86244d3591f5b41f",
+          "kee:sentence:641b6881b963fd9bf7907cef08a98e33c2e1aaafe24b5b7ad672b5b4e1f2b868"
+        ],
+        "blocked": false
+      }
+    ]
+  }
+]

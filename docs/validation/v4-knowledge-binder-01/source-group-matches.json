@@ -1,0 +1,3251 @@
+[
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:3",
+    "catalogKey": "kc:v1:04660e1b2b218df18be0665c608efd00d23e57da1643ddc22bddc6085dadd73a",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:4",
+    "catalogKey": "kc:v1:051272da13c38172edbacf6cd7187958bd57dcdca69627de48da75f40bb8fc05",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:6",
+    "catalogKey": "kc:v1:06b73b71f38481a016c18400652b5a44e4789bfa0d1e90a7be9849e3473b1731",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:9",
+    "catalogKey": "kc:v1:07d3b3bf19b0b5111efc1e838dac36749e24f75e05c05fd3688444566fe79774",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:10",
+    "catalogKey": "kc:v1:09e153497692aa6c2621afcc660c6309a5a27f6646622a6f19c11c49e1839ce1",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:11",
+    "catalogKey": "kc:v1:0b774fec14f4de60d3701dc7126913600f25345794d1880e927739d0ba45b73e",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:12",
+    "catalogKey": "kc:v1:0c1226e31af4970c06bc390dd4ce7818ecb6f0e6a2d4762e6d3b672e5cb6b3c0",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:16",
+    "catalogKey": "kc:v1:0f5aa744fe2a578c6797815dd3140fbb14f709a2df1a126671fcc26ac12a775e",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:21",
+    "catalogKey": "kc:v1:12fa3386cac5eb0bac26739ca499d22d5358b5131082571a1c2db201583a30c8",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:25",
+    "catalogKey": "kc:v1:1694543fc66368b099a0d9383b5faff6e3df09da51f97aae241087c48eb1534a",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:26",
+    "catalogKey": "kc:v1:16a8a61ff503c78eee4d82a74f5538d48af01d992adb316afd4491b141036af1",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:27",
+    "catalogKey": "kc:v1:1b3e015733598acbc6e3dc2a07acb2d636187699ce5b9834ba9bb59fc74d1aab",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:28",
+    "catalogKey": "kc:v1:1b9fe00020cb4edd9ed93dfddf195ab56573f428c2797b69a7f34a9a112d181f",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:31",
+    "catalogKey": "kc:v1:1e2c399e5face0f3d119aa44845129aec054f7ae79b741697181617d3e591324",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:34",
+    "catalogKey": "kc:v1:242859532dfd2dd90fd75380d75bd4200fe81870184d666d1450d33516a2eae1",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:35",
+    "catalogKey": "kc:v1:249a11ad5745a48e34ad7f1ef166edaacdc14ad3c5c47e2acb245ec5d6a76763",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:37",
+    "catalogKey": "kc:v1:24fbe83a0396c3e91ce3e387605907c0133c0963be4969b773d7f603ae7d9322",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:38",
+    "catalogKey": "kc:v1:26da27e1da373db13997548bd92a840e6bd3a462811ae7c21979e26d30dfebc4",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:40",
+    "catalogKey": "kc:v1:2923db7e4d30e8f9dd0def6553c0eabf6f689f34835d1c86953cb9e394ea65d7",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:45",
+    "catalogKey": "kc:v1:373f412de8cc294e014ec0075c126fea3ccedccdb1afef58031a8397c0c48286",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:46",
+    "catalogKey": "kc:v1:3993bd14331a88d980da49da9ee972bc28bce61ba9c1ed172fdd241db1f77437",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:49",
+    "catalogKey": "kc:v1:3b30f7c7943a422c5990dba6bafc1d3c50d30fda2c46c325f2b84c6dba78955d",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:51",
+    "catalogKey": "kc:v1:3f13f310545b2db0ef184f4dda66e0ddae8ed1da281fc206700331a303282bbb",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:52",
+    "catalogKey": "kc:v1:3f51b4e12903985952b2c2e70dff8abc60cff80b997366f2bc4c73bf82695657",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:55",
+    "catalogKey": "kc:v1:43cf3a794249191f51bddab38eea97de8c0c1604437545ef74bc2319d1e55dcd",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:56",
+    "catalogKey": "kc:v1:4422401430c64f615e3ab2e136dbb5e63115feadee8c16bf06dce08b178f0a29",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:58",
+    "catalogKey": "kc:v1:45969980d2d936fbe64f1956ca51a27f1aa8262e5b92af3d965f80e2b9beb706",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:61",
+    "catalogKey": "kc:v1:4927c5306ad7d0fd4032bea48e2e09ce72b0b95ecd86fc7561c8c2dfeef4187c",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:64",
+    "catalogKey": "kc:v1:4d6784c2b62bd2b66025d313267c5fcdae47291d90ca70e0b636861fe07e59bc",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:65",
+    "catalogKey": "kc:v1:4e311b98b711686a893e8af894fdcb6be382480d05608c793fad5aa936f55cf7",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:68",
+    "catalogKey": "kc:v1:53876be1faa567bf303eda50e5ff852e2490defeb19ea5d6cf3fe152dc486187",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:69",
+    "catalogKey": "kc:v1:5639650ae471384c6224afdaf94ff06c0e8f261d228c799626e6b7a7c1966dd0",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:74",
+    "catalogKey": "kc:v1:5af971685410e453214575fbe8b8dbc8baf6567f726ca824ca3926db591bec4f",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:77",
+    "catalogKey": "kc:v1:5c92e2e1cac379945f36e169e51602f5c23224b130b90d32f674c6ddc7be75fb",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:79",
+    "catalogKey": "kc:v1:5d1ba17aa9f70211870537c2e91d8f7856db46aad4f320b7a775521c0f44448f",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:85",
+    "catalogKey": "kc:v1:63bcc10c2aabb4dacf303b559d8442f8e85b542d89371ffdd8f2cccacaaee29a",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:87",
+    "catalogKey": "kc:v1:66bed15eaa94d34d8e577bf4f6759827033d441e1aa56e2f011a29232999092f",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:95",
+    "catalogKey": "kc:v1:7082902ae734a2c11b3697782dd3ea84ff986f58e09c46d1e23744fa97226107",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:96",
+    "catalogKey": "kc:v1:71667066fec427364292da85fc42484e1301700b57282e68f317c57cf90ba3a1",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:98",
+    "catalogKey": "kc:v1:73eeb2912097ccd153676607b6fb278b3554a1d750f6b12d2e318561270f115e",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:101",
+    "catalogKey": "kc:v1:75f217d20f99e7904f925cb1916e793c58533c7d842249beaa37a67931cf6588",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:102",
+    "catalogKey": "kc:v1:76b82de539ced07c6725ee728cbf1eda152a4b4ea7be443670702d7a5ad2343c",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:103",
+    "catalogKey": "kc:v1:776d7a86eb29ca815d6ddc3d54e096d70c006908bad64b17ff0875096c2ca62a",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:105",
+    "catalogKey": "kc:v1:77faae040036fa87066b3f50f6d2480aa28791d632167ae9d59ec4e81f3dbda7",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:106",
+    "catalogKey": "kc:v1:7951cc0cc7a0b451be6019210e82e741109d6d748365c4973513123f160123f9",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:107",
+    "catalogKey": "kc:v1:79b7375850740e865be14adc60e2157e494c8713ea036e997605b776f5972334",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:108",
+    "catalogKey": "kc:v1:7a4f93fe699c11aa904e58649551321dd7fd36cafa59e455652c5068f2f44cd7",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:109",
+    "catalogKey": "kc:v1:7ac01249a82f155bd6e9d2017af170bf9637d4b0d61e9baa72ecb45648e2d02e",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:111",
+    "catalogKey": "kc:v1:7b5ae501fa9753eddeff947bcaf7b2c928943ce2998533a8a5ca22e92270f68e",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:114",
+    "catalogKey": "kc:v1:7d8b253efa867786fd4dfe538721858e9411ff31d2522873f1be2158834a7d73",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:116",
+    "catalogKey": "kc:v1:7f1c2e3e57318fe3855df3c7f33e2840036695d11c75331352bf75a111e3bd28",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:118",
+    "catalogKey": "kc:v1:820d72644ecaa3a49eb1e4072d33a6cc2b2cef5f393633fa292ae79329d2c14d",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:122",
+    "catalogKey": "kc:v1:84d1fa3de764acbd3dbd170a62b20771050274198818e8a28aae6a58e01d54cd",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:127",
+    "catalogKey": "kc:v1:8b7487a5b9f7620a90bd4eb3803303f19b9a71bb198d54395b7dce12e671c4bb",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:128",
+    "catalogKey": "kc:v1:8bd3c6c4650dd339eecbd23b4b4358dfcbe7b7b690eb9c0c714dc0b7152f4271",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:129",
+    "catalogKey": "kc:v1:8d4f0a97429cf01f56f766e0997c38bf81ef9142dbd8a2602e74c951e0d0a917",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:134",
+    "catalogKey": "kc:v1:90889903f950cc203232c2f6b83d710c7b7363e72bc60574c73b6329d317f8b2",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:139",
+    "catalogKey": "kc:v1:9534b977b891daab1d5233d8d56187342cb7c4a6370d8ac4e1b962b3637a8d20",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:142",
+    "catalogKey": "kc:v1:980fb5e6e916e7c286336f93d7d3109d5f736bb29d5a4f1a9aac952a6be3b54b",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:143",
+    "catalogKey": "kc:v1:993f63c648363cbd9ffcf4ff71b771ca880992a3844f91a67bbfe661294ab26c",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:147",
+    "catalogKey": "kc:v1:9f226167987686be6960b4fc59334bd82bd69941512aa35e536c129bcfc44fc7",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:149",
+    "catalogKey": "kc:v1:a1d42854e6a6a09700c8a3d7a0d3a71395035384a49cb08ee9aa3c3de5078682",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:150",
+    "catalogKey": "kc:v1:a544245736e427d1f75f3f6ee70dbc3a76a88ceb08fffd91af1f498c6689e90d",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:155",
+    "catalogKey": "kc:v1:a93e38d1f60e3a3312d9dcee015923de453900c11866ca3e5aeb44c355ae6d97",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:157",
+    "catalogKey": "kc:v1:aac9acacabdc9d7ec888c4dcc351c7843e9cfaf18da71efb7754d477bd099ae4",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:158",
+    "catalogKey": "kc:v1:ac2624d24ddccaf851485a60ba5bafac5741ac8dc10ef49007f5c694e1b47993",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:164",
+    "catalogKey": "kc:v1:b01b953021a52f665b16fc7218c365a7856885be712c086de5a11be1682b4e50",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:171",
+    "catalogKey": "kc:v1:b5d01fb63be1876944da54a338dd28fa8f4c0daaeab8852b26dc4fb51770b632",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:174",
+    "catalogKey": "kc:v1:ba3db9fd56baf79b1a22f75f06c1a77e9ad5014d18d7cf3df8748e2ed4500194",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:175",
+    "catalogKey": "kc:v1:bb378349add292a831586ab2557b752b5adea8d8b98da9ad0369b9b0c1139bb6",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:177",
+    "catalogKey": "kc:v1:bbcd752b647d5c2cfe33e1eba23225935e7e6867167777d8fb92f7864d2347e6",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      },
+      {
+        "groupIndex": 1,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:178",
+    "catalogKey": "kc:v1:c025d42cb5343e28c4c5a2b51bcc5ccde848bcce033966f67f290dd71520b34e",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:180",
+    "catalogKey": "kc:v1:c213f177d246b4c30ae2c90d50e9dca1a2c59e184b99df765c39a8fd2f385437",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:185",
+    "catalogKey": "kc:v1:cdbd3d477b4af08161103290d869f8690c0dc0d665e8d5b38f9c7cd25e7cacac",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:189",
+    "catalogKey": "kc:v1:d21276e4eab9fc6132d7440ce776b9f2b7f7db560abd4fd72916a28c55a63a72",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:191",
+    "catalogKey": "kc:v1:d4e67aada801d06d64511850b0989b05c7ed232d69e1d55cf55ed46d5f16d622",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:194",
+    "catalogKey": "kc:v1:d873a251f17fef9109d89bfcde3793ab1b622c4dc9c627543d4a52379059eef4",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:195",
+    "catalogKey": "kc:v1:d88e3144c036e51034328a43328ed31b772b489e9353419b7756eb97e88f4f2f",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:196",
+    "catalogKey": "kc:v1:da1299cb8697cac9b1574e6001a5a028a21aecd8dc1620ffa73b367afd5ac405",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:199",
+    "catalogKey": "kc:v1:dac3f916509ccf086442e80cb40bf1bfc7b333bcde05129dc495465dfc4b057a",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:200",
+    "catalogKey": "kc:v1:dbdd62fa674840537c8f0f4d08737db2d874f5582f98ed7dfd7ba1a6ccd088a7",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:202",
+    "catalogKey": "kc:v1:dd24b6ac82c70cc9808ecb8df4d840820c18802cd30ff229f428bd133dcab41f",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:205",
+    "catalogKey": "kc:v1:de4a1fb43443830b7aedddd0ff2874976c789c8a33f7d73eed05475cb60fb723",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:208",
+    "catalogKey": "kc:v1:df1336900c846a1dbe066dafcf00a6a21a5e3e78251fee8692da1d1c9d904062",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:212",
+    "catalogKey": "kc:v1:e582b32de6e7dfbfffc9bb590f636e1859cc51dafc75bd64e5471e4284cf4661",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:219",
+    "catalogKey": "kc:v1:ea85205a95b20278c09c39de9dc529096a3d779f4ae1354cdaa6cdfcfb4c9890",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:220",
+    "catalogKey": "kc:v1:eae3a671072072a3010209480dd7ef049d6fea56936c00ce9b6603831f91bc70",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:221",
+    "catalogKey": "kc:v1:eb0d194549192b552ddd043ddb539ea132a5a1069b5d47844ec6c39cc57fe1b7",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:224",
+    "catalogKey": "kc:v1:edc60a5dcab353ac4773e0819165d37bc6a0b8aaab4119934ef3409a3832d0a4",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:225",
+    "catalogKey": "kc:v1:ee0765d3c9997200afef47a287f52da77813cf48ce3dfdba67d2248427390abe",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:226",
+    "catalogKey": "kc:v1:ef566b23cf6aea76679ec4e3853203085d5878fe5718f8f887777f2ec5e71363",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:229",
+    "catalogKey": "kc:v1:f1dea392464d931102bd3e43749e33ee949fdf70f583c2bc89f76c8712f8cd60",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:230",
+    "catalogKey": "kc:v1:f23a129eb826cd13840b3e8e1d4523f9c606d95f92ac51d4fc44236c5c1702aa",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:232",
+    "catalogKey": "kc:v1:f449e173e7289eee149564afedb6bb64163d8dbf440d08550c51d2662832670f",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:236",
+    "catalogKey": "kc:v1:f6e4df71ed359dff9ed76eaebdd3f133da3cf5937d6ab260f396db6626288c36",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-managerReport:binding:239",
+    "catalogKey": "kc:v1:fab8637fabf542b09137a137ca1721d81862d1d1d1ed365b839d9add6817ea36",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:4",
+    "catalogKey": "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:7",
+    "catalogKey": "kc:v1:0451a66131664ea5e5a377835ffe9fef4767146cc937211d3bd299ed4c7953e6",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:12",
+    "catalogKey": "kc:v1:0695c634c7547bd9f8e20c3cffa0b9d35b5c086061b496d46fc86004e9e007e4",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:14",
+    "catalogKey": "kc:v1:07a88e09ace16addca655a42a9090a39580ef00d3788f382bade0997194177cb",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:18",
+    "catalogKey": "kc:v1:0a2c7c32171c0f79f4c794f08442decfa90c262268540cb97deae8873f1500c6",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:20",
+    "catalogKey": "kc:v1:104d31c50ae487eb4d6f361f59ab2870a0ee29c73eba1c5285b0fb8dd8f33549",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:30",
+    "catalogKey": "kc:v1:192cdbda770880e97e6a870a8e3ac9ef4b6d0cd30dc2765b33ce635916598e84",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      },
+      {
+        "groupIndex": 1,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:31",
+    "catalogKey": "kc:v1:1932594f88c8e8de495837ca9a8e77419bd4b5ba5bf61ab7936777125f7a28a2",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      },
+      {
+        "groupIndex": 1,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:35",
+    "catalogKey": "kc:v1:205ac0124ef97682094933f21e2eb1a88c68771964e6ffc5d17ac3959f4078c3",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:36",
+    "catalogKey": "kc:v1:25380523664c7a345f5bd1825fbd1d53ced01599806b72b6643d3e497621cfdd",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:37",
+    "catalogKey": "kc:v1:253fe0b528a1572d11aa3cec2b0e6b698af5283f56737787c01b599ded84bcc3",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:38",
+    "catalogKey": "kc:v1:25f99c2f61b337d0d2c30eeb6bbdc7e427f0d7a145b2537d9a6ff9537e1ec159",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:41",
+    "catalogKey": "kc:v1:299364237c7be6751dab294938d3dedb6ede1733041136e6910b41c5b738e8e7",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:42",
+    "catalogKey": "kc:v1:2a1dad9d73a067b98508e7d964fc53ecb2bb93f686736092b69dba2af5b331e9",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:43",
+    "catalogKey": "kc:v1:2a601ae714116e3eaad5785a34a943996be918cadff8f9ed82532efa407944ff",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:49",
+    "catalogKey": "kc:v1:31e24187d5fd403f3bc21e06729a9d9fc591840d7ccd3112f331d5dfe1649fcd",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:51",
+    "catalogKey": "kc:v1:327089838798a06e848b43c68f3eee89d2dd23f15cc315fe3f631a48291649a3",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:54",
+    "catalogKey": "kc:v1:33d09880998eeb3945f749bd159e44f95633ef35424750e884a28234eb654fc9",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:60",
+    "catalogKey": "kc:v1:36a0515afc3ff29d653255316be970cfdfef7dd01f29a1abd5e8f6be09c9205a",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:61",
+    "catalogKey": "kc:v1:383cd3d2dfb00f3a52e58e8c00ee5fd18e99d5b8a6dad8ed203b158a805d77ea",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      },
+      {
+        "groupIndex": 1,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:67",
+    "catalogKey": "kc:v1:402e7fde7a770fe6de8310bdf7de7b312772bc544755723202dd12e3d8502f7d",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:68",
+    "catalogKey": "kc:v1:40d8df6060e26efe51d939c48b029d55dd3cd520f184de16503f7ae48ce43cbf",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:71",
+    "catalogKey": "kc:v1:42fb6a2622f0a89720ca7b60d9ead719c8da0a735c96b62981e8b1f9fe858b6b",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:72",
+    "catalogKey": "kc:v1:43691973c3d7aea7bb6bb7776e04ab79e7bdeb639f3548b506aa9f935c42faa6",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:74",
+    "catalogKey": "kc:v1:44d534559486ab36ef167836ce67f7645c2f0a9a76b3fcf485f76714b5095b3c",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:75",
+    "catalogKey": "kc:v1:45a16f0f49fd2fc66ab4b5e05d1cbe3b2481d4c408e1adc472daded35f9c300c",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:76",
+    "catalogKey": "kc:v1:45d18911399f92c779f5d99c77bdaa680a56d28212d32f3cf7320d3283f86391",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:77",
+    "catalogKey": "kc:v1:46f2ebcb0a2557fe2316080f26d60fbb3024895b04b1ee2fa5f178e0e6d24b02",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:80",
+    "catalogKey": "kc:v1:48cfa9c86005fbe3c7d867ec18e08f82a09273dc443b1d37b5243c96a710d1b7",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      },
+      {
+        "groupIndex": 1,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:82",
+    "catalogKey": "kc:v1:4bc1cd39f432a1cc8cd61059a0a88696459b603e0d9630a6f32ecb041e5629bb",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:83",
+    "catalogKey": "kc:v1:4d1d3412b1a13c9485112a4e0bfdac5d7b6f05bcd322a5940549cff2cdfcbf8f",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:84",
+    "catalogKey": "kc:v1:4d57b403d2713783d964e23ecece0682319542728ddc5dfdf799a2b21d3bb2da",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:85",
+    "catalogKey": "kc:v1:4dec56559676f22ee6196e927e8946fde366f659e00fbd6c9a3739b6a6622bd3",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      },
+      {
+        "groupIndex": 1,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:86",
+    "catalogKey": "kc:v1:4def48c2765c376ed19b010b5bfdabe85b534c42bbd132d0cff5b5d93440cbe1",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:87",
+    "catalogKey": "kc:v1:4e000bf599c57f3055e1c7d53d87200573627c98e0e2b96c12cdd03f905bf93d",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:93",
+    "catalogKey": "kc:v1:507a6579c201a0a78bb842207fc035a5f9c27672cb1f57f9907b707b53b1e99d",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      },
+      {
+        "groupIndex": 1,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:97",
+    "catalogKey": "kc:v1:51ef0c27e23b083fd38f2b3b6336416a6a463d50f35bbf976677d299b6092c84",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:98",
+    "catalogKey": "kc:v1:555c86e300990fda80e0371f46451d6ccae62dfe072f248d0c9454b2d9724a78",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      },
+      {
+        "groupIndex": 1,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:102",
+    "catalogKey": "kc:v1:57d044268bf7d341c921e1cfadf67a186d46882f6f5c2a45032a5658824d60e7",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:103",
+    "catalogKey": "kc:v1:5bda8dec802b07dcba8d2fad4f849c0ed9782fb52001b2f5153d6fb5da20ca0a",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:104",
+    "catalogKey": "kc:v1:5ca996811b5ce3ef853323355cd4ca920bebd51149ccde0c59b35278220194bb",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:116",
+    "catalogKey": "kc:v1:669c4cd0a6da6ab28a66b7b422ac539b1004c63facf60d9768381f8a7b5ebef7",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:118",
+    "catalogKey": "kc:v1:6850d0dedae8931776f456fae76a86523057993a26401432f6c025c96242b2a8",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      },
+      {
+        "groupIndex": 1,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:121",
+    "catalogKey": "kc:v1:6b8fd86b2da5db27234ea29f05317f83a7caa790e552f9e6aaff84e7a14e3201",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:122",
+    "catalogKey": "kc:v1:6c17a116d8abccaa9bf813c0f8c9ff17370cc2bf575497a72e0a6712a22f0973",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:123",
+    "catalogKey": "kc:v1:6c1a9f6ed991aa189e72d1106566e0fdaeefb0977e8dc21a3afdd44bb8b726b6",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:125",
+    "catalogKey": "kc:v1:6cda2870dec50489cf25f806844b97dd23a70837437844a48646fd1f31b904d4",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:126",
+    "catalogKey": "kc:v1:6d2c28d140408f781837d80cdf59a2a078361ab05126a7a1b45b63173e569ab1",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:129",
+    "catalogKey": "kc:v1:6e5ecb4efbd8d41a330d3098a48ddf91c20c18fd8500860e2aab873b580af477",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:135",
+    "catalogKey": "kc:v1:74e2dd7f2d1b26f474811fdbf64f9ff3f716ccf42d58e0a55b0ce3e21be9c837",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:138",
+    "catalogKey": "kc:v1:7722719ab9c2f17925b215e796d56bf44e3fc5f836d90c43fc86d6efa87828fb",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:143",
+    "catalogKey": "kc:v1:7aa1085fc4761d98bc128aa65790db28dcb8cb64ed5555144f3bb07b57f9ee4a",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:146",
+    "catalogKey": "kc:v1:7d1e7b4ca1f9ffbd77932ccf8b9c9daef9c6bdf4f40ca4f0362c8b9c26313bb6",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:147",
+    "catalogKey": "kc:v1:7d93eea46ac63c95be9cbe4c8d35b6acddd031085dc800f02957f8d68439e100",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:148",
+    "catalogKey": "kc:v1:7db400647cb5ff9298a5774cfdcf547dfd08438c8e5e71699ac21124f37acb53",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:164",
+    "catalogKey": "kc:v1:91128707ee4a564a54036be414415a07fad605f8b89ee6ce8d0ef7e772dab57b",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:165",
+    "catalogKey": "kc:v1:9242f0f5b934e29fca883bd5876563b77e6eca6d337b674754d40b594ca93848",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:167",
+    "catalogKey": "kc:v1:92d981135231878ddb6d434c6aaf291f50dae09121d9b3bf62d1eec8224bc9aa",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:173",
+    "catalogKey": "kc:v1:97693e9594246c1de7df5c7394c97ee7213526f8debd14a31f864e12fc7e531a",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:176",
+    "catalogKey": "kc:v1:9a862f87ec7f16eddc02d3af1fccfefdf91dfdbb817d861d272eef74d3be2256",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:178",
+    "catalogKey": "kc:v1:9b63ca53c485f6819bfe6b20ce43f8a8d2da062d5eb61a4a83542326ff2910b2",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:180",
+    "catalogKey": "kc:v1:9e800eceacf2d35d068d805228e68d511247478901ec99e73fade2e3d303b319",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:181",
+    "catalogKey": "kc:v1:9eef01d6e8e8cf82a451f79a04be862a4a364c4a446f9226884ddbc0ea70e1a2",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:185",
+    "catalogKey": "kc:v1:a148c2e26ee3f54629bf92351106faddf31569b9beb5bb7668a53b17556e3f41",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:187",
+    "catalogKey": "kc:v1:a3d25a06806f491158f6536df0d21c0cc9fdd245b35718988cf1fe05fbaad6af",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:189",
+    "catalogKey": "kc:v1:a564d92d30f47d01faa7e5e366d63273aaa1d983e79602294a2644378912d66f",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:193",
+    "catalogKey": "kc:v1:a9dfd2659997cb0c80cb3d043a5d2bd7af4bb55588f04a2442a5ef7594c9fe5e",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:196",
+    "catalogKey": "kc:v1:ab3afe0aeebe5adb3340deb1b7abb0d1675975c2c7e177aeffc792bbb4cbacb9",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:198",
+    "catalogKey": "kc:v1:adab2265a2b927ed9fce6e63c969cf9280c6e21714f0527dc6d28d4045093400",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:199",
+    "catalogKey": "kc:v1:ae134afa35596eabc4dc76a9a54d70e0fdeffcaecf21ab1feac7478e4312d721",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:200",
+    "catalogKey": "kc:v1:ae3c6f5e85bf68daa6dc5562f933317527f4c81c0187febfc487e503059e91be",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:204",
+    "catalogKey": "kc:v1:b3924f92ef7de627aed2b0a4bd36ef3ef13f6da3fb03066881f1adb84816c5fb",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:209",
+    "catalogKey": "kc:v1:b956a5302c2fc86cb2f569c3fc3ca4142a136c680a7e7d62019243dfc48f8687",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:210",
+    "catalogKey": "kc:v1:b9f4a4917a9310b173dd273a255148bfbe62692ccaff790585af52328b43e95a",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:212",
+    "catalogKey": "kc:v1:ba315353db12b1408262ba71350337ad47898af3739708c29890aba8e8c7598d",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:215",
+    "catalogKey": "kc:v1:bcad98c983f0e7c634895509dc118b2259e511eb0af782c3f211ab1fe3972ec0",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:220",
+    "catalogKey": "kc:v1:c07024807db58790ccccb92cf38241a892bbf599139b7f5153883d6daa8ad6fb",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:224",
+    "catalogKey": "kc:v1:c3e33a780d2d8371fb4acc70087e02c6b5eb7b3d61b58b7a47d4a8d6545679db",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:226",
+    "catalogKey": "kc:v1:c614de0ee2f82c9dfd092b3c7ad0d53c245b24054a65f2e1ec94b5dcbe2ac69c",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:228",
+    "catalogKey": "kc:v1:c83c1914d718e51e16dac5ca24d9e350b6b0c0a0c1529f1e30a5349e5dab2d8f",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:231",
+    "catalogKey": "kc:v1:cb2635cebe84ec4d90d044e0302639d690472229f0103770965b19c887d0b78c",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:236",
+    "catalogKey": "kc:v1:ceff46a770360d7faa98c2b54df021f92eda15602ad9f3223cb4c36b34174ecf",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:242",
+    "catalogKey": "kc:v1:d1f50bc8e80cb20c9e0124315154f93ce3833e2d23c1ff59b28eb3fea6d8af9d",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:246",
+    "catalogKey": "kc:v1:d8e5e6541a52d60c5afd9706ecdaa26a34384c231effe5535641463b2b1998ce",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:247",
+    "catalogKey": "kc:v1:d948c86d61d0442fb37cee8a9bb45b29192adb0e0d8d81a0cd90791d08e59b2c",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:249",
+    "catalogKey": "kc:v1:dc4863735bab78d0e731316493fe3df142b543b5f0404a63abfcda155edb61f3",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:250",
+    "catalogKey": "kc:v1:dd528efeb3c68634d3d481e5acf0226dcee6f6c0119b520b9400447dca1b32d3",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:254",
+    "catalogKey": "kc:v1:e4b0e8e6802b628b707935160ef609c852e8cb6f3db01b5cfec06ccf19d44034",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:256",
+    "catalogKey": "kc:v1:e5deb87e8986ceeff65deb770cc501f3953c51c32f4c5b9d964a3ac32da9435a",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:259",
+    "catalogKey": "kc:v1:e77a953be746487eca605d5e3e8f11800eafe0dedba828ef5d9db47598b8ca13",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:260",
+    "catalogKey": "kc:v1:e886a3b33d59396ae3d13ec21114a7740417ad969883dc046545a44c2ab815d3",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:265",
+    "catalogKey": "kc:v1:f18d19d9f16ca2b83d9e1b79528b0c542a9281d8ae3db4d31268cd7a86f994c5",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:267",
+    "catalogKey": "kc:v1:f26235293f8176625cb4665fe35d823589db481d3f278f10969878b6ff29aa41",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:273",
+    "catalogKey": "kc:v1:f7b2b7805692e02edd042911c7204ec429a95497049521324d3d64fcc3b1aac2",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:277",
+    "catalogKey": "kc:v1:fc4b1c759bdf8eda7020409ef28e5dc710c598f7f2a7140ba9b6b7ac1885ae6e",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED",
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH"
+        ],
+        "selected": false
+      }
+    ]
+  },
+  {
+    "receiptId": "fixture-compatibility-businessPartner:binding:279",
+    "catalogKey": "kc:v1:fcda288ceac92d62fe57f5a69d8d57ad51ced9829da890b0497b17b08ce8f1a6",
+    "groups": [
+      {
+        "groupIndex": 0,
+        "state": "FAIL",
+        "reasons": [
+          "ALL_AND_GROUP_SOURCES_REQUIRED",
+          "INCOMPATIBLE_SOURCE_GROUP",
+          "INHERITED_SOURCE_GROUP_HELD",
+          "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+          "SOURCE_REFERENCE_UNRESOLVED"
+        ],
+        "selected": false
+      }
+    ]
+  }
+]

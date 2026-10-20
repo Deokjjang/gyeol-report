@@ -1,0 +1,17 @@
+{
+  "newParagraphQuestions": 36,
+  "conditionalIndependentQuestions": 32,
+  "derivedRecallCandidates": 4,
+  "priorCandidatesCompared": 676,
+  "normalizedExactCoreOrSceneMatches": [],
+  "semanticReview": "human-review.md",
+  "notASemanticSimilarityProof": true,
+  "topicAndRoleReuseNotCountedAsNewFacts": true,
+  "uniqueFields": {
+    "readerQuestion": 36,
+    "coreMeaning": 36,
+    "positive": 36,
+    "risk": 36,
+    "twist": 36
+  }
+}

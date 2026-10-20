@@ -1,0 +1,2186 @@
+[
+  {
+    "engineId": "comprehensive",
+    "fixtureId": "fixture-comprehensive-A",
+    "candidate": "global-candidate-address-v1:5c6b477d863fb9b6467e0d69c0e3f17492e100c0ddd3148fe99422d876f03f96",
+    "positiveEnvelopeValidation": true,
+    "results": [
+      {
+        "id": "A",
+        "condition": "Duplicate engine registration",
+        "blocked": true,
+        "error": "DUPLICATE_ENGINE_OR_SCOPE"
+      },
+      {
+        "id": "B",
+        "condition": "Wrong product",
+        "blocked": true,
+        "error": "ENGINE_GRAPH_SCOPE_MISMATCH"
+      },
+      {
+        "id": "C",
+        "condition": "Wrong relationship",
+        "blocked": true,
+        "error": "UNREGISTERED_PRODUCT_RELATIONSHIP"
+      },
+      {
+        "id": "D",
+        "condition": "Source hash tampering",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "E",
+        "condition": "Source encoding changed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "F",
+        "condition": "Catalog/address collision",
+        "blocked": true,
+        "error": "GLOBAL_CANDIDATE_ADDRESS_COLLISION"
+      },
+      {
+        "id": "G",
+        "condition": "Fixture owner collision",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "H",
+        "condition": "Whole swap mislabeled as name-only",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "I",
+        "condition": "Reverse directional evidence reuse",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "J",
+        "condition": "Nonoverlapping time evidence",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "K",
+        "condition": "Conditional transition made exact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "L",
+        "condition": "Month stem and branch main mixed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "M",
+        "condition": "Required gate bypass by not-applicable",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "N",
+        "condition": "Partial source group passed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "O",
+        "condition": "Mix alternative source group pieces",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "P",
+        "condition": "Forged recall display",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Q",
+        "condition": "Forged repair predecessor",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "R",
+        "condition": "Synthetic approval applied to actual research",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "S",
+        "condition": "Other-product reuse budget copied",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "T",
+        "condition": "Forbidden domain bypass",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "U",
+        "condition": "Children ancestry relabeled as relationships",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "V",
+        "condition": "Unknown context asserted as fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "W",
+        "condition": "Pending meaning made verified",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "X",
+        "condition": "Legacy published edition mislabeled",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Y",
+        "condition": "Source match counted as independent fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Z",
+        "condition": "Planner assignment without approval",
+        "blocked": true,
+        "error": "UNAPPROVED_PLANNER_ASSIGNMENT"
+      }
+    ],
+    "originalUnchanged": true,
+    "foundationCacheResults": [
+      {
+        "condition": "foreign fixture",
+        "blocked": true,
+        "error": "PREPARED_FOUNDATION_SCOPE_OR_STATE_MISMATCH"
+      },
+      {
+        "condition": "foreign product receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      },
+      {
+        "condition": "foreign relationship receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      }
+    ]
+  },
+  {
+    "engineId": "career",
+    "fixtureId": "fixture-career-A",
+    "candidate": "global-candidate-address-v1:372db06597317d72c42154415a4bd45a6c66e2920d11aa91354eed853d93b10c",
+    "positiveEnvelopeValidation": true,
+    "results": [
+      {
+        "id": "A",
+        "condition": "Duplicate engine registration",
+        "blocked": true,
+        "error": "DUPLICATE_ENGINE_OR_SCOPE"
+      },
+      {
+        "id": "B",
+        "condition": "Wrong product",
+        "blocked": true,
+        "error": "ENGINE_GRAPH_SCOPE_MISMATCH"
+      },
+      {
+        "id": "C",
+        "condition": "Wrong relationship",
+        "blocked": true,
+        "error": "UNREGISTERED_PRODUCT_RELATIONSHIP"
+      },
+      {
+        "id": "D",
+        "condition": "Source hash tampering",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "E",
+        "condition": "Source encoding changed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "F",
+        "condition": "Catalog/address collision",
+        "blocked": true,
+        "error": "GLOBAL_CANDIDATE_ADDRESS_COLLISION"
+      },
+      {
+        "id": "G",
+        "condition": "Fixture owner collision",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "H",
+        "condition": "Whole swap mislabeled as name-only",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "I",
+        "condition": "Reverse directional evidence reuse",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "J",
+        "condition": "Nonoverlapping time evidence",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "K",
+        "condition": "Conditional transition made exact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "L",
+        "condition": "Month stem and branch main mixed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "M",
+        "condition": "Required gate bypass by not-applicable",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "N",
+        "condition": "Partial source group passed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "O",
+        "condition": "Mix alternative source group pieces",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "P",
+        "condition": "Forged recall display",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Q",
+        "condition": "Forged repair predecessor",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "R",
+        "condition": "Synthetic approval applied to actual research",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "S",
+        "condition": "Other-product reuse budget copied",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "T",
+        "condition": "Forbidden domain bypass",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "U",
+        "condition": "Children ancestry relabeled as relationships",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "V",
+        "condition": "Unknown context asserted as fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "W",
+        "condition": "Pending meaning made verified",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "X",
+        "condition": "Legacy published edition mislabeled",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Y",
+        "condition": "Source match counted as independent fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Z",
+        "condition": "Planner assignment without approval",
+        "blocked": true,
+        "error": "UNAPPROVED_PLANNER_ASSIGNMENT"
+      }
+    ],
+    "originalUnchanged": true,
+    "foundationCacheResults": [
+      {
+        "condition": "foreign fixture",
+        "blocked": true,
+        "error": "PREPARED_FOUNDATION_SCOPE_OR_STATE_MISMATCH"
+      },
+      {
+        "condition": "foreign product receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      },
+      {
+        "condition": "foreign relationship receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      }
+    ]
+  },
+  {
+    "engineId": "love",
+    "fixtureId": "fixture-love-A",
+    "candidate": "global-candidate-address-v1:5160a52fa0a0cc7bb8ff906fdfaf8e725f705f53f8966be9f028ad2d41508d62",
+    "positiveEnvelopeValidation": true,
+    "results": [
+      {
+        "id": "A",
+        "condition": "Duplicate engine registration",
+        "blocked": true,
+        "error": "DUPLICATE_ENGINE_OR_SCOPE"
+      },
+      {
+        "id": "B",
+        "condition": "Wrong product",
+        "blocked": true,
+        "error": "ENGINE_GRAPH_SCOPE_MISMATCH"
+      },
+      {
+        "id": "C",
+        "condition": "Wrong relationship",
+        "blocked": true,
+        "error": "UNREGISTERED_PRODUCT_RELATIONSHIP"
+      },
+      {
+        "id": "D",
+        "condition": "Source hash tampering",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "E",
+        "condition": "Source encoding changed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "F",
+        "condition": "Catalog/address collision",
+        "blocked": true,
+        "error": "GLOBAL_CANDIDATE_ADDRESS_COLLISION"
+      },
+      {
+        "id": "G",
+        "condition": "Fixture owner collision",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "H",
+        "condition": "Whole swap mislabeled as name-only",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "I",
+        "condition": "Reverse directional evidence reuse",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "J",
+        "condition": "Nonoverlapping time evidence",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "K",
+        "condition": "Conditional transition made exact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "L",
+        "condition": "Month stem and branch main mixed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "M",
+        "condition": "Required gate bypass by not-applicable",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "N",
+        "condition": "Partial source group passed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "O",
+        "condition": "Mix alternative source group pieces",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "P",
+        "condition": "Forged recall display",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Q",
+        "condition": "Forged repair predecessor",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "R",
+        "condition": "Synthetic approval applied to actual research",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "S",
+        "condition": "Other-product reuse budget copied",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "T",
+        "condition": "Forbidden domain bypass",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "U",
+        "condition": "Children ancestry relabeled as relationships",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "V",
+        "condition": "Unknown context asserted as fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "W",
+        "condition": "Pending meaning made verified",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "X",
+        "condition": "Legacy published edition mislabeled",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Y",
+        "condition": "Source match counted as independent fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Z",
+        "condition": "Planner assignment without approval",
+        "blocked": true,
+        "error": "UNAPPROVED_PLANNER_ASSIGNMENT"
+      }
+    ],
+    "originalUnchanged": true,
+    "foundationCacheResults": [
+      {
+        "condition": "foreign fixture",
+        "blocked": true,
+        "error": "PREPARED_FOUNDATION_SCOPE_OR_STATE_MISMATCH"
+      },
+      {
+        "condition": "foreign product receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      },
+      {
+        "condition": "foreign relationship receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      }
+    ]
+  },
+  {
+    "engineId": "compatibility-love",
+    "fixtureId": "fixture-compatibility-A",
+    "candidate": "global-candidate-address-v1:c6ac20e276cfb25c5b9d8398118473c90b64584696a95a6f9ea044eb385ab857",
+    "positiveEnvelopeValidation": true,
+    "results": [
+      {
+        "id": "A",
+        "condition": "Duplicate engine registration",
+        "blocked": true,
+        "error": "DUPLICATE_ENGINE_OR_SCOPE"
+      },
+      {
+        "id": "B",
+        "condition": "Wrong product",
+        "blocked": true,
+        "error": "UNREGISTERED_PRODUCT_RELATIONSHIP"
+      },
+      {
+        "id": "C",
+        "condition": "Wrong relationship",
+        "blocked": true,
+        "error": "ENGINE_GRAPH_SCOPE_MISMATCH"
+      },
+      {
+        "id": "D",
+        "condition": "Source hash tampering",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "E",
+        "condition": "Source encoding changed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "F",
+        "condition": "Catalog/address collision",
+        "blocked": true,
+        "error": "GLOBAL_CANDIDATE_ADDRESS_COLLISION"
+      },
+      {
+        "id": "G",
+        "condition": "Fixture owner collision",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "H",
+        "condition": "Whole swap mislabeled as name-only",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "I",
+        "condition": "Reverse directional evidence reuse",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "J",
+        "condition": "Nonoverlapping time evidence",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "K",
+        "condition": "Conditional transition made exact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "L",
+        "condition": "Month stem and branch main mixed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "M",
+        "condition": "Required gate bypass by not-applicable",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "N",
+        "condition": "Partial source group passed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "O",
+        "condition": "Mix alternative source group pieces",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "P",
+        "condition": "Forged recall display",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Q",
+        "condition": "Forged repair predecessor",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "R",
+        "condition": "Synthetic approval applied to actual research",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "S",
+        "condition": "Other-product reuse budget copied",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "T",
+        "condition": "Forbidden domain bypass",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "U",
+        "condition": "Children ancestry relabeled as relationships",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "V",
+        "condition": "Unknown context asserted as fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "W",
+        "condition": "Pending meaning made verified",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "X",
+        "condition": "Legacy published edition mislabeled",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Y",
+        "condition": "Source match counted as independent fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Z",
+        "condition": "Planner assignment without approval",
+        "blocked": true,
+        "error": "UNAPPROVED_PLANNER_ASSIGNMENT"
+      }
+    ],
+    "originalUnchanged": true,
+    "foundationCacheResults": [
+      {
+        "condition": "foreign fixture",
+        "blocked": true,
+        "error": "PREPARED_FOUNDATION_SCOPE_OR_STATE_MISMATCH"
+      },
+      {
+        "condition": "foreign product receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      },
+      {
+        "condition": "foreign relationship receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      }
+    ]
+  },
+  {
+    "engineId": "compatibility-marriage",
+    "fixtureId": "fixture-compatibility-marriage",
+    "candidate": "global-candidate-address-v1:05ec496aa80010cea223895c02e1808b4298286194e70bf7a8e2c5f02ce4b560",
+    "positiveEnvelopeValidation": true,
+    "results": [
+      {
+        "id": "A",
+        "condition": "Duplicate engine registration",
+        "blocked": true,
+        "error": "DUPLICATE_ENGINE_OR_SCOPE"
+      },
+      {
+        "id": "B",
+        "condition": "Wrong product",
+        "blocked": true,
+        "error": "UNREGISTERED_PRODUCT_RELATIONSHIP"
+      },
+      {
+        "id": "C",
+        "condition": "Wrong relationship",
+        "blocked": true,
+        "error": "ENGINE_GRAPH_SCOPE_MISMATCH"
+      },
+      {
+        "id": "D",
+        "condition": "Source hash tampering",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "E",
+        "condition": "Source encoding changed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "F",
+        "condition": "Catalog/address collision",
+        "blocked": true,
+        "error": "GLOBAL_CANDIDATE_ADDRESS_COLLISION"
+      },
+      {
+        "id": "G",
+        "condition": "Fixture owner collision",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "H",
+        "condition": "Whole swap mislabeled as name-only",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "I",
+        "condition": "Reverse directional evidence reuse",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "J",
+        "condition": "Nonoverlapping time evidence",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "K",
+        "condition": "Conditional transition made exact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "L",
+        "condition": "Month stem and branch main mixed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "M",
+        "condition": "Required gate bypass by not-applicable",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "N",
+        "condition": "Partial source group passed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "O",
+        "condition": "Mix alternative source group pieces",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "P",
+        "condition": "Forged recall display",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Q",
+        "condition": "Forged repair predecessor",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "R",
+        "condition": "Synthetic approval applied to actual research",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "S",
+        "condition": "Other-product reuse budget copied",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "T",
+        "condition": "Forbidden domain bypass",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "U",
+        "condition": "Children ancestry relabeled as relationships",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "V",
+        "condition": "Unknown context asserted as fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "W",
+        "condition": "Pending meaning made verified",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "X",
+        "condition": "Legacy published edition mislabeled",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Y",
+        "condition": "Source match counted as independent fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Z",
+        "condition": "Planner assignment without approval",
+        "blocked": true,
+        "error": "UNAPPROVED_PLANNER_ASSIGNMENT"
+      }
+    ],
+    "originalUnchanged": true,
+    "foundationCacheResults": [
+      {
+        "condition": "foreign fixture",
+        "blocked": true,
+        "error": "PREPARED_FOUNDATION_SCOPE_OR_STATE_MISMATCH"
+      },
+      {
+        "condition": "foreign product receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      },
+      {
+        "condition": "foreign relationship receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      }
+    ]
+  },
+  {
+    "engineId": "compatibility-parent-child",
+    "fixtureId": "fixture-compatibility-parentChild",
+    "candidate": "global-candidate-address-v1:e413ff750328e87e53c056152141e0fe45a9bc42f2679913d4366c0a71b1f36e",
+    "positiveEnvelopeValidation": true,
+    "results": [
+      {
+        "id": "A",
+        "condition": "Duplicate engine registration",
+        "blocked": true,
+        "error": "DUPLICATE_ENGINE_OR_SCOPE"
+      },
+      {
+        "id": "B",
+        "condition": "Wrong product",
+        "blocked": true,
+        "error": "UNREGISTERED_PRODUCT_RELATIONSHIP"
+      },
+      {
+        "id": "C",
+        "condition": "Wrong relationship",
+        "blocked": true,
+        "error": "ENGINE_GRAPH_SCOPE_MISMATCH"
+      },
+      {
+        "id": "D",
+        "condition": "Source hash tampering",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "E",
+        "condition": "Source encoding changed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "F",
+        "condition": "Catalog/address collision",
+        "blocked": true,
+        "error": "GLOBAL_CANDIDATE_ADDRESS_COLLISION"
+      },
+      {
+        "id": "G",
+        "condition": "Fixture owner collision",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "H",
+        "condition": "Whole swap mislabeled as name-only",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "I",
+        "condition": "Reverse directional evidence reuse",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "J",
+        "condition": "Nonoverlapping time evidence",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "K",
+        "condition": "Conditional transition made exact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "L",
+        "condition": "Month stem and branch main mixed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "M",
+        "condition": "Required gate bypass by not-applicable",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "N",
+        "condition": "Partial source group passed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "O",
+        "condition": "Mix alternative source group pieces",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "P",
+        "condition": "Forged recall display",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Q",
+        "condition": "Forged repair predecessor",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "R",
+        "condition": "Synthetic approval applied to actual research",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "S",
+        "condition": "Other-product reuse budget copied",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "T",
+        "condition": "Forbidden domain bypass",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "U",
+        "condition": "Children ancestry relabeled as relationships",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "V",
+        "condition": "Unknown context asserted as fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "W",
+        "condition": "Pending meaning made verified",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "X",
+        "condition": "Legacy published edition mislabeled",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Y",
+        "condition": "Source match counted as independent fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Z",
+        "condition": "Planner assignment without approval",
+        "blocked": true,
+        "error": "UNAPPROVED_PLANNER_ASSIGNMENT"
+      }
+    ],
+    "originalUnchanged": true,
+    "foundationCacheResults": [
+      {
+        "condition": "foreign fixture",
+        "blocked": true,
+        "error": "PREPARED_FOUNDATION_SCOPE_OR_STATE_MISMATCH"
+      },
+      {
+        "condition": "foreign product receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      },
+      {
+        "condition": "foreign relationship receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      }
+    ]
+  },
+  {
+    "engineId": "compatibility-coworker",
+    "fixtureId": "fixture-compatibility-coworker",
+    "candidate": "global-candidate-address-v1:880d31f6e942e9542e752c93ef3aecc77d5e62857e238921e03e0662aa9be34d",
+    "positiveEnvelopeValidation": true,
+    "results": [
+      {
+        "id": "A",
+        "condition": "Duplicate engine registration",
+        "blocked": true,
+        "error": "DUPLICATE_ENGINE_OR_SCOPE"
+      },
+      {
+        "id": "B",
+        "condition": "Wrong product",
+        "blocked": true,
+        "error": "UNREGISTERED_PRODUCT_RELATIONSHIP"
+      },
+      {
+        "id": "C",
+        "condition": "Wrong relationship",
+        "blocked": true,
+        "error": "ENGINE_GRAPH_SCOPE_MISMATCH"
+      },
+      {
+        "id": "D",
+        "condition": "Source hash tampering",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "E",
+        "condition": "Source encoding changed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "F",
+        "condition": "Catalog/address collision",
+        "blocked": true,
+        "error": "GLOBAL_CANDIDATE_ADDRESS_COLLISION"
+      },
+      {
+        "id": "G",
+        "condition": "Fixture owner collision",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "H",
+        "condition": "Whole swap mislabeled as name-only",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "I",
+        "condition": "Reverse directional evidence reuse",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "J",
+        "condition": "Nonoverlapping time evidence",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "K",
+        "condition": "Conditional transition made exact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "L",
+        "condition": "Month stem and branch main mixed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "M",
+        "condition": "Required gate bypass by not-applicable",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "N",
+        "condition": "Partial source group passed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "O",
+        "condition": "Mix alternative source group pieces",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "P",
+        "condition": "Forged recall display",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Q",
+        "condition": "Forged repair predecessor",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "R",
+        "condition": "Synthetic approval applied to actual research",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "S",
+        "condition": "Other-product reuse budget copied",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "T",
+        "condition": "Forbidden domain bypass",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "U",
+        "condition": "Children ancestry relabeled as relationships",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "V",
+        "condition": "Unknown context asserted as fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "W",
+        "condition": "Pending meaning made verified",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "X",
+        "condition": "Legacy published edition mislabeled",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Y",
+        "condition": "Source match counted as independent fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Z",
+        "condition": "Planner assignment without approval",
+        "blocked": true,
+        "error": "UNAPPROVED_PLANNER_ASSIGNMENT"
+      }
+    ],
+    "originalUnchanged": true,
+    "foundationCacheResults": [
+      {
+        "condition": "foreign fixture",
+        "blocked": true,
+        "error": "PREPARED_FOUNDATION_SCOPE_OR_STATE_MISMATCH"
+      },
+      {
+        "condition": "foreign product receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      },
+      {
+        "condition": "foreign relationship receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      }
+    ]
+  },
+  {
+    "engineId": "compatibility-manager-report",
+    "fixtureId": "fixture-compatibility-managerReport",
+    "candidate": "global-candidate-address-v1:f1a951dafb08d2f0b6d574d7fde3033d82c064510c222a893007d4ce737e93c9",
+    "positiveEnvelopeValidation": true,
+    "results": [
+      {
+        "id": "A",
+        "condition": "Duplicate engine registration",
+        "blocked": true,
+        "error": "DUPLICATE_ENGINE_OR_SCOPE"
+      },
+      {
+        "id": "B",
+        "condition": "Wrong product",
+        "blocked": true,
+        "error": "UNREGISTERED_PRODUCT_RELATIONSHIP"
+      },
+      {
+        "id": "C",
+        "condition": "Wrong relationship",
+        "blocked": true,
+        "error": "ENGINE_GRAPH_SCOPE_MISMATCH"
+      },
+      {
+        "id": "D",
+        "condition": "Source hash tampering",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "E",
+        "condition": "Source encoding changed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "F",
+        "condition": "Catalog/address collision",
+        "blocked": true,
+        "error": "GLOBAL_CANDIDATE_ADDRESS_COLLISION"
+      },
+      {
+        "id": "G",
+        "condition": "Fixture owner collision",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "H",
+        "condition": "Whole swap mislabeled as name-only",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "I",
+        "condition": "Reverse directional evidence reuse",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "J",
+        "condition": "Nonoverlapping time evidence",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "K",
+        "condition": "Conditional transition made exact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "L",
+        "condition": "Month stem and branch main mixed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "M",
+        "condition": "Required gate bypass by not-applicable",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "N",
+        "condition": "Partial source group passed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "O",
+        "condition": "Mix alternative source group pieces",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "P",
+        "condition": "Forged recall display",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Q",
+        "condition": "Forged repair predecessor",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "R",
+        "condition": "Synthetic approval applied to actual research",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "S",
+        "condition": "Other-product reuse budget copied",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "T",
+        "condition": "Forbidden domain bypass",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "U",
+        "condition": "Children ancestry relabeled as relationships",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "V",
+        "condition": "Unknown context asserted as fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "W",
+        "condition": "Pending meaning made verified",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "X",
+        "condition": "Legacy published edition mislabeled",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Y",
+        "condition": "Source match counted as independent fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Z",
+        "condition": "Planner assignment without approval",
+        "blocked": true,
+        "error": "UNAPPROVED_PLANNER_ASSIGNMENT"
+      }
+    ],
+    "originalUnchanged": true,
+    "foundationCacheResults": [
+      {
+        "condition": "foreign fixture",
+        "blocked": true,
+        "error": "PREPARED_FOUNDATION_SCOPE_OR_STATE_MISMATCH"
+      },
+      {
+        "condition": "foreign product receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      },
+      {
+        "condition": "foreign relationship receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      }
+    ]
+  },
+  {
+    "engineId": "compatibility-business-partner",
+    "fixtureId": "fixture-compatibility-businessPartner",
+    "candidate": "global-candidate-address-v1:059f0a2e75fd87973c58a5e1e4585c2b12c59a057c85df03363f6d1a95293695",
+    "positiveEnvelopeValidation": true,
+    "results": [
+      {
+        "id": "A",
+        "condition": "Duplicate engine registration",
+        "blocked": true,
+        "error": "DUPLICATE_ENGINE_OR_SCOPE"
+      },
+      {
+        "id": "B",
+        "condition": "Wrong product",
+        "blocked": true,
+        "error": "UNREGISTERED_PRODUCT_RELATIONSHIP"
+      },
+      {
+        "id": "C",
+        "condition": "Wrong relationship",
+        "blocked": true,
+        "error": "ENGINE_GRAPH_SCOPE_MISMATCH"
+      },
+      {
+        "id": "D",
+        "condition": "Source hash tampering",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "E",
+        "condition": "Source encoding changed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "F",
+        "condition": "Catalog/address collision",
+        "blocked": true,
+        "error": "GLOBAL_CANDIDATE_ADDRESS_COLLISION"
+      },
+      {
+        "id": "G",
+        "condition": "Fixture owner collision",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "H",
+        "condition": "Whole swap mislabeled as name-only",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "I",
+        "condition": "Reverse directional evidence reuse",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "J",
+        "condition": "Nonoverlapping time evidence",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "K",
+        "condition": "Conditional transition made exact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "L",
+        "condition": "Month stem and branch main mixed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "M",
+        "condition": "Required gate bypass by not-applicable",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "N",
+        "condition": "Partial source group passed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "O",
+        "condition": "Mix alternative source group pieces",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "P",
+        "condition": "Forged recall display",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Q",
+        "condition": "Forged repair predecessor",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "R",
+        "condition": "Synthetic approval applied to actual research",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "S",
+        "condition": "Other-product reuse budget copied",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "T",
+        "condition": "Forbidden domain bypass",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "U",
+        "condition": "Children ancestry relabeled as relationships",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "V",
+        "condition": "Unknown context asserted as fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "W",
+        "condition": "Pending meaning made verified",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "X",
+        "condition": "Legacy published edition mislabeled",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Y",
+        "condition": "Source match counted as independent fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Z",
+        "condition": "Planner assignment without approval",
+        "blocked": true,
+        "error": "UNAPPROVED_PLANNER_ASSIGNMENT"
+      }
+    ],
+    "originalUnchanged": true,
+    "foundationCacheResults": [
+      {
+        "condition": "foreign fixture",
+        "blocked": true,
+        "error": "PREPARED_FOUNDATION_SCOPE_OR_STATE_MISMATCH"
+      },
+      {
+        "condition": "foreign product receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      },
+      {
+        "condition": "foreign relationship receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      }
+    ]
+  },
+  {
+    "engineId": "compatibility-friendship",
+    "fixtureId": "fixture-compatibility-friendship",
+    "candidate": "global-candidate-address-v1:9653289cd9e5ebaca7cdd89c27c5c3f64f84cdf149778ded5fef6fd84a9554ce",
+    "positiveEnvelopeValidation": true,
+    "results": [
+      {
+        "id": "A",
+        "condition": "Duplicate engine registration",
+        "blocked": true,
+        "error": "DUPLICATE_ENGINE_OR_SCOPE"
+      },
+      {
+        "id": "B",
+        "condition": "Wrong product",
+        "blocked": true,
+        "error": "UNREGISTERED_PRODUCT_RELATIONSHIP"
+      },
+      {
+        "id": "C",
+        "condition": "Wrong relationship",
+        "blocked": true,
+        "error": "ENGINE_GRAPH_SCOPE_MISMATCH"
+      },
+      {
+        "id": "D",
+        "condition": "Source hash tampering",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "E",
+        "condition": "Source encoding changed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "F",
+        "condition": "Catalog/address collision",
+        "blocked": true,
+        "error": "GLOBAL_CANDIDATE_ADDRESS_COLLISION"
+      },
+      {
+        "id": "G",
+        "condition": "Fixture owner collision",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "H",
+        "condition": "Whole swap mislabeled as name-only",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "I",
+        "condition": "Reverse directional evidence reuse",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "J",
+        "condition": "Nonoverlapping time evidence",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "K",
+        "condition": "Conditional transition made exact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "L",
+        "condition": "Month stem and branch main mixed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "M",
+        "condition": "Required gate bypass by not-applicable",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "N",
+        "condition": "Partial source group passed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "O",
+        "condition": "Mix alternative source group pieces",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "P",
+        "condition": "Forged recall display",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Q",
+        "condition": "Forged repair predecessor",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "R",
+        "condition": "Synthetic approval applied to actual research",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "S",
+        "condition": "Other-product reuse budget copied",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "T",
+        "condition": "Forbidden domain bypass",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "U",
+        "condition": "Children ancestry relabeled as relationships",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "V",
+        "condition": "Unknown context asserted as fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "W",
+        "condition": "Pending meaning made verified",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "X",
+        "condition": "Legacy published edition mislabeled",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Y",
+        "condition": "Source match counted as independent fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Z",
+        "condition": "Planner assignment without approval",
+        "blocked": true,
+        "error": "UNAPPROVED_PLANNER_ASSIGNMENT"
+      }
+    ],
+    "originalUnchanged": true,
+    "foundationCacheResults": [
+      {
+        "condition": "foreign fixture",
+        "blocked": true,
+        "error": "PREPARED_FOUNDATION_SCOPE_OR_STATE_MISMATCH"
+      },
+      {
+        "condition": "foreign product receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      },
+      {
+        "condition": "foreign relationship receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      }
+    ]
+  },
+  {
+    "engineId": "major-fortune",
+    "fixtureId": "fixture-major-A",
+    "candidate": "global-candidate-address-v1:c05fe6d8f80d3903bec7ce10905747b25e0505160ba6dfa28486d977e5b3d84f",
+    "positiveEnvelopeValidation": true,
+    "results": [
+      {
+        "id": "A",
+        "condition": "Duplicate engine registration",
+        "blocked": true,
+        "error": "DUPLICATE_ENGINE_OR_SCOPE"
+      },
+      {
+        "id": "B",
+        "condition": "Wrong product",
+        "blocked": true,
+        "error": "ENGINE_GRAPH_SCOPE_MISMATCH"
+      },
+      {
+        "id": "C",
+        "condition": "Wrong relationship",
+        "blocked": true,
+        "error": "UNREGISTERED_PRODUCT_RELATIONSHIP"
+      },
+      {
+        "id": "D",
+        "condition": "Source hash tampering",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "E",
+        "condition": "Source encoding changed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "F",
+        "condition": "Catalog/address collision",
+        "blocked": true,
+        "error": "GLOBAL_CANDIDATE_ADDRESS_COLLISION"
+      },
+      {
+        "id": "G",
+        "condition": "Fixture owner collision",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "H",
+        "condition": "Whole swap mislabeled as name-only",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "I",
+        "condition": "Reverse directional evidence reuse",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "J",
+        "condition": "Nonoverlapping time evidence",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "K",
+        "condition": "Conditional transition made exact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "L",
+        "condition": "Month stem and branch main mixed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "M",
+        "condition": "Required gate bypass by not-applicable",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "N",
+        "condition": "Partial source group passed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "O",
+        "condition": "Mix alternative source group pieces",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "P",
+        "condition": "Forged recall display",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Q",
+        "condition": "Forged repair predecessor",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "R",
+        "condition": "Synthetic approval applied to actual research",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "S",
+        "condition": "Other-product reuse budget copied",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "T",
+        "condition": "Forbidden domain bypass",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "U",
+        "condition": "Children ancestry relabeled as relationships",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "V",
+        "condition": "Unknown context asserted as fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "W",
+        "condition": "Pending meaning made verified",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "X",
+        "condition": "Legacy published edition mislabeled",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Y",
+        "condition": "Source match counted as independent fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Z",
+        "condition": "Planner assignment without approval",
+        "blocked": true,
+        "error": "UNAPPROVED_PLANNER_ASSIGNMENT"
+      }
+    ],
+    "originalUnchanged": true,
+    "foundationCacheResults": [
+      {
+        "condition": "foreign fixture",
+        "blocked": true,
+        "error": "PREPARED_FOUNDATION_SCOPE_OR_STATE_MISMATCH"
+      },
+      {
+        "condition": "foreign product receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      },
+      {
+        "condition": "foreign relationship receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      }
+    ]
+  },
+  {
+    "engineId": "annual-fortune",
+    "fixtureId": "fixture-annual-A",
+    "candidate": "global-candidate-address-v1:a716171ff3410b9a4e67d2ebacb04aaf90f371f4054bbe717a6a85b9afee3be6",
+    "positiveEnvelopeValidation": true,
+    "results": [
+      {
+        "id": "A",
+        "condition": "Duplicate engine registration",
+        "blocked": true,
+        "error": "DUPLICATE_ENGINE_OR_SCOPE"
+      },
+      {
+        "id": "B",
+        "condition": "Wrong product",
+        "blocked": true,
+        "error": "ENGINE_GRAPH_SCOPE_MISMATCH"
+      },
+      {
+        "id": "C",
+        "condition": "Wrong relationship",
+        "blocked": true,
+        "error": "UNREGISTERED_PRODUCT_RELATIONSHIP"
+      },
+      {
+        "id": "D",
+        "condition": "Source hash tampering",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "E",
+        "condition": "Source encoding changed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "F",
+        "condition": "Catalog/address collision",
+        "blocked": true,
+        "error": "GLOBAL_CANDIDATE_ADDRESS_COLLISION"
+      },
+      {
+        "id": "G",
+        "condition": "Fixture owner collision",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "H",
+        "condition": "Whole swap mislabeled as name-only",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "I",
+        "condition": "Reverse directional evidence reuse",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "J",
+        "condition": "Nonoverlapping time evidence",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "K",
+        "condition": "Conditional transition made exact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "L",
+        "condition": "Month stem and branch main mixed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "M",
+        "condition": "Required gate bypass by not-applicable",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "N",
+        "condition": "Partial source group passed",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "O",
+        "condition": "Mix alternative source group pieces",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "P",
+        "condition": "Forged recall display",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Q",
+        "condition": "Forged repair predecessor",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "R",
+        "condition": "Synthetic approval applied to actual research",
+        "blocked": true,
+        "error": "ORIGINAL_RECEIPT_CHANGED"
+      },
+      {
+        "id": "S",
+        "condition": "Other-product reuse budget copied",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "T",
+        "condition": "Forbidden domain bypass",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "U",
+        "condition": "Children ancestry relabeled as relationships",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "V",
+        "condition": "Unknown context asserted as fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "W",
+        "condition": "Pending meaning made verified",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "X",
+        "condition": "Legacy published edition mislabeled",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Y",
+        "condition": "Source match counted as independent fact",
+        "blocked": true,
+        "error": "GLOBAL_ENVELOPE_CONTRACT_CHANGED"
+      },
+      {
+        "id": "Z",
+        "condition": "Planner assignment without approval",
+        "blocked": true,
+        "error": "UNAPPROVED_PLANNER_ASSIGNMENT"
+      }
+    ],
+    "originalUnchanged": true,
+    "foundationCacheResults": [
+      {
+        "condition": "foreign fixture",
+        "blocked": true,
+        "error": "PREPARED_FOUNDATION_SCOPE_OR_STATE_MISMATCH"
+      },
+      {
+        "condition": "foreign product receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      },
+      {
+        "condition": "foreign relationship receipt",
+        "blocked": true,
+        "error": "PREPARED_RECEIPT_FIXTURE_PRODUCT_RELATIONSHIP_MISMATCH"
+      }
+    ]
+  }
+]

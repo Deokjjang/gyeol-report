@@ -1,0 +1,160 @@
+{
+  "version": "major-fortune-product-knowledge-01",
+  "baseSha": "565c4613d4e01d65510380e0f597c535f81396c0",
+  "productKey": "major_fortune",
+  "runtimeMapping": {
+    "productKey": "major_fortune",
+    "productSlug": "major-fortune"
+  },
+  "registry": {
+    "cycle": 16,
+    "tenGod": 10,
+    "phases": 3,
+    "transition": 7,
+    "interaction": 4,
+    "temporalReferences": 410,
+    "relativeYears": 14,
+    "questions": 168,
+    "comparisons": 9,
+    "domains": 8,
+    "mbti": 16,
+    "axes": 36,
+    "facets": 109,
+    "fusionReferences": 164,
+    "bindingStages": 9,
+    "rejected": 13,
+    "sources": 17,
+    "observedPeriodStudies": 8,
+    "developmentStudies": 10
+  },
+  "existingResearchFamilies": [
+    {
+      "family": "career-product-research",
+      "records": 839,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "compatibility-business-partner-research",
+      "records": 1917,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "compatibility-coworker-research",
+      "records": 1948,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "compatibility-friendship-research",
+      "records": 2138,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "compatibility-love-research",
+      "records": 851,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "compatibility-manager-report-research",
+      "records": 1741,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "compatibility-marriage-research",
+      "records": 1133,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "compatibility-parent-child-research",
+      "records": 1209,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "composite-structure-research",
+      "records": 301,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "comprehensive-product-research",
+      "records": 512,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "fusion-knowledge-research",
+      "records": 374,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "love-product-research",
+      "records": 764,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "mbti-foundation-research",
+      "records": 531,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "mbti-pair-research",
+      "records": 279,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "relation-research",
+      "records": 246,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "semantic-axis-research",
+      "records": 370,
+      "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+    },
+    {
+      "family": "temporal-interaction-research",
+      "records": 410,
+      "actualMajorUse": "producer_derived_facts_are_separate_from_offline_research"
+    }
+  ],
+  "existingRegistryRecords": 15563,
+  "independentMeaningCountsExcludeReferenceCrosswalks": true,
+  "allNewResearchOffline": true,
+  "newRuntimeImports": 0,
+  "bindingImplemented": false,
+  "customerApproved": false,
+  "unsupportedTestRequest": {
+    "request": "14 fully covered years without transition",
+    "status": "UNREACHABLE_under_existing_ten_year_cycles",
+    "replacement": "actual nontransition years within complete fourteen-year horizons; rejection preserved for uncovered/uncertain inputs"
+  },
+  "sourcePolicy": "repository contracts checked; three historical transcriptions read 2026-10-14; modern applications conditional, not empirical",
+  "remainingGaps": [
+    "before-transition detailed relation packets absent from annual row",
+    "other-cycle natal relation factors not carried to V4 majorNatal",
+    "dedicated three-layer formation/strength/verdict unsupported",
+    "historical edition collation and empirical predictive validation not performed",
+    "binding/selection/allocation/generator integration intentionally not implemented"
+  ],
+  "foundationHandoffRecords": 2991,
+  "referenceRecordsAreNotNewIndependentMeanings": true,
+  "relativeYearQuestionsAreAnalyticalViewsNot168CalculatedFacts": true,
+  "newRegistryRecords": 863,
+  "referenceCrosswalkRecords": 735,
+  "authoredStudyRecords": 89,
+  "newCalculatedFacts": 0,
+  "newCustomerApprovedClaims": 0,
+  "validation": {
+    "newTestPasses": 1671,
+    "newFailures": 0,
+    "existingFailures": 39,
+    "typescript": 0,
+    "lint": "PASS",
+    "build": "PASS",
+    "diffCheck": "PASS"
+  },
+  "temporalApplicability": {
+    "conditional_review_required": 287,
+    "outside_major_annual_scope": 85,
+    "withhold_rejected": 14,
+    "withhold_unsupported": 20,
+    "withhold_unverified": 4
+  }
+}

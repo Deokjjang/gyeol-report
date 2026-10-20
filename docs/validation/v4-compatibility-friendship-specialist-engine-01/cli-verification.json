@@ -1,0 +1,26 @@
+{
+  "independentRuns": [
+    {
+      "run": "verified-one",
+      "generatedFiles": 43,
+      "foundationGeneratedFilesExactlyMatched": 64,
+      "baseFilesVerifiedBeforeAndAfter": 5013,
+      "ownInputsVerifiedBeforeAndAfter": 18,
+      "network": "disabled",
+      "outputHashesEqual": true
+    },
+    {
+      "run": "verified-two",
+      "generatedFiles": 43,
+      "foundationGeneratedFilesExactlyMatched": 64,
+      "baseFilesVerifiedBeforeAndAfter": 5013,
+      "ownInputsVerifiedBeforeAndAfter": 18,
+      "network": "disabled",
+      "outputHashesEqual": true
+    }
+  ],
+  "generatedJsonByteParity": true,
+  "performanceLogs": "external only; not in deterministic payloads",
+  "intermediateRuns": "final/sealed/release intermediate runs intentionally terminated after source changes; complete-one/two were successful intermediate219-test-input outputs; publish-one/two rejected changing synthetic fixture with SYNTHETIC_SOURCE_HASH_MISMATCH. None are final publication proof. Only verified-one/two use the final237-test source/fixture hashes",
+  "initialTestSetup": "208 pending due invalid fixture context ID, corrected; second208PASS, later219PASS and235PASS on intermediate inputs; superseded runs are not final proof; final237PASS"
+}

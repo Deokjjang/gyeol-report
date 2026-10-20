@@ -1,0 +1,167 @@
+{
+  "baseSha": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+  "productKey": "career_money_study",
+  "chapters": 9,
+  "paragraphs": 36,
+  "sentenceRoles": 144,
+  "roleContributionLinks": 768,
+  "authoredMaterialCandidates": 192,
+  "conditionalNonRecall": 171,
+  "recallOnly": 20,
+  "heldMaterials": 1,
+  "materialKindCounts": {
+    "natal_application": 34,
+    "mbti_application": 101,
+    "registered_fusion_application": 5,
+    "conditional_cross_source": 16,
+    "input_context": 16,
+    "recall": 20
+  },
+  "jobProfiles": 23,
+  "detailQuestions": 24,
+  "detailQuestionsConditional": 23,
+  "detailQuestionsHeld": 1,
+  "jobStatuses": 10,
+  "inputCases": 20,
+  "inputVariants": 24,
+  "facetAudits": 17,
+  "routeAudits": 8,
+  "existingSceneFunctionGroups": 11,
+  "existingDetailedStepGroups": 3,
+  "existingCareerCollections": [
+    {
+      "export": "CAREER_RELEASE_MATERIALS",
+      "entries": 17,
+      "hash": "2193cfce58e4a3c178332269bc2b6c17c8448faf252797ea63acc06b0b14c5dc"
+    },
+    {
+      "export": "CAREER_TASKS",
+      "entries": 17,
+      "hash": "356f111df9cdfd30232001cd28b5cad90daa37ae5ef0d6f5d970453dfd193184"
+    },
+    {
+      "export": "CAREER_WORKFLOWS",
+      "entries": 3,
+      "hash": "e54d0f59e04761fee9bb2f19b8b69b1be5a1e6f3385ce1cfaa21b435c15ebfc6"
+    },
+    {
+      "export": "CAREER_JOB_SCENES",
+      "entries": 11,
+      "hash": "01fa55ec44b4570d11090ffc1c89c98a3c0a49a6806b5f8e0e2eea6f58a27f18"
+    },
+    {
+      "export": "CAREER_JOB_STEPS",
+      "entries": 3,
+      "hash": "5529b61f0a941837d45196f54a3bbc2fb71b530cc08367bac4dbd1da13e4acba"
+    },
+    {
+      "export": "CAREER_ECONOMIC_USE",
+      "entries": 17,
+      "hash": "57038291287b3d57a9db97a3cc9db1bb58a8c561d7d124401a3417df4d0eeeee"
+    },
+    {
+      "export": "CAREER_WEALTH_APPLICATIONS",
+      "entries": 2,
+      "hash": "f08fe59c077948e852fa8d3881def4a249b3c482e1971c0229d45a466ecd94dc"
+    },
+    {
+      "export": "CAREER_GROWTH_RISKS",
+      "entries": 5,
+      "hash": "9eb25c55d87d61fb14ea1ac8084c43183f7c369cbaed2f7a6c294d47cc5c930b"
+    },
+    {
+      "export": "CAREER_STUDY_REMEDIES",
+      "entries": 16,
+      "hash": "240a6a2bc90be17b114df06119e8f0c7346ccfc897c4c7289944ef834176a7ce"
+    },
+    {
+      "export": "CAREER_STATUS_COPY",
+      "entries": 10,
+      "hash": "2059a6b98bee6e4d0dddd53c76e2484c11cf5f176c06f1f0b1a156363d99361c"
+    },
+    {
+      "export": "CAREER_ROLE_SCENES",
+      "entries": 8,
+      "hash": "12be886bd9ec04acf69aea130355e4a42d601ff3a0316add509a1158447f397f"
+    },
+    {
+      "export": "CAREER_ENVIRONMENT_COST",
+      "entries": 8,
+      "hash": "12b55c497f398a458ba9843f97eb5f27a4c5ac0d89a06b75101a288cedd40ecf"
+    },
+    {
+      "export": "CAREER_STUDY_BRIDGES",
+      "entries": 16,
+      "hash": "544187fcf0a886116bb4ca3c977522da4f9340622206a8932b01aa227037f887"
+    },
+    {
+      "export": "CAREER_VOICES",
+      "entries": 7,
+      "hash": "f2751c1c6334a0db0ca6f87f626b6ee1cc9fe77ba4f9a83bf7ec0705ba724a38"
+    }
+  ],
+  "selectedPersonalSourceLocators": 117,
+  "selectedNatalSources": 12,
+  "selectedMbtiSources": 99,
+  "selectedFusionResearch": 5,
+  "inputContractSources": 1,
+  "semanticAxesAvailable": 36,
+  "semanticFacetsAvailable": 109,
+  "semanticFacetsReferenced": 24,
+  "referencedSemanticFacetIds": [
+    "sar:facet:STRUCTURE_STYLE:fixed-minimum",
+    "sar:facet:DEPTH:cause-tracing",
+    "sar:facet:CREATION:prototype",
+    "sar:facet:SOCIAL_ATTUNEMENT:cue-observation",
+    "sar:facet:RESOURCE_SENSE:flow-account",
+    "sar:facet:PRECISION:error-detection",
+    "sar:facet:EXPRESSION:channel-choice",
+    "sar:facet:OPPORTUNITY_SENSE:option-discovery",
+    "sar:facet:CARE:need-check",
+    "sar:facet:LEARNING:acquisition",
+    "sar:facet:ACTION_TEMPO:start-latency",
+    "sar:facet:PERSISTENCE:repeat-practice",
+    "sar:facet:ADAPTABILITY:method-revision",
+    "sar:facet:AUTONOMY:choice-ownership",
+    "sar:facet:BOUNDARY:refusal",
+    "sar:facet:MEANING:value-articulation",
+    "sar:facet:LEADERSHIP:direction-proposal",
+    "sar:facet:PRACTICALITY:use-test",
+    "sar:facet:INITIATIVE:opening-proposal",
+    "sar:facet:STRATEGY:route-comparison",
+    "sar:facet:RECOVERY_NEED:load-recognition",
+    "sar:facet:GOAL_DRIVE:priority-focus",
+    "sar:facet:STABILITY:minimum-security",
+    "sar:facet:CURIOSITY:question-making"
+  ],
+  "sourceSurvey": 2991,
+  "sourceSurveyFamilies": {
+    "composite": 301,
+    "completion": 173,
+    "deep": 838,
+    "mbtiIndividual": 531,
+    "mbtiPair": 279,
+    "relation": 246,
+    "foundation": 213,
+    "temporal": 410
+  },
+  "mbtiPrimaryTraits": 1213,
+  "mbtiRecommendedJobs": 190,
+  "mbtiAvoidItems": 120,
+  "legacyFusionRules": 44,
+  "complementRules": 96,
+  "unregisteredFusionCandidates": 24,
+  "allFusionSurvey": 164,
+  "comprehensiveReferenceMaterials": 179,
+  "comprehensiveMaterialsCopied": 0,
+  "reusePolicies": 12,
+  "rejectedOrHeldRecords": 24,
+  "newTraditionalFacts": 0,
+  "newEmpiricalFacts": 0,
+  "newRuntimeEvidenceIds": 0,
+  "runtimeConnected": 0,
+  "customerApproved": 0,
+  "rankingChanges": 0,
+  "fixtureCasesAreNotAdditionalKnowledge": true,
+  "noCartesianCoverageClaim": true
+}

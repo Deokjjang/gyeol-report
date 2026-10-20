@@ -1,0 +1,846 @@
+{
+  "baseSha": "6d220856fbfa9a681a74625680387f855b5e77f0",
+  "counts": {
+    "chapters": 13,
+    "paragraphs": 52,
+    "sentenceRoles": 208,
+    "materials": 179,
+    "roleContributionLinks": 716,
+    "existingFacets": 15,
+    "existingCollections": 20,
+    "semanticAxesSurveyed": 36,
+    "semanticFacetsSurveyed": 109,
+    "selectedAxes": 35,
+    "selectedFacets": 83,
+    "positive": 179,
+    "shadow": 179,
+    "factBomb": 179,
+    "twist": 179,
+    "fictionalScenes": 179,
+    "applications": 179,
+    "materialClasses": {
+      "conditional_combination": 77,
+      "distinct_interpretation": 20,
+      "contextual_application": 47,
+      "introduced_meaning_recall": 35
+    },
+    "conditionalResearch": 175,
+    "sourceConditionHeld": 4,
+    "inputCases": 21,
+    "reuseContracts": 15,
+    "rejectedInterpretations": 24,
+    "actualSourceLocators": 140,
+    "inheritedResearchRows": 2991,
+    "primaryTraits": 1213,
+    "newRuntimeRules": 0,
+    "newEvidenceFacts": 0
+  },
+  "paragraphs": [
+    {
+      "address": "CH01.P1",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH01.P1:understand-before-answer",
+        "cpr:material:CH01.P1:open-small-door",
+        "cpr:material:CH01.P1:keep-room-for-others"
+      ],
+      "roles": [
+        "CH01.P1.S1",
+        "CH01.P1.S2",
+        "CH01.P1.S3",
+        "CH01.P1.S4"
+      ]
+    },
+    {
+      "address": "CH01.P2",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH01.P2:wood-learning-condition",
+        "cpr:material:CH01.P2:metal-output-context",
+        "cpr:material:CH01.P2:water-pressure-support"
+      ],
+      "roles": [
+        "CH01.P2.S1",
+        "CH01.P2.S2",
+        "CH01.P2.S3",
+        "CH01.P2.S4"
+      ]
+    },
+    {
+      "address": "CH01.P3",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH01.P3:criteria-and-questions",
+        "cpr:material:CH01.P3:lead-and-listen",
+        "cpr:material:CH01.P3:values-and-expression"
+      ],
+      "roles": [
+        "CH01.P3.S1",
+        "CH01.P3.S2",
+        "CH01.P3.S3",
+        "CH01.P3.S4"
+      ]
+    },
+    {
+      "address": "CH01.P4",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH01.P4:precision-has-a-stop",
+        "cpr:material:CH01.P4:care-with-choice",
+        "cpr:material:CH01.P4:change-keeps-purpose"
+      ],
+      "roles": [
+        "CH01.P4.S1",
+        "CH01.P4.S2",
+        "CH01.P4.S3",
+        "CH01.P4.S4"
+      ]
+    },
+    {
+      "address": "CH02.P1",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH02.P1:wood-earth-map",
+        "cpr:material:CH02.P1:fire-water-map",
+        "cpr:material:CH02.P1:metal-wood-constraint"
+      ],
+      "roles": [
+        "CH02.P1.S1",
+        "CH02.P1.S2",
+        "CH02.P1.S3",
+        "CH02.P1.S4"
+      ]
+    },
+    {
+      "address": "CH02.P2",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH02.P2:wood-use-learning",
+        "cpr:material:CH02.P2:earth-use-continuity",
+        "cpr:material:CH02.P2:metal-use-finish"
+      ],
+      "roles": [
+        "CH02.P2.S1",
+        "CH02.P2.S2",
+        "CH02.P2.S3",
+        "CH02.P2.S4"
+      ]
+    },
+    {
+      "address": "CH02.P3",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH02.P3:low-output-is-not-silence",
+        "cpr:material:CH02.P3:wealth-overload-condition",
+        "cpr:material:CH02.P3:resource-excess-application"
+      ],
+      "roles": [
+        "CH02.P3.S1",
+        "CH02.P3.S2",
+        "CH02.P3.S3",
+        "CH02.P3.S4"
+      ]
+    },
+    {
+      "address": "CH02.P4",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH02.P4:recall-grow-with-support",
+        "cpr:material:CH02.P4:recall-expression-audience",
+        "cpr:material:CH02.P4:recall-boundaries-for-trials"
+      ],
+      "roles": [
+        "CH02.P4.S1",
+        "CH02.P4.S2",
+        "CH02.P4.S3",
+        "CH02.P4.S4"
+      ]
+    },
+    {
+      "address": "CH03.P1",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH03.P1:question-roots",
+        "cpr:material:CH03.P1:learn-with-practice",
+        "cpr:material:CH03.P1:promise-and-regularity"
+      ],
+      "roles": [
+        "CH03.P1.S1",
+        "CH03.P1.S2",
+        "CH03.P1.S3",
+        "CH03.P1.S4"
+      ]
+    },
+    {
+      "address": "CH03.P2",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH03.P2:resource-versus-goal",
+        "cpr:material:CH03.P2:support-received-and-given",
+        "cpr:material:CH03.P2:output-and-meaning"
+      ],
+      "roles": [
+        "CH03.P2.S1",
+        "CH03.P2.S2",
+        "CH03.P2.S3",
+        "CH03.P2.S4"
+      ]
+    },
+    {
+      "address": "CH03.P3",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH03.P3:private-social-channel",
+        "cpr:material:CH03.P3:learn-before-try",
+        "cpr:material:CH03.P3:save-and-experience"
+      ],
+      "roles": [
+        "CH03.P3.S1",
+        "CH03.P3.S2",
+        "CH03.P3.S3",
+        "CH03.P3.S4"
+      ]
+    },
+    {
+      "address": "CH03.P4",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH03.P4:from-question-to-small-proof",
+        "cpr:material:CH03.P4:choose-support-mode",
+        "cpr:material:CH03.P4:keep-joy-and-reserve"
+      ],
+      "roles": [
+        "CH03.P4.S1",
+        "CH03.P4.S2",
+        "CH03.P4.S3",
+        "CH03.P4.S4"
+      ]
+    },
+    {
+      "address": "CH04.P1",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH04.P1:clear-request-first",
+        "cpr:material:CH04.P1:quiet-first-contact",
+        "cpr:material:CH04.P1:invite-into-conversation",
+        "cpr:material:CH04.P1:expression-not-mind-reading"
+      ],
+      "roles": [
+        "CH04.P1.S1",
+        "CH04.P1.S2",
+        "CH04.P1.S3",
+        "CH04.P1.S4"
+      ]
+    },
+    {
+      "address": "CH04.P2",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH04.P2:private-criteria",
+        "cpr:material:CH04.P2:inner-values-not-secret",
+        "cpr:material:CH04.P2:after-help-load",
+        "cpr:material:CH04.P2:private-reading-window"
+      ],
+      "roles": [
+        "CH04.P2.S1",
+        "CH04.P2.S2",
+        "CH04.P2.S3",
+        "CH04.P2.S4"
+      ]
+    },
+    {
+      "address": "CH04.P3",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH04.P3:selective-warmth",
+        "cpr:material:CH04.P3:playful-after-trust",
+        "cpr:material:CH04.P3:firm-boundary-close",
+        "cpr:material:CH04.P3:chosen-disclosure-with-trust"
+      ],
+      "roles": [
+        "CH04.P3.S1",
+        "CH04.P3.S2",
+        "CH04.P3.S3",
+        "CH04.P3.S4"
+      ]
+    },
+    {
+      "address": "CH04.P4",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH04.P4:invisible-maintenance",
+        "cpr:material:CH04.P4:soft-precise-request",
+        "cpr:material:CH04.P4:useful-small-making",
+        "cpr:material:CH04.P4:small-output-shows-value"
+      ],
+      "roles": [
+        "CH04.P4.S1",
+        "CH04.P4.S2",
+        "CH04.P4.S3",
+        "CH04.P4.S4"
+      ]
+    },
+    {
+      "address": "CH05.P1",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH05.P1:analysis-that-decides",
+        "cpr:material:CH05.P1:start-with-consent",
+        "cpr:material:CH05.P1:support-need-not-guess",
+        "cpr:material:CH05.P1:learn-and-transfer"
+      ],
+      "roles": [
+        "CH05.P1.S1",
+        "CH05.P1.S2",
+        "CH05.P1.S3",
+        "CH05.P1.S4"
+      ]
+    },
+    {
+      "address": "CH05.P2",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH05.P2:make-visible",
+        "cpr:material:CH05.P2:resource-route",
+        "cpr:material:CH05.P2:translate-for-learner",
+        "cpr:material:CH05.P2:maintain-an-independent-function"
+      ],
+      "roles": [
+        "CH05.P2.S1",
+        "CH05.P2.S2",
+        "CH05.P2.S3",
+        "CH05.P2.S4"
+      ]
+    },
+    {
+      "address": "CH05.P3",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH05.P3:quiet-lead",
+        "cpr:material:CH05.P3:standards-open-way",
+        "cpr:material:CH05.P3:boundaries-enable-support"
+      ],
+      "roles": [
+        "CH05.P3.S1",
+        "CH05.P3.S2",
+        "CH05.P3.S3",
+        "CH05.P3.S4"
+      ]
+    },
+    {
+      "address": "CH05.P4",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH05.P4:feedback-windows",
+        "cpr:material:CH05.P4:role-and-rest",
+        "cpr:material:CH05.P4:keep-choice-in-care"
+      ],
+      "roles": [
+        "CH05.P4.S1",
+        "CH05.P4.S2",
+        "CH05.P4.S3",
+        "CH05.P4.S4"
+      ]
+    },
+    {
+      "address": "CH06.P1",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH06.P1:correction-before-request",
+        "cpr:material:CH06.P1:goal-eats-capacity",
+        "cpr:material:CH06.P1:help-with-hidden-expectation",
+        "cpr:material:CH06.P1:overused-output-standard"
+      ],
+      "roles": [
+        "CH06.P1.S1",
+        "CH06.P1.S2",
+        "CH06.P1.S3",
+        "CH06.P1.S4"
+      ]
+    },
+    {
+      "address": "CH06.P2",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH06.P2:output-authority-collision",
+        "cpr:material:CH06.P2:wealth-and-load",
+        "cpr:material:CH06.P2:support-versus-obligation"
+      ],
+      "roles": [
+        "CH06.P2.S1",
+        "CH06.P2.S2",
+        "CH06.P2.S3",
+        "CH06.P2.S4"
+      ]
+    },
+    {
+      "address": "CH06.P3",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH06.P3:feedback-as-evaluation",
+        "cpr:material:CH06.P3:decide-for-everyone",
+        "cpr:material:CH06.P3:care-without-request",
+        "cpr:material:CH06.P3:offered-explanation-not-asked"
+      ],
+      "roles": [
+        "CH06.P3.S1",
+        "CH06.P3.S2",
+        "CH06.P3.S3",
+        "CH06.P3.S4"
+      ]
+    },
+    {
+      "address": "CH06.P4",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH06.P4:correction-to-agreement",
+        "cpr:material:CH06.P4:goal-to-operable-scope",
+        "cpr:material:CH06.P4:help-to-clear-offer"
+      ],
+      "roles": [
+        "CH06.P4.S1",
+        "CH06.P4.S2",
+        "CH06.P4.S3",
+        "CH06.P4.S4"
+      ]
+    },
+    {
+      "address": "CH07.P1",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH07.P1:help-has-a-door",
+        "cpr:material:CH07.P1:learning-support-card",
+        "cpr:material:CH07.P1:made-value-can-travel",
+        "cpr:material:CH07.P1:munchang-held-study-symbol"
+      ],
+      "roles": [
+        "CH07.P1.S1",
+        "CH07.P1.S2",
+        "CH07.P1.S3",
+        "CH07.P1.S4"
+      ]
+    },
+    {
+      "address": "CH07.P2",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH07.P2:reserve-with-purpose",
+        "cpr:material:CH07.P2:start-and-finish-card",
+        "cpr:material:CH07.P2:center-of-shared-work",
+        "cpr:material:CH07.P2:jaego-held-storehouse"
+      ],
+      "roles": [
+        "CH07.P2.S1",
+        "CH07.P2.S2",
+        "CH07.P2.S3",
+        "CH07.P2.S4"
+      ]
+    },
+    {
+      "address": "CH07.P3",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH07.P3:attention-has-a-message",
+        "cpr:material:CH07.P3:recognition-by-role",
+        "cpr:material:CH07.P3:day-pillar-resource-question",
+        "cpr:material:CH07.P3:banan-held-status"
+      ],
+      "roles": [
+        "CH07.P3.S1",
+        "CH07.P3.S2",
+        "CH07.P3.S3",
+        "CH07.P3.S4"
+      ]
+    },
+    {
+      "address": "CH07.P4",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH07.P4:use-support-not-wait",
+        "cpr:material:CH07.P4:use-created-value",
+        "cpr:material:CH07.P4:use-role-with-room"
+      ],
+      "roles": [
+        "CH07.P4.S1",
+        "CH07.P4.S2",
+        "CH07.P4.S3",
+        "CH07.P4.S4"
+      ]
+    },
+    {
+      "address": "CH08.P1",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH08.P1:criteria-before-delivery",
+        "cpr:material:CH08.P1:try-in-real-use",
+        "cpr:material:CH08.P1:work-through-shared-purpose"
+      ],
+      "roles": [
+        "CH08.P1.S1",
+        "CH08.P1.S2",
+        "CH08.P1.S3",
+        "CH08.P1.S4"
+      ]
+    },
+    {
+      "address": "CH08.P2",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH08.P2:diagnose-assumptions",
+        "cpr:material:CH08.P2:handoff-continuity",
+        "cpr:material:CH08.P2:explain-use-for-people",
+        "cpr:material:CH08.P2:finish-before-handoff"
+      ],
+      "roles": [
+        "CH08.P2.S1",
+        "CH08.P2.S2",
+        "CH08.P2.S3",
+        "CH08.P2.S4"
+      ]
+    },
+    {
+      "address": "CH08.P3",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH08.P3:control-without-method-space",
+        "cpr:material:CH08.P3:changing-standard-without-log",
+        "cpr:material:CH08.P3:feedback-never-reaches-work",
+        "cpr:material:CH08.P3:learning-without-access"
+      ],
+      "roles": [
+        "CH08.P3.S1",
+        "CH08.P3.S2",
+        "CH08.P3.S3",
+        "CH08.P3.S4"
+      ]
+    },
+    {
+      "address": "CH08.P4",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH08.P4:learn-with-feedback",
+        "cpr:material:CH08.P4:independent-delivery-learning",
+        "cpr:material:CH08.P4:return-from-manageable-step"
+      ],
+      "roles": [
+        "CH08.P4.S1",
+        "CH08.P4.S2",
+        "CH08.P4.S3",
+        "CH08.P4.S4"
+      ]
+    },
+    {
+      "address": "CH09.P1",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH09.P1:money-as-project-resource",
+        "cpr:material:CH09.P1:money-as-experience",
+        "cpr:material:CH09.P1:money-as-meaning",
+        "cpr:material:CH09.P1:resource-purpose-before-style"
+      ],
+      "roles": [
+        "CH09.P1.S1",
+        "CH09.P1.S2",
+        "CH09.P1.S3",
+        "CH09.P1.S4"
+      ]
+    },
+    {
+      "address": "CH09.P2",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH09.P2:retained-value-conditions",
+        "cpr:material:CH09.P2:exchange-options-screening",
+        "cpr:material:CH09.P2:output-price-maintenance"
+      ],
+      "roles": [
+        "CH09.P2.S1",
+        "CH09.P2.S2",
+        "CH09.P2.S3",
+        "CH09.P2.S4"
+      ]
+    },
+    {
+      "address": "CH09.P3",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH09.P3:generosity-has-a-budget",
+        "cpr:material:CH09.P3:expertise-price-silence",
+        "cpr:material:CH09.P3:small-tests-big-costs"
+      ],
+      "roles": [
+        "CH09.P3.S1",
+        "CH09.P3.S2",
+        "CH09.P3.S3",
+        "CH09.P3.S4"
+      ]
+    },
+    {
+      "address": "CH09.P4",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH09.P4:purpose-and-cost-ledger",
+        "cpr:material:CH09.P4:joy-with-room",
+        "cpr:material:CH09.P4:scope-before-price"
+      ],
+      "roles": [
+        "CH09.P4.S1",
+        "CH09.P4.S2",
+        "CH09.P4.S3",
+        "CH09.P4.S4"
+      ]
+    },
+    {
+      "address": "CH10.P1",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH10.P1:affection-through-small-actions",
+        "cpr:material:CH10.P1:space-and-return",
+        "cpr:material:CH10.P1:ask-about-direction",
+        "cpr:material:CH10.P1:chosen-expression-in-closeness"
+      ],
+      "roles": [
+        "CH10.P1.S1",
+        "CH10.P1.S2",
+        "CH10.P1.S3",
+        "CH10.P1.S4"
+      ]
+    },
+    {
+      "address": "CH10.P2",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH10.P2:warmth-in-chosen-details",
+        "cpr:material:CH10.P2:curiosity-as-intimacy",
+        "cpr:material:CH10.P2:respond-with-room",
+        "cpr:material:CH10.P2:expression-as-agreed-offer"
+      ],
+      "roles": [
+        "CH10.P2.S1",
+        "CH10.P2.S2",
+        "CH10.P2.S3",
+        "CH10.P2.S4"
+      ]
+    },
+    {
+      "address": "CH10.P3",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH10.P3:romance-as-problem-set",
+        "cpr:material:CH10.P3:confirmation-pressure",
+        "cpr:material:CH10.P3:space-without-signal",
+        "cpr:material:CH10.P3:own-criteria-without-message"
+      ],
+      "roles": [
+        "CH10.P3.S1",
+        "CH10.P3.S2",
+        "CH10.P3.S3",
+        "CH10.P3.S4"
+      ]
+    },
+    {
+      "address": "CH10.P4",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH10.P4:interest-and-clear-consent",
+        "cpr:material:CH10.P4:space-with-agreed-return",
+        "cpr:material:CH10.P4:curiosity-not-verdict",
+        "cpr:material:CH10.P4:closeness-with-chosen-space"
+      ],
+      "roles": [
+        "CH10.P4.S1",
+        "CH10.P4.S2",
+        "CH10.P4.S3",
+        "CH10.P4.S4"
+      ]
+    },
+    {
+      "address": "CH11.P1",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH11.P1:protect-with-permission",
+        "cpr:material:CH11.P1:own-choice-near-family",
+        "cpr:material:CH11.P1:position-is-not-duty-roster"
+      ],
+      "roles": [
+        "CH11.P1.S1",
+        "CH11.P1.S2",
+        "CH11.P1.S3",
+        "CH11.P1.S4"
+      ]
+    },
+    {
+      "address": "CH11.P2",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH11.P2:practical-care-with-agreement",
+        "cpr:material:CH11.P2:clear-shared-logistics",
+        "cpr:material:CH11.P2:agreed-responsibility"
+      ],
+      "roles": [
+        "CH11.P2.S1",
+        "CH11.P2.S2",
+        "CH11.P2.S3",
+        "CH11.P2.S4"
+      ]
+    },
+    {
+      "address": "CH11.P3",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH11.P3:care-load-becomes-default",
+        "cpr:material:CH11.P3:protection-becomes-decision",
+        "cpr:material:CH11.P3:privacy-and-coordination",
+        "cpr:material:CH11.P3:same-duty-different-expectations"
+      ],
+      "roles": [
+        "CH11.P3.S1",
+        "CH11.P3.S2",
+        "CH11.P3.S3",
+        "CH11.P3.S4"
+      ]
+    },
+    {
+      "address": "CH11.P4",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH11.P4:renegotiate-care",
+        "cpr:material:CH11.P4:coordinate-with-privacy",
+        "cpr:material:CH11.P4:shared-duty-with-return"
+      ],
+      "roles": [
+        "CH11.P4.S1",
+        "CH11.P4.S2",
+        "CH11.P4.S3",
+        "CH11.P4.S4"
+      ]
+    },
+    {
+      "address": "CH12.P1",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH12.P1:open-a-voluntary-meeting",
+        "cpr:material:CH12.P1:reliable-invitation",
+        "cpr:material:CH12.P1:curious-listener",
+        "cpr:material:CH12.P1:share-a-chosen-story"
+      ],
+      "roles": [
+        "CH12.P1.S1",
+        "CH12.P1.S2",
+        "CH12.P1.S3",
+        "CH12.P1.S4"
+      ]
+    },
+    {
+      "address": "CH12.P2",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH12.P2:space-with-respect",
+        "cpr:material:CH12.P2:remember-and-check",
+        "cpr:material:CH12.P2:shared-making-not-performance",
+        "cpr:material:CH12.P2:promise-as-choice"
+      ],
+      "roles": [
+        "CH12.P2.S1",
+        "CH12.P2.S2",
+        "CH12.P2.S3",
+        "CH12.P2.S4"
+      ]
+    },
+    {
+      "address": "CH12.P3",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH12.P3:repair-not-correct-person",
+        "cpr:material:CH12.P3:invite-without-oversubscription",
+        "cpr:material:CH12.P3:quiet-without-disappearance",
+        "cpr:material:CH12.P3:critique-without-invitation"
+      ],
+      "roles": [
+        "CH12.P3.S1",
+        "CH12.P3.S2",
+        "CH12.P3.S3",
+        "CH12.P3.S4"
+      ]
+    },
+    {
+      "address": "CH12.P4",
+      "materials": 4,
+      "ids": [
+        "cpr:material:CH12.P4:questions-without-tests",
+        "cpr:material:CH12.P4:contact-not-counter",
+        "cpr:material:CH12.P4:choice-with-a-warm-no",
+        "cpr:material:CH12.P4:friendship-with-voluntary-answers"
+      ],
+      "roles": [
+        "CH12.P4.S1",
+        "CH12.P4.S2",
+        "CH12.P4.S3",
+        "CH12.P4.S4"
+      ]
+    },
+    {
+      "address": "CH13.P1",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH13.P1:understand-then-try",
+        "cpr:material:CH13.P1:goal-with-operating-room",
+        "cpr:material:CH13.P1:care-and-choice-together"
+      ],
+      "roles": [
+        "CH13.P1.S1",
+        "CH13.P1.S2",
+        "CH13.P1.S3",
+        "CH13.P1.S4"
+      ]
+    },
+    {
+      "address": "CH13.P2",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH13.P2:proof-before-more-search",
+        "cpr:material:CH13.P2:reversible-before-bigger",
+        "cpr:material:CH13.P2:agreement-before-answer"
+      ],
+      "roles": [
+        "CH13.P2.S1",
+        "CH13.P2.S2",
+        "CH13.P2.S3",
+        "CH13.P2.S4"
+      ]
+    },
+    {
+      "address": "CH13.P3",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH13.P3:one-request-in-work",
+        "cpr:material:CH13.P3:resource-check-in-daily-choice",
+        "cpr:material:CH13.P3:update-a-shared-duty"
+      ],
+      "roles": [
+        "CH13.P3.S1",
+        "CH13.P3.S2",
+        "CH13.P3.S3",
+        "CH13.P3.S4"
+      ]
+    },
+    {
+      "address": "CH13.P4",
+      "materials": 3,
+      "ids": [
+        "cpr:material:CH13.P4:map-and-next-step",
+        "cpr:material:CH13.P4:small-door-with-finish",
+        "cpr:material:CH13.P4:steady-care-with-room"
+      ],
+      "roles": [
+        "CH13.P4.S1",
+        "CH13.P4.S2",
+        "CH13.P4.S3",
+        "CH13.P4.S4"
+      ]
+    }
+  ],
+  "newMaterialCounting": "20 distinct interpretations, 77 conditional combinations, 47 contextual applications, 35 recalls; not 179 new psychological or traditional facts.",
+  "connectedToRuntime": false,
+  "approvedForCustomer": false
+}

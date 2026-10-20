@@ -6,7 +6,7 @@ import { COMPATIBILITY_REPORT_CHAPTER_IDS } from "./compatibilityReportDraftType
 import {
   adaptCompatibilityTextForRelationshipType,
   normalizeCompatibilityRelationCategory,
-  type CompatibilityRelationshipType,
+  type CompatibilityRelationshipCategoryInput,
 } from "../report-knowledge/compatibilityTypes";
 
 export type CompatibilityReportDraftValidationResult = {
@@ -251,7 +251,7 @@ export function sanitizeCompatibilityAwkwardKoreanText(text: string): string {
 
 export function sanitizeCompatibilityVisibleText(
   text: string,
-  relationshipType: CompatibilityRelationshipType,
+  relationshipType: CompatibilityRelationshipCategoryInput,
 ): string {
   const firstPass = adaptCompatibilityTextForRelationshipType(
     sanitizeCompatibilityKoreanCopy(text),

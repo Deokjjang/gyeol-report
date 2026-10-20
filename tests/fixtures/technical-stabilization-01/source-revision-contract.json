@@ -1,0 +1,132 @@
+{
+  "baseSha": "7ef25fcc0ae6f7765473433a826cb7cf96068a7b",
+  "customerRuntimeActivated": false,
+  "researchSourcesChanged": false,
+  "historicalHashFilesRewritten": false,
+  "priorRevisions": [
+    {
+      "task": "V4-PUBLICATION-SAFETY-01",
+      "commit": "0a8e685b07f5cd60226ced986d4e3fe92f392b64",
+      "file": "src/lib/interpretation-v4/compatibilityProductAdapter.ts",
+      "before": "bfc8e0844c7eb5bf0711c463745fda00b1cae460ffb19e95e82697d4fd4c7456",
+      "after": "a02bfc2e1cfab018a8b1fa8ab43e679aec6a18628363f56b5b3197264b272d36"
+    },
+    {
+      "task": "V4-PUBLICATION-SAFETY-01",
+      "commit": "0a8e685b07f5cd60226ced986d4e3fe92f392b64",
+      "file": "src/lib/interpretation-v4/compatibilityReleaseRenderer.ts",
+      "before": "48b54e1d5c6112f8f678b406c731afd1b0ffd90679aa0039443f343c9cb37999",
+      "after": "1ef6ab02d9a7cedc08aea244158ad806dae1ce0caedca1250054d5a9129cdf63"
+    },
+    {
+      "task": "V4-PUBLICATION-SAFETY-01",
+      "commit": "0a8e685b07f5cd60226ced986d4e3fe92f392b64",
+      "file": "src/lib/report-generation/productPreviewSnapshot.ts",
+      "before": "339ef6fdad096da95457bb9694b7727dd22604c88a8de0dea5433b32b2319274",
+      "after": "4bb50d7dfda76f4e4b739971c938ca69ab9f0f66384782734ed69fb92e66b8d2"
+    },
+    {
+      "task": "V4-PUBLICATION-SAFETY-01",
+      "commit": "0a8e685b07f5cd60226ced986d4e3fe92f392b64",
+      "file": "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts",
+      "before": "48dda91ad01c621b6e9f742ccc332092b207b7d79af265eca5deea98954e4a86",
+      "after": "aa1b778b20661a932a9175f2a370b33ce20444a4a1403672a4d482df5a547c6a"
+    },
+    {
+      "task": "V4-VERCEL-FUNCTION-TRACE-FIX-01",
+      "commit": "1e836a5606745d5f2d1d7972afdca6cd2ae9f86a",
+      "file": "src/lib/tickets/localDatabase.ts",
+      "before": "c0f8846755d800153ca048cd3f4c445d514a373a5330d640f1d2f85f19c82de0",
+      "after": "931e1eba5d0bd46190d8a4e7eba1a45b376fd49819e8304416ded45aa7eab6c3"
+    }
+  ],
+  "currentDeltas": {
+    "tests/unit/app/dev/bookReading13b.test.tsx": {
+      "before": "0300db25f1e78aba177a6c633a3714599afecd627201c5443c23e4de5e7d1b6a",
+      "after": "cc4edae90377d6067fb9e30a44d7a40d8adb95f771b904f8a4c5dd8977ffd4fa"
+    },
+    "tests/unit/app/dev/bookRuntime.test.tsx": {
+      "before": "cd8247744136d70a3efce8c33bf769649c4a972879622a0c14777b629c4661e1",
+      "after": "d399529b3abb678aea35a2e37f732ebd1612827abb5124456ddcf678901e7800"
+    },
+    "tests/unit/interpretation-v4/annualSafety.test.ts": {
+      "before": "269036555e2a820b795df254ff94fa9f2f27dcac43891be054b646d4cac5f620",
+      "after": "288015c0f7102f6782ccced1caefc4df43c5758809fc3e0986b9c6670af82cc8"
+    },
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts": {
+      "before": "e2d42a04ccafabf9b1490a2af66d12b830f95b6287d637dd1ce5b82f87d8de95",
+      "after": "69a21df991d90a6ed9f62e54a071b8767914caac7d64ab8f6cc529ff7b7df138"
+    },
+    "tests/unit/interpretation-v4/careerRelease.test.ts": {
+      "before": "542b2c01639697fea67b44756313fc1c689316b75c5faa2b22dc34176648741b",
+      "after": "3de9f3474aae6c8d412e12d59d737eb993adecdb4d21ac4be8f5b2e3c8229b21"
+    },
+    "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts": {
+      "before": "c83eed9f20e281b3d66056356674a4cee10fc0b63f95671ec02f2ece85ca9874",
+      "after": "1d1cce1e8df4201fef80d19ccf9dd9b2dc430a63b7e7c97e2de4940dc9211cd0"
+    },
+    "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts": {
+      "before": "9cbdad242130376ab8763315c47164249c8344dae82f980cd0435806798e5619",
+      "after": "534330347fb94c6ea521e478f199536e86e7753534541cfbd6388091dc107b11"
+    },
+    "tests/unit/interpretation-v4/foundationAdapter.test.ts": {
+      "before": "02e9351ae981960e313537a8180f36cb66d2f9191effb70f5aaa1402efb44948",
+      "after": "d104234e79b348c5195acb74d8b99e7806dbb67b12944477dfebcdfafc45d027"
+    },
+    "tests/unit/interpretation-v4/koreanNarrativeCore.test.ts": {
+      "before": "149d2175158c761eb9960601f6b27eceee8a48d0a040b1a0420e55d99821385b",
+      "after": "b191b785cf7550f104bca1b64e0a4664329e559613d4abbb317f81b7eaeaf040"
+    },
+    "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts": {
+      "before": "7a2075678851d28f24c385b3d13af0721bbd15a04f3b01235d0793e63139a0d9",
+      "after": "27bf24733d8d9e7e73d9beb754afe575a6133e723808f7e881c3c5bd8ff713e5"
+    },
+    "tests/unit/interpretation-v4/runtimeShadow.test.tsx": {
+      "before": "b266ea6311758fd2924949ed3bfc68013110680165784095acbdc3ff9713176e",
+      "after": "62cb6144391f9ad2b0667b9d7dedb4263239aa1e6413a4357b383435b48e6a37"
+    },
+    "tests/unit/report-generation/customerDayunGeneration.test.ts": {
+      "before": "5301486083f0a4c680186688d196be480fe46326c08765de171a5a359fa3b3ce",
+      "after": "15224273b017fb769d248c6c7f75c507ddc2229b30be9b447a99850c38135a31"
+    },
+    "tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts": {
+      "before": "e559e74737e98159ea567b13ba461f6de6546046ecd3b07c3f0fd1973860ce4a",
+      "after": "07845ba9d127ba1185c0aedcbc2e3d150107149621aec13eb1f175774f393e00"
+    },
+    "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts": {
+      "before": "aa1b778b20661a932a9175f2a370b33ce20444a4a1403672a4d482df5a547c6a",
+      "after": "8f2e6e882de6c11ff2e27c876a60f8effda6dc530f989791dbc063aa879a4dc5"
+    },
+    "tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts": {
+      "before": "8baef10f08bf283916d816b86614dca151e51705dc5a5f8ef8bf359d83079313",
+      "after": "49f80c7c2f3b4e12b88a64085eef390295ba61ef22388ae86378b2b4cd060d9a"
+    },
+    "tests/unit/report-knowledge/compatibilityLoveResearch.test.ts": {
+      "before": "a4c436f433793c63dae154e1056c1931566a44b891f8f37758adcbe2fb0b1f4e",
+      "after": "acd94fb63ec507be8666a70c61e9ef66f355d90ad2ca6e545f4d46b7a1b981d0"
+    },
+    "tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts": {
+      "before": "09628e10a5805c6c269ae49825d2185701b5c7b3aacad48f1777a1da0d613c65",
+      "after": "01d6160e93ecf35c35e747a1730cfc0eb4a3e3b24ee24c7e1c9371a996ef3c3e"
+    },
+    "tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts": {
+      "before": "c82ccbdb202ee18c8c91f055df326a1c424631b1433e16db7ac1ed938d91f260",
+      "after": "7e51ec5eefcbd4de8d852b58c0c803e585eb24c6023c28d09bb113ab299be297"
+    },
+    "tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts": {
+      "before": "157874386bf1c840a92fd400363e078d7317bbb945119a07ed4aaf9afe414300",
+      "after": "c175fcb15c9137353c882ea6739654a5512ef0a21ab237d24f0d55136ca9d8da"
+    }
+  },
+  "immutableReceipts": {
+    "docs/validation/v4-compatibility-love-product-knowledge-01/existing-files-preservation.json": "8d3e700b2040425a5ea5dcaf009369e1ee6c9e5f57c0d1a3f7eb63af2b5b47d8",
+    "docs/validation/v4-compatibility-marriage-product-knowledge-01/existing-files-preservation.json": "36d85146a198fd581d4f916f3fbd2d81a8ad8ee33416b586bc2238b741a9d977",
+    "docs/validation/v4-compatibility-parent-child-product-knowledge-01/existing-files-preservation.json": "fad26c9e2ade2aaf719018a9ff1a48b1237c13daccf1da66d750f6c6c1a77b36",
+    "docs/validation/v4-compatibility-coworker-product-knowledge-01/existing-files-preservation.json": "e942a373b6e8a157d7881ee58a26b937dbafe4db243e62895c4d23f0acea849e",
+    "docs/validation/v4-compatibility-manager-report-product-knowledge-01/existing-files-preservation.json": "2bf1276f4a0bd21507f2422776ec68093551fa0203a7dbdb079c7ab3d8b21792",
+    "docs/validation/v4-compatibility-business-partner-product-knowledge-01/existing-files-preservation.json": "8227a97912cfc9748e09d13c45a640657ee6568567127a3ccff2cc7da5bb95ef",
+    "docs/validation/v4-compatibility-business-partner-specialist-engine-01/original-file-hashes.json": "46d9ec29ae25b369e66fbdf05f886e470983dac30656070bec5256a704b6c76c",
+    "docs/validation/v4-compatibility-business-partner-specialist-engine-01/source-input-hashes.json": "294200ce59805dc2897de93bc213dd5e77645c6f01405c7677572d1ff96448de",
+    "tests/fixtures/publication-safety-01/source-revision-contract.json": "afdcb18f96f9a6252c96b23c3a050d71473b6c27385affa97752d790b1f30580"
+  }
+}

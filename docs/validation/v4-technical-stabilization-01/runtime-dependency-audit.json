@@ -1,0 +1,26 @@
+{
+  "nftTraceFiles": 90,
+  "nftDependencySetsEqual": true,
+  "newRuntimeEntries": 0,
+  "customerRoots": 46,
+  "customerModules": 700,
+  "customerGraphEqual": true,
+  "researchOfflineReachable": [],
+  "computedCustomerImports": [],
+  "astIncludes": [
+    "value imports",
+    "side-effect imports",
+    "mixed type/value imports",
+    "value re-exports",
+    "literal lazy imports",
+    "CommonJS require/import-equals"
+  ],
+  "astExcludes": [
+    "explicit type-only imports/exports",
+    "import type queries",
+    "comments and string contents"
+  ],
+  "moduleContract": "tests/fixtures/technical-stabilization-01/module-contract.json",
+  "rawTraceBefore": "/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/before-baseline/nft.json",
+  "rawTraceAfter": "/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/after-verified/nft.json"
+}

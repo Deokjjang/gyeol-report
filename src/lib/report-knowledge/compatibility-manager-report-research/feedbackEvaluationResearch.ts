@@ -1,0 +1,136 @@
+/** Static offline managerReport research. No runtime registration or customer approval. */
+import type { MaterialView } from "./researchTypes";
+export const MR_FEEDBACK_EVALUATION_RESEARCH: readonly MaterialView[] = [
+  {
+    "id": "mrpr:view:feedbackEvaluationResearch:material:CH02.P2:manager-standard-evidence",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH02.P2:manager-standard-evidence",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackEvaluationResearch:material:CH02.P4:manager-avoid-feedback",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH02.P4:manager-avoid-feedback",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackEvaluationResearch:material:CH03.P2:report-private-feedback-space",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH03.P2:report-private-feedback-space",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackEvaluationResearch:material:CH03.P3:report-participation-signal",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH03.P3:report-participation-signal",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackEvaluationResearch:material:CH04.P3:feedback-credit-visible",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH04.P3:feedback-credit-visible",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackEvaluationResearch:material:CH05.P2:manager-recognize-evidence",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH05.P2:manager-recognize-evidence",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackEvaluationResearch:material:CH05.P3:manager-speed-pressure",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH05.P3:manager-speed-pressure",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackEvaluationResearch:material:CH05.P4:manager-feedback-recheck",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH05.P4:manager-feedback-recheck",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackEvaluationResearch:material:CH06.P4:report-feedback-clarification",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH06.P4:report-feedback-clarification",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackEvaluationResearch:material:CH07.P3:insufficient-credit",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH07.P3:insufficient-credit",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackEvaluationResearch:material:CH08.P3:report-state-contribution",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH08.P3:report-state-contribution",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackEvaluationResearch:material:CH09.P4:recall-contribution-learning",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH09.P4:recall-contribution-learning",
+    "notAdditionalIndependentFact": true
+  }
+];

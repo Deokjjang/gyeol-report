@@ -1,0 +1,19 @@
+{
+  "fields": [
+    "preExistingIP",
+    "newIP",
+    "thirdPartyIP",
+    "ipOwnership",
+    "ipLicense",
+    "usagePermission",
+    "modificationPermission",
+    "disclosurePermission",
+    "confidentiality",
+    "ipTransfer",
+    "exitUse",
+    "deliverableRights"
+  ],
+  "ownershipIsUsage": false,
+  "usageIsDisclosure": false,
+  "actualFacts": "UNKNOWN"
+}

@@ -1,0 +1,1220 @@
+/** A-X offline audit inputs, not a runtime lookup. */
+import type { InputCase } from "./researchTypes";
+export const LOVE_PAIR_INPUT_CASES: readonly InputCase[] = [
+  {
+    "id": "clr:case:A",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "A",
+    "description": "두 사람 MBTI 기지",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "both_mbti",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:B",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "B",
+    "description": "A만 MBTI 기지",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "a_only_mbti",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:C",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "C",
+    "description": "B만 MBTI 기지",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "b_only_mbti",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:D",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "D",
+    "description": "양쪽 MBTI 미상",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "neither_mbti",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:E",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "E",
+    "description": "A 출생시간 미상",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "a_unknown_hour",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:F",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "F",
+    "description": "B 출생시간 미상",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "b_unknown_hour",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:G",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "G",
+    "description": "양쪽 시간 확정",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "both_known_hour",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:H",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "H",
+    "description": "같은 INTP 유형",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "INTP",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "same_mbti",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:I",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "I",
+    "description": "서로 다른 INTP/ESFJ",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "different_mbti",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:J",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "J",
+    "description": "수신자 십성 AB 정관·BA 정재",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "different_ten_god",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:K",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "K",
+    "description": "양쪽 비견: 차이를 창작하지 않음",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "도윤",
+          "birthDate": "1985-06-30",
+          "birthTime": "06:00",
+          "mbtiType": "INFJ",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "하린",
+          "birthDate": "2001-01-27",
+          "birthTime": "18:20",
+          "mbtiType": "ESTP",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "same_ten_god",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:L",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "L",
+    "description": "실제 합 존재",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "harmony",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:M",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "M",
+    "description": "실제 충 존재",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "clash",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:N",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "N",
+    "description": "합과 충 공존",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "both_relations",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:O",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "O",
+    "description": "cross-branch 관계 없음; 방향 십성은 존재",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "검수가상고요A",
+          "birthDate": "1996-12-08",
+          "birthTime": "",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상고요B",
+          "birthDate": "1996-12-08",
+          "birthTime": "",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "no_cross_branch",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:P",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "P",
+    "description": "독립 개인 자료와 여러 실제 합 존재; 긍정 결과 보장 아님",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "rich_sources",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:Q",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "Q",
+    "description": "동일 원국·MBTI 미상: signed-axis friction 비교 부족",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "검수가상고요A",
+          "birthDate": "1996-12-08",
+          "birthTime": "",
+          "mbtiType": "",
+          "gender": "MALE",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상고요B",
+          "birthDate": "1996-12-08",
+          "birthTime": "",
+          "mbtiType": "",
+          "gender": "MALE",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "no_friction",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:R",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "R",
+    "description": "양쪽 유형 미상: MBTI Pair별 repair 출처 없음; 일반 조언은 남음",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "no_pair_repair",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:S",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "S",
+    "description": "子未 원진은 연구에만, 실제 harm은 존재",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "서진",
+          "birthDate": "1990-07-18",
+          "birthTime": "05:30",
+          "mbtiType": "ENTJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "나영",
+          "birthDate": "1984-07-27",
+          "birthTime": "15:30",
+          "mbtiType": "INTP",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "research_only_wonjin",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:T",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "T",
+    "description": "子未 해≠원진: producer/연구 지원 범위 불일치 보류",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "서진",
+          "birthDate": "1990-07-18",
+          "birthTime": "05:30",
+          "mbtiType": "ENTJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "나영",
+          "birthDate": "1984-07-27",
+          "birthTime": "15:30",
+          "mbtiType": "INTP",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "withhold_mismatched_relation",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:U",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "U",
+    "description": "이름만 교환: person identity는 변경, 계산은 유지",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "소연",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "현우",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "name_swap",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:V",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "V",
+    "description": "전체 A/B 입력 순서 교환",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "whole_swap",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:W",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "W",
+    "description": "동일 입력·고정 시각 재실행",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "replay",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "clr:case:X",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "X",
+    "description": "다른 6관계는 감사·격리만",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "marriage",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "coworker",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "managerReport",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "businessPartner",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "friendship",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "category_isolation",
+    "isFictional": true,
+    "notCustomerHistory": true
+  }
+];

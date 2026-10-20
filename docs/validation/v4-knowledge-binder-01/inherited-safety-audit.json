@@ -1,0 +1,1024 @@
+{
+  "staticFriendshipChildrenSourceUses": 63,
+  "actualGraphFriendshipChildDerivedNodes": 91,
+  "theseAreDifferentSets": true,
+  "staticRecords": [
+    {
+      "catalogKey": "kc:v1:01b5373a6f69f42b7d563be8aceb76ed1623558096f82b574af128c433990f2a",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:01b5373a6f69f42b7d563be8aceb76ed1623558096f82b574af128c433990f2a",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:b1b3e4219c082df51d4686b4d4f4243616de952ba5a037598383e3ea4b1d0652",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:03ae0a642d03007db8124738c849876f853c92b4ed0122c5d65ec3dce161082c",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:03ae0a642d03007db8124738c849876f853c92b4ed0122c5d65ec3dce161082c",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:dece44a4f1821fd7e3245944e769d9a841e2d7f18b7fd46db170d744be52fd31",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:051a79b243c4b9c47e22068b5aee07aeca5e8e3f73b6f99224473909d80e8c43",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:051a79b243c4b9c47e22068b5aee07aeca5e8e3f73b6f99224473909d80e8c43",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:6ef75419e5b8e71f94634c60c654dd22172170bc157c0eaa98e254b375b8d2c2",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:0609712266aabbb496f84dc74ebcc0f205e625e053e399e72fa62e3849f80015",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:0609712266aabbb496f84dc74ebcc0f205e625e053e399e72fa62e3849f80015",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:a7613e6751d6db1c5ff56b6d18b61252493865f3a2d3b5d589afa39c2c6325d3",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:074ec91c71fc2b4df871f9b61923e95d4755f5fe8b34466d08e27b22b43bddba",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:074ec91c71fc2b4df871f9b61923e95d4755f5fe8b34466d08e27b22b43bddba",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:0c80a6c587db4cac967a4ebdeb2761b8d96f2de20760cdc856ae2f3c3c38aeba",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:07b9061904d335613ce1293c640513edc33f406e4e969935b341f54f8a7bfc44",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:07b9061904d335613ce1293c640513edc33f406e4e969935b341f54f8a7bfc44",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:672023e2418958bc2eb80ad90b600f850ef43bb164d1f279594331ca78246da5",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:0a93d9b0b6f55c02f734a3be494d6e70cba3bfb0bb16247593a7108728382fd1",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:0a93d9b0b6f55c02f734a3be494d6e70cba3bfb0bb16247593a7108728382fd1",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:a64b4b450b78a5b3d8fb7a86a670ac62056d371eb3f7cff6deea5267042983c7",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:0edd299a05a370c3b22c201ffbe1fcbb7b6e12aa233480a535945dfe3184057c",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:0edd299a05a370c3b22c201ffbe1fcbb7b6e12aa233480a535945dfe3184057c",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:ab458d841fa3de8996bed9663cafb290bb89c1761ce08a990177e71636da1386",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:1113edec9ac747d50a11081c8634d3267736b323163d93dda0e796ebd7038889",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:1113edec9ac747d50a11081c8634d3267736b323163d93dda0e796ebd7038889",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:b5a67cb580432964162d92eec14579ff91fcd29f87911225468f3e2fe4169c90",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:11a0574a181932a98d982937b3202fc892591f4b38c7c1fb5091c60d20272535",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:11a0574a181932a98d982937b3202fc892591f4b38c7c1fb5091c60d20272535",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:38f1630494ed3eb8641a66436f8fd2539d5724c07c0a695661eb410c584abf8e",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:11c8fe0f0d1820d13c61466d01ebcb71bc07af169afa98cd51b92f36bfa07fbc",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:11c8fe0f0d1820d13c61466d01ebcb71bc07af169afa98cd51b92f36bfa07fbc",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:26622ca66532b9df21baff1a15c6c20044b5ef1278fe20497afa344971024c6b",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:12e864441f8989fd1d7b5ebb0c35b41e00f578e76c3fc6b770f99e09e589ddb8",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:12e864441f8989fd1d7b5ebb0c35b41e00f578e76c3fc6b770f99e09e589ddb8",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:378cc78d3ad78aa167c06d84b81df781685e9a0fc2fc2a4fcfcc635fd302be78",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:191dcb85c9a5cfd546b3fd2deb6f98304cab95c348be82a55b23b1727eee7f28",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:191dcb85c9a5cfd546b3fd2deb6f98304cab95c348be82a55b23b1727eee7f28",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:38160de9fa1ed42dc02855e72629d5cd71ff5a71e8155e022bc4110e3444146d",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:1a96428309db0e8c2c673bb4838acbb9b55413f559a6856ccc9b0c6bc130ad8d",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:1a96428309db0e8c2c673bb4838acbb9b55413f559a6856ccc9b0c6bc130ad8d",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:93aeb95cdd5dd2b869a6ccf6c3294b142407623439d6c54642f1e6306e6c1444",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:1dd4ca1df35a664124c3f32ab10fe4b7eac8d387f9dd4311d8cf4377f04f14b0",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:1dd4ca1df35a664124c3f32ab10fe4b7eac8d387f9dd4311d8cf4377f04f14b0",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:a5d35c859f132d08f7d970858de9d5417cd45f07164c6dbd3adb4963658fa3b8",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:213ed096bcb90796ed1d4ffe184aa8e87842da5c79dfad40af205b0be3a8b3fb",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:213ed096bcb90796ed1d4ffe184aa8e87842da5c79dfad40af205b0be3a8b3fb",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:27511b5adea03156808c179cc85eef77bffeba5b4d08cdb233b172620ede254b",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:24fe175d490826c3adeccbe7d548a205852a219047fd9cd6c2701b773ecfdbac",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:24fe175d490826c3adeccbe7d548a205852a219047fd9cd6c2701b773ecfdbac",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:cbb0dae91dae1e3642ba5a6533abd31e9873177c1dd9f71e3c3155abfcea2e4b",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:319d7865c4fb3c32207379daef43e2ec6c59e7d926fb89d58e0fc6a856d5e101",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:319d7865c4fb3c32207379daef43e2ec6c59e7d926fb89d58e0fc6a856d5e101",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:ed07991a295ec1fa2b1d63614138f89d2120e4a4ea1a098a49af5f975b5956d1",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:34742bec531cf0a0efc97d9a0d8f86791c2cba29de78fb94aa9cf8b7792701be",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:34742bec531cf0a0efc97d9a0d8f86791c2cba29de78fb94aa9cf8b7792701be",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:9fafcedf330eca21d3b775df8ef265c375560ac8cbc96cf217e24934c5d214ab",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:3c16fc426e5582bdf3912e5fc49815c4d20320a1ae4d6ed0ff0620cdc31f91d8",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:3c16fc426e5582bdf3912e5fc49815c4d20320a1ae4d6ed0ff0620cdc31f91d8",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:574d87211ea602cb22c4fd50cd252c2d117b07fc214a95935fb7b2551496d8e7",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:3c7cd28f1b789ebd49aee20360a8b31dc22cfbfbe2afb5d43a4a20f684675921",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:1fd1a747e35ea4769fd10631971cbf304d6b9a5f59131faaf92d9ae82c0843c9",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:3c7cd28f1b789ebd49aee20360a8b31dc22cfbfbe2afb5d43a4a20f684675921",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:3d98ac43963decbd57a941488a8e30d44aa26ef08165668513999aa45b64655a",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:3d98ac43963decbd57a941488a8e30d44aa26ef08165668513999aa45b64655a",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:6c4bd803df64ef1d826ea279e68c70c17bd1ce1924b0139d5e2546f6169bd9f9",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:4052532b7abfad87ba78356fbfe5fd0237c049fb5677e66fb19a4fee95216af1",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:379e365573e7690f8fbce9d0d270c995bff63168c9ce35ba5a5487598ae381e0",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:4052532b7abfad87ba78356fbfe5fd0237c049fb5677e66fb19a4fee95216af1",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:461dabc4ec78bf1fde3a72dc8645629895460159022323035f8c19a0c13fc2f9",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:461dabc4ec78bf1fde3a72dc8645629895460159022323035f8c19a0c13fc2f9",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:af0f474074af94fc57dcc9cf6cb504c5735cf6402b62a928a568807f22b5f8b7",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:4a4b19a350e36fa738be9ab6852824ebf081a901562cc0d6c0dae4d66cff2720",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:4a4b19a350e36fa738be9ab6852824ebf081a901562cc0d6c0dae4d66cff2720",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:fefbc9aa7cc7eb28a1b5a2c53284e86d5e373d46de66c65ed1102a4cb0247757",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:4b14e4a37a18f8a0e40c02ade216c14a5188cb01cbcdc00ea428b139ca87ee79",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:4b14e4a37a18f8a0e40c02ade216c14a5188cb01cbcdc00ea428b139ca87ee79",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:fc6a70a89f0008766eef7ffa7d2d43e6185f929e73e8e6e4d5e59ecaf9cf91dc",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:4b52667c8f5a08a6ec1da9bddeb72494d885f9bfaf49f95e1d8e94195ae7a72e",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:4b52667c8f5a08a6ec1da9bddeb72494d885f9bfaf49f95e1d8e94195ae7a72e",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:96d4f78a2dd801db85c1f35b1aebd24345c2fd8eb0d2c9e6c1999347679fd7df",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:4c2cba36101b0fbef67e6d00cd00e4e1edf4f2eedc78b9c6da3e8ec3e364573a",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:4c2cba36101b0fbef67e6d00cd00e4e1edf4f2eedc78b9c6da3e8ec3e364573a",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:4cdd430c5d46a7767d4f33a3a1fb6af07a9698c7fb375577dede486092094c94",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:54913a401abcb26235db94dd28ddabd19785d8f9aa223255542e3272be8d0ef0",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:29ee00cc215db46a8f8cfa0faed82c161a3c64690a31e0aca2315e1bcf25f5da",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:54913a401abcb26235db94dd28ddabd19785d8f9aa223255542e3272be8d0ef0",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:54fa9ab52276d80597b0a9f2e0fb0ccce00fee862d0679a83ed0e6ac7540f128",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:54fa9ab52276d80597b0a9f2e0fb0ccce00fee862d0679a83ed0e6ac7540f128",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:59a131f63fdc549c02fce11fed25c8ee99c205f7295a839f8f4d8cada7836d95",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:5fd61e397b4398b1edb7d737e747602dd440777d467768180d21371c289b657d",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:072657d7e829c0a353c6052163382b4e991d6b3960e79992fffd243cb9fbe97c",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:5fd61e397b4398b1edb7d737e747602dd440777d467768180d21371c289b657d",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:60376af53b563a8ff9336607fe8166ff06547dc1433776b0831b8511cec99528",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:60376af53b563a8ff9336607fe8166ff06547dc1433776b0831b8511cec99528",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:aa3229326fb8b468722e2f5487ea0c1cf5fb69077a7d15bd9096d02b5c7fa7d3",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:6835f5bcda8d648ac260b9b057321a5839e2cd4c15a15cb18c5135a944da6a42",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:6835f5bcda8d648ac260b9b057321a5839e2cd4c15a15cb18c5135a944da6a42",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:7fb72885030cc2a5e7d8aae8aaed8f58580482c5b56193753150b2fd98850459",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:6b18cad827067e461f270965cda1edac922ad88bf8d85b77ebe657ba27882b80",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:6b18cad827067e461f270965cda1edac922ad88bf8d85b77ebe657ba27882b80",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:ad47d6dbb3322e0127470543ee90cc80b4284f95f035b3e8ea4acf26694c639a",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:6d30d0fd41eb46b5cbcf2bb9c135967d791fe9f332c58e49b95c1eea0e333e6c",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:6d30d0fd41eb46b5cbcf2bb9c135967d791fe9f332c58e49b95c1eea0e333e6c",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:819bcdb298578be6fbae8f1c35dc3d348629b9c96699447a908346f9e5e59e7b",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:748708b5421d4187a35d52c7efec33763ecbecb76b9d9566faf60c7e7e0e4940",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:748708b5421d4187a35d52c7efec33763ecbecb76b9d9566faf60c7e7e0e4940",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:74a61e7fb49f8c497de462d7c753b2ecd834239000b90df53e7cfac7e9ae6e84",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:7a4a63d759acec74728e23dda6dc89310333da78bd0122804ffcacf687d1c6a1",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:1b9c544348db77e219d47f4fa24da4b1e28d333d5003a036c41b91dca7ed5913",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:7a4a63d759acec74728e23dda6dc89310333da78bd0122804ffcacf687d1c6a1",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:818adb40319960799dc9973076d0c4eb3ee173634a79c437c5704aa2d13daf22",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:734ffd958c247bfad302f44a2a8424b9e6cc156f7ab3ce0b59b33c27b90f2c16",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:818adb40319960799dc9973076d0c4eb3ee173634a79c437c5704aa2d13daf22",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:83a38a7ca29f457767083faa765dcebd903daf94089ca0c5435e576e65c2841e",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:6d5d57dd306b16059c2d7f818a3c6890e6b42526ff2addeeeb824f9203513518",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:83a38a7ca29f457767083faa765dcebd903daf94089ca0c5435e576e65c2841e",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:84f21cf4a85e0f48f47f05d73af6920a00b095bfd4111e35ea0babfaff75d0ea",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:772a9d57883579efc28a1eba77585f51735ae2075923e629b2ef3d31fc35d627",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:84f21cf4a85e0f48f47f05d73af6920a00b095bfd4111e35ea0babfaff75d0ea",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:8755566dff83d262ad671747db963194c5558b76e62ee9dcf5985afb3ea9e056",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:427debbaa0746630c07af41e64fe1ecb5bc36494f430fc331fe9fead63c96546",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:8755566dff83d262ad671747db963194c5558b76e62ee9dcf5985afb3ea9e056",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:8a9f931d8fe7580df3f506a162ac873646371bd84f004d6c7b52986e1616fc24",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:3f0cf4ce386d91d007cb7ccd458d7dc0dc067233829dcccbcca6c9be5ec1f51e",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:8a9f931d8fe7580df3f506a162ac873646371bd84f004d6c7b52986e1616fc24",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:974f4179c18703b77ead4110440fd8d2e4a5bd16b375a403473bc708e5c90566",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:8ae203e1f266ed254a5453ff075d5d119dc85ff776332d039a3318173ec6d385",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:974f4179c18703b77ead4110440fd8d2e4a5bd16b375a403473bc708e5c90566",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:9dc2d378c7b0af68f9b18a9694dd8910fc31717d4dd6f4153f6c0109b04073d7",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:9dc2d378c7b0af68f9b18a9694dd8910fc31717d4dd6f4153f6c0109b04073d7",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:9dee4cb0ee6b135970618d3a2d811e08a3f06c0289a76bb20b56b950dbf33a02",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:aedcd6fa9f134f38c073d6d9faf783b7aec8e8bf34bfd9412f7f958c90a2a086",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:62292e7d6265cf68da9385b502ecd2459e881803dbdb097d97acdcf52b90b7d6",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:aedcd6fa9f134f38c073d6d9faf783b7aec8e8bf34bfd9412f7f958c90a2a086",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:b238525c136feb748329ac256bdc58d01b8ae00166d9d9cbbb1d2b5d5cd89520",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:b238525c136feb748329ac256bdc58d01b8ae00166d9d9cbbb1d2b5d5cd89520",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:ed20c646a3cbb592c55540b96d5c369f8e7cbd461ab541fd6b45f04ac42e9752",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:b4404d6e57b1405e78455b5e0b94ce923045c9a9a60ec51de9fe926b035ee73e",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:1ad47c9874264243585a3bf4111be0da399acf3f928d4bbdf3a8c05011ac9021",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:b4404d6e57b1405e78455b5e0b94ce923045c9a9a60ec51de9fe926b035ee73e",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:b8b17e8a95ebbfcccfd62940ca2929463de0424f41258a6133bc55db9d92ba79",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:8691024555d4fc9ad12b7b2c58035a637f47ff000a749ae913ee493f498202d9",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:b8b17e8a95ebbfcccfd62940ca2929463de0424f41258a6133bc55db9d92ba79",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:bb03a78ba1f3221060814621f2a3e1c2b265a489a17cad2dd651a3cf489e2f50",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:87ee1d5a9a2fc2dfef68a2191859e732978fd5c6683c840221ce12ba132023c0",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:bb03a78ba1f3221060814621f2a3e1c2b265a489a17cad2dd651a3cf489e2f50",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:c3ff26ffe35ab30422c24ff5ecb107fec7b4a9424089128cd23d2e3bfbd32d0a",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:c3ff26ffe35ab30422c24ff5ecb107fec7b4a9424089128cd23d2e3bfbd32d0a",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:fa7d87e33f492690825a2a9c6ddd31cd34614fba121bed212fef3304ee8a5260",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:c5704304aa21ab238360bd4fa0bfbdb83bb1c03b1b66e7eeb80dcced7b8692f7",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:39b94e8fc7f1066f9c936027f54ef0d9a7c8b599ff7b334568701e6f50e9f277",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:c5704304aa21ab238360bd4fa0bfbdb83bb1c03b1b66e7eeb80dcced7b8692f7",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:c77779e1a705d38a30c7e562db3c3663bd88cc818ecbc4cb02db8aa9a985e7cc",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:5715d3a3a0a3887fc175cacd068aa24d022a5894dd54b317eab6c9c44a69f636",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:c77779e1a705d38a30c7e562db3c3663bd88cc818ecbc4cb02db8aa9a985e7cc",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:ca6ac08393f1c9ce4188d4d2f5f9d1384e6f2a61756a0df34042f63d4308d467",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:611c3a25dfb1f6359789a8bef1dd161cb1cc1aa4bf22447873591a39c9fdc16f",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:ca6ac08393f1c9ce4188d4d2f5f9d1384e6f2a61756a0df34042f63d4308d467",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:cc572e0f90d9b2b5117b4efb2b703f0c972f43c8ed6a94f6a2c5598c2432bcb5",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:39ee6ed9c63ce4e8f8a0f0ea9a1d74b2d811ac14b1401ca0db9d9b117dab5df1",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:cc572e0f90d9b2b5117b4efb2b703f0c972f43c8ed6a94f6a2c5598c2432bcb5",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:d0ea417a1e22635e0be68b5b82d460d38f3f628572320ae4f3d05a4064e2f42d",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:0accb7f7766fd4e0393576e20f63f6b363f770d9cf54e6ad4193bcb7294114b3",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:d0ea417a1e22635e0be68b5b82d460d38f3f628572320ae4f3d05a4064e2f42d",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:e0d6f2ea7748bc7c998178f67512de5cf7c581a716f038f4e67ccf2e8b85bf40",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:560f6aace931002d7675cceaa5d1bf075df4e3b1e1eb649f06390be6f923bce6",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:e0d6f2ea7748bc7c998178f67512de5cf7c581a716f038f4e67ccf2e8b85bf40",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:e692d46b0fef457401fab6aeb5c4cb37a35beb43c644fb862da069347cba8de3",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:96af2effdda42adb80356229d008a7fed12b62dfecde0d4e908020a05c13a4e2",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:e692d46b0fef457401fab6aeb5c4cb37a35beb43c644fb862da069347cba8de3",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:e7323ebb3bea4be82b7b94b5487005855967917187d22a25373cc018bc34f3f3",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:d2f20226dabf8a14994e421caf8b164a3bd7819576384f343b6f66e7cf4df053",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:e7323ebb3bea4be82b7b94b5487005855967917187d22a25373cc018bc34f3f3",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:eb16a9e22fa420557e8891b89a7201b7fd45213ea27623a43a6d7dbe1355db2d",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:2ace7200c5642f0f3495fc70a55cd2d38a32d5fe2dd4267022a963232d5f3ef7",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:eb16a9e22fa420557e8891b89a7201b7fd45213ea27623a43a6d7dbe1355db2d",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:edc0e5f5180ea160ee668730043a4ac0b998cfa80145732cc3f3ca4e41afe477",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:8910e4aed6aa357c55e98c1dc16d8e87fb3f5d3822b7116136357f440028b2d5",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:edc0e5f5180ea160ee668730043a4ac0b998cfa80145732cc3f3ca4e41afe477",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:ee916f37eb903f06f94362bcea379907e5235c93e8713963e77bc0e318f6e1a5",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:31ed53db16b644c5112fe39b3fdbd6e8c474cab74229e8e5b3a7b57e5c725e2e",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:ee916f37eb903f06f94362bcea379907e5235c93e8713963e77bc0e318f6e1a5",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:f0660bfe67aa98cd352fc4b2d151a8ffac42111795a623f9b70e441841ee7f40",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:10bca4dbaea4a1c0db372d714ab8753e9e4123fcb740c3844812976874204da4",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:f0660bfe67aa98cd352fc4b2d151a8ffac42111795a623f9b70e441841ee7f40",
+          "domain": "CHILDREN"
+        }
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:f5ae56cfb7e5aadb275c0136fb02a66f8b53785e588bb0eb8a360e64e929c6cb",
+      "classification": "NOT_INTERPRETATION_CANDIDATE",
+      "originalProhibitions": [
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:f5534d3ff584f24eb4e33430e5e7cab4e42725cfea4a3946fca2c8544e2e4be5",
+          "domain": "CHILDREN"
+        },
+        {
+          "ruleId": "sdv:policy:friendship-child-ban",
+          "ancestor": "kc:v1:f5ae56cfb7e5aadb275c0136fb02a66f8b53785e588bb0eb8a360e64e929c6cb",
+          "domain": "CHILDREN"
+        }
+      ]
+    }
+  ],
+  "binderScopedDomainBansByRelationship": {
+    "coworker": 165,
+    "managerReport": 128,
+    "businessPartner": 203
+  },
+  "sourceGroupRecords": 192,
+  "inheritedSourceGroupHeld": 188,
+  "allOriginalDecisionsAndResearchPreserved": true,
+  "customerRuntimeAllAncestorEnforcementClaimed": false
+}

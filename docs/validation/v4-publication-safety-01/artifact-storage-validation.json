@@ -1,0 +1,21 @@
+{
+  "codec": "Existing DeterministicArtifactWriter/readGlobalArtifact",
+  "lossless": true,
+  "originalResearchArchivesChanged": false,
+  "files": [
+    {
+      "file": "before-after-publication.json",
+      "originalBytes": 2155211,
+      "payloadBytes": 243995,
+      "logicalSha256": "77291f52e5af46aa4096bdcb02dda1a4b9c4e622f5809a40ad774b2c76bb29cf",
+      "restoredExactBytes": true
+    },
+    {
+      "file": "publication-source-shortages.json",
+      "originalBytes": 1693939,
+      "payloadBytes": 103365,
+      "logicalSha256": "5e527890da820df1371488ee3887e3fd4500e33d1259ad6acfc27ab9139a5681",
+      "restoredExactBytes": true
+    }
+  ]
+}

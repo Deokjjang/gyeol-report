@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "source-exact-proofs.json.gz",
+  "payloadHash": "d9215b17bcf9f8844ab4b10d16c65f59bdd52a622ac6b6b86de6d60a1a2f6937",
+  "logicalJsonHash": "659454c249b6ace79be79df8ebfab66bcd2a1176fb6cfc9bad17ed2973828d19",
+  "uncompressedBytes": 2118532
+}

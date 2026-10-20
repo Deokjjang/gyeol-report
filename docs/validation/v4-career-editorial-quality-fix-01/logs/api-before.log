@@ -1,0 +1,147 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-career-editorial-quality-fix-01
+
+ ❯ tests/unit/payment/annualPurchaseYearPolicy.test.ts (22 tests | 21 failed) 1522ms
+     × new checkout at Thu Dec 31 2026 23:59:59 GMT+0900 (Korean Standard Time) for 2021 returns 200 22ms
+     × new checkout at Thu Dec 31 2026 23:59:59 GMT+0900 (Korean Standard Time) for 2020 returns 400 10ms
+     × new checkout at Thu Dec 31 2026 23:59:59 GMT+0900 (Korean Standard Time) for 2027 returns 400 9ms
+     × new checkout at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) for 2021 returns 400 9ms
+     × new checkout at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) for 2022 returns 200 8ms
+     × new checkout at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) for 2027 returns 200 9ms
+     × rejects spoofed old acceptance both beside and inside the public payload 8ms
+     × paid 2021 generates after rollover/delay at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) using original selected-year Dayun 8ms
+     × paid 2021 generates after rollover/delay at Mon Feb 15 2027 00:00:00 GMT+0900 (Korean Standard Time) using original selected-year Dayun 9ms
+     × writer outage in 2027 immediately delivers fallback using the accepted 2026 policy 10ms
+     × other product saju_mbti_full keeps price, input and paid generation without annual context 12ms
+     × other product career_money_study keeps price, input and paid generation without annual context 8ms
+     × other product love_marriage_child keeps price, input and paid generation without annual context 7ms
+     × other product major_fortune keeps price, input and paid generation without annual context 7ms
+     × other product saju_mbti_compatibility keeps price, input and paid generation without annual context 7ms
+     × automatic retries and real deterministic fallback preserve accepted policy 7ms
+     × admin retry and duplicate callbacks leave original durable context and identity intact 7ms
+     × missing paid context never invokes generation, reaches attention, preserves PAID 7ms
+     × invalid-date paid context never invokes generation, reaches attention, preserves PAID 7ms
+     × tampered-year paid context never invokes generation, reaches attention, preserves PAID 7ms
+     × wrong-version paid context never invokes generation, reaches attention, preserves PAID 7ms
+ ❯ tests/unit/api/bookAnnualPreflight.test.ts (2 tests | 1 failed) 97ms
+   × uncertain Annual fails before order, local redeem or production queue; exact correction can retry 95ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 22 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/api/bookAnnualPreflight.test.ts > uncertain Annual fails before order, local redeem or production queue; exact correction can retry
+AssertionError: expected 403 to be 400 // Object.is equality
+
+- Expected
++ Received
+
+- 400
++ 403
+
+ ❯ tests/unit/api/bookAnnualPreflight.test.ts:31:24
+     29|     inputSnapshot: { displayName: payload.person.name, birthDate: payl…
+     30|   }) }));
+     31|   expect(order.status).toBe(400); expect(storage.create).not.toHaveBee…
+       |                        ^
+     32|   expect(await order.json()).not.toHaveProperty("checkoutSession");
+     33|   const store = { call: vi.fn() }, consent = createCheckoutConsentEvid…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/22]⎯
+
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > new checkout at Thu Dec 31 2026 23:59:59 GMT+0900 (Korean Standard Time) for 2021 returns 200
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > new checkout at Thu Dec 31 2026 23:59:59 GMT+0900 (Korean Standard Time) for 2020 returns 400
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > new checkout at Thu Dec 31 2026 23:59:59 GMT+0900 (Korean Standard Time) for 2027 returns 400
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > new checkout at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) for 2021 returns 400
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > new checkout at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) for 2022 returns 200
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > new checkout at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) for 2027 returns 200
+SyntaxError: Unexpected end of JSON input
+ ❯ checkout tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58
+
+ ❯ tests/unit/payment/annualPurchaseYearPolicy.test.ts:84:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/22]⎯
+
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > rejects spoofed old acceptance both beside and inside the public payload
+SyntaxError: Unexpected end of JSON input
+ ❯ checkout tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58
+
+ ❯ tests/unit/payment/annualPurchaseYearPolicy.test.ts:97:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/22]⎯
+
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > paid 2021 generates after rollover/delay at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) using original selected-year Dayun
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > paid 2021 generates after rollover/delay at Mon Feb 15 2027 00:00:00 GMT+0900 (Korean Standard Time) using original selected-year Dayun
+SyntaxError: Unexpected end of JSON input
+ ❯ checkout tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58
+
+ ❯ purchase tests/unit/payment/annualPurchaseYearPolicy.test.ts:57:28
+ ❯ tests/unit/payment/annualPurchaseYearPolicy.test.ts:104:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/22]⎯
+
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > writer outage in 2027 immediately delivers fallback using the accepted 2026 policy
+SyntaxError: Unexpected end of JSON input
+ ❯ checkout tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58
+
+ ❯ purchase tests/unit/payment/annualPurchaseYearPolicy.test.ts:57:28
+ ❯ tests/unit/payment/annualPurchaseYearPolicy.test.ts:113:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/22]⎯
+
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > other product saju_mbti_full keeps price, input and paid generation without annual context
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > other product career_money_study keeps price, input and paid generation without annual context
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > other product love_marriage_child keeps price, input and paid generation without annual context
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > other product major_fortune keeps price, input and paid generation without annual context
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > other product saju_mbti_compatibility keeps price, input and paid generation without annual context
+AssertionError: expected 403 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 403
+
+ ❯ tests/unit/payment/annualPurchaseYearPolicy.test.ts:140:29
+    138|       method: "POST", body: JSON.stringify({ consent: adultCheckoutCon…
+    139|     }));
+    140|     expect(response.status).toBe(200);
+       |                             ^
+    141|     const body = await response.json();
+    142|     expect(body.paymentOrder).toMatchObject({ productType: productKey,…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/22]⎯
+
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > automatic retries and real deterministic fallback preserve accepted policy
+SyntaxError: Unexpected end of JSON input
+ ❯ checkout tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58
+
+ ❯ purchase tests/unit/payment/annualPurchaseYearPolicy.test.ts:57:28
+ ❯ tests/unit/payment/annualPurchaseYearPolicy.test.ts:153:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/22]⎯
+
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > admin retry and duplicate callbacks leave original durable context and identity intact
+SyntaxError: Unexpected end of JSON input
+ ❯ checkout tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58
+
+ ❯ purchase tests/unit/payment/annualPurchaseYearPolicy.test.ts:57:28
+ ❯ tests/unit/payment/annualPurchaseYearPolicy.test.ts:166:45
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/22]⎯
+
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > missing paid context never invokes generation, reaches attention, preserves PAID
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > invalid-date paid context never invokes generation, reaches attention, preserves PAID
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > tampered-year paid context never invokes generation, reaches attention, preserves PAID
+ FAIL  tests/unit/payment/annualPurchaseYearPolicy.test.ts > annual purchase policy — real prepare / SQL / worker, no providers > wrong-version paid context never invokes generation, reaches attention, preserves PAID
+SyntaxError: Unexpected end of JSON input
+ ❯ checkout tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58
+
+ ❯ purchase tests/unit/payment/annualPurchaseYearPolicy.test.ts:57:28
+ ❯ tests/unit/payment/annualPurchaseYearPolicy.test.ts:184:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/22]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  22 failed | 2 passed (24)
+   Start at  18:32:58
+   Duration  3.36s (transform 3.39s, setup 59ms, import 4.47s, tests 1.62s, environment 0ms)

@@ -1,0 +1,159 @@
+{
+  "baseSha": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+  "environment": {
+    "node": "v25.9.0",
+    "next": "16.2.4",
+    "vitest": "4.1.5"
+  },
+  "baselineKnownFailures": {
+    "files": 5,
+    "pass": 122,
+    "fail": 6,
+    "preexistingConditionalNotRun": 1,
+    "exitCode": 1
+  },
+  "baselineAdditionalFailures": {
+    "exactBaseArchive": "/tmp/gyeol-career-knowledge-baseline-df70",
+    "files": 2,
+    "fail": 10,
+    "selectedPass": 1,
+    "notSelectedByNameFilter": 36,
+    "allNamesAndDigestArraysMatch": true,
+    "exitCode": 1
+  },
+  "finalNewResearchTests": {
+    "file": "tests/unit/report-knowledge/careerProductResearch.test.ts",
+    "pass": 467,
+    "fail": 0,
+    "includedInRelatedSuite": true,
+    "exitCode": 0
+  },
+  "relatedSuite": {
+    "paths": [
+      "tests/unit/report-knowledge/careerProductResearch.test.ts",
+      "tests/unit/report-knowledge/comprehensiveProductResearch.test.ts",
+      "tests/unit/report-knowledge/fusionKnowledgeResearch.test.ts",
+      "tests/unit/report-knowledge/semanticAxisResearch.test.ts",
+      "tests/unit/report-knowledge/mbti/sourceRuntimeAdapter.test.ts",
+      "tests/unit/report-knowledge/mbtiFoundationResearch.test.ts",
+      "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "tests/unit/interpretation-v4/careerQuality.test.ts",
+      "tests/unit/interpretation-v4/careerProduct.test.tsx",
+      "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "tests/unit/interpretation-v4/careerNarrative.test.ts",
+      "tests/unit/interpretation-v4/careerSafety.test.ts",
+      "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+      "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+      "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+      "tests/unit/interpretation-v4/comprehensiveRelease.test.ts"
+    ],
+    "files": 17,
+    "pass": 1651,
+    "fail": 16,
+    "newFailures": 0,
+    "preexistingConditionalNotRun": 1,
+    "exitCode": 1
+  },
+  "sixProductSuite": {
+    "file": "tests/unit/interpretation-v4/sixProductIntegration.test.ts",
+    "passBefore": 64,
+    "passAfter": 64,
+    "fail": 0,
+    "exitCode": 0
+  },
+  "combinedNonDuplicatedFinalChecks": {
+    "files": 18,
+    "pass": 1715,
+    "existingFailures": 16,
+    "newFailures": 0,
+    "preexistingConditionalNotRun": 1
+  },
+  "typescript": {
+    "before": 0,
+    "after": 0,
+    "new": 0,
+    "command": "npx tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "lint": {
+    "command": "npm run lint",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "OPENAI_REPORT_WRITER_ENABLED=0 TOSS_CONFIRM_API_ENABLED=0 PAID_REPORT_RELIABILITY_ENABLED=0 npm run build -- --webpack",
+    "initialRestrictedEnvironment": "FAIL ENOTFOUND fonts.googleapis.com for Geist/Geist Mono",
+    "networkAllowedRetry": "PASS",
+    "finalBuild": "PASS",
+    "staticPages": 47,
+    "nftWarnings": 0,
+    "newWarningTypes": 0,
+    "environmentFilesChanged": false,
+    "buildConfigurationChanged": false,
+    "exitCode": 0
+  },
+  "diffCheck": {
+    "requiredCommands": [
+      "git diff --check",
+      "git diff --cached --check"
+    ],
+    "lastCheckAtStaging": true
+  },
+  "sourceVerification": {
+    "baseSha": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "inheritedRecordsResolved": 2991,
+    "inheritedFamilies": {
+      "composite": 301,
+      "completion": 173,
+      "deep": 838,
+      "mbtiIndividual": 531,
+      "mbtiPair": 279,
+      "relation": 246,
+      "foundation": 213,
+      "temporal": 410
+    },
+    "primaryTraitsResolved": 1213,
+    "traitCoverage": {
+      "direct": 938,
+      "inferred": 275
+    },
+    "selectedLocators": 117,
+    "sourceKinds": {
+      "natal_research": 12,
+      "mbti_trait": 99,
+      "fusion_research": 5,
+      "input_contract": 1
+    },
+    "semanticFacetsAvailable": 109,
+    "comprehensiveMaterialsReviewed": 179,
+    "mbtiRecommended": 190,
+    "mbtiAvoid": 120,
+    "unresolvedHintTraits": [
+      {
+        "id": "mbti:INTP:recommendedJobs:1",
+        "unresolved": [
+          "deep_project_learning"
+        ]
+      },
+      {
+        "id": "mbti:INTP:recommendedJobs:2",
+        "unresolved": [
+          "intellectual_depth"
+        ]
+      },
+      {
+        "id": "mbti:ENFP:avoidJobsOrEnvironments:3",
+        "unresolved": [
+          "meaning_based_study"
+        ]
+      }
+    ],
+    "existingFileHashesMatched": 2275,
+    "method": "actual TS export/index or JSON pointer resolution, SHA256 and original coverage state comparison",
+    "historicalExternalSourcesReaccessed": false,
+    "newTraditionalFacts": 0,
+    "newEmpiricalFacts": 0,
+    "occupationSourcesUsedForTaskScopeOnly": 6
+  },
+  "scope": "Static career research, tests and validation docs only; no runtime integration or customer approval"
+}

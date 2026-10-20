@@ -1,0 +1,27 @@
+{
+  "originalGitVersions": [
+    {
+      "file": "src/lib/interpretation-v4/materialDepth.ts",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "expectedFileHash": "e9d4f0d46548a6af00299a742dd47a92e8ffea375bc8bc1199be97e994bcd8f8",
+      "originalCommitFileHash": "e9d4f0d46548a6af00299a742dd47a92e8ffea375bc8bc1199be97e994bcd8f8",
+      "verified": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/structureRules.ts",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "expectedFileHash": "4f0affe12664bd670076884d3f9b170f48f82f425702a531b2d6363e192d3395",
+      "originalCommitFileHash": "4f0affe12664bd670076884d3f9b170f48f82f425702a531b2d6363e192d3395",
+      "verified": true
+    },
+    {
+      "file": "src/lib/saju/shinsalConstants.ts",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "expectedFileHash": "161d5600b88cb096b80ed9ec618a6639b9ab3b89613baa8cf51e0986467865d3",
+      "originalCommitFileHash": "161d5600b88cb096b80ed9ec618a6639b9ab3b89613baa8cf51e0986467865d3",
+      "verified": true
+    }
+  ],
+  "sha64VersionsValidatedByOriginalSourceReader": true,
+  "allVerified": true
+}

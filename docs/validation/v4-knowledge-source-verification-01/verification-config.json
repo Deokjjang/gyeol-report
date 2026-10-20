@@ -1,0 +1,120 @@
+{
+  "version": "source-verification-v1",
+  "baseSha": "51420fdebd4af81b503128a64f2c5c4d5beb3714",
+  "catalogRoot": "docs/validation/v4-knowledge-unified-catalog-01",
+  "catalogConfig": "docs/validation/v4-knowledge-unified-catalog-01/compiler-config.json",
+  "sourceIntegrity": "docs/validation/v4-knowledge-unified-catalog-01/source-integrity.json",
+  "locatorConventions": [
+    {
+      "prefix": "taxonomy",
+      "file": "src/lib/report-knowledge/sajuFeatureTaxonomy.ts",
+      "exportName": "SAJU_FEATURE_TAXONOMY",
+      "fieldSuffix": false,
+      "proof": "Exact existing source ID/key in the declared export; no spelling or semantic substitution."
+    },
+    {
+      "prefix": "knowledge",
+      "file": "src/lib/report-knowledge/sajuKnowledgeBase.ts",
+      "exportName": "SAJU_KNOWLEDGE_BASE",
+      "fieldSuffix": false,
+      "proof": "Exact existing source ID/key in the declared export; no spelling or semantic substitution."
+    },
+    {
+      "prefix": "dayPillars",
+      "file": "src/lib/report-knowledge/sajuDayPillarKnowledge.ts",
+      "exportName": "SAJU_DAY_PILLAR_KNOWLEDGE",
+      "fieldSuffix": false,
+      "proof": "Exact existing source ID/key in the declared export; no spelling or semantic substitution."
+    },
+    {
+      "prefix": "sajuDayPillarKnowledge",
+      "file": "src/lib/report-knowledge/sajuDayPillarKnowledge.ts",
+      "exportName": "SAJU_DAY_PILLAR_KNOWLEDGE",
+      "fieldSuffix": true,
+      "proof": "Exact existing source ID/key in the declared export; no spelling or semantic substitution."
+    },
+    {
+      "prefix": "SHINSAL_RULES",
+      "file": "src/lib/saju/shinsalConstants.ts",
+      "exportName": "SHINSAL_RULES",
+      "fieldSuffix": false,
+      "proof": "Exact existing source ID/key in the declared export; no spelling or semantic substitution."
+    },
+    {
+      "prefix": "STRUCTURE_RULES",
+      "file": "src/lib/interpretation-v4/structureRules.ts",
+      "exportName": "STRUCTURE_RULES",
+      "fieldSuffix": false,
+      "proof": "Exact existing source ID/key in the declared export; no spelling or semantic substitution."
+    }
+  ],
+  "fragmentGrammars": [
+    {
+      "exportName": "COMPLETION_DAYPILLARS",
+      "referenceField": "/inheritedMeaningRef/0",
+      "syntax": "comma-separated-top-level-fields",
+      "fields": [
+        "core",
+        "positive",
+        "risk"
+      ],
+      "declaration": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTypes.ts",
+      "examplesFile": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepDayPillars.ts",
+      "contractNote": "inheritedMeaningRef explicitly retains text by reference; all 60 original declarations use #core,positive,risk. Each requested field must exist."
+    }
+  ],
+  "aliasDocuments": [
+    {
+      "file": "docs/validation/v4-fusion-semantic-knowledge-depth-01/source-verification.json",
+      "field": "researchSourceAliases"
+    }
+  ],
+  "declarationSources": [
+    {
+      "file": "src/lib/report-knowledge/fusion-knowledge-research/fusionResearchSources.ts",
+      "exportName": "FUSION_RESEARCH_SOURCE_IDS",
+      "role": "documentary_authored_ids_not_facts"
+    }
+  ],
+  "scopeAlias": {
+    "exportName": "TEMPORAL_SCOPES",
+    "field": "scope",
+    "proof": "Exact scope value declared by the original temporal scope record, not a calculated window."
+  },
+  "nativeDefinitionFiles": [
+    "src/lib/saju/constants.ts",
+    "src/lib/saju/types.ts",
+    "src/lib/saju/tenGods.ts",
+    "src/lib/report-knowledge/sajuPillarFeaturePlacement.ts"
+  ],
+  "domainPolicies": [
+    {
+      "relationship": "businessPartner",
+      "policyId": "bppr:binding-policy:v1",
+      "domains": [
+        "WORK",
+        "CAREER",
+        "THINKING",
+        "MONEY",
+        "INVESTMENT"
+      ],
+      "quote": "WORK/CAREER/THINKING/MONEY/INVESTMENT는 현재 비연애 projection 미허용."
+    }
+  ],
+  "futurePatterns": [
+    "^sar:gate:",
+    "^SajuCalcResult:",
+    "^input:",
+    "^natal[:.]",
+    "^annual:",
+    "^month-v2:",
+    "^calendarMonths:",
+    "^annual-month:",
+    "^v4:(?:major-setting|annual|major|interaction|compatibility|natal)",
+    "^canonical-natal-table-",
+    "^supplement:",
+    "^foundation:(?:element|yin_yang):[^:]+:",
+    "^(?:basis|reference|source|referenceBranch|yearBranch|dayStem|branch|position):"
+  ],
+  "checkedAtPolicy": "DETERMINISTIC_BASE_SNAPSHOT_ONLY; wall-clock run metadata is stored outside versioned receipts"
+}

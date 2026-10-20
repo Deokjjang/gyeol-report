@@ -1,0 +1,562 @@
+[
+  {
+    "materialId": "clr:material:CH01.P1:response-and-thought",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 혼자 정리할 때 B에게 다시 이야기할 때를 전한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH01.P1:steady-and-new",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B의 즉흥 제안을 A의 기존 일정과 함께 살핀다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH01.P2:detected-harmony-context",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 함께할 장소를 고를 때 각자 어려운 조건을 먼저 말한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH01.P2:clash-without-prophecy",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 다음 약속의 확정 전에 필요한 생각 시간을 묻는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH01.P3:two-types-two-views",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 들은 말과 B가 했던 행동의 뜻을 각자 설명한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH01.P3:same-type-no-same-person",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 둘이 원하는 만남의 목적을 각자 적어 비교한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH01.P4:agreement-not-feeling-score",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 다음 만남을 제안하고 장소와 시간을 바꿀 여지를 둔다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH01.P4:two-source-limits",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 각자의 쉬는 시간과 꾸준한 안부를 함께 정한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P1:a-deliberate-affection",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 다시 만나고 싶지만 더 알아가고 싶다고 전한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P1:a-explicit-action",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 만남 준비 뒤 B에게 좋았던 점을 묻는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P2:a-space-with-connection",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 개인 작업 뒤 통화 가능한 때를 제안한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P2:a-trust-change",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 새 장소를 제안하면 A가 중요한 기존 조건을 말한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P3:a-help-with-permission",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 B의 바쁜 일을 들은 뒤 어떤 도움이 필요한지 묻는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P3:a-playful-encouragement",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 새로운 관심을 말한 뒤 B가 고를 주제를 기다린다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P4:a-fix-before-hearing",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 고민을 말할 때 A가 듣기와 제안 중 필요한 것을 묻는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P4:a-read-response",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 B의 짧은 답에 불편한지 묻고 설명을 기다린다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P1:b-reaction-as-participation",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 기다리기 편한 짧은 안내를 A에게 설명한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P1:b-practical-quietness",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 약속 준비를 마친 뒤 A에게 어떤 뜻인지 짧게 말한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P2:b-safe-disagreement",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 제안의 일부는 좋지만 일정은 어렵다고 말한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P2:b-chosen-presence",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 함께하고 싶은 활동 하나를 A에게 제안한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P3:b-reliable-small-care",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 새 활동의 예약만 맡고 나머지는 함께 나눈다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P3:b-new-view-with-listening",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 A의 장소 선택 이유를 듣고 활동 하나를 보탠다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P4:b-silent-resentment",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 장소가 불편한 이유 하나와 대안을 전한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P4:b-novelty-with-cost",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 만남을 바꾸자고 할 때 취소와 재예약도 함께 정한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P1:shared-trust-not-same-rule",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 각자 기다리기 편한 안내를 한 가지씩 말한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P1:same-care-different-help",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 두 사람이 바쁜 주에 원하는 지원을 각자 고른다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P2:curiosity-and-continuity",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 새로운 장소를 찾고 B가 지금 좋아하는 분위기를 말한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P2:clear-and-considered",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 다음 만남 제안에서 각자 원하는 내용과 어려운 표현을 말한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P3:chosen-shared-adventure",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 산책에서 더 둘러볼 곳과 쉬고 싶은 곳을 번갈아 고른다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P3:quiet-co-presence",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 각자 읽은 뒤 저녁에 나누고 싶은 이야기를 고른다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P4:positive-harmony-with-choice",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 만남을 제안하며 서로 수정할 항목을 하나씩 둔다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P4:mutual-chosen-strength",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 각자 가능한 지원 하나와 어려운 일 하나를 말한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P1:ab-rule-as-option",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 만남 주기를 제안하고 B가 바꾸고 싶은 부분을 고른다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P1:ab-output-enjoyment",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 짧은 체험을 제안하고 B가 수준과 끝낼 때를 고른다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P1:ab-resource-specificity",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 만남의 소요 시간을 말하고 B가 가능한 범위를 고른다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P2:ab-clear-invite",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 다음 만남을 제안한 뒤 B가 답할 때를 묻는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P2:ab-care-with-autonomy",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 준비를 돕기 전에 B가 원한 범위를 묻는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P2:ab-new-meaning",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 새로운 장소 하나를 제안하며 기존 시간을 유지한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P3:ab-reaction-pressure",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 긴 메시지를 보낸 뒤 B에게 답할 준비가 됐는지 묻는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P3:ab-correction-without-request",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 만남 준비의 오류 하나만 말하고 B의 이유를 듣는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P3:ab-care-debt",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 준비를 맡기 전 B와 가능한 역할을 나눈다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P4:ab-listen-before-more",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 B의 설명을 한 문장으로 확인한 뒤 도움을 제안한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P4:ab-offer-not-reservation",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 작은 만남을 제안하고 B가 바꿀 시간을 둔다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P4:ab-return-with-boundary",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 A가 오늘은 쉬고 다음 날 대화 가능 여부를 다시 묻겠다고 알린다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P1:ba-care-receiving",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 필요한 준비를 돕겠다고 하고 A가 범위를 고른다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P1:ba-other-question",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 A가 고른 만남의 이유 하나를 묻고 답을 남긴다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P1:ba-equal-opinion",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 활동의 이유를 말하고 A가 지금 하고 싶은 범위를 고른다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P2:ba-warm-feedback",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 A의 짧은 생각에 반응하고 더 말할지는 A가 고르게 한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P2:ba-quiet-doing",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 준비를 마친 뒤 A에게 어떤 도움이었는지 설명한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P2:ba-memory-open-question",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 전에 좋아한 장소를 A가 지금도 원하는지 묻는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P3:ba-asking-becomes-monitoring",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 A의 모든 일정을 묻기보다 다음 연결 시간만 상의한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P3:ba-explanation-too-late",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 제안에 아직 답하기 어렵다고 말하고 가능한 시점을 둔다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P3:ba-care-erases-choice",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 계획을 대신 정하기 전에 A가 원하는 참여를 묻는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P4:ba-present-not-explain-away",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 A의 불편을 되말하고 어떤 부분이 남았는지 묻는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P4:ba-update-memory",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 익숙한 만남과 새로운 제안 중 A의 현재 선택을 묻는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P4:ba-name-own-need",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 B가 다음 만남에서 받고 싶은 관심 하나를 짧게 말한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P1:mismatched-response-time",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 긴 메시지 뒤 같은 질문이 이어지면 가능한 응답부터 나눈다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P1:no-friction-no-hidden-fault",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 둘 다 혼자 쉴 필요가 있다면 공동 약속을 무엇까지 유지할지 묻는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P2:clash-position-and-question",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 만남 변경 때 누가 무엇을 다시 준비할지 확인한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P2:harm-is-not-wonjin",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 짧은 답의 뜻을 확인하되 원진 때문에 서운했다고 하지 않는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P3:correction-and-retreat",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 한 번의 약속 실수에서 지난 일까지 꺼내려 할 때 멈춘다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P3:care-and-unasked-debt",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 둘 다 준비를 맡으려 할 때 원하는 도움과 가능한 몫을 따로 적는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P4:safety-outside-type",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 위협이 있는 대화라면 중단과 확인된 지원을 먼저 검토한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P4:assumption-grows-with-meaning",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 약속 취소를 사랑의 부정으로 읽기 전 실제 이유를 묻는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P1:repair-response-loop",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 서운한 대화를 다시 하기로 했다면 먼저 재개 의사를 묻는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P1:repair-correction-loop",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 다시 대화에 동의했다면 이번 약속 한 항목만 맞춘다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P2:a-change-delivery",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 다시 이야기하기로 했다면 A가 받은 영향을 먼저 확인한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P2:a-change-unasked-care",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 이전 준비가 있었다면 다음 약속의 담당을 새로 정한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P3:b-change-return-signal",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 대화 재개에 동의했다면 B가 보류한 내용과 가능한 때를 알린다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P3:b-change-help-boundary",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 재논의에 동의했다면 B가 도움 목록을 펼치고 A가 받을 부분만 고른다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P4:joint-contact-revision",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 바쁜 주에는 안부 방식과 긴 대화 시간을 따로 고른다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P4:joint-safe-stop",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 거절에 불이익이 있는 상황이라면 대화를 중단하고 안전한 지원을 확인한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P1:recall-trust-as-choice",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 선행 의미를 읽었다면 바쁜 주의 약속을 다시 조정한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P1:recall-mutual-care-limit",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 선행 돌봄 뜻을 읽었다면 다음 만남에서 각자 가능한 몫을 고른다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P2:recall-symbol-grounded",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 선행 뜻을 읽었다면 다음 제안에서 각자 수정할 부분을 고른다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P2:recall-independent-fusions",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 선행 의미를 읽었다면 각자 해줄 수 있는 도움 하나를 고른다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P3:recall-response-agreement",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 선행 의미를 읽었다면 일정 변화 때 안내 방식을 다시 정한다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P3:recall-request-not-ledger",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 선행 뜻을 읽었다면 다음 만남의 준비를 처음부터 나눈다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P4:closing-response-with-choice",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 선행 뜻을 읽었다면 다음 대화에서 편한 응답을 함께 고른다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P4:closing-new-and-held",
+    "kind": "LOVE_SCENE",
+    "status": "fictional_not_customer_history",
+    "text": "가상으로 선행 의미를 읽었다면 새 활동의 제안과 마무리를 함께 나눈다.",
+    "notAdditionalInterpretation": true
+  }
+]

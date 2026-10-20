@@ -1,0 +1,42 @@
+{
+  "newTests": {
+    "pass": 42,
+    "fail": 0
+  },
+  "originalCatalogSourceSemanticGraphBinderAndBookTests": {
+    "pass": 240,
+    "fail": 0
+  },
+  "original16FailedFiles": {
+    "before": {
+      "pass": 5837,
+      "fail": 46
+    },
+    "after": {
+      "pass": 5837,
+      "fail": 46
+    },
+    "identical46ErrorSignatures": true
+  },
+  "testScope": "Related validation suites plus every test in the original 16 failed files. Not a claim that the entire repository test suite passes.",
+  "typescript": {
+    "frozenBaseDiagnostics": 0,
+    "afterDiagnostics": 0,
+    "newDiagnostics": 0
+  },
+  "lint": "PASS",
+  "build": "PASS",
+  "buildWarnings": 0,
+  "diffCheck": "PASS",
+  "originalWorktrees": 40,
+  "originalDirtyFiles": 11,
+  "books": 17,
+  "digests": 102,
+  "preview": {
+    "implementationSha": "215060261e32428ad2ae961de8ca76da263af42e",
+    "state": "READY",
+    "url": "https://gyeol-report-m4i6rusze-gyeol-report-s-projects.vercel.app",
+    "target": "preview",
+    "finalDocumentationCommit": "Verified separately after push"
+  }
+}

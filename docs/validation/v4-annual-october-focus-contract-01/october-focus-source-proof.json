@@ -1,0 +1,100 @@
+{
+  "baseSha": "14d486fc9b1af927705dca67c148e1c172d50023",
+  "source": {
+    "month": 10,
+    "id": "afpr:month-slot:10",
+    "catalogKey": "kc:v1:2e651c7b2ea8498abdbd5de4b63faeb6bdcd8703baf7b13b3251281d48b31614",
+    "proof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+        "exportName": "ANNUAL_MONTH_MATRIX",
+        "index": 9,
+        "originalId": "afpr:month-slot:10",
+        "recordSha256": "6bafa2af71967a35934e08b7705fed9b7f4ddcfb881788f4b85a084488fd3c94",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+      },
+      "matchedCatalogKey": "kc:v1:2e651c7b2ea8498abdbd5de4b63faeb6bdcd8703baf7b13b3251281d48b31614",
+      "originalId": "afpr:month-slot:10",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "6bafa2af71967a35934e08b7705fed9b7f4ddcfb881788f4b85a084488fd3c94",
+      "actualHash": "6bafa2af71967a35934e08b7705fed9b7f4ddcfb881788f4b85a084488fd3c94",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "originalRequirements": [
+      "selectedYear + actual civil month bounds",
+      "every canonical segment",
+      "actual reading instant + focus interval + all unselected segments"
+    ],
+    "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+    "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+    "counterexample": "10월만 현재 월이라고 연구 조건을 고정하지 않는다.",
+    "disallowed": [
+      "입력받지 않은 과거 경험 단정",
+      "성공·실패·수입·질병·혼인 사건 예언",
+      "근거 없는 시주·복합 관계 생성"
+    ],
+    "originalMeaningIdentity": null,
+    "originalClaimIdentity": null
+  },
+  "originalRecord": {
+    "id": "afpr:month-slot:10",
+    "productKey": "annual_fortune",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "scope": "civil_month",
+    "meaning": "읽는 순간의 활성 구간과 대표 focus",
+    "positive": "지금 적용되는 근거를 먼저 읽을 수 있다.",
+    "risk": "미래 절입 뒤 focus를 이미 시작된 흐름으로 표시",
+    "twist": "같은 Book의 재생성 검증 시 평가 순간이 달라지면 focus 차이는 가능하다.",
+    "action": "고정 평가 instant와 focus start/end를 함께 남긴다.",
+    "scene": {
+      "text": "가상으로 월초에 읽은 계획과 절입 뒤 확인할 질문을 나눈다.",
+      "hypothetical": true,
+      "isCustomerHistory": false
+    },
+    "counterexample": "10월만 현재 월이라고 연구 조건을 고정하지 않는다.",
+    "requires": [
+      "selectedYear + actual civil month bounds",
+      "every canonical segment",
+      "actual reading instant + focus interval + all unselected segments"
+    ],
+    "disallowed": [
+      "입력받지 않은 과거 경험 단정",
+      "성공·실패·수입·질병·혼인 사건 예언",
+      "근거 없는 시주·복합 관계 생성"
+    ],
+    "sourceRefs": [
+      "afpr:source:jie",
+      "afpr:source:month-copy",
+      "afpr:source:editorial"
+    ],
+    "verification": "conditional_editorial_not_calculated_fact",
+    "month": 10,
+    "jieName": "한로",
+    "primaryMeaning": "읽는 순간의 활성 구간과 대표 focus",
+    "secondaryMeaning": "현재 월에서 절입 전후 실제 focus가 바뀌는 조건",
+    "duplicateMeaningGroup": "actual_fact_root_and_scope_not_month_name",
+    "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+    "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+    "notFixedToYear": true,
+    "notMonthlyFate": true,
+    "segmentCountFixed": false,
+    "informationFunctionNotCalculatedEvidence": true
+  },
+  "sourceUnchanged": true,
+  "originalMeaningIdentity": null,
+  "originalClaimIdentity": null,
+  "sourceProofIsNotMeaningOrCustomerApproval": true,
+  "focusProducer": {
+    "file": "src/lib/interpretation-v4/annualEvidence.ts",
+    "symbol": "annualNarrativeEvidence",
+    "fileSha256": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533"
+  },
+  "clockSource": "/composition/result/evidence/clock/currentDate",
+  "policyDateUse": "OFFLINE_COMMERCE_ONLY_NOT_READING_INSTANT"
+}

@@ -1,0 +1,17 @@
+{
+  "baseSha": "1b89d8d90fdad2b0a82b783e2d948c9cc5de878f",
+  "existingCustomerRuntimeChanged": false,
+  "customerAuthorized": false,
+  "humanQualityApproved": false,
+  "fictitiousInputsOnly": true,
+  "rawInputsOrGeneratedBooksCommitted": false,
+  "privateKeyCommitted": false,
+  "privateKeyLogged": false,
+  "existingIgnoredEnvironmentFilesCopied": false,
+  "newOperatingSecrets": false,
+  "artifactStorage": "External local files downloaded by operator; Reader request/browser memory only",
+  "httpLogging": "Case IDs/status only; no request input or artifact body logs",
+  "operatingNetworkCalls": 0,
+  "browserExternalRequests": [],
+  "sourceAndSecretScan": "/Users/Deokmin/Documents/gyeol-validation/v4-protected-staging-integration-01/privacy.json"
+}

@@ -1,0 +1,340 @@
+{
+  "A": {
+    "beforeExactRepeatedSentences": 0,
+    "afterExactRepeatedSentences": 0,
+    "afterSentenceCount": 145,
+    "facetsByChapter": {
+      "CH01": [
+        "persistence",
+        "precision",
+        "stability"
+      ],
+      "CH02": [
+        "leadership",
+        "resource"
+      ],
+      "CH03": [
+        "drive"
+      ],
+      "CH04": [
+        "care",
+        "flexibility",
+        "leadership",
+        "precision"
+      ],
+      "CH05": [
+        "opportunity",
+        "stability"
+      ],
+      "CH06": [
+        "opportunity",
+        "precision",
+        "resource",
+        "stability"
+      ],
+      "CH07": [
+        "precision"
+      ],
+      "CH08": [
+        "persistence",
+        "precision",
+        "resource"
+      ],
+      "CH09": [
+        "precision",
+        "resource"
+      ]
+    }
+  },
+  "B": {
+    "beforeExactRepeatedSentences": 0,
+    "afterExactRepeatedSentences": 0,
+    "afterSentenceCount": 146,
+    "facetsByChapter": {
+      "CH01": [
+        "autonomy",
+        "flexibility",
+        "structure"
+      ],
+      "CH02": [
+        "creation",
+        "meaning"
+      ],
+      "CH03": [
+        "stability"
+      ],
+      "CH04": [
+        "boundary",
+        "care",
+        "flexibility",
+        "leadership"
+      ],
+      "CH05": [
+        "opportunity",
+        "resource"
+      ],
+      "CH06": [
+        "opportunity",
+        "persistence",
+        "resource",
+        "stability"
+      ],
+      "CH07": [
+        "drive"
+      ],
+      "CH08": [
+        "autonomy",
+        "creation",
+        "meaning",
+        "persistence"
+      ],
+      "CH09": [
+        "boundary",
+        "flexibility",
+        "meaning"
+      ]
+    }
+  },
+  "C": {
+    "beforeExactRepeatedSentences": 0,
+    "afterExactRepeatedSentences": 0,
+    "afterSentenceCount": 146,
+    "facetsByChapter": {
+      "CH01": [
+        "autonomy",
+        "drive",
+        "flexibility"
+      ],
+      "CH02": [
+        "meaning",
+        "precision"
+      ],
+      "CH03": [
+        "depth"
+      ],
+      "CH04": [
+        "care",
+        "persistence",
+        "resource",
+        "stability"
+      ],
+      "CH05": [
+        "boundary",
+        "leadership",
+        "learning"
+      ],
+      "CH06": [
+        "boundary",
+        "depth",
+        "resource",
+        "stability"
+      ],
+      "CH07": [
+        "precision"
+      ],
+      "CH08": [
+        "drive",
+        "meaning",
+        "opportunity"
+      ],
+      "CH09": [
+        "drive",
+        "meaning",
+        "persistence"
+      ]
+    }
+  },
+  "D": {
+    "beforeExactRepeatedSentences": 0,
+    "afterExactRepeatedSentences": 0,
+    "afterSentenceCount": 145,
+    "facetsByChapter": {
+      "CH01": [
+        "persistence",
+        "resource",
+        "stability"
+      ],
+      "CH02": [
+        "drive",
+        "leadership"
+      ],
+      "CH03": [
+        "opportunity"
+      ],
+      "CH04": [
+        "care",
+        "flexibility",
+        "resource",
+        "stability"
+      ],
+      "CH05": [
+        "leadership",
+        "persistence"
+      ],
+      "CH06": [
+        "drive",
+        "leadership",
+        "resource",
+        "stability"
+      ],
+      "CH07": [
+        "care"
+      ],
+      "CH08": [
+        "flexibility",
+        "leadership",
+        "opportunity",
+        "resource"
+      ],
+      "CH09": [
+        "leadership",
+        "persistence",
+        "stability"
+      ]
+    }
+  },
+  "E": {
+    "beforeExactRepeatedSentences": 0,
+    "afterExactRepeatedSentences": 0,
+    "afterSentenceCount": 145,
+    "facetsByChapter": {
+      "CH01": [
+        "opportunity",
+        "persistence",
+        "resource",
+        "stability"
+      ],
+      "CH02": [
+        "care",
+        "drive",
+        "leadership"
+      ],
+      "CH03": [
+        "flexibility"
+      ],
+      "CH04": [
+        "flexibility",
+        "opportunity",
+        "resource",
+        "stability"
+      ],
+      "CH05": [
+        "care",
+        "drive",
+        "leadership"
+      ],
+      "CH06": [
+        "drive",
+        "persistence",
+        "resource",
+        "stability"
+      ],
+      "CH07": [
+        "opportunity",
+        "persistence"
+      ],
+      "CH08": [
+        "care",
+        "leadership",
+        "resource"
+      ],
+      "CH09": [
+        "drive",
+        "leadership",
+        "stability"
+      ]
+    }
+  },
+  "F": {
+    "beforeExactRepeatedSentences": 0,
+    "afterExactRepeatedSentences": 0,
+    "afterSentenceCount": 145,
+    "facetsByChapter": {
+      "CH01": [
+        "drive",
+        "opportunity",
+        "resource",
+        "stability"
+      ],
+      "CH02": [
+        "care",
+        "leadership",
+        "persistence"
+      ],
+      "CH03": [
+        "flexibility"
+      ],
+      "CH04": [
+        "flexibility",
+        "opportunity",
+        "resource",
+        "stability"
+      ],
+      "CH05": [
+        "drive",
+        "flexibility",
+        "leadership"
+      ],
+      "CH06": [
+        "care",
+        "leadership",
+        "resource",
+        "stability"
+      ],
+      "CH07": [
+        "leadership",
+        "persistence"
+      ],
+      "CH08": [
+        "care",
+        "drive",
+        "opportunity",
+        "resource"
+      ],
+      "CH09": [
+        "leadership",
+        "opportunity",
+        "persistence"
+      ]
+    }
+  },
+  "A-B": {
+    "afterSharedExactSentences": 32,
+    "examples": [
+      "가능성이 많이 보여도 수익이 확정된 것은 아니므로, 준비에 쓸 돈과 시간 및 미루게 될 일을 먼저 비교하세요.",
+      "강점이 통하는 조건을 알면, 다음에 맡을 과제도 더 정확히 고를 수 있습니다.",
+      "같은 직무라도 이런 조건이 반복되면 대응에 시간을 더 쓰므로, 적성과 환경의 문제를 나누어야 합니다.",
+      "같은 직업도 맡을 문제와 결정할 범위에 따라 다음 선택의 가치가 달라집니다.",
+      "경제적 가치로 설명할 재능은 바깥의 변화를 기회로 읽는 감각이며, 잘하는 행동이 누구의 어떤 문제를 덜어 주는지 보여야 합니다.",
+      "다른 방향의 강점이 만나는 과제인지 작은 결과로 확인하면, 익숙하지 않은 역할에서도 쓸 수 있는 능력의 범위가 보입니다.",
+      "다만 맡긴 일을 기다리지 못하고 다시 내 손으로 가져오는 습관을 경계하며, 내가 결정할 부분과 다른 사람에게 물어야 할 부분을 일찍 나눌 필요가 있습니다.",
+      "바깥의 변화를 기회로 읽는 감각을 지금 맡을 과제에 적용할 범위를 정해 볼 만합니다."
+    ]
+  },
+  "A-C": {
+    "afterSharedExactSentences": 34,
+    "examples": [
+      "강점이 통하는 조건을 알면, 다음에 맡을 과제도 더 정확히 고를 수 있습니다.",
+      "같은 직무라도 이런 조건이 반복되면 대응에 시간을 더 쓰므로, 적성과 환경의 문제를 나누어야 합니다.",
+      "같은 직업도 맡을 문제와 결정할 범위에 따라 다음 선택의 가치가 달라집니다.",
+      "꾸준히 지킨 품질과 누적된 경험을 평가하는 곳이 맞는 조건이며, 기준을 매번 바꾸면서 이전 약속은 없던 일로 하는 곳에서는 이 강점을 쓰기 어려울 수 있습니다.",
+      "다른 방향의 강점이 만나는 과제인지 작은 결과로 확인하면, 익숙하지 않은 역할에서도 쓸 수 있는 능력의 범위가 보입니다.",
+      "목 기운에 담긴 ‘앞으로 나아가고 지금보다 더 커지고 싶어 하는 기운’의 뜻이 이 업무 경향의 명리 근거입니다.",
+      "배운 내용을 직접 확인할 과제와 구체적인 피드백이 있는 환경인지 살펴보세요.",
+      "범위나 검토 순서를 합의해 바꿀 수 있는지 먼저 묻고, 조정할 권한 없이 같은 부담이 반복된다면 피할 조건으로 볼 만합니다."
+    ]
+  },
+  "B-C": {
+    "afterSharedExactSentences": 31,
+    "examples": [
+      "강점이 통하는 조건을 알면, 다음에 맡을 과제도 더 정확히 고를 수 있습니다.",
+      "같은 직무라도 이런 조건이 반복되면 대응에 시간을 더 쓰므로, 적성과 환경의 문제를 나누어야 합니다.",
+      "같은 직업도 맡을 문제와 결정할 범위에 따라 다음 선택의 가치가 달라집니다.",
+      "결과와 안전 기준은 분명하되 방법을 고를 여지가 있는 환경에서, 무조건 혼자 일하는 것보다 책임 있는 자율성을 쓰기 좋습니다.",
+      "금 기운에 담긴 ‘필요한 것과 필요 없는 것을 가르고 기준을 세우는 기운’의 뜻이 이 업무 경향의 명리 근거입니다.",
+      "내가 더 잘 안다는 생각으로 과정을 생략해 알리면, 합리적인 선택도 함께하는 사람에게는 갑작스러운 변경이나 독단으로 보일 수 있습니다.",
+      "다른 방향의 강점이 만나는 과제인지 작은 결과로 확인하면, 익숙하지 않은 역할에서도 쓸 수 있는 능력의 범위가 보입니다.",
+      "당장의 활동을 장기적인 목적과 연결한다는 점이 가치이며, 많이 하는 것과 필요한 일을 하는 것을 가르는 판단이 공동의 자원을 지켜 줍니다."
+    ]
+  }
+}

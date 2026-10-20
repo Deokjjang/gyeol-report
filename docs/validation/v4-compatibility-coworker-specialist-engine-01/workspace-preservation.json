@@ -1,0 +1,11 @@
+{
+  "oldWorktrees": 49,
+  "newWorktreeCount": 50,
+  "taskReportedOldWorktrees": 48,
+  "originalDirtyFiles": 11,
+  "allOldHeadBranchStatusAndFileHashesEqual": true,
+  "originalTrackedFiles": 4773,
+  "taskReportedPreviousProtectedFiles": 4701,
+  "countDifference": "Completed ParentChild predecessor adds72 tracked files and one worktree; latest measured baseline used.",
+  "baseSha": "ffb685cc5d3f0301ed97c8db6d9b661ca6ad682b"
+}

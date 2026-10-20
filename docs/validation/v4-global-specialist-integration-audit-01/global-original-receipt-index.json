@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-original-receipt-index.json.gz",
+  "payloadHash": "f6c42e044094a8ecd2fa8bce62761dda6e71785adfae4704f05d933cc42dc849",
+  "logicalJsonHash": "5f2bafef1cd903c4f659f65b458b48f8f114182dbaa7a7bad8c4e524af291702",
+  "uncompressedBytes": 7010889
+}

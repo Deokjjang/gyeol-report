@@ -1,0 +1,79 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "OBJECT",
+  "keys": [
+    "engine",
+    "source",
+    "versions",
+    "questions",
+    "syntheticCandidates",
+    "originalContract",
+    "sourceGroups",
+    "rootOwnership",
+    "syntheticEvidenceGraph",
+    "informationUnits"
+  ],
+  "logicalJsonHash": "8faaa5216bb68ad18be69ec3d0c15249d858d9c7b442d8788f0959b33cd9f08a",
+  "parts": [
+    {
+      "file": "synthetic-rehearsal-input-part-0021.json",
+      "sha256": "e73b136203550910e0b1319f494f481feded738f0a1b1bae438bb0d75cf59851",
+      "kind": "FIELD",
+      "key": "engine"
+    },
+    {
+      "file": "synthetic-rehearsal-input-part-0022.json",
+      "sha256": "2f4bf06dd640710ccd3479de13694732f430aeea253e3b17b391bd1d242c34ab",
+      "kind": "FIELD",
+      "key": "source"
+    },
+    {
+      "file": "synthetic-rehearsal-input-part-0023.json",
+      "sha256": "35d916c6568a812b957854af1b828cba15b09b439c4b73e46846d71f1f273425",
+      "kind": "FIELD",
+      "key": "versions"
+    },
+    {
+      "file": "synthetic-rehearsal-input-part-0024.json",
+      "sha256": "1a90174b094d75531c00374f3b646cad0016327119a2277d97c38ea98eed19b7",
+      "kind": "FIELD",
+      "key": "questions"
+    },
+    {
+      "file": "synthetic-rehearsal-input-part-0025.json",
+      "sha256": "e4ed53497744d58f5e3e8182627428301b10d308581e4f9f79543c0450e38a92",
+      "kind": "FIELD",
+      "key": "syntheticCandidates"
+    },
+    {
+      "file": "synthetic-rehearsal-input-part-0033.json",
+      "sha256": "412176dae0f18d82a07d2a20f3479c550f7b57f855787c3e3987c68cae16fa57",
+      "kind": "FIELD",
+      "key": "originalContract"
+    },
+    {
+      "file": "synthetic-rehearsal-input-part-0034.json",
+      "sha256": "796087219685eb25849df9412cadc33ef6db8103b5c8c8df78f3c363c4670050",
+      "kind": "FIELD",
+      "key": "sourceGroups"
+    },
+    {
+      "file": "synthetic-rehearsal-input-part-0035.json",
+      "sha256": "46d4de8668f97253bd4f7be629af2957eb849ba4680f0b81962bdbf8b0f23767",
+      "kind": "FIELD",
+      "key": "rootOwnership"
+    },
+    {
+      "file": "synthetic-rehearsal-input-part-0036.json",
+      "sha256": "50709bc1e61dac516bac63ad9b79bea206828d5b0c1094c13a8af881b7617f86",
+      "kind": "FIELD",
+      "key": "syntheticEvidenceGraph"
+    },
+    {
+      "file": "synthetic-rehearsal-input-part-0043.json",
+      "sha256": "418e9b3045ca1c1d3801d923d8666a74136b5b715eb9418b9f74c1c0adf307a4",
+      "kind": "FIELD",
+      "key": "informationUnits"
+    }
+  ]
+}

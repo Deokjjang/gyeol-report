@@ -1,0 +1,3183 @@
+{
+  "required": [
+    "observedWork",
+    "observedIssue",
+    "expectedStandard",
+    "potentialImpact",
+    "requestedRevision",
+    "availableResources",
+    "actualResponse"
+  ],
+  "taskProblemIsPersonEvaluation": false,
+  "actualRecipientReaction": "UNKNOWN",
+  "actualChecks": [
+    {
+      "id": "mrpr:material:CH08.P3:report-name-blocked-resource",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P2:big-picture-field-interface",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P3:report-participation-signal",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-close-revision",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P3:report-detect-procedure-gap",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-request-specific-feedback",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P1:manager-to-report-exploration",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P3:report-question-as-final-decision",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P4:excluded-team-voice",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P2:half-harmony-not-completion",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P2:report-time-clash",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P1:responsibility-without-delegation",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P3:manager-support-limit",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P1:report-independent-focus",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P1:excess-report-frequency",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P3:recall-safe-voice",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-explain-evaluation",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P4:manager-delegation-confirm",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P3:manager-speed-pressure",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P2:manager-recognize-evidence",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P2:report-definition-before-work",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P1:separate-method",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P4:report-feedback-clarification",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P1:delegate-decision",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P2:manager-resource-removal",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P1:manager-to-report-constraint",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P3:insufficient-credit",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P3:delegation-with-checkpoints",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P4:late-risk-report",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P2:manager-checkpoint-intent",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P4:missing-change-history",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P3:recall-delegation-principle",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P4:manager-feedback-recheck",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P2:rework-with-half-harmony",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P3:public-personal-judgment",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-set-report-time",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P3:model-and-procedure",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-safe-support-route",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P3:manager-care-as-surveillance",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P1:clarify-output",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P2:manager-standard-evidence",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P4:discretion-as-condition",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P4:manager-overcontrol",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-early-risk-response",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P2:harmony-not-approval",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P4:report-late-synthesis",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P3:report-unclear-risk-timing",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P2:recall-personal-fusion",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P1:manager-people-purpose",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P1:goal-method-interface",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-multiple-voice-channels",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P1:make-discretion-visible",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P3:fear-of-retaliation",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P3:same-type-different-role",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P1:recall-goal-execution",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P3:feedback-credit-visible",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P4:management-facts-before-compatibility",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P3:insufficient-resources",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P1:support-execution-interface",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P3:overload-allocation",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P2:report-capacity-information",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P3:manager-correct-own-error",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P1:manager-model-goal",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P4:manager-response-to-early-risk",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P4:recall-contribution-learning",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P2:report-propose-bounded-method",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P2:priority-change-harm",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P1:recall-shared-completion",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-report-purpose",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-confirm-final-authority",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P1:goal-method-confusion",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P2:recall-supported-possibility",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P1:reduce-duplicate-report",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P4:report-decision-ready-brief",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P2:report-private-feedback-space",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P1:vague-instructions",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-record-priority",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P1:report-procedure-understanding",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P4:report-overacceptance",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-change-log",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P2:final-authority-unsupported",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P2:idea-review-not-personal-approval",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-state-contribution",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P4:recall-decision-responsibility",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P1:shared-analysis-different-scope",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P4:manager-avoid-feedback",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-state-capacity",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-retained-manager-decision",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P1:report-to-manager-customer-observation",
+      "checks": [
+        {
+          "field": "availableResources",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedWork",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedStandard",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedRevision",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualResponse",
+          "state": "UNKNOWN"
+        }
+      ]
+    }
+  ]
+}

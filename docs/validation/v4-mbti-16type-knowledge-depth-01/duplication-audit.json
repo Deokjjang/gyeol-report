@@ -1,0 +1,29 @@
+{
+  "existingExactMeaningDuplicates": 0,
+  "newExactBehaviorGroups": [],
+  "newWithinDomainNearBehaviorPairs": [
+    {
+      "a": "mkr:INFJ:communication:01",
+      "b": "mkr:INFP:communication:01",
+      "similarity": 0.833,
+      "review": "lexical overlap screen; source conditions/intent must be read before reuse; not an empirical novelty metric"
+    },
+    {
+      "a": "mkr:INFP:communication:01",
+      "b": "mkr:ESFP:communication:02",
+      "similarity": 0.87,
+      "review": "lexical overlap screen; source conditions/intent must be read before reuse; not an empirical novelty metric"
+    },
+    {
+      "a": "mkr:ENFP:love:02",
+      "b": "mkr:ESFP:love:01",
+      "similarity": 0.762,
+      "review": "lexical overlap screen; source conditions/intent must be read before reuse; not an empirical novelty metric"
+    }
+  ],
+  "sharedPracticeFamilies": 64,
+  "candidateRecords": 512,
+  "distinctEmpiricalTypeFacts": 0,
+  "uniqueTitlesAreNotProofOfNovelty": true,
+  "independentSemanticFactCount": "not claimed; contexts share practices and must not be added as independent score evidence"
+}

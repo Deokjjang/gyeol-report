@@ -1,0 +1,140 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-compatibility-business-partner-product-knowledge-01
+
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx (36 tests | 11 failed) 80176ms
+     ✓ 'comprehensive': every original paragraph and final line in original order 36ms
+     × 'career': every original paragraph and final line in original order 6ms
+     × 'love': every original paragraph and final line in original order 1ms
+     × 'compatibility': every original paragraph and final line in original order 0ms
+     ✓ 'major': every original paragraph and final line in original order 46ms
+     ✓ 'annual': every original paragraph and final line in original order 30ms
+     ✓ 'full-unknown': every original paragraph and final line in original order 17ms
+     ✓ 'full-approximate': every original paragraph and final line in original order 20ms
+     × 'pair-02-marriage': every original paragraph and final line in original order 0ms
+     × 'pair-03-parent': every original paragraph and final line in original order 0ms
+     × 'pair-04-coworker': every original paragraph and final line in original order 0ms
+     × 'pair-05-manager': every original paragraph and final line in original order 0ms
+     × 'pair-06-business': every original paragraph and final line in original order 0ms
+     × 'pair-07-friend': every original paragraph and final line in original order 0ms
+     × 'pair-08-love': every original paragraph and final line in original order 0ms
+     ✓ 'comprehensive': complete canonical tables, MBTI and untruncated inventory 3ms
+     ✓ 'career': complete canonical tables, MBTI and untruncated inventory 1ms
+     ✓ 'love': complete canonical tables, MBTI and untruncated inventory 2ms
+     ✓ 'compatibility': complete canonical tables, MBTI and untruncated inventory 3ms
+     ✓ 'major': complete canonical tables, MBTI and untruncated inventory 2ms
+     ✓ 'annual': complete canonical tables, MBTI and untruncated inventory 1ms
+     ✓ 'full-unknown': complete canonical tables, MBTI and untruncated inventory 1ms
+     ✓ 'full-approximate': complete canonical tables, MBTI and untruncated inventory 1ms
+     ✓ 'pair-02-marriage': complete canonical tables, MBTI and untruncated inventory 3ms
+     ✓ 'pair-03-parent': complete canonical tables, MBTI and untruncated inventory 3ms
+     ✓ 'pair-04-coworker': complete canonical tables, MBTI and untruncated inventory 3ms
+     ✓ 'pair-05-manager': complete canonical tables, MBTI and untruncated inventory 2ms
+     ✓ 'pair-06-business': complete canonical tables, MBTI and untruncated inventory 3ms
+     ✓ 'pair-07-friend': complete canonical tables, MBTI and untruncated inventory 3ms
+     ✓ 'pair-08-love': complete canonical tables, MBTI and untruncated inventory 2ms
+     × 14 years, 10 future years, all ages, transitions and clickable full narratives 2ms
+     ✓ 12 months and exact canonical Jie ordering remain in the source, never raw timestamps in prose 1ms
+     ✓ seven categories preserve roles and directions, with the explicit deterministic index only 2ms
+     ✓ unknown hour/type never invented; approximate slot uses canonical Korean label 1ms
+     ✓ server cache only accepts finite approved fixtures and projection fails closed on tampering  9233ms
+     ✓ exports reviewer page inventory when explicitly requested 0ms
+ ✓ tests/unit/app/dev/bookReading13b.test.tsx (16 tests) 25259ms
+ ✓ tests/unit/app/bookPublicFlow.test.tsx (31 tests) 86077ms
+     ✓ 'comprehensive' complete flow, catalog/payload parity, full book  9614ms
+     ✓ 'career' complete flow, catalog/payload parity, full book  1656ms
+     ✓ 'love' complete flow, catalog/payload parity, full book  2355ms
+     ✓ 'compatibility' complete flow, catalog/payload parity, full book  5542ms
+     ✓ 'major' complete flow, catalog/payload parity, full book  3074ms
+     ✓ 'annual' complete flow, catalog/payload parity, full book  3260ms
+     ✓ 'comprehensive' unknown/approx/roles pass through same adapters  9183ms
+     ✓ 'full-unknown' unknown/approx/roles pass through same adapters  348ms
+     ✓ 'full-approximate' unknown/approx/roles pass through same adapters  12946ms
+     ✓ 'pair-02-marriage' unknown/approx/roles pass through same adapters  4436ms
+     ✓ 'pair-03-parent' unknown/approx/roles pass through same adapters  5094ms
+     ✓ 'pair-04-coworker' unknown/approx/roles pass through same adapters  7333ms
+     ✓ 'pair-05-manager' unknown/approx/roles pass through same adapters  5393ms
+     ✓ 'pair-06-business' unknown/approx/roles pass through same adapters  6288ms
+     ✓ 'pair-07-friend' unknown/approx/roles pass through same adapters  5051ms
+     ✓ 'pair-08-love' unknown/approx/roles pass through same adapters  4454ms
+ ✓ tests/unit/sharing/bookSharing.test.tsx (16 tests) 28102ms
+     ✓ 6 OG images + long names/year/compatibility, no remote assets  400ms
+ ✓ tests/unit/app/reports/completedReadingExperience.test.tsx (11 tests) 636ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 11 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'career': every original paragraph and final line in original order
+AssertionError: only actual closing-rule titles may supplement chapter headings: expected [ '도울 범위를 먼저 정하세요', '중요한 오류부터 보세요' ] to include '나는 어떻게 일하는 사람인가'
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:46:100
+     44|     for (const heading of headings) {
+     45|       if (heading === expectedHeadings[nextHeading]) nextHeading++;
+     46|       else expect(ruleHeadings, "only actual closing-rule titles may s…
+       |                                                                                                    ^
+     47|     }
+     48|     expect(nextHeading).toBe(expectedHeadings.length);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/11]⎯
+
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'love': every original paragraph and final line in original order
+AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '사랑할 때의 나'
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:46:100
+     44|     for (const heading of headings) {
+     45|       if (heading === expectedHeadings[nextHeading]) nextHeading++;
+     46|       else expect(ruleHeadings, "only actual closing-rule titles may s…
+       |                                                                                                    ^
+     47|     }
+     48|     expect(nextHeading).toBe(expectedHeadings.length);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/11]⎯
+
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'compatibility': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-02-marriage': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-03-parent': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-04-coworker': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-05-manager': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-06-business': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-07-friend': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-08-love': every original paragraph and final line in original order
+AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:46:100
+     44|     for (const heading of headings) {
+     45|       if (heading === expectedHeadings[nextHeading]) nextHeading++;
+     46|       else expect(ruleHeadings, "only actual closing-rule titles may s…
+       |                                                                                                    ^
+     47|     }
+     48|     expect(nextHeading).toBe(expectedHeadings.length);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/11]⎯
+
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 14 years, 10 future years, all ages, transitions and clickable full narratives
+AssertionError: expected [ 2031, 48, '丁卯 → 丙寅', '辛亥', …(1) ] to deeply equal [ 2031, 48, '丙寅', '辛亥', …(1) ]
+
+- Expected
++ Received
+
+  [
+    2031,
+    48,
+-   "丙寅",
++   "丁卯 → 丙寅",
+    "辛亥",
+    "배워둔 것이 나 대신 문을 열어줍니다 — 큰 배경도 바뀝니다",
+  ]
+
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:115:59
+    113|     page.years.forEach((y, i) => {
+    114|       const original = e.composition.product === "major_fortune" ? e.c…
+    115|       expect([y.year, y.age, y.cycle, y.annual, y.title]).toEqual([ori…
+       |                                                           ^
+    116|       expect(data.pages[y.page].kind).toBe("narrative");
+    117|     });
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:113:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/11]⎯
+
+
+ Test Files  1 failed | 4 passed (5)
+      Tests  11 failed | 99 passed (110)
+   Start at  05:06:48
+   Duration  225.86s (transform 2.68s, setup 43ms, import 4.85s, tests 220.25s, environment 0ms)
+
+JSON report written to /tmp/gyeol-compatibility-business-partner-knowledge-validation/book-before.json

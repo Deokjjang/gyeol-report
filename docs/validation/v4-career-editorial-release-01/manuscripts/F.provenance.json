@@ -1,0 +1,4036 @@
+[
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "대표 업무 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "구체적 업무 상황",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "그 방식의 장점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "기억할 업무 정체성",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:work-identity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 명리 근거",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SAME_DIRECTION_ADAPTABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "쉬운 의미",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "SAME_DIRECTION_ADAPTABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "실제 MBTI 업무 특성",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:strengths:open_criticism_processing:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1"
+    ],
+    "semanticTheme": "SAME_DIRECTION_ADAPTABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "두 분석의 결합",
+    "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:strengths:open_criticism_processing:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1"
+    ],
+    "semanticTheme": "SAME_DIRECTION_ADAPTABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "fusion:work-basis",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:REINFORCE:ADAPTABILITY:learning:ADAPTABILITY:1:ADAPTABILITY:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "시작 방식",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:壬",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_WATER_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:flexibility:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "ADAPTABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:壬"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "진행 중 행동",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:壬",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_WATER_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:flexibility:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "ADAPTABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:壬"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "마무리 방식",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:壬",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_WATER_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:flexibility:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "ADAPTABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:壬"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "효과적인 조건과 주의점",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:壬",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_WATER_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:flexibility:workflow",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "ADAPTABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:壬"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "능력이 살아나는 환경",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:stability:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "적합한 이유",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:stability:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "불편한 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:stability:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:stability:work-conditions",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "주요 강점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:creation:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:creation:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "발휘 장면",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:creation:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "실제 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:creation:talent-primary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "다른 재능",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR077",
+    "evidenceIds": [
+      "natal:month:stem:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRESSURE_FOCUS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:precision:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR077"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR077",
+    "evidenceIds": [
+      "natal:month:stem:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRESSURE_FOCUS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:precision:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR077"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "문제 해결 장면",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR077",
+    "evidenceIds": [
+      "natal:month:stem:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRESSURE_FOCUS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:precision:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR077"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "발전 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR077",
+    "evidenceIds": [
+      "natal:month:stem:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRESSURE_FOCUS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:precision:talent-secondary",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR077"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "덜 익숙한 활용 가능성",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C003:learning:PATTERN_SENSE:1:PRECISION:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:strengths:lie_and_trick_detection:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C003:learning:PATTERN_SENSE:1:PRECISION:1"
+    ],
+    "semanticTheme": "REPEATING_ERROR_SENSE",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C003:learning:PATTERN_SENSE:1:PRECISION:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 결합 근거",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C003:learning:PATTERN_SENSE:1:PRECISION:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:strengths:lie_and_trick_detection:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C003:learning:PATTERN_SENSE:1:PRECISION:1"
+    ],
+    "semanticTheme": "REPEATING_ERROR_SENSE",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C003:learning:PATTERN_SENSE:1:PRECISION:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "다른 업무의 활용",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C003:learning:PATTERN_SENSE:1:PRECISION:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:strengths:lie_and_trick_detection:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C003:learning:PATTERN_SENSE:1:PRECISION:1"
+    ],
+    "semanticTheme": "REPEATING_ERROR_SENSE",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C003:learning:PATTERN_SENSE:1:PRECISION:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "가능성의 의미",
+    "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C003:learning:PATTERN_SENSE:1:PRECISION:1",
+    "evidenceIds": [
+      "foundation:element:WATER:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:strengths:lie_and_trick_detection:plainKo"
+    ],
+    "fusionIds": [
+      "fusion:COMPLEMENT:C003:learning:PATTERN_SENSE:1:PRECISION:1"
+    ],
+    "semanticTheme": "REPEATING_ERROR_SENSE",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "fusion:talent-transfer",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "fusion:COMPLEMENT:C003:learning:PATTERN_SENSE:1:PRECISION:1"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "공통 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:opportunity:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "성과로 바꿀 요소",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:opportunity:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "부족해질 부분",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:opportunity:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "구체적 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "foundation:yin_yang:STRONG_YANG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:opportunity:talent-practice",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "적합한 직무의 공통점",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:壬",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_WATER_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:depth:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PATTERN_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:壬"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:壬",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_WATER_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:depth:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PATTERN_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:壬"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "만족 조건",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:壬",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_WATER_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:depth:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PATTERN_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:壬"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "직업 선택 기준",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:壬",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_WATER_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:depth:aptitude-common",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PATTERN_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:壬"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 첫 추천",
+    "sourceCandidateId": "career-route:investigate",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:investigate",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "route:investigate",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:twelve_sinsal_hwagae",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "getTenGod:壬:庚:偏印",
+        "getTenGod:壬:戊:偏官",
+        "getTenGod:壬:辛:正印",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:INTP:recommendedJobs:경제·데이터 분석가",
+        "mbti:INTP:recommendedJobs:과학자",
+        "mbti:INTP:recommendedJobs:연구원",
+        "natal:twelve_sinsal_hwagae",
+        "pillars:day:壬戌",
+        "pillars:hour:戊申",
+        "pillars:month:辛未",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:戌:戊:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:戌:辛:SUB:0.3",
+        "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:申:戊:MINOR:0.1",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuFeatureTaxonomy:twelve_sinsal_hwagae",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:twelveSinsal:술:술",
+        "v4-structure-evidence-1",
+        "v4:career-route:investigate",
+        "v4:career-setting:language_mediation",
+        "v4:career-voice:inquiry",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:fusion-rule:intp-pressure-learning-structure",
+        "v4:material-depth:ten_god_pian_yin",
+        "v4:material-depth:twelve_sinsal_hwagae",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "v4:structure-material:killingResourceFlow",
+        "v4:structure-rule:killingResourceFlow",
+        "foundation:element:WATER:BALANCED",
+        "mbti:INTP:traits:strengths:lie_and_trick_detection:plainKo",
+        "mbti:INTP:traits:strengths:open_criticism_processing:plainKo",
+        "mbti:INTP:traits:thinkingStyle:proof_before_agreement:plainKo",
+        "mbti:INTP:traits:workplace:scope_clarity_contract:plainKo",
+        "natal:day:stem:壬",
+        "natal:ten-god:hour:MAIN:庚",
+        "natal:ten-god:month:MINOR:乙"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "추천 이유",
+    "sourceCandidateId": "career-route:investigate",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:investigate",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "route:investigate",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:twelve_sinsal_hwagae",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "getTenGod:壬:庚:偏印",
+        "getTenGod:壬:戊:偏官",
+        "getTenGod:壬:辛:正印",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:INTP:recommendedJobs:경제·데이터 분석가",
+        "mbti:INTP:recommendedJobs:과학자",
+        "mbti:INTP:recommendedJobs:연구원",
+        "natal:twelve_sinsal_hwagae",
+        "pillars:day:壬戌",
+        "pillars:hour:戊申",
+        "pillars:month:辛未",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:戌:戊:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:戌:辛:SUB:0.3",
+        "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:申:戊:MINOR:0.1",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuFeatureTaxonomy:twelve_sinsal_hwagae",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:twelveSinsal:술:술",
+        "v4-structure-evidence-1",
+        "v4:career-route:investigate",
+        "v4:career-setting:language_mediation",
+        "v4:career-voice:inquiry",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:fusion-rule:intp-pressure-learning-structure",
+        "v4:material-depth:ten_god_pian_yin",
+        "v4:material-depth:twelve_sinsal_hwagae",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "v4:structure-material:killingResourceFlow",
+        "v4:structure-rule:killingResourceFlow",
+        "foundation:element:WATER:BALANCED",
+        "mbti:INTP:traits:strengths:lie_and_trick_detection:plainKo",
+        "mbti:INTP:traits:strengths:open_criticism_processing:plainKo",
+        "mbti:INTP:traits:thinkingStyle:proof_before_agreement:plainKo",
+        "mbti:INTP:traits:workplace:scope_clarity_contract:plainKo",
+        "natal:day:stem:壬",
+        "natal:ten-god:hour:MAIN:庚",
+        "natal:ten-god:month:MINOR:乙"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "활용 강점",
+    "sourceCandidateId": "career-route:investigate",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:investigate",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "route:investigate",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:twelve_sinsal_hwagae",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "getTenGod:壬:庚:偏印",
+        "getTenGod:壬:戊:偏官",
+        "getTenGod:壬:辛:正印",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:INTP:recommendedJobs:경제·데이터 분석가",
+        "mbti:INTP:recommendedJobs:과학자",
+        "mbti:INTP:recommendedJobs:연구원",
+        "natal:twelve_sinsal_hwagae",
+        "pillars:day:壬戌",
+        "pillars:hour:戊申",
+        "pillars:month:辛未",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:戌:戊:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:戌:辛:SUB:0.3",
+        "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:申:戊:MINOR:0.1",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuFeatureTaxonomy:twelve_sinsal_hwagae",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:twelveSinsal:술:술",
+        "v4-structure-evidence-1",
+        "v4:career-route:investigate",
+        "v4:career-setting:language_mediation",
+        "v4:career-voice:inquiry",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:fusion-rule:intp-pressure-learning-structure",
+        "v4:material-depth:ten_god_pian_yin",
+        "v4:material-depth:twelve_sinsal_hwagae",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "v4:structure-material:killingResourceFlow",
+        "v4:structure-rule:killingResourceFlow",
+        "foundation:element:WATER:BALANCED",
+        "mbti:INTP:traits:strengths:lie_and_trick_detection:plainKo",
+        "mbti:INTP:traits:strengths:open_criticism_processing:plainKo",
+        "mbti:INTP:traits:thinkingStyle:proof_before_agreement:plainKo",
+        "mbti:INTP:traits:workplace:scope_clarity_contract:plainKo",
+        "natal:day:stem:壬",
+        "natal:ten-god:hour:MAIN:庚",
+        "natal:ten-god:month:MINOR:乙"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "현실적 조건",
+    "sourceCandidateId": "career-route:investigate",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:investigate",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "route:investigate",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:twelve_sinsal_hwagae",
+        "careerContextV3:normalized-dimensions",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "getTenGod:壬:庚:偏印",
+        "getTenGod:壬:戊:偏官",
+        "getTenGod:壬:辛:正印",
+        "input:detailJob",
+        "input:jobStatus",
+        "mbti:INTP:recommendedJobs:경제·데이터 분석가",
+        "mbti:INTP:recommendedJobs:과학자",
+        "mbti:INTP:recommendedJobs:연구원",
+        "natal:twelve_sinsal_hwagae",
+        "pillars:day:壬戌",
+        "pillars:hour:戊申",
+        "pillars:month:辛未",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:戌:戊:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:戌:辛:SUB:0.3",
+        "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:申:戊:MINOR:0.1",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuFeatureTaxonomy:twelve_sinsal_hwagae",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:twelveSinsal:술:술",
+        "v4-structure-evidence-1",
+        "v4:career-route:investigate",
+        "v4:career-setting:language_mediation",
+        "v4:career-voice:inquiry",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:fusion-rule:intp-pressure-learning-structure",
+        "v4:material-depth:ten_god_pian_yin",
+        "v4:material-depth:twelve_sinsal_hwagae",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "v4:structure-material:killingResourceFlow",
+        "v4:structure-rule:killingResourceFlow",
+        "foundation:element:WATER:BALANCED",
+        "mbti:INTP:traits:strengths:lie_and_trick_detection:plainKo",
+        "mbti:INTP:traits:strengths:open_criticism_processing:plainKo",
+        "mbti:INTP:traits:thinkingStyle:proof_before_agreement:plainKo",
+        "mbti:INTP:traits:workplace:scope_clarity_contract:plainKo",
+        "natal:day:stem:壬",
+        "natal:ten-god:hour:MAIN:庚",
+        "natal:ten-god:month:MINOR:乙"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "다른 실제 추천",
+    "sourceCandidateId": "career-route:teach",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:teach",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "route:teach",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:DAY_STEM_TO_BRANCH",
+        "basis:MONTH_BRANCH_TO_STEM_OR_BRANCH",
+        "branch:申",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_cheondeok",
+        "canonical-natal-table-v1:features:gwiin_hakdang",
+        "careerContextV3:normalized-dimensions",
+        "dayStem:壬",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "getTenGod:壬:庚:偏印",
+        "getTenGod:壬:戊:偏官",
+        "getTenGod:壬:辛:正印",
+        "input:detailJob",
+        "input:jobStatus",
+        "monthBranch:未",
+        "natal:gwiin_cheondeok",
+        "natal:gwiin_hakdang",
+        "pillars:day:壬戌",
+        "pillars:hour:戊申",
+        "pillars:month:辛未",
+        "position:hour",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:戌:戊:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:戌:辛:SUB:0.3",
+        "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:申:戊:MINOR:0.1",
+        "sajuFeatureTaxonomy:gwiin_cheondeok",
+        "sajuFeatureTaxonomy:gwiin_hakdang",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:CHEON_DEOK_GWIIN",
+        "shinsal:HAK_DANG_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "target:甲",
+        "v1:gwiin:천덕귀인",
+        "v1:gwiin:학당귀인",
+        "v4-structure-evidence-1",
+        "v4:career-route:teach",
+        "v4:career-setting:language_mediation",
+        "v4:career-voice:inquiry",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:fusion-rule:intp-pressure-learning-structure",
+        "v4:material-depth:gwiin_cheondeok",
+        "v4:material-depth:gwiin_hakdang",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "v4:structure-material:killingResourceFlow",
+        "v4:structure-rule:killingResourceFlow"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "career-route:teach",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:teach",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "route:teach",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:DAY_STEM_TO_BRANCH",
+        "basis:MONTH_BRANCH_TO_STEM_OR_BRANCH",
+        "branch:申",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_cheondeok",
+        "canonical-natal-table-v1:features:gwiin_hakdang",
+        "careerContextV3:normalized-dimensions",
+        "dayStem:壬",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "getTenGod:壬:庚:偏印",
+        "getTenGod:壬:戊:偏官",
+        "getTenGod:壬:辛:正印",
+        "input:detailJob",
+        "input:jobStatus",
+        "monthBranch:未",
+        "natal:gwiin_cheondeok",
+        "natal:gwiin_hakdang",
+        "pillars:day:壬戌",
+        "pillars:hour:戊申",
+        "pillars:month:辛未",
+        "position:hour",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:戌:戊:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:戌:辛:SUB:0.3",
+        "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:申:戊:MINOR:0.1",
+        "sajuFeatureTaxonomy:gwiin_cheondeok",
+        "sajuFeatureTaxonomy:gwiin_hakdang",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:CHEON_DEOK_GWIIN",
+        "shinsal:HAK_DANG_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "target:甲",
+        "v1:gwiin:천덕귀인",
+        "v1:gwiin:학당귀인",
+        "v4-structure-evidence-1",
+        "v4:career-route:teach",
+        "v4:career-setting:language_mediation",
+        "v4:career-voice:inquiry",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:fusion-rule:intp-pressure-learning-structure",
+        "v4:material-depth:gwiin_cheondeok",
+        "v4:material-depth:gwiin_hakdang",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "v4:structure-material:killingResourceFlow",
+        "v4:structure-rule:killingResourceFlow"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "발휘 능력",
+    "sourceCandidateId": "career-route:create",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:create",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "route:create",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "SajuCalcResult:tenGods.distribution:食神",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:子",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:sinsal_hongyeom",
+        "careerContextV3:normalized-dimensions",
+        "dayStem:壬",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "getTenGod:壬:庚:偏印",
+        "getTenGod:壬:戊:偏官",
+        "getTenGod:壬:辛:正印",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:sinsal_hongyeom",
+        "pillars:day:壬戌",
+        "pillars:hour:戊申",
+        "pillars:month:辛未",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:戌:戊:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:戌:辛:SUB:0.3",
+        "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:申:戊:MINOR:0.1",
+        "sajuFeatureTaxonomy:sinsal_hongyeom",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_shi_shen",
+        "shinsal:HONGYEOMSAL",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:sinsal:홍염살",
+        "v4-structure-evidence-1",
+        "v4:career-route:create",
+        "v4:career-setting:language_mediation",
+        "v4:career-voice:inquiry",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:fusion-rule:intp-pressure-learning-structure",
+        "v4:material-depth:sinsal_hongyeom",
+        "v4:material-depth:ten_god_shi_shen",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "v4:semantic-meaning:ten_god_shi_shen",
+        "v4:structure-material:killingResourceFlow",
+        "v4:structure-rule:killingResourceFlow",
+        "foundation:element:WATER:BALANCED",
+        "natal:ten-god:hour:MAIN:庚",
+        "natal:ten-god:year:visible:甲",
+        "natal:year:branch:子",
+        "supplement:marker:HAKDANG",
+        "supplement:marker:TAEGEUK",
+        "supplement:marker:WOL",
+        "supplement:stage:hour:장생"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "준비와 조건",
+    "sourceCandidateId": "career-route:create",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:create",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "route:create",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "SajuCalcResult:tenGods.distribution:食神",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:子",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:sinsal_hongyeom",
+        "careerContextV3:normalized-dimensions",
+        "dayStem:壬",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "getTenGod:壬:庚:偏印",
+        "getTenGod:壬:戊:偏官",
+        "getTenGod:壬:辛:正印",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:sinsal_hongyeom",
+        "pillars:day:壬戌",
+        "pillars:hour:戊申",
+        "pillars:month:辛未",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:戌:戊:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:戌:辛:SUB:0.3",
+        "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:申:戊:MINOR:0.1",
+        "sajuFeatureTaxonomy:sinsal_hongyeom",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_shi_shen",
+        "shinsal:HONGYEOMSAL",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:sinsal:홍염살",
+        "v4-structure-evidence-1",
+        "v4:career-route:create",
+        "v4:career-setting:language_mediation",
+        "v4:career-voice:inquiry",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:fusion-rule:intp-pressure-learning-structure",
+        "v4:material-depth:sinsal_hongyeom",
+        "v4:material-depth:ten_god_shi_shen",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "v4:semantic-meaning:ten_god_shi_shen",
+        "v4:structure-material:killingResourceFlow",
+        "v4:structure-rule:killingResourceFlow",
+        "foundation:element:WATER:BALANCED",
+        "natal:ten-god:hour:MAIN:庚",
+        "natal:ten-god:year:visible:甲",
+        "natal:year:branch:子",
+        "supplement:marker:HAKDANG",
+        "supplement:marker:TAEGEUK",
+        "supplement:marker:WOL",
+        "supplement:stage:hour:장생"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S5",
+    "roleDescription": "준비와 조건",
+    "sourceCandidateId": "career-route:create",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CAREER_ROUTE:create",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "route:create:environment",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "SajuCalcResult:tenGods.distribution:食神",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:子",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:sinsal_hongyeom",
+        "careerContextV3:normalized-dimensions",
+        "dayStem:壬",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "getTenGod:壬:庚:偏印",
+        "getTenGod:壬:戊:偏官",
+        "getTenGod:壬:辛:正印",
+        "input:detailJob",
+        "input:jobStatus",
+        "natal:sinsal_hongyeom",
+        "pillars:day:壬戌",
+        "pillars:hour:戊申",
+        "pillars:month:辛未",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:戌:戊:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:戌:辛:SUB:0.3",
+        "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:申:戊:MINOR:0.1",
+        "sajuFeatureTaxonomy:sinsal_hongyeom",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_shi_shen",
+        "shinsal:HONGYEOMSAL",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:sinsal:홍염살",
+        "v4-structure-evidence-1",
+        "v4:career-route:create",
+        "v4:career-setting:language_mediation",
+        "v4:career-voice:inquiry",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:fusion-rule:intp-pressure-learning-structure",
+        "v4:material-depth:sinsal_hongyeom",
+        "v4:material-depth:ten_god_shi_shen",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "v4:semantic-meaning:ten_god_shi_shen",
+        "v4:structure-material:killingResourceFlow",
+        "v4:structure-rule:killingResourceFlow",
+        "foundation:element:WATER:BALANCED",
+        "natal:ten-god:hour:MAIN:庚",
+        "natal:ten-god:year:visible:甲",
+        "natal:year:branch:子",
+        "supplement:marker:HAKDANG",
+        "supplement:marker:TAEGEUK",
+        "supplement:marker:WOL",
+        "supplement:stage:hour:장생"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 회피 환경",
+    "sourceCandidateId": "career-avoid:0",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "VERIFIED_AVOID_ENVIRONMENT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "avoid:0",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "calendar:saju-calendar-kst-v2",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "getTenGod:壬:庚:偏印",
+        "getTenGod:壬:戊:偏官",
+        "getTenGod:壬:辛:正印",
+        "mbti:INTP:avoidJobsOrEnvironments:반복 행정만 있는 직무",
+        "mbti:INTP:traits:career:research_field_fit",
+        "pillars:day:壬戌",
+        "pillars:hour:戊申",
+        "pillars:month:辛未",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:戌:戊:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:戌:辛:SUB:0.3",
+        "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:申:戊:MINOR:0.1",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v4-structure-evidence-1",
+        "v4:career-route:investigate:environment",
+        "v4:career-voice:inquiry",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:fusion-rule:intp-pressure-learning-structure",
+        "v4:material-depth:ten_god_pian_yin",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "v4:structure-material:killingResourceFlow",
+        "v4:structure-rule:killingResourceFlow"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "불편한 이유",
+    "sourceCandidateId": "career-avoid:1",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "VERIFIED_AVOID_ENVIRONMENT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "avoid:1",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:MONTH_BRANCH_TO_STEM_OR_BRANCH",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_cheondeok",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "getTenGod:壬:庚:偏印",
+        "getTenGod:壬:戊:偏官",
+        "getTenGod:壬:辛:正印",
+        "mbti:INTP:avoidJobsOrEnvironments:반복 행정만 있는 직무",
+        "mbti:INTP:traits:career:research_field_fit",
+        "monthBranch:未",
+        "natal:gwiin_cheondeok",
+        "pillars:day:壬戌",
+        "pillars:hour:戊申",
+        "pillars:month:辛未",
+        "position:year",
+        "saju/analyze.ts:analyzeVisibleTenGods",
+        "saju/constants.ts:HIDDEN_STEMS:戌:戊:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:戌:辛:SUB:0.3",
+        "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6",
+        "saju/constants.ts:HIDDEN_STEMS:申:戊:MINOR:0.1",
+        "sajuFeatureTaxonomy:gwiin_cheondeok",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:CHEON_DEOK_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "target:甲",
+        "v1:gwiin:천덕귀인",
+        "v4-structure-evidence-1",
+        "v4:career-route:teach:environment",
+        "v4:career-voice:inquiry",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:fusion-rule:intp-pressure-learning-structure",
+        "v4:material-depth:gwiin_cheondeok",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "v4:structure-material:killingResourceFlow",
+        "v4:structure-rule:killingResourceFlow"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "가능한 문제",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "avoid:cost",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "회피와 조정 구분",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "avoid:adjustment",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "협업 특징",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:壬",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_WATER_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:flexibility:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "ADAPTABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:壬"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "소통 근거",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:壬",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_WATER_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:flexibility:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "ADAPTABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:壬"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "타인에게 주는 장점",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:壬",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_WATER_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:flexibility:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "ADAPTABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:壬"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "좋은 협업 조건",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:壬",
+    "evidenceIds": [
+      "natal:day:stem:壬"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STEM_WATER_YANG",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:flexibility:collaboration",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "ADAPTABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "single:natal:day:stem:壬"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "적합한 역할",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "natal:month:branch:未"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:resource:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "natal:month:branch:未"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:resource:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "적용 상황",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "natal:month:branch:未"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:resource:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "한계",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "natal:month:branch:未"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:resource:team-role",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "반복 위험",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:day:branch:戌"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:boundary:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:day:branch:戌"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:boundary:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "충돌과 성과 비용",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:day:branch:戌"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:boundary:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "조정 행동",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:day:branch:戌"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:boundary:work-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "편안한 환경",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:hour:MAIN:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "자율성 규칙 소통",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:hour:MAIN:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "피할 문제",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:hour:MAIN:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "개선 방법",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:ten-god:hour:MAIN:庚"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:culture",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "입력한 상태",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "연결 강점",
+    "sourceCandidateId": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+    "evidenceIds": [
+      "natal:ten-god:hour:visible:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_DESIRE",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:drive:current-strength",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "GOAL_DRIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU02_GROWTH_DESIRE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "가능한 어려움",
+    "sourceCandidateId": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+    "evidenceIds": [
+      "natal:ten-god:hour:visible:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_DESIRE",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:drive:current-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "GOAL_DRIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU02_GROWTH_DESIRE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "현재 활용 능력",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YANG_EARTH",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:persistence:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "개인 근거",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YANG_EARTH",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:persistence:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "실제 가능한 활동",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YANG_EARTH",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:persistence:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "활용 방법",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YANG_EARTH",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:persistence:current-application",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "발전 능력",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "natal:ten-god:month:MINOR:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:creation:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "필요한 이유",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "natal:ten-god:month:MINOR:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:creation:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "부족해질 부분",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "natal:ten-god:month:MINOR:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:creation:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "성장 확인",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR012",
+    "evidenceIds": [
+      "natal:ten-god:month:MINOR:乙"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "QUESTION_TO_OUTPUT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:creation:next-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "CURIOSITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR012"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "상태별 우선순위",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "성급한 판단",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "작은 시도",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "다음 단계 기준",
+    "sourceCandidateId": "input:jobStatus",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "CURRENT_CAREER_CONTEXT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "context:status",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "input:jobStatus",
+        "input:detailJob"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "수익 관련 경향",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:resource:income",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "명리 재물 근거",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:resource:income-basis",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "MBTI 판단 선호",
+    "sourceCandidateId": "mbti:INTP:traits:money:automated_money_routine:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:money:automated_money_routine:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_DECISION",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "money:actual-mbti",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:INTP:traits:money:automated_money_routine:plainKo"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "가치 생산 방식",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:resource:income-condition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "검증된 재능",
+    "sourceCandidateId": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+    "evidenceIds": [
+      "natal:ten-god:hour:visible:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_DESIRE",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:drive:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "GOAL_DRIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU02_GROWTH_DESIRE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "근거",
+    "sourceCandidateId": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+    "evidenceIds": [
+      "natal:ten-god:hour:visible:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_DESIRE",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:drive:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "GOAL_DRIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU02_GROWTH_DESIRE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "직업적 활용",
+    "sourceCandidateId": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+    "evidenceIds": [
+      "natal:ten-god:hour:visible:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_DESIRE",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:drive:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "GOAL_DRIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU02_GROWTH_DESIRE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "경제적 가치 조건",
+    "sourceCandidateId": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+    "evidenceIds": [
+      "natal:ten-god:hour:visible:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_DESIRE",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:drive:economic-value",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "GOAL_DRIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU02_GROWTH_DESIRE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "가능한 약점",
+    "sourceCandidateId": "editorial:CLAIM:F05_OVERTHINKING",
+    "evidenceIds": [
+      "natal:year:branch:子"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OVERTHINKING",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:depth:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "F05_OVERTHINKING"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "그 근거",
+    "sourceCandidateId": "editorial:CLAIM:F05_OVERTHINKING",
+    "evidenceIds": [
+      "natal:year:branch:子"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OVERTHINKING",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:depth:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "F05_OVERTHINKING"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "지출 기회 시간 위험",
+    "sourceCandidateId": "editorial:CLAIM:F05_OVERTHINKING",
+    "evidenceIds": [
+      "natal:year:branch:子"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OVERTHINKING",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:depth:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "F05_OVERTHINKING"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "선택 기준",
+    "sourceCandidateId": "editorial:CLAIM:F05_OVERTHINKING",
+    "evidenceIds": [
+      "natal:year:branch:子"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OVERTHINKING",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:depth:money-cost",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "F05_OVERTHINKING"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "관리 원칙",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "소득 비용 시간",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "개인 점검 방식",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "현실적인 결론",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:ten-god:month:visible:辛"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:stability:resource-management",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "STABILITY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "학습 특징",
+    "sourceCandidateId": "mbti:INTP:traits:study:math_science_affinity:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:study:math_science_affinity:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_hakdang",
+        "dayStem:壬",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "mbti:INTP:traits:study:math_science_affinity",
+        "mbti:coverage:direct",
+        "natal:gwiin_hakdang",
+        "position:hour",
+        "sajuFeatureTaxonomy:gwiin_hakdang",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:HAK_DANG_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwiin:학당귀인",
+        "v4:career-study:INTP",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:material-depth:gwiin_hakdang",
+        "v4:semantic-meaning:ten_god_pian_yin"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 학업 자료",
+    "sourceCandidateId": "mbti:INTP:traits:study:math_science_affinity:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:study:math_science_affinity:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_hakdang",
+        "dayStem:壬",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "mbti:INTP:traits:study:math_science_affinity",
+        "mbti:coverage:direct",
+        "natal:gwiin_hakdang",
+        "position:hour",
+        "sajuFeatureTaxonomy:gwiin_hakdang",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:HAK_DANG_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwiin:학당귀인",
+        "v4:career-study:INTP",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:material-depth:gwiin_hakdang",
+        "v4:semantic-meaning:ten_god_pian_yin"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "명리 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR077",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRESSURE_FOCUS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "study:natal-basis",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR077"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "적합한 방식",
+    "sourceCandidateId": "mbti:INTP:traits:study:math_science_affinity:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:study:math_science_affinity:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "study:existing-bridge",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_hakdang",
+        "dayStem:壬",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "mbti:INTP:traits:study:math_science_affinity",
+        "mbti:coverage:direct",
+        "natal:gwiin_hakdang",
+        "position:hour",
+        "sajuFeatureTaxonomy:gwiin_hakdang",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:HAK_DANG_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwiin:학당귀인",
+        "v4:career-study:INTP",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:material-depth:gwiin_hakdang",
+        "v4:semantic-meaning:ten_god_pian_yin"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "흥미와 능력 조건",
+    "sourceCandidateId": "mbti:INTP:traits:study:math_journal_strategy:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:study:math_journal_strategy:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY:math_journal_strategy",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "study:db:math_journal_strategy",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:INTP:traits:study:math_journal_strategy:plainKo",
+        "mbti:coverage:direct"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "학습 근거",
+    "sourceCandidateId": "mbti:INTP:traits:study:math_journal_strategy:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:study:math_journal_strategy:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY:math_journal_strategy",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "study:db:math_journal_strategy",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:INTP:traits:study:math_journal_strategy:plainKo",
+        "mbti:coverage:direct"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "학습 활동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR077",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRESSURE_FOCUS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "study:activity",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR077"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "환경",
+    "sourceCandidateId": "mbti:INTP:traits:study:math_journal_strategy:plainKo",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:study:math_journal_strategy:plainKo"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY:math_journal_strategy",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "study:db:math_journal_strategy",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "mbti:INTP:traits:study:math_journal_strategy:plainKo",
+        "mbti:coverage:direct"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "가능한 실수",
+    "sourceCandidateId": "mbti:INTP:traits:study:math_science_affinity:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:study:math_science_affinity:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "study:risk:math_science_affinity",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_hakdang",
+        "dayStem:壬",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "mbti:INTP:traits:study:math_science_affinity",
+        "mbti:coverage:direct",
+        "natal:gwiin_hakdang",
+        "position:hour",
+        "sajuFeatureTaxonomy:gwiin_hakdang",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:HAK_DANG_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwiin:학당귀인",
+        "v4:career-study:INTP",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:material-depth:gwiin_hakdang",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "mbti:INTP:traits:study:math_science_affinity:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "원인",
+    "sourceCandidateId": "mbti:INTP:traits:study:math_science_affinity:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:study:math_science_affinity:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "study:risk:math_science_affinity",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_hakdang",
+        "dayStem:壬",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "mbti:INTP:traits:study:math_science_affinity",
+        "mbti:coverage:direct",
+        "natal:gwiin_hakdang",
+        "position:hour",
+        "sajuFeatureTaxonomy:gwiin_hakdang",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:HAK_DANG_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwiin:학당귀인",
+        "v4:career-study:INTP",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:material-depth:gwiin_hakdang",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "mbti:INTP:traits:study:math_science_affinity:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "지속성 비용",
+    "sourceCandidateId": "mbti:INTP:traits:study:math_science_affinity:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:study:math_science_affinity:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "study:risk:math_science_affinity",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_hakdang",
+        "dayStem:壬",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "mbti:INTP:traits:study:math_science_affinity",
+        "mbti:coverage:direct",
+        "natal:gwiin_hakdang",
+        "position:hour",
+        "sajuFeatureTaxonomy:gwiin_hakdang",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:HAK_DANG_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwiin:학당귀인",
+        "v4:career-study:INTP",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:material-depth:gwiin_hakdang",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "mbti:INTP:traits:study:math_science_affinity:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "학습 방법",
+    "sourceCandidateId": "mbti:INTP:traits:study:math_science_affinity:risk",
+    "evidenceIds": [],
+    "mbtiSourceNodeIds": [
+      "mbti:INTP:traits:study:math_science_affinity:risk"
+    ],
+    "fusionIds": [],
+    "semanticTheme": "STUDY_METHOD",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "study:risk:math_science_affinity",
+      "application": "SOURCE",
+      "sourceRefs": [
+        "SajuCalcResult:tenGods.distribution:偏印",
+        "basis:DAY_STEM_TO_BRANCH",
+        "branch:申",
+        "calendar:saju-calendar-kst-v2",
+        "canonical-natal-table-v1:features:gwiin_hakdang",
+        "dayStem:壬",
+        "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+        "mbti:INTP:traits:study:math_science_affinity",
+        "mbti:coverage:direct",
+        "natal:gwiin_hakdang",
+        "position:hour",
+        "sajuFeatureTaxonomy:gwiin_hakdang",
+        "sajuFeatureTaxonomy:ten_god_pian_yin",
+        "sajuKnowledgeBase:ten_god_pian_yin",
+        "shinsal:HAK_DANG_GWIIN",
+        "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+        "v1:gwiin:학당귀인",
+        "v4:career-study:INTP",
+        "v4:fusion-rule:intp-inquiry",
+        "v4:material-depth:gwiin_hakdang",
+        "v4:semantic-meaning:ten_god_pian_yin",
+        "mbti:INTP:traits:study:math_science_affinity:risk"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "발전 능력",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR077",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRESSURE_FOCUS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:precision:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR077"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "능력의 가치",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR077",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRESSURE_FOCUS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:precision:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR077"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "상태별 전략",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR077",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRESSURE_FOCUS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:precision:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR077"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "실력 확인",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR077",
+    "evidenceIds": [
+      "foundation:element:METAL:BALANCED"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "PRESSURE_FOCUS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:precision:professional-skill",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "PRECISION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR077"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "승인된 긍정 특징",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:ten-god:year:MAIN:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:opportunity:positive-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:ten-god:year:MAIN:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:opportunity:positive-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "발휘 상황",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:ten-god:year:MAIN:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:opportunity:positive-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "실현 조건",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+    "evidenceIds": [
+      "natal:ten-god:year:MAIN:癸"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_AND_STABILITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:opportunity:positive-capability",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "EXPANSION",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR018"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "타인에게 주는 가치",
+    "sourceCandidateId": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_DESIRE",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:drive:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "GOAL_DRIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU02_GROWTH_DESIRE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거",
+    "sourceCandidateId": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_DESIRE",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:drive:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "GOAL_DRIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU02_GROWTH_DESIRE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "인정받을 상황",
+    "sourceCandidateId": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_DESIRE",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:drive:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "GOAL_DRIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU02_GROWTH_DESIRE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "드러내는 방법",
+    "sourceCandidateId": "editorial:CLAIM:SU02_GROWTH_DESIRE",
+    "evidenceIds": [
+      "natal:ten-god:day:MAIN:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "GROWTH_DESIRE",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:drive:recognition",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "GOAL_DRIVE",
+      "direction": 1,
+      "sourceRefs": [
+        "SU02_GROWTH_DESIRE"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "중요 위험",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:hour:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:boundary:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "원인",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:hour:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:boundary:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "기회와 비용",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:hour:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:boundary:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "과사용 방지",
+    "sourceCandidateId": "editorial:CLAIM:F01_STUBBORN",
+    "evidenceIds": [
+      "natal:hour:stem:戊"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "STUBBORNNESS",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:boundary:success-risk",
+      "application": "CONDITIONAL_APPLICATION",
+      "axis": "BOUNDARY",
+      "direction": 1,
+      "sourceRefs": [
+        "F01_STUBBORN"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "활용 가치",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "natal:month:branch:未"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:resource:positive-activation",
+      "application": "RECALL",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "가치가 커질 조건",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "natal:month:branch:未"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:resource:positive-activation",
+      "application": "RECALL",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "피할 행동",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "natal:month:branch:未"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:resource:positive-activation",
+      "application": "RECALL",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "현실적 희망",
+    "sourceCandidateId": "editorial:CLAIM:M03_MONEY_OPPORTUNITY",
+    "evidenceIds": [
+      "natal:month:branch:未"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "MONEY_OPPORTUNITY",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:resource:positive-activation",
+      "application": "RECALL",
+      "axis": "RESOURCE_SENSE",
+      "direction": 1,
+      "sourceRefs": [
+        "M03_MONEY_OPPORTUNITY"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "핵심 조건",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YANG_EARTH",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:persistence:career-choice",
+      "application": "RECALL",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "중요한 이유",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YANG_EARTH",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:persistence:career-choice",
+      "application": "RECALL",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "선택 질문",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YANG_EARTH",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:persistence:career-choice",
+      "application": "RECALL",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "잘못된 선택 방지",
+    "sourceCandidateId": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH",
+    "evidenceIds": [
+      "foundation:element:EARTH:STRONG"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "YANG_EARTH",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:persistence:career-choice",
+      "application": "RECALL",
+      "axis": "PERSISTENCE",
+      "direction": 1,
+      "sourceRefs": [
+        "synthesis:foundation:YIN_YANG_ELEMENT:YANG_EARTH"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "소개된 위험",
+    "sourceCandidateId": "editorial:CLAIM:F05_OVERTHINKING",
+    "evidenceIds": [
+      "natal:year:branch:子"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OVERTHINKING",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:depth:risk-reminder",
+      "application": "RECALL",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "F05_OVERTHINKING"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "연결 이유",
+    "sourceCandidateId": "editorial:CLAIM:F05_OVERTHINKING",
+    "evidenceIds": [
+      "natal:year:branch:子"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OVERTHINKING",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:depth:risk-reminder",
+      "application": "RECALL",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "F05_OVERTHINKING"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "악화 조건",
+    "sourceCandidateId": "editorial:CLAIM:F05_OVERTHINKING",
+    "evidenceIds": [
+      "natal:year:branch:子"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OVERTHINKING",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:depth:risk-reminder",
+      "application": "RECALL",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "F05_OVERTHINKING"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "보완 방법",
+    "sourceCandidateId": "editorial:CLAIM:F05_OVERTHINKING",
+    "evidenceIds": [
+      "natal:year:branch:子"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OVERTHINKING",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:depth:risk-reminder",
+      "application": "RECALL",
+      "axis": "DEPTH",
+      "direction": 1,
+      "sourceRefs": [
+        "F05_OVERTHINKING"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "첫 행동",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:integrated-growth",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "장기 능력",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:integrated-growth",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "일 돈 학업 연결",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:integrated-growth",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "성장 확인",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:integrated-growth",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "소개된 강점",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:closing",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "긍정 가능성",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:closing",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "기억할 원칙",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:closing",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  },
+  {
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "개인별 마무리",
+    "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR034",
+    "evidenceIds": [
+      "natal:year:stem:甲"
+    ],
+    "mbtiSourceNodeIds": [],
+    "fusionIds": [],
+    "semanticTheme": "OWN_METHOD_RESULT",
+    "lifeStatus": "freelancer",
+    "jobContext": "기술 문서 번역가",
+    "provenance": {
+      "materialId": "career:autonomy:closing",
+      "application": "RECALL",
+      "axis": "AUTONOMY",
+      "direction": 1,
+      "sourceRefs": [
+        "resonance:PR034"
+      ]
+    }
+  }
+]

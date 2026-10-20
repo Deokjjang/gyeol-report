@@ -1,0 +1,323 @@
+{
+  "referenceCommit": "f0de150f932f30087ddb680689456d7d8b760488",
+  "logicalArtifacts": [
+    {
+      "name": "global-case-01.json",
+      "logicalJsonHash": "6b87159e30f3b486c9dbff4e536e9d1374171ed77f512f08e065e883b18b7464",
+      "exact": true
+    },
+    {
+      "name": "global-case-02.json",
+      "logicalJsonHash": "59aac97e357cf8b5d46bdcfb7e934ae8bc03e7492eead0e6c25b71a505943c78",
+      "exact": true
+    },
+    {
+      "name": "global-case-03.json",
+      "logicalJsonHash": "0f0cd62fa3a0db118c2a0777bfd0a5419153b2da20b71811b4499c1f2765f42f",
+      "exact": true
+    },
+    {
+      "name": "global-case-04.json",
+      "logicalJsonHash": "350d96f9016ac78669cc848874f52ead64ad5eebdbc1ea81eeddc90af9b7a7f9",
+      "exact": true
+    },
+    {
+      "name": "global-case-05.json",
+      "logicalJsonHash": "cb79c7cdfc934a1674b10943a25b14b0fcff62f429e94bda23a6857f68884ef5",
+      "exact": true
+    },
+    {
+      "name": "global-case-06.json",
+      "logicalJsonHash": "343557824a7522b1a91797d8327771e94dcc386d0c678c0089c870a145d60396",
+      "exact": true
+    },
+    {
+      "name": "global-case-07.json",
+      "logicalJsonHash": "449766583d09a95e3f236d076da41e5b4ef0d27b63ca997487c0a8e7b435372e",
+      "exact": true
+    },
+    {
+      "name": "global-case-08.json",
+      "logicalJsonHash": "c2c682577ab004dcfb80e5387aac14f16e6a9e33fd2c7fa8e08797db45277fdc",
+      "exact": true
+    },
+    {
+      "name": "global-case-09.json",
+      "logicalJsonHash": "2b08968ee0cf35795ee93fd93268df627d863de27a32778dd230636f830b1936",
+      "exact": true
+    },
+    {
+      "name": "global-case-10.json",
+      "logicalJsonHash": "66be2450a8ac64926c1766e8909762ef0efa9972db5d1b48b9927ab1908b52db",
+      "exact": true
+    },
+    {
+      "name": "global-case-11.json",
+      "logicalJsonHash": "39afed17ae95e7043a0c1f805e31c5b4f8735802972b9d5eeb65c5668a227b88",
+      "exact": true
+    },
+    {
+      "name": "global-case-12.json",
+      "logicalJsonHash": "ddd145b843676d08fc9fa0035beaa68ec0e0e8258350fbc6f79775d5f893ba4a",
+      "exact": true
+    },
+    {
+      "name": "global-case-13.json",
+      "logicalJsonHash": "168597823dd6ca042af3f5fe703af26065a3b94bc5dfc37b4d0d6f773e0bbd9b",
+      "exact": true
+    },
+    {
+      "name": "global-case-14.json",
+      "logicalJsonHash": "d0204bebab807b92bd1cf34a93714a2bc6c939226965626c25866bd21cf12da4",
+      "exact": true
+    },
+    {
+      "name": "global-case-15.json",
+      "logicalJsonHash": "a77481f2a3e6009c516d9a173e6cca277a6dd8a2a2f82654431be8058e2c67b7",
+      "exact": true
+    },
+    {
+      "name": "global-case-16.json",
+      "logicalJsonHash": "7f580c8c19c212f77393b8448f73536cc764eb0a05550949c0671157f8d5830d",
+      "exact": true
+    },
+    {
+      "name": "global-case-17.json",
+      "logicalJsonHash": "363026b39052c30e93c225491b1b04d381da97360bf59b20611ad03ce2ed0b3a",
+      "exact": true
+    },
+    {
+      "name": "global-case-18.json",
+      "logicalJsonHash": "f29e77537c59d840a8048b0dc62b22075b64c3d951deca70eca1ee41e66fcc6b",
+      "exact": true
+    },
+    {
+      "name": "global-case-19.json",
+      "logicalJsonHash": "b7797afcf6873c1eb3df8b17f11b2cdfa1c96f7c5c5f8eb272e8b600a34b69f9",
+      "exact": true
+    },
+    {
+      "name": "global-case-20.json",
+      "logicalJsonHash": "d25bd6f232e28d8581187018586996a828905a79404a33fc3cd6b412d5de3d7e",
+      "exact": true
+    },
+    {
+      "name": "global-case-21.json",
+      "logicalJsonHash": "e8295bdaa6b41d7a5bf45d070e5e43c74d369adeae61ae622c87c2bf425703ee",
+      "exact": true
+    },
+    {
+      "name": "global-case-22.json",
+      "logicalJsonHash": "3c5b2839109ed14324969760e0f2d1d4759c66ed3ba73b0fec650ad87c7bdda3",
+      "exact": true
+    },
+    {
+      "name": "global-case-23.json",
+      "logicalJsonHash": "8c28ba4a9c288cbcb2bbf3b624d15d56144d82dda1d4612f478fdf1fec62dc3e",
+      "exact": true
+    },
+    {
+      "name": "global-case-24.json",
+      "logicalJsonHash": "71df41b94655a2ffecd9d67fa7428370529c0d794bc890dddc893d517bc8adc2",
+      "exact": true
+    },
+    {
+      "name": "global-case-25.json",
+      "logicalJsonHash": "52af13b7c5227f942efa591bd3559bcce7d8ec069be42b7b87556b4413818200",
+      "exact": true
+    },
+    {
+      "name": "global-case-26.json",
+      "logicalJsonHash": "73356a81d9cec2da5eea94750f24ee12118707e4d656a17259cbd22382bb9268",
+      "exact": true
+    },
+    {
+      "name": "global-case-27.json",
+      "logicalJsonHash": "1ec221b3068c9dbd73caf14cdac9882a0c3c10e2975cd3988ead167700186f3a",
+      "exact": true
+    },
+    {
+      "name": "global-temporal-scope-audit.json",
+      "logicalJsonHash": "a78a451c12b2313775b9124bab1fb8d74dd1eeff4233f1242fd15b1429538b44",
+      "exact": true
+    },
+    {
+      "name": "global-approval-isolation.json",
+      "logicalJsonHash": "15ae2d44304207d2599c166ff93eb5431f8377cb3bc8fb7e8b07ece0427ed173",
+      "exact": true
+    },
+    {
+      "name": "global-blocker-impact.json",
+      "logicalJsonHash": "a628eba10395762b1f5ae3627adaf8c18bc3fcaed3eac4b9382ae41a6fc08db3",
+      "exact": true
+    },
+    {
+      "name": "global-candidate-envelope-index.json",
+      "logicalJsonHash": "a317dc3c88680c5b7f892632b7b1645c5ee151979f79adbe2645e41ab739ec64",
+      "exact": true
+    },
+    {
+      "name": "global-candidate-fixture-ledger.json",
+      "logicalJsonHash": "f84480cbc10dfad5c6bab508b70e50d6fab130de7d7983a28934cf1369c7ab50",
+      "exact": true
+    },
+    {
+      "name": "global-case-files.json",
+      "logicalJsonHash": "0356ea46583d346d173e7c75801e1886b6549df2f09bf3e8bf5a06b8492617f4",
+      "exact": true
+    },
+    {
+      "name": "global-domain-ancestry-audit.json",
+      "logicalJsonHash": "56e49f6e5fc59f04743b8813b51678086d4a93c6b699a52cb43c8413e049256d",
+      "exact": true
+    },
+    {
+      "name": "global-engine-interface-matrix.json",
+      "logicalJsonHash": "a2a6c981c069887dbc6f3342ce533c242a507fda1a038b3c65d5adfc5b0380f9",
+      "exact": true
+    },
+    {
+      "name": "global-engine-invocation-results.json",
+      "logicalJsonHash": "250127bcab8afea94943ca41435ead36825c81a0746d83addda1c582d8879d1e",
+      "exact": true
+    },
+    {
+      "name": "global-engine-registry.json",
+      "logicalJsonHash": "8f96bfbb895b23e2296229fc98da4aae150faabe7038ca309e75f6b3a95de77e",
+      "exact": true
+    },
+    {
+      "name": "global-evidence-match-matrix.json",
+      "logicalJsonHash": "135d1319f6d21fa990a448ea53ab4cd59a2aa0897e2a5ed07e5ac316666a4272",
+      "exact": true
+    },
+    {
+      "name": "global-evidence-witness-index.json",
+      "logicalJsonHash": "c667c3ba5b7ec4af1d4898ddb21878dff7d327e6be856c3a89a322afb163d745",
+      "exact": true
+    },
+    {
+      "name": "global-fact-root-reuse.json",
+      "logicalJsonHash": "24bedddd5f580bca7e14a110ec6a9ec48e49adb8ebc04f88dff891effdff0127",
+      "exact": true
+    },
+    {
+      "name": "global-hard-gate-audit.json",
+      "logicalJsonHash": "3866624d24896b94fe5e6bc3a862a03b6c2b9baff500289c27185fa5a80aedc0",
+      "exact": true
+    },
+    {
+      "name": "global-meaning-review-index.json",
+      "logicalJsonHash": "0739825187771eba66ff9c09522a01fadf9e10c535f45043d4b1ad25de209e40",
+      "exact": true
+    },
+    {
+      "name": "global-negative-audit.json",
+      "logicalJsonHash": "82f50d77bdda92447ba54665ed06ac07196d293a7c932366fa9229fa4133cb07",
+      "exact": true
+    },
+    {
+      "name": "global-operator-review-queue.json",
+      "logicalJsonHash": "0739825187771eba66ff9c09522a01fadf9e10c535f45043d4b1ad25de209e40",
+      "exact": true
+    },
+    {
+      "name": "global-original-receipt-index.json",
+      "logicalJsonHash": "5f2bafef1cd903c4f659f65b458b48f8f114182dbaa7a7bad8c4e524af291702",
+      "exact": true
+    },
+    {
+      "name": "global-owner-direction-audit.json",
+      "logicalJsonHash": "174dfe8c038a1065f7b52cb8e2851d87d2fe892ecb61144d800472076a28eaa6",
+      "exact": true
+    },
+    {
+      "name": "global-planner-handoff-contract.json",
+      "logicalJsonHash": "fc65da71e37fe268b87a2bf86ddc291058a7afe24d8291bed49782da80468e7c",
+      "exact": true
+    },
+    {
+      "name": "global-planner-readiness.json",
+      "logicalJsonHash": "f5c9dbe8d168f69f375ead139d52c6e28d18a43194aa85ebada7c3e54159e8cb",
+      "exact": true
+    },
+    {
+      "name": "global-policy-code-contracts.json",
+      "logicalJsonHash": "7f13755c3c46487d07a77a84eafdd7a114952b31d7216d7c65e2279cd4776316",
+      "exact": true
+    },
+    {
+      "name": "global-privacy-audit.json",
+      "logicalJsonHash": "74e323fca45437d0370776160847e2b77bed0f0a25c610c3d3aa93620cb1f13b",
+      "exact": true
+    },
+    {
+      "name": "global-product-routing-matrix.json",
+      "logicalJsonHash": "9664fb52f5159e240533e155db37a5cbeb0e3f46e78a5046ed1e4533da905438",
+      "exact": true
+    },
+    {
+      "name": "global-publication-risk-registry.json",
+      "logicalJsonHash": "d79f20fb51eb3075a5a4e19cbfd14507d6c0b77ae77ab10216c359136fc2fd29",
+      "exact": true
+    },
+    {
+      "name": "global-reader-question-index.json",
+      "logicalJsonHash": "7f6c7b4d935d893693874fb59d6d3037ef5608f16c118a3e2c53e6c2e0694881",
+      "exact": true
+    },
+    {
+      "name": "global-semantic-conflict-candidates.json",
+      "logicalJsonHash": "5b18371c481604a400d4b38cc086d57d16f8d9f1b0590d3765a425696eba4387",
+      "exact": true
+    },
+    {
+      "name": "global-source-group-audit.json",
+      "logicalJsonHash": "157654ad3cb8bcb2d47603d43aceaab0ab04f94c5ce7c3ba7905101bb6e50390",
+      "exact": true
+    },
+    {
+      "name": "global-source-hash-integrity.json",
+      "logicalJsonHash": "142afa6c5380f67a78a3f05ca121520eda2043197e4842cbd9cba17573c0a100",
+      "exact": true
+    },
+    {
+      "name": "global-source-match-matrix.json",
+      "logicalJsonHash": "8147c7dcd1b6c7ee03c0f7462beaff58878ea8d8d926a45ea1e98821e18b3816",
+      "exact": true
+    },
+    {
+      "name": "global-source-provenance-index.json",
+      "logicalJsonHash": "4038d789e3400f9eb0afc1d121dd03cf9d446f47a0d03d80657755d79c506411",
+      "exact": true
+    },
+    {
+      "name": "global-specialist-manifest.json",
+      "logicalJsonHash": "ac52a165d3445817ce32f72b6b8c21a1941f3783326fbdb975a6079a5b045ef0",
+      "exact": true
+    },
+    {
+      "name": "global-specialist-policy-matrix.json",
+      "logicalJsonHash": "6793d677f5389a93e8aa86ddf806527634b6370dda82f1e713714ab399826b32",
+      "exact": true
+    },
+    {
+      "name": "global-structural-match-matrix.json",
+      "logicalJsonHash": "016dee49711ffade9485b231f916caa8a632d754c00418343b38c2ab547fd73c",
+      "exact": true
+    },
+    {
+      "name": "global-withhold-reasons.json",
+      "logicalJsonHash": "2788b630fb3e7510d066ee3158e70a67c34f949a3e552421cbae2ad4d0375d49",
+      "exact": true
+    }
+  ],
+  "allLogicalDataBytesPreserved": true,
+  "physicalBytesBefore": 982471059,
+  "physicalBytesAfter": 96193430,
+  "sourceKnowledgeEncodingUnchanged": true,
+  "storageEncoding": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "originalResearchFilesUnchanged": 5086,
+  "rawPayloadMaximumBytes": 51380224,
+  "realNativeInvocationsRerunTwice": true
+}

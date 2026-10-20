@@ -1,3 +1,4 @@
+import { reviewedMbtiBehavior } from "./contentMbti";
 import type { ComprehensivePlanInputs, ComprehensiveSectionId } from "./comprehensivePlanCore";
 import type { FusionCandidate } from "./fusionCore";
 import type { MbtiSourceDomain } from "./mbtiSemanticCore";
@@ -22,8 +23,9 @@ export function humanMbtiReason(i: ComprehensivePlanInputs, fusion: FusionCandid
     && visibleMbtiDomainRank(n.sourceDomain, section, fusion.primaryContext) >= 0
     && i.mbti.annotations.some(a => a.sourceNodeId === n.id && a.annotationConfidence !== "REFERENCE_ONLY"
       && (a.axes[side.axis] ?? 0) * side.direction > 0));
-  nodes.sort((a, b) => visibleMbtiDomainRank(b.sourceDomain, section, fusion.primaryContext) - visibleMbtiDomainRank(a.sourceDomain, section, fusion.primaryContext) || a.id.localeCompare(b.id));
-  const node = nodes[0], action = mbtiHumanBehavior(side.axis, side.direction);
+  nodes.sort((a, b) => visibleMbtiDomainRank(b.sourceDomain, section, fusion.primaryContext) - visibleMbtiDomainRank(a.sourceDomain, section, fusion.primaryContext)
+    || (memory.usedEvidence[a.id] ?? 0) - (memory.usedEvidence[b.id] ?? 0) || a.id.localeCompare(b.id));
+  const node = nodes[0], action = node && (reviewedMbtiBehavior(node) ?? mbtiHumanBehavior(side.axis, side.direction));
   if (!node || !action) return undefined;
   const type = i.mbti.mbtiType;
   const forms = fusion.type==="TENSION" ? [

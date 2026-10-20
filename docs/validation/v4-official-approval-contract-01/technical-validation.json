@@ -1,0 +1,39 @@
+{
+  "newTests": {
+    "passed": 146,
+    "failed": 0,
+    "pending": 0,
+    "failures": []
+  },
+  "existingPlannerTests": "125 PASS / 0 FAIL",
+  "knownRegressions": "5837 PASS / 46 identical FAIL",
+  "businessPartner": "382 PASS / 1 identical FAIL",
+  "offlineCliRequiredHeapMiB": 8192,
+  "defaultHeapAuditFailsFast": true,
+  "newRegressions": 0,
+  "typescript": {
+    "before": 0,
+    "after": 0,
+    "new": 0
+  },
+  "lint": "PASS / 0 warnings",
+  "build": "PASS",
+  "buildNode": "24.22.0",
+  "next": "16.2.4",
+  "buildWarningsObserved": 0,
+  "initialLocalEnvironmentIssue": "External node_modules symlink rejected by Turbopack; replaced only own ignored dependency link with identical local APFS copy. Sandbox build stalled; own generated output archived and same default command passed outside sandbox. No source/config/lock change.",
+  "fullSuiteClaimed": false,
+  "diffCheck": "PASS / explicit staged files checked; final check repeated before commit",
+  "logHashes": {
+    "new-tests-complete.json": "627a909f457e540efce6d2a7892be271c37f9a14e51e2e11fbf3292c2811f2bf",
+    "new-and-planner.json": "8e105b4d562a15518fb91d79103c4be0738bc410e65854341728e2e4fed921e4",
+    "base-known.json": "33f4c689a949a4b5d844f2748950df3a53327b82da220b0f024fedcaf605a297",
+    "current-known.json": "d76c009aca194b60d6b966223f201ed8844f8bbeab23b431ff4afbf7c377fffb",
+    "bp-base-default.json": "70b6e4891e7d56d0c858dc4135e1e5b50277adf6a99ca01af310d5f934a61613",
+    "bp-current-default.json": "740617ea7dca23576c4c1abecf95681cf7b1b6b2f078ab3443e25a5ac10c1075",
+    "typescript-base.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typescript-final-proof.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lint-final-proof.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build-final-proof.log": "5a3b6cb0e24d3bc52c9f6703bc488e63eaf1085b277e1659f82b140b7929d2f5"
+  }
+}

@@ -1,0 +1,158 @@
+.next/types/app/report/new/page.ts(14,13): error TS2344: Type 'OmitWithTag<typeof import("/private/tmp/gyeol-release-technical-stabilization-01/src/app/report/new/page"), "default" | "config" | "metadata" | "dynamic" | "runtime" | "generateStaticParams" | ... 9 more ... | "generateViewport", "">' does not satisfy the constraint '{ [x: string]: never; }'.
+  Property 'getAsiaSeoulCurrentYear' is incompatible with index signature.
+    Type '(referenceDate?: Date) => number' is not assignable to type 'never'.
+tests/unit/api/createReportRoute.test.ts(324,19): error TS2551: Property 'report' does not exist on type 'ApiSuccessBody | ProductApiSuccessBody'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'ProductApiSuccessBody'.
+tests/unit/api/createReportRoute.test.ts(325,19): error TS2551: Property 'report' does not exist on type 'ApiSuccessBody | ProductApiSuccessBody'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'ProductApiSuccessBody'.
+tests/unit/api/createReportRoute.test.ts(326,19): error TS2551: Property 'report' does not exist on type 'ApiSuccessBody | ProductApiSuccessBody'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'ProductApiSuccessBody'.
+tests/unit/api/createReportRoute.test.ts(328,14): error TS2551: Property 'report' does not exist on type 'ApiSuccessBody | ProductApiSuccessBody'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'ProductApiSuccessBody'.
+tests/unit/api/createReportRoute.test.ts(328,35): error TS7006: Parameter 'section' implicitly has an 'any' type.
+tests/unit/api/createReportRoute.test.ts(334,19): error TS2551: Property 'report' does not exist on type 'ApiSuccessBody | ProductApiSuccessBody'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'ProductApiSuccessBody'.
+tests/unit/api/createReportRoute.test.ts(592,48): error TS2551: Property 'report' does not exist on type 'ApiSuccessBody | ProductApiSuccessBody'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'ProductApiSuccessBody'.
+tests/unit/api/createReportRoute.test.ts(611,19): error TS2551: Property 'report' does not exist on type 'ApiSuccessBody | ProductApiSuccessBody'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'ProductApiSuccessBody'.
+tests/unit/api/createReportRoute.test.ts(634,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(635,19): error TS2339: Property 'errors' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'errors' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(635,31): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/api/createReportRoute.test.ts(650,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(651,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(652,19): error TS2339: Property 'errors' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'errors' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(653,19): error TS2339: Property 'errors' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'errors' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(653,31): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/api/createReportRoute.test.ts(673,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(677,19): error TS2339: Property 'errors' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'errors' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(691,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(692,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(693,19): error TS2339: Property 'errors' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'errors' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(711,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(712,19): error TS2339: Property 'error' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'error' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(713,19): error TS2339: Property 'errors' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'errors' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(714,19): error TS2339: Property 'errors' does not exist on type 'ApiErrorBody | ProductApiErrorBody'.
+  Property 'errors' does not exist on type 'ProductApiErrorBody'.
+tests/unit/api/createReportRoute.test.ts(714,31): error TS7006: Parameter 'error' implicitly has an 'any' type.
+tests/unit/app/reports/reportFinalRoute.test.tsx(36,111): error TS2322: Type 'unknown' is not assignable to type 'ProductPreviewSnapshotDraft'.
+tests/unit/app/reports/reportResultPage.test.tsx(166,7): error TS2322: Type '{ role: "personA" | "personB"; displayName: string; mbti: "INTP" | "ENTJ"; birthTimeConfidence: string; pillars: { year: string; month: string; day: string; }; dayMaster: string; dayPillar: string; featureIds: never[]; featureLabels: never[]; diagnosticFeatureLabels: never[]; sajuFacts: { ...; }; }' is not assignable to type 'CompatibilityPersonChartSummary'.
+  Types of property 'birthTimeConfidence' are incompatible.
+    Type 'string' is not assignable to type '"unknown" | "known"'.
+tests/unit/app/reports/reportResultPage.test.tsx(171,7): error TS2322: Type '{ role: "personA" | "personB"; displayName: string; mbti: "INTP" | "ENTJ"; birthTimeConfidence: string; pillars: { year: string; month: string; day: string; }; dayMaster: string; dayPillar: string; featureIds: never[]; featureLabels: never[]; diagnosticFeatureLabels: never[]; sajuFacts: { ...; }; }' is not assignable to type 'CompatibilityPersonChartSummary'.
+  Types of property 'birthTimeConfidence' are incompatible.
+    Type 'string' is not assignable to type '"unknown" | "known"'.
+tests/unit/app/reports/reportResultPage.test.tsx(1079,9): error TS2322: Type '{ readonly version: "v1"; readonly titleKo: "상품 미리보기"; readonly subtitleKo: "상품 미리보기 snapshot"; readonly sections: readonly []; readonly notices: readonly []; }' is not assignable to type 'ReportOutput'.
+  Types of property 'sections' are incompatible.
+    The type 'readonly []' is 'readonly' and cannot be assigned to the mutable type 'ReportSection[]'.
+tests/unit/interpretation-v3/commonFinal.test.tsx(69,32): error TS2339: Property 'narrativeAudit' does not exist on type 'LoveV3Draft | CompatibilityV3Draft | MajorFortuneV3Draft | (ComprehensiveV3Draft & { narrativeEdition: "mbti-library-1" | "mbti-library-2"; narrativeAudit: readonly NarrativeAudit[]; rhythmWarnings: readonly string[]; } & { ...; }) | (CareerV3Draft & ... 1 more ... & { ...; })'.
+  Property 'narrativeAudit' does not exist on type 'LoveV3Draft'.
+tests/unit/interpretation-v3/commonFinal.test.tsx(73,30): error TS7006: Parameter 'a' implicitly has an 'any' type.
+tests/unit/interpretation-v3/commonFinal.test.tsx(74,30): error TS7006: Parameter 'a' implicitly has an 'any' type.
+tests/unit/payment/paidProductReportFulfillment.test.ts(48,34): error TS2339: Property 'person' does not exist on type 'ReportInputPayload'.
+  Property 'person' does not exist on type 'CompatibilityReportInputPayload'.
+tests/unit/payment/paidProductReportFulfillment.test.ts(49,32): error TS2339: Property 'person' does not exist on type 'ReportInputPayload'.
+  Property 'person' does not exist on type 'CompatibilityReportInputPayload'.
+tests/unit/payment/paidProductReportFulfillment.test.ts(96,26): error TS2339: Property 'productPreview' does not exist on type 'PublicReportPreviewRecord'.
+  Property 'productPreview' does not exist on type 'PublicComprehensiveReportPreviewRecord'.
+tests/unit/payment/tossClientCheckoutTypes.test.ts(58,41): error TS2554: Expected 0 arguments, but got 1.
+tests/unit/payment/tossConfirmClient.test.ts(140,24): error TS2493: Tuple type '[]' of length '0' has no element at index '0'.
+tests/unit/payment/tossConfirmClient.test.ts(141,12): error TS2532: Object is possibly 'undefined'.
+tests/unit/payment/tossConfirmClient.test.ts(141,24): error TS2493: Tuple type '[]' of length '0' has no element at index '1'.
+tests/unit/payment/tossConfirmClient.test.ts(142,35): error TS2493: Tuple type '[]' of length '0' has no element at index '1'.
+tests/unit/payment/tossConfirmClient.test.ts(145,35): error TS2493: Tuple type '[]' of length '0' has no element at index '1'.
+tests/unit/payment/tossConfirmClient.test.ts(148,40): error TS2493: Tuple type '[]' of length '0' has no element at index '1'.
+tests/unit/persistence/inMemoryReportPersistenceAdapter.test.ts(39,28): error TS2352: Conversion of type '{ version: "compatibility_v1_draft"; productType: "saju_mbti_compatibility"; productVersion: "1.0"; relationshipType: "love"; personALabel: string; personBLabel: string; openingTitle: string; ... 8 more ...; safetyNotes: string[]; }' to type 'ProductPreviewSnapshotDraft' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ version: "compatibility_v1_draft"; productType: "saju_mbti_compatibility"; productVersion: "1.0"; relationshipType: "love"; personALabel: string; personBLabel: string; openingTitle: string; ... 8 more ...; safetyNotes: string[]; }' is not comparable to type 'CompatibilityReportDraft'.
+    The types of 'chartComparison.personA' are incompatible between these types.
+      Type '{}' is missing the following properties from type 'CompatibilityPersonChartSummary': role, displayName, birthTimeConfidence, pillars, and 6 more.
+tests/unit/persistence/inMemoryReportPersistenceAdapter.test.ts(116,7): error TS2322: Type '{ readonly version: "v1"; readonly titleKo: "결리포트"; readonly subtitleKo: "사주와 MBTI로 읽는 나의 결"; readonly sections: readonly []; readonly notices: readonly []; }' is not assignable to type 'ReportOutput'.
+  Types of property 'sections' are incompatible.
+    The type 'readonly []' is 'readonly' and cannot be assigned to the mutable type 'ReportSection[]'.
+tests/unit/persistence/inMemoryReportPersistenceAdapter.test.ts(148,7): error TS2322: Type '{ readonly version: "v1"; readonly titleKo: "결리포트"; readonly subtitleKo: "사주와 MBTI로 읽는 나의 결"; readonly sections: readonly []; readonly notices: readonly []; }' is not assignable to type 'ReportOutput'.
+  Types of property 'sections' are incompatible.
+    The type 'readonly []' is 'readonly' and cannot be assigned to the mutable type 'ReportSection[]'.
+tests/unit/persistence/inMemoryReportPersistenceAdapter.test.ts(208,33): error TS2339: Property 'productPreview' does not exist on type 'PersistedReportSnapshot'.
+  Property 'productPreview' does not exist on type 'ComprehensiveReportOutputSnapshot'.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(201,11): error TS2322: Type '(accessTokenHash: string) => Promise<SupabaseReportQueryResult<SupabaseReportRow | null>>' is not assignable to type '(accessTokenHash: string) => Promise<SupabaseReportQueryResult<SupabasePaidReportLookupRow | null>>'.
+  Type 'Promise<SupabaseReportQueryResult<SupabaseReportRow | null>>' is not assignable to type 'Promise<SupabaseReportQueryResult<SupabasePaidReportLookupRow | null>>'.
+    Type 'SupabaseReportQueryResult<SupabaseReportRow | null>' is not assignable to type 'SupabaseReportQueryResult<SupabasePaidReportLookupRow | null>'.
+      Type '{ readonly ok: true; readonly data: SupabaseReportRow | null; }' is not assignable to type 'SupabaseReportQueryResult<SupabasePaidReportLookupRow | null>'.
+        Type '{ readonly ok: true; readonly data: SupabaseReportRow | null; }' is not assignable to type '{ readonly ok: true; readonly data: SupabasePaidReportLookupRow | null; }'.
+          Types of property 'data' are incompatible.
+            Type 'SupabaseReportRow | null' is not assignable to type 'SupabasePaidReportLookupRow | null'.
+              Type 'SupabaseReportRow' is not assignable to type 'SupabasePaidReportLookupRow'.
+                Types of property 'status' are incompatible.
+                  Type 'string' is not assignable to type 'ReportPersistenceStatus'.
+tests/unit/persistence/supabaseReportPersistenceAdapter.test.ts(406,28): error TS2551: Property 'report' does not exist on type 'PublicReportPreviewRecord'. Did you mean 'reportId'?
+  Property 'report' does not exist on type 'PublicProductPreviewRecord'.
+tests/unit/report-generation/annualFortuneReportDraftValidator.test.ts(222,31): error TS2352: Conversion of type 'AnnualFortuneReportDraft | undefined' to type 'Record<string, unknown>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'AnnualFortuneReportDraft' is not comparable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'AnnualFortuneReportDraft'.
+tests/unit/report-generation/annualFortuneReportDraftValidator.test.ts(510,12): error TS2704: The operand of a 'delete' operator cannot be a read-only property.
+tests/unit/report-generation/compatibilityGenerationHandler.test.ts(13,3): error TS2459: Module '"../../../src/lib/report-generation/reportInputAdapter"' declares 'CompatibilityRelationshipType' locally, but it is not exported.
+tests/unit/report-generation/compatibilityReportDraftValidator.test.ts(123,12): error TS2704: The operand of a 'delete' operator cannot be a read-only property.
+tests/unit/report-generation/compatibilityReportDraftValidator.test.ts(522,7): error TS2345: Argument of type '"businessPartner"' is not assignable to parameter of type 'CompatibilityRelationshipType'.
+tests/unit/report-generation/compatibilityReportDraftValidator.test.ts(526,7): error TS2345: Argument of type '"businessPartner"' is not assignable to parameter of type 'CompatibilityRelationshipType'.
+tests/unit/report-generation/comprehensiveReportDraftValidator.test.ts(536,14): error TS2532: Object is possibly 'undefined'.
+tests/unit/report-generation/comprehensiveReportProfileTableBuilder.test.ts(70,12): error TS18048: 'profileTable.fiveElementBadges' is possibly 'undefined'.
+tests/unit/report-generation/comprehensiveReportProfileTableBuilder.test.ts(71,12): error TS18048: 'profileTable.fiveElementBadges' is possibly 'undefined'.
+tests/unit/report-generation/comprehensiveReportProfileTableBuilder.test.ts(72,12): error TS18048: 'profileTable.fiveElementBadges' is possibly 'undefined'.
+tests/unit/report-generation/comprehensiveReportProfileTableBuilder.test.ts(73,12): error TS18048: 'profileTable.fiveElementBadges' is possibly 'undefined'.
+tests/unit/report-generation/comprehensiveReportProfileTableBuilder.test.ts(74,12): error TS18048: 'profileTable.fiveElementBadges' is possibly 'undefined'.
+tests/unit/report-generation/majorFortuneGenerationHandler.test.ts(83,22): error TS2339: Property 'coreFlow' does not exist on type 'MajorFortuneTimelineYearDetail'.
+  Property 'coreFlow' does not exist on type 'MajorFortuneTimelineYearLegacyDetail'.
+tests/unit/report-generation/majorFortuneGenerationHandler.test.ts(84,22): error TS2339: Property 'realWorldScenes' does not exist on type 'MajorFortuneTimelineYearDetail'.
+  Property 'realWorldScenes' does not exist on type 'MajorFortuneTimelineYearLegacyDetail'.
+tests/unit/report-generation/majorFortuneGenerationHandler.test.ts(85,22): error TS2339: Property 'cautionPoint' does not exist on type 'MajorFortuneTimelineYearDetail'.
+  Property 'cautionPoint' does not exist on type 'MajorFortuneTimelineYearLegacyDetail'.
+tests/unit/report-generation/majorFortuneReportDraftValidator.test.ts(725,12): error TS2704: The operand of a 'delete' operator cannot be a read-only property.
+tests/unit/report-generation/majorFortuneReportDraftValidator.test.ts(821,12): error TS2704: The operand of a 'delete' operator cannot be a read-only property.
+tests/unit/report-generation/openaiComprehensiveReportWriter.test.ts(183,5): error TS2322: Type 'string' is not assignable to type '"" | MbtiType'.
+tests/unit/report-generation/openaiComprehensiveReportWriter.test.ts(502,9): error TS2322: Type 'string[] | readonly { readonly text?: string | undefined; }[]' is not assignable to type '{ readonly text?: string | undefined; } | readonly { readonly text?: string | undefined; }[]'.
+  Type 'string[]' is not assignable to type '{ readonly text?: string | undefined; } | readonly { readonly text?: string | undefined; }[]'.
+    Type 'string[]' is not assignable to type 'readonly { readonly text?: string | undefined; }[]'.
+      Type 'string' has no properties in common with type '{ readonly text?: string | undefined; }'.
+tests/unit/report-generation/openaiComprehensiveReportWriter.test.ts(504,66): error TS18046: 'content' is of type 'unknown'.
+tests/unit/report-generation/productPreviewSnapshot.test.ts(201,16): error TS2352: Conversion of type '{ productType: "annual_fortune"; version: "compatibility_v1_draft"; productVersion: "1.0"; relationshipType: CompatibilityRelationshipType; ... 11 more ...; safetyNotes: readonly string[]; }' to type 'ProductPreviewSnapshotDraft' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ productType: "annual_fortune"; version: "compatibility_v1_draft"; productVersion: "1.0"; relationshipType: CompatibilityRelationshipType; ... 11 more ...; safetyNotes: readonly string[]; }' is not comparable to type 'AnnualFortuneReportDraft | AnnualV3Draft'.
+    Type '{ productType: "annual_fortune"; version: "compatibility_v1_draft"; productVersion: "1.0"; relationshipType: CompatibilityRelationshipType; ... 11 more ...; safetyNotes: readonly string[]; }' is not comparable to type 'AnnualV3Draft'.
+      Type '{ productType: "annual_fortune"; version: "compatibility_v1_draft"; productVersion: "1.0"; relationshipType: CompatibilityRelationshipType; personALabel: string; ... 10 more ...; safetyNotes: readonly string[]; }' is missing the following properties from type 'Omit<AnnualFortuneReportDraft, "version" | "productVersion">': personLabel, mode, headline, targetYear, and 19 more.
+tests/unit/report-generation/productPreviewSnapshot.test.ts(217,16): error TS2352: Conversion of type '{ productVersion: ""; version: "compatibility_v1_draft"; productType: "saju_mbti_compatibility"; relationshipType: CompatibilityRelationshipType; ... 11 more ...; safetyNotes: readonly string[]; }' to type 'ProductPreviewSnapshotDraft' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ productVersion: ""; version: "compatibility_v1_draft"; productType: "saju_mbti_compatibility"; relationshipType: CompatibilityRelationshipType; ... 11 more ...; safetyNotes: readonly string[]; }' is not comparable to type 'CompatibilityReportDraft'.
+    Types of property 'productVersion' are incompatible.
+      Type '""' is not comparable to type '"1.0"'.
+tests/unit/report-knowledge/compatibilityEvidenceBuilder.test.ts(102,54): error TS2345: Argument of type 'string' is not assignable to parameter of type 'CompatibilityRelationshipCategoryInput'.
+tests/unit/report-knowledge/compatibilityEvidenceBuilder.test.ts(130,54): error TS2345: Argument of type 'string' is not assignable to parameter of type 'CompatibilityRelationshipCategoryInput'.
+tests/unit/report-knowledge/compatibilityScoreEngine.test.ts(13,7): error TS2322: Type 'CompatibilityRelationshipCategoryInput' is not assignable to type 'CompatibilityRelationshipType'.
+  Type '"businessPartner"' is not assignable to type 'CompatibilityRelationshipType'.
+tests/unit/report-knowledge/compatibilityScoreEngine.test.ts(40,7): error TS2322: Type 'CompatibilityRelationshipCategoryInput' is not assignable to type 'CompatibilityRelationshipType'.
+  Type '"businessPartner"' is not assignable to type 'CompatibilityRelationshipType'.
+tests/unit/report-knowledge/compatibilityScoreEngine.test.ts(50,7): error TS2322: Type 'CompatibilityRelationshipCategoryInput' is not assignable to type 'CompatibilityRelationshipType'.
+  Type '"businessPartner"' is not assignable to type 'CompatibilityRelationshipType'.
+tests/unit/report-knowledge/comprehensiveReportEvidenceInputBuilder.test.ts(419,30): error TS2345: Argument of type 'readonly string[]' is not assignable to parameter of type 'WithAsymmetricMatcher<string>[]'.
+  The type 'readonly string[]' is 'readonly' and cannot be assigned to the mutable type 'WithAsymmetricMatcher<string>[]'.
+tests/unit/report-knowledge/reportQualityFixtureMatrix.test.ts(40,34): error TS2345: Argument of type 'string' is not assignable to parameter of type '"INTJ" | "INTP" | "ENTJ" | "ENTP" | "INFJ" | "INFP" | "ENFP" | "ISTJ" | "ISFJ" | "ESTJ" | "ISFP" | "ESTP" | "ESFP"'.
+tests/unit/report-knowledge/reportQualityFixtureMatrix.test.ts(166,28): error TS2345: Argument of type 'string' is not assignable to parameter of type '"personality" | "relationship" | "work" | "money" | "love" | "family" | "study" | "environment" | "growth" | "positive" | "warning" | "mixed"'.
+tests/unit/report-knowledge/sajuComputedFactsMapper.test.ts(38,61): error TS2345: Argument of type 'readonly string[]' is not assignable to parameter of type 'WithAsymmetricMatcher<string>[]'.
+  The type 'readonly string[]' is 'readonly' and cannot be assigned to the mutable type 'WithAsymmetricMatcher<string>[]'.
+tests/unit/report-knowledge/sajuSymbolicNickname.test.ts(121,11): error TS2820: Type '"bi_jian"' is not assignable to type 'TenGod'. Did you mean '"bijian"'?
+tests/unit/report-tables/careerReportTablePresenter.test.ts(88,45): error TS18047: 'note.plainKo' is possibly 'null'.
+tests/unit/report-tables/careerReportTablePresenter.test.ts(91,45): error TS18047: 'note.plainKo' is possibly 'null'.
+tests/unit/report-tables/careerReportTablePresenter.test.ts(94,45): error TS18047: 'note.plainKo' is possibly 'null'.
+tests/unit/saju/advancedTags.test.ts(9,3): error TS2739: Type '{ input: { birthDate: string; birthTime: string; birthTimeUnknown: false; calendarType: "SOLAR"; gender: "MALE"; timezone: "Asia/Seoul"; }; converted: { solarDate: string; }; pillars: { year: { stem: "甲"; branch: "辰"; }; month: { ...; }; day: { ...; }; hour: { ...; }; }; ... 5 more ...; notices: never[]; }' is missing the following properties from type 'SajuCalcResult': shinsal, structureAnalysis
+tests/unit/sharing/paidDeliveryCompleteness.test.tsx(89,161): error TS2322: Type 'unknown' is not assignable to type 'ProductPreviewSnapshotDraft'.

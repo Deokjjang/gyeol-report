@@ -1,0 +1,674 @@
+[
+  {
+    "id": "bppr:paragraph:CH01.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1",
+    "originalPurpose": "두 사람을 한마디로 설명하면",
+    "titleTemplate": "두 사람을 한마디로 설명하면",
+    "readerQuestion": "같이 볼 고객 문제와 제공 가정은 무엇인가?",
+    "materialIds": [
+      "bppr:material:CH01.P1:idea-demand-interface",
+      "bppr:material:CH01.P1:opportunity-capacity-interface"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH01.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2",
+    "originalPurpose": "명리에서 보는 두 사람의 관계",
+    "titleTemplate": "명리에서 보는 두 사람의 관계",
+    "readerQuestion": "실제 명리 정의와 사업 조건을 어떻게 구분하는가?",
+    "materialIds": [
+      "bppr:material:CH01.P2:harmony-not-revenue",
+      "bppr:material:CH01.P2:half-harmony-not-governance"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH01.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3",
+    "originalPurpose": "MBTI가 보여주는 우리",
+    "titleTemplate": "MBTI가 보여주는 우리",
+    "readerQuestion": "각자의 정보 질문은 어떻게 다른가?",
+    "materialIds": [
+      "bppr:material:CH01.P3:analysis-and-use",
+      "bppr:material:CH01.P3:same-type-different-stakes"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH01.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4",
+    "originalPurpose": "이 관계를 이해하는 가장 중요한 기준",
+    "titleTemplate": "이 관계를 이해하는 가장 중요한 기준",
+    "readerQuestion": "동업 상태·기여·위험에서 무엇을 먼저 확인하는가?",
+    "materialIds": [
+      "bppr:material:CH01.P4:trust-verification-boundary",
+      "bppr:material:CH01.P4:stop-before-risk-lock"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH02.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1",
+    "originalPurpose": "A의 관계 성향",
+    "titleTemplate": "{{A}}의 관계 성향",
+    "readerQuestion": "A는 어떤 정보로 기회를 이해하는가?",
+    "materialIds": [
+      "bppr:material:CH02.P1:a-opportunity-model",
+      "bppr:material:CH02.P1:a-resource-as-goal"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH02.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2",
+    "originalPurpose": "A가 관계에서 중요하게 여기는 것",
+    "titleTemplate": "{{A:subject}} 관계에서 중요하게 여기는 것",
+    "readerQuestion": "A가 시작 전에 확인할 조건은 무엇인가?",
+    "materialIds": [
+      "bppr:material:CH02.P2:a-record-before-commit",
+      "bppr:material:CH02.P2:a-meaning-and-finance"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH02.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3",
+    "originalPurpose": "A가 관계에 가져오는 장점",
+    "titleTemplate": "{{A:subject}} 관계에 가져오는 장점",
+    "readerQuestion": "A의 강점이 사업 질문에 도움이 될 조건은 무엇인가?",
+    "materialIds": [
+      "bppr:material:CH02.P3:a-small-working-test",
+      "bppr:material:CH02.P3:a-correct-assumptions"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH02.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4",
+    "originalPurpose": "A가 조심해야 할 부분",
+    "titleTemplate": "{{A:subject}} 조심해야 할 부분",
+    "readerQuestion": "A의 서두름·과검토는 어떤 부담을 남기는가?",
+    "materialIds": [
+      "bppr:material:CH02.P4:a-theory-without-demand",
+      "bppr:material:CH02.P4:a-support-becomes-funding"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH03.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1",
+    "originalPurpose": "B의 관계 성향",
+    "titleTemplate": "{{B}}의 관계 성향",
+    "readerQuestion": "B는 어떤 자료로 실행 조건을 이해하는가?",
+    "materialIds": [
+      "bppr:material:CH03.P1:b-operational-conditions",
+      "bppr:material:CH03.P1:b-method-and-data"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH03.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2",
+    "originalPurpose": "B가 관계에서 중요하게 여기는 것",
+    "titleTemplate": "{{B:subject}} 관계에서 중요하게 여기는 것",
+    "readerQuestion": "B가 필요한 비용·범위 정보는 무엇인가?",
+    "materialIds": [
+      "bppr:material:CH03.P2:b-terms-before-money",
+      "bppr:material:CH03.P2:b-value-before-price"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH03.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3",
+    "originalPurpose": "B가 관계에 가져오는 장점",
+    "titleTemplate": "{{B:subject}} 관계에 가져오는 장점",
+    "readerQuestion": "B의 독립 강점은 언제 유용한가?",
+    "materialIds": [
+      "bppr:material:CH03.P3:b-customer-observation",
+      "bppr:material:CH03.P3:b-cost-gap-review"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH03.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4",
+    "originalPurpose": "B가 조심해야 할 부분",
+    "titleTemplate": "{{B:subject}} 조심해야 할 부분",
+    "readerQuestion": "B의 과용은 어떤 조건을 가리는가?",
+    "materialIds": [
+      "bppr:material:CH03.P4:b-review-without-close",
+      "bppr:material:CH03.P4:b-relationship-cost-blindness"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH04.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1",
+    "originalPurpose": "두 사람의 공통점",
+    "titleTemplate": "두 사람의 공통점",
+    "readerQuestion": "고객·제공의 어떤 접점이 실제로 공통인가?",
+    "materialIds": [
+      "bppr:material:CH04.P1:shared-proof-before-investment",
+      "bppr:material:CH04.P1:shared-scope-repeatability"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH04.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2",
+    "originalPurpose": "서로 다른 장점이 만날 때",
+    "titleTemplate": "서로 다른 장점이 만날 때",
+    "readerQuestion": "다른 기여를 잇는 비용·동의 조건은 무엇인가?",
+    "materialIds": [
+      "bppr:material:CH04.P2:exploration-delivery-interface",
+      "bppr:material:CH04.P2:trial-and-contract-boundary"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH04.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3",
+    "originalPurpose": "함께 있을 때 좋은 순간",
+    "titleTemplate": "함께 있을 때 좋은 순간",
+    "readerQuestion": "좋은 공동 장면에서 각자 무엇을 제공하는가?",
+    "materialIds": [
+      "bppr:material:CH04.P3:customer-signal-product-adjustment",
+      "bppr:material:CH04.P3:crisis-information-two-views"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH04.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4",
+    "originalPurpose": "이 관계에서 키울 수 있는 좋은 힘",
+    "titleTemplate": "이 관계에서 키울 수 있는 좋은 힘",
+    "readerQuestion": "반복 운영·기여 인정은 무엇을 전제로 하는가?",
+    "materialIds": [
+      "bppr:material:CH04.P4:repeatable-operation-value",
+      "bppr:material:CH04.P4:contribution-recognition-without-shares"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH05.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1",
+    "originalPurpose": "A는 B에게 어떤 자극을 주는가",
+    "titleTemplate": "{{A:topic}} {{B}}에게 어떤 자극을 주는가",
+    "readerQuestion": "B 수신 십성과 A의 제안은 무엇이 다른가?",
+    "materialIds": [
+      "bppr:material:CH05.P1:a-alternative-b-standard",
+      "bppr:material:CH05.P1:a-resource-b-obligation"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH05.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2",
+    "originalPurpose": "A가 B에게 주는 좋은 영향",
+    "titleTemplate": "{{A:subject}} {{B}}에게 주는 좋은 영향",
+    "readerQuestion": "A의 기여가 B에게 도움 될 조건은 무엇인가?",
+    "materialIds": [
+      "bppr:material:CH05.P2:a-prototype-b-service-cost",
+      "bppr:material:CH05.P2:a-meaning-b-allocation"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH05.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3",
+    "originalPurpose": "A의 행동이 B에게 부담이 되는 순간",
+    "titleTemplate": "{{A}}의 행동이 {{B}}에게 부담이 되는 순간",
+    "readerQuestion": "A의 약속·확장이 B에게 남길 비용은 무엇인가?",
+    "materialIds": [
+      "bppr:material:CH05.P3:a-client-promise-b-cost",
+      "bppr:material:CH05.P3:a-expand-b-cash-timing"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH05.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4",
+    "originalPurpose": "A가 영향력을 잘 사용하는 방법",
+    "titleTemplate": "{{A:subject}} 영향력을 잘 사용하는 방법",
+    "readerQuestion": "A는 변경·위험 동의를 어떻게 확인하는가?",
+    "materialIds": [
+      "bppr:material:CH05.P4:a-change-small-safe-trial",
+      "bppr:material:CH05.P4:a-risk-disclosure-before-consent"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH06.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1",
+    "originalPurpose": "B는 A에게 어떤 자극을 주는가",
+    "titleTemplate": "{{B:topic}} {{A}}에게 어떤 자극을 주는가",
+    "readerQuestion": "A 수신 십성과 B의 실행 정보는 무엇이 다른가?",
+    "materialIds": [
+      "bppr:material:CH06.P1:b-operation-a-support-question",
+      "bppr:material:CH06.P1:b-boundary-a-resource-choice"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH06.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2",
+    "originalPurpose": "B가 A에게 주는 좋은 영향",
+    "titleTemplate": "{{B:subject}} {{A}}에게 주는 좋은 영향",
+    "readerQuestion": "B의 관찰·회수 자료가 A에게 유용할 조건은 무엇인가?",
+    "materialIds": [
+      "bppr:material:CH06.P2:b-customer-issue-a-hypothesis",
+      "bppr:material:CH06.P2:b-cost-log-a-commitment"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH06.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3",
+    "originalPurpose": "B의 행동이 A에게 부담이 되는 순간",
+    "titleTemplate": "{{B}}의 행동이 {{A}}에게 부담이 되는 순간",
+    "readerQuestion": "B의 검토·운영 부담이 A에게 어떻게 들리는가?",
+    "materialIds": [
+      "bppr:material:CH06.P3:b-contract-risk-a-delay",
+      "bppr:material:CH06.P3:b-maintenance-a-direction"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH06.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4",
+    "originalPurpose": "B가 영향력을 잘 사용하는 방법",
+    "titleTemplate": "{{B:subject}} 영향력을 잘 사용하는 방법",
+    "readerQuestion": "B는 작은 시험·보류를 어떻게 제안하는가?",
+    "materialIds": [
+      "bppr:material:CH06.P4:b-small-trial-before-expansion",
+      "bppr:material:CH06.P4:b-hold-with-decision-question"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH07.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1",
+    "originalPurpose": "가장 중요한 차이",
+    "titleTemplate": "가장 중요한 차이",
+    "readerQuestion": "방향·지출·계약·예상 손익·출자의 차이는 무엇인가?",
+    "materialIds": [
+      "bppr:material:CH07.P1:direction-disagreement",
+      "bppr:material:CH07.P1:unreviewed-spending",
+      "bppr:material:CH07.P1:external-contract-without-consent",
+      "bppr:material:CH07.P1:expected-return-actual-cost",
+      "bppr:material:CH07.P1:capital-expectation-difference"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH07.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2",
+    "originalPurpose": "명리에서 보이는 충돌",
+    "titleTemplate": "명리에서 보이는 충돌",
+    "readerQuestion": "기여·작업·손실·자금 정보·변경의 공백은 무엇인가?",
+    "materialIds": [
+      "bppr:material:CH07.P2:credit-imbalance",
+      "bppr:material:CH07.P2:unclear-work-responsibility",
+      "bppr:material:CH07.P2:unclear-loss-allocation",
+      "bppr:material:CH07.P2:missing-cash-information",
+      "bppr:material:CH07.P2:contract-change"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH07.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3",
+    "originalPurpose": "이 관계의 팩폭",
+    "titleTemplate": "이 관계의 팩폭",
+    "readerQuestion": "고객 약속·IP·정보·교착·신뢰는 어떤 다른 문제인가?",
+    "materialIds": [
+      "bppr:material:CH07.P3:customer-promise-execution",
+      "bppr:material:CH07.P3:ip-output-use",
+      "bppr:material:CH07.P3:information-not-shared",
+      "bppr:material:CH07.P3:deadlock",
+      "bppr:material:CH07.P3:trust-verification"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH07.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4",
+    "originalPurpose": "갈등이 커지는 조건",
+    "titleTemplate": "갈등이 커지는 조건",
+    "readerQuestion": "확장·운영 부담·단독 결정·중단·친분의 경계는 무엇인가?",
+    "materialIds": [
+      "bppr:material:CH07.P4:expansion-speed",
+      "bppr:material:CH07.P4:ops-burden-imbalance",
+      "bppr:material:CH07.P4:unilateral-decision",
+      "bppr:material:CH07.P4:no-stop-conditions",
+      "bppr:material:CH07.P4:hide-problem-for-relationship"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH08.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1",
+    "originalPurpose": "우리에게 필요한 조율",
+    "titleTemplate": "우리에게 필요한 조율",
+    "readerQuestion": "표시된 방향·지출·계약·손익·출자 문제를 어떤 확인으로 좁히는가?",
+    "materialIds": [
+      "bppr:material:CH08.P1:repair-direction-disagreement",
+      "bppr:material:CH08.P1:repair-unreviewed-spending",
+      "bppr:material:CH08.P1:repair-external-contract-without-consent",
+      "bppr:material:CH08.P1:repair-expected-return-actual-cost",
+      "bppr:material:CH08.P1:repair-capital-expectation-difference"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH08.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2",
+    "originalPurpose": "A가 바꾸면 좋은 행동",
+    "titleTemplate": "{{A:subject}} 바꾸면 좋은 행동",
+    "readerQuestion": "표시된 기여·책임·손실·자금·변경에 어떤 자료·권한이 필요한가?",
+    "materialIds": [
+      "bppr:material:CH08.P2:repair-credit-imbalance",
+      "bppr:material:CH08.P2:repair-unclear-work-responsibility",
+      "bppr:material:CH08.P2:repair-unclear-loss-allocation",
+      "bppr:material:CH08.P2:repair-missing-cash-information",
+      "bppr:material:CH08.P2:repair-contract-change"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH08.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3",
+    "originalPurpose": "B가 바꾸면 좋은 행동",
+    "titleTemplate": "{{B:subject}} 바꾸면 좋은 행동",
+    "readerQuestion": "표시된 고객·IP·정보·교착·신뢰 문제를 어떻게 조정하는가?",
+    "materialIds": [
+      "bppr:material:CH08.P3:repair-customer-promise-execution",
+      "bppr:material:CH08.P3:repair-ip-output-use",
+      "bppr:material:CH08.P3:repair-information-not-shared",
+      "bppr:material:CH08.P3:repair-deadlock",
+      "bppr:material:CH08.P3:repair-trust-verification"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH08.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4",
+    "originalPurpose": "둘이 함께 지킬 약속",
+    "titleTemplate": "둘이 함께 지킬 약속",
+    "readerQuestion": "표시된 지속·권한·중단·친분 문제를 어떻게 재검토하는가?",
+    "materialIds": [
+      "bppr:material:CH08.P4:repair-expansion-speed",
+      "bppr:material:CH08.P4:repair-ops-burden-imbalance",
+      "bppr:material:CH08.P4:repair-unilateral-decision",
+      "bppr:material:CH08.P4:repair-no-stop-conditions",
+      "bppr:material:CH08.P4:repair-hide-problem-for-relationship"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH09.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1",
+    "originalPurpose": "두 사람이 가진 좋은 힘",
+    "titleTemplate": "두 사람이 가진 좋은 힘",
+    "readerQuestion": "표시된 접점·공동 정보만 어떻게 지속하는가?",
+    "materialIds": [
+      "bppr:material:CH09.P1:recall-market-and-scope",
+      "bppr:material:CH09.P1:recall-customer-and-risk"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH09.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2",
+    "originalPurpose": "함께 활용할 수 있는 좋은 기운",
+    "titleTemplate": "함께 활용할 수 있는 좋은 기운",
+    "readerQuestion": "표시된 방향별 기여·가치를 어떻게 활용하는가?",
+    "materialIds": [
+      "bppr:material:CH09.P2:recall-directional-contribution",
+      "bppr:material:CH09.P2:recall-contribution-without-value-price"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH09.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3",
+    "originalPurpose": "관계를 오래 지키는 선택",
+    "titleTemplate": "관계를 오래 지키는 선택",
+    "readerQuestion": "표시된 동의·범위·중단 원칙을 어떻게 유지하는가?",
+    "materialIds": [
+      "bppr:material:CH09.P3:recall-consent-principle",
+      "bppr:material:CH09.P3:recall-scope-and-stop-principle"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  },
+  {
+    "id": "bppr:paragraph:CH09.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4",
+    "originalPurpose": "우리라는 관계의 마지막 메시지",
+    "titleTemplate": "우리라는 관계의 마지막 메시지",
+    "readerQuestion": "표시된 가치·안전·선택을 어떻게 기억하는가?",
+    "materialIds": [
+      "bppr:material:CH09.P4:recall-business-value-with-boundary",
+      "bppr:material:CH09.P4:recall-hold-and-safe-exit"
+    ],
+    "missingEvidence": "withhold_not_fill"
+  }
+]

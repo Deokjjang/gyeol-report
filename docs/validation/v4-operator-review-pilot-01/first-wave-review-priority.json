@@ -1,0 +1,1210 @@
+{
+  "criteria": "원본 Record 확인 → 남은 Source 실패 → 실제 Witness → Owner/방향/기간 → 명시/ancestry 금지 → 실제 맥락 → Structural 영향. 원래 Gate만 사용하며 새 PASS를 만들지 않는다.",
+  "cards": [
+    {
+      "order": 1,
+      "reviewUnitId": "review-unit-v1:16113b812644bbaccbedaba0d56728a43edd2f262d9ce397b35a6222eabc8944",
+      "originalResearchId": "lkr:material:CH08.P4:parent-consent-respect",
+      "product": "love_marriage_child",
+      "relationship": null,
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 2,
+      "reviewUnitId": "review-unit-v1:3a09a215d6292844220e662009d0ed0cd27f298c369a333dc580bc22747f2400",
+      "originalResearchId": "cwpr:material:CH08.P2:a-do-not-claim-authority",
+      "product": "saju_mbti_compatibility",
+      "relationship": "coworker",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 3,
+      "reviewUnitId": "review-unit-v1:431a7dd96215f14384db9d0223c9ec6159bd81af7c399a9cb71015f2932456dc",
+      "originalResearchId": "mrpr:relation:rr:combination:yukhap:巳申",
+      "product": "saju_mbti_compatibility",
+      "relationship": "managerReport",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 4,
+      "reviewUnitId": "review-unit-v1:459a3a3dbc231af64f19c184387dca52bfed0be7daf90a7439b37e670e6942a4",
+      "originalResearchId": "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact",
+      "product": "saju_mbti_compatibility",
+      "relationship": "parentChild",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 5,
+      "reviewUnitId": "review-unit-v1:546099cb92d114feb3abed80b1d90e979e39913e139c39d6191d43370e677a1f",
+      "originalResearchId": "frpr:direction:CH05.P1",
+      "product": "saju_mbti_compatibility",
+      "relationship": "friendship",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 6,
+      "reviewUnitId": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+      "originalResearchId": "mrpr:relation:rr:combination:hae:寅巳",
+      "product": "saju_mbti_compatibility",
+      "relationship": "managerReport",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 7,
+      "reviewUnitId": "review-unit-v1:7e49413ef271e70f0cc3ab43744f20160f0e5445317ea4973c799eff33450e20",
+      "originalResearchId": "bppr:relation:rr:combination:hae:寅巳",
+      "product": "saju_mbti_compatibility",
+      "relationship": "businessPartner",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 8,
+      "reviewUnitId": "review-unit-v1:9349b850cda441b851a1d67911aef1048039ec21b5d3bf765dab4a833d0047d1",
+      "originalResearchId": "cwpr:material:CH08.P2:a-change-with-record",
+      "product": "saju_mbti_compatibility",
+      "relationship": "coworker",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 9,
+      "reviewUnitId": "review-unit-v1:a3a3921b97ea4748bc3cbf8ea59d8d7919b7b009690bf4892c135b445be2e878",
+      "originalResearchId": "bppr:relation:rr:combination:yukhap:辰酉",
+      "product": "saju_mbti_compatibility",
+      "relationship": "businessPartner",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 10,
+      "reviewUnitId": "review-unit-v1:afb46395b309ac2a5b1927d84353d5b4d4502bdc7f53896d3d6c75011b691702",
+      "originalResearchId": "cwpr:material:CH08.P3:b-state-integration-limit",
+      "product": "saju_mbti_compatibility",
+      "relationship": "coworker",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 11,
+      "reviewUnitId": "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e",
+      "originalResearchId": "pcpr:relation:rr:combination:chung:丑未",
+      "product": "saju_mbti_compatibility",
+      "relationship": "parentChild",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 12,
+      "reviewUnitId": "review-unit-v1:bd476818775f92259e906e1c23d5c41863f55d716e34d119ab6df087ff40fc5e",
+      "originalResearchId": "pcpr:material:CH03.P4:b-agreement-can-hide-unasked-view",
+      "product": "saju_mbti_compatibility",
+      "relationship": "parentChild",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 13,
+      "reviewUnitId": "review-unit-v1:c689f40eeb08bd8c45d83c9a4d6320579e2d550d252d8078eb139979082f9ec8",
+      "originalResearchId": "frpr:direction:CH05.P2",
+      "product": "saju_mbti_compatibility",
+      "relationship": "friendship",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 14,
+      "reviewUnitId": "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8",
+      "originalResearchId": "bppr:relation:rr:combination:chung:丑未",
+      "product": "saju_mbti_compatibility",
+      "relationship": "businessPartner",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 15,
+      "reviewUnitId": "review-unit-v1:d8e73cd04aa3771a6c77552940ac9b45eac3102fced4bed5485bf414cce96dc5",
+      "originalResearchId": "cmpr:relation:rr:combination:hae:寅巳",
+      "product": "saju_mbti_compatibility",
+      "relationship": "marriage",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 16,
+      "reviewUnitId": "review-unit-v1:e48e51851f8ee6ad275f5b31cb17400a31bbf895c7a713f7bfe8b46238def6c8",
+      "originalResearchId": "frpr:direction:CH05.P3",
+      "product": "saju_mbti_compatibility",
+      "relationship": "friendship",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 17,
+      "reviewUnitId": "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe",
+      "originalResearchId": "mrpr:relation:rr:combination:chung:丑未",
+      "product": "saju_mbti_compatibility",
+      "relationship": "managerReport",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 18,
+      "reviewUnitId": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+      "originalResearchId": "cmpr:relation:rr:combination:chung:丑未",
+      "product": "saju_mbti_compatibility",
+      "relationship": "marriage",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 19,
+      "reviewUnitId": "review-unit-v1:ff5bf0f98d07ec27f4fda6b18c6529cb37f35f84a5da251e4da592277581d47f",
+      "originalResearchId": "cmpr:relation:rr:combination:yukhap:巳申",
+      "product": "saju_mbti_compatibility",
+      "relationship": "marriage",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": false,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 20,
+      "reviewUnitId": "review-unit-v1:449dc748b29d61562990b1d3bf3363854b75903a2e8a54a7f5e53053722a59c4",
+      "originalResearchId": "clr:relation:rr:combination:hae:寅巳",
+      "product": "saju_mbti_compatibility",
+      "relationship": "love",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -3
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 3,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 3
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 21,
+      "reviewUnitId": "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5",
+      "originalResearchId": "clr:relation:rr:combination:chung:丑未",
+      "product": "saju_mbti_compatibility",
+      "relationship": "love",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -3
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 3,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 3
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 22,
+      "reviewUnitId": "review-unit-v1:f414eea3d7da6f6f5f1a4949bba88ec732d97f0cef676c918805206a75932afa",
+      "originalResearchId": "cpr:material:CH04.P3:firm-boundary-close",
+      "product": "saju_mbti_full",
+      "relationship": null,
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -2
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 2,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 2
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 23,
+      "reviewUnitId": "review-unit-v1:6fb89263ce5aa9a307d3c4a07f239f5bf1b4f5ba9580513ce355373983f20625",
+      "originalResearchId": "lkr:material:CH01.P1:shared-meaning",
+      "product": "love_marriage_child",
+      "relationship": null,
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 24,
+      "reviewUnitId": "review-unit-v1:919a3b43cc1c6e772d3b28080628cdac715284178b547d744f180f4465d50856",
+      "originalResearchId": "cpr:material:CH04.P2:private-criteria",
+      "product": "saju_mbti_full",
+      "relationship": null,
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 25,
+      "reviewUnitId": "review-unit-v1:aee379e4082b818dfb42ec7906d9204c9bf4b425c19745459c88e0cfe32355a9",
+      "originalResearchId": "cpr:material:CH10.P3:romance-as-problem-set",
+      "product": "saju_mbti_full",
+      "relationship": null,
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 26,
+      "reviewUnitId": "review-unit-v1:ba09ae15fbce32dd35c706607bd987416b3d2664c2606aa88846766740f6338e",
+      "originalResearchId": "lkr:material:CH02.P3:new-experience-design",
+      "product": "love_marriage_child",
+      "relationship": null,
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 27,
+      "reviewUnitId": "review-unit-v1:c3dd46879f874810f1034bb06230e4a7559448eab2f26ca20fa8f49a698d611e",
+      "originalResearchId": "clr:material:CH05.P4:ab-offer-not-reservation",
+      "product": "saju_mbti_compatibility",
+      "relationship": "love",
+      "priorityTuple": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 6,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 1
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 28,
+      "reviewUnitId": "review-unit-v1:5993b08182efc78df3dd9bd976e7ab85c58444220e40e9f08422ce213e646785",
+      "originalResearchId": "afpr:annual-god:비견",
+      "product": "annual_fortune",
+      "relationship": null,
+      "priorityTuple": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 0,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 0
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_ACTUAL_EVIDENCE",
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 29,
+      "reviewUnitId": "review-unit-v1:5ac48e6169d0fa0914c14e3748447872e45d17307c9c6802adf52a6db12afcfa",
+      "originalResearchId": "lkr:material:CH08.P4:parent-consent-respect",
+      "product": "love_marriage_child",
+      "relationship": null,
+      "priorityTuple": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 0,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 0
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_ACTUAL_EVIDENCE",
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 30,
+      "reviewUnitId": "review-unit-v1:bbad7836b4a303f2d9dfc68f1d69142edfe0c96336d9e6e68e8f7fa20439bed6",
+      "originalResearchId": "afpr:annual-god:겁재",
+      "product": "annual_fortune",
+      "relationship": null,
+      "priorityTuple": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 0,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": false,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 0
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_ACTUAL_EVIDENCE",
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 31,
+      "reviewUnitId": "review-unit-v1:26bc543d779c926a91bdd35019d6437aa65a7f674be5a7988a97eb3b01599cb6",
+      "originalResearchId": "ckr:material:CH01.P1:capacity-entry",
+      "product": "career_money_study",
+      "relationship": null,
+      "priorityTuple": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 2,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": true,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 0
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_DOMAIN_POLICY",
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 32,
+      "reviewUnitId": "review-unit-v1:85c43ec8805b90d79e0c3c10e168f1b4a82c1ef7bd80f8052abb810a16b1172c",
+      "originalResearchId": "ckr:material:CH01.P1:draft-as-question",
+      "product": "career_money_study",
+      "relationship": null,
+      "priorityTuple": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 2,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": true,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 0
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_DOMAIN_POLICY",
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 33,
+      "reviewUnitId": "review-unit-v1:04ff78e189998bf73cbdbe78eb8cc745bfdd1180b12c62ed71ccecf063434eb1",
+      "originalResearchId": "ckr:material:CH08.P1:held-munchang-exam",
+      "product": "career_money_study",
+      "relationship": null,
+      "priorityTuple": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 0,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": true,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 0
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_DOMAIN_POLICY",
+        "REQUEST_ACTUAL_EVIDENCE",
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 34,
+      "reviewUnitId": "review-unit-v1:e052b32db11df0eaf51eec4bdb294b8db34009c9bc6b6927374419f28ee1bed2",
+      "originalResearchId": "afpr:case-study:canonical-help",
+      "product": "annual_fortune",
+      "relationship": null,
+      "priorityTuple": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+        ],
+        "actualWitnessCount": 0,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": true,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 0
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_EXACT_ORIGINAL",
+        "REQUEST_EDITION",
+        "REQUEST_SOURCE_POINTER",
+        "REQUEST_DOMAIN_POLICY",
+        "REQUEST_ACTUAL_EVIDENCE",
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 35,
+      "reviewUnitId": "review-unit-v1:14f117b796f0276b39f4a7f16bb95db9f7cd0bcb097ec661f1fe24c47bcfa895",
+      "originalResearchId": "mfpr:god:편재",
+      "product": "major_fortune",
+      "relationship": null,
+      "priorityTuple": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "FAIL"
+        ],
+        "actualWitnessCount": 1,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": true,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 0
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_EXACT_ORIGINAL",
+        "REQUEST_DOMAIN_POLICY",
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 36,
+      "reviewUnitId": "review-unit-v1:27ffd5b0576085ca6e0bace7a984e8afe0ef404872cf7ec92b7947091ad90ecc",
+      "originalResearchId": "mfpr:god:편인",
+      "product": "major_fortune",
+      "relationship": null,
+      "priorityTuple": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "FAIL"
+        ],
+        "actualWitnessCount": 2,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": true,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 0
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_EXACT_ORIGINAL",
+        "REQUEST_DOMAIN_POLICY",
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    },
+    {
+      "order": 37,
+      "reviewUnitId": "review-unit-v1:a7a734c1d533c29e541b60a61bd6d9ce07c642004364b4cf4ad502ffeefe6fe3",
+      "originalResearchId": "mfpr:god:편관",
+      "product": "major_fortune",
+      "relationship": null,
+      "priorityTuple": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "reasons": {
+        "sourceRecordChecked": true,
+        "sourceGate": [
+          "FAIL"
+        ],
+        "actualWitnessCount": 0,
+        "originalOwnerDirectionTimeGateStillPending": true,
+        "explicitOrAncestryProhibition": true,
+        "actualContextStillPending": false,
+        "structuralOccurrences": 0
+      },
+      "purpose": "OPERATOR_WORKLOAD_ORDER_ONLY_NO_CUSTOMER_RANK_CHANGE",
+      "nextWork": [
+        "REQUEST_EXACT_ORIGINAL",
+        "REQUEST_DOMAIN_POLICY",
+        "REQUEST_ACTUAL_EVIDENCE",
+        "REQUEST_CONTEXT",
+        "REQUEST_HUMAN_MEANING_REVIEW"
+      ]
+    }
+  ],
+  "originalCardRanksChanged": 0,
+  "actualApprovals": 0
+}

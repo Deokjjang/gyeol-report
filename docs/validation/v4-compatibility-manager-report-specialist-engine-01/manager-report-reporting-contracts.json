@@ -1,0 +1,5494 @@
+{
+  "required": [
+    "reportPurpose",
+    "currentState",
+    "confirmedFacts",
+    "assumptions",
+    "unknowns",
+    "risks",
+    "dependencies",
+    "decisionNeeded",
+    "decisionDeadline",
+    "availableOptions",
+    "requiredSupport",
+    "expectedNextUpdate",
+    "actualAcceptance"
+  ],
+  "actualReportingRelationship": "UNKNOWN",
+  "frequencyIsQuality": false,
+  "reportingIsSurveillance": false,
+  "materials": [
+    {
+      "id": "mrpr:material:CH08.P3:report-name-blocked-resource",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P2:big-picture-field-interface",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P3:report-participation-signal",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-close-revision",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P3:report-detect-procedure-gap",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-request-specific-feedback",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P1:manager-to-report-exploration",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P3:report-question-as-final-decision",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P4:excluded-team-voice",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P2:half-harmony-not-completion",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P2:report-time-clash",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P1:responsibility-without-delegation",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P3:manager-support-limit",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P1:report-independent-focus",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P1:excess-report-frequency",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P3:recall-safe-voice",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-explain-evaluation",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P4:manager-delegation-confirm",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P3:manager-speed-pressure",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P2:manager-recognize-evidence",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P2:report-definition-before-work",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P1:separate-method",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P4:report-feedback-clarification",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P1:delegate-decision",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P2:manager-resource-removal",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P1:manager-to-report-constraint",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P3:insufficient-credit",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P3:delegation-with-checkpoints",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P4:late-risk-report",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P2:manager-checkpoint-intent",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P4:missing-change-history",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P3:recall-delegation-principle",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P4:manager-feedback-recheck",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P2:rework-with-half-harmony",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P3:public-personal-judgment",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-set-report-time",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P3:model-and-procedure",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-safe-support-route",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P3:manager-care-as-surveillance",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P1:clarify-output",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P2:manager-standard-evidence",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P4:discretion-as-condition",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P4:manager-overcontrol",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-early-risk-response",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P2:harmony-not-approval",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P4:report-late-synthesis",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P3:report-unclear-risk-timing",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P2:recall-personal-fusion",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P1:manager-people-purpose",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P1:goal-method-interface",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-multiple-voice-channels",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P1:make-discretion-visible",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P3:fear-of-retaliation",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P3:same-type-different-role",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P1:recall-goal-execution",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P3:feedback-credit-visible",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P4:management-facts-before-compatibility",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P3:insufficient-resources",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P1:support-execution-interface",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P3:overload-allocation",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P2:report-capacity-information",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P3:manager-correct-own-error",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P1:manager-model-goal",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P4:manager-response-to-early-risk",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P4:recall-contribution-learning",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P2:report-propose-bounded-method",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P2:priority-change-harm",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P1:recall-shared-completion",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-report-purpose",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-confirm-final-authority",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P1:goal-method-confusion",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P2:recall-supported-possibility",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P1:reduce-duplicate-report",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P4:report-decision-ready-brief",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P2:report-private-feedback-space",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P1:vague-instructions",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-record-priority",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P1:report-procedure-understanding",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P4:report-overacceptance",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-change-log",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P2:final-authority-unsupported",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P2:idea-review-not-personal-approval",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-state-contribution",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P4:recall-decision-responsibility",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P1:shared-analysis-different-scope",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P4:manager-avoid-feedback",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-state-capacity",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-retained-manager-decision",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P1:report-to-manager-customer-observation",
+      "checks": [
+        {
+          "field": "reportPurpose",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "confirmedFacts",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "assumptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "unknowns",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "risks",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependencies",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionNeeded",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableOptions",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredSupport",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "expectedNextUpdate",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "actualAcceptance",
+          "state": "UNKNOWN"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "nodeId": "fixture-compatibility-A:node:242",
+    "direction": {
+      "subject": "fixture-person-8",
+      "recipient": "fixture-person-7",
+      "relationId": "fixture-person-8:to:fixture-person-7",
+      "recipientDayMaster": "甲",
+      "subjectDayMaster": "乙"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      },
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-A:node:721",
+    "direction": {
+      "subject": "fixture-person-7",
+      "recipient": "fixture-person-8",
+      "relationId": "fixture-person-7:to:fixture-person-8",
+      "recipientDayMaster": "乙",
+      "subjectDayMaster": "甲"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      },
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-marriage:node:242",
+    "direction": {
+      "subject": "fixture-person-8",
+      "recipient": "fixture-person-7",
+      "relationId": "fixture-person-8:to:fixture-person-7",
+      "recipientDayMaster": "甲",
+      "subjectDayMaster": "乙"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      },
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-marriage:node:721",
+    "direction": {
+      "subject": "fixture-person-7",
+      "recipient": "fixture-person-8",
+      "relationId": "fixture-person-7:to:fixture-person-8",
+      "recipientDayMaster": "乙",
+      "subjectDayMaster": "甲"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      },
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-parentChild:node:242",
+    "direction": {
+      "subject": "fixture-person-8",
+      "recipient": "fixture-person-7",
+      "relationId": "fixture-person-8:to:fixture-person-7",
+      "recipientDayMaster": "甲",
+      "subjectDayMaster": "乙"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      },
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-parentChild:node:721",
+    "direction": {
+      "subject": "fixture-person-7",
+      "recipient": "fixture-person-8",
+      "relationId": "fixture-person-7:to:fixture-person-8",
+      "recipientDayMaster": "乙",
+      "subjectDayMaster": "甲"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      },
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-coworker:node:242",
+    "direction": {
+      "subject": "fixture-person-8",
+      "recipient": "fixture-person-7",
+      "relationId": "fixture-person-8:to:fixture-person-7",
+      "recipientDayMaster": "甲",
+      "subjectDayMaster": "乙"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      },
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-coworker:node:721",
+    "direction": {
+      "subject": "fixture-person-7",
+      "recipient": "fixture-person-8",
+      "relationId": "fixture-person-7:to:fixture-person-8",
+      "recipientDayMaster": "乙",
+      "subjectDayMaster": "甲"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      },
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-managerReport:node:242",
+    "direction": {
+      "subject": "fixture-person-8",
+      "recipient": "fixture-person-7",
+      "relationId": "fixture-person-8:to:fixture-person-7",
+      "recipientDayMaster": "甲",
+      "subjectDayMaster": "乙"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      },
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-managerReport:node:721",
+    "direction": {
+      "subject": "fixture-person-7",
+      "recipient": "fixture-person-8",
+      "relationId": "fixture-person-7:to:fixture-person-8",
+      "recipientDayMaster": "乙",
+      "subjectDayMaster": "甲"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      },
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-businessPartner:node:242",
+    "direction": {
+      "subject": "fixture-person-8",
+      "recipient": "fixture-person-7",
+      "relationId": "fixture-person-8:to:fixture-person-7",
+      "recipientDayMaster": "甲",
+      "subjectDayMaster": "乙"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      },
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-businessPartner:node:721",
+    "direction": {
+      "subject": "fixture-person-7",
+      "recipient": "fixture-person-8",
+      "relationId": "fixture-person-7:to:fixture-person-8",
+      "recipientDayMaster": "乙",
+      "subjectDayMaster": "甲"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      },
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-friendship:node:242",
+    "direction": {
+      "subject": "fixture-person-8",
+      "recipient": "fixture-person-7",
+      "relationId": "fixture-person-8:to:fixture-person-7",
+      "recipientDayMaster": "甲",
+      "subjectDayMaster": "乙"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      },
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-friendship:node:721",
+    "direction": {
+      "subject": "fixture-person-7",
+      "recipient": "fixture-person-8",
+      "relationId": "fixture-person-7:to:fixture-person-8",
+      "recipientDayMaster": "乙",
+      "subjectDayMaster": "甲"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      },
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-unknown-both:node:18",
+    "direction": {
+      "subject": "fixture-person-13",
+      "recipient": "fixture-person-12",
+      "relationId": "fixture-person-13:to:fixture-person-12",
+      "recipientDayMaster": "甲",
+      "subjectDayMaster": "乙"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-13",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      },
+      {
+        "owner": "fixture-person-12",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-unknown-both:node:257",
+    "direction": {
+      "subject": "fixture-person-12",
+      "recipient": "fixture-person-13",
+      "relationId": "fixture-person-12:to:fixture-person-13",
+      "recipientDayMaster": "乙",
+      "subjectDayMaster": "甲"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-12",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      },
+      {
+        "owner": "fixture-person-13",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-slot-swap:node:232",
+    "direction": {
+      "subject": "fixture-person-8",
+      "recipient": "fixture-person-7",
+      "relationId": "fixture-person-8:to:fixture-person-7",
+      "recipientDayMaster": "甲",
+      "subjectDayMaster": "乙"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      },
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-slot-swap:node:723",
+    "direction": {
+      "subject": "fixture-person-7",
+      "recipient": "fixture-person-8",
+      "relationId": "fixture-person-7:to:fixture-person-8",
+      "recipientDayMaster": "乙",
+      "subjectDayMaster": "甲"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      },
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-no-detected-pair:node:111",
+    "direction": {
+      "subject": "fixture-person-17",
+      "recipient": "fixture-person-16",
+      "relationId": "fixture-person-17:to:fixture-person-16",
+      "recipientDayMaster": "丁",
+      "subjectDayMaster": "己"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-17",
+        "position": "day",
+        "slot": "stem",
+        "value": "己"
+      },
+      {
+        "owner": "fixture-person-16",
+        "position": "day",
+        "slot": "stem",
+        "value": "丁"
+      }
+    ],
+    "verified": true
+  },
+  {
+    "nodeId": "fixture-compatibility-no-detected-pair:node:195",
+    "direction": {
+      "subject": "fixture-person-16",
+      "recipient": "fixture-person-17",
+      "relationId": "fixture-person-16:to:fixture-person-17",
+      "recipientDayMaster": "己",
+      "subjectDayMaster": "丁"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-16",
+        "position": "day",
+        "slot": "stem",
+        "value": "丁"
+      },
+      {
+        "owner": "fixture-person-17",
+        "position": "day",
+        "slot": "stem",
+        "value": "己"
+      }
+    ],
+    "verified": true
+  }
+]

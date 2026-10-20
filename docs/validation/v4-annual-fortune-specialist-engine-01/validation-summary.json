@@ -1,0 +1,53 @@
+{
+  "status": "OFFLINE_IMPLEMENTED",
+  "newTests": {
+    "pass": 71,
+    "fail": 0,
+    "skip": 0
+  },
+  "existingRelated": {
+    "pass": 558,
+    "fail": 0,
+    "skip": 0
+  },
+  "knownFailedFiles": {
+    "pass": 5837,
+    "fail": 46,
+    "sameFullSignatures": true
+  },
+  "typescript": {
+    "before": 0,
+    "after": 0,
+    "new": 0
+  },
+  "lint": "PASS",
+  "build": "PASS",
+  "warnings": 0,
+  "originalFiles": 4509,
+  "books": 17,
+  "digests": 102,
+  "observedBooks": 11,
+  "observedMonths": 132,
+  "originalMonthlyTextsByteEqual": 132,
+  "oldWorktrees": 45,
+  "dirtyFiles": 11,
+  "deterministicJson": 29,
+  "customerApproved": 0,
+  "customerSelections": 0,
+  "claims": 0,
+  "preview": {
+    "implementation": {
+      "id": "dpl_AhPLPvjp1Nv5wnRNB9enMAvfgw8i",
+      "url": "https://gyeol-report-8mazm7pvo-gyeol-report-s-projects.vercel.app",
+      "state": "READY",
+      "sha": "9e65187a87ad3f0d36a4b072c7c4651a7df25f79",
+      "branch": "v4/annual-fortune-specialist-engine-01",
+      "project": "prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+      "target": null
+    },
+    "finalHeadReceipt": "/tmp/gyeol-annual-specialist-engine-01-validation/final-preview-receipt.json",
+    "finalHeadVerifiedAfterDocumentationPush": true
+  },
+  "productionApproved": false,
+  "diffCheck": "PASS"
+}

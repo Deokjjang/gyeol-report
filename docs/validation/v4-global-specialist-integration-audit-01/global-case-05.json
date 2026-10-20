@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-case-05.json.gz",
+  "payloadHash": "2c57025fbadf5ff2075bfe8a7f06e8b0461ff0f389aa519d55495919c8813782",
+  "logicalJsonHash": "cb79c7cdfc934a1674b10943a25b14b0fcff62f429e94bda23a6857f68884ef5",
+  "uncompressedBytes": 13435677
+}

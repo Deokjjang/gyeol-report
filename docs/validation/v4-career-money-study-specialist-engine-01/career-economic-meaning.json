@@ -1,0 +1,2344 @@
+{
+  "distinctConceptVocabulary": [
+    "revenue",
+    "profit",
+    "cashFlow",
+    "compensation",
+    "price",
+    "workTime",
+    "opportunityCost",
+    "maintenanceCost"
+  ],
+  "materialMeaningClassification": "UNVERIFIED_ORIGINAL_NATURAL_LANGUAGE; no automatic keyword mapping",
+  "materials": [
+    {
+      "id": "ckr:material:CH09.P2:guard-precision-loop",
+      "original": [
+        "직접 교정·재질의·기준 유지 투입",
+        "이전 위험이 실제 도입되지 않았다면 보류",
+        "도입된 비용만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P2:source-help-boundary",
+      "original": [
+        "누락 전달을 줄이는 가치와 확인 시간의 필요 구분",
+        "실제 자격·원국·유형 조건이 없으면 전문 능력 주장 보류",
+        "수익·보상 관심도 실제 경제 사실과 별도"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P1:draft-as-question",
+      "original": [
+        "초안 투입과 잘못된 방향의 전체 제작 비용을 구분",
+        "안전·규정상 허용된 답이 정해졌다면 자유 시안은 부적절",
+        "투입 전에 결과와 범위를 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P4:autonomy-with-checkpoint",
+      "original": [
+        "혼자 고른 도구의 이후 유지 투입도 비교",
+        "자격·안전 기준이 정한 방법은 재량 대상이 아닐 수 있음",
+        "필요 정보와 검토 투입을 숨기지 않음"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P3:iterate-selected-idea",
+      "original": [
+        "재편집과 단순 길이 조정의 투입 차이",
+        "기획 자체를 검증 중인 단계라면 방향 변경이 필요한 경우도 있음",
+        "단계별 재작업과 대기 투입",
+        "변경이 필요한 준비·이동·대기 투입 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P1:story-to-rule",
+      "original": [
+        "자료 제작과 필수 연습의 시간 구분",
+        "학업 성과·지능·언어 능력을 유형으로 단정하지 않음",
+        "수집·실습·독립 수행의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P2:route-create-photo",
+      "original": [
+        "준비·이동·선별·보정 투입의 분리",
+        "사진가가 실제 추천 목록에 없다면 신규 추천 사실로 쓰지 않음",
+        "제공 범위와 준비 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P4:portfolio-decision",
+      "original": [
+        "자료 정리와 새 제작 투입을 구분",
+        "없는 의뢰·고객·계약·성과를 경력으로 쓰지 않음",
+        "과정·연습·도입·유지 투입",
+        "자료 정리 투입과 의뢰 제작 투입 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P3:scope-refusal-cost",
+      "original": [
+        "재논의·불필요한 구현 투입 구분",
+        "실제 상사와 갈등이 있다고 단정하지 않음",
+        "금전이 아니라 공동 작업의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P1:status-seeker",
+      "original": [
+        "준비 비용·지원 시간·생활 유지 기간은 실제 자료 필요",
+        "취업 기간·면접·이전 경력 추정 금지",
+        "상태별 다른 자원 질문"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P3:timeboxed-inquiry",
+      "original": [
+        "추가 조사가 바꿀 판단과 미룰 실행을 비교",
+        "안전상 미확인 상태에서 진행할 수 없는 결정은 별도 중단",
+        "단계별 재작업과 대기 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P2:guard-depth-delay",
+      "original": [
+        "추가 조사와 사용 지연의 투입",
+        "INTP·INTJ 양쪽 원천이 한 입력에 동시에 참이라고 회수하지 않음",
+        "도입된 비용만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P1:output-audience",
+      "original": [
+        "매체별 제작과 수정 투입 차이",
+        "실제 추천 근거 없는 분야를 천직으로 확정 금지",
+        "분야별 다른 준비·유지 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P2:route-teach-instruction",
+      "original": [
+        "수업 외 준비·피드백 투입",
+        "교육 선호만으로 교사 자격이나 합격을 보장하지 않음",
+        "제공 범위와 준비 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P4:closing-help-sustainable",
+      "original": [
+        "이미 소개된 지원·준비 투입만 회수",
+        "실제 조력·인정·건강 상태 생성 금지",
+        "이미 확인한 자원만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P4:next-seeker-sample",
+      "original": [
+        "교육비·연습·지원 준비 투입 분리",
+        "채용·합격·기간 보장 금지",
+        "실제 돈·시간·지원 조건을 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P2:guard-help-responsibility",
+      "original": [
+        "이미 소개된 준비·응대 투입 회수",
+        "없는 수업·대상자·소진 경험 생성 금지",
+        "도입된 비용만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P1:shared-vocabulary",
+      "original": [
+        "되묻기와 재작업의 투입 구분",
+        "상대의 말과 반응 정보가 없으면 실제 오해를 단정하지 않음",
+        "되묻기·인계·응대 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P1:capacity-entry",
+      "original": [
+        "준비·폐기·청소 시간까지 합친 투입 비교",
+        "실제 예산·운영량 없이 가능한 규모를 정답으로 제시할 수 없음",
+        "투입 전에 결과와 범위를 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P3:invisible-change",
+      "original": [
+        "납기·준비·다른 고객 일정의 투입 비교",
+        "실제 계약을 임의 변경하거나 법률 조언하지 않음",
+        "금전이 아니라 공동 작업의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P3:grow-photo-client-fit",
+      "original": [
+        "용도별 사용 범위·수정·선별 투입",
+        "스타일·고객층·포트폴리오 존재를 만들지 않음",
+        "새 기능의 추가 투입",
+        "다른 목적의 재선별·촬영 범위 구분"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P1:request-framing",
+      "original": [
+        "서류 재제출의 시간을 줄이는 가치와 초기 확인의 투입 비교",
+        "결과 기준이 이미 명확하면 확인을 반복할 이유가 적음",
+        "투입 전에 결과와 범위를 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P4:next-photo-brief",
+      "original": [
+        "작업 시간·이동·사용 범위·수정 횟수 구분",
+        "계약 이력·단가·고객 수 보장 금지",
+        "실제 돈·시간·지원 조건을 확인",
+        "준비·촬영·선별을 같은 한 시간으로 합치지 않음"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P1:choose-freelance-purpose",
+      "original": [
+        "촬영 밖 선별·보정·응대 투입을 회수",
+        "현재 분류 unknown과 실제 경력 미상을 유지",
+        "이미 소개한 자원 조건만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P2:opportunity-distinct",
+      "original": [
+        "미성사 제안의 조사·응대 투입도 봄",
+        "실제 수요 확인 없이 매출 가능성을 단정하지 않음",
+        "다른 기능의 투입과 결과를 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P3:grow-finance-communication",
+      "original": [
+        "추가 회의와 재질의의 투입 차이",
+        "현재 보상·인정·승진으로 연결됐다고 말하지 않음",
+        "새 기능의 추가 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P2:current-cafe-flow",
+      "original": [
+        "재료·폐기·준비·마감 투입",
+        "실제 가게·매출·단골·인력 보유는 미확인",
+        "단계별 투입과 실제 사용처"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P3:many-opportunities-cost",
+      "original": [
+        "기회비용은 예상 수익이 아니라 포기할 실제 활동으로 설명",
+        "소득 변동이나 실패를 유형의 운명으로 만들지 않음",
+        "시간·회수·포기 활동·되돌림 비용"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P4:positive-to-learning-humility",
+      "original": [
+        "추가 조사와 사용할 결과의 투입 균형",
+        "예지·학력·합격·전문 자격 보장 금지",
+        "준비·유지·검증을 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P3:alternative-ux",
+      "original": [
+        "전체 개편과 작은 검증 투입 차이",
+        "고객 행동이나 시장 효과를 근거 없이 예측하지 않음",
+        "분야별 투입과 제공 조건"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P2:source-expression-link",
+      "original": [
+        "제작 시간 외 자료 확인 시간을 구분",
+        "사용자 유형이 ENFP가 아니면 이 유형 원천은 사용 불가",
+        "수익·보상 관심도 실제 경제 사실과 별도"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P3:fast-commitment",
+      "original": [
+        "초기·유지·전환·검증 투입 구분",
+        "구매·투자 수익을 권하거나 실제 계약 조건을 단정하지 않음",
+        "시간·회수·포기 활동·되돌림 비용"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P1:status-owner",
+      "original": [
+        "회수 시점·운영 지출·인력·약속의 자원 구분",
+        "직원·매출·법적 대표 지위를 자동 생성하지 않음",
+        "상태별 다른 자원 질문"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P1:causal-model",
+      "original": [
+        "판단에 필요한 확실성과 조사 비용의 관계",
+        "통계적 근거나 설계가 없으면 인과관계 단정 불가",
+        "기여의 종류를 확인하되 보상 예측 금지",
+        "추가 조사와 결정에 필요한 확실성의 균형"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P1:learn-by-explain",
+      "original": [
+        "모임 시간과 개인 연습 시간을 구분",
+        "타인의 실제 성과·유형을 만들어내지 않음",
+        "수집·실습·독립 수행의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P4:culture-recovery",
+      "original": [
+        "응대와 후속 작업의 투입 분리",
+        "질병·번아웃 진단 또는 개인 건강 예측 금지",
+        "준비·회복·수정 시간을 운영 항목으로 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P1:help-task-scope",
+      "original": [
+        "준비·후속 응대·지원 인계의 투입 차이",
+        "자격 요건은 현재 실제 제도와 개별 공고에서 별도 확인 필요",
+        "분야별 다른 준비·유지 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P4:certificate-requirement",
+      "original": [
+        "교육비·시험 준비·실습 시간 구분",
+        "특정 자격 취득 권고·합격·채용 보장 금지",
+        "과정·연습·도입·유지 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P2:employee-contribution",
+      "original": [
+        "재처리 시간·자료 준비·검토 투입 분리",
+        "급여 인상·승진·실제 회사 절감액 보장 금지",
+        "직업별 다른 제공·준비·유지 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P4:next-cafe-test",
+      "original": [
+        "재료·폐기·대기·마감 투입",
+        "매출 증가·이익 개선을 보장하지 않음",
+        "실제 돈·시간·지원 조건을 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P3:alternative-field",
+      "original": [
+        "대기와 재처리 자원을 함께 봄",
+        "위험 작업 실험·사고 예측·자격 추정 금지",
+        "분야별 투입과 제공 조건"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P1:learn-by-doing",
+      "original": [
+        "실습 도구와 배우는 시간 투입",
+        "안전 위험이 있는 실전 시행착오 권장 금지",
+        "수집·실습·독립 수행의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P1:task-not-title",
+      "original": [
+        "비교할 자료 준비와 재검토 투입 차이",
+        "실제 추천 경로와 근거가 없으면 추천 순위에 삽입 불가",
+        "분야별 다른 준비·유지 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P4:feedback-not-praise",
+      "original": [
+        "수정 투입과 얻은 전달 개선을 비교",
+        "피드백 상대와 목적이 다르면 그대로 적용 불가",
+        "시간 투입과 실제 기여를 따로 측정"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P4:work-based-upskill",
+      "original": [
+        "연습·검토·도입·유지 투입을 구분",
+        "고객 데이터·실전 시스템 임의 변경 지침 금지",
+        "과정·연습·도입·유지 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P3:meaning-to-proposal",
+      "original": [
+        "기획·실행·검증에 쓸 자원을 나누기",
+        "실제 조직 권한이나 시장 성공을 단정하지 않음",
+        "전이 뒤 필요한 준비와 사용처"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P1:make-alternative",
+      "original": [
+        "제작 범위와 채택 후 적용 투입을 구분",
+        "이미 기준이 확정된 과제에는 대안의 수가 성과가 아님",
+        "기여의 종류를 확인하되 보상 예측 금지"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P3:execution-to-experiment",
+      "original": [
+        "실험 규모와 전체 개편 투입을 구분",
+        "확정 효과나 모든 사용자에 대한 결론을 만들지 않음",
+        "전이 뒤 필요한 준비와 사용처"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P1:reliable-execution",
+      "original": [
+        "유지 품질과 반복 확인 시간의 관계",
+        "측정할 품질과 실제 업무가 없으면 숙련 판정 불가",
+        "기여의 종류를 확인하되 보상 예측 금지"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P2:route-manage-admin",
+      "original": [
+        "재문의와 재접수의 투입 비교",
+        "행정이 실제 추천에 없으면 공공직 천직 주장 금지",
+        "제공 범위와 준비 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P1:status-self-employed",
+      "original": [
+        "상품별 재료·폐기·준비·마감 투입",
+        "단골·현재 수익·직원·영업 이력을 만들지 않음",
+        "상태별 다른 자원 질문"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P4:criterion-before-practice",
+      "original": [
+        "연습 시간과 실제 재작업 예방은 별도 지표",
+        "관찰 자료가 없으면 실력이 늘었다고 단정하지 않음",
+        "시간 투입과 실제 기여를 따로 측정"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P3:career-drive-repeat-fire",
+      "original": [
+        "응급 수정·재발 확인·예방 투입 구분",
+        "실제 운영 장애나 실패 사건을 생성하지 않음",
+        "학습·기준·전문 준비가 밀리는 기회비용"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P2:current-photo-selection",
+      "original": [
+        "선별·재선별·다른 비율 출력의 투입",
+        "포트폴리오·납품 이력·고객 만족을 추정하지 않음",
+        "단계별 투입과 실제 사용처",
+        "재선별·규격별 출력·추가 확인의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P4:value-not-cheapest",
+      "original": [
+        "초기·유지·변경의 자원 구분",
+        "특정 상품 구매나 미래 절감액을 보장하지 않음",
+        "확보/예상·고정/변동·준비/유지"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P4:positive-to-shared-decision",
+      "original": [
+        "결정 대기·확인·재수행 투입",
+        "직책·직원·승진을 추정하지 않음",
+        "준비·유지·검증을 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P1:resource-foundation-positive",
+      "original": [
+        "준비·폐기·정리 투입을 구분",
+        "부·수익·자산의 크기를 보장하지 않음",
+        "상징은 자산·직위·수입 자료가 아님"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P2:field-anomaly-learning",
+      "original": [
+        "교육·확인·인계 투입의 구분",
+        "설비·위험 작업을 임의 시험하는 행동 금지",
+        "도구·자료·연습·질문의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P2:business-repeat-value",
+      "original": [
+        "자료 작성·유지·교육·대표 개입 투입 구분",
+        "매출·직원 존재·확장 성공을 추정하지 않음",
+        "직업별 다른 제공·준비·유지 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P1:student-role-dialogue",
+      "original": [
+        "공동 제출량과 개인 학습 시간을 구분",
+        "실제 팀 과제·친구 성격을 만들어내지 않음",
+        "되묻기·인계·응대 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P1:explain-to-use",
+      "original": [
+        "반복 문의 감소와 준비 투입을 분리",
+        "실제 학습 반응이 없으면 효과를 단정하지 않음",
+        "기여의 종류를 확인하되 보상 예측 금지"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P3:alternative-support",
+      "original": [
+        "자료 유지와 반복 응대 감소의 투입 비교",
+        "보조 역할이 본인의 유일한 천직이라고 제한하지 않음",
+        "분야별 투입과 제공 조건"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P4:positive-to-repeat-system",
+      "original": [
+        "유지 부담과 변경 투입 분리",
+        "매출·이익·확장 결과를 보장하지 않음",
+        "준비·유지·검증을 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P2:instruction-role",
+      "original": [
+        "교육 준비·자료 유지 투입",
+        "없는 신입·동료·부하 직원을 생성하지 않음",
+        "대기·확인·자료 접근의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P3:career-boundary-isolation",
+      "original": [
+        "협의 시간과 잘못된 적용의 투입 비교",
+        "실제 직장 정치·소외를 추정하지 않음",
+        "학습·기준·전문 준비가 밀리는 기회비용"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P3:career-precision-lock",
+      "original": [
+        "누적 확인·기준 유지의 투입 차이",
+        "실제 실패·정체·불인정을 단정하지 않음",
+        "학습·기준·전문 준비가 밀리는 기회비용"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P3:feedback-loop-entry",
+      "original": [
+        "재문의와 긴 통화의 투입을 별도로 봄",
+        "즉시 반응을 받을 수 없는 과제에는 다른 검토 방식 필요",
+        "단계별 재작업과 대기 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P4:closing-depth-use",
+      "original": [
+        "이미 소개한 조사·사용 투입 회수",
+        "원천 후보의 여러 MBTI를 한 사람에게 합치지 않음",
+        "이미 확인한 자원만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P1:status-student",
+      "original": [
+        "수업료·재료·연습 시간의 투입 구분",
+        "성적·전공 성취·실습 경험을 만들어내지 않음",
+        "상태별 다른 자원 질문"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P4:permission-to-correct",
+      "original": [
+        "추가 자료 요청 시간과 마감 변경을 함께 검토",
+        "단순 참고 역할이면 최종 수정 권한을 요구할 이유가 다를 수 있음",
+        "필요 정보와 검토 투입을 숨기지 않음"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P4:culture-exception-path",
+      "original": [
+        "확인·재처리·공지 유지 시간의 구분",
+        "실제 조직 사례가 없으면 문화 품질 판정 보류",
+        "준비·회복·수정 시간을 운영 항목으로 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P1:hypothesis-first",
+      "original": [
+        "조사 범위가 줄인 불확실성과 사용한 시간을 함께 봄",
+        "확정 절차를 따르는 일에서는 원인 탐색이 우선이 아닐 수 있음",
+        "투입 전에 결과와 범위를 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P2:current-finance-variance",
+      "original": [
+        "분석 시간과 결정에 필요한 정보의 균형",
+        "실제 회사의 성과나 보상 기록을 생성하지 않음",
+        "단계별 투입과 실제 사용처",
+        "자료 정리·검토·재질의 투입 구분"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P1:structured-practice",
+      "original": [
+        "정리·반복·응용 연습의 시간 구분",
+        "정확한 출생시간이 있어도 학업 능력을 보장하지 않음",
+        "수집·실습·독립 수행의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P1:jangseong-responsibility",
+      "original": [
+        "대기·설명·수습의 투입 차이",
+        "승진·지위·사업 성공을 보장하지 않음",
+        "상징은 자산·직위·수입 자료가 아님"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P2:operations-bridge",
+      "original": [
+        "대기·인수인계·다시 시작할 투입 구분",
+        "안전·설비 절차를 임의 변경하는 지침 금지",
+        "대기·확인·자료 접근의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P4:transfer-test",
+      "original": [
+        "교육 투입과 실제 유지 가능한 결과 구분",
+        "실전 시스템을 위험하게 변경하는 검증 금지",
+        "시간 투입과 실제 기여를 따로 측정"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P3:sharp-correction-cost",
+      "original": [
+        "방어적 대화·자료 재요청의 투입",
+        "실제 갈등이나 동료 감정을 단정하지 않음",
+        "금전이 아니라 공동 작업의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P4:reserve-options",
+      "original": [
+        "생활 자원과 새 준비 투입을 별도로 확인",
+        "금융 자문·자산 예측·수익 보장으로 사용하지 않음",
+        "확보/예상·고정/변동·준비/유지"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P2:coordination-distinct",
+      "original": [
+        "대표 개입 시간과 담당자의 대기 시간을 구분",
+        "실제 위임할 권한과 사람이 없으면 관리자 능력 확정 금지",
+        "다른 기능의 투입과 결과를 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P2:design-constraint-learning",
+      "original": [
+        "도구·제작·피드백 투입 구분",
+        "학생에게 고객·계약 경험을 만들지 않음",
+        "도구·자료·연습·질문의 투입",
+        "새 방향 재제작과 같은 안 적용 투입 구분"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P3:strategy-photo-cycle",
+      "original": [
+        "이미 소개된 준비·보정·도구 투입만 연결",
+        "현재 직무·유형·분류 unknown 유지",
+        "같은 과제의 여러 투입을 나눔"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P1:siksang-output-potential",
+      "original": [
+        "작성·검증·수정 투입의 차이",
+        "창작 성공·고소득·인기 보장 금지",
+        "상징은 자산·직위·수입 자료가 아님"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P3:alternative-operations",
+      "original": [
+        "확인·재설명·대기 투입 구분",
+        "현재 직원과 매출이 존재한다고 추정하지 않음",
+        "분야별 투입과 제공 조건"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P3:perfection-start",
+      "original": [
+        "추가 읽기와 결과 작성 시간의 균형",
+        "안전·정확성상 필수 검증을 생략하라는 뜻이 아님",
+        "반복·작성·전이 연습의 균형"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P1:detect-mismatch",
+      "original": [
+        "추가 검토 투입과 예방할 재처리의 종류를 구분",
+        "원자료와 검토 기준이 없으면 정확성 판정 보류",
+        "기여의 종류를 확인하되 보상 예측 금지"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P1:wealth-not-balance",
+      "original": [
+        "반복 제공·유지·변경에 드는 투입 구분",
+        "자산·급여·수익률을 추정하지 않음",
+        "수입·매출·확보 자원은 별도"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P4:mission-with-basics",
+      "original": [
+        "상담 시간 밖 후속 연결·준비 투입을 분리",
+        "현재 역할과 지원 대상이 없으면 실제 보람을 경험했다고 말하지 않음",
+        "필요 정보와 검토 투입을 숨기지 않음"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P1:choose-learning-sample",
+      "original": [
+        "과정·연습·지원 준비 투입을 비교",
+        "source pool의 다른 유형을 함께 사실로 회수하지 않음",
+        "이미 소개한 자원 조건만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P1:choose-known-context",
+      "original": [
+        "돈·시간·지원의 실제 입력만 회수",
+        "other와 empty를 동일한 상태로 합치지 않음",
+        "이미 소개한 자원 조건만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P2:decision-owner",
+      "original": [
+        "확인 지연과 반복 승인 투입",
+        "실제 지위가 없으면 관리자로 호명하지 않음",
+        "대기·확인·자료 접근의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P4:closing-self-chosen-scope",
+      "original": [
+        "확인되지 않은 경제 숫자 없이 자원 질문만 회수",
+        "직업·가족·소득·건강·이전 경험 보충 금지",
+        "이미 확인한 자원만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P2:route-review-finance",
+      "original": [
+        "원가 절감과 포기한 활동의 대가 비교",
+        "review가 실제 추천에 없으면 신규 추천으로 출력 불가",
+        "제공 범위와 준비 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P2:route-experience-service",
+      "original": [
+        "반복 질문·대기·추가 응대 투입",
+        "외향 유형이라는 이유로 모든 접객 직무 추천 금지",
+        "제공 범위와 준비 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P4:skill-repeatability",
+      "original": [
+        "재수행·검토·훈련 투입 구분",
+        "안전 기준과 자격을 대체하는 요령 제작 금지",
+        "과정·연습·도입·유지 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P2:route-investigate-dev",
+      "original": [
+        "구현과 유지 투입을 구분",
+        "기존 추천 없이는 개발자를 새 1순위로 만들지 않음",
+        "제공 범위와 준비 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P2:recognized-clarity",
+      "original": [
+        "재논의·대기·추가 작업의 투입",
+        "실제 인정·승진·상대 반응을 만들지 않음",
+        "확인된 변화와 추정 효과 구별"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P3:career-depth-without-use",
+      "original": [
+        "추가 조사와 적용 지연의 투입",
+        "실제 소득·경력 실패를 유형으로 예언하지 않음",
+        "학습·기준·전문 준비가 밀리는 기회비용"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P3:precision-to-visual",
+      "original": [
+        "출력 재제작을 줄일 검토와 확인 시간",
+        "실제 디자인 능력이나 추천 순위 상승의 근거가 아님",
+        "전이 뒤 필요한 준비와 사용처"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P2:dev-new-input",
+      "original": [
+        "강의·실습·재현·피드백 시간 구분",
+        "고객 서비스·실전 데이터로 위험한 실험 금지",
+        "도구·자료·연습·질문의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P4:care-always-on",
+      "original": [
+        "수업 외 반복 응대 투입을 구분",
+        "의료·안전상 필요한 대응은 임의 중단 지침으로 쓰지 않음",
+        "대기·추가 작업·재처리 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P1:choose-task-rights",
+      "original": [
+        "역할의 준비·검토·재처리 투입 구분",
+        "선행 의미가 없으면 회수 보류",
+        "이미 소개한 자원 조건만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P2:route-lead-project",
+      "original": [
+        "결정 대기와 재작업의 투입 차이",
+        "실제 추천과 권한이 없으면 관리자라고 부르지 않음",
+        "제공 범위와 준비 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P3:career-help-overload",
+      "original": [
+        "반복 응대와 전문 준비의 자원 구분",
+        "건강·번아웃·실제 실패 단정 금지",
+        "학습·기준·전문 준비가 밀리는 기회비용"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P3:alternative-translation",
+      "original": [
+        "조사·질의·검수 투입을 분량과 구분",
+        "실제 추천·언어 능력·분야 조건 없으면 추천 확정 불가",
+        "분야별 투입과 제공 조건"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P1:status-homemaker",
+      "original": [
+        "소득이 아닌 시간·외부 도움·준비의 투입 구분",
+        "가족 구성·자녀·경제 의존·경력 단절을 추정하지 않음",
+        "상태별 다른 자원 질문"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P3:analysis-to-teaching",
+      "original": [
+        "반복 교육의 시간을 줄일 자료와 제작 투입",
+        "본인 이해 근거나 타인 전달 조건이 없으면 조합 보류",
+        "전이 뒤 필요한 준비와 사용처"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P2:source-resource-link",
+      "original": [
+        "실제 금액을 추정하지 않고 비용 항목만 비교",
+        "원국 재성 또는 ENTJ 실제 입력이 없으면 조합 보류",
+        "수익·보상 관심도 실제 경제 사실과 별도"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P2:photo-light-comparison",
+      "original": [
+        "장비·연습·선별·보정 투입 구분",
+        "실제 수요·장비 보유·고객 반응을 추정하지 않음",
+        "도구·자료·연습·질문의 투입",
+        "촬영·선별·보정·출력별 실제 시간 분리",
+        "연습 장비·재료·선별·보정 투입 구분"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P3:silent-disagreement",
+      "original": [
+        "추가 문의·뒤늦은 보완의 투입",
+        "실제 성격 결함이나 반복 실패로 단정하지 않음",
+        "금전이 아니라 공동 작업의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P3:collecting-not-learning",
+      "original": [
+        "수집·읽기·작성 시간 구분",
+        "새로운 자료가 실제 필수 정보일 때는 수집을 무조건 줄이지 않음",
+        "반복·작성·전이 연습의 균형"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P2:current-care-record",
+      "original": [
+        "확인·인계·후속 응대 투입을 운영 과제로 봄",
+        "진단·치료·대상자 건강을 추정하지 않음",
+        "단계별 투입과 실제 사용처",
+        "관찰·보고·확인·인계 투입을 개인 호의로 지우지 않음"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P4:positive-conditions-to-proof",
+      "original": [
+        "준비·확인·연습의 투입 구분",
+        "미입력 인맥·조력자·좋은 사건 생성 금지",
+        "준비·유지·검증을 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P2:source-review-link",
+      "original": [
+        "추가 분석이 줄일 재작업과 분석 투입을 비교",
+        "C002 성립 조건·source assignment가 없으면 조합 보류",
+        "수익·보상 관심도 실제 경제 사실과 별도"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P1:held-munchang-exam",
+      "original": [
+        "시험 비용이나 수입 자료를 생성하지 않음",
+        "성적·합격·학력·문재의 확정 근거로 사용 금지",
+        "상징은 자산·직위·수입 자료가 아님"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P2:current-design-student",
+      "original": [
+        "재료·도구 비용과 연습 시간 구분",
+        "고객·판매·수익을 이미 경험했다고 쓰지 않음",
+        "단계별 투입과 실제 사용처"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P1:handoff-observation",
+      "original": [
+        "확인·인계 시간을 개인 호의로 지우지 않음",
+        "건강 판단·자격·실제 대상자 경험을 생성하지 않음",
+        "되묻기·인계·응대 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P1:taegeuk-understanding",
+      "original": [
+        "추가 조사와 사용할 결정의 균형",
+        "전문 능력·시험 합격·예지력을 보장하지 않음",
+        "상징은 자산·직위·수입 자료가 아님"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P1:service-value",
+      "original": [
+        "응대·자료 유지·후속 연결 시간을 구분",
+        "현재 고객 수·실적·금액을 만들지 않음",
+        "수입·매출·확보 자원은 별도"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P2:route-market-sales",
+      "original": [
+        "사전 제안·도입 지원·미성사 투입",
+        "수입·거래 성사·사업 성공을 보장하지 않음",
+        "제공 범위와 준비 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P1:opportunity-to-demand",
+      "original": [
+        "준비·제작·응대 투입과 실제 거래는 별도",
+        "사주·MBTI로 사업 성공을 보장하지 않음",
+        "수입·매출·확보 자원은 별도",
+        "노출·제작·응대·제공 투입 구분"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P3:unpriced-revision",
+      "original": [
+        "수정 횟수보다 목적 변경과 필요한 투입 확인",
+        "법적 계약 효력을 단정하거나 실제 단가 제시하지 않음",
+        "시간·회수·포기 활동·되돌림 비용",
+        "수정 횟수 외 목적 변경·재촬영·새 버전의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P1:client-brief",
+      "original": [
+        "재촬영과 같은 컷 보정의 투입 차이",
+        "의뢰·계약 존재를 입력 없이 과거 경험으로 말하지 않음",
+        "되묻기·인계·응대 투입",
+        "새 방향 탐색과 같은 방향 수정의 투입 구분"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P3:alternative-video",
+      "original": [
+        "버전·자막·음향·출력 투입 분리",
+        "영상 직접 function 분류가 있다고 기록하지 않음",
+        "분야별 투입과 제공 조건"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P3:strategy-context-before-plan",
+      "original": [
+        "생활·학습·외부 도움은 확인된 자료만 회수",
+        "미입력에 가족·질병·실업 원인 생성 금지",
+        "같은 과제의 여러 투입을 나눔"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P2:recognized-prevention",
+      "original": [
+        "검토 투입과 확인된 재처리의 차이",
+        "인정·보상·사고 방지를 실제 사실로 만들지 않음",
+        "확인된 변화와 추정 효과 구별"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P3:care-to-process",
+      "original": [
+        "응대량 감소와 자료 유지 시간을 구분",
+        "반복 질문의 실제 자료가 없으면 필요를 가정으로 표시",
+        "전이 뒤 필요한 준비와 사용처"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P3:help-hidden-cost",
+      "original": [
+        "준비·응대·연결·회복의 투입 구분",
+        "진단·치료·금전 구제 책임을 추정하지 않음",
+        "시간·회수·포기 활동·되돌림 비용"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P4:career-change-learning",
+      "original": [
+        "배움 시간·생활 역할·외부 도움은 실제 정보 필요",
+        "가족·질병·경력 단절·구직 의사 추정 금지",
+        "과정·연습·도입·유지 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P1:skill-to-use",
+      "original": [
+        "구현·설치·유지·지원 투입 구분",
+        "수입·계약·기술 자격 자동 확정 금지",
+        "수입·매출·확보 자원은 별도"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P1:people-entry",
+      "original": [
+        "준비·개별 안내 시간이 수업 시간 밖에 있음을 분리",
+        "개별 요청을 확인할 입력이 없으면 사람별 필요를 단정하지 않음",
+        "투입 전에 결과와 범위를 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P3:grow-dev-maintain",
+      "original": [
+        "유지·질문·추가 구현 투입 구분",
+        "실제 경력·운영 경험 생성 금지",
+        "새 기능의 추가 투입",
+        "재현·구현·검증·유지 투입 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P3:tool-demand-gap",
+      "original": [
+        "구입·임차·관리·학습·사용 빈도의 투입 구분",
+        "장비 투자 수익·감가 금액·구매 추천을 제공하지 않음",
+        "시간·회수·포기 활동·되돌림 비용",
+        "구입·임차·관리·학습·준비의 다른 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P4:fixed-variable-time",
+      "original": [
+        "고정·변동·시간을 구별하되 수치를 만들어내지 않음",
+        "세무·투자·특정 사업 손익의 결론으로 사용하지 않음",
+        "확보/예상·고정/변동·준비/유지"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P3:handoff-finish",
+      "original": [
+        "재확인·대기 시간이 어디에서 생기는지 비교",
+        "후속 공정 정보가 없으면 완료 기준을 임의 결정하지 않음",
+        "단계별 재작업과 대기 투입",
+        "대기·재확인·재처리 투입 구분"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P2:recognized-translation",
+      "original": [
+        "조사·질의·검수 투입을 분리",
+        "실제 번역 경력·언어 수준·고객 반응을 추정하지 않음",
+        "확인된 변화와 추정 효과 구별",
+        "분량·용어 조사·질의·검수 투입 구분"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P1:status-freelancer",
+      "original": [
+        "촬영 시간 외 준비·이동·보정·응대 투입 구분",
+        "실제 계약·매출·포트폴리오·장비 보유를 추정하지 않음",
+        "상태별 다른 자원 질문",
+        "새 조사·협업 조정·준비·납품 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P2:guard-boundary-isolation",
+      "original": [
+        "협의와 잘못된 적용의 투입 비교",
+        "실제 갈등·고립·상대 유형을 생성하지 않음",
+        "도입된 비용만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P1:status-other",
+      "original": [
+        "과제별 시간과 보상 유무를 별도로 질문",
+        "실제 답변 전까지 역할·수입·고용 관계를 생성하지 않음",
+        "상태별 다른 자원 질문"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P4:protected-depth-window",
+      "original": [
+        "중단 후 재착수·추가 조사 투입 비교",
+        "긴급 대응이 핵심인 직무는 연속 집중을 동일하게 확보하기 어려움",
+        "필요 정보와 검토 투입을 숨기지 않음"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P4:cashflow-timing",
+      "original": [
+        "작업 비용과 개인 생활비는 별도 확인",
+        "개인 금융 권고·저축 비율·금액 처방 금지",
+        "확보/예상·고정/변동·준비/유지"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P2:recognized-experience",
+      "original": [
+        "재편집·자막·추가 안내 투입",
+        "고객 수·인기·수익·재의뢰를 추정하지 않음",
+        "확인된 변화와 추정 효과 구별"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P4:false-speed",
+      "original": [
+        "초기 속도와 후속 재처리를 구분",
+        "안전 절차를 줄여서 적응하라는 조언 금지",
+        "대기·추가 작업·재처리 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P1:status-resting",
+      "original": [
+        "준비 지출과 생활 유지 조건은 실제 자료 확인",
+        "질병·실직·번아웃·구직 의사를 추정하지 않음",
+        "상태별 다른 자원 질문"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P3:grow-owner-question",
+      "original": [
+        "대기·재설명·확인 투입",
+        "직원과 조직이 없으면 가상의 예시로만 유지",
+        "새 기능의 추가 투입",
+        "승인 대기·재설명·대표 개입 투입 구분"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P2:technical-distinct",
+      "original": [
+        "재료 소모와 재작업 투입을 구분",
+        "자격·위험이 있는 실전 작업을 임의 실험하지 않음",
+        "다른 기능의 투입과 결과를 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P4:two-skill-complement",
+      "original": [
+        "확인 시간과 담당자의 대기 투입 구분",
+        "실제 위임 대상이 없는 입력에 직원·팀 생성 금지",
+        "시간 투입과 실제 기여를 따로 측정"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P1:choose-repeat-burden",
+      "original": [
+        "이미 확인한 자원 항목만 회수",
+        "실제 매출·고객 수·확대 성공 생성 금지",
+        "이미 소개한 자원 조건만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P4:culture-evidence-decision",
+      "original": [
+        "재조사와 결정 지연의 투입 구분",
+        "조직 정치·차별·평가 사실을 입력 없이 만들지 않음",
+        "준비·회복·수정 시간을 운영 항목으로 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P1:status-empty",
+      "original": [
+        "실제 소득 대신 확인할 자원 질문만 제시",
+        "미입력을 무직·학생·사업가로 바꾸지 않음",
+        "상태별 다른 자원 질문"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P3:start-finish-contract",
+      "original": [
+        "재작업의 원인이 추가 요구인지 결함인지 구분",
+        "명확한 입력이 없으면 실제 업무 단계 수행을 주장하지 않음",
+        "단계별 재작업과 대기 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P4:culture-frontline-voice",
+      "original": [
+        "응대량과 안내 유지의 투입 비교",
+        "실제 고객 수·반응 통계를 추정하지 않음",
+        "준비·회복·수정 시간을 운영 항목으로 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P4:positive-to-client-use",
+      "original": [
+        "선별·보정·규격별 출력 투입 구분",
+        "실제 고객·재의뢰·인기를 예언하지 않음",
+        "준비·유지·검증을 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P4:next-employee-role",
+      "original": [
+        "보상·추가 시간·배울 기회를 각각 확인",
+        "이직·연봉 결과를 예측하거나 실제 회사 정보를 만들지 않음",
+        "실제 돈·시간·지원 조건을 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P3:alternative-retail",
+      "original": [
+        "재고·반품·예약 응대의 자원 구분",
+        "고객 수·재방문 실적을 사실로 만들지 않음",
+        "분야별 투입과 제공 조건",
+        "재고·예약·후속 응대 투입 구분"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P3:strategy-dev-cycle",
+      "original": [
+        "새 제작·유지·학습 투입의 차이 회수",
+        "실전 데이터·서비스 임의 변경 금지",
+        "같은 과제의 여러 투입을 나눔"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P3:take-back-work",
+      "original": [
+        "재수행·승인 대기·대표 개입 투입 구분",
+        "직원·팀이 없는 입력에는 적용 불가",
+        "금전이 아니라 공동 작업의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P2:guard-drive-review",
+      "original": [
+        "수습·대기·재수행 투입의 차이",
+        "사업 owner와 개발 직무를 입력 없이 동시에 생성하지 않음",
+        "도입된 비용만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P3:alternative-business-analysis",
+      "original": [
+        "준비 투입·제공 투입·회수 시점 구분",
+        "사업 성공·고소득을 확정하지 않음",
+        "분야별 투입과 제공 조건"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P3:strategy-cafe-cycle",
+      "original": [
+        "기존 자원 의미만 회수하며 금액 생성 금지",
+        "이익 개선·단골 증가·사업 확장 예언 금지",
+        "같은 과제의 여러 투입을 나눔"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P1:investigation-object",
+      "original": [
+        "조사에 쓸 시간과 사용할 결정의 차이",
+        "실제 전공·경험·자격을 입력 없이 채우지 않음",
+        "분야별 다른 준비·유지 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P2:recognized-enablement",
+      "original": [
+        "응대·문서 유지·인계의 투입",
+        "실제 고객·동료·인정이 있었다고 서술하지 않음",
+        "확인된 변화와 추정 효과 구별"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P1:expertise-value",
+      "original": [
+        "조사 범위·자료 접근·추가 확인 투입 분리",
+        "시장 가격·수입 규모·전문 자격은 보장하지 않음",
+        "수입·매출·확보 자원은 별도"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH08.P1:cheoneul-help-network",
+      "original": [
+        "질문 준비·피드백·실습 시간을 함께 봄",
+        "실제 귀인·채용 추천·인맥·성공을 생성하지 않음",
+        "상징은 자산·직위·수입 자료가 아님"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P2:quality-gate-role",
+      "original": [
+        "필수 수정과 선택 개선의 투입 차이",
+        "권한·실제 결과 없이 최종 책임을 개인에게 귀속하지 않음",
+        "대기·확인·자료 접근의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P3:strategy-finance-cycle",
+      "original": [
+        "이미 소개된 검토·재질의·학습 투입 회수",
+        "보상·회사 절감·승진 결과를 보장하지 않음",
+        "같은 과제의 여러 투입을 나눔"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P2:cafe-unit-value",
+      "original": [
+        "재료·폐기·고정 부담·시간은 서로 다른 항목",
+        "판매량·원가·이익 수치를 추정하지 않음",
+        "직업별 다른 제공·준비·유지 투입",
+        "상품별 투입과 전체 운영의 지연을 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P4:culture-feedback-safety",
+      "original": [
+        "방향 재제작과 세부 조정 투입 차이",
+        "현재 조직이 적대적이라고 추정하지 않음",
+        "준비·회복·수정 시간을 운영 항목으로 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P4:closing-creative-purpose",
+      "original": [
+        "이미 소개한 제작·수정 투입만 회수",
+        "없는 고객·수익·경력 생성 금지",
+        "이미 확인한 자원만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P1:status-employee",
+      "original": [
+        "보상·업무량·학습 시간을 실제 조건으로 분리",
+        "현 회사·급여·승진 대상·상사 성격을 추정하지 않음",
+        "상태별 다른 자원 질문"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P2:finance-scenario-learning",
+      "original": [
+        "교재·자료 정리·검증 투입 구분",
+        "실제 사업 전망·투자 판단을 예측하지 않음",
+        "도구·자료·연습·질문의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P3:activity-to-language",
+      "original": [
+        "실습·선별·재시험 투입",
+        "실제 사진 촬영 경험과 장비를 보충하지 않음",
+        "반복·작성·전이 연습의 균형"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P3:social-solo-gap",
+      "original": [
+        "모임·개인 연습·후속 질문의 시간 구분",
+        "실제 친구·학습 모임이 있다고 추정하지 않음",
+        "반복·작성·전이 연습의 균형"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P4:blocked-review",
+      "original": [
+        "대기와 재검토 투입을 따로 기록",
+        "불편을 실제 겪었다고 입력 없이 말하지 않음",
+        "대기·추가 작업·재처리 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P4:next-unknown-question",
+      "original": [
+        "돈·시간·외부 도움은 실제 제공된 자료만 확인",
+        "이 상태들을 동일한 생활이라고 합치지 않음",
+        "실제 돈·시간·지원 조건을 확인"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P2:care-distinct",
+      "original": [
+        "후속 연락과 반복 문의 투입을 구분",
+        "도움받을 상대의 실제 필요를 입력 없이 만들지 않음",
+        "다른 기능의 투입과 결과를 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P1:parallel-constraints",
+      "original": [
+        "결정 대기와 조율 시간의 차이",
+        "상대 역할·조직이 입력되지 않았다면 가상 상황으로만 유지",
+        "되묻기·인계·응대 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH04.P2:independent-contributor",
+      "original": [
+        "추가 조사와 최종 결정 대기의 자원 구분",
+        "실제 전문 자격·경력을 자동 인정하지 않음",
+        "대기·확인·자료 접근의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH09.P4:closing-precision-value",
+      "original": [
+        "확인한 투입·기여만 회수",
+        "새 명리·MBTI·기간 사실 추가 금지",
+        "이미 확인한 자원만 회수"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P2:photo-use-value",
+      "original": [
+        "준비·현장·보정·사용 범위·출력 버전의 투입",
+        "고객·가격·장비·이전 계약을 추정하지 않음",
+        "직업별 다른 제공·준비·유지 투입",
+        "준비·현장·보정·응대·출력 투입을 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P2:source-two-sided-tempo",
+      "original": [
+        "실습 재료 비용과 실제 제공 서비스의 비용을 구분",
+        "신체·금전 손해가 가능한 실전에서 임의 실험 금지",
+        "수익·보상 관심도 실제 경제 사실과 별도"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P4:purpose-mismatch",
+      "original": [
+        "노출·제작·응대 투입과 목표 연결",
+        "실제 조직 목적을 입력 없이 부정적으로 평가하지 않음",
+        "대기·추가 작업·재처리 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P4:creative-scope-chaos",
+      "original": [
+        "추가 제작과 같은 컷 보정의 투입 차이",
+        "한 번의 다른 의견으로 직무 회피를 권하지 않음",
+        "대기·추가 작업·재처리 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P4:learning-budget-question",
+      "original": [
+        "과정·재료·도구·연습 투입을 분리",
+        "교육비 회수·취업·합격을 보장하지 않음",
+        "확보/예상·고정/변동·준비/유지"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH06.P2:learning-investment-value",
+      "original": [
+        "과정비·재료·연습·기회비용을 나눔",
+        "학비 회수·채용·합격·수입 증가를 보장하지 않음",
+        "직업별 다른 제공·준비·유지 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P3:familiarity-trap",
+      "original": [
+        "반복·오답·전이 연습의 시간 구분",
+        "실제 성적·시험 불안·학습 장애를 추정하지 않음",
+        "반복·작성·전이 연습의 균형"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH01.P4:change-with-baseline",
+      "original": [
+        "긴급 대응과 기존 고객 약속의 투입을 함께 검토",
+        "제공 범위가 고정된 상황에서는 약속 조정 여지가 없음",
+        "필요 정보와 검토 투입을 숨기지 않음"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH03.P1:repeat-vs-search",
+      "original": [
+        "재고 유지와 제안 준비의 다른 투입",
+        "직무 이름만으로 스트레스나 만족을 예측하지 않음",
+        "분야별 다른 준비·유지 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P2:resource-distinct",
+      "original": [
+        "구입·전환·유지의 비용을 같은 항목으로 합치지 않음",
+        "실제 비용 정보가 없으면 가장 유리한 안을 확정하지 않음",
+        "다른 기능의 투입과 결과를 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH02.P4:value-trace",
+      "original": [
+        "산출물 분량과 실제 사용 가치를 구별",
+        "관찰한 변화가 없으면 실제 성과라고 쓰지 않음",
+        "시간 투입과 실제 기여를 따로 측정"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH05.P3:grow-teaching-transfer",
+      "original": [
+        "수업·채점·개별 질문 투입",
+        "시험 성적·합격·이해 증가를 입력 없이 단정하지 않음",
+        "새 기능의 추가 투입",
+        "준비·수업·채점·후속 질문 투입 분리"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "ckr:material:CH07.P1:concept-structure",
+      "original": [
+        "읽기·자료 수집·실습 투입을 따로 봄",
+        "원국이나 실제 유형 없으면 양측 결합을 보류",
+        "수집·실습·독립 수행의 투입"
+      ],
+      "categories": [],
+      "actualAmounts": "UNKNOWN",
+      "traditionalSymbolIsMoney": false,
+      "status": "REVIEW_REQUIRED"
+    }
+  ],
+  "actualFinancialAmountsKnown": 0
+}

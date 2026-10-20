@@ -1,0 +1,14 @@
+{
+  "preExistingWorktrees": 56,
+  "preExistingWorktreesPreserved": true,
+  "newWorktree": "/private/tmp/gyeol-operator-review-pilot-01",
+  "totalWorktreesNow": 57,
+  "mainHead": "c048218cc5961e0f53a1deab2603511e17559fc3",
+  "mainBranch": "v4/annual-editorial-quality-fix-01",
+  "mainDirtyFiles": 11,
+  "allTrackedAndNonignoredUntrackedFilesBytePreserved": true,
+  "allExistingHeadsBranchesStatusesPreserved": true,
+  "destructiveGitOperations": 0,
+  "masterWrites": 0,
+  "productionWrites": 0
+}

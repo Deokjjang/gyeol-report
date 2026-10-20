@@ -1,0 +1,89 @@
+{
+  "baseSha": "1b89d8d90fdad2b0a82b783e2d948c9cc5de878f",
+  "existingCustomerRuntimeChanged": false,
+  "customerAuthorized": false,
+  "humanQualityApproved": false,
+  "newUnitCases": 40,
+  "finalFailures": 0,
+  "mutationChecks": {
+    "cases": 11,
+    "blocked": 11,
+    "bookDigestRecomputed": true,
+    "rows": [
+      {
+        "name": "Source SHA",
+        "blocked": true,
+        "error": "ARTIFACT_SIGNATURE_INVALID"
+      },
+      {
+        "name": "customer authority",
+        "blocked": true,
+        "error": "ARTIFACT_SIGNATURE_INVALID"
+      },
+      {
+        "name": "human approval",
+        "blocked": true,
+        "error": "ARTIFACT_SIGNATURE_INVALID"
+      },
+      {
+        "name": "fake Reader Bridge",
+        "blocked": true,
+        "error": "ARTIFACT_SIGNATURE_INVALID"
+      },
+      {
+        "name": "A/B owner reversal",
+        "blocked": true,
+        "error": "ARTIFACT_SIGNATURE_INVALID"
+      },
+      {
+        "name": "direction reversal",
+        "blocked": true,
+        "error": "ARTIFACT_SIGNATURE_INVALID"
+      },
+      {
+        "name": "parental authority fabrication",
+        "blocked": true,
+        "error": "ARTIFACT_SIGNATURE_INVALID"
+      },
+      {
+        "name": "14 year period forgery",
+        "blocked": true,
+        "error": "ARTIFACT_SIGNATURE_INVALID"
+      },
+      {
+        "name": "major cycle forgery",
+        "blocked": true,
+        "error": "ARTIFACT_SIGNATURE_INVALID"
+      },
+      {
+        "name": "12 month forgery",
+        "blocked": true,
+        "error": "ARTIFACT_SIGNATURE_INVALID"
+      },
+      {
+        "name": "month boundary forgery",
+        "blocked": true,
+        "error": "ARTIFACT_SIGNATURE_INVALID"
+      }
+    ]
+  },
+  "controls": [
+    "Exact loopback bind/Host/Origin",
+    "Production/Vercel generation rejected",
+    "No VERCEL deletion or NODE_ENV disguise",
+    "Body byte limits; one in-flight generation",
+    "Server-side Ed25519,Source SHA,version and hash checks",
+    "No client-provided verification key or authority",
+    "Original private Publication receipt checked before signing",
+    "No unsafe partial output",
+    "No storage/share/payment/account/analytics mount",
+    "Private no-store, no-referrer, frame-ancestors none, nosniff,CORP same-origin"
+  ],
+  "actualOperatingDbCalls": 0,
+  "actualPayments": 0,
+  "workerCalls": 0,
+  "realShares": 0,
+  "officialApprovalReplacement": false,
+  "localDevelopmentCsp": "unsafe-eval only NODE_ENV=development AND !VERCEL for Webpack dev; absent in Production",
+  "remoteProtectionTests": "NOT_EXECUTED; no independent project"
+}

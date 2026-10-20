@@ -1,0 +1,388 @@
+[
+  {
+    "id": "A",
+    "purpose": "different natal / MBTI",
+    "payload": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "06:00",
+        "mbtiType": "INFJ",
+        "gender": "MALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4",
+        "selectedYear": "2026"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "expectation": "success"
+  },
+  {
+    "id": "B",
+    "purpose": "different natal / MBTI",
+    "payload": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "서진",
+        "birthDate": "1990-07-18",
+        "birthTime": "05:30",
+        "mbtiType": "ENTJ",
+        "gender": "FEMALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "employee",
+        "detailJob": "B2B SaaS 영업기획",
+        "relationshipStatus": "dating",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4",
+        "selectedYear": "2026"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "expectation": "success"
+  },
+  {
+    "id": "C",
+    "purpose": "different natal / MBTI",
+    "payload": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "서윤",
+        "birthDate": "1994-11-18",
+        "birthTime": "07:42",
+        "mbtiType": "ENFP",
+        "gender": "FEMALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "freelancer",
+        "detailJob": "브랜드 디자이너",
+        "relationshipStatus": "single",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4",
+        "selectedYear": "2026"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "expectation": "success"
+  },
+  {
+    "id": "D",
+    "purpose": "unknown time",
+    "payload": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "",
+        "mbtiType": "INFJ",
+        "gender": "MALE",
+        "birthTimeUnknown": true,
+        "birthTimePrecision": "unknown",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4",
+        "selectedYear": "2026"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "expectation": "success"
+  },
+  {
+    "id": "E",
+    "purpose": "unknown MBTI",
+    "payload": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "06:00",
+        "mbtiType": "",
+        "gender": "MALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4",
+        "selectedYear": "2026"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "expectation": "success"
+  },
+  {
+    "id": "F",
+    "purpose": "both unknown",
+    "payload": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "",
+        "mbtiType": "",
+        "gender": "MALE",
+        "birthTimeUnknown": true,
+        "birthTimePrecision": "unknown",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4",
+        "selectedYear": "2026"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "expectation": "success"
+  },
+  {
+    "id": "PAST",
+    "purpose": "past year uses present policy and retrospective tense",
+    "payload": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "06:00",
+        "mbtiType": "INFJ",
+        "gender": "MALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4",
+        "selectedYear": "2024"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "expectation": "success"
+  },
+  {
+    "id": "FUTURE_REJECT",
+    "purpose": "future year forbidden by unchanged current commerce policy",
+    "payload": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "서윤",
+        "birthDate": "1994-11-18",
+        "birthTime": "07:42",
+        "mbtiType": "ENFP",
+        "gender": "FEMALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "freelancer",
+        "detailJob": "브랜드 디자이너",
+        "relationshipStatus": "single",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4",
+        "selectedYear": "2028"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "expectation": "failure"
+  },
+  {
+    "id": "FUTURE_OFFLINE",
+    "purpose": "future annual generation only through existing offline policyDate",
+    "payload": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "서윤",
+        "birthDate": "1994-11-18",
+        "birthTime": "07:42",
+        "mbtiType": "ENFP",
+        "gender": "FEMALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "freelancer",
+        "detailJob": "브랜드 디자이너",
+        "relationshipStatus": "single",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4",
+        "selectedYear": "2028"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00",
+      "policyDate": "2028-10-12T12:00:00+09:00"
+    },
+    "expectation": "success"
+  },
+  {
+    "id": "EXACT_DAYUN",
+    "purpose": "actual December30 2026 exact transition and multiple segments",
+    "payload": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "정확경계",
+        "birthDate": "2001-06-22",
+        "birthTime": "13:30",
+        "mbtiType": "INFJ",
+        "gender": "MALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4",
+        "selectedYear": "2026"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "expectation": "success"
+  },
+  {
+    "id": "RANGE_DAYUN",
+    "purpose": "unknown-time range throughout several months; conditional cycle facts",
+    "payload": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "범위경계",
+        "birthDate": "1999-07-31",
+        "birthTime": "",
+        "mbtiType": "INFJ",
+        "gender": "MALE",
+        "birthTimeUnknown": true,
+        "birthTimePrecision": "unknown",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4",
+        "selectedYear": "2027"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00",
+      "policyDate": "2027-10-12T12:00:00+09:00"
+    },
+    "expectation": "success"
+  },
+  {
+    "id": "H_STUDENT",
+    "purpose": "existing student reader context and actual relation coexistence",
+    "payload": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "한예린",
+        "birthDate": "2000-12-14",
+        "birthTime": "11:50",
+        "mbtiType": "INTJ",
+        "gender": "FEMALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "student",
+        "detailJob": "",
+        "relationshipStatus": "",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4",
+        "selectedYear": "2026"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "expectation": "success"
+  }
+]

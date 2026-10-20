@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "source-alias-fragment-audit.json.gz",
+  "payloadHash": "d3318271da9a4760d0062960246421126ea3dc314c50a0a94b9fb406f805b5c5",
+  "logicalJsonHash": "d568ce598cc31cb974b818bb8c8a65003121bcfecf518dff12ed762c367906f3",
+  "uncompressedBytes": 1975583
+}

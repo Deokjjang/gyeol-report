@@ -1,0 +1,163 @@
+{
+  "baseSha": "1e03899455eaf46ce0d613bf48d9a21ea88b1917",
+  "sourceRecords": [
+    {
+      "month": 9,
+      "id": "afpr:month-slot:09",
+      "proof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 8,
+          "originalId": "afpr:month-slot:09",
+          "recordSha256": "81de9d7b2756401b029c4d8c2eabdabaffe097fc812ee86ec1a75125831aee82",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:8c42d5d6e9659a08d4a2164fd53c39e34d05fb54e0a04d64ae1097c3b28a9cdc",
+        "originalId": "afpr:month-slot:09",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "81de9d7b2756401b029c4d8c2eabdabaffe097fc812ee86ec1a75125831aee82",
+        "actualHash": "81de9d7b2756401b029c4d8c2eabdabaffe097fc812ee86ec1a75125831aee82",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalRequirements": [
+        "selectedYear + actual civil month bounds",
+        "every canonical segment",
+        "prior month last segment + current first/new Jie segment"
+      ],
+      "originalRecord": {
+        "id": "afpr:month-slot:09",
+        "productKey": "annual_fortune",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "scope": "civil_month",
+        "meaning": "같은 월주의 이어짐과 새 절입 이후의 차이",
+        "positive": "같은 조건이면 유지·점검으로 설명할 수 있다.",
+        "risk": "절입 전의 반복 흐름을 월 전체의 새로운 특성으로 포장",
+        "twist": "새 근거가 적은 구간도 선택을 점검하는 의미가 있다.",
+        "action": "월초 carryover와 백로 뒤 새 월주를 따로 비교한다.",
+        "scene": {
+          "text": "가상으로 이미 정한 작업 순서를 지금 조건에서도 쓸지 확인한다.",
+          "hypothetical": true,
+          "isCustomerHistory": false
+        },
+        "counterexample": "월 이름이나 계절만으로 결실·평가 결과를 예측하지 않는다.",
+        "requires": [
+          "selectedYear + actual civil month bounds",
+          "every canonical segment",
+          "prior month last segment + current first/new Jie segment"
+        ],
+        "disallowed": [
+          "입력받지 않은 과거 경험 단정",
+          "성공·실패·수입·질병·혼인 사건 예언",
+          "근거 없는 시주·복합 관계 생성"
+        ],
+        "sourceRefs": [
+          "afpr:source:jie",
+          "afpr:source:month-copy",
+          "afpr:source:editorial"
+        ],
+        "verification": "conditional_editorial_not_calculated_fact",
+        "month": 9,
+        "jieName": "백로",
+        "primaryMeaning": "같은 월주의 이어짐과 새 절입 이후의 차이",
+        "secondaryMeaning": "carryover와 onset의 정보 기능을 구별",
+        "duplicateMeaningGroup": "actual_fact_root_and_scope_not_month_name",
+        "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+        "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+        "notFixedToYear": true,
+        "notMonthlyFate": true,
+        "segmentCountFixed": false,
+        "informationFunctionNotCalculatedEvidence": true
+      },
+      "meaningIdentity": null,
+      "claimIdentity": null
+    },
+    {
+      "month": 3,
+      "id": "afpr:month-slot:03",
+      "proof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 2,
+          "originalId": "afpr:month-slot:03",
+          "recordSha256": "ec1daf02dd14578a4d6bd69fe8870144f81ebb0ad94ca1fd9de257ffe1fe9303",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:af77e05440dbe5374d7e33e74172991c37295fabdad6892f817993e88331a365",
+        "originalId": "afpr:month-slot:03",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "ec1daf02dd14578a4d6bd69fe8870144f81ebb0ad94ca1fd9de257ffe1fe9303",
+        "actualHash": "ec1daf02dd14578a4d6bd69fe8870144f81ebb0ad94ca1fd9de257ffe1fe9303",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalRequirements": [
+        "selectedYear + actual civil month bounds",
+        "every canonical segment",
+        "actual before/after month pillar and relation signatures"
+      ],
+      "originalRecord": {
+        "id": "afpr:month-slot:03",
+        "productKey": "annual_fortune",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "scope": "civil_month",
+        "meaning": "연주 유지와 새 월주 조건의 차이",
+        "positive": "같은 연간 방향 아래 이번 월의 독립 접점을 확인한다.",
+        "risk": "새 월이라는 이유로 새로운 기회·사건을 자동 생성",
+        "twist": "이전 질문의 적용을 바꾸는 것만으로도 정보가 될 수 있다.",
+        "action": "2월 말과 3월 경칩 뒤의 실제 signature 차이만 남긴다.",
+        "scene": {
+          "text": "가상으로 같은 학습 목표를 다른 과제에 적용할지 비교한다.",
+          "hypothetical": true,
+          "isCustomerHistory": false
+        },
+        "counterexample": "계절 이미지가 활력·성공을 증명하지 않는다.",
+        "requires": [
+          "selectedYear + actual civil month bounds",
+          "every canonical segment",
+          "actual before/after month pillar and relation signatures"
+        ],
+        "disallowed": [
+          "입력받지 않은 과거 경험 단정",
+          "성공·실패·수입·질병·혼인 사건 예언",
+          "근거 없는 시주·복합 관계 생성"
+        ],
+        "sourceRefs": [
+          "afpr:source:jie",
+          "afpr:source:month-copy",
+          "afpr:source:editorial"
+        ],
+        "verification": "conditional_editorial_not_calculated_fact",
+        "month": 3,
+        "jieName": "경칩",
+        "primaryMeaning": "연주 유지와 새 월주 조건의 차이",
+        "secondaryMeaning": "지난 입춘의 변화를 다시 새 사실로 세지 않기",
+        "duplicateMeaningGroup": "actual_fact_root_and_scope_not_month_name",
+        "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+        "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+        "notFixedToYear": true,
+        "notMonthlyFate": true,
+        "segmentCountFixed": false,
+        "informationFunctionNotCalculatedEvidence": true
+      },
+      "meaningIdentity": null,
+      "claimIdentity": null
+    }
+  ],
+  "sourceUnchanged": true,
+  "originalMeaningIdentity": null,
+  "originalClaimIdentity": null,
+  "exactSourceProofIsNotMeaningOrApproval": true
+}

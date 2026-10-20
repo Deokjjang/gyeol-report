@@ -1,0 +1,1648 @@
+{
+  "negative": [
+    {
+      "engine": "comprehensive",
+      "name": "question changed",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "comprehensive",
+      "name": "MBTI/Fusion support lost",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "comprehensive",
+      "name": "source hash",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "comprehensive",
+      "name": "owner",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "comprehensive",
+      "name": "direction",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "comprehensive",
+      "name": "claim",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "comprehensive",
+      "name": "meaning",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "comprehensive",
+      "name": "condition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "comprehensive",
+      "name": "negation",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "comprehensive",
+      "name": "certainty",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "comprehensive",
+      "name": "counterexample",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "comprehensive",
+      "name": "prohibition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "comprehensive",
+      "name": "ancestry",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "career",
+      "name": "question changed",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "career",
+      "name": "MBTI/Fusion support lost",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "career",
+      "name": "source hash",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "career",
+      "name": "owner",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "career",
+      "name": "direction",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "career",
+      "name": "claim",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "career",
+      "name": "meaning",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "career",
+      "name": "condition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "career",
+      "name": "negation",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "career",
+      "name": "certainty",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "career",
+      "name": "counterexample",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "career",
+      "name": "prohibition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "career",
+      "name": "ancestry",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "love",
+      "name": "question changed",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "love",
+      "name": "MBTI/Fusion support lost",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "love",
+      "name": "source hash",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "love",
+      "name": "owner",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "love",
+      "name": "direction",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "love",
+      "name": "claim",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "love",
+      "name": "meaning",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "love",
+      "name": "condition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "love",
+      "name": "negation",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "love",
+      "name": "certainty",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "love",
+      "name": "counterexample",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "love",
+      "name": "prohibition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "love",
+      "name": "ancestry",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "name": "question changed",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "name": "MBTI/Fusion support lost",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "name": "source hash",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "name": "owner",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "name": "direction",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "name": "time",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "name": "claim",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "name": "meaning",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "name": "condition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "name": "negation",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "name": "certainty",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "name": "counterexample",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "name": "prohibition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "name": "ancestry",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "question changed",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "MBTI/Fusion support lost",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "source hash",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "owner",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "direction",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "time",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "claim",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "meaning",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "condition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "negation",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "certainty",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "counterexample",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "prohibition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "name": "ancestry",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "question changed",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "MBTI/Fusion support lost",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "source hash",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "owner",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "direction",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "claim",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "meaning",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "condition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "negation",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "certainty",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "counterexample",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "prohibition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "name": "ancestry",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "question changed",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "MBTI/Fusion support lost",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "source hash",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "owner",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "direction",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "claim",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "meaning",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "condition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "negation",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "certainty",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "counterexample",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "prohibition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "name": "ancestry",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "question changed",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "MBTI/Fusion support lost",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "source hash",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "owner",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "direction",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "claim",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "meaning",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "condition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "negation",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "certainty",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "counterexample",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "prohibition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "name": "ancestry",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "question changed",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "MBTI/Fusion support lost",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "source hash",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "owner",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "direction",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "claim",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "meaning",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "condition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "negation",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "certainty",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "counterexample",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "prohibition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "name": "ancestry",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "question changed",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "MBTI/Fusion support lost",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "source hash",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "owner",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "direction",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "claim",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "meaning",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "condition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "negation",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "certainty",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "counterexample",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "prohibition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "name": "ancestry",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "question changed",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "MBTI/Fusion support lost",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "source hash",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "owner",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "direction",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "claim",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "meaning",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "condition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "negation",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "certainty",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "counterexample",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "prohibition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "name": "ancestry",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "question changed",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "MBTI/Fusion support lost",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "source hash",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "owner",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "direction",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "claim",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "meaning",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "condition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "negation",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "certainty",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "counterexample",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "prohibition",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "name": "ancestry",
+      "rejected": true,
+      "errors": [
+        "CLAIM_SOURCE_SCOPE_OR_SEMANTIC_UNITS_CHANGED"
+      ]
+    },
+    {
+      "id": "ker:invariant:0",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:invariant:1",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:invariant:2",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:invariant:3",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:invariant:4",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:invariant:5",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:invariant:6",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:invariant:7",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:invariant:8",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:invariant:9",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:invariant:10",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:invariant:11",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:invariant:12",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:invariant:13",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:1",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:1:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:2",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:2:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:3",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:3:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:4",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:4:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:5",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:5:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:6",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:6:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:7",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:7:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:8",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:8:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:9",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:9:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:10",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:10:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:11",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:11:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:12",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:12:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:13",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:13:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:14",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:14:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:15",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:15:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:16",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:16:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:17",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:17:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:18",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:18:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:19",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:19:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:20",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    },
+    {
+      "id": "ker:rejected:20:soft",
+      "rejected": true,
+      "errors": [
+        "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+      ]
+    }
+  ],
+  "failures": [],
+  "syntheticOnly": true
+}

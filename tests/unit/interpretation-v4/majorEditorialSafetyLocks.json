@@ -1,0 +1,28 @@
+{
+  "base": "4e8deb242f78310ff9bc3fbcba4fb364a48503e4",
+  "clock": {
+    "evaluatedAt": "2026-10-12T12:00:00+09:00"
+  },
+  "rows": {
+    "01-business": {
+      "invariant": "3836934d3c2bfeafdb765a6ac455b07247cd0047fa6ed1fc1d8eaa3a0994aaec"
+    },
+    "02-employee": {
+      "invariant": "1a3bdc19e74ecdd23024e2b546ba23803fa159c565d5d8e521a1ca6377ea19fb"
+    },
+    "03-freelance": {
+      "invariant": "1d11ac7dd3045e021e1904c98eff88569e5c72baeebb6a95926fd48f6f3d5e30"
+    },
+    "04-time-unknown": {
+      "invariant": "2a55c4f402503e1e7b9e0eb40d3af60215aaf7704e43661ccb470e134e5a3ace"
+    },
+    "05-mbti-unknown": {
+      "invariant": "368f948ec156cbb411e677884e2bb449d04889e3810559f5d5ad35bb5832d467"
+    },
+    "06-both-unknown": {
+      "invariant": "227cbf5c243265d94f1f379d22c919229e4c60a3e285df934d68e83bfe7a318f"
+    }
+  },
+  "revision": "v4-major-fortune-reader-quality-polish-01",
+  "previousBase": "1bfe836f76d3384de27ae3e3f4e99aa0017339a2"
+}

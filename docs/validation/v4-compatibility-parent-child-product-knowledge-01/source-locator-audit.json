@@ -1,0 +1,3626 @@
+[
+  {
+    "key": "63aa4d746575e86c7743",
+    "sourceId": "mbti:ISTJ:traits:parenting:diligent_responsible_parent",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/traits/parenting/0",
+    "recordSha256": "76a18fecdcb889f6e5fabbc60000b7094aa7f6ad88134c0b1cee465d072f2186",
+    "originalState": {
+      "type": "ISTJ",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "diligent_responsible_parent",
+      "label": "성실 책임형 부모",
+      "plainKo": "부모가 되면 근면, 성실, 노력, 책임을 자녀에게 강하게 요구한다. 자녀도 안정적이고 확실한 미래를 만들기를 바란다.",
+      "strongLine": "당신은 아이를 사랑으로만 키우기보다, 책임과 기준으로 키우려는 부모가 됩니다.",
+      "positiveUse": "생활 습관, 공부 루틴, 예의범절, 장기 목표를 잡아준다.",
+      "risk": "아이의 재능, 놀이, 친구 관계보다 입시와 취업만 강조하면 정서적 거리감이 생긴다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "정인",
+        "토"
+      ],
+      "productDomains": [
+        "parenting",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "6fa914122dba7be984fd",
+    "sourceId": "mbti:ENFP:traits:child:all_or_nothing_study_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "pointer": "/traits/child/1",
+    "recordSha256": "83fd0d140dac476afeecbc7ed6eb2c459715d67557e143890ee8ecfc2341d6f1",
+    "originalState": {
+      "type": "ENFP",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "all_or_nothing_study_child",
+      "label": "관심 따라 극단",
+      "plainKo": "공부에 관심이 있으면 매우 열심히 하지만 관심이 없으면 끝까지 버티기 어렵다. 좋아하는 분야와 싫어하는 분야의 차이가 크게 벌어지는 아이로 보일 수 있다.",
+      "strongLine": "ENFP 아이는 좋아하는 공부에는 전력 질주하고, 싫은 공부 앞에서는 거의 움직이지 않는다.",
+      "positiveUse": "관심사를 학습 동기로 연결하면 놀라운 집중과 성취가 나온다.",
+      "risk": "부모가 흥미 없는 과목을 힘으로만 밀면 충돌과 회피가 커진다.",
+      "matchingMyeongliSignals": [
+        "문창",
+        "편인",
+        "화"
+      ],
+      "productDomains": [
+        "child",
+        "study",
+        "parenting"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "ee509907f7d870f38308",
+    "sourceId": "external:parent-child:teen",
+    "sourceKind": "external_context",
+    "url": "https://www.unicef.org/eca/stories/11-tips-communicating-your-teen",
+    "recordSha256": "ef24c8f6fd282e18ca51a255f239d9e2f4f02ec7902ce4b89a8a495d4650dbd1",
+    "originalState": {
+      "institution": "UNICEF Europe and Central Asia",
+      "title": "11 tips for communicating with your teen",
+      "url": "https://www.unicef.org/eca/stories/11-tips-communicating-your-teen",
+      "publishedOrUpdated": "2022-06-05",
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Build on your relationship; Be an active listener, items 5–11",
+      "contexts": [
+        "TEEN"
+      ],
+      "summary": "의견을 판단하기 전 듣고 확인하며, 말할 준비가 되지 않았을 때 강요하지 않는 소통을 참고한다.",
+      "limit": "유형별 심리 효과·진단·가족 관계 사실을 입증하지 않음.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "institution": "UNICEF Europe and Central Asia",
+      "title": "11 tips for communicating with your teen",
+      "url": "https://www.unicef.org/eca/stories/11-tips-communicating-your-teen",
+      "publishedOrUpdated": "2022-06-05",
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Build on your relationship; Be an active listener, items 5–11",
+      "contexts": [
+        "TEEN"
+      ],
+      "summary": "의견을 판단하기 전 듣고 확인하며, 말할 준비가 되지 않았을 때 강요하지 않는 소통을 참고한다.",
+      "limit": "유형별 심리 효과·진단·가족 관계 사실을 입증하지 않음."
+    }
+  },
+  {
+    "key": "10d4177606458102491b",
+    "sourceId": "mbti:INFP:traits:parenting:autonomy_parent",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INFP.json",
+    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "pointer": "/traits/parenting/0",
+    "recordSha256": "a65ddd52d6d456055f3c4295e83288d06957129fe8c5d65307521ca586732fb0",
+    "originalState": {
+      "type": "INFP",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "autonomy_parent",
+      "label": "자율성 지향 부모",
+      "plainKo": "INFP 부모는 원리·원칙적이고 엄격한 부모보다 자녀의 자율성을 지향한다. 아이가 자기 의견과 자아를 형성하고 흥미 있는 일을 찾을 권리를 주고 싶어 한다.",
+      "strongLine": "당신은 아이를 틀에 맞추기보다, 아이가 자기만의 결을 찾도록 곁을 지켜주는 부모에 가깝습니다.",
+      "positiveUse": "아이의 개성, 흥미, 자기표현, 창의성을 존중한다.",
+      "risk": "일상 규칙과 생활 틀을 세우는 데 어려움을 겪을 수 있다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "비견",
+        "목"
+      ],
+      "productDomains": [
+        "parenting",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "dbac6788077f6b449dd2",
+    "sourceId": "mbti:ESTJ:traits:child:fair_rule_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "pointer": "/traits/child/1",
+    "recordSha256": "855b28fd97ceca1deea8263bc7d49694d35a4c2af403c067560c34c87025a180",
+    "originalState": {
+      "type": "ESTJ",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "fair_rule_child",
+      "label": "공정성 민감",
+      "plainKo": "ESTJ 아이는 규칙이 어겨지거나 불공정한 상황을 싫어한다. 자신이 이익을 보는 상황이라도 불공정하면 불편함을 느낀다.",
+      "strongLine": "ESTJ 아이에게 규칙은 잔소리가 아니라 세상이 공정하게 돌아간다는 증거입니다.",
+      "positiveUse": "반칙을 줄이고 팀 활동에서 원칙을 지키게 만든다.",
+      "risk": "상황의 예외나 친구의 감정을 충분히 보지 못하고 지적부터 할 수 있다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "금",
+        "토"
+      ],
+      "productDomains": [
+        "child",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "4d0792e403615a91db52",
+    "sourceId": "external:parent-child:safety",
+    "sourceKind": "external_context",
+    "url": "https://www.who.int/teams/social-determinants-of-health/violence-prevention/parenting-guidelines",
+    "recordSha256": "ca4b323f6d58f888226725f75f7b417af0c49020a7420121c1a0f44878c8655f",
+    "originalState": {
+      "institution": "WHO",
+      "title": "Parenting intervention guidelines overview, children aged 0–17",
+      "url": "https://www.who.int/teams/social-determinants-of-health/violence-prevention/parenting-guidelines",
+      "publishedOrUpdated": "2023-02-10",
+      "accessedAt": "2026-10-14",
+      "access": "overview_page_actually_accessed",
+      "section": "Overview and scope; guideline listing",
+      "contexts": [
+        "YOUNG",
+        "SCHOOL",
+        "TEEN"
+      ],
+      "summary": "학대·가혹한 양육을 줄이기 위한 전문적인 부모 지원의 범위와 안전 경계를 확인한다.",
+      "limit": "WHO가 본 상품을 지지한다는 뜻 아님. 전체 guideline·GRADE 원문 검증 아님. NCBI 본문은 captcha로 확인 못함.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "institution": "WHO",
+      "title": "Parenting intervention guidelines overview, children aged 0–17",
+      "url": "https://www.who.int/teams/social-determinants-of-health/violence-prevention/parenting-guidelines",
+      "publishedOrUpdated": "2023-02-10",
+      "accessedAt": "2026-10-14",
+      "access": "overview_page_actually_accessed",
+      "section": "Overview and scope; guideline listing",
+      "contexts": [
+        "YOUNG",
+        "SCHOOL",
+        "TEEN"
+      ],
+      "summary": "학대·가혹한 양육을 줄이기 위한 전문적인 부모 지원의 범위와 안전 경계를 확인한다.",
+      "limit": "WHO가 본 상품을 지지한다는 뜻 아님. 전체 guideline·GRADE 원문 검증 아님. NCBI 본문은 captcha로 확인 못함."
+    }
+  },
+  {
+    "key": "84d1ddc4aa078aa8fa5f",
+    "sourceId": "rr:combination:yukhap:子丑",
+    "sourceKind": "relation_definition",
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsYukhap.ts",
+    "sourceFileSha256": "0c7326fa0c8ab8976b9b59c9522bd276c13ee4d8c2e29a66af8ab041ebacd8d0",
+    "exportName": "RELATION_COMBINATIONS_YUKHAP",
+    "index": 0,
+    "recordSha256": "4dea97f188169831baa4da4834947255b9af2b2dffaee5b735c26d39bd345219",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": "A_HISTORICAL_TEXT",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "definitionReview": null,
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "육합 목록의 한 쌍이다. 고전의 주객별 평가와 현행 대칭 검출은 다르다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論支元六合"
+          }
+        ]
+      },
+      "evidenceLevel": null,
+      "formation": "子水·丑土가 실제 별도 자리에 있어야 하며 동절 토수의 여력을 검토한다.",
+      "exclusions": [
+        "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "support": null,
+      "deferred": []
+    },
+    "raw": {
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "runtimeEvidenceIds": [],
+      "id": "rr:combination:yukhap:子丑",
+      "relation": "yukhap",
+      "targetId": "foundation:relation:yukhap",
+      "members": [
+        "子",
+        "丑"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "participants": [
+        {
+          "symbol": "子",
+          "element": "WATER",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "癸"
+          ]
+        },
+        {
+          "symbol": "丑",
+          "element": "EARTH",
+          "yinYang": "yin",
+          "hiddenStems": [
+            "己",
+            "癸",
+            "辛"
+          ]
+        }
+      ],
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "육합 목록의 한 쌍이다. 고전의 주객별 평가와 현행 대칭 검출은 다르다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論支元六合"
+          }
+        ]
+      },
+      "composition": "子:WATER·yang·장간 癸 / 丑:EARTH·yin·장간 己癸辛; 본기·음양·장간은 저장소 상수의 그대로인 구성 정보이며 이 항목만으로 길흉·힘·사건을 계산하지 않는다.",
+      "formation": "子水·丑土가 실제 별도 자리에 있어야 하며 동절 토수의 여력을 검토한다.",
+      "exclusions": [
+        "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "modifiers": "월령·각 지지의 장간·주변 기세를 확인하며 화한 오행은 별도 판본 비교가 필요하다. 합을 합화·결혼·동의·평화로 환산하지 않는다.",
+      "meaningClass": "C_CONDITIONAL_RESEARCH",
+      "positive": "배합과 본래 토수 제약이 공존하는 조건을 확인할 수 있다.",
+      "risk": "丑의 장간과 계절을 생략하고 합화토를 확정하지 않는다.",
+      "reversal": "느슨한 연결이 원래 기능을 남길 수도 있다.",
+      "distinction": "午未 역시 토 참여 육합이나 상대 오행과 계절이 다르다.",
+      "modern": {
+        "class": "D_MODERN_APPLICATION",
+        "condition": "실제 함께 쓰는 자원의 사용 시간이 다르면 운영 규칙을 확인한다.",
+        "action": "사용권과 보관 책임을 나눈다.",
+        "sourceRefs": [
+          {
+            "sourceId": "authored",
+            "locator": "조합별 조건부 현대 질문; 독립 전통 사실·예측 효력 아님"
+          }
+        ]
+      },
+      "overlaps": [],
+      "scopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "uncertainties": [
+        "고전의 방향별 복 차이를 현행 대칭 표에서 계산한 것처럼 말하지 않는다.",
+        "육합의 화오행은 이 레지스트리에서 새 판정을 만들지 않는다.",
+        "조합별 생활 장면의 고유 효과는 검증되지 않았다. 장면 차이를 독립 명리 사실로 집계하지 않는다."
+      ],
+      "producerScopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "unsupportedProducerScopeRefs": []
+    }
+  },
+  {
+    "key": "21a2cc4649da9423a26d",
+    "sourceId": "rr:combination:chung:寅申",
+    "sourceKind": "relation_definition",
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsChung.ts",
+    "sourceFileSha256": "37d4801960b9824789f51685207eafc46ce7556ecba4484ef1a96c5b3b90bcb9",
+    "exportName": "RELATION_COMBINATIONS_CHUNG",
+    "index": 2,
+    "recordSha256": "8bc86e5662ba7e4334aac0944e8847d66269ce4944cff4b31275d9d1ce9c0d8a",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": "A_HISTORICAL_TEXT",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "definitionReview": null,
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "대표 목금 충이며 형 표에도 같은 쌍이 있다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論衝擊"
+          }
+        ]
+      },
+      "evidenceLevel": null,
+      "formation": "寅木·申金의 대향과 장간의 여러 생극을 함께 검토한다.",
+      "exclusions": [
+        "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "support": null,
+      "deferred": []
+    },
+    "raw": {
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "runtimeEvidenceIds": [],
+      "id": "rr:combination:chung:寅申",
+      "relation": "chung",
+      "targetId": "foundation:relation:chung",
+      "members": [
+        "寅",
+        "申"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "participants": [
+        {
+          "symbol": "寅",
+          "element": "WOOD",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "甲",
+            "丙",
+            "戊"
+          ]
+        },
+        {
+          "symbol": "申",
+          "element": "METAL",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "庚",
+            "壬",
+            "戊"
+          ]
+        }
+      ],
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "대표 목금 충이며 형 표에도 같은 쌍이 있다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論衝擊"
+          }
+        ]
+      },
+      "composition": "寅:WOOD·yang·장간 甲丙戊 / 申:METAL·yang·장간 庚壬戊; 본기·음양·장간은 저장소 상수의 그대로인 구성 정보이며 이 항목만으로 길흉·힘·사건을 계산하지 않는다.",
+      "formation": "寅木·申金의 대향과 장간의 여러 생극을 함께 검토한다.",
+      "exclusions": [
+        "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "modifiers": "왕쇠·뿌리·노출·장간을 함께 보며 같은 쌍도 계절이 다르면 작용 평가가 다르다. 방향이 대립한다는 구조와 이동·실패라는 생활 결과를 구분한다.",
+      "meaningClass": "C_CONDITIONAL_RESEARCH",
+      "positive": "배치 변경의 필요와 보존할 기능을 같이 살필 수 있다.",
+      "risk": "충·형의 겹침을 두 개의 독립 불행으로 세지 않는다.",
+      "reversal": "제약의 조정이 기능을 살릴 수도 있으나 상대의 소멸을 전제하지 않는다.",
+      "distinction": "卯酉의 목금 충보다 寅申은 각 장간이 복수이며 형에도 참여한다.",
+      "modern": {
+        "class": "D_MODERN_APPLICATION",
+        "condition": "실제 추진 방식과 검토 방식이 충돌하면 어느 단계에서 문제가 나는지 확인한다.",
+        "action": "제안 단계와 검토 단계를 나눈다.",
+        "sourceRefs": [
+          {
+            "sourceId": "authored",
+            "locator": "조합별 조건부 현대 질문; 독립 전통 사실·예측 효력 아님"
+          }
+        ]
+      },
+      "overlaps": [
+        "rr:combination:hyeong:申寅"
+      ],
+      "scopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "uncertainties": [
+        "적천수 본문·주석 전사는 층위가 섞여 있으며 후대 주석의 귀속을 단정하지 않는다.",
+        "사고지 개고는 정설로 확정하지 않고 실제 재물과 연결하지 않는다.",
+        "조합별 생활 장면의 고유 효과는 검증되지 않았다. 장면 차이를 독립 명리 사실로 집계하지 않는다."
+      ],
+      "producerScopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "unsupportedProducerScopeRefs": []
+    }
+  },
+  {
+    "key": "825fd4e9a742a121464b",
+    "sourceId": "mbti:INTJ:traits:parenting:teach_how_to_think",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "pointer": "/traits/parenting/0",
+    "recordSha256": "7a2ac8f68f5c4ec00e92e7ea96198596d17698ff5b4918ca4f4b39c0a4dc314a",
+    "originalState": {
+      "type": "INTJ",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "teach_how_to_think",
+      "label": "생각법 교육",
+      "plainKo": "INTJ 부모는 아이에게 무엇을 생각하라고 강요하기보다 어떻게 생각해야 하는지를 가르치려 한다. 비판적 사고와 문제 해결 능력을 중요한 자산으로 본다.",
+      "strongLine": "당신은 아이에게 정답보다 사고의 구조를 물려주고 싶어 하는 부모입니다.",
+      "positiveUse": "아이의 독립적 판단, 논리적 사고, 학습 전략을 키워준다.",
+      "risk": "어린 아이에게도 지나치게 어른스러운 사고 수준을 기대할 수 있다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "문창",
+        "정관"
+      ],
+      "productDomains": [
+        "parenting",
+        "child",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "71b3ec665e36ff80d62e",
+    "sourceId": "mbti:ENTP:traits:child:rule_testing_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "pointer": "/traits/child/0",
+    "recordSha256": "721ee892031fe553c5f6d2c41dad537a5fc7cf0a8ab4aa0ca180719515157194",
+    "originalState": {
+      "type": "ENTP",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "rule_testing_child",
+      "label": "규칙을 시험하는 아이",
+      "plainKo": "ENTP 아이는 규칙을 이유 없이 따르기 어렵다. 왜 해야 하는지 납득되지 않으면 질문하고, 때로는 반항적으로 보일 만큼 부당함에 민감하게 반응한다.",
+      "strongLine": "ENTP 아이의 반항은 대개 규칙보다 설명이 부족할 때 커진다.",
+      "positiveUse": "논리적 설명과 선택권을 주면 스스로 책임지는 태도가 자란다.",
+      "risk": "권위로만 누르면 부모와 교사에게 버릇없다는 평가를 받기 쉽다.",
+      "matchingMyeongliSignals": [
+        "상관",
+        "겁재"
+      ],
+      "productDomains": [
+        "child",
+        "parenting",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "4c8fec77bf18db714ce9",
+    "sourceId": "mbti-pair:INTJ>ENTP",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "318ce163cecb6383cd6d3dd68e5d598b2312bf8c58e9a380354c4a12e4181626",
+    "originalState": {
+      "sourceType": "INTJ",
+      "targetType": "ENTP",
+      "sourceCoverage": "direct",
+      "lineage": "not_established",
+      "patternField": "generic_sharedGround_friction_positiveInfluence_repairStrategy_only",
+      "parentChildPatternExists": false,
+      "romanticPatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "ENTP",
+      "label": "흥미로운 관계",
+      "sourceRelationName": "Interesting / Alpha-Opposite",
+      "sourceCoverage": "direct",
+      "sharedGround": [
+        "둘 다 새로운 관점, 지식적 토론, 기존 규칙을 깨는 사고에서 빠르게 흥미를 느낀다.",
+        "감정적 교류보다 두뇌의 자극으로 관계가 시작되는 경향이 있다.",
+        "과학, 철학, 예술, 사회 변화 같은 추상적 주제를 함께 오래 다룰 수 있다."
+      ],
+      "friction": [
+        "둘 다 분석적으로 경쟁적이라 토론이 '내가 맞고 네가 틀리다'로 흐르기 쉽다.",
+        "ENTP는 자연스러운 흐름과 가벼운 대화를 선호하지만 INTJ는 조직적 과정과 엄숙한 집중을 원한다.",
+        "ENTP의 자유로운 일정과 INTJ의 빡빡한 계획이 생활에서 계속 충돌한다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 INTJ에게 여유, 유머, 삶을 즐기는 감각을 제공한다.",
+        "INTJ는 ENTP에게 흐트러진 계획을 정리하고 끈기와 책임감을 보완해준다.",
+        "둘이 신뢰와 공감을 확보하면 독특한 아이디어와 실행 구조를 동시에 만들 수 있다."
+      ],
+      "lovePattern": "연애 초반에는 말이 잘 통하고 지적 자극이 강하다. 시간이 지나면 ENTP의 즉흥성과 INTJ의 통제 욕구가 부딪히므로 토론을 애정 표현으로 착각하지 않아야 한다.",
+      "marriagePattern": "결혼에서는 자유 시간, 일정, 정리정돈, 목표 몰입도가 핵심 갈등이다. INTJ가 모든 생활을 전략화하고 ENTP가 모든 구조를 느슨하게 만들면 피로가 쌓인다.",
+      "repairStrategy": [
+        "토론이 승부로 변하면 멈추고 합의해야 할 현실 과제를 따로 적는다.",
+        "INTJ는 ENTP의 여유 시간을 무책임으로 단정하지 않는다.",
+        "ENTP는 INTJ가 지키고 싶은 핵심 일정과 정리 기준을 존중한다."
+      ],
+      "reportLine": "INTJ와 ENTP는 지적 전류가 강한 조합이지만, 토론을 신뢰와 공감으로 받쳐주지 않으면 가장 흥미로운 사람이 가장 피곤한 상대가 됩니다."
+    }
+  },
+  {
+    "key": "7b92392c46e9ec2206cf",
+    "sourceId": "mbti-pair:ENTP>INTJ",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "6b8ba7c1d237d3f0402f225c38ba87d89b38fb1bdd30485d9acfe47eff4e0c3c",
+    "originalState": {
+      "sourceType": "ENTP",
+      "targetType": "INTJ",
+      "sourceCoverage": "direct",
+      "lineage": "not_established",
+      "patternField": "generic_sharedGround_friction_positiveInfluence_repairStrategy_only",
+      "parentChildPatternExists": false,
+      "romanticPatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "INTJ",
+      "label": "대척 관계",
+      "sourceRelationName": "Extinguishment",
+      "sourceCoverage": "direct",
+      "sharedGround": [
+        "겉으로는 독립적이고 지적인 분위기가 비슷해 초반에는 잘 맞는다고 느끼기 쉽다.",
+        "둘 다 혼자 있는 시간을 중시하고, 일대일 대화에서는 편안함을 느낄 수 있다.",
+        "회사나 프로젝트에서는 ENTP의 대인 감각과 INTJ의 깊은 분석이 서로 도움이 된다."
+      ],
+      "friction": [
+        "생활 양식이 비슷해 보여도 가치관을 깊게 나누면 성향 차이가 크게 드러난다.",
+        "ENTP는 가능성을 넓히고 즉흥적으로 움직이는 반면, INTJ는 내적 전략과 체계를 중시한다.",
+        "깊은 대화나 가치 공유가 어려워 불안정한 심리적 거리가 생길 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 INTJ에게 외부 연결과 유연한 대안을 제공하고, INTJ는 ENTP에게 집중된 분석과 장기 관점을 제공한다.",
+        "각자의 독립 공간을 인정하면 업무적 보완이 가능하다."
+      ],
+      "lovePattern": "연애 초반에는 서로의 지성과 독립성이 매력으로 작동한다. 하지만 ENTP의 즉흥적 대화와 INTJ의 깊고 체계적인 판단이 엇갈리면 가까워질수록 심리적 거리가 불안정해진다.",
+      "marriagePattern": "장기 관계에서는 개인 공간을 존중하는 장점이 있지만, 생활 방식과 의사결정 기준을 깊게 맞추는 데 어려움이 있다. 함께 일하거나 목표를 나눌 때는 서로의 강점이 보이지만, 감정적 친밀감은 의식적으로 만들어야 한다.",
+      "repairStrategy": [
+        "각자 혼자 있는 시간을 관계의 안정 장치로 인정한다.",
+        "공통 관심사를 만들어 대화가 형식적 관계로 굳지 않게 한다.",
+        "ENTP는 INTJ의 집중 계획을 자주 흔들지 않고, INTJ는 ENTP의 대안을 무질서로만 보지 않는다."
+      ],
+      "reportLine": "ENTP와 INTJ는 지적으로 끌릴 수 있지만, 가까워질수록 서로 다른 방향의 독립성이 드러나 거리 조절이 핵심이 된다."
+    }
+  },
+  {
+    "key": "f9709a2aaf92c814cb26",
+    "sourceId": "mbti:ISFJ:traits:parenting:structured_home_parent",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "pointer": "/traits/parenting/0",
+    "recordSha256": "f08a47b00493ddeb285c15b56a323222609b741a86e2db581f17385d9ad62aee",
+    "originalState": {
+      "type": "ISFJ",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "structured_home_parent",
+      "label": "구조화된 가정",
+      "plainKo": "부모가 되면 아이에게 안정적인 루틴과 예측 가능한 환경을 만들어주려 한다. 가족 행사와 생활 규칙을 잘 관리해 아이가 안정감을 느끼게 한다.",
+      "strongLine": "당신은 부모가 되면 아이에게 자유보다 먼저 안정과 루틴을 주려는 사람입니다.",
+      "positiveUse": "아이에게 생활의 기준, 안전감, 기본 예절을 가르친다.",
+      "risk": "아이의 즉흥성이나 개성을 불안하게 느껴 지나치게 조정할 수 있다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "정관",
+        "토"
+      ],
+      "productDomains": [
+        "parenting",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "a98212d9a6491c70cd80",
+    "sourceId": "mbti:ISFJ:traits:child:model_student_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "pointer": "/traits/child/0",
+    "recordSha256": "418b40896e874ebcb53b79ae979c69019a06b15aca08f3062c8e937f01e080f2",
+    "originalState": {
+      "type": "ISFJ",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "model_student_child",
+      "label": "모범생 아이",
+      "plainKo": "어른의 권위와 규칙을 잘 따르고 숙제와 공부를 성실히 수행한다. 부모와 교사에게는 착한 아이로 보이지만 자기 주장과 감정 표현은 늦을 수 있다.",
+      "strongLine": "ISFJ 아이는 말을 잘 듣는 것처럼 보여도, 속마음을 잘 말한다는 뜻은 아닙니다.",
+      "positiveUse": "학교생활, 과제, 규칙, 또래 관계에서 큰 문제를 덜 만든다.",
+      "risk": "갈등을 피하려다 자기 의견을 숨기고 눈치를 많이 본다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "정인",
+        "토"
+      ],
+      "productDomains": [
+        "child",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "eb40d39f2065a867ad79",
+    "sourceId": "mbti-pair:ISFJ>ISFJ",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "91bb027f959e53a6247fd2cc87107dc9298146f762e076b054b34f4af28b9ac5",
+    "originalState": {
+      "sourceType": "ISFJ",
+      "targetType": "ISFJ",
+      "sourceCoverage": "direct",
+      "lineage": "not_established",
+      "patternField": "generic_sharedGround_friction_positiveInfluence_repairStrategy_only",
+      "parentChildPatternExists": false,
+      "romanticPatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "ISFJ",
+      "label": "동일 관계",
+      "sourceRelationName": "Identical",
+      "sourceCoverage": "direct",
+      "sharedGround": [
+        "둘 다 상황과 문제를 비슷하게 인식하고 비슷한 방식으로 대응한다.",
+        "상대가 중요하게 여기는 안정, 배려, 책임의 가치를 쉽게 알아본다.",
+        "두 사람이 서로에게 매력을 느끼면 조용하고 돌봄이 많은 관계가 되며, 작은 약속을 지키는 태도에서 신뢰가 빠르게 쌓인다."
+      ],
+      "friction": [
+        "상호 보완보다 유사성이 크기 때문에 새로운 자극이 부족해질 수 있다.",
+        "한쪽이 불건강해지면 다른 한쪽도 비슷한 불안과 회피 패턴으로 끌려가기 쉽다.",
+        "함께 나눌 정보와 새로운 경험이 줄면 관계가 금방 고갈되고, 둘 다 참기만 하면 서운함을 확인할 기회가 사라진다."
+      ],
+      "positiveInfluence": [
+        "서로의 장단점을 다른 각도에서 보게 만들어 자기 이해를 높인다.",
+        "생활의 안정과 정서적 돌봄을 서로에게 제공한다.",
+        "말하지 않아도 필요한 배려와 루틴을 알아차리는 편안함이 있다."
+      ],
+      "lovePattern": "연애에서는 빠른 설렘보다 안정과 돌봄으로 가까워진다. 서로의 필요를 조용히 챙기지만, 둘 다 불편한 감정을 늦게 말하면 관계가 잔잔하게 식을 수 있다.",
+      "marriagePattern": "결혼에서는 루틴, 가족 행사, 생활 안정이 잘 맞는다. 다만 두 사람 모두 변화를 피하면 생활은 안정적이어도 성장이 느려지고, 문제를 덮어두는 방식이 반복된다.",
+      "repairStrategy": [
+        "정기적으로 새로운 활동이나 외부 접점을 넣어 관계 고갈을 막는다.",
+        "서운한 감정은 쌓아두지 말고 작게 자주 말한다.",
+        "돌봄을 주고받을 때 고마움을 명시적으로 표현한다."
+      ],
+      "reportLine": "ISFJ와 ISFJ는 서로를 가장 편하게 이해하지만, 둘 다 조용히 참기 시작하면 안정이 아니라 정체가 되는 조합입니다."
+    }
+  },
+  {
+    "key": "58ee6bd5417794df4aec",
+    "sourceId": "external:parent-child:adult",
+    "sourceKind": "external_context",
+    "url": "https://studentaffairs.psu.edu/about/audience/parents-families/resources",
+    "recordSha256": "035ca3aefdc3f2e3d80e4bbd9f74479c113f79f6c9461850a0cb7e2f69969a78",
+    "originalState": {
+      "institution": "Penn State Office of Parent and Family Engagement",
+      "title": "Parent & Family Resources",
+      "url": "https://studentaffairs.psu.edu/about/audience/parents-families/resources",
+      "publishedOrUpdated": null,
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Helping Your Student Use Campus Resources; Problem Solving Resources",
+      "contexts": [
+        "ADULT"
+      ],
+      "summary": "대학생이 문제 해결과 지원 요청을 직접 이끌도록 부모가 정보와 경청을 제공하는 대학 맥락을 참고한다.",
+      "limit": "대학 전환 맥락을 모든 성인 자녀에게 일반화하지 않음. 미국 개인정보 법률을 한국에 적용하지 않음. 과거 guide PDF는 redirect되어 미열람.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "institution": "Penn State Office of Parent and Family Engagement",
+      "title": "Parent & Family Resources",
+      "url": "https://studentaffairs.psu.edu/about/audience/parents-families/resources",
+      "publishedOrUpdated": null,
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Helping Your Student Use Campus Resources; Problem Solving Resources",
+      "contexts": [
+        "ADULT"
+      ],
+      "summary": "대학생이 문제 해결과 지원 요청을 직접 이끌도록 부모가 정보와 경청을 제공하는 대학 맥락을 참고한다.",
+      "limit": "대학 전환 맥락을 모든 성인 자녀에게 일반화하지 않음. 미국 개인정보 법률을 한국에 적용하지 않음. 과거 guide PDF는 redirect되어 미열람."
+    }
+  },
+  {
+    "key": "41f807794a6c25d13e93",
+    "sourceId": "mbti:ENTJ:traits:parenting:serious_responsible_parent",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "pointer": "/traits/parenting/0",
+    "recordSha256": "5a6586ae3f0af76c131020c9d76d8bd1939dfa46b0eb25c8ba6c8ab4c3042044",
+    "originalState": {
+      "type": "ENTJ",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "serious_responsible_parent",
+      "label": "책임형 부모",
+      "plainKo": "부모 역할을 도전으로 받아들이고 진지하고 책임감 있게 수행한다. 자녀와 가정을 통제하며 일관적이고 합리적인 훈육을 통해 순종을 이끌어내려 한다.",
+      "strongLine": "ENTJ 부모는 양육을 감정적 돌봄만이 아니라 책임과 기준을 세우는 리더십 과제로 봅니다.",
+      "positiveUse": "명확한 규칙, 높은 기준, 책임감, 독립성을 자녀에게 가르친다.",
+      "risk": "아이의 감정과 발달 속도를 기준 미달로만 해석한다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "편관",
+        "토"
+      ],
+      "productDomains": [
+        "parenting",
+        "child",
+        "marriage"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "5511525de4a015d143f6",
+    "sourceId": "external:parent-child:rules",
+    "sourceKind": "external_context",
+    "url": "https://www.cdc.gov/parenting-toddlers/structure-rules/rules.html",
+    "recordSha256": "4ddbd2f03f1697b7f09119471afded44932cdd6f52a971860d1107ee824475be",
+    "originalState": {
+      "institution": "CDC",
+      "title": "Tips for Creating Rules",
+      "url": "https://www.cdc.gov/parenting-toddlers/structure-rules/rules.html",
+      "publishedOrUpdated": "2026-04-30",
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Identify family rules; Explain; Follow, ages 2–4 resource",
+      "contexts": [
+        "YOUNG"
+      ],
+      "summary": "실행할 수 있는 구체적인 규칙과 어른의 일관성을 확인한다.",
+      "limit": "실제 능력을 나이·유형으로 확정하지 않음. 처벌 계획·강제 복종으로 전용하지 않음.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "institution": "CDC",
+      "title": "Tips for Creating Rules",
+      "url": "https://www.cdc.gov/parenting-toddlers/structure-rules/rules.html",
+      "publishedOrUpdated": "2026-04-30",
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Identify family rules; Explain; Follow, ages 2–4 resource",
+      "contexts": [
+        "YOUNG"
+      ],
+      "summary": "실행할 수 있는 구체적인 규칙과 어른의 일관성을 확인한다.",
+      "limit": "실제 능력을 나이·유형으로 확정하지 않음. 처벌 계획·강제 복종으로 전용하지 않음."
+    }
+  },
+  {
+    "key": "8340bca1aae1ff5a8c69",
+    "sourceId": "mbti:INFP:traits:parenting:moral_parent",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INFP.json",
+    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "pointer": "/traits/parenting/1",
+    "recordSha256": "4fbc70750d4ef8b61d61afef6585b4c4aee919fc4d20795b2e0fb8a794675959",
+    "originalState": {
+      "type": "INFP",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "moral_parent",
+      "label": "도덕성 교육",
+      "plainKo": "INFP 부모는 정직, 연민, 배려 같은 도덕성을 중시한다. 평소 규율을 강하게 밀지 않더라도 윤리적 문제나 타인에게 피해를 주는 행동에는 민감하다.",
+      "strongLine": "당신은 아이가 성공하는 것보다 먼저, 타인을 해치지 않는 따뜻한 사람으로 자라기를 바랍니다.",
+      "positiveUse": "아이에게 공감, 배려, 책임, 약자에 대한 감수성을 심어준다.",
+      "risk": "아이의 도덕적 실수를 자신의 양육 실패처럼 받아들일 수 있다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "정인",
+        "귀인"
+      ],
+      "productDomains": [
+        "parenting",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "d34d165d4966692ca6cb",
+    "sourceId": "mbti:ISTJ:traits:parenting:practical_success_parenting",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/traits/parenting/1",
+    "recordSha256": "d6bb019d1160d32132fc5f2dfffc625f72da5ed40d19465185daaa561de7f126",
+    "originalState": {
+      "type": "ISTJ",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "practical_success_parenting",
+      "label": "현실 성공 기준",
+      "plainKo": "자녀가 명문대, 좋은 직장, 안정적 미래를 갖는 것을 매우 중요하게 본다. 불투명한 진로에는 걱정이 강하게 나온다.",
+      "strongLine": "당신은 자녀의 꿈보다 그 꿈이 먹고살 수 있는지부터 확인하는 부모가 됩니다.",
+      "positiveUse": "현실적인 진로 설계와 장기 준비를 도와준다.",
+      "risk": "예술, 창작, 비정형 진로를 원하는 아이와 강하게 충돌할 수 있다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관",
+        "토"
+      ],
+      "productDomains": [
+        "parenting",
+        "child",
+        "career"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "31fe578398dda7ed2b7e",
+    "sourceId": "mbti:ISFJ:traits:parenting:self_sacrificing_parent",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "pointer": "/traits/parenting/3",
+    "recordSha256": "c2e82d0f132277e60df054592d574ec269164a648bb2fd7ca2070843e08bffee",
+    "originalState": {
+      "type": "ISFJ",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "self_sacrificing_parent",
+      "label": "자기희생 부모",
+      "plainKo": "부모의 의무를 성실히 이행하려는 마음이 강해 자신의 욕구를 뒤로 미루기 쉽다. 아이를 우선하는 마음은 강점이지만 장기적으로는 체력과 감정 자원이 필요하다.",
+      "strongLine": "당신은 아이를 위해 버티는 힘이 크지만, 나를 지우는 방식은 오래 가지 않습니다.",
+      "positiveUse": "아이에게 안정적인 돌봄과 책임 있는 양육을 제공한다.",
+      "risk": "자신을 돌보지 않으면 피로가 아이에게 잔소리와 통제로 돌아갈 수 있다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "정관",
+        "토"
+      ],
+      "productDomains": [
+        "parenting",
+        "marriage"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "e5ebcee2b4f04948ce2b",
+    "sourceId": "external:parent-child:responsive",
+    "sourceKind": "external_context",
+    "url": "https://developingchild.harvard.edu/key-concept/serve-and-return/",
+    "recordSha256": "72dc9524244111f6561628444ed25845a19851a44ed843afc2e7ac17d6f93f30",
+    "originalState": {
+      "institution": "Harvard Center on the Developing Child",
+      "title": "Serve and Return",
+      "url": "https://developingchild.harvard.edu/key-concept/serve-and-return/",
+      "publishedOrUpdated": null,
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Key Takeaways; responsive relationships; caregiver supports",
+      "contexts": [
+        "YOUNG"
+      ],
+      "summary": "어린 자녀가 보내는 관심 신호를 알아보고 응답하는 관계 및 보호자 지원을 검토한다.",
+      "limit": "개인 발달 검사·뇌 발달 예측·MBTI별 효과 아님. 관련 원전 전체 열람 아님.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "institution": "Harvard Center on the Developing Child",
+      "title": "Serve and Return",
+      "url": "https://developingchild.harvard.edu/key-concept/serve-and-return/",
+      "publishedOrUpdated": null,
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Key Takeaways; responsive relationships; caregiver supports",
+      "contexts": [
+        "YOUNG"
+      ],
+      "summary": "어린 자녀가 보내는 관심 신호를 알아보고 응답하는 관계 및 보호자 지원을 검토한다.",
+      "limit": "개인 발달 검사·뇌 발달 예측·MBTI별 효과 아님. 관련 원전 전체 열람 아님."
+    }
+  },
+  {
+    "key": "ff09b3cb5318045846ad",
+    "sourceId": "mbti:INTP:traits:parenting:parent_needs_alone_time",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTP.json",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "pointer": "/traits/parenting/2",
+    "recordSha256": "a41d287eb62159ec396fba5ab216f7e7512ab2dc3530059720b0236b001a3208",
+    "originalState": {
+      "type": "INTP",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "parent_needs_alone_time",
+      "label": "부모의 혼자 시간",
+      "plainKo": "좋은 부모가 되려면 혼자 생각하고 흥미에 몰입할 시간이 필요하다. 이를 확보하지 못하면 책임과 압박에서 벗어나려는 방식으로 생활이 흔들린다.",
+      "strongLine": "당신은 혼자만의 시간이 있어야 아이에게도 더 침착하고 너그러운 부모가 됩니다.",
+      "positiveUse": "회복 시간을 확보하면 양육 스트레스와 감정 소모를 줄인다.",
+      "risk": "회복 욕구가 방치로 보이지 않도록 역할 분담과 시간을 명확히 해야 한다.",
+      "matchingMyeongliSignals": [
+        "비견",
+        "편인",
+        "수"
+      ],
+      "productDomains": [
+        "parenting",
+        "marriage"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "cb9ee7415c4e3089e7f9",
+    "sourceId": "mbti:ENFJ:traits:parenting:emotional_anchor_parent",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "pointer": "/traits/parenting/1",
+    "recordSha256": "843672eaa659db97651c14c919387fc3c45aca0f296be526fa29f0e802da1af3",
+    "originalState": {
+      "type": "ENFJ",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "emotional_anchor_parent",
+      "label": "정신적 지주",
+      "plainKo": "ENFJ 부모는 자녀에게 정신적 지주가 되고 싶어 한다. 주제에 구애받지 않고 아이와 대화하며, 아이가 마음을 기대는 어른이 되려 한다.",
+      "strongLine": "ENFJ 부모는 아이에게 지시하는 어른보다 언제든 마음을 나눌 수 있는 어른이고 싶어 한다.",
+      "positiveUse": "자녀가 고민을 말하고 감정을 표현하는 환경을 만든다.",
+      "risk": "아이의 감정까지 깊게 흡수하면 부모 자신의 감정 경계가 흐려진다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "귀인",
+        "수"
+      ],
+      "productDomains": [
+        "parenting",
+        "child",
+        "love"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "9e14ddceb99de8f8c245",
+    "sourceId": "mbti:ENTP:traits:parenting:intellectual_parent",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "pointer": "/traits/parenting/1",
+    "recordSha256": "215767da3c83401d59252c25f97afec5b4fa69aee4afd24398b2c24ce7ad5997",
+    "originalState": {
+      "type": "ENTP",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "intellectual_parent",
+      "label": "지적 호기심 충족",
+      "plainKo": "ENTP 부모는 아이의 질문을 귀찮아하기보다 함께 파고드는 데 강하다. 왜라는 질문을 대화, 실험, 여행, 자료 탐색으로 연결할 수 있다.",
+      "strongLine": "ENTP 부모는 아이의 질문에 답만 주기보다 더 큰 질문을 열어 준다.",
+      "positiveUse": "자녀의 사고력, 말하기, 탐구심을 키우는 데 좋다.",
+      "risk": "아이의 감정적 위로가 필요한 순간에도 토론처럼 접근하면 서운함이 남는다.",
+      "matchingMyeongliSignals": [
+        "문창",
+        "천문성",
+        "정인"
+      ],
+      "productDomains": [
+        "parenting",
+        "study",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "5d03c8ad1c25fc371767",
+    "sourceId": "mbti:ISTP:traits:parenting:privacy_respecting_parent",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "pointer": "/traits/parenting/1",
+    "recordSha256": "79177137d218c02d0ef93abd0bd143d2d1244f8ec61d59632c1400e1acd484fe",
+    "originalState": {
+      "type": "ISTP",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "privacy_respecting_parent",
+      "label": "사생활 존중 부모",
+      "plainKo": "자녀의 개인 시간과 사생활을 존중한다. 아이에게도 자기만의 세계와 탐색 공간이 필요하다고 본다.",
+      "strongLine": "당신은 아이를 소유하려 하기보다, 자기 공간을 가진 사람으로 대하려는 부모입니다.",
+      "positiveUse": "자녀가 독립성과 자기 취향을 키우는 데 도움이 된다.",
+      "risk": "너무 방임처럼 보이면 아이가 감정적 지지를 덜 받는다고 느낄 수 있다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "비견",
+        "수"
+      ],
+      "productDomains": [
+        "parenting",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "88e81f230552092ca55c",
+    "sourceId": "mbti:ISFP:traits:parenting:experience_based_parenting",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "pointer": "/traits/parenting/2",
+    "recordSha256": "b80b9c0997a084b19fc1d0f3b498d79090ede973cca78a6849203becd1784f17",
+    "originalState": {
+      "type": "ISFP",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "experience_based_parenting",
+      "label": "경험형 교육",
+      "plainKo": "말로 깨닫게 하기보다 직접 해보고 느끼게 하는 교육을 선호한다. 아이가 감각과 경험을 통해 배우는 것을 자연스럽게 받아들인다.",
+      "strongLine": "당신은 아이에게 말로만 가르치기보다, 직접 해보게 두는 쪽이 맞습니다.",
+      "positiveUse": "예술, 자연, 놀이, 체험을 통한 학습을 잘 지원한다.",
+      "risk": "기초 규칙과 반복 훈련이 필요한 영역을 놓칠 수 있다.",
+      "matchingMyeongliSignals": [
+        "식신",
+        "역마",
+        "목"
+      ],
+      "productDomains": [
+        "parenting",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "b1ef5ca26a18193d1227",
+    "sourceId": "external:parent-child:choices",
+    "sourceKind": "external_context",
+    "url": "https://www.cdc.gov/parenting-toddlers/communication/giving-directions.html",
+    "recordSha256": "40a3e994282bd436ae6001c8c6733c8279c81a8e1f6d0131bcf91ce88a458e2c",
+    "originalState": {
+      "institution": "CDC",
+      "title": "Tips for Giving Directions",
+      "url": "https://www.cdc.gov/parenting-toddlers/communication/giving-directions.html",
+      "publishedOrUpdated": "2026-04-30",
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Clear directions; Encourage positive choices; safety, ages 2–4 resource",
+      "contexts": [
+        "YOUNG"
+      ],
+      "summary": "어린 자녀에게 이해할 수 있는 행동 설명과 실제 가능한 작은 선택을 제공하는 범위를 참고한다.",
+      "limit": "모든 나이에 같은 선택 수·훈육을 적용하지 않음. 위험을 자녀의 선택 책임으로 넘기지 않음.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "institution": "CDC",
+      "title": "Tips for Giving Directions",
+      "url": "https://www.cdc.gov/parenting-toddlers/communication/giving-directions.html",
+      "publishedOrUpdated": "2026-04-30",
+      "accessedAt": "2026-10-14",
+      "access": "page_actually_accessed",
+      "section": "Clear directions; Encourage positive choices; safety, ages 2–4 resource",
+      "contexts": [
+        "YOUNG"
+      ],
+      "summary": "어린 자녀에게 이해할 수 있는 행동 설명과 실제 가능한 작은 선택을 제공하는 범위를 참고한다.",
+      "limit": "모든 나이에 같은 선택 수·훈육을 적용하지 않음. 위험을 자녀의 선택 책임으로 넘기지 않음."
+    }
+  },
+  {
+    "key": "f5fb513fa5e97583225b",
+    "sourceId": "mbti:ESTJ:traits:parenting:traditional_parenting",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "pointer": "/traits/parenting/0",
+    "recordSha256": "35a59020e3618b6618785b36990a9a1fe79d46f57b09e764e1532c7abcaaf7d4",
+    "originalState": {
+      "type": "ESTJ",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "traditional_parenting",
+      "label": "전통적 양육",
+      "plainKo": "ESTJ 부모는 자녀에게 전통적인 규칙과 책임을 가르치려 한다. 명절, 의식, 문화적 행사 같은 전통을 통해 가족 관계를 형성하는 면도 강하다.",
+      "strongLine": "당신은 자녀에게 자유보다 먼저 책임과 기본을 가르치려는 부모가 되기 쉽습니다.",
+      "positiveUse": "자녀에게 규칙, 예절, 책임감, 현실적인 생활 태도를 심어준다.",
+      "risk": "세대 감각과 자녀의 개성을 낡은 기준으로 누르려 할 수 있다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "정관",
+        "토"
+      ],
+      "productDomains": [
+        "parenting",
+        "child",
+        "marriage"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "f56616fb042e916a2137",
+    "sourceId": "mbti:ESFJ:traits:parenting:harmony_home_pressure",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "pointer": "/traits/parenting/3",
+    "recordSha256": "2e8f6c27bf56f9fbccf616990afbf601a7d3a1dc25518513c089790f844f2ef4",
+    "originalState": {
+      "type": "ESFJ",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "harmony_home_pressure",
+      "label": "가정 조화 압박",
+      "plainKo": "가정의 안정과 조화를 크게 보므로 가족 구성원이 갈등을 드러내는 것을 힘들어한다. 사춘기 자녀의 독립 요구와 부딪히면 관계가 격해진다.",
+      "strongLine": "ESFJ 부모에게 평화로운 집은 중요하지만, 아이에게는 모든 감정을 같은 방향으로 맞추라는 압박이 될 수 있습니다.",
+      "positiveUse": "가족 내 갈등을 빠르게 감지하고 관계 회복을 시도한다.",
+      "risk": "필요한 분리와 반항까지 가족을 해치는 행동으로 해석한다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "정인",
+        "비견"
+      ],
+      "productDomains": [
+        "parenting",
+        "marriage",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "d617367bfe748e497cb9",
+    "sourceId": "mbti:INFJ:traits:parenting:values_and_manners_parent",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "pointer": "/traits/parenting/1",
+    "recordSha256": "c275e3e3e37868e1bb3c1ecda03ce96f2e21b26182a5d242109404180aac5c26",
+    "originalState": {
+      "type": "INFJ",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "values_and_manners_parent",
+      "label": "가치관과 예의 교육",
+      "plainKo": "INFJ 부모는 아이에게 자신의 가치관과 지혜를 전하고 싶어 하며, 예의를 필수로 본다. 행동 방식의 이면까지 꿰뚫어보는 관찰력도 강하다.",
+      "strongLine": "당신은 아이의 행동만 보는 부모가 아니라, 그 행동 뒤의 마음과 방향까지 읽으려는 부모입니다.",
+      "positiveUse": "아이에게 예의, 가치 판단, 자기 성찰을 가르친다.",
+      "risk": "아이의 행동을 너무 깊게 해석하면 아이가 감시받는 느낌을 받을 수 있다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "정인",
+        "천문성"
+      ],
+      "productDomains": [
+        "parenting",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "5895562b63068759bb90",
+    "sourceId": "mbti:INTP:traits:child:knowledge_rich_but_uneven_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTP.json",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "pointer": "/traits/child/0",
+    "recordSha256": "a70e69a3a5a0e388c9ae199a8f7992a00ee3e353962d99bdde8b29b7327fe928",
+    "originalState": {
+      "type": "INTP",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "knowledge_rich_but_uneven_child",
+      "label": "편차 큰 지식",
+      "plainKo": "INTP 아이는 관심사에 대해서는 또래보다 훨씬 많이 알지만, 모두가 아는 기본 정보를 모를 수 있다. 지식이 넓다기보다 관심사 중심으로 깊게 쌓인다.",
+      "strongLine": "이 아이는 모르는 게 많아서가 아니라, 관심 있는 것과 없는 것의 차이가 너무 큰 아이입니다.",
+      "positiveUse": "관심 분야를 발견하면 매우 빠르게 깊은 실력을 만든다.",
+      "risk": "무관심 분야가 학업과 생활의 기본을 무너뜨릴 수 있다.",
+      "matchingMyeongliSignals": [
+        "편인",
+        "문창",
+        "정인"
+      ],
+      "productDomains": [
+        "child",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "e082f6c2d0c63170fc6e",
+    "sourceId": "mbti:ISFP:traits:child:visual_art_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "pointer": "/traits/child/1",
+    "recordSha256": "5103f1907ee95b31a9828d58ee0cc106a795759e6952009ec52c4c77a1df4fa3",
+    "originalState": {
+      "type": "ISFP",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "visual_art_child",
+      "label": "색감·꾸미기 감각",
+      "plainKo": "색 배합, 미술, 꾸미기, 옷과 머리 스타일, 공예처럼 눈과 손으로 표현하는 활동을 좋아한다. 예체능 과목에서 흥미가 잘 살아난다.",
+      "strongLine": "ISFP 아이는 색과 손의 감각을 쓸 때 자기다움이 확 살아납니다.",
+      "positiveUse": "미술, 공예, 디자인, 패션, 역할 놀이, 예체능 활동을 통해 자신감을 얻는다.",
+      "risk": "논리와 이론만 강조하면 아이가 자기 재능을 낮게 볼 수 있다.",
+      "matchingMyeongliSignals": [
+        "도화",
+        "홍염",
+        "식신"
+      ],
+      "productDomains": [
+        "child",
+        "study",
+        "career"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "cf5096af08861edcca86",
+    "sourceId": "mbti:ESFJ:traits:child:predictable_sequence_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "pointer": "/traits/child/1",
+    "recordSha256": "9df2baf5a30e45df53bda05967a6cdb9875b8e3d2bba5e493426fadc65093001",
+    "originalState": {
+      "type": "ESFJ",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "predictable_sequence_child",
+      "label": "예고 선호",
+      "plainKo": "앞으로 무슨 일이 어떤 순서로 일어나는지 미리 알고 싶어 한다. 규칙이 명확하고 일관된 학교 환경에서 안정감을 얻는다.",
+      "strongLine": "ESFJ 아이에게 갑작스러운 변화보다 힘든 것은, 무엇을 기대해야 하는지 모르는 상황입니다.",
+      "positiveUse": "일정표, 준비물 안내, 단계별 설명을 주면 성실하게 따라온다.",
+      "risk": "예고 없는 변화가 반복되면 불안해지고 실수에 지나치게 민감해진다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "정인",
+        "토"
+      ],
+      "productDomains": [
+        "child",
+        "study",
+        "parenting"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "d50e782170a5c0a71e15",
+    "sourceId": "mbti:INFJ:traits:child:written_expression_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "pointer": "/traits/child/0",
+    "recordSha256": "ab8065e35bc597b4a9542fb6c65f8cf6d6efa5506951d8e770210c2213194684",
+    "originalState": {
+      "type": "INFJ",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "written_expression_child",
+      "label": "글로 선명해지는 아이",
+      "plainKo": "INFJ 자녀는 말로 의견을 쉽게 전달하지 못해도 글로는 명확하고 간결하게 표현한다. 생각을 정리할 시간을 주면 훨씬 안정적으로 자기 의견을 낸다.",
+      "strongLine": "이 아이는 바로 말하지 못한다고 생각이 없는 것이 아니라, 글로 옮길 때 생각이 선명해지는 아이입니다.",
+      "positiveUse": "글쓰기, 일기, 독서록, 발표 전 메모가 자기표현을 돕는다.",
+      "risk": "즉석 대답을 강요하면 위축되거나 속마음을 숨긴다.",
+      "matchingMyeongliSignals": [
+        "문창",
+        "정인",
+        "수"
+      ],
+      "productDomains": [
+        "child",
+        "study",
+        "parenting"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "7ad9ba971bacdf36c537",
+    "sourceId": "mbti:INFP:traits:child:sensitive_to_harshness_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INFP.json",
+    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "pointer": "/traits/child/1",
+    "recordSha256": "62a1820483be8f5fca2600c7ac673d07d451df1a19e37aa3d861db03bec7918a",
+    "originalState": {
+      "type": "INFP",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "sensitive_to_harshness_child",
+      "label": "거친 말에 약한 아이",
+      "plainKo": "INFP 아이는 고함, 엄격한 처벌, 비판, 불친절, 무관심, 무시에서 쉽게 충격을 받을 수 있다. 논리적 판단보다 정서적 지지와 공감이 먼저 필요하다.",
+      "strongLine": "이 아이는 혼나서 강해지는 아이가 아니라, 이해받을 때 다시 움직일 힘을 얻는 아이입니다.",
+      "positiveUse": "따뜻한 지지 속에서 자기표현과 창의성이 살아난다.",
+      "risk": "거친 훈육은 위축, 눈물, 회피, 자기비난으로 이어진다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "수",
+        "귀인"
+      ],
+      "productDomains": [
+        "child",
+        "parenting"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "3b16f6d2078a7dd2a82f",
+    "sourceId": "mbti:ENTP:traits:child:curious_knowledge_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "pointer": "/traits/child/1",
+    "recordSha256": "e53faa5f4755342605bde45824befe8aeb1beca2cd0d229b97dfaa207e0e698f",
+    "originalState": {
+      "type": "ENTP",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "curious_knowledge_child",
+      "label": "궁금증 많은 아이",
+      "plainKo": "ENTP 아이는 질문이 많고, 궁금한 분야를 만나면 지식이 빠르게 늘어난다. 관심 과목과 관심 없는 과목의 차이가 크게 벌어질 수 있다.",
+      "strongLine": "ENTP 아이는 관심이 붙는 순간 또래보다 훨씬 깊게 파고든다.",
+      "positiveUse": "흥미 주제를 학습 계획과 연결하면 성취감이 커진다.",
+      "risk": "싫어하는 과목을 완전히 놓아 버리면 학업 균형이 무너진다.",
+      "matchingMyeongliSignals": [
+        "문창",
+        "편인"
+      ],
+      "productDomains": [
+        "child",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "758f1fd0edec5f2f8304",
+    "sourceId": "mbti:ENFJ:traits:child:popular_helper_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "pointer": "/traits/child/0",
+    "recordSha256": "468d4c25327ff26e8b1a40c0af400a305a9eed5c3ce9e8c124bcb5af8c9ea55d",
+    "originalState": {
+      "type": "ENFJ",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "popular_helper_child",
+      "label": "평판 좋은 조력자",
+      "plainKo": "ENFJ 자녀는 친화력이 좋고 주변인을 잘 챙겨 평판이 좋은 편이다. 남을 도와주는 일에 주저하지 않고 친구들의 고민 상담도 잘한다.",
+      "strongLine": "ENFJ 아이는 친구들 사이에서 자연스럽게 응원자와 상담자의 자리에 선다.",
+      "positiveUse": "또래 관계, 협동 활동, 반 분위기 조성에서 신뢰를 얻는다.",
+      "risk": "친구 문제를 너무 많이 떠안으면 어린 나이에도 감정적으로 지친다.",
+      "matchingMyeongliSignals": [
+        "귀인",
+        "도화",
+        "정인"
+      ],
+      "productDomains": [
+        "child",
+        "study",
+        "parenting"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "e522803dbd756411fcef",
+    "sourceId": "mbti:INTJ:traits:child:single_field_mastery",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "pointer": "/traits/child/3",
+    "recordSha256": "0cdce5983a4642732d6c2b2cbbf635fd0620fdcf112d51721741c2fcf84b406b",
+    "originalState": {
+      "type": "INTJ",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "single_field_mastery",
+      "label": "한 분야 몰입",
+      "plainKo": "여러 활동을 넓게 하는 것보다 한 분야에서 최고가 되고 싶어 한다. 관심 분야가 생기면 깊게 파고들고, 무관한 활동에는 흥미가 급격히 낮다.",
+      "strongLine": "이 아이는 이것저것 잘하는 아이보다, 자기 분야를 끝까지 파고드는 아이에 가깝습니다.",
+      "positiveUse": "진로 탐색이 빨리 잡히면 강한 전문성과 포트폴리오를 만든다.",
+      "risk": "균형 잡힌 기초 활동이나 사회 경험을 귀찮게 여길 수 있다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "편인",
+        "문창"
+      ],
+      "productDomains": [
+        "child",
+        "study",
+        "career"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "242d420d68455dae6761",
+    "sourceId": "mbti:ISTP:traits:child:brief_answer_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "pointer": "/traits/child/2",
+    "recordSha256": "e37b2e715db59e31a1674355630fa246ca429c125c2a380cd58b80c355bf4c11",
+    "originalState": {
+      "type": "ISTP",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "brief_answer_child",
+      "label": "짧은 대답",
+      "plainKo": "긴 설명을 들어도 대답은 매우 짧게 한다. 이해를 못 한 것이 아니라 필요한 말만 하는 방식이다.",
+      "strongLine": "ISTP 아이의 짧은 대답은 무시가 아니라, 필요한 말만 남기는 습관일 수 있습니다.",
+      "positiveUse": "핵심을 짧게 잡고 실제 행동으로 옮긴다.",
+      "risk": "부모가 말로 감정을 확인하려 하면 답답한 소통이 반복된다.",
+      "matchingMyeongliSignals": [
+        "금",
+        "현침살",
+        "수"
+      ],
+      "productDomains": [
+        "child",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "15bdd9dde80da5ce278d",
+    "sourceId": "mbti:ESTP:traits:child:serious_talk_avoidance_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "pointer": "/traits/child/2",
+    "recordSha256": "d5c0bb91253140189d8928aefecd562c772595735f3deed7ff5493262a945569",
+    "originalState": {
+      "type": "ESTP",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "serious_talk_avoidance_child",
+      "label": "진지함 회피",
+      "plainKo": "ESTP 아이는 진지하고 긴 이야기를 좋아하지 않는다. 짧고 명확한 말, 직접 해 보는 활동, 즉각적인 피드백이 더 잘 통한다.",
+      "strongLine": "ESTP 아이에게 긴 설교보다 짧은 말과 바로 해 보는 경험이 훨씬 잘 먹힙니다.",
+      "positiveUse": "활동형 지도와 실전 피드백으로 빠르게 배운다.",
+      "risk": "감정 대화와 책임 설명을 계속 피하면 중요한 관계 수업을 놓친다.",
+      "matchingMyeongliSignals": [
+        "상관",
+        "식신",
+        "화"
+      ],
+      "productDomains": [
+        "child",
+        "parenting",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "ea9519a12540624c4823",
+    "sourceId": "mbti:ENFP:traits:parenting:understanding_parent",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "pointer": "/traits/parenting/0",
+    "recordSha256": "7f3f82485314ac22c0b3ad9fa7cb5ac83b5def4ec94e78548dadefdd854972d7",
+    "originalState": {
+      "type": "ENFP",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "understanding_parent",
+      "label": "이해하려는 부모",
+      "plainKo": "ENFP 부모는 평소 자녀를 이해하려고 하고, 아이의 언어와 표정에 민감하다. 아이가 느끼는 즐거움과 행복을 중요한 양육 기준으로 삼는다.",
+      "strongLine": "ENFP 부모는 아이의 성적표보다 아이의 표정과 마음이 먼저 눈에 들어온다.",
+      "positiveUse": "자녀가 자기 감정과 생각을 편하게 말할 수 있는 분위기를 만든다.",
+      "risk": "학업과 규칙의 중요성을 지나치게 낮게 보면 장기 습관 형성이 약해진다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "귀인",
+        "식신"
+      ],
+      "productDomains": [
+        "parenting",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "67f918c8959cf547910b",
+    "sourceId": "mbti:ENFP:traits:child:playful_social_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "pointer": "/traits/child/0",
+    "recordSha256": "99a96095188f2ecf7e9b24a47095bd438e09b4bd2c799bd926ec19feb868ae75",
+    "originalState": {
+      "type": "ENFP",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "playful_social_child",
+      "label": "잘 노는 아이",
+      "plainKo": "ENFP 자녀는 놀기를 좋아하고 같이 놀 친구도 잘 만든다. 외향적이지만 혼자만의 시간도 괜찮아하는 편이라, 사람과 자기 세계를 오간다.",
+      "strongLine": "ENFP 아이는 놀이와 친구 속에서 배우지만, 혼자 상상할 공간도 필요하다.",
+      "positiveUse": "또래 관계, 역할 놀이, 발표, 협동 활동에서 장점이 잘 드러난다.",
+      "risk": "놀이는 좋아하지만 반복 학습과 정리 습관은 약해질 수 있다.",
+      "matchingMyeongliSignals": [
+        "도화",
+        "식신",
+        "비견"
+      ],
+      "productDomains": [
+        "child",
+        "study",
+        "parenting"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "34a4a6cf8a718fb338a9",
+    "sourceId": "mbti:ESTP:traits:parenting:self_development_support",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "pointer": "/traits/parenting/2",
+    "recordSha256": "48ca428383c9a0fa9259b1aa038a3e75c11a98da45f513b4c53a9b8dbd14a3d3",
+    "originalState": {
+      "type": "ESTP",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "self_development_support",
+      "label": "자기계발 지원",
+      "plainKo": "ESTP 부모는 자녀의 자기계발을 실제 활동과 기회로 도와주는 편이다. 말로만 응원하기보다 필요한 경험을 열어준다.",
+      "strongLine": "당신은 아이에게 가능성을 설명하기보다 해 볼 수 있는 장을 만들어주는 부모입니다.",
+      "positiveUse": "운동, 취미, 현장 경험, 사람 만남을 통해 아이의 능력을 키운다.",
+      "risk": "아이가 진지한 대화나 정서적 지지를 원할 때 활동 제안으로만 대응할 수 있다.",
+      "matchingMyeongliSignals": [
+        "식신",
+        "편재",
+        "귀인"
+      ],
+      "productDomains": [
+        "parenting",
+        "child",
+        "career"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "0b40f2b7112d3c882b3a",
+    "sourceId": "mbti:ENTJ:traits:child:respect_independent_thinking_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "pointer": "/traits/child/1",
+    "recordSha256": "1596abb52067c60ebe493112cb6bdaa2f219d8782f83f73fa99112755e56e01a",
+    "originalState": {
+      "type": "ENTJ",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "respect_independent_thinking_child",
+      "label": "사고 존중 욕구",
+      "plainKo": "부모에게 겸손과 인사치레보다 자신의 지적 능력, 독립성, 사고 방식을 인정받고 싶어 한다. 불필요한 규칙과 감정적인 통제에는 반항심이 강해진다.",
+      "strongLine": "ENTJ 아이는 착하다는 말보다 똑똑하고 독립적으로 생각한다는 인정을 더 강하게 원합니다.",
+      "positiveUse": "논리적으로 설명하고 선택권을 주면 책임감 있게 움직인다.",
+      "risk": "이유 없는 규칙은 권위에 대한 반발과 논쟁으로 이어진다.",
+      "matchingMyeongliSignals": [
+        "편관",
+        "문창",
+        "비견"
+      ],
+      "productDomains": [
+        "child",
+        "parenting",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "7cad2339fed7bcabefd7",
+    "sourceId": "mbti:INTJ:traits:parenting:knowledge_centered_support",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "pointer": "/traits/parenting/3",
+    "recordSha256": "92dfa9123694cda58c4375827fa6d93dcd25addc6c64da64b69097fad3ec602f",
+    "originalState": {
+      "type": "INTJ",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "knowledge_centered_support",
+      "label": "지식 중심 지원",
+      "plainKo": "어려운 과목이나 복잡한 주제는 직접 가르치거나 좋은 자료를 찾아주려 한다. 무지보다 지식의 추구를 훨씬 높은 가치로 둔다.",
+      "strongLine": "당신은 아이에게 마음만 주는 부모가 아니라, 더 잘 생각할 도구까지 찾아주는 부모입니다.",
+      "positiveUse": "학습 자료, 진로 정보, 전문 지식, 문제 해결 전략을 제공한다.",
+      "risk": "아이가 원하는 애정 표현보다 공부와 방향 제시가 앞설 수 있다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "문창",
+        "편인"
+      ],
+      "productDomains": [
+        "parenting",
+        "study",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "a147b57a7d16ec148fec",
+    "sourceId": "mbti:ISTJ:traits:child:responsible_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/traits/child/0",
+    "recordSha256": "ac0257a3067daa68cb93aa2065b75d2ae650804555bd03e808e69cc480d31a47",
+    "originalState": {
+      "type": "ISTJ",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "responsible_child",
+      "label": "자기관리형 아이",
+      "plainKo": "ISTJ 아이는 또래보다 책임감과 자제력이 두드러진다. 규칙을 잘 지키고 어른들이 싫어할 행동을 크게 하지 않는다.",
+      "strongLine": "ISTJ 아이는 손이 덜 가는 대신, 고지식함과 완고함이 일찍 드러납니다.",
+      "positiveUse": "공부, 생활 습관, 약속, 자기관리에서 안정적이다.",
+      "risk": "변화가 생기거나 스케줄이 깨지면 짜증을 강하게 표출할 수 있다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "정인",
+        "토"
+      ],
+      "productDomains": [
+        "child",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "537c223e51462b4fd6bd",
+    "sourceId": "mbti:ESFP:traits:parenting:fun_support_parent",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "pointer": "/traits/parenting/2",
+    "recordSha256": "ad12e2126273860a4145025f6dd3134d975757b807e24db08f6913aec90124fa",
+    "originalState": {
+      "type": "ESFP",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "fun_support_parent",
+      "label": "즐거움 지원",
+      "plainKo": "자녀가 즐거움을 추구하는 것을 도와준다. 예체능, 축제, 친구 관계, 야외 활동처럼 아이가 빛나는 장면을 적극적으로 응원한다.",
+      "strongLine": "ESFP 부모는 아이가 즐거워하고 빛나는 순간을 교육의 중요한 일부로 봅니다.",
+      "positiveUse": "자녀의 표현력, 자신감, 친구 관계를 키워 준다.",
+      "risk": "즐거운 활동만 강조하면 참아야 하는 훈련과 책임감이 부족해진다.",
+      "matchingMyeongliSignals": [
+        "식신",
+        "도화",
+        "홍염"
+      ],
+      "productDomains": [
+        "parenting",
+        "child",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "6cb81b925a2eedef0907",
+    "sourceId": "mbti:ESFP:traits:child:active_outdoor_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "pointer": "/traits/child/0",
+    "recordSha256": "595f626c373bb22ae357d5f404ab5a2ad763da4e2166b7016d1331ea6d51a709",
+    "originalState": {
+      "type": "ESFP",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "active_outdoor_child",
+      "label": "밖으로 뻗는 아이",
+      "plainKo": "ESFP 자녀는 집에 가만히 있기보다 밖에서 에너지를 쓰고 싶어 한다. 놀기를 좋아하고 처음 만난 아이들과도 금방 친해진다.",
+      "strongLine": "ESFP 아이는 조용히 앉아 있는 시간보다 밖에서 뛰고 말하고 어울리는 시간에 더 자기다워집니다.",
+      "positiveUse": "친구가 많고 학급 분위기를 활기 있게 만들며 사회성을 빠르게 키운다.",
+      "risk": "가만히 해야 하는 수업과 숙제에서 산만하고 덜렁거린다는 평가를 받는다.",
+      "matchingMyeongliSignals": [
+        "역마",
+        "도화",
+        "화"
+      ],
+      "productDomains": [
+        "child",
+        "parenting",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "69aac2d24f114cdd40fb",
+    "sourceId": "rr:combination:banhap:申子",
+    "sourceKind": "relation_definition",
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsBanhap.ts",
+    "sourceFileSha256": "790add612b2500bb5495248bc7d9122bf9acaeebabf8d7c362b1dd01ffb8eff6",
+    "exportName": "RELATION_COMBINATIONS_BANHAP",
+    "index": 0,
+    "recordSha256": "ce3de3577c501eb53df213c59fffceace976f71b50474af1391bc6ac16413583",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": "E_UNVERIFIED",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "definitionReview": null,
+      "traditional": {
+        "class": "E_UNVERIFIED",
+        "text": "삼합 원리의 생왕 부분, 현대 왕지 포함 반합 전승과 저장소12쌍 정책에 모두 속한다.",
+        "sourceRefs": [
+          {
+            "sourceId": "half",
+            "locator": "반합 / 유파 차이"
+          }
+        ]
+      },
+      "evidenceLevel": null,
+      "formation": "수국의 생지申·왕지子 두 자리이며 辰은 실제로 없다면 보충하지 않는다.",
+      "exclusions": [
+        "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "support": null,
+      "deferred": []
+    },
+    "raw": {
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "runtimeEvidenceIds": [],
+      "id": "rr:combination:banhap:申子",
+      "relation": "banhap",
+      "targetId": "foundation:relation:banhap",
+      "members": [
+        "申",
+        "子"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "participants": [
+        {
+          "symbol": "申",
+          "element": "METAL",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "庚",
+            "壬",
+            "戊"
+          ]
+        },
+        {
+          "symbol": "子",
+          "element": "WATER",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "癸"
+          ]
+        }
+      ],
+      "traditional": {
+        "class": "E_UNVERIFIED",
+        "text": "삼합 원리의 생왕 부분, 현대 왕지 포함 반합 전승과 저장소12쌍 정책에 모두 속한다.",
+        "sourceRefs": [
+          {
+            "sourceId": "half",
+            "locator": "반합 / 유파 차이"
+          }
+        ]
+      },
+      "composition": "申:METAL·yang·장간 庚壬戊 / 子:WATER·yang·장간 癸; 본기·음양·장간은 저장소 상수의 그대로인 구성 정보이며 이 항목만으로 길흉·힘·사건을 계산하지 않는다.",
+      "formation": "수국의 생지申·왕지子 두 자리이며 辰은 실제로 없다면 보충하지 않는다.",
+      "exclusions": [
+        "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "modifiers": "왕지 존재·계절·투출·다른 작용을 확인하되 지장간만으로 없는 왕지를 채우지 않는다. 12쌍은 저장소 정책;8쌍 엄격 전승과4쌍 약한/미채택 전승을 별도 목록으로 보존한다.",
+      "meaningClass": "C_CONDITIONAL_RESEARCH",
+      "positive": "시작과 중심의 연결 가능성을 제한적으로 검토한다.",
+      "risk": "갈무리 辰이 있다고 가정해 완성 화국으로 읽지 않는다.",
+      "reversal": "부족한 구성을 인정하는 것이 무리한 완성 선언을 줄일 수 있다.",
+      "distinction": "子辰은 왕고이고 申辰은 왕지 없는 생고다.",
+      "modern": {
+        "class": "D_MODERN_APPLICATION",
+        "condition": "시작과 실행은 맞지만 정리 담당이 실제 없다면 마무리 조건을 확인한다.",
+        "action": "종료 담당과 보존할 결과물을 정한다.",
+        "sourceRefs": [
+          {
+            "sourceId": "authored",
+            "locator": "조합별 조건부 현대 질문; 독립 전통 사실·예측 효력 아님"
+          }
+        ]
+      },
+      "overlaps": [],
+      "scopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "uncertainties": [
+        "왕지8쌍/생고4쌍 차이는 확인한 현대 전승이며 모든 학파의 보편 규칙을 확정한 것이 아니다.",
+        "현행12쌍 정책은 변경하지 않는다.",
+        "조합별 생활 장면의 고유 효과는 검증되지 않았다. 장면 차이를 독립 명리 사실로 집계하지 않는다."
+      ],
+      "producerScopeRefs": [
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "unsupportedProducerScopeRefs": [
+        "natal"
+      ]
+    }
+  },
+  {
+    "key": "73f1ae9fb0a7c110106b",
+    "sourceId": "fkr:complement:C095",
+    "sourceKind": "individual_fusion_research",
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/complementFusionResearch.ts",
+    "sourceFileSha256": "3196e648432ea2a207564bcba11d90693b0bae14a515e9c7a7ef9ec1bb971f9b",
+    "exportName": "COMPLEMENT_FUSION_RESEARCH",
+    "index": 94,
+    "recordSha256": "50010e390115589a3442750c4947a4ae95b65171630d77eb74ded6f4fa7aab75",
+    "originalState": {
+      "review": "conditional_editorial_not_empirical",
+      "contexts": [
+        "identity",
+        "recovery",
+        "stress",
+        "work"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "DUTY",
+          "CARE"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "sourceAssignmentRequired": true,
+      "noAutomaticParentChildTransfer": true
+    },
+    "raw": {
+      "id": "fkr:complement:C095",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "review": "conditional_editorial_not_empirical",
+      "sourceRefs": [
+        "repo:semantic-fusion",
+        "repo:complement-registry",
+        "authored:fusion-research"
+      ],
+      "sourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+      "missingEvidencePolicy": "withhold_no_fallback_fact",
+      "scopeRef": "fkr:scope:individual",
+      "origin": "complement_rule",
+      "existingRuleId": "C095",
+      "existingRuleSha256": "83bba3294a3a8c6b4c940f810f750765c64de1b1335c4c360cace58ed785203e",
+      "group": "CHANGE_RECOVERY",
+      "researchRelation": "task_complement",
+      "originalMeaning": "사람을 챙기는 마음을 말로만 두지 않고 맡은 책임까지 실제로 지키려는 사람으로 이어질 수 있습니다.",
+      "originalDomains": [],
+      "contexts": [
+        "identity",
+        "recovery",
+        "stress",
+        "work"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "DUTY",
+          "CARE"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "facets": [
+        {
+          "axis": "DUTY",
+          "direction": 1,
+          "facetRef": "sar:facet:DUTY:promise-update",
+          "definition": "못 지킬 가능성을 미리 알림",
+          "role": "axisA_role"
+        },
+        {
+          "axis": "CARE",
+          "direction": 1,
+          "facetRef": "sar:facet:CARE:practical-support",
+          "definition": "동의한 구체적 부담을 덜어줌",
+          "role": "axisB_role"
+        }
+      ],
+      "orientationPolicy": "both_source_assignments_require_independent_review",
+      "coreMeaning": "합의한 의무와 자발적 도움을 구분하는가?",
+      "jointReason": "못 지킬 가능성을 미리 알림 / 동의한 구체적 부담을 덜어줌의 서로 다른 기여가 같은 과제에서 필요한지 확인한다.",
+      "positive": "맡은 역할을 수행하면서 추가 지원의 한도를 알림",
+      "risk": "타인을 챙긴다는 이유로 자신의 의무를 남에게 넘김",
+      "goodIntentionMistake": "책임 있게 하려 도움을 무기한 의무로 바꿈",
+      "twist": "지원 요청을 거절해도 맡은 약속은 지킬 수 있음",
+      "fictionalScene": {
+        "kind": "fictional_not_customer_history",
+        "text": "가상으로 가사 분담과 추가 돌봄 요청을 별도로 의논하는 장면"
+      },
+      "behaviorQuestion": "합의한 의무와 자발적 도움을 구분하는가?",
+      "conditions": [
+        "실제 역할·보호 의무·추가 요청·동의·여력 확인",
+        "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+        "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+      ],
+      "counterexample": "의무를 다해도 모든 사람에게 도움을 줄 수 없음",
+      "exclusions": [
+        "돌봄·책임으로 좋은 가족·도덕성 확정",
+        "축의 점수만으로 facet의 세부 행동을 관찰한 것으로 처리하지 않는다."
+      ],
+      "distinction": "C073의 지속 지원보다 의무·호의의 분리",
+      "applicabilityRef": "fkr:app:complement:C095",
+      "legacyTagReview": {
+        "relatedTags": [
+          {
+            "tag": "leadership",
+            "researchRef": "sar:tag:leadership",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "help",
+            "researchRef": "sar:tag:help",
+            "relation": "NOT_EQUIVALENT",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "intimate-attraction",
+            "researchRef": "sar:tag:intimate-attraction",
+            "relation": "NOT_EQUIVALENT",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "consistency",
+            "researchRef": "sar:tag:consistency",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          }
+        ],
+        "use": "reference_only_no_new_semanticConnection"
+      }
+    }
+  },
+  {
+    "key": "ce1defc1af72408fec4a",
+    "sourceId": "deep:ten_god:zheng_guan",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 6,
+    "recordSha256": "02292f2111aaf7b4a4934cecc4b14bbe4f7149241fe5601a054d35e32d7a3d59",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:zheng_guan",
+      "targetId": "foundation:ten_god:zheng_guan",
+      "label": "정관",
+      "definition": "나를 극하는 오행·다른 음양의 제약 관계",
+      "contrastTargetId": "foundation:ten_god:qi_sha",
+      "differentiation": "공식 역할·책임을 급격한 압박 대응과 구별한다.",
+      "prerequisites": [
+        "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다."
+      ],
+      "strengthConditions": [
+        "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:zheng_guan:personality",
+        "deep:application:ten_god:zheng_guan:career",
+        "deep:application:ten_god:zheng_guan:money",
+        "deep:application:ten_god:zheng_guan:study",
+        "deep:application:ten_god:zheng_guan:love",
+        "deep:application:ten_god:zheng_guan:marriage",
+        "deep:application:ten_god:zheng_guan:family",
+        "deep:application:ten_god:zheng_guan:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論正官 / 身旺・財印・月令・官殺",
+          "proposition": "일간을 극하며 다른 음양인 규율 관계. 論正官는 身旺·財印·형충·관살 구성의 조건을 병기한다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "fe11b875c7ad3a9c8318",
+    "sourceId": "deep:ten_god:zheng_yin",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 8,
+    "recordSha256": "380e3f5f82de6c74467c4321d2e0234a21601692aeb639f6a481481d12941572",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:zheng_yin",
+      "targetId": "foundation:ten_god:zheng_yin",
+      "label": "정인",
+      "definition": "나를 생하는 오행·다른 음양의 지원 관계",
+      "contrastTargetId": "foundation:ten_god:pian_yin",
+      "differentiation": "체계적 수용·지원의 통로를 낯선 관점의 탐색과 구별한다.",
+      "prerequisites": [
+        "일간의 강약, 월령, 인성의 생조, 재성의 제약과 식상의 산출을 함께 확인한다."
+      ],
+      "strengthConditions": [
+        "필요한 지원과 과도한 의존은 원국·실제 맥락이 달라 구분해야 한다. 인성 개수로 지능·학력·부모를 확정하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:zheng_yin:personality",
+        "deep:application:ten_god:zheng_yin:career",
+        "deep:application:ten_god:zheng_yin:money",
+        "deep:application:ten_god:zheng_yin:study",
+        "deep:application:ten_god:zheng_yin:love",
+        "deep:application:ten_god:zheng_yin:marriage",
+        "deep:application:ten_god:zheng_yin:family",
+        "deep:application:ten_god:zheng_yin:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論印綬 / 月最要日時次之; 時逢生印",
+          "proposition": "일간을 생하며 다른 음양인 지원 관계. 論印綬는 부모·인장 비유와 月日時·官財·과다의 조건을 나누어 설명한다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "bbc18a4e615032647a49",
+    "sourceId": "deep:ten_god:pian_cai",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 4,
+    "recordSha256": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:pian_cai",
+      "targetId": "foundation:ten_god:pian_cai",
+      "label": "편재",
+      "definition": "내가 극하는 오행·동일 음양의 자원 관계",
+      "contrastTargetId": "foundation:ten_god:zheng_cai",
+      "differentiation": "외부 자원·거래 범위를 지속적인 보유·관리와 구별한다.",
+      "prerequisites": [
+        "일간의 감당 여력, 재성의 강약·투출, 비겁과 실제 거래 조건을 확인한다."
+      ],
+      "strengthConditions": [
+        "재성이 많아도 일간의 여력과 회수 조건이 다르면 해석이 달라진다. 거래 규모를 부의 양으로 읽지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:pian_cai:personality",
+        "deep:application:ten_god:pian_cai:career",
+        "deep:application:ten_god:pian_cai:money",
+        "deep:application:ten_god:pian_cai:study",
+        "deep:application:ten_god:pian_cai:love",
+        "deep:application:ten_god:pian_cai:marriage",
+        "deep:application:ten_god:pian_cai:family",
+        "deep:application:ten_god:pian_cai:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論偏財 / 衆人之財・身勢勝任・年月日時差",
+          "proposition": "일간이 극하며 같은 음양인 자원 관계. 論偏財의 衆人之財는 고전의 자원 비유이지 타인의 돈을 받을 권리나 횡재 예언이 아니다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "0c2824cc2f62a5c72693",
+    "sourceId": "mbti:ENTJ:traits:parenting:independence_test_parent",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "pointer": "/traits/parenting/3",
+    "recordSha256": "6309ac96c84ae858417f7f1d317428f057dfb0566680a033b202a86c1fd14a77",
+    "originalState": {
+      "type": "ENTJ",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "independence_test_parent",
+      "label": "독립성 검증",
+      "plainKo": "자녀에게 자유를 주기 전, 그 자유를 책임감 있게 사용할 능력과 의지가 있는지 확인하려 한다. 의견 차이는 환영하지만 책임 회피로 보이면 매우 엄격해진다.",
+      "strongLine": "ENTJ 부모는 자유를 선물로 주기보다, 감당할 수 있음을 증명한 뒤 허용하는 편입니다.",
+      "positiveUse": "자녀가 선택의 책임과 결과를 배우게 한다.",
+      "risk": "자녀가 부모에게 계속 시험받는다고 느껴 정서적 거리를 둔다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "편관",
+        "금"
+      ],
+      "productDomains": [
+        "parenting",
+        "child",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "f8f90022e047bfe61557",
+    "sourceId": "deep:ten_god:qi_sha",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 9,
+    "recordSha256": "2e8310a635977205afbcb0dffde9f5cbe8b140f2adf14e7b5899d4517a7defa3",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:qi_sha",
+      "targetId": "foundation:ten_god:qi_sha",
+      "label": "편관",
+      "definition": "나를 극하는 오행·동일 음양의 제약 관계",
+      "contrastTargetId": "foundation:ten_god:zheng_guan",
+      "differentiation": "강한 요구와 대응 압력을 합의된 공식 규범과 구별한다.",
+      "prerequisites": [
+        "일간의 통근·강약, 식신의 제어, 인성의 연결, 혼잡 여부를 실제 근거로 확인한다."
+      ],
+      "strengthConditions": [
+        "살의 압력을 감당하거나 전환하는 조건과 지나치게 제압된 경우를 따로 본다. 위험·폭력·직업을 단정하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:qi_sha:personality",
+        "deep:application:ten_god:qi_sha:career",
+        "deep:application:ten_god:qi_sha:money",
+        "deep:application:ten_god:qi_sha:study",
+        "deep:application:ten_god:qi_sha:love",
+        "deep:application:ten_god:qi_sha:marriage",
+        "deep:application:ten_god:qi_sha:family",
+        "deep:application:ten_god:qi_sha:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論偏官 / 制合生化・太過不及; 天元坐煞・時上一位貴・年上七煞",
+          "proposition": "일간을 극하며 같은 음양인 압력 관계. 論偏官는 制化·강약·과불급을 함께 보며 偏官/七煞를 단순 선악으로 고정하지 않는다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "272c67e0206eba757597",
+    "sourceId": "mbti:ISFP:traits:child:peaceful_peer_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "pointer": "/traits/child/2",
+    "recordSha256": "2ba497c67a7642a78a9d398f5f9dfe59229b42dc3b8a32d749f2611c68bc39fd",
+    "originalState": {
+      "type": "ISFP",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "peaceful_peer_child",
+      "label": "평화로운 또래 관계",
+      "plainKo": "또래나 형제와 평화롭게 지내고 따뜻한 환경을 원한다. 열린 마음 덕분에 관계는 원만하지만, 수줍음 때문에 초반에는 소수와만 지낼 수 있다.",
+      "strongLine": "ISFP 아이는 많은 친구보다, 편안하고 조화로운 친구 관계가 더 중요합니다.",
+      "positiveUse": "갈등이 적고 부드러운 또래 관계를 만든다.",
+      "risk": "소극성 때문에 자기 마음을 표현하지 못하고 짝사랑이나 관계 고민이 깊어질 수 있다.",
+      "matchingMyeongliSignals": [
+        "비견",
+        "도화",
+        "수"
+      ],
+      "productDomains": [
+        "child",
+        "love",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "b7c4f738dad8d6d8d61c",
+    "sourceId": "mbti:ISTP:traits:child:solo_play_precision_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "pointer": "/traits/child/1",
+    "recordSha256": "b181a835aa1a66cba1437cf9d82bf756b6dbc98d3db91d2cd5458893eeb87b1f",
+    "originalState": {
+      "type": "ISTP",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "solo_play_precision_child",
+      "label": "혼자 노는 정밀형",
+      "plainKo": "혼자 잘 놀고, 퍼즐이나 비디오 게임, 개인 스포츠처럼 섬세함과 손감각이 필요한 활동에서 두각을 보인다.",
+      "strongLine": "ISTP 아이는 혼자 있는 시간이 비어 있는 시간이 아니라, 자기 감각을 키우는 시간입니다.",
+      "positiveUse": "퍼즐, 과학 실험, 게임, 개인 스포츠, 도구 활동에서 재능을 발견하기 쉽다.",
+      "risk": "부모가 사교성과 언어 표현을 과하게 강요하면 더 닫힐 수 있다.",
+      "matchingMyeongliSignals": [
+        "식신",
+        "문창",
+        "금"
+      ],
+      "productDomains": [
+        "child",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "43161eed254c850e342b",
+    "sourceId": "mbti:INTP:traits:parenting:answering_child_questions",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTP.json",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "pointer": "/traits/parenting/1",
+    "recordSha256": "eea208b46302133eb6f69e9ddf59fbe92a2c13fc19b466c375b4c557bd2e3c8e",
+    "originalState": {
+      "type": "INTP",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "answering_child_questions",
+      "label": "질문에 답하기",
+      "plainKo": "자녀가 묻는 것에 성실히 답해주는 강점이 있다. 단순한 지시보다 이유와 원리를 설명해 아이가 스스로 이해하게 만든다.",
+      "strongLine": "당신은 아이에게 시키는 부모보다, 왜 그런지를 같이 생각하게 하는 부모입니다.",
+      "positiveUse": "학습 호기심과 논리적 사고를 자극한다.",
+      "risk": "아이가 감정적 위로를 원할 때도 설명이 길어질 수 있다.",
+      "matchingMyeongliSignals": [
+        "문창",
+        "식신",
+        "정인"
+      ],
+      "productDomains": [
+        "parenting",
+        "child"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "668bff6bf74135a0bc03",
+    "sourceId": "mbti:INTJ:traits:child:rule_questioning_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "pointer": "/traits/child/1",
+    "recordSha256": "f5e37b3c25eca3280098727d50e2e59280ec42ac596b5b0eb75bc9f0744e7afc",
+    "originalState": {
+      "type": "INTJ",
+      "area": "child",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "CHILDREN",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "rule_questioning_child",
+      "label": "규칙 질문형",
+      "plainKo": "필요 없는 규칙과 형식적인 예절을 그냥 따르기 어려워한다. 왜 해야 하는지 납득하지 못하면 반항처럼 보일 수 있다.",
+      "strongLine": "이 아이는 말을 안 듣는 것이 아니라, 납득되지 않는 규칙을 받아들이기 어렵습니다.",
+      "positiveUse": "이유와 구조를 설명하면 자기 기준으로 책임 있게 따를 수 있다.",
+      "risk": "권위만 앞세우면 부모나 교사와 정면충돌한다.",
+      "matchingMyeongliSignals": [
+        "상관",
+        "비견",
+        "금"
+      ],
+      "productDomains": [
+        "child",
+        "parenting",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "46eb373ed8de497e1ba3",
+    "sourceId": "mbti:ENTJ:traits:parenting:child_success_projection",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "pointer": "/traits/parenting/1",
+    "recordSha256": "a6723c12f1459badd486df675e9d47dfcbb66582711f720f36530285756c47cc",
+    "originalState": {
+      "type": "ENTJ",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "child_success_projection",
+      "label": "자녀 성취 투영",
+      "plainKo": "자녀의 성공 여부를 자신의 성공이 반영되는 척도로 볼 수 있다. 자녀가 똑똑하고 독립적인 사람으로 성장하기를 바라며, 도덕적 감정보다 능력과 자립을 더 중시한다.",
+      "strongLine": "ENTJ 부모에게 자녀의 성장은 사랑의 대상이면서 동시에 성과와 독립성을 증명해야 하는 프로젝트가 되기 쉽습니다.",
+      "positiveUse": "자녀의 잠재력을 높게 보고 도전과 자기계발을 적극적으로 지원한다.",
+      "risk": "자녀가 부모의 목표를 대신 증명해야 하는 압박을 느낀다.",
+      "matchingMyeongliSignals": [
+        "편관",
+        "정관",
+        "문창"
+      ],
+      "productDomains": [
+        "parenting",
+        "child",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "3888aa2e5b9fb179e218",
+    "sourceId": "mbti:ISFJ:traits:parenting:protective_overinvolvement",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "pointer": "/traits/parenting/1",
+    "recordSha256": "dc0c1e013a05e5c0e40733001cce34939a4b20d9d1103fb5b2a86ebd5964dbfe",
+    "originalState": {
+      "type": "ISFJ",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "protective_overinvolvement",
+      "label": "보호와 과보호",
+      "plainKo": "아이를 보호하려는 마음이 강해 생활, 친구, 진로, 습관에 깊게 관여할 수 있다. 보호는 강점이지만 과하면 자립을 막는 통제로 느껴진다.",
+      "strongLine": "당신의 보호는 따뜻하지만, 선을 넘으면 아이에게 간섭으로 남습니다.",
+      "positiveUse": "위험을 미리 줄이고 아이의 생활 기반을 안정시킨다.",
+      "risk": "독립적인 자녀나 NT 성향 자녀는 통제받는다고 느낄 수 있다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "겁재",
+        "토"
+      ],
+      "productDomains": [
+        "parenting",
+        "child",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "1de5594bb3cc1a883744",
+    "sourceId": "mbti:ENTP:traits:parenting:debating_with_child",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "pointer": "/traits/parenting/3",
+    "recordSha256": "17af9cf87e8943b111c88723181a0bc56fc9b994519f78e0094b91471d2cd83a",
+    "originalState": {
+      "type": "ENTP",
+      "area": "parenting",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "PARENTS",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "developmentalAssessment": false,
+      "adultTransferOfChildTraitApproved": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "debating_with_child",
+      "label": "토론하는 부모",
+      "plainKo": "ENTP 부모는 자녀와도 말로 부딪치며 설득하고 토론하는 편이다. 아이의 생각을 존중하는 장점이 있지만, 말싸움으로 흐르면 부모의 말재주가 아이를 압도할 수 있다.",
+      "strongLine": "ENTP 부모의 대화는 아이를 크게 키우지만, 때로는 아이가 이겨 볼 공간도 남겨야 한다.",
+      "positiveUse": "자녀가 자기 의견을 말하고 근거를 세우는 훈련을 받는다.",
+      "risk": "정서적 공감이 필요한 순간까지 논쟁으로 처리하면 아이가 위축된다.",
+      "matchingMyeongliSignals": [
+        "문창",
+        "상관",
+        "현침살"
+      ],
+      "productDomains": [
+        "parenting",
+        "child",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "aaac0cf1c3f696a21cc6",
+    "sourceId": "external:parent-child:regulate",
+    "sourceKind": "external_context",
+    "url": "https://www.cdc.gov/parenting-teens/media/pdfs/essentialsParentingTeens-EmotionCoachingActivity.pdf",
+    "recordSha256": "f08e44e7095410bd4c8b7be7cb415d49a72a3acc8ee6e8768d1d9727f40bc769",
+    "originalState": {
+      "institution": "CDC",
+      "title": "ACTIVITY: Emotion Coaching Teens",
+      "url": "https://www.cdc.gov/parenting-teens/media/pdfs/essentialsParentingTeens-EmotionCoachingActivity.pdf",
+      "publishedOrUpdated": null,
+      "accessedAt": "2026-10-14",
+      "access": "pdf_actually_accessed",
+      "section": "PDF pages 1–4, especially page 2 pause/apology",
+      "contexts": [
+        "TEEN"
+      ],
+      "summary": "부모가 반응 전 감정을 가다듬고 잘못한 반응을 인정하는 연습을 검토한다.",
+      "limit": "치료·효과 보장 아님. 보호자 중단 때 필요한 안전 돌봄을 버리는 지침 아님.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "institution": "CDC",
+      "title": "ACTIVITY: Emotion Coaching Teens",
+      "url": "https://www.cdc.gov/parenting-teens/media/pdfs/essentialsParentingTeens-EmotionCoachingActivity.pdf",
+      "publishedOrUpdated": null,
+      "accessedAt": "2026-10-14",
+      "access": "pdf_actually_accessed",
+      "section": "PDF pages 1–4, especially page 2 pause/apology",
+      "contexts": [
+        "TEEN"
+      ],
+      "summary": "부모가 반응 전 감정을 가다듬고 잘못한 반응을 인정하는 연습을 검토한다.",
+      "limit": "치료·효과 보장 아님. 보호자 중단 때 필요한 안전 돌봄을 버리는 지침 아님."
+    }
+  },
+  {
+    "key": "6047f491aa9082328a86",
+    "sourceId": "deep:ten_god:shang_guan",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 3,
+    "recordSha256": "3e4680f1d5790eb0614c29a380cd7c8ecbf27be8c600c27180989af07a73b797",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:shang_guan",
+      "targetId": "foundation:ten_god:shang_guan",
+      "label": "상관",
+      "definition": "내가 생하는 오행·다른 음양의 산출 관계",
+      "contrastTargetId": "foundation:ten_god:shi_shen",
+      "differentiation": "기준을 바꾸는 표현을 안정적 숙련의 반복과 구별한다.",
+      "prerequisites": [
+        "일간의 강약, 관성의 상태, 재성의 통관과 인성의 제약을 함께 확인한다."
+      ],
+      "strengthConditions": [
+        "상관과 관성이 있다는 이유만으로 충돌을 확정하지 않는다. 제화·통관·별도 격의 조건을 분리한다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:shang_guan:personality",
+        "deep:application:ten_god:shang_guan:career",
+        "deep:application:ten_god:shang_guan:money",
+        "deep:application:ten_god:shang_guan:study",
+        "deep:application:ten_god:shang_guan:love",
+        "deep:application:ten_god:shang_guan:marriage",
+        "deep:application:ten_god:shang_guan:family",
+        "deep:application:ten_god:shang_guan:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論傷官 / 傷官見官亦有不作禍者",
+          "proposition": "일간이 생하며 다른 음양인 산출 관계. 傷官 명칭은 正官과의 생극 설명에서 나오며 모든 권위와 충돌한다는 뜻이 아니다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "3f130780549c6cb7a467",
+    "sourceId": "deep:ten_god:bijian",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 0,
+    "recordSha256": "840c6e6862018b7d5d8a960286c802edb2b4bd6caf5fb9b09164cff7cd8b3bc4",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:bijian",
+      "targetId": "foundation:ten_god:bijian",
+      "label": "비견",
+      "definition": "동일 오행·동일 음양의 동료 관계",
+      "contrastTargetId": "foundation:ten_god:jie_cai",
+      "differentiation": "독립된 기준과 동등한 협업을 자원 분배의 긴장과 구별한다.",
+      "prerequisites": [
+        "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다."
+      ],
+      "strengthConditions": [
+        "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:bijian:personality",
+        "deep:application:ten_god:bijian:career",
+        "deep:application:ten_god:bijian:money",
+        "deep:application:ten_god:bijian:study",
+        "deep:application:ten_god:bijian:love",
+        "deep:application:ten_god:bijian:marriage",
+        "deep:application:ten_god:bijian:family",
+        "deep:application:ten_god:bijian:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論正財 / 財少身強柱有比劫太過不及",
+          "proposition": "같은 오행·같은 음양의 동류 관계. 독립 의지와 대등한 역할을 설명하는 후보이며 비견 자체가 강약 판정은 아니다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "78ca1a3776c53c2d0b48",
+    "sourceId": "deep:ten_god:pian_yin",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 7,
+    "recordSha256": "a6d3747f2872f90db9a5075fea446471d0f665fa58ef3d4fb57af24132720b90",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:pian_yin",
+      "targetId": "foundation:ten_god:pian_yin",
+      "label": "편인",
+      "definition": "나를 생하는 오행·동일 음양의 지원 관계",
+      "contrastTargetId": "foundation:ten_god:zheng_yin",
+      "differentiation": "비정형 관점의 탐구를 검증된 지식의 수용과 구별한다.",
+      "prerequisites": [
+        "일간의 강약, 실제 식신의 유무·용도, 재성의 제어와 인성의 편중을 확인한다."
+      ],
+      "strengthConditions": [
+        "편인이 있다는 사실과 식신을 제약하는 도식 조건은 같지 않다. 실제 조합 없이 도식의 위험을 적용하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:pian_yin:personality",
+        "deep:application:ten_god:pian_yin:career",
+        "deep:application:ten_god:pian_yin:money",
+        "deep:application:ten_god:pian_yin:study",
+        "deep:application:ten_god:pian_yin:love",
+        "deep:application:ten_god:pian_yin:marriage",
+        "deep:application:ten_god:pian_yin:family",
+        "deep:application:ten_god:pian_yin:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論倒食 / 柱中無食只以偏印論; 不可一見倒食便以凶論",
+          "proposition": "일간을 생하며 같은 음양인 지원 관계. 論倒食은 食神을 실제로 해치는 조건과 無食只以偏印論을 구분한다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "90e77590d3ea07930ba1",
+    "sourceId": "deep:ten_god:shi_shen",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 2,
+    "recordSha256": "46429fe865e9a25fb4e332aa37e7709375a33374caa139c3857d3ef233b41ffd",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:shi_shen",
+      "targetId": "foundation:ten_god:shi_shen",
+      "label": "식신",
+      "definition": "내가 생하는 오행·동일 음양의 산출 관계",
+      "contrastTargetId": "foundation:ten_god:shang_guan",
+      "differentiation": "숙련·지속적 산출을 규칙에 대한 비판·변경과 구별한다.",
+      "prerequisites": [
+        "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다."
+      ],
+      "strengthConditions": [
+        "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:shi_shen:personality",
+        "deep:application:ten_god:shi_shen:career",
+        "deep:application:ten_god:shi_shen:money",
+        "deep:application:ten_god:shi_shen:study",
+        "deep:application:ten_god:shi_shen:love",
+        "deep:application:ten_god:shi_shen:marriage",
+        "deep:application:ten_god:shi_shen:family",
+        "deep:application:ten_god:shi_shen:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論古人立印食官財名義 / 我生者・致養; 論倒食 / 食神条件",
+          "proposition": "일간이 생하며 같은 음양인 산출 관계. 印食官財 명의는 기르고 되돌려 주는 비유를 사용한다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "941361dcf854c0c9f213",
+    "sourceId": "rr:combination:chung:子午",
+    "sourceKind": "relation_definition",
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsChung.ts",
+    "sourceFileSha256": "37d4801960b9824789f51685207eafc46ce7556ecba4484ef1a96c5b3b90bcb9",
+    "exportName": "RELATION_COMBINATIONS_CHUNG",
+    "index": 0,
+    "recordSha256": "71d8187b4eb1e7cbe80be0ae4dc99c0236f88b2c42eb07c857236af8c3a7a970",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": "A_HISTORICAL_TEXT",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "definitionReview": null,
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "수화 충이며 적천수는 자왕오쇠와 자쇠오왕을 같은 결과로 보지 않는다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論衝擊"
+          }
+        ]
+      },
+      "evidenceLevel": null,
+      "formation": "子水·午火의 대향과 월령별 왕쇠를 검토한다.",
+      "exclusions": [
+        "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "support": null,
+      "deferred": []
+    },
+    "raw": {
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "runtimeEvidenceIds": [],
+      "id": "rr:combination:chung:子午",
+      "relation": "chung",
+      "targetId": "foundation:relation:chung",
+      "members": [
+        "子",
+        "午"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "participants": [
+        {
+          "symbol": "子",
+          "element": "WATER",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "癸"
+          ]
+        },
+        {
+          "symbol": "午",
+          "element": "FIRE",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "丁",
+            "己"
+          ]
+        }
+      ],
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "수화 충이며 적천수는 자왕오쇠와 자쇠오왕을 같은 결과로 보지 않는다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論衝擊"
+          }
+        ]
+      },
+      "composition": "子:WATER·yang·장간 癸 / 午:FIRE·yang·장간 丁己; 본기·음양·장간은 저장소 상수의 그대로인 구성 정보이며 이 항목만으로 길흉·힘·사건을 계산하지 않는다.",
+      "formation": "子水·午火의 대향과 월령별 왕쇠를 검토한다.",
+      "exclusions": [
+        "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "modifiers": "왕쇠·뿌리·노출·장간을 함께 보며 같은 쌍도 계절이 다르면 작용 평가가 다르다. 방향이 대립한다는 구조와 이동·실패라는 생활 결과를 구분한다.",
+      "meaningClass": "C_CONDITIONAL_RESEARCH",
+      "positive": "필요 없어진 배치를 바꿀 조건인지 검토할 수 있다.",
+      "risk": "충이라는 이유만으로 화·수 중 한쪽이 항상 사라진다고 할 수 없다.",
+      "reversal": "왕한 쪽을 자극하는 것과 쇠한 뿌리를 흔드는 것은 방향이 다르다.",
+      "distinction": "丑未와 달리 대표 오행이 수화의 직접 제어다.",
+      "modern": {
+        "class": "D_MODERN_APPLICATION",
+        "condition": "실제 집중 시간과 외부 일정이 맞부딪치면 둘을 동시에 지킬 수 있는지 확인한다.",
+        "action": "보존할 시간과 옮길 시간을 선택한다.",
+        "sourceRefs": [
+          {
+            "sourceId": "authored",
+            "locator": "조합별 조건부 현대 질문; 독립 전통 사실·예측 효력 아님"
+          }
+        ]
+      },
+      "overlaps": [],
+      "scopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "uncertainties": [
+        "적천수 본문·주석 전사는 층위가 섞여 있으며 후대 주석의 귀속을 단정하지 않는다.",
+        "사고지 개고는 정설로 확정하지 않고 실제 재물과 연결하지 않는다.",
+        "조합별 생활 장면의 고유 효과는 검증되지 않았다. 장면 차이를 독립 명리 사실로 집계하지 않는다."
+      ],
+      "producerScopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "unsupportedProducerScopeRefs": []
+    }
+  },
+  {
+    "key": "e23b027944c5f0d3197a",
+    "sourceId": "rr:combination:hae:子未",
+    "sourceKind": "relation_definition",
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsHae.ts",
+    "sourceFileSha256": "b5fc64fd7a22f65da05b09c24f0f0272ec7ccbb671509841be5cded8502ee007",
+    "exportName": "RELATION_COMBINATIONS_HAE",
+    "index": 0,
+    "recordSha256": "bc9b8234ebd6265493d706d54a563baa70d2a82231df764aa4df97e49dfe3fb2",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": "A_HISTORICAL_TEXT",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "definitionReview": null,
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "육해의 子未는 합·충 매개 설명과 토수 여력 논설을 가진다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論六害"
+          }
+        ]
+      },
+      "evidenceLevel": null,
+      "formation": "子·未 두 실제 글자와 각 계절·장간을 확인한다.",
+      "exclusions": [
+        "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "support": null,
+      "deferred": []
+    },
+    "raw": {
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "runtimeEvidenceIds": [],
+      "id": "rr:combination:hae:子未",
+      "relation": "hae",
+      "targetId": "foundation:relation:hae",
+      "members": [
+        "子",
+        "未"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "participants": [
+        {
+          "symbol": "子",
+          "element": "WATER",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "癸"
+          ]
+        },
+        {
+          "symbol": "未",
+          "element": "EARTH",
+          "yinYang": "yin",
+          "hiddenStems": [
+            "己",
+            "丁",
+            "乙"
+          ]
+        }
+      ],
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "육해의 子未는 합·충 매개 설명과 토수 여력 논설을 가진다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論六害"
+          }
+        ]
+      },
+      "composition": "子:WATER·yang·장간 癸 / 未:EARTH·yin·장간 己丁乙; 본기·음양·장간은 저장소 상수의 그대로인 구성 정보이며 이 항목만으로 길흉·힘·사건을 계산하지 않는다.",
+      "formation": "子·未 두 실제 글자와 각 계절·장간을 확인한다.",
+      "exclusions": [
+        "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "modifiers": "왕쇠·장간·납음 논의가 있으나 현행 표 판정에 모두 들어 있지는 않다. 충·합 매개를 설명하는 그림에서 부재한 매개 지지가 실제 원국에 있다고 가정하지 않는다.",
+      "meaningClass": "C_CONDITIONAL_RESEARCH",
+      "positive": "기대가 연결되지 않는 조건을 구체적으로 확인할 질문이 가능하다.",
+      "risk": "원진에도 겹치지만 감정 갈등 두 배로 세지 않는다.",
+      "reversal": "드러난 차이는 실제 약속의 빈칸을 알리는 자료가 될 수 있다.",
+      "distinction": "丑午도 원진·해가 겹치나 기본 수토·화토 구성이 다르다.",
+      "modern": {
+        "class": "D_MODERN_APPLICATION",
+        "condition": "받기로 한 도움과 실제 제공된 도움이 다르면 요청 내용을 확인한다.",
+        "action": "도움의 내용·기한·동의를 다시 묻는다.",
+        "sourceRefs": [
+          {
+            "sourceId": "authored",
+            "locator": "조합별 조건부 현대 질문; 독립 전통 사실·예측 효력 아님"
+          }
+        ]
+      },
+      "overlaps": [
+        "rr:combination:wonjin:子未"
+      ],
+      "scopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "uncertainties": [
+        "납음·주객·궁위 조건이 다른 전승을 현행 대칭 쌍 검출이 모두 지원한다고 말하지 않는다.",
+        "원국의 실제 매개 지지가 없어도 표 일치가 있지만 그 지지의 존재를 창작하지 않는다.",
+        "조합별 생활 장면의 고유 효과는 검증되지 않았다. 장면 차이를 독립 명리 사실로 집계하지 않는다."
+      ],
+      "producerScopeRefs": [
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "unsupportedProducerScopeRefs": [
+        "natal"
+      ]
+    }
+  },
+  {
+    "key": "88af77cc76890045d0ca",
+    "sourceId": "rr:combination:wonjin:子未",
+    "sourceKind": "relation_definition",
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsWonjin.ts",
+    "sourceFileSha256": "0b98f07aaa68388ea33a2358f7ef581904723fc99aaa15287d72ab25e93bcf08",
+    "exportName": "RELATION_COMBINATIONS_WONJIN",
+    "index": 0,
+    "recordSha256": "8e7df60a16274c333fb005d1c75a0442bda7b0ec5df1ce7c926aa2c5ef3ddb61",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": "E_UNVERIFIED",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "definitionReview": null,
+      "traditional": {
+        "class": "E_UNVERIFIED",
+        "text": "현대 저자의6쌍 표와 프로젝트 표가 일치한다. 고전 기원·고유 감정 예측은 미확인이다.",
+        "sourceRefs": [
+          {
+            "sourceId": "wonjin",
+            "locator": "적용 / 성립의 여러 방법 / 인접 기준 / 참고자료"
+          }
+        ]
+      },
+      "evidenceLevel": null,
+      "formation": "子·未 실제 두 자리와 facts의 원진살 신호·육해 중복을 확인한다.",
+      "exclusions": [
+        "끌림·집착·혐오·외도·관계 실패를 실제 감정이나 사건으로 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "support": null,
+      "deferred": []
+    },
+    "raw": {
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "runtimeEvidenceIds": [],
+      "id": "rr:combination:wonjin:子未",
+      "relation": "wonjin",
+      "targetId": "foundation:relation:wonjin",
+      "members": [
+        "子",
+        "未"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "participants": [
+        {
+          "symbol": "子",
+          "element": "WATER",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "癸"
+          ]
+        },
+        {
+          "symbol": "未",
+          "element": "EARTH",
+          "yinYang": "yin",
+          "hiddenStems": [
+            "己",
+            "丁",
+            "乙"
+          ]
+        }
+      ],
+      "traditional": {
+        "class": "E_UNVERIFIED",
+        "text": "현대 저자의6쌍 표와 프로젝트 표가 일치한다. 고전 기원·고유 감정 예측은 미확인이다.",
+        "sourceRefs": [
+          {
+            "sourceId": "wonjin",
+            "locator": "적용 / 성립의 여러 방법 / 인접 기준 / 참고자료"
+          }
+        ]
+      },
+      "composition": "子:WATER·yang·장간 癸 / 未:EARTH·yin·장간 己丁乙; 본기·음양·장간은 저장소 상수의 그대로인 구성 정보이며 이 항목만으로 길흉·힘·사건을 계산하지 않는다.",
+      "formation": "子·未 실제 두 자리와 facts의 원진살 신호·육해 중복을 확인한다.",
+      "exclusions": [
+        "끌림·집착·혐오·외도·관계 실패를 실제 감정이나 사건으로 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "modifiers": "기존 신호만으로 힘·길흉·감정 집중도를 계산한 것처럼 쓰지 않는다. foundation 투영에는 일치한 쌍이 노출되지 않는다. 쌍을 추측해 설명하지 않는다.",
+      "meaningClass": "C_CONDITIONAL_RESEARCH",
+      "positive": "실제 기대 차이가 확인될 때만 검증 질문을 작성할 수 있다.",
+      "risk": "육해와 원진을 독립 위험2개로 더하지 않는다.",
+      "reversal": "관계가 실제 안정적이면 부정적 라벨보다 그 사실을 우선한다.",
+      "distinction": "원진 중 육해와 겹치는2쌍의 하나이고 귀문 쌍은 아니다.",
+      "modern": {
+        "class": "D_MODERN_APPLICATION",
+        "condition": "실제로 약속 이해가 달랐다면 누가 무엇을 기대했는지 묻는다.",
+        "action": "기호를 원인으로 지목하지 않고 당사자 설명을 듣는다.",
+        "sourceRefs": [
+          {
+            "sourceId": "authored",
+            "locator": "조합별 조건부 현대 질문; 독립 전통 사실·예측 효력 아님"
+          }
+        ]
+      },
+      "overlaps": [
+        "rr:combination:hae:子未"
+      ],
+      "scopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "uncertainties": [
+        "고전 전거 미확인; 학술 초록의 참고문헌을 읽은 원전으로 승격하지 않는다.",
+        "현대 저자의 책·팟캐스트 참고는 이번에 직접 열람하지 않아 직접 출처로 채택하지 않는다.",
+        "현대 전승 확인은 개인 사건에 대한 실증이 아니다.",
+        "조합별 생활 장면의 고유 효과는 검증되지 않았다. 장면 차이를 독립 명리 사실로 집계하지 않는다."
+      ],
+      "producerScopeRefs": [
+        "natal",
+        "natal_month"
+      ],
+      "unsupportedProducerScopeRefs": [
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "between_periods"
+      ]
+    }
+  }
+]

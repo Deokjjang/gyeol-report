@@ -1,0 +1,20 @@
+{
+  "separate": [
+    "helpOffer",
+    "helpRequest",
+    "helpAcceptance",
+    "voluntaryHelp",
+    "timeCost",
+    "moneyCost",
+    "emotionalCost",
+    "expectedReciprocity",
+    "explicitAgreement",
+    "actualDebt",
+    "supportBoundary",
+    "adviceRequested",
+    "helpReceived"
+  ],
+  "helpIsDebt": false,
+  "confirmedDebtIsNotAutomaticallyGift": true,
+  "actualFacts": "UNKNOWN"
+}

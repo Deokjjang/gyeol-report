@@ -1,0 +1,8 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-compatibility-love-knowledge-validation/base
+
+
+ Test Files  1 passed (1)
+      Tests  25 passed (25)
+   Start at  23:45:13
+   Duration  145.50s (transform 2.49s, setup 24ms, import 3.08s, tests 142.17s, environment 0ms)

@@ -1,0 +1,1762 @@
+[
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/81",
+      "recordSha256": "0b23d0e3d5bd78942ff6d908b89caac93dcd99c7aa8abc3cf92048765cf54c60",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "0b23d0e3d5bd78942ff6d908b89caac93dcd99c7aa8abc3cf92048765cf54c60",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/82",
+      "recordSha256": "0a19bfaa268fd573a0e0f4039644b778fbc42818dc71139f9cea15e914d9c434",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "0a19bfaa268fd573a0e0f4039644b778fbc42818dc71139f9cea15e914d9c434",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/83",
+      "recordSha256": "77b22bc093685bc1c8cbb5ec12a6926a1fcd589e6c535b2d625e7334148ba32f",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "77b22bc093685bc1c8cbb5ec12a6926a1fcd589e6c535b2d625e7334148ba32f",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/84",
+      "recordSha256": "12fa6956e8056e4a8535846ad0b6a6b4d4202239472e771340edc93594d96846",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "12fa6956e8056e4a8535846ad0b6a6b4d4202239472e771340edc93594d96846",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/85",
+      "recordSha256": "31aad253c8ce84682c55c22eb8b1bc0cc32ad8f125f5fef17cb25524927df909",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "31aad253c8ce84682c55c22eb8b1bc0cc32ad8f125f5fef17cb25524927df909",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/86",
+      "recordSha256": "2ed45955b743dfdd694242a693d73a8cf064d3ad646e62babee8403653acbcd0",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "2ed45955b743dfdd694242a693d73a8cf064d3ad646e62babee8403653acbcd0",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/87",
+      "recordSha256": "39cc5dbd6f1c287cda1bcd8ad1f5c9803abc12393c99545ba5866827386d780b",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "39cc5dbd6f1c287cda1bcd8ad1f5c9803abc12393c99545ba5866827386d780b",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/88",
+      "recordSha256": "7e70d68beb4fef713b44a49960bc22ebb1e2023d07b96047ff8f7153d0226d03",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "7e70d68beb4fef713b44a49960bc22ebb1e2023d07b96047ff8f7153d0226d03",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/89",
+      "recordSha256": "c53709bbb9fc68ff75b7f50742d961d6b237cc6631557c3d0cd4a04b10fe80c9",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "c53709bbb9fc68ff75b7f50742d961d6b237cc6631557c3d0cd4a04b10fe80c9",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/90",
+      "recordSha256": "29738a327a0842b6f39903f0476b0f797f1982b54b0a495ea70d496a8f04d076",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "29738a327a0842b6f39903f0476b0f797f1982b54b0a495ea70d496a8f04d076",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/91",
+      "recordSha256": "4a317aa5db3a9b7d8b418124a383ff68b484852302f0e2b885c343467d5a58a1",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "4a317aa5db3a9b7d8b418124a383ff68b484852302f0e2b885c343467d5a58a1",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/92",
+      "recordSha256": "dec0704665842a74d9008f641c38da91d358640f4163a54a64b87f53d79e3f72",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "dec0704665842a74d9008f641c38da91d358640f4163a54a64b87f53d79e3f72",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/93",
+      "recordSha256": "9245cf969b5ebb19e94a5dcec810d3764161d708ae9ff6b85f6182ff50ce1df1",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "9245cf969b5ebb19e94a5dcec810d3764161d708ae9ff6b85f6182ff50ce1df1",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/94",
+      "recordSha256": "3787fa8b08c316dd7780b71b3f39748cd74e734bf8e60bec0de79c3e53e1a05c",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "3787fa8b08c316dd7780b71b3f39748cd74e734bf8e60bec0de79c3e53e1a05c",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/95",
+      "recordSha256": "ba04a06a3c809043325f8c4522dd515686fcbbcda0584462b687e0c183784622",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "ba04a06a3c809043325f8c4522dd515686fcbbcda0584462b687e0c183784622",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/96",
+      "recordSha256": "8c9052339486140668e2c47729260dc6f139281c243caca182ee356982b9a2f6",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "8c9052339486140668e2c47729260dc6f139281c243caca182ee356982b9a2f6",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/97",
+      "recordSha256": "1248053d7700bc8017012cfca3f56c0e5c9ea07c0cc0169d0aa5d15236dab7b0",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "1248053d7700bc8017012cfca3f56c0e5c9ea07c0cc0169d0aa5d15236dab7b0",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/98",
+      "recordSha256": "f9e2a8842a26ed67da079d231ce433610496f70e312423918975229b9ed6f48b",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "f9e2a8842a26ed67da079d231ce433610496f70e312423918975229b9ed6f48b",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/99",
+      "recordSha256": "88b84c5fa6f2f17bd205b323b1de534f6d544d4d2e2aa53e31d5e2315fb18fc0",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "88b84c5fa6f2f17bd205b323b1de534f6d544d4d2e2aa53e31d5e2315fb18fc0",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/100",
+      "recordSha256": "b34c2c5a5a0d0d56757da60d42606a86314888f90f921e0243d524a483798bbd",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "b34c2c5a5a0d0d56757da60d42606a86314888f90f921e0243d524a483798bbd",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/101",
+      "recordSha256": "ae07493026b76a3aac6769b0d5ff5182fe7553b4e9e9fcf493838c1b9b156d13",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "ae07493026b76a3aac6769b0d5ff5182fe7553b4e9e9fcf493838c1b9b156d13",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/102",
+      "recordSha256": "809389a2e4560838600e1716e46b409ade087acd50bec2f811e77144bfead111",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "809389a2e4560838600e1716e46b409ade087acd50bec2f811e77144bfead111",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/103",
+      "recordSha256": "55d60b3989966e834ac9d7ef504fc171e09841deec6a94b3b8fff5728ef7b28c",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "55d60b3989966e834ac9d7ef504fc171e09841deec6a94b3b8fff5728ef7b28c",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/104",
+      "recordSha256": "4aeb4bd7b723587e903c6ec8b30dcf6261882bd4ddefe457644459e5c21e2e8b",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "4aeb4bd7b723587e903c6ec8b30dcf6261882bd4ddefe457644459e5c21e2e8b",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/105",
+      "recordSha256": "fbdb08122da3d6aa42c22e396a6d92a71c68c4898428cbfd2ffad082a28a4af2",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "fbdb08122da3d6aa42c22e396a6d92a71c68c4898428cbfd2ffad082a28a4af2",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/106",
+      "recordSha256": "5e005c2e11e3a6ea6b97cca3f275f0ffacf5b3e1a0a201e3f63b5cca7222cc2d",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "5e005c2e11e3a6ea6b97cca3f275f0ffacf5b3e1a0a201e3f63b5cca7222cc2d",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/107",
+      "recordSha256": "4b423af2ab1011300027d7ab5ca4cd5fac5962ae76540a26ce7dec3f6dcdbb00",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "4b423af2ab1011300027d7ab5ca4cd5fac5962ae76540a26ce7dec3f6dcdbb00",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/108",
+      "recordSha256": "25bba76af72a304a70c40dba50508da8e5dc3bf8de1b93caad63fc4ac8f451b9",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "25bba76af72a304a70c40dba50508da8e5dc3bf8de1b93caad63fc4ac8f451b9",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/109",
+      "recordSha256": "a602d127bcd41d5157096152abde21c735566aa3aeb9b183477c1360bc098c2d",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "a602d127bcd41d5157096152abde21c735566aa3aeb9b183477c1360bc098c2d",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/110",
+      "recordSha256": "f3d719b97bf92e855e6d713f59e56234a8732e0b61cd631627f1b78b208de122",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "f3d719b97bf92e855e6d713f59e56234a8732e0b61cd631627f1b78b208de122",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/111",
+      "recordSha256": "4907487113649b2b6d35697755bbc5e44302bcf0951ab3ff50b15406699641b5",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "4907487113649b2b6d35697755bbc5e44302bcf0951ab3ff50b15406699641b5",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/112",
+      "recordSha256": "34336b9aaa341c9e4538a80b6d4194df7b5eb5e19ef3e3827ca778c1526834db",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "34336b9aaa341c9e4538a80b6d4194df7b5eb5e19ef3e3827ca778c1526834db",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/113",
+      "recordSha256": "5be3b7797e5a74f83acd38c64a35c6afc139e0ea36dfab46d968f70f81e74006",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "5be3b7797e5a74f83acd38c64a35c6afc139e0ea36dfab46d968f70f81e74006",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/114",
+      "recordSha256": "4dfbc5709d3249954f5b184924c485ad1698066b6174ed09450ac05b694509d8",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "4dfbc5709d3249954f5b184924c485ad1698066b6174ed09450ac05b694509d8",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/115",
+      "recordSha256": "4bea9842865793f029d0e0d3f76c0401962e2126433c6419d93355aab289f158",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "4bea9842865793f029d0e0d3f76c0401962e2126433c6419d93355aab289f158",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/116",
+      "recordSha256": "ea93a03d3fe7c1b562c8d44c02fe4499d742e320582b5dcc5663158759c285c9",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "ea93a03d3fe7c1b562c8d44c02fe4499d742e320582b5dcc5663158759c285c9",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/117",
+      "recordSha256": "8491a49bc8c2d2972b7248c5857205f776be79d296f9cc23337fc5b10ef1cb31",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "8491a49bc8c2d2972b7248c5857205f776be79d296f9cc23337fc5b10ef1cb31",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/118",
+      "recordSha256": "bd154eaf3ad997319438a6f55714bff12a7f0889cb6b9e13e1dbea5a9594c4a1",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "bd154eaf3ad997319438a6f55714bff12a7f0889cb6b9e13e1dbea5a9594c4a1",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/119",
+      "recordSha256": "68727da4677e03c27f0fe55a47705a96b65bc26952d2829388540966a728f5c7",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "68727da4677e03c27f0fe55a47705a96b65bc26952d2829388540966a728f5c7",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/120",
+      "recordSha256": "aea5c0ac803fc60bc47538151ecd6eaa80035d7ce8563d2a44b1b0e3989e34c9",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "aea5c0ac803fc60bc47538151ecd6eaa80035d7ce8563d2a44b1b0e3989e34c9",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/2",
+      "recordSha256": "719c6103dee2413d4e56572d086e727a8529274e78eb7e058007662995b34d27",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "719c6103dee2413d4e56572d086e727a8529274e78eb7e058007662995b34d27",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/3",
+      "recordSha256": "22f433e772e07f969d705e179a3afb8c345bb1a8db09023e77fe6fa54fca43a2",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "22f433e772e07f969d705e179a3afb8c345bb1a8db09023e77fe6fa54fca43a2",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/4",
+      "recordSha256": "5a7ac0f15635c1bd7e8724e1b3707338b59b54e3deadb7039b4cb076091b5ebd",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "5a7ac0f15635c1bd7e8724e1b3707338b59b54e3deadb7039b4cb076091b5ebd",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/5",
+      "recordSha256": "858f438e1d1d03fb63cb2fc0451b51705b0f333ccdbc046c4fc782cbc01052a4",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "858f438e1d1d03fb63cb2fc0451b51705b0f333ccdbc046c4fc782cbc01052a4",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/6",
+      "recordSha256": "ea640065b9b0c21340b1451b7c11f44a62ef78d161172727f1725e92a8c512e3",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "ea640065b9b0c21340b1451b7c11f44a62ef78d161172727f1725e92a8c512e3",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/7",
+      "recordSha256": "510cd00328301783c04ddd4532a5faa6ec5673d2fce56ae7e77c5ddfd06262ee",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "510cd00328301783c04ddd4532a5faa6ec5673d2fce56ae7e77c5ddfd06262ee",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/8",
+      "recordSha256": "927a9f2b36c065a5c631df39017270ec83a9354392a1be953daa378d6da8a51f",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "927a9f2b36c065a5c631df39017270ec83a9354392a1be953daa378d6da8a51f",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/9",
+      "recordSha256": "52e768582eb2dffe01639827e35fdc300fc80263c617495679e533d8769d397b",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "52e768582eb2dffe01639827e35fdc300fc80263c617495679e533d8769d397b",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/10",
+      "recordSha256": "f4ecb8667e1bb2d4c544db36cb754ca57fc5b7caa2e01ffcefff50a0cc18e444",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "f4ecb8667e1bb2d4c544db36cb754ca57fc5b7caa2e01ffcefff50a0cc18e444",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/11",
+      "recordSha256": "80f16a4bdd9e001e75cc2f5a1de2be8a7b38264127c0c2c9f12794717bcfe48f",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "80f16a4bdd9e001e75cc2f5a1de2be8a7b38264127c0c2c9f12794717bcfe48f",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/12",
+      "recordSha256": "44904473e1a7cfb05d50a6f8d193e5adec3b92785e1b9823d5fd25381973bceb",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "44904473e1a7cfb05d50a6f8d193e5adec3b92785e1b9823d5fd25381973bceb",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/13",
+      "recordSha256": "f033ec05a19025824163eb4a0930355c838ad4faf45a055f10d7a3cea34ac2a6",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "f033ec05a19025824163eb4a0930355c838ad4faf45a055f10d7a3cea34ac2a6",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/14",
+      "recordSha256": "7e5687011a13a71bd137d12ba94ea45ab9e90f8fab953564481b281a3fba2fbe",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "7e5687011a13a71bd137d12ba94ea45ab9e90f8fab953564481b281a3fba2fbe",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/15",
+      "recordSha256": "66cfe51dc45f926c4ef7069a922bb78a7e683578c16bc6c63da7ae47116ac106",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "66cfe51dc45f926c4ef7069a922bb78a7e683578c16bc6c63da7ae47116ac106",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/16",
+      "recordSha256": "6a5cdd94ace4f527e2d199bd7f16daa148824b31500082e0d82feaa004624bb0",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "6a5cdd94ace4f527e2d199bd7f16daa148824b31500082e0d82feaa004624bb0",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/17",
+      "recordSha256": "3f0e8363f94733e33246449d4140d4ec1a17c546f09c131f33b702ba250ae149",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "3f0e8363f94733e33246449d4140d4ec1a17c546f09c131f33b702ba250ae149",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/18",
+      "recordSha256": "a2835dd0d0b1729b05e40bfe8039112a5548188d2e80a61977ae623c9dd96a86",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "a2835dd0d0b1729b05e40bfe8039112a5548188d2e80a61977ae623c9dd96a86",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/19",
+      "recordSha256": "5832774a08605acbd404c06c9467c84b657b3e62c8a9e5c7170ddee91a8ed3db",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "5832774a08605acbd404c06c9467c84b657b3e62c8a9e5c7170ddee91a8ed3db",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/20",
+      "recordSha256": "8a70038df5fae071abdd95f0180a0a348852273ed066096727205137ca51dc6b",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "8a70038df5fae071abdd95f0180a0a348852273ed066096727205137ca51dc6b",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/21",
+      "recordSha256": "70a037dc5023e552da3fd0feb134d7ae8fa33d1dbff4e68435d114dcea559871",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "70a037dc5023e552da3fd0feb134d7ae8fa33d1dbff4e68435d114dcea559871",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/22",
+      "recordSha256": "b96a7886e85cf87dc5ec3296168be8012f3a7e3e3e2ee30c44bca44190c66856",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "b96a7886e85cf87dc5ec3296168be8012f3a7e3e3e2ee30c44bca44190c66856",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/23",
+      "recordSha256": "8f1664e6393101354f09d315200594ac0aa827b5f47bb950158ccbc34357ab2c",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "8f1664e6393101354f09d315200594ac0aa827b5f47bb950158ccbc34357ab2c",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/24",
+      "recordSha256": "0debb2259e8c36324763ad43414a25e04bb0e040a12b39a8e9561b863934489b",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "0debb2259e8c36324763ad43414a25e04bb0e040a12b39a8e9561b863934489b",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/25",
+      "recordSha256": "3c1501d5f2d184af9d47f614cb6aedfb16f01a8c8c90fd298302c05fdc74f5fa",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "3c1501d5f2d184af9d47f614cb6aedfb16f01a8c8c90fd298302c05fdc74f5fa",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/26",
+      "recordSha256": "a7766b360ff838299a25ef6391c70ecee8751655081b394fb6aaec929df6bace",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "a7766b360ff838299a25ef6391c70ecee8751655081b394fb6aaec929df6bace",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/27",
+      "recordSha256": "1f13fe34422229e7964f8f2a40ac674945eae9a6e42c2b1763261fce75bfcbcc",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "1f13fe34422229e7964f8f2a40ac674945eae9a6e42c2b1763261fce75bfcbcc",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/28",
+      "recordSha256": "aeb44f28440694c5cc069dfb584dd986a1916284794a319f72ce38e24ca816d2",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "aeb44f28440694c5cc069dfb584dd986a1916284794a319f72ce38e24ca816d2",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/29",
+      "recordSha256": "c4d856f8640ed5f985abae201e507efb9f2694d28b182b0c8d7aab4678dd67d3",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "c4d856f8640ed5f985abae201e507efb9f2694d28b182b0c8d7aab4678dd67d3",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/30",
+      "recordSha256": "e3387c75327d40764b00cd1d366d9ae9fa3676b704ac2179b9b3e8d27692b307",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "e3387c75327d40764b00cd1d366d9ae9fa3676b704ac2179b9b3e8d27692b307",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/31",
+      "recordSha256": "9780f9aabdc651a2c068e989e79993da5e4f44cb0fe5699e3d4d93769739da83",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "9780f9aabdc651a2c068e989e79993da5e4f44cb0fe5699e3d4d93769739da83",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/32",
+      "recordSha256": "207d0c617f61389f5bb8615097c4cbd4debc7a352b2ceb4877c733b81662ce28",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "207d0c617f61389f5bb8615097c4cbd4debc7a352b2ceb4877c733b81662ce28",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/33",
+      "recordSha256": "8d8392c9f1632f92cb28c9b7fb7f4cfdef0bf87673788f0e72b65c0d1da99229",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "8d8392c9f1632f92cb28c9b7fb7f4cfdef0bf87673788f0e72b65c0d1da99229",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/34",
+      "recordSha256": "80b14ee7da74c5cb1a7e58b59394ac30b9f6b22c9bc7eef79e424dba6f68c6df",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "80b14ee7da74c5cb1a7e58b59394ac30b9f6b22c9bc7eef79e424dba6f68c6df",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/35",
+      "recordSha256": "2a3f62f59e4c039b156ca92325dd3721437503b63b59d1db67320691f799481e",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "2a3f62f59e4c039b156ca92325dd3721437503b63b59d1db67320691f799481e",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/36",
+      "recordSha256": "92a030a3198c51ec21d5d67ddec565aad9ac90f363d9efc95a2a7a69d1a9b1a4",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "92a030a3198c51ec21d5d67ddec565aad9ac90f363d9efc95a2a7a69d1a9b1a4",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/37",
+      "recordSha256": "5cb73c4f16b44e9ff94a18006e832dd774c2041bd0c9f2a9cf5fd01e9d72f5bc",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "5cb73c4f16b44e9ff94a18006e832dd774c2041bd0c9f2a9cf5fd01e9d72f5bc",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/38",
+      "recordSha256": "9e8d70cd3b022cb1a20c9973a6ad46fb97a2ecd2cc0b3887f83a8940af1c26b6",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "9e8d70cd3b022cb1a20c9973a6ad46fb97a2ecd2cc0b3887f83a8940af1c26b6",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/39",
+      "recordSha256": "e833b4fd7b291dc3aad00873570c9328b27c52ea1f49f870b6bff2c95ab5d451",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "e833b4fd7b291dc3aad00873570c9328b27c52ea1f49f870b6bff2c95ab5d451",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/40",
+      "recordSha256": "86dcd1eaaf22a851fa6a2319dd1057cadf69239d4680cb8e9faa0e6677a7025e",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "86dcd1eaaf22a851fa6a2319dd1057cadf69239d4680cb8e9faa0e6677a7025e",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/41",
+      "recordSha256": "1e27265ecad75562113d9d0480a0f8cca3049c0e862207a697ef3d940b5677f4",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "1e27265ecad75562113d9d0480a0f8cca3049c0e862207a697ef3d940b5677f4",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/42",
+      "recordSha256": "08f9506bfd9e30f031c06209ce97fb4f8599175cafca5d73433400891b407829",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "08f9506bfd9e30f031c06209ce97fb4f8599175cafca5d73433400891b407829",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/43",
+      "recordSha256": "b882dcd92b4b5af5c13b6073b4f0fbadf74e5b6e4a203f6438a3bcdb2345c1d8",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "b882dcd92b4b5af5c13b6073b4f0fbadf74e5b6e4a203f6438a3bcdb2345c1d8",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/44",
+      "recordSha256": "7d76b359a8d67904bf9bdaf4790ec53a39db6ee58de821517753a53b9407a6d3",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "7d76b359a8d67904bf9bdaf4790ec53a39db6ee58de821517753a53b9407a6d3",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/45",
+      "recordSha256": "6bf9d8d92fe77ccf87fa5938b0cb95fdd95d3f803af5ae6855859881859c0d9a",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "6bf9d8d92fe77ccf87fa5938b0cb95fdd95d3f803af5ae6855859881859c0d9a",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/46",
+      "recordSha256": "449ed8978aadb0798020fd7c046110b923516d9fe505ccc24518abd76cc70295",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "449ed8978aadb0798020fd7c046110b923516d9fe505ccc24518abd76cc70295",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/47",
+      "recordSha256": "e1b9cf1c1c162bd4ecb447014db3b862ce0afff7470b77830914c2329e3f050d",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "e1b9cf1c1c162bd4ecb447014db3b862ce0afff7470b77830914c2329e3f050d",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/48",
+      "recordSha256": "995cbedaff4e1c275a8ac0e22f609d6e4ce3d00210490710b71c83342dc14481",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "995cbedaff4e1c275a8ac0e22f609d6e4ce3d00210490710b71c83342dc14481",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/49",
+      "recordSha256": "b7006826949995c794b118505bac3d8a2bed968c7b486db8633066bb410f1983",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "b7006826949995c794b118505bac3d8a2bed968c7b486db8633066bb410f1983",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/50",
+      "recordSha256": "ee6f56077aa6c7bb3ecac4c2c1d3ee62de774d12657522961fe67fb45d6daf17",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "ee6f56077aa6c7bb3ecac4c2c1d3ee62de774d12657522961fe67fb45d6daf17",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/51",
+      "recordSha256": "beb259eb36870c5dd7d9b8c145873452de564a222332a00f37d65679bcec7164",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "beb259eb36870c5dd7d9b8c145873452de564a222332a00f37d65679bcec7164",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/52",
+      "recordSha256": "77a2ca5223d828b544c29a4927ff146e84b356cccbd1427d06cb3015c3b21519",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "77a2ca5223d828b544c29a4927ff146e84b356cccbd1427d06cb3015c3b21519",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/53",
+      "recordSha256": "8b4db92bc562a922597bc5fe2f6b603b7257bb84111f3a295939aaa57ab970ac",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "8b4db92bc562a922597bc5fe2f6b603b7257bb84111f3a295939aaa57ab970ac",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/54",
+      "recordSha256": "d844f5e53c8c2b493c88f4411fd4d09715c08ec35258e33dc549af23fb7e696e",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "d844f5e53c8c2b493c88f4411fd4d09715c08ec35258e33dc549af23fb7e696e",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/55",
+      "recordSha256": "7e5f3df22b81d76f6d047650b11471bf736d788efd50087111085e7b83c4b58a",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "7e5f3df22b81d76f6d047650b11471bf736d788efd50087111085e7b83c4b58a",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/56",
+      "recordSha256": "3f12f08c6a8234c52ce1e8a92e96063d2287cbcd8004862c3aa8e2e42bd4e53d",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "3f12f08c6a8234c52ce1e8a92e96063d2287cbcd8004862c3aa8e2e42bd4e53d",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/57",
+      "recordSha256": "7947fd7a02c3c6f82114d9b859c8a9c76263ecf98b69a99971af4fc0d34b488c",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "7947fd7a02c3c6f82114d9b859c8a9c76263ecf98b69a99971af4fc0d34b488c",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/58",
+      "recordSha256": "dd11d9e8307974ed81c0b023d8abf6602fdaeec6e70b2085d9037e6709c30b66",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "dd11d9e8307974ed81c0b023d8abf6602fdaeec6e70b2085d9037e6709c30b66",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/59",
+      "recordSha256": "3c7e59df9a0791e6f6dcf4f5ea871a7a4161b14bde86e5c09b1ecf50ac38ca61",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "3c7e59df9a0791e6f6dcf4f5ea871a7a4161b14bde86e5c09b1ecf50ac38ca61",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/60",
+      "recordSha256": "c32da2e5b36aaad48760d9340187d0d22f6a2b96b0c4ee86ceb023f5be39a312",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "c32da2e5b36aaad48760d9340187d0d22f6a2b96b0c4ee86ceb023f5be39a312",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/61",
+      "recordSha256": "13ca38940c1bb93e1c5a79e93036646db50126690225bf1680e79b9227ed9f24",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "13ca38940c1bb93e1c5a79e93036646db50126690225bf1680e79b9227ed9f24",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/62",
+      "recordSha256": "28468f97bc2586b68e608cbf779bb5615a19bf50b8f63dada57f5053155b111b",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "28468f97bc2586b68e608cbf779bb5615a19bf50b8f63dada57f5053155b111b",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/63",
+      "recordSha256": "da1496728cdb8e5d55472a5363f33e8f4b80d83e3d193354379438ac623dec2c",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "da1496728cdb8e5d55472a5363f33e8f4b80d83e3d193354379438ac623dec2c",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/64",
+      "recordSha256": "175d0a9b28d58cd647fc04137db2c73f4139002a326323fbb5eee66f6ebc8784",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "175d0a9b28d58cd647fc04137db2c73f4139002a326323fbb5eee66f6ebc8784",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/65",
+      "recordSha256": "06dcccb535e03d79bdcf17fc33d0e9784db1096370ed516af089b9651f9922ee",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "06dcccb535e03d79bdcf17fc33d0e9784db1096370ed516af089b9651f9922ee",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/66",
+      "recordSha256": "6b21a1efee7d2aa37655139bf10278c3788862412fa43765085fa2ab8356f6ea",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "6b21a1efee7d2aa37655139bf10278c3788862412fa43765085fa2ab8356f6ea",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/67",
+      "recordSha256": "ee4f1e2bb5696771846cbbcdc3fb9ac66b5af3b6f0d73dffdf7ef77de1ee9f47",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "ee4f1e2bb5696771846cbbcdc3fb9ac66b5af3b6f0d73dffdf7ef77de1ee9f47",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/68",
+      "recordSha256": "ac8ae4f434cabda09c23e610fb8519f72651d5d9c4c9d6b0a894b355d425ec01",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "ac8ae4f434cabda09c23e610fb8519f72651d5d9c4c9d6b0a894b355d425ec01",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/69",
+      "recordSha256": "59ddf5ed83aee32d0aa0c8dd8ca970b60211a6d3bfa62c13d85a4cd36facc5b3",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "59ddf5ed83aee32d0aa0c8dd8ca970b60211a6d3bfa62c13d85a4cd36facc5b3",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/70",
+      "recordSha256": "e99b6041f66684b4ba21d7fd690e4adb3684d1e85bae744c4637c03c2b272be9",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "e99b6041f66684b4ba21d7fd690e4adb3684d1e85bae744c4637c03c2b272be9",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/71",
+      "recordSha256": "2e5d0961051be975df659424d75f39bdcc544576df5802da757123a95ea322b6",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "2e5d0961051be975df659424d75f39bdcc544576df5802da757123a95ea322b6",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/72",
+      "recordSha256": "fb97042d56097dad37b85219b86e11e47903336fd285323e3eca01782bb77736",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "fb97042d56097dad37b85219b86e11e47903336fd285323e3eca01782bb77736",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/73",
+      "recordSha256": "75b4757d64d66b33c48846e66a9c74efb7a92f76f04a146fba1f0d193643748a",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "75b4757d64d66b33c48846e66a9c74efb7a92f76f04a146fba1f0d193643748a",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/74",
+      "recordSha256": "77ae560e0902088851ab1e2fce2fbe89a021c1e458db36fd020055b78d9f5867",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "77ae560e0902088851ab1e2fce2fbe89a021c1e458db36fd020055b78d9f5867",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/75",
+      "recordSha256": "e9507a15ae81bec504ac3ae245432abb7cc8922572bf43e6b9d50451b3076d23",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "e9507a15ae81bec504ac3ae245432abb7cc8922572bf43e6b9d50451b3076d23",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/76",
+      "recordSha256": "4b466ff445ade1050d6b93134490411e986f171bbac5c1424d10a92684b6c1c1",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "4b466ff445ade1050d6b93134490411e986f171bbac5c1424d10a92684b6c1c1",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/77",
+      "recordSha256": "3a2996de89f7713c7f1075053789d8f7e653439e968f1b27471831f2176bce47",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "3a2996de89f7713c7f1075053789d8f7e653439e968f1b27471831f2176bce47",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/78",
+      "recordSha256": "3ac0d201820bec14d03d0afafb91a4fd166737446599222697cf724d87156be9",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "3ac0d201820bec14d03d0afafb91a4fd166737446599222697cf724d87156be9",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/79",
+      "recordSha256": "260a25398bf27acb716e9188c796c926704011c034849a730c9b69a53c9ee6ae",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "260a25398bf27acb716e9188c796c926704011c034849a730c9b69a53c9ee6ae",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/80",
+      "recordSha256": "ef0f5d475c99cb3200477a39291e93d29ad331983a5c70a1088667e88d68ea2d",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "ef0f5d475c99cb3200477a39291e93d29ad331983a5c70a1088667e88d68ea2d",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/121",
+      "recordSha256": "ed2177ea45e45f1b098e8a70ecd40e6acc909045b82b0f4fd367024c906fce68",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "ed2177ea45e45f1b098e8a70ecd40e6acc909045b82b0f4fd367024c906fce68",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/122",
+      "recordSha256": "7269994ac54e535009eaec92f1d676ddda0cc85846aa4fb2b9492a09aafa1a57",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "7269994ac54e535009eaec92f1d676ddda0cc85846aa4fb2b9492a09aafa1a57",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/123",
+      "recordSha256": "77e31a815658959565726ac7d2b989b1084fdf3f5877d5925fd69de7cda2341a",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "77e31a815658959565726ac7d2b989b1084fdf3f5877d5925fd69de7cda2341a",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/124",
+      "recordSha256": "49bc32acbc081e2996fc0e148c6578cb956063ebc53f42817294fbb974a31f54",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "49bc32acbc081e2996fc0e148c6578cb956063ebc53f42817294fbb974a31f54",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/125",
+      "recordSha256": "1b4d350934924e6320fec95acfcabc2c4a9b60e245fc8648e1cc152e4703e6fd",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "1b4d350934924e6320fec95acfcabc2c4a9b60e245fc8648e1cc152e4703e6fd",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/126",
+      "recordSha256": "55e56601f3b8c61a2a88f242fcc3bb108e0b28b6b0a6b9716f476ce430dafe1c",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "55e56601f3b8c61a2a88f242fcc3bb108e0b28b6b0a6b9716f476ce430dafe1c",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/127",
+      "recordSha256": "7573d5146f5de285e474a83f9d04845c16cb0e8a2f3731daf00232f55b272a2c",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "7573d5146f5de285e474a83f9d04845c16cb0e8a2f3731daf00232f55b272a2c",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/128",
+      "recordSha256": "7d2475200a9240b4a38658f3e5ad02ceba866dcf17954d3cb8f93699dc297245",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "7d2475200a9240b4a38658f3e5ad02ceba866dcf17954d3cb8f93699dc297245",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/129",
+      "recordSha256": "8cec8f76fbda0605521e903d7db9200715dbb29596bdbee29690b4a17588132c",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "8cec8f76fbda0605521e903d7db9200715dbb29596bdbee29690b4a17588132c",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/130",
+      "recordSha256": "837f6387444b145b11a3770f0394eaf79740364962fb49f75e0bf56bfa8638bf",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "837f6387444b145b11a3770f0394eaf79740364962fb49f75e0bf56bfa8638bf",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/131",
+      "recordSha256": "c362ada5a05da272edd48272c5b392d6b77fa8c818205e03c705c9f632b92c3f",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "c362ada5a05da272edd48272c5b392d6b77fa8c818205e03c705c9f632b92c3f",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/132",
+      "recordSha256": "c0842bc8ea8914dfc565df9fd3cfc3c245616f4b9a76d099020edcf58807d10d",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "c0842bc8ea8914dfc565df9fd3cfc3c245616f4b9a76d099020edcf58807d10d",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/133",
+      "recordSha256": "cec174f0581d1773aa3e288d6a77bf8ce1882947f4d55ff0066f1938840697f3",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "cec174f0581d1773aa3e288d6a77bf8ce1882947f4d55ff0066f1938840697f3",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/134",
+      "recordSha256": "3e7ebdec3d302284e48de1e592598480f7903cb8db7428947f464b01a6899737",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "3e7ebdec3d302284e48de1e592598480f7903cb8db7428947f464b01a6899737",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/135",
+      "recordSha256": "8cef8ecbd4f4560d7eaa4639345b6b724b0be6439a5e44b8feb59e5771b3275b",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "8cef8ecbd4f4560d7eaa4639345b6b724b0be6439a5e44b8feb59e5771b3275b",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/136",
+      "recordSha256": "0e2c989ce3b9e9fc3a03184a0dbf0114b9feea6f8232d6b9c210b046e5180a50",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "0e2c989ce3b9e9fc3a03184a0dbf0114b9feea6f8232d6b9c210b046e5180a50",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/137",
+      "recordSha256": "7dbbc10ba37ef477486b41729095f66db196f90d86d15bffee14da8a2afb3bbe",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "7dbbc10ba37ef477486b41729095f66db196f90d86d15bffee14da8a2afb3bbe",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/138",
+      "recordSha256": "99ff0dea1fe18c8eb2ac5b6e20198e58d7367ad0cafd80123788a301c02773fe",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "99ff0dea1fe18c8eb2ac5b6e20198e58d7367ad0cafd80123788a301c02773fe",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/139",
+      "recordSha256": "ff991b6f74d481b77ac55e4bebe47a53d055a3e5ebf604fa6faea9d7a0af7c36",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "ff991b6f74d481b77ac55e4bebe47a53d055a3e5ebf604fa6faea9d7a0af7c36",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/140",
+      "recordSha256": "6a6c28015e5c57fbd5c8caf1cedcfc7e4b6b186d08d63d9b5efa9d6f24ac8c25",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "6a6c28015e5c57fbd5c8caf1cedcfc7e4b6b186d08d63d9b5efa9d6f24ac8c25",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/141",
+      "recordSha256": "105e3c8a45f67b1c6160ff046ef9f10b22de79c1b1df21626abbbc314993b177",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "105e3c8a45f67b1c6160ff046ef9f10b22de79c1b1df21626abbbc314993b177",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/142",
+      "recordSha256": "aacb2e9ea913c18fcee81851cf6498ba5b359fd9c7e6847c46e28caa10437a31",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "aacb2e9ea913c18fcee81851cf6498ba5b359fd9c7e6847c46e28caa10437a31",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/143",
+      "recordSha256": "64e65077558ccf07bfc0281a76e322e0019849c67462a3f31a07efaa1864565f",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "64e65077558ccf07bfc0281a76e322e0019849c67462a3f31a07efaa1864565f",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/144",
+      "recordSha256": "c275eb13df886b4173584c8aab426cc7a319e45d9d5ef1816cd08eb3e09b2a68",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "c275eb13df886b4173584c8aab426cc7a319e45d9d5ef1816cd08eb3e09b2a68",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/145",
+      "recordSha256": "94b7d8c9867a9b14b4d4f534dcadb99dc760d6a9f1eaf33f6dc20682cd690fb0",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "94b7d8c9867a9b14b4d4f534dcadb99dc760d6a9f1eaf33f6dc20682cd690fb0",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/146",
+      "recordSha256": "1aa140ab638f23a2343bc9a7a66155dda809f504fc037cc74a7340abf7c9a8a3",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "1aa140ab638f23a2343bc9a7a66155dda809f504fc037cc74a7340abf7c9a8a3",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/147",
+      "recordSha256": "551a8bba3496c6b1a00441c59fd17da71c52f2907f95b9025c9ebc7e08b5e88c",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "551a8bba3496c6b1a00441c59fd17da71c52f2907f95b9025c9ebc7e08b5e88c",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/148",
+      "recordSha256": "d23be3f3e76722038648677fdaa7711ffd5960a74c352463f6923456fb9a620b",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "d23be3f3e76722038648677fdaa7711ffd5960a74c352463f6923456fb9a620b",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/149",
+      "recordSha256": "b2c614315ecad45c5d2402ee47ab780908173b94a7327b6620e59c33bac0af83",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "b2c614315ecad45c5d2402ee47ab780908173b94a7327b6620e59c33bac0af83",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/150",
+      "recordSha256": "04e2db5ff9ba17eb72825af95ca39fc6e654f4f20a28fe04aba9a7a08c253e0b",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "04e2db5ff9ba17eb72825af95ca39fc6e654f4f20a28fe04aba9a7a08c253e0b",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/151",
+      "recordSha256": "b423a6b21f4acdeabd21680b89da0868e9d6ce8eab50274e438e15a1a3411a2d",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "b423a6b21f4acdeabd21680b89da0868e9d6ce8eab50274e438e15a1a3411a2d",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/152",
+      "recordSha256": "e69fcf7f6e783f00ce848bc84e90e1d2e7809485895658a710a98f490dc76d97",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "e69fcf7f6e783f00ce848bc84e90e1d2e7809485895658a710a98f490dc76d97",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/153",
+      "recordSha256": "2e24a8174f4bc4e5d542e020eb4bd2a4f4e290b5250fd9f2c60484d820ac2e20",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "2e24a8174f4bc4e5d542e020eb4bd2a4f4e290b5250fd9f2c60484d820ac2e20",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/154",
+      "recordSha256": "08f0f25b76f8f9cc5a3e3e3f18514335a032636a6caa8a7339e81026d05f374d",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "08f0f25b76f8f9cc5a3e3e3f18514335a032636a6caa8a7339e81026d05f374d",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/155",
+      "recordSha256": "15554b2447b3314cc36e4420ae9054428706b20bb355d28e3fdf85b035a302aa",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "15554b2447b3314cc36e4420ae9054428706b20bb355d28e3fdf85b035a302aa",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/156",
+      "recordSha256": "78c682e9e75c2b6f1a0bee5fb570572bb4c95a9791809baaec8e00ef0ff7e605",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "78c682e9e75c2b6f1a0bee5fb570572bb4c95a9791809baaec8e00ef0ff7e605",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/157",
+      "recordSha256": "e1e47eb986f95e57463d4e27fbc50bc16198d5f14dba8571d0fb6662bdd28143",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "e1e47eb986f95e57463d4e27fbc50bc16198d5f14dba8571d0fb6662bdd28143",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/158",
+      "recordSha256": "1abe3bafbd8208093e92a8fc41313cb1a543ed4a5763fda5e71b40688fc75cbb",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "1abe3bafbd8208093e92a8fc41313cb1a543ed4a5763fda5e71b40688fc75cbb",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/159",
+      "recordSha256": "4f1311f1050725cb828e1788328235ec8a3617edbccb6f1fe07646102f6c355a",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "4f1311f1050725cb828e1788328235ec8a3617edbccb6f1fe07646102f6c355a",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/160",
+      "recordSha256": "f19ac28d1786a238b082add7b6b409a1ed280003698943d4cb470cf96ef1fc04",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "f19ac28d1786a238b082add7b6b409a1ed280003698943d4cb470cf96ef1fc04",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/1",
+      "recordSha256": "32ba671713a31b0c20b48311a2cc47ce240c9947505a40c9d1739b0f356d2fee",
+      "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+      "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+    },
+    "hash": "32ba671713a31b0c20b48311a2cc47ce240c9947505a40c9d1739b0f356d2fee",
+    "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+  }
+]

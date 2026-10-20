@@ -1,0 +1,934 @@
+[
+  {
+    "caseId": "A",
+    "boundaries": [],
+    "beforeFirst": [],
+    "uncertain": []
+  },
+  {
+    "caseId": "B",
+    "boundaries": [],
+    "beforeFirst": [],
+    "uncertain": []
+  },
+  {
+    "caseId": "C",
+    "boundaries": [],
+    "beforeFirst": [],
+    "uncertain": []
+  },
+  {
+    "caseId": "D",
+    "boundaries": [],
+    "beforeFirst": [],
+    "uncertain": []
+  },
+  {
+    "caseId": "E",
+    "boundaries": [],
+    "beforeFirst": [],
+    "uncertain": []
+  },
+  {
+    "caseId": "F",
+    "boundaries": [],
+    "beforeFirst": [],
+    "uncertain": []
+  },
+  {
+    "caseId": "PAST",
+    "boundaries": [],
+    "beforeFirst": [],
+    "uncertain": []
+  },
+  {
+    "caseId": "FUTURE_OFFLINE",
+    "boundaries": [
+      {
+        "instant": "2028-04-23T21:42:00+09:00",
+        "month": 4,
+        "reason": [
+          "dayun_transition"
+        ],
+        "beforePointer": "/composition/result/evidence/raw/calendarMonths/3/segments/1",
+        "afterPointer": "/composition/result/evidence/raw/calendarMonths/3/segments/2",
+        "monthChanged": false,
+        "annualChanged": false,
+        "dayunChanged": true,
+        "before": {
+          "month": {
+            "stem": "丙",
+            "branch": "辰"
+          },
+          "annual": {
+            "stem": "戊",
+            "branch": "申"
+          },
+          "dayun": {
+            "status": "active",
+            "cycles": [
+              {
+                "index": 3,
+                "ganji": "壬申"
+              }
+            ],
+            "includesBeforeFirstCycle": false,
+            "transitionRange": null
+          },
+          "stemTenGod": "편인",
+          "branchTenGod": "비견",
+          "relationIds": [
+            "month-v2:2028:4:2:month:2028:4:branch:반합:辰申",
+            "month-v2:2028:4:2:month:2028:4:branch:충:辰戌",
+            "month-v2:2028:4:2:month:2028:4:branch:형:辰辰",
+            "month-v2:2028:4:2:month:2028:4:element:missing:fire",
+            "month-v2:2028:4:2:month:2028:4:element:heavy:earth",
+            "month-v2:2028:4:2:month_annual_branch:戊申:반합:申辰",
+            "month-v2:2028:4:2:month_dayun_branch:3:반합:申辰"
+          ],
+          "evidenceIds": [
+            "month-v2:2028:4:2:month",
+            "month-v2:2028:4:2:annual",
+            "month-v2:2028:4:2:dayun",
+            "month-v2:2028:4:2:ten_gods",
+            "month-v2:2028:4:2:elements",
+            "month-v2:2028:4:2:month:2028:4:branch:반합:辰申",
+            "month-v2:2028:4:2:month:2028:4:branch:충:辰戌",
+            "month-v2:2028:4:2:month:2028:4:branch:형:辰辰",
+            "month-v2:2028:4:2:month:2028:4:element:missing:fire",
+            "month-v2:2028:4:2:month:2028:4:element:heavy:earth",
+            "month-v2:2028:4:2:month_annual_branch:戊申:반합:申辰",
+            "month-v2:2028:4:2:month_dayun_branch:3:반합:申辰"
+          ]
+        },
+        "at": {
+          "month": {
+            "stem": "丙",
+            "branch": "辰"
+          },
+          "annual": {
+            "stem": "戊",
+            "branch": "申"
+          },
+          "dayun": {
+            "status": "active",
+            "cycles": [
+              {
+                "index": 4,
+                "ganji": "辛未"
+              }
+            ],
+            "includesBeforeFirstCycle": false,
+            "transitionRange": null
+          },
+          "stemTenGod": "편인",
+          "branchTenGod": "비견",
+          "relationIds": [
+            "month-v2:2028:4:3:month:2028:4:branch:반합:辰申",
+            "month-v2:2028:4:3:month:2028:4:branch:충:辰戌",
+            "month-v2:2028:4:3:month:2028:4:branch:형:辰辰",
+            "month-v2:2028:4:3:month:2028:4:element:missing:fire",
+            "month-v2:2028:4:3:month:2028:4:element:heavy:earth",
+            "month-v2:2028:4:3:month_annual_branch:戊申:반합:申辰"
+          ],
+          "evidenceIds": [
+            "month-v2:2028:4:3:month",
+            "month-v2:2028:4:3:annual",
+            "month-v2:2028:4:3:dayun",
+            "month-v2:2028:4:3:ten_gods",
+            "month-v2:2028:4:3:elements",
+            "month-v2:2028:4:3:month:2028:4:branch:반합:辰申",
+            "month-v2:2028:4:3:month:2028:4:branch:충:辰戌",
+            "month-v2:2028:4:3:month:2028:4:branch:형:辰辰",
+            "month-v2:2028:4:3:month:2028:4:element:missing:fire",
+            "month-v2:2028:4:3:month:2028:4:element:heavy:earth",
+            "month-v2:2028:4:3:month_annual_branch:戊申:반합:申辰"
+          ]
+        },
+        "after": {
+          "month": {
+            "stem": "丙",
+            "branch": "辰"
+          },
+          "annual": {
+            "stem": "戊",
+            "branch": "申"
+          },
+          "dayun": {
+            "status": "active",
+            "cycles": [
+              {
+                "index": 4,
+                "ganji": "辛未"
+              }
+            ],
+            "includesBeforeFirstCycle": false,
+            "transitionRange": null
+          },
+          "stemTenGod": "편인",
+          "branchTenGod": "비견",
+          "relationIds": [
+            "month-v2:2028:4:3:month:2028:4:branch:반합:辰申",
+            "month-v2:2028:4:3:month:2028:4:branch:충:辰戌",
+            "month-v2:2028:4:3:month:2028:4:branch:형:辰辰",
+            "month-v2:2028:4:3:month:2028:4:element:missing:fire",
+            "month-v2:2028:4:3:month:2028:4:element:heavy:earth",
+            "month-v2:2028:4:3:month_annual_branch:戊申:반합:申辰"
+          ],
+          "evidenceIds": [
+            "month-v2:2028:4:3:month",
+            "month-v2:2028:4:3:annual",
+            "month-v2:2028:4:3:dayun",
+            "month-v2:2028:4:3:ten_gods",
+            "month-v2:2028:4:3:elements",
+            "month-v2:2028:4:3:month:2028:4:branch:반합:辰申",
+            "month-v2:2028:4:3:month:2028:4:branch:충:辰戌",
+            "month-v2:2028:4:3:month:2028:4:branch:형:辰辰",
+            "month-v2:2028:4:3:month:2028:4:element:missing:fire",
+            "month-v2:2028:4:3:month:2028:4:element:heavy:earth",
+            "month-v2:2028:4:3:month_annual_branch:戊申:반합:申辰"
+          ]
+        },
+        "state": "VERIFIED"
+      }
+    ],
+    "beforeFirst": [],
+    "uncertain": []
+  },
+  {
+    "caseId": "EXACT_DAYUN",
+    "boundaries": [
+      {
+        "instant": "2026-12-30T15:30:00+09:00",
+        "month": 12,
+        "reason": [
+          "dayun_transition"
+        ],
+        "beforePointer": "/composition/result/evidence/raw/calendarMonths/11/segments/1",
+        "afterPointer": "/composition/result/evidence/raw/calendarMonths/11/segments/2",
+        "monthChanged": false,
+        "annualChanged": false,
+        "dayunChanged": true,
+        "before": {
+          "month": {
+            "stem": "庚",
+            "branch": "子"
+          },
+          "annual": {
+            "stem": "丙",
+            "branch": "午"
+          },
+          "dayun": {
+            "status": "active",
+            "cycles": [
+              {
+                "index": 2,
+                "ganji": "壬辰"
+              }
+            ],
+            "includesBeforeFirstCycle": false,
+            "transitionRange": null
+          },
+          "stemTenGod": "편재",
+          "branchTenGod": "정관",
+          "relationIds": [
+            "month-v2:2026:12:2:month:2026:12:branch:반합:子辰",
+            "month-v2:2026:12:2:month:2026:12:branch:충:子午",
+            "month-v2:2026:12:2:month:2026:12:branch:해:子未",
+            "month-v2:2026:12:2:month:2026:12:element:missing:metal",
+            "month-v2:2026:12:2:month:2026:12:element:missing:water",
+            "month-v2:2026:12:2:month_annual_branch:丙午:충:子午",
+            "month-v2:2026:12:2:month_dayun_branch:2:반합:子辰"
+          ],
+          "evidenceIds": [
+            "month-v2:2026:12:2:month",
+            "month-v2:2026:12:2:annual",
+            "month-v2:2026:12:2:dayun",
+            "month-v2:2026:12:2:ten_gods",
+            "month-v2:2026:12:2:elements",
+            "month-v2:2026:12:2:month:2026:12:branch:반합:子辰",
+            "month-v2:2026:12:2:month:2026:12:branch:충:子午",
+            "month-v2:2026:12:2:month:2026:12:branch:해:子未",
+            "month-v2:2026:12:2:month:2026:12:element:missing:metal",
+            "month-v2:2026:12:2:month:2026:12:element:missing:water",
+            "month-v2:2026:12:2:month_annual_branch:丙午:충:子午",
+            "month-v2:2026:12:2:month_dayun_branch:2:반합:子辰"
+          ]
+        },
+        "at": {
+          "month": {
+            "stem": "庚",
+            "branch": "子"
+          },
+          "annual": {
+            "stem": "丙",
+            "branch": "午"
+          },
+          "dayun": {
+            "status": "active",
+            "cycles": [
+              {
+                "index": 3,
+                "ganji": "辛卯"
+              }
+            ],
+            "includesBeforeFirstCycle": false,
+            "transitionRange": null
+          },
+          "stemTenGod": "편재",
+          "branchTenGod": "정관",
+          "relationIds": [
+            "month-v2:2026:12:3:month:2026:12:branch:반합:子辰",
+            "month-v2:2026:12:3:month:2026:12:branch:충:子午",
+            "month-v2:2026:12:3:month:2026:12:branch:해:子未",
+            "month-v2:2026:12:3:month:2026:12:element:missing:metal",
+            "month-v2:2026:12:3:month:2026:12:element:missing:water",
+            "month-v2:2026:12:3:month_annual_branch:丙午:충:子午",
+            "month-v2:2026:12:3:month_dayun_branch:3:형:子卯"
+          ],
+          "evidenceIds": [
+            "month-v2:2026:12:3:month",
+            "month-v2:2026:12:3:annual",
+            "month-v2:2026:12:3:dayun",
+            "month-v2:2026:12:3:ten_gods",
+            "month-v2:2026:12:3:elements",
+            "month-v2:2026:12:3:month:2026:12:branch:반합:子辰",
+            "month-v2:2026:12:3:month:2026:12:branch:충:子午",
+            "month-v2:2026:12:3:month:2026:12:branch:해:子未",
+            "month-v2:2026:12:3:month:2026:12:element:missing:metal",
+            "month-v2:2026:12:3:month:2026:12:element:missing:water",
+            "month-v2:2026:12:3:month_annual_branch:丙午:충:子午",
+            "month-v2:2026:12:3:month_dayun_branch:3:형:子卯"
+          ]
+        },
+        "after": {
+          "month": {
+            "stem": "庚",
+            "branch": "子"
+          },
+          "annual": {
+            "stem": "丙",
+            "branch": "午"
+          },
+          "dayun": {
+            "status": "active",
+            "cycles": [
+              {
+                "index": 3,
+                "ganji": "辛卯"
+              }
+            ],
+            "includesBeforeFirstCycle": false,
+            "transitionRange": null
+          },
+          "stemTenGod": "편재",
+          "branchTenGod": "정관",
+          "relationIds": [
+            "month-v2:2026:12:3:month:2026:12:branch:반합:子辰",
+            "month-v2:2026:12:3:month:2026:12:branch:충:子午",
+            "month-v2:2026:12:3:month:2026:12:branch:해:子未",
+            "month-v2:2026:12:3:month:2026:12:element:missing:metal",
+            "month-v2:2026:12:3:month:2026:12:element:missing:water",
+            "month-v2:2026:12:3:month_annual_branch:丙午:충:子午",
+            "month-v2:2026:12:3:month_dayun_branch:3:형:子卯"
+          ],
+          "evidenceIds": [
+            "month-v2:2026:12:3:month",
+            "month-v2:2026:12:3:annual",
+            "month-v2:2026:12:3:dayun",
+            "month-v2:2026:12:3:ten_gods",
+            "month-v2:2026:12:3:elements",
+            "month-v2:2026:12:3:month:2026:12:branch:반합:子辰",
+            "month-v2:2026:12:3:month:2026:12:branch:충:子午",
+            "month-v2:2026:12:3:month:2026:12:branch:해:子未",
+            "month-v2:2026:12:3:month:2026:12:element:missing:metal",
+            "month-v2:2026:12:3:month:2026:12:element:missing:water",
+            "month-v2:2026:12:3:month_annual_branch:丙午:충:子午",
+            "month-v2:2026:12:3:month_dayun_branch:3:형:子卯"
+          ]
+        },
+        "state": "VERIFIED"
+      }
+    ],
+    "beforeFirst": [],
+    "uncertain": []
+  },
+  {
+    "caseId": "RANGE_DAYUN",
+    "boundaries": [
+      {
+        "instant": "2027-04-08T00:00:00+09:00",
+        "month": 4,
+        "reason": [
+          "dayun_uncertainty_start"
+        ],
+        "beforePointer": "/composition/result/evidence/raw/calendarMonths/3/segments/1",
+        "afterPointer": "/composition/result/evidence/raw/calendarMonths/3/segments/2",
+        "monthChanged": false,
+        "annualChanged": false,
+        "dayunChanged": true,
+        "before": {
+          "month": {
+            "stem": "甲",
+            "branch": "辰"
+          },
+          "annual": {
+            "stem": "丁",
+            "branch": "未"
+          },
+          "dayun": {
+            "status": "active",
+            "cycles": [
+              {
+                "index": 2,
+                "ganji": "己巳"
+              }
+            ],
+            "includesBeforeFirstCycle": false,
+            "transitionRange": null
+          },
+          "stemTenGod": "비견",
+          "branchTenGod": "편재",
+          "relationIds": [
+            "month-v2:2027:4:2:month:2027:4:branch:반합:辰申",
+            "month-v2:2027:4:2:month:2027:4:branch:해:卯辰"
+          ],
+          "evidenceIds": [
+            "month-v2:2027:4:2:month",
+            "month-v2:2027:4:2:annual",
+            "month-v2:2027:4:2:dayun",
+            "month-v2:2027:4:2:ten_gods",
+            "month-v2:2027:4:2:elements",
+            "month-v2:2027:4:2:month:2027:4:branch:반합:辰申",
+            "month-v2:2027:4:2:month:2027:4:branch:해:卯辰"
+          ]
+        },
+        "at": {
+          "month": {
+            "stem": "甲",
+            "branch": "辰"
+          },
+          "annual": {
+            "stem": "丁",
+            "branch": "未"
+          },
+          "dayun": {
+            "status": "transition_uncertain",
+            "cycles": [
+              {
+                "index": 2,
+                "ganji": "己巳"
+              },
+              {
+                "index": 3,
+                "ganji": "戊辰"
+              }
+            ],
+            "includesBeforeFirstCycle": false,
+            "transitionRange": {
+              "earliestKst": "2027-04-08T00:00:00+09:00",
+              "latestKst": "2027-08-08T21:59:59+09:00"
+            }
+          },
+          "stemTenGod": "비견",
+          "branchTenGod": "편재",
+          "relationIds": [
+            "month-v2:2027:4:3:month:2027:4:branch:반합:辰申",
+            "month-v2:2027:4:3:month:2027:4:branch:해:卯辰",
+            "month-v2:2027:4:3:month_dayun_branch:3:형:辰辰"
+          ],
+          "evidenceIds": [
+            "month-v2:2027:4:3:month",
+            "month-v2:2027:4:3:annual",
+            "month-v2:2027:4:3:dayun",
+            "month-v2:2027:4:3:ten_gods",
+            "month-v2:2027:4:3:elements",
+            "month-v2:2027:4:3:month:2027:4:branch:반합:辰申",
+            "month-v2:2027:4:3:month:2027:4:branch:해:卯辰",
+            "month-v2:2027:4:3:month_dayun_branch:3:형:辰辰"
+          ]
+        },
+        "after": {
+          "month": {
+            "stem": "甲",
+            "branch": "辰"
+          },
+          "annual": {
+            "stem": "丁",
+            "branch": "未"
+          },
+          "dayun": {
+            "status": "transition_uncertain",
+            "cycles": [
+              {
+                "index": 2,
+                "ganji": "己巳"
+              },
+              {
+                "index": 3,
+                "ganji": "戊辰"
+              }
+            ],
+            "includesBeforeFirstCycle": false,
+            "transitionRange": {
+              "earliestKst": "2027-04-08T00:00:00+09:00",
+              "latestKst": "2027-08-08T21:59:59+09:00"
+            }
+          },
+          "stemTenGod": "비견",
+          "branchTenGod": "편재",
+          "relationIds": [
+            "month-v2:2027:4:3:month:2027:4:branch:반합:辰申",
+            "month-v2:2027:4:3:month:2027:4:branch:해:卯辰",
+            "month-v2:2027:4:3:month_dayun_branch:3:형:辰辰"
+          ],
+          "evidenceIds": [
+            "month-v2:2027:4:3:month",
+            "month-v2:2027:4:3:annual",
+            "month-v2:2027:4:3:dayun",
+            "month-v2:2027:4:3:ten_gods",
+            "month-v2:2027:4:3:elements",
+            "month-v2:2027:4:3:month:2027:4:branch:반합:辰申",
+            "month-v2:2027:4:3:month:2027:4:branch:해:卯辰",
+            "month-v2:2027:4:3:month_dayun_branch:3:형:辰辰"
+          ]
+        },
+        "state": "VERIFIED"
+      },
+      {
+        "instant": "2027-08-08T21:59:59+09:00",
+        "month": 8,
+        "reason": [
+          "dayun_uncertainty_end"
+        ],
+        "beforePointer": "/composition/result/evidence/raw/calendarMonths/7/segments/1",
+        "afterPointer": "/composition/result/evidence/raw/calendarMonths/7/segments/2",
+        "monthChanged": false,
+        "annualChanged": false,
+        "dayunChanged": true,
+        "before": {
+          "month": {
+            "stem": "戊",
+            "branch": "申"
+          },
+          "annual": {
+            "stem": "丁",
+            "branch": "未"
+          },
+          "dayun": {
+            "status": "transition_uncertain",
+            "cycles": [
+              {
+                "index": 2,
+                "ganji": "己巳"
+              },
+              {
+                "index": 3,
+                "ganji": "戊辰"
+              }
+            ],
+            "includesBeforeFirstCycle": false,
+            "transitionRange": {
+              "earliestKst": "2027-04-08T00:00:00+09:00",
+              "latestKst": "2027-08-08T21:59:59+09:00"
+            }
+          },
+          "stemTenGod": "편재",
+          "branchTenGod": "편관",
+          "relationIds": [
+            "month-v2:2027:8:2:month_dayun_branch:2:육합:巳申",
+            "month-v2:2027:8:2:month_dayun_branch:2:형:巳申",
+            "month-v2:2027:8:2:month_dayun_branch:2:파:巳申",
+            "month-v2:2027:8:2:month_dayun_branch:3:반합:申辰"
+          ],
+          "evidenceIds": [
+            "month-v2:2027:8:2:month",
+            "month-v2:2027:8:2:annual",
+            "month-v2:2027:8:2:dayun",
+            "month-v2:2027:8:2:ten_gods",
+            "month-v2:2027:8:2:elements",
+            "month-v2:2027:8:2:month_dayun_branch:2:육합:巳申",
+            "month-v2:2027:8:2:month_dayun_branch:2:형:巳申",
+            "month-v2:2027:8:2:month_dayun_branch:2:파:巳申",
+            "month-v2:2027:8:2:month_dayun_branch:3:반합:申辰"
+          ]
+        },
+        "at": {
+          "month": {
+            "stem": "戊",
+            "branch": "申"
+          },
+          "annual": {
+            "stem": "丁",
+            "branch": "未"
+          },
+          "dayun": {
+            "status": "active",
+            "cycles": [
+              {
+                "index": 3,
+                "ganji": "戊辰"
+              }
+            ],
+            "includesBeforeFirstCycle": false,
+            "transitionRange": null
+          },
+          "stemTenGod": "편재",
+          "branchTenGod": "편관",
+          "relationIds": [
+            "month-v2:2027:8:3:month_dayun_branch:3:반합:申辰"
+          ],
+          "evidenceIds": [
+            "month-v2:2027:8:3:month",
+            "month-v2:2027:8:3:annual",
+            "month-v2:2027:8:3:dayun",
+            "month-v2:2027:8:3:ten_gods",
+            "month-v2:2027:8:3:elements",
+            "month-v2:2027:8:3:month_dayun_branch:3:반합:申辰"
+          ]
+        },
+        "after": {
+          "month": {
+            "stem": "戊",
+            "branch": "申"
+          },
+          "annual": {
+            "stem": "丁",
+            "branch": "未"
+          },
+          "dayun": {
+            "status": "active",
+            "cycles": [
+              {
+                "index": 3,
+                "ganji": "戊辰"
+              }
+            ],
+            "includesBeforeFirstCycle": false,
+            "transitionRange": null
+          },
+          "stemTenGod": "편재",
+          "branchTenGod": "편관",
+          "relationIds": [
+            "month-v2:2027:8:3:month_dayun_branch:3:반합:申辰"
+          ],
+          "evidenceIds": [
+            "month-v2:2027:8:3:month",
+            "month-v2:2027:8:3:annual",
+            "month-v2:2027:8:3:dayun",
+            "month-v2:2027:8:3:ten_gods",
+            "month-v2:2027:8:3:elements",
+            "month-v2:2027:8:3:month_dayun_branch:3:반합:申辰"
+          ]
+        },
+        "state": "VERIFIED"
+      }
+    ],
+    "beforeFirst": [],
+    "uncertain": [
+      {
+        "pointer": "/composition/result/evidence/raw/calendarMonths/3/segments/2",
+        "window": {
+          "scope": "month",
+          "start": "2027-04-08T00:00:00+09:00",
+          "endExclusive": "2027-05-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "boundaryReason": [
+              "dayun_uncertainty_start"
+            ]
+          },
+          "compatibleCombination": true
+        },
+        "context": {
+          "status": "transition_uncertain",
+          "cycles": [
+            {
+              "index": 2,
+              "ganji": "己巳"
+            },
+            {
+              "index": 3,
+              "ganji": "戊辰"
+            }
+          ],
+          "includesBeforeFirstCycle": false,
+          "transitionRange": {
+            "earliestKst": "2027-04-08T00:00:00+09:00",
+            "latestKst": "2027-08-08T21:59:59+09:00"
+          }
+        }
+      },
+      {
+        "pointer": "/composition/result/evidence/raw/calendarMonths/4/segments/0",
+        "window": {
+          "scope": "month",
+          "start": "2027-05-01T00:00:00+09:00",
+          "endExclusive": "2027-05-06T02:25:12+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "boundaryReason": [
+              "calendar_month_start"
+            ]
+          },
+          "compatibleCombination": true
+        },
+        "context": {
+          "status": "transition_uncertain",
+          "cycles": [
+            {
+              "index": 2,
+              "ganji": "己巳"
+            },
+            {
+              "index": 3,
+              "ganji": "戊辰"
+            }
+          ],
+          "includesBeforeFirstCycle": false,
+          "transitionRange": {
+            "earliestKst": "2027-04-08T00:00:00+09:00",
+            "latestKst": "2027-08-08T21:59:59+09:00"
+          }
+        }
+      },
+      {
+        "pointer": "/composition/result/evidence/raw/calendarMonths/4/segments/1",
+        "window": {
+          "scope": "month",
+          "start": "2027-05-06T02:25:12+09:00",
+          "endExclusive": "2027-06-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "boundaryReason": [
+              "jie:입하"
+            ]
+          },
+          "compatibleCombination": true
+        },
+        "context": {
+          "status": "transition_uncertain",
+          "cycles": [
+            {
+              "index": 2,
+              "ganji": "己巳"
+            },
+            {
+              "index": 3,
+              "ganji": "戊辰"
+            }
+          ],
+          "includesBeforeFirstCycle": false,
+          "transitionRange": {
+            "earliestKst": "2027-04-08T00:00:00+09:00",
+            "latestKst": "2027-08-08T21:59:59+09:00"
+          }
+        }
+      },
+      {
+        "pointer": "/composition/result/evidence/raw/calendarMonths/5/segments/0",
+        "window": {
+          "scope": "month",
+          "start": "2027-06-01T00:00:00+09:00",
+          "endExclusive": "2027-06-06T06:25:48+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "boundaryReason": [
+              "calendar_month_start"
+            ]
+          },
+          "compatibleCombination": true
+        },
+        "context": {
+          "status": "transition_uncertain",
+          "cycles": [
+            {
+              "index": 2,
+              "ganji": "己巳"
+            },
+            {
+              "index": 3,
+              "ganji": "戊辰"
+            }
+          ],
+          "includesBeforeFirstCycle": false,
+          "transitionRange": {
+            "earliestKst": "2027-04-08T00:00:00+09:00",
+            "latestKst": "2027-08-08T21:59:59+09:00"
+          }
+        }
+      },
+      {
+        "pointer": "/composition/result/evidence/raw/calendarMonths/5/segments/1",
+        "window": {
+          "scope": "month",
+          "start": "2027-06-06T06:25:48+09:00",
+          "endExclusive": "2027-07-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "boundaryReason": [
+              "jie:망종"
+            ]
+          },
+          "compatibleCombination": true
+        },
+        "context": {
+          "status": "transition_uncertain",
+          "cycles": [
+            {
+              "index": 2,
+              "ganji": "己巳"
+            },
+            {
+              "index": 3,
+              "ganji": "戊辰"
+            }
+          ],
+          "includesBeforeFirstCycle": false,
+          "transitionRange": {
+            "earliestKst": "2027-04-08T00:00:00+09:00",
+            "latestKst": "2027-08-08T21:59:59+09:00"
+          }
+        }
+      },
+      {
+        "pointer": "/composition/result/evidence/raw/calendarMonths/6/segments/0",
+        "window": {
+          "scope": "month",
+          "start": "2027-07-01T00:00:00+09:00",
+          "endExclusive": "2027-07-07T16:37:03+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "boundaryReason": [
+              "calendar_month_start"
+            ]
+          },
+          "compatibleCombination": true
+        },
+        "context": {
+          "status": "transition_uncertain",
+          "cycles": [
+            {
+              "index": 2,
+              "ganji": "己巳"
+            },
+            {
+              "index": 3,
+              "ganji": "戊辰"
+            }
+          ],
+          "includesBeforeFirstCycle": false,
+          "transitionRange": {
+            "earliestKst": "2027-04-08T00:00:00+09:00",
+            "latestKst": "2027-08-08T21:59:59+09:00"
+          }
+        }
+      },
+      {
+        "pointer": "/composition/result/evidence/raw/calendarMonths/6/segments/1",
+        "window": {
+          "scope": "month",
+          "start": "2027-07-07T16:37:03+09:00",
+          "endExclusive": "2027-08-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "boundaryReason": [
+              "jie:소서"
+            ]
+          },
+          "compatibleCombination": true
+        },
+        "context": {
+          "status": "transition_uncertain",
+          "cycles": [
+            {
+              "index": 2,
+              "ganji": "己巳"
+            },
+            {
+              "index": 3,
+              "ganji": "戊辰"
+            }
+          ],
+          "includesBeforeFirstCycle": false,
+          "transitionRange": {
+            "earliestKst": "2027-04-08T00:00:00+09:00",
+            "latestKst": "2027-08-08T21:59:59+09:00"
+          }
+        }
+      },
+      {
+        "pointer": "/composition/result/evidence/raw/calendarMonths/7/segments/0",
+        "window": {
+          "scope": "month",
+          "start": "2027-08-01T00:00:00+09:00",
+          "endExclusive": "2027-08-08T02:26:46+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "boundaryReason": [
+              "calendar_month_start"
+            ]
+          },
+          "compatibleCombination": true
+        },
+        "context": {
+          "status": "transition_uncertain",
+          "cycles": [
+            {
+              "index": 2,
+              "ganji": "己巳"
+            },
+            {
+              "index": 3,
+              "ganji": "戊辰"
+            }
+          ],
+          "includesBeforeFirstCycle": false,
+          "transitionRange": {
+            "earliestKst": "2027-04-08T00:00:00+09:00",
+            "latestKst": "2027-08-08T21:59:59+09:00"
+          }
+        }
+      },
+      {
+        "pointer": "/composition/result/evidence/raw/calendarMonths/7/segments/1",
+        "window": {
+          "scope": "month",
+          "start": "2027-08-08T02:26:46+09:00",
+          "endExclusive": "2027-08-08T21:59:59+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "boundaryReason": [
+              "jie:입추"
+            ]
+          },
+          "compatibleCombination": true
+        },
+        "context": {
+          "status": "transition_uncertain",
+          "cycles": [
+            {
+              "index": 2,
+              "ganji": "己巳"
+            },
+            {
+              "index": 3,
+              "ganji": "戊辰"
+            }
+          ],
+          "includesBeforeFirstCycle": false,
+          "transitionRange": {
+            "earliestKst": "2027-04-08T00:00:00+09:00",
+            "latestKst": "2027-08-08T21:59:59+09:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "caseId": "H_STUDENT",
+    "boundaries": [],
+    "beforeFirst": [],
+    "uncertain": []
+  }
+]

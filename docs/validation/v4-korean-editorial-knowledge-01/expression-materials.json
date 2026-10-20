@@ -1,0 +1,834 @@
+[
+  {
+    "id": "ker:expression:comprehensive:1",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:comprehensive:1",
+    "claimRef": "ker:claim:comprehensive",
+    "meaningIdentity": "ker:meaning:comprehensive",
+    "function": "explanation",
+    "text": "이해할 이유를 먼저 찾는 면이 실제로 확인된다면, 설명을 살핀 뒤 판단하려는 인물상 후보로 읽을 수 있습니다.",
+    "semanticUnits": [
+      "이유 탐색의 확인",
+      "조건부 인물상"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:comprehensive:2",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:comprehensive:2",
+    "claimRef": "ker:claim:comprehensive",
+    "meaningIdentity": "ker:meaning:comprehensive",
+    "function": "explanation",
+    "text": "설명을 확인한 뒤 판단하려는 면이 근거로 확인된다면, 먼저 이해해야 움직이는 인물상의 한 부분으로 읽을 수 있습니다.",
+    "semanticUnits": [
+      "이유 탐색의 확인",
+      "조건부 인물상"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:career:1",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:career:1",
+    "claimRef": "ker:claim:career",
+    "meaningIdentity": "ker:meaning:career",
+    "function": "explanation",
+    "text": "업무를 시작할 때는 요청의 목적과 완료 조건을 나누어 확인하는 질문을 적용할 수 있습니다.",
+    "semanticUnits": [
+      "요청 목적",
+      "완료 조건"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:career:2",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:career:2",
+    "claimRef": "ker:claim:career",
+    "meaningIdentity": "ker:meaning:career",
+    "function": "explanation",
+    "text": "일을 받는 상황이라면, 왜 필요한 일인지와 어디까지 끝내야 하는지를 구분해 물어볼 수 있습니다.",
+    "semanticUnits": [
+      "요청 목적",
+      "완료 조건"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:love:1",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:love:1",
+    "claimRef": "ker:claim:love",
+    "meaningIdentity": "ker:meaning:love",
+    "function": "explanation",
+    "text": "누군가를 돕고 싶은 상황이라면, 필요한 것을 알아보는 관심과 상대가 동의한 도움을 건네는 행동을 나누어 볼 수 있습니다.",
+    "semanticUnits": [
+      "필요 확인",
+      "동의한 도움"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:love:2",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:love:2",
+    "claimRef": "ker:claim:love",
+    "meaningIdentity": "ker:meaning:love",
+    "function": "explanation",
+    "text": "도움을 주려 할 때에는 무엇이 필요한지 살피는 일과 허락받은 도움을 실제로 건네는 일을 구분해볼 수 있습니다.",
+    "semanticUnits": [
+      "필요 확인",
+      "동의한 도움"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:pair-love:1",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:pair-love:1",
+    "claimRef": "ker:claim:pair-love",
+    "meaningIdentity": "ker:meaning:pair-love",
+    "function": "explanation",
+    "text": "두 사람의 실제 필요가 확인된다면, 반응으로 관심을 확인하려는 필요와 생각할 시간을 지키려는 필요가 만날 조건을 살펴볼 수 있습니다.",
+    "semanticUnits": [
+      "반응의 필요",
+      "생각할 시간",
+      "양쪽 실제 확인"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:pair-love:2",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:pair-love:2",
+    "claimRef": "ker:claim:pair-love",
+    "meaningIdentity": "ker:meaning:pair-love",
+    "function": "explanation",
+    "text": "관심을 알아볼 반응과 생각할 시간 모두가 실제 필요로 확인될 때, 둘이 함께 지킬 수 있는 조건을 비교해볼 수 있습니다.",
+    "semanticUnits": [
+      "반응의 필요",
+      "생각할 시간",
+      "양쪽 실제 확인"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:pair-marriage:1",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:pair-marriage:1",
+    "claimRef": "ker:claim:pair-marriage",
+    "meaningIdentity": "ker:meaning:pair-marriage",
+    "function": "explanation",
+    "text": "공동생활을 선택한다면, 유지할 기본 약속과 상황에 따라 바꿀 방법을 먼저 구분해볼 수 있습니다.",
+    "semanticUnits": [
+      "공동생활 조건",
+      "약속과 방법 구분"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:pair-marriage:2",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:pair-marriage:2",
+    "claimRef": "ker:claim:pair-marriage",
+    "meaningIdentity": "ker:meaning:pair-marriage",
+    "function": "explanation",
+    "text": "함께 사는 선택을 한다면, 계속 지킬 약속은 무엇이고 조정할 방식은 무엇인지 나누어 볼 수 있습니다.",
+    "semanticUnits": [
+      "공동생활 조건",
+      "약속과 방법 구분"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:pair-parent-child:1",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:pair-parent-child:1",
+    "claimRef": "ker:claim:pair-parent-child",
+    "meaningIdentity": "ker:meaning:pair-parent-child",
+    "function": "explanation",
+    "text": "부모의 꾸준함에 대한 기대와 자녀의 관심 탐색이 확인된다면, 두 필요를 서로 다른 책임의 질문으로 살펴볼 수 있습니다.",
+    "semanticUnits": [
+      "부모 기대 확인",
+      "자녀 탐색 확인",
+      "책임의 구분"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:pair-parent-child:2",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:pair-parent-child:2",
+    "claimRef": "ker:claim:pair-parent-child",
+    "meaningIdentity": "ker:meaning:pair-parent-child",
+    "function": "explanation",
+    "text": "꾸준함을 바라는 부모의 기대와 관심을 탐색하는 자녀의 필요가 확인될 때, 각자의 책임을 같은 질문으로 묶지 않고 볼 수 있습니다.",
+    "semanticUnits": [
+      "부모 기대 확인",
+      "자녀 탐색 확인",
+      "책임의 구분"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:pair-coworker:1",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:pair-coworker:1",
+    "claimRef": "ker:claim:pair-coworker",
+    "meaningIdentity": "ker:meaning:pair-coworker",
+    "function": "explanation",
+    "text": "A의 사전 사고 시간과 B의 현장 대응 선호가 실제로 확인된다면, 착수 전에 어떤 정보가 필요한지 서로 나누어 물어볼 수 있습니다.",
+    "semanticUnits": [
+      "A 사전 사고",
+      "B 현장 대응",
+      "착수 전 정보",
+      "양쪽 조건 확인"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:pair-coworker:2",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:pair-coworker:2",
+    "claimRef": "ker:claim:pair-coworker",
+    "meaningIdentity": "ker:meaning:pair-coworker",
+    "function": "explanation",
+    "text": "시작 전에 생각할 시간이 필요한 A와 현장에서 대응하기를 선호하는 B가 확인된다면, 착수 전 필요한 정보를 각자에게 물어볼 수 있습니다.",
+    "semanticUnits": [
+      "A 사전 사고",
+      "B 현장 대응",
+      "착수 전 정보",
+      "양쪽 조건 확인"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:pair-manager-report:1",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:pair-manager-report:1",
+    "claimRef": "ker:claim:pair-manager-report",
+    "meaningIdentity": "ker:meaning:pair-manager-report",
+    "function": "explanation",
+    "text": "목표를 정리하는 상사와 실행 경로를 확인하는 팀원의 조건이 확인된다면, 정할 목표와 확인할 방법의 접점을 살펴볼 수 있습니다.",
+    "semanticUnits": [
+      "상사 목표",
+      "팀원 경로",
+      "역할 조건"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:pair-manager-report:2",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:pair-manager-report:2",
+    "claimRef": "ker:claim:pair-manager-report",
+    "meaningIdentity": "ker:meaning:pair-manager-report",
+    "function": "explanation",
+    "text": "상사가 목표를 정리하고 팀원이 실행 경로를 확인하려는 조건이라면, 목표와 방법이 만나는 지점을 함께 볼 수 있습니다.",
+    "semanticUnits": [
+      "상사 목표",
+      "팀원 경로",
+      "역할 조건"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:pair-business-partner:1",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:pair-business-partner:1",
+    "claimRef": "ker:claim:pair-business-partner",
+    "meaningIdentity": "ker:meaning:pair-business-partner",
+    "function": "explanation",
+    "text": "함께 사업을 검토한다면, 제안의 가능성과 실제 필요를 서로 다른 질문으로 살펴볼 수 있습니다.",
+    "semanticUnits": [
+      "사업 검토 조건",
+      "가능성",
+      "실제 필요"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:pair-business-partner:2",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:pair-business-partner:2",
+    "claimRef": "ker:claim:pair-business-partner",
+    "meaningIdentity": "ker:meaning:pair-business-partner",
+    "function": "explanation",
+    "text": "공동사업을 생각하는 상황에서는 할 수 있는 가능성과 실제로 필요한 것을 구분해 물어볼 수 있습니다.",
+    "semanticUnits": [
+      "사업 검토 조건",
+      "가능성",
+      "실제 필요"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:pair-friendship:1",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:pair-friendship:1",
+    "claimRef": "ker:claim:pair-friendship",
+    "meaningIdentity": "ker:meaning:pair-friendship",
+    "function": "explanation",
+    "text": "친구를 만날 기회가 있다는 것과 다시 시간을 내고 싶은 선택은 구분해서 볼 수 있습니다.",
+    "semanticUnits": [
+      "기회",
+      "시간을 내는 선택",
+      "동일시 금지"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:pair-friendship:2",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:pair-friendship:2",
+    "claimRef": "ker:claim:pair-friendship",
+    "meaningIdentity": "ker:meaning:pair-friendship",
+    "function": "explanation",
+    "text": "만날 수 있는 기회와 다시 만나기로 시간을 고르는 선택은 같은 뜻으로 묶지 않을 수 있습니다.",
+    "semanticUnits": [
+      "기회",
+      "시간을 내는 선택",
+      "동일시 금지"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:major:1",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:major:1",
+    "claimRef": "ker:claim:major",
+    "meaningIdentity": "ker:meaning:major",
+    "function": "explanation",
+    "text": "대운 천간은 그 간지의 드러난 층위를 구별하는 표지로 읽으며, 천간 하나로 외부 성취를 확정하지 않습니다.",
+    "semanticUnits": [
+      "대운 천간 역할",
+      "성취 확정 금지"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:major:2",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:major:2",
+    "claimRef": "ker:claim:major",
+    "meaningIdentity": "ker:meaning:major",
+    "function": "explanation",
+    "text": "대운 간지에서 드러난 층위를 나누는 표지가 천간입니다. 이 표지만으로 바깥의 성취까지 정하지는 않습니다.",
+    "semanticUnits": [
+      "대운 천간 역할",
+      "성취 확정 금지"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:annual:1",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:annual:1",
+    "claimRef": "ker:claim:annual",
+    "meaningIdentity": "ker:meaning:annual",
+    "function": "explanation",
+    "text": "선택 연도의 천간 관계 범주와 구간에 실제 적용되는 연주는 구분해야 하며, 입춘 전후를 같은 대상으로 합치지 않습니다.",
+    "semanticUnits": [
+      "선택 연도 표지",
+      "실효 연주",
+      "입춘 대상 보존"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  },
+  {
+    "id": "ker:expression:annual:2",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "expressionIdentity": "ker:expression:annual:2",
+    "claimRef": "ker:claim:annual",
+    "meaningIdentity": "ker:meaning:annual",
+    "function": "explanation",
+    "text": "한 해의 명목 천간을 보는 것과 실제 구간의 연주를 보는 것은 구분합니다. 입춘 이전과 이후의 상대를 자동으로 같게 보지 않습니다.",
+    "semanticUnits": [
+      "선택 연도 표지",
+      "실효 연주",
+      "입춘 대상 보존"
+    ],
+    "requiredContext": [
+      "future approved interpretation matching this exact source meaning",
+      "verified person owner and relevant context",
+      "source review/conditions retained; source existence is not customer approval"
+    ],
+    "prohibitedInference": [
+      "new personality/event/result claim",
+      "stronger certainty or changed negation",
+      "wrong owner/direction/time",
+      "hypothetical scene as customer history"
+    ],
+    "sceneIdentity": null,
+    "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+    "meaningChangeAllowed": false,
+    "newEvidenceCreated": false,
+    "manuallyReviewedForMeaning": true,
+    "humanReviewRequiredBeforeUse": true
+  }
+]

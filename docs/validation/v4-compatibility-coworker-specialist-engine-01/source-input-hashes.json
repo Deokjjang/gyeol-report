@@ -1,0 +1,20 @@
+{
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/artifacts.ts": "fc897bbf00231bcce69b03d793b145c5d5a168f483a2fb2b348007a25d4e8aed",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/candidateIndex.ts": "d51f3a9850b0e314556015a9b285502ad87907d6bda1de4df43263d8c4a83ab4",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/conflictGraph.ts": "ea475ad68506edafe8532a2751fc068b9f71abe32b51d8fcfe0cc821251bff6b",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/engine.ts": "ced63ab049f9cd1112e700948c465cd0837fe1cd649dc4d7e25823ccb32bdd7d",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/frictionTopics.ts": "f4ce381d725e8988369b43afc9cc6a8ba00ee20103ee589150bba9f1979bf0d0",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/observations.ts": "20b2642e1cef261300f0c08ecd91747404ff89f4658755b55750f4c42beda0b9",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/policy.ts": "ca33aed5a72d777b15a71b815719e90f3e1068833d81599eb6df22a2661235c3",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/requirementAdapter.ts": "5127c2a8905e3fcf2282a05c24ef9aa8e8ffa63d38b2ea1a9b06c1e1fd6c2666",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/researchCatalog.ts": "1cd1ac95ae38ad274d8736295a9067b85b9f9123807f680364eee55eb001607b",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/selection.ts": "04467fee4cdfc4047f82fade4beeb90a5eaf6e914449de32c4c43a195180c619",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/sourceOwnership.ts": "2b7bfad9e62d01567afba7cfc9d00cad720753bbc2dfc315a71cb1dd68b0df54",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/synthetic.ts": "08f0ed408fa0f98317acac1cf112cb0f4ee290f7042fa6b43fce46fef81e9f5d",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/workContext.ts": "6d2a45e8c659a40fa372360d28f495ab2103cec5a6333196735f072ac38fd271",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/workDomainBoundary.ts": "793ceb4f3c91f841aa8aa31aab97c8cba83a69b3bf0628363d8b13d4d560c80a",
+  "tools/compatibility-coworker-specialist-engine/verify.mjs": "3e305fa3efe9f3a812702afbf6c28fec34cae319705e138cdc8e771fc14552c1",
+  "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+  "docs/validation/v4-compatibility-coworker-specialist-engine-01/original-file-hashes.json": "7e7c4f695a36f7778feebe5f45f3e2262fc85c4c031ff546f31e3c2828771947",
+  "docs/validation/v4-compatibility-coworker-specialist-engine-01/pair-baseline-digests.json": "45dc5818f2d8d3ee14ae0bf5e9db0eb66472f52542037224f9959ae4ea35e9dd"
+}

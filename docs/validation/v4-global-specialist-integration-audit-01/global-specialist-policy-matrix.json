@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-specialist-policy-matrix.json.gz",
+  "payloadHash": "e5eadac33a68b4e8eabe2d623d30f85feb098749a4ea4ce7e53d18b272079e3d",
+  "logicalJsonHash": "6793d677f5389a93e8aa86ddf806527634b6370dda82f1e713714ab399826b32",
+  "uncompressedBytes": 13257697
+}

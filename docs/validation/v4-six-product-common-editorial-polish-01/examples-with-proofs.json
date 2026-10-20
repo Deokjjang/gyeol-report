@@ -1,0 +1,1016 @@
+[
+  {
+    "product": "comprehensive",
+    "case": "A",
+    "paragraph": "CH03.P1",
+    "before": {
+      "id": "CH03.P1",
+      "purpose": "두 분석이 공통으로 말하는 것",
+      "sentences": [
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P1",
+          "sentenceRole": "S1",
+          "roleDescription": "가장 강하게 일치하는 특징을 소개한다.",
+          "text": "배운 것을 말이나 결과물로 꺼내 볼 때 이해의 빈틈을 찾기 쉬울 수 있습니다.",
+          "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1",
+          "evidenceIds": [
+            "foundation:element:FIRE:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [
+            "fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1"
+          ],
+          "semanticTheme": "SAME_DIRECTION_ENERGY_DIRECTION",
+          "context": "learning",
+          "provenance": {
+            "materialId": "fusion:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1:learning",
+            "source": "editorial:FUSION:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1",
+            "application": "CONDITIONAL_APPLICATION"
+          }
+        },
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P1",
+          "sentenceRole": "S2",
+          "roleDescription": "실제 명리 근거를 제시한다.",
+          "text": "화 기운의 ‘생각이나 감정을 밖으로 보여주는 기운’이라는 뜻이 이 해석의 명리 쪽 출발점입니다.",
+          "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1",
+          "evidenceIds": [
+            "foundation:element:FIRE:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [
+            "fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1"
+          ],
+          "semanticTheme": "SAME_DIRECTION_ENERGY_DIRECTION",
+          "context": "learning",
+          "provenance": {
+            "materialId": "fusion:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1:learning",
+            "source": "editorial:FUSION:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1",
+            "application": "CONDITIONAL_APPLICATION"
+          }
+        },
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P1",
+          "sentenceRole": "S3",
+          "roleDescription": "해당 MBTI 근거를 제시한다.",
+          "text": "ENFJ의 학습 방식 자료를 이 상황에 적용하면, 아이디어와 결과를 다른 사람이 이해할 수 있게 전달하는 역할에서 강점을 발견할 수 있습니다.",
+          "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1",
+          "evidenceIds": [
+            "foundation:element:FIRE:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [
+            "mbti:ENFJ:traits:study:answer_leader_child:plainKo"
+          ],
+          "fusionIds": [
+            "fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1"
+          ],
+          "semanticTheme": "SAME_DIRECTION_ENERGY_DIRECTION",
+          "context": "learning",
+          "provenance": {
+            "materialId": "fusion:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1:learning",
+            "source": "editorial:FUSION:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1",
+            "application": "CONDITIONAL_APPLICATION"
+          }
+        },
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P1",
+          "sentenceRole": "S4",
+          "roleDescription": "공통 특징이 생활에서 어떻게 드러날 수 있는지 설명한다.",
+          "text": "새 개념을 짧은 설명이나 간단한 작업으로 만들어 보면, 아는 것 같은 느낌과 실제로 설명할 수 있는 지식을 구분할 수 있습니다.",
+          "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1",
+          "evidenceIds": [
+            "foundation:element:FIRE:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [
+            "fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1"
+          ],
+          "semanticTheme": "SAME_DIRECTION_ENERGY_DIRECTION",
+          "context": "learning",
+          "provenance": {
+            "materialId": "fusion:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1:learning",
+            "source": "editorial:FUSION:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1",
+            "application": "CONDITIONAL_APPLICATION"
+          }
+        }
+      ],
+      "text": "배운 것을 말이나 결과물로 꺼내 볼 때 이해의 빈틈을 찾기 쉬울 수 있습니다. 화 기운의 ‘생각이나 감정을 밖으로 보여주는 기운’이라는 뜻이 이 해석의 명리 쪽 출발점입니다. ENFJ의 학습 방식 자료를 이 상황에 적용하면, 아이디어와 결과를 다른 사람이 이해할 수 있게 전달하는 역할에서 강점을 발견할 수 있습니다. 새 개념을 짧은 설명이나 간단한 작업으로 만들어 보면, 아는 것 같은 느낌과 실제로 설명할 수 있는 지식을 구분할 수 있습니다.",
+      "semanticKey": "fusion:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1:learning",
+      "legacySections": [
+        "C2"
+      ]
+    },
+    "after": {
+      "id": "CH03.P1",
+      "purpose": "두 분석이 공통으로 말하는 것",
+      "sentences": [
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P1",
+          "sentenceRole": "S1",
+          "roleDescription": "가장 강하게 일치하는 특징을 소개한다.",
+          "text": "배운 것을 말이나 결과물로 꺼내 볼 때 이해의 빈틈을 찾기 쉬울 수 있습니다.",
+          "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1",
+          "evidenceIds": [
+            "foundation:element:FIRE:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [
+            "fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1"
+          ],
+          "semanticTheme": "SAME_DIRECTION_ENERGY_DIRECTION",
+          "context": "learning",
+          "provenance": {
+            "materialId": "fusion:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1:learning",
+            "source": "editorial:FUSION:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1",
+            "application": "CONDITIONAL_APPLICATION"
+          }
+        },
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P1",
+          "sentenceRole": "S3",
+          "roleDescription": "해당 MBTI 근거를 제시한다.",
+          "text": "ENFJ의 학습 방식 자료를 이 상황에 적용하면, 아이디어와 결과를 다른 사람이 이해할 수 있게 전달하는 역할에서 강점을 발견할 수 있습니다.",
+          "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1",
+          "evidenceIds": [
+            "foundation:element:FIRE:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [
+            "mbti:ENFJ:traits:study:answer_leader_child:plainKo"
+          ],
+          "fusionIds": [
+            "fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1"
+          ],
+          "semanticTheme": "SAME_DIRECTION_ENERGY_DIRECTION",
+          "context": "learning",
+          "provenance": {
+            "materialId": "fusion:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1:learning",
+            "source": "editorial:FUSION:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1",
+            "application": "CONDITIONAL_APPLICATION"
+          }
+        },
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P1",
+          "sentenceRole": "S4",
+          "roleDescription": "공통 특징이 생활에서 어떻게 드러날 수 있는지 설명한다.",
+          "text": "새 개념을 짧은 설명이나 간단한 작업으로 만들어 보면, 아는 것 같은 느낌과 실제로 설명할 수 있는 지식을 구분할 수 있습니다.",
+          "sourceCandidateId": "editorial:FUSION:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1",
+          "evidenceIds": [
+            "foundation:element:FIRE:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [
+            "fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1"
+          ],
+          "semanticTheme": "SAME_DIRECTION_ENERGY_DIRECTION",
+          "context": "learning",
+          "provenance": {
+            "materialId": "fusion:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1:learning",
+            "source": "editorial:FUSION:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1",
+            "application": "CONDITIONAL_APPLICATION"
+          }
+        }
+      ],
+      "text": "배운 것을 말이나 결과물로 꺼내 볼 때 이해의 빈틈을 찾기 쉬울 수 있습니다. ENFJ의 학습 방식 자료를 이 상황에 적용하면, 아이디어와 결과를 다른 사람이 이해할 수 있게 전달하는 역할에서 강점을 발견할 수 있습니다. 새 개념을 짧은 설명이나 간단한 작업으로 만들어 보면, 아는 것 같은 느낌과 실제로 설명할 수 있는 지식을 구분할 수 있습니다.",
+      "semanticKey": "fusion:fusion:REINFORCE:ENERGY_DIRECTION:learning:ENERGY_DIRECTION:1:ENERGY_DIRECTION:1:learning",
+      "legacySections": [
+        "C2"
+      ]
+    }
+  },
+  {
+    "product": "career",
+    "case": "A",
+    "paragraph": "CH09.P2",
+    "before": {
+      "id": "CH09.P2",
+      "purpose": "내가 반드시 조심해야 할 것",
+      "text": "선택 앞에서도 중요도가 다른 오류를 모두 같은 무게로 검토하는 습관을 경계해야 하며, 앞서 읽은 약점은 큰 결정에서도 반복될 수 있습니다. 빠진 조건을 찾아내는 정확성이 필요한 일일수록 같은 방식에만 기대기 쉬우므로, 결과와 지금의 부담을 함께 돌아보아야 합니다. 요청이 늘고 시간이 줄어들면 평소의 방법을 자동으로 반복하기 쉬우니, 합의한 범위가 바뀌었는지부터 살펴야 합니다. 앞선 위험에 대응해 ‘핵심 오류와 표현의 흠을 나누어 검토하기’를 실행한 뒤 결과와 부담의 변화를 대조하면, 조정할 부분이 구체적으로 보입니다.",
+      "sentences": [
+        {
+          "chapterId": "CH09",
+          "paragraphId": "P2",
+          "sentenceRole": "S1",
+          "roleDescription": "소개된 위험",
+          "text": "선택 앞에서도 중요도가 다른 오류를 모두 같은 무게로 검토하는 습관을 경계해야 하며, 앞서 읽은 약점은 큰 결정에서도 반복될 수 있습니다.",
+          "sourceCandidateId": "editorial:CLAIM:F03_PERFECTIONISM",
+          "evidenceIds": [
+            "foundation:element:METAL:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "semanticTheme": "PERFECTIONISM",
+          "lifeStatus": "",
+          "jobContext": "개발자",
+          "provenance": {
+            "materialId": "career:precision:risk-reminder",
+            "application": "RECALL",
+            "axis": "PRECISION",
+            "direction": 1,
+            "sourceRefs": [
+              "F03_PERFECTIONISM"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH09",
+          "paragraphId": "P2",
+          "sentenceRole": "S2",
+          "roleDescription": "연결 이유",
+          "text": "빠진 조건을 찾아내는 정확성이 필요한 일일수록 같은 방식에만 기대기 쉬우므로, 결과와 지금의 부담을 함께 돌아보아야 합니다.",
+          "sourceCandidateId": "editorial:CLAIM:F03_PERFECTIONISM",
+          "evidenceIds": [
+            "foundation:element:METAL:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "semanticTheme": "PERFECTIONISM",
+          "lifeStatus": "",
+          "jobContext": "개발자",
+          "provenance": {
+            "materialId": "career:precision:risk-reminder",
+            "application": "RECALL",
+            "axis": "PRECISION",
+            "direction": 1,
+            "sourceRefs": [
+              "F03_PERFECTIONISM"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH09",
+          "paragraphId": "P2",
+          "sentenceRole": "S3",
+          "roleDescription": "악화 조건",
+          "text": "요청이 늘고 시간이 줄어들면 평소의 방법을 자동으로 반복하기 쉬우니, 합의한 범위가 바뀌었는지부터 살펴야 합니다.",
+          "sourceCandidateId": "editorial:CLAIM:F03_PERFECTIONISM",
+          "evidenceIds": [
+            "foundation:element:METAL:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "semanticTheme": "PERFECTIONISM",
+          "lifeStatus": "",
+          "jobContext": "개발자",
+          "provenance": {
+            "materialId": "career:precision:risk-reminder",
+            "application": "RECALL",
+            "axis": "PRECISION",
+            "direction": 1,
+            "sourceRefs": [
+              "F03_PERFECTIONISM"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH09",
+          "paragraphId": "P2",
+          "sentenceRole": "S4",
+          "roleDescription": "보완 방법",
+          "text": "앞선 위험에 대응해 ‘핵심 오류와 표현의 흠을 나누어 검토하기’를 실행한 뒤 결과와 부담의 변화를 대조하면, 조정할 부분이 구체적으로 보입니다.",
+          "sourceCandidateId": "editorial:CLAIM:F03_PERFECTIONISM",
+          "evidenceIds": [
+            "foundation:element:METAL:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "semanticTheme": "PERFECTIONISM",
+          "lifeStatus": "",
+          "jobContext": "개발자",
+          "provenance": {
+            "materialId": "career:precision:risk-reminder",
+            "application": "RECALL",
+            "axis": "PRECISION",
+            "direction": 1,
+            "sourceRefs": [
+              "F03_PERFECTIONISM"
+            ]
+          }
+        }
+      ]
+    },
+    "after": {
+      "id": "CH09.P2",
+      "purpose": "내가 반드시 조심해야 할 것",
+      "text": "앞서 읽은 약점을 새 역할의 선택 기준으로 옮겨보면, 자료를 확인하고 중요한 오류를 고칠 권한이 실제로 주어지는지 물어볼 수 있습니다. 빠진 조건을 찾아내는 정확성이 필요한 일일수록 같은 방식에만 기대기 쉬우므로, 결과와 지금의 부담을 함께 돌아보아야 합니다. 면담에서는 다시 고칠 일의 감소를 평가하는 방법과, 그 일을 위해 쓸 수 있는 시간을 함께 물어보세요. 잘할 수 있다는 이유만으로 그 역할을 골라야 하는 것은 아니며, 필요한 권한과 시간을 얻기 어려운 조건도 선택에 포함할 만합니다.",
+      "sentences": [
+        {
+          "chapterId": "CH09",
+          "paragraphId": "P2",
+          "sentenceRole": "S1",
+          "roleDescription": "소개된 위험",
+          "text": "앞서 읽은 약점을 새 역할의 선택 기준으로 옮겨보면, 자료를 확인하고 중요한 오류를 고칠 권한이 실제로 주어지는지 물어볼 수 있습니다.",
+          "sourceCandidateId": "editorial:CLAIM:F03_PERFECTIONISM",
+          "evidenceIds": [
+            "foundation:element:METAL:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "semanticTheme": "PERFECTIONISM",
+          "lifeStatus": "",
+          "jobContext": "개발자",
+          "provenance": {
+            "materialId": "career:precision:risk-reminder",
+            "application": "RECALL",
+            "axis": "PRECISION",
+            "direction": 1,
+            "sourceRefs": [
+              "F03_PERFECTIONISM"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH09",
+          "paragraphId": "P2",
+          "sentenceRole": "S2",
+          "roleDescription": "연결 이유",
+          "text": "빠진 조건을 찾아내는 정확성이 필요한 일일수록 같은 방식에만 기대기 쉬우므로, 결과와 지금의 부담을 함께 돌아보아야 합니다.",
+          "sourceCandidateId": "editorial:CLAIM:F03_PERFECTIONISM",
+          "evidenceIds": [
+            "foundation:element:METAL:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "semanticTheme": "PERFECTIONISM",
+          "lifeStatus": "",
+          "jobContext": "개발자",
+          "provenance": {
+            "materialId": "career:precision:risk-reminder",
+            "application": "RECALL",
+            "axis": "PRECISION",
+            "direction": 1,
+            "sourceRefs": [
+              "F03_PERFECTIONISM"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH09",
+          "paragraphId": "P2",
+          "sentenceRole": "S3",
+          "roleDescription": "악화 조건",
+          "text": "면담에서는 다시 고칠 일의 감소를 평가하는 방법과, 그 일을 위해 쓸 수 있는 시간을 함께 물어보세요.",
+          "sourceCandidateId": "editorial:CLAIM:F03_PERFECTIONISM",
+          "evidenceIds": [
+            "foundation:element:METAL:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "semanticTheme": "PERFECTIONISM",
+          "lifeStatus": "",
+          "jobContext": "개발자",
+          "provenance": {
+            "materialId": "career:precision:risk-reminder",
+            "application": "RECALL",
+            "axis": "PRECISION",
+            "direction": 1,
+            "sourceRefs": [
+              "F03_PERFECTIONISM"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH09",
+          "paragraphId": "P2",
+          "sentenceRole": "S4",
+          "roleDescription": "보완 방법",
+          "text": "잘할 수 있다는 이유만으로 그 역할을 골라야 하는 것은 아니며, 필요한 권한과 시간을 얻기 어려운 조건도 선택에 포함할 만합니다.",
+          "sourceCandidateId": "editorial:CLAIM:F03_PERFECTIONISM",
+          "evidenceIds": [
+            "foundation:element:METAL:BALANCED"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "semanticTheme": "PERFECTIONISM",
+          "lifeStatus": "",
+          "jobContext": "개발자",
+          "provenance": {
+            "materialId": "career:precision:risk-reminder",
+            "application": "RECALL",
+            "axis": "PRECISION",
+            "direction": 1,
+            "sourceRefs": [
+              "F03_PERFECTIONISM"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "product": "love",
+    "case": "A",
+    "paragraph": "CH06.P2",
+    "before": {
+      "id": "CH06.P2",
+      "purpose": "왜 그런 문제가 생기는가",
+      "text": "일주 일간 신금은 ‘작은 차이와 완성도를 세밀하게 보는 성질’의 뜻으로 읽는 근거이며, 이 힘 자체가 나쁜 것은 아닙니다. 문제는 세심함을 평가보다 관심으로 받는 관계를 원하는 마음이 강해질 때, 상대도 같은 방법을 원한다는 전제를 먼저 둘 수 있다는 점입니다. 차이를 잘 보는 힘이 피곤한 날에도 틀린 점부터 향하면, 상대가 시도한 이유나 이미 잘한 부분을 듣는 순서가 줄어들 수 있습니다.",
+      "sentences": [
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P2",
+          "sentenceRole": "S1",
+          "roleDescription": "명리 근거",
+          "text": "일주 일간 신금은 ‘작은 차이와 완성도를 세밀하게 보는 성질’의 뜻으로 읽는 근거이며, 이 힘 자체가 나쁜 것은 아닙니다.",
+          "sourceCandidateId": "editorial:CLAIM:F02_SHARP_SPEECH",
+          "evidenceIds": [
+            "natal:day:stem:辛"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "semanticTheme": "SHARP_SPEECH",
+          "relationshipStatus": "single",
+          "context": "shadow",
+          "provenance": {
+            "materialId": "love:precision:risk-cause",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "F02_SHARP_SPEECH"
+            ],
+            "axis": "PRECISION",
+            "direction": 1
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P2",
+          "sentenceRole": "S2",
+          "roleDescription": "쉬운 의미",
+          "text": "문제는 세심함을 평가보다 관심으로 받는 관계를 원하는 마음이 강해질 때, 상대도 같은 방법을 원한다는 전제를 먼저 둘 수 있다는 점입니다.",
+          "sourceCandidateId": "editorial:CLAIM:F02_SHARP_SPEECH",
+          "evidenceIds": [
+            "natal:day:stem:辛"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "semanticTheme": "SHARP_SPEECH",
+          "relationshipStatus": "single",
+          "context": "shadow",
+          "provenance": {
+            "materialId": "love:precision:risk-cause",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "F02_SHARP_SPEECH"
+            ],
+            "axis": "PRECISION",
+            "direction": 1
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P2",
+          "sentenceRole": "S3",
+          "roleDescription": "MBTI 조건",
+          "text": "차이를 잘 보는 힘이 피곤한 날에도 틀린 점부터 향하면, 상대가 시도한 이유나 이미 잘한 부분을 듣는 순서가 줄어들 수 있습니다.",
+          "sourceCandidateId": "editorial:CLAIM:F02_SHARP_SPEECH",
+          "evidenceIds": [
+            "natal:day:stem:辛"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "semanticTheme": "SHARP_SPEECH",
+          "relationshipStatus": "single",
+          "context": "shadow",
+          "provenance": {
+            "materialId": "love:precision:risk-cause",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "F02_SHARP_SPEECH"
+            ],
+            "axis": "PRECISION",
+            "direction": 1
+          }
+        }
+      ]
+    },
+    "after": {
+      "id": "CH06.P2",
+      "purpose": "왜 그런 문제가 생기는가",
+      "text": "일주 일간 신금에서 읽은 작은 차이를 알아보는 세심함은 장점이지만, 언제 어떻게 쓰는지에 따라 상대가 받는 느낌은 달라질 수 있습니다. 문제는 세심함을 평가보다 관심으로 받는 관계를 원하는 마음이 강해질 때, 상대도 같은 방법을 원한다는 전제를 먼저 둘 수 있다는 점입니다. 차이를 잘 보는 힘이 피곤한 날에도 틀린 점부터 향하면, 상대가 시도한 이유나 이미 잘한 부분을 듣는 순서가 줄어들 수 있습니다.",
+      "sentences": [
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P2",
+          "sentenceRole": "S1",
+          "roleDescription": "명리 근거",
+          "text": "일주 일간 신금에서 읽은 작은 차이를 알아보는 세심함은 장점이지만, 언제 어떻게 쓰는지에 따라 상대가 받는 느낌은 달라질 수 있습니다.",
+          "sourceCandidateId": "editorial:CLAIM:F02_SHARP_SPEECH",
+          "evidenceIds": [
+            "natal:day:stem:辛"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "semanticTheme": "SHARP_SPEECH",
+          "relationshipStatus": "single",
+          "context": "shadow",
+          "provenance": {
+            "materialId": "love:precision:risk-cause",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "F02_SHARP_SPEECH"
+            ],
+            "axis": "PRECISION",
+            "direction": 1
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P2",
+          "sentenceRole": "S2",
+          "roleDescription": "쉬운 의미",
+          "text": "문제는 세심함을 평가보다 관심으로 받는 관계를 원하는 마음이 강해질 때, 상대도 같은 방법을 원한다는 전제를 먼저 둘 수 있다는 점입니다.",
+          "sourceCandidateId": "editorial:CLAIM:F02_SHARP_SPEECH",
+          "evidenceIds": [
+            "natal:day:stem:辛"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "semanticTheme": "SHARP_SPEECH",
+          "relationshipStatus": "single",
+          "context": "shadow",
+          "provenance": {
+            "materialId": "love:precision:risk-cause",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "F02_SHARP_SPEECH"
+            ],
+            "axis": "PRECISION",
+            "direction": 1
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P2",
+          "sentenceRole": "S3",
+          "roleDescription": "MBTI 조건",
+          "text": "차이를 잘 보는 힘이 피곤한 날에도 틀린 점부터 향하면, 상대가 시도한 이유나 이미 잘한 부분을 듣는 순서가 줄어들 수 있습니다.",
+          "sourceCandidateId": "editorial:CLAIM:F02_SHARP_SPEECH",
+          "evidenceIds": [
+            "natal:day:stem:辛"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "semanticTheme": "SHARP_SPEECH",
+          "relationshipStatus": "single",
+          "context": "shadow",
+          "provenance": {
+            "materialId": "love:precision:risk-cause",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "F02_SHARP_SPEECH"
+            ],
+            "axis": "PRECISION",
+            "direction": 1
+          }
+        }
+      ]
+    }
+  },
+  {
+    "product": "compatibility",
+    "case": "A",
+    "paragraph": "CH06.P2",
+    "before": {
+      "id": "CH06.P2",
+      "purpose": "정유진이 이준혁에게 주는 좋은 영향",
+      "text": "낯선 곳에서 함께 하루를 보내보기로 한다면, 정유진님의 대화의 온도가 달라지는 순간을 알아채는 감각이 이준혁님에게 도움이 될 수 있습니다. 이준혁님은 스스로 판단한 뒤 선택을 알리는 방식을 바탕으로 자기 답을 찾는 편이므로, 정유진님의 기여를 받아도 선택을 직접 확인할 여지는 필요합니다. 이준혁님이 평소 혼자 확인하던 부분에 정유진님의 관점을 보태보면, 도움을 받으면서도 최종 선택은 직접 할 수 있습니다. 이준혁님이 어떤 도움이 실제로 필요했는지 알려주면, 정유진님도 수고를 더 늘리기보다 필요한 곳에 힘을 쓸 수 있습니다.",
+      "sentences": [
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P2",
+          "sentenceRole": "S1",
+          "roleDescription": "도움 되는 강점",
+          "text": "낯선 곳에서 함께 하루를 보내보기로 한다면, 정유진님의 대화의 온도가 달라지는 순간을 알아채는 감각이 이준혁님에게 도움이 될 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [
+            "natal:day:stem:乙"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B가 A에게 주는 좋은 영향",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1",
+          "provenance": {
+            "materialId": "pair-release:CH06:P2:S1",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:FUSION:fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1:natal:day:stem:乙:SOCIAL_ATTUNEMENT",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1",
+              "natal:day:stem:乙",
+              "person:b425792e04d53877ee951f97"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P2",
+          "sentenceRole": "S2",
+          "roleDescription": "독립적 근거",
+          "text": "이준혁님은 스스로 판단한 뒤 선택을 알리는 방식을 바탕으로 자기 답을 찾는 편이므로, 정유진님의 기여를 받아도 선택을 직접 확인할 여지는 필요합니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [
+            "natal:day:stem:甲"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B가 A에게 주는 좋은 영향",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+          "provenance": {
+            "materialId": "pair-release:CH06:P2:S2",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1:natal:day:stem:甲:AUTONOMY",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+              "natal:day:stem:甲",
+              "person:29a2534854378270a988c1f8"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P2",
+          "sentenceRole": "S3",
+          "roleDescription": "관계별 장면",
+          "text": "이준혁님이 평소 혼자 확인하던 부분에 정유진님의 관점을 보태보면, 도움을 받으면서도 최종 선택은 직접 할 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [
+            "natal:day:stem:乙"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B가 A에게 주는 좋은 영향",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1",
+          "provenance": {
+            "materialId": "pair-release:CH06:P2:S3",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:FUSION:fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1:natal:day:stem:乙:SOCIAL_ATTUNEMENT",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1",
+              "natal:day:stem:乙",
+              "person:b425792e04d53877ee951f97"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P2",
+          "sentenceRole": "S4",
+          "roleDescription": "발휘 조건",
+          "text": "이준혁님이 어떤 도움이 실제로 필요했는지 알려주면, 정유진님도 수고를 더 늘리기보다 필요한 곳에 힘을 쓸 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [
+            "natal:day:stem:甲"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B가 A에게 주는 좋은 영향",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+          "provenance": {
+            "materialId": "pair-release:CH06:P2:S4",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1:natal:day:stem:甲:AUTONOMY",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+              "natal:day:stem:甲",
+              "person:29a2534854378270a988c1f8"
+            ]
+          }
+        }
+      ]
+    },
+    "after": {
+      "id": "CH06.P2",
+      "purpose": "정유진이 이준혁에게 주는 좋은 영향",
+      "text": "낯선 곳에서 함께 하루를 보내보기로 한다면, 정유진님의 대화의 온도가 달라지는 순간을 알아채는 감각이 이준혁님에게 도움이 될 수 있습니다. 이준혁님은 스스로 판단한 뒤 선택을 알리는 방식을 바탕으로 자기 답을 찾는 편이므로, 정유진님의 기여를 받아도 선택을 직접 확인할 여지는 필요합니다. 이준혁님이 평소 혼자 확인하던 부분에 정유진님의 관점을 보태보면, 도움을 받으면서도 최종 선택은 직접 할 수 있습니다. 정유진님이 보탠 뒤 이준혁님이 혼자 이어갈 부분까지 정하면, 다음에도 같은 도움을 기다려야 하는 부담을 줄일 수 있습니다.",
+      "sentences": [
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P2",
+          "sentenceRole": "S1",
+          "roleDescription": "도움 되는 강점",
+          "text": "낯선 곳에서 함께 하루를 보내보기로 한다면, 정유진님의 대화의 온도가 달라지는 순간을 알아채는 감각이 이준혁님에게 도움이 될 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [
+            "natal:day:stem:乙"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B가 A에게 주는 좋은 영향",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1",
+          "provenance": {
+            "materialId": "pair-release:CH06:P2:S1",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:FUSION:fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1:natal:day:stem:乙:SOCIAL_ATTUNEMENT",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1",
+              "natal:day:stem:乙",
+              "person:b425792e04d53877ee951f97"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P2",
+          "sentenceRole": "S2",
+          "roleDescription": "독립적 근거",
+          "text": "이준혁님은 스스로 판단한 뒤 선택을 알리는 방식을 바탕으로 자기 답을 찾는 편이므로, 정유진님의 기여를 받아도 선택을 직접 확인할 여지는 필요합니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [
+            "natal:day:stem:甲"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B가 A에게 주는 좋은 영향",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+          "provenance": {
+            "materialId": "pair-release:CH06:P2:S2",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1:natal:day:stem:甲:AUTONOMY",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+              "natal:day:stem:甲",
+              "person:29a2534854378270a988c1f8"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P2",
+          "sentenceRole": "S3",
+          "roleDescription": "관계별 장면",
+          "text": "이준혁님이 평소 혼자 확인하던 부분에 정유진님의 관점을 보태보면, 도움을 받으면서도 최종 선택은 직접 할 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [
+            "natal:day:stem:乙"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B가 A에게 주는 좋은 영향",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1",
+          "provenance": {
+            "materialId": "pair-release:CH06:P2:S3",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:FUSION:fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1:natal:day:stem:乙:SOCIAL_ATTUNEMENT",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1",
+              "natal:day:stem:乙",
+              "person:b425792e04d53877ee951f97"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P2",
+          "sentenceRole": "S4",
+          "roleDescription": "발휘 조건",
+          "text": "정유진님이 보탠 뒤 이준혁님이 혼자 이어갈 부분까지 정하면, 다음에도 같은 도움을 기다려야 하는 부담을 줄일 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [
+            "natal:day:stem:甲"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B가 A에게 주는 좋은 영향",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+          "provenance": {
+            "materialId": "pair-release:CH06:P2:S4",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1:natal:day:stem:甲:AUTONOMY",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+              "natal:day:stem:甲",
+              "person:29a2534854378270a988c1f8"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "product": "major",
+    "case": "S",
+    "paragraph": "2029-gift",
+    "before": {
+      "id": "2029-gift",
+      "text": "2029년 대운 丙辰의 지지 辰, 己酉(편관) 세운의 酉 사이에는 辰·酉 육합: 함께하기 쉬운 접점입니다. 일을 풀어가는 방식에는 원국의 겁재가 드러납니다. 동료의 좋은 결과가 자극이 되어 내 방식도 빠르게 바꿔봐요. ‘먼저 처리할 요구와 도움을 청할 기준’을 함께 맡을 범위와 종료 조건에 맞춰보세요.",
+      "mode": "prose",
+      "tone": "positive",
+      "proof": {
+        "features": [
+          "ten_god_jie_cai"
+        ],
+        "seedIds": [
+          "ten_god_jie_cai:work"
+        ],
+        "fusionIds": [],
+        "sourceRefs": [
+          "SajuCalcResult:tenGods.distribution:劫財",
+          "calendar:saju-calendar-kst-v2",
+          "careerContextV3:function:project_creation",
+          "dayun:dayun-kst-sect2-v1",
+          "input:detailJob",
+          "input:jobStatus",
+          "major:4:丙辰:year:2029:己酉",
+          "major:4:丙辰:year:2029:己酉:cycle:육합:辰酉:cycle",
+          "major:4:丙辰:year:2029:己酉:element:earth:missing",
+          "major:4:丙辰:year:2029:己酉:natal:반합:酉巳:day",
+          "major:4:丙辰:year:2029:己酉:natal:충:卯酉:hour",
+          "major:4:丙辰:year:2029:己酉:ten-god",
+          "majorFortuneDecadeReading:major-decade-v2",
+          "majorFortuneHorizon:14-year-window",
+          "majorFortuneV3Generation:createMajorFortuneV3:writer-disabled",
+          "period-ten-god:편관",
+          "sajuFeatureTaxonomy:ten_god_qi_sha",
+          "sajuKnowledgeBase:ten_god_jie_cai",
+          "sajuKnowledgeBase:ten_god_qi_sha",
+          "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+          "v4:major-setting:employee",
+          "v4:material-depth:ten_god_jie_cai",
+          "v4:semantic-meaning:ten_god_jie_cai",
+          "v4:semantic-meaning:ten_god_qi_sha"
+        ]
+      }
+    },
+    "after": {
+      "id": "2029-gift",
+      "text": "2029년, 대운 丙辰의 지지 辰 및 세운 己酉(편관)의 지지 酉 사이에서 읽는 辰·酉 육합은 함께하기 쉬운 접점입니다. 일을 풀어가는 방식에는 원국의 겁재가 드러납니다. 동료의 좋은 결과가 자극이 되어 내 방식도 빠르게 바꿔봐요. 호흡이 맞아도 ‘먼저 처리할 요구와 도움을 청할 기준’을 정할 때는 함께 나타난 긴장을 덮으면서까지 약속을 넓히지는 않아도 됩니다.",
+      "mode": "prose",
+      "tone": "positive",
+      "proof": {
+        "features": [
+          "ten_god_jie_cai"
+        ],
+        "seedIds": [
+          "ten_god_jie_cai:work"
+        ],
+        "fusionIds": [],
+        "sourceRefs": [
+          "SajuCalcResult:tenGods.distribution:劫財",
+          "calendar:saju-calendar-kst-v2",
+          "careerContextV3:function:project_creation",
+          "dayun:dayun-kst-sect2-v1",
+          "input:detailJob",
+          "input:jobStatus",
+          "major:4:丙辰:year:2029:己酉",
+          "major:4:丙辰:year:2029:己酉:cycle:육합:辰酉:cycle",
+          "major:4:丙辰:year:2029:己酉:element:earth:missing",
+          "major:4:丙辰:year:2029:己酉:natal:반합:酉巳:day",
+          "major:4:丙辰:year:2029:己酉:natal:충:卯酉:hour",
+          "major:4:丙辰:year:2029:己酉:ten-god",
+          "majorFortuneDecadeReading:major-decade-v2",
+          "majorFortuneHorizon:14-year-window",
+          "majorFortuneV3Generation:createMajorFortuneV3:writer-disabled",
+          "period-ten-god:편관",
+          "sajuFeatureTaxonomy:ten_god_qi_sha",
+          "sajuKnowledgeBase:ten_god_jie_cai",
+          "sajuKnowledgeBase:ten_god_qi_sha",
+          "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+          "v4:major-setting:employee",
+          "v4:material-depth:ten_god_jie_cai",
+          "v4:semantic-meaning:ten_god_jie_cai",
+          "v4:semantic-meaning:ten_god_qi_sha"
+        ]
+      }
+    }
+  },
+  {
+    "product": "annual",
+    "case": "H",
+    "paragraph": "month-10-action",
+    "before": {
+      "id": "month-10-action",
+      "text": "이번 달 한 가지 · 발표나 실습에서 배운 것을 보여줄 작은 결과 하나를 완성해보세요. 기존 일정과 겹친다면 ‘완성할 범위와 마무리 순서’를 먼저 조정해보세요. 피할 것 · 아이디어를 더 보태느라 보여줄 결과를 끝내지 못하는 것.",
+      "mode": "prose",
+      "tone": "direction",
+      "proof": {
+        "features": [],
+        "seedIds": [],
+        "fusionIds": [],
+        "sourceRefs": [
+          "annual-month-jie-kst-v2",
+          "calendarMonths:10:2026-10-08T15:29:17+09:00",
+          "careerContextV3:function:unknown",
+          "input:detailJob",
+          "input:jobStatus",
+          "month-v2:2026:10:2:annual",
+          "month-v2:2026:10:2:dayun",
+          "month-v2:2026:10:2:elements",
+          "month-v2:2026:10:2:month",
+          "month-v2:2026:10:2:month:2026:10:branch:반합:戌午",
+          "month-v2:2026:10:2:month:2026:10:branch:충:辰戌",
+          "month-v2:2026:10:2:month:2026:10:element:heavy:earth",
+          "month-v2:2026:10:2:month_annual_branch:丙午:반합:午戌",
+          "month-v2:2026:10:2:month_dayun_branch:3:해:酉戌",
+          "month-v2:2026:10:2:ten_gods",
+          "v4:major-setting:student"
+        ]
+      }
+    },
+    "after": {
+      "id": "month-10-action",
+      "text": "이번 달 한 가지 · 발표나 실습에서 배운 것을 보여줄 작은 결과 하나를 완성해보세요. 피할 것 · 아이디어를 더 보태느라 보여줄 결과를 끝내지 못하는 것.",
+      "mode": "prose",
+      "tone": "direction",
+      "proof": {
+        "features": [],
+        "seedIds": [],
+        "fusionIds": [],
+        "sourceRefs": [
+          "annual-month-jie-kst-v2",
+          "calendarMonths:10:2026-10-08T15:29:17+09:00",
+          "careerContextV3:function:unknown",
+          "input:detailJob",
+          "input:jobStatus",
+          "month-v2:2026:10:2:annual",
+          "month-v2:2026:10:2:dayun",
+          "month-v2:2026:10:2:elements",
+          "month-v2:2026:10:2:month",
+          "month-v2:2026:10:2:month:2026:10:branch:반합:戌午",
+          "month-v2:2026:10:2:month:2026:10:branch:충:辰戌",
+          "month-v2:2026:10:2:month:2026:10:element:heavy:earth",
+          "month-v2:2026:10:2:month_annual_branch:丙午:반합:午戌",
+          "month-v2:2026:10:2:month_dayun_branch:3:해:酉戌",
+          "month-v2:2026:10:2:ten_gods",
+          "v4:major-setting:student"
+        ]
+      }
+    }
+  }
+]

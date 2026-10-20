@@ -1,0 +1,29 @@
+{
+  "materialRecords": 179,
+  "distinctMeaningIdentityResolved": 0,
+  "meaningReviewRequired": 179,
+  "candidateFixtureOccurrences": 800,
+  "materialFixtureOccurrences": 716,
+  "questionFixtureOccurrences": 1040,
+  "distinctQuestionsWithLinkedMaterial": 260,
+  "distinctQuestionsWithActualWitness": 195,
+  "distinctQuestionsWithStructuralMaterial": 60,
+  "customerAnswerableQuestions": 0,
+  "nativeStructuralRequirementTemplates": 84,
+  "actualMeaningRelationOccurrences": {
+    "MEANING_RELATION_REVIEW_REQUIRED": 14176,
+    "SAME_FACT": 245
+  },
+  "actualConflictEdgeKinds": {
+    "DIFFERENT_APPLICATION": 726,
+    "REQUIRES_PRIOR_INTRODUCTION": 356,
+    "SAME_UNDERLYING_FACT": 4588,
+    "SOURCE_REUSE_WITH_DIFFERENT_QUESTION": 4482,
+    "CONDITIONAL_TENSION": 258
+  },
+  "unresolvedConditionOccurrences": 1111,
+  "sourceGroupRecords": 0,
+  "declaredUnsupportedProducerRequirements": 0,
+  "producerSupportFailedFixtureOccurrences": 67,
+  "interpretation": "Source references, actual Graph-node witnesses, canonical roots, meaning identity and customer eligibility are distinct units."
+}

@@ -1,0 +1,516 @@
+{
+  "actualContext": "UNKNOWN",
+  "adultParentFinalAuthority": false,
+  "actualSupportNeed": "UNKNOWN",
+  "originalAdultContexts": [
+    {
+      "id": "pcpr:material:CH07.P1:adult-contact-is-not-permission",
+      "address": "CH07.P1",
+      "declaredContexts": {
+        "context": "UNKNOWN",
+        "state": "CONTEXT_NOT_ENTERED",
+        "declared": false,
+        "actualAge": "UNKNOWN",
+        "actualAbility": "UNKNOWN",
+        "actualSupportNeed": "UNKNOWN",
+        "ageCalculated": false,
+        "hypotheticalResearchContextIsActualInput": false,
+        "applicable": false,
+        "reasons": [
+          "CONTEXT_NOT_ENTERED",
+          "DEVELOPMENTAL_STAGE_UNVERIFIED"
+        ]
+      },
+      "originalDevelopmentalContexts": [
+        "ADULT"
+      ],
+      "predicates": [],
+      "parentResponsibleAction": "기대와 실제 동의를 분리한다.",
+      "childAvailableChoice": "거절·다른 날짜·정보 경계를 선택할 수 있다.",
+      "actualFacts": {
+        "parentage": "UNKNOWN",
+        "guardianship": "UNKNOWN",
+        "cohabitation": "UNKNOWN",
+        "familyHistory": "UNKNOWN",
+        "childAbility": "UNKNOWN",
+        "schoolPerformance": "UNKNOWN",
+        "developmentalAssessment": "UNKNOWN",
+        "emotionalHealth": "UNKNOWN",
+        "childConsent": "UNKNOWN",
+        "supportNeed": "UNKNOWN",
+        "legalAuthority": "UNKNOWN",
+        "actualRisk": "UNKNOWN"
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_OWNER_REQUIREMENT_MISSING",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "EXACT_PRODUCER_REQUIREMENT_MISSING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "CONTEXT_NOT_ENTERED",
+        "DEVELOPMENTAL_STAGE_UNVERIFIED",
+        "UNVERIFIED_ROLE_ASSIGNMENT",
+        "ASYMMETRIC_RESPONSIBILITY_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH04.P3:adult-resource-with-consent",
+      "address": "CH04.P3",
+      "declaredContexts": {
+        "context": "UNKNOWN",
+        "state": "CONTEXT_NOT_ENTERED",
+        "declared": false,
+        "actualAge": "UNKNOWN",
+        "actualAbility": "UNKNOWN",
+        "actualSupportNeed": "UNKNOWN",
+        "ageCalculated": false,
+        "hypotheticalResearchContextIsActualInput": false,
+        "applicable": false,
+        "reasons": [
+          "CONTEXT_NOT_ENTERED",
+          "DEVELOPMENTAL_STAGE_UNVERIFIED"
+        ]
+      },
+      "originalDevelopmentalContexts": [
+        "ADULT"
+      ],
+      "predicates": [],
+      "parentResponsibleAction": "원하는 지원 범위만 확인한다.",
+      "childAvailableChoice": "자료를 쓰거나 다른 자원을 찾고 조언을 거절할 수 있다.",
+      "actualFacts": {
+        "parentage": "UNKNOWN",
+        "guardianship": "UNKNOWN",
+        "cohabitation": "UNKNOWN",
+        "familyHistory": "UNKNOWN",
+        "childAbility": "UNKNOWN",
+        "schoolPerformance": "UNKNOWN",
+        "developmentalAssessment": "UNKNOWN",
+        "emotionalHealth": "UNKNOWN",
+        "childConsent": "UNKNOWN",
+        "supportNeed": "UNKNOWN",
+        "legalAuthority": "UNKNOWN",
+        "actualRisk": "UNKNOWN"
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_OWNER_REQUIREMENT_MISSING",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "EXACT_PRODUCER_REQUIREMENT_MISSING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "CONTEXT_NOT_ENTERED",
+        "DEVELOPMENTAL_STAGE_UNVERIFIED",
+        "UNVERIFIED_ROLE_ASSIGNMENT",
+        "ASYMMETRIC_RESPONSIBILITY_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact",
+      "address": "CH06.P2",
+      "declaredContexts": {
+        "context": "UNKNOWN",
+        "state": "CONTEXT_NOT_ENTERED",
+        "declared": false,
+        "actualAge": "UNKNOWN",
+        "actualAbility": "UNKNOWN",
+        "actualSupportNeed": "UNKNOWN",
+        "ageCalculated": false,
+        "hypotheticalResearchContextIsActualInput": false,
+        "applicable": false,
+        "reasons": [
+          "CONTEXT_NOT_ENTERED",
+          "DEVELOPMENTAL_STAGE_UNVERIFIED"
+        ]
+      },
+      "originalDevelopmentalContexts": [
+        "ADULT"
+      ],
+      "predicates": [],
+      "parentResponsibleAction": "기대와 동의 범위를 조정한다.",
+      "childAvailableChoice": "연락·방문·정보 공유 범위를 선택할 수 있다.",
+      "actualFacts": {
+        "parentage": "UNKNOWN",
+        "guardianship": "UNKNOWN",
+        "cohabitation": "UNKNOWN",
+        "familyHistory": "UNKNOWN",
+        "childAbility": "UNKNOWN",
+        "schoolPerformance": "UNKNOWN",
+        "developmentalAssessment": "UNKNOWN",
+        "emotionalHealth": "UNKNOWN",
+        "childConsent": "UNKNOWN",
+        "supportNeed": "UNKNOWN",
+        "legalAuthority": "UNKNOWN",
+        "actualRisk": "UNKNOWN"
+      },
+      "blockers": [
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "CONTEXT_NOT_ENTERED",
+        "DEVELOPMENTAL_STAGE_UNVERIFIED",
+        "UNVERIFIED_ROLE_ASSIGNMENT",
+        "ASYMMETRIC_RESPONSIBILITY_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH04.P4:change-rules-with-development",
+      "address": "CH04.P4",
+      "declaredContexts": {
+        "context": "UNKNOWN",
+        "state": "CONTEXT_NOT_ENTERED",
+        "declared": false,
+        "actualAge": "UNKNOWN",
+        "actualAbility": "UNKNOWN",
+        "actualSupportNeed": "UNKNOWN",
+        "ageCalculated": false,
+        "hypotheticalResearchContextIsActualInput": false,
+        "applicable": false,
+        "reasons": [
+          "CONTEXT_NOT_ENTERED",
+          "DEVELOPMENTAL_STAGE_UNVERIFIED"
+        ]
+      },
+      "originalDevelopmentalContexts": [
+        "TEEN",
+        "ADULT"
+      ],
+      "predicates": [],
+      "parentResponsibleAction": "역할·상황·지원의 전제를 확인한다.",
+      "childAvailableChoice": "현재의 경계와 도움 요청 범위를 말할 수 있다.",
+      "actualFacts": {
+        "parentage": "UNKNOWN",
+        "guardianship": "UNKNOWN",
+        "cohabitation": "UNKNOWN",
+        "familyHistory": "UNKNOWN",
+        "childAbility": "UNKNOWN",
+        "schoolPerformance": "UNKNOWN",
+        "developmentalAssessment": "UNKNOWN",
+        "emotionalHealth": "UNKNOWN",
+        "childConsent": "UNKNOWN",
+        "supportNeed": "UNKNOWN",
+        "legalAuthority": "UNKNOWN",
+        "actualRisk": "UNKNOWN"
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_OWNER_REQUIREMENT_MISSING",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "EXACT_PRODUCER_REQUIREMENT_MISSING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "CONTEXT_NOT_ENTERED",
+        "DEVELOPMENTAL_STAGE_UNVERIFIED",
+        "UNVERIFIED_ROLE_ASSIGNMENT",
+        "ASYMMETRIC_RESPONSIBILITY_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH08.P4:adult-consent-and-contact-review",
+      "address": "CH08.P4",
+      "declaredContexts": {
+        "context": "UNKNOWN",
+        "state": "CONTEXT_NOT_ENTERED",
+        "declared": false,
+        "actualAge": "UNKNOWN",
+        "actualAbility": "UNKNOWN",
+        "actualSupportNeed": "UNKNOWN",
+        "ageCalculated": false,
+        "hypotheticalResearchContextIsActualInput": false,
+        "applicable": false,
+        "reasons": [
+          "CONTEXT_NOT_ENTERED",
+          "DEVELOPMENTAL_STAGE_UNVERIFIED"
+        ]
+      },
+      "originalDevelopmentalContexts": [
+        "ADULT"
+      ],
+      "predicates": [],
+      "parentResponsibleAction": "승인 요구를 줄이고 동의한 지원만 맡는다.",
+      "childAvailableChoice": "방문·연락·조언·정보 경계를 선택할 수 있다.",
+      "actualFacts": {
+        "parentage": "UNKNOWN",
+        "guardianship": "UNKNOWN",
+        "cohabitation": "UNKNOWN",
+        "familyHistory": "UNKNOWN",
+        "childAbility": "UNKNOWN",
+        "schoolPerformance": "UNKNOWN",
+        "developmentalAssessment": "UNKNOWN",
+        "emotionalHealth": "UNKNOWN",
+        "childConsent": "UNKNOWN",
+        "supportNeed": "UNKNOWN",
+        "legalAuthority": "UNKNOWN",
+        "actualRisk": "UNKNOWN"
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_OWNER_REQUIREMENT_MISSING",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "EXACT_PRODUCER_REQUIREMENT_MISSING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "CONTEXT_NOT_ENTERED",
+        "DEVELOPMENTAL_STAGE_UNVERIFIED",
+        "UNVERIFIED_ROLE_ASSIGNMENT",
+        "ASYMMETRIC_RESPONSIBILITY_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH09.P4:recall-adult-support-and-boundary",
+      "address": "CH09.P4",
+      "declaredContexts": {
+        "context": "UNKNOWN",
+        "state": "CONTEXT_NOT_ENTERED",
+        "declared": false,
+        "actualAge": "UNKNOWN",
+        "actualAbility": "UNKNOWN",
+        "actualSupportNeed": "UNKNOWN",
+        "ageCalculated": false,
+        "hypotheticalResearchContextIsActualInput": false,
+        "applicable": false,
+        "reasons": [
+          "CONTEXT_NOT_ENTERED",
+          "DEVELOPMENTAL_STAGE_UNVERIFIED"
+        ]
+      },
+      "originalDevelopmentalContexts": [
+        "ADULT"
+      ],
+      "predicates": [],
+      "parentResponsibleAction": "동의한 지원과 경계를 유지한다.",
+      "childAvailableChoice": "조언·방문·연락을 고를 수 있다.",
+      "actualFacts": {
+        "parentage": "UNKNOWN",
+        "guardianship": "UNKNOWN",
+        "cohabitation": "UNKNOWN",
+        "familyHistory": "UNKNOWN",
+        "childAbility": "UNKNOWN",
+        "schoolPerformance": "UNKNOWN",
+        "developmentalAssessment": "UNKNOWN",
+        "emotionalHealth": "UNKNOWN",
+        "childConsent": "UNKNOWN",
+        "supportNeed": "UNKNOWN",
+        "legalAuthority": "UNKNOWN",
+        "actualRisk": "UNKNOWN"
+      },
+      "blockers": [
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED",
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_OWNER_REQUIREMENT_MISSING",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "EXACT_PRODUCER_REQUIREMENT_MISSING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "CONTEXT_NOT_ENTERED",
+        "DEVELOPMENTAL_STAGE_UNVERIFIED",
+        "UNVERIFIED_ROLE_ASSIGNMENT",
+        "ASYMMETRIC_RESPONSIBILITY_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH09.P4:recall-role-changes-with-context",
+      "address": "CH09.P4",
+      "declaredContexts": {
+        "context": "UNKNOWN",
+        "state": "CONTEXT_NOT_ENTERED",
+        "declared": false,
+        "actualAge": "UNKNOWN",
+        "actualAbility": "UNKNOWN",
+        "actualSupportNeed": "UNKNOWN",
+        "ageCalculated": false,
+        "hypotheticalResearchContextIsActualInput": false,
+        "applicable": false,
+        "reasons": [
+          "CONTEXT_NOT_ENTERED",
+          "DEVELOPMENTAL_STAGE_UNVERIFIED"
+        ]
+      },
+      "originalDevelopmentalContexts": [
+        "ADULT"
+      ],
+      "predicates": [],
+      "parentResponsibleAction": "상황·동의·재검토 조건을 유지한다.",
+      "childAvailableChoice": "현재 필요한 도움과 경계를 말할 수 있다.",
+      "actualFacts": {
+        "parentage": "UNKNOWN",
+        "guardianship": "UNKNOWN",
+        "cohabitation": "UNKNOWN",
+        "familyHistory": "UNKNOWN",
+        "childAbility": "UNKNOWN",
+        "schoolPerformance": "UNKNOWN",
+        "developmentalAssessment": "UNKNOWN",
+        "emotionalHealth": "UNKNOWN",
+        "childConsent": "UNKNOWN",
+        "supportNeed": "UNKNOWN",
+        "legalAuthority": "UNKNOWN",
+        "actualRisk": "UNKNOWN"
+      },
+      "blockers": [
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED",
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_OWNER_REQUIREMENT_MISSING",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "EXACT_PRODUCER_REQUIREMENT_MISSING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "CONTEXT_NOT_ENTERED",
+        "DEVELOPMENTAL_STAGE_UNVERIFIED",
+        "UNVERIFIED_ROLE_ASSIGNMENT",
+        "ASYMMETRIC_RESPONSIBILITY_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH07.P4:adult-choice-not-permanent-approval",
+      "address": "CH07.P4",
+      "declaredContexts": {
+        "context": "UNKNOWN",
+        "state": "CONTEXT_NOT_ENTERED",
+        "declared": false,
+        "actualAge": "UNKNOWN",
+        "actualAbility": "UNKNOWN",
+        "actualSupportNeed": "UNKNOWN",
+        "ageCalculated": false,
+        "hypotheticalResearchContextIsActualInput": false,
+        "applicable": false,
+        "reasons": [
+          "CONTEXT_NOT_ENTERED",
+          "DEVELOPMENTAL_STAGE_UNVERIFIED"
+        ]
+      },
+      "originalDevelopmentalContexts": [
+        "ADULT"
+      ],
+      "predicates": [],
+      "parentResponsibleAction": "승인 요구를 줄이고 정보 제공 범위를 확인한다.",
+      "childAvailableChoice": "결정·조언 수신·연락 경계를 고를 수 있다.",
+      "actualFacts": {
+        "parentage": "UNKNOWN",
+        "guardianship": "UNKNOWN",
+        "cohabitation": "UNKNOWN",
+        "familyHistory": "UNKNOWN",
+        "childAbility": "UNKNOWN",
+        "schoolPerformance": "UNKNOWN",
+        "developmentalAssessment": "UNKNOWN",
+        "emotionalHealth": "UNKNOWN",
+        "childConsent": "UNKNOWN",
+        "supportNeed": "UNKNOWN",
+        "legalAuthority": "UNKNOWN",
+        "actualRisk": "UNKNOWN"
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_OWNER_REQUIREMENT_MISSING",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "EXACT_PRODUCER_REQUIREMENT_MISSING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "CONTEXT_NOT_ENTERED",
+        "DEVELOPMENTAL_STAGE_UNVERIFIED",
+        "UNVERIFIED_ROLE_ASSIGNMENT",
+        "ASYMMETRIC_RESPONSIBILITY_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH01.P4:adult-child-has-own-life",
+      "address": "CH01.P4",
+      "declaredContexts": {
+        "context": "UNKNOWN",
+        "state": "CONTEXT_NOT_ENTERED",
+        "declared": false,
+        "actualAge": "UNKNOWN",
+        "actualAbility": "UNKNOWN",
+        "actualSupportNeed": "UNKNOWN",
+        "ageCalculated": false,
+        "hypotheticalResearchContextIsActualInput": false,
+        "applicable": false,
+        "reasons": [
+          "CONTEXT_NOT_ENTERED",
+          "DEVELOPMENTAL_STAGE_UNVERIFIED"
+        ]
+      },
+      "originalDevelopmentalContexts": [
+        "ADULT"
+      ],
+      "predicates": [],
+      "parentResponsibleAction": "조언·실행 지원·결정을 구분한다.",
+      "childAvailableChoice": "조언을 고르거나 거절하고 직접 결정할 수 있다.",
+      "actualFacts": {
+        "parentage": "UNKNOWN",
+        "guardianship": "UNKNOWN",
+        "cohabitation": "UNKNOWN",
+        "familyHistory": "UNKNOWN",
+        "childAbility": "UNKNOWN",
+        "schoolPerformance": "UNKNOWN",
+        "developmentalAssessment": "UNKNOWN",
+        "emotionalHealth": "UNKNOWN",
+        "childConsent": "UNKNOWN",
+        "supportNeed": "UNKNOWN",
+        "legalAuthority": "UNKNOWN",
+        "actualRisk": "UNKNOWN"
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_OWNER_REQUIREMENT_MISSING",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "EXACT_PRODUCER_REQUIREMENT_MISSING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "CONTEXT_NOT_ENTERED",
+        "DEVELOPMENTAL_STAGE_UNVERIFIED",
+        "UNVERIFIED_ROLE_ASSIGNMENT",
+        "ASYMMETRIC_RESPONSIBILITY_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    }
+  ],
+  "V": [
+    {
+      "address": "CH06.P4",
+      "excerpt": "자녀는 해보고 싶은 일과 도움이 필요한 곳을 말할 수 있으며, 부모가 안전과 최종 결정의 책임을 맡아야 합니다.",
+      "originalParagraphHash": "d94eb1935e88ab541d1181f3432ccb31d7bcc30c601df1abf102c1921739bd9c",
+      "states": [
+        "ACTUAL_READER_ADULT_BOUNDARY_RISK",
+        "CURRENT_WRITER_UNCHANGED",
+        "SPECIALIST_ADULT_CONTEXT_WITHHELD",
+        "FUTURE_WRITER_REPAIR_REQUIRED"
+      ]
+    }
+  ],
+  "writerRepaired": false
+}

@@ -1,0 +1,301 @@
+/** Static offline coworker research. No runtime registration or customer approval. */
+import type { MaterialView } from "./researchTypes";
+export const CW_REVIEW_QUALITY_RESEARCH: readonly MaterialView[] = [
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH01.P3:shared-precision-not-proof",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH01.P3:shared-precision-not-proof",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH01.P4:result-and-respect",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH01.P4:result-and-respect",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH02.P1:a-logical-model",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH02.P1:a-logical-model",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH02.P2:a-clear-criteria",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH02.P2:a-clear-criteria",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH02.P3:a-system-review",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH02.P3:a-system-review",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH03.P1:b-private-synthesis",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH03.P1:b-private-synthesis",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH03.P2:b-time-to-answer",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH03.P2:b-time-to-answer",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH03.P3:b-clear-completion",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH03.P3:b-clear-completion",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH03.P3:b-contradiction-question",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH03.P3:b-contradiction-question",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH04.P1:shared-records-different-checks",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH04.P1:shared-records-different-checks",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH04.P1:shared-space-different-questions",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH04.P1:shared-space-different-questions",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH04.P2:structure-and-detail",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH04.P2:structure-and-detail",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH04.P3:parallel-review-rejoin",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH04.P3:parallel-review-rejoin",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH04.P3:draft-before-polish",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH04.P3:draft-before-polish",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH05.P2:ab-criterion-not-command",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH05.P2:ab-criterion-not-command",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH06.P1:ba-independent-second-view",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P1:ba-independent-second-view",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH06.P1:ba-change-the-premise",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P1:ba-change-the-premise",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH06.P2:ba-closure-list",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P2:ba-closure-list",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH06.P2:ba-other-model",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P2:ba-other-model",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH06.P3:ba-detail-cost",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P3:ba-detail-cost",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH06.P4:ba-prioritize-review",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P4:ba-prioritize-review",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH06.P4:ba-ask-one-assumption",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P4:ba-ask-one-assumption",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH07.P1:completion-mismatch",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH07.P1:completion-mismatch",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH07.P1:review-depth-gap",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH07.P1:review-depth-gap",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH08.P1:repair-done-state",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH08.P1:repair-done-state",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH08.P1:repair-review-level",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH08.P1:repair-review-level",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:reviewQualityResearch:material:CH08.P3:b-name-pending-review",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH08.P3:b-name-pending-review",
+    "notAdditionalIndependentFact": true
+  }
+];

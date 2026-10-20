@@ -1,0 +1,2000 @@
+[
+  {
+    "engineId": "comprehensive",
+    "engineVersion": "comprehensive-specialist-engine-v1",
+    "productKey": "saju_mbti_full",
+    "relationshipCategory": null,
+    "sourceResearchFamily": "comprehensive-product-research",
+    "readerContract": {
+      "originalManifestContract": {
+        "readerChapters": 13,
+        "readerParagraphs": 52,
+        "readerRoles": 208,
+        "registeredQuestions": 260,
+        "questionLinkedMaterials": 179
+      },
+      "foundationProductContract": [
+        {
+          "productKey": "saju_mbti_full",
+          "relationship": null,
+          "chapters": 13,
+          "paragraphs": 52,
+          "roles": 208,
+          "periodSlots": null,
+          "originalReaderVersion": "comprehensive-editorial-quality-fix-01-v1",
+          "originalReaderFile": "src/lib/interpretation-v4/comprehensiveReleaseContracts.ts",
+          "originalReaderHash": "e8d105999376cb61b6da101fe236ba60e7af47708dfdcf81f894622ef1d956d3",
+          "policy": "ORIGINAL_STRUCTURE_ONLY"
+        }
+      ]
+    },
+    "questionRegistryVersion": "product-specialist-foundation-v1",
+    "evidenceRequirementKinds": [
+      "CALCULATED_NATAL_FACT",
+      "FUSION_DERIVATION",
+      "MBTI_SOURCE_NODE"
+    ],
+    "sourceGroupPolicy": "PRESERVE_NATIVE_GROUP_SEMANTICS",
+    "temporalPolicy": "ORIGINAL_[START,END)_CONDITIONAL_AND_UNKNOWN_PRESERVED",
+    "ownerPolicy": "FIXTURE_GRAPH_OWNER_ISOLATION",
+    "directionPolicy": "ORIGINAL_DIRECTION_AND_RECEIVED_TEN_GOD",
+    "domainPolicy": "FULL_REQUIRED_ANCESTRY_ORIGINAL_SPECIALIST_POLICY",
+    "meaningPolicy": "UNAPPROVED_REVIEW_REQUIRED",
+    "reusePolicy": {
+      "policySources": [
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/artifacts.ts",
+          "sha256": "eba512108b46318691a22d024b08c53d53b67eb45bbf9ffd50f7cc77a651049e"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/candidateIndex.ts",
+          "sha256": "b256d10d229a14a6285c4cdb52a5d31c40a15a57ede6587e64caa242bd64bdeb"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/conflictGraph.ts",
+          "sha256": "b5dc9df9d889374db6388cf1aadbce0454295936d2d9bb7726b67f1f9e817017"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/engine.ts",
+          "sha256": "4dbd9310600d0ce18ad0e6618efb310e1ea05618380cdf2fdd627b496e8f5bac"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/meaningIdentity.ts",
+          "sha256": "9fe058a2876c33f6435e8d6819958d1dc399b4abaddedbf097326ea7e805086c"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/requirementAdapter.ts",
+          "sha256": "38e335a30bacffc464cc44111640a3cd8b643c0577434540fee67b8a3fafd631"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/reuseConstraints.ts",
+          "sha256": "2df3b3a285bf6c2eef91f4430747e034203cd17e7d45b5e69a6c5cefd269cda7"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/selectionEngine.ts",
+          "sha256": "fe0fce6a1321b8cfb15c26d3198c832458e64d0998cc2debb58462c036a01f74"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/syntheticValidation.ts",
+          "sha256": "da53df17ff06b795225ffcfe06e2c77a798fb1f3ab1df84958c93eb05eef4fd3"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/types.ts",
+          "sha256": "bff8894e9c62f1f6236b60c72fcd92972d527605bf585a5f700c97eb10b05bb9"
+        }
+      ],
+      "unitScopeLimitException": "NATIVE_SOURCE_CONTRACTS_NO_GLOBAL_CAP"
+    },
+    "recallPolicy": "ORIGINAL_ACTUAL_DISPLAY_AND_PREDECESSOR_REQUIREMENTS",
+    "specialistAdapter": "comprehensive-native-result-v1",
+    "actualEngineInvoker": "ComprehensiveSpecialistEngine.diagnose",
+    "currentApprovalPolicy": "REAL_RESEARCH_APPROVAL_ZERO",
+    "fixtureIds": [
+      "fixture-comprehensive-A",
+      "fixture-comprehensive-F",
+      "fixture-same-natal-different-mbti",
+      "fixture-same-mbti-different-natal"
+    ],
+    "originalManifestLocator": "docs/validation/v4-comprehensive-specialist-engine-01/comprehensive-specialist-manifest.json",
+    "originalManifestHash": "49c03e5d5a5e84a621b40bd26c66fe154a8031050ccd7faa28425625c8d51915",
+    "policySources": [
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/artifacts.ts",
+        "sha256": "eba512108b46318691a22d024b08c53d53b67eb45bbf9ffd50f7cc77a651049e"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/candidateIndex.ts",
+        "sha256": "b256d10d229a14a6285c4cdb52a5d31c40a15a57ede6587e64caa242bd64bdeb"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/conflictGraph.ts",
+        "sha256": "b5dc9df9d889374db6388cf1aadbce0454295936d2d9bb7726b67f1f9e817017"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/engine.ts",
+        "sha256": "4dbd9310600d0ce18ad0e6618efb310e1ea05618380cdf2fdd627b496e8f5bac"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/meaningIdentity.ts",
+        "sha256": "9fe058a2876c33f6435e8d6819958d1dc399b4abaddedbf097326ea7e805086c"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/requirementAdapter.ts",
+        "sha256": "38e335a30bacffc464cc44111640a3cd8b643c0577434540fee67b8a3fafd631"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/reuseConstraints.ts",
+        "sha256": "2df3b3a285bf6c2eef91f4430747e034203cd17e7d45b5e69a6c5cefd269cda7"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/selectionEngine.ts",
+        "sha256": "fe0fce6a1321b8cfb15c26d3198c832458e64d0998cc2debb58462c036a01f74"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/syntheticValidation.ts",
+        "sha256": "da53df17ff06b795225ffcfe06e2c77a798fb1f3ab1df84958c93eb05eef4fd3"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/types.ts",
+        "sha256": "bff8894e9c62f1f6236b60c72fcd92972d527605bf585a5f700c97eb10b05bb9"
+      }
+    ],
+    "folder": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine"
+  },
+  {
+    "engineId": "career",
+    "engineVersion": "career-specialist-engine-v1",
+    "productKey": "career_money_study",
+    "relationshipCategory": null,
+    "sourceResearchFamily": "career-product-research",
+    "readerContract": {
+      "originalManifestContract": {
+        "readerChapters": 9,
+        "readerParagraphs": 36,
+        "readerRoles": 144,
+        "registeredQuestions": 180,
+        "questionLinkedMaterials": 192,
+        "originalFoundationQuestionBaseline": {
+          "rows": 540,
+          "withWitness": 140,
+          "references": 205
+        }
+      },
+      "foundationProductContract": [
+        {
+          "productKey": "career_money_study",
+          "relationship": null,
+          "chapters": 9,
+          "paragraphs": 36,
+          "roles": 144,
+          "periodSlots": null,
+          "originalReaderVersion": "career-editorial-quality-fix-01-v1",
+          "originalReaderFile": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+          "originalReaderHash": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+          "policy": "ORIGINAL_STRUCTURE_ONLY"
+        }
+      ]
+    },
+    "questionRegistryVersion": "product-specialist-foundation-v1",
+    "evidenceRequirementKinds": [
+      "CALCULATED_NATAL_FACT",
+      "FUSION_DERIVATION",
+      "MBTI_SOURCE_NODE"
+    ],
+    "sourceGroupPolicy": "PRESERVE_NATIVE_GROUP_SEMANTICS",
+    "temporalPolicy": "ORIGINAL_[START,END)_CONDITIONAL_AND_UNKNOWN_PRESERVED",
+    "ownerPolicy": "FIXTURE_GRAPH_OWNER_ISOLATION",
+    "directionPolicy": "ORIGINAL_DIRECTION_AND_RECEIVED_TEN_GOD",
+    "domainPolicy": "FULL_REQUIRED_ANCESTRY_ORIGINAL_SPECIALIST_POLICY",
+    "meaningPolicy": "UNAPPROVED_REVIEW_REQUIRED",
+    "reusePolicy": {
+      "policySources": [
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/artifacts.ts",
+          "sha256": "795b2c66edc3785ef4c541c01f7f94e326ca58cc593449207440f8dee2c7797d"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/candidateIndex.ts",
+          "sha256": "d37f8e54482af72fb995624a047cf431d396e486de5974c2551a22a18cdcd5d7"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/conflictGraph.ts",
+          "sha256": "d91aa25a0f97731eb8008c163b5eda313ff168ebcfab4fc8c41b6d6acd5b2c93"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/context.ts",
+          "sha256": "5ec9f85e1217b9fc121d76041c81caa05b02dff579ee0c59df74938e0a13a522"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/domainRequirements.ts",
+          "sha256": "070f43f2dd11adc36c55b4cc5ce0507c16da3f36539a266219a0c528322843fe"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/engine.ts",
+          "sha256": "bbd39ca730fea9f86dacff68724f3952fd0f80917cebaa7552e524ad88c692c1"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/proofMatcher.ts",
+          "sha256": "fb4ef187e769755c3bded426144d6e22704a5d273b591e95a50c789d74a5cf4b"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/requirementAdapter.ts",
+          "sha256": "856ed17f837304d9926aaf446638c6c9a41d5c2564b12edfc93b2875c523887d"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/reuseConstraints.ts",
+          "sha256": "9ffaba3e901b2ffcf847168053214294679c4b1b9d02c34139f9400f14206947"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/selectionEngine.ts",
+          "sha256": "cddfc520462f99efcf291bec4d45818d223a739f06b0660fbf46c32daa252e8d"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/syntheticValidation.ts",
+          "sha256": "dd7e134bf5638b84a93820c3e480bb32f1c448fb63916c8f98bb95f57b9c52b2"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/types.ts",
+          "sha256": "00709e26a41ae1570c30cc11c7b4941d661a7704ee02dd18a7357c3033a6c7b4"
+        }
+      ],
+      "unitScopeLimitException": "NATIVE_SOURCE_CONTRACTS_NO_GLOBAL_CAP"
+    },
+    "recallPolicy": "ORIGINAL_ACTUAL_DISPLAY_AND_PREDECESSOR_REQUIREMENTS",
+    "specialistAdapter": "career-native-result-v1",
+    "actualEngineInvoker": "CareerSpecialistEngine.diagnose",
+    "currentApprovalPolicy": "REAL_RESEARCH_APPROVAL_ZERO",
+    "fixtureIds": [
+      "fixture-career-A",
+      "fixture-career-F",
+      "fixture-same-natal-career"
+    ],
+    "originalManifestLocator": "docs/validation/v4-career-money-study-specialist-engine-01/career-specialist-manifest.json",
+    "originalManifestHash": "e794766a6d389a693a4f7165c2cf1af2589558ee059799039f66286a97333c84",
+    "policySources": [
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/artifacts.ts",
+        "sha256": "795b2c66edc3785ef4c541c01f7f94e326ca58cc593449207440f8dee2c7797d"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/candidateIndex.ts",
+        "sha256": "d37f8e54482af72fb995624a047cf431d396e486de5974c2551a22a18cdcd5d7"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/conflictGraph.ts",
+        "sha256": "d91aa25a0f97731eb8008c163b5eda313ff168ebcfab4fc8c41b6d6acd5b2c93"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/context.ts",
+        "sha256": "5ec9f85e1217b9fc121d76041c81caa05b02dff579ee0c59df74938e0a13a522"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/domainRequirements.ts",
+        "sha256": "070f43f2dd11adc36c55b4cc5ce0507c16da3f36539a266219a0c528322843fe"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/engine.ts",
+        "sha256": "bbd39ca730fea9f86dacff68724f3952fd0f80917cebaa7552e524ad88c692c1"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/proofMatcher.ts",
+        "sha256": "fb4ef187e769755c3bded426144d6e22704a5d273b591e95a50c789d74a5cf4b"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/requirementAdapter.ts",
+        "sha256": "856ed17f837304d9926aaf446638c6c9a41d5c2564b12edfc93b2875c523887d"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/reuseConstraints.ts",
+        "sha256": "9ffaba3e901b2ffcf847168053214294679c4b1b9d02c34139f9400f14206947"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/selectionEngine.ts",
+        "sha256": "cddfc520462f99efcf291bec4d45818d223a739f06b0660fbf46c32daa252e8d"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/syntheticValidation.ts",
+        "sha256": "dd7e134bf5638b84a93820c3e480bb32f1c448fb63916c8f98bb95f57b9c52b2"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/types.ts",
+        "sha256": "00709e26a41ae1570c30cc11c7b4941d661a7704ee02dd18a7357c3033a6c7b4"
+      }
+    ],
+    "folder": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine"
+  },
+  {
+    "engineId": "love",
+    "engineVersion": "love-specialist-engine-v1",
+    "productKey": "love_marriage_child",
+    "relationshipCategory": null,
+    "sourceResearchFamily": "love-product-research",
+    "readerContract": {
+      "originalManifestContract": {
+        "questions": 180,
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144
+      },
+      "foundationProductContract": [
+        {
+          "productKey": "love_marriage_child",
+          "relationship": null,
+          "chapters": 9,
+          "paragraphs": 36,
+          "roles": 144,
+          "periodSlots": null,
+          "originalReaderVersion": "love-editorial-quality-fix-01-v1",
+          "originalReaderFile": "src/lib/interpretation-v4/loveReleaseContracts.ts",
+          "originalReaderHash": "ea860d14a254f063ad1b3925a7e2f64cc6f87af5afcd48b4c69902fb04ae0f54",
+          "policy": "ORIGINAL_STRUCTURE_ONLY"
+        }
+      ]
+    },
+    "questionRegistryVersion": "product-specialist-foundation-v1",
+    "evidenceRequirementKinds": [
+      "CALCULATED_NATAL_FACT",
+      "FUSION_DERIVATION",
+      "MBTI_SOURCE_NODE"
+    ],
+    "sourceGroupPolicy": "PRESERVE_NATIVE_GROUP_SEMANTICS",
+    "temporalPolicy": "ORIGINAL_[START,END)_CONDITIONAL_AND_UNKNOWN_PRESERVED",
+    "ownerPolicy": "FIXTURE_GRAPH_OWNER_ISOLATION",
+    "directionPolicy": "ORIGINAL_DIRECTION_AND_RECEIVED_TEN_GOD",
+    "domainPolicy": "FULL_REQUIRED_ANCESTRY_ORIGINAL_SPECIALIST_POLICY",
+    "meaningPolicy": "UNAPPROVED_REVIEW_REQUIRED",
+    "reusePolicy": {
+      "policySources": [
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/artifacts.ts",
+          "sha256": "9a5eb421b08d28ac1a772b8519a76e7849d98ee3ea9d865a37a78dcc10ffdf68"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/candidateIndex.ts",
+          "sha256": "4bc0e434a131308742478fa60d9dad2ad3e46492305f4975dc1b18504db22f1f"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/conflictGraph.ts",
+          "sha256": "4400aed7cb2f783dba19fcadcd92e9da3a1f460ff07b89e75ab1234616be34fb"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/engine.ts",
+          "sha256": "da2cff41d9f02c66b048b5d5e434fc741f6d6f8a09286825d93303c7d997fa2c"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/evidenceBoundaries.ts",
+          "sha256": "28ca877850548085a9c2dd368cdbb395a9c05a012544b13ba7769c4af1b46039"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/inputProbes.ts",
+          "sha256": "630a31e5c14573f629afefeabfc3e1a43b04c178957d6e0c81d27c88e7db58e7"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/parentingSources.ts",
+          "sha256": "d4d9deb118fd48c0ba3b5d7d7765338bf548a87fff4e347a105f8f12a1c227ec"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/relationshipContext.ts",
+          "sha256": "622cee5513d16f6a7577f1f00f38588796949dea15c4f7abbf3d0946ec464f97"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/requirementAdapter.ts",
+          "sha256": "22eceb85e0a819fb186e581c45bc84be92adf6254a226a0db93e938247b669bf"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/reuseConstraints.ts",
+          "sha256": "fba84ae1f9f7e0841fd39679e4ffb672c5971daf42ae58c171b3d208e63302d9"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/selectionEngine.ts",
+          "sha256": "9927cc18c423ee2cd8ba945c27cbf3d4f98e031b94d3be7eb4016252838368c7"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/syntheticValidation.ts",
+          "sha256": "d15d29e83f1ad2c1ff40c1fc5ab15ddb26c0a38dbc45cd31a9e8713ed78c1fa6"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/types.ts",
+          "sha256": "f0fbbed583a47c43d94b0beece08b16e59a8900b99019e9abaf262b22005a814"
+        }
+      ],
+      "unitScopeLimitException": "NATIVE_SOURCE_CONTRACTS_NO_GLOBAL_CAP"
+    },
+    "recallPolicy": "ORIGINAL_ACTUAL_DISPLAY_AND_PREDECESSOR_REQUIREMENTS",
+    "specialistAdapter": "love-native-result-v1",
+    "actualEngineInvoker": "LoveSpecialistEngine.diagnose",
+    "currentApprovalPolicy": "REAL_RESEARCH_APPROVAL_ZERO",
+    "fixtureIds": [
+      "fixture-love-A",
+      "fixture-love-F"
+    ],
+    "originalManifestLocator": "docs/validation/v4-love-marriage-child-specialist-engine-01/love-specialist-manifest.json",
+    "originalManifestHash": "2ad0017eb0e547318a06911a72090da520475a65d3d1c94bbd325c0617fe5fb7",
+    "policySources": [
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/artifacts.ts",
+        "sha256": "9a5eb421b08d28ac1a772b8519a76e7849d98ee3ea9d865a37a78dcc10ffdf68"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/candidateIndex.ts",
+        "sha256": "4bc0e434a131308742478fa60d9dad2ad3e46492305f4975dc1b18504db22f1f"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/conflictGraph.ts",
+        "sha256": "4400aed7cb2f783dba19fcadcd92e9da3a1f460ff07b89e75ab1234616be34fb"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/engine.ts",
+        "sha256": "da2cff41d9f02c66b048b5d5e434fc741f6d6f8a09286825d93303c7d997fa2c"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/evidenceBoundaries.ts",
+        "sha256": "28ca877850548085a9c2dd368cdbb395a9c05a012544b13ba7769c4af1b46039"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/inputProbes.ts",
+        "sha256": "630a31e5c14573f629afefeabfc3e1a43b04c178957d6e0c81d27c88e7db58e7"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/parentingSources.ts",
+        "sha256": "d4d9deb118fd48c0ba3b5d7d7765338bf548a87fff4e347a105f8f12a1c227ec"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/relationshipContext.ts",
+        "sha256": "622cee5513d16f6a7577f1f00f38588796949dea15c4f7abbf3d0946ec464f97"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/requirementAdapter.ts",
+        "sha256": "22eceb85e0a819fb186e581c45bc84be92adf6254a226a0db93e938247b669bf"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/reuseConstraints.ts",
+        "sha256": "fba84ae1f9f7e0841fd39679e4ffb672c5971daf42ae58c171b3d208e63302d9"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/selectionEngine.ts",
+        "sha256": "9927cc18c423ee2cd8ba945c27cbf3d4f98e031b94d3be7eb4016252838368c7"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/syntheticValidation.ts",
+        "sha256": "d15d29e83f1ad2c1ff40c1fc5ab15ddb26c0a38dbc45cd31a9e8713ed78c1fa6"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/types.ts",
+        "sha256": "f0fbbed583a47c43d94b0beece08b16e59a8900b99019e9abaf262b22005a814"
+      }
+    ],
+    "folder": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine"
+  },
+  {
+    "engineId": "major-fortune",
+    "engineVersion": "major-fortune-specialist-v1",
+    "productKey": "major_fortune",
+    "relationshipCategory": null,
+    "sourceResearchFamily": "major-fortune-product-research",
+    "readerContract": {
+      "originalManifestContract": {
+        "yearSlots": 14,
+        "questionViews": 168
+      },
+      "foundationProductContract": [
+        {
+          "productKey": "major_fortune",
+          "relationship": null,
+          "chapters": null,
+          "paragraphs": null,
+          "roles": null,
+          "periodSlots": 14,
+          "originalReaderVersion": null,
+          "originalReaderFile": "src/lib/report-knowledge/major-fortune-product-research/yearMatrix.ts",
+          "originalReaderHash": "5d68d20479b0bcf7311cff51774eda184cfa63276ebac26782e0e76d57dce17f",
+          "policy": "ORIGINAL_STRUCTURE_ONLY"
+        }
+      ]
+    },
+    "questionRegistryVersion": "product-specialist-foundation-v1",
+    "evidenceRequirementKinds": [
+      "CALCULATED_PERIOD_FACT"
+    ],
+    "sourceGroupPolicy": "PRESERVE_NATIVE_GROUP_SEMANTICS",
+    "temporalPolicy": "ORIGINAL_[START,END)_CONDITIONAL_AND_UNKNOWN_PRESERVED",
+    "ownerPolicy": "FIXTURE_GRAPH_OWNER_ISOLATION",
+    "directionPolicy": "ORIGINAL_DIRECTION_AND_RECEIVED_TEN_GOD",
+    "domainPolicy": "FULL_REQUIRED_ANCESTRY_ORIGINAL_SPECIALIST_POLICY",
+    "meaningPolicy": "UNAPPROVED_REVIEW_REQUIRED",
+    "reusePolicy": {
+      "policySources": [
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/artifacts.ts",
+          "sha256": "f6864d47aadac131186e4b40d18531af4480ec68d6b69dcf0c2df8d8a7537d2c"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/candidateIndex.ts",
+          "sha256": "fb2143d587783ea65741b49a9b8a002b6872939801a868957bc778780ad9932a"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/conflictGraph.ts",
+          "sha256": "9329277fa853362a9e9d442246346bf24d10684903ecef36d760cf4895ebfacc"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/cycleMatcher.ts",
+          "sha256": "1b37cee4e19c964e9c2e1e7751d789d21cd07bf8297512c48dd42d5629776092"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/diagnostics.ts",
+          "sha256": "9cf739cbaa245a937edff2e097bf7aba8a021e09907ce5b66f25d16db3ec28b3"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/engine.ts",
+          "sha256": "007df65cd8ff1b5fb4518fc8be53ef5706899548913f0947f2fae5a2d15394ad"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/inputProbes.ts",
+          "sha256": "fb5726ca5975a611ec5368a511ff6066fbcd96af1c76f02bc9462390a307d162"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/periodQuestionRegistry.ts",
+          "sha256": "8fea61c8f52571448648b8cc8df7dc83d84d23cc4ba57ac0e83499b9c09e63c9"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/relationMatcher.ts",
+          "sha256": "161beacab545060637afbb5a388e97cafe9d828b96d3bc660849a764c81dba3e"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/requirementAdapter.ts",
+          "sha256": "9f60db4d88628752b77360095694739e7d4d47ea6fa9beea2ad7bac24e365354"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/reuseConstraints.ts",
+          "sha256": "7f9b3f7b7a3f43863a56d58c1c5899a016d410e0088053df6078f370721958f2"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/selectionEngine.ts",
+          "sha256": "8083f352366709f51b89466f0806c4fdb82619bfd9633c3c0ccb2182f2885f0f"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/syntheticValidation.ts",
+          "sha256": "2e6be9777506ef3e0f3d7101b81fc20d5286044990449d309f33867469f1ee33"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/temporalEvidence.ts",
+          "sha256": "562f457e8b2214c4774b8b781a85e5bf8cc09a1df0dc564291f750f5f57252e3"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/tenGodMatcher.ts",
+          "sha256": "aa2eb33e038ea1b3d2bf8c1a8bde4618a5d3e966cfcf36e5d39be5c4d9666e38"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/transitionValidator.ts",
+          "sha256": "71fb9eb7a2ff4d68845bea7881b32e659cfe5ddcd36c6ebe8b5de9c329a1b198"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/types.ts",
+          "sha256": "2982be674a2688eba40f21b5ac728dbf7003d82f4510dc772af46e1eebf4d149"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/yearComparator.ts",
+          "sha256": "03b842ac3d3d19ca56407332be3fb0fdf52ec4d8b9e3f18200f20f7029d4d9af"
+        }
+      ],
+      "unitScopeLimitException": "NATIVE_SOURCE_CONTRACTS_NO_GLOBAL_CAP"
+    },
+    "recallPolicy": "ORIGINAL_ACTUAL_DISPLAY_AND_PREDECESSOR_REQUIREMENTS",
+    "specialistAdapter": "major-fortune-native-result-v1",
+    "actualEngineInvoker": "MajorFortuneSpecialistEngine.diagnose",
+    "currentApprovalPolicy": "REAL_RESEARCH_APPROVAL_ZERO",
+    "fixtureIds": [
+      "fixture-major-A",
+      "fixture-major-F",
+      "fixture-major-transition-C"
+    ],
+    "originalManifestLocator": "docs/validation/v4-major-fortune-specialist-engine-01/major-specialist-manifest.json",
+    "originalManifestHash": "c38a28a435e82edc06cac41dff013359c3665a6208f3b6d6f60242a819d1e464",
+    "policySources": [
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/artifacts.ts",
+        "sha256": "f6864d47aadac131186e4b40d18531af4480ec68d6b69dcf0c2df8d8a7537d2c"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/candidateIndex.ts",
+        "sha256": "fb2143d587783ea65741b49a9b8a002b6872939801a868957bc778780ad9932a"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/conflictGraph.ts",
+        "sha256": "9329277fa853362a9e9d442246346bf24d10684903ecef36d760cf4895ebfacc"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/cycleMatcher.ts",
+        "sha256": "1b37cee4e19c964e9c2e1e7751d789d21cd07bf8297512c48dd42d5629776092"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/diagnostics.ts",
+        "sha256": "9cf739cbaa245a937edff2e097bf7aba8a021e09907ce5b66f25d16db3ec28b3"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/engine.ts",
+        "sha256": "007df65cd8ff1b5fb4518fc8be53ef5706899548913f0947f2fae5a2d15394ad"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/inputProbes.ts",
+        "sha256": "fb5726ca5975a611ec5368a511ff6066fbcd96af1c76f02bc9462390a307d162"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/periodQuestionRegistry.ts",
+        "sha256": "8fea61c8f52571448648b8cc8df7dc83d84d23cc4ba57ac0e83499b9c09e63c9"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/relationMatcher.ts",
+        "sha256": "161beacab545060637afbb5a388e97cafe9d828b96d3bc660849a764c81dba3e"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/requirementAdapter.ts",
+        "sha256": "9f60db4d88628752b77360095694739e7d4d47ea6fa9beea2ad7bac24e365354"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/reuseConstraints.ts",
+        "sha256": "7f9b3f7b7a3f43863a56d58c1c5899a016d410e0088053df6078f370721958f2"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/selectionEngine.ts",
+        "sha256": "8083f352366709f51b89466f0806c4fdb82619bfd9633c3c0ccb2182f2885f0f"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/syntheticValidation.ts",
+        "sha256": "2e6be9777506ef3e0f3d7101b81fc20d5286044990449d309f33867469f1ee33"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/temporalEvidence.ts",
+        "sha256": "562f457e8b2214c4774b8b781a85e5bf8cc09a1df0dc564291f750f5f57252e3"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/tenGodMatcher.ts",
+        "sha256": "aa2eb33e038ea1b3d2bf8c1a8bde4618a5d3e966cfcf36e5d39be5c4d9666e38"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/transitionValidator.ts",
+        "sha256": "71fb9eb7a2ff4d68845bea7881b32e659cfe5ddcd36c6ebe8b5de9c329a1b198"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/types.ts",
+        "sha256": "2982be674a2688eba40f21b5ac728dbf7003d82f4510dc772af46e1eebf4d149"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/yearComparator.ts",
+        "sha256": "03b842ac3d3d19ca56407332be3fb0fdf52ec4d8b9e3f18200f20f7029d4d9af"
+      }
+    ],
+    "folder": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine"
+  },
+  {
+    "engineId": "annual-fortune",
+    "engineVersion": "annual-fortune-specialist-v1",
+    "productKey": "annual_fortune",
+    "relationshipCategory": null,
+    "sourceResearchFamily": "annual-fortune-product-research",
+    "readerContract": {
+      "originalManifestContract": {
+        "questionCount": 12,
+        "roleAlternativeWitnessOccurrences": 248,
+        "observedMonthRows": 132
+      },
+      "foundationProductContract": [
+        {
+          "productKey": "annual_fortune",
+          "relationship": null,
+          "chapters": null,
+          "paragraphs": null,
+          "roles": null,
+          "periodSlots": 12,
+          "originalReaderVersion": null,
+          "originalReaderFile": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "originalReaderHash": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3",
+          "policy": "ORIGINAL_STRUCTURE_ONLY"
+        }
+      ]
+    },
+    "questionRegistryVersion": "product-specialist-foundation-v1",
+    "evidenceRequirementKinds": [],
+    "sourceGroupPolicy": "PRESERVE_NATIVE_GROUP_SEMANTICS",
+    "temporalPolicy": "ORIGINAL_[START,END)_CONDITIONAL_AND_UNKNOWN_PRESERVED",
+    "ownerPolicy": "FIXTURE_GRAPH_OWNER_ISOLATION",
+    "directionPolicy": "ORIGINAL_DIRECTION_AND_RECEIVED_TEN_GOD",
+    "domainPolicy": "FULL_REQUIRED_ANCESTRY_ORIGINAL_SPECIALIST_POLICY",
+    "meaningPolicy": "UNAPPROVED_REVIEW_REQUIRED",
+    "reusePolicy": {
+      "policySources": [
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/annualIdentity.ts",
+          "sha256": "4ff12d10dffb5e0bcd6442849161d2ec9abee8a82dd27737501e47298ebba228"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/artifacts.ts",
+          "sha256": "aa5759e9e04e5721706fb2926931b75ffb51a56b659551b783e56ca52754ad4a"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/boundaryValidator.ts",
+          "sha256": "ecca715f9d7b8ed4f1e3eabf49aab58b8c972f36d1c4b6b30e46ebce69041440"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/candidateIndex.ts",
+          "sha256": "3bfb70373e9e549f3bbc30347f2d18b9fb147207a862e35211b17c7b81a88c2f"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/conflictGraph.ts",
+          "sha256": "b232363431a2a9dbf0346a48b5c0e4560f9d429dc7b27aafad3422b7097ad06b"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/engine.ts",
+          "sha256": "1e958f5d819c9bd99a0bf518706feabf81a8d09896713835f68e9f0a7f4bc5a4"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/fullSegmentLedger.ts",
+          "sha256": "c8c5cbc4132b544aa19371fd570a63380901917d9d26da56d226eccef037bbfa"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/monthComparator.ts",
+          "sha256": "fd6b6a9179be3853075c5f971bcf83e12e224a08ada3a17e092ebaccebffed83"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/monthQuestionRegistry.ts",
+          "sha256": "d1bb6d8cd24c2090165eb91b6f2e7769804736a9f4d6e8401f00c536daa70d4d"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/monthlyTenGodMatcher.ts",
+          "sha256": "0f621a1513731eaef50857950b5d80b8e212cfb04cc18f8638e657a125b625c7"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/observations.ts",
+          "sha256": "2ea18631cf6e8e3f58fd6a1b68ab5e2474dec6e127816e3c8526bde2274b45aa"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/relationMatcher.ts",
+          "sha256": "546cb3f97227273be1705ae330d516a4e516caf7fd065a72630bf29ad33f74b4"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/selectionEngine.ts",
+          "sha256": "ca4309bb58d072ddfbd0440d19a99084ed796cfcd192a6b53e540268ed1ccf85"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/syntheticValidation.ts",
+          "sha256": "939ecb0a4035d895481ecb6aea51fd2af5c002e5e6591f92d2c8d531971a026d"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/transitEvidence.ts",
+          "sha256": "7f5c75615723b1d402ab7bbfc695fa48fb09a91b8fb0c547fbf7de4fa8af44c9"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/types.ts",
+          "sha256": "ad68d6abd152799e1bd15fc4b0ceefa5c1a8c1f77c00c866440312cd6574be3e"
+        }
+      ],
+      "unitScopeLimitException": "NATIVE_SOURCE_CONTRACTS_NO_GLOBAL_CAP"
+    },
+    "recallPolicy": "ORIGINAL_ACTUAL_DISPLAY_AND_PREDECESSOR_REQUIREMENTS",
+    "specialistAdapter": "annual-fortune-native-result-v1",
+    "actualEngineInvoker": "AnnualFortuneSpecialistEngine.diagnose",
+    "currentApprovalPolicy": "REAL_RESEARCH_APPROVAL_ZERO",
+    "fixtureIds": [
+      "fixture-annual-A",
+      "fixture-annual-F",
+      "fixture-annual-transition-C2028",
+      "fixture-annual-ranged-transition",
+      "fixture-annual-before-first-dayun"
+    ],
+    "originalManifestLocator": "docs/validation/v4-annual-fortune-specialist-engine-01/annual-specialist-manifest.json",
+    "originalManifestHash": "2857c5574993200949b48926c894640e15df89a1e772d373a3eaf1ff33576719",
+    "policySources": [
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/annualIdentity.ts",
+        "sha256": "4ff12d10dffb5e0bcd6442849161d2ec9abee8a82dd27737501e47298ebba228"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/artifacts.ts",
+        "sha256": "aa5759e9e04e5721706fb2926931b75ffb51a56b659551b783e56ca52754ad4a"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/boundaryValidator.ts",
+        "sha256": "ecca715f9d7b8ed4f1e3eabf49aab58b8c972f36d1c4b6b30e46ebce69041440"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/candidateIndex.ts",
+        "sha256": "3bfb70373e9e549f3bbc30347f2d18b9fb147207a862e35211b17c7b81a88c2f"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/conflictGraph.ts",
+        "sha256": "b232363431a2a9dbf0346a48b5c0e4560f9d429dc7b27aafad3422b7097ad06b"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/engine.ts",
+        "sha256": "1e958f5d819c9bd99a0bf518706feabf81a8d09896713835f68e9f0a7f4bc5a4"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/fullSegmentLedger.ts",
+        "sha256": "c8c5cbc4132b544aa19371fd570a63380901917d9d26da56d226eccef037bbfa"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/monthComparator.ts",
+        "sha256": "fd6b6a9179be3853075c5f971bcf83e12e224a08ada3a17e092ebaccebffed83"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/monthQuestionRegistry.ts",
+        "sha256": "d1bb6d8cd24c2090165eb91b6f2e7769804736a9f4d6e8401f00c536daa70d4d"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/monthlyTenGodMatcher.ts",
+        "sha256": "0f621a1513731eaef50857950b5d80b8e212cfb04cc18f8638e657a125b625c7"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/observations.ts",
+        "sha256": "2ea18631cf6e8e3f58fd6a1b68ab5e2474dec6e127816e3c8526bde2274b45aa"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/relationMatcher.ts",
+        "sha256": "546cb3f97227273be1705ae330d516a4e516caf7fd065a72630bf29ad33f74b4"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/selectionEngine.ts",
+        "sha256": "ca4309bb58d072ddfbd0440d19a99084ed796cfcd192a6b53e540268ed1ccf85"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/syntheticValidation.ts",
+        "sha256": "939ecb0a4035d895481ecb6aea51fd2af5c002e5e6591f92d2c8d531971a026d"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/transitEvidence.ts",
+        "sha256": "7f5c75615723b1d402ab7bbfc695fa48fb09a91b8fb0c547fbf7de4fa8af44c9"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/types.ts",
+        "sha256": "ad68d6abd152799e1bd15fc4b0ceefa5c1a8c1f77c00c866440312cd6574be3e"
+      }
+    ],
+    "folder": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine"
+  },
+  {
+    "engineId": "compatibility-love",
+    "engineVersion": "compatibility-love-specialist-v1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "sourceResearchFamily": "compatibility-love-research",
+    "readerContract": {
+      "originalManifestContract": {
+        "roleVersion": "compatibility-fixed-ab-v1",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "questions": 180,
+        "roleContributions": 320
+      },
+      "foundationProductContract": [
+        {
+          "productKey": "saju_mbti_compatibility",
+          "relationship": "love",
+          "chapters": 9,
+          "paragraphs": 36,
+          "roles": 144,
+          "periodSlots": null,
+          "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+          "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+          "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+          "policy": "ORIGINAL_STRUCTURE_ONLY"
+        }
+      ]
+    },
+    "questionRegistryVersion": "product-specialist-foundation-v1",
+    "evidenceRequirementKinds": [
+      "CALCULATED_NATAL_FACT",
+      "CANONICAL_PAIR_FACT",
+      "DIRECTIONAL_RELATION_FACT",
+      "FUSION_DERIVATION",
+      "MBTI_SOURCE_NODE",
+      "SOURCE_DECLARATION"
+    ],
+    "sourceGroupPolicy": "PRESERVE_NATIVE_GROUP_SEMANTICS",
+    "temporalPolicy": "ORIGINAL_[START,END)_CONDITIONAL_AND_UNKNOWN_PRESERVED",
+    "ownerPolicy": "FIXTURE_GRAPH_OWNER_ISOLATION",
+    "directionPolicy": "ORIGINAL_DIRECTION_AND_RECEIVED_TEN_GOD",
+    "domainPolicy": "FULL_REQUIRED_ANCESTRY_ORIGINAL_SPECIALIST_POLICY",
+    "meaningPolicy": "UNAPPROVED_REVIEW_REQUIRED",
+    "reusePolicy": {
+      "policySources": [
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/artifacts.ts",
+          "sha256": "675173915aabc3b7ba8d5c70d63d1c87c5c0dc746ec11521905e1429df609a0f"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/candidateIndex.ts",
+          "sha256": "70046731ad030b798412c3d8362f4e56193a8efd6d7aae6118b5eb6632c59af7"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/engine.ts",
+          "sha256": "28738fd9691f662de078b2c43e9c200b16494f654af2e07d9a0040282e9a5b97"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/observations.ts",
+          "sha256": "d2501a4c63668a990846da93399c2aa1f35578cf1594a533abd4bd77ec4caa68"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/pairWitness.ts",
+          "sha256": "f42366470cf25acf87e7ac79ded36d263b92eda72defd4e71c405bf019249130"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/policy.ts",
+          "sha256": "6383cf4551a6d60641eff004c6649ee7372bc71c89d0bdba6a723668ff761dc9"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/researchCatalog.ts",
+          "sha256": "b35385a42b866493761c59812adc150d00f268e7621d3467d74e11a610d5fffe"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/selection.ts",
+          "sha256": "bec8c382c52ad0a44c8b4703f64be5c8bb819b23266ec937389f17104c116b76"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/synthetic.ts",
+          "sha256": "058aef1d59f7cd76e060c5c8dcecd18bf311304a6a0af5ff26ec3d94aaef125a"
+        }
+      ],
+      "unitScopeLimitException": "NATIVE_SOURCE_CONTRACTS_NO_GLOBAL_CAP"
+    },
+    "recallPolicy": "ORIGINAL_ACTUAL_DISPLAY_AND_PREDECESSOR_REQUIREMENTS",
+    "specialistAdapter": "compatibility-love-native-result-v1",
+    "actualEngineInvoker": "CompatibilityLoveSpecialistEngine.diagnose",
+    "currentApprovalPolicy": "REAL_RESEARCH_APPROVAL_ZERO",
+    "fixtureIds": [
+      "fixture-compatibility-A",
+      "fixture-compatibility-unknown-both",
+      "fixture-compatibility-slot-swap",
+      "fixture-compatibility-no-detected-pair"
+    ],
+    "originalManifestLocator": "docs/validation/v4-compatibility-love-specialist-engine-01/compatibility-love-specialist-manifest.json",
+    "originalManifestHash": "c3fd619ced92af63cd1ba52943f65a43fcb0c5c4a93a89cd9958039d53207045",
+    "policySources": [
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/artifacts.ts",
+        "sha256": "675173915aabc3b7ba8d5c70d63d1c87c5c0dc746ec11521905e1429df609a0f"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/candidateIndex.ts",
+        "sha256": "70046731ad030b798412c3d8362f4e56193a8efd6d7aae6118b5eb6632c59af7"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/engine.ts",
+        "sha256": "28738fd9691f662de078b2c43e9c200b16494f654af2e07d9a0040282e9a5b97"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/observations.ts",
+        "sha256": "d2501a4c63668a990846da93399c2aa1f35578cf1594a533abd4bd77ec4caa68"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/pairWitness.ts",
+        "sha256": "f42366470cf25acf87e7ac79ded36d263b92eda72defd4e71c405bf019249130"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/policy.ts",
+        "sha256": "6383cf4551a6d60641eff004c6649ee7372bc71c89d0bdba6a723668ff761dc9"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/researchCatalog.ts",
+        "sha256": "b35385a42b866493761c59812adc150d00f268e7621d3467d74e11a610d5fffe"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/selection.ts",
+        "sha256": "bec8c382c52ad0a44c8b4703f64be5c8bb819b23266ec937389f17104c116b76"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/synthetic.ts",
+        "sha256": "058aef1d59f7cd76e060c5c8dcecd18bf311304a6a0af5ff26ec3d94aaef125a"
+      }
+    ],
+    "folder": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine"
+  },
+  {
+    "engineId": "compatibility-marriage",
+    "engineVersion": "compatibility-marriage-specialist-v1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "sourceResearchFamily": "compatibility-marriage-research",
+    "readerContract": {
+      "originalManifestContract": {
+        "roleVersion": "compatibility-fixed-ab-v1",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "questions": 180,
+        "roleContributions": 448
+      },
+      "foundationProductContract": [
+        {
+          "productKey": "saju_mbti_compatibility",
+          "relationship": "marriage",
+          "chapters": 9,
+          "paragraphs": 36,
+          "roles": 144,
+          "periodSlots": null,
+          "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+          "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+          "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+          "policy": "ORIGINAL_STRUCTURE_ONLY"
+        }
+      ]
+    },
+    "questionRegistryVersion": "product-specialist-foundation-v1",
+    "evidenceRequirementKinds": [
+      "CALCULATED_NATAL_FACT",
+      "CANONICAL_PAIR_FACT",
+      "DIRECTIONAL_RELATION_FACT",
+      "FUSION_DERIVATION",
+      "MBTI_SOURCE_NODE",
+      "SOURCE_DECLARATION"
+    ],
+    "sourceGroupPolicy": "PRESERVE_NATIVE_GROUP_SEMANTICS",
+    "temporalPolicy": "ORIGINAL_[START,END)_CONDITIONAL_AND_UNKNOWN_PRESERVED",
+    "ownerPolicy": "FIXTURE_GRAPH_OWNER_ISOLATION",
+    "directionPolicy": "ORIGINAL_DIRECTION_AND_RECEIVED_TEN_GOD",
+    "domainPolicy": "FULL_REQUIRED_ANCESTRY_ORIGINAL_SPECIALIST_POLICY",
+    "meaningPolicy": "UNAPPROVED_REVIEW_REQUIRED",
+    "reusePolicy": {
+      "policySources": [
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/artifacts.ts",
+          "sha256": "cd375db08f1607a5ec4f8f97b896e44012cf008ff391cc54a25a62973bc523a7"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/candidateIndex.ts",
+          "sha256": "2cb592e96e027edbd866b78eb5182b733c2b9aa2170d80e4f83821a83e1d0aba"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/conflictGraph.ts",
+          "sha256": "e5842847b69c3854cebc0b95bfb614bbf19e4debc52e1de972b276c4b18ea21d"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/engine.ts",
+          "sha256": "1427ad7955cf19592302c7d026b43599dfe2b0d56e5ac63577e0baeaf5448bd7"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/householdContext.ts",
+          "sha256": "ea0ee32aecde8a38496bf51aa225816cc238876c02995f6295dbf4e12012bdcf"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/observations.ts",
+          "sha256": "425175aaf19ba061ab509d89c43d6fc878e4353c470f000f3629a59654b584ba"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/policy.ts",
+          "sha256": "75a130fd9735f0301d550d153b15a60f22a26dd4fefa4fefb2af61d5ecdb613c"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/requirementAdapter.ts",
+          "sha256": "d049f3e9f2b967a27d812988baf3332b23e6a6f89394ac60d8f75394cfddd5b3"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/researchCatalog.ts",
+          "sha256": "2834dc88cb3b20a6b462e597c5ac5f718d35372c7007b0646bf12534151ffd47"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/selection.ts",
+          "sha256": "d76ea5717f3d69293e8b906e6011bd82569aa355dfe921c3568efb7afef1ddfa"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/synthetic.ts",
+          "sha256": "a39ace57f7c225ba0a1518d3970893750d3ae84d784eb41a4d57de947fd5af9d"
+        }
+      ],
+      "unitScopeLimitException": "NATIVE_SOURCE_CONTRACTS_NO_GLOBAL_CAP"
+    },
+    "recallPolicy": "ORIGINAL_ACTUAL_DISPLAY_AND_PREDECESSOR_REQUIREMENTS",
+    "specialistAdapter": "compatibility-marriage-native-result-v1",
+    "actualEngineInvoker": "CompatibilityMarriageSpecialistEngine.diagnose",
+    "currentApprovalPolicy": "REAL_RESEARCH_APPROVAL_ZERO",
+    "fixtureIds": [
+      "fixture-compatibility-marriage"
+    ],
+    "originalManifestLocator": "docs/validation/v4-compatibility-marriage-specialist-engine-01/compatibility-marriage-specialist-manifest.json",
+    "originalManifestHash": "d6f430dc8256f2a545c6c97730da701a08007bda40fe7d1886285eeebe002b80",
+    "policySources": [
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/artifacts.ts",
+        "sha256": "cd375db08f1607a5ec4f8f97b896e44012cf008ff391cc54a25a62973bc523a7"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/candidateIndex.ts",
+        "sha256": "2cb592e96e027edbd866b78eb5182b733c2b9aa2170d80e4f83821a83e1d0aba"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/conflictGraph.ts",
+        "sha256": "e5842847b69c3854cebc0b95bfb614bbf19e4debc52e1de972b276c4b18ea21d"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/engine.ts",
+        "sha256": "1427ad7955cf19592302c7d026b43599dfe2b0d56e5ac63577e0baeaf5448bd7"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/householdContext.ts",
+        "sha256": "ea0ee32aecde8a38496bf51aa225816cc238876c02995f6295dbf4e12012bdcf"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/observations.ts",
+        "sha256": "425175aaf19ba061ab509d89c43d6fc878e4353c470f000f3629a59654b584ba"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/policy.ts",
+        "sha256": "75a130fd9735f0301d550d153b15a60f22a26dd4fefa4fefb2af61d5ecdb613c"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/requirementAdapter.ts",
+        "sha256": "d049f3e9f2b967a27d812988baf3332b23e6a6f89394ac60d8f75394cfddd5b3"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/researchCatalog.ts",
+        "sha256": "2834dc88cb3b20a6b462e597c5ac5f718d35372c7007b0646bf12534151ffd47"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/selection.ts",
+        "sha256": "d76ea5717f3d69293e8b906e6011bd82569aa355dfe921c3568efb7afef1ddfa"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/synthetic.ts",
+        "sha256": "a39ace57f7c225ba0a1518d3970893750d3ae84d784eb41a4d57de947fd5af9d"
+      }
+    ],
+    "folder": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine"
+  },
+  {
+    "engineId": "compatibility-parent-child",
+    "engineVersion": "compatibility-parent-child-specialist-v1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "sourceResearchFamily": "compatibility-parent-child-research",
+    "readerContract": {
+      "originalManifestContract": {
+        "roleVersion": "compatibility-fixed-ab-v1",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "questions": 180,
+        "roleContributions": 480,
+        "expectedRoleErrors": 2
+      },
+      "foundationProductContract": [
+        {
+          "productKey": "saju_mbti_compatibility",
+          "relationship": "parentChild",
+          "chapters": 9,
+          "paragraphs": 36,
+          "roles": 144,
+          "periodSlots": null,
+          "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+          "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+          "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+          "policy": "ORIGINAL_STRUCTURE_ONLY"
+        }
+      ]
+    },
+    "questionRegistryVersion": "product-specialist-foundation-v1",
+    "evidenceRequirementKinds": [
+      "CANONICAL_PAIR_FACT",
+      "DIRECTIONAL_RELATION_FACT",
+      "FUSION_DERIVATION",
+      "MBTI_SOURCE_NODE",
+      "SOURCE_DECLARATION"
+    ],
+    "sourceGroupPolicy": "PRESERVE_NATIVE_GROUP_SEMANTICS",
+    "temporalPolicy": "ORIGINAL_[START,END)_CONDITIONAL_AND_UNKNOWN_PRESERVED",
+    "ownerPolicy": "FIXTURE_GRAPH_OWNER_ISOLATION",
+    "directionPolicy": "ORIGINAL_DIRECTION_AND_RECEIVED_TEN_GOD",
+    "domainPolicy": "FULL_REQUIRED_ANCESTRY_ORIGINAL_SPECIALIST_POLICY",
+    "meaningPolicy": "UNAPPROVED_REVIEW_REQUIRED",
+    "reusePolicy": {
+      "policySources": [
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/artifacts.ts",
+          "sha256": "950429690b5bf649fde32458790f234ec7370d557ee90fab4b8f437b2bf60a15"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/candidateIndex.ts",
+          "sha256": "e4d0e2c8ee0c2fb1c1b77f70df83edfb39f1ae5e8739c03fe868139dbc4c157c"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/conflictGraph.ts",
+          "sha256": "71f6417d7e98c64255169c0397d19801526b3fd4607b91593c033277bd8e68e0"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/developmentalContext.ts",
+          "sha256": "02d58cec5b0ae348ca0d91443f725402d1cb57c677288c3f53c0fb660e46d0a0"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/engine.ts",
+          "sha256": "da7040149a3f29f52688dd8de5b6ccaf4595c9f7195a80e8c0b1b3e40e27f110"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/meaningIdentity.ts",
+          "sha256": "fc742d3ecf9797c425a024613c5f8431f8a3c293c3dcde12b6ec8360e34358be"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/observations.ts",
+          "sha256": "ce3f6138899b1f2c94fc430815e8efdb3e60a743dbac7a0f130d506dc34e8f26"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/parentChildPolicy.ts",
+          "sha256": "3b69b072796cbd54a20e69ae4e5d7679bd29fab26195a0ae7327c9d31ff4bad4"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/requirementAdapter.ts",
+          "sha256": "855d5f00f6faacfeff4cf4b78397ca00e0e6f72b3d84777534a2f68584e5027e"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/researchCatalog.ts",
+          "sha256": "c93e6cb294516e8679520f0d9c92056dad9e58bf8b4735b6b414a7a715f550fa"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/roleValidator.ts",
+          "sha256": "cdc6ee45836d0bbeb49de1b0bbb106739ae59229a7bba2ee9ee8bf17a8dc24a5"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/selection.ts",
+          "sha256": "8515af8c89ac307fbd5e01a974e7aa5ddc09fa7d786114b7cc416e2f1d3cf611"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/sourceOwnership.ts",
+          "sha256": "e26fa751f4ed73080976f09f0f8522b8832ddcef17a78dd047b61629eca8438e"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/synthetic.ts",
+          "sha256": "0c21e0240ac28f0e04f7aea4010479ef8b3a6a190693cb2454ccf6d560b9d1f4"
+        }
+      ],
+      "unitScopeLimitException": "NATIVE_SOURCE_CONTRACTS_NO_GLOBAL_CAP"
+    },
+    "recallPolicy": "ORIGINAL_ACTUAL_DISPLAY_AND_PREDECESSOR_REQUIREMENTS",
+    "specialistAdapter": "compatibility-parent-child-native-result-v1",
+    "actualEngineInvoker": "CompatibilityParentChildSpecialistEngine.diagnose",
+    "currentApprovalPolicy": "REAL_RESEARCH_APPROVAL_ZERO",
+    "fixtureIds": [
+      "fixture-compatibility-parentChild"
+    ],
+    "originalManifestLocator": "docs/validation/v4-compatibility-parent-child-specialist-engine-01/compatibility-parent-child-specialist-manifest.json",
+    "originalManifestHash": "87322751dc870ea16e01648664bd19161fc62277344f9d60d8eca13bafd5cb71",
+    "policySources": [
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/artifacts.ts",
+        "sha256": "950429690b5bf649fde32458790f234ec7370d557ee90fab4b8f437b2bf60a15"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/candidateIndex.ts",
+        "sha256": "e4d0e2c8ee0c2fb1c1b77f70df83edfb39f1ae5e8739c03fe868139dbc4c157c"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/conflictGraph.ts",
+        "sha256": "71f6417d7e98c64255169c0397d19801526b3fd4607b91593c033277bd8e68e0"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/developmentalContext.ts",
+        "sha256": "02d58cec5b0ae348ca0d91443f725402d1cb57c677288c3f53c0fb660e46d0a0"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/engine.ts",
+        "sha256": "da7040149a3f29f52688dd8de5b6ccaf4595c9f7195a80e8c0b1b3e40e27f110"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/meaningIdentity.ts",
+        "sha256": "fc742d3ecf9797c425a024613c5f8431f8a3c293c3dcde12b6ec8360e34358be"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/observations.ts",
+        "sha256": "ce3f6138899b1f2c94fc430815e8efdb3e60a743dbac7a0f130d506dc34e8f26"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/parentChildPolicy.ts",
+        "sha256": "3b69b072796cbd54a20e69ae4e5d7679bd29fab26195a0ae7327c9d31ff4bad4"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/requirementAdapter.ts",
+        "sha256": "855d5f00f6faacfeff4cf4b78397ca00e0e6f72b3d84777534a2f68584e5027e"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/researchCatalog.ts",
+        "sha256": "c93e6cb294516e8679520f0d9c92056dad9e58bf8b4735b6b414a7a715f550fa"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/roleValidator.ts",
+        "sha256": "cdc6ee45836d0bbeb49de1b0bbb106739ae59229a7bba2ee9ee8bf17a8dc24a5"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/selection.ts",
+        "sha256": "8515af8c89ac307fbd5e01a974e7aa5ddc09fa7d786114b7cc416e2f1d3cf611"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/sourceOwnership.ts",
+        "sha256": "e26fa751f4ed73080976f09f0f8522b8832ddcef17a78dd047b61629eca8438e"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/synthetic.ts",
+        "sha256": "0c21e0240ac28f0e04f7aea4010479ef8b3a6a190693cb2454ccf6d560b9d1f4"
+      }
+    ],
+    "folder": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine"
+  },
+  {
+    "engineId": "compatibility-coworker",
+    "engineVersion": "compatibility-coworker-specialist-v1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "sourceResearchFamily": "compatibility-coworker-research",
+    "readerContract": {
+      "originalManifestContract": {
+        "roleVersion": "compatibility-fixed-ab-v1",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "questions": 180,
+        "roleContributions": 688
+      },
+      "foundationProductContract": [
+        {
+          "productKey": "saju_mbti_compatibility",
+          "relationship": "coworker",
+          "chapters": 9,
+          "paragraphs": 36,
+          "roles": 144,
+          "periodSlots": null,
+          "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+          "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+          "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+          "policy": "ORIGINAL_STRUCTURE_ONLY"
+        }
+      ]
+    },
+    "questionRegistryVersion": "product-specialist-foundation-v1",
+    "evidenceRequirementKinds": [
+      "CALCULATED_NATAL_FACT",
+      "CANONICAL_PAIR_FACT",
+      "DIRECTIONAL_RELATION_FACT",
+      "FUSION_DERIVATION",
+      "MBTI_SOURCE_NODE",
+      "SOURCE_DECLARATION"
+    ],
+    "sourceGroupPolicy": "PRESERVE_NATIVE_GROUP_SEMANTICS",
+    "temporalPolicy": "ORIGINAL_[START,END)_CONDITIONAL_AND_UNKNOWN_PRESERVED",
+    "ownerPolicy": "FIXTURE_GRAPH_OWNER_ISOLATION",
+    "directionPolicy": "ORIGINAL_DIRECTION_AND_RECEIVED_TEN_GOD",
+    "domainPolicy": "FULL_REQUIRED_ANCESTRY_ORIGINAL_SPECIALIST_POLICY",
+    "meaningPolicy": "UNAPPROVED_REVIEW_REQUIRED",
+    "reusePolicy": {
+      "policySources": [
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/artifacts.ts",
+          "sha256": "fc897bbf00231bcce69b03d793b145c5d5a168f483a2fb2b348007a25d4e8aed"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/candidateIndex.ts",
+          "sha256": "d51f3a9850b0e314556015a9b285502ad87907d6bda1de4df43263d8c4a83ab4"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/conflictGraph.ts",
+          "sha256": "ea475ad68506edafe8532a2751fc068b9f71abe32b51d8fcfe0cc821251bff6b"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/engine.ts",
+          "sha256": "ced63ab049f9cd1112e700948c465cd0837fe1cd649dc4d7e25823ccb32bdd7d"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/frictionTopics.ts",
+          "sha256": "f4ce381d725e8988369b43afc9cc6a8ba00ee20103ee589150bba9f1979bf0d0"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/observations.ts",
+          "sha256": "20b2642e1cef261300f0c08ecd91747404ff89f4658755b55750f4c42beda0b9"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/policy.ts",
+          "sha256": "ca33aed5a72d777b15a71b815719e90f3e1068833d81599eb6df22a2661235c3"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/requirementAdapter.ts",
+          "sha256": "5127c2a8905e3fcf2282a05c24ef9aa8e8ffa63d38b2ea1a9b06c1e1fd6c2666"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/researchCatalog.ts",
+          "sha256": "1cd1ac95ae38ad274d8736295a9067b85b9f9123807f680364eee55eb001607b"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/selection.ts",
+          "sha256": "04467fee4cdfc4047f82fade4beeb90a5eaf6e914449de32c4c43a195180c619"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/sourceOwnership.ts",
+          "sha256": "2b7bfad9e62d01567afba7cfc9d00cad720753bbc2dfc315a71cb1dd68b0df54"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/synthetic.ts",
+          "sha256": "08f0ed408fa0f98317acac1cf112cb0f4ee290f7042fa6b43fce46fef81e9f5d"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/workContext.ts",
+          "sha256": "6d2a45e8c659a40fa372360d28f495ab2103cec5a6333196735f072ac38fd271"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/workDomainBoundary.ts",
+          "sha256": "793ceb4f3c91f841aa8aa31aab97c8cba83a69b3bf0628363d8b13d4d560c80a"
+        }
+      ],
+      "unitScopeLimitException": "NATIVE_SOURCE_CONTRACTS_NO_GLOBAL_CAP"
+    },
+    "recallPolicy": "ORIGINAL_ACTUAL_DISPLAY_AND_PREDECESSOR_REQUIREMENTS",
+    "specialistAdapter": "compatibility-coworker-native-result-v1",
+    "actualEngineInvoker": "CompatibilityCoworkerSpecialistEngine.diagnose",
+    "currentApprovalPolicy": "REAL_RESEARCH_APPROVAL_ZERO",
+    "fixtureIds": [
+      "fixture-compatibility-coworker"
+    ],
+    "originalManifestLocator": "docs/validation/v4-compatibility-coworker-specialist-engine-01/compatibility-coworker-specialist-manifest.json",
+    "originalManifestHash": "50c3ebf5e45419aee341f88f4878dbf70e2b6ff93f7131db2120b34a3de17565",
+    "policySources": [
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/artifacts.ts",
+        "sha256": "fc897bbf00231bcce69b03d793b145c5d5a168f483a2fb2b348007a25d4e8aed"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/candidateIndex.ts",
+        "sha256": "d51f3a9850b0e314556015a9b285502ad87907d6bda1de4df43263d8c4a83ab4"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/conflictGraph.ts",
+        "sha256": "ea475ad68506edafe8532a2751fc068b9f71abe32b51d8fcfe0cc821251bff6b"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/engine.ts",
+        "sha256": "ced63ab049f9cd1112e700948c465cd0837fe1cd649dc4d7e25823ccb32bdd7d"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/frictionTopics.ts",
+        "sha256": "f4ce381d725e8988369b43afc9cc6a8ba00ee20103ee589150bba9f1979bf0d0"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/observations.ts",
+        "sha256": "20b2642e1cef261300f0c08ecd91747404ff89f4658755b55750f4c42beda0b9"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/policy.ts",
+        "sha256": "ca33aed5a72d777b15a71b815719e90f3e1068833d81599eb6df22a2661235c3"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/requirementAdapter.ts",
+        "sha256": "5127c2a8905e3fcf2282a05c24ef9aa8e8ffa63d38b2ea1a9b06c1e1fd6c2666"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/researchCatalog.ts",
+        "sha256": "1cd1ac95ae38ad274d8736295a9067b85b9f9123807f680364eee55eb001607b"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/selection.ts",
+        "sha256": "04467fee4cdfc4047f82fade4beeb90a5eaf6e914449de32c4c43a195180c619"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/sourceOwnership.ts",
+        "sha256": "2b7bfad9e62d01567afba7cfc9d00cad720753bbc2dfc315a71cb1dd68b0df54"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/synthetic.ts",
+        "sha256": "08f0ed408fa0f98317acac1cf112cb0f4ee290f7042fa6b43fce46fef81e9f5d"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/workContext.ts",
+        "sha256": "6d2a45e8c659a40fa372360d28f495ab2103cec5a6333196735f072ac38fd271"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/workDomainBoundary.ts",
+        "sha256": "793ceb4f3c91f841aa8aa31aab97c8cba83a69b3bf0628363d8b13d4d560c80a"
+      }
+    ],
+    "folder": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine"
+  },
+  {
+    "engineId": "compatibility-manager-report",
+    "engineVersion": "compatibility-manager-report-specialist-v1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "sourceResearchFamily": "compatibility-manager-report-research",
+    "readerContract": {
+      "originalManifestContract": {
+        "roleVersion": "compatibility-fixed-ab-v1",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "questions": 180,
+        "roleContributions": 384
+      },
+      "foundationProductContract": [
+        {
+          "productKey": "saju_mbti_compatibility",
+          "relationship": "managerReport",
+          "chapters": 9,
+          "paragraphs": 36,
+          "roles": 144,
+          "periodSlots": null,
+          "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+          "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+          "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+          "policy": "ORIGINAL_STRUCTURE_ONLY"
+        }
+      ]
+    },
+    "questionRegistryVersion": "product-specialist-foundation-v1",
+    "evidenceRequirementKinds": [
+      "CALCULATED_NATAL_FACT",
+      "CANONICAL_PAIR_FACT",
+      "DIRECTIONAL_RELATION_FACT",
+      "FUSION_DERIVATION",
+      "MBTI_SOURCE_NODE",
+      "SOURCE_DECLARATION"
+    ],
+    "sourceGroupPolicy": "PRESERVE_NATIVE_GROUP_SEMANTICS",
+    "temporalPolicy": "ORIGINAL_[START,END)_CONDITIONAL_AND_UNKNOWN_PRESERVED",
+    "ownerPolicy": "FIXTURE_GRAPH_OWNER_ISOLATION",
+    "directionPolicy": "ORIGINAL_DIRECTION_AND_RECEIVED_TEN_GOD",
+    "domainPolicy": "FULL_REQUIRED_ANCESTRY_ORIGINAL_SPECIALIST_POLICY",
+    "meaningPolicy": "UNAPPROVED_REVIEW_REQUIRED",
+    "reusePolicy": {
+      "policySources": [
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/artifacts.ts",
+          "sha256": "458c8168922cf9dd826f5c3fe04e2d478b55fbaa98cf08229526e893cf261d95"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/candidateIndex.ts",
+          "sha256": "1ce0995c81aad7cf9956f3435aac92e6b57aa6abe0f7a58200a9513a532d3730"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/conflictGraph.ts",
+          "sha256": "bf7fb941456e5cb7890dda7ec91c15826df44da0c9a7c6ead825ce090afe78f6"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/engine.ts",
+          "sha256": "7f094c5477259c91c381ac2c2549d34f8002395122025395cd1ccc855db83d9f"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/managementContext.ts",
+          "sha256": "d31e421c9f530ecd67c25f280bc5c09125ba1f782f3b45e4e02bd77c1ad2b986"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/observations.ts",
+          "sha256": "ac386debc6974a0a54b108cc9095e2827cd848832c9f25a3182acb09d790152b"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/policy.ts",
+          "sha256": "225e66b4f2ded84cd924c37797f540132029c51ace6468a2dcc4cf7b068a98ed"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/requirementAdapter.ts",
+          "sha256": "2114e3adb93411042dae701a6683fe1e53921b970982ad67f0d1cc239e579c16"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/researchCatalog.ts",
+          "sha256": "a2974bb873f4784ad91b24dd97197fb9c72f53e38cff8435b232b14e2b28b0ea"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/roleValidator.ts",
+          "sha256": "c4b8c14e7e3f4b46d6c4a941223c65418cac1918a5c0157de76c1f98bb7d523e"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/selection.ts",
+          "sha256": "108de4f908e42c76311ccd03fecec59d234a8a4de45f0ac05ef932e593c14544"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/sourceGroups.ts",
+          "sha256": "5e375f3bdc762884b3b9330eb06356f0c475f9e294909c1d388c864a8d391bca"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/synthetic.ts",
+          "sha256": "94741ace12f0b07c03ea4d0a401fd8b863f5bf103bebefa0bc2c417d41a851d4"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/workDomainBoundary.ts",
+          "sha256": "0a5cb966e91f57c78abd2a4e7254cdbec924aedc088dfcf128dd60b77f3b323e"
+        }
+      ],
+      "unitScopeLimitException": "NATIVE_SOURCE_CONTRACTS_NO_GLOBAL_CAP"
+    },
+    "recallPolicy": "ORIGINAL_ACTUAL_DISPLAY_AND_PREDECESSOR_REQUIREMENTS",
+    "specialistAdapter": "compatibility-manager-report-native-result-v1",
+    "actualEngineInvoker": "CompatibilityManagerReportSpecialistEngine.diagnose",
+    "currentApprovalPolicy": "REAL_RESEARCH_APPROVAL_ZERO",
+    "fixtureIds": [
+      "fixture-compatibility-managerReport"
+    ],
+    "originalManifestLocator": "docs/validation/v4-compatibility-manager-report-specialist-engine-01/compatibility-manager-report-specialist-manifest.json",
+    "originalManifestHash": "c99181acd682aef6cd04240826d06ab087a1e5f2494bfce119955e0917a6e4eb",
+    "policySources": [
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/artifacts.ts",
+        "sha256": "458c8168922cf9dd826f5c3fe04e2d478b55fbaa98cf08229526e893cf261d95"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/candidateIndex.ts",
+        "sha256": "1ce0995c81aad7cf9956f3435aac92e6b57aa6abe0f7a58200a9513a532d3730"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/conflictGraph.ts",
+        "sha256": "bf7fb941456e5cb7890dda7ec91c15826df44da0c9a7c6ead825ce090afe78f6"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/engine.ts",
+        "sha256": "7f094c5477259c91c381ac2c2549d34f8002395122025395cd1ccc855db83d9f"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/managementContext.ts",
+        "sha256": "d31e421c9f530ecd67c25f280bc5c09125ba1f782f3b45e4e02bd77c1ad2b986"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/observations.ts",
+        "sha256": "ac386debc6974a0a54b108cc9095e2827cd848832c9f25a3182acb09d790152b"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/policy.ts",
+        "sha256": "225e66b4f2ded84cd924c37797f540132029c51ace6468a2dcc4cf7b068a98ed"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/requirementAdapter.ts",
+        "sha256": "2114e3adb93411042dae701a6683fe1e53921b970982ad67f0d1cc239e579c16"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/researchCatalog.ts",
+        "sha256": "a2974bb873f4784ad91b24dd97197fb9c72f53e38cff8435b232b14e2b28b0ea"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/roleValidator.ts",
+        "sha256": "c4b8c14e7e3f4b46d6c4a941223c65418cac1918a5c0157de76c1f98bb7d523e"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/selection.ts",
+        "sha256": "108de4f908e42c76311ccd03fecec59d234a8a4de45f0ac05ef932e593c14544"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/sourceGroups.ts",
+        "sha256": "5e375f3bdc762884b3b9330eb06356f0c475f9e294909c1d388c864a8d391bca"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/synthetic.ts",
+        "sha256": "94741ace12f0b07c03ea4d0a401fd8b863f5bf103bebefa0bc2c417d41a851d4"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/workDomainBoundary.ts",
+        "sha256": "0a5cb966e91f57c78abd2a4e7254cdbec924aedc088dfcf128dd60b77f3b323e"
+      }
+    ],
+    "folder": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine"
+  },
+  {
+    "engineId": "compatibility-business-partner",
+    "engineVersion": "compatibility-business-partner-specialist-v1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "sourceResearchFamily": "compatibility-business-partner-research",
+    "readerContract": {
+      "originalManifestContract": {
+        "roleVersion": "compatibility-fixed-ab-v1",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "questions": 180,
+        "roleContributions": 384,
+        "expectedRoleRejections": 2
+      },
+      "foundationProductContract": [
+        {
+          "productKey": "saju_mbti_compatibility",
+          "relationship": "businessPartner",
+          "chapters": 9,
+          "paragraphs": 36,
+          "roles": 144,
+          "periodSlots": null,
+          "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+          "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+          "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+          "policy": "ORIGINAL_STRUCTURE_ONLY"
+        }
+      ]
+    },
+    "questionRegistryVersion": "product-specialist-foundation-v1",
+    "evidenceRequirementKinds": [
+      "CALCULATED_NATAL_FACT",
+      "CANONICAL_PAIR_FACT",
+      "DIRECTIONAL_RELATION_FACT",
+      "FUSION_DERIVATION",
+      "MBTI_SOURCE_NODE",
+      "SOURCE_DECLARATION"
+    ],
+    "sourceGroupPolicy": "PRESERVE_NATIVE_GROUP_SEMANTICS",
+    "temporalPolicy": "ORIGINAL_[START,END)_CONDITIONAL_AND_UNKNOWN_PRESERVED",
+    "ownerPolicy": "FIXTURE_GRAPH_OWNER_ISOLATION",
+    "directionPolicy": "ORIGINAL_DIRECTION_AND_RECEIVED_TEN_GOD",
+    "domainPolicy": "FULL_REQUIRED_ANCESTRY_ORIGINAL_SPECIALIST_POLICY",
+    "meaningPolicy": "UNAPPROVED_REVIEW_REQUIRED",
+    "reusePolicy": {
+      "policySources": [
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/artifacts.ts",
+          "sha256": "a27fb64897e27533c5c4add943a894880f20ccdf3d21e33c9eb21ec2ecc834b2"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/businessContext.ts",
+          "sha256": "b3bf73f9a4155aa2465b0fc8d7ebaae500cb2d0a7b3de6b8f2b230519db7924e"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/candidateIndex.ts",
+          "sha256": "020e8ffd3f92c1ee07916fde5e6f8e858732b4bf6980c0e14b157f894656d313"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/conflictGraph.ts",
+          "sha256": "f74b6e549730f553666677c568c840db089323d5ebc8d0cfd611debb65b6a472"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/domainBoundary.ts",
+          "sha256": "2265ce2e94f5417764b31654f534be52fe6e915110b461d73c1cabfc9e465318"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/engine.ts",
+          "sha256": "713323b8fa5cf6f5ef20bddd3e3a929e1526d894c263a7ddc6a9f53970286c8e"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/observations.ts",
+          "sha256": "691eb0f0accf851a6885a3ea6e60db7a9e394c8cfbf762b41b38d147fa82b09c"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/policy.ts",
+          "sha256": "2759ae72461825cb825df572b5027e35eb32d14278fb3c644b52911cc8eb0508"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/requirementAdapter.ts",
+          "sha256": "288edfed07819767dbee2e90592ecf983e70ab2cda7ec5f565c09111dc97fa9d"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/researchCatalog.ts",
+          "sha256": "488bc4a9ac28ce994e27cdcddd779822d6e13823fc263385371efa0e78e04c3a"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/roleValidator.ts",
+          "sha256": "1209243ad7ba98ad2f960215bf698ab80c1f2300eddac3a0436fff16ea178a6a"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/selection.ts",
+          "sha256": "c3c4a7931491e99b765646d5a8a2aa45ea98125b31d9c55ca3de870256891210"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/sourceGroups.ts",
+          "sha256": "e89ae191fb15390582a6657250a6111a011304c04c07906c7805f8fcdc89e6e4"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/synthetic.ts",
+          "sha256": "c132efe5516b6a737b7bcac0337e4f429483204309bf882e0d44616a706b2300"
+        }
+      ],
+      "unitScopeLimitException": "NATIVE_SOURCE_CONTRACTS_NO_GLOBAL_CAP"
+    },
+    "recallPolicy": "ORIGINAL_ACTUAL_DISPLAY_AND_PREDECESSOR_REQUIREMENTS",
+    "specialistAdapter": "compatibility-business-partner-native-result-v1",
+    "actualEngineInvoker": "CompatibilityBusinessPartnerSpecialistEngine.diagnose",
+    "currentApprovalPolicy": "REAL_RESEARCH_APPROVAL_ZERO",
+    "fixtureIds": [
+      "fixture-compatibility-businessPartner"
+    ],
+    "originalManifestLocator": "docs/validation/v4-compatibility-business-partner-specialist-engine-01/compatibility-business-partner-specialist-manifest.json",
+    "originalManifestHash": "15cde14050f1f669c79785fbe255f000bab90adbb83b891578e09e6b6673b51c",
+    "policySources": [
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/artifacts.ts",
+        "sha256": "a27fb64897e27533c5c4add943a894880f20ccdf3d21e33c9eb21ec2ecc834b2"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/businessContext.ts",
+        "sha256": "b3bf73f9a4155aa2465b0fc8d7ebaae500cb2d0a7b3de6b8f2b230519db7924e"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/candidateIndex.ts",
+        "sha256": "020e8ffd3f92c1ee07916fde5e6f8e858732b4bf6980c0e14b157f894656d313"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/conflictGraph.ts",
+        "sha256": "f74b6e549730f553666677c568c840db089323d5ebc8d0cfd611debb65b6a472"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/domainBoundary.ts",
+        "sha256": "2265ce2e94f5417764b31654f534be52fe6e915110b461d73c1cabfc9e465318"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/engine.ts",
+        "sha256": "713323b8fa5cf6f5ef20bddd3e3a929e1526d894c263a7ddc6a9f53970286c8e"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/observations.ts",
+        "sha256": "691eb0f0accf851a6885a3ea6e60db7a9e394c8cfbf762b41b38d147fa82b09c"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/policy.ts",
+        "sha256": "2759ae72461825cb825df572b5027e35eb32d14278fb3c644b52911cc8eb0508"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/requirementAdapter.ts",
+        "sha256": "288edfed07819767dbee2e90592ecf983e70ab2cda7ec5f565c09111dc97fa9d"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/researchCatalog.ts",
+        "sha256": "488bc4a9ac28ce994e27cdcddd779822d6e13823fc263385371efa0e78e04c3a"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/roleValidator.ts",
+        "sha256": "1209243ad7ba98ad2f960215bf698ab80c1f2300eddac3a0436fff16ea178a6a"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/selection.ts",
+        "sha256": "c3c4a7931491e99b765646d5a8a2aa45ea98125b31d9c55ca3de870256891210"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/sourceGroups.ts",
+        "sha256": "e89ae191fb15390582a6657250a6111a011304c04c07906c7805f8fcdc89e6e4"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/synthetic.ts",
+        "sha256": "c132efe5516b6a737b7bcac0337e4f429483204309bf882e0d44616a706b2300"
+      }
+    ],
+    "folder": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine"
+  },
+  {
+    "engineId": "compatibility-friendship",
+    "engineVersion": "compatibility-friendship-specialist-v1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "friendship",
+    "sourceResearchFamily": "compatibility-friendship-research",
+    "readerContract": {
+      "originalManifestContract": {
+        "roleVersion": "compatibility-fixed-ab-v1",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "questions": 180,
+        "roleContributions": 144,
+        "sourceRolePolicy": "UNSPECIFIED_SELECTORS_WITHHELD_NO_NEW_SOURCE_AND"
+      },
+      "foundationProductContract": [
+        {
+          "productKey": "saju_mbti_compatibility",
+          "relationship": "friendship",
+          "chapters": 9,
+          "paragraphs": 36,
+          "roles": 144,
+          "periodSlots": null,
+          "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+          "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+          "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+          "policy": "ORIGINAL_STRUCTURE_ONLY"
+        }
+      ]
+    },
+    "questionRegistryVersion": "product-specialist-foundation-v1",
+    "evidenceRequirementKinds": [
+      "CANONICAL_PAIR_FACT",
+      "DIRECTIONAL_RELATION_FACT"
+    ],
+    "sourceGroupPolicy": "PRESERVE_NATIVE_GROUP_SEMANTICS",
+    "temporalPolicy": "ORIGINAL_[START,END)_CONDITIONAL_AND_UNKNOWN_PRESERVED",
+    "ownerPolicy": "FIXTURE_GRAPH_OWNER_ISOLATION",
+    "directionPolicy": "ORIGINAL_DIRECTION_AND_RECEIVED_TEN_GOD",
+    "domainPolicy": "FULL_REQUIRED_ANCESTRY_ORIGINAL_SPECIALIST_POLICY",
+    "meaningPolicy": "UNAPPROVED_REVIEW_REQUIRED",
+    "reusePolicy": {
+      "policySources": [
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/artifacts.ts",
+          "sha256": "92e42e2a7ca7e0abe0658d0bc3596feaeea932a3c53ceb77f17935788b2407dc"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/candidateIndex.ts",
+          "sha256": "f7c0b2f2c83ca108f0931f472783030696505a330b4015a6d3757d3dfa1c7c62"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/conflictGraph.ts",
+          "sha256": "095d62e2e5c2d84b18bb99da7a017db80d25da18872bc82a8ca03e16c29199d1"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/engine.ts",
+          "sha256": "06a9cf9c615118309b180b5bd51a21df9bd7082d5c0b448a97ca0c9fa3f9ee54"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/introducedGroups.ts",
+          "sha256": "4447af5b31807df5f951017eb5b8e93f0ff31e0e9c818abe959f96797a211463"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/observations.ts",
+          "sha256": "61b0ff0e9c9f2379969944029c1e99e71e42dfa61f6c9e1e275fddc693cbea18"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/relationshipContext.ts",
+          "sha256": "af0fa605871114fc28276a49daaf82ac83ae4ccc1c007ddaadcb4ad1e01579d3"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/requirementAdapter.ts",
+          "sha256": "ba9b71064f51d88a97b517aa95ebdded3754001bed39cfc1e40f3521733a5a54"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/researchCatalog.ts",
+          "sha256": "6c650df9723fb141f0a2db839365b8dc7448207fc8c8162a4d35c14fcdc191da"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/selection.ts",
+          "sha256": "0d737985b832dfab50e4ac750d53dbcede34ddc3ad53d3c1ca0ff8a53e5ad16a"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/sourceInventoryResolver.ts",
+          "sha256": "55638962feb481c7c14147bbbd290c706d953578dab5b6192b340011fc1ee8a5"
+        },
+        {
+          "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/synthetic.ts",
+          "sha256": "88ca35cb57974d622e0451a8a80144b05c34eeeacd2ae0fa2ae9850b04b1dc22"
+        }
+      ],
+      "unitScopeLimitException": "NATIVE_SOURCE_CONTRACTS_NO_GLOBAL_CAP"
+    },
+    "recallPolicy": "ORIGINAL_ACTUAL_DISPLAY_AND_PREDECESSOR_REQUIREMENTS",
+    "specialistAdapter": "compatibility-friendship-native-result-v1",
+    "actualEngineInvoker": "CompatibilityFriendshipSpecialistEngine.diagnose",
+    "currentApprovalPolicy": "REAL_RESEARCH_APPROVAL_ZERO",
+    "fixtureIds": [
+      "fixture-compatibility-friendship"
+    ],
+    "originalManifestLocator": "docs/validation/v4-compatibility-friendship-specialist-engine-01/compatibility-friendship-specialist-manifest.json",
+    "originalManifestHash": "da21babf33968afb5d8ff435a3420d1bac0462d9cf5d67a7cb133f4ba8809a96",
+    "policySources": [
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/artifacts.ts",
+        "sha256": "92e42e2a7ca7e0abe0658d0bc3596feaeea932a3c53ceb77f17935788b2407dc"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/candidateIndex.ts",
+        "sha256": "f7c0b2f2c83ca108f0931f472783030696505a330b4015a6d3757d3dfa1c7c62"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/conflictGraph.ts",
+        "sha256": "095d62e2e5c2d84b18bb99da7a017db80d25da18872bc82a8ca03e16c29199d1"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/engine.ts",
+        "sha256": "06a9cf9c615118309b180b5bd51a21df9bd7082d5c0b448a97ca0c9fa3f9ee54"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/introducedGroups.ts",
+        "sha256": "4447af5b31807df5f951017eb5b8e93f0ff31e0e9c818abe959f96797a211463"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/observations.ts",
+        "sha256": "61b0ff0e9c9f2379969944029c1e99e71e42dfa61f6c9e1e275fddc693cbea18"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/relationshipContext.ts",
+        "sha256": "af0fa605871114fc28276a49daaf82ac83ae4ccc1c007ddaadcb4ad1e01579d3"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/requirementAdapter.ts",
+        "sha256": "ba9b71064f51d88a97b517aa95ebdded3754001bed39cfc1e40f3521733a5a54"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/researchCatalog.ts",
+        "sha256": "6c650df9723fb141f0a2db839365b8dc7448207fc8c8162a4d35c14fcdc191da"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/selection.ts",
+        "sha256": "0d737985b832dfab50e4ac750d53dbcede34ddc3ad53d3c1ca0ff8a53e5ad16a"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/sourceInventoryResolver.ts",
+        "sha256": "55638962feb481c7c14147bbbd290c706d953578dab5b6192b340011fc1ee8a5"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/synthetic.ts",
+        "sha256": "88ca35cb57974d622e0451a8a80144b05c34eeeacd2ae0fa2ae9850b04b1dc22"
+      }
+    ],
+    "folder": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine"
+  }
+]

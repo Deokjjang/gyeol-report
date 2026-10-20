@@ -1,0 +1,99 @@
+[
+  {
+    "id": "A",
+    "state": "PENDING_EXTERNAL_EVIDENCE_OR_APPROVAL",
+    "finding": "525 original technical Source proofs reverified;2677 held",
+    "evidence": {
+      "initial": 3202,
+      "recovered": 525,
+      "stillHeld": 2677
+    },
+    "existingCustomerRuntimeChanged": false
+  },
+  {
+    "id": "B",
+    "state": "PENDING_EXTERNAL_EVIDENCE_OR_APPROVAL",
+    "finding": "2966 original Domain reviews;1040 explicitly prohibited;no approvals",
+    "evidence": {
+      "EXPLICITLY_PROHIBITED": 1040,
+      "POLICY_REVIEW_REQUIRED": 1094,
+      "SOURCE_INCOMPLETE": 331,
+      "SEMANTIC_REVIEW_REQUIRED": 499,
+      "CONDITIONAL_CROSSWALK_REVIEWED": 1,
+      "REVIEWED_MEANING_NOT_CUSTOMER_APPROVED": 1
+    },
+    "existingCustomerRuntimeChanged": false
+  },
+  {
+    "id": "C",
+    "state": "BLOCKED_FAIL_CLOSED",
+    "finding": "2060 original Reader IDs;0 customer bridges;native placement never promoted",
+    "evidence": {
+      "originalReaderQuestions": 2060,
+      "customerBridges": 0
+    },
+    "existingCustomerRuntimeChanged": false
+  },
+  {
+    "id": "D",
+    "state": "BLOCKED_FAIL_CLOSED",
+    "finding": "7 actual CHILDREN cases reproduced at original addresses;full-ancestry projection excludes contaminated candidates/sides;mandatory Source shortages withhold whole new Book",
+    "evidence": {
+      "cases": [
+        "coworker/W/0",
+        "manager-report/AJ/0",
+        "manager-report/AK/0",
+        "business-partner/AM/0",
+        "business-partner/AN/0",
+        "friendship/A0/0",
+        "friendship/H0/0"
+      ],
+      "customerActivation": "NOT_AUTHORIZED"
+    },
+    "existingCustomerRuntimeChanged": false
+  },
+  {
+    "id": "E",
+    "state": "BLOCKED_FAIL_CLOSED",
+    "finding": "Legacy fallback without independently proven full safety cannot be published by the offline entry;existing paid runtime unchanged",
+    "evidence": {
+      "publishedNewLegacyFallbacks": 0,
+      "diagnosticLegacySelections": 7,
+      "mutatedLegacyRejected": true
+    },
+    "existingCustomerRuntimeChanged": false
+  },
+  {
+    "id": "F",
+    "state": "REPAIRED_AND_VERIFIED",
+    "finding": "CH06.P4 and CH08.P2 distinguish support/risk explanation from unverified decision rights",
+    "evidence": {
+      "actualAgeVerified": false,
+      "guardianship": "UNKNOWN",
+      "consent": "UNKNOWN",
+      "supportNeed": "UNKNOWN",
+      "legalAuthority": "UNKNOWN"
+    },
+    "existingCustomerRuntimeChanged": false
+  },
+  {
+    "id": "G",
+    "state": "PENDING_EXTERNAL_EVIDENCE_OR_APPROVAL",
+    "finding": "10 exact mfpr:god references/30 SOURCE_INTEGRITY failures remain held;no same-name replacement",
+    "evidence": {
+      "uniqueSources": 10,
+      "failures": 30
+    },
+    "existingCustomerRuntimeChanged": false
+  },
+  {
+    "id": "H",
+    "state": "REPAIRED_AND_VERIFIED",
+    "finding": "18 original Reader failure cases regenerated;corrected offline 9/36/144;no new Legacy fallback",
+    "evidence": {
+      "cases": 18,
+      "customerActivation": "NOT_AUTHORIZED"
+    },
+    "existingCustomerRuntimeChanged": false
+  }
+]

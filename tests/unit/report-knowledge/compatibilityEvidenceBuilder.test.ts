@@ -99,7 +99,7 @@ describe("REPORT-18A compatibility evidence builder", () => {
     const focusSignatures = new Set<string>();
 
     for (const [category, expectedFocus] of Object.entries(expectedFocusByCategory)) {
-      const packet = buildPacketWithRelationshipType(category);
+      const packet = buildPacketWithRelationshipType(category as keyof typeof expectedFocusByCategory);
 
       expect(packet.relationshipType).toBe(category);
       expect(packet.categoryLens.relationshipType).toBe(category);
@@ -127,7 +127,7 @@ describe("REPORT-18A compatibility evidence builder", () => {
     for (const [category, expectedSafetyNote] of Object.entries(
       expectedSafetyNoteByCategory,
     )) {
-      const packet = buildPacketWithRelationshipType(category);
+      const packet = buildPacketWithRelationshipType(category as keyof typeof expectedSafetyNoteByCategory);
       const safetyText = packet.safetyNotes.join("\n");
 
       expect(safetyText).toContain(expectedSafetyNote);

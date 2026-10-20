@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "review-unit-index-part-0004.json.gz",
+  "payloadHash": "e3b8baa6977119bff4d96445140c18a2e292e82d3cc059956b1240dc589c5cec",
+  "logicalJsonHash": "0c3362420696dcf4cd60e12fcf1f1f415db3d08076acb314d7c28e11a72c4ad5",
+  "uncompressedBytes": 17668342
+}

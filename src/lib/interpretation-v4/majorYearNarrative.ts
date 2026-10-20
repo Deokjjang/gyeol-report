@@ -3,7 +3,7 @@ import { majorAnnualStory } from "./majorAnnualStories";
 import { majorHarmonyCopy } from "./majorHarmonyCopy";
 import { paragraph, proof, particle } from "./copyRealizer";
 import { periodExplanation } from "./contentPeriod";
-import { planMajorYears, friendlyTransition, type PeriodImportance } from "./periodPlanner";
+import { planMajorYears, type PeriodImportance } from "./periodPlanner";
 import type { MajorEvidence, MajorYearEvidence } from "./majorEvidence";
 import type { MajorContext } from "./majorContext";
 import type { NarrativeBlock } from "./narrativeTypes";
@@ -29,7 +29,7 @@ export function majorYearNarrative(e: MajorEvidence, y: MajorYearEvidence, c: Ma
   if (harmony && importance === "HIGH") {
     add("harmony", majorHarmonyCopy(y.annual.tenGod, story.topic, story.setting, mature, y.timePosition === "past"));
   }
-  if (transition) add("boundary", `${friendlyTransition(transition.dateLabel)}${y.timePosition === "past" ? "을 경계로" : "부터"} ${transition.before.ganji}에서 ${transition.after.ganji}로 ${y.timePosition === "past" ? "옮겨온 해입니다" : "넘어가는 해입니다"}. ${particle(MAJOR_MEANINGS[transition.after.tenGod].theme, "과", "와")} ${particle(story.topic, "을", "를")} 이어볼 때, 전환 뒤에 남길 몫도 달라 보입니다.`);
+  if (transition) add("boundary", `${transition.dateLabel}이 특정 사건의 예정일은 아닙니다. 기존 ${transition.before.ganji} 대운에서 다루던 ${particle(MAJOR_MEANINGS[transition.before.tenGod].theme, "을", "를")} 모두 버리기보다, 새 ${transition.after.ganji} 대운의 ${particle(MAJOR_MEANINGS[transition.after.tenGod].theme, "을", "를")} 작은 선택부터 보태볼 수 있어요.`, "observation");
   if (["식신", "상관"].includes(y.annual.tenGod)) [blocks[0], blocks[1]] = [blocks[1], blocks[0]];
   if (y.annual.tenGod === "정인" && harmony && blocks.length > 2) [blocks[0], blocks[2]] = [blocks[2], blocks[0]];
   const title = `${a.titles[mature ? 1 : 0]}${transition ? " — 큰 배경도 바뀝니다" : ""}`;

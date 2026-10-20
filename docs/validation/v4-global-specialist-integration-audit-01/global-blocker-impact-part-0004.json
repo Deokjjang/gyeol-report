@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-blocker-impact-part-0004.json.gz",
+  "payloadHash": "be3baa33b21b6bf83c29095b02d8a4f0e8ad80bb915566838a689a25f39670a1",
+  "logicalJsonHash": "254de7d9a15c1e94c2553df8a5968cfa385c094c70cb3b2339afc57f1cac7b0a",
+  "uncompressedBytes": 26338788
+}

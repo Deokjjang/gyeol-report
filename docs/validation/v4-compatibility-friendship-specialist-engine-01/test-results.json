@@ -1,0 +1,340 @@
+{
+  "newEngine": {
+    "files": 1,
+    "pass": 237,
+    "fail": 0,
+    "pending": 0
+  },
+  "newArtifacts": {
+    "files": 1,
+    "pass": 28,
+    "fail": 0,
+    "pending": 0
+  },
+  "existingRelated": {
+    "files": 24,
+    "pass": 2244,
+    "fail": 0,
+    "pending": 0,
+    "recheck": {
+      "initialBatchPass": 2243,
+      "initialBatchFail": 1,
+      "initialFailedTest": "creates genuine deterministic artifacts with no input data and no errors",
+      "initialDurationMs": 5463.15737500001,
+      "configuredDefaultTimeoutMs": 5000,
+      "independentDefaultPass": 360,
+      "independentDefaultFail": 1,
+      "extendedCliTestTimeoutMs": 30000,
+      "projectTestOrConfigChanged": false,
+      "pristineBaseFilesVerified": 5013,
+      "pristineTargetedSelected": 1,
+      "pristineTargetedFiltered": 360,
+      "pristineTargetedStatus": "failed",
+      "pristineTargetedDurationMs": 5446.602125000034,
+      "failureStack": "STACK_TRACE_ERROR at Vitest withTimeout declaration",
+      "independentRerunFiles": 1,
+      "independentRerunPass": 361,
+      "independentRerunFail": 0,
+      "independentRerunPending": 0,
+      "sameTestNameSet": true,
+      "noTestOrConfigChanged": true,
+      "validationExecutionLimitOverriddenOnlyByCli": true,
+      "defaultExecutionLimitIssueRemains": true,
+      "uniqueReconciledRelatedPass": 2244,
+      "rawInitialBatchStillRecordedAsFailed": true
+    }
+  },
+  "knownFailures": {
+    "baseSha": "06ef1cc69c1b607445aafc3468f2c4f111596f99",
+    "testFiles": 16,
+    "beforePass": 5837,
+    "beforeFail": 46,
+    "afterPass": 5837,
+    "afterFail": 46,
+    "beforePending": 0,
+    "afterPending": 0,
+    "fullNormalizedMessagesEqual": true,
+    "entireSuiteExecuted": false,
+    "normalization": "ANSI and the identical current worktree prefix only",
+    "signatures": [
+      {
+        "file": "REPO/tests/unit/app/dev/bookRuntime.test.tsx",
+        "testName": "actual V4 packet → book pages; no new calculation or prose 'career': every original paragraph and final line in original order",
+        "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [ '도울 범위를 먼저 정하세요', '중요한 오류부터 보세요' ] to include '나는 어떻게 일하는 사람인가'",
+        "normalizedErrorSignature": "ac7a427da99540ea4b9581f164719cde7936a8f8ed809706c9a4024c15ed1b0f"
+      },
+      {
+        "file": "REPO/tests/unit/app/dev/bookRuntime.test.tsx",
+        "testName": "actual V4 packet → book pages; no new calculation or prose 'compatibility': every original paragraph and final line in original order",
+        "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "normalizedErrorSignature": "1ed63acf69e46f2f219ede468448d1dc551d5960c0dcb73d03e150520e94bec9"
+      },
+      {
+        "file": "REPO/tests/unit/app/dev/bookRuntime.test.tsx",
+        "testName": "actual V4 packet → book pages; no new calculation or prose 'love': every original paragraph and final line in original order",
+        "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '사랑할 때의 나'",
+        "normalizedErrorSignature": "8c13ed892bbfe6b22ff03d30bbd999d671efea132f88a993b29f75f98ce3bc44"
+      },
+      {
+        "file": "REPO/tests/unit/app/dev/bookRuntime.test.tsx",
+        "testName": "actual V4 packet → book pages; no new calculation or prose 'pair-02-marriage': every original paragraph and final line in original order",
+        "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "normalizedErrorSignature": "1ed63acf69e46f2f219ede468448d1dc551d5960c0dcb73d03e150520e94bec9"
+      },
+      {
+        "file": "REPO/tests/unit/app/dev/bookRuntime.test.tsx",
+        "testName": "actual V4 packet → book pages; no new calculation or prose 'pair-03-parent': every original paragraph and final line in original order",
+        "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "normalizedErrorSignature": "1ed63acf69e46f2f219ede468448d1dc551d5960c0dcb73d03e150520e94bec9"
+      },
+      {
+        "file": "REPO/tests/unit/app/dev/bookRuntime.test.tsx",
+        "testName": "actual V4 packet → book pages; no new calculation or prose 'pair-04-coworker': every original paragraph and final line in original order",
+        "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "normalizedErrorSignature": "1ed63acf69e46f2f219ede468448d1dc551d5960c0dcb73d03e150520e94bec9"
+      },
+      {
+        "file": "REPO/tests/unit/app/dev/bookRuntime.test.tsx",
+        "testName": "actual V4 packet → book pages; no new calculation or prose 'pair-05-manager': every original paragraph and final line in original order",
+        "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "normalizedErrorSignature": "1ed63acf69e46f2f219ede468448d1dc551d5960c0dcb73d03e150520e94bec9"
+      },
+      {
+        "file": "REPO/tests/unit/app/dev/bookRuntime.test.tsx",
+        "testName": "actual V4 packet → book pages; no new calculation or prose 'pair-06-business': every original paragraph and final line in original order",
+        "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "normalizedErrorSignature": "1ed63acf69e46f2f219ede468448d1dc551d5960c0dcb73d03e150520e94bec9"
+      },
+      {
+        "file": "REPO/tests/unit/app/dev/bookRuntime.test.tsx",
+        "testName": "actual V4 packet → book pages; no new calculation or prose 'pair-07-friend': every original paragraph and final line in original order",
+        "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "normalizedErrorSignature": "1ed63acf69e46f2f219ede468448d1dc551d5960c0dcb73d03e150520e94bec9"
+      },
+      {
+        "file": "REPO/tests/unit/app/dev/bookRuntime.test.tsx",
+        "testName": "actual V4 packet → book pages; no new calculation or prose 'pair-08-love': every original paragraph and final line in original order",
+        "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "normalizedErrorSignature": "1ed63acf69e46f2f219ede468448d1dc551d5960c0dcb73d03e150520e94bec9"
+      },
+      {
+        "file": "REPO/tests/unit/app/dev/bookRuntime.test.tsx",
+        "testName": "actual V4 packet → book pages; no new calculation or prose 14 years, 10 future years, all ages, transitions and clickable full narratives",
+        "firstError": "AssertionError: expected [ 2031, 48, '丁卯 → 丙寅', '辛亥', …(1) ] to deeply equal [ 2031, 48, '丙寅', '辛亥', …(1) ]",
+        "normalizedErrorSignature": "b38075ca423b10f4be5ac9b5f1a3da7d49963e2019185a5815cbc9032d39984f"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/annualSafety.test.ts",
+        "testName": "Annual V4 canonical evidence, clock and regression boundaries '01-business': V4 Major byte hash unchanged",
+        "firstError": "AssertionError: expected '553c4343c0c489c67135d9dd22e99219459da…' to be '43f0424d001cbb0302c68aaa13a95d787424f…' // Object.is equality",
+        "normalizedErrorSignature": "ba4322b14c422575b6142921c952d1b55ea2e5cbca422501c1bc65260fdb623c"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/annualSafety.test.ts",
+        "testName": "Annual V4 canonical evidence, clock and regression boundaries '02-employee': V4 Major byte hash unchanged",
+        "firstError": "AssertionError: expected 'adee56e9086fb365539ea94f4384bcf512df5…' to be '7eab24fabce46a06374e6a57ed03aae9d89ff…' // Object.is equality",
+        "normalizedErrorSignature": "0a6c494a2e68a6043a18431f19ac09efc66cfb738e776488b2f362c0d82d3553"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/annualSafety.test.ts",
+        "testName": "Annual V4 canonical evidence, clock and regression boundaries '03-freelance': V4 Major byte hash unchanged",
+        "firstError": "AssertionError: expected 'cbdb4ac3099261861261b21f9f8977a8e5ab9…' to be '1f5a756eceef3330443801e17bca1b64b3892…' // Object.is equality",
+        "normalizedErrorSignature": "f208e57de32136e3e88e9800cd2aedba18d0e4f92433423246e45c5ba11bc30f"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/annualSafety.test.ts",
+        "testName": "Annual V4 canonical evidence, clock and regression boundaries '04-student': V4 Major byte hash unchanged",
+        "firstError": "AssertionError: expected 'a99915db8529d76c15b8d95840b19619c276f…' to be '96e047ab34e267a7de2883731e8a616642c66…' // Object.is equality",
+        "normalizedErrorSignature": "4fac040fcb2a296d2cf83f36689f0a860b3ac8726651fb942badda9fc43ae85f"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/annualSafety.test.ts",
+        "testName": "Annual V4 canonical evidence, clock and regression boundaries '05-unknown': V4 Major byte hash unchanged",
+        "firstError": "AssertionError: expected 'a31d851b048081b187000e4f7705e739ed78b…' to be '9aeff414e7d16f9dd76802894cd6960622ab2…' // Object.is equality",
+        "normalizedErrorSignature": "8b8f6fa03b4f1d4a2263f8ce3e330e95f16d5c81c6ddd1ee05d8e5ad57c17423"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/annualSafety.test.ts",
+        "testName": "Annual V4 canonical evidence, clock and regression boundaries '06-transition': V4 Major byte hash unchanged",
+        "firstError": "AssertionError: expected 'f72ee51d8b302f035393cad14a8fc9d06dd16…' to be 'f6f68cb00f06ffd029a479934a71d8ee3e3c9…' // Object.is equality",
+        "normalizedErrorSignature": "393bae77e01ef4ea133bc1c518411e54e6c64d0f014320479f27cc2da15e146c"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "testName": "'annual' customer/evidence/Book stays frozen",
+        "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "normalizedErrorSignature": "ccf18e4975047213fccf26035ce77689c88d9d7bcce84017a349ef7b9910585f"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "testName": "'compatibility' customer/evidence/Book stays frozen",
+        "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "normalizedErrorSignature": "ba150b991d79385584cfea40f7e7aafd65c0e4278b46d766a732fbca72664741"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "testName": "'comprehensive' customer/evidence/Book stays frozen",
+        "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "normalizedErrorSignature": "a4256622cdc0b3bd6f10f5b125ae5ce68325f664a5eefb85149ee6dfbb3082e4"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "testName": "'love' customer/evidence/Book stays frozen",
+        "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "normalizedErrorSignature": "ba150b991d79385584cfea40f7e7aafd65c0e4278b46d766a732fbca72664741"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "testName": "'major' customer/evidence/Book stays frozen",
+        "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "normalizedErrorSignature": "ccf18e4975047213fccf26035ce77689c88d9d7bcce84017a349ef7b9910585f"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/careerRelease.test.ts",
+        "testName": "Career editorial reader edition 'annual' previous saved edition remains identical",
+        "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "normalizedErrorSignature": "f5936763c652fef2d3b7c70fdcd13aa14b8f288779445a91c8740f8e2c7ab5cb"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/careerRelease.test.ts",
+        "testName": "Career editorial reader edition 'compatibility' previous saved edition remains identical",
+        "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "normalizedErrorSignature": "f13d09370392ba8113ec05198e33a1145b76086bc83f20f8a0a3774a67a6cf47"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/careerRelease.test.ts",
+        "testName": "Career editorial reader edition 'comprehensive' previous saved edition remains identical",
+        "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "normalizedErrorSignature": "f13d09370392ba8113ec05198e33a1145b76086bc83f20f8a0a3774a67a6cf47"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/careerRelease.test.ts",
+        "testName": "Career editorial reader edition 'love' previous saved edition remains identical",
+        "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "normalizedErrorSignature": "f13d09370392ba8113ec05198e33a1145b76086bc83f20f8a0a3774a67a6cf47"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/careerRelease.test.ts",
+        "testName": "Career editorial reader edition 'major' previous saved edition remains identical",
+        "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "normalizedErrorSignature": "f5936763c652fef2d3b7c70fdcd13aa14b8f288779445a91c8740f8e2c7ab5cb"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+        "testName": "section-specific allocations, reservations, fallback and budgets C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+        "firstError": "AssertionError: expected [] to include 'composite'",
+        "normalizedErrorSignature": "bc97815cae4eba06bd5a178972050619062d8637094d2db3dd39dbc90d84feca"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+        "testName": "section-specific allocations, reservations, fallback and budgets recovery-axis Fusion can serve C9 even when its original application is work",
+        "firstError": "AssertionError: expected false to be true // Object.is equality",
+        "normalizedErrorSignature": "e4e3afc01f4d3537cd213e8208b7a44e1b9e230aa653889a9dedba2a868e128c"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+        "testName": "actual 12-person review cohort and isolation scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+        "firstError": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/…/comprehensivePlanCore[\"']",
+        "normalizedErrorSignature": "c1ecd0f3ad72deb4f7f1b5e2411e09a5d285ad5d19ada8f3ca5dabe1281d138a"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/foundationAdapter.test.ts",
+        "testName": "Phase13D-1A stays off all six product paths only foundation modules reference the foundation; no writer/UI/calculation import",
+        "firstError": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality",
+        "normalizedErrorSignature": "aa688ea639648bc652b07fe2a6c47a059484c7fec20c822a834f960135904812"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/koreanNarrativeCore.test.ts",
+        "testName": "narrative output is not accepted merely because it has source IDs no runtime/customer imports, dependencies, clocks, randomness, external services",
+        "firstError": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/narrat…/narrativeMemory[\"']",
+        "normalizedErrorSignature": "528e0c5ea1f34895cd34b640015a9e604300b34cc84cb1bf48c8d1c9d5d3287c"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "testName": "Major natal and cycle evidence separation '01-business': base calculations, all 14 year stories, transitions and selection remain identical",
+        "firstError": "AssertionError: expected '8083bc24276c5586ec058942b27600524131f…' to be 'ffc532f6be8bfa197ebe48d8657b4700a464f…' // Object.is equality",
+        "normalizedErrorSignature": "306a99655b1ce902e1b0bc2620023884920d728e2f7f39bdbeeb7b3d819c362d"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "testName": "Major natal and cycle evidence separation '02-employee': base calculations, all 14 year stories, transitions and selection remain identical",
+        "firstError": "AssertionError: expected '19ca502fb92b5dcbdba2f0ba6be3e6c5ba49f…' to be '975d59e600a7c35176969efc26824700f9deb…' // Object.is equality",
+        "normalizedErrorSignature": "df7b28ebbab389715b6682293cb6b7722541e47d5b2130b8f8d77137c38062eb"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "testName": "Major natal and cycle evidence separation '03-freelance': base calculations, all 14 year stories, transitions and selection remain identical",
+        "firstError": "AssertionError: expected 'ba50e8da08e85a81df99f25584e6556399e10…' to be '519a1615a8470eb16f005db27e172e6133b1c…' // Object.is equality",
+        "normalizedErrorSignature": "5acbdeebcdc2a269b0743e428b5960088850288446b200e08195a6c02f630b8f"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "testName": "Major natal and cycle evidence separation '04-time-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+        "firstError": "AssertionError: expected 'fab24c2772ad32df2d1310295b69a07769182…' to be '8be0cb81bd2f9c0166f81205ac10146a14406…' // Object.is equality",
+        "normalizedErrorSignature": "a6e73da8986faff75babcdadf2f8e7594b8f7970d602cc99998c4f341148ef49"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "testName": "Major natal and cycle evidence separation '05-mbti-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+        "firstError": "AssertionError: expected '24d6674e675d5e2567fe9c9dad6404f536c91…' to be 'e4db60ead95ac3c569338da41e7bdac344852…' // Object.is equality",
+        "normalizedErrorSignature": "6dd003bc97e95a4deb33f4317fe194bf4588efc2e43395a973f7d5033d249f48"
+      },
+      {
+        "file": "REPO/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "testName": "Major natal and cycle evidence separation '06-both-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+        "firstError": "AssertionError: expected 'cc574e5b36614f4868bda18a73b34d0b00f2e…' to be '602e1a50b541da267119847a367181a970eb9…' // Object.is equality",
+        "normalizedErrorSignature": "1f5e3329980c7e2e362a4c95d05fde16d205da432aa85c2fbc01d1dc33b13ff5"
+      },
+      {
+        "file": "REPO/tests/unit/report-generation/customerDayunGeneration.test.ts",
+        "testName": "customer Dayun production boundaries rejects annual_fortune bypass before order writes and allows stable input",
+        "firstError": "SyntaxError: Unexpected end of JSON input",
+        "normalizedErrorSignature": "2a52a99b8eaa0b4d2f9d196fb5c17186d0de57030f2e747f5fdf18b86aa87a91"
+      },
+      {
+        "file": "REPO/tests/unit/report-generation/customerDayunGeneration.test.ts",
+        "testName": "customer Dayun production boundaries rejects major_fortune bypass before order writes and allows stable input",
+        "firstError": "SyntaxError: Unexpected end of JSON input",
+        "normalizedErrorSignature": "2a52a99b8eaa0b4d2f9d196fb5c17186d0de57030f2e747f5fdf18b86aa87a91"
+      },
+      {
+        "file": "REPO/tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts",
+        "testName": "preserves all 3073 pre-existing source/test/knowledge/report files byte for byte",
+        "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+        "normalizedErrorSignature": "158084912e0a4b7d93133616f0edd4733a2b06b3b7222d1023a0520be2280846"
+      },
+      {
+        "file": "REPO/tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts",
+        "testName": "preserves all 2755 pre-existing tracked source/test/knowledge/report files byte for byte",
+        "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+        "normalizedErrorSignature": "a4397dd045f802d10f7b53795a5795a623bd9634e0aee27c3cc1c9c0a929a1a0"
+      },
+      {
+        "file": "REPO/tests/unit/report-knowledge/compatibilityLoveResearch.test.ts",
+        "testName": "preserves all 2435 existing tracked source, research, Book and fixture hashes",
+        "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+        "normalizedErrorSignature": "c7c3b2e69c368410d3db7b62c0914cbafae6115cb048000b7c8525b9e3077660"
+      },
+      {
+        "file": "REPO/tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts",
+        "testName": "preserves all 2904 pre-existing tracked source/test/knowledge/report files byte for byte",
+        "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+        "normalizedErrorSignature": "9a0217069f9b7be21d38ae5b21c40c43c0eeb89bbd3467917877d4e4579138b8"
+      },
+      {
+        "file": "REPO/tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts",
+        "testName": "preserves 2531 original tracked source, research, UI, Book, contract and fixture files",
+        "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+        "normalizedErrorSignature": "efdc0b89d97f14a62c45e97c80aac59f08110aa0e6fc9c820816ef03e12aaa85"
+      },
+      {
+        "file": "REPO/tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts",
+        "testName": "preserves 2639 original tracked source/research/Book/UI/test hashes",
+        "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+        "normalizedErrorSignature": "bcb23c171391a9b0539b32332ca62ccc39c8e58716b5a2828d0363d84b884ebd"
+      }
+    ]
+  },
+  "entireSuiteExecuted": false,
+  "cohortsNotSummed": true
+}

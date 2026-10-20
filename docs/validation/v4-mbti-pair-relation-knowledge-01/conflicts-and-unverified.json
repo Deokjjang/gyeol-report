@@ -1,0 +1,37 @@
+{
+  "verifiedOriginalLogicalContradictions": [],
+  "notAZeroDefectCertification": true,
+  "classificationConflicts": "directional-comparison.json의 C 분류 참조; 다른 모형 명칭을 MBTI 판정으로 정규화하지 않음",
+  "sourceContextTensions": [
+    {
+      "pair": "ENTJ ISTJ",
+      "fields": [
+        "lovePattern",
+        "reportLine"
+      ],
+      "observation": "한 방향은 ISTJ 통제/ENTJ 주도권, 역방향은 ENTJ의 빠른 결정/ISTJ 절차 요구를 강조",
+      "verdict": "동시에 가능한 마찰 관점; 어느 쪽이 감독자인지 확정 불가"
+    },
+    {
+      "pair": "ENFP ESFJ",
+      "fields": [
+        "lovePattern",
+        "marriagePattern"
+      ],
+      "observation": "양쪽 원문이 끌림·맞춤의 부담을 다른 위치에서 설명",
+      "verdict": "영향·부담의 수혜자 고정 금지; 사실 충돌 확정에 개인·원전 맥락 부족"
+    },
+    {
+      "pair": "INFJ INFP",
+      "fields": [
+        "sourceRelationName"
+      ],
+      "observation": "False Identical / Quasi-Identical",
+      "verdict": "거짓동일을 준동일로 자동 정규화할 원전 근거 부족"
+    }
+  ],
+  "newConditionalStatus": "256 모두 개인 적합성과 실제 역할 확인 전 고객 미승인",
+  "externalAccessLimit": "2013 후속 논문은 공개 초록만 확인; 유료 PDF 미접근·미사용",
+  "unknownTypes": "null/UNKNOWN에 페어 유형을 추정하지 않음",
+  "missingReverse": "현재 0개; missing_do_not_invent 정책으로 누락 상태 보존"
+}

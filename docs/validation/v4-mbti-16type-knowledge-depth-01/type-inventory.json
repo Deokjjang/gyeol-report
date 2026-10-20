@@ -1,0 +1,1432 @@
+[
+  {
+    "type": "INTJ",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "bytes": 132041,
+    "unicodeCharsIncludingBom": 84785,
+    "sha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "traitCount": 81,
+    "domains": {
+      "identity": {
+        "direct": 6,
+        "total": 6
+      },
+      "thinkingStyle": {
+        "direct": 6,
+        "total": 6
+      },
+      "career": {
+        "direct": 7,
+        "inferred": 1,
+        "total": 8
+      },
+      "workplace": {
+        "direct": 6,
+        "inferred": 1,
+        "total": 7
+      },
+      "money": {
+        "inferred": 5,
+        "direct": 1,
+        "total": 6
+      },
+      "investment": {
+        "inferred": 5,
+        "total": 5
+      },
+      "study": {
+        "direct": 4,
+        "inferred": 1,
+        "total": 5
+      },
+      "love": {
+        "direct": 4,
+        "total": 4
+      },
+      "marriage": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 4,
+        "total": 4
+      },
+      "child": {
+        "direct": 4,
+        "total": 4
+      },
+      "relationships": {
+        "direct": 4,
+        "total": 4
+      },
+      "communication": {
+        "direct": 4,
+        "total": 4
+      },
+      "strengths": {
+        "direct": 4,
+        "total": 4
+      },
+      "risks": {
+        "direct": 4,
+        "inferred": 1,
+        "total": 5
+      },
+      "growth": {
+        "direct": 4,
+        "total": 4
+      }
+    },
+    "leafCount": 1683,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+    },
+    "relationshipHintsSha256": "82ac345d2c8c289a5a490c154f56e38a5aca1d68af16989e5a3edbbd680ed577"
+  },
+  {
+    "type": "INTP",
+    "file": "docs/product/mbti/source/INTP.json",
+    "bytes": 130045,
+    "unicodeCharsIncludingBom": 82791,
+    "sha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "traitCount": 81,
+    "domains": {
+      "identity": {
+        "direct": 6,
+        "total": 6
+      },
+      "thinkingStyle": {
+        "direct": 6,
+        "total": 6
+      },
+      "career": {
+        "direct": 6,
+        "inferred": 1,
+        "total": 7
+      },
+      "workplace": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "money": {
+        "direct": 2,
+        "inferred": 4,
+        "total": 6
+      },
+      "investment": {
+        "direct": 2,
+        "inferred": 3,
+        "total": 5
+      },
+      "study": {
+        "direct": 4,
+        "inferred": 1,
+        "total": 5
+      },
+      "love": {
+        "direct": 4,
+        "total": 4
+      },
+      "marriage": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 3,
+        "total": 3
+      },
+      "child": {
+        "direct": 5,
+        "total": 5
+      },
+      "relationships": {
+        "direct": 4,
+        "total": 4
+      },
+      "communication": {
+        "direct": 5,
+        "total": 5
+      },
+      "strengths": {
+        "direct": 4,
+        "total": 4
+      },
+      "risks": {
+        "direct": 6,
+        "total": 6
+      },
+      "growth": {
+        "direct": 3,
+        "inferred": 1,
+        "total": 4
+      }
+    },
+    "leafCount": 1636,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+    },
+    "relationshipHintsSha256": "a6624e909880bb751446c25fc7a3a682c29aa7056bb7674dbd5b305c460650b0"
+  },
+  {
+    "type": "ENTJ",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "bytes": 251763,
+    "unicodeCharsIncludingBom": 203429,
+    "sha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "traitCount": 78,
+    "domains": {
+      "identity": {
+        "direct": 6,
+        "total": 6
+      },
+      "thinkingStyle": {
+        "direct": 5,
+        "total": 5
+      },
+      "career": {
+        "direct": 6,
+        "inferred": 1,
+        "total": 7
+      },
+      "workplace": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "money": {
+        "direct": 3,
+        "inferred": 3,
+        "total": 6
+      },
+      "investment": {
+        "inferred": 5,
+        "total": 5
+      },
+      "study": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "love": {
+        "direct": 4,
+        "total": 4
+      },
+      "marriage": {
+        "inferred": 3,
+        "direct": 2,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 4,
+        "total": 4
+      },
+      "child": {
+        "direct": 4,
+        "total": 4
+      },
+      "relationships": {
+        "direct": 4,
+        "total": 4
+      },
+      "communication": {
+        "direct": 4,
+        "total": 4
+      },
+      "strengths": {
+        "direct": 4,
+        "total": 4
+      },
+      "risks": {
+        "direct": 5,
+        "total": 5
+      },
+      "growth": {
+        "direct": 4,
+        "total": 4
+      }
+    },
+    "leafCount": 1810,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함. 번역 안내, 출처 표기, 통계표 노이즈, 반복 주의문은 제거하고 성향·직업·연애·부모·자녀·궁합 정보를 의미 단위로 보존함"
+    },
+    "relationshipHintsSha256": "6bd904356ffe6f9f4031a6b774a52c7d9f22460692aa56629c702af7d38437a9"
+  },
+  {
+    "type": "ENTP",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "bytes": 133296,
+    "unicodeCharsIncludingBom": 84481,
+    "sha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "traitCount": 78,
+    "domains": {
+      "identity": {
+        "direct": 6,
+        "total": 6
+      },
+      "thinkingStyle": {
+        "direct": 6,
+        "total": 6
+      },
+      "career": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "workplace": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "money": {
+        "inferred": 5,
+        "direct": 1,
+        "total": 6
+      },
+      "investment": {
+        "inferred": 5,
+        "total": 5
+      },
+      "study": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "love": {
+        "direct": 4,
+        "total": 4
+      },
+      "marriage": {
+        "inferred": 5,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 4,
+        "total": 4
+      },
+      "child": {
+        "direct": 4,
+        "total": 4
+      },
+      "relationships": {
+        "direct": 4,
+        "total": 4
+      },
+      "communication": {
+        "direct": 4,
+        "total": 4
+      },
+      "strengths": {
+        "direct": 4,
+        "total": 4
+      },
+      "risks": {
+        "direct": 5,
+        "total": 5
+      },
+      "growth": {
+        "direct": 4,
+        "total": 4
+      }
+    },
+    "leafCount": 1602,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+    },
+    "relationshipHintsSha256": "67d50830d42cf13b37e0977306c0076226a14164a3242e66706a559ffe701e31"
+  },
+  {
+    "type": "INFJ",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "bytes": 243217,
+    "unicodeCharsIncludingBom": 192675,
+    "sha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "traitCount": 81,
+    "domains": {
+      "identity": {
+        "direct": 6,
+        "total": 6
+      },
+      "thinkingStyle": {
+        "direct": 6,
+        "total": 6
+      },
+      "career": {
+        "direct": 6,
+        "inferred": 1,
+        "total": 7
+      },
+      "workplace": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "money": {
+        "direct": 1,
+        "inferred": 5,
+        "total": 6
+      },
+      "investment": {
+        "inferred": 5,
+        "total": 5
+      },
+      "study": {
+        "direct": 4,
+        "inferred": 1,
+        "total": 5
+      },
+      "love": {
+        "direct": 4,
+        "total": 4
+      },
+      "marriage": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 3,
+        "total": 3
+      },
+      "child": {
+        "direct": 5,
+        "total": 5
+      },
+      "relationships": {
+        "direct": 4,
+        "total": 4
+      },
+      "communication": {
+        "direct": 5,
+        "total": 5
+      },
+      "strengths": {
+        "direct": 4,
+        "total": 4
+      },
+      "risks": {
+        "direct": 6,
+        "total": 6
+      },
+      "growth": {
+        "direct": 4,
+        "total": 4
+      }
+    },
+    "leafCount": 1665,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+    },
+    "relationshipHintsSha256": "4b52fed5dfb40170673a6eea8ec8725ed1fe91d255e98343940679c71ae5352d"
+  },
+  {
+    "type": "INFP",
+    "file": "docs/product/mbti/source/INFP.json",
+    "bytes": 132803,
+    "unicodeCharsIncludingBom": 85038,
+    "sha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "traitCount": 81,
+    "domains": {
+      "identity": {
+        "direct": 6,
+        "total": 6
+      },
+      "thinkingStyle": {
+        "direct": 6,
+        "total": 6
+      },
+      "career": {
+        "direct": 6,
+        "inferred": 1,
+        "total": 7
+      },
+      "workplace": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "money": {
+        "direct": 3,
+        "inferred": 3,
+        "total": 6
+      },
+      "investment": {
+        "inferred": 5,
+        "total": 5
+      },
+      "study": {
+        "direct": 4,
+        "inferred": 1,
+        "total": 5
+      },
+      "love": {
+        "direct": 4,
+        "total": 4
+      },
+      "marriage": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 3,
+        "total": 3
+      },
+      "child": {
+        "direct": 5,
+        "total": 5
+      },
+      "relationships": {
+        "direct": 4,
+        "total": 4
+      },
+      "communication": {
+        "direct": 5,
+        "total": 5
+      },
+      "strengths": {
+        "direct": 4,
+        "total": 4
+      },
+      "risks": {
+        "direct": 6,
+        "total": 6
+      },
+      "growth": {
+        "direct": 4,
+        "total": 4
+      }
+    },
+    "leafCount": 1676,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+    },
+    "relationshipHintsSha256": "e5fa1c00965c874296b43c168afe86e62209b7d20839193d76f69117a4d98e0b"
+  },
+  {
+    "type": "ENFJ",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "bytes": 118707,
+    "unicodeCharsIncludingBom": 75861,
+    "sha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "traitCount": 69,
+    "domains": {
+      "identity": {
+        "direct": 5,
+        "total": 5
+      },
+      "thinkingStyle": {
+        "direct": 5,
+        "total": 5
+      },
+      "career": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "workplace": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "money": {
+        "direct": 1,
+        "inferred": 5,
+        "total": 6
+      },
+      "investment": {
+        "inferred": 5,
+        "total": 5
+      },
+      "study": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "love": {
+        "direct": 4,
+        "total": 4
+      },
+      "marriage": {
+        "direct": 2,
+        "inferred": 3,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 3,
+        "total": 3
+      },
+      "child": {
+        "direct": 3,
+        "total": 3
+      },
+      "relationships": {
+        "direct": 3,
+        "total": 3
+      },
+      "communication": {
+        "direct": 3,
+        "total": 3
+      },
+      "strengths": {
+        "direct": 3,
+        "total": 3
+      },
+      "risks": {
+        "direct": 4,
+        "total": 4
+      },
+      "growth": {
+        "direct": 3,
+        "total": 3
+      }
+    },
+    "leafCount": 1486,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+    },
+    "relationshipHintsSha256": "375aa271417230bdf1a479c727eb8bc9c259a586f43bef00167ccfdfbba68e18"
+  },
+  {
+    "type": "ENFP",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "bytes": 125923,
+    "unicodeCharsIncludingBom": 78806,
+    "sha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "traitCount": 70,
+    "domains": {
+      "identity": {
+        "direct": 5,
+        "total": 5
+      },
+      "thinkingStyle": {
+        "direct": 5,
+        "total": 5
+      },
+      "career": {
+        "direct": 4,
+        "inferred": 2,
+        "total": 6
+      },
+      "workplace": {
+        "direct": 4,
+        "inferred": 2,
+        "total": 6
+      },
+      "money": {
+        "inferred": 5,
+        "direct": 1,
+        "total": 6
+      },
+      "investment": {
+        "inferred": 5,
+        "total": 5
+      },
+      "study": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "love": {
+        "direct": 4,
+        "total": 4
+      },
+      "marriage": {
+        "inferred": 4,
+        "direct": 1,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 3,
+        "total": 3
+      },
+      "child": {
+        "direct": 4,
+        "total": 4
+      },
+      "relationships": {
+        "direct": 3,
+        "total": 3
+      },
+      "communication": {
+        "direct": 3,
+        "total": 3
+      },
+      "strengths": {
+        "direct": 3,
+        "total": 3
+      },
+      "risks": {
+        "direct": 4,
+        "total": 4
+      },
+      "growth": {
+        "direct": 3,
+        "total": 3
+      }
+    },
+    "leafCount": 1474,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+    },
+    "relationshipHintsSha256": "41c7760feb9ed461333041fe9623947854b28a1a86da7033e89cbac67304acb4"
+  },
+  {
+    "type": "ISTJ",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "bytes": 117469,
+    "unicodeCharsIncludingBom": 74278,
+    "sha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "traitCount": 65,
+    "domains": {
+      "identity": {
+        "direct": 6,
+        "total": 6
+      },
+      "thinkingStyle": {
+        "direct": 5,
+        "total": 5
+      },
+      "career": {
+        "direct": 6,
+        "inferred": 1,
+        "total": 7
+      },
+      "workplace": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "money": {
+        "direct": 3,
+        "inferred": 3,
+        "total": 6
+      },
+      "investment": {
+        "inferred": 5,
+        "total": 5
+      },
+      "study": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "love": {
+        "direct": 3,
+        "total": 3
+      },
+      "marriage": {
+        "direct": 2,
+        "inferred": 3,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 3,
+        "total": 3
+      },
+      "child": {
+        "direct": 2,
+        "total": 2
+      },
+      "relationships": {
+        "direct": 3,
+        "total": 3
+      },
+      "communication": {
+        "direct": 2,
+        "total": 2
+      },
+      "strengths": {
+        "direct": 2,
+        "total": 2
+      },
+      "risks": {
+        "direct": 3,
+        "total": 3
+      },
+      "growth": {
+        "inferred": 2,
+        "total": 2
+      }
+    },
+    "leafCount": 1429,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함. 나무위키/16Personalities/TRUITY식 표현은 외부 리포트에 그대로 노출하지 않고 의미 단위로 재작성한다."
+    },
+    "relationshipHintsSha256": "96ce04798f1dd269abf2e51230e0d4491f86f599b9af68348d5449dcf33ef42b"
+  },
+  {
+    "type": "ISFJ",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "bytes": 127496,
+    "unicodeCharsIncludingBom": 80884,
+    "sha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "traitCount": 76,
+    "domains": {
+      "identity": {
+        "direct": 6,
+        "total": 6
+      },
+      "thinkingStyle": {
+        "direct": 4,
+        "total": 4
+      },
+      "career": {
+        "direct": 6,
+        "inferred": 1,
+        "total": 7
+      },
+      "workplace": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "money": {
+        "direct": 1,
+        "inferred": 5,
+        "total": 6
+      },
+      "investment": {
+        "inferred": 5,
+        "total": 5
+      },
+      "study": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "love": {
+        "direct": 4,
+        "total": 4
+      },
+      "marriage": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 4,
+        "total": 4
+      },
+      "child": {
+        "direct": 4,
+        "total": 4
+      },
+      "relationships": {
+        "direct": 4,
+        "total": 4
+      },
+      "communication": {
+        "direct": 3,
+        "total": 3
+      },
+      "strengths": {
+        "direct": 4,
+        "total": 4
+      },
+      "risks": {
+        "direct": 5,
+        "total": 5
+      },
+      "growth": {
+        "direct": 4,
+        "total": 4
+      }
+    },
+    "leafCount": 1575,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함. 출처표기, 편집 문구, 통계표 노이즈, 반복 주의문은 제거하고 의미 단위와 관계 패턴만 보존함"
+    },
+    "relationshipHintsSha256": "f33953f01c5e5a2683141981257d2d301b142af1830523b86b416c5582580c94"
+  },
+  {
+    "type": "ESTJ",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "bytes": 131002,
+    "unicodeCharsIncludingBom": 84102,
+    "sha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "traitCount": 79,
+    "domains": {
+      "identity": {
+        "direct": 6,
+        "total": 6
+      },
+      "thinkingStyle": {
+        "direct": 5,
+        "total": 5
+      },
+      "career": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "workplace": {
+        "direct": 6,
+        "inferred": 1,
+        "total": 7
+      },
+      "money": {
+        "direct": 3,
+        "inferred": 3,
+        "total": 6
+      },
+      "investment": {
+        "inferred": 5,
+        "total": 5
+      },
+      "study": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "love": {
+        "direct": 4,
+        "total": 4
+      },
+      "marriage": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 4,
+        "total": 4
+      },
+      "child": {
+        "direct": 4,
+        "total": 4
+      },
+      "relationships": {
+        "direct": 5,
+        "total": 5
+      },
+      "communication": {
+        "direct": 4,
+        "total": 4
+      },
+      "strengths": {
+        "direct": 4,
+        "total": 4
+      },
+      "risks": {
+        "direct": 5,
+        "total": 5
+      },
+      "growth": {
+        "direct": 1,
+        "inferred": 3,
+        "total": 4
+      }
+    },
+    "leafCount": 1671,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+    },
+    "relationshipHintsSha256": "bfc21bb38f8fe9b24d38c8d70739b87734157b50404598b183324110e060224c"
+  },
+  {
+    "type": "ESFJ",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "bytes": 248433,
+    "unicodeCharsIncludingBom": 198261,
+    "sha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "traitCount": 79,
+    "domains": {
+      "identity": {
+        "direct": 6,
+        "total": 6
+      },
+      "thinkingStyle": {
+        "direct": 5,
+        "total": 5
+      },
+      "career": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "workplace": {
+        "direct": 6,
+        "inferred": 1,
+        "total": 7
+      },
+      "money": {
+        "direct": 3,
+        "inferred": 3,
+        "total": 6
+      },
+      "investment": {
+        "inferred": 5,
+        "total": 5
+      },
+      "study": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "love": {
+        "direct": 4,
+        "total": 4
+      },
+      "marriage": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 4,
+        "total": 4
+      },
+      "child": {
+        "direct": 4,
+        "total": 4
+      },
+      "relationships": {
+        "direct": 5,
+        "total": 5
+      },
+      "communication": {
+        "direct": 4,
+        "total": 4
+      },
+      "strengths": {
+        "direct": 4,
+        "total": 4
+      },
+      "risks": {
+        "direct": 5,
+        "total": 5
+      },
+      "growth": {
+        "inferred": 4,
+        "total": 4
+      }
+    },
+    "leafCount": 1763,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함. 편집 문구, 출처 표기, 통계표 노이즈, 커뮤니티 안내는 제거하고 의미 단위만 보존함"
+    },
+    "relationshipHintsSha256": "d7d2dcd8358361a985f2b5814a4b69e2f56f2b3d3f2cd67c05d682040ad92d96"
+  },
+  {
+    "type": "ISTP",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "bytes": 121745,
+    "unicodeCharsIncludingBom": 76822,
+    "sha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "traitCount": 67,
+    "domains": {
+      "identity": {
+        "direct": 6,
+        "total": 6
+      },
+      "thinkingStyle": {
+        "direct": 5,
+        "total": 5
+      },
+      "career": {
+        "direct": 6,
+        "inferred": 1,
+        "total": 7
+      },
+      "workplace": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "money": {
+        "direct": 1,
+        "inferred": 5,
+        "total": 6
+      },
+      "investment": {
+        "direct": 2,
+        "inferred": 3,
+        "total": 5
+      },
+      "study": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "love": {
+        "direct": 3,
+        "total": 3
+      },
+      "marriage": {
+        "direct": 2,
+        "inferred": 3,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 3,
+        "total": 3
+      },
+      "child": {
+        "direct": 3,
+        "total": 3
+      },
+      "relationships": {
+        "direct": 3,
+        "total": 3
+      },
+      "communication": {
+        "direct": 2,
+        "total": 2
+      },
+      "strengths": {
+        "direct": 3,
+        "total": 3
+      },
+      "risks": {
+        "direct": 3,
+        "total": 3
+      },
+      "growth": {
+        "inferred": 1,
+        "direct": 1,
+        "total": 2
+      }
+    },
+    "leafCount": 1473,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함. 통계, 출처, 편집 안내, 반복 주의문은 제거하고 의미 단위만 보존함"
+    },
+    "relationshipHintsSha256": "1d69a6d97fb7a30f2f01a1bc1d98730b322c48e52278fe883c690fb6ac12cd85"
+  },
+  {
+    "type": "ISFP",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "bytes": 124811,
+    "unicodeCharsIncludingBom": 80142,
+    "sha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "traitCount": 76,
+    "domains": {
+      "identity": {
+        "direct": 6,
+        "total": 6
+      },
+      "thinkingStyle": {
+        "direct": 5,
+        "total": 5
+      },
+      "career": {
+        "direct": 6,
+        "inferred": 1,
+        "total": 7
+      },
+      "workplace": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "money": {
+        "direct": 1,
+        "inferred": 5,
+        "total": 6
+      },
+      "investment": {
+        "inferred": 5,
+        "total": 5
+      },
+      "study": {
+        "direct": 4,
+        "inferred": 1,
+        "total": 5
+      },
+      "love": {
+        "direct": 4,
+        "total": 4
+      },
+      "marriage": {
+        "inferred": 4,
+        "direct": 1,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 3,
+        "total": 3
+      },
+      "child": {
+        "direct": 4,
+        "total": 4
+      },
+      "relationships": {
+        "direct": 4,
+        "total": 4
+      },
+      "communication": {
+        "direct": 3,
+        "total": 3
+      },
+      "strengths": {
+        "direct": 4,
+        "total": 4
+      },
+      "risks": {
+        "direct": 5,
+        "total": 5
+      },
+      "growth": {
+        "direct": 1,
+        "inferred": 3,
+        "total": 4
+      }
+    },
+    "leafCount": 1613,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함. 출처표기, 통계표 노이즈, 편집 문구, 반복 주의문은 제거하고 성향·장면·직업·관계 패턴만 보존함"
+    },
+    "relationshipHintsSha256": "ffb13cde264a877cee60d2e01c07087a3cce425f58363ad06a5b865302125c26"
+  },
+  {
+    "type": "ESTP",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "bytes": 130103,
+    "unicodeCharsIncludingBom": 82302,
+    "sha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "traitCount": 75,
+    "domains": {
+      "identity": {
+        "direct": 6,
+        "total": 6
+      },
+      "thinkingStyle": {
+        "direct": 5,
+        "total": 5
+      },
+      "career": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "workplace": {
+        "direct": 4,
+        "inferred": 1,
+        "total": 5
+      },
+      "money": {
+        "direct": 2,
+        "inferred": 4,
+        "total": 6
+      },
+      "investment": {
+        "inferred": 5,
+        "total": 5
+      },
+      "study": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "love": {
+        "direct": 4,
+        "total": 4
+      },
+      "marriage": {
+        "inferred": 5,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 3,
+        "total": 3
+      },
+      "child": {
+        "direct": 4,
+        "total": 4
+      },
+      "relationships": {
+        "direct": 4,
+        "total": 4
+      },
+      "communication": {
+        "direct": 4,
+        "total": 4
+      },
+      "strengths": {
+        "direct": 4,
+        "total": 4
+      },
+      "risks": {
+        "direct": 5,
+        "total": 5
+      },
+      "growth": {
+        "direct": 1,
+        "inferred": 3,
+        "total": 4
+      }
+    },
+    "leafCount": 1572,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함"
+    },
+    "relationshipHintsSha256": "aaafe677a49486e8f803de75325dc95fdbdda064b306f0845d7c10f81c5da73d"
+  },
+  {
+    "type": "ESFP",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "bytes": 231861,
+    "unicodeCharsIncludingBom": 183392,
+    "sha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "traitCount": 77,
+    "domains": {
+      "identity": {
+        "direct": 6,
+        "total": 6
+      },
+      "thinkingStyle": {
+        "direct": 5,
+        "total": 5
+      },
+      "career": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "workplace": {
+        "direct": 5,
+        "inferred": 1,
+        "total": 6
+      },
+      "money": {
+        "inferred": 5,
+        "direct": 1,
+        "total": 6
+      },
+      "investment": {
+        "inferred": 5,
+        "total": 5
+      },
+      "study": {
+        "direct": 3,
+        "inferred": 2,
+        "total": 5
+      },
+      "love": {
+        "direct": 4,
+        "total": 4
+      },
+      "marriage": {
+        "inferred": 4,
+        "direct": 1,
+        "total": 5
+      },
+      "parenting": {
+        "direct": 4,
+        "total": 4
+      },
+      "child": {
+        "direct": 4,
+        "total": 4
+      },
+      "relationships": {
+        "direct": 4,
+        "total": 4
+      },
+      "communication": {
+        "direct": 4,
+        "total": 4
+      },
+      "strengths": {
+        "direct": 4,
+        "total": 4
+      },
+      "risks": {
+        "direct": 5,
+        "total": 5
+      },
+      "growth": {
+        "inferred": 4,
+        "total": 4
+      }
+    },
+    "leafCount": 1622,
+    "pairCount": 16,
+    "reportUseCases": 6,
+    "sourceStatus": {
+      "rawSourceWasProvidedByUser": true,
+      "rawTextStoredVerbatim": false,
+      "cleanedAndRewritten": true,
+      "notes": "제공 자료를 그대로 저장하지 않고 결리포트 상품용 trait으로 재구성함. 통계표, 출처 표기, 편집 문구, 반복 주의문은 제거하고 성향·직업·연애·부모·자녀·궁합 정보만 의미 단위로 보존함"
+    },
+    "relationshipHintsSha256": "7d7f70b419f1f83fe2fa841a82b10773c7132203b29093e1bd1bc72f8516f5a3"
+  }
+]

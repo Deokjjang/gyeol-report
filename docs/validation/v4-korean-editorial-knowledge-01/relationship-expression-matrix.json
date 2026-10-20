@@ -1,0 +1,639 @@
+[
+  {
+    "id": "ker:relationship:love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "category": "love",
+    "originalRoleContract": "9 chapters / 36 paragraphs / 144 sentence roles",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:f608d6b3a7a9320d4a58",
+      "originalId": "clr:material:CH01.P1:response-and-thought",
+      "recordSha256": "fdd4e5d8ecf6e2a194a461ff1f1fe67a15f3805eee4af78ddb80663ff56d1fe0",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "aspects": [
+      {
+        "key": "personA",
+        "question": "A는 호감을 어떤 통로로 전하고 싶은가",
+        "example": "A의 표현 방식이 확인된다면, 어떤 반응을 받으면 관심이 전해졌다고 느끼는지 물어볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "personB",
+        "question": "B는 마음을 정리할 어떤 여유가 필요한가",
+        "example": "B에게 생각할 시간이 필요하다면, 곧바로 대답하는 일과 마음을 전하는 일을 나누어 볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "common",
+        "question": "둘이 같은 만남에서 반갑게 느끼는 것은 무엇인가",
+        "example": "둘 다 원하는 활동이 확인된다면, 같은 시간을 즐길 조건부터 비교해볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "difference",
+        "question": "표현과 수신의 기준이 어떻게 다른가",
+        "example": "A가 건넨 표현의 크기와 B가 알아들은 관심의 뜻은 다를 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "ab",
+        "question": "A의 연락이 B에게 닿는 조건은 무엇인가",
+        "example": "A가 먼저 연락하더라도 B가 편하게 답할 수 있는 시간인지 확인해야 부담 여부를 말할 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual A→B direction and recipient context",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "ba",
+        "question": "B의 답변 속도가 A에게 어떻게 읽힐 수 있는가",
+        "example": "B가 답을 늦게 고르는 상황이라면, A가 기다릴 기준을 아는지 별도로 물어볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual B→A direction and recipient context",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "positive",
+        "question": "관심과 자율성이 함께 남을 조건은 무엇인가",
+        "example": "만남을 제안하면서 거절하거나 쉬고 싶은 선택도 남길 수 있다면, 호의를 편하게 받을 여지가 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "conflict",
+        "question": "답장 길이를 애정의 크기로 단정하고 있는가",
+        "example": "짧은 답의 이유를 확인하지 않았다면, 마음이 식었다는 결론을 내리지 않습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "repair",
+        "question": "서운함을 말할 때 무엇을 먼저 확인할까",
+        "example": "서운했던 장면을 다시 이야기한다면, 보낸 의도와 받은 뜻을 각자 설명해볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "maintenance",
+        "question": "익숙해진 뒤 어떤 선택을 계속 확인할까",
+        "example": "관계가 이어지는 상황이라면, 예전의 연락 약속이 지금도 편한지 다시 물어볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      }
+    ],
+    "permissionIsNotCalculated": true,
+    "noForcedDifference": true
+  },
+  {
+    "id": "ker:relationship:marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "category": "marriage",
+    "originalRoleContract": "9 chapters / 36 paragraphs / 144 sentence roles",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:8b8b78c40298c00c5487",
+      "originalId": "cmpr:material:CH01.P1:predictability-and-revision",
+      "recordSha256": "eb22baf63923614535ae1046c2e156e532a178cd9bc6d0d26ec9f320b093a388",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "aspects": [
+      {
+        "key": "personA",
+        "question": "A는 공동생활에서 무엇을 기본 약속으로 보는가",
+        "example": "A가 유지하고 싶은 생활 기준을 실제로 알려줬다면, 어느 부분이 꼭 필요한지 살펴볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "personB",
+        "question": "B는 어떤 생활 방식을 조정하고 싶은가",
+        "example": "B가 바꾸고 싶은 방식을 말한다면, 약속 자체를 없애려는지 방법을 고르려는지 구분해볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "common",
+        "question": "둘 다 쉬기 위해 필요한 조건은 무엇인가",
+        "example": "함께 사는 경우라면, 각자 쉬는 시간과 남은 일을 같은 표에서 볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "difference",
+        "question": "같은 집안일도 어떤 수고가 다르게 보이는가",
+        "example": "실행한 일과 계획하고 기억한 수고는 같은 개수로 설명되지 않을 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "ab",
+        "question": "A의 기준이 B의 선택에 어떤 범위를 남기는가",
+        "example": "A가 정한 생활 기준을 제안한다면, B에게도 방법을 바꿀 선택이 남는지 확인할 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual A→B direction and recipient context",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "ba",
+        "question": "B의 변경 제안이 A의 예측 가능성에 어떻게 닿는가",
+        "example": "B가 분담을 바꾸려 한다면, A가 다음 일정을 알 수 있게 무엇을 미리 말할지 물어볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual B→A direction and recipient context",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "positive",
+        "question": "함께 지키는 기본 약속의 쓸모는 무엇인가",
+        "example": "둘이 동의한 기본 약속이 있다면, 매번 처음부터 협의할 부담을 덜 조건이 될 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "conflict",
+        "question": "분담 변경을 성의 부족으로 해석하는가",
+        "example": "근무나 돌봄 조건이 달라졌다면, 이전 분담을 못 지켰다는 이유만으로 마음까지 평가하지 않습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "repair",
+        "question": "누락된 일을 어떻게 다시 나눌까",
+        "example": "분담을 다시 정한다면, 실행할 일뿐 아니라 기억하고 준비할 담당도 함께 확인해볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "maintenance",
+        "question": "생활 조건이 바뀔 때 무엇을 다시 합의할까",
+        "example": "함께 사는 조건이 달라진다면, 예전의 공평함을 현재 자원과 시간에 맞춰 검토할 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      }
+    ],
+    "permissionIsNotCalculated": true,
+    "noForcedDifference": true
+  },
+  {
+    "id": "ker:relationship:parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "category": "parentChild",
+    "originalRoleContract": "9 chapters / 36 paragraphs / 144 sentence roles",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:d87197b16b1907002952",
+      "originalId": "pcpr:material:CH01.P1:predictability-with-room-to-try",
+      "recordSha256": "05f677cb1841841f2a93dbf57a4c4e7a756523b74d93cb8294a7db7bef75c557",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "aspects": [
+      {
+        "key": "personA",
+        "question": "부모 A에게 어떤 보호 책임이 있는가",
+        "example": "A가 부모 역할을 맡는다면, 안전을 확인할 책임을 자녀의 기분 관리 책임과 구분해볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "personB",
+        "question": "자녀 B에게 발달 단계에 맞는 어떤 선택이 있는가",
+        "example": "B가 직접 고를 수 있는 범위가 확인된다면, 그 안에서 무엇을 시도하고 싶은지 들어볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "common",
+        "question": "보호와 시도를 함께 지킬 목표는 무엇인가",
+        "example": "안전선이 확인된다면, 부모가 준비할 조건과 자녀가 선택할 방법을 나누어 볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "difference",
+        "question": "걱정의 기준과 관심의 기준은 어디서 다른가",
+        "example": "부모의 걱정과 자녀의 관심은 같은 책임에서 나온 말로 묶지 않습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "ab",
+        "question": "부모 A의 안내가 자녀 B에게 선택을 남기는가",
+        "example": "A가 규칙을 설명할 때 B에게도 이유를 묻고 말할 자리가 남는지 확인할 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual A→B direction and recipient context",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "ba",
+        "question": "자녀 B의 시도가 부모 A에게 어떤 정보를 주는가",
+        "example": "B가 해보고 싶은 이유를 말한다면, A는 위험을 더 정확히 판단할 정보를 얻을 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual B→A direction and recipient context",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "positive",
+        "question": "자녀가 도움을 청할 수 있는 보호는 무엇인가",
+        "example": "혼자 시도할 범위를 남기면서 다시 도움을 구할 수 있다면, 보호와 탐색을 함께 살필 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "conflict",
+        "question": "설명하지 못한 것을 불순종으로 확정하는가",
+        "example": "자녀가 아직 이유를 말하지 못했다면, 그 침묵을 나쁜 의도로 단정하지 않습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "repair",
+        "question": "성인이 먼저 다시 열어야 할 대화는 무엇인가",
+        "example": "다툼 뒤 다시 이야기한다면, 부모가 먼저 안전과 규칙의 이유를 설명하고 자녀의 말을 끝까지 들을 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "maintenance",
+        "question": "성장에 따라 누구의 책임이 어떻게 달라지는가",
+        "example": "자녀의 발달 단계와 실제 생활이 달라지면, 직접 고를 범위도 새로 확인할 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      }
+    ],
+    "permissionIsNotCalculated": true,
+    "noForcedDifference": true
+  },
+  {
+    "id": "ker:relationship:coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "category": "coworker",
+    "originalRoleContract": "9 chapters / 36 paragraphs / 144 sentence roles",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:baa6c8d1d7187eece097",
+      "originalId": "cwpr:material:CH01.P1:question-before-start",
+      "recordSha256": "ae6dd80d9ce2077aa9148386625ef8f42f7577f42a4e3b0d066b57ca6455cd40",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "aspects": [
+      {
+        "key": "personA",
+        "question": "A는 착수 전에 무엇을 알아야 하는가",
+        "example": "A가 생각할 시간이 필요하다면, 시작 전에 목적과 빠진 조건을 확인할 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "personB",
+        "question": "B는 현장에서 어떤 정보를 확인하는가",
+        "example": "B가 대응하며 배우는 편이라면, 진행 중 알아낸 내용을 언제 공유할지 물어볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "common",
+        "question": "같은 결과를 위해 무엇을 함께 확인할까",
+        "example": "두 사람이 같은 과제를 맡는다면, 넘겨줄 산출물과 완료 기준을 함께 정해볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "difference",
+        "question": "사전 검토와 진행 중 대응의 접점은 어디인가",
+        "example": "시작 전에 정할 것과 해보며 바꿀 것을 구분하면 실제 차이를 비교할 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "ab",
+        "question": "A의 검토가 B의 실행에 어떤 조건을 주는가",
+        "example": "A가 검토 의견을 주려 한다면, B가 지금 수정할 수 있는 범위인지 확인할 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual A→B direction and recipient context",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "ba",
+        "question": "B의 현장 정보가 A의 판단을 어떻게 돕는가",
+        "example": "B가 진행 중 발견한 조건을 알린다면, A가 처음 세운 기준을 다시 볼 근거가 생길 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual B→A direction and recipient context",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "positive",
+        "question": "서로의 다른 확인 방식이 기여할 조건은 무엇인가",
+        "example": "각자의 검토가 같은 항목을 중복하지 않을 때, 다른 확인 지점이 과제의 빈 부분을 찾는 데 쓰일 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "conflict",
+        "question": "수정 의견을 사람 평가로 바꾸고 있는가",
+        "example": "결과의 틀린 부분을 말할 때에는 동료 전체의 능력을 그 오류 하나로 정하지 않습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "repair",
+        "question": "넘겨받을 조건을 어떻게 다시 맞출까",
+        "example": "의견이 엇갈린다면, 오늘 수정할 것과 다음 검토 시점을 나누어 정해볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "maintenance",
+        "question": "반복 협업에서 기여와 인계를 어떻게 남길까",
+        "example": "다음 일을 함께한다면, 누가 어떤 부분을 끝냈고 무엇을 넘겼는지 기록해볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      }
+    ],
+    "permissionIsNotCalculated": true,
+    "noForcedDifference": true
+  },
+  {
+    "id": "ker:relationship:managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "category": "managerReport",
+    "originalRoleContract": "9 chapters / 36 paragraphs / 144 sentence roles",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:3a24f834e990095106e1",
+      "originalId": "mrpr:material:CH01.P1:goal-method-interface",
+      "recordSha256": "dc410d3619f06d8f22dc06680a87017211f82ea6dd606344b2314c5037e2a8ac",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "aspects": [
+      {
+        "key": "personA",
+        "question": "상사 A는 무엇을 정할 권한과 책임이 있는가",
+        "example": "A가 목표를 정하는 상사라면, 결과 기준과 부여할 권한을 먼저 설명할 책임이 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "personB",
+        "question": "팀원 B는 어떤 실행 경로를 확인해야 하는가",
+        "example": "B가 실행을 맡는다면, 바꿀 수 있는 방법과 보고가 필요한 결정을 구분해 물어볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "common",
+        "question": "둘이 합의할 결과 기준은 무엇인가",
+        "example": "업무를 맡기는 상황이라면, 같은 결과를 어떻게 확인할지 먼저 정해볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "difference",
+        "question": "목표 결정과 실행 재량의 차이는 무엇인가",
+        "example": "결과를 정할 권한과 방법을 고를 재량은 같지 않으므로 둘을 따로 설명합니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "ab",
+        "question": "A의 지시가 B에게 실제 재량을 주는가",
+        "example": "A가 알아서 하라고 말한다면, B가 허락 없이 바꿀 수 있는 범위를 명시해야 합니다.",
+        "requiredEvidence": "same-owner approved claim; actual A→B direction and recipient context",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "ba",
+        "question": "B의 보고가 A의 책임 판단에 어떤 정보를 주는가",
+        "example": "B가 막힌 조건을 보고한다면, A가 조정할 자원이나 판단할 결정을 구분할 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual B→A direction and recipient context",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "positive",
+        "question": "자율성과 지원이 함께 작동할 조건은 무엇인가",
+        "example": "권한을 맡기면서 어려운 판단을 가져올 경로도 남기면, 혼자 감추는 부담을 줄일 여지가 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "conflict",
+        "question": "평가 권한 때문에 말하기 어려운 조건이 있는가",
+        "example": "B가 말하지 않았다는 사실만으로 동의했다고 보지 않고, 평가 관계에서 말할 수 있는 조건을 확인합니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "repair",
+        "question": "상사가 먼저 분명히 할 기준은 무엇인가",
+        "example": "기대가 엇갈렸다면, 상사가 결과 기준을 다시 설명한 뒤 팀원의 제약을 들어볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "maintenance",
+        "question": "권한과 책임이 달라질 때 무엇을 갱신할까",
+        "example": "맡긴 범위가 달라지면, 보고 약속과 지원 자원도 그 범위에 맞춰 다시 정해볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      }
+    ],
+    "permissionIsNotCalculated": true,
+    "noForcedDifference": true
+  },
+  {
+    "id": "ker:relationship:businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "category": "businessPartner",
+    "originalRoleContract": "9 chapters / 36 paragraphs / 144 sentence roles",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:967881edd5da393d6674",
+      "originalId": "bppr:material:CH01.P1:idea-demand-interface",
+      "recordSha256": "9fe7f3009fb7adf5f1758c7de277d0904650943f459d82bac60490253a256399",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "aspects": [
+      {
+        "key": "personA",
+        "question": "A는 어떤 가능성을 제안하는가",
+        "example": "A가 사업 아이디어를 낸다면, 할 수 있다는 판단과 실제 필요한 고객을 구분해 설명할 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "personB",
+        "question": "B는 어떤 필요와 운영 조건을 확인하는가",
+        "example": "B가 실행 조건을 검토한다면, 누구의 필요를 어떤 비용으로 해결할지 물어볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "common",
+        "question": "같은 사업 목표를 무엇으로 확인할까",
+        "example": "함께 검토한다면, 기대하는 성과와 판단할 자료를 같은 기준으로 놓아볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "difference",
+        "question": "아이디어의 가능성과 실제 수요는 어디서 다른가",
+        "example": "흥미로운 제안이라는 사실과 실제 수요가 확인됐다는 사실은 다릅니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "ab",
+        "question": "A의 확장 제안이 B의 자원에 어떤 결정을 요구하는가",
+        "example": "A가 더 큰 시도를 제안한다면, B가 동의할 비용과 실행 범위를 따로 확인해야 합니다.",
+        "requiredEvidence": "same-owner approved claim; actual A→B direction and recipient context",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "ba",
+        "question": "B의 운영 질문이 A의 기회 판단에 무엇을 더하는가",
+        "example": "B가 필요한 시간과 비용을 제시한다면, A는 제안의 크기를 그 조건에 비춰 비교할 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual B→A direction and recipient context",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "positive",
+        "question": "가능성과 필요를 나누는 질문의 쓸모는 무엇인가",
+        "example": "양쪽 질문이 실제 자료를 확인하는 데 쓰인다면, 좋은 아이디어를 검토할 기준이 더 분명해질 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "conflict",
+        "question": "동의를 얻지 않은 위험을 함께 부담시키는가",
+        "example": "한 사람이 지출을 정했다고 해서 다른 사람이 손실 부담에도 동의했다고 보지 않습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "repair",
+        "question": "결정·부담·종료 조건을 어떻게 다시 정할까",
+        "example": "계획이 엇갈리면, 함께 정할 지출과 각자 맡을 실행, 중단할 조건을 나누어 적어볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "maintenance",
+        "question": "운영 조건이 바뀔 때 어떤 합의를 다시 확인할까",
+        "example": "사업 조건이 달라지면, 실제 기여·권한·손실 부담·종료 조건을 새 상황에서 검토할 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      }
+    ],
+    "permissionIsNotCalculated": true,
+    "noForcedDifference": true
+  },
+  {
+    "id": "ker:relationship:friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "runtimeEvidenceIds": [],
+    "existingScoreContribution": false,
+    "review": "editorial_research_not_customer_approved",
+    "category": "friendship",
+    "originalRoleContract": "9 chapters / 36 paragraphs / 144 sentence roles",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:2375c74243bbfbee1d39",
+      "originalId": "frpr:material:CH01.P1:chosen-time",
+      "recordSha256": "528fa9a2cddba2da7f2123fbb593dccf5520617a4b3a812a02973b32a5f5843c",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "aspects": [
+      {
+        "key": "personA",
+        "question": "A는 어떤 만남에 시간을 내고 싶은가",
+        "example": "A가 친구에게 시간을 내고 싶은 조건을 알려줬다면, 자주 볼 기회와 원하는 만남을 나누어 볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "personB",
+        "question": "B는 어떤 거리와 만남을 편하게 느끼는가",
+        "example": "B가 편한 연락 범위를 말한다면, 연락 횟수로 마음을 대신 판단하지 않고 들어볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "common",
+        "question": "둘이 다시 고르는 시간에는 무엇이 있는가",
+        "example": "둘 다 원하는 만남이 있다면, 우연히 만난 기회와 스스로 시간을 낸 선택을 구분해볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "difference",
+        "question": "연락 빈도와 비독점적 친밀감은 어떻게 다른가",
+        "example": "다른 친구와 보내는 시간이 있다는 사실이 이 우정의 감소를 곧바로 뜻하지는 않습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "ab",
+        "question": "A의 제안이 B의 선택권을 남기는가",
+        "example": "A가 만남을 제안하더라도, B가 다른 약속이나 쉬는 시간을 고를 자리는 남아야 합니다.",
+        "requiredEvidence": "same-owner approved claim; actual A→B direction and recipient context",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "ba",
+        "question": "B의 거리 요청이 A에게 어떻게 설명될 수 있는가",
+        "example": "B가 연락을 줄이고 싶다면, A가 거절의 범위를 알 수 있도록 필요한 시간을 설명해볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual B→A direction and recipient context",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "positive",
+        "question": "다시 시간을 내는 선택의 쓸모는 무엇인가",
+        "example": "원하는 만남을 서로 고를 수 있을 때, 잦은 연락만으로 설명되지 않는 친밀함도 살펴볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "conflict",
+        "question": "다른 모임을 우정의 경쟁자로 보고 있는가",
+        "example": "친구의 새 모임을 알았다는 이유만으로 내 자리를 빼앗겼다고 단정하지 않습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "repair",
+        "question": "거절과 다시 만날 조건을 어떻게 함께 말할까",
+        "example": "이번 만남이 어렵다면, 못 하는 이유의 범위와 다시 이야기할 수 있는 조건을 짧게 나눠볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      },
+      {
+        "key": "maintenance",
+        "question": "달라진 생활에서 어떤 거리를 갱신할까",
+        "example": "생활이 달라진다면, 이전 연락 횟수보다 지금 가능한 만남과 관심을 다시 확인해볼 수 있습니다.",
+        "requiredEvidence": "same-owner approved claim; actual role/state/context; actual commonality if comparing",
+        "forbidden": "do not infer recipient experience, permission, consent or outcome from actor preference; no fabricated history"
+      }
+    ],
+    "permissionIsNotCalculated": true,
+    "noForcedDifference": true
+  }
+]

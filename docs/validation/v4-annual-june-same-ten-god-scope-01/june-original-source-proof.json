@@ -1,0 +1,417 @@
+{
+  "month": 6,
+  "id": "afpr:month-slot:06",
+  "proof": {
+    "locator": {
+      "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+      "exportName": "ANNUAL_MONTH_MATRIX",
+      "index": 5,
+      "originalId": "afpr:month-slot:06",
+      "recordSha256": "d11f10905a2dc8cf7d07f4b32d43ae46c2bbe3c36e100fbe8d7c46415856f409",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+    },
+    "matchedCatalogKey": "kc:v1:f5ec8a9ad9e2f6f6acea1105299b88c192b5d5621a60d32276ef19a4fe1ede8d",
+    "originalId": "afpr:month-slot:06",
+    "role": "ORIGINAL_RECORD",
+    "expectedHash": "d11f10905a2dc8cf7d07f4b32d43ae46c2bbe3c36e100fbe8d7c46415856f409",
+    "actualHash": "d11f10905a2dc8cf7d07f4b32d43ae46c2bbe3c36e100fbe8d7c46415856f409",
+    "hashAlgorithm": "SHA256_JSON_INSERTION",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+  },
+  "originalRequirements": [
+    "selectedYear + actual civil month bounds",
+    "every canonical segment",
+    "previous same god + current actual relations + source scope"
+  ],
+  "originalRecord": {
+    "id": "afpr:month-slot:06",
+    "productKey": "annual_fortune",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "scope": "civil_month",
+    "meaning": "반복 십성과 다른 기간 조건의 비교",
+    "positive": "실제 바뀐 접점만 새 정보로 전달한다.",
+    "risk": "비슷한 조언을 문장만 바꿔 새 해석으로 표시",
+    "twist": "유지할 기준을 짧게 상기하고 다른 적용에 집중할 수 있다.",
+    "action": "앞선 동일 god 월의 roots와 현재 segment를 대조한다.",
+    "scene": {
+      "text": "가상으로 같은 비용 기준을 새로운 활동의 지출에 적용한다.",
+      "hypothetical": true,
+      "isCustomerHistory": false
+    },
+    "counterexample": "상반기 말이 곧 수확·정산 시기라고 정하지 않는다.",
+    "requires": [
+      "selectedYear + actual civil month bounds",
+      "every canonical segment",
+      "previous same god + current actual relations + source scope"
+    ],
+    "disallowed": [
+      "입력받지 않은 과거 경험 단정",
+      "성공·실패·수입·질병·혼인 사건 예언",
+      "근거 없는 시주·복합 관계 생성"
+    ],
+    "sourceRefs": [
+      "afpr:source:jie",
+      "afpr:source:month-copy",
+      "afpr:source:editorial"
+    ],
+    "verification": "conditional_editorial_not_calculated_fact",
+    "month": 6,
+    "jieName": "망종",
+    "primaryMeaning": "반복 십성과 다른 기간 조건의 비교",
+    "secondaryMeaning": "다른 월과 같은 god가 나와도 참가 관계의 차이 확인",
+    "duplicateMeaningGroup": "actual_fact_root_and_scope_not_month_name",
+    "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+    "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+    "notFixedToYear": true,
+    "notMonthlyFate": true,
+    "segmentCountFixed": false,
+    "informationFunctionNotCalculatedEvidence": true
+  },
+  "meaningIdentity": null,
+  "claimIdentity": null,
+  "producerCodeProof": [
+    {
+      "file": "src/lib/report-knowledge/annual-fortune-product-research/monthlyTenGodResearch.ts",
+      "actualHash": "ace1f94e6b43c7ab2bd117c15b22c3cd2ea3f9ca1f2518ceb52b78d2c727ce24",
+      "expectedHash": "ace1f94e6b43c7ab2bd117c15b22c3cd2ea3f9ca1f2518ceb52b78d2c727ce24",
+      "sourceVersion": "ace1f94e6b43c7ab2bd117c15b22c3cd2ea3f9ca1f2518ceb52b78d2c727ce24",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/monthlyTenGodMatcher.ts",
+      "actualHash": "0f621a1513731eaef50857950b5d80b8e212cfb04cc18f8638e657a125b625c7",
+      "expectedHash": "0f621a1513731eaef50857950b5d80b8e212cfb04cc18f8638e657a125b625c7",
+      "sourceVersion": "0f621a1513731eaef50857950b5d80b8e212cfb04cc18f8638e657a125b625c7",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-april-relation/contract.ts",
+      "actualHash": "66c3a4410b5de84f361a0e99bfe6bd85707fcce399c98facc25513f0897976ea",
+      "expectedHash": "66c3a4410b5de84f361a0e99bfe6bd85707fcce399c98facc25513f0897976ea",
+      "sourceVersion": "66c3a4410b5de84f361a0e99bfe6bd85707fcce399c98facc25513f0897976ea",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/monthComparator.ts",
+      "actualHash": "fd6b6a9179be3853075c5f971bcf83e12e224a08ada3a17e092ebaccebffed83",
+      "expectedHash": "fd6b6a9179be3853075c5f971bcf83e12e224a08ada3a17e092ebaccebffed83",
+      "sourceVersion": "fd6b6a9179be3853075c5f971bcf83e12e224a08ada3a17e092ebaccebffed83",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-generation/annualMonthlyPublication.ts",
+      "actualHash": "8b9659ef27e5b51ac959c42f10e559f013b5b6c7c1447a51172c215b66249a72",
+      "expectedHash": "8b9659ef27e5b51ac959c42f10e559f013b5b6c7c1447a51172c215b66249a72",
+      "sourceVersion": "8b9659ef27e5b51ac959c42f10e559f013b5b6c7c1447a51172c215b66249a72",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/annualFortuneEvidence.ts",
+      "actualHash": "133314070c86ad93a77aa641f9100ff1c25a0dc98176e1ddb0a61594f53a9a08",
+      "expectedHash": "133314070c86ad93a77aa641f9100ff1c25a0dc98176e1ddb0a61594f53a9a08",
+      "sourceVersion": "133314070c86ad93a77aa641f9100ff1c25a0dc98176e1ddb0a61594f53a9a08",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/interpretation-v4/annualEvidence.ts",
+      "actualHash": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+      "expectedHash": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+      "sourceVersion": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/saju/customerDayun.ts",
+      "actualHash": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123",
+      "expectedHash": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123",
+      "sourceVersion": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/saju/calendarVersion.ts",
+      "actualHash": "4afd5b85df5f5cd5e2d5b6249077b40c3bca1057aae5662e12fbb1ebd73a07a5",
+      "expectedHash": "4afd5b85df5f5cd5e2d5b6249077b40c3bca1057aae5662e12fbb1ebd73a07a5",
+      "sourceVersion": "4afd5b85df5f5cd5e2d5b6249077b40c3bca1057aae5662e12fbb1ebd73a07a5",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/annualMonthJie.ts",
+      "actualHash": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+      "expectedHash": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+      "sourceVersion": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/boundaryValidator.ts",
+      "actualHash": "ecca715f9d7b8ed4f1e3eabf49aab58b8c972f36d1c4b6b30e46ebce69041440",
+      "expectedHash": "ecca715f9d7b8ed4f1e3eabf49aab58b8c972f36d1c4b6b30e46ebce69041440",
+      "sourceVersion": "ecca715f9d7b8ed4f1e3eabf49aab58b8c972f36d1c4b6b30e46ebce69041440",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/relationMatcher.ts",
+      "actualHash": "546cb3f97227273be1705ae330d516a4e516caf7fd065a72630bf29ad33f74b4",
+      "expectedHash": "546cb3f97227273be1705ae330d516a4e516caf7fd065a72630bf29ad33f74b4",
+      "sourceVersion": "546cb3f97227273be1705ae330d516a4e516caf7fd065a72630bf29ad33f74b4",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/periods.ts",
+      "actualHash": "70413c47eb8f8819b3b7542cff932f3ac05e132dcd859b629265d1b60ae46753",
+      "expectedHash": "70413c47eb8f8819b3b7542cff932f3ac05e132dcd859b629265d1b60ae46753",
+      "sourceVersion": "70413c47eb8f8819b3b7542cff932f3ac05e132dcd859b629265d1b60ae46753",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    }
+  ],
+  "monthlyGodRoleSources": [
+    {
+      "originalId": "afpr:month-god:비견",
+      "originalRole": "AMBIGUOUS",
+      "originalSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthlyTenGodResearch.ts",
+          "exportName": "MONTHLY_TEN_GOD_RESEARCH",
+          "index": 0,
+          "originalId": "afpr:month-god:비견",
+          "recordSha256": "cf91873bc939d6c90be8b8cbb72b554ead63f210c30b9f43a84538dd7d90ae20",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "ace1f94e6b43c7ab2bd117c15b22c3cd2ea3f9ca1f2518ceb52b78d2c727ce24"
+        },
+        "matchedCatalogKey": "kc:v1:012935a14b54e8de2245d0baaca79ff48816478033895ef9a8135c61961b603d",
+        "originalId": "afpr:month-god:비견",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "cf91873bc939d6c90be8b8cbb72b554ead63f210c30b9f43a84538dd7d90ae20",
+        "actualHash": "cf91873bc939d6c90be8b8cbb72b554ead63f210c30b9f43a84538dd7d90ae20",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "requiredRoleAdded": false
+    },
+    {
+      "originalId": "afpr:month-god:정재",
+      "originalRole": "AMBIGUOUS",
+      "originalSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthlyTenGodResearch.ts",
+          "exportName": "MONTHLY_TEN_GOD_RESEARCH",
+          "index": 5,
+          "originalId": "afpr:month-god:정재",
+          "recordSha256": "41f3c76e56fa292a68d01b94098ab36a3c3b0c89f9a378cc8193c37aa5ccee26",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "ace1f94e6b43c7ab2bd117c15b22c3cd2ea3f9ca1f2518ceb52b78d2c727ce24"
+        },
+        "matchedCatalogKey": "kc:v1:15ecbe0089d779b7f9bb70b1007baa5cec911199dcc0824a1a48dd8896a28c88",
+        "originalId": "afpr:month-god:정재",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "41f3c76e56fa292a68d01b94098ab36a3c3b0c89f9a378cc8193c37aa5ccee26",
+        "actualHash": "41f3c76e56fa292a68d01b94098ab36a3c3b0c89f9a378cc8193c37aa5ccee26",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "requiredRoleAdded": false
+    },
+    {
+      "originalId": "afpr:month-god:겁재",
+      "originalRole": "AMBIGUOUS",
+      "originalSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthlyTenGodResearch.ts",
+          "exportName": "MONTHLY_TEN_GOD_RESEARCH",
+          "index": 1,
+          "originalId": "afpr:month-god:겁재",
+          "recordSha256": "a74291ef9e7cc98695fc0bbf2f9d9be481ca46456da7d724de2ca8dcc79ffc9c",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "ace1f94e6b43c7ab2bd117c15b22c3cd2ea3f9ca1f2518ceb52b78d2c727ce24"
+        },
+        "matchedCatalogKey": "kc:v1:22174f8fd576ef42893fdbe74ffb12d4fa3556912e593548f1488c25ada9dba7",
+        "originalId": "afpr:month-god:겁재",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "a74291ef9e7cc98695fc0bbf2f9d9be481ca46456da7d724de2ca8dcc79ffc9c",
+        "actualHash": "a74291ef9e7cc98695fc0bbf2f9d9be481ca46456da7d724de2ca8dcc79ffc9c",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "requiredRoleAdded": false
+    },
+    {
+      "originalId": "afpr:month-god:상관",
+      "originalRole": "AMBIGUOUS",
+      "originalSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthlyTenGodResearch.ts",
+          "exportName": "MONTHLY_TEN_GOD_RESEARCH",
+          "index": 3,
+          "originalId": "afpr:month-god:상관",
+          "recordSha256": "e9532be52e3266215360ca0656b0de25c5dd420090c58908329b91e0740545ea",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "ace1f94e6b43c7ab2bd117c15b22c3cd2ea3f9ca1f2518ceb52b78d2c727ce24"
+        },
+        "matchedCatalogKey": "kc:v1:34cf935ecb319408ea5591dd636c1921b976f2e13207d2014fdb5ef701af4799",
+        "originalId": "afpr:month-god:상관",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "e9532be52e3266215360ca0656b0de25c5dd420090c58908329b91e0740545ea",
+        "actualHash": "e9532be52e3266215360ca0656b0de25c5dd420090c58908329b91e0740545ea",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "requiredRoleAdded": false
+    },
+    {
+      "originalId": "afpr:month-god:식신",
+      "originalRole": "AMBIGUOUS",
+      "originalSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthlyTenGodResearch.ts",
+          "exportName": "MONTHLY_TEN_GOD_RESEARCH",
+          "index": 2,
+          "originalId": "afpr:month-god:식신",
+          "recordSha256": "355a9947e0b30c74fdd637a3c72bf10a419c6993851d25e8ee2b601389f8e127",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "ace1f94e6b43c7ab2bd117c15b22c3cd2ea3f9ca1f2518ceb52b78d2c727ce24"
+        },
+        "matchedCatalogKey": "kc:v1:49aaa3874aa7f7316fbcac7d3d6be4e1b53b6e7416c860f8851c624b757b990a",
+        "originalId": "afpr:month-god:식신",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "355a9947e0b30c74fdd637a3c72bf10a419c6993851d25e8ee2b601389f8e127",
+        "actualHash": "355a9947e0b30c74fdd637a3c72bf10a419c6993851d25e8ee2b601389f8e127",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "requiredRoleAdded": false
+    },
+    {
+      "originalId": "afpr:month-god:편재",
+      "originalRole": "AMBIGUOUS",
+      "originalSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthlyTenGodResearch.ts",
+          "exportName": "MONTHLY_TEN_GOD_RESEARCH",
+          "index": 4,
+          "originalId": "afpr:month-god:편재",
+          "recordSha256": "904a1ea34202c9d2ee06704a999140c4c4a3337f4f0ebc71c65a4ed0ef277a7c",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "ace1f94e6b43c7ab2bd117c15b22c3cd2ea3f9ca1f2518ceb52b78d2c727ce24"
+        },
+        "matchedCatalogKey": "kc:v1:4caa364c56bb21fa68eb3024fafacde78acb2fc3a30da50724319e0506d63754",
+        "originalId": "afpr:month-god:편재",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "904a1ea34202c9d2ee06704a999140c4c4a3337f4f0ebc71c65a4ed0ef277a7c",
+        "actualHash": "904a1ea34202c9d2ee06704a999140c4c4a3337f4f0ebc71c65a4ed0ef277a7c",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "requiredRoleAdded": false
+    },
+    {
+      "originalId": "afpr:month-god:정관",
+      "originalRole": "AMBIGUOUS",
+      "originalSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthlyTenGodResearch.ts",
+          "exportName": "MONTHLY_TEN_GOD_RESEARCH",
+          "index": 7,
+          "originalId": "afpr:month-god:정관",
+          "recordSha256": "145a3f04748f3a1afed5c1b7b27050190323dd02b2cf4756cfc449f7c5e5f468",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "ace1f94e6b43c7ab2bd117c15b22c3cd2ea3f9ca1f2518ceb52b78d2c727ce24"
+        },
+        "matchedCatalogKey": "kc:v1:85898e2fd070fe31907f2840279f4d2b3ab2c680dfce6d1b36e35cbb7eba650f",
+        "originalId": "afpr:month-god:정관",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "145a3f04748f3a1afed5c1b7b27050190323dd02b2cf4756cfc449f7c5e5f468",
+        "actualHash": "145a3f04748f3a1afed5c1b7b27050190323dd02b2cf4756cfc449f7c5e5f468",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "requiredRoleAdded": false
+    },
+    {
+      "originalId": "afpr:month-god:편인",
+      "originalRole": "AMBIGUOUS",
+      "originalSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthlyTenGodResearch.ts",
+          "exportName": "MONTHLY_TEN_GOD_RESEARCH",
+          "index": 8,
+          "originalId": "afpr:month-god:편인",
+          "recordSha256": "114e7db2536fd0546b536b35c3dd30424afab9a86c37703d4dfa0b3e24fcd223",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "ace1f94e6b43c7ab2bd117c15b22c3cd2ea3f9ca1f2518ceb52b78d2c727ce24"
+        },
+        "matchedCatalogKey": "kc:v1:b7bf8d5ca4ed5e83f77a66c48987c4783a3a1f1010d6426209b38cd79b1fa3ce",
+        "originalId": "afpr:month-god:편인",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "114e7db2536fd0546b536b35c3dd30424afab9a86c37703d4dfa0b3e24fcd223",
+        "actualHash": "114e7db2536fd0546b536b35c3dd30424afab9a86c37703d4dfa0b3e24fcd223",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "requiredRoleAdded": false
+    },
+    {
+      "originalId": "afpr:month-god:정인",
+      "originalRole": "AMBIGUOUS",
+      "originalSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthlyTenGodResearch.ts",
+          "exportName": "MONTHLY_TEN_GOD_RESEARCH",
+          "index": 9,
+          "originalId": "afpr:month-god:정인",
+          "recordSha256": "6218a05bbb9892bf2e4976610231a35c9ec7f4a11f1e0fdb00ca105f466b2e46",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "ace1f94e6b43c7ab2bd117c15b22c3cd2ea3f9ca1f2518ceb52b78d2c727ce24"
+        },
+        "matchedCatalogKey": "kc:v1:c900847a2765d51efe5be69d77bd5e7c6b069eae66430a344878875d00b6d6c2",
+        "originalId": "afpr:month-god:정인",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "6218a05bbb9892bf2e4976610231a35c9ec7f4a11f1e0fdb00ca105f466b2e46",
+        "actualHash": "6218a05bbb9892bf2e4976610231a35c9ec7f4a11f1e0fdb00ca105f466b2e46",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "requiredRoleAdded": false
+    },
+    {
+      "originalId": "afpr:month-god:편관",
+      "originalRole": "AMBIGUOUS",
+      "originalSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthlyTenGodResearch.ts",
+          "exportName": "MONTHLY_TEN_GOD_RESEARCH",
+          "index": 6,
+          "originalId": "afpr:month-god:편관",
+          "recordSha256": "bb52de1d1e5c32f466f1c60c84d16ff55ea5c7bdce27c79a88a7061254109547",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "ace1f94e6b43c7ab2bd117c15b22c3cd2ea3f9ca1f2518ceb52b78d2c727ce24"
+        },
+        "matchedCatalogKey": "kc:v1:dc90f4ca4a27d9528f42eb69a5ef7d2d84ef88b6dfadaca285cf2aeabf5caa08",
+        "originalId": "afpr:month-god:편관",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "bb52de1d1e5c32f466f1c60c84d16ff55ea5c7bdce27c79a88a7061254109547",
+        "actualHash": "bb52de1d1e5c32f466f1c60c84d16ff55ea5c7bdce27c79a88a7061254109547",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "requiredRoleAdded": false
+    }
+  ],
+  "sourceVersionKind": "Original research commit and content-addressed Producer code, not Meaning approval.",
+  "originalJuneRequiredRoleDeclared": false,
+  "allTenMonthlyGodRequiredRolesDeclared": false,
+  "technicalObservationsAuthorizedAsResearchRole": false,
+  "roleResolution": "ROLE_SOURCE_DECISION_REQUIRED"
+}

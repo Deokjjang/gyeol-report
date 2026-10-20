@@ -1,0 +1,35 @@
+/** Offline product knowledge only; no producer, binding, scoring or writer. */
+import type { Domain } from "../../interpretation-v4/types";
+import type { InterpretationContext, SemanticAxis } from "../../interpretation-v4/semanticCore";
+export type ChapterId = "CH01" | "CH02" | "CH03" | "CH04" | "CH05" | "CH06" | "CH07" | "CH08" | "CH09" | "CH10" | "CH11" | "CH12" | "CH13";
+export type ParagraphId = "P1" | "P2" | "P3" | "P4";
+export type SentenceRole = "S1" | "S2" | "S3" | "S4";
+export type ParagraphAddress = `${ChapterId}.${ParagraphId}`;
+export type SentenceAddress = `${ParagraphAddress}.${SentenceRole}`;
+export type ProductResearchId = `cpr:${string}`;
+declare const existingProducer: unique symbol;
+export type CalculatedEvidenceId = string & { readonly [existingProducer]: "existing_calculation" };
+export type Offline = { id: ProductResearchId; product: "saju_mbti_full"; connectedToRuntime: false; approvedForCustomer: false; existingScoreContribution: false; runtimeEvidenceIds: readonly []; empiricalVerification: "not_established" };
+export type SourceRef = { sourceId: string; auditRef: string; sourceKind: "natal_research" | "mbti_trait" | "fusion_research"; recordSha256: string; sourceFileSha256: string; originalState: Readonly<Record<string, unknown>> };
+export type SemanticFacetRef = { axis: SemanticAxis; id: string; definition: string; condition: string; notIndependentEvidence: true };
+export type Material = Offline & {
+  chapterId: ChapterId; paragraphId: ParagraphId; address: ParagraphAddress;
+  kind: "natal" | "mbti" | "fusion" | "recall";
+  readerQuestion: string; coreMeaning: string;
+  roleContributions: Readonly<Record<SentenceRole, { address: SentenceAddress; originalRole: string; knowledge: string; roleKind: "interpretation_material_not_final_copy" }>>;
+  sourceRefs: readonly SourceRef[]; semanticFacets: readonly SemanticFacetRef[];
+  legacyFacetRelation: { facets: readonly string[]; relation: "subfacet" | "conditional_combination" | "distinct_question" | "product_application" | "existing_meaning_application"; runtimeFacetChange: false };
+  positive: string; shadow: string; factBomb: string; twist: string;
+  fictionalScene: { status: "fictional_not_customer_history"; text: string }; application: string;
+  prerequisites: readonly string[]; counterexample: string; distinction: string;
+  meaningClass: "distinct_interpretation" | "contextual_application" | "conditional_combination" | "introduced_meaning_recall";
+  precedingMeaningRefs: readonly ProductResearchId[]; precedingMeaningPolicy: "actual_introduced_compatible_subset_only"; newInformation: string;
+  sourcePolicy: { unknownMbti: "withhold_mbti_and_fusion" | "natal_only_if_actual_evidence" | "follow_antecedent_availability"; unknownBirthTime: "no_synthetic_hour_recheck_prerequisites"; futurePrediction: false; pairAsIndividual: false; independentDerivedFacts: 0; currentUserFactsKnown: false };
+  exclusions: readonly string[]; sourceReviewNotes: readonly string[]; review: "conditional_editorial_research" | "source_or_condition_insufficient";
+};
+export type ParagraphResearch = Offline & { chapterId: ChapterId; paragraphId: ParagraphId; address: ParagraphAddress; originalPurpose: string; domain: Domain; context: InterpretationContext; question: string; mustConvey: string; distinctFrom: string; previousUse: string; nextInformation: string; prerequisites: readonly string[]; forbidden: readonly string[]; materialIds: readonly ProductResearchId[]; sourceNeeds: { saju: string; mbti: string; fusion: string }; positiveRole: string; riskRole: string; twistRole: string; sceneRole: string; reuseRule: string };
+export type RoleResearch = Offline & { chapterId: ChapterId; paragraphId: ParagraphId; sentenceRole: SentenceRole; address: SentenceAddress; originalRole: string; materialRefs: readonly { materialId: ProductResearchId; contribution: SentenceAddress }[]; absentEvidence: "withhold_role_no_invented_filler"; isNewMaterial: false };
+export type ChapterResearch = Offline & { chapterId: ChapterId; originalTitle: string; domain: Domain; context: InterpretationContext; intent: string; introduces: string; recalls: string; mustNotRepeat: string; nextBridge: string; paragraphs: readonly ParagraphAddress[] };
+export type InputContextResearch = Offline & { inputKind: "job" | "relationship" | "mbti" | "birth_time"; actualValue: string; label: string; appliesTo: readonly ChapterId[]; question: string; example: string; requires: string; mustNotInfer: string; supportedEnum: boolean };
+export type ReuseResearch = Offline & { from: ChapterId; to: ChapterId; sharedMeaning: string; newQuestion: string; sameClaimForbidden: string; necessaryChange: string; independentFactsAdded: 0 };
+export type RejectedResearch = Offline & { invalidClaim: string; reason: string; reconsideration: string; scope: string };

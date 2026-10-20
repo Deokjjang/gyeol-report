@@ -1,0 +1,129 @@
+{
+  "reproduced": [
+    {
+      "id": "UI-01",
+      "issue": "Domain filter label intrinsic width causes mobile horizontal overflow",
+      "before": [
+        {
+          "width": 1920,
+          "scrollWidth": 1920,
+          "cardCount": 37,
+          "overflow": []
+        },
+        {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "cardCount": 37,
+          "overflow": []
+        },
+        {
+          "width": 1024,
+          "scrollWidth": 1024,
+          "cardCount": 37,
+          "overflow": []
+        },
+        {
+          "width": 768,
+          "scrollWidth": 768,
+          "cardCount": 37,
+          "overflow": []
+        },
+        {
+          "width": 390,
+          "scrollWidth": 402,
+          "cardCount": 37,
+          "overflow": [
+            {
+              "tag": "LABEL",
+              "id": "",
+              "class": "",
+              "right": 402
+            },
+            {
+              "tag": "SELECT",
+              "id": "domain",
+              "class": "",
+              "right": 402
+            }
+          ]
+        },
+        {
+          "width": 375,
+          "scrollWidth": 402,
+          "cardCount": 37,
+          "overflow": [
+            {
+              "tag": "LABEL",
+              "id": "",
+              "class": "",
+              "right": 402
+            },
+            {
+              "tag": "SELECT",
+              "id": "domain",
+              "class": "",
+              "right": 402
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "scrollWidth": 402,
+          "cardCount": 37,
+          "overflow": [
+            {
+              "tag": "LABEL",
+              "id": "",
+              "class": "",
+              "right": 402
+            },
+            {
+              "tag": "SELECT",
+              "id": "domain",
+              "class": "",
+              "right": 402
+            }
+          ]
+        }
+      ],
+      "fix": "Constrain filter labels with min-width:0 and max-width:100%; preserve existing select style",
+      "after": "7 viewports x 37 cards, max overflow 0"
+    },
+    {
+      "id": "UI-02",
+      "issue": "Unexported notes/checks/decision lost on reload with no notice",
+      "before": {
+        "notesBefore": "SYNTHETIC_BROWSER_TEST_DRAFT",
+        "notesAfter": ""
+      },
+      "fix": "Dirty-state indicator, export-request reminder, import/loss guidance, conditional beforeunload. No persistent store",
+      "after": "Real Chrome dismiss/confirm reload and import verified"
+    },
+    {
+      "id": "UI-03",
+      "issue": "DRAFT_SELECTED results stale after decision changes",
+      "before": {
+        "afterDecision": "0 검토 단위 · 표시 0개",
+        "visibleRows": 0,
+        "afterRefilter": "1 검토 단위 · 표시 1개"
+      },
+      "fix": "Re-render list after select change; keep active control and draft object",
+      "after": "Immediately 1 → 0 → 1 rows, focus and draft retained"
+    }
+  ],
+  "fixedCount": 3,
+  "usabilityAdditions": [
+    "First wave READ shortcut",
+    "Explicit summary focus-visible outline"
+  ],
+  "onlyExistingSourceChanged": "offlineUi.ts",
+  "sourceDomainBinderSpecialistChanged": false,
+  "newKnownUIDefects": 0,
+  "remainingLimitations": [
+    "Safari automation disabled",
+    "CUA unavailable",
+    "No real screen-reader session",
+    "No native iOS/Android hardware session",
+    "Beforeunload cannot guarantee crash recovery"
+  ]
+}

@@ -1,0 +1,107 @@
+[
+  {
+    "file": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+    "sha256": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+    "lineCount": 75
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityReleaseMaterials.ts",
+    "sha256": "ff8ab20f7052245a1f3b1b15750597174d8145905ee4cd9b5268caae239bd6c5",
+    "lineCount": 38
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityReleaseApplications.ts",
+    "sha256": "1424943be84c007bd416ff3c9ead79d94b2652acb97762ffb983660d2789da73",
+    "lineCount": 120
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityReleaseSources.ts",
+    "sha256": "43bf043973defb651064e74708a67c6e4c2d6c8d6eeed0f42feedfa3b08a5468",
+    "lineCount": 30
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityReleaseRenderer.ts",
+    "sha256": "48b54e1d5c6112f8f678b406c731afd1b0ffd90679aa0039443f343c9cb37999",
+    "lineCount": 331
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityReleaseValidator.ts",
+    "sha256": "ced3608469c681af82aecbbfc2b64ab878ec8546cf688a00db7a7e556a27909d",
+    "lineCount": 60
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityProductAdapter.ts",
+    "sha256": "bfc8e0844c7eb5bf0711c463745fda00b1cae460ffb19e95e82697d4fd4c7456",
+    "lineCount": 101
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityProductView.ts",
+    "sha256": "99358ed0c7e6ebd3885e47a1d89fafecc84422115d882d869952bc52d6aab1ae",
+    "lineCount": 47
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityEvidence.ts",
+    "sha256": "18cb6fa460fa0b88181253b59600438b0b745d265748a0c18bb983cf58f910c2",
+    "lineCount": 59
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityComposer.ts",
+    "sha256": "5276c23804195543ac3c17495e7ac7c6f47c544aeb32282728b087c161cfb654",
+    "lineCount": 61
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityNarrativeTypes.ts",
+    "sha256": "79e165b5de5691851dfe70126ab86d264ba4f17afe85169d4b4886cd73331b83",
+    "lineCount": 30
+  },
+  {
+    "file": "src/lib/interpretation-v4/relationshipProductView.ts",
+    "sha256": "5890c8ec936036dc78a7870aa1a8f5ed660a46df8c04f37fdffd0594e435d2d2",
+    "lineCount": 93
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+    "sha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631",
+    "lineCount": 72
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityHarmony.ts",
+    "sha256": "694faa13bdfb806b59131c9d880d30e706c528ba611aa6cfef6f1490e1383adb",
+    "lineCount": 98
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityTitle.ts",
+    "sha256": "b4416f038af379cfc4bd67e26b3a18672857c5cbc2884bd9cd5b45e95a6591c4",
+    "lineCount": 14
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibilityDirectionEvidence.ts",
+    "sha256": "c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84",
+    "lineCount": 110
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibilityRelationRules.ts",
+    "sha256": "a4166aa86b20b3771944d28788fa755c7150127d5bb5d99be858cdcdf76f1dd9",
+    "lineCount": 526
+  },
+  {
+    "file": "src/lib/report-generation/reportInputTypes.ts",
+    "sha256": "0052f84a359e3390ebad37107d777f04faa0809b05a20b2276c4ad99b466a20d",
+    "lineCount": 170
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityIndex.ts",
+    "sha256": "e17f2277226557c958c7d55dd44f680743958229cd6f01ec0909a60de20f6605",
+    "lineCount": 109
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityCategoryCopy.ts",
+    "sha256": "4ba231a9006519928cad56adda23bdd4b909e9d460536b1780b0d95db8ffa8e8",
+    "lineCount": 146
+  },
+  {
+    "file": "src/lib/interpretation-v4/relationshipProductView.ts",
+    "sha256": "5890c8ec936036dc78a7870aa1a8f5ed660a46df8c04f37fdffd0594e435d2d2",
+    "lineCount": 93
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "scope": "career",
+    "command": "vitest run tests/unit/interpretation-v4/{careerQuality.test.ts,careerRelease.test.ts,careerProduct.test.tsx,careerSafety.test.ts} --maxWorkers=2 --testTimeout=120000 --hookTimeout=120000",
+    "pass": 100,
+    "baselineFail": 4,
+    "newFail": 0,
+    "log": "logs/career-final-verified.log"
+  },
+  {
+    "scope": "final added proof assertions",
+    "command": "vitest run tests/unit/interpretation-v4/careerQuality.test.ts --maxWorkers=1 --testTimeout=120000",
+    "pass": 14,
+    "fail": 0,
+    "log": "logs/quality-final-proof.log"
+  },
+  {
+    "scope": "boundary",
+    "command": "vitest run tests/unit/interpretation-v4/runtimeShadow.test.tsx tests/unit/interpretation-v3/v2Regression.test.ts tests/unit/interpretation-v4/careerNarrative.test.ts tests/unit/interpretation-v4/careerProductLocks.test.ts --maxWorkers=2 --testTimeout=120000 --hookTimeout=120000",
+    "pass": 89,
+    "baselineFail": 2,
+    "newFail": 0,
+    "note": "Vitest .test.ts filter also matches .test.tsx. V3 separately re-run at exact .tsx path: 6 pass.",
+    "log": "logs/boundary-final.log"
+  },
+  {
+    "scope": "API",
+    "command": "vitest run tests/unit/api/bookAnnualPreflight.test.ts tests/unit/payment/annualPurchaseYearPolicy.test.ts",
+    "pass": 2,
+    "baselineFail": 22,
+    "newFail": 0,
+    "log": "logs/api-after.log",
+    "testFiles": [
+      "tests/unit/api/bookAnnualPreflight.test.ts",
+      "tests/unit/payment/annualPurchaseYearPolicy.test.ts"
+    ]
+  },
+  {
+    "scope": "lint",
+    "command": "eslint",
+    "exit": 0,
+    "log": "logs/lint-final.log"
+  },
+  {
+    "scope": "build",
+    "command": "OPENAI_REPORT_WRITER_ENABLED=0 TOSS_CONFIRM_API_ENABLED=0 PAID_REPORT_RELIABILITY_ENABLED=0 next build --webpack",
+    "exit": 1,
+    "note": "Bundle compilation passed; existing invalid Page named export. NFT not reached.",
+    "log": "logs/build-after.log"
+  },
+  {
+    "scope": "typescript",
+    "command": "tsc --noEmit --pretty false --incremental false",
+    "exit": 2,
+    "baselineCount": 390,
+    "finalCount": 390,
+    "newCount": 0,
+    "log": "logs/tsc-final.log"
+  },
+  {
+    "scope": "diff",
+    "command": "git diff --check",
+    "exit": 0
+  }
+]

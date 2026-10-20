@@ -1,0 +1,102 @@
+[
+  {
+    "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+    "sha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+    "lineCount": 74
+  },
+  {
+    "file": "src/lib/interpretation-v4/careerReleaseMaterials.ts",
+    "sha256": "45764d89bae1daada1ae35401ea66a6edb8e75206129d0b9de386384577bcbfa",
+    "lineCount": 267
+  },
+  {
+    "file": "src/lib/interpretation-v4/careerReleaseApplications.ts",
+    "sha256": "f2e95ce7728047c29388330762f85619ea7695f8aab26090ef250af608c2fe27",
+    "lineCount": 43
+  },
+  {
+    "file": "src/lib/interpretation-v4/careerReleaseSources.ts",
+    "sha256": "4c423e39264c9a2830a6005866a0c4525a920552a6a53115f7d9813dcada2d42",
+    "lineCount": 33
+  },
+  {
+    "file": "src/lib/interpretation-v4/careerReleaseRenderer.ts",
+    "sha256": "2cbfe331f99489448900374409c3187cf1d7977e9f110822ab6233c93b7dbed6",
+    "lineCount": 338
+  },
+  {
+    "file": "src/lib/interpretation-v4/careerReleaseValidator.ts",
+    "sha256": "6791e0790a11b7b7dd8f1fd452b557ce9e7ead91e1f79b32e8e676417643aef5",
+    "lineCount": 62
+  },
+  {
+    "file": "src/lib/interpretation-v4/careerReleaseContext.ts",
+    "sha256": "82140cbf9d9a77dfac8b67313ce702c0380862f930dcba919979f7a209111ead",
+    "lineCount": 17
+  },
+  {
+    "file": "src/lib/interpretation-v4/careerReleaseStudy.ts",
+    "sha256": "4a9c287a9417e75c7462d1b59c2e4f7d24788ce9c543a4ffd61bab98cb93609b",
+    "lineCount": 21
+  },
+  {
+    "file": "src/lib/interpretation-v4/careerQualityApplications.ts",
+    "sha256": "8f8b61dbfb1266d319aa0a5093e9a418c5bea2452530efd6ae7ce6ceff74b7d9",
+    "lineCount": 147
+  },
+  {
+    "file": "src/lib/interpretation-v4/careerProductAdapter.ts",
+    "sha256": "4ea3d5c1a9ee4aa1e5fce8a38deb2ad139365f1933adc98e1b7384711a1a2a34",
+    "lineCount": 163
+  },
+  {
+    "file": "src/lib/interpretation-v4/careerProductSelection.ts",
+    "sha256": "37b2fefdfa7f8dde26c363938a17343a62bc20d4f7aff18f3332f3ce4f82c711",
+    "lineCount": 62
+  },
+  {
+    "file": "src/lib/interpretation-v4/careerRecommendations.ts",
+    "sha256": "f67140178f0bea75fe9811602af00eb0dcc8db0a11803804caaa391d3528db87",
+    "lineCount": 78
+  },
+  {
+    "file": "src/lib/interpretation-v4/careerRoleScenes.ts",
+    "sha256": "988543fb9b16860c1abd87b66a464f70b3d429c30866f1ff920273690eb94b97",
+    "lineCount": 68
+  },
+  {
+    "file": "src/lib/interpretation-v4/careerWorkNarrative.ts",
+    "sha256": "45b6c40ad2249d20c48ea273ba416b6dc60fde440401683d5439534a62ce3cc9",
+    "lineCount": 61
+  },
+  {
+    "file": "src/lib/interpretation-v4/narrativeContext.ts",
+    "sha256": "7c5fd219c33f07bfe98cebb3721d0a0a7cd7fbda8075da3f235462aff79eb24e",
+    "lineCount": 68
+  },
+  {
+    "file": "src/lib/interpretation-v3/careerContextV3.ts",
+    "sha256": "4afc714e1f9068bccbcc93851148170e3360b7ac7c9d3f59138b42fe0b2a58a1",
+    "lineCount": 75
+  },
+  {
+    "file": "src/lib/interpretation-v3/context.ts",
+    "sha256": "be57546353e3c5c9892716351370503024a296b859971213d5cb487822de7cb9",
+    "lineCount": 72
+  },
+  {
+    "file": "src/lib/report-generation/reportInputTypes.ts",
+    "sha256": "0052f84a359e3390ebad37107d777f04faa0809b05a20b2276c4ad99b466a20d",
+    "lineCount": 170
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti/sourceRuntimeAdapter.ts",
+    "sha256": "6672b6f6dd22b310414b3e8694ee3fed7a75d2350c37365dd056d346d43f8dad",
+    "lineCount": 349
+  },
+  {
+    "file": "src/lib/interpretation-v4/narrativeWorkContext.ts",
+    "sha256": "246e3f3f0f02d25e8bc0c41ab02f383b7c469657f72dc82829633b85afb69695",
+    "lineCount": 54
+  }
+]

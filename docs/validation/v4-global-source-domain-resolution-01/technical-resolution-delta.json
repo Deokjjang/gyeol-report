@@ -1,0 +1,22 @@
+{
+  "original": {
+    "sourceBefore": 10536,
+    "sourceAfter": 11170,
+    "evidenceBefore": 917,
+    "evidenceAfter": 1489,
+    "structuralBefore": 81,
+    "structuralAfter": 81,
+    "structuralPreserved": 81,
+    "evaluations": 5073
+  },
+  "newOverlay": {
+    "evaluations": 559,
+    "sourceMatchDelta": 48,
+    "evidenceMatchDelta": 0,
+    "structuralMatchDelta": 0,
+    "exactSelectorRefinements": 508,
+    "customerEligible": 0,
+    "bookAllocations": 0
+  },
+  "baselineDenominatorChanged": false
+}

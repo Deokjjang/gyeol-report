@@ -1,0 +1,18 @@
+{
+  "baseSha": "428199630a1a70796cf79ba3234cf2a74c1be0ba",
+  "freshBeforeAfterRuns": true,
+  "books": 17,
+  "digests": 102,
+  "friendshipCases": 20,
+  "friendshipDigests": 140,
+  "individualProfiles": 40,
+  "profileBytesPerSide": 308432008,
+  "allSevenCompatibilityCategories": true,
+  "calculationEvidenceNarrativeBookSnapshotByteIdentical": true,
+  "storedBookRoundtrip": true,
+  "productionBooksAccessedOrWritten": 0,
+  "comparisonHashes": {
+    "books": "1a31dda3eeb646b1553a31d96bb4d9eb86f09a8c1ad200ecf41e3c707cb904fd",
+    "pairs": "0f86374d5acd6f251f496c8733f852c975ecfcb0606659f7fd81604634722cd0"
+  }
+}

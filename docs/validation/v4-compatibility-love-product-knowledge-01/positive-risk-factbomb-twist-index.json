@@ -1,0 +1,642 @@
+[
+  {
+    "materialId": "clr:material:CH01.P1:response-and-thought",
+    "positive": "관심과 정리 시간을 함께 남길 여지",
+    "risk": "답할 때까지 재촉하거나 안내를 전부 생략",
+    "factBomb": "내가 편한 침묵이 상대에게도 같은 정보는 아니다.",
+    "twist": "짧은 안내가 긴 해명을 줄일 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH01.P1:steady-and-new",
+    "positive": "기다릴 기준 안에 새 즐거움을 둘 가능성",
+    "risk": "변경 비용을 한 사람이 계속 부담",
+    "factBomb": "아이디어가 새로워도 기다린 시간은 사라지지 않는다.",
+    "twist": "유지할 약속이 있어야 새 제안도 선택이 된다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH01.P2:detected-harmony-context",
+    "positive": "연결된 조건을 살필 관점",
+    "risk": "합이라는 이름으로 다른 긴장과 거절을 지우기",
+    "factBomb": "합이 검출돼도 두 사람의 답까지 합쳐지지는 않는다.",
+    "twist": "연결을 느슨하게 두어야 각자의 선택이 남을 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH01.P2:clash-without-prophecy",
+    "positive": "서로 필요한 조건을 드러낼 여지",
+    "risk": "충의 이름으로 실제 답을 미리 정하기",
+    "factBomb": "충이라는 단어가 두 사람의 미래를 대신 말하지는 않는다.",
+    "twist": "차이가 드러나도 조정할 선택은 남는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH01.P3:two-types-two-views",
+    "positive": "다른 통로의 관심을 알아볼 기회",
+    "risk": "행동이나 말 중 한쪽만 진짜 사랑으로 판정",
+    "factBomb": "내게 익숙한 표현이 애정의 유일한 언어는 아니다.",
+    "twist": "받는 방식을 물으면 기존 행동도 다르게 보일 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH01.P3:same-type-no-same-person",
+    "positive": "중요한 질문을 알아듣기 쉬울 가능성",
+    "risk": "같은 유형이니 설명하지 않아도 안다고 기대",
+    "factBomb": "같은 유형은 같은 대답의 계약서가 아니다.",
+    "twist": "비슷할수록 작은 차이를 먼저 물을 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH01.P4:agreement-not-feeling-score",
+    "positive": "호감과 선택을 혼동하지 않을 여지",
+    "risk": "답을 재촉하며 누가 더 좋아하는지 시험",
+    "factBomb": "큰 표현을 받았다고 같은 속도로 답할 의무는 없다.",
+    "twist": "작은 제안에도 분명한 선택이 담길 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH01.P4:two-source-limits",
+    "positive": "다른 개인 자원을 한 관계에서 조율할 가능성",
+    "risk": "두 개인 Fusion이 있으면 관계도 검증됐다고 보기",
+    "factBomb": "개인의 결합 근거 둘이 커플 성공 근거 하나가 되지는 않는다.",
+    "twist": "개인 해석의 차이가 질문을 구체화할 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P1:a-deliberate-affection",
+    "positive": "선택한 만남에 주의를 기울일 가능성",
+    "risk": "확신할 때까지 아무 신호도 주지 않기",
+    "factBomb": "생각이 깊어도 말하지 않은 답은 전달되지 않는다.",
+    "twist": "아직 모르겠다는 답도 선택 정보가 된다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P1:a-explicit-action",
+    "positive": "관심을 실제 행동으로 옮길 가능성",
+    "risk": "일을 끝냈으니 감정 대화도 끝났다고 보기",
+    "factBomb": "처리한 일이 많아도 듣지 않은 마음은 남을 수 있다.",
+    "twist": "작은 질문이 행동의 도움을 더 정확히 만든다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P2:a-space-with-connection",
+    "positive": "자기 선택을 잃지 않는 만남",
+    "risk": "연락의 이유까지 모두 생략",
+    "factBomb": "내 자유를 설명하지 않으면 다른 사람의 대기시간이 될 수 있다.",
+    "twist": "짧은 안내로 공간을 더 편하게 지킬 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P2:a-trust-change",
+    "positive": "기다릴 기준을 명료하게 할 가능성",
+    "risk": "예전 합의를 유일한 정답으로 고정",
+    "factBomb": "지키라는 말만 있고 바꿀 길이 없으면 약속은 숨길 일이 된다.",
+    "twist": "변경을 빨리 알리는 행동도 신뢰일 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P3:a-help-with-permission",
+    "positive": "필요한 부담을 정확히 덜 가능성",
+    "risk": "부탁 전에 일을 전부 맡기",
+    "factBomb": "잘해줄 수 있다는 생각이 대신할 권한은 아니다.",
+    "twist": "돕지 않을 선택도 관심이 될 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P3:a-playful-encouragement",
+    "positive": "편한 이야기를 시작할 여지",
+    "risk": "조용한 답을 재미없거나 무관심하다고 평가",
+    "factBomb": "분위기를 열었다고 상대의 참여량까지 정할 수는 없다.",
+    "twist": "잠깐 기다림이 초대를 더 따뜻하게 만들 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P4:a-fix-before-hearing",
+    "positive": "해결 자원을 적절히 쓰는 가능성",
+    "risk": "설명 중간에 답을 연속 제시",
+    "factBomb": "해답을 많이 주었다고 많이 들은 것은 아니다.",
+    "twist": "첫 질문을 바꾸면 같은 능력을 다르게 쓸 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH02.P4:a-read-response",
+    "positive": "추측을 실제 답으로 고칠 가능성",
+    "risk": "반응 크기로 애정량을 계산",
+    "factBomb": "내가 읽은 표정은 B가 말한 대답이 아니다.",
+    "twist": "불확실함을 인정하면 질문이 더 정확해질 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P1:b-reaction-as-participation",
+    "positive": "서로 참여하고 있는지 물을 통로",
+    "risk": "같은 크기의 반응을 애정 의무로 만들기",
+    "factBomb": "함께 있다는 답이 늘 같은 방식으로 와야 하는 것은 아니다.",
+    "twist": "작은 신호와 긴 이야기를 나눠 받을 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P1:b-practical-quietness",
+    "positive": "과장 없이 참여할 여지",
+    "risk": "충분히 해줬으니 알아야 한다고 보기",
+    "factBomb": "내게 분명한 행동도 상대에게는 설명이 필요한 정보다.",
+    "twist": "작은 말이 이미 한 행동을 더 잘 전달할 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P2:b-safe-disagreement",
+    "positive": "거절이 가능한 대화",
+    "risk": "불편을 숨기다가 관계 전체의 평가로 확대",
+    "factBomb": "상처받기 싫다는 마음이 다른 의견까지 없애지는 않는다.",
+    "twist": "부드러운 거절이 정확한 정보를 남길 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P2:b-chosen-presence",
+    "positive": "함께할 시간을 구체적으로 고를 여지",
+    "risk": "만난 횟수를 관심의 순위로 만들기",
+    "factBomb": "일정을 같이 썼다고 서로를 같은 만큼 들은 것은 아니다.",
+    "twist": "짧아도 서로 고른 시간이 더 편할 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P3:b-reliable-small-care",
+    "positive": "새 관심을 실행할 작은 도움",
+    "risk": "고마움을 기다리며 요청 없이 역할을 늘리기",
+    "factBomb": "많이 챙겼다는 사실이 계속 맡겠다는 동의는 아니다.",
+    "twist": "도움을 줄여도 같이 즐길 자리는 남길 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P3:b-new-view-with-listening",
+    "positive": "익숙한 만남에 새로운 선택을 더할 가능성",
+    "risk": "질문의 재미로 상대의 수고를 부정",
+    "factBomb": "다른 답이 보인다고 이미 준비한 이유가 없어지지는 않는다.",
+    "twist": "하나만 바꾸어도 새 관점의 가치를 볼 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P4:b-silent-resentment",
+    "positive": "작은 요청으로 선택을 남길 가능성",
+    "risk": "힌트로 정답을 맞히게 하기",
+    "factBomb": "암호처럼 전한 기대는 공동 약속이 아니다.",
+    "twist": "아직 답하기 어렵다는 안내도 분명한 표현이다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH03.P4:b-novelty-with-cost",
+    "positive": "새 선택과 기존 약속을 조정할 가능성",
+    "risk": "좋은 제안이라며 변경 비용을 가볍게 넘기기",
+    "factBomb": "다른 재미를 찾았다고 먼저 기다린 시간이 돌아오지는 않는다.",
+    "twist": "작게 바꾸면 서로의 수고를 함께 살릴 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P1:shared-trust-not-same-rule",
+    "positive": "중요한 약속을 이야기할 접점",
+    "risk": "설명 없이 같은 기준일 것이라 기대",
+    "factBomb": "같은 신뢰라는 말에도 다른 연락 기준이 들어갈 수 있다.",
+    "twist": "비슷한 필요가 있어도 질문은 줄지 않을 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P1:same-care-different-help",
+    "positive": "필요를 물을 관심이 양쪽에 있을 가능성",
+    "risk": "서로 대신 해주다가 선택을 지우기",
+    "factBomb": "둘 다 잘해주려 해도 아무도 묻지 않으면 도움은 빗나갈 수 있다.",
+    "twist": "도움을 받지 않을 답이 돌봄을 더 정확히 만든다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P2:curiosity-and-continuity",
+    "positive": "새로움과 현재의 취향을 같이 볼 여지",
+    "risk": "A는 제안만, B는 모든 준비만 맡는 역할 고정",
+    "factBomb": "보완한다는 말이 반복 담당을 배정하는 명령은 아니다.",
+    "twist": "역할을 바꿔봐도 각자의 좋은 기여는 남는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P2:clear-and-considered",
+    "positive": "뜻과 수신을 함께 확인할 여지",
+    "risk": "B에게 A의 모든 표현을 번역할 책임을 주기",
+    "factBomb": "한 사람의 다정함이 다른 사람의 거친 말을 면제하지는 않는다.",
+    "twist": "각자 뜻과 영향을 모두 살필 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P3:chosen-shared-adventure",
+    "positive": "다른 방식으로 같은 시간을 알아갈 기회",
+    "risk": "즐거워야 한다는 기대 때문에 쉬고 싶은 답을 숨기기",
+    "factBomb": "좋은 계획도 참여자가 고를 수 있어야 좋은 제안이다.",
+    "twist": "작은 경험이 큰 준비보다 함께 고르기 쉬울 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P3:quiet-co-presence",
+    "positive": "계속 반응하지 않아도 참여할 여지",
+    "risk": "각자 편하니 연락이 전혀 필요 없다고 판단",
+    "factBomb": "간섭하지 않는 것과 관심을 전하지 않는 것은 다르다.",
+    "twist": "조용한 동행에도 짧은 재연결이 있을 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P4:positive-harmony-with-choice",
+    "positive": "좋은 자원을 사용할 조건을 물을 여지",
+    "risk": "부분 합을 완벽한 결속으로 읽기",
+    "factBomb": "관계 분류가 가까워질 동의까지 대신하지는 않는다.",
+    "twist": "연결의 이름보다 거절할 여지가 실용적인 기준이 된다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH04.P4:mutual-chosen-strength",
+    "positive": "기여의 크기를 조정하며 좋은 점을 남길 여지",
+    "risk": "잘하는 사람이 늘 같은 역할을 맡기",
+    "factBomb": "잘할 수 있다는 말은 계속 해야 한다는 약속이 아니다.",
+    "twist": "잠시 덜 하는 선택이 강점을 오래 쓸 조건일 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P1:ab-rule-as-option",
+    "positive": "예측할 약속을 함께 고를 가능성",
+    "risk": "기준의 제안을 B를 관리할 권한으로 바꾸기",
+    "factBomb": "정관으로 보인다는 말이 상대를 지휘할 권한은 아니다.",
+    "twist": "수정할 규칙이 있어야 기준도 선택이 된다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P1:ab-output-enjoyment",
+    "positive": "새 경험을 선택할 기회",
+    "risk": "움직여야 즐거워진다는 기대를 강요",
+    "factBomb": "기회를 열었다고 그 경험을 원했다는 답까지 생기지는 않는다.",
+    "twist": "멈출 선택이 있어야 시도도 자유롭다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P1:ab-resource-specificity",
+    "positive": "무리 없는 만남의 범위를 정할 가능성",
+    "risk": "준비한 비용으로 B의 선택권을 제한",
+    "factBomb": "시간과 돈을 썼다고 상대의 답을 산 것은 아니다.",
+    "twist": "규모를 줄여도 분명한 관심을 전할 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P2:ab-clear-invite",
+    "positive": "불필요한 추측을 줄일 여지",
+    "risk": "답이 늦으면 제안을 확정해버리기",
+    "factBomb": "제안이 구체적이라는 이유로 동의가 빨라질 의무는 없다.",
+    "twist": "분명히 말하고 기다리는 두 행동은 함께 가능하다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P2:ab-care-with-autonomy",
+    "positive": "필요한 도움의 방향을 맞출 가능성",
+    "risk": "B가 직접 하겠다고 해도 더 좋은 도움이라며 밀기",
+    "factBomb": "도울 마음이 크다는 사실이 받는 사람의 결정을 대신하지는 않는다.",
+    "twist": "기다려주는 행동도 A의 기여가 될 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P2:ab-new-meaning",
+    "positive": "익숙한 만남에 다른 선택을 넣을 여지",
+    "risk": "준비와 마무리는 B에게 전부 맡기기",
+    "factBomb": "새로움을 제안한 사람에게도 유지할 몫이 있다.",
+    "twist": "작게 시작하면 기존 수고도 살릴 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P3:ab-reaction-pressure",
+    "positive": "수신 속도를 따로 정할 기회",
+    "risk": "같은 반응이 올 때까지 표현을 반복",
+    "factBomb": "크게 전했다고 같은 크기의 답을 받을 권리는 없다.",
+    "twist": "반응을 덜 요구하면 설명이 더 나올 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P3:ab-correction-without-request",
+    "positive": "필요한 문제를 정확히 줄일 여지",
+    "risk": "사소한 차이와 지난 실수를 모두 지적",
+    "factBomb": "정확한 내용이라고 사람을 평가할 권한이 되지는 않는다.",
+    "twist": "고치지 않을 차이를 고르는 것도 정확함이다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P3:ab-care-debt",
+    "positive": "돌봄의 범위를 명확히 할 가능성",
+    "risk": "고마움을 알아채지 못하면 애정 부족으로 평가",
+    "factBomb": "A가 다 했다는 말은 B가 부탁했다는 말과 다르다.",
+    "twist": "다음 부탁을 말하면 수고의 비교를 줄일 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P4:ab-listen-before-more",
+    "positive": "도움의 순서를 맞출 가능성",
+    "risk": "이해했다며 해결 계획부터 확정",
+    "factBomb": "들었다는 말보다 이해를 고칠 여지가 먼저다.",
+    "twist": "제안을 보류하는 시간이 도움을 구체화할 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P4:ab-offer-not-reservation",
+    "positive": "서로 다른 속도에도 선택을 맞출 여지",
+    "risk": "먼저 준비한 일을 취소하기 어렵게 만들어 동의를 받기",
+    "factBomb": "준비를 끝냈다는 사실이 상대의 답을 끝내지는 않는다.",
+    "twist": "준비 규모를 줄이면 거절도 편해질 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH05.P4:ab-return-with-boundary",
+    "positive": "공간과 재연결을 동시에 고를 가능성",
+    "risk": "설명 없이 거리를 두다가 B의 질문을 모두 간섭으로 보기",
+    "factBomb": "내 공간이 필요하다는 말에 B의 시간도 포함해 생각할 수 있다.",
+    "twist": "짧은 안내가 혼자 쉴 시간을 지킬 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P1:ba-care-receiving",
+    "positive": "혼자 감당할 필요를 줄일 선택지",
+    "risk": "좋은 도움이라며 A의 거절을 바꾸려 하기",
+    "factBomb": "도움의 통로가 있다고 그 도움을 받아야 하는 것은 아니다.",
+    "twist": "받지 않겠다는 답도 적절한 지원 정보를 준다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P1:ba-other-question",
+    "positive": "같은 경험을 다른 이유로 볼 기회",
+    "risk": "질문을 계속해 A의 원래 뜻을 해명 대상으로 만들기",
+    "factBomb": "다른 이유를 찾는 일은 상대의 답을 의심할 의무가 아니다.",
+    "twist": "질문을 하나 줄이면 더 중요한 이유가 들릴 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P1:ba-equal-opinion",
+    "positive": "의견을 나란히 놓을 기회",
+    "risk": "같은 기준일 것이라며 차이를 생략",
+    "factBomb": "동등한 자리는 같은 대답을 강요하는 자리가 아니다.",
+    "twist": "비슷한 계산 관계 안에도 다른 선택이 남을 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P2:ba-warm-feedback",
+    "positive": "완성되지 않은 생각도 나눌 여지",
+    "risk": "대답이 나오면 곧바로 감정의 확답을 요구",
+    "factBomb": "열린 질문 뒤에 정해진 답을 기다리면 초대가 시험이 된다.",
+    "twist": "반응을 적게 요구할수록 더 솔직한 정보가 나올 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P2:ba-quiet-doing",
+    "positive": "큰 표현 없이 지원할 여지",
+    "risk": "행동을 했으니 말은 필요 없다고 판단",
+    "factBomb": "해준 일은 보이더라도 해준 이유는 보이지 않을 수 있다.",
+    "twist": "한마디가 과장 없이 관심을 알려줄 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P2:ba-memory-open-question",
+    "positive": "익숙한 관심과 새 답을 함께 남길 가능성",
+    "risk": "예전 말을 근거로 현재 선택을 막기",
+    "factBomb": "잘 기억하는 것과 같은 답을 요구하는 것은 다르다.",
+    "twist": "다시 모른다고 묻는 것이 더 세심할 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P3:ba-asking-becomes-monitoring",
+    "positive": "필요한 정보를 좁힐 기회",
+    "risk": "답이 올 때까지 질문 범위를 확대",
+    "factBomb": "마음을 확인하고 싶다는 말이 모든 정보를 볼 권한은 아니다.",
+    "twist": "한 가지 합의된 신호로 여러 질문을 줄일 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P3:ba-explanation-too-late",
+    "positive": "말할 준비와 필요한 안내를 함께 고를 여지",
+    "risk": "괜찮다고 한 뒤 이유 없이 멀어지기",
+    "factBomb": "말이 늦어도 보류라는 정보는 먼저 줄 수 있다.",
+    "twist": "짧은 거절이 긴 추측보다 정확할 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P3:ba-care-erases-choice",
+    "positive": "원하는 도움의 범위를 맞출 여지",
+    "risk": "준비한 수고를 이유로 A의 거절을 무효화",
+    "factBomb": "정성을 들였어도 받는 사람이 고를 자리는 남아야 한다.",
+    "twist": "이미 준비했어도 일부를 하지 않을 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P4:ba-present-not-explain-away",
+    "positive": "솔직함과 수신이 함께 남을 여지",
+    "risk": "정확한 말만 하며 감정의 영향을 부정",
+    "factBomb": "위로를 꾸미지 않는 것과 불편을 듣지 않는 것은 다르다.",
+    "twist": "해결하지 않고 들은 뜻을 남길 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P4:ba-update-memory",
+    "positive": "오래 아는 관심을 현재에 맞출 가능성",
+    "risk": "원래 좋아했으니 지금도 맞을 것이라고 결정",
+    "factBomb": "기억은 현재의 답을 대신할 수 없다.",
+    "twist": "바뀌지 않은 취향도 직접 확인한 새 정보가 된다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH06.P4:ba-name-own-need",
+    "positive": "추측 대신 요청과 응답을 남길 여지",
+    "risk": "A가 알아채야 사랑이라고 판단",
+    "factBomb": "말하지 않은 부탁을 못 맞힌 것은 애정의 점수가 아니다.",
+    "twist": "작은 요청이 두 사람 모두의 선택을 넓힐 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P1:mismatched-response-time",
+    "positive": "다른 속도를 일찍 알릴 기회",
+    "risk": "재촉과 침묵이 서로를 늘리는 순환",
+    "factBomb": "반응을 더 요구할수록 답할 정보가 줄 수 있다.",
+    "twist": "짧은 안내로 두 필요를 같이 남길 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P1:no-friction-no-hidden-fault",
+    "positive": "유사한 필요 안의 실제 차이를 질문할 여지",
+    "risk": "갈등 장을 채우려고 가상의 원인을 만들기",
+    "factBomb": "차이가 확인되지 않았다면 그 빈칸도 남겨야 한다.",
+    "twist": "같은 필요여도 가능한 여력은 달라질 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P2:clash-position-and-question",
+    "positive": "확인할 기대를 좁힐 관점",
+    "risk": "충 때문에 어쩔 수 없다는 숙명론",
+    "factBomb": "관계 이름은 책임을 설명하지 않고 행동을 면제하지도 않는다.",
+    "twist": "차이를 작은 합의로 다룰 여지가 남는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P2:harm-is-not-wonjin",
+    "positive": "관계명 혼동을 줄일 가능성",
+    "risk": "같은 子未를 두 독립된 갈등 효과로 세기",
+    "factBomb": "같은 글자에 두 이름이 있어도 실제 검출이 두 번 된 것은 아니다.",
+    "twist": "근거를 줄여도 더 정확한 질문을 남길 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P3:correction-and-retreat",
+    "positive": "악순환의 행동을 나눌 가능성",
+    "risk": "작은 오류를 사람됨의 평가로 묶기",
+    "factBomb": "맞는 말을 계속해도 듣지 못한 이유는 남는다.",
+    "twist": "한 항목만 고르면 대화의 크기가 줄어들 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P3:care-and-unasked-debt",
+    "positive": "감사와 분담을 구분할 여지",
+    "risk": "더 많이 한 사람이 더 사랑한다고 평가",
+    "factBomb": "수고의 양은 마음의 순위를 계산하는 단위가 아니다.",
+    "twist": "부탁을 줄이는 것이 관계를 덜 아끼는 일은 아니다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P4:safety-outside-type",
+    "positive": "자유로운 선택을 보호할 기준",
+    "risk": "관계를 지키려 한쪽의 거절을 계속 줄이기",
+    "factBomb": "좋은 의도라는 말이 안전을 대신할 수는 없다.",
+    "twist": "계속하지 않는 선택도 유효하다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH07.P4:assumption-grows-with-meaning",
+    "positive": "기대의 차이를 실제 질문으로 바꿀 여지",
+    "risk": "작은 행동을 관계 전체의 시험으로 확대",
+    "factBomb": "내가 붙인 의미는 두 사람이 합의한 뜻이 아니다.",
+    "twist": "짧은 설명 하나가 큰 추측을 줄일 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P1:repair-response-loop",
+    "positive": "서로 기다릴 기준을 고를 가능성",
+    "risk": "화해 후에도 즉시 같은 반응을 요구",
+    "factBomb": "미안하다는 말이 상대의 답할 시간을 끝내지는 않는다.",
+    "twist": "대화량을 줄여도 필요한 신호는 남길 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P1:repair-correction-loop",
+    "positive": "고칠 문제를 작게 유지할 여지",
+    "risk": "사과를 받기 전에는 상대 말을 듣지 않기",
+    "factBomb": "잘못의 크기를 같게 만들어야 대화할 수 있는 것은 아니다.",
+    "twist": "한 행동을 고쳐도 다른 뜻은 아직 남을 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P2:a-change-delivery",
+    "positive": "명료함을 유지하며 평가를 줄일 가능성",
+    "risk": "말투만 바꾸고 같은 지적을 계속하기",
+    "factBomb": "부드럽게 말해도 듣지 않은 내용은 그대로 남는다.",
+    "twist": "판단을 줄이면 정확히 고칠 항목이 보일 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P2:a-change-unasked-care",
+    "positive": "다음 역할을 구체적으로 고를 가능성",
+    "risk": "고마움을 받은 뒤에도 빚의 목록을 유지",
+    "factBomb": "알아줬다는 답이 다음 분담의 답은 아니다.",
+    "twist": "감사와 도움 요청을 따로 말할 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P3:b-change-return-signal",
+    "positive": "보류가 무관심으로 고정되지 않을 여지",
+    "risk": "완벽한 설명이 준비될 때까지 모든 대답을 미루기",
+    "factBomb": "정리가 안 됐다는 정보는 정리가 끝나기 전에도 줄 수 있다.",
+    "twist": "짧은 안내가 더 긴 생각 시간을 지킬 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P3:b-change-help-boundary",
+    "positive": "돌봄과 선택을 다시 맞출 가능성",
+    "risk": "더 잘해주면 거절이 없어질 것이라 기대",
+    "factBomb": "정성을 더하는 것보다 멈추는 것이 필요한 때도 있다.",
+    "twist": "준비한 일부를 쓰지 않아도 관계의 선택은 남는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P4:joint-contact-revision",
+    "positive": "약속을 숨기지 않고 고칠 여지",
+    "risk": "기존 빈도를 영구 의무로 고정",
+    "factBomb": "합의의 수명은 두 사람의 현재 여력과 함께 확인해야 한다.",
+    "twist": "횟수를 줄여도 필요한 정보를 더 정확히 줄 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH08.P4:joint-safe-stop",
+    "positive": "한쪽에게 유지 책임을 떠넘기지 않는 기준",
+    "risk": "상대를 이해하면 모든 위험을 감당할 수 있다고 보기",
+    "factBomb": "서로 노력하자는 말로 안전의 책임을 지울 수는 없다.",
+    "twist": "회복을 중단하는 선택이 보호일 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P1:recall-trust-as-choice",
+    "positive": "좋은 기준을 현재 여력에 맞출 가능성",
+    "risk": "한 번의 공통점을 영구 합의로 고정",
+    "factBomb": "오래 안다는 사실이 오늘의 답을 대신하지는 않는다.",
+    "twist": "같은 목적을 다른 방식으로 지킬 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P1:recall-mutual-care-limit",
+    "positive": "잘하는 점을 소진 없이 유지할 여지",
+    "risk": "둘 다 돌봄 자료가 있으니 항상 잘해줘야 한다고 보기",
+    "factBomb": "좋은 점은 계속 증명해야 할 할당량이 아니다.",
+    "twist": "덜 하는 선택이 오래 참여할 조건일 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P2:recall-symbol-grounded",
+    "positive": "좋은 자원을 쓸 범위를 현실에서 확인할 여지",
+    "risk": "상징을 더 붙여 관계가 더 좋다고 계산",
+    "factBomb": "같은 관계를 다른 이름으로 반복해도 새로운 사실은 늘지 않는다.",
+    "twist": "적은 근거로도 더 정확한 선택을 남길 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P2:recall-independent-fusions",
+    "positive": "각자의 자원을 다시 선택할 가능성",
+    "risk": "과거의 기여를 영구 역할로 굳히기",
+    "factBomb": "잘해왔다는 사실이 지금도 같은 몫을 감당한다는 답은 아니다.",
+    "twist": "역할을 바꿔도 좋은 자원을 잃지 않을 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P3:recall-response-agreement",
+    "positive": "약속을 다시 고를 통로",
+    "risk": "한 번 정한 연락량을 사랑의 시험으로 유지",
+    "factBomb": "한 번의 합의가 두 사람의 모든 날을 대신하지는 않는다.",
+    "twist": "기준을 줄여도 관심은 더 정확히 전할 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P3:recall-request-not-ledger",
+    "positive": "상호성을 구체적으로 요청할 여지",
+    "risk": "새 약속에서도 수고를 마음의 순위로 계산",
+    "factBomb": "다음 부탁은 지난 수고의 청구서가 아니다.",
+    "twist": "현재 여력을 물으면 다른 방식의 참여도 남는다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P4:closing-response-with-choice",
+    "positive": "각자의 방식으로 참여할 기준",
+    "risk": "말미에 반드시 오래갈 관계라고 보장",
+    "factBomb": "잘 맞는다는 말은 아무것도 묻지 않아도 된다는 뜻이 아니다.",
+    "twist": "다시 물을 질문을 아는 것이 좋은 힘일 수 있다.",
+    "notAdditionalInterpretation": true
+  },
+  {
+    "materialId": "clr:material:CH09.P4:closing-new-and-held",
+    "positive": "좋은 차이를 선택으로 유지할 여지",
+    "risk": "다른 성향이니 역할을 영구 분담해야 한다고 보기",
+    "factBomb": "차이는 역할 배정표가 아니라 다시 물을 조건이다.",
+    "twist": "각자 역할을 바꿔도 같은 좋은 목적을 지킬 수 있다.",
+    "notAdditionalInterpretation": true
+  }
+]

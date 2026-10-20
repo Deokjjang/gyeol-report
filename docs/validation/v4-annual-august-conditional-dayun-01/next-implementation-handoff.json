@@ -1,0 +1,53 @@
+{
+  "status": "AUGUST_TECHNICAL_CONDITIONAL_DAYUN_SCOPE_COMPLETE_NOT_CUSTOMER_AUTHORIZATION",
+  "verifiedMonthsBefore": [
+    2,
+    3,
+    4,
+    5,
+    7,
+    9,
+    10,
+    12
+  ],
+  "verifiedMonthsAfter": [
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "remainingMonths": [
+    1,
+    6,
+    11
+  ],
+  "augustCandidates": 3,
+  "augustTypedBindings": 7,
+  "annualCandidatesBefore": 35,
+  "annualCandidatesAfter": 38,
+  "majorCandidates": 2,
+  "unmatchedUnits": 396,
+  "newFactRoots": 0,
+  "newCalculatedFacts": 0,
+  "conditionalFactPromotions": 0,
+  "customerClaims": 0,
+  "customerApprovals": 0,
+  "customerReaderBridges": 0,
+  "plannerAssignments": 0,
+  "nextImplementationTask": "Not started. Requires a separate user instruction.",
+  "remainingBlockers": [
+    "Uncertain ranges and before-first-cycle fixtures remain withheld; alternatives are not confirmed cycles",
+    "Missing monthly contracts 01/06/11",
+    "30 original Source Integrity FAIL unchanged",
+    "10 monthly ten-god roles remain ambiguous",
+    "Meaning/Product/Customer approval pending",
+    "Two exact-Base stale protected-hash failures and one original October 5000ms timeout remain",
+    "Historical ignored/unrecorded temporary-worktree loss remains UNVERIFIED"
+  ],
+  "automaticFollowupStarted": false
+}

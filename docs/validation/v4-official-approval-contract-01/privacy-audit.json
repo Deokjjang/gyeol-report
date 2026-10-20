@@ -1,0 +1,222 @@
+{
+  "status": "PASS",
+  "filesScanned": 52,
+  "gzipLeavesDecodedAndScanned": 0,
+  "privateNameAndBirthDateTermsChecked": 37,
+  "nonNullOriginalPersonIdRejected": true,
+  "rawCustomerAccesses": 0,
+  "externalProseApiCalls": 0,
+  "originalGraphRootsAndOwnersPreserved": true,
+  "rawGenerationAndWorkspaceSnapshotsExternal": true,
+  "files": [
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/README.md",
+      "sha256": "453325ba96a6d0d5dcbb6208a949f7645c7bd5c28b5c205386ed11c0d1b7e83b"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/actual-allocation-forgery.json",
+      "sha256": "aceabefc21f92f0e4b9c026a9d5529d73dc67b1a80da9e568d7de5e92e988510"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/approval-audit-receipt.json",
+      "sha256": "0875e2ae51e3dbc28df4ca4cdfda4b1e2eb0b9b3516be8f9879bb5f51462a783"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/approval-schema.json",
+      "sha256": "825e94e8d489b6b8e729203ecf71f041dd2e952fb78ca454466cb68ec6ff0dd0"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/approval-scope-audit.json",
+      "sha256": "e6ff61725655c3a5966acc5f4dc80a7cc995916b3375dd26a6959691aea74009"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/approval-validity-tests.json",
+      "sha256": "bafd846cf3094ab2ecee4540e780e92f07a6e1eace8b976745cc99d3bb90ba5f"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/binder-gate-preservation.json",
+      "sha256": "2afd40712daad19bfe28510eec1511b0756f5421563638191f27d7a1f6435630"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/book-preservation.json",
+      "sha256": "76ee99ad6db7dc6dbc0257253057f5cf6f51db3fa34b26bfde07bc4b8c06d0ee"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/business-partner-baseline.json",
+      "sha256": "ef9efc08b309cceb9a63bfde8dcd3f93b3da82dc629a4dc8a0c4f5d4a4cbe1d2"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/deterministic-rebuild.json",
+      "sha256": "179a78c30bf8a4591b81ff7cfe9b56d4b6c0ecb00f746d1a02498fd4e7115064"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/evidence-scope-binding.json",
+      "sha256": "5b1c519ebaf58bb39dd1a8ddd4dd0a426f6f40702179899e98ef079030230d3f"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/final-report-fields.json",
+      "sha256": "4742637e0316a9ccbf58badd336a4a9ec9d98e84149cd06a7f197b4f0f5f5c13"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/future-activation-handoff.json",
+      "sha256": "2e36551eb47263011a0e7047162b8fe9b931b2c4c041fccf2de77db963b8568e"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/independent-rebuild-validation.json",
+      "sha256": "db35b0e7790d5b601db23b12fea2d50cd25c5278b43fb0b159cf62a6b1bd7567"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/known-failure-comparison.json",
+      "sha256": "d1786e85fd37c7de334f797a4ae81c9030161f38d50147eb1d5dd7f3ad3c81a3"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/negative-security-tests.json",
+      "sha256": "1447791ee813012559dca4a47a93fe1321c40c09ca04d7baf270fe998d28eeb4"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/nft-trace-preservation.json",
+      "sha256": "2083ca77494b98779d9dc6680cac0176a13c7c9559740c45a1280b74bff9b0bd"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/official-approval-manifest.json",
+      "sha256": "70b701d132a91e452df1c8330dc60cc415ad45cec17e59bd50fb943fb99b712b"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/planner-approval-boundary.json",
+      "sha256": "01cbdfb1bca98835456fda53dc1f2aee50be7402813115979d613f9cb10e91c1"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/provider-compatibility.json",
+      "sha256": "38368fee266cb70031c15d5c9cb9030cbbdfe277d07cfb24f1f62439b998c76e"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/review-draft-boundary.json",
+      "sha256": "bd20081fbad311cfa46774dc211622ecb90eb57d71a7dca808bd608af4928208"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/revocation-tests.json",
+      "sha256": "ef891ccaacd6ae3f99e35b7ab8db66ad5a6f094cfb6a46b1d07c49c62047566e"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/signature-verification-results.json",
+      "sha256": "437f4acaf0396f1458d5e55dfb26f1f3492e02c05afef461dd1c009497d9fefb"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/signed-applicability-contract.json",
+      "sha256": "45693dd10260182b8a8caf048cdaae3738592eae84bed232aec7bf99a52bcc3c"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/signed-customer-use-contract.json",
+      "sha256": "8f0fe9403930da5e9bb5602f4ba30aa1521d3d0feb69215ab8b024f2436ef1aa"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/signed-meaning-decision-contract.json",
+      "sha256": "1161faa63950e0c02337cb2fb634bffb4087cbaf73fe322ec4d95d3847fbd9fb"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/signed-operator-authorization-contract.json",
+      "sha256": "0fb49d0b18eccdc2bde76e9640aa8c50511e064d4bec7612d04e197abeff6f59"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/source-hash-binding.json",
+      "sha256": "62629d1951ec6b19d689fa18e105454aab391be647f78cac98bc741ca2630303"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/source-preservation.json",
+      "sha256": "bffa050ecfc9f91475c6fc694d422c06eb3b564bae6ad1164fcc7043cee016d4"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/synthetic-approval-rehearsal.json",
+      "sha256": "182790a726a2af88a695b456ff2243ec48252ba9042eb088f7ebb8b233671575"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/technical-validation.json",
+      "sha256": "8e2061bdb1c4b81fb575cc0b3c45cf6b2a0e108d83b334b7097f1d5ef1ef1d2f"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/trusted-reviewer-registry-schema.json",
+      "sha256": "4e0f0d22c463b1e5b29e4c28ec41a5eeac6d53a59dcc2551ab05ae06f77ae089"
+    },
+    {
+      "file": "docs/validation/v4-official-approval-contract-01/workspace-preservation.json",
+      "sha256": "e8220de5f09a655618430c93346d952585434ca012c7b7caaa0f4896fd75aff6"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/approvalEnvelope.ts",
+      "sha256": "67eb0b2054eeb1714705c18de4fd3d69c4c5063498dcc6f4b080f5644c3e4826"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/approvalProvider.ts",
+      "sha256": "10cefd0a9d2bbf84ba6ba6097dd51603be33a56412556665fd7b540c599bc945"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/approvalScope.ts",
+      "sha256": "a1cfce4890ff4537fb789b74fea95533976d7cdfb49de542308cd38028be1b7a"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/binderCompatibility.ts",
+      "sha256": "5233ede564ebd0d8b78ec8b4158373080eadde2fbe012e78e0ae9593924cc74a"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/canonicalApproval.ts",
+      "sha256": "a33dfe5ecdfce79537fbc6f99aecf87d2b325748f4c97f5e8284d333e87a9e64"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/futureActivation.ts",
+      "sha256": "6ff7df25193a7b7904f95e44c75ff3372c393a11b47718c1a421d974d86fb1eb"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/negativeFixtures.ts",
+      "sha256": "72607d7dbd3efc68fc2a35cd112e1d733989ec53fab6eb80778b2ce8e07b4f79"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/plannerBoundary.ts",
+      "sha256": "c680538c945ab3e755c27e17b57dcbb57999491fdcfe81b8e58c1a39c55ef709"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/reviewContext.ts",
+      "sha256": "27f252dee0162d4542c617027be94acd4cb83b7f4cb23d0e448c3edb3670644b"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/reviewDecision.ts",
+      "sha256": "b1b85bae46b1fec64a27fbe4106ae927bccce35d2b882bed8edbc56948858f93"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/revocationLedger.ts",
+      "sha256": "77868409c5088b3ccdb6913d4930a796849c1b5fca174a9ff6f337ca6c75ca8d"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/signatureVerification.ts",
+      "sha256": "9e99f50669e44ab38e443bc83be8372b41fa1216e8ecebb5288d6b037e400967"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/syntheticApproval.ts",
+      "sha256": "0958258ceb7acd5886909eed99072fda126f3a178b44316a0b3e5089cec0e76f"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/trustedReviewerRegistry.ts",
+      "sha256": "03ecf8beddfade2c6abf1329ffda2b8e138b7f9417fdf3b964d3aea98411e0d0"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/types.ts",
+      "sha256": "bc231f2a72e4df05300fe61bd90e459e13e1332604be42113c6612284025bfe2"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/official-approval-contract/validityWindow.ts",
+      "sha256": "d0650c155d915b6a8e5ba981d7b89dfc28e2181281e9457f150b0dc749858718"
+    },
+    {
+      "file": "tests/unit/report-knowledge/officialApprovalContract.test.ts",
+      "sha256": "bd4b6fc5ff7e57fdefe2108998de0e59b8cc2644d31c81a94b8ab2eaa754c8db"
+    },
+    {
+      "file": "tools/official-approval-contract/bootstrap.mjs",
+      "sha256": "89e5f716d07bd33a33e42edcc2a00afd876737f0ada5b2317e4f9e352edf1ee6"
+    },
+    {
+      "file": "tools/official-approval-contract/verify.mjs",
+      "sha256": "dc3c52926d7afd7faa096b0d404656051bb4feec23a1a190854d55e8241e6396"
+    }
+  ],
+  "auditItselfExcluded": true
+}

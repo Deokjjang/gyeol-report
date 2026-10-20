@@ -1,0 +1,159 @@
+[
+  {
+    "letter": "O",
+    "publishedEdition": "compatibility-product-13d-7b-v1",
+    "readerEditorial": [
+      {
+        "severity": "Major",
+        "code": "REPEATED_LONG_PHRASE",
+        "location": "CH02.P2 / CH03.P2"
+      },
+      {
+        "severity": "Major",
+        "code": "REPEATED_LONG_PHRASE",
+        "location": "CH02.P3 / CH03.P3"
+      }
+    ],
+    "readerValidation": {
+      "hardErrors": [],
+      "qualityIssues": [
+        "BODY_LENGTH"
+      ]
+    },
+    "compatibilityIndex": {
+      "version": "gyeol-compatibility-index-13b-1",
+      "total": 53,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [],
+          "value": 15
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [],
+          "value": 18
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "공통 관심과 좋은 영향",
+              "value": 4,
+              "sources": [
+                "3265a4c7e0fa7a829d2c80ff:to:b36da8848e44eeca5a03abf1:mbti-pair",
+                "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff:mbti-pair"
+              ]
+            },
+            {
+              "factor": "다르게 반응하는 지점",
+              "value": -4,
+              "sources": [
+                "3265a4c7e0fa7a829d2c80ff:to:b36da8848e44eeca5a03abf1:mbti-pair",
+                "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff:mbti-pair"
+              ]
+            },
+            {
+              "factor": "관계 유형별 자료",
+              "value": 0,
+              "sources": [
+                "3265a4c7e0fa7a829d2c80ff:to:b36da8848e44eeca5a03abf1:mbti-pair:lovePattern",
+                "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff:mbti-pair:lovePattern"
+              ]
+            }
+          ],
+          "value": 13
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "대화를 다시 잇는 방법",
+              "value": 2,
+              "sources": [
+                "3265a4c7e0fa7a829d2c80ff:to:b36da8848e44eeca5a03abf1:mbti-pair:repairStrategy",
+                "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff:mbti-pair:repairStrategy"
+              ]
+            }
+          ],
+          "value": 7
+        }
+      ],
+      "category": "love",
+      "verdict": "지수보다 두 사람이 실제로 주고받는 반응을 함께 보세요. 아래의 방향별 이야기에서 관계의 쓰임을 찾을 수 있어요.",
+      "notice": "명리와 MBTI를 바탕으로 한 엔터테인먼트 해석입니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "출생시간이 불확실한 사람의 오행 부족·음양 보완은 점수에 사용하지 않았습니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    }
+  },
+  {
+    "letter": "Q",
+    "publishedEdition": "compatibility-product-13d-7b-v1",
+    "readerEditorial": [
+      {
+        "severity": "Major",
+        "code": "REPEATED_LONG_PHRASE",
+        "location": "CH02.P2 / CH03.P2"
+      },
+      {
+        "severity": "Major",
+        "code": "REPEATED_LONG_PHRASE",
+        "location": "CH02.P3 / CH03.P3"
+      }
+    ],
+    "readerValidation": {
+      "hardErrors": [],
+      "qualityIssues": [
+        "BODY_LENGTH"
+      ]
+    },
+    "compatibilityIndex": {
+      "version": "gyeol-compatibility-index-13b-1",
+      "total": 51,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [],
+          "value": 15
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [],
+          "value": 18
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [],
+          "value": 13
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [],
+          "value": 5
+        }
+      ],
+      "category": "love",
+      "verdict": "지수보다 두 사람이 실제로 주고받는 반응을 함께 보세요. 아래의 방향별 이야기에서 관계의 쓰임을 찾을 수 있어요.",
+      "notice": "명리와 MBTI를 바탕으로 한 엔터테인먼트 해석입니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "이 조합의 MBTI 관계 자료가 부족해 해당 항목은 중립으로 두었습니다.",
+        "출생시간이 불확실한 사람의 오행 부족·음양 보완은 점수에 사용하지 않았습니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    }
+  }
+]

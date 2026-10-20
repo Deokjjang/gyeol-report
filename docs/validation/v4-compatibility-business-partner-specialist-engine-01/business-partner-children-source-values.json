@@ -1,0 +1,242 @@
+[
+  {
+    "letter": "AM",
+    "sourceId": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+    "sourceClassification": "SCORING_SEMANTIC",
+    "sourceDomain": "CHILDREN",
+    "contributions": [
+      {
+        "axis": "RELATION_STYLE",
+        "sourceNodeId": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+        "mbtiType": "INTP",
+        "sourceDomain": "CHILDREN",
+        "sourceType": "domain_trait",
+        "weightClass": "DOMAIN_SPECIFIC",
+        "rawValue": -2,
+        "effectiveValue": -3,
+        "annotationConfidence": "DIRECT",
+        "contexts": [
+          "social"
+        ],
+        "sourcePath": "/traits/child/1/plainKo",
+        "sourceCoverage": "direct"
+      }
+    ],
+    "adaptedSocialSides": [
+      {
+        "system": "mbti",
+        "axis": "RELATION_STYLE",
+        "direction": -1,
+        "scope": "social",
+        "band": "STRONG",
+        "axisRank": 4,
+        "score": -9.5,
+        "priorScore": -0.5,
+        "evidenceIds": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+        ],
+        "candidateIds": [],
+        "annotationIds": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo:annotation",
+          "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo:annotation",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo:annotation",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo:annotation"
+        ],
+        "priorEvidenceIds": [
+          "mbti:INTP:prior:I"
+        ],
+        "families": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+        ],
+        "domains": [
+          "CHILDREN",
+          "IDENTITY",
+          "RELATIONSHIPS"
+        ],
+        "proofs": [
+          {
+            "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "axis": "RELATION_STYLE",
+            "value": -3,
+            "contexts": [
+              "social"
+            ],
+            "family": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "domain": "CHILDREN",
+            "quality": "DOMAIN_SPECIFIC"
+          },
+          {
+            "id": "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo",
+            "axis": "RELATION_STYLE",
+            "value": -2,
+            "contexts": [
+              "identity"
+            ],
+            "family": "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo",
+            "domain": "IDENTITY",
+            "quality": "GENERAL_TRAIT"
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "axis": "RELATION_STYLE",
+            "value": -3,
+            "contexts": [
+              "social"
+            ],
+            "family": "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "domain": "RELATIONSHIPS",
+            "quality": "SPECIFIC_TRAIT"
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "axis": "RELATION_STYLE",
+            "value": -1.5,
+            "contexts": [
+              "social"
+            ],
+            "family": "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "domain": "RELATIONSHIPS",
+            "quality": "SPECIFIC_TRAIT"
+          }
+        ],
+        "exactEvidenceIds": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+        ],
+        "amplifierOnly": false,
+        "priorHeavy": false
+      }
+    ],
+    "canonicalCompatibilityIndexDigest": "82181c67591eccd156bcfbf99df25e4eaa0824c820b76f4418da16c024eda164",
+    "adaptedSideIsDirectIndexAddition": false,
+    "previousProfileBytePreserved": true,
+    "publishedWriterUnchanged": true
+  },
+  {
+    "letter": "AN",
+    "sourceId": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+    "sourceClassification": "SCORING_SEMANTIC",
+    "sourceDomain": "CHILDREN",
+    "contributions": [
+      {
+        "axis": "RELATION_STYLE",
+        "sourceNodeId": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+        "mbtiType": "INTP",
+        "sourceDomain": "CHILDREN",
+        "sourceType": "domain_trait",
+        "weightClass": "DOMAIN_SPECIFIC",
+        "rawValue": -2,
+        "effectiveValue": -3,
+        "annotationConfidence": "DIRECT",
+        "contexts": [
+          "social"
+        ],
+        "sourcePath": "/traits/child/1/plainKo",
+        "sourceCoverage": "direct"
+      }
+    ],
+    "adaptedSocialSides": [
+      {
+        "system": "mbti",
+        "axis": "RELATION_STYLE",
+        "direction": -1,
+        "scope": "social",
+        "band": "STRONG",
+        "axisRank": 4,
+        "score": -9.5,
+        "priorScore": -0.5,
+        "evidenceIds": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+        ],
+        "candidateIds": [],
+        "annotationIds": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo:annotation",
+          "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo:annotation",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo:annotation",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo:annotation"
+        ],
+        "priorEvidenceIds": [
+          "mbti:INTP:prior:I"
+        ],
+        "families": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+        ],
+        "domains": [
+          "CHILDREN",
+          "IDENTITY",
+          "RELATIONSHIPS"
+        ],
+        "proofs": [
+          {
+            "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "axis": "RELATION_STYLE",
+            "value": -3,
+            "contexts": [
+              "social"
+            ],
+            "family": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "domain": "CHILDREN",
+            "quality": "DOMAIN_SPECIFIC"
+          },
+          {
+            "id": "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo",
+            "axis": "RELATION_STYLE",
+            "value": -2,
+            "contexts": [
+              "identity"
+            ],
+            "family": "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo",
+            "domain": "IDENTITY",
+            "quality": "GENERAL_TRAIT"
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "axis": "RELATION_STYLE",
+            "value": -3,
+            "contexts": [
+              "social"
+            ],
+            "family": "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "domain": "RELATIONSHIPS",
+            "quality": "SPECIFIC_TRAIT"
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "axis": "RELATION_STYLE",
+            "value": -1.5,
+            "contexts": [
+              "social"
+            ],
+            "family": "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "domain": "RELATIONSHIPS",
+            "quality": "SPECIFIC_TRAIT"
+          }
+        ],
+        "exactEvidenceIds": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+        ],
+        "amplifierOnly": false,
+        "priorHeavy": false
+      }
+    ],
+    "canonicalCompatibilityIndexDigest": "82181c67591eccd156bcfbf99df25e4eaa0824c820b76f4418da16c024eda164",
+    "adaptedSideIsDirectIndexAddition": false,
+    "previousProfileBytePreserved": true,
+    "publishedWriterUnchanged": true
+  }
+]

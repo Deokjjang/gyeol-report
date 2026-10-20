@@ -1,0 +1,70 @@
+{
+  "typescriptDiagnostics": 0,
+  "lint": "PASS",
+  "productionBuild": "PASS",
+  "buildWarnings": 0,
+  "diffCheck": "PASS",
+  "relatedTests": {
+    "passed": 197,
+    "failed": 0
+  },
+  "jsdom": {
+    "environment": "JSDOM actual generated HTML script; native Chrome verified separately",
+    "tests": [
+      {
+        "name": "actual inline script runs with 37 cards / 6965 units",
+        "passed": true
+      },
+      {
+        "name": "CSP hashes match and the policy declares external requests blocked",
+        "passed": true
+      },
+      {
+        "name": "every engine/product/relationship/source/domain/structural/witness/read filter executes",
+        "passed": true
+      },
+      {
+        "name": "exact material search returns matching scoped units",
+        "passed": true
+      },
+      {
+        "name": "all twelve engine cards can be opened and compared",
+        "passed": true
+      },
+      {
+        "name": "export with an incomplete selected review is blocked",
+        "passed": true
+      },
+      {
+        "name": "reviewed fields + notes produce a genuine draft download",
+        "passed": true
+      },
+      {
+        "name": "exported JSON retains exact scoped identities and zero authority",
+        "passed": true
+      },
+      {
+        "name": "forged approval import is rejected atomically",
+        "passed": true
+      },
+      {
+        "name": "valid exported draft can be imported",
+        "passed": true
+      },
+      {
+        "name": "hostile original/proposal renders as text without executable elements",
+        "passed": true
+      },
+      {
+        "name": "no collected draft becomes an operator/customer approval count",
+        "passed": true
+      }
+    ],
+    "passed": 12,
+    "failed": 0,
+    "browserVisualCheck": "UNVERIFIED",
+    "operatorDecisionsAuthenticated": 0
+  },
+  "chromeAssertions": 36,
+  "newRegressions": 0
+}

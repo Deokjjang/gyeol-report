@@ -1,0 +1,702 @@
+[
+  {
+    "slot": "personA",
+    "sourceNodes": 1636,
+    "workScoringNodes": 6,
+    "projectedNodes": 21,
+    "projectedDomains": [
+      "RELATIONSHIPS",
+      "COMMUNICATION",
+      "IDENTITY",
+      "STRENGTHS",
+      "RISKS",
+      "GROWTH"
+    ],
+    "candidates": [
+      {
+        "id": "editorial:FUSION:fusion:REINFORCE:AUTONOMY:recovery:AUTONOMY:1:AUTONOMY:1",
+        "nodeDomains": [
+          "IDENTITY",
+          "IDENTITY",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:REINFORCE:AUTONOMY:social:AUTONOMY:1:AUTONOMY:1",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "RELATIONSHIPS",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:MYEONGLI_PATTERN:tension:EXPAND_AND_MAINTAIN",
+        "nodeDomains": [],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:MYEONGLI_PATTERN:tension:OUTSIDE_AND_RECOVERY",
+        "nodeDomains": [],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:MYEONGLI_PATTERN:tension:SELF_AND_PRESSURE",
+        "nodeDomains": [],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:PERSONAL_RESONANCE:resonance:PR053",
+        "nodeDomains": [
+          "PARENTS",
+          "PARENTS",
+          "STRENGTHS",
+          "STRENGTHS",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:PERSONAL_RESONANCE:resonance:PR061",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "PARENTS",
+          "PARENTS",
+          "RELATIONSHIPS",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:PERSONAL_RESONANCE:resonance:PR062",
+        "nodeDomains": [
+          "PARENTS",
+          "PARENTS",
+          "STRENGTHS",
+          "STRENGTHS",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:PERSONAL_RESONANCE:resonance:PR063",
+        "nodeDomains": [
+          "CHILDREN",
+          "COMMUNICATION",
+          "IDENTITY",
+          "IDENTITY",
+          "IDENTITY",
+          "PARENTS",
+          "PARENTS",
+          "STRENGTHS",
+          "THINKING",
+          "THINKING",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:PERSONAL_RESONANCE:resonance:PR072",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "PARENTS",
+          "PARENTS",
+          "RELATIONSHIPS",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "PARENTS",
+          "PARENTS",
+          "RELATIONSHIPS",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      }
+    ],
+    "readerSelectedNodeDomains": [
+      "COMMUNICATION",
+      "RELATIONSHIPS",
+      "IDENTITY",
+      "CHILDREN"
+    ],
+    "unprojectedSelectedNodes": [
+      {
+        "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+        "domain": "CHILDREN"
+      }
+    ],
+    "unprojectedSentences": [
+      {
+        "chapterId": "CH07",
+        "paragraphId": "CH07.P1",
+        "role": "S1",
+        "text": "수정 의견이 결과물에 관한 말인지 능력 평가인지 모호해질 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+        "sourceRefs": [
+          "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+          "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+          "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+          "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+        ],
+        "nodeIds": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+          "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+          "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+          "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+        ]
+      },
+      {
+        "chapterId": "CH07",
+        "paragraphId": "CH07.P1",
+        "role": "S2",
+        "text": "현우님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+        "sourceRefs": [
+          "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+          "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+          "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+          "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+        ],
+        "nodeIds": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+          "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+          "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+          "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+        ]
+      },
+      {
+        "chapterId": "CH07",
+        "paragraphId": "CH07.P1",
+        "role": "S3",
+        "text": "소연님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+        "sourceRefs": [
+          "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+          "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+          "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+          "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+        ],
+        "nodeIds": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+          "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+          "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+          "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+        ]
+      },
+      {
+        "chapterId": "CH07",
+        "paragraphId": "CH07.P1",
+        "role": "S4",
+        "text": "수정을 더 하자는 의견과 지금 넘기자는 의견은 완성도의 문제와 일정의 문제를 다른 순서로 말하는 중일 수 있습니다.",
+        "sourceRefs": [
+          "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+          "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+          "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+          "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+        ],
+        "nodeIds": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+          "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+          "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+          "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+        ]
+      }
+    ]
+  },
+  {
+    "slot": "personB",
+    "sourceNodes": 1763,
+    "workScoringNodes": 7,
+    "projectedNodes": 21,
+    "projectedDomains": [
+      "RELATIONSHIPS",
+      "COMMUNICATION",
+      "IDENTITY",
+      "STRENGTHS",
+      "RISKS",
+      "GROWTH"
+    ],
+    "candidates": [
+      {
+        "id": "editorial:CLAIM:A02_INTIMATE_CHARM",
+        "nodeDomains": [
+          "IDENTITY",
+          "IDENTITY",
+          "IDENTITY",
+          "IDENTITY",
+          "LOVE",
+          "LOVE",
+          "MARRIAGE",
+          "MARRIAGE",
+          "MARRIAGE",
+          "MARRIAGE",
+          "STRENGTHS",
+          "THINKING",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:CLAIM:A05_ROMANTIC_VISIBILITY",
+        "nodeDomains": [
+          "IDENTITY",
+          "IDENTITY",
+          "IDENTITY",
+          "IDENTITY",
+          "LOVE",
+          "LOVE",
+          "MARRIAGE",
+          "MARRIAGE",
+          "MARRIAGE",
+          "MARRIAGE",
+          "STRENGTHS",
+          "THINKING",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:CLAIM:F07_OVERCARE",
+        "nodeDomains": [
+          "CAREER",
+          "CAREER",
+          "CAREER",
+          "CAREER",
+          "COMMUNICATION",
+          "IDENTITY",
+          "IDENTITY",
+          "IDENTITY",
+          "IDENTITY",
+          "RELATIONSHIPS",
+          "STRENGTHS",
+          "THINKING",
+          "THINKING",
+          "WORK",
+          "WORK",
+          "WORK",
+          "WORK"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+        "nodeDomains": [
+          "IDENTITY",
+          "IDENTITY",
+          "IDENTITY",
+          "IDENTITY",
+          "LOVE",
+          "LOVE",
+          "MARRIAGE",
+          "MARRIAGE",
+          "MARRIAGE",
+          "MARRIAGE",
+          "STRENGTHS",
+          "THINKING",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "RELATIONSHIPS",
+          "STRENGTHS",
+          "THINKING",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:COMPLEMENT:C049:social:SOCIAL_ATTUNEMENT:1:CARE:1",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "PARENTS",
+          "PARENTS",
+          "RELATIONSHIPS",
+          "RELATIONSHIPS"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "RELATIONSHIPS",
+          "STRENGTHS",
+          "THINKING",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:COMPLEMENT:C050:social:SOCIAL_ATTUNEMENT:1:EXPRESSION:1",
+        "nodeDomains": [
+          "COMMUNICATION",
+          "IDENTITY",
+          "STRENGTHS"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:COMPLEMENT:C052:social:SOCIAL_ATTUNEMENT:1:BOUNDARY:1",
+        "nodeDomains": [
+          "COMMUNICATION",
+          "RELATIONSHIPS"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:COMPLEMENT:C053:social:CARE:1:BOUNDARY:1",
+        "nodeDomains": [
+          "COMMUNICATION",
+          "RELATIONSHIPS"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:COMPLEMENT:C073:social:CARE:1:STABILITY:1",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "PARENTS",
+          "PARENTS"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:COMPLEMENT:C073:social:STABILITY:1:CARE:1",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "PARENTS",
+          "PARENTS",
+          "RELATIONSHIPS",
+          "RELATIONSHIPS"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:COMPLEMENT:C074:social:CARE:1:EXPRESSION:1",
+        "nodeDomains": [
+          "COMMUNICATION",
+          "IDENTITY",
+          "STRENGTHS"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:COMPLEMENT:C074:social:EXPRESSION:1:CARE:1",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "PARENTS",
+          "PARENTS",
+          "RELATIONSHIPS",
+          "RELATIONSHIPS"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:COMPLEMENT:C075:social:DEPTH:1:CARE:1",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "PARENTS",
+          "PARENTS",
+          "RELATIONSHIPS",
+          "RELATIONSHIPS"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:COMPLEMENT:C076:social:SOCIAL_ATTUNEMENT:1:STABILITY:1",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "PARENTS",
+          "PARENTS"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:COMPLEMENT:C076:social:STABILITY:1:SOCIAL_ATTUNEMENT:1",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "RELATIONSHIPS",
+          "STRENGTHS",
+          "THINKING",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:REINFORCE:CARE:recovery:CARE:1:CARE:1",
+        "nodeDomains": [
+          "IDENTITY",
+          "IDENTITY"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:REINFORCE:CARE:social:CARE:1:CARE:1",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "PARENTS",
+          "PARENTS",
+          "RELATIONSHIPS",
+          "RELATIONSHIPS"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:REINFORCE:EXPRESSION:social:EXPRESSION:1:EXPRESSION:1",
+        "nodeDomains": [
+          "COMMUNICATION",
+          "IDENTITY",
+          "STRENGTHS"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:REINFORCE:SOCIAL_ATTUNEMENT:social:SOCIAL_ATTUNEMENT:1:SOCIAL_ATTUNEMENT:1",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "RELATIONSHIPS",
+          "STRENGTHS",
+          "THINKING",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:FUSION:fusion:REINFORCE:STABILITY:social:STABILITY:1:STABILITY:1",
+        "nodeDomains": [
+          "CHILDREN",
+          "IDENTITY",
+          "PARENTS",
+          "PARENTS"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:GUIDANCE:guidance:G26",
+        "nodeDomains": [
+          "CHILDREN",
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "RELATIONSHIPS",
+          "STRENGTHS",
+          "THINKING",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:己",
+        "nodeDomains": [],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:MYEONGLI_PATTERN:synthesis:natal:day:stem:己:meaning",
+        "nodeDomains": [],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:MYEONGLI_PATTERN:tension:EXPAND_AND_MAINTAIN",
+        "nodeDomains": [],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:MYEONGLI_PATTERN:tension:OUTSIDE_AND_RECOVERY",
+        "nodeDomains": [],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:MYEONGLI_PATTERN:tension:SELF_AND_PRESSURE",
+        "nodeDomains": [],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:PERSONAL_RESONANCE:resonance:PR050",
+        "nodeDomains": [
+          "CHILDREN",
+          "COMMUNICATION",
+          "IDENTITY",
+          "IDENTITY",
+          "RELATIONSHIPS",
+          "RELATIONSHIPS",
+          "STRENGTHS",
+          "THINKING",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:PERSONAL_RESONANCE:resonance:PR062",
+        "nodeDomains": [
+          "CHILDREN",
+          "CHILDREN",
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "IDENTITY",
+          "IDENTITY",
+          "PARENTS",
+          "PARENTS",
+          "RELATIONSHIPS",
+          "RELATIONSHIPS",
+          "RELATIONSHIPS",
+          "STRENGTHS",
+          "THINKING",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:PERSONAL_RESONANCE:resonance:PR066",
+        "nodeDomains": [
+          "COMMUNICATION",
+          "IDENTITY",
+          "RELATIONSHIPS",
+          "RELATIONSHIPS",
+          "RELATIONSHIPS",
+          "RELATIONSHIPS",
+          "STRENGTHS",
+          "STRENGTHS"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:PERSONAL_RESONANCE:resonance:PR068",
+        "nodeDomains": [
+          "CHILDREN",
+          "CHILDREN",
+          "IDENTITY",
+          "IDENTITY",
+          "RELATIONSHIPS",
+          "STRENGTHS",
+          "THINKING",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      },
+      {
+        "id": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+        "nodeDomains": [
+          "CHILDREN",
+          "CHILDREN",
+          "COMMUNICATION",
+          "IDENTITY",
+          "IDENTITY",
+          "IDENTITY",
+          "IDENTITY",
+          "PARENTS",
+          "PARENTS",
+          "RELATIONSHIPS",
+          "RELATIONSHIPS",
+          "RELATIONSHIPS",
+          "STRENGTHS",
+          "THINKING",
+          "THINKING"
+        ],
+        "primaryEligible": true,
+        "invalidReasons": []
+      }
+    ],
+    "readerSelectedNodeDomains": [
+      "COMMUNICATION",
+      "RELATIONSHIPS",
+      "IDENTITY"
+    ],
+    "unprojectedSelectedNodes": [],
+    "unprojectedSentences": []
+  }
+]

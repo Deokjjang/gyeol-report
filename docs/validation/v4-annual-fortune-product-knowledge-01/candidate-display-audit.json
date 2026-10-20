@@ -1,0 +1,212 @@
+[
+  {
+    "caseId": "A",
+    "selectedYear": 2026,
+    "totalSegments": 24,
+    "focusesNotAllSegments": true,
+    "selectedNatalCount": 17,
+    "availableFusionIds": [
+      "infj-depth",
+      "infj-marriage"
+    ],
+    "displayedFusionIds": [
+      "fusion:REINFORCE:CARE:love:CARE:1:CARE:1",
+      "fusion:REINFORCE:SOCIAL_ATTUNEMENT:love:SOCIAL_ATTUNEMENT:1:SOCIAL_ATTUNEMENT:1"
+    ],
+    "monthParagraphs": 55,
+    "monthlyNarrativeLength": 7980,
+    "branchSparseFocusMonths": [],
+    "unselectedAcceptedTransitCount": 36,
+    "heldTransitCount": 2
+  },
+  {
+    "caseId": "B",
+    "selectedYear": 2026,
+    "totalSegments": 24,
+    "focusesNotAllSegments": true,
+    "selectedNatalCount": 25,
+    "availableFusionIds": [
+      "entj-needle",
+      "entj-pressure",
+      "entj-wealth"
+    ],
+    "displayedFusionIds": [
+      "entj-wealth",
+      "fusion:COMPLEMENT:C038:money:STABILITY:1:RESOURCE_SENSE:1",
+      "fusion:REINFORCE:RESOURCE_SENSE:money:RESOURCE_SENSE:1:RESOURCE_SENSE:1"
+    ],
+    "monthParagraphs": 56,
+    "monthlyNarrativeLength": 7892,
+    "branchSparseFocusMonths": [
+      8
+    ],
+    "unselectedAcceptedTransitCount": 36,
+    "heldTransitCount": 2
+  },
+  {
+    "caseId": "C",
+    "selectedYear": 2026,
+    "totalSegments": 24,
+    "focusesNotAllSegments": true,
+    "selectedNatalCount": 23,
+    "availableFusionIds": [
+      "enfp-connection"
+    ],
+    "displayedFusionIds": [],
+    "monthParagraphs": 56,
+    "monthlyNarrativeLength": 7911,
+    "branchSparseFocusMonths": [],
+    "unselectedAcceptedTransitCount": 39,
+    "heldTransitCount": 2
+  },
+  {
+    "caseId": "D",
+    "selectedYear": 2026,
+    "totalSegments": 24,
+    "focusesNotAllSegments": true,
+    "selectedNatalCount": 16,
+    "availableFusionIds": [
+      "infj-depth",
+      "infj-marriage"
+    ],
+    "displayedFusionIds": [
+      "fusion:REINFORCE:EXPRESSION:social:EXPRESSION:1:EXPRESSION:1",
+      "fusion:REINFORCE:PATTERN_SENSE:identity:PATTERN_SENSE:1:PATTERN_SENSE:1"
+    ],
+    "monthParagraphs": 59,
+    "monthlyNarrativeLength": 8348,
+    "branchSparseFocusMonths": [],
+    "unselectedAcceptedTransitCount": 34,
+    "heldTransitCount": 2
+  },
+  {
+    "caseId": "E",
+    "selectedYear": 2026,
+    "totalSegments": 24,
+    "focusesNotAllSegments": true,
+    "selectedNatalCount": 17,
+    "availableFusionIds": [],
+    "displayedFusionIds": [],
+    "monthParagraphs": 54,
+    "monthlyNarrativeLength": 7875,
+    "branchSparseFocusMonths": [],
+    "unselectedAcceptedTransitCount": 36,
+    "heldTransitCount": 2
+  },
+  {
+    "caseId": "F",
+    "selectedYear": 2026,
+    "totalSegments": 24,
+    "focusesNotAllSegments": true,
+    "selectedNatalCount": 16,
+    "availableFusionIds": [],
+    "displayedFusionIds": [],
+    "monthParagraphs": 57,
+    "monthlyNarrativeLength": 8094,
+    "branchSparseFocusMonths": [],
+    "unselectedAcceptedTransitCount": 34,
+    "heldTransitCount": 2
+  },
+  {
+    "caseId": "PAST",
+    "selectedYear": 2024,
+    "totalSegments": 24,
+    "focusesNotAllSegments": true,
+    "selectedNatalCount": 17,
+    "availableFusionIds": [
+      "infj-depth",
+      "infj-marriage"
+    ],
+    "displayedFusionIds": [],
+    "monthParagraphs": 52,
+    "monthlyNarrativeLength": 7679,
+    "branchSparseFocusMonths": [],
+    "unselectedAcceptedTransitCount": 38,
+    "heldTransitCount": 2
+  },
+  {
+    "caseId": "FUTURE_OFFLINE",
+    "selectedYear": 2028,
+    "totalSegments": 25,
+    "focusesNotAllSegments": true,
+    "selectedNatalCount": 23,
+    "availableFusionIds": [
+      "enfp-connection"
+    ],
+    "displayedFusionIds": [],
+    "monthParagraphs": 64,
+    "monthlyNarrativeLength": 8593,
+    "branchSparseFocusMonths": [],
+    "unselectedAcceptedTransitCount": 35,
+    "heldTransitCount": 2
+  },
+  {
+    "caseId": "EXACT_DAYUN",
+    "selectedYear": 2026,
+    "totalSegments": 25,
+    "focusesNotAllSegments": true,
+    "selectedNatalCount": 21,
+    "availableFusionIds": [
+      "infj-depth",
+      "infj-marriage"
+    ],
+    "displayedFusionIds": [
+      "fusion:REINFORCE:AUTONOMY:social:AUTONOMY:1:AUTONOMY:1",
+      "fusion:REINFORCE:EXPRESSION:learning:EXPRESSION:1:EXPRESSION:1"
+    ],
+    "monthParagraphs": 56,
+    "monthlyNarrativeLength": 7957,
+    "branchSparseFocusMonths": [
+      5
+    ],
+    "unselectedAcceptedTransitCount": 36,
+    "heldTransitCount": 2
+  },
+  {
+    "caseId": "RANGE_DAYUN",
+    "selectedYear": 2027,
+    "totalSegments": 26,
+    "focusesNotAllSegments": true,
+    "selectedNatalCount": 20,
+    "availableFusionIds": [
+      "infj-depth",
+      "infj-marriage"
+    ],
+    "displayedFusionIds": [
+      "fusion:REINFORCE:AUTONOMY:social:AUTONOMY:1:AUTONOMY:1",
+      "fusion:COMPLEMENT:C037:money:PRACTICALITY:1:RESOURCE_SENSE:1",
+      "fusion:COMPLEMENT:C038:money:STABILITY:1:RESOURCE_SENSE:1",
+      "fusion:REINFORCE:RESOURCE_SENSE:money:RESOURCE_SENSE:1:RESOURCE_SENSE:1",
+      "fusion:REINFORCE:BOUNDARY:identity:BOUNDARY:1:BOUNDARY:1",
+      "fusion:COMPLEMENT:C002:work:PRECISION:1:DEPTH:1"
+    ],
+    "monthParagraphs": 63,
+    "monthlyNarrativeLength": 8328,
+    "branchSparseFocusMonths": [],
+    "unselectedAcceptedTransitCount": 34,
+    "heldTransitCount": 2
+  },
+  {
+    "caseId": "H_STUDENT",
+    "selectedYear": 2026,
+    "totalSegments": 24,
+    "focusesNotAllSegments": true,
+    "selectedNatalCount": 12,
+    "availableFusionIds": [
+      "intj-inquiry"
+    ],
+    "displayedFusionIds": [
+      "fusion:COMPLEMENT:C049:social:SOCIAL_ATTUNEMENT:1:CARE:1",
+      "fusion:COMPLEMENT:C052:social:SOCIAL_ATTUNEMENT:1:BOUNDARY:1",
+      "fusion:REINFORCE:CHANGE_ORIENTATION:identity:CHANGE_ORIENTATION:1:CHANGE_ORIENTATION:1",
+      "fusion:COMPLEMENT:C061:identity:EXPRESSION:1:CREATION:1"
+    ],
+    "monthParagraphs": 56,
+    "monthlyNarrativeLength": 7330,
+    "branchSparseFocusMonths": [
+      11
+    ],
+    "unselectedAcceptedTransitCount": 35,
+    "heldTransitCount": 2
+  }
+]

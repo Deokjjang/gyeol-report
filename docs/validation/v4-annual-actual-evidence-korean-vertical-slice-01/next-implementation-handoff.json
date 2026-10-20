@@ -1,0 +1,93 @@
+{
+  "offlineFactualPreview": "IMPLEMENTED",
+  "customerReady": false,
+  "wholeBookCompleted": false,
+  "meaningApproved": false,
+  "customerEdition": false,
+  "verifiedMonthContractsBefore": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "verifiedMonthContractsAfter": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "june": "ROLE_SOURCE_DECISION_REQUIRED",
+  "november": "ACTUAL_CONTEXT_TIMESTAMP_REQUIRED",
+  "sourceIntegrityFail": 30,
+  "customerClaims": 0,
+  "customerApprovals": 0,
+  "customerReaderBridges": 0,
+  "customerBookAllocations": 0,
+  "newFactRoots": 0,
+  "readerQuestionsPreserved": 2060,
+  "originalRegistryScopeChecks": [
+    {
+      "fixture": "fixture-annual-A",
+      "graphHash": "5bb2ed4694075a62d71921c2ffe955c872ece9a4e7a5d85e9efec53b23bb9269",
+      "originalRegistryScopeHash": "56f92d81ff369ebc130db7c38d0ad76a8c80a27bc67ae8ec3e265d97f0cdfd67",
+      "registeredCalculationFixture": true,
+      "reason": null,
+      "customerAuthorizationConferred": false,
+      "registryExtended": false
+    },
+    {
+      "fixture": "fixture-annual-F",
+      "graphHash": "b0b781c2ba3011bcdfa2764ae843ca569de7223b4c2c5ff586c5637ea268f068",
+      "originalRegistryScopeHash": "56f92d81ff369ebc130db7c38d0ad76a8c80a27bc67ae8ec3e265d97f0cdfd67",
+      "registeredCalculationFixture": true,
+      "reason": null,
+      "customerAuthorizationConferred": false,
+      "registryExtended": false
+    },
+    {
+      "fixture": "fixture-annual-C2028",
+      "graphHash": "b9b900a9138e1649ec60393ee1f0ffe9de99080d465465d4c2b2eba473292850",
+      "originalRegistryScopeHash": "56f92d81ff369ebc130db7c38d0ad76a8c80a27bc67ae8ec3e265d97f0cdfd67",
+      "registeredCalculationFixture": false,
+      "reason": "ENGINE_GRAPH_SCOPE_MISMATCH",
+      "customerAuthorizationConferred": false,
+      "registryExtended": false
+    },
+    {
+      "fixture": "fixture-annual-ranged-transition",
+      "graphHash": "cefd56b7cfa1fcc0cd59dacd3187a3640c26b21082e2f8a25614c7c049719ad8",
+      "originalRegistryScopeHash": "56f92d81ff369ebc130db7c38d0ad76a8c80a27bc67ae8ec3e265d97f0cdfd67",
+      "registeredCalculationFixture": true,
+      "reason": null,
+      "customerAuthorizationConferred": false,
+      "registryExtended": false
+    }
+  ],
+  "factualSyntheticDefinitionReads": 0,
+  "preservedExistingStrictDefinitionIntegrityReads": 12,
+  "addressAliasingOrRegistryExpansion": false,
+  "nextImplementationTask": "NOT_STARTED. Separate instruction and verified original source/Meaning approval are required before any actual interpretation, Reader/Planner/Writer integration or June/November resolution.",
+  "remainingBlockers": [
+    "Current actual C2028 fixture address differs from original transition-C2028 Registry address; existing scope rejection preserved, no alias/registration added",
+    "Ranged registration is structural only and confers no Meaning/customer authorization",
+    "June role source unresolved",
+    "November authenticated context observation timestamp absent",
+    "Original Source Integrity FAIL 30 unchanged",
+    "Meaning/Product/Customer approvals pending",
+    "Known protected-hash baseline failures and October timing sensitivity tracked separately",
+    "Legacy ignored/unrecorded temporary material remains UNVERIFIED"
+  ],
+  "noAutomaticFollowup": true
+}

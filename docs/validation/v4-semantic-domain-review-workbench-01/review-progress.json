@@ -1,0 +1,23 @@
+{
+  "researchFamilies": 20,
+  "researchRecords": 18610,
+  "interpretationCandidates": 4270,
+  "unscopedCommonResearch": 1903,
+  "interpretationCandidateMaterials": 2367,
+  "distinctReviewUnits": 6965,
+  "domainQueue": 2966,
+  "sourceTechnicallyRecovered": 525,
+  "sourceRemaining": 2677,
+  "directMaterialReadings": 36,
+  "sourceSupportReadings": 1,
+  "modelProposals": 36,
+  "humanReviewPending": 37,
+  "draftDecisionCollected": 0,
+  "actualOperatorApproved": 0,
+  "actualCustomerApproved": 0,
+  "actualCustomerEligible": 0,
+  "actualCustomerSelection": 0,
+  "actualSpecialistClaims": 0,
+  "actualBookAllocations": 0,
+  "approvalRecordsIssued": 0
+}

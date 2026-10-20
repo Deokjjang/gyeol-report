@@ -1,0 +1,2181 @@
+{
+  "sajuFeatureTaxonomy.ts": {
+    "count": 124,
+    "records": [
+      {
+        "index": 0,
+        "id": "day_pillar_gapja",
+        "category": "day_pillar",
+        "aliases": [
+          "갑자일주",
+          "갑자"
+        ],
+        "recordSha256": "6dcc2083e4aabc9ea2f8a3cb6476d08065b70b6faa85ba3ff3edfddede7aadc6"
+      },
+      {
+        "index": 1,
+        "id": "day_pillar_eulchuk",
+        "category": "day_pillar",
+        "aliases": [
+          "을축일주",
+          "을축"
+        ],
+        "recordSha256": "9e69df16caac8aa691ea7a41e7f0e2fe391a802f4cd65b4b7f18a937b529462f"
+      },
+      {
+        "index": 2,
+        "id": "day_pillar_byeongin",
+        "category": "day_pillar",
+        "aliases": [
+          "병인일주",
+          "병인"
+        ],
+        "recordSha256": "c14b38dadd4ca3ef81911e2c3c808a82e8ce9b38e062a83cee1201cd1182d633"
+      },
+      {
+        "index": 3,
+        "id": "day_pillar_jeongmyo",
+        "category": "day_pillar",
+        "aliases": [
+          "정묘일주",
+          "정묘"
+        ],
+        "recordSha256": "6cda547b87c1079a169730485d28abfe04d456bb91fadaa90bc990d8ecd98453"
+      },
+      {
+        "index": 4,
+        "id": "day_pillar_mujin",
+        "category": "day_pillar",
+        "aliases": [
+          "무진일주",
+          "무진"
+        ],
+        "recordSha256": "58607aafa6193de7bcc78c496b385aa26ad2e9737b0d3556ab83ff150d5c79a8"
+      },
+      {
+        "index": 5,
+        "id": "day_pillar_gisa",
+        "category": "day_pillar",
+        "aliases": [
+          "기사일주",
+          "기사"
+        ],
+        "recordSha256": "d60a93b891d81e4772304a4fc9dba7913f835074ed44ed489dc76699270a50fe"
+      },
+      {
+        "index": 6,
+        "id": "day_pillar_gyeongo",
+        "category": "day_pillar",
+        "aliases": [
+          "경오일주",
+          "경오"
+        ],
+        "recordSha256": "1f30c540610dc5c9012681c3a08826f4db32efee28085d9b18011913b81f3657"
+      },
+      {
+        "index": 7,
+        "id": "day_pillar_sinmi",
+        "category": "day_pillar",
+        "aliases": [
+          "신미일주",
+          "신미"
+        ],
+        "recordSha256": "20f29f2720d2f15a1839cfb5f0a1a9454a8d0c14d76eb650a2ece9676cac326d"
+      },
+      {
+        "index": 8,
+        "id": "day_pillar_imsin",
+        "category": "day_pillar",
+        "aliases": [
+          "임신일주",
+          "임신"
+        ],
+        "recordSha256": "f9cabbed868beb358aa532d91854b9345dc179a5869b1c93bfa80d4157eaea09"
+      },
+      {
+        "index": 9,
+        "id": "day_pillar_gyeyu",
+        "category": "day_pillar",
+        "aliases": [
+          "계유일주",
+          "계유"
+        ],
+        "recordSha256": "399dda8a1a314e677f3f5f4879601244b722b3abed301d5bb22e982f09938e0a"
+      },
+      {
+        "index": 10,
+        "id": "day_pillar_gapsul",
+        "category": "day_pillar",
+        "aliases": [
+          "갑술일주",
+          "갑술"
+        ],
+        "recordSha256": "c2ac6ecdf0e718a53fa4409fbf502738206b165dab7f4c1c925a874603c1c851"
+      },
+      {
+        "index": 11,
+        "id": "day_pillar_eulhae",
+        "category": "day_pillar",
+        "aliases": [
+          "을해일주",
+          "을해"
+        ],
+        "recordSha256": "5526c2a7613e8c19adfe68049f2c3ee0cb68a35f6b2f8d7cfe000e8e725aec16"
+      },
+      {
+        "index": 12,
+        "id": "day_pillar_byeongja",
+        "category": "day_pillar",
+        "aliases": [
+          "병자일주",
+          "병자"
+        ],
+        "recordSha256": "401ad4734e0e7b91e417a86c5b306c322544af9c6ce30150d7a4f8ba0860de89"
+      },
+      {
+        "index": 13,
+        "id": "day_pillar_jeongchuk",
+        "category": "day_pillar",
+        "aliases": [
+          "정축일주",
+          "정축"
+        ],
+        "recordSha256": "9e9b4db33bbe41bd673d143920e5fb7a9265d3c344af6f9d0e67c38d01993300"
+      },
+      {
+        "index": 14,
+        "id": "day_pillar_muin",
+        "category": "day_pillar",
+        "aliases": [
+          "무인일주",
+          "무인"
+        ],
+        "recordSha256": "ac50e01e068c8fa900eb6d56ac4a52ace65d668b81fca19597c16dd7c17c7a98"
+      },
+      {
+        "index": 15,
+        "id": "day_pillar_gimyo",
+        "category": "day_pillar",
+        "aliases": [
+          "기묘일주",
+          "기묘"
+        ],
+        "recordSha256": "ee6efd9fb7369c0c4d11cd8e7c3e907e0ea5f32773860b565d9eaf5571a0c3e6"
+      },
+      {
+        "index": 16,
+        "id": "day_pillar_gyeongjin",
+        "category": "day_pillar",
+        "aliases": [
+          "경진일주",
+          "경진"
+        ],
+        "recordSha256": "33bbde82d06be8c46fba5e93abe4c2a2fbc644d94dab95279c63e5e22bb7ea14"
+      },
+      {
+        "index": 17,
+        "id": "day_pillar_sinsa",
+        "category": "day_pillar",
+        "aliases": [
+          "신사일주",
+          "신사"
+        ],
+        "recordSha256": "f3934cf748f62f2b7f6af4bb13af5cea34b132effe25eab8eaf4f29c5c65fab6"
+      },
+      {
+        "index": 18,
+        "id": "day_pillar_imo",
+        "category": "day_pillar",
+        "aliases": [
+          "임오일주",
+          "임오"
+        ],
+        "recordSha256": "571595ebadf1535f4895c39ba87a034342500a2e116774180a67d871bec5cedd"
+      },
+      {
+        "index": 19,
+        "id": "day_pillar_gyemi",
+        "category": "day_pillar",
+        "aliases": [
+          "계미일주",
+          "계미"
+        ],
+        "recordSha256": "140068aac9f162877b1bcf695168ed7aba8fda2840f94302b852322f2ac748e6"
+      },
+      {
+        "index": 20,
+        "id": "day_pillar_gapsin",
+        "category": "day_pillar",
+        "aliases": [
+          "갑신일주",
+          "갑신"
+        ],
+        "recordSha256": "997c1ea69e1f9e3672fac63d214863c593b099010df0de8f33b9153df34be2c9"
+      },
+      {
+        "index": 21,
+        "id": "day_pillar_eulyu",
+        "category": "day_pillar",
+        "aliases": [
+          "을유일주",
+          "을유"
+        ],
+        "recordSha256": "b04f4c5b2ea593ebbdd5a908c085082c30d14d3e2643488b85c7aafa471493df"
+      },
+      {
+        "index": 22,
+        "id": "day_pillar_byeongsul",
+        "category": "day_pillar",
+        "aliases": [
+          "병술일주",
+          "병술"
+        ],
+        "recordSha256": "99017128a9f9262a289682f85243732047d6ca3aa488a031215fe6b837e9771c"
+      },
+      {
+        "index": 23,
+        "id": "day_pillar_jeonghae",
+        "category": "day_pillar",
+        "aliases": [
+          "정해일주",
+          "정해"
+        ],
+        "recordSha256": "eb2901956fcc1d8dd7ed3740796d5557f99e2ccb980ecb9cdd56a837942f7748"
+      },
+      {
+        "index": 24,
+        "id": "day_pillar_muja",
+        "category": "day_pillar",
+        "aliases": [
+          "무자일주",
+          "무자"
+        ],
+        "recordSha256": "c7f242686c384e8d441cb2edc29eccbc3d0cef70cdfa9d9211299a158c4d5abf"
+      },
+      {
+        "index": 25,
+        "id": "day_pillar_gichuk",
+        "category": "day_pillar",
+        "aliases": [
+          "기축일주",
+          "기축"
+        ],
+        "recordSha256": "45af63873152e71522bb1dbf3f98b679bc8ca56781237b2eee4dd17596b0d697"
+      },
+      {
+        "index": 26,
+        "id": "day_pillar_gyeongin",
+        "category": "day_pillar",
+        "aliases": [
+          "경인일주",
+          "경인"
+        ],
+        "recordSha256": "f686828195385a73a33183ae3feea025e394beb949f02a594eb8b3334984dbf1"
+      },
+      {
+        "index": 27,
+        "id": "day_pillar_sinmyo",
+        "category": "day_pillar",
+        "aliases": [
+          "신묘일주",
+          "신묘"
+        ],
+        "recordSha256": "060b1110a669165deb4ae86b5040d22f2b8fa9dabd5b6154346688ad785e7ed8"
+      },
+      {
+        "index": 28,
+        "id": "day_pillar_imjin",
+        "category": "day_pillar",
+        "aliases": [
+          "임진일주",
+          "임진"
+        ],
+        "recordSha256": "e3820ef9be1848fbb6704b199c58288bffda665be98ad488eb0301be3ae86588"
+      },
+      {
+        "index": 29,
+        "id": "day_pillar_gyesa",
+        "category": "day_pillar",
+        "aliases": [
+          "계사일주",
+          "계사"
+        ],
+        "recordSha256": "3f65479ce053efaa17062ffc02f7b8ada7f103c82ed332e5fe276d2a06a3fcde"
+      },
+      {
+        "index": 30,
+        "id": "day_pillar_gabo",
+        "category": "day_pillar",
+        "aliases": [
+          "갑오일주",
+          "갑오"
+        ],
+        "recordSha256": "06d26416a66a17adbb5a6609631a9e632111b5793dafc54d30a94f7391bc8898"
+      },
+      {
+        "index": 31,
+        "id": "day_pillar_eulmi",
+        "category": "day_pillar",
+        "aliases": [
+          "을미일주",
+          "을미"
+        ],
+        "recordSha256": "2bd1f2bec126ef51deebf58c05222c9bdb96e4928c356203b5e0ac372ac2864b"
+      },
+      {
+        "index": 32,
+        "id": "day_pillar_byeongsin",
+        "category": "day_pillar",
+        "aliases": [
+          "병신일주",
+          "병신"
+        ],
+        "recordSha256": "68f9755285a62257db71dc43cf5b104edd5de2103d6058b25ebd1d52d4a599d6"
+      },
+      {
+        "index": 33,
+        "id": "day_pillar_jeongyu",
+        "category": "day_pillar",
+        "aliases": [
+          "정유일주",
+          "정유"
+        ],
+        "recordSha256": "b873ccc5f1d36a0fa7ff6b6fd855228972ed799af81082b6da1a30215bbf67c0"
+      },
+      {
+        "index": 34,
+        "id": "day_pillar_musul",
+        "category": "day_pillar",
+        "aliases": [
+          "무술일주",
+          "무술"
+        ],
+        "recordSha256": "d1b44d3cdef3a7206b8d1ffff1e1867120d53e2dfe77f2572b904c820e6a1516"
+      },
+      {
+        "index": 35,
+        "id": "day_pillar_gihae",
+        "category": "day_pillar",
+        "aliases": [
+          "기해일주",
+          "기해"
+        ],
+        "recordSha256": "2e6a1c980943c2ace7c0ac1ffb9ad6e498e0003485926f99d2dd11ac39689d68"
+      },
+      {
+        "index": 36,
+        "id": "day_pillar_gyeongja",
+        "category": "day_pillar",
+        "aliases": [
+          "경자일주",
+          "경자"
+        ],
+        "recordSha256": "98dfb475d8a29fc719a7946ed15e72ee96a22143507ac881f6a662613c7b27f8"
+      },
+      {
+        "index": 37,
+        "id": "day_pillar_sinchuk",
+        "category": "day_pillar",
+        "aliases": [
+          "신축일주",
+          "신축"
+        ],
+        "recordSha256": "47a07e11c7d34c346265e843984791934cd3d27c65093b43837b0abf5dd1d1d4"
+      },
+      {
+        "index": 38,
+        "id": "day_pillar_imin",
+        "category": "day_pillar",
+        "aliases": [
+          "임인일주",
+          "임인"
+        ],
+        "recordSha256": "1790501cd9a5b459d1c3674605651c92865ca327e39722636ce26ed670ed7ccc"
+      },
+      {
+        "index": 39,
+        "id": "day_pillar_gyemyo",
+        "category": "day_pillar",
+        "aliases": [
+          "계묘일주",
+          "계묘"
+        ],
+        "recordSha256": "ed2aa92a34701bbde8e1fff0c7c667968e496871d82a94712eb4ea38dd456b04"
+      },
+      {
+        "index": 40,
+        "id": "day_pillar_gapjin",
+        "category": "day_pillar",
+        "aliases": [
+          "갑진일주",
+          "갑진"
+        ],
+        "recordSha256": "4ec0cf310cd10569502ca39471f2b62c984abf03703dc425100ff514469a1acf"
+      },
+      {
+        "index": 41,
+        "id": "day_pillar_eulsa",
+        "category": "day_pillar",
+        "aliases": [
+          "을사일주",
+          "을사"
+        ],
+        "recordSha256": "854edab5696fe4a05352c77961323b6ed4d4bf6fdb7050134cb0bee60b04c2e7"
+      },
+      {
+        "index": 42,
+        "id": "day_pillar_byeongo",
+        "category": "day_pillar",
+        "aliases": [
+          "병오일주",
+          "병오"
+        ],
+        "recordSha256": "59e606a429a320aa73302012e7bab411aa43fa7708f3d2b57a1d8677167ee5b0"
+      },
+      {
+        "index": 43,
+        "id": "day_pillar_jeongmi",
+        "category": "day_pillar",
+        "aliases": [
+          "정미일주",
+          "정미"
+        ],
+        "recordSha256": "42e068292d32500017647c9a73165d0bc8b4642011a4edb0af189aba3c475364"
+      },
+      {
+        "index": 44,
+        "id": "day_pillar_musin",
+        "category": "day_pillar",
+        "aliases": [
+          "무신일주",
+          "무신"
+        ],
+        "recordSha256": "05a61641c207787f3f993e88a45966a936d26b7575b3a41d6753605db662de5c"
+      },
+      {
+        "index": 45,
+        "id": "day_pillar_giyu",
+        "category": "day_pillar",
+        "aliases": [
+          "기유일주",
+          "기유"
+        ],
+        "recordSha256": "b4b3c7cdd21a00051138d8e53d57081a913cc18a3c2ffa6e108d04d320043cbf"
+      },
+      {
+        "index": 46,
+        "id": "day_pillar_gyeongsul",
+        "category": "day_pillar",
+        "aliases": [
+          "경술일주",
+          "경술"
+        ],
+        "recordSha256": "81fbd73e9533ca0a1d301086af79fa999576ce76f096cfe52fe172f4a26cbb4d"
+      },
+      {
+        "index": 47,
+        "id": "day_pillar_sinhae",
+        "category": "day_pillar",
+        "aliases": [
+          "신해일주",
+          "신해"
+        ],
+        "recordSha256": "50198dc7ccb7f8ca2f571459dcf65a440a20206d3aa5d18342f4509ee8b3756e"
+      },
+      {
+        "index": 48,
+        "id": "day_pillar_imja",
+        "category": "day_pillar",
+        "aliases": [
+          "임자일주",
+          "임자"
+        ],
+        "recordSha256": "de535cca71eade1036c4cb0d64fab65ca15778f7597423a590a25ab26ff70ffd"
+      },
+      {
+        "index": 49,
+        "id": "day_pillar_gyechuk",
+        "category": "day_pillar",
+        "aliases": [
+          "계축일주",
+          "계축"
+        ],
+        "recordSha256": "0d6107e3cbcff63b34e16a144063561ec73bffbd870222132950ac6159c2b6cb"
+      },
+      {
+        "index": 50,
+        "id": "day_pillar_gabin",
+        "category": "day_pillar",
+        "aliases": [
+          "갑인일주",
+          "갑인"
+        ],
+        "recordSha256": "d173e6970743188ebdb1d6aac4ccc5f4838e680ce58994c3bf20a0fec51d744d"
+      },
+      {
+        "index": 51,
+        "id": "day_pillar_eulmyo",
+        "category": "day_pillar",
+        "aliases": [
+          "을묘일주",
+          "을묘"
+        ],
+        "recordSha256": "cbe0d6d31b8eef51ba9e4dbfb9000d6031d3e5a665a57002f4f34253105105b9"
+      },
+      {
+        "index": 52,
+        "id": "day_pillar_byeongjin",
+        "category": "day_pillar",
+        "aliases": [
+          "병진일주",
+          "병진"
+        ],
+        "recordSha256": "da3b8608ce030a05031fe9590c3c8c6106bd28e4a8705f3cff59286ab88aa38e"
+      },
+      {
+        "index": 53,
+        "id": "day_pillar_jeongsa",
+        "category": "day_pillar",
+        "aliases": [
+          "정사일주",
+          "정사"
+        ],
+        "recordSha256": "8bea7d66319041bfea04928f084a668cfb331cdc281d6c58eeb90241a3793ab3"
+      },
+      {
+        "index": 54,
+        "id": "day_pillar_muo",
+        "category": "day_pillar",
+        "aliases": [
+          "무오일주",
+          "무오"
+        ],
+        "recordSha256": "fb18f838d6146c337af510ff3e9132b91bf72262f630874ba09d2257a4696029"
+      },
+      {
+        "index": 55,
+        "id": "day_pillar_gimi",
+        "category": "day_pillar",
+        "aliases": [
+          "기미일주",
+          "기미"
+        ],
+        "recordSha256": "3d66cb954eb792bced72cd9b8008d746b6450ef43fbc74b8fdb668d8a1f6826e"
+      },
+      {
+        "index": 56,
+        "id": "day_pillar_gyeongsin",
+        "category": "day_pillar",
+        "aliases": [
+          "경신일주",
+          "경신"
+        ],
+        "recordSha256": "3bfdf37e88d980067f6ab9980073d2d61fdbc820b8f968255b63302921e29b30"
+      },
+      {
+        "index": 57,
+        "id": "day_pillar_sinyu",
+        "category": "day_pillar",
+        "aliases": [
+          "신유일주",
+          "신유"
+        ],
+        "recordSha256": "4b7b25224f0d10067b7ea3501134aaefac50f16d4213e95734e4200409c24958"
+      },
+      {
+        "index": 58,
+        "id": "day_pillar_imsul",
+        "category": "day_pillar",
+        "aliases": [
+          "임술일주",
+          "임술"
+        ],
+        "recordSha256": "be848a7884cb3fb01684a3ed62e51bdeaefa330a85d7b501658094c1a1d3d9fb"
+      },
+      {
+        "index": 59,
+        "id": "day_pillar_gyehae",
+        "category": "day_pillar",
+        "aliases": [
+          "계해일주",
+          "계해"
+        ],
+        "recordSha256": "f02efe800559a1a87aabb8fc0b27f4f2399227577ff83642469476c4729905aa"
+      },
+      {
+        "index": 60,
+        "id": "twelve_sinsal_banan",
+        "category": "twelve_sinsal",
+        "aliases": [
+          "반안",
+          "반안살"
+        ],
+        "recordSha256": "6f38e6d8efb6929a36ca8a0d829a787db06aac9a8027b2a56bfdb56e731f7104"
+      },
+      {
+        "index": 61,
+        "id": "twelve_sinsal_jangseong",
+        "category": "twelve_sinsal",
+        "aliases": [
+          "장성",
+          "장성살"
+        ],
+        "recordSha256": "18fa5935308c5a49051d88b296320818035fd112cf48355e2a15762091d18860"
+      },
+      {
+        "index": 62,
+        "id": "twelve_sinsal_yeokma",
+        "category": "twelve_sinsal",
+        "aliases": [
+          "역마",
+          "역마살"
+        ],
+        "recordSha256": "c55aa7fd282325916b4bef1c9acbd70d4194bd61f953fb1bb4a006b1c0e3beda"
+      },
+      {
+        "index": 63,
+        "id": "twelve_sinsal_hwagae",
+        "category": "twelve_sinsal",
+        "aliases": [
+          "화개",
+          "화개살"
+        ],
+        "recordSha256": "fdcc6462595fb29ebcb2f35cbaa2e0f4f36a25c1b00e35d8faf8072de0cd613f"
+      },
+      {
+        "index": 64,
+        "id": "twelve_sinsal_geopsal",
+        "category": "twelve_sinsal",
+        "aliases": [
+          "겁살"
+        ],
+        "recordSha256": "aec5227e6d0358cde9a7e2e9ec72f7e9a185c8e9a0345afc8361f87244a9e5b1"
+      },
+      {
+        "index": 65,
+        "id": "twelve_sinsal_jaesal",
+        "category": "twelve_sinsal",
+        "aliases": [
+          "재살"
+        ],
+        "recordSha256": "3dcce4737ea1ca5bf563150785670279361156f1dd53dde37d783165019d2bbd"
+      },
+      {
+        "index": 66,
+        "id": "twelve_sinsal_jisal",
+        "category": "twelve_sinsal",
+        "aliases": [
+          "지살"
+        ],
+        "recordSha256": "a6594fda33d7f68c99480bb2b820dd7914d69bf95430fb202b54ae13872bcccc"
+      },
+      {
+        "index": 67,
+        "id": "twelve_sinsal_nyeonsal",
+        "category": "twelve_sinsal",
+        "aliases": [
+          "년살",
+          "연살"
+        ],
+        "recordSha256": "35ac2a92180ffbc8bf350ad75be4e85e0450cfb8a2695304e47960231cadbf3d"
+      },
+      {
+        "index": 68,
+        "id": "twelve_sinsal_yukhae",
+        "category": "twelve_sinsal",
+        "aliases": [
+          "육해",
+          "육해살"
+        ],
+        "recordSha256": "d241e8fe05e4ab1d98c2fe6a4db047999ee1621eb6af8969de6dcec1f4f86792"
+      },
+      {
+        "index": 69,
+        "id": "twelve_sinsal_mangsin",
+        "category": "twelve_sinsal",
+        "aliases": [
+          "망신",
+          "망신살"
+        ],
+        "recordSha256": "fc9e5d322c7b3699a8c4d205fe7f0158512c2353232d2f908e2452461ec34fdd"
+      },
+      {
+        "index": 70,
+        "id": "twelve_sinsal_cheonsal",
+        "category": "twelve_sinsal",
+        "aliases": [
+          "천살"
+        ],
+        "recordSha256": "9cf6947e57053d97fac93149baa0eaa780a6d50b9e800a617be18367ddaf5d9c"
+      },
+      {
+        "index": 71,
+        "id": "twelve_sinsal_wolsal",
+        "category": "twelve_sinsal",
+        "aliases": [
+          "월살"
+        ],
+        "recordSha256": "9ab70e51b93d4babf5af2543f3a615a859048246aafca7aad04753db7d828624"
+      },
+      {
+        "index": 72,
+        "id": "sinsal_dohwa",
+        "category": "sinsal",
+        "aliases": [
+          "도화",
+          "도화살"
+        ],
+        "recordSha256": "868823d45708fb1a0975c5068328a27fd136645986ce61c9b151fa5a2392b782"
+      },
+      {
+        "index": 73,
+        "id": "sinsal_hongyeom",
+        "category": "sinsal",
+        "aliases": [
+          "홍염",
+          "홍염살"
+        ],
+        "recordSha256": "2e5cb738252205e7b0751f33afb00c929401c5a869b69840a0c2171b925f201a"
+      },
+      {
+        "index": 74,
+        "id": "sinsal_baekho",
+        "category": "sinsal",
+        "aliases": [
+          "백호",
+          "백호살",
+          "백호대살"
+        ],
+        "recordSha256": "8364c5c7e6ed3ba3381b6d198d8089c3d6311fa57cbf506118177141045fd769"
+      },
+      {
+        "index": 75,
+        "id": "sinsal_hyeonchim",
+        "category": "sinsal",
+        "aliases": [
+          "현침",
+          "현침살"
+        ],
+        "recordSha256": "be9255dcaae367fb5c578eeb799f18f6424839f8004eb3590d9fd707def6ba4b"
+      },
+      {
+        "index": 76,
+        "id": "sinsal_gwimun",
+        "category": "sinsal",
+        "aliases": [
+          "귀문",
+          "귀문관",
+          "귀문관살"
+        ],
+        "recordSha256": "b4a1bbe82c14538d1ffbc4fc0459367a4fc9877b8b14d6e8e94c3c8437caca73"
+      },
+      {
+        "index": 77,
+        "id": "sinsal_wonjin",
+        "category": "sinsal",
+        "aliases": [
+          "원진",
+          "원진살"
+        ],
+        "recordSha256": "8e7e54e4c3c7d733beac88152e92fc715f38fe36dd372b202d4baf60d59dacf6"
+      },
+      {
+        "index": 78,
+        "id": "sinsal_yangin",
+        "category": "sinsal",
+        "aliases": [
+          "양인",
+          "양인살"
+        ],
+        "recordSha256": "2432e2cb0f7f404ed9afb5974d009dad856d72dabb6d627dd5b8ac5d89dd427f"
+      },
+      {
+        "index": 79,
+        "id": "sinsal_goegang",
+        "category": "sinsal",
+        "aliases": [
+          "괴강",
+          "괴강살"
+        ],
+        "recordSha256": "ccc2350596f0ad0aa4352c1187416539988886cfd1c971a5a0cb15537237ab1a"
+      },
+      {
+        "index": 80,
+        "id": "sinsal_gongmang",
+        "category": "sinsal",
+        "aliases": [
+          "공망"
+        ],
+        "recordSha256": "cf870befdfb5c468808df2cc45a397fe56cbd4a55f7c2382eecddbc051e8e87a"
+      },
+      {
+        "index": 81,
+        "id": "sinsal_cheonmunseong",
+        "category": "sinsal",
+        "aliases": [
+          "천문",
+          "천문성"
+        ],
+        "recordSha256": "037ce0faed76008b51b5c7fc73bbd76aceea80ed5cf47ac3ab2232f45c4902cd"
+      },
+      {
+        "index": 82,
+        "id": "gwiin_mungok",
+        "category": "gwiin",
+        "aliases": [
+          "문곡",
+          "문곡귀인"
+        ],
+        "recordSha256": "44f8b7f6f6d762b803fba176cb037f7764d687f549ed7cde8df689476b4d942c"
+      },
+      {
+        "index": 83,
+        "id": "gwiin_cheoneul",
+        "category": "gwiin",
+        "aliases": [
+          "천을",
+          "천을귀인"
+        ],
+        "recordSha256": "0ad1d9d722c13c9121d28f150fb3c7bba1102e58acdcf9d8905f660ef3100333"
+      },
+      {
+        "index": 84,
+        "id": "gwiin_cheondeok",
+        "category": "gwiin",
+        "aliases": [
+          "천덕",
+          "천덕귀인"
+        ],
+        "recordSha256": "b085ab03f491cde6b4f787a145403d357233fcbe79d857f3d03a139505f8d611"
+      },
+      {
+        "index": 85,
+        "id": "gwiin_woldeok",
+        "category": "gwiin",
+        "aliases": [
+          "월덕",
+          "월덕귀인"
+        ],
+        "recordSha256": "3c91c8229456f8e873c8750408caf1a66ef985ea22d748180d97bb55bf272aa3"
+      },
+      {
+        "index": 86,
+        "id": "gwiin_munchang",
+        "category": "gwiin",
+        "aliases": [
+          "문창",
+          "문창귀인"
+        ],
+        "recordSha256": "7caa2c17eed71071c00652f7b22ecb92d3868d718d1771d04ef8dafda69527ce"
+      },
+      {
+        "index": 87,
+        "id": "gwiin_hakdang",
+        "category": "gwiin",
+        "aliases": [
+          "학당",
+          "학당귀인"
+        ],
+        "recordSha256": "95c9320fbc2b037b78f077443fe3c8464b73bc911b34d9bed9fdcc653b4a3dd6"
+      },
+      {
+        "index": 88,
+        "id": "gwiin_taegeuk",
+        "category": "gwiin",
+        "aliases": [
+          "태극",
+          "태극귀인"
+        ],
+        "recordSha256": "c076c2a9a7d3b26d3c1c95a95e9a8ad3d31e8986986a35bd1d1443f07501ed33"
+      },
+      {
+        "index": 89,
+        "id": "gwiin_jaego",
+        "category": "gwiin",
+        "aliases": [
+          "재고",
+          "재고귀인"
+        ],
+        "recordSha256": "862367c8b3784da2f5565b3f415f9b128c158c6c1247bd4c03f1a3b7476c4202"
+      },
+      {
+        "index": 90,
+        "id": "gwiin_bokseong",
+        "category": "gwiin",
+        "aliases": [
+          "복성",
+          "복성귀인"
+        ],
+        "recordSha256": "b6f78f06a6c40bbac8a3a314b19375508cff43c18852d71cc672f229bdd9702e"
+      },
+      {
+        "index": 91,
+        "id": "gwiin_geumyeorok",
+        "category": "gwiin",
+        "aliases": [
+          "금여",
+          "금여록"
+        ],
+        "recordSha256": "ae239c72a271055007c0d8bb721bf699c9e8125dd03ec4666dd68494c02e338a"
+      },
+      {
+        "index": 92,
+        "id": "gwiin_cheoneuiseong",
+        "category": "gwiin",
+        "aliases": [
+          "천의",
+          "천의성"
+        ],
+        "recordSha256": "d3a699e648bacc93822364b41fd29012c488726eeb2715ae24d76d36d61fca34"
+      },
+      {
+        "index": 93,
+        "id": "gwiin_amrok",
+        "category": "gwiin",
+        "aliases": [
+          "암록"
+        ],
+        "recordSha256": "7f5f1130fac2d2f8759604ea55cb7be38e5defbc686a8e6329ded811f904b813"
+      },
+      {
+        "index": 94,
+        "id": "structure_jaeda_sinyak",
+        "category": "structure",
+        "aliases": [
+          "재다신약"
+        ],
+        "recordSha256": "1225146c7ce83ffb820fa5f732a41f502993a1c4f76dd42023117b9a2a4f50e8"
+      },
+      {
+        "index": 95,
+        "id": "structure_no_resource",
+        "category": "structure",
+        "aliases": [
+          "무인성",
+          "인성 부족"
+        ],
+        "recordSha256": "d793c1602ff40a174016a29b2dbe49489035daae935d8c3d601c05257d27edce"
+      },
+      {
+        "index": 96,
+        "id": "structure_no_output",
+        "category": "structure",
+        "aliases": [
+          "무식상",
+          "식상 부족"
+        ],
+        "recordSha256": "5a191060de8d2551705e8e51f460d6a68cadb0098bdfd22a32df10ec27590961"
+      },
+      {
+        "index": 97,
+        "id": "structure_gwansal_mixed",
+        "category": "structure",
+        "aliases": [
+          "관살혼잡"
+        ],
+        "recordSha256": "c5dcea0c3386a94130191b60889ee4a5d9c2c673f8bf3cfecde38e6d444a1b18"
+      },
+      {
+        "index": 98,
+        "id": "structure_siksang_saengjae",
+        "category": "structure",
+        "aliases": [
+          "식상생재"
+        ],
+        "recordSha256": "ac48fe40b595a8ee2936f3184586ab226a730c795eb2d0fe6010a9a0d8efbf61"
+      },
+      {
+        "index": 99,
+        "id": "structure_jaesaenggwan",
+        "category": "structure",
+        "aliases": [
+          "재생관"
+        ],
+        "recordSha256": "c21ed86d47095c4a2f7d48f7e69d01a4d5af80625e4055a9f323d3db27690fda"
+      },
+      {
+        "index": 100,
+        "id": "structure_salin_sangsaeng",
+        "category": "structure",
+        "aliases": [
+          "살인상생"
+        ],
+        "recordSha256": "f1e4cc514895d0531e4b7f0c2bcf5f946954d89658ffb074297e115007b98688"
+      },
+      {
+        "index": 101,
+        "id": "structure_sanggwan_gyeongwan",
+        "category": "structure",
+        "aliases": [
+          "상관견관"
+        ],
+        "recordSha256": "1dc86cc5e293a0e88480338ef31d03288414fb49c9239f01f67dcc77a35c8ad3"
+      },
+      {
+        "index": 102,
+        "id": "structure_bigeop_many",
+        "category": "structure",
+        "aliases": [
+          "비겁다자",
+          "비겁 과다"
+        ],
+        "recordSha256": "8142e1ff0c2d191a4d2dcd6c5ed7a9fecf87687c819b5db06930b1ce4e2c1885"
+      },
+      {
+        "index": 103,
+        "id": "structure_resource_many",
+        "category": "structure",
+        "aliases": [
+          "인성다자",
+          "인성 과다"
+        ],
+        "recordSha256": "9650544f1ef490d72cda293ea146cc7ac6076b19d05faa5b627230381e4426bd"
+      },
+      {
+        "index": 104,
+        "id": "element_wood_excess",
+        "category": "element",
+        "aliases": [
+          "목 과다"
+        ],
+        "recordSha256": "87cc014b5efc630a3d06db67e18ad623800bd38332e91beeebaadd860ac6abdb"
+      },
+      {
+        "index": 105,
+        "id": "element_wood_missing",
+        "category": "element",
+        "aliases": [
+          "목 부족"
+        ],
+        "recordSha256": "e57017e5655bac77fd04d8fe5f66430cfad16640b73d8d60ffe856551e3ab78f"
+      },
+      {
+        "index": 106,
+        "id": "element_fire_excess",
+        "category": "element",
+        "aliases": [
+          "화 과다"
+        ],
+        "recordSha256": "63c62cfb1d3e81b298a17e5900bf2f3c0eb80ed8f1365614fcfee22441c8ef19"
+      },
+      {
+        "index": 107,
+        "id": "element_fire_missing",
+        "category": "element",
+        "aliases": [
+          "화 부족"
+        ],
+        "recordSha256": "5b6116f2eb8f21d73e196d19f67f593197101902e78b39f24731ec4e10e2f44f"
+      },
+      {
+        "index": 108,
+        "id": "element_earth_excess",
+        "category": "element",
+        "aliases": [
+          "토 과다"
+        ],
+        "recordSha256": "4590662fe89e8723a2b60f761e5eda1c1201f06199afc25eddb9a2820ea03dea"
+      },
+      {
+        "index": 109,
+        "id": "element_earth_missing",
+        "category": "element",
+        "aliases": [
+          "토 부족"
+        ],
+        "recordSha256": "766057d4f10103fd8c004a023acce0861522a27df136e6beb9f4b4a22dfdadf7"
+      },
+      {
+        "index": 110,
+        "id": "element_metal_excess",
+        "category": "element",
+        "aliases": [
+          "금 과다"
+        ],
+        "recordSha256": "aa0db38946f3128f35a69b4cbd170c28a244aff5ba555984fdde31c5f798e67b"
+      },
+      {
+        "index": 111,
+        "id": "element_metal_missing",
+        "category": "element",
+        "aliases": [
+          "금 부족"
+        ],
+        "recordSha256": "79af7467b417972efdc8b993cc075b0d0ccd1e55b9f8b89577a56756e7a778d7"
+      },
+      {
+        "index": 112,
+        "id": "element_water_excess",
+        "category": "element",
+        "aliases": [
+          "수 과다"
+        ],
+        "recordSha256": "8dfdc877e6edc3c653716f07b023f8fb4f5dc27fa0507c8449c88f02d85ea7a2"
+      },
+      {
+        "index": 113,
+        "id": "element_water_missing",
+        "category": "element",
+        "aliases": [
+          "수 부족"
+        ],
+        "recordSha256": "d59ce7fb313ba08da984d0a86f58f1ba1b34fbb4fcb6347f45dc91328bdf7895"
+      },
+      {
+        "index": 114,
+        "id": "ten_god_bijian",
+        "category": "ten_god",
+        "aliases": [
+          "비견"
+        ],
+        "recordSha256": "01d094f18d04a347ed9bbafe17641836c60c944a4c9704932ca8c062bab713d9"
+      },
+      {
+        "index": 115,
+        "id": "ten_god_jie_cai",
+        "category": "ten_god",
+        "aliases": [
+          "겁재"
+        ],
+        "recordSha256": "c0cc72c4b00a6c8bd3e1422203f2019d2a360833e25a09a9dfc0a8b0f934ed17"
+      },
+      {
+        "index": 116,
+        "id": "ten_god_shi_shen",
+        "category": "ten_god",
+        "aliases": [
+          "식신"
+        ],
+        "recordSha256": "4879939cfabd44db5976e478ffde72ce584506eb6e627adb740e77fdae0ee825"
+      },
+      {
+        "index": 117,
+        "id": "ten_god_shang_guan",
+        "category": "ten_god",
+        "aliases": [
+          "상관"
+        ],
+        "recordSha256": "21385509eb476877ddbaf5d10c151aa879f1b6b9becfd7aafd3bd46d5f82865b"
+      },
+      {
+        "index": 118,
+        "id": "ten_god_pian_cai",
+        "category": "ten_god",
+        "aliases": [
+          "편재"
+        ],
+        "recordSha256": "9953e8ad60cd42c6a42be587da80b22bd0582ac31c0dfd5739cc97aa9cbf1041"
+      },
+      {
+        "index": 119,
+        "id": "ten_god_zheng_cai",
+        "category": "ten_god",
+        "aliases": [
+          "정재"
+        ],
+        "recordSha256": "26ce283600ec6a2dad9dc0a5d4cc89dee727a9009ad5ef74851a2cb4a9dd4087"
+      },
+      {
+        "index": 120,
+        "id": "ten_god_qi_sha",
+        "category": "ten_god",
+        "aliases": [
+          "편관",
+          "칠살"
+        ],
+        "recordSha256": "22f75b8f95ef772fa9182cb762ff42481de2ebbe6aa41e7620d7e5f6de8ed596"
+      },
+      {
+        "index": 121,
+        "id": "ten_god_zheng_guan",
+        "category": "ten_god",
+        "aliases": [
+          "정관"
+        ],
+        "recordSha256": "883736e1ac0f418501fbc97aedf6ac8d04af2aef89ddc7fd2d0056e970d3e562"
+      },
+      {
+        "index": 122,
+        "id": "ten_god_pian_yin",
+        "category": "ten_god",
+        "aliases": [
+          "편인"
+        ],
+        "recordSha256": "9614af5e5c3a24e2cb4415a708d5004bf6442f8445a8c1f5105c214b6a89894e"
+      },
+      {
+        "index": 123,
+        "id": "ten_god_zheng_yin",
+        "category": "ten_god",
+        "aliases": [
+          "정인"
+        ],
+        "recordSha256": "e610663857442c038df27ce2aec8689d645f904eee3578f5b7269bc5ed512bd9"
+      }
+    ]
+  },
+  "sajuKnowledgeBase.ts": {
+    "count": 77,
+    "records": [
+      {
+        "index": 0,
+        "id": "element_wood",
+        "category": "five_element",
+        "aliases": [
+          "wood",
+          "나무",
+          "생장"
+        ],
+        "recordSha256": "639c5678145fca8842f6c8350b950cca13fb46a69dac1f172a29caeb6b83045f"
+      },
+      {
+        "index": 1,
+        "id": "element_fire",
+        "category": "five_element",
+        "aliases": [
+          "fire",
+          "불",
+          "표현"
+        ],
+        "recordSha256": "e591116d7ff5f244e61d294fb2253af5ef9c427dfbc6847b9e6dc96a8be39326"
+      },
+      {
+        "index": 2,
+        "id": "element_earth",
+        "category": "five_element",
+        "aliases": [
+          "earth",
+          "흙",
+          "저장"
+        ],
+        "recordSha256": "88c575501f6f909598281b4f1196500145dcb0f32fe1abaf2f82df2a2d3e9cb2"
+      },
+      {
+        "index": 3,
+        "id": "element_metal",
+        "category": "five_element",
+        "aliases": [
+          "metal",
+          "쇠",
+          "판단"
+        ],
+        "recordSha256": "641a888862c4a1e7529a939ee2e84e8779953df28eb0619e0bb68fa35dad16bc"
+      },
+      {
+        "index": 4,
+        "id": "element_water",
+        "category": "five_element",
+        "aliases": [
+          "water",
+          "물",
+          "회복"
+        ],
+        "recordSha256": "7fb9bcb79fc1b44660708dc0d172ee9d359fc865e071904e57514abda75f4cf8"
+      },
+      {
+        "index": 5,
+        "id": "element_earth_excess",
+        "category": "element_balance",
+        "aliases": [
+          "earth_excess",
+          "토 많음",
+          "토 강함"
+        ],
+        "recordSha256": "9046c8c5e9ad8a8dd5266f9174ccac1d8c4f431e12f2da484c0d919374da119b"
+      },
+      {
+        "index": 6,
+        "id": "element_water_missing",
+        "category": "element_balance",
+        "aliases": [
+          "water_missing",
+          "수 약함",
+          "수 기운 부족"
+        ],
+        "recordSha256": "91915a10f5051c50cdc842ec8a7abbb181ce9c2b1331ff1a507fdc7fabacaee5"
+      },
+      {
+        "index": 7,
+        "id": "element_fire_missing",
+        "category": "element_balance",
+        "aliases": [
+          "fire_missing",
+          "화 약함",
+          "화 기운 부족"
+        ],
+        "recordSha256": "8849b94ddae3ab143f492cede6ba0cdb67ae9fe62ae944493731343e7edfb35c"
+      },
+      {
+        "index": 8,
+        "id": "element_wood_missing",
+        "category": "element_balance",
+        "aliases": [
+          "wood_missing",
+          "목 약함",
+          "목 기운 부족"
+        ],
+        "recordSha256": "42e48547c0258562ba948df0b715b30d53ebf8c36d700a56409ae45038097a13"
+      },
+      {
+        "index": 9,
+        "id": "element_metal_strong",
+        "category": "element_balance",
+        "aliases": [
+          "metal_strong",
+          "금 강세",
+          "금 기운 강함"
+        ],
+        "recordSha256": "bc6c6bb6d2e27054f04ab658c85d733840c6086d7d9f88904f0379a4783a7f18"
+      },
+      {
+        "index": 10,
+        "id": "ten_god_bijian",
+        "category": "ten_god",
+        "aliases": [
+          "bijian",
+          "비견",
+          "견줄 비견"
+        ],
+        "recordSha256": "d9db265926a8e6248614240bacd5579d690b02e5b6a5263823ffa8cb526aa692"
+      },
+      {
+        "index": 11,
+        "id": "ten_god_jie_cai",
+        "category": "ten_god",
+        "aliases": [
+          "jie_cai",
+          "겁재"
+        ],
+        "recordSha256": "8a65ceea2db8cab23b4808715b366f149d7057c63ffe1f6a11b77473578317e2"
+      },
+      {
+        "index": 12,
+        "id": "ten_god_shi_shen",
+        "category": "ten_god",
+        "aliases": [
+          "shi_shen",
+          "식신"
+        ],
+        "recordSha256": "4a70b56fd776da9f4d6b9de8dbe039346cc9efa9ac47bfef1b792b7be5d2eca9"
+      },
+      {
+        "index": 13,
+        "id": "ten_god_shang_guan",
+        "category": "ten_god",
+        "aliases": [
+          "shang_guan",
+          "상관"
+        ],
+        "recordSha256": "32accd9b725a1d2604bad5499ea11f7dedbc6581f2212bb3291a81b148253513"
+      },
+      {
+        "index": 14,
+        "id": "ten_god_pian_cai",
+        "category": "ten_god",
+        "aliases": [
+          "pian_cai",
+          "편재",
+          "재성"
+        ],
+        "recordSha256": "6feede52399f0b4938929fcbcc86f56c38448696149ee6ae6e5f745466c1902a"
+      },
+      {
+        "index": 15,
+        "id": "ten_god_zheng_cai",
+        "category": "ten_god",
+        "aliases": [
+          "zheng_cai",
+          "정재",
+          "재성"
+        ],
+        "recordSha256": "afea916fb462a1b43ab5ad6e39de890a9b5cfb7e48f52540407d40e6ec676102"
+      },
+      {
+        "index": 16,
+        "id": "ten_god_qi_sha",
+        "category": "ten_god",
+        "aliases": [
+          "qi_sha",
+          "칠살",
+          "편관",
+          "관성"
+        ],
+        "recordSha256": "c55601c7e069478e5c9464a021017bb28d1591e99adb825f51236d5ab107dfec"
+      },
+      {
+        "index": 17,
+        "id": "ten_god_zheng_guan",
+        "category": "ten_god",
+        "aliases": [
+          "zheng_guan",
+          "정관",
+          "관성"
+        ],
+        "recordSha256": "e112dc455fd74dd3881997605e6fd32caa123238c13bacd5322bd265016753b9"
+      },
+      {
+        "index": 18,
+        "id": "ten_god_pian_yin",
+        "category": "ten_god",
+        "aliases": [
+          "pian_yin",
+          "편인",
+          "인성"
+        ],
+        "recordSha256": "5bbeb0572bf5676f86f68f1452eeab319c5a33ad73d205fdd694498451d06e53"
+      },
+      {
+        "index": 19,
+        "id": "ten_god_zheng_yin",
+        "category": "ten_god",
+        "aliases": [
+          "zheng_yin",
+          "정인",
+          "인성"
+        ],
+        "recordSha256": "7b911eee626ce99687b7f454dd71c262838d9940c373e3fcaabf5bd550cd5d79"
+      },
+      {
+        "index": 20,
+        "id": "pattern_jaeda_sinyak",
+        "category": "special_pattern",
+        "aliases": [
+          "재다신약",
+          "재성 강하고 일간 약함"
+        ],
+        "recordSha256": "a961f5b17a9246931fcb9421122a49de453e8954fa0758dc9f7966b9f14fc000"
+      },
+      {
+        "index": 21,
+        "id": "pattern_gwansal_honjob",
+        "category": "special_pattern",
+        "aliases": [
+          "관살혼잡",
+          "정관 편관 혼재"
+        ],
+        "recordSha256": "c6b2743a0c426988573ed2021ec60b301a8ed456460d0cdbffe4f6a9fdf61be1"
+      },
+      {
+        "index": 22,
+        "id": "pattern_siksang_saengjae",
+        "category": "special_pattern",
+        "aliases": [
+          "식상생재",
+          "output to money"
+        ],
+        "recordSha256": "76c4cef9e99205e8f60f5be3e1737e1f657d78909a9ad06ee3969f1356d7e65d"
+      },
+      {
+        "index": 23,
+        "id": "pattern_jaesaenggwan",
+        "category": "special_pattern",
+        "aliases": [
+          "재생관",
+          "money to authority"
+        ],
+        "recordSha256": "0812f7e64c732e2e5bf2eae25dee2ce1a06906662bb84335b7c87f0cf67e63db"
+      },
+      {
+        "index": 24,
+        "id": "pattern_salin_sangsaeng",
+        "category": "special_pattern",
+        "aliases": [
+          "살인상생",
+          "압박이 학습으로 전환"
+        ],
+        "recordSha256": "e1c0c6a903b758bf14cf3fa49982af80f098a8f1514beb496a87eb1d4e963d32"
+      },
+      {
+        "index": 25,
+        "id": "pattern_singang",
+        "category": "special_pattern",
+        "aliases": [
+          "신강",
+          "일간 강함"
+        ],
+        "recordSha256": "7d3a26dc683e0a2f00afe5126841f0726d5075c4bcb7b0d31998e898839f58cd"
+      },
+      {
+        "index": 26,
+        "id": "pattern_sinyak",
+        "category": "special_pattern",
+        "aliases": [
+          "신약",
+          "일간 약함"
+        ],
+        "recordSha256": "a21ab356807f691dfaf2147545d90792a0cdd4676e75a8332a08c4c337453b5b"
+      },
+      {
+        "index": 27,
+        "id": "pattern_no_resource",
+        "category": "special_pattern",
+        "aliases": [
+          "무인성",
+          "인성 부족",
+          "resource missing"
+        ],
+        "recordSha256": "51c1bfd3edaf82c009218d3f9302dcb731d5a288fc8dd4d559a405c50ce03790"
+      },
+      {
+        "index": 28,
+        "id": "pattern_no_output",
+        "category": "special_pattern",
+        "aliases": [
+          "무식상",
+          "식상 부족",
+          "output missing"
+        ],
+        "recordSha256": "3561f07310d7b8496c2273f79af2fdd73838ca5e7763f4133a5dad68a51bff6c"
+      },
+      {
+        "index": 29,
+        "id": "pattern_toda_maegeum",
+        "category": "special_pattern",
+        "aliases": [
+          "토다매금",
+          "토가 금을 묻음"
+        ],
+        "recordSha256": "37d372c479131e7e7869f08c8dd8e3fa6809e7e14fe0a57888abcaec08607508"
+      },
+      {
+        "index": 30,
+        "id": "pattern_geumda_mokjeol",
+        "category": "special_pattern",
+        "aliases": [
+          "금다목절",
+          "금이 목을 자름"
+        ],
+        "recordSha256": "7f5ef03bf34a2f5448919a30d5c6df9ec4e736ba73395395d04cbaa71d55a72e"
+      },
+      {
+        "index": 31,
+        "id": "pattern_mokda_hwasik",
+        "category": "special_pattern",
+        "aliases": [
+          "목다화식",
+          "목이 화를 먹음"
+        ],
+        "recordSha256": "c342dd16e1b9ba015f28e4eb5bc97a8113c3842e26eb79e527a5a365b4682111"
+      },
+      {
+        "index": 32,
+        "id": "pattern_suda_mokbu",
+        "category": "special_pattern",
+        "aliases": [
+          "수다목부",
+          "물이 많아 목이 뜸"
+        ],
+        "recordSha256": "4240e0eb5fa717979fe0e512fd5225510b8bd62c4476fa65b840a54b40174d9b"
+      },
+      {
+        "index": 33,
+        "id": "sinsal_hyeonchim",
+        "category": "sinsal",
+        "aliases": [
+          "현침",
+          "현침살"
+        ],
+        "recordSha256": "42d847e0f5012224f6b7abc2e15351317e31692cfb61398f9067e28f3609e6bf"
+      },
+      {
+        "index": 34,
+        "id": "sinsal_hongyeom",
+        "category": "sinsal",
+        "aliases": [
+          "홍염",
+          "홍염살"
+        ],
+        "recordSha256": "ff7f42dce0c8c7abfb83110de80bd687004c2b3e271da9982a23ec851a0481d0"
+      },
+      {
+        "index": 35,
+        "id": "sinsal_mangsin",
+        "category": "sinsal",
+        "aliases": [
+          "망신",
+          "망신살"
+        ],
+        "recordSha256": "00561735788d03cb306537b63f0e8415dfc1fa351bb027a44a720a3f366319ec"
+      },
+      {
+        "index": 36,
+        "id": "sinsal_baekho",
+        "category": "sinsal",
+        "aliases": [
+          "백호",
+          "백호대살"
+        ],
+        "recordSha256": "ab7248fa996aa5c24a3bf2af03dfc59783cfe1e447345c1cf8d34f56067b6821"
+      },
+      {
+        "index": 37,
+        "id": "sinsal_yeokma",
+        "category": "sinsal",
+        "aliases": [
+          "역마",
+          "역마살"
+        ],
+        "recordSha256": "a23a7c7585411a6740d451accf5c69f4967f0fab2987d9581005ac4b0916072e"
+      },
+      {
+        "index": 38,
+        "id": "sinsal_gwimun",
+        "category": "sinsal",
+        "aliases": [
+          "귀문",
+          "귀문관살"
+        ],
+        "recordSha256": "a9ec334c465bbb03ad4be266205986db927b39e1379618a017365ac16334d514"
+      },
+      {
+        "index": 39,
+        "id": "sinsal_wonjin",
+        "category": "sinsal",
+        "aliases": [
+          "원진",
+          "원진살"
+        ],
+        "recordSha256": "add080e8a3a1e193a91976bf5a9c9e932466868aaa3f37c9f16e0d3200820b46"
+      },
+      {
+        "index": 40,
+        "id": "sinsal_dohwa",
+        "category": "sinsal",
+        "aliases": [
+          "도화",
+          "도화살"
+        ],
+        "recordSha256": "4a1535a6023689f10fd5e186f02268c504c3b52359c407d773e57bb6ad76cf7b"
+      },
+      {
+        "index": 41,
+        "id": "sinsal_hwagae",
+        "category": "sinsal",
+        "aliases": [
+          "화개",
+          "화개살"
+        ],
+        "recordSha256": "de4ef027b1b4c80d6e0e41ea42e6cded7425b75f66739ee268b4679c12be01c2"
+      },
+      {
+        "index": 42,
+        "id": "sinsal_goegang",
+        "category": "sinsal",
+        "aliases": [
+          "괴강",
+          "괴강살"
+        ],
+        "recordSha256": "ed11316cf62304c3d5f8e1a063f168b953c608a896e37addf0f44de1bae73c45"
+      },
+      {
+        "index": 43,
+        "id": "sinsal_yangin",
+        "category": "sinsal",
+        "aliases": [
+          "양인",
+          "양인살"
+        ],
+        "recordSha256": "90c821fc510a51adb3d94dd12a18e4c9460f631149f5310a011f75a3332411dc"
+      },
+      {
+        "index": 44,
+        "id": "sinsal_cheonmun",
+        "category": "sinsal",
+        "aliases": [
+          "천문",
+          "천문성"
+        ],
+        "recordSha256": "617ed9136d21f63c436630e1aeaa012e5d87c7fa849388a1ffb61a956610cd93"
+      },
+      {
+        "index": 45,
+        "id": "sinsal_wolsal",
+        "category": "sinsal",
+        "aliases": [
+          "월살",
+          "달살"
+        ],
+        "recordSha256": "f88a90c7558aa17bafa8104edce56ccc91a10fefcf11d3fb26ac74099614d697"
+      },
+      {
+        "index": 46,
+        "id": "sinsal_jangseong",
+        "category": "sinsal",
+        "aliases": [
+          "장성",
+          "장성살"
+        ],
+        "recordSha256": "70d75255ce9c8faf923873b7d8872881804aedc0ec601730fafda959d0401e17"
+      },
+      {
+        "index": 47,
+        "id": "sinsal_banan",
+        "category": "sinsal",
+        "aliases": [
+          "반안",
+          "반안살"
+        ],
+        "recordSha256": "4893be67733d63a03837081990796d2218a4beca83c5c55863b41226157cb79e"
+      },
+      {
+        "index": 48,
+        "id": "nobleman_cheoneul",
+        "category": "nobleman",
+        "aliases": [
+          "천을",
+          "천을귀인"
+        ],
+        "recordSha256": "d5a8e2a1724497206c11656bd4f83f65aa42367663067aa9eb080cc1310b0295"
+      },
+      {
+        "index": 49,
+        "id": "nobleman_cheondeok",
+        "category": "nobleman",
+        "aliases": [
+          "천덕",
+          "천덕귀인"
+        ],
+        "recordSha256": "edb211ace5227332b0d76dea61ba28b514d832bbba5dcddf62dbeed483d2f93f"
+      },
+      {
+        "index": 50,
+        "id": "nobleman_woldeok",
+        "category": "nobleman",
+        "aliases": [
+          "월덕",
+          "월덕귀인"
+        ],
+        "recordSha256": "aae017329992dd0c1267022a0a57011273a3b87508c9a0ddb03493ea30910cbb"
+      },
+      {
+        "index": 51,
+        "id": "nobleman_munchang",
+        "category": "nobleman",
+        "aliases": [
+          "문창",
+          "문창귀인"
+        ],
+        "recordSha256": "bda61ebb07899c5a6cfb3112753f7ba53852bc69088a40d1cfda191853465e6a"
+      },
+      {
+        "index": 52,
+        "id": "nobleman_taegeuk",
+        "category": "nobleman",
+        "aliases": [
+          "태극",
+          "태극귀인"
+        ],
+        "recordSha256": "9a68aec4d92ae244e540bf201979ec63d528f2b6f79c372aab1599325df78d65"
+      },
+      {
+        "index": 53,
+        "id": "nobleman_jaego",
+        "category": "nobleman",
+        "aliases": [
+          "재고",
+          "재고귀인",
+          "자산 창고"
+        ],
+        "recordSha256": "b077e23651ad425ab8c1cad531c6bc97564300687b5ece87c4f89066de37d8d5"
+      },
+      {
+        "index": 54,
+        "id": "gwiin_jaego",
+        "category": "nobleman",
+        "aliases": [
+          "재고귀인 gwiin",
+          "재고 도움",
+          "money storage nobleman"
+        ],
+        "recordSha256": "cac3d1a38b1365a2bd1512a4780d0e383dfa8e9a7c6fd5ba371f02912a11b315"
+      },
+      {
+        "index": 55,
+        "id": "day_master_gabmok",
+        "category": "day_master",
+        "aliases": [
+          "甲木",
+          "갑목",
+          "큰 나무"
+        ],
+        "recordSha256": "a08e61b4000ed08b0e88317add1cc305feecee1d103e8deebbc1f602f4b5545b"
+      },
+      {
+        "index": 56,
+        "id": "day_master_eulmok",
+        "category": "day_master",
+        "aliases": [
+          "乙木",
+          "을목",
+          "풀과 덩굴"
+        ],
+        "recordSha256": "ebd642ba6a35f1f7bd58efdab6b55d71454709e4e27112163dbf20c238fb585d"
+      },
+      {
+        "index": 57,
+        "id": "day_master_byeonghwa",
+        "category": "day_master",
+        "aliases": [
+          "丙火",
+          "병화",
+          "태양"
+        ],
+        "recordSha256": "7ab1933c5df5dde79bed5e347baaaf569c5724270104aa6b9494fcda263fce19"
+      },
+      {
+        "index": 58,
+        "id": "day_master_jeonghwa",
+        "category": "day_master",
+        "aliases": [
+          "丁火",
+          "정화",
+          "촛불"
+        ],
+        "recordSha256": "109df941c99ae3efbe8c17b226182d98a45a8e25dc0abd1b383a81dca11f7591"
+      },
+      {
+        "index": 59,
+        "id": "day_master_muto",
+        "category": "day_master",
+        "aliases": [
+          "戊土",
+          "무토",
+          "큰 산"
+        ],
+        "recordSha256": "d2011aaa80242be56c8bbc0d32ae6af84390a9eae754749d561f0c86bd4786be"
+      },
+      {
+        "index": 60,
+        "id": "day_master_gito",
+        "category": "day_master",
+        "aliases": [
+          "己土",
+          "기토",
+          "논밭의 흙"
+        ],
+        "recordSha256": "065ff68e6df4e3e325b5d32d6b505be0a4561a679e0b5ac9270bce688aefced6"
+      },
+      {
+        "index": 61,
+        "id": "day_master_gyeonggeum",
+        "category": "day_master",
+        "aliases": [
+          "庚金",
+          "경금",
+          "큰 쇠"
+        ],
+        "recordSha256": "946027aed8238b59219b4a8e2cc5fda6f56707aeefd12f8837a7dce688b1b11b"
+      },
+      {
+        "index": 62,
+        "id": "day_master_singeum",
+        "category": "day_master",
+        "aliases": [
+          "辛金",
+          "신금",
+          "보석"
+        ],
+        "recordSha256": "9d75d5ab992282773ae0af798cabf1f1fcb7a2c3846d34774b9080ac506ad0de"
+      },
+      {
+        "index": 63,
+        "id": "day_master_imsu",
+        "category": "day_master",
+        "aliases": [
+          "壬水",
+          "임수",
+          "큰 물"
+        ],
+        "recordSha256": "b69d993b00b3f2e519d31e78820357a2d4605256d39c16d8b996110843f45fad"
+      },
+      {
+        "index": 64,
+        "id": "day_master_gyesu",
+        "category": "day_master",
+        "aliases": [
+          "癸水",
+          "계수",
+          "비와 안개"
+        ],
+        "recordSha256": "0daa7bb6add1df4db3943c5db9675f9419f7fa788a7b9cffc8b47cbbbf4f2ffe"
+      },
+      {
+        "index": 65,
+        "id": "day_pillar_gapsin",
+        "category": "day_pillar",
+        "aliases": [
+          "甲申",
+          "갑신",
+          "갑신일주"
+        ],
+        "recordSha256": "5e16d6d69b3c7256d68899b5094b8ca51ad13ad9056a240e66f04cc24d7b0a21"
+      },
+      {
+        "index": 66,
+        "id": "day_pillar_gihae",
+        "category": "day_pillar",
+        "aliases": [
+          "己亥",
+          "기해",
+          "기해일주"
+        ],
+        "recordSha256": "db8394eccd31745d81c3a6becb4643a4f4aac9704ddaafe54e9ebac54d77266b"
+      },
+      {
+        "index": 67,
+        "id": "day_pillar_gabja",
+        "category": "day_pillar",
+        "aliases": [
+          "甲子",
+          "갑자",
+          "갑자일주"
+        ],
+        "recordSha256": "7b4b56999b0f2718a0a8baae957857648fa7f5da9bde5c67af603f329b45cb0e"
+      },
+      {
+        "index": 68,
+        "id": "day_pillar_gapjin",
+        "category": "day_pillar",
+        "aliases": [
+          "甲辰",
+          "갑진",
+          "갑진일주"
+        ],
+        "recordSha256": "322f9513b950f3db0910650a4a74177d5beb6b5b1b61ed6c2de714185666db5f"
+      },
+      {
+        "index": 69,
+        "id": "day_pillar_eulsa",
+        "category": "day_pillar",
+        "aliases": [
+          "乙巳",
+          "을사",
+          "을사일주"
+        ],
+        "recordSha256": "a54b5feef7bc55bd8c5d1439e56bfcb7ae2701aa845fd6217f5075b924c421fe"
+      },
+      {
+        "index": 70,
+        "id": "day_pillar_byeongoh",
+        "category": "day_pillar",
+        "aliases": [
+          "丙午",
+          "병오",
+          "병오일주"
+        ],
+        "recordSha256": "c6dab5927cb0c001f5528e812867e2dd35c3642a7dff653b1f3e8190fa5d0e83"
+      },
+      {
+        "index": 71,
+        "id": "day_pillar_jeonghae",
+        "category": "day_pillar",
+        "aliases": [
+          "丁亥",
+          "정해",
+          "정해일주"
+        ],
+        "recordSha256": "62b528e89d1c0e86f53402c65c47645b1eed46e3b61cfed8e7cd81091fe913eb"
+      },
+      {
+        "index": 72,
+        "id": "day_pillar_mujin",
+        "category": "day_pillar",
+        "aliases": [
+          "戊辰",
+          "무진",
+          "무진일주"
+        ],
+        "recordSha256": "e5bde907f7643b04d1f98a02bfdd52d8226755f0b51844d2e6ccd8f062516778"
+      },
+      {
+        "index": 73,
+        "id": "day_pillar_gyeongsin",
+        "category": "day_pillar",
+        "aliases": [
+          "庚申",
+          "경신",
+          "경신일주"
+        ],
+        "recordSha256": "d8a30587223c720453ad0c4fd647d704b3fa82176b69491ab15809782fdf3b7d"
+      },
+      {
+        "index": 74,
+        "id": "day_pillar_sinyu",
+        "category": "day_pillar",
+        "aliases": [
+          "辛酉",
+          "신유",
+          "신유일주"
+        ],
+        "recordSha256": "54f175d917f96d5c104de264acfe96f9c7051d02b3218aa3c0a09b6b072f6405"
+      },
+      {
+        "index": 75,
+        "id": "day_pillar_imja",
+        "category": "day_pillar",
+        "aliases": [
+          "壬子",
+          "임자",
+          "임자일주"
+        ],
+        "recordSha256": "032a9389e56f8335a5d84c1f6b0a322cc3d090d2ec2e5b0c259a365c295eebec"
+      },
+      {
+        "index": 76,
+        "id": "day_pillar_gyemyo",
+        "category": "day_pillar",
+        "aliases": [
+          "癸卯",
+          "계묘",
+          "계묘일주"
+        ],
+        "recordSha256": "bf149640238f7e8ec493534c5ee696bdd94d440d13f9c7da329de6d7f05933ed"
+      }
+    ]
+  },
+  "sajuFoundationSources.ts": {
+    "count": 20,
+    "records": [
+      {
+        "index": 0,
+        "id": "sm1",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "6a101c32d64458c16d6e2d04b44d614e50db29974de0bef7448a35e36ec0fe75"
+      },
+      {
+        "index": 1,
+        "id": "sm2",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "2493674685f94097d8bf5d438caa84c473775a874722839dba5b9dc48e324e48"
+      },
+      {
+        "index": 2,
+        "id": "sm3",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "9081cde32d5ce46d8b0c110496dc97903e686f6e5eb7419b7b6371c517750f27"
+      },
+      {
+        "index": 3,
+        "id": "sm5",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "f06aee40d5b8b79885a2ed6693044f474e5a257bc2738cdce4314ca95c55270d"
+      },
+      {
+        "index": 4,
+        "id": "sm6",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "34afeb8aa68cab66eaf5126f13f9604662f831bbac6324f4f3f9fb97acc346f0"
+      },
+      {
+        "index": 5,
+        "id": "dt",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "f0802583f628b079c068cfeaa79f8a8b3af005bc8dd5d3a367b48cbbf31b1646"
+      },
+      {
+        "index": 6,
+        "id": "yh",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "92b809e6f42a2eeaf666c0a1a6bbb43ae6cc9c6a0e371174837b27e3924ca2dc"
+      },
+      {
+        "index": 7,
+        "id": "aks",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "6a862710c014508d7d6f7f2d9c61b83d873bb9f51d85fa456508f0084f6cfd6f"
+      },
+      {
+        "index": 8,
+        "id": "repo_constants",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "4ad95ceeca33a55d58774e8b42f8b1ef587acf0fba0078d50c97ca2c5f6220e7"
+      },
+      {
+        "index": 9,
+        "id": "repo_knowledge",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "9e0ae3fa8e13189ad05fbf68634f873ba61194779e1eb5c2628944adcfbce06e"
+      },
+      {
+        "index": 10,
+        "id": "repo_taxonomy",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "282278f0d34aa686d7e830ad8ad6be1f2959d72da5028b943767a2c904d6c82e"
+      },
+      {
+        "index": 11,
+        "id": "repo_day",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "50687ddbcbfc9d591180405d8d6bd202aadae5dbb39cc29f92d52acc631633f3"
+      },
+      {
+        "index": 12,
+        "id": "repo_branch",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "611eaf3382a5acf73cfe34ca1e5b6d7d60f7318c587479ecb5138477e47c9502"
+      },
+      {
+        "index": 13,
+        "id": "repo_stars",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "ab193f41d3c3848b0fd191d819b6beec0fabcf377eb69508a729fe8702965eee"
+      },
+      {
+        "index": 14,
+        "id": "repo_placement",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "bfd9cb0cc81790fa1fb24e22a2e0741b483bc8ccede002a694369330308ce69e"
+      },
+      {
+        "index": 15,
+        "id": "repo_structure",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "8b6cfa6bc8b0ddfb84eb769d8311c9289bd860a02d5b889c5250b594d660d0eb"
+      },
+      {
+        "index": 16,
+        "id": "repo_tengod",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "be86856108b295647684734910c20984c45df03a970a16a824f9a21fa59831c6"
+      },
+      {
+        "index": 17,
+        "id": "repo_relation",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "c6d37db651b406792610a29e9fa6864bce4a516e98786a79d6eec7396238be0f"
+      },
+      {
+        "index": 18,
+        "id": "repo_extractor",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "b8bf27fcdd3b7f1bafb0fd1c1b73807022926fd3d460081965c0bd005ab3ac5a"
+      },
+      {
+        "index": 19,
+        "id": "repo_v4structure",
+        "category": null,
+        "aliases": [],
+        "recordSha256": "e8cfdcb00ab242cdc6e3fdcf8271199548c5ab421f26bb5bd688aebd2c3b38a0"
+      }
+    ]
+  }
+}

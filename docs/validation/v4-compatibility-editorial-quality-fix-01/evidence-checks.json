@@ -1,0 +1,3416 @@
+{
+  "evaluatedAt": "2026-10-12T12:00:00+09:00",
+  "cases": {
+    "A": {
+      "input": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "love",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "afterCaptureSha256": "cc55f40c62e424c969c6a4873b25cb1e45b3c17f882edb617382e4a8c22a8028",
+      "beforeCaptureSha256": "629d1d5256f5471a841aace6738e1a4d01429d56f17e38add10ee51d81009607"
+    },
+    "B": {
+      "input": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "love",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "김태오",
+          "birthDate": "1988-11-06",
+          "birthTime": "16:45",
+          "gender": "MALE",
+          "mbtiType": "ISTJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "박소민",
+          "birthDate": "1996-05-24",
+          "birthTime": "22:10",
+          "gender": "FEMALE",
+          "mbtiType": "ENFP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "afterCaptureSha256": "1ce3911567bb21082b64f47fe7bd82821247553862e6ac52009d684f834d4214",
+      "beforeCaptureSha256": "b7f40e7d29cdc9502572c5e4c5b9432ba5d7bb713d3eaa8bce22e4c621676a6e"
+    },
+    "C": {
+      "input": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "love",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "afterCaptureSha256": "522d483de0504428040265d2c732000891d69a41359f8e29f3f119a7b496d46a",
+      "beforeCaptureSha256": "31cb52910b4baa3341a9678aca8542293a12b05eeb0f0a4cf08b49b8b7f58407"
+    },
+    "D": {
+      "input": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "love",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "afterCaptureSha256": "7dce47d3cd2c8d6f18ba6829dce85eea6cc092f20391684b1d870425b3d1374e",
+      "beforeCaptureSha256": "52a2e1a6d0b6483015248e0bbd64691196b93529886e9f34598e3e6e1e3566b3"
+    },
+    "E": {
+      "input": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "love",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "afterCaptureSha256": "65c64e92a11be37e515d3801ff532a8ad6da6fc87feb107dcca540a7d2aa825c",
+      "beforeCaptureSha256": "484b93572a15ebe36d17e38a6064f95a4890c4638dfa8c4db5cb6224f49bcc91"
+    },
+    "F": {
+      "input": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "love",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "",
+          "gender": "MALE",
+          "mbtiType": "",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "",
+          "gender": "FEMALE",
+          "mbtiType": "",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "afterCaptureSha256": "e02bdff50b0ab830923c1a9503368601b24a0c2f350d2d6629dd5d1beb211055",
+      "beforeCaptureSha256": "51754bb240adb66ee4b0e3afac1a8aa56e549714a7daddfbc9bf3c87cdd6df5a"
+    },
+    "marriage": {
+      "input": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "marriage",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "afterCaptureSha256": "efe9c4db344307255e2507bf29e6f60bf41072fe88d27fe896edf4921e626fa5",
+      "beforeCaptureSha256": "eb89c2926e5463affbb60975c368a213a568b506340701417bcbc6db84208afb"
+    },
+    "parentChild": {
+      "input": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "parentChild",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "afterCaptureSha256": "fd6a3ad13a74a5832ef3e9c8d1e5fb85e2785b7139d810e6b14f86c278ba9999",
+      "beforeCaptureSha256": "973bd28ab3955e8cced1fa3a29ecec4bb49ee5cc319efa6f5ba9c4ebfc1ce879"
+    },
+    "coworker": {
+      "input": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "coworker",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "afterCaptureSha256": "bbc4b6caf3792ab0860e21706925ed4caf1c0f9622c53f78c9f0413c1034a797",
+      "beforeCaptureSha256": "08742d84a880c3573789fb0123e26a113d37447e50a953b03a2a56a7afd13094"
+    },
+    "managerReport": {
+      "input": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "managerReport",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "afterCaptureSha256": "78f0a9034010b26a4997b4cb6f8b11bc44a44f2c88154519afe53f5c80229496",
+      "beforeCaptureSha256": "29e59ef773f5858a0f1680a598dd401e7d5e08beeb44b1964b202cfe375b8bb1"
+    },
+    "businessPartner": {
+      "input": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "businessPartner",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "afterCaptureSha256": "aebf23e0b6bfb049e7b68a1dd1ceeda3f74366f860a33a2604b13ea3c36df1a8",
+      "beforeCaptureSha256": "b9933416092b9c885cdcdc2bc38b674bd47aebf4ac5cd40d1551dae6570fe772"
+    },
+    "friendship": {
+      "input": {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "friendship",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "personA": {
+          "name": "이준혁",
+          "birthDate": "1991-08-12",
+          "birthTime": "07:30",
+          "gender": "MALE",
+          "mbtiType": "ESTP",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "정유진",
+          "birthDate": "1994-01-19",
+          "birthTime": "13:40",
+          "gender": "FEMALE",
+          "mbtiType": "ISFJ",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "productOptions": {
+          "contentVersion": "v4"
+        }
+      },
+      "afterCaptureSha256": "4eea413f628c01e839216b1aea43d5945cbf1c67c777bed3b11b85297eb0abba",
+      "beforeCaptureSha256": "778aaa6a192b253573a72a29eef8d8501858d91e8dd7785c9573b42ef70873f7"
+    }
+  },
+  "A": {
+    "directions": {
+      "aToB": {
+        "subjectPerson": "29a2534854378270a988c1f8",
+        "targetPerson": "b425792e04d53877ee951f97",
+        "relationId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+        "receivedTenGod": {
+          "viewerDayStem": "乙",
+          "targetDayStem": "甲",
+          "tenGod": "劫財",
+          "tenGodKo": "겁재",
+          "relationLabel": "을목이 갑목를 보면 겁재"
+        },
+        "element": {
+          "sourceStem": "甲",
+          "targetStem": "乙",
+          "sourceElement": "wood",
+          "targetElement": "wood",
+          "relation": "same",
+          "relationLabel": "갑목 -> 을목",
+          "summary": "갑목와 을목가 같은 오행으로 공명하는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "ESTP",
+          "targetType": "ISFJ",
+          "evidenceId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+          "withType": "ISFJ",
+          "label": "안정-자극 조율 관계",
+          "sourceRelationName": "Inferred Stability-Stimulation Balance",
+          "sourceCoverage": "inferred",
+          "sharedGround": [
+            "ISFJ는 따뜻한 돌봄과 안정된 루틴을 만들고, ESTP는 활력과 현실 대응력을 제공한다.",
+            "두 사람 모두 말뿐인 약속보다 실제 행동으로 드러나는 도움을 중요하게 볼 수 있다.",
+            "ISFJ의 세심함과 ESTP의 순발력이 맞으면 생활 속 문제를 빠르게 해결하면서도 정서적 기반을 만들 수 있다."
+          ],
+          "friction": [
+            "ISFJ는 예측 가능한 관계와 배려 있는 표현을 원하지만, ESTP는 자유로운 교류와 즉각적인 행동을 선호한다.",
+            "ESTP의 장난과 직설은 ISFJ에게 가볍거나 무례하게 느껴질 수 있고, ISFJ의 걱정과 확인은 ESTP에게 간섭으로 느껴질 수 있다.",
+            "갈등이 생기면 ISFJ는 서운함을 쌓아 두고 ESTP는 분위기를 바꾸려 하면서 문제의 깊이가 달라진다."
+          ],
+          "positiveInfluence": [
+            "ISFJ는 ESTP에게 관계를 오래 지키는 세심함과 책임감을 알려 준다.",
+            "ESTP는 ISFJ가 걱정에만 머물지 않고 더 넓은 경험을 하도록 움직이게 만든다.",
+            "서로의 선의를 인정하면 안정과 활력이 함께 살아난다."
+          ],
+          "lovePattern": "연애에서는 ESTP가 ISFJ의 따뜻한 챙김에 안정감을 느끼고, ISFJ는 ESTP의 활기와 추진력에 끌릴 수 있다. 다만 ESTP가 너무 자유롭게 움직이면 ISFJ는 불안해지고, ISFJ가 관계를 세밀하게 챙길수록 ESTP는 답답함을 느낀다.",
+          "marriagePattern": "결혼하면 ISFJ는 가족, 집안일, 기념일, 안정된 생활을 챙기고 ESTP는 활동과 외부 교류를 유지하려 한다. 돈과 생활 리듬에서 안정 저축과 경험 소비가 충돌할 수 있어 기준을 미리 정해야 한다.",
+          "repairStrategy": [
+            "ESTP는 ISFJ가 중요하게 여기는 약속과 기념일을 가볍게 넘기지 않는다.",
+            "ISFJ는 ESTP의 외부 활동을 곧바로 관계 소홀로 해석하지 말고 필요한 안정 기준을 말한다.",
+            "생활비와 자유 활동비를 분리해 돌봄과 즐거움이 서로를 침범하지 않게 한다."
+          ],
+          "reportLine": "이 관계는 안정과 활력이 만나는 조합이지만, 걱정이 통제가 되고 자유가 방치가 되지 않도록 생활 기준을 맞춰야 합니다."
+        }
+      },
+      "bToA": {
+        "subjectPerson": "b425792e04d53877ee951f97",
+        "targetPerson": "29a2534854378270a988c1f8",
+        "relationId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+        "receivedTenGod": {
+          "viewerDayStem": "甲",
+          "targetDayStem": "乙",
+          "tenGod": "劫財",
+          "tenGodKo": "겁재",
+          "relationLabel": "갑목이 을목를 보면 겁재"
+        },
+        "element": {
+          "sourceStem": "乙",
+          "targetStem": "甲",
+          "sourceElement": "wood",
+          "targetElement": "wood",
+          "relation": "same",
+          "relationLabel": "을목 -> 갑목",
+          "summary": "을목와 갑목가 같은 오행으로 공명하는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "ISFJ",
+          "targetType": "ESTP",
+          "evidenceId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+          "withType": "ESTP",
+          "label": "환상 관계",
+          "sourceRelationName": "Illusionary",
+          "sourceCoverage": "direct",
+          "sharedGround": [
+            "서로의 이야기를 흥미롭게 듣는 순간은 있다.",
+            "함께 일하더라도 업무가 다르면 따뜻하게 배려하는 관계가 가능하다.",
+            "현실 접점이 분명할 때는 ESTP의 현장 대응력과 ISFJ의 생활 관리력이 서로 다른 방식으로 도움이 된다는 점을 인정할 수 있다."
+          ],
+          "friction": [
+            "함께 목표를 성취하려 할수록 서로의 방식이 불충분하고 의미 없게 보인다.",
+            "ESTP의 즉흥성과 행동성은 ISFJ에게 불안하고, ISFJ의 조심스러움은 ESTP에게 답답하다.",
+            "서로의 능력을 깊게 신뢰하지 못해 비판적이고 부정적으로 흐르기 쉽다."
+          ],
+          "positiveInfluence": [
+            "업무 영역을 분리하면 서로에게 필요한 도움만 주고받을 수 있다.",
+            "ESTP는 ISFJ에게 현재 행동의 에너지를, ISFJ는 ESTP에게 생활 안정감을 줄 수 있다.",
+            "상대의 역할을 과하게 침범하지 않을 때 관계 온도가 유지된다."
+          ],
+          "lovePattern": "초반에는 다른 에너지가 흥미롭게 보일 수 있다. 하지만 연애가 생활로 들어가면 ISFJ는 안정 부족을 느끼고 ESTP는 관계가 무거워진다고 느낀다.",
+          "marriagePattern": "장기 관계에서는 목표와 역할을 분리해야 한다. 모든 일을 같이 해결하려 하면 서로를 무력하게 만들고, 각자 맡은 영역이 있을 때만 따뜻함이 살아난다.",
+          "repairStrategy": [
+            "함께할 일과 각자 처리할 일을 분명히 나눈다.",
+            "ISFJ는 ESTP의 즉흥성을 전부 무책임으로 해석하지 않는다.",
+            "ESTP는 ISFJ의 안정 욕구를 잔소리로만 듣지 않는다."
+          ],
+          "reportLine": "ISFJ와 ESTP는 서로를 흥미롭게 보지만 같은 방식으로 목표를 이루려 하면 금방 무력해지므로, 역할 분리가 핵심입니다."
+        }
+      }
+    },
+    "relations": [
+      {
+        "kind": "harm",
+        "labelKo": "해",
+        "relationLabel": "寅巳 해",
+        "branches": [
+          "寅",
+          "巳"
+        ],
+        "refs": [
+          {
+            "person": "personA",
+            "personLabel": "이준혁",
+            "position": "day",
+            "branch": "寅"
+          },
+          {
+            "person": "personB",
+            "personLabel": "정유진",
+            "position": "day",
+            "branch": "巳"
+          }
+        ],
+        "identity": "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+      },
+      {
+        "kind": "six_harmony",
+        "labelKo": "육합",
+        "relationLabel": "巳申 육합",
+        "branches": [
+          "巳",
+          "申"
+        ],
+        "refs": [
+          {
+            "person": "personA",
+            "personLabel": "이준혁",
+            "position": "month",
+            "branch": "申"
+          },
+          {
+            "person": "personB",
+            "personLabel": "정유진",
+            "position": "day",
+            "branch": "巳"
+          }
+        ],
+        "identity": "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+      },
+      {
+        "kind": "clash",
+        "labelKo": "충",
+        "relationLabel": "丑未 충",
+        "branches": [
+          "丑",
+          "未"
+        ],
+        "refs": [
+          {
+            "person": "personA",
+            "personLabel": "이준혁",
+            "position": "year",
+            "branch": "未"
+          },
+          {
+            "person": "personB",
+            "personLabel": "정유진",
+            "position": "month",
+            "branch": "丑"
+          }
+        ],
+        "identity": "clash:29a2534854378270a988c1f8:year:未|b425792e04d53877ee951f97:month:丑"
+      },
+      {
+        "kind": "six_harmony",
+        "labelKo": "육합",
+        "relationLabel": "辰酉 육합",
+        "branches": [
+          "辰",
+          "酉"
+        ],
+        "refs": [
+          {
+            "person": "personA",
+            "personLabel": "이준혁",
+            "position": "hour",
+            "branch": "辰"
+          },
+          {
+            "person": "personB",
+            "personLabel": "정유진",
+            "position": "year",
+            "branch": "酉"
+          }
+        ],
+        "identity": "six_harmony:29a2534854378270a988c1f8:hour:辰|b425792e04d53877ee951f97:year:酉"
+      }
+    ],
+    "index": {
+      "version": "gyeol-compatibility-index-13b-1",
+      "total": 54,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "같은 오행으로 치우침",
+              "value": -2,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:4.4",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:high"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 2.4,
+              "sources": [
+                "day:BRANCH_YIN_YANG:寅",
+                "day:BRANCH_YIN_YANG:巳",
+                "day:STEM_YIN_YANG:乙",
+                "day:STEM_YIN_YANG:甲",
+                "hour:BRANCH_YIN_YANG:未",
+                "hour:BRANCH_YIN_YANG:辰",
+                "hour:STEM_YIN_YANG:戊",
+                "hour:STEM_YIN_YANG:癸",
+                "month:BRANCH_YIN_YANG:丑",
+                "month:BRANCH_YIN_YANG:申",
+                "month:STEM_YIN_YANG:丙",
+                "month:STEM_YIN_YANG:乙",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:未",
+                "year:BRANCH_YIN_YANG:酉",
+                "year:STEM_YIN_YANG:癸",
+                "year:STEM_YIN_YANG:辛"
+              ]
+            }
+          ],
+          "value": 15
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 7.199999999999999,
+              "sources": [
+                "six_harmony:29a2534854378270a988c1f8:hour:辰|b425792e04d53877ee951f97:year:酉",
+                "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -6,
+              "sources": [
+                "clash:29a2534854378270a988c1f8:year:未|b425792e04d53877ee951f97:month:丑",
+                "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+              ]
+            }
+          ],
+          "value": 19
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "공통 관심과 좋은 영향",
+              "value": 4,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair"
+              ]
+            },
+            {
+              "factor": "다르게 반응하는 지점",
+              "value": -4,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair"
+              ]
+            },
+            {
+              "factor": "관계 유형별 자료",
+              "value": 0,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair:lovePattern",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair:lovePattern"
+              ]
+            }
+          ],
+          "value": 13
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "대화를 다시 잇는 방법",
+              "value": 2,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair:repairStrategy",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair:repairStrategy"
+              ]
+            }
+          ],
+          "value": 7
+        }
+      ],
+      "category": "love",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리와 MBTI를 바탕으로 한 엔터테인먼트 해석입니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "sentenceProofs": {
+      "CH01.P2": [
+        {
+          "chapterId": "CH01",
+          "paragraphId": "P2",
+          "sentenceRole": "S1",
+          "roleDescription": "실제 명리 관계",
+          "text": "두 원국의 연결 중 먼저 볼 것은 이준혁님의 월지 申 및 정유진님의 일지 巳 사이의 육합입니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+          ],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [
+            "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+          ],
+          "semanticTheme": "core:명리에서 보는 두 사람의 관계",
+          "provenance": {
+            "materialId": "pair-release:CH01:P2:S1",
+            "sourceRegistryKey": "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "compatibilityRelationRules:detectCrossBranchRelations:six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH01",
+          "paragraphId": "P2",
+          "sentenceRole": "S2",
+          "roleDescription": "쉬운 의미",
+          "text": "육합은 다른 부분을 이어 맞추며 호흡을 만드는 연결입니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+          ],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [
+            "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+          ],
+          "semanticTheme": "core:명리에서 보는 두 사람의 관계",
+          "provenance": {
+            "materialId": "pair-release:CH01:P2:S2",
+            "sourceRegistryKey": "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "compatibilityRelationRules:detectCrossBranchRelations:six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH01",
+          "paragraphId": "P2",
+          "sentenceRole": "S3",
+          "roleDescription": "상호 영향",
+          "text": "여행에서 쉬고 싶은 때와 더 둘러보고 싶은 때를 맞춰본다면, 서로의 방식을 지우지 않고 같은 선택에 보태는 연습을 해볼 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+          ],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [
+            "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+          ],
+          "semanticTheme": "core:명리에서 보는 두 사람의 관계",
+          "provenance": {
+            "materialId": "pair-release:CH01:P2:S3",
+            "sourceRegistryKey": "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "compatibilityRelationRules:detectCrossBranchRelations:six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH01",
+          "paragraphId": "P2",
+          "sentenceRole": "S4",
+          "roleDescription": "강점과 주의 조건",
+          "text": "이 연결만으로 관계의 결과를 정할 수는 없으며, 실제로 서로의 의견을 듣고 선택을 나눌 때 도움이 되는 가능성으로 읽습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+          ],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [
+            "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+          ],
+          "semanticTheme": "core:명리에서 보는 두 사람의 관계",
+          "provenance": {
+            "materialId": "pair-release:CH01:P2:S4",
+            "sourceRegistryKey": "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "compatibilityRelationRules:detectCrossBranchRelations:six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+            ]
+          }
+        }
+      ],
+      "CH02.P1": [
+        {
+          "chapterId": "CH02",
+          "paragraphId": "P1",
+          "sentenceRole": "S1",
+          "roleDescription": "대표 행동",
+          "text": "이준혁님의 관계 성향은 스스로 판단한 뒤 선택을 알리는 방식을 중심으로 살펴볼 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "natal:day:stem:甲"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "person-a:A의 관계 성향",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+          "provenance": {
+            "materialId": "pair-release:CH02:P1:S1",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1:natal:day:stem:甲:AUTONOMY",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+              "natal:day:stem:甲",
+              "person:29a2534854378270a988c1f8"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH02",
+          "paragraphId": "P1",
+          "sentenceRole": "S2",
+          "roleDescription": "명리 근거",
+          "text": "이준혁님의 일주 일간 갑목은 ‘방향을 잡으면 앞으로 자라고 커지려는 성질’이라는 뜻으로, 상대와 함께 정할 때도 자신의 기준이 생기는 이유를 보여줍니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "natal:day:stem:甲"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "person-a:A의 관계 성향",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+          "provenance": {
+            "materialId": "pair-release:CH02:P1:S2",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1:natal:day:stem:甲:AUTONOMY",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+              "natal:day:stem:甲",
+              "person:29a2534854378270a988c1f8"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH02",
+          "paragraphId": "P1",
+          "sentenceRole": "S3",
+          "roleDescription": "MBTI 선호",
+          "text": "ESTP의 선호를 함께 보면 중요한 일일수록 정해진 답을 받기보다 직접 결정하고 싶어 합니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [
+            "mbti:ESTP:traits:love:freedom_in_love:plainKo"
+          ],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "person-a:A의 관계 성향",
+          "provenance": {
+            "materialId": "pair-release:CH02:P1:S3",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:mbti:ESTP:traits:love:freedom_in_love:plainKo",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "/traits/love/1/plainKo"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH02",
+          "paragraphId": "P1",
+          "sentenceRole": "S4",
+          "roleDescription": "B와의 관계",
+          "text": "정유진님이 상대가 빠뜨린 작은 필요를 챙기는 방식을 중요하게 여긴다는 점까지 함께 보면, 자기 기준을 전하는 것과 상대가 받아들일 준비를 하는 것은 다른 과정임을 알 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "natal:day:stem:乙"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "person-a:A의 관계 성향",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1",
+          "provenance": {
+            "materialId": "pair-release:CH02:P1:S4",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:FUSION:fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1:natal:day:stem:乙:CARE",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1",
+              "natal:day:stem:乙",
+              "person:b425792e04d53877ee951f97"
+            ]
+          }
+        }
+      ],
+      "CH02.P3": [
+        {
+          "chapterId": "CH02",
+          "paragraphId": "P3",
+          "sentenceRole": "S1",
+          "roleDescription": "특징적 강점",
+          "text": "이준혁님의 양의 움직임은 ‘생각을 안에만 두기보다 행동이나 표현으로 꺼내는 쪽’이라는 뜻으로, 가까운 사람에게 건넬 강점의 바탕입니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "foundation:yin_yang:STRONG_YANG"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "person-a:A가 관계에 가져오는 장점",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+          "provenance": {
+            "materialId": "pair-release:CH02:P3:S1",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:FUSION:fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1:foundation:yin_yang:STRONG_YANG:EXPRESSION",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+              "foundation:yin_yang:STRONG_YANG",
+              "person:29a2534854378270a988c1f8"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH02",
+          "paragraphId": "P3",
+          "sentenceRole": "S2",
+          "roleDescription": "실제 근거",
+          "text": "이준혁님의 ESTP 선호에서도 대화가 달라지면 말의 내용뿐 아니라 상대 반응도 같이 봅니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [
+            "mbti:ESTP:traits:relationships:intent_reader:plainKo"
+          ],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "person-a:A가 관계에 가져오는 장점",
+          "provenance": {
+            "materialId": "pair-release:CH02:P3:S2",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:mbti:ESTP:traits:relationships:intent_reader:plainKo",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "/traits/relationships/2/plainKo"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH02",
+          "paragraphId": "P3",
+          "sentenceRole": "S3",
+          "roleDescription": "B에게 좋은 상황",
+          "text": "혼자 말하기보다 상대 반응을 보면서 말과 분위기를 조절하는 사람으로 이어질 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "foundation:yin_yang:STRONG_YANG"
+          ],
+          "mbtiSourceNodeIds": [
+            "mbti:ESTP:traits:relationships:intent_reader:plainKo"
+          ],
+          "fusionIds": [
+            "fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1"
+          ],
+          "relationIds": [],
+          "semanticTheme": "person-a:A가 관계에 가져오는 장점",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+          "provenance": {
+            "materialId": "pair-release:CH02:P3:S3",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:FUSION:fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1:foundation:yin_yang:STRONG_YANG:EXPRESSION:fusion:fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+              "foundation:yin_yang:STRONG_YANG",
+              "person:29a2534854378270a988c1f8",
+              "fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+              "mbti:ESTP:traits:relationships:intent_reader:plainKo"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH02",
+          "paragraphId": "P3",
+          "sentenceRole": "S4",
+          "roleDescription": "유지 조건",
+          "text": "상대가 힘들었던 하루를 들려줄 때, 이준혁님이 할 수 있는 도움과 상대가 원하는 도움을 맞춰보면 이 장점을 덜 소모하면서 쓸 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "foundation:yin_yang:STRONG_YANG"
+          ],
+          "mbtiSourceNodeIds": [
+            "mbti:ESTP:traits:relationships:intent_reader:plainKo"
+          ],
+          "fusionIds": [
+            "fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1"
+          ],
+          "relationIds": [],
+          "semanticTheme": "person-a:A가 관계에 가져오는 장점",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+          "provenance": {
+            "materialId": "pair-release:CH02:P3:S4",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:FUSION:fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1:foundation:yin_yang:STRONG_YANG:EXPRESSION:fusion:fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+              "foundation:yin_yang:STRONG_YANG",
+              "person:29a2534854378270a988c1f8",
+              "fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+              "mbti:ESTP:traits:relationships:intent_reader:plainKo"
+            ]
+          }
+        }
+      ],
+      "CH03.P1": [
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P1",
+          "sentenceRole": "S1",
+          "roleDescription": "독립적 행동",
+          "text": "정유진님에게서 먼저 읽을 면은 상대가 빠뜨린 작은 필요를 챙기는 방식입니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "natal:day:stem:乙"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "person-b:B의 관계 성향",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1",
+          "provenance": {
+            "materialId": "pair-release:CH03:P1:S1",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:FUSION:fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1:natal:day:stem:乙:CARE",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1",
+              "natal:day:stem:乙",
+              "person:b425792e04d53877ee951f97"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P1",
+          "sentenceRole": "S2",
+          "roleDescription": "명리 근거",
+          "text": "정유진님의 일주 일간 을목은 ‘정면으로 밀기보다 가능한 길을 찾아 계속 자라는 성질’이라는 뜻으로, 상대에게 다가가고 자기 뜻을 지키는 바탕이 됩니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "natal:day:stem:乙"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "person-b:B의 관계 성향",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1",
+          "provenance": {
+            "materialId": "pair-release:CH03:P1:S2",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:FUSION:fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1:natal:day:stem:乙:CARE",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1",
+              "natal:day:stem:乙",
+              "person:b425792e04d53877ee951f97"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P1",
+          "sentenceRole": "S3",
+          "roleDescription": "MBTI 선호",
+          "text": "정유진님의 ISFJ 선호에서 함께 살필 반응도 있습니다: 누군가 곤란해 보이면 필요한 것을 알아차리고, 무엇을 챙겨줄 수 있을지 생각하며 먼저 움직입니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [
+            "mbti:ISFJ:traits:love:devoted_partner:plainKo"
+          ],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "person-b:B의 관계 성향",
+          "provenance": {
+            "materialId": "pair-release:CH03:P1:S3",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:mbti:ISFJ:traits:love:devoted_partner:plainKo",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "/traits/love/1/plainKo"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P1",
+          "sentenceRole": "S4",
+          "roleDescription": "A와의 관계",
+          "text": "이준혁님에게 익숙한 스스로 판단한 뒤 선택을 알리는 방식을 함께 생각하면, 정유진님의 편안함만으로 둘의 대화가 끝났다고 여기기는 어렵습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "natal:day:stem:甲"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "person-b:B의 관계 성향",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+          "provenance": {
+            "materialId": "pair-release:CH03:P1:S4",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1:natal:day:stem:甲:AUTONOMY",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+              "natal:day:stem:甲",
+              "person:29a2534854378270a988c1f8"
+            ]
+          }
+        }
+      ],
+      "CH03.P3": [
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P3",
+          "sentenceRole": "S1",
+          "roleDescription": "특징적 강점",
+          "text": "정유진님의 음의 움직임은 ‘바로 꺼내기보다 안에서 충분히 보고 정리한 뒤 움직이는 쪽’이라는 뜻으로, 가까운 사람에게 건넬 강점의 바탕입니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "foundation:yin_yang:EXTREME_YIN"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "person-b:B가 관계에 가져오는 장점",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+          "provenance": {
+            "materialId": "pair-release:CH03:P3:S1",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:FUSION:fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1:foundation:yin_yang:EXTREME_YIN:COMMUNICATION_STYLE",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+              "foundation:yin_yang:EXTREME_YIN",
+              "person:b425792e04d53877ee951f97"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P3",
+          "sentenceRole": "S2",
+          "roleDescription": "독립적 근거",
+          "text": "정유진님의 ISFJ 선호에서도 가까운 사람이 어려워하면 무엇을 해줄 수 있을지 생각합니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [
+            "mbti:ISFJ:traits:communication:careful_word_choice:plainKo"
+          ],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "person-b:B가 관계에 가져오는 장점",
+          "provenance": {
+            "materialId": "pair-release:CH03:P3:S2",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "/traits/communication/0/plainKo"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P3",
+          "sentenceRole": "S3",
+          "roleDescription": "A에게 좋은 상황",
+          "text": "하고 싶은 말이 있어도 상대가 받아들이기 쉬운 방식으로 부드럽게 말하려는 사람으로 이어질 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "foundation:yin_yang:EXTREME_YIN"
+          ],
+          "mbtiSourceNodeIds": [
+            "mbti:ISFJ:traits:communication:careful_word_choice:plainKo"
+          ],
+          "fusionIds": [
+            "fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1"
+          ],
+          "relationIds": [],
+          "semanticTheme": "person-b:B가 관계에 가져오는 장점",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+          "provenance": {
+            "materialId": "pair-release:CH03:P3:S3",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:FUSION:fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1:foundation:yin_yang:EXTREME_YIN:COMMUNICATION_STYLE:fusion:fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+              "foundation:yin_yang:EXTREME_YIN",
+              "person:b425792e04d53877ee951f97",
+              "fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+              "mbti:ISFJ:traits:communication:careful_word_choice:plainKo"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH03",
+          "paragraphId": "P3",
+          "sentenceRole": "S4",
+          "roleDescription": "유지 조건",
+          "text": "정유진님이 상대를 챙기면서 자기 수고도 알릴 수 있다면, 배려가 당연한 역할이 되어 혼자 지치는 상황을 줄일 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "foundation:yin_yang:EXTREME_YIN"
+          ],
+          "mbtiSourceNodeIds": [
+            "mbti:ISFJ:traits:communication:careful_word_choice:plainKo"
+          ],
+          "fusionIds": [
+            "fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1"
+          ],
+          "relationIds": [],
+          "semanticTheme": "person-b:B가 관계에 가져오는 장점",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+          "provenance": {
+            "materialId": "pair-release:CH03:P3:S4",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:FUSION:fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1:foundation:yin_yang:EXTREME_YIN:COMMUNICATION_STYLE:fusion:fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+              "foundation:yin_yang:EXTREME_YIN",
+              "person:b425792e04d53877ee951f97",
+              "fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+              "mbti:ISFJ:traits:communication:careful_word_choice:plainKo"
+            ]
+          }
+        }
+      ],
+      "CH05.P1": [
+        {
+          "chapterId": "CH05",
+          "paragraphId": "P1",
+          "sentenceRole": "S1",
+          "roleDescription": "A→B 영향",
+          "text": "정유진님의 일간 乙 기준에서 이준혁님의 일간 甲에 해당하는 십성은 겁재입니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "targetPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97"
+          ],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+          "semanticTheme": "direction-ab:A는 B에게 어떤 자극을 주는가",
+          "provenance": {
+            "materialId": "pair-release:CH05:P1:S1",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "compatibilityRelationRules:getCrossTenGodRelation:29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+              "target-viewer:b425792e04d53877ee951f97"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH05",
+          "paragraphId": "P1",
+          "sentenceRole": "S2",
+          "roleDescription": "받는 사람 기준 십성",
+          "text": "겁재의 관계 자극을 풀면 이준혁님의 존재가 정유진님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "targetPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97"
+          ],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+          "semanticTheme": "direction-ab:A는 B에게 어떤 자극을 주는가",
+          "provenance": {
+            "materialId": "pair-release:CH05:P1:S2",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "compatibilityRelationRules:getCrossTenGodRelation:29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+              "target-viewer:b425792e04d53877ee951f97"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH05",
+          "paragraphId": "P1",
+          "sentenceRole": "S3",
+          "roleDescription": "구체적 행동",
+          "text": "이준혁님 쪽에서는 스스로 판단한 뒤 선택을 알리는 방식으로 그 자극을 전할 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "targetPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97"
+          ],
+          "individualEvidenceIds": [
+            "natal:day:stem:甲"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+          "semanticTheme": "direction-ab:A는 B에게 어떤 자극을 주는가",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+          "provenance": {
+            "materialId": "pair-release:CH05:P1:S3",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:FUSION:fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1:natal:day:stem:甲:AUTONOMY",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1",
+              "natal:day:stem:甲",
+              "person:29a2534854378270a988c1f8"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH05",
+          "paragraphId": "P1",
+          "sentenceRole": "S4",
+          "roleDescription": "B에게 남는 의미",
+          "text": "정유진님에게 중요한 무리한 몫을 거절할 수 있는 선을 함께 지켜야 이 자극이 선택 가능한 제안으로 도착합니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "targetPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97"
+          ],
+          "individualEvidenceIds": [
+            "natal:ten-god:month:visible:乙"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+          "semanticTheme": "direction-ab:A는 B에게 어떤 자극을 주는가",
+          "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR055",
+          "provenance": {
+            "materialId": "pair-release:CH05:P1:S4",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:PERSONAL_RESONANCE:resonance:PR055:natal:ten-god:month:visible:乙:BOUNDARY",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "resonance:PR055",
+              "natal:ten-god:month:visible:乙",
+              "person:b425792e04d53877ee951f97"
+            ]
+          }
+        }
+      ],
+      "CH05.P3": [
+        {
+          "chapterId": "CH05",
+          "paragraphId": "P3",
+          "sentenceRole": "S1",
+          "roleDescription": "부담 행동",
+          "text": "갑자기 바뀐 만남을 두고 한쪽만 일정을 다시 맞춰야 한다면, 이준혁님의 내용을 고치려다 사람을 평가하는 것처럼 들리는 말이 정유진님에게는 부담으로 커질 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "targetPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97"
+          ],
+          "individualEvidenceIds": [
+            "foundation:yin_yang:STRONG_YANG"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+          "semanticTheme": "direction-ab:A의 행동이 B에게 부담이 되는 순간",
+          "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR054",
+          "provenance": {
+            "materialId": "pair-release:CH05:P3:S1",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:PERSONAL_RESONANCE:resonance:PR054:foundation:yin_yang:STRONG_YANG:COMMUNICATION_STYLE",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "resonance:PR054",
+              "foundation:yin_yang:STRONG_YANG",
+              "person:29a2534854378270a988c1f8"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH05",
+          "paragraphId": "P3",
+          "sentenceRole": "S2",
+          "roleDescription": "검증된 차이",
+          "text": "정유진님에게 필요한 무리한 몫을 거절할 수 있는 선이 빠지면, 도움의 크기보다 자신이 참여할 자리가 있는지를 먼저 묻게 되기 때문입니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "targetPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97"
+          ],
+          "individualEvidenceIds": [
+            "natal:ten-god:month:visible:乙"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+          "semanticTheme": "direction-ab:A의 행동이 B에게 부담이 되는 순간",
+          "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR055",
+          "provenance": {
+            "materialId": "pair-release:CH05:P3:S2",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:PERSONAL_RESONANCE:resonance:PR055:natal:ten-god:month:visible:乙:BOUNDARY",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "resonance:PR055",
+              "natal:ten-god:month:visible:乙",
+              "person:b425792e04d53877ee951f97"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH05",
+          "paragraphId": "P3",
+          "sentenceRole": "S3",
+          "roleDescription": "의도와 경험",
+          "text": "이 상황에서 정유진님의 ISFJ 선호를 함께 살피면 요청을 받으면 들어줄 수 있는지부터 확인하고 내 기준도 지키고 싶어 합니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "targetPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97"
+          ],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [
+            "mbti:ISFJ:traits:relationships:secret_keeper:plainKo"
+          ],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+          "semanticTheme": "direction-ab:A의 행동이 B에게 부담이 되는 순간",
+          "provenance": {
+            "materialId": "pair-release:CH05:P3:S3",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:mbti:ISFJ:traits:relationships:secret_keeper:plainKo",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "/traits/relationships/2/plainKo"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH05",
+          "paragraphId": "P3",
+          "sentenceRole": "S4",
+          "roleDescription": "악화 조건",
+          "text": "이때 상대가 고마워할 줄 모른다고 결론을 내리면, 호의의 방향을 고칠 기회까지 닫히게 된다는 점을 조심할 만합니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "29a2534854378270a988c1f8",
+          "targetPersonId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97"
+          ],
+          "individualEvidenceIds": [
+            "foundation:yin_yang:STRONG_YANG"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+          "semanticTheme": "direction-ab:A의 행동이 B에게 부담이 되는 순간",
+          "sourceCandidateId": "editorial:PERSONAL_RESONANCE:resonance:PR054",
+          "provenance": {
+            "materialId": "pair-release:CH05:P3:S4",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:PERSONAL_RESONANCE:resonance:PR054:foundation:yin_yang:STRONG_YANG:COMMUNICATION_STYLE",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "resonance:PR054",
+              "foundation:yin_yang:STRONG_YANG",
+              "person:29a2534854378270a988c1f8"
+            ]
+          }
+        }
+      ],
+      "CH06.P1": [
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P1",
+          "sentenceRole": "S1",
+          "roleDescription": "B→A 영향",
+          "text": "이준혁님의 일간 甲 기준에서 정유진님의 일간 乙에 해당하는 십성은 겁재입니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B는 A에게 어떤 자극을 주는가",
+          "provenance": {
+            "materialId": "pair-release:CH06:P1:S1",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "compatibilityRelationRules:getCrossTenGodRelation:b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+              "target-viewer:29a2534854378270a988c1f8"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P1",
+          "sentenceRole": "S2",
+          "roleDescription": "받는 사람 기준 십성",
+          "text": "겁재의 관계 자극을 풀면 정유진님의 존재가 이준혁님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B는 A에게 어떤 자극을 주는가",
+          "provenance": {
+            "materialId": "pair-release:CH06:P1:S2",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "compatibilityRelationRules:getCrossTenGodRelation:b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+              "target-viewer:29a2534854378270a988c1f8"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P1",
+          "sentenceRole": "S3",
+          "roleDescription": "다른 방향 행동",
+          "text": "정유진님에게 익숙한 상대가 빠뜨린 작은 필요를 챙기는 방식이 이준혁님에게 닿는다면, 받는 쪽의 여건도 같이 살펴야 합니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [
+            "natal:day:stem:乙"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B는 A에게 어떤 자극을 주는가",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1",
+          "provenance": {
+            "materialId": "pair-release:CH06:P1:S3",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:FUSION:fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1:natal:day:stem:乙:CARE",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1",
+              "natal:day:stem:乙",
+              "person:b425792e04d53877ee951f97"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P1",
+          "sentenceRole": "S4",
+          "roleDescription": "A에게 남는 의미",
+          "text": "이준혁님이 필요로 하는 바뀌는 이유를 미리 알 수 있는 약속을 먼저 살피면, 같은 십성의 자극도 그 사람에게 맞는 속도로 건넬 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [
+            "foundation:element:EARTH:STRONG"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B는 A에게 어떤 자극을 주는가",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C076:love:STABILITY:1:SOCIAL_ATTUNEMENT:1",
+          "provenance": {
+            "materialId": "pair-release:CH06:P1:S4",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:FUSION:fusion:COMPLEMENT:C076:love:STABILITY:1:SOCIAL_ATTUNEMENT:1:foundation:element:EARTH:STRONG:STABILITY",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C076:love:STABILITY:1:SOCIAL_ATTUNEMENT:1",
+              "foundation:element:EARTH:STRONG",
+              "person:29a2534854378270a988c1f8"
+            ]
+          }
+        }
+      ],
+      "CH06.P3": [
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P3",
+          "sentenceRole": "S1",
+          "roleDescription": "부담 행동",
+          "text": "갑자기 바뀐 만남을 두고 한쪽만 일정을 다시 맞춰야 한다면, 정유진님의 분위기를 지키려다 필요한 반대를 삼키는 태도가 이준혁님에게는 부담으로 커질 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [
+            "foundation:yin_yang:EXTREME_YIN"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B의 행동이 A에게 부담이 되는 순간",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+          "provenance": {
+            "materialId": "pair-release:CH06:P3:S1",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:FUSION:fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1:foundation:yin_yang:EXTREME_YIN:COMMUNICATION_STYLE",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+              "foundation:yin_yang:EXTREME_YIN",
+              "person:b425792e04d53877ee951f97"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P3",
+          "sentenceRole": "S2",
+          "roleDescription": "검증된 차이",
+          "text": "이준혁님은 바뀌는 이유를 미리 알 수 있는 약속을 중요하게 여기는 만큼, 선의로 건넨 행동도 자신의 기준을 무시한다고 느끼면 받아들이기 어려울 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [
+            "foundation:element:EARTH:STRONG"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B의 행동이 A에게 부담이 되는 순간",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C076:love:STABILITY:1:SOCIAL_ATTUNEMENT:1",
+          "provenance": {
+            "materialId": "pair-release:CH06:P3:S2",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:editorial:FUSION:fusion:COMPLEMENT:C076:love:STABILITY:1:SOCIAL_ATTUNEMENT:1:foundation:element:EARTH:STRONG:STABILITY",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C076:love:STABILITY:1:SOCIAL_ATTUNEMENT:1",
+              "foundation:element:EARTH:STRONG",
+              "person:29a2534854378270a988c1f8"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P3",
+          "sentenceRole": "S3",
+          "roleDescription": "의도와 경험",
+          "text": "이준혁님의 ESTP 선호를 이 상황에 놓으면 생각이나 마음이 생기면 말이나 작업으로 밖에 보여주고 싶어 합니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [
+            "mbti:ESTP:traits:love:active_affection:plainKo"
+          ],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B의 행동이 A에게 부담이 되는 순간",
+          "provenance": {
+            "materialId": "pair-release:CH06:P3:S3",
+            "sourceRegistryKey": "29a2534854378270a988c1f8:mbti:ESTP:traits:love:active_affection:plainKo",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "/traits/love/2/plainKo"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH06",
+          "paragraphId": "P3",
+          "sentenceRole": "S4",
+          "roleDescription": "악화 조건",
+          "text": "불편하다는 반응을 곧바로 도움 자체를 거절한 뜻으로 읽기보다, 어떤 부분을 스스로 하고 싶은지 물어야 실제 경계를 알 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "subjectPersonId": "b425792e04d53877ee951f97",
+          "targetPersonId": "29a2534854378270a988c1f8",
+          "canonicalEvidenceIds": [
+            "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+          ],
+          "individualEvidenceIds": [
+            "foundation:yin_yang:EXTREME_YIN"
+          ],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "directionId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "semanticTheme": "direction-ba:B의 행동이 A에게 부담이 되는 순간",
+          "sourceCandidateId": "editorial:FUSION:fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+          "provenance": {
+            "materialId": "pair-release:CH06:P3:S4",
+            "sourceRegistryKey": "b425792e04d53877ee951f97:editorial:FUSION:fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1:foundation:yin_yang:EXTREME_YIN:COMMUNICATION_STYLE",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+              "foundation:yin_yang:EXTREME_YIN",
+              "person:b425792e04d53877ee951f97"
+            ]
+          }
+        }
+      ],
+      "CH07.P1": [
+        {
+          "chapterId": "CH07",
+          "paragraphId": "P1",
+          "sentenceRole": "S1",
+          "roleDescription": "불일치 또는 확인할 조건",
+          "text": "답장이 짧아진 이유를 묻는 대화에서 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "foundation:yin_yang:EXTREME_YIN",
+            "natal:day:stem:乙",
+            "natal:month:stem:乙"
+          ],
+          "mbtiSourceNodeIds": [
+            "mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo",
+            "mbti:ESTP:traits:communication:short_explanation_preference:plainKo",
+            "mbti:ESTP:traits:communication:straight_humor:plainKo",
+            "mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+            "mbti:ISFJ:traits:love:gentle_speech_love:plainKo",
+            "mbti:ISFJ:traits:love:low_request_high_duty:plainKo",
+            "mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo"
+          ],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "friction:가장 중요한 차이",
+          "provenance": {
+            "materialId": "pair-release:CH07:P1:S1",
+            "sourceRegistryKey": "comparison:FRICTION:COMMUNICATION_STYLE",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "personA:mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo",
+              "personA:mbti:ESTP:traits:communication:short_explanation_preference:plainKo",
+              "personA:mbti:ESTP:traits:communication:straight_humor:plainKo",
+              "personB:foundation:yin_yang:EXTREME_YIN",
+              "personB:mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+              "personB:mbti:ISFJ:traits:love:gentle_speech_love:plainKo",
+              "personB:mbti:ISFJ:traits:love:low_request_high_duty:plainKo",
+              "personB:mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo",
+              "personB:natal:day:stem:乙",
+              "personB:natal:month:stem:乙"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH07",
+          "paragraphId": "P1",
+          "sentenceRole": "S2",
+          "roleDescription": "각자의 성향",
+          "text": "이준혁님 쪽에서는 틀린 점이 보이면 돌려 말하기보다 무엇이 다른지 바로 말하고 고칠 부분을 짚습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "foundation:yin_yang:EXTREME_YIN",
+            "natal:day:stem:乙",
+            "natal:month:stem:乙"
+          ],
+          "mbtiSourceNodeIds": [
+            "mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo",
+            "mbti:ESTP:traits:communication:short_explanation_preference:plainKo",
+            "mbti:ESTP:traits:communication:straight_humor:plainKo",
+            "mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+            "mbti:ISFJ:traits:love:gentle_speech_love:plainKo",
+            "mbti:ISFJ:traits:love:low_request_high_duty:plainKo",
+            "mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo"
+          ],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "friction:가장 중요한 차이",
+          "provenance": {
+            "materialId": "pair-release:CH07:P1:S2",
+            "sourceRegistryKey": "comparison:FRICTION:COMMUNICATION_STYLE",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "personA:mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo",
+              "personA:mbti:ESTP:traits:communication:short_explanation_preference:plainKo",
+              "personA:mbti:ESTP:traits:communication:straight_humor:plainKo",
+              "personB:foundation:yin_yang:EXTREME_YIN",
+              "personB:mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+              "personB:mbti:ISFJ:traits:love:gentle_speech_love:plainKo",
+              "personB:mbti:ISFJ:traits:love:low_request_high_duty:plainKo",
+              "personB:mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo",
+              "personB:natal:day:stem:乙",
+              "personB:natal:month:stem:乙"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH07",
+          "paragraphId": "P1",
+          "sentenceRole": "S3",
+          "roleDescription": "다른 이해",
+          "text": "정유진님에게는 다른 방향도 있습니다: 의견이 달라도 바로 말하기 전에 상대가 어떻게 들을지 생각하고, 받아들일 말을 골라서 전합니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "foundation:yin_yang:EXTREME_YIN",
+            "natal:day:stem:乙",
+            "natal:month:stem:乙"
+          ],
+          "mbtiSourceNodeIds": [
+            "mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo",
+            "mbti:ESTP:traits:communication:short_explanation_preference:plainKo",
+            "mbti:ESTP:traits:communication:straight_humor:plainKo",
+            "mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+            "mbti:ISFJ:traits:love:gentle_speech_love:plainKo",
+            "mbti:ISFJ:traits:love:low_request_high_duty:plainKo",
+            "mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo"
+          ],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "friction:가장 중요한 차이",
+          "provenance": {
+            "materialId": "pair-release:CH07:P1:S3",
+            "sourceRegistryKey": "comparison:FRICTION:COMMUNICATION_STYLE",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "personA:mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo",
+              "personA:mbti:ESTP:traits:communication:short_explanation_preference:plainKo",
+              "personA:mbti:ESTP:traits:communication:straight_humor:plainKo",
+              "personB:foundation:yin_yang:EXTREME_YIN",
+              "personB:mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+              "personB:mbti:ISFJ:traits:love:gentle_speech_love:plainKo",
+              "personB:mbti:ISFJ:traits:love:low_request_high_duty:plainKo",
+              "personB:mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo",
+              "personB:natal:day:stem:乙",
+              "personB:natal:month:stem:乙"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH07",
+          "paragraphId": "P1",
+          "sentenceRole": "S4",
+          "roleDescription": "답답함의 이유",
+          "text": "답장을 기다린 쪽은 관심을 묻고, 늦게 답한 쪽은 하루를 설명하면서 같은 대화를 다르게 시작할 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [
+            "foundation:yin_yang:EXTREME_YIN",
+            "natal:day:stem:乙",
+            "natal:month:stem:乙"
+          ],
+          "mbtiSourceNodeIds": [
+            "mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo",
+            "mbti:ESTP:traits:communication:short_explanation_preference:plainKo",
+            "mbti:ESTP:traits:communication:straight_humor:plainKo",
+            "mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+            "mbti:ISFJ:traits:love:gentle_speech_love:plainKo",
+            "mbti:ISFJ:traits:love:low_request_high_duty:plainKo",
+            "mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo"
+          ],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "friction:가장 중요한 차이",
+          "provenance": {
+            "materialId": "pair-release:CH07:P1:S4",
+            "sourceRegistryKey": "comparison:FRICTION:COMMUNICATION_STYLE",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "personA:mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo",
+              "personA:mbti:ESTP:traits:communication:short_explanation_preference:plainKo",
+              "personA:mbti:ESTP:traits:communication:straight_humor:plainKo",
+              "personB:foundation:yin_yang:EXTREME_YIN",
+              "personB:mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+              "personB:mbti:ISFJ:traits:love:gentle_speech_love:plainKo",
+              "personB:mbti:ISFJ:traits:love:low_request_high_duty:plainKo",
+              "personB:mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo",
+              "personB:natal:day:stem:乙",
+              "personB:natal:month:stem:乙"
+            ]
+          }
+        }
+      ],
+      "CH07.P2": [
+        {
+          "chapterId": "CH07",
+          "paragraphId": "P2",
+          "sentenceRole": "S1",
+          "roleDescription": "실제 충돌 또는 부재",
+          "text": "갈등을 읽을 명리 단서는 이준혁님의 일지 寅 및 정유진님의 일지 巳 사이의 해입니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+          ],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [
+            "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+          ],
+          "semanticTheme": "friction:명리에서 보이는 충돌",
+          "provenance": {
+            "materialId": "pair-release:CH07:P2:S1",
+            "sourceRegistryKey": "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "compatibilityRelationRules:detectCrossBranchRelations:harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH07",
+          "paragraphId": "P2",
+          "sentenceRole": "S2",
+          "roleDescription": "쉬운 의미",
+          "text": "해는 말로 정하지 않은 기대가 엇갈리며 서운함을 남길 수 있는 관계입니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+          ],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [
+            "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+          ],
+          "semanticTheme": "friction:명리에서 보이는 충돌",
+          "provenance": {
+            "materialId": "pair-release:CH07:P2:S2",
+            "sourceRegistryKey": "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "compatibilityRelationRules:detectCrossBranchRelations:harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH07",
+          "paragraphId": "P2",
+          "sentenceRole": "S3",
+          "roleDescription": "다른 반응",
+          "text": "서운했던 한 순간이 누가 더 좋아하는지 증명하는 시험으로 바뀌는 때에는 작은 행동도 누구의 기준이 우선인지 따지는 문제로 번질 수 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+          ],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [
+            "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+          ],
+          "semanticTheme": "friction:명리에서 보이는 충돌",
+          "provenance": {
+            "materialId": "pair-release:CH07:P2:S3",
+            "sourceRegistryKey": "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "compatibilityRelationRules:detectCrossBranchRelations:harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH07",
+          "paragraphId": "P2",
+          "sentenceRole": "S4",
+          "roleDescription": "긍정적 여지",
+          "text": "이 관계가 불화나 이별을 예고하는 것은 아니며, 말하지 않은 기대와 실제 합의가 다른 지점을 찾아 조정하는 데 쓸 수 있는 단서입니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [
+            "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+          ],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [
+            "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+          ],
+          "semanticTheme": "friction:명리에서 보이는 충돌",
+          "provenance": {
+            "materialId": "pair-release:CH07:P2:S4",
+            "sourceRegistryKey": "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "compatibilityRelationRules:detectCrossBranchRelations:harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+            ]
+          }
+        }
+      ],
+      "CH09.P2": [
+        {
+          "chapterId": "CH09",
+          "paragraphId": "P2",
+          "sentenceRole": "S1",
+          "roleDescription": "검증된 좋은 기운",
+          "text": "이준혁님에게는 천을귀인의 사람복이 있습니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "fortune:함께 활용할 수 있는 좋은 기운",
+          "provenance": {
+            "materialId": "pair-release:CH09:P2:S1",
+            "sourceRegistryKey": "good-card-0",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "basis:DAY_STEM_TO_BRANCH",
+              "branch:未",
+              "canonical-natal-table-v1:features:gwiin_cheoneul",
+              "dayStem:甲",
+              "natal:gwiin_cheoneul",
+              "person:29a2534854378270a988c1f8",
+              "position:year",
+              "sajuFeatureTaxonomy:gwiin_cheoneul",
+              "shinsal:CHEON_EUL_GWIIN",
+              "v1:gwiin:갑:미",
+              "v1:gwiin:천을귀인",
+              "v4:material-depth:gwiin_cheoneul"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH09",
+          "paragraphId": "P2",
+          "sentenceRole": "S2",
+          "roleDescription": "근거와 의미",
+          "text": "정유진님에게도 혼자 버티려 하지 않고 도움을 청할 수 있다면, 이준혁님의 좋은 패를 가까운 사이에서도 써볼 여지가 생깁니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "fortune:함께 활용할 수 있는 좋은 기운",
+          "provenance": {
+            "materialId": "pair-release:CH09:P2:S2",
+            "sourceRegistryKey": "good-card-0",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "basis:DAY_STEM_TO_BRANCH",
+              "branch:未",
+              "canonical-natal-table-v1:features:gwiin_cheoneul",
+              "dayStem:甲",
+              "natal:gwiin_cheoneul",
+              "person:29a2534854378270a988c1f8",
+              "position:year",
+              "sajuFeatureTaxonomy:gwiin_cheoneul",
+              "shinsal:CHEON_EUL_GWIIN",
+              "v1:gwiin:갑:미",
+              "v1:gwiin:천을귀인",
+              "v4:material-depth:gwiin_cheoneul"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH09",
+          "paragraphId": "P2",
+          "sentenceRole": "S3",
+          "roleDescription": "관계의 가능성",
+          "text": "이준혁님의 좋은 면을 정유진님이 발견해주는 과정도 연애의 즐거움입니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "fortune:함께 활용할 수 있는 좋은 기운",
+          "provenance": {
+            "materialId": "pair-release:CH09:P2:S3",
+            "sourceRegistryKey": "good-card-0",
+            "application": "SOURCE",
+            "sourceRefs": [
+              "basis:DAY_STEM_TO_BRANCH",
+              "branch:未",
+              "canonical-natal-table-v1:features:gwiin_cheoneul",
+              "dayStem:甲",
+              "natal:gwiin_cheoneul",
+              "person:29a2534854378270a988c1f8",
+              "position:year",
+              "sajuFeatureTaxonomy:gwiin_cheoneul",
+              "shinsal:CHEON_EUL_GWIIN",
+              "v1:gwiin:갑:미",
+              "v1:gwiin:천을귀인",
+              "v4:material-depth:gwiin_cheoneul"
+            ]
+          }
+        },
+        {
+          "chapterId": "CH09",
+          "paragraphId": "P2",
+          "sentenceRole": "S4",
+          "roleDescription": "현실적 활용",
+          "text": "이 기운은 본인이 활용할 관계 자원이며, 상대가 반드시 나의 귀인이라거나 둘의 미래가 정해졌다는 뜻은 아닙니다.",
+          "relationshipCategory": "love",
+          "personAId": "29a2534854378270a988c1f8",
+          "personBId": "b425792e04d53877ee951f97",
+          "canonicalEvidenceIds": [],
+          "individualEvidenceIds": [],
+          "mbtiSourceNodeIds": [],
+          "fusionIds": [],
+          "relationIds": [],
+          "semanticTheme": "fortune:함께 활용할 수 있는 좋은 기운",
+          "provenance": {
+            "materialId": "pair-release:CH09:P2:S4",
+            "sourceRegistryKey": "good-card-0",
+            "application": "CONDITIONAL_APPLICATION",
+            "sourceRefs": [
+              "basis:DAY_STEM_TO_BRANCH",
+              "branch:未",
+              "canonical-natal-table-v1:features:gwiin_cheoneul",
+              "dayStem:甲",
+              "natal:gwiin_cheoneul",
+              "person:29a2534854378270a988c1f8",
+              "position:year",
+              "sajuFeatureTaxonomy:gwiin_cheoneul",
+              "shinsal:CHEON_EUL_GWIIN",
+              "v1:gwiin:갑:미",
+              "v1:gwiin:천을귀인",
+              "v4:material-depth:gwiin_cheoneul"
+            ]
+          }
+        }
+      ]
+    },
+    "canonicalNatalTables": {
+      "personA": {
+        "version": "canonical-natal-table-v1",
+        "calendarVersion": "saju-calendar-kst-v2",
+        "precision": "exact",
+        "pillars": [
+          {
+            "columnId": "hour",
+            "labelKo": "시주",
+            "pillar": "戊辰",
+            "heavenlyStem": "戊",
+            "earthlyBranch": "辰",
+            "tenGod": [
+              "천간 편재",
+              "지지 편재"
+            ],
+            "hiddenStems": [
+              "戊 편재",
+              "乙 겁재",
+              "癸 정인"
+            ],
+            "twelveLifeStage": [
+              "쇠"
+            ],
+            "twelveSinsal": [
+              "반안살"
+            ],
+            "gwiin": [],
+            "sinsal": [
+              "백호대살"
+            ],
+            "interactions": []
+          },
+          {
+            "columnId": "day",
+            "labelKo": "일주",
+            "pillar": "甲寅",
+            "heavenlyStem": "甲",
+            "earthlyBranch": "寅",
+            "tenGod": [
+              "천간 비견",
+              "지지 비견"
+            ],
+            "hiddenStems": [
+              "甲 비견",
+              "丙 식신",
+              "戊 편재"
+            ],
+            "twelveLifeStage": [
+              "건록"
+            ],
+            "twelveSinsal": [
+              "망신살"
+            ],
+            "sinsal": [
+              "고신살"
+            ],
+            "gwiin": [],
+            "interactions": []
+          },
+          {
+            "columnId": "month",
+            "labelKo": "월주",
+            "pillar": "丙申",
+            "heavenlyStem": "丙",
+            "earthlyBranch": "申",
+            "tenGod": [
+              "천간 식신",
+              "지지 편관"
+            ],
+            "hiddenStems": [
+              "庚 편관",
+              "壬 편인",
+              "戊 편재"
+            ],
+            "twelveLifeStage": [
+              "절"
+            ],
+            "twelveSinsal": [
+              "겁살"
+            ],
+            "sinsal": [
+              "망신살"
+            ],
+            "gwiin": [],
+            "interactions": [
+              "월주·일주 지지충 寅申"
+            ]
+          },
+          {
+            "columnId": "year",
+            "labelKo": "연주",
+            "pillar": "辛未",
+            "heavenlyStem": "辛",
+            "earthlyBranch": "未",
+            "tenGod": [
+              "천간 정관",
+              "지지 정재"
+            ],
+            "hiddenStems": [
+              "己 정재",
+              "丁 상관",
+              "乙 겁재"
+            ],
+            "twelveLifeStage": [
+              "묘"
+            ],
+            "twelveSinsal": [
+              "화개살"
+            ],
+            "gwiin": [
+              "천을귀인"
+            ],
+            "sinsal": [
+              "화개"
+            ],
+            "interactions": [
+              "연주·월주 천간합 丙辛"
+            ]
+          }
+        ],
+        "features": [
+          {
+            "id": "day_pillar_gabin",
+            "label": "갑인일주",
+            "aliases": [
+              "갑인일주",
+              "갑인"
+            ],
+            "category": "day_pillar",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:day_pillar_gabin",
+              "v1:dayPillar:갑인"
+            ]
+          },
+          {
+            "id": "ten_god_bijian",
+            "label": "비견",
+            "aliases": [
+              "비견"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_bijian",
+              "v1:tenGod:bijian:present"
+            ]
+          },
+          {
+            "id": "ten_god_jie_cai",
+            "label": "겁재",
+            "aliases": [
+              "겁재"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_jie_cai",
+              "v1:tenGod:jie_cai:present"
+            ]
+          },
+          {
+            "id": "ten_god_shi_shen",
+            "label": "식신",
+            "aliases": [
+              "식신"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_shi_shen",
+              "v1:tenGod:shi_shen:present"
+            ]
+          },
+          {
+            "id": "ten_god_shang_guan",
+            "label": "상관",
+            "aliases": [
+              "상관"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_shang_guan",
+              "v1:tenGod:shang_guan:present"
+            ]
+          },
+          {
+            "id": "ten_god_pian_cai",
+            "label": "편재",
+            "aliases": [
+              "편재"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_pian_cai",
+              "v1:tenGod:pian_cai:present"
+            ]
+          },
+          {
+            "id": "ten_god_zheng_cai",
+            "label": "정재",
+            "aliases": [
+              "정재"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_zheng_cai",
+              "v1:tenGod:zheng_cai:present"
+            ]
+          },
+          {
+            "id": "ten_god_qi_sha",
+            "label": "편관",
+            "aliases": [
+              "편관",
+              "칠살"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_qi_sha",
+              "v1:tenGod:qi_sha:present"
+            ]
+          },
+          {
+            "id": "ten_god_zheng_guan",
+            "label": "정관",
+            "aliases": [
+              "정관"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_zheng_guan",
+              "v1:tenGod:zheng_guan:present"
+            ]
+          },
+          {
+            "id": "ten_god_pian_yin",
+            "label": "편인",
+            "aliases": [
+              "편인"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_pian_yin",
+              "v1:tenGod:pian_yin:present"
+            ]
+          },
+          {
+            "id": "ten_god_zheng_yin",
+            "label": "정인",
+            "aliases": [
+              "정인"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_zheng_yin",
+              "v1:tenGod:zheng_yin:present"
+            ]
+          },
+          {
+            "id": "sinsal_baekho",
+            "label": "백호대살",
+            "aliases": [
+              "백호대살",
+              "백호",
+              "백호살"
+            ],
+            "category": "sinsal",
+            "source": "calculated",
+            "basis": "원국 계산 표식",
+            "positions": [
+              "hour"
+            ],
+            "evidenceIds": [
+              "natal:sinsal_baekho",
+              "shinsal:BAEKHODAESAL",
+              "position:hour",
+              "basis:STEM_BRANCH_PAIR",
+              "stem:戊",
+              "branch:辰",
+              "v1:sinsal:백호대살"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_mangsin",
+            "label": "망신살",
+            "aliases": [
+              "망신살",
+              "망신"
+            ],
+            "category": "twelve_sinsal",
+            "source": "calculated",
+            "basis": "연지 기준 표식 · 연지 기준 십이신살",
+            "positions": [
+              "month",
+              "day"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_mangsin",
+              "shinsal:MANGSINSAL",
+              "position:month",
+              "basis:YEAR_BRANCH_TO_BRANCH",
+              "yearBranch:未",
+              "branch:申",
+              "shinsal:TWELVE_MANGSINSAL",
+              "position:day",
+              "basis:BRANCH_GROUP_TO_BRANCH",
+              "source:BRANCH_GROUP_TO_BRANCH",
+              "reference:YEAR_BRANCH",
+              "referenceBranch:未",
+              "branch:寅",
+              "v1:sinsal:망신살"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_hwagae",
+            "label": "화개살",
+            "aliases": [
+              "화개살",
+              "화개"
+            ],
+            "category": "twelve_sinsal",
+            "source": "calculated",
+            "basis": "연지 기준 표식 · 연지 기준 십이신살",
+            "positions": [
+              "year"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_hwagae",
+              "shinsal:HWAGAE",
+              "position:year",
+              "basis:YEAR_BRANCH_TO_BRANCH",
+              "yearBranch:未",
+              "branch:未",
+              "shinsal:TWELVE_HWAGAE",
+              "basis:BRANCH_GROUP_TO_BRANCH",
+              "source:BRANCH_GROUP_TO_BRANCH",
+              "reference:YEAR_BRANCH",
+              "referenceBranch:未",
+              "v1:sinsal:화개",
+              "v1:sinsal:화개살"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_geopsal",
+            "label": "겁살",
+            "aliases": [
+              "겁살"
+            ],
+            "category": "twelve_sinsal",
+            "source": "calculated",
+            "basis": "연지 기준 십이신살",
+            "positions": [
+              "month"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_geopsal",
+              "shinsal:TWELVE_GEOPSAL",
+              "position:month",
+              "basis:BRANCH_GROUP_TO_BRANCH",
+              "source:BRANCH_GROUP_TO_BRANCH",
+              "reference:YEAR_BRANCH",
+              "referenceBranch:未",
+              "branch:申",
+              "v1:sinsal:겁살"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_banan",
+            "label": "반안살",
+            "aliases": [
+              "반안살",
+              "반안"
+            ],
+            "category": "twelve_sinsal",
+            "source": "calculated",
+            "basis": "연지 기준 십이신살",
+            "positions": [
+              "hour"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_banan",
+              "shinsal:TWELVE_BANANSAL",
+              "position:hour",
+              "basis:BRANCH_GROUP_TO_BRANCH",
+              "source:BRANCH_GROUP_TO_BRANCH",
+              "reference:YEAR_BRANCH",
+              "referenceBranch:未",
+              "branch:辰",
+              "v1:sinsal:반안살",
+              "v1:twelveSinsal:인:미"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_banan:day-reference",
+            "label": "반안살",
+            "aliases": [
+              "반안살",
+              "반안"
+            ],
+            "category": "twelve_sinsal",
+            "source": "derived",
+            "basis": "일지 기준 십이신살",
+            "positions": [
+              "year"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_banan:year:day-reference"
+            ]
+          },
+          {
+            "id": "gwiin_cheoneul",
+            "label": "천을귀인",
+            "aliases": [
+              "천을귀인",
+              "천을"
+            ],
+            "category": "gwiin",
+            "source": "calculated",
+            "basis": "일간 기준 표식",
+            "positions": [
+              "year"
+            ],
+            "evidenceIds": [
+              "natal:gwiin_cheoneul",
+              "shinsal:CHEON_EUL_GWIIN",
+              "position:year",
+              "basis:DAY_STEM_TO_BRANCH",
+              "dayStem:甲",
+              "branch:未",
+              "v1:gwiin:천을귀인",
+              "v1:gwiin:갑:미"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_yeokma",
+            "label": "역마살",
+            "aliases": [
+              "역마살",
+              "역마"
+            ],
+            "category": "twelve_sinsal",
+            "source": "derived",
+            "basis": "일지 기준 십이신살",
+            "positions": [
+              "month"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_yeokma",
+              "v1:twelveSinsal:인:신"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_jisal",
+            "label": "지살",
+            "aliases": [
+              "지살"
+            ],
+            "category": "twelve_sinsal",
+            "source": "derived",
+            "basis": "일지 기준 십이신살",
+            "positions": [
+              "day"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_jisal",
+              "v1:twelveSinsal:인:인"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_wolsal",
+            "label": "월살",
+            "aliases": [
+              "월살"
+            ],
+            "category": "twelve_sinsal",
+            "source": "derived",
+            "basis": "일지 기준 십이신살",
+            "positions": [
+              "hour"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_wolsal",
+              "v1:twelveSinsal:인:진"
+            ]
+          },
+          {
+            "id": "gwiin_jaego",
+            "label": "재고귀인",
+            "aliases": [
+              "재고귀인",
+              "재고"
+            ],
+            "category": "gwiin",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [
+              "hour"
+            ],
+            "evidenceIds": [
+              "natal:gwiin_jaego",
+              "v1:gwiin:갑:진"
+            ]
+          },
+          {
+            "id": "gwiin_geumyeorok",
+            "label": "금여록",
+            "aliases": [
+              "금여록",
+              "금여"
+            ],
+            "category": "gwiin",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [
+              "hour"
+            ],
+            "evidenceIds": [
+              "natal:gwiin_geumyeorok",
+              "v1:gwiin:갑:진"
+            ]
+          },
+          {
+            "id": "sinsal_gwimun",
+            "label": "귀문관살",
+            "aliases": [
+              "귀문관살",
+              "귀문",
+              "귀문관"
+            ],
+            "category": "sinsal",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:sinsal_gwimun",
+              "v1:gwimun:pair"
+            ]
+          },
+          {
+            "id": "shinsal:GOSINSAL",
+            "label": "고신살",
+            "aliases": [
+              "고신살"
+            ],
+            "category": "sinsal",
+            "source": "calculated",
+            "basis": "연지 기준 표식",
+            "positions": [
+              "day"
+            ],
+            "evidenceIds": [
+              "shinsal:GOSINSAL",
+              "position:day",
+              "basis:YEAR_BRANCH_TO_BRANCH",
+              "yearBranch:未",
+              "branch:寅"
+            ]
+          }
+        ],
+        "relations": [
+          {
+            "id": "natal:STEM_COMBINATION:year:month:丙辛",
+            "label": "연주·월주 천간합 丙辛",
+            "positions": [
+              "year",
+              "month"
+            ],
+            "participants": [
+              "丙",
+              "辛"
+            ]
+          },
+          {
+            "id": "natal:BRANCH_CLASH:month:day:寅申",
+            "label": "월주·일주 지지충 寅申",
+            "positions": [
+              "month",
+              "day"
+            ],
+            "participants": [
+              "寅",
+              "申"
+            ]
+          }
+        ]
+      },
+      "personB": {
+        "version": "canonical-natal-table-v1",
+        "calendarVersion": "saju-calendar-kst-v2",
+        "precision": "exact",
+        "pillars": [
+          {
+            "columnId": "hour",
+            "labelKo": "시주",
+            "pillar": "癸未",
+            "heavenlyStem": "癸",
+            "earthlyBranch": "未",
+            "tenGod": [
+              "천간 편인",
+              "지지 편재"
+            ],
+            "hiddenStems": [
+              "己 편재",
+              "丁 식신",
+              "乙 비견"
+            ],
+            "twelveLifeStage": [
+              "양"
+            ],
+            "twelveSinsal": [
+              "월살"
+            ],
+            "sinsal": [],
+            "gwiin": [],
+            "interactions": []
+          },
+          {
+            "columnId": "day",
+            "labelKo": "일주",
+            "pillar": "乙巳",
+            "heavenlyStem": "乙",
+            "earthlyBranch": "巳",
+            "tenGod": [
+              "천간 비견",
+              "지지 상관"
+            ],
+            "hiddenStems": [
+              "丙 상관",
+              "戊 정재",
+              "庚 정관"
+            ],
+            "twelveLifeStage": [
+              "목욕"
+            ],
+            "twelveSinsal": [
+              "지살"
+            ],
+            "gwiin": [],
+            "sinsal": [],
+            "interactions": []
+          },
+          {
+            "columnId": "month",
+            "labelKo": "월주",
+            "pillar": "乙丑",
+            "heavenlyStem": "乙",
+            "earthlyBranch": "丑",
+            "tenGod": [
+              "천간 비견",
+              "지지 편재"
+            ],
+            "hiddenStems": [
+              "己 편재",
+              "癸 편인",
+              "辛 편관"
+            ],
+            "twelveLifeStage": [
+              "쇠"
+            ],
+            "twelveSinsal": [
+              "화개살"
+            ],
+            "sinsal": [
+              "화개"
+            ],
+            "gwiin": [],
+            "interactions": [
+              "월주·시주 지지충 丑未"
+            ]
+          },
+          {
+            "columnId": "year",
+            "labelKo": "연주",
+            "pillar": "癸酉",
+            "heavenlyStem": "癸",
+            "earthlyBranch": "酉",
+            "tenGod": [
+              "천간 편인",
+              "지지 편관"
+            ],
+            "hiddenStems": [
+              "辛 편관"
+            ],
+            "twelveLifeStage": [
+              "절"
+            ],
+            "twelveSinsal": [
+              "장성살"
+            ],
+            "sinsal": [
+              "현침살"
+            ],
+            "gwiin": [],
+            "interactions": []
+          }
+        ],
+        "features": [
+          {
+            "id": "day_pillar_eulsa",
+            "label": "을사일주",
+            "aliases": [
+              "을사일주",
+              "을사"
+            ],
+            "category": "day_pillar",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:day_pillar_eulsa",
+              "v1:dayPillar:을사"
+            ]
+          },
+          {
+            "id": "ten_god_bijian",
+            "label": "비견",
+            "aliases": [
+              "비견"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_bijian",
+              "v1:tenGod:bijian:present"
+            ]
+          },
+          {
+            "id": "ten_god_shi_shen",
+            "label": "식신",
+            "aliases": [
+              "식신"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_shi_shen",
+              "v1:tenGod:shi_shen:present"
+            ]
+          },
+          {
+            "id": "ten_god_shang_guan",
+            "label": "상관",
+            "aliases": [
+              "상관"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_shang_guan",
+              "v1:tenGod:shang_guan:present"
+            ]
+          },
+          {
+            "id": "ten_god_pian_cai",
+            "label": "편재",
+            "aliases": [
+              "편재"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_pian_cai",
+              "v1:tenGod:pian_cai:present"
+            ]
+          },
+          {
+            "id": "ten_god_zheng_cai",
+            "label": "정재",
+            "aliases": [
+              "정재"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_zheng_cai",
+              "v1:tenGod:zheng_cai:present"
+            ]
+          },
+          {
+            "id": "ten_god_qi_sha",
+            "label": "편관",
+            "aliases": [
+              "편관",
+              "칠살"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_qi_sha",
+              "v1:tenGod:qi_sha:present"
+            ]
+          },
+          {
+            "id": "ten_god_zheng_guan",
+            "label": "정관",
+            "aliases": [
+              "정관"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_zheng_guan",
+              "v1:tenGod:zheng_guan:present"
+            ]
+          },
+          {
+            "id": "ten_god_pian_yin",
+            "label": "편인",
+            "aliases": [
+              "편인"
+            ],
+            "category": "ten_god",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [],
+            "evidenceIds": [
+              "natal:ten_god_pian_yin",
+              "v1:tenGod:pian_yin:present"
+            ]
+          },
+          {
+            "id": "sinsal_hyeonchim",
+            "label": "현침살",
+            "aliases": [
+              "현침살",
+              "현침"
+            ],
+            "category": "sinsal",
+            "source": "calculated",
+            "basis": "원국 계산 표식",
+            "positions": [
+              "year"
+            ],
+            "evidenceIds": [
+              "natal:sinsal_hyeonchim",
+              "shinsal:HYEONCHIMSAL",
+              "position:year",
+              "basis:BRANCH_ONLY",
+              "branch:酉",
+              "v1:sinsal:현침살",
+              "v1:hyeonchim:유"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_hwagae",
+            "label": "화개살",
+            "aliases": [
+              "화개살",
+              "화개"
+            ],
+            "category": "twelve_sinsal",
+            "source": "calculated",
+            "basis": "연지 기준 표식 · 연지 기준 십이신살",
+            "positions": [
+              "month"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_hwagae",
+              "shinsal:HWAGAE",
+              "position:month",
+              "basis:YEAR_BRANCH_TO_BRANCH",
+              "yearBranch:酉",
+              "branch:丑",
+              "shinsal:TWELVE_HWAGAE",
+              "basis:BRANCH_GROUP_TO_BRANCH",
+              "source:BRANCH_GROUP_TO_BRANCH",
+              "reference:YEAR_BRANCH",
+              "referenceBranch:酉",
+              "v1:sinsal:화개",
+              "v1:sinsal:화개살",
+              "v1:twelveSinsal:사:축"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_hwagae:day-reference",
+            "label": "화개살",
+            "aliases": [
+              "화개살",
+              "화개"
+            ],
+            "category": "twelve_sinsal",
+            "source": "derived",
+            "basis": "일지 기준 십이신살",
+            "positions": [
+              "month"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_hwagae:month:day-reference"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_jisal",
+            "label": "지살",
+            "aliases": [
+              "지살"
+            ],
+            "category": "twelve_sinsal",
+            "source": "calculated",
+            "basis": "연지 기준 십이신살",
+            "positions": [
+              "day"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_jisal",
+              "shinsal:TWELVE_JISAL",
+              "position:day",
+              "basis:BRANCH_GROUP_TO_BRANCH",
+              "source:BRANCH_GROUP_TO_BRANCH",
+              "reference:YEAR_BRANCH",
+              "referenceBranch:酉",
+              "branch:巳",
+              "v1:sinsal:지살",
+              "v1:twelveSinsal:사:사"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_jisal:day-reference",
+            "label": "지살",
+            "aliases": [
+              "지살"
+            ],
+            "category": "twelve_sinsal",
+            "source": "derived",
+            "basis": "일지 기준 십이신살",
+            "positions": [
+              "day"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_jisal:day:day-reference"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_wolsal",
+            "label": "월살",
+            "aliases": [
+              "월살"
+            ],
+            "category": "twelve_sinsal",
+            "source": "calculated",
+            "basis": "연지 기준 십이신살",
+            "positions": [
+              "hour"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_wolsal",
+              "shinsal:TWELVE_WOLSAL",
+              "position:hour",
+              "basis:BRANCH_GROUP_TO_BRANCH",
+              "source:BRANCH_GROUP_TO_BRANCH",
+              "reference:YEAR_BRANCH",
+              "referenceBranch:酉",
+              "branch:未",
+              "v1:sinsal:월살",
+              "v1:twelveSinsal:사:미"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_wolsal:day-reference",
+            "label": "월살",
+            "aliases": [
+              "월살"
+            ],
+            "category": "twelve_sinsal",
+            "source": "derived",
+            "basis": "일지 기준 십이신살",
+            "positions": [
+              "hour"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_wolsal:hour:day-reference"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_jangseong",
+            "label": "장성살",
+            "aliases": [
+              "장성살",
+              "장성"
+            ],
+            "category": "twelve_sinsal",
+            "source": "calculated",
+            "basis": "연지 기준 십이신살",
+            "positions": [
+              "year"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_jangseong",
+              "shinsal:TWELVE_JANGSEONGSAL",
+              "position:year",
+              "basis:BRANCH_GROUP_TO_BRANCH",
+              "source:BRANCH_GROUP_TO_BRANCH",
+              "reference:YEAR_BRANCH",
+              "referenceBranch:酉",
+              "branch:酉",
+              "v1:sinsal:장성살",
+              "v1:twelveSinsal:사:유"
+            ]
+          },
+          {
+            "id": "twelve_sinsal_jangseong:day-reference",
+            "label": "장성살",
+            "aliases": [
+              "장성살",
+              "장성"
+            ],
+            "category": "twelve_sinsal",
+            "source": "derived",
+            "basis": "일지 기준 십이신살",
+            "positions": [
+              "year"
+            ],
+            "evidenceIds": [
+              "natal:twelve_sinsal_jangseong:year:day-reference"
+            ]
+          },
+          {
+            "id": "gwiin_geumyeorok",
+            "label": "금여록",
+            "aliases": [
+              "금여록",
+              "금여"
+            ],
+            "category": "gwiin",
+            "source": "derived",
+            "basis": "원국 전체의 파생 근거",
+            "positions": [
+              "day"
+            ],
+            "evidenceIds": [
+              "natal:gwiin_geumyeorok",
+              "v1:gwiin:을:사"
+            ]
+          }
+        ],
+        "relations": [
+          {
+            "id": "natal:BRANCH_CLASH:month:hour:丑未",
+            "label": "월주·시주 지지충 丑未",
+            "positions": [
+              "month",
+              "hour"
+            ],
+            "participants": [
+              "丑",
+              "未"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "crossProductLocks": "tests/unit/interpretation-v4/compatibilityQualityFixtures.json",
+  "captures": "/tmp/gyeol-compatibility-quality-validation"
+}

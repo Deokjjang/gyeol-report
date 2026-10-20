@@ -1,0 +1,14 @@
+{
+  "draftIsApprovalRecord": false,
+  "provider": "NO_APPROVALS_UNCHANGED",
+  "requiredFutureWork": [
+    "AUTHENTICATED_REVIEWER_AUTHORITY",
+    "EXACT_SCOPE_AND_MEANING_IDENTITY",
+    "SOURCE_AND_GRAPH_VERSION",
+    "APPROVAL_VALIDITY_AND_REVOCATION",
+    "SEPARATE_EXPLICIT_CUSTOMER_APPROVAL"
+  ],
+  "issued": 0,
+  "binderApprovalRequirementUnchanged": true,
+  "draftCannotPromoteAnyGate": true
+}

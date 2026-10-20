@@ -1,0 +1,16218 @@
+/** Static parent/child research. No runtime binding, age inference or customer approval. */
+import type { PairReview } from "./researchTypes";
+export const PC_PAIR_SOURCE_REVIEWS: readonly PairReview[] = [
+  {
+    "id": "pcpr:pair:ENFJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ENFJ:INTJ",
+    "originalResearchHash": "0d92592f68f53ec587873d8fc6f966c366eac6361a9b2af0f0605251568864c0",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "d4627bd77ff529c704845a5195fb8bf33abe8ac77f4402006e2734931010c315",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "d07e061f0276e54945b7fb51a6ca8ac62937b8c71ffde7e4f75debec384458f4",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "INTJ는 ENFJ에게 분석적 통찰과 비전의 방향을 제공할 수 있다.",
+        "ENFJ는 INTJ에게 동정심과 이타심을 보완해 줄 수 있다.",
+        "친구나 연인으로 좋은 관계를 오래 이어가며 서로에게 도움을 줄 수 있다.",
+        "둘 다 더 나은 방향을 만들고 싶어 하며, 한쪽은 구조를 보고 한쪽은 사람을 본다."
+      ],
+      "friction": [
+        "INTJ의 차분한 분석은 ENFJ에게 차갑게 느껴질 수 있고, ENFJ의 정서적 접근은 INTJ에게 과하게 보일 수 있다.",
+        "가르침과 도움의 방향이 고정되면 관계가 수평적이지 않게 느껴질 수 있다.",
+        "INTJ가 결론만 말하고 ENFJ의 감정 확인을 건너뛰면 ENFJ는 관계를 혼자 책임진다고 느낀다."
+      ],
+      "positiveInfluence": [
+        "INTJ는 ENFJ의 이상을 더 정밀한 전략으로 다듬고, ENFJ는 INTJ의 비전에 사람의 온도와 설득력을 더한다.",
+        "서로의 부족한 영역을 비교적 선명하게 보완한다."
+      ],
+      "repairStrategy": [
+        "조언을 하기 전에 상대가 조언을 원하는지 감정적 지지를 원하는지 확인한다.",
+        "분석과 공감을 동등한 관계 자원으로 인정한다.",
+        "공동 비전을 세울 때 실행 계획과 사람에게 미칠 영향을 함께 검토한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ENFJ:INTP",
+    "originalResearchHash": "cf0d946a9242193c551b496d5771bb90708c55ac271d1d60e9bb5a847938feb1",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "780bf11f043b16c3a15a07cb19574359dd184a82e697a0670ce3e987d65dd3a8",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "14a6596211c2fee58e7fb91272631854b07ae36adf2b2d7c6c265e2a890a82a1",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로 큰 어려움 없이 이해하고 많은 주제로 대화할 수 있다.",
+        "지적 호기심과 의미 있는 대화가 살아나면 강한 끌림이 생긴다.",
+        "ENFJ는 INTP의 독립적 사고에 매력을 느끼고, INTP는 ENFJ의 사람을 움직이는 힘을 신선하게 본다."
+      ],
+      "friction": [
+        "연인으로 발전하면 열정적이지만 안정적인 관계를 위한 노력이 없으면 갈등이 잦아진다.",
+        "ENFJ는 감정 확인과 관계 방향을 원하고, INTP는 독립적 사고와 자유로운 몰입을 원한다.",
+        "INTP가 생각을 정리하느라 반응을 늦추면 ENFJ는 무심함으로 받아들이고 관계 불안을 키운다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 INTP의 생각을 사람과 현실의 언어로 연결하고, INTP는 ENFJ에게 분석적 거리와 논리적 정리를 제공한다.",
+        "서로의 차이를 존중하면 열정과 지적 성장감이 함께 생긴다."
+      ],
+      "repairStrategy": [
+        "관계 확인 대화의 빈도와 개인 몰입 시간을 미리 합의한다.",
+        "ENFJ는 INTP의 침묵을 무관심으로 단정하지 않는다.",
+        "INTP는 ENFJ에게 결론 없는 분석보다 짧은 정서적 확인을 먼저 준다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ENFJ:ENTJ",
+    "originalResearchHash": "71d21f64e8a0322a56a3f1efa77ddf9373a617429a88511648d412c5c5b16a23",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "9c0d8b50db3e1899b5f343d73f358a8a21d2a003f88d6be7920bdfb4bad1fe0d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "68a9138b14138311b4e3de2ad634f23ddad73545c1143f71fc7f7063bf5a218b",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "관계 진전이 쉽고 서로에게 많은 것을 털어놓기 쉽다.",
+        "비슷한 문제를 갖고 있어 서로에게 연민을 느끼며, 협동할 때 시너지가 크다.",
+        "두 유형 모두 집단을 이끌고 목표를 제시하는 힘이 있다.",
+        "둘 다 큰 그림을 보고 사람이나 조직을 움직이는 데 익숙하다."
+      ],
+      "friction": [
+        "어떤 대화든 한 사람이 리드하려는 흐름이 생길 수 있다.",
+        "ENFJ는 사람의 감정과 명분을, ENTJ는 성과와 구조를 우선해 리더십 기준이 다를 수 있다.",
+        "ENTJ가 결과를 앞세우면 ENFJ는 사람을 소모한다고 느끼고, ENFJ의 정서 조율은 ENTJ에게 느리게 보일 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 ENFJ에게 실행력과 냉정한 판단을 주고, ENFJ는 ENTJ에게 사람 중심 설득과 정서적 균형을 준다.",
+        "상처받기 쉬운 비판을 피하려는 성향 덕분에 기본적 존중이 유지되기 쉽다."
+      ],
+      "repairStrategy": [
+        "대화마다 누가 최종 결정을 이끌지 역할을 분명히 한다.",
+        "성과 목표와 관계 목표를 따로 적어 둘 다 관리한다.",
+        "비판은 상대의 성격이 아니라 실행 방식에 한정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_DISTINCT_SOCIONICS_TERM_FAMILIES_MAPPING_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ENFJ:ENTP",
+    "originalResearchHash": "8b357478c17338dd4562f16ae3aa09c6d688ba718ebb031e83228404c173288b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "93e218aa8ae609187236a0f943dad345d65cab46e0d77e415acc384adc8ce503",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "982fd4e23e02ee80a316bfb2bac5ee5cde1469cdbd0e7f436795b7061cadee9f",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ENFJ는 ENTP의 행동, 매너, 생각, 능력에 감명을 받고 존경하기 쉽다.",
+        "함께 있을 때 ENFJ가 ENTP를 기쁘게 해주려는 흐름이 생긴다.",
+        "둘 다 대화와 반응이 빠르게 살아나면 관계가 지루하지 않게 움직인다.",
+        "아이디어와 사람 사이의 분위기를 동시에 다룰 때 매력이 커진다."
+      ],
+      "friction": [
+        "ENTP는 ENFJ를 자신보다 어리게 보거나 보호 대상으로 볼 수 있어 균형이 흔들린다.",
+        "ENFJ가 계속 맞추는 구조가 되면 존경이 피로로 바뀐다.",
+        "ENTP가 장난과 논쟁으로 분위기를 흔들 때 ENFJ는 관계를 가볍게 여긴다고 느낄 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ENFJ에게 새로운 관점과 특별한 자극을 제공하고, ENFJ는 ENTP에게 따뜻한 반응과 관계적 의미를 준다.",
+        "서로 존중하면 창의성과 사람 중심 리더십이 결합된다."
+      ],
+      "repairStrategy": [
+        "ENFJ는 존경과 자기 욕구 표현을 함께 유지한다.",
+        "ENTP는 ENFJ의 배려를 구체적으로 인정하고 가볍게 여기지 않는다.",
+        "관계가 한쪽의 기쁨 맞추기로 흐르지 않도록 역할을 주기적으로 점검한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ENFJ:INFJ",
+    "originalResearchHash": "074f3154dd8a1d9c63fcc0b66a9f7747de0d9162c39f03f0d4078fb07b4b1a91",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "c92ef7e96364ac5ba69e404cedc3dccce73a4fbf941dfcc03504a923a5ca3497",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "fcce50086087c3066d2126251c2da437879e03ea925baaaad82592b10909faba",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "비슷한 관심과 아이디어를 가지고 있어 좋은 친구 관계가 되기 쉽다.",
+        "같은 문제를 약간 다르게 이해하기 때문에 서로의 사고방식을 흥미롭게 본다.",
+        "같은 프로젝트에서 상호 보완과 건설적 비판이 쉽다.",
+        "둘 다 사람의 성장과 관계의 의미를 중요하게 보며 깊은 대화를 자연스럽게 이어간다."
+      ],
+      "friction": [
+        "ENFJ는 외부 사람과 집단을 향해 움직이고, INFJ는 내면의 통찰과 깊이를 더 중시할 수 있다.",
+        "비슷하지만 다른 이해 방식 때문에 같은 말을 하면서도 방향이 조금씩 어긋난다.",
+        "ENFJ가 관계를 밖으로 확장하려 할수록 INFJ는 조용한 정리와 회복을 더 필요로 한다."
+      ],
+      "positiveInfluence": [
+        "INFJ는 ENFJ의 비전에 깊은 통찰을 더하고, ENFJ는 INFJ의 아이디어를 사람들에게 전달되는 언어로 확장한다.",
+        "서로의 비슷한 마음을 빠르게 알아차려 안정감 있는 협력이 가능하다."
+      ],
+      "repairStrategy": [
+        "외부 활동과 조용한 회복 시간을 둘 다 일정에 반영한다.",
+        "서로의 다른 이해 방식을 틀림이 아니라 관점 차이로 본다.",
+        "프로젝트에서는 ENFJ가 전달을, INFJ가 깊이와 방향을 맡는 식으로 역할을 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ENFJ:INFP",
+    "originalResearchHash": "ea62e4cb13cfcdae6d6f49561375454a6933be4e18661bf67a1945ee239b8bc5",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "a19376126fef3ac86eb240a63eaa67855739c382cf82b3ac42e636625a6d5e0b",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "eca981c09641f3ad51204fa380f57288b9e85802ee0daf6711941459949e006c",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로의 특성 중 일부를 좋아하게 되어 친해지는 계기가 생길 수 있다.",
+        "둘 다 감정과 가치, 의미를 중요하게 본다.",
+        "초반에는 서로의 따뜻함과 이상주의에서 특별한 연결감을 느낄 수 있다.",
+        "사람을 깊게 이해받고 싶어 하는 욕구도 강하게 겹친다."
+      ],
+      "friction": [
+        "불안정한 심리적 거리를 유지하게 되고 관계 정착이 어렵다.",
+        "같은 회사에 근무하면 INFP가 거리를 두면서 관계가 형식적이고 조심스럽게 변할 수 있다.",
+        "ENFJ는 INFP가 사사건건 반대한다고 오해하고, INFP는 ENFJ의 활동적이고 분주한 면을 이해하지 못할 수 있다.",
+        "상처를 더 많이 받는 쪽은 ENFJ가 되기 쉽고, 배신감과 과도한 걱정이 커질 수 있다."
+      ],
+      "positiveInfluence": [
+        "INFP는 ENFJ에게 내면 가치의 깊이를 보여 주고, ENFJ는 INFP에게 관계와 표현의 장을 열어 준다.",
+        "각자 떨어져 있을 때는 서로의 장점을 더 편안하게 인정할 수 있다."
+      ],
+      "repairStrategy": [
+        "ENFJ는 INFP의 거리두기를 고의적 반대로 단정하지 않는다.",
+        "INFP는 침묵 대신 현재 필요한 거리와 마음을 짧게 말한다.",
+        "서로 떨어져 회복하는 시간을 관계의 일부로 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ENFJ:ENFJ",
+    "originalResearchHash": "0f746dd61e76532d0108cb253282cec02eef6e3ca1d9d0660793143e97a3aaec",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "e57ee65a5251dc60a686ed66ee4e994deba5c4983b26245e15fa6e057bd1f46f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "e57ee65a5251dc60a686ed66ee4e994deba5c4983b26245e15fa6e057bd1f46f",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로를 완전히 이해하기 쉽고, 연민과 지지를 주고받는 돈독한 관계가 되기 쉽다.",
+        "상대를 거울처럼 보며 자기 평가와 능력 개발의 계기를 얻는다.",
+        "둘 다 관계의 분위기와 상대 감정을 빠르게 읽어 서로가 원하는 반응을 잘 맞춘다."
+      ],
+      "friction": [
+        "서로 너무 비슷해 상호 보완이 약하고 지루함을 느끼기 쉽다.",
+        "둘 다 감정과 관계에 민감해 같은 지점에서 동시에 흔들릴 수 있다.",
+        "서로가 서로를 챙기려다 정작 누가 현실 문제를 냉정하게 닫을지 비어 버릴 수 있다.",
+        "관계 확인이 과해지면 안정감보다 피로가 먼저 쌓인다."
+      ],
+      "positiveInfluence": [
+        "서로의 선의와 헌신을 잘 알아보고 정서적 지지를 크게 준다.",
+        "자신의 장단점을 다른 사람을 통해 선명하게 볼 수 있다.",
+        "상대의 성장을 진심으로 밀어주며 관계 안에서 자신감과 소속감을 회복하게 만든다."
+      ],
+      "repairStrategy": [
+        "감정 확인과 현실 의사결정을 분리해 대화한다.",
+        "서로를 위로하는 시간과 실제 문제를 해결하는 시간을 따로 둔다.",
+        "비슷한 약점을 보완할 외부 구조나 역할 분담을 만든다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ENFJ:ENFP",
+    "originalResearchHash": "a63dd4cdd7d738dac08fd92df9235aa70dab6fd2835b0333491becc2514c4d8f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "be8b68a042df1e6b4f1c1c3767f383dc36f4513a8bdeddce603499a787439f60",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "0576c11bc8317f57dc652e6958144b909f0e60352426558ae519ffa1cbc773a9",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로 비슷한 성향으로 보여 초반에는 친근하게 느낄 수 있다.",
+        "둘 다 사람과 가능성, 의미 있는 대화를 좋아한다.",
+        "따뜻한 반응과 활기 있는 대화가 살아나면 빠르게 가까워지는 편이다.",
+        "둘 다 사람을 격려하고 분위기를 살리는 데 자연스러운 힘이 있다."
+      ],
+      "friction": [
+        "심리 기능이 전혀 달라 상대를 충분히 이해하기 어렵다.",
+        "문제를 함께 해결해야 할 때 너무 다르게 생각한다고 느낀다.",
+        "대화가 서로에게 만족감을 주지 못하고, 함께 보낸 시간을 후회하기 시작할 수 있다.",
+        "ENFJ는 관계의 합의를 원하고 ENFP는 가능성을 열어두려 해 결정의 마감선에서 자주 엇갈린다."
+      ],
+      "positiveInfluence": [
+        "서로의 자유로운 감성 표현과 사람 중심 시야에서 초반 활력을 얻는다.",
+        "단기적 교류에서는 서로의 다른 방식이 신선하게 느껴질 수 있다.",
+        "서로를 고치려 하지 않으면 따뜻한 확장성과 사회적 활력이 관계에 붙는다."
+      ],
+      "repairStrategy": [
+        "비슷하다는 착각을 줄이고 의사결정 기준을 명시한다.",
+        "관계 방향과 개인 자유의 범위를 따로 합의한다.",
+        "만족감이 낮은 대화는 주제보다 방식이 다른 문제로 보고 조정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ENFJ:ISTJ",
+    "originalResearchHash": "2b2692c5594f9220ec5fb40976769dd5e2ba345091245595acc95a76aea3b81b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "cb5ff1e97985f2d51f50b32904b3f1ecd4dda7c342cdd57702df01b338c0f137",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "7ebe89b60facf72f99aa5a77fe75aa27d03a2e57712d0faf158fc9e0b86297ba",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "처음에는 서로의 다른 점이 매력적으로 보일 수 있다.",
+        "서로가 자신에게 부족한 세계를 가진 사람처럼 느껴 초반 호기심이 생긴다.",
+        "ENFJ는 ISTJ의 책임감을 안정감으로 보고, ISTJ는 ENFJ의 따뜻한 조율 능력을 신선하게 느낀다."
+      ],
+      "friction": [
+        "갈등이 잦아지면 서로의 방식이 관계를 지키는 노력인지 압박인지 다르게 해석되기 쉽다.",
+        "ENFJ는 관계의 정서와 의미를 중시하고, ISTJ는 절차와 사실, 책임의 기준을 중시한다.",
+        "정서 확인 방식과 문제 해결 속도가 맞지 않으면 두 사람 모두 강한 피로감을 느낀다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 ENFJ에게 현실 기준과 절차를 보여 주고, ENFJ는 ISTJ에게 사람의 감정과 공동체 의미를 보여 준다.",
+        "짧은 협업에서는 서로의 사각지대를 알게 해준다."
+      ],
+      "repairStrategy": [
+        "감정 문제와 생활 규칙 문제를 분리해 다룬다.",
+        "ENFJ는 ISTJ의 절차를 무정함으로 단정하지 않는다.",
+        "ISTJ는 ENFJ의 감정 확인을 비효율이 아니라 관계 안정 요청으로 이해한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ENFJ:ISFJ",
+    "originalResearchHash": "da40a89efe371ac5eeefdfa6ca837a14582d4f9322c33e888bdcdb8db0dab422",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "6f3f77258e950d4af75b4a63c53d5a16c882fb4918ee548229ad28aa37c99dc7",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "afdfe234ad109aa6cbc55439b9fc590d3f0d6e996a8f4a746a08ee7efde6911d",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사람을 돌보고 관계의 조화를 중요하게 본다.",
+        "초반에는 배려와 책임감 때문에 서로를 좋은 사람으로 느낄 수 있다.",
+        "가까운 사람을 챙기고 관계를 오래 유지하려는 마음이 강하다는 점은 닮았다.",
+        "가족과 주변 사람을 책임지는 태도에서도 공통점을 찾기 쉽다."
+      ],
+      "friction": [
+        "ISFJ는 감독자, ENFJ는 감독 대상자처럼 작동하며 ISFJ가 ENFJ를 변화시키려 할 수 있다.",
+        "ISFJ의 세세한 참견과 통제는 ENFJ에게 답답하게 느껴진다.",
+        "ENFJ는 논쟁하거나 명령하는 위치로 이동해 통제에서 벗어나려 할 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISFJ는 ENFJ에게 세부와 생활 안정감을 주고, ENFJ는 ISFJ에게 더 넓은 관계와 비전을 보여 준다.",
+        "역할이 고정되지 않으면 돌봄과 리더십이 함께 작동할 수 있다."
+      ],
+      "repairStrategy": [
+        "세부 생활 기준과 관계 방향 결정권을 분리한다.",
+        "ISFJ는 조언 전에 ENFJ의 선택권을 확인한다.",
+        "ENFJ는 통제감을 느낄 때 명령조로 반격하지 말고 필요한 자유를 구체적으로 요청한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ENFJ:ESTJ",
+    "originalResearchHash": "0ff3b23439b288b509f2d61a6f98efcf2ae7d596e6be1789decbeb8b369d1c06",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "14bcc83711b893596ea9a524e0d31ae995a891c5d588e427bcd382172d4731a3",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "d41ffc64fd4388fec02e853b4a1afd5708a77bf4d44ab04cdf73419c68e7259e",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로 따뜻한 감정을 경험할 수 있지만 겉으로는 차갑게 보일 수 있다.",
+        "공통 관심사가 있으면 일정한 교류와 협력이 가능하다.",
+        "둘 다 책임과 역할을 가볍게 보지 않아 공동 목표가 있으면 관계를 꾸준히 끌고 갈 수 있다.",
+        "가족과 일의 기본 질서를 세우려는 마음도 공유할 수 있다."
+      ],
+      "friction": [
+        "공통 관심사가 없으면 관계가 매우 형식적이 된다.",
+        "서로 자기 관점을 말하려 하고 상대의 이야기를 충분히 듣지 않을 수 있다.",
+        "ENFJ는 사람의 감정과 의미를 보고, ESTJ는 실행 기준과 질서를 먼저 본다.",
+        "ESTJ가 해결책을 바로 제시하면 ENFJ는 마음을 듣지 않는다고 느끼고, ENFJ의 감정 설명은 ESTJ에게 길게 느껴진다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 ENFJ에게 현실적 실행력과 기준을 주고, ENFJ는 ESTJ에게 관계적 온도와 명분을 더한다.",
+        "공통 목표가 있으면 서로의 다른 강점이 프로젝트에 도움이 된다."
+      ],
+      "repairStrategy": [
+        "공통 관심사와 공동 프로젝트를 의식적으로 만든다.",
+        "서로 자기 관점을 말한 뒤 상대의 요지를 한 번씩 되짚는다.",
+        "ESTJ는 감정 확인을 일정에 넣고, ENFJ는 실행 기준을 존중한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ENFJ:ESFJ",
+    "originalResearchHash": "7ce6900fbea56e56b6a7024165cc54796c77f133c7b002bf2921dab81a170736",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "467419fffdb2215f967065467a6d0db95d77fea0f89ba1dd50d13dc36076a5c3",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "567d4b766b3c906dbbcdf4b2a4ee605a34e02a7b96ef8b4051dd7d7001decbf4",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "대화 주제가 비슷하고 유사한 관심사를 공유한다.",
+        "서로에게 정중한 호의를 갖고 평화롭게 상생할 수 있다.",
+        "둘 다 관계의 예의와 주변 사람의 기분을 중요하게 보며 기본적인 다정함이 있다.",
+        "가족, 모임, 사회적 평판을 챙기는 감각도 비슷하게 작동한다."
+      ],
+      "friction": [
+        "시간이 지날수록 관계가 지루하게 가라앉을 수 있다.",
+        "절대 상대의 문제점에는 관심을 보이지 않는 경향이 있어 깊은 개선이 어렵다.",
+        "위계에서 한쪽이 높은 위치에 있으면 심각한 의견 불일치와 갈등이 생길 수 있다.",
+        "둘 다 분위기를 해치기 싫어 진짜 불만을 미루면 겉은 부드러운데 속은 식어갈 수 있다."
+      ],
+      "positiveInfluence": [
+        "두 사람 모두 관계와 배려를 중시해 기본적 친절과 협력이 쉽다.",
+        "같은 레벨의 협업에서는 서로를 무리 없이 지지한다.",
+        "가족, 모임, 사회적 관계를 챙기는 능력이 합쳐지면 생활 안정감이 커진다."
+      ],
+      "repairStrategy": [
+        "상대의 문제를 피하지 말고 정중하지만 구체적으로 말한다.",
+        "위계가 생기는 역할 분담은 주기적으로 조정한다.",
+        "새로운 공동 목표를 만들어 지루함을 줄인다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ENFJ:ISTP",
+    "originalResearchHash": "e97401305398780611a098add305af0f2418cc6b4916d1802c7e3717f72e4958",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "82a30cbee6954a603592e8e093511bd8d498a5294736f3107e73bcca5597b17e",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "88e65a90aac6efb846e8afbe0890df01aea9b27d8ce01126eb782499c015d8aa",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로의 단점을 보완하며 비교적 편안하게 자기 모습을 드러낼 수 있다.",
+        "ENFJ의 관계 조율과 ISTP의 현실적 문제 해결이 만나면 정신적 도움과 실질적 보완이 동시에 생긴다.",
+        "ENFJ는 관계의 방향을 잡고, ISTP는 말보다 행동으로 안정감을 주는 역할을 맡기 쉽다."
+      ],
+      "friction": [
+        "이상적인 관계가 되려면 공통 관심사와 비슷한 가치관이 필요하다.",
+        "ENFJ는 감정과 방향을 확인하려 하고, ISTP는 간결한 행동과 개인 공간을 선호해 속도가 엇갈릴 수 있다.",
+        "ISTP가 침묵하면 ENFJ는 혼자 관계를 붙잡는다고 느끼고, 확인 요구가 늘수록 ISTP는 더 물러난다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 ISTP에게 관계의 언어와 장기적 의미를 보강하고, ISTP는 ENFJ에게 과도한 감정 몰입에서 빠져나오는 현실감을 준다.",
+        "서로의 차이가 인정되면 안정감과 성장감이 강한 관계가 된다."
+      ],
+      "repairStrategy": [
+        "ENFJ는 감정 확인을 요구하기 전에 ISTP의 행동 신호를 함께 읽는다.",
+        "ISTP는 침묵만으로 안정감을 주려 하지 말고 짧게라도 마음을 표현한다.",
+        "공통 취미와 실질적 목표를 만들어 보완이 생활 속에 자리 잡게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ENFJ:ISFP",
+    "originalResearchHash": "5cf2066591be4c047923c22538d15fb1ee070f133a1f23d45b0750ba8191b22d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "ecd925b759b02c7808eb3ab019c78371988e6018db867d52ef16446ec141c574",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "16aec1b428f572b47190276a8bba43fb8997fdb7a739aabeb5faa219a2957d58",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "다른 주제로 토론하면서도 긴장하지 않고 편안하게 대화할 수 있다.",
+        "서로에게 끌리며 따뜻하고 배려 넘치는 관계로 발전할 수 있다.",
+        "ENFJ는 ISFP의 진솔한 감각에, ISFP는 ENFJ의 따뜻한 보호성에 안정감을 느낀다."
+      ],
+      "friction": [
+        "상대의 이야기가 흥미롭지만 제대로 이해하려면 많은 집중과 노력이 필요하다.",
+        "서로에게 기대하는 것이 달라 능력을 신뢰하기 쉽지 않다.",
+        "ENFJ는 관계의 방향과 표현을 원하고, ISFP는 자기 속도와 감각적 진정성을 중시한다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 ISFP에게 정서적 지지와 관계의 방향을 주고, ISFP는 ENFJ에게 현재의 감각과 부드러운 진정성을 준다.",
+        "서로 배려심이 많아 차이를 존중하면 따뜻한 관계가 된다."
+      ],
+      "repairStrategy": [
+        "상대가 기대하는 도움과 표현 방식을 구체적으로 묻는다.",
+        "ENFJ는 ISFP의 느린 표현을 무관심으로 단정하지 않는다.",
+        "ISFP는 감정과 취향의 기준을 말로 조금씩 알려 준다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ENFJ:ESTP",
+    "originalResearchHash": "e1ae7e0e9dafe895973a189c9f34741483e4e71b47010d4ccb2d763765ade0ea",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "a4591e42a78343bd5db260f5c33bf6d05f57eaf43d494a42f6d7a93b7da0401a",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "2d89a77cccb2229e5f02a6913edde9a264fdad2c7e1122f1373a7a7a1d1eadc0",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "가장 쉽고 빠르게 시작되는 관계로, 서로를 활동적으로 자극한다.",
+        "둘 다 외부 활동성과 사람 사이의 반응에 민감해 초반 에너지가 높다.",
+        "함께 움직이고 사람을 만나는 장면에서는 관계의 속도가 빠르게 붙는다.",
+        "서로의 반응이 빠른 만큼 데이트와 대화의 생동감이 강하다."
+      ],
+      "friction": [
+        "과도한 자극 때문에 서로에게 싫증을 느끼기 쉽다.",
+        "일상 문제나 협력 관계에서는 많은 어려움이 생길 수 있다.",
+        "ENFJ는 관계의 의미를 확인하려 하고, ESTP는 지금의 재미와 자유를 먼저 보면서 책임감의 온도가 어긋난다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 ENFJ에게 행동력과 현재 감각을 주고, ENFJ는 ESTP에게 관계의 의미와 방향성을 보강한다.",
+        "짧고 활기 있는 프로젝트에서는 서로의 추진력을 끌어올린다."
+      ],
+      "repairStrategy": [
+        "활동과 휴식의 주기를 정해 과자극을 줄인다.",
+        "일상 책임은 감정이 아니라 역할표로 분명히 나눈다.",
+        "ENFJ는 ESTP에게 장기 대화를 짧고 구체적으로 요청한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ENFJ:ESFP",
+    "originalResearchHash": "3167014a72902af330f7ce7884530b5a6422018493643473f481bd059080f0c7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "c3c084a61cf0db4f8bc28a33d2a0758364f367113f8d2f8cc27eb45588e53a43",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "a737c3f5c3f7451c777fd841c0a3b4471c4a5bfdae8823a3b303423dd42b6c8d",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ESFP는 ENFJ의 행동, 매너, 생각, 능력에 감명을 받고 존경하기 쉽다.",
+        "함께 있을 때 ESFP가 ENFJ를 기쁘게 해주려는 흐름이 생긴다.",
+        "둘 다 사람 사이의 반응과 분위기를 빠르게 읽어 초반 친밀감이 살아난다."
+      ],
+      "friction": [
+        "ENFJ는 ESFP에게 특별한 것을 제공할 수 있다고 느끼는 동시에 ESFP를 자신보다 어리게 볼 수 있다.",
+        "한쪽이 계속 맞추는 구조가 되면 관계의 균형이 흔들린다.",
+        "ENFJ가 방향을 잡아주려 할수록 ESFP는 자유를 빼앗긴다고 느끼고, ENFJ는 책임감이 혼자에게 몰린다고 느낀다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 ESFP에게 방향과 의미를 주고, ESFP는 ENFJ에게 현재의 즐거움과 생동감을 준다.",
+        "따뜻함과 활동성이 결합되어 밝은 관계가 되기 쉽다."
+      ],
+      "repairStrategy": [
+        "ESFP의 자율성과 즉흥성을 존중한다.",
+        "ENFJ는 조언을 하기 전에 상대의 선택을 먼저 확인한다.",
+        "즐거움과 장기 계획을 둘 다 일정에 포함한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ENFP:INTJ",
+    "originalResearchHash": "105db13ca27ec85d875079387a77dafaacd2d3b22e7c6e3f48c3c327c7ed4d8f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "a2a51af3de246694cf24d12ab55d50c2738f7dc483b274213800f2aa9410bf0c",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "ffaaee04cec941d7ece6b3228430b748eb9010baa609b49ce8de51b93d5bc6ef",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 겉으로 보이는 현실보다 앞으로 열릴 가능성과 큰 방향에 민감하다.",
+        "ENFP는 사람과 아이디어의 확장을 만들고, INTJ는 그 가능성 중 실현 가치가 있는 구조를 골라낸다.",
+        "서로의 독립성을 어느 정도 존중할 수 있어, 처음부터 지나치게 달라붙는 관계보다 각자의 세계를 유지하는 관계에서 잘 맞물린다."
+      ],
+      "friction": [
+        "ENFP는 가능성을 넓게 열고 싶어 하지만, INTJ는 불필요한 선택지를 빨리 제거하려 한다.",
+        "INTJ의 차가운 판단과 압축된 표현은 ENFP에게 정서적 거절처럼 느껴질 수 있고, ENFP의 감정적 반응과 산만한 전환은 INTJ에게 비효율로 보일 수 있다.",
+        "갈등이 생기면 ENFP는 마음의 온도와 자유를 묻고, INTJ는 논리와 실행 가능성을 따지면서 대화의 우선순위가 어긋난다."
+      ],
+      "positiveInfluence": [
+        "INTJ는 ENFP의 많은 아이디어를 실제 전략과 장기 계획으로 압축해 준다.",
+        "ENFP는 INTJ가 지나치게 혼자 결론 내리지 않도록 사람의 반응과 새로운 가능성을 열어 준다.",
+        "서로를 통제하지 않으면 상상력과 전략이 동시에 커지는 관계가 된다."
+      ],
+      "repairStrategy": [
+        "ENFP는 INTJ의 짧은 표현을 애정 부족으로 단정하지 말고 구체적으로 필요한 반응을 요청한다.",
+        "INTJ는 ENFP의 감정 표현을 비논리로 밀어내지 말고 관계의 상태 신호로 받아들인다.",
+        "아이디어는 ENFP가 넓히고 실행 기준은 INTJ가 정리하되, 최종 선택은 둘이 함께 확인한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ENFP:INTP",
+    "originalResearchHash": "8216801e8bdf64ebd97755da3d4f00c6fbe3988be37fd08d0f3f09a39a3f9a51",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "5909ece18bf69864110a319d4a897eeba48ff660edd782b5610a95b83356d540",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "18771e01e1b906c47aef415b5cd932fd43cadca8802ba0c5a0b6bf3b49ba4ed0",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 정해진 답보다 새로운 관점, 가능성, 열린 대화를 좋아한다.",
+        "ENFP는 사람과 의미를 중심으로 아이디어를 확장하고, INTP는 논리와 개념을 중심으로 구조를 파고든다.",
+        "서로에게 강한 통제를 요구하지 않기 때문에 친구처럼 시작되는 관계에서는 자유롭고 흥미로운 대화가 이어지기 쉽다."
+      ],
+      "friction": [
+        "ENFP는 정서적 반응과 관계의 온도를 중요하게 보지만, INTP는 감정 표현보다 개념의 정확성을 우선한다.",
+        "INTP의 무심한 분석은 ENFP에게 차갑게 들릴 수 있고, ENFP의 감정적 확신은 INTP에게 논리적 비약처럼 보일 수 있다.",
+        "둘 다 결정을 미루기 쉬워 현실적인 약속, 돈, 생활 책임을 누가 챙길지가 흐려질 수 있다."
+      ],
+      "positiveInfluence": [
+        "INTP는 ENFP의 직관적 아이디어를 더 정교한 논리와 분석으로 다듬어 준다.",
+        "ENFP는 INTP가 생각 속에만 머물지 않고 사람과 현실의 반응을 보게 만든다.",
+        "서로의 자유를 존중하면 대화와 탐구가 살아 있는 관계가 된다."
+      ],
+      "repairStrategy": [
+        "ENFP는 서운함을 감정의 크기만으로 말하지 말고 실제 필요한 행동을 함께 말한다.",
+        "INTP는 감정 대화를 논쟁처럼 다루지 말고 먼저 상대의 마음을 요약해 준다.",
+        "현실 책임은 누가 더 잘하느냐가 아니라 반복 가능한 체크리스트로 나누어 관리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ENFP:ENTJ",
+    "originalResearchHash": "c2513096cd24859d92fd03a9d565e1ee87833c19dbe7ec41eed9f971af13c9e7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "94f9250fd98f376df0958a393bf114955259c6050d50eb38e55b46d5e7d35b82",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "4549ae103aec96930eb9a754cf424fd05c556373a65bbda2c622d5cd6d04bcab",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 작은 안정에만 머무르기보다 더 큰 가능성과 성장을 보고 움직인다.",
+        "ENFP는 사람의 마음을 움직이는 비전과 분위기를 만들고, ENTJ는 목표와 실행 구조를 빠르게 세운다.",
+        "둘 다 에너지가 크고 변화에 열려 있어 함께 프로젝트나 인생 계획을 만들 때 속도가 붙는다."
+      ],
+      "friction": [
+        "ENTJ는 결과와 효율을 분명히 요구하지만, ENFP는 과정의 의미와 사람의 감정을 함께 보고 싶어 한다.",
+        "ENTJ의 직설적 피드백은 ENFP에게 상처가 될 수 있고, ENFP의 감정적 유동성은 ENTJ에게 집중력 부족처럼 보일 수 있다.",
+        "갈등이 생기면 ENTJ는 결론을 요구하고 ENFP는 마음을 이해받고 싶어 하면서 서로를 압박한다고 느낀다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 ENFP가 흩뿌린 가능성을 실질적인 목표와 성과로 연결해 준다.",
+        "ENFP는 ENTJ가 놓치기 쉬운 사람의 감정, 관계의 설득력, 분위기의 흐름을 보완한다.",
+        "서로의 강점을 인정하면 추진력과 인간적 매력이 함께 살아나는 조합이 된다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 피드백을 줄 때 해결책보다 먼저 관계를 존중한다는 신호를 준다.",
+        "ENFP는 자유를 요구할 때 책임 회피처럼 보이지 않도록 마감과 약속을 명확히 한다.",
+        "큰 목표는 ENTJ가 구조를 잡고 ENFP가 사람과 동기부여를 설계하는 방식으로 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ENFP:ENTP",
+    "originalResearchHash": "82a05c3b15a79d3fc5c1d34e9dd002679594c684e7386072210e44201ff61fc4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "4ac2c0221a57999eb9fbd09fba4ba20571f9801c803767f14ac9d3ac45e8510a",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "a3f43e6b0115a3c66cef254bf2ea68dc36cb096eced85dfc814f8aa023e04dcc",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 새로운 가능성, 유머, 빠른 대화 전환에 강하게 반응한다.",
+        "ENFP는 사람의 가치와 감정을 중심으로 확장하고, ENTP는 논리적 반박과 실험을 통해 아이디어를 넓힌다.",
+        "서로의 즉흥성과 호기심을 이해하기 때문에 초반에는 지루할 틈이 없는 관계가 되기 쉽다."
+      ],
+      "friction": [
+        "ENTP의 논쟁적 장난은 ENFP에게 마음을 가볍게 여기는 태도로 느껴질 수 있다.",
+        "ENFP의 가치 중심 반응은 ENTP에게 토론을 개인적으로 받아들이는 모습처럼 보일 수 있다.",
+        "둘 다 가능성을 계속 열어 두려 하므로 약속, 결론, 생활 책임이 뒤로 밀릴 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ENFP가 감정적으로 확신한 아이디어를 더 넓은 관점에서 검증하게 만든다.",
+        "ENFP는 ENTP가 사람의 마음을 지나치게 실험 대상으로 다루지 않도록 따뜻한 기준을 제공한다.",
+        "토론과 애정의 경계를 지키면 서로의 창의성을 크게 자극한다."
+      ],
+      "repairStrategy": [
+        "ENTP는 반박하기 전에 ENFP가 중요하게 여기는 감정과 가치를 먼저 인정한다.",
+        "ENFP는 ENTP의 질문을 곧바로 공격으로 해석하지 말고 확인 질문으로 구분한다.",
+        "토론이 과열되면 승부를 멈추고 관계에서 필요한 결론 하나만 정해 마무리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ENFP:INFJ",
+    "originalResearchHash": "847eb4663df6f389ccec8201fb62b2bb6e26f0c460fb014111cbd2638c488b64",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "213d96b3a70731884e8097152689d742f016c829271371e640be339ae4b8f5b6",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "7eff45c613cbea02e8e00641ff5ea8884a09a964a05a04bb74501092b75a78f0",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 유형 모두 깊은 공감과 관심을 공유하며 얕은 관계보다 의미 있는 유대를 선호한다.",
+        "ENFP의 활기와 창의성, INFJ의 안정성과 조직성이 서로를 보완한다.",
+        "가족과 직장에서 상호 보완적인 역할을 수행할 수 있고, ENFP의 가능성 감각과 INFJ의 방향 감각이 맞물리면 관계가 깊어진다."
+      ],
+      "friction": [
+        "ENFP는 즉흥적이고 확장적이며, INFJ는 안정적이고 구조적인 방향을 선호한다.",
+        "ENFP의 감정과 경험 확장은 INFJ에게 산만하게 느껴질 수 있고, INFJ의 조직성은 ENFP에게 답답하게 느껴질 수 있다.",
+        "ENFP는 자유를 막힌다고 느끼면 급격히 멀어지고, INFJ는 의미 없는 즉흥이 반복된다고 느끼면 조용히 신뢰를 거둔다."
+      ],
+      "positiveInfluence": [
+        "ENFP는 INFJ에게 재미, 활력, 새로운 경험을 제공하고, INFJ는 ENFP에게 안정감과 균형을 제공한다.",
+        "서로 다른 사교적 스타일을 배우며 성장과 발전을 촉진한다."
+      ],
+      "repairStrategy": [
+        "ENFP는 INFJ가 안정감을 원한다는 점을 일정과 약속으로 보여 준다.",
+        "INFJ는 ENFP의 즉흥성을 무책임이 아니라 활력의 표현으로 분리해 본다.",
+        "공동 계획에는 자유 활동과 정리 시간을 함께 넣는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ENFP:INFP",
+    "originalResearchHash": "3564978c928a7a46bf027004bc9877914680176457e52eaeda45bc5f22c3fb73",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "077d3093a2a4c276dc923b882c473ce3f976f7533af9d2cdb8f77ba728910da0",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "7fb41219fa290787bd6b05dec7cccc5f70bb59cb2759009a6b2f7237c67f9562",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "성격, 가치관, 취향이 비슷해 서로의 감정과 이상을 이해하기 쉽다.",
+        "I/E 차이가 크지 않게 느껴지는 경우가 많아 대화와 정서적 공감이 자연스럽다.",
+        "둘 다 진정성과 가능성을 중요하게 보니, 상대가 자기 세계를 가볍게 취급하지 않는다는 감각에서 빠르게 가까워진다."
+      ],
+      "friction": [
+        "ENFP는 외부 사람과 경험을 통해 에너지를 얻고, INFP는 내면의 감정과 조용한 몰입을 더 필요로 한다.",
+        "ENFP가 계속 밖으로 움직이려 하면 INFP는 관계가 산만하다고 느끼고, INFP가 오래 안으로 들어가면 ENFP는 마음을 닫았다고 느낀다.",
+        "둘 다 현실 정리와 반복 실행이 약해질 수 있어, 감정은 깊어도 돈·일정·생활 책임이 밀리면 피로가 쌓인다."
+      ],
+      "positiveInfluence": [
+        "ENFP는 INFP의 생각을 밖으로 꺼내고, INFP는 ENFP의 감정을 더 깊게 정리해 준다.",
+        "동일 관계보다 보완감이 있어 창작과 관계에서 좋은 시너지가 난다."
+      ],
+      "repairStrategy": [
+        "외부 활동과 조용한 회복 시간을 모두 일정에 반영한다.",
+        "현실 업무는 감정 상태와 별개로 역할을 나눈다.",
+        "서로의 회피를 배려로 포장하지 말고 필요한 문제를 짧게라도 다룬다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ENFP:ENFJ",
+    "originalResearchHash": "7eb794ca82010688d9c8c5e831c3a0cbfb57e99c7d35609977cc91a4ca06e725",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "0576c11bc8317f57dc652e6958144b909f0e60352426558ae519ffa1cbc773a9",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "be8b68a042df1e6b4f1c1c3767f383dc36f4513a8bdeddce603499a787439f60",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 사람을 좋아하고 관계 속에서 의미와 가능성을 찾는다.",
+        "ENFP는 자유로운 영감으로 사람을 열고, ENFJ는 방향 있는 격려와 설득으로 사람을 이끈다.",
+        "둘 다 따뜻하고 표현력이 있어 처음에는 서로를 매우 비슷한 사람처럼 느낄 수 있다."
+      ],
+      "friction": [
+        "ENFJ는 관계와 목표를 일정한 방향으로 이끌고 싶어 하지만, ENFP는 선택지를 열어 두고 자발적으로 움직이고 싶어 한다.",
+        "ENFJ의 기대와 조율은 ENFP에게 은근한 통제로 느껴질 수 있고, ENFP의 변덕과 자유는 ENFJ에게 책임감 부족처럼 보일 수 있다.",
+        "둘 다 사람의 마음을 중요하게 보기 때문에 갈등이 생기면 논점보다 서운함과 인정 욕구가 커질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 ENFP가 가진 영감을 사람들과 함께 움직이는 비전으로 정리해 준다.",
+        "ENFP는 ENFJ가 지나치게 역할과 책임에 묶이지 않도록 더 자유로운 시야를 열어 준다.",
+        "서로의 따뜻함을 경쟁하지 않으면 관계와 활동 모두에 활력을 준다."
+      ],
+      "repairStrategy": [
+        "ENFJ는 ENFP를 좋은 방향으로 이끌려는 마음이 통제로 느껴질 수 있음을 의식한다.",
+        "ENFP는 자유를 주장할 때 관계의 약속을 가볍게 여기는 인상을 주지 않도록 기준을 말한다.",
+        "서로를 설득하기 전에 각자가 원하는 관계 속도와 외부 교류 범위를 먼저 정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ENFP:ENFP",
+    "originalResearchHash": "796e1fe2b4aa051acaea05b4ca73a598c4dc1cd3a32f903fe03ca68aa8ca35fd",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "3c2e244412063515b9a5cefbb86985223cb90ddc80d30ae1c80fe09e30244a2d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "3c2e244412063515b9a5cefbb86985223cb90ddc80d30ae1c80fe09e30244a2d",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "같은 기능을 같은 순서로 사용해 서로의 감정, 가능성 탐색, 자유 욕구를 빠르게 이해한다.",
+        "둘 다 관계에서 설렘, 대화의 생동감, 정서적 자유를 중요하게 보니 초반 호흡이 빠르게 살아난다.",
+        "친구로서는 말이 잘 통하고 함께 새로운 경험을 벌이기 쉬워, 지루한 일상도 둘이 있으면 금방 이벤트가 된다."
+      ],
+      "friction": [
+        "상호 보완을 기대하기는 어렵고, 둘 다 마무리와 세부 관리가 약해질 수 있다.",
+        "두 사람 모두 즉흥적 제안과 감정 흐름에 잘 올라타기 때문에 약속, 돈, 일정 같은 현실 관리가 뒤로 밀린다.",
+        "한쪽이 불건강하면 다른 한쪽도 감정 기복, 충동성, 미완성 패턴에 쉽게 휩쓸리며 관계의 중심이 흔들린다."
+      ],
+      "positiveInfluence": [
+        "서로의 개성과 가능성을 잘 인정하며 밝은 에너지를 증폭시킨다.",
+        "서로를 거울처럼 보며 자신의 장단점을 더 선명하게 알 수 있고, 상대의 자유를 허용하는 법도 자연스럽게 배운다."
+      ],
+      "repairStrategy": [
+        "즐거운 계획과 생활 책임을 같은 중요도로 적어 둔다.",
+        "감정이 커졌을 때 즉시 결론을 내리지 말고 하루 뒤 다시 이야기한다.",
+        "세부 관리 영역은 체크리스트와 외부 도구를 사용한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ENFP:ISTJ",
+    "originalResearchHash": "43440412a6f25e8798eeb8fb021e714492328c7d2da0eaaea736286100228e0a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "733b5e81b47d5cfdf6670a3c315dce43d34fd24376cdb71847aa5651de2d5c46",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "c7ad74a304f3a8f92d951a040b763ad9d37b6f41614a40c80f08db70c77fc097",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ENFP는 가능성과 사람의 마음을 넓게 보고, ISTJ는 현실의 책임과 검증된 질서를 단단히 잡는다.",
+        "서로가 잘 못하는 영역을 상대가 자연스럽게 해내는 모습을 보며 신기함과 안정감을 동시에 느낄 수 있다.",
+        "둘 다 진심과 책임을 가볍게 여기지 않기 때문에 관계가 자리 잡으면 서로에게 오래 남는 영향을 준다."
+      ],
+      "friction": [
+        "ENFP는 변화와 자발성을 원하지만, ISTJ는 예측 가능한 계획과 약속 이행을 먼저 본다.",
+        "ISTJ의 기준과 지적은 ENFP에게 숨 막히는 통제로 느껴질 수 있고, ENFP의 즉흥성은 ISTJ에게 불안정함으로 보일 수 있다.",
+        "갈등이 생기면 ENFP는 마음과 의도를 설명하고, ISTJ는 실제 행동과 결과를 확인하려 하면서 서로 답답해진다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 ENFP가 흩어지지 않도록 생활의 뼈대와 꾸준한 실행력을 제공한다.",
+        "ENFP는 ISTJ가 지나치게 익숙한 방식에만 머물지 않도록 관계와 삶의 새로운 가능성을 열어 준다.",
+        "서로를 바꾸려 하지 않으면 안정성과 생동감이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ENFP는 즉흥적인 변경이 필요할 때 ISTJ가 불안해하지 않도록 변경 이유와 새 약속을 함께 제시한다.",
+        "ISTJ는 ENFP의 자유로운 표현을 책임 부족으로 단정하지 말고 관계를 살리는 에너지로도 본다.",
+        "돈과 일정은 ISTJ식 기준을 세우되, ENFP가 숨 쉴 수 있는 여유 예산과 자유 시간을 따로 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ENFP:ISFJ",
+    "originalResearchHash": "a69a3f47df7ea37dbd039592fe310934d2c85d8a1732e7032d50f38c294129cb",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "9fde4dc476eadb193156caab28eecbb696582532c6e4c42b57cabc32d3f54efe",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "64ce6132ad4229ce42b798f60e9e19dad9ca345610ac6fb4be79ecdeb9803885",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 사람을 향한 따뜻함과 진심 어린 배려를 중요하게 여긴다.",
+        "ENFP는 새로운 가능성과 정서적 활력을 주고, ISFJ는 관계를 실제 돌봄과 안정으로 지탱한다.",
+        "서로에게 부족한 부분을 채워 줄 수 있어 친해지면 의외로 깊은 정서적 의지가 생긴다."
+      ],
+      "friction": [
+        "ENFP는 자유롭고 새로운 방식으로 관계를 풀어가고 싶어 하지만, ISFJ는 익숙한 예의와 안정된 흐름을 더 편안해한다.",
+        "ISFJ의 조심스러운 걱정과 잔소리는 ENFP에게 제한처럼 느껴질 수 있고, ENFP의 예측 어려운 변화는 ISFJ에게 불안으로 다가올 수 있다.",
+        "둘 다 상처를 주고 싶어 하지 않지만, ENFP는 회피로 넘기고 ISFJ는 속으로 쌓아 두면서 문제가 늦게 터질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISFJ는 ENFP에게 일상적 책임과 관계를 오래 지키는 방식을 알려 준다.",
+        "ENFP는 ISFJ에게 새로운 경험과 더 넓은 관점을 제공해 삶의 폭을 넓혀 준다.",
+        "서로의 선의를 의심하지 않으면 따뜻함과 변화가 함께 공존한다."
+      ],
+      "repairStrategy": [
+        "ENFP는 약속 변경이 잦아질 때 ISFJ에게 사과와 대체 계획을 분명히 제시한다.",
+        "ISFJ는 걱정을 돌봄으로만 표현하지 말고 자신의 불안과 원하는 기준을 직접 말한다.",
+        "주말과 지출은 안정 루틴과 새로운 경험을 일정 비율로 나누어 둘 다 만족할 공간을 만든다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ENFP:ESTJ",
+    "originalResearchHash": "3df4295cfec260c27b87ab9eb2a571d59000e3a86d244655cdf157e64d4b4b0e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "4f7b95ac7142612629b107ea6252379dbcac8b1266ecdd97f5ddcfeb3c006738",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "5448ad65b07e5a98547606e80723e562d29114d39ddbb11485730fe7b234511a",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 에너지가 크고, 마음이 움직이면 실제 행동으로 옮기는 힘이 있다.",
+        "ENFP는 사람을 설득하고 분위기를 열며, ESTJ는 계획을 실행하고 결과를 관리한다.",
+        "함께 목표를 잡으면 아이디어와 추진이 빠르게 결합되어 짧은 시간에 많은 일을 해낼 수 있다."
+      ],
+      "friction": [
+        "ESTJ는 명확한 기준과 책임을 요구하지만, ENFP는 자발성과 여지를 중요하게 본다.",
+        "ESTJ의 단호한 말투는 ENFP에게 정서적 압박으로 느껴질 수 있고, ENFP의 변화와 감정 표현은 ESTJ에게 산만함으로 보일 수 있다.",
+        "갈등이 생기면 ESTJ는 규칙과 결과를 앞세우고 ENFP는 마음과 가능성을 설명하면서 서로의 언어가 부딪힌다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 ENFP가 아이디어를 실제 성과로 마무리하도록 현실적인 틀을 제공한다.",
+        "ENFP는 ESTJ가 지나치게 성과와 규칙에만 몰입하지 않도록 사람의 동기와 관계 분위기를 살린다.",
+        "역할이 분명하면 실행력과 창의성이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 지적보다 먼저 ENFP의 의도와 장점을 인정하고 기준을 설명한다.",
+        "ENFP는 감정적으로 억울함만 말하지 말고 약속 가능한 행동 단위를 제시한다.",
+        "생활 운영은 ESTJ가 틀을 잡되 ENFP가 선택할 수 있는 자유 영역을 명확히 남긴다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ENFP:ESFJ",
+    "originalResearchHash": "b412015a754a8cad6e9d271cfce8bc4d69ac47a940821f2996f593c8a123105a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "2932dd55664844a8db89011adadac0e9c2a5bd5336156933d76d49c8e23ae9d3",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "0755211201906428d46d74f59d48941e0fec1feb1871957b51f56a0be16f688f",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ESFJ는 ENFP를 귀엽고 매력적으로 느끼며 끌리기 쉽다.",
+        "ENFP도 ESFJ를 예뻐하고 다정하게 반응해 편안하고 애정 어린 분위기가 만들어진다.",
+        "둘 다 사람과 정서 교류를 중요하게 보니 연락, 리액션, 일상의 챙김에서 관계가 빠르게 따뜻해진다."
+      ],
+      "friction": [
+        "ESFJ의 관계 관리와 생활 규범은 ENFP에게 가끔 답답하게 느껴질 수 있다.",
+        "ENFP의 즉흥성과 산만함은 ESFJ에게 불안정하게 보일 수 있다.",
+        "ESFJ가 더 자주 확인하고 챙기려 할수록 ENFP는 관리받는 느낌을 받고, ENFP가 자유롭게 움직일수록 ESFJ는 배려가 부족하다고 느낀다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 ENFP에게 생활 안정과 꾸준한 돌봄을 제공하고, ENFP는 ESFJ에게 활기와 새로운 경험을 준다.",
+        "서로를 귀엽게 보고 예뻐하는 정서가 관계의 부드러움을 만든다."
+      ],
+      "repairStrategy": [
+        "생활 규칙은 최소한으로 정하고 ENFP가 선택할 여지를 남긴다.",
+        "ENFP는 ESFJ의 세심함을 통제가 아니라 안정감 제공으로 인정한다.",
+        "애정 표현만큼 일정과 약속도 구체적으로 확인한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ENFP:ISTP",
+    "originalResearchHash": "d21d1c4df9aa5f5919511a39cf22e9748561e933b16e3b97c3ef062391cec47d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "b558d263fdda1a02b750a078f69b4dc675903e81b33cc0e109cbf372e4aa3cdc",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "68c36ed3e74b5f1959d7d33149e30707ec140b2209996136434ae79d847dca44",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 불필요한 형식과 과한 통제를 싫어하고, 각자의 자율성을 중요하게 여긴다.",
+        "ENFP는 가능성과 사람의 마음을 직관적으로 읽고, ISTP는 상황의 원리와 실제 작동 방식을 빠르게 파악한다.",
+        "서로의 독립성을 존중한다면 친구처럼 가볍고 부담 없는 접점은 만들 수 있다."
+      ],
+      "friction": [
+        "ENFP는 감정의 의미와 관계의 가능성을 자주 확인하고 싶어 하지만, ISTP는 말보다 행동과 효율을 더 신뢰한다.",
+        "ISTP의 짧고 건조한 반응은 ENFP에게 무관심처럼 느껴질 수 있고, ENFP의 감정적 확장은 ISTP에게 과한 부담으로 느껴질 수 있다.",
+        "갈등이 생기면 ENFP는 마음을 풀기 위한 대화를 원하고, ISTP는 문제를 단순화하거나 거리를 두려 하면서 서로 더 서운해질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISTP는 ENFP가 복잡하게 느끼는 문제를 실제로 가능한 행동 단위로 줄여 준다.",
+        "ENFP는 ISTP가 사람의 마음과 관계의 맥락을 놓치지 않도록 부드럽게 환기한다.",
+        "서로에게 너무 많은 정서적 역할을 요구하지 않으면 현실성과 따뜻함이 조금씩 보완된다."
+      ],
+      "repairStrategy": [
+        "ENFP는 ISTP에게 긴 감정 설명을 한 번에 쏟기보다 핵심 감정과 필요한 행동을 짧게 말한다.",
+        "ISTP는 거리를 두기 전에 언제 돌아와 대화할지 시간을 분명히 알려 준다.",
+        "갈등 대화는 감정 확인, 사실 확인, 다음 행동을 분리해 짧은 단계로 진행한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ENFP:ISFP",
+    "originalResearchHash": "7fa9fc0c9398cc335f7945d47fbcd1cafe37449d09055aa160891e72104b5f0c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "820c9da4b5b22145bbf1eb5157c2ca93a3e1bc34883543ccf1e722fb4dc38b39",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "27913c4d50577fe1720995f273dad675c42fc2d4e6074f2018d41b8165e5b41e",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 개인의 진심과 가치, 억지스럽지 않은 관계를 중요하게 여긴다.",
+        "ENFP는 말과 가능성으로 마음을 열고, ISFP는 조용한 행동과 감각적 배려로 진심을 보여 준다.",
+        "서로에게 강한 위계나 통제를 요구하지 않는 점은 초반의 편안함을 만든다."
+      ],
+      "friction": [
+        "ENFP는 감정과 생각을 밖으로 풀어내며 관계를 확인하지만, ISFP는 말보다 조용한 체감과 자유로운 거리를 선호한다.",
+        "ENFP의 많은 질문과 빠른 변화는 ISFP에게 압박으로 느껴질 수 있고, ISFP의 침묵과 손절 성향은 ENFP에게 갑작스러운 거절처럼 느껴질 수 있다.",
+        "둘 다 상처를 싫어하지만 표현 방식이 달라, 한쪽은 말이 많아지고 한쪽은 더 조용해지는 식으로 멀어질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISFP는 ENFP에게 현재의 감각, 단순한 진심, 조용한 실천의 힘을 알려 준다.",
+        "ENFP는 ISFP가 자기 마음을 숨기지 않고 더 넓게 표현하도록 분위기를 열어 준다.",
+        "속도를 낮추면 자유와 다정함이 함께 살아나는 관계가 된다."
+      ],
+      "repairStrategy": [
+        "ENFP는 ISFP가 바로 말하지 못하는 감정을 기다려 주고 질문을 한 번에 많이 던지지 않는다.",
+        "ISFP는 마음이 닫히기 전에 최소한의 불편함을 말해 갑작스러운 거리두기를 줄인다.",
+        "각자의 개인 시간과 함께 보내는 시간을 주 단위로 분리해 자유와 안정감을 동시에 만든다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ENFP:ESTP",
+    "originalResearchHash": "c8b2b6b38f2e16e71fa3dc89a9c11c70370e95f464a3f7f26fe04ff695be3ae7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "3e221b5e2a3571d5859adf7b9bb078db050833ad9c77c1c2173d6fa58bd16784",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "a98598fa4e1d56416b1bfb4dcbd68d746bb449c8bc3b2d51006a70bb2251ffd7",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 에너지가 크고 새로운 경험을 향해 빠르게 반응한다.",
+        "ENFP는 가능성과 사람의 의미를 열고, ESTP는 눈앞의 상황과 실제 행동으로 분위기를 움직인다.",
+        "초반에는 서로의 활기와 즉흥성이 잘 맞아 지루하지 않은 관계가 되기 쉽다."
+      ],
+      "friction": [
+        "ENFP는 감정과 가능성의 의미를 중요하게 보지만, ESTP는 지금 통하는 행동과 현실 감각을 더 신뢰한다.",
+        "ESTP의 직설적이고 장난스러운 반응은 ENFP에게 마음을 가볍게 다루는 태도로 느껴질 수 있고, ENFP의 감정적 해석은 ESTP에게 과한 의미 부여로 보일 수 있다.",
+        "둘 다 즉흥성이 있어 즐거움은 빠르지만 장기 책임과 조용한 감정 점검은 쉽게 밀릴 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 ENFP가 생각과 감정 속에서 맴돌 때 실제 경험과 행동으로 나오게 만든다.",
+        "ENFP는 ESTP가 순간의 재미만 보지 않고 사람의 마음과 관계의 의미를 생각하게 돕는다.",
+        "서로의 속도를 존중하면 활기와 정서적 풍부함이 함께 생긴다."
+      ],
+      "repairStrategy": [
+        "ESTP는 농담과 직설이 ENFP에게 상처가 될 수 있음을 알고 중요한 대화에서는 톤을 낮춘다.",
+        "ENFP는 ESTP에게 감정의 의미를 길게 설명하기보다 지금 필요한 행동을 짧게 요청한다.",
+        "즐거운 활동만으로 갈등을 덮지 말고, 중요한 문제는 짧고 직접적인 대화로 마무리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENFP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ENFP:ESFP",
+    "originalResearchHash": "d6265da666656d5f080845503dc5ca8bfc7d69bad4743a24a836d9bb0ef6558f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "6f7e1ed0caab2799cc7653945331bc4554c2a1f90a35e9afece8fef0d34b5df9",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "54b9dbe17f4059f335a5eea2d06efc96f09cc866591488f27301381f72e3c14a",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 밝은 에너지, 사람과의 교류, 삶의 즐거움을 중요하게 여긴다.",
+        "ENFP는 상상력과 가능성으로 분위기를 열고, ESFP는 현실의 감각과 표현력으로 그 순간을 생생하게 만든다.",
+        "서로를 억누르지 않는 분위기에서는 친구처럼 편하고 즐거운 연애가 되기 쉽다."
+      ],
+      "friction": [
+        "ENFP는 미래의 가능성과 의미를 자주 이야기하고, ESFP는 지금의 경험과 눈앞의 즐거움을 더 중시한다.",
+        "ESFP가 가볍게 넘어간 일을 ENFP는 깊게 해석할 수 있고, ENFP의 긴 의미 대화는 ESFP에게 분위기를 무겁게 만드는 것으로 느껴질 수 있다.",
+        "둘 다 즐거움을 따라 움직이면 돈, 일정, 장기 계획이 뒤늦게 부담으로 돌아올 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 ENFP가 머릿속 가능성에만 머물지 않고 현실의 즐거움을 직접 누리게 한다.",
+        "ENFP는 ESFP가 순간의 재미 뒤에 있는 마음의 방향과 미래 선택지를 보게 돕는다.",
+        "서로의 활력을 인정하면 관계가 밝고 따뜻하게 유지된다."
+      ],
+      "repairStrategy": [
+        "ENFP는 ESFP가 현재를 즐기는 방식을 깊이 부족으로 단정하지 않는다.",
+        "ESFP는 ENFP가 의미를 묻는 순간을 분위기 깨기로 보지 말고 관계 방향 점검으로 받아들인다.",
+        "즐거운 계획과 현실 예산을 한 번에 세워 감정과 생활이 따로 놀지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ENTJ:INTJ",
+    "originalResearchHash": "98849e3147db7a2dd811422124b70af334412e8a5a4221c1b2e8cf6fd5e122eb",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "22026d31f55ff9e0ece96117745371224a453b5227aae8e8113def4d149841a3",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "7c239b12335a21d8e078cd866698abd0d4e57e61725c4ee6279c1e45163f442f",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "비슷한 관심사와 아이디어를 공유하며 서로의 사고방식을 흥미롭게 본다.",
+        "상대가 확신하는 영역이 다른 상대의 창조 영역이 되며 건설적 자극을 준다.",
+        "같은 목표를 향해 협력할 때 상호 보완과 건설적 비판이 유용하게 작동한다."
+      ],
+      "friction": [
+        "같은 문제의 서로 다른 절반만 보아 주요 개념을 오해할 수 있다.",
+        "상대를 이해시키려 해도 각자 확신하는 측면에 기반해 행동하므로 논쟁이 뜨거워진다.",
+        "가까운 미래 목표에는 동의해도 최종 목표와 실행 리듬에서 불일치가 생긴다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 INTJ의 전략을 외부 실행과 조직화로 밀어준다.",
+        "INTJ는 ENTJ의 빠른 추진에 더 깊은 구조와 장기 관점을 보완한다.",
+        "둘 다 비판을 생산적으로 받아들이면 강력한 전략 파트너가 된다."
+      ],
+      "repairStrategy": [
+        "서로의 확신 영역을 먼저 인정한 뒤 수정 의견을 낸다.",
+        "최종 목표와 중간 목표를 따로 합의한다.",
+        "논쟁이 과열되면 제3의 데이터나 외부 기준으로 조정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ENTJ:INTP",
+    "originalResearchHash": "6f5a80b445d95437f125d4f4d273144e6feec175d6ea31f0f1e3492b15abb738",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "307a3404c5ba218a109e2919131a1341494c5b35cfbbfc6d36bb9c3f314a9aa2",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "697c391f5775aada8a532f208b2785773d7a885974380223b84e5ef56f7a78c6",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사고형이며 지적 주제와 논리적 설명에 반응한다.",
+        "ENTJ는 INTP의 원리 분석에서 전략의 빈틈을 발견하고, INTP는 ENTJ의 실행력에서 생각이 현실로 옮겨지는 힘을 본다.",
+        "감정 과잉보다 근거 있는 대화를 선호해, 경쟁이 통제되면 서로의 판단을 날카롭게 만드는 조합이 된다."
+      ],
+      "friction": [
+        "사회적 상황에서는 각자의 강한 면으로 경쟁하며 심리적 거리를 형성하기 어렵다.",
+        "ENTJ는 INTP의 신중함과 거리두기를 의도적 회피로 오해할 수 있다.",
+        "ENTJ의 빠른 실행 압박과 INTP의 사고 독립성이 부딪히면, 한쪽은 답답함을 느끼고 한쪽은 자기 속도를 침해받는다고 느낀다."
+      ],
+      "positiveInfluence": [
+        "INTP는 ENTJ에게 더 깊은 논리 검증과 개념적 정교함을 제공한다.",
+        "ENTJ는 INTP에게 실행과 외부 영향력의 필요를 보여 준다.",
+        "경쟁이 통제되면 지적 긴장감이 생산적 자극이 된다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 INTP의 느린 사고를 무능으로 보지 않는다.",
+        "INTP는 결론 없는 탐색을 줄이고 실행 가능한 최소 합의를 제시한다.",
+        "사회적 역할과 개인 사고 시간을 분명히 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ENTJ:ENTJ",
+    "originalResearchHash": "4966d9eee6cb57258a804515843ec49f90cec9e1b4072aa5a504ff4b6b5ee256",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "7e0830092b5f9a7d76e0d3e284127838c0683b3055a4556fa6242901a6845475",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "7e0830092b5f9a7d76e0d3e284127838c0683b3055a4556fa6242901a6845475",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 목표, 성과, 권한, 효율을 중요하게 보고 빠른 결정을 편하게 느낀다.",
+        "서로의 추진력과 야망을 설명하지 않아도 이해하며, 큰 과제를 앞에 두면 강력한 실행 파트너가 될 수 있다.",
+        "돈, 커리어, 가족의 장기 계획도 감정의 흐름보다 전략과 자원 배분의 관점에서 다루려는 공통점이 있다."
+      ],
+      "friction": [
+        "둘 다 주도권을 잡으려는 힘이 강해 방향이 다르면 협력보다 지휘권 싸움으로 번지기 쉽다.",
+        "피드백을 빠르고 직설적으로 주고받기 때문에 관계의 온도가 차가워지고, 작은 말도 공격처럼 들릴 수 있다.",
+        "성과와 미래 목표를 앞세우다 보면 현재의 감정, 휴식, 생활의 부드러움을 둘 다 놓치기 쉽다."
+      ],
+      "positiveInfluence": [
+        "서로의 높은 기준이 동기 부여가 되어 커리어와 프로젝트에서 강한 상승 압력을 만든다.",
+        "한쪽이 과하게 밀어붙일 때 다른 한쪽이 전략과 우선순위를 다시 점검하게 만들 수 있다.",
+        "목표와 권한을 명확히 나누면 두 사람의 추진력이 충돌이 아니라 확장으로 작동한다."
+      ],
+      "repairStrategy": [
+        "공동 목표와 각자의 결정 권한을 분명히 나누어 같은 문제를 두고 두 명이 동시에 지휘하지 않게 한다.",
+        "피드백을 줄 때는 성과 평가와 감정 표현을 분리하고, 비판 전에 상대의 기여를 먼저 인정한다.",
+        "일, 돈, 가족 계획을 논의하는 시간과 쉬는 시간을 분리해 관계가 계속 회의처럼 흐르지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ENTJ:ENTP",
+    "originalResearchHash": "783a5b2ac85dbb7ea58af0537cd96a38c1f0ae01a497d3f0a2efd5edb9ecb62c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "084db856b56488a4c4f4bf7c5b39c9de57b8b1aab911de83be672b8a5c362300",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "d70ece2ef6d6e8bcb2b4ac4c348780692d14bfe3e89e7e5fb89ea5b6296fa406",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사고형이라 비교적 온건한 방식으로 상호작용할 수 있다.",
+        "대화나 토론 주제를 찾는 데 어려움은 적다.",
+        "서로를 위험하게 보지 않으며 약점을 직접 주시하지 않는 장점이 있고, 아이디어와 전략을 말로 밀어붙이는 힘에서 서로를 자극한다."
+      ],
+      "friction": [
+        "상대의 정보를 자신이 이해하는 방식으로 계속 변환해야 해서 에너지가 많이 든다.",
+        "상대가 중요한 문제를 너무 간단하게 생각한다고 느끼거나 고의로 혼동시킨다고 의심한다.",
+        "함께 문제를 해결해야 할 때 너무 다르게 생각해 시간 낭비였다고 느낀다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ENTJ에게 유연한 가능성과 발상을 보여 준다.",
+        "ENTJ는 ENTP에게 실행과 결론의 필요를 보여 준다.",
+        "가벼운 주제와 아이디어 교환에서는 서로의 사고를 자극한다."
+      ],
+      "repairStrategy": [
+        "아이디어 토론과 실행 결정 시간을 분리한다.",
+        "ENTJ는 ENTP의 탐색을 시간 낭비로만 보지 않는다.",
+        "ENTP는 결정된 실행 단계에서는 변형 욕구를 제한한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ENTJ:INFJ",
+    "originalResearchHash": "0962129ed61c6c998d6b49284409e49ba1bc850485b349fdb9863dc9852e432b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "5eb294b19d64bb416e282d099078bc0c975c117b03c20a172a23ca490c0a88a2",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "ff70dcf9818480fa94d6d39ab1d80c1a25c619312886773a66aa93c1ea929ebb",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ENTJ는 INFJ를 흥미롭고 유능한 사람으로 볼 수 있다.",
+        "겉으로는 ENTJ가 INFJ를 보호하고 돕는 관계처럼 보일 수 있다.",
+        "둘 다 큰 방향과 의미 있는 목표에 관심을 가지며, ENTJ는 실행 구조를 보고 INFJ는 사람의 내면과 흐름을 읽는다."
+      ],
+      "friction": [
+        "INFJ는 ENTJ가 계속 지켜보고 통제하는 듯한 압박을 느낄 수 있다.",
+        "ENTJ는 도움과 조언을 주려 하지만 방식이 미숙해 INFJ가 기대한 지원을 받지 못한다.",
+        "INFJ가 벗어나려 할수록 ENTJ는 더 많은 관심을 요구하는 것으로 해석할 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 INFJ에게 실행력과 외부 현실화를 보완한다.",
+        "INFJ는 ENTJ에게 사람의 내면과 의미의 깊이를 보여 준다.",
+        "서로의 역할을 과도하게 침범하지 않으면 방향성과 통찰이 결합된다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 조언보다 먼저 INFJ가 원하는 도움의 형태를 묻는다.",
+        "INFJ는 불편함을 암시로만 남기지 말고 구체적 경계로 말한다.",
+        "관계에서 개선 대상과 존중 대상의 경계를 분명히 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ENTJ:INFP",
+    "originalResearchHash": "0c9343f0b2df30f8b26ef9d3d00decbc089b391816a7e7e6652963aefde2ae0b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "c6ec53d686f89609621aaedb6745519fb058cbb04dec17ac81457408d2a81d9a",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "bf6165c959305603b02dc6a38d5f2449a53f9f5ba0124431fa25acb24ee269d0",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로의 의도와 목표를 비교적 잘 이해할 수 있다.",
+        "대화 주제가 많고, ENTJ는 INFP의 깊은 가치감에서 자신에게 부족한 내면의 기준을 본다.",
+        "INFP는 ENTJ의 결단력과 현실 장악력에 끌리며, 서로의 다른 에너지가 강한 열정으로 이어진다."
+      ],
+      "friction": [
+        "안정적인 관계를 위한 노력이 없으면 빈번한 갈등 상황에 놓인다.",
+        "ENTJ는 현실적 추진을 원하고 INFP는 내적 의미와 감정의 진정성을 중시한다.",
+        "ENTJ의 비판과 속도는 INFP에게 정서적 침해로 느껴지고, INFP의 침묵과 거리두기는 ENTJ에게 회피와 비협조로 보인다."
+      ],
+      "positiveInfluence": [
+        "INFP는 ENTJ에게 가치와 내면의 의미를 보완한다.",
+        "ENTJ는 INFP에게 목표를 현실화하는 구조와 실행력을 제공한다.",
+        "서로의 세계를 존중하면 열정과 성장의 조합이 된다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 INFP의 감정 설명을 비효율로 보지 않고 관계 데이터로 받아들인다.",
+        "INFP는 필요한 감정과 가치 기준을 구체적인 요청으로 번역한다.",
+        "열정이 높을수록 생활 규칙과 갈등 회복 절차를 미리 정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ENTJ:ENFJ",
+    "originalResearchHash": "d8ca10b9b452eb7869cbba7d379f3d4ffbaf1937970cb8652cd4bddc175859a8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "68a9138b14138311b4e3de2ad634f23ddad73545c1143f71fc7f7063bf5a218b",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "9c0d8b50db3e1899b5f343d73f358a8a21d2a003f88d6be7920bdfb4bad1fe0d",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 강한 개성과 외향적 영향력을 가지고 있어 쉽게 대화할 수 있다.",
+        "서로를 위험한 사람으로 보지 않고 비슷한 문제를 공유한다.",
+        "서로 호감이 있으면 협동이 유용하고 관계가 지루하지 않으며, 목표를 향해 사람을 움직이는 방식에서 서로의 힘을 알아본다."
+      ],
+      "friction": [
+        "도움을 주려 하지만 비슷한 문제를 가져 도움의 효과가 충분하지 않을 수 있다.",
+        "연민이 풀리면 서로의 취약점을 압박해 예기치 않은 불쾌감을 주고, 좋은 의도도 평가와 개입으로 바뀐다.",
+        "ENTJ는 성과와 논리를, ENFJ는 사람과 의미를 우선해 갈등한다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 ENTJ에게 사람의 정서와 공동체 의미를 보완한다.",
+        "ENTJ는 ENFJ에게 구조와 실행력을 보완한다.",
+        "서로의 영향력을 인정하면 목표와 관계를 함께 움직일 수 있다."
+      ],
+      "repairStrategy": [
+        "서로의 도움 방식이 실제로 도움이 되는지 확인한다.",
+        "성과 목표와 관계 목표를 분리해 각자의 강점을 배치한다.",
+        "논쟁이 약점 공격으로 바뀌기 전에 중단 신호를 정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_DISTINCT_SOCIONICS_TERM_FAMILIES_MAPPING_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ENTJ:ENFP",
+    "originalResearchHash": "989cb51397d9e20f0fd7f42edf6940a5d996784eb162d52d7c4649b5e125c21a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "4549ae103aec96930eb9a754cf424fd05c556373a65bbda2c622d5cd6d04bcab",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "94f9250fd98f376df0958a393bf114955259c6050d50eb38e55b46d5e7d35b82",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 외향적이고 가능성, 사람, 변화에 반응한다.",
+        "ENFP는 ENTJ의 강점과 방식에서 특별한 도움을 기대할 수 있다.",
+        "초반에는 ENTJ의 추진력과 ENFP의 확장성이 맞물려, 관계가 단순한 호감보다 프로젝트와 성장의 에너지로 번진다."
+      ],
+      "friction": [
+        "ENTJ는 ENFP의 실행 기준이 흐려 보일 때 답답함을 느끼고 더 명확한 구조를 요구한다.",
+        "ENFP는 ENTJ의 기준과 속도를 압박으로 받아들이며, 자신의 가능성이 평가받기만 한다고 느낄 수 있다.",
+        "관계가 ENTJ가 주도하고 ENFP가 맞추는 비대칭으로 굳으면, ENFP의 자유 흐름은 반발로 바뀌고 ENTJ는 산만함에 지친다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 ENFP에게 실행 구조와 현실화 전략을 준다.",
+        "ENFP는 ENTJ에게 유연한 가능성과 사람의 정서적 맥락을 보완한다.",
+        "서로의 위치를 존중하면 강한 창의성과 실행력이 결합된다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 ENFP의 제안을 즉시 낮게 평가하지 않고 실험 가능한 부분을 찾는다.",
+        "ENFP는 ENTJ를 기쁘게 하려는 과잉 적응을 줄인다.",
+        "의사결정 권한과 창의적 탐색 권한을 따로 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ENTJ:ISTJ",
+    "originalResearchHash": "6c85615d64cf2f85b8938995bcb07c3733d87d9526179bf9b0f65fe361e22b4a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "cd9fdf9c3842cb6fe14e176b15c7e7f73256460ad5bf26167776b78fd09fa0d9",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "bebe69a636f5ceb2354c8eff042951c880a5e32ada58c89d93167c4a7f0d22d6",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 책임, 성과, 현실적 판단을 중요하게 본다.",
+        "ISTJ는 ENTJ를 흥미롭고 유능한 사람으로 볼 수 있다.",
+        "겉으로는 보호자와 관심 대상처럼 좋은 친구 관계로 보일 수 있고, 약속과 결과를 중시한다는 점에서는 빠르게 신뢰를 쌓는다."
+      ],
+      "friction": [
+        "ENTJ는 ISTJ의 통제를 말하지 않아도 느끼며 예민해질 수 있다.",
+        "ISTJ는 ENTJ를 변화시키려 노력하지만 ENTJ는 그 의도를 자연스럽게 이해하지 못한다.",
+        "ENTJ는 인정과 칭찬을 원하지만 ISTJ는 능력을 평가절하하는 것처럼 보일 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 ENTJ에게 절차와 현실 검증을 보완한다.",
+        "ENTJ는 ISTJ에게 더 큰 목표와 변화 추진력을 보여 준다.",
+        "상호 역할이 명확하면 보호와 관심이 일정한 안정성을 만든다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 ENTJ의 주도권 욕구를 일부 공식 역할로 인정한다.",
+        "ENTJ는 ISTJ의 검증을 방해가 아니라 안정 장치로 해석한다.",
+        "칭찬과 수정 피드백을 분리해 전달한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ENTJ:ISFJ",
+    "originalResearchHash": "4dd949cb83760bde04ba4b7f0dc9587d704a2896aedf0099853b567bd823b936",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "9fe81666223c3778f7a153813d346b7c647409936175b63624848f39ec767e6f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "9b50d1ad0ca37f4700d5545db6e257e3e9789c102861f6ebba60a6aec71af46c",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "처음에는 서로를 매력적이고 흥미롭게 느낄 수 있다.",
+        "둘 다 관계나 생활을 안정시키려는 나름의 기준이 있다.",
+        "ENTJ는 성장과 성과로, ISFJ는 안정과 돌봄으로 관계를 지키려 하며 초반에는 서로에게 없는 힘이 매력으로 보인다."
+      ],
+      "friction": [
+        "관계를 진전시키려는 노력이 오히려 갈등을 일으키고 서로의 약한 면을 정확히 찌른다.",
+        "ENTJ는 해결과 성장을 말하지만 ISFJ는 압박과 평가로 듣고, ISFJ의 조심스러운 안정 요구는 ENTJ에게 회피와 느린 판단으로 보인다.",
+        "ENTJ는 ISFJ의 보호와 안정 요구를 답답하게 보고, ISFJ는 ENTJ의 직설과 압박을 상처로 받아들인다."
+      ],
+      "positiveInfluence": [
+        "거리를 둔 협력에서는 ENTJ가 ISFJ에게 큰 방향을, ISFJ가 ENTJ에게 생활 감각을 보여 줄 수 있다.",
+        "서로의 약점을 자각하는 계기가 된다.",
+        "초기 매력은 서로의 부족한 세계를 보게 만드는 자극이 된다."
+      ],
+      "repairStrategy": [
+        "서로를 바꾸려는 목표를 낮추고 필요한 협력 범위만 정한다.",
+        "ENTJ는 직설 전에 ISFJ의 감정 안전을 확인한다.",
+        "ISFJ는 감정 호소만이 아니라 구체적 요청과 기준으로 말한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ENTJ:ESTJ",
+    "originalResearchHash": "8ff1b92be34375c280257ed1186fcec89d3d33228f7060e861b93834c2bdd960",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "61a29df4fd5c6687183b657b58ddc7347c3c03a43008a38890eaeb9579ef024b",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "827d51cd4df1c45ea442b0d795e00e9adbe9914c49decbb6b50855b4d8e6f903",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "믿기 어려울 만큼 유사성이 있고 비슷한 관심사를 공유한다.",
+        "서로 정중과 호의의 기준으로 행동할 수 있다.",
+        "회사에서는 상대의 행동이 흥미롭고 가치 있게 보이며, 책임과 성과를 중시하는 태도 덕분에 사회적 관계를 향상시킬 기회가 있다."
+      ],
+      "friction": [
+        "시간이 지나면 관계가 지루하고 침체될 수 있다.",
+        "위계가 달라지면 심각한 불일치와 갈등이 생긴다.",
+        "같은 문제를 아주 다른 관점에서 보며, ENTJ는 ESTJ의 절차를 느리다고 보고 ESTJ는 ENTJ의 전략을 검증되지 않은 방식으로 본다."
+      ],
+      "positiveInfluence": [
+        "서로 실무적 강점과 리더십 기준을 자극한다.",
+        "업무 현장에서는 상대의 행동에서 배울 점을 찾을 수 있다.",
+        "비슷한 문제를 공유하기 때문에 일정 수준의 연민과 이해가 생긴다."
+      ],
+      "repairStrategy": [
+        "서로의 방법을 비현실적이라고 단정하기 전에 목표 기준을 먼저 맞춘다.",
+        "권한과 책임을 명확히 분리해 위계 싸움을 줄인다.",
+        "가족 관계에서는 업무식 평가 언어를 줄인다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ENTJ:ESFJ",
+    "originalResearchHash": "20fde4fed2956a9e69aa4d064cba6346f645b875fe281cc5fa0ab7db8beb0f7c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "78af09919ea691979f428aeb1494e0f51e4e735bdbe903be3cf4c9f7e25f39b9",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "ff04d90e9171d15fde7f4c7093e4f75e03d1eff22185bd51285553febdd8cb02",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로를 조금 신비스럽게 이상화하고 따뜻한 감정을 경험할 수 있다.",
+        "상대의 관심사와 사고 구조를 친절히 보여주며 상호 존중으로 시작할 수 있다.",
+        "두 외향형 모두 사회적 장면에서 존재감이 있고, ENTJ의 방향 제시와 ESFJ의 관계 관리가 분리되면 각자의 영향력이 살아난다."
+      ],
+      "friction": [
+        "공통 관심사가 없으면 관계가 매우 형식적으로 변한다.",
+        "각자 자기 관점을 표현하려 하고 상대방을 경청하지 않는다.",
+        "가까워질수록 일상 문제와 협력에서 서로가 고의로 방해하는 것처럼 오해하고, ENTJ의 해결책은 ESFJ에게 차갑게 들릴 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 ENTJ에게 사람의 감정과 관계의 온도를 보여 준다.",
+        "ENTJ는 ESFJ에게 구조와 목표, 논리적 판단을 제공한다.",
+        "초기 존중을 유지하면 서로 다른 세계를 배우는 계기가 된다."
+      ],
+      "repairStrategy": [
+        "공통 관심사와 공동 목표를 명확히 만든다.",
+        "ENTJ는 ESFJ의 감정 확인을 비효율로 보지 않는다.",
+        "ESFJ는 ENTJ의 업무 몰입을 사랑 부족으로만 해석하지 않는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ENTJ:ISTP",
+    "originalResearchHash": "f7f75f06db126863b5f88d64d2f5c59c5ddfda94cbfde780ac9249c7bff9365f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "c8c4d88e10daa17919dd5a6ce781bbdbfcd32ee0ae2b9f209794e25141733eaf",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "fccd4661be4d755acf8a808bffb5aee38fc0a04abb5d735daf6e80b71f986bfb",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로 긴장을 푼 상태로 편안하게 있을 수 있다.",
+        "상대의 이야기가 흥미롭게 들리고 짧은 불일치는 끌림으로 덮일 수 있다.",
+        "업무가 분리되어 있을 때는 ENTJ의 큰 방향성과 ISTP의 실전 문제 해결력이 서로를 건드리지 않고 따뜻하게 협력할 수 있다."
+      ],
+      "friction": [
+        "서로의 행동 동기와 이유를 이해하기 어렵다.",
+        "함께 목표를 성취하거나 사업을 하는 것은 매우 어렵다.",
+        "ENTJ는 ISTP를 더 체계적인 사람으로 만들고 싶어 하고, ISTP는 ENTJ의 자기주장과 설득을 자신을 도구처럼 다루는 압박으로 느낀다."
+      ],
+      "positiveInfluence": [
+        "ISTP는 ENTJ에게 과도한 통제에서 빠져나오는 실용적 거리감을 보여 준다.",
+        "ENTJ는 ISTP에게 더 큰 목표와 조직적 실행을 제안한다.",
+        "분리된 역할로 협력하면 서로의 결과에서 영감을 얻을 수 있다."
+      ],
+      "repairStrategy": [
+        "공동 목표보다 각자의 역할과 독립 영역을 먼저 정한다.",
+        "ENTJ는 ISTP를 변화시키려는 설득을 줄인다.",
+        "ISTP는 회피 대신 필요한 거리와 이유를 짧게라도 말한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ENTJ:ISFP",
+    "originalResearchHash": "0ad4fbf10d1a12eb150034fb9f44c784ec6757a138a44a4c1caa30673f2c886e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "d2031b2e2cfccfbb3db01d62bfcc22a7d1bed2ba60b543522cab1aa5da9efeab",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "1a8c474419444785584183b977d70a7902b3bc4f8644a651cb9ff90b8f001f1c",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로에게 이상적이고 상호보완적인 관계로 묘사된다.",
+        "ENTJ는 강한 성격과 윤리적 원칙을 가진 파트너의 조언과 균형이 필요하다.",
+        "ISFP는 ENTJ의 충동과 전술적 실수를 줄이고, 생활의 편안함과 관계 감각을 보완할 수 있다."
+      ],
+      "friction": [
+        "ENTJ의 예기치 않은 계획 변경과 모험성은 ISFP에게 불만과 분노를 일으킬 수 있다.",
+        "ENTJ는 자신의 윤리적 실수를 정확히 이해하는 데 어려움을 겪고, ISFP는 그 부분을 예민하게 본다.",
+        "ENTJ가 일상과 편안함을 과소평가하면 ISFP의 섬세한 생활 감각과 충돌한다."
+      ],
+      "positiveInfluence": [
+        "ISFP는 ENTJ가 위험한 선택과 나쁜 접촉을 피하도록 현실적·윤리적 균형을 제공한다.",
+        "ENTJ는 ISFP에게 변화와 도전, 더 큰 목표를 향한 추진력을 제공한다.",
+        "서로의 차이가 안정과 모험, 윤리와 전략의 균형으로 작동할 수 있다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 큰 결정과 계획 변경 전에 ISFP의 감정적 안전과 생활 리듬을 확인한다.",
+        "ISFP는 불편함을 침묵으로만 처리하지 말고 구체적인 선과 이유를 말한다.",
+        "모험과 안정, 목표와 휴식의 비율을 일정과 생활 규칙으로 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ENTJ:ESTP",
+    "originalResearchHash": "c48b8e9c236639c534e9a6d14d5e2ec3d42797ce1fe1662399b18df690a0d182",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "6c2c1da2f53156d2ec9ee3cc8c64f7ec3a22ca8f44568df75cc12c64c5c6862f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "c5d1960bec1560f57a291e7cf461094a7e73de94a3be7fc529b5821d837419c4",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 활동적이고 현실에서 부딪히며 문제를 해결하려는 힘이 있다.",
+        "ENTJ는 ESTP의 약점을 보고 도와줄 수 있다고 확신한다.",
+        "초반에는 추진력과 현장성이 맞물려 서로를 강한 사람으로 인식하고, 같이 움직이면 결과가 빨리 나온다는 기대가 생긴다."
+      ],
+      "friction": [
+        "ESTP는 ENTJ의 도움을 현장 판단을 방해하는 개입으로 받아들이고 바로 거리를 둘 수 있다.",
+        "ENTJ는 ESTP의 즉각적인 선택과 자유로운 움직임을 장기 방향 없이 흩어지는 행동으로 볼 수 있다.",
+        "ENTJ는 방향과 통제권을 원하고 ESTP는 즉각성과 자유도를 원해, 의사결정 방식에서 힘겨루기가 생긴다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 ENTJ에게 현장감과 즉각 행동을 보완한다.",
+        "ENTJ는 ESTP에게 장기 구조와 전략적 방향을 제공한다.",
+        "필요가 분명할 때는 서로의 부족한 부분을 현실적으로 채워 준다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 ESTP에게 조언하기 전에 도움 요청이 있는지 확인한다.",
+        "ESTP는 ENTJ의 장기 관점을 통제 시도로만 보지 않는다.",
+        "역할을 전략과 현장으로 나누되 서로의 영역을 침범하지 않는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ENTJ:ESFP",
+    "originalResearchHash": "e838b480c517309bf57ccf24e778dec620724b57885fdbab3cddca84ee1c7266",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "f7ef893ce212d6056ba2a2a3180eb44e9a0b4a364746fa0bea4a8b96783fa820",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "a90068036aa92801ca6411a235be87a72a46489ca693e976f351cbab10126ec1",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "관계 시작이 쉽고 서로를 활동적으로 자극한다.",
+        "서로에게 가시적 어려움 없이 빠르게 호감을 느낄 수 있다.",
+        "ENTJ의 추진력과 ESFP의 현장 에너지가 만나면 빠른 실행과 즉각적인 분위기 전환이 동시에 살아나고, 관계가 정체되지 않는다."
+      ],
+      "friction": [
+        "과도한 활동이 누적되면 서로에게 쉽게 싫증과 피로를 느낀다.",
+        "매일 함께해야 하는 상황에서는 많은 문제가 생기고 조언이 상대의 약점을 건드린다.",
+        "J/P 리듬 차이로 삶의 속도와 예측 가능성에서 충돌하고, ENTJ의 계획 언어가 ESFP에게 평가나 압박처럼 들릴 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 ESFP에게 방향과 구조를 제공한다.",
+        "ESFP는 ENTJ에게 현재의 즐거움과 감각적 회복을 제공한다.",
+        "짧은 휴식과 거리 조절이 있으면 관계의 활력이 반복적으로 회복된다."
+      ],
+      "repairStrategy": [
+        "함께 움직이는 시간과 각자 쉬는 시간을 분리한다.",
+        "ENTJ는 ESFP의 즉흥성을 무능으로 보지 않는다.",
+        "ESFP는 ENTJ가 필요한 최소한의 일정과 약속을 지켜 신뢰를 준다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ENTP:INTJ",
+    "originalResearchHash": "a2bca702fe8d529eb7f6d99cf824dcb263c210af0d0d45af7d9f04b84603b3ec",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "22e2efbb02e16bcc44fbe380e2600265d6d4d84c32d686140c5cd9db9cd1b04e",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "b917e453a20d63c6d3bbb4979ecbddda440c441eb00ac7af089f5c1cebea7ad5",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "겉으로는 독립적이고 지적인 분위기가 비슷해 초반에는 잘 맞는다고 느끼기 쉽다.",
+        "둘 다 혼자 있는 시간을 중시하고, 일대일 대화에서는 편안함을 느낄 수 있다.",
+        "회사나 프로젝트에서는 ENTP의 대인 감각과 INTJ의 깊은 분석이 서로 도움이 된다."
+      ],
+      "friction": [
+        "생활 양식이 비슷해 보여도 가치관을 깊게 나누면 성향 차이가 크게 드러난다.",
+        "ENTP는 가능성을 넓히고 즉흥적으로 움직이는 반면, INTJ는 내적 전략과 체계를 중시한다.",
+        "깊은 대화나 가치 공유가 어려워 불안정한 심리적 거리가 생길 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 INTJ에게 외부 연결과 유연한 대안을 제공하고, INTJ는 ENTP에게 집중된 분석과 장기 관점을 제공한다.",
+        "각자의 독립 공간을 인정하면 업무적 보완이 가능하다."
+      ],
+      "repairStrategy": [
+        "각자 혼자 있는 시간을 관계의 안정 장치로 인정한다.",
+        "공통 관심사를 만들어 대화가 형식적 관계로 굳지 않게 한다.",
+        "ENTP는 INTJ의 집중 계획을 자주 흔들지 않고, INTJ는 ENTP의 대안을 무질서로만 보지 않는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [
+      "pcpr:material:CH01.P3:pair-is-not-development-test"
+    ],
+    "coverageClass": "selected_conditional_candidate",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ENTP:INTP",
+    "originalResearchHash": "745750a3c6bf10ca660b2118221ed0dbeae79f1ba5ad8cc686e86c400772f48f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "1602f8c1ccb9a7dcecee11c230adc2816aef6ca0b3b38f73f823c83389c262bb",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "c13cd91533ac746a418b3a7ee82936abcc3d888df682e72beda7a1409e40622d",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 유형은 관심사와 사고 방식이 비슷해 말이 잘 통하고 취향이 겹치기 쉽다.",
+        "한 사람이 가능성을 열면 다른 사람이 논리적으로 정리하는 역할 분담이 생긴다.",
+        "같은 프로젝트에서 건설적 비판과 상호 보완을 주고받기 좋고, 서로의 지적 자유를 크게 침범하지 않는 편안함이 있다."
+      ],
+      "friction": [
+        "ENTP의 외부 활동성과 INTP의 내향적 몰입 리듬이 다를 수 있다.",
+        "둘 다 논리적 반박에 익숙해 감정적 확인을 생략하면 관계가 건조해진다.",
+        "아이디어가 많아도 실행 책임을 서로 미루면 프로젝트가 늘어질 수 있고, 관계에서도 말은 풍부한데 생활의 책임은 비어 보일 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 INTP의 생각을 밖으로 끌어내고, INTP는 ENTP의 아이디어를 더 정밀하게 다듬는다.",
+        "서로의 비판을 비교적 유용하게 받아들이기 쉬워 지적 성장이 빠르다."
+      ],
+      "repairStrategy": [
+        "아이디어와 실행 담당을 분리해 역할을 명확히 한다.",
+        "감정 확인을 농담이나 토론으로 대체하지 않는다.",
+        "생활 루틴은 최소 규칙으로 합의하고 자동화한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ENTP:ENTJ",
+    "originalResearchHash": "df5c5b3b69288f784729cdc823eaf94f85b24c8b6a94574f07459d359ca79c2e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "d70ece2ef6d6e8bcb2b4ac4c348780692d14bfe3e89e7e5fb89ea5b6296fa406",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "084db856b56488a4c4f4bf7c5b39c9de57b8b1aab911de83be672b8a5c362300",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 유형 모두 사고형이고 목표를 향한 자신감이 있어 초반에는 비슷하게 느껴진다.",
+        "대화와 토론 주제를 찾는 데 어려움이 없고, 새로운 아이디어를 평가할 때 생산적이다.",
+        "서로 다른 전문적 시각으로 보완점을 찾아내는 힘이 있다."
+      ],
+      "friction": [
+        "겉보기와 달리 내면의 작동 방식이 달라 문제를 함께 해결할 때 갈등이 생긴다.",
+        "ENTJ는 성취와 구조를 중시하고, ENTP는 가능성과 반박을 통해 사고를 확장한다.",
+        "두 사람 모두 상대가 자기보다 재능이 부족한데 더 성취했다고 느끼는 미묘한 긴장을 가질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 ENTP의 아이디어에 실행 압력과 구조를 더하고, ENTP는 ENTJ의 계획에 대안과 허점 검토를 더한다.",
+        "서로의 약점을 물고 늘어지지 않으면 전략 평가에서 강한 파트너가 된다."
+      ],
+      "repairStrategy": [
+        "결정 전 단계와 실행 후 단계를 나누어 ENTP의 대안 제시와 ENTJ의 실행력을 모두 살린다.",
+        "상대의 성취를 비교하지 말고 역할 차이로 인정한다.",
+        "논쟁이 길어지면 최종 결정권과 검토 시간을 미리 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ENTP:ENTP",
+    "originalResearchHash": "cdfadb0d98336de8ed62262c27735a8c7cc85ff33717e8704411bc2077308716",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "97236abdcd82b6b9c985caafc46486fc91bb849b764505cdfbd3ee86b85275cc",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "97236abdcd82b6b9c985caafc46486fc91bb849b764505cdfbd3ee86b85275cc",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 아이디어, 자유로운 말, 새로운 가능성에 빠르게 반응한다.",
+        "관계가 정체되거나 너무 규칙적으로만 흐르면 금방 지루함을 느낀다.",
+        "서로의 장난, 도발, 빠른 대화 전환을 자연스럽게 받아들일 수 있어 초반에는 강한 재미가 생긴다."
+      ],
+      "friction": [
+        "둘 다 논쟁을 즐기기 때문에 가벼운 대화가 쉽게 승부나 반박으로 바뀔 수 있다.",
+        "새 아이디어는 많지만 실행과 마무리를 서로에게 미루면 관계와 생활이 산만해진다.",
+        "감정 확인을 농담이나 논리로 넘기면 겉으로는 유쾌해도 안쪽에는 서운함이 남을 수 있다."
+      ],
+      "positiveInfluence": [
+        "서로의 사고를 자극해 더 넓은 관점과 새로운 시도를 만든다.",
+        "같은 장단점을 보며 자신의 말투, 충동성, 마무리 약점을 객관적으로 볼 수 있다.",
+        "관계 안에서 자유와 지적 재미를 크게 느낄 수 있다."
+      ],
+      "repairStrategy": [
+        "논쟁이 과열되면 누가 맞는지보다 관계에서 정해야 할 결론 하나를 먼저 고른다.",
+        "새 프로젝트나 큰 지출은 아이디어 단계와 실행 단계를 분리해 검토한다.",
+        "감정 문제가 생겼을 때 농담으로 넘기지 말고 불편했던 장면을 짧게 말한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ENTP:INFJ",
+    "originalResearchHash": "8cfd466126756cb816b960f1e4e7e87904fed98e601403ca89db8a17ef9c72f7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "bb60b61c385a3f88801ccbe64b43db181694f1fdfd83920104659aff8ba2ed3b",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "f98ecc5a611179b860643540f8584f3985b3688f69674d97bfbdbbc1c37411dc",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 유형 모두 독립적이고 창의적이며, 깊은 주제와 가능성에 끌린다.",
+        "INFJ의 통찰과 ENTP의 발상이 만나면 추상적인 비전이 실행 가능한 방향으로 정리된다.",
+        "서로 다른 방식으로 사람과 세계의 변화를 상상한다는 점에서 흥미를 느낀다."
+      ],
+      "friction": [
+        "ENTP는 분석과 반박으로 생각을 다듬고, INFJ는 정서적 의미와 직관적 확신을 중요하게 본다.",
+        "ENTP의 장난스러운 논쟁은 INFJ에게 진심을 가볍게 다루는 것처럼 보일 수 있다.",
+        "INFJ의 깊은 정서와 신념은 ENTP에게 지나치게 무겁거나 해석하기 어려운 신호가 될 수 있다."
+      ],
+      "positiveInfluence": [
+        "INFJ는 ENTP의 아이디어에 방향과 의미를 부여하고, ENTP는 INFJ의 비전을 구체적 계획으로 끌어낸다.",
+        "서로의 독창성을 존중하면 관계가 지적 자극과 정서적 깊이를 동시에 가진다."
+      ],
+      "repairStrategy": [
+        "ENTP는 INFJ의 감정 표현을 논박하지 말고 먼저 의미를 확인한다.",
+        "INFJ는 ENTP의 반박을 관계 부정이 아니라 사고 과정으로 분리해 본다.",
+        "중요한 결정은 INFJ의 방향감과 ENTP의 실행 대안을 함께 적어 비교한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ENTP:INFP",
+    "originalResearchHash": "d734eef1c528c58794703f9ccb41e2de63f3eb7a2c3d24dd4a07d61c6251b697",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "0c70470f086b3706d9621299777cf2baddd2f68547e5f8e290b6b547f1f151d9",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "b31d04ae7da482276c74c6cc25d6090556aa73b089718e09a7768990deb77243",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 정해진 틀보다 자기다운 생각과 자유로운 가능성을 중요하게 여긴다.",
+        "INFP는 내면의 가치와 진정성을 지키고, ENTP는 질문과 아이디어로 고정된 관점을 흔든다.",
+        "서로가 안전하다고 느끼면 깊은 주제와 독특한 상상을 오래 나눌 수 있다."
+      ],
+      "friction": [
+        "ENTP는 반박과 도발을 통해 생각을 넓히지만, INFP는 그 말이 관계의 진심을 건드리는지 민감하게 느낀다.",
+        "ENTP의 장난 섞인 논쟁은 INFP에게 상처가 될 수 있고, INFP의 감정적 반응은 ENTP에게 토론을 개인적으로 받아들이는 모습처럼 보일 수 있다.",
+        "갈등이 생기면 ENTP는 논점을 정리하려 하고 INFP는 마음의 의미를 확인하려 해 서로 필요한 답이 다르다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 INFP가 자기 가치 안에만 머물지 않고 더 넓은 가능성을 검토하게 돕는다.",
+        "INFP는 ENTP가 사람의 감정과 말의 여파를 더 깊게 고려하게 만든다.",
+        "서로의 언어를 배울 수 있으면 아이디어와 진정성이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ENTP는 반박하기 전에 INFP가 중요하게 여기는 감정과 가치를 먼저 인정한다.",
+        "INFP는 ENTP의 질문을 곧바로 공격으로 해석하지 말고 의도를 확인한다.",
+        "갈등 대화는 논점과 감정을 분리해 각각 결론을 내린다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ENTP:ENFJ",
+    "originalResearchHash": "5897880ada8784830c153bee4fd990244c12a4a4b051756c1cfbc05999455acf",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "982fd4e23e02ee80a316bfb2bac5ee5cde1469cdbd0e7f436795b7061cadee9f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "93e218aa8ae609187236a0f943dad345d65cab46e0d77e415acc384adc8ce503",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ENFJ는 ENTP의 행동, 매너, 생각, 능력에 감명을 받고 존경을 느끼기 쉽다.",
+        "ENTP는 ENFJ에게 특별한 것을 제공할 수 있다고 느끼고, 동시에 지켜주고 싶은 사람으로 본다.",
+        "두 유형 모두 사람을 움직이고 분위기를 만드는 힘이 있어 관계의 활기가 크다."
+      ],
+      "friction": [
+        "ENFJ가 ENTP를 기쁘게 하려는 방향으로 관계가 기울면 균형이 깨질 수 있다.",
+        "ENTP는 자유롭게 움직이려 하고, ENFJ는 관계의 의미와 상호 확인을 더 많이 원할 수 있다.",
+        "ENTP의 장난스러운 반박이 ENFJ의 진심 어린 배려를 가볍게 만드는 순간 갈등이 생긴다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ENFJ에게 신선한 관점과 용기를 주고, ENFJ는 ENTP에게 사람의 감정과 관계의 방향성을 보강한다.",
+        "서로 존중하면 ENFJ의 따뜻한 추진력과 ENTP의 창의적 문제 해결이 결합된다."
+      ],
+      "repairStrategy": [
+        "ENFJ의 배려를 당연한 분위기로 두지 말고 구체적으로 인정한다.",
+        "ENTP는 중요한 결정에서 관계적 영향을 함께 설명한다.",
+        "ENFJ는 ENTP를 기쁘게 하려는 노력과 자기 욕구 표현의 균형을 맞춘다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ENTP:ENFP",
+    "originalResearchHash": "bb0d6dad775457913986aed41b2de4c6cd97b6a0a17d6507eb2f24d9e256afec",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "a3f43e6b0115a3c66cef254bf2ea68dc36cb096eced85dfc814f8aa023e04dcc",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "4ac2c0221a57999eb9fbd09fba4ba20571f9801c803767f14ac9d3ac45e8510a",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 새로운 가능성, 사람과 아이디어의 연결, 지루하지 않은 대화를 좋아한다.",
+        "ENFP는 가치와 감정의 의미를 중심으로 확장하고, ENTP는 논리적 실험과 반박으로 가능성을 넓힌다.",
+        "초반에는 말이 끊기지 않고 서로의 즉흥성과 자유로움에 강하게 끌린다."
+      ],
+      "friction": [
+        "ENTP는 논쟁을 장난과 탐구로 여기지만, ENFP는 말의 감정적 온도와 관계의 의미를 함께 느낀다.",
+        "ENTP의 도발은 ENFP에게 무심하거나 차갑게 들릴 수 있고, ENFP의 감정적 확신은 ENTP에게 논리 검토가 부족한 주장처럼 보일 수 있다.",
+        "둘 다 가능성을 계속 열어 두려 하므로 약속, 결론, 생활 책임이 뒤로 밀릴 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ENFP가 감정적으로 확신한 아이디어를 더 넓은 관점에서 검증하게 만든다.",
+        "ENFP는 ENTP가 사람의 마음을 지나치게 실험 대상으로 다루지 않도록 따뜻한 기준을 제공한다.",
+        "토론과 애정의 경계를 지키면 서로의 창의성을 크게 자극한다."
+      ],
+      "repairStrategy": [
+        "ENTP는 반박하기 전에 ENFP가 중요하게 여기는 감정과 가치를 먼저 인정한다.",
+        "ENFP는 ENTP의 질문을 곧바로 공격으로 해석하지 말고 확인 질문으로 구분한다.",
+        "토론이 과열되면 승부를 멈추고 관계에서 필요한 결론 하나만 정해 마무리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ENTP:ISTJ",
+    "originalResearchHash": "4dff240871bcd3dcbd3083d218e62fa46e8b8e491517a0a8294cc85f91d997a8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "df6da54047e33b60a6ce9445aa8a2a783c40e9b658045c91e895132935f74b2f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "bb153f3c5ac0da22e342acf9f01cc9aca46bbdf73a135a8e62f7dadc1732ff8e",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 유형은 서로의 목표 자체를 이해하는 데에는 큰 문제가 없다.",
+        "계획을 세우는 단계에서는 의도를 비교적 쉽게 파악하고 재미있는 대화도 가능하다.",
+        "연애에서는 ENTP의 말솜씨와 가능성 감각, ISTJ의 안정성과 책임감이 서로에게 낯선 매력으로 들어온다."
+      ],
+      "friction": [
+        "실행 단계로 들어가면 협력 방식이 어긋나고 관계가 갑자기 흔들릴 수 있다.",
+        "ENTP는 ISTJ의 의견에 오래 집중하지 못하고, ISTJ는 ENTP의 변덕스러운 흐름에 당황할 수 있다.",
+        "갈등을 오래 견디기 어려워 행복감과 실망감이 급격히 교차한다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 ENTP에게 현실적 절차와 지속성을 주고, ENTP는 ISTJ에게 새로운 관점과 대화의 활기를 준다.",
+        "초기 계획과 아이디어 검토에서는 서로 다른 강점이 도움이 된다."
+      ],
+      "repairStrategy": [
+        "계획 단계에서 실행 기준, 변경 가능 범위, 최종 책임자를 명확히 정한다.",
+        "ENTP는 ISTJ의 현실적 지적을 지루한 간섭으로만 보지 않는다.",
+        "ISTJ는 ENTP의 대안 제시를 합의 파기가 아니라 개선 제안으로 분리해 듣는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ENTP:ISFJ",
+    "originalResearchHash": "e28af68eaf743c36df7ca7781c665a5a3fbbffcf74c003ab8130178f82c85fa0",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "e9a4383e38b4eeb1eda3f28e53390f7601113934b649d1f1de647f32ed7d4714",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "65a331d9123350c3b46423f16e8560e601cec4de08b941dc1c29206bd0d33178",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 유형은 같은 기능을 반대 순서로 사용해 서로가 부족한 부분을 자연스럽게 발견한다.",
+        "ISFJ의 계획성과 따뜻함은 ENTP의 빠른 아이디어와 행동력을 생활 속에 안착시킨다.",
+        "ENTP의 사교성과 거침없는 발상은 ISFJ가 익숙한 세계 밖으로 나오는 데 자극이 된다."
+      ],
+      "friction": [
+        "이론적으로 보완이 강해도 실제로는 서로를 이해하기 어려운 순간이 자주 생긴다.",
+        "ENTP의 즉흥성과 논쟁성은 ISFJ에게 불안정하게 느껴지고, ISFJ의 조심스러운 루틴은 ENTP에게 답답하게 보인다.",
+        "공통 관심사와 비슷한 삶의 방향이 없으면 보완보다 피로가 먼저 커진다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ISFJ에게 새 가능성과 용기를 주고, ISFJ는 ENTP에게 책임과 지속성을 보강한다.",
+        "서로의 약점을 보호하고 강점을 칭찬하는 패턴이 만들어지면 안정과 확장이 함께 생긴다."
+      ],
+      "repairStrategy": [
+        "ENTP는 즉흥 변경 전에 생활 영향과 감정 부담을 먼저 설명한다.",
+        "ISFJ는 불안을 통제 대신 구체적 요청으로 말한다.",
+        "두 사람은 공동 목표와 최소 루틴을 정해 보완이 실제 생활로 이어지게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ENTP:ESTJ",
+    "originalResearchHash": "1bd471c5ddb6ceede3e57549e43591e99b506cbf55e39d409c14422ccaf07c55",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "856952eb9f9bfe70d22887bfc467d99c2ab8f62271583c2488d181a2a4e7fa03",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "e474363d2e9bc6e9c3108db24865a11606ea6c004977c528b32d3782b9c8e909",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ESTJ는 현실의 책임과 실행 구조를 중시하고, ENTP는 새로운 방법과 가능성을 계속 제안한다.",
+        "두 사람 모두 에너지가 크고 자기 의견을 숨기지 않아 관계가 정체되기보다 빠르게 움직인다.",
+        "공동의 목표가 분명하면 ESTJ는 마무리를, ENTP는 돌파 아이디어를 제공할 수 있다."
+      ],
+      "friction": [
+        "ESTJ는 검증된 규칙과 책임을 요구하지만, ENTP는 규칙 자체를 질문하고 다른 방식을 시험하고 싶어 한다.",
+        "ESTJ의 단호한 관리와 지시는 ENTP에게 답답한 통제로 느껴지고, ENTP의 반박과 장난은 ESTJ에게 불성실하거나 무책임하게 보일 수 있다.",
+        "갈등이 생기면 ESTJ는 기준을 강화하고 ENTP는 그 기준을 다시 논쟁하면서 문제 해결보다 힘겨루기가 앞설 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 ENTP에게 실행, 마감, 책임 구조를 제공한다.",
+        "ENTP는 ESTJ가 익숙한 방식만 고집하지 않도록 더 넓은 선택지와 창의적 접근을 제시한다.",
+        "서로를 방해자가 아니라 보완 역할로 보면 변화와 실행이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 ENTP의 반박을 곧바로 불복종으로 보지 말고 개선 아이디어인지 확인한다.",
+        "ENTP는 장난과 논쟁을 하더라도 약속, 마감, 돈 문제에서는 결론을 남겨야 한다.",
+        "규칙을 정할 때는 ESTJ가 기준을 세우고 ENTP가 예외와 개선안을 제안하는 순서로 대화한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ENTP:ESFJ",
+    "originalResearchHash": "af5ab99827e18ad17ce175b56e5bd8c32f610944aaa9bdd39cd4e3bd0491f2a2",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "7e0fc2bb5a9461b8bb77e1906200112fa02e42cc527f43de0f13e09a64819b77",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "c26f81d3777558f874f519448689e1a79fe67fb9f3e4f14a138976994dc9c825",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 유형은 빠르게 친해지고 서로를 활동적으로 자극한다.",
+        "ESFJ의 사람 중심 에너지와 ENTP의 아이디어 에너지가 만나 초반 관계 속도가 빠르다.",
+        "둘 다 외부 반응을 읽고 분위기를 움직이는 힘이 있어 함께 있을 때 생동감이 크다."
+      ],
+      "friction": [
+        "자극이 강한 만큼 쉽게 지치고, 짧은 휴식 없이 계속 붙어 있으면 피로가 쌓인다.",
+        "문제가 생겼을 때 함께 해결하기보다 서로에게 조언만 던지는 패턴이 생길 수 있다.",
+        "상대의 행동을 예측하기 어려워 안정적인 의존 관계를 만들기 힘들다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ESFJ에게 새로운 관점과 도전 의식을 주고, ESFJ는 ENTP에게 관계의 온도와 사회적 흐름을 보강한다.",
+        "적절한 거리와 휴식이 있으면 관계의 활기가 긍정적으로 반복된다."
+      ],
+      "repairStrategy": [
+        "정기적으로 혼자 쉬는 시간을 관계의 거리두기가 아니라 회복 루틴으로 합의한다.",
+        "조언을 하기 전에 상대가 해결책을 원하는지 공감을 원하는지 확인한다.",
+        "함께 하는 활동과 각자 쉬는 시간을 구분해 과자극을 줄인다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ENTP:ISTP",
+    "originalResearchHash": "9e53f9bcca3a9131f101f52bfa7fc36941318f0dc74bdbe8c16a58c8238a16b9",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "8b599bc341bcde8e9918cfe9d5a95a6f492f19ea5a6e9a4c5ccd1f1ee3ff9c97",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "61f5ffbf6e6c25c77b0e52f445320aeda955c060911ffdd959150dd353bb10f7",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 정해진 방식에 갇히기보다 직접 시험하고 새로운 방법을 찾는 쪽에 끌린다.",
+        "ENTP는 아이디어와 논쟁으로 가능성을 넓히고, ISTP는 실제 장비와 상황을 다루며 가능성을 검증한다.",
+        "서로에게 지나친 형식과 감정 의례를 요구하지 않아 초반에는 가볍고 자극적인 관계가 된다."
+      ],
+      "friction": [
+        "ENTP는 말로 실험하고 ISTP는 행동으로 실험하기 때문에, 대화와 실행의 속도가 다르게 느껴진다.",
+        "ENTP의 끝없는 반박은 ISTP에게 피곤한 소음처럼 느껴질 수 있고, ISTP의 짧은 반응은 ENTP에게 재미없는 벽처럼 보일 수 있다.",
+        "둘 다 자율성을 중시해 책임과 일정이 흐려지면 관계가 산만해진다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ISTP에게 더 많은 선택지와 관점을 제공하고, ISTP는 ENTP의 아이디어를 실제로 되는 것과 안 되는 것으로 가른다.",
+        "서로의 실험 방식을 존중하면 창의성과 현실성이 함께 생긴다.",
+        "재미와 도전이 있는 프로젝트에서는 강한 시너지가 나온다."
+      ],
+      "repairStrategy": [
+        "ENTP는 논쟁을 시작하기 전에 ISTP가 지금 대화할 에너지가 있는지 확인한다.",
+        "ISTP는 피곤할 때 갑자기 끊기보다 쉬고 다시 이야기할 시간을 말한다.",
+        "새로운 시도는 좋지만 비용, 일정, 책임자를 먼저 정해 관계의 부담을 줄인다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ENTP:ISFP",
+    "originalResearchHash": "15e89c476bb1badf6833f2ac8200a3e75431dca252e47c2083564980b6f15e7b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "41c2cfb63fc60751886140755bbed3219845825f6241044af7739e83b8c393b5",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "a846eb755532f134b3b0dd54e1712eb0e9653ada7c723c225079ebdd5396e528",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "초반에는 서로가 낯설고 흥미로워 매력을 느낄 수 있다.",
+        "다른 갈등 관계보다 개방성, 개인주의, 관습에 대한 의문이라는 공통점이 있다.",
+        "둘 다 억압적 전통을 싫어한다는 점에서는 접점이 생기고, 서로를 고정된 틀에 가두지 않는 자유 감각은 초반 끌림이 된다."
+      ],
+      "friction": [
+        "ENTP는 논리와 토론으로 접근하고, ISFP는 내적 가치와 감정의 진정성을 중시한다.",
+        "서로의 생활 스타일과 동기를 거의 이해하지 못해 관계가 진전될수록 충돌이 커진다.",
+        "논쟁이 길어지면 서로에게 깊은 상처를 남기기 쉬워, 충분한 거리 조절 없이 붙어 있으면 관계 피로가 빠르게 커진다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ISFP에게 더 넓은 관점과 언어화된 대안을 줄 수 있고, ISFP는 ENTP에게 감정의 진정성과 현재의 감각을 일깨운다.",
+        "공통의 반권위성에 집중하면 짧은 협업에서는 서로의 다른 힘을 볼 수 있다."
+      ],
+      "repairStrategy": [
+        "논쟁이 시작되면 즉시 결론을 내리려 하지 말고 감정 휴식 시간을 둔다.",
+        "ENTP는 ISFP의 침묵을 패배나 회피로 몰아붙이지 않는다.",
+        "ISFP는 감정이 상한 지점을 짧게라도 말로 표시하고, ENTP는 반박보다 요약을 먼저 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ENTP:ESTP",
+    "originalResearchHash": "fee6a52f5c2c8cbf71859954c2cd0995e50f4ba2e38be1232c945581e972495b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "34899f89139164d8db0504b0fb058b00ea44c22e48545ab1fbda2da7cf0dab24",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "833e4a031a737746b638db4f0f0174e5e0b67e1bd5e715e86a0286688936c6cd",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ENTP는 새로운 아이디어와 논쟁으로 가능성을 만들고, ESTP는 그 가능성을 현장에서 바로 시험한다.",
+        "둘 다 지루한 규칙과 반복보다 변화, 자극, 자유로운 시도를 좋아한다.",
+        "함께 있으면 대화와 행동이 빠르게 이어져 관계가 정체되지 않는다."
+      ],
+      "friction": [
+        "ENTP는 말로 가능성을 확장하고 ESTP는 행동으로 효과를 확인하려 한다.",
+        "ESTP는 ENTP의 긴 논쟁을 피곤하게 느낄 수 있고, ENTP는 ESTP가 생각보다 반응이 앞선다고 느낄 수 있다.",
+        "둘 다 즉흥성이 강해 장기 책임과 감정 정리는 뒤로 밀릴 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ESTP에게 더 넓은 관점과 새로운 선택지를 제공한다.",
+        "ESTP는 ENTP의 아이디어가 현실에서 통하는지 빠르게 검증해 준다.",
+        "재미와 실험이 있는 관계에서는 서로의 활력을 크게 키운다."
+      ],
+      "repairStrategy": [
+        "ENTP는 논쟁이 길어질 때 ESTP가 실제 행동 기준을 원한다는 점을 기억한다.",
+        "ESTP는 바로 움직이기 전에 ENTP가 제기한 리스크를 한 번 검토한다.",
+        "새로운 시도는 예산, 일정, 책임 범위를 먼저 정한 뒤 실행한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ENTP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ENTP:ESFP",
+    "originalResearchHash": "d2c1e295fdd313ae19313ecd3780277f8a6c7172e728dae2ec9de2b3974e71e2",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "858d958b607f70e470e5bc2ecb66e35a2006711601f86a32712c354305cf421c",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "5334f001d00787bdf2172f9f8e788a1a21483302cb7dec7c99d4a06d97fac25e",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ENTP와 ESFP는 둘 다 지루한 관계를 오래 버티기 어렵고 새로운 자극과 재미를 중요하게 본다.",
+        "ENTP는 말과 아이디어로 관계를 흔들고, ESFP는 감정과 분위기에서 즉각적인 생동감을 만든다.",
+        "초반에는 대화와 분위기가 빠르게 살아나고, 서로를 답답하게 만들지 않는 자유로움이 강한 끌림이 된다."
+      ],
+      "friction": [
+        "ENTP는 논쟁과 장난으로 관계를 자극하지만, ESFP는 말의 감정적 온도와 분위기 변화를 즉각적으로 느낀다.",
+        "ENTP의 장난 섞인 논쟁은 ESFP에게 무심하거나 상처 주는 말로 느껴질 수 있고, ESFP의 감정 표현은 ENTP에게 토론을 개인적으로 받아들이는 모습처럼 보일 수 있다.",
+        "둘 다 새로움을 좋아해 장기 책임, 돈, 생활 루틴을 뒤로 미루면 관계는 재미있지만 안정감이 부족해진다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ESFP에게 더 넓은 관점과 새로운 선택지를 열어 준다.",
+        "ESFP는 ENTP가 말로만 가능성을 굴리지 않고 실제 사람과 분위기 속에서 반응을 보게 만든다.",
+        "토론과 표현의 선을 지키면 두 사람은 서로에게 강한 활력과 창의성을 준다."
+      ],
+      "repairStrategy": [
+        "ENTP는 반박이나 농담을 하기 전에 ESFP가 감정적으로 받아들일 수 있는 표현인지 한 번 걸러야 한다.",
+        "ESFP는 ENTP의 질문을 곧바로 공격으로 해석하지 말고 토론인지 비난인지 구분해 확인한다.",
+        "재미있는 계획을 세울 때도 비용, 일정, 책임자를 먼저 정해 즉흥성이 부담으로 바뀌지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ESFJ:INTJ",
+    "originalResearchHash": "fdf2f2ac2b8ae96889592aa0a73a1856a8973aa9d0cc317f3f78244e5b09986e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "341b6d52284bd38b539ba4be14da0e4679e793a2cb84dd8edb894e39812df125",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "0456f86bf6c647ae6a76ca4d223bbc50004f354235f453e01ec355181da446dd",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "처음에는 서로의 전혀 다른 방식이 신선하고 매력적으로 보일 수 있다.",
+        "둘 다 자기 기준과 생활 방식을 진지하게 여긴다.",
+        "서로를 조금만 이해하면 평화롭게 지낼 수 있다고 착각하기 쉽지만, 실제로는 관계 안정과 개인 자유의 기준을 먼저 합의해야 한다."
+      ],
+      "friction": [
+        "ESFJ는 가시적인 안정과 관계의 온도를 중시하고, INTJ는 효율과 자유, 자기 세계를 중시한다.",
+        "ESFJ의 도움은 INTJ에게 쓸데없는 간섭으로 보이고, INTJ의 비판은 ESFJ에게 정중하지 못한 공격으로 느껴진다.",
+        "문제를 고치려는 노력이 오히려 더 큰 싸움과 상처를 만든다."
+      ],
+      "positiveInfluence": [
+        "거리를 두고 협력하면 ESFJ는 INTJ에게 사람의 반응을, INTJ는 ESFJ에게 구조적 관점을 보여 줄 수 있다.",
+        "서로의 가치 차이를 이해하면 자신의 약점을 자각하는 계기가 된다.",
+        "초기 매력은 서로에게 낯선 세계를 보게 만드는 자극이 된다."
+      ],
+      "repairStrategy": [
+        "서로를 설득해 바꾸려는 목표를 낮추고 필요한 접점만 명확히 정한다.",
+        "ESFJ는 도움을 제안으로만 남기고 INTJ의 선택권을 보장한다.",
+        "INTJ는 비판을 사실 전달로만 끝내지 말고 ESFJ의 의도와 감정을 인정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ESFJ:INTP",
+    "originalResearchHash": "dee164feaaf4971eb1475ff1b07a44cb5bcc81111e67a573af361653290b180c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "91f5afbc183a6c78c382b889b6d7e892c76e5ccdb9185561783d2cdfbfe1a221",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "b05461de872df2fdc82681df0fe3da281935874b512f294ee9a07c34eff75fb7",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+        "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+        "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+      ],
+      "friction": [
+        "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+        "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+        "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+        "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+        "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+      ],
+      "repairStrategy": [
+        "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+        "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+        "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ESFJ:ENTJ",
+    "originalResearchHash": "ad4382ca3aa159422e4f89dfc920b3181b66153efbde3c655fb04549a11d4839",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "ff04d90e9171d15fde7f4c7093e4f75e03d1eff22185bd51285553febdd8cb02",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "78af09919ea691979f428aeb1494e0f51e4e735bdbe903be3cf4c9f7e25f39b9",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로가 자신과 전혀 다르다는 점에 매혹되거나 놀랄 수 있다.",
+        "둘 다 사회적 역할과 책임을 가볍게 보지 않고, 관계와 성과를 각자의 방식으로 책임지려 한다.",
+        "ENTJ는 ESFJ의 섬세한 관계 감각을, ESFJ는 ENTJ의 진지함과 추진력을 강하게 의식한다."
+      ],
+      "friction": [
+        "ENTJ는 목표와 효율을 밀어붙이고, ESFJ는 사람의 반응과 관계의 안정성을 먼저 본다.",
+        "ESFJ는 ENTJ의 속도와 강도를 부담스러워하고, ENTJ는 ESFJ의 걱정과 감정 확인을 비효율로 볼 수 있다.",
+        "중요하게 여기는 가치가 반대 방향이라 서로를 이해하기보다 평가하게 된다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 ESFJ에게 더 큰 목표와 결단력을 보여 준다.",
+        "ESFJ는 ENTJ에게 사람의 감정과 사회적 수용성을 보완해 준다.",
+        "서로의 강점을 존중하면 관계와 성과를 함께 고려하는 균형이 생긴다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 결정 속도를 조금 늦추고 관계 영향까지 설명한다.",
+        "ESFJ는 걱정을 감정 호소가 아니라 구체적인 리스크로 정리해 말한다.",
+        "목표, 가족, 사회적 관계의 우선순위를 함께 문서화한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ESFJ:ENTP",
+    "originalResearchHash": "1a095fe77cbc9a2ecb9c7474d4a7c5b9af47a3b803c3abbad8a4800af4c2e7c0",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "c26f81d3777558f874f519448689e1a79fe67fb9f3e4f14a138976994dc9c825",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "7e0fc2bb5a9461b8bb77e1906200112fa02e42cc527f43de0f13e09a64819b77",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사람과 아이디어가 오가는 장면에서 활력이 생긴다.",
+        "관계 시작이 빠르고 서로를 활동적으로 자극한다.",
+        "ESFJ의 사람 중심 실행력과 ENTP의 아이디어 확장이 만나면 새로운 경험이 많아지고, 관계가 정체되지 않는 활력이 생긴다."
+      ],
+      "friction": [
+        "과도한 활동과 자극이 누적되면 서로에게 쉽게 지친다.",
+        "문제가 생겼을 때 실제 해결보다 조언만 주고받는 패턴으로 흐를 수 있다.",
+        "서로의 행동 예측이 어렵고 장기 협동에서 불안정해지며, ESFJ는 약속과 반응을 원하고 ENTP는 자유와 변형을 원해 피로가 쌓인다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ESFJ에게 새로운 관점과 가능성을 열어 준다.",
+        "ESFJ는 ENTP의 아이디어를 사람과 일정 안에 연결해 실제화한다.",
+        "적당한 거리와 휴식이 있으면 관계가 반복적으로 활력을 회복한다."
+      ],
+      "repairStrategy": [
+        "가까워질수록 일부러 혼자 쉬는 시간을 둔다.",
+        "문제 조언보다 누가 무엇을 언제 할지 실행 단위를 정한다.",
+        "ENTP는 즉흥 변경을 예고하고, ESFJ는 모든 변화를 관계 불안으로 해석하지 않는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ESFJ:INFJ",
+    "originalResearchHash": "beb0dcdf442bc2f826ad586209ab095cad0e7e791965e69093f3ff6acc60ec01",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "3c7c5f8891484b480e9142c16d89cc0a886ed2f9b6999e7712bd474038d330d5",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "d11c82dc495ec6891a71ccf175de825027259223821c5039e9fa3fd7549555e5",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사람의 감정과 관계의 방향을 중요하게 보고, 가까운 사람의 어려움을 그냥 지나치지 않는다.",
+        "ESFJ는 현재의 분위기와 생활 속 필요를 빠르게 읽고, INFJ는 관계 안에 숨어 있는 의미와 장기 흐름을 읽는다.",
+        "서로의 방식이 맞물리면 따뜻한 돌봄과 깊은 이해가 함께 있는 관계가 된다."
+      ],
+      "friction": [
+        "ESFJ는 즉각적인 반응과 표현을 통해 관계를 확인하려 하고, INFJ는 깊이 생각한 뒤 의미 있는 대화를 나누려 한다.",
+        "ESFJ의 적극적인 챙김과 주변 관계 관리가 INFJ에게는 과한 개입처럼 느껴질 수 있고, INFJ의 침묵은 ESFJ에게 거리감으로 보일 수 있다.",
+        "갈등이 생기면 ESFJ는 지금의 분위기를 풀고 싶어 하지만 INFJ는 문제의 뿌리와 의미를 먼저 정리하려 해 대화 속도가 엇갈린다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 INFJ가 사람들과 실제로 연결되고 생활 속에서 고립되지 않도록 돕는다.",
+        "INFJ는 ESFJ가 눈앞의 반응과 평판만 보지 않고 관계의 깊은 이유와 장기 방향을 보게 만든다.",
+        "두 사람이 서로의 속도를 인정하면 관계 관리와 가치 대화가 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESFJ는 INFJ의 침묵을 애정 부족으로 단정하지 말고 생각할 시간을 준다.",
+        "INFJ는 깊은 고민을 혼자 끝내지 말고 ESFJ가 알 수 있는 짧은 중간 신호를 준다.",
+        "가족 행사, 주변 관계, 돈, 장기 목표를 감정 대화와 실무 대화로 나누어 정리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ESFJ:INFP",
+    "originalResearchHash": "4902bac0c8bc7127316ea68a3bc187bb10c82eb55139bcfa97d22e764fd4536e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "b8354baf8fd1c77cfc37a349caea448b5d3cc006b506b848e83408c4d6a06504",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "53be18c8f56a8e3c48f27700800807e9415aa28a6086ddc1b3e4d6e9b8354de5",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "감정과 감각, 직관과 사고의 선호 차원을 공유해 처음에는 가까워지기 쉽다.",
+        "서로 다른 주제로 이야기해도 편안하게 긴장을 풀 수 있다.",
+        "상대의 이야기가 흥미롭게 들려 따뜻하고 애틋한 관계가 될 수 있으며, ESFJ의 돌봄과 INFP의 진정성이 만나면 정서적 온기가 깊어진다."
+      ],
+      "friction": [
+        "상대의 말을 흥미롭게 듣지만 정확히 이해하려면 많은 집중이 필요하다.",
+        "함께 목표를 성취하거나 사업을 하는 일은 상당히 어렵다.",
+        "ESFJ는 현실적 관계 운영과 빠른 확인을 원하고 INFP는 내적 의미와 감정의 진정성을 더 보므로, 챙김이 간섭으로 읽히기 쉽다."
+      ],
+      "positiveInfluence": [
+        "INFP는 ESFJ에게 더 깊은 내면 감정과 가치의 세계를 보여 준다.",
+        "ESFJ는 INFP에게 현실적 돌봄과 사회적 안정감을 제공한다.",
+        "서로의 차이를 가볍게 받아들이면 부드러운 정서 교류가 가능하다."
+      ],
+      "repairStrategy": [
+        "공동 목표는 감정이 아니라 일정과 역할로 구체화한다.",
+        "ESFJ는 INFP의 침묵과 상상을 비현실로만 보지 않는다.",
+        "INFP는 ESFJ의 안부와 확인 욕구를 통제로만 해석하지 않는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ESFJ:ENFJ",
+    "originalResearchHash": "2601c6d0b06c08ca90c85af0598c113b06cde17d0955ee34ea1b2d3743921669",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "567d4b766b3c906dbbcdf4b2a4ee605a34e02a7b96ef8b4051dd7d7001decbf4",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "467419fffdb2215f967065467a6d0db95d77fea0f89ba1dd50d13dc36076a5c3",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사람과 관계의 가치를 크게 보고 더 나은 공동체를 원한다.",
+        "가족, 사람, 사회적 기여를 중요하게 생각한다.",
+        "큰 틀에서는 비슷한 정서 언어를 사용해 친구로 잘 맞을 수 있고, 서로의 챙김과 격려를 관계 책임으로 이해한다."
+      ],
+      "friction": [
+        "ENFJ는 개혁과 비전, 흔적을 남기는 일을 원하고 ESFJ는 일상의 친절과 안정적 기여를 더 본다.",
+        "ESFJ에게 ENFJ의 이상과 목표지향성은 거창하게 느껴질 수 있다.",
+        "ENFJ는 ESFJ의 전통적이고 생활 중심적인 방식이 좁게 보일 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 ESFJ에게 더 큰 방향성과 사회적 의미를 보여 준다.",
+        "ESFJ는 ENFJ에게 일상의 돌봄과 현실적 기여의 가치를 일깨운다.",
+        "서로의 방식이 다르다는 점을 인정하면 좋은 세상을 만들고자 하는 공통 마음이 살아난다."
+      ],
+      "repairStrategy": [
+        "각자가 생각하는 기여의 단위를 서로 설명한다.",
+        "ENFJ는 ESFJ의 작은 실천을 낮게 보지 않는다.",
+        "ESFJ는 ENFJ의 큰 목표를 허황된 말로만 치부하지 않는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ESFJ:ENFP",
+    "originalResearchHash": "d2235245b578c08df5b7f424d6bde2409443653afb865baa1ac35b21d227e7af",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "0755211201906428d46d74f59d48941e0fec1feb1871957b51f56a0be16f688f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "2932dd55664844a8db89011adadac0e9c2a5bd5336156933d76d49c8e23ae9d3",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사람에게 관심이 많고 관계 안에서 에너지를 얻는다.",
+        "ENFP는 ESFJ의 실행력과 사회적 안정감을 매력적으로 볼 수 있다.",
+        "ESFJ는 ENFP의 활기와 가능성 감각에서 신선함을 느끼고, ENFP는 ESFJ의 챙김과 사회적 안정감에서 보호받는 느낌을 얻는다."
+      ],
+      "friction": [
+        "관계가 비대칭적으로 흐르기 쉬워 한쪽이 더 유리한 위치를 갖는다.",
+        "ENFP는 ESFJ의 행동과 태도를 과대평가하며 비위를 맞추는 쪽으로 흐를 수 있다.",
+        "ESFJ는 ENFP의 도움을 필요로 하면서도 그 도움을 선뜻 받아들이지 않을 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 ENFP에게 현실적 정리와 사회적 연결을 제공한다.",
+        "ENFP는 ESFJ에게 새로운 가능성과 유연한 관점을 보여 준다.",
+        "필요가 분명할 때는 서로에게 강한 끌림과 영감을 준다."
+      ],
+      "repairStrategy": [
+        "서로의 도움과 기대를 말로 명확히 합의한다.",
+        "ENFP가 무리해서 맞춰 주는 패턴을 빨리 끊는다.",
+        "ESFJ는 ENFP의 자유로운 변화를 무책임으로만 보지 않는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ESFJ:ISTJ",
+    "originalResearchHash": "a5990a84f6ee6e2f587c6ebe875c9a3db315c7da9e2026cad7e4555ba5c5457c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "a1cba90cd92422ee98e8831d434ae7d4d2b3f3c48db3aa001d6dc57ac67e3f88",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "7b423047419c0a03b067eddeda5be37bd10c9a032b1073b94f4bdfe17f769566",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 현실적이고 책임과 절차를 중요하게 본다.",
+        "ESFJ는 ISTJ의 안정성과 성실함을 흥미롭게 관찰하고 도우려 한다.",
+        "겉으로는 보호자와 관심 대상처럼 좋은 친구 관계로 보일 수 있고, 책임과 생활 안정이라는 공통 기준에서는 신뢰를 만들 수 있다."
+      ],
+      "friction": [
+        "ISTJ는 ESFJ가 자신을 계속 지켜보고 통제하는 것처럼 느낀다.",
+        "ESFJ의 관계적 개입은 ISTJ에게 필요 이상의 간섭으로 보이고, ISTJ의 짧은 반응은 ESFJ에게 감사 표현 부족으로 남는다.",
+        "ESFJ는 ISTJ의 건조한 반응을 고마움 부족으로 받아들인다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 ISTJ가 놓치는 관계 신호와 주변 분위기를 보완한다.",
+        "ISTJ는 ESFJ에게 절차적 안정과 현실 검증을 제공한다.",
+        "서로의 역할을 인정하면 보호와 신뢰가 작동한다."
+      ],
+      "repairStrategy": [
+        "ESFJ는 도움을 주기 전에 ISTJ가 원하는 방식인지 확인한다.",
+        "ISTJ는 고마움을 말로 짧게라도 표현해 ESFJ의 불안을 줄인다.",
+        "생활 관리 영역과 개인 자율 영역을 분리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ESFJ:ISFJ",
+    "originalResearchHash": "084a142f987912a359a9e5cf5d300e74a449a05c31f088eb1ac86f797c361fcf",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "9836e0aabf05765eabb1f462707cc08c2c1fb5ae9a0331873a786d16d6c6aed3",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "149d963716412543a683ce103a896c26d04e2aac3b57aae29aed13e1ec6b7dbf",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사람을 챙기고 생활의 안정과 예의를 중요하게 본다.",
+        "관심사와 취향이 비슷해 친구나 동료로 빠르게 편안해질 수 있다.",
+        "한 사람이 관계의 방향을 열면 다른 사람이 세부와 안정성을 정리해 주며, 서로의 챙김과 예의를 관계의 신뢰 신호로 받아들인다."
+      ],
+      "friction": [
+        "둘 다 조화와 배려를 중시하지만 표현 속도와 주도권에서 차이가 난다.",
+        "ESFJ의 활발한 관계 확장은 ISFJ에게 부담이 되고, ISFJ의 조용한 신중함은 ESFJ에게 답답함으로 보일 수 있다.",
+        "비슷한 가치가 오히려 서로의 작은 차이를 크게 느끼게 만들 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 ISFJ를 더 넓은 관계로 연결하고, ISFJ는 ESFJ의 빠른 판단을 차분하게 정리한다.",
+        "같은 프로젝트에서 서로의 빈틈을 건설적인 피드백으로 보완한다.",
+        "관계와 생활 안정이라는 공통 목표가 있어 신뢰 형성이 빠르다."
+      ],
+      "repairStrategy": [
+        "ESFJ는 ISFJ의 느린 표현을 무관심으로 단정하지 않는다.",
+        "ISFJ는 고마움과 불편함을 말로 더 자주 확인해 준다.",
+        "가족과 주변 사람의 기대보다 두 사람의 생활 기준을 먼저 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ESFJ:ESTJ",
+    "originalResearchHash": "2f8ed9e2359793bade713250a54a26dea43bc8cff65a8e3eaf666ae56836ea63",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "d870b0ebdbb912ebb804abf8ead12956ecb2a0b6af35bdb32a7f7180951a1457",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "62998f44351b352111e95ba2bc4dfed4478f17e1a42bbd8cd385a4a9524eabba",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 현실적이고 조직 안에서 역할과 결과를 중요하게 본다.",
+        "비슷한 관심사와 활동 영역을 공유해 대화 시작이 어렵지 않고, 둘 다 맡은 역할을 끝까지 해내는 사람을 신뢰한다.",
+        "서로에게 큰 위험을 느끼지 않고 동등한 파트너처럼 협력할 수 있다."
+      ],
+      "friction": [
+        "ESFJ는 사람의 감정과 관계를 먼저 보고, ESTJ는 효율과 논리를 먼저 본다.",
+        "같은 목표를 두고도 작업 일정과 접근 방식이 달라 팀워크에서 충돌한다.",
+        "친구처럼 깊어지기보다 격식 있는 업무 관계로 굳어질 수 있고, 감사 표현이 부족하면 ESFJ는 관계가 차갑다고 느낀다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 ESFJ에게 실행 기준과 객관성을 제공한다.",
+        "ESFJ는 ESTJ에게 사람의 반응과 조직 분위기를 읽게 해 준다.",
+        "상호 호감이 있으면 업무 협력이 매우 실용적으로 작동한다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 피드백 전에 ESFJ의 기여를 인정한다.",
+        "ESFJ는 감정 표현과 업무 요청을 분리해 전달한다.",
+        "가정과 일 모두에서 역할 분담 기준을 문장으로 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ESFJ:ESFJ",
+    "originalResearchHash": "303b2befd85eee61635c8b5df94e6ac6f6d1a4c554694edde8aaf1583a598caf",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "0bb3e1e5d7b7385526a30f224a31d841d181b707346f2243fcd645c57a953143",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "0bb3e1e5d7b7385526a30f224a31d841d181b707346f2243fcd645c57a953143",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사람, 예의, 소속감, 생활 안정의 가치를 쉽게 이해한다.",
+        "비슷한 상황에서 비슷한 방식으로 반응해 말이 잘 통한다.",
+        "공통 관심사가 있으면 서로를 적극적으로 돌보고 응원하는 관계가 되며, 안부와 기념일, 주변 사람까지 챙기는 따뜻한 결속이 생긴다."
+      ],
+      "friction": [
+        "상호 보완보다 유사성이 커서 새로운 정보와 자극이 부족해질 수 있다.",
+        "한쪽이 불건강하면 인정 욕구, 잔소리, 집단 동조가 서로에게 증폭된다.",
+        "둘 다 겸손과 배려를 놓치면 누가 더 챙겼는지 비교하는 감정 장부가 생기고, 인정 표현이 줄어든 순간 서운함이 빠르게 커진다."
+      ],
+      "positiveInfluence": [
+        "자신의 장점과 약점을 상대를 통해 더 분명히 보게 된다.",
+        "관계 관리와 생활 운영에서 서로의 노력을 빠르게 알아본다.",
+        "같은 분야나 공동 목표가 있으면 강한 팀워크를 만든다."
+      ],
+      "repairStrategy": [
+        "서로의 친절을 당연히 여기지 말고 구체적으로 고마움을 표현한다.",
+        "외부 평판보다 부부의 실제 피로와 욕구를 먼저 확인한다.",
+        "정기적으로 새로운 경험을 넣어 관계가 반복 업무처럼 굳지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ESFJ:ISTP",
+    "originalResearchHash": "92bc538416752e7a288db1c63b72b57b0d211f6b14f6e78bda01c47f0f9765c4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "d4e0e7a5f15cfe50998e0e35f6173242322939db886273d4ad106acc1c06922d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "ad258c69529c20bdde58a78217f758925a668d52fe465ea2924d840546c2b568",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로의 목표 자체는 이해할 수 있고 대화 주제도 적지 않다.",
+        "ESFJ는 ISTP의 담백함과 실용성을 흥미롭게 느낄 수 있다.",
+        "ISTP는 ESFJ의 방식에 어느 정도 적응하며 관계를 유지할 수 있고, ESFJ는 ISTP의 실전 해결력을 생활 안정의 자원으로 본다."
+      ],
+      "friction": [
+        "계획 단계에서는 맞는 것 같지만 실행 단계에서 협력이 어려워진다.",
+        "ESFJ는 ISTP의 의견에 충분히 집중하지 못하고, ISTP는 감정 요구를 부담스러워한다.",
+        "무의식적인 행동 하나가 기존의 조화를 크게 흔들 수 있고, ESFJ의 확인 욕구와 ISTP의 거리 두기가 반복해서 엇갈린다."
+      ],
+      "positiveInfluence": [
+        "ISTP는 ESFJ에게 감정에 휩쓸리지 않는 실용적 관점을 제공한다.",
+        "ESFJ는 ISTP에게 사람과 관계를 고려하는 감각을 보완한다.",
+        "안정된 관계로 들어가면 지루하지 않은 대화와 상호 보완이 가능하다."
+      ],
+      "repairStrategy": [
+        "ESFJ는 ISTP의 짧은 표현을 마음 부족으로 해석하지 않는다.",
+        "ISTP는 중요한 결정에서 ESFJ의 감정과 의견을 명시적으로 물어본다.",
+        "계획은 함께 세우되 실행 책임과 방식은 구체적으로 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ESFJ:ISFP",
+    "originalResearchHash": "22a721e7c4c40085177a8cc706cd7642c53b7f3d68e3efdb202ea434e93d152f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "eb1400e28f0baec45cb8bac41c8b4e604584f60f3dccd705d5709e7dddda2306",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "ec95800b75453943f0d6de3bf04e8df98e98b04f3823253af7e3151d373593a1",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "겉으로는 다정하고 사람을 배려하는 모습이 비슷해 초반에는 잘 맞아 보인다.",
+        "일대일 대화에서는 편안함을 느낄 수 있고, 둘 다 강압보다 부드러운 분위기에서 마음을 연다.",
+        "생활 양식 일부가 비슷해 서로에게 호감을 느끼는 지점이 있다."
+      ],
+      "friction": [
+        "ESFJ의 전통적이고 체계적인 방식은 ISFP에게 구속으로 느껴진다.",
+        "ISFP는 자기 감정을 잘 드러내지 않고, ESFJ는 그 침묵에 답답함을 느껴 대답을 요구한다.",
+        "관계가 깊어질수록 심리적 거리가 불안정해지고 오해가 커진다."
+      ],
+      "positiveInfluence": [
+        "ISFP는 ESFJ에게 더 유연하고 개인적인 가치의 중요성을 보여 준다.",
+        "ESFJ는 ISFP에게 관계 유지와 사회적 안정의 필요성을 알려 준다.",
+        "서로 떨어져 각자의 시간을 충분히 가질 때 관계 온도가 안정된다."
+      ],
+      "repairStrategy": [
+        "ESFJ는 ISFP의 침묵을 즉시 추궁하지 않고 표현 시간을 준다.",
+        "ISFP는 중요한 불편함을 사라지듯 넘기지 말고 최소한의 문장으로 알려 준다.",
+        "함께하는 시간과 각자 떨어져 회복하는 시간을 명확히 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ESFJ:ESTP",
+    "originalResearchHash": "ea3e03242e1b86ab4616ddf9bb608c2e45c464e86839538619378ff224396bd0",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "12b91028b2cc871720e8c51ca0e65f39559eed458bd187d9c9e9ed52571e76fc",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "0920a9497186f64e048104b5c6d9438e790fa65296f735a0d0dfaf711ccfcd42",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 외부 세계에 적극적으로 반응하고 사람과 활동 속에서 에너지를 얻는다.",
+        "ESFJ는 ESTP의 행동력과 복잡한 일을 쉽게 처리하는 태도에 끌릴 수 있다.",
+        "ESTP는 ESFJ의 친화력과 돌봄을 편하게 받아들일 수 있다."
+      ],
+      "friction": [
+        "ESFJ가 ESTP를 과대평가하며 맞춰 주는 방향으로 흐르기 쉽다.",
+        "ESFJ가 ESTP의 약점을 도와주려 해도 ESTP는 간섭으로 받아들이고 거절할 수 있다.",
+        "필요와 역할이 맞지 않으면 관계가 갑자기 식고, ESFJ가 챙긴 만큼 인정받지 못한다고 느끼면 서운함이 빠르게 누적된다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 ESFJ에게 즉각적인 행동력과 현실 대처를 보여 준다.",
+        "ESFJ는 ESTP에게 관계적 안정과 사회적 신뢰를 제공한다.",
+        "서로의 역할이 명확할 때 실용적인 협력이 가능하다."
+      ],
+      "repairStrategy": [
+        "ESFJ는 ESTP를 기쁘게 하려는 자동 반응을 줄이고 자기 필요를 먼저 말한다.",
+        "ESTP는 자유를 유지하더라도 약속과 반응을 안정적으로 제공한다.",
+        "도움이 필요한 영역과 각자 알아서 할 영역을 분리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ESFJ:ESFP",
+    "originalResearchHash": "892371d0cb4e87541703dff01cbd0942f95d71f96fd58be45e6b88edec298fa8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "021269527af2b17d175528c6a263d620df10502ba09eb6d8433233bd7b0290b3",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "ca0c16adafb5b09701cb65af780a02de48cd1a0e406ed82d6b59c05c92242877",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "외향적이고 사람과 활동을 좋아해 처음에는 쉽게 가까워진다.",
+        "비슷한 관심사와 활동을 공유할 수 있다.",
+        "서로를 위험한 사람으로 보지 않아 대화 주제를 찾기는 어렵지 않고, 밝은 반응과 활동성으로 초반 분위기를 빠르게 살린다."
+      ],
+      "friction": [
+        "겉모습은 비슷하지만 내적 동기와 판단 기준이 크게 다르다.",
+        "둘 다 감정형이라 오해가 생기면 감정적 분쟁으로 번지기 쉽다.",
+        "함께 문제를 해결해야 할 때 서로 너무 다르게 생각해 시간 낭비로 느끼고, ESFJ의 관계 확인과 ESFP의 즉흥성이 같은 감정 언어 안에서도 충돌한다."
+      ],
+      "positiveInfluence": [
+        "새로운 아이디어의 약점을 서로 다른 관점에서 볼 수 있다.",
+        "ESFP는 ESFJ에게 현재의 즐거움과 즉흥성을 보여 준다.",
+        "ESFJ는 ESFP에게 관계와 절차의 지속성을 보완한다."
+      ],
+      "repairStrategy": [
+        "비슷해 보인다는 전제부터 내려놓고 각자의 우선순위를 확인한다.",
+        "함께 해결할 문제는 감정 반응보다 역할과 마감으로 정리한다.",
+        "즐거움과 안정의 예산, 시간, 책임을 별도로 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ESFP:INTJ",
+    "originalResearchHash": "a0f7d13da2afeef6eab4820e3e3c0040b5666d6b710ecd23a5a9b29a168b3b66",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "df675c709b51b5c9128cc4deb0971fd3f22f860f55fb6a1044e1868ec9c52eeb",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "c83ed4aee18250f38d0b604d2396ce85c4ea575a2dbd8929b9d03404ae41ada9",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로가 가진 정서와 계획의 결핍을 강하게 보완할 수 있다.",
+        "INTJ는 ESFP의 친근함, 개방성, 열정, 쾌활함에서 감정적 안정과 매력을 느낄 수 있다.",
+        "ESFP는 INTJ의 침착함, 똑부러짐, 인생 계획 능력을 존경하고 배우고 싶어질 수 있다."
+      ],
+      "friction": [
+        "INTJ의 통제가 적당한 수준을 넘으면 ESFP는 자유를 침해받는다고 느낀다.",
+        "ESFP의 즉흥성과 감정 표현은 INTJ에게 예측하기 어렵고 피곤하게 보일 수 있다.",
+        "서로의 사고방식이 너무 달라 소통 방식에서 자주 부딪힐 수 있다."
+      ],
+      "positiveInfluence": [
+        "INTJ는 ESFP에게 장기 계획과 구조를 제공한다.",
+        "ESFP는 INTJ에게 명확한 정서 인식과 따뜻한 보살핌을 제공한다.",
+        "서로의 차이를 존중하면 자유와 계획, 감정과 전략이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "INTJ는 통제를 명령이 아니라 선택지와 이유로 설명한다.",
+        "ESFP는 즉흥 변경이 필요한 때 미리 알려 INTJ의 불안을 줄인다.",
+        "장기 계획 안에 여행, 문화 생활, 자유 시간을 의도적으로 포함한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ESFP:INTP",
+    "originalResearchHash": "81241cfe86a3a3f7ac29c4ee11b3c7e91f7ec0d28937bcab31325955db8d1c79",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "1d8de7191593d49b4a3886fc5e2c03019a130c0e1008a7c10eb56145140655d4",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "57b0d14af8614f5518631b68e1fa8be9429e44e745db719bd0c0d56bce7729be",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "처음에는 서로의 다른 모습이 매력적으로 보일 수 있다.",
+        "개그 콤비처럼 특정 장면에서는 의외로 재미있는 상호작용이 생길 수 있다.",
+        "둘 다 인식형이라 완전히 정해진 틀보다는 느슨한 여지를 남길 수 있고, 가벼운 유머나 취미 활동에서는 예상보다 편한 접점이 생긴다."
+      ],
+      "friction": [
+        "ESFP는 INTP의 차분한 거리감과 늦은 반응을 차갑거나 무심한 태도로 받아들이기 쉽다.",
+        "INTP는 ESFP의 즉각적인 감정 표현과 자극을 찾는 움직임을 부담스럽거나 지나치게 빠른 흐름으로 느낄 수 있다.",
+        "한쪽은 지금의 반응과 함께 있는 시간을 원하고, 한쪽은 생각을 정리할 거리와 시간을 원하므로 조율 지점이 선명하다."
+      ],
+      "positiveInfluence": [
+        "INTP는 ESFP에게 논리와 거리두기를 보여 준다.",
+        "ESFP는 INTP에게 현장감과 사람과의 즐거움을 경험하게 한다.",
+        "짧고 가벼운 협업이나 유머 중심 장면에서는 서로의 차이가 재미가 될 수 있다."
+      ],
+      "repairStrategy": [
+        "ESFP는 INTP의 혼자 있는 시간을 관계 거절로 단정하지 않는다.",
+        "INTP는 ESFP에게 최소한의 반응과 일정 공유를 제공한다.",
+        "깊은 생활 결합보다 짧은 활동, 유머, 명확한 역할이 있는 접점을 먼저 만든다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ESFP:ENTJ",
+    "originalResearchHash": "d94daa57819cc119c8477390dc0619ae5e046bfbf700bebeafeb5f0dc394c9e8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "a90068036aa92801ca6411a235be87a72a46489ca693e976f351cbab10126ec1",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "f7ef893ce212d6056ba2a2a3180eb44e9a0b4a364746fa0bea4a8b96783fa820",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로를 빠르게 활동적으로 만들고 관계 시작이 쉽다.",
+        "둘 다 외부 세계에 적극적으로 반응하고 움직이는 에너지가 강하다.",
+        "ESFP의 생동감과 ENTJ의 추진력이 만나면 강한 자극과 실행력이 생기고, 함께 있으면 관계가 정체되기보다 계속 움직인다."
+      ],
+      "friction": [
+        "과도한 자극이 누적되면 서로에게 빨리 싫증과 피로를 느낀다.",
+        "매일 붙어 있는 상황에서는 많은 문제가 생기고, 직접 해결보다 조언으로 상대의 약점을 건드리기 쉽다.",
+        "서로의 행동 예측이 어렵고 안정적으로 기대어 협동하기 어렵다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 ESFP에게 목표와 실행 구조를 제공한다.",
+        "ESFP는 ENTJ에게 현장의 감정과 즐거움을 다시 느끼게 한다.",
+        "짧은 휴식과 거리 조절이 있으면 관계가 주기적으로 활력을 회복한다."
+      ],
+      "repairStrategy": [
+        "매일 붙어 있는 구조보다 각자 회복하는 시간을 둔다.",
+        "조언하기 전에 상대가 원하는 것이 해결인지 공감인지 확인한다.",
+        "공동 목표는 정하되 실행 방식에는 ESFP의 자율성을 남긴다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ESFP:ENTP",
+    "originalResearchHash": "121f0997a666029dd9b63a4be07186ca01baecbb95a1e9c69e4df973753c7b6b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "5334f001d00787bdf2172f9f8e788a1a21483302cb7dec7c99d4a06d97fac25e",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "858d958b607f70e470e5bc2ecb66e35a2006711601f86a32712c354305cf421c",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ESFP와 ENTP는 둘 다 지루한 관계를 오래 버티기 어렵고 새로운 자극과 재미에 빠르게 반응한다.",
+        "ESFP는 분위기와 감정 표현으로 장면을 살리고, ENTP는 말과 아이디어로 관계의 판을 흔든다.",
+        "서로를 답답하게 묶지 않는 자유로움이 있어 초반에는 대화와 활동이 빠르게 살아난다."
+      ],
+      "friction": [
+        "ENTP는 논쟁과 장난으로 관계를 자극하지만, ESFP는 그 말이 주는 분위기와 감정적 반응을 즉각적으로 느낀다.",
+        "ENTP의 가벼운 반박은 ESFP에게 무심하거나 상처 주는 말로 들릴 수 있고, ESFP의 감정 반응은 ENTP에게 과하게 예민한 반응처럼 보일 수 있다.",
+        "둘 다 새로움을 좋아해 장기 책임, 돈, 생활 루틴을 뒤로 미루면 관계는 재미있지만 안정감이 부족해진다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ESFP에게 더 넓은 관점과 새로운 선택지를 열어 준다.",
+        "ESFP는 ENTP가 말로만 가능성을 굴리지 않고 실제 사람과 분위기 속에서 반응을 보게 만든다.",
+        "토론과 표현의 선을 지키면 두 사람은 서로에게 강한 활력과 창의성을 준다."
+      ],
+      "repairStrategy": [
+        "ENTP는 반박이나 농담을 하기 전에 ESFP가 감정적으로 받아들일 수 있는 표현인지 한 번 걸러야 한다.",
+        "ESFP는 ENTP의 질문을 곧바로 공격으로 해석하지 말고 토론인지 비난인지 구분해 확인한다.",
+        "재미있는 계획을 세울 때도 비용, 일정, 책임자를 먼저 정해 즉흥성이 부담으로 바뀌지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ESFP:INFJ",
+    "originalResearchHash": "2460810375f429e3ccbf53ee051e763fd7906b086e61fc906b264d184983d50c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "ce58ac131537053c6ab97faf449a0b4711c183e951405a7603f3575de57f2850",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "20d4c39ef86dccc8c3aab3eeb61b25e7147868635b2b98bf1f9984035d40beda",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "INFJ는 사람과 관계의 숨은 의미를 깊이 읽고, ESFP는 지금의 분위기와 감정 표현을 생생하게 살린다.",
+        "두 사람 모두 사람에게 관심이 있고, 차가운 관계보다 따뜻한 반응이 있는 관계를 선호한다.",
+        "INFJ의 통찰과 ESFP의 생동감이 만나면 조용한 깊이와 밝은 표현이 함께 살아난다."
+      ],
+      "friction": [
+        "INFJ는 관계의 방향과 내면의 의미를 확인하고 싶어 하지만, ESFP는 현재의 즐거움과 즉각적인 반응을 더 중요하게 본다.",
+        "ESFP의 즉흥성과 넓은 교류는 INFJ에게 피로가 될 수 있고, INFJ의 깊은 해석과 침묵은 ESFP에게 무겁거나 알 수 없는 거리감으로 느껴질 수 있다.",
+        "갈등이 생기면 INFJ는 조용히 상처의 의미를 정리하고, ESFP는 분위기를 바꾸며 풀려고 해 문제를 다루는 깊이가 달라진다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 INFJ가 머릿속과 마음속에서만 돌리던 생각을 실제 경험으로 끌어낸다.",
+        "INFJ는 ESFP가 순간의 기분 뒤에 있는 관계의 흐름과 선택의 의미를 보게 돕는다.",
+        "서로의 리듬을 인정하면 깊이와 생동감이 균형을 이룬다."
+      ],
+      "repairStrategy": [
+        "INFJ는 ESFP의 즉흥성을 가벼움으로 단정하지 말고 애정 표현의 한 방식으로 읽는다.",
+        "ESFP는 INFJ가 진지한 대화를 꺼낼 때 분위기를 깨는 말로 받아들이지 말고 관계 점검으로 받아들인다.",
+        "외부 약속과 둘만의 조용한 시간을 주 단위로 나누어 서로의 에너지 리듬을 보호한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ESFP:INFP",
+    "originalResearchHash": "2c679b1e51ba7d95307e73cb065d6964dcc773231c0800b6d2412e2638dd65e5",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "4e52bf84122597abbd14452fbc85ba1d860b84619276d5933494442f6d311673",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "581eabd5368af0780169ddd8a9ad495591f73e6018a5d7982df531760aef33c2",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 자기다운 선택과 진심을 중요하게 여기며 강압적인 관계를 싫어한다.",
+        "INFP는 마음의 의미와 가치에 민감하고, ESFP는 감정의 표현과 현실의 즐거움에 민감하다.",
+        "서로가 편안한 분위기를 만들면 부드럽고 따뜻한 감정 교류가 생긴다."
+      ],
+      "friction": [
+        "INFP는 말과 행동 뒤의 진심을 오래 생각하지만, ESFP는 지금의 분위기와 즉각적인 반응으로 관계를 느낀다.",
+        "ESFP의 밝은 표현과 빠른 전환은 INFP에게 가벼움으로 느껴질 수 있고, INFP의 깊은 감정 설명은 ESFP에게 무거운 분위기로 느껴질 수 있다.",
+        "갈등이 생기면 INFP는 의미를 확인하려 하고 ESFP는 빨리 풀고 즐거운 분위기로 돌아가려 하면서 속도가 어긋난다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 INFP가 감정 속에만 머물지 않고 현실의 즐거움과 경험을 누리게 돕는다.",
+        "INFP는 ESFP가 순간의 분위기만 보지 않고 관계의 진정성과 상대의 상처를 살피게 해 준다.",
+        "서로를 재촉하지 않으면 감성의 깊이와 생활의 밝음이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESFP는 INFP가 조용해질 때 분위기만 바꾸려 하지 말고 어떤 의미에서 상처받았는지 물어본다.",
+        "INFP는 ESFP의 밝은 표현을 진심 부족으로 단정하지 말고 행동과 반복을 함께 본다.",
+        "감정 대화 뒤에는 함께 산책이나 가벼운 활동을 넣어 관계가 무겁게만 남지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ESFP:ENFJ",
+    "originalResearchHash": "963b904aa5fced64ff7864fdab0018d6190152ddebd12749ed93315d0de7897f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "a737c3f5c3f7451c777fd841c0a3b4471c4a5bfdae8823a3b303423dd42b6c8d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "c3c084a61cf0db4f8bc28a33d2a0758364f367113f8d2f8cc27eb45588e53a43",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사람에게 관심이 많고 관계 속에서 에너지를 얻는다.",
+        "ESFP는 ENFJ의 행동, 매너, 생각, 능력에 감명을 받고 존경할 수 있다.",
+        "ENFJ는 ESFP에게 특별한 지지와 방향성을 제공할 수 있고, ESFP는 ENFJ에게 즉각적인 표현과 살아 있는 정서 반응을 돌려준다."
+      ],
+      "friction": [
+        "ESFP가 이유 없이 ENFJ를 기쁘게 하려 하며 관계가 비대칭으로 흐를 수 있다.",
+        "ENFJ의 방향 제시가 ESFP에게는 자유를 좁히는 압박이 될 수 있다.",
+        "ESFP가 ENFJ를 과대평가하면 자기 욕구를 뒤로 밀어 관계 균형이 깨진다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 ESFP에게 의미와 방향을 제시한다.",
+        "ESFP는 ENFJ에게 현재의 즐거움과 즉각적인 생동감을 제공한다.",
+        "상호 존중이 있으면 따뜻함과 활력이 동시에 살아난다."
+      ],
+      "repairStrategy": [
+        "ESFP는 ENFJ를 만족시키기 전에 자기 욕구를 먼저 확인한다.",
+        "ENFJ는 조언과 방향 제시를 줄이고 ESFP의 즉흥성을 인정한다.",
+        "관계 안에서 누가 계속 맞추고 있는지 주기적으로 점검한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ESFP:ENFP",
+    "originalResearchHash": "720fd2b8607d000ccb7586ea5368ac26943b12fbd7682f2738d803fe4122951d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "54b9dbe17f4059f335a5eea2d06efc96f09cc866591488f27301381f72e3c14a",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "6f7e1ed0caab2799cc7653945331bc4554c2a1f90a35e9afece8fef0d34b5df9",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 밝은 에너지, 사람과의 교류, 새로운 경험에 빠르게 반응한다.",
+        "ENFP는 가능성과 의미를 넓히고, ESFP는 현재의 분위기와 감각적 즐거움을 생생하게 만든다.",
+        "서로를 억누르지 않는 자유로운 분위기에서는 친구처럼 편하고 즐거운 연애가 되기 쉽다."
+      ],
+      "friction": [
+        "ENFP는 미래의 가능성과 관계의 의미를 자주 이야기하고, ESFP는 지금의 경험과 감정 반응을 더 중요하게 본다.",
+        "ESFP가 가볍게 넘어간 일을 ENFP는 깊게 해석할 수 있고, ENFP의 긴 의미 대화는 ESFP에게 분위기를 무겁게 만드는 말로 느껴질 수 있다.",
+        "둘 다 즐거움과 자유를 따라 움직이면 돈, 일정, 장기 책임이 뒤늦게 부담으로 돌아올 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 ENFP가 머릿속 가능성에만 머물지 않고 현실의 즐거움을 직접 누리게 한다.",
+        "ENFP는 ESFP가 순간의 재미 뒤에 있는 마음의 방향과 미래 선택지를 보게 돕는다.",
+        "서로의 활력을 인정하면 관계가 밝고 따뜻하게 유지된다."
+      ],
+      "repairStrategy": [
+        "ENFP는 ESFP가 현재를 즐기는 방식을 깊이 부족으로 단정하지 않는다.",
+        "ESFP는 ENFP가 의미를 묻는 순간을 분위기 깨기로 보지 말고 관계 방향 점검으로 받아들인다.",
+        "즐거운 계획과 현실 예산을 한 번에 세워 감정과 생활이 따로 놀지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ESFP:ISTJ",
+    "originalResearchHash": "2fa44308b0fe2db045a93102be83fda27beb1e0f5143426c68b682882115910a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "2a99e5a4ed20052e1a20d09dd6fbf0fe34e9922ffff12355341815fffe0a3c14",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "4e1143ef30cd546b8e11e3c70dae10c71d4666568569b172597d51ed9fb9b036",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ISTJ는 안정된 절차와 책임을 중시하고, ESFP는 현재의 분위기와 즐거운 경험을 중시한다.",
+        "두 사람 모두 현실 감각이 있어 말뿐인 약속보다 실제 행동을 보고 신뢰를 판단한다.",
+        "서로의 역할이 분명하면 ISTJ는 생활 기반을 만들고 ESFP는 관계의 활력을 살릴 수 있다."
+      ],
+      "friction": [
+        "ISTJ는 계획과 약속이 지켜져야 안심하지만, ESFP는 상황과 기분에 따라 유연하게 움직이는 편이다.",
+        "ISTJ의 기준과 지적은 ESFP에게 차갑거나 답답하게 느껴질 수 있고, ESFP의 즉흥성과 표현은 ISTJ에게 산만하거나 책임감 부족으로 보일 수 있다.",
+        "갈등이 생기면 ISTJ는 규칙을 강화하고 ESFP는 분위기와 감정을 앞세우며 서로의 언어가 달라진다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 ESFP에게 장기 책임과 생활 안정의 힘을 제공한다.",
+        "ESFP는 ISTJ가 지나치게 무겁고 반복적인 생활에 갇히지 않도록 즐거움과 표현을 더해 준다.",
+        "안정과 활력의 역할을 나누면 생활과 관계가 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 ESFP에게 규칙을 말할 때 비판보다 안정이 필요한 이유를 먼저 설명한다.",
+        "ESFP는 즉흥 약속이나 지출이 생길 때 ISTJ가 예측할 수 있도록 미리 공유한다.",
+        "생활비와 즐거움 예산을 분리해 안정과 활력이 서로를 침범하지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ESFP:ISFJ",
+    "originalResearchHash": "4612780bf87817e23666386f29ccfe1cbdf111c8a23123387fea30461bd40cea",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "24d07254bfcf86fbfad140d80a8c859ab805fcd69f2e725f84545e0a8967b047",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "31497f79d3c059a631677e3f5cc465d2ee1c37574ca8b52001fe00869ecd5501",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ISFJ는 세심한 돌봄과 안정된 루틴을 만들고, ESFP는 밝은 표현과 활동성으로 관계에 생기를 더한다.",
+        "두 사람 모두 사람의 감정과 분위기에 민감해 따뜻한 반응이 있는 관계를 선호한다.",
+        "ISFJ의 책임감과 ESFP의 생동감이 맞으면 부드럽고 활기 있는 생활을 만들 수 있다."
+      ],
+      "friction": [
+        "ISFJ는 예측 가능한 관계와 조심스러운 배려를 원하지만, ESFP는 즉각적인 표현과 자유로운 경험을 더 중요하게 본다.",
+        "ESFP의 넓은 교류와 즉흥성은 ISFJ에게 불안으로 느껴질 수 있고, ISFJ의 걱정과 확인은 ESFP에게 간섭처럼 느껴질 수 있다.",
+        "갈등이 생기면 ISFJ는 서운함을 쌓아 두고 ESFP는 분위기를 바꾸려 하면서 문제의 깊이가 다르게 처리된다."
+      ],
+      "positiveInfluence": [
+        "ISFJ는 ESFP에게 관계를 오래 지키는 세심함과 책임감을 알려 준다.",
+        "ESFP는 ISFJ가 걱정과 의무에만 머물지 않고 더 즐겁게 표현하도록 돕는다.",
+        "서로의 선의를 인정하면 안정과 활력이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESFP는 ISFJ가 중요하게 여기는 약속과 기념일을 가볍게 넘기지 않는다.",
+        "ISFJ는 ESFP의 외부 활동을 곧바로 관계 소홀로 해석하지 말고 필요한 안정 기준을 말한다.",
+        "주말 일정은 가족 루틴과 즐거운 외부 활동을 모두 넣어 한쪽만 희생하지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ESFP:ESTJ",
+    "originalResearchHash": "27d30fa30ad573b04e2dfb6ba40ffc2f7eecf50cb5fbedfea35fc74e295adc1e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "78ac7b30a0664f322a8ce6bf06dffbd4a088a7ff1c5ef82fd404abfd960eda34",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "692f4c6a8626d6ca3cbce39c70b26e40d9330271487f48966256ba0f003c83cf",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ESTJ는 현실적 책임과 실행 구조를 만들고, ESFP는 사람과 분위기를 살리는 표현력을 제공한다.",
+        "두 사람 모두 외부 세계에 적극적으로 반응하고, 일이 움직여야 한다는 감각이 강하다.",
+        "공동 목표가 분명하면 ESTJ는 추진 체계를, ESFP는 참여와 활력을 맡아 성과를 만들 수 있다."
+      ],
+      "friction": [
+        "ESTJ는 계획, 기준, 책임을 분명히 하려 하고, ESFP는 현장의 분위기와 자유로운 반응을 중시한다.",
+        "ESTJ의 지시와 평가가 ESFP에게 차갑게 느껴질 수 있고, ESFP의 즉흥성과 감정 표현은 ESTJ에게 산만함으로 보일 수 있다.",
+        "갈등이 생기면 ESTJ는 더 강하게 관리하려 하고 ESFP는 더 감정적으로 반응하거나 회피하면서 압박과 반발이 반복될 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 ESFP에게 책임 구조와 장기 실행력을 제공한다.",
+        "ESFP는 ESTJ가 지나치게 딱딱해지지 않도록 사람의 반응과 분위기의 힘을 알려 준다.",
+        "역할을 존중하면 관리와 표현이 함께 살아나는 실행형 조합이 된다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 ESFP에게 기준을 말할 때 사람을 평가하는 톤보다 함께 안정되기 위한 이유를 설명한다.",
+        "ESFP는 즉흥적인 지출이나 일정 변경이 필요할 때 대안을 함께 제시한다.",
+        "역할 분담은 ESTJ가 관리하고 ESFP가 따라가는 구조가 아니라 서로의 강점을 반영해 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ESFP:ESFJ",
+    "originalResearchHash": "d370d55d60afc2cafb3aa224e334f8bc71bf3561b802283f0b238137e0af9093",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "ca0c16adafb5b09701cb65af780a02de48cd1a0e406ed82d6b59c05c92242877",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "021269527af2b17d175528c6a263d620df10502ba09eb6d8433233bd7b0290b3",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "겉으로는 둘 다 사교적이고 감정 표현이 풍부해 쉽게 친해질 수 있다.",
+        "사람과 분위기를 좋아하고 밝은 관계를 선호한다.",
+        "초반에는 비슷한 외향성과 친화력 때문에 편하게 느끼며, 연락·리액션·모임 속에서 애정이 빠르게 살아난다."
+      ],
+      "friction": [
+        "내적 성향이 달라 싸움이 나면 크게 부딪힌다.",
+        "ESFJ는 규칙과 관계 질서를 중시하고 ESFP는 자유와 즉흥성을 중시한다.",
+        "ESFJ가 챙김을 이유로 기준을 세울수록 ESFP는 통제받는다고 느끼고, ESFP가 즉흥적으로 움직일수록 ESFJ는 배려받지 못한다고 느낀다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 ESFP에게 생활 질서와 책임을 보완한다.",
+        "ESFP는 ESFJ에게 자유로운 즐거움과 현재의 활기를 보여 준다.",
+        "겉으로 비슷하지만 다른 기준을 이해하면 관계와 자유의 균형을 배울 수 있다."
+      ],
+      "repairStrategy": [
+        "겉으로 비슷하다는 착각을 버리고 각자의 우선순위를 문장으로 확인한다.",
+        "ESFJ는 ESFP의 즉흥성을 전부 무책임으로 보지 않는다.",
+        "ESFP는 ESFJ가 필요로 하는 최소한의 약속과 루틴을 지킨다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ESFP:ISTP",
+    "originalResearchHash": "310466f3a1932dd1973944e312d7faf2510f4ace137ab435bfbd2468d96b8a49",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "5d89166714cfa7c36c99bcaafe4d1030a7c3fb5af85b460a32c6248ff5cea1c4",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "6ec4e8230764f3f3c46a19a19b0a5ff057475d8796e28ab7c0715129f7be49c3",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 지금 눈앞의 현실, 몸으로 느끼는 경험, 직접 해보는 활동에 강하다.",
+        "ESFP는 분위기와 사람을 살리고, ISTP는 상황의 구조와 실제 해결책을 빠르게 잡는다.",
+        "함께 움직이고 경험하는 데서 친밀감이 생기기 쉬워 정적인 관계보다 활동적인 관계에서 잘 맞는다."
+      ],
+      "friction": [
+        "ESFP는 표현과 즉각적인 반응을 원하지만, ISTP는 조용히 관찰하고 필요한 순간에만 말하는 편이다.",
+        "ESFP의 감정 표현과 사교성은 ISTP에게 과한 자극이 될 수 있고, ISTP의 무덤덤함은 ESFP에게 재미없거나 차갑게 느껴질 수 있다.",
+        "둘 다 현재의 즐거움과 자율성을 좋아해 장기 계획과 돈 관리를 미루면 현실 부담이 쌓인다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 ISTP에게 관계의 밝은 표현과 즐거움을 더해 준다.",
+        "ISTP는 ESFP가 순간의 분위기에 휩쓸릴 때 현실적인 판단과 기술적 해결책을 제공한다.",
+        "서로의 활동성을 존중하면 즐거움과 실용성이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESFP는 ISTP의 조용함을 무관심으로 단정하지 말고 행동 표현을 함께 본다.",
+        "ISTP는 중요한 순간에는 짧게라도 감정 반응을 보여 ESFP의 불안을 줄인다.",
+        "데이트와 소비는 즉흥성을 살리되 월별 예산과 회복 시간을 함께 정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ESFP:ISFP",
+    "originalResearchHash": "b4fb8cba61a9c5fac4c65b4557f97f41fab78693254299cf38add8530dfd5cb4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "19679c639f31c07206b00c257c78f7e724401111683675f29820605ef5a55441",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "fc42963e3aaaf19109b43ee279d47bc13a62dff1303b6249857a1b81ec454d2f",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 감각적 경험, 개인의 취향, 자연스러운 표현을 중요하게 여긴다.",
+        "ISFP는 조용한 진심과 미적 감각으로 관계를 다루고, ESFP는 밝은 표현과 사회적 생동감으로 관계를 넓힌다.",
+        "서로의 취향과 현재 감각을 존중하면 부담 없이 편안한 매력이 생긴다."
+      ],
+      "friction": [
+        "ESFP는 더 많이 표현하고 함께 움직이고 싶어 하지만, ISFP는 조용한 개인 시간과 감정의 속도를 지키려 한다.",
+        "ESFP의 빠른 반응과 넓은 교류는 ISFP에게 피로가 될 수 있고, ISFP의 침묵과 거리두기는 ESFP에게 서운함으로 느껴질 수 있다.",
+        "갈등이 생기면 둘 다 강하게 논쟁하기보다 분위기로 넘기거나 조용히 멀어질 수 있어 문제가 늦게 드러난다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 ISFP가 더 밝게 표현하고 사람들과 경험을 나누도록 돕는다.",
+        "ISFP는 ESFP가 순간의 반응만 보지 않고 자기 진심과 취향의 깊이를 지키게 해 준다.",
+        "서로의 표현 속도를 존중하면 감각적 즐거움과 정서적 편안함이 함께 생긴다."
+      ],
+      "repairStrategy": [
+        "ESFP는 ISFP가 말이 적어질 때 바로 재촉하지 말고 감정이 정리될 시간을 준다.",
+        "ISFP는 불편함을 갑자기 거리두기로 표현하기보다 짧게라도 이유를 말한다.",
+        "활동적인 일정과 조용한 회복 시간을 번갈아 배치해 서로의 에너지 차이를 줄인다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ESFP:ESTP",
+    "originalResearchHash": "14a621a90f5be2db019585cf92c24453e37dea71283e68e0b24faa774a7e3be0",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "7817acf34e0e48673391c6d3e3a6564219a69fbca107e2c8bdf66be210a0d8c9",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "901a0b1de84c836b5c150fd295ac437fde8962bcc41c73c62d4b1a186eeb35e5",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 현재의 경험, 사람과의 교류, 몸으로 느끼는 즐거움에 강하게 반응한다.",
+        "ESTP는 현장의 기회와 문제 해결을, ESFP는 분위기와 감정의 생동감을 빠르게 살린다.",
+        "함께 있으면 활동성과 사교성이 커져 주변까지 밝고 역동적인 분위기가 된다."
+      ],
+      "friction": [
+        "ESTP는 문제를 빠르게 해결하고 장난스럽게 넘기려 하지만, ESFP는 감정의 반응과 분위기를 더 중요하게 본다.",
+        "ESTP의 직설은 ESFP에게 상처가 될 수 있고, ESFP의 감정 표현은 ESTP에게 과한 반응처럼 느껴질 수 있다.",
+        "둘 다 현재의 재미와 사람 만남을 좋아해 돈, 일정, 장기 책임이 뒤로 밀릴 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 ESTP에게 사람의 감정과 즐거운 표현을 더해 준다.",
+        "ESTP는 ESFP가 분위기에 휩쓸릴 때 현실적인 판단과 빠른 해결책을 제공한다.",
+        "서로의 활동성을 긍정적으로 쓰면 밝고 강한 현장형 커플이 된다."
+      ],
+      "repairStrategy": [
+        "ESTP는 ESFP의 감정 표현을 과장으로만 보지 말고 관계의 신호로 받아들인다.",
+        "ESFP는 ESTP의 직설을 전부 애정 부족으로 해석하지 말고 필요한 표현을 구체적으로 요청한다.",
+        "즐거운 활동과 생활 책임을 같은 캘린더에 넣어 재미와 안정이 따로 놀지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESFP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ESFP:ESFP",
+    "originalResearchHash": "7f4ccd5a3de44292ae80f28a1907a45803d22142c20529338e2030023d6e68f9",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "2eb58f7a5410e1d214f08747c47cd87bc35dc7319884492c39370937f0996a7a",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "2eb58f7a5410e1d214f08747c47cd87bc35dc7319884492c39370937f0996a7a",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 밝은 표현, 사람과의 교류, 현재의 즐거움에 강하게 반응한다.",
+        "함께 있으면 분위기가 빠르게 살아나고 데이트, 여행, 모임 같은 활동에서 친밀감이 생긴다.",
+        "서로의 즉흥성과 감정 표현을 자연스럽게 이해해 초반에는 답답함이 적다."
+      ],
+      "friction": [
+        "둘 다 현재의 즐거움에 끌리기 쉬워 장기 계획, 돈 관리, 반복 책임이 뒤로 밀릴 수 있다.",
+        "감정 표현이 빠른 만큼 서운함도 즉각적으로 드러나 분위기가 크게 흔들릴 수 있다.",
+        "서로가 계속 재미와 반응을 기대하면 조용한 회복 시간이나 현실 점검이 부족해질 수 있다."
+      ],
+      "positiveInfluence": [
+        "서로의 밝은 에너지를 키워 주고 관계 안에 생동감을 만든다.",
+        "표현이 빠르기 때문에 애정을 숨기지 않고 확인하기 쉽다.",
+        "비슷한 장단점을 보며 자기 즉흥성과 인정 욕구를 객관적으로 볼 수 있다."
+      ],
+      "repairStrategy": [
+        "큰 지출과 외부 약속은 즉흥으로 결정하지 말고 하루 이상 확인 시간을 둔다.",
+        "감정이 올라올 때 분위기로만 풀지 말고 무엇이 서운했는지 짧게 말한다.",
+        "즐거운 일정과 고정 책임을 같은 캘린더에 넣어 재미와 생활이 따로 놀지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ESTJ:INTJ",
+    "originalResearchHash": "40f55c7f70c9d2e52d729c45bfc38be0beef9a2eb41aea6bdc273d18222a416a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "3f49841298b241ea98454f2f62537d03b71f39335cd4add060f0428e8132c948",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "ca6e3a337a4f552d210ddb9345681a5ce90cff73a0a2effea036cdcfdaf4f21b",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 구조와 체계를 선호하고 감정보다 논리로 움직이는 편이다.",
+        "역할을 인정하면 전략과 실행이 결합된 강한 관계가 된다.",
+        "관계에서도 막연한 위로보다 문제의 원인과 앞으로의 운영 방식을 정리하려는 태도가 비슷해 대화가 빠르게 실무형으로 정돈된다."
+      ],
+      "friction": [
+        "ESTJ는 전통과 절차를 신뢰하고 INTJ는 시스템을 분석해 더 나은 방식으로 바꾸려 한다.",
+        "ESTJ는 INTJ를 비현실적이거나 규칙에 무관심하게 보고, INTJ는 ESTJ를 보수적이고 관습적으로 본다.",
+        "감정 갈등보다 무엇이 더 맞는 방식인가를 두고 충돌한다."
+      ],
+      "positiveInfluence": [
+        "INTJ는 ESTJ에게 새로운 가능성과 장기 전략을 보게 한다.",
+        "ESTJ는 INTJ의 아이디어를 현실적인 계획으로 다듬는다.",
+        "둘이 협력하면 추상적 설계가 실제 돈, 일정, 역할로 내려온다."
+      ],
+      "repairStrategy": [
+        "INTJ의 아이디어를 바로 비현실로 자르지 말고 실험 범위를 정한다.",
+        "ESTJ의 절차를 낡은 것으로만 보지 말고 안정 장치로 인정한다.",
+        "전략 담당과 운영 담당의 역할을 분명히 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ESTJ:INTP",
+    "originalResearchHash": "a06e59a917b96a3f8ae53fe82d2909b2ddc41be851cac06df4518b8170633627",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "a8cb7aac585cf2c96f8ddab7a51008491fbbead476e40cb7aad962ec9e589e4a",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "062c81179613424d3593bc1b684eec2841bf0d580772e9cf1332874c2629d6da",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 감정보다 사고를 중시할 수 있다.",
+        "잘 맞으면 ESTJ는 INTP의 아이디어를 실제 행동으로 옮기고 INTP는 ESTJ가 기존 방식 밖의 가능성을 보게 한다.",
+        "문제를 두고 감정적 확인보다 원인과 해결 구조를 찾으려는 지점에서는 대화가 이어질 수 있다."
+      ],
+      "friction": [
+        "INTP는 개념, 가능성, 독립적 탐구를 중시하고 ESTJ는 현실적 사실, 절차, 책임, 검증된 방식을 중시한다.",
+        "ESTJ는 INTP를 비현실적이거나 규칙에 관심 없는 사람으로 보고, INTP는 ESTJ를 관습적이고 통제적으로 볼 수 있다.",
+        "갈등은 감정보다 논리, 방식, 자율성에서 생기기 쉽다."
+      ],
+      "positiveInfluence": [
+        "INTP는 ESTJ에게 더 깊은 논리와 대안적 가능성을 보여준다.",
+        "ESTJ는 INTP가 생각을 실제 결과로 연결하도록 돕는다.",
+        "논리와 실행이 맞물리면 아이디어가 생활과 일의 성과로 닫힌다."
+      ],
+      "repairStrategy": [
+        "생활 책임은 최소 기준만 정하고 방식은 자율에 맡긴다.",
+        "ESTJ는 INTP의 탐구를 게으름으로 단정하지 않는다.",
+        "INTP는 생각만 하지 말고 합의한 생활 책임을 일정으로 지킨다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ESTJ:ENTJ",
+    "originalResearchHash": "c4260b95eb6a2ad51c8992237602fa0c21b816f8b47bca7c01f891ae9e298bca",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "827d51cd4df1c45ea442b0d795e00e9adbe9914c49decbb6b50855b4d8e6f903",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "61a29df4fd5c6687183b657b58ddc7347c3c03a43008a38890eaeb9579ef024b",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 추진력과 리더십이 강하고 성과와 책임을 중시한다.",
+        "목표를 향해 사람과 자원을 조직하는 데 익숙해 잘 맞으면 강력한 실행 조합이 된다.",
+        "돈, 커리어, 가족 운영을 감정의 흐름보다 목표와 자원 배분의 문제로 다루려는 점도 비슷하다."
+      ],
+      "friction": [
+        "ENTJ는 장기 비전과 전략적 가능성을 중시하고 ESTJ는 검증된 절차와 구체적 사실을 신뢰한다.",
+        "ESTJ는 ENTJ를 비현실적으로 볼 수 있고, ENTJ는 ESTJ를 보수적으로 볼 수 있다.",
+        "둘 다 자기 판단에 대한 확신이 강해 주도권 싸움이 생기기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 ESTJ에게 더 넓은 가능성과 전략적 방향을 보여준다.",
+        "ESTJ는 ENTJ의 추상적 아이디어를 현실적인 실행 계획으로 끌어내린다.",
+        "서로의 권한을 나누면 비전과 운영이 모두 강한 팀이 된다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 비전을 말할 때 실행 근거를 함께 제시한다.",
+        "ESTJ는 검증된 방식만 정답으로 두지 않는다.",
+        "방향 결정권과 운영 결정권을 분리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ESTJ:ENTP",
+    "originalResearchHash": "6375554905fa6a2a4d73bed826457b87be9ffaf44e34738ca803aefd09166231",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "e474363d2e9bc6e9c3108db24865a11606ea6c004977c528b32d3782b9c8e909",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "856952eb9f9bfe70d22887bfc467d99c2ab8f62271583c2488d181a2a4e7fa03",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사고를 다룰 수 있고 토론을 통해 관계를 발전시킬 수 있다.",
+        "잘 맞으면 ENTP의 아이디어와 ESTJ의 실행력이 강하게 결합된다.",
+        "서로가 상대를 게으르게 만들기보다 더 빠르게 생각하고 움직이게 하는 자극을 줄 수 있다."
+      ],
+      "friction": [
+        "ENTP는 새로운 관점과 가능성 탐색을 중시하고 ESTJ는 검증된 방식과 현실적 실행을 중시한다.",
+        "ESTJ는 ENTP가 규칙과 절차를 가볍게 여긴다고 느끼고, ENTP는 ESTJ가 보수적이라고 느낄 수 있다.",
+        "ENTP의 말실험과 장난 섞인 반박은 ESTJ에게 책임 없는 도발처럼 들릴 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ESTJ에게 기존 방식 밖의 질문을 던져 사고를 확장시킨다.",
+        "ESTJ는 ENTP의 가능성을 실제 결과로 만들도록 구조를 제공한다.",
+        "아이디어와 책임을 함께 묶으면 말뿐인 가능성이 실제 성과로 바뀐다."
+      ],
+      "repairStrategy": [
+        "ENTP는 아이디어마다 최소 실행 책임을 제시한다.",
+        "ESTJ는 새 제안을 작은 실험으로 검증할 여지를 둔다.",
+        "토론의 목적을 이기는 것보다 더 나은 실행안 만들기로 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ESTJ:INFJ",
+    "originalResearchHash": "1020106aea055a5b5db92b41b4cde3e6bb8e5375192a913ba9d35017871c5320",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "8fcba510d201a8781e92bb12166c009462c9e073fedccf53d31c0d723ad463d5",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "4a4c65bcc02c4ae40656203f7508ae08f0ff902736647a4214641bdb25efef24",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로에게 부족한 관점을 제공할 가능성은 있다.",
+        "INFJ는 ESTJ가 더 넓은 관점과 변화 가능성을 보도록 돕고, ESTJ는 INFJ의 이상을 현실에 고정시킨다.",
+        "둘 다 의미 있는 책임을 가볍게 보지 않기 때문에 공통의 대의나 가족 과제가 있으면 협력의 접점이 생긴다."
+      ],
+      "friction": [
+        "INFJ는 관계, 가치, 이상, 변화 가능성에 관심이 많고 ESTJ는 전통과 안정, 일관성을 중요하게 본다.",
+        "ESTJ는 INFJ의 아이디어를 비현실적으로 보고, INFJ는 ESTJ를 정체되어 있거나 상상력이 부족하다고 볼 수 있다.",
+        "ESTJ는 사실과 단계에 집중하고 INFJ는 의미와 큰 그림을 말해 서로 다른 언어를 쓰는 느낌이 든다."
+      ],
+      "positiveInfluence": [
+        "INFJ는 ESTJ에게 가치와 큰 그림을 보여준다.",
+        "ESTJ는 INFJ에게 현실적인 실행 기반과 안정성을 제공한다.",
+        "서로를 존중하면 이상은 실행 계획이 되고 현실은 더 넓은 의미를 얻는다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 INFJ의 이상을 바로 비현실로 규정하지 않는다.",
+        "INFJ는 추상적 의미를 구체적인 행동 요청으로 번역한다.",
+        "비판은 짧게, 의미 대화는 충분한 시간과 안전감 속에서 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ESTJ:INFP",
+    "originalResearchHash": "b3a7cc1583054e1c9d758e616195cdfb58f7910f0b19269b4c530517cf512f42",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "a7d4674f712bc896bbe9bda3c0ce526fd398b7c632b6d55db6fb22ca1fbb6282",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "a325368869a08a7f2c55fc5cae185789ead0de92b523214d5992629a229ec513",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로에게 없는 관점을 제공해 강한 성장 자극이 된다.",
+        "INFP는 ESTJ에게 감정과 가치, 변화 가능성을 보게 하고 ESTJ는 INFP가 이상을 현실적 행동으로 옮기게 돕는다.",
+        "서로의 기준이 낯설어도 관계를 포기하지 않으면 마음과 현실을 함께 다루는 훈련이 된다."
+      ],
+      "friction": [
+        "INFP는 진정성, 가치, 감정적 깊이, 이상을 중요하게 여기고 ESTJ는 안정, 전통, 실용성, 예측 가능성을 중시한다.",
+        "ESTJ는 INFP의 이상을 비현실적으로 보고, INFP는 ESTJ를 딱딱하고 변화에 닫힌 사람으로 볼 수 있다.",
+        "ESTJ의 직설적 비판은 INFP에게 크게 상처가 된다."
+      ],
+      "positiveInfluence": [
+        "INFP는 ESTJ의 삶에 정서적 깊이와 가치 질문을 더한다.",
+        "ESTJ는 INFP의 이상을 일정, 역할, 실행으로 연결한다.",
+        "서로의 언어를 번역하면 마음의 의미와 현실의 책임을 함께 다룰 수 있다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 비판을 하기 전에 INFP의 가치와 감정을 먼저 인정한다.",
+        "INFP는 불편함을 침묵으로 처리하지 말고 구체적 요청으로 바꾼다.",
+        "이상과 실행을 분리하지 말고 작은 행동 계획으로 연결한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ESTJ:ENFJ",
+    "originalResearchHash": "fcca62e79aabdffc93d3a482321fcf5a757e71b7c6a2bcff6de950c158e7f8c0",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "d41ffc64fd4388fec02e853b4a1afd5708a77bf4d44ab04cdf73419c68e7259e",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "14bcc83711b893596ea9a524e0d31ae995a891c5d588e427bcd382172d4731a3",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 외향적이고 사람을 이끄는 힘이 있다.",
+        "공동체를 움직이고 관계망 안에서 역할을 맡는 데 익숙하다.",
+        "가족, 조직, 모임에서 방관자로 있기보다 필요한 역할을 맡아 움직이는 편이라 관계가 빠르게 실제 운영으로 들어간다."
+      ],
+      "friction": [
+        "ENFJ는 사람, 관계, 가치, 변화 가능성에 관심이 많고 ESTJ는 전통, 안정, 구체적 책임을 중시한다.",
+        "ESTJ는 ENFJ를 이상적이고 감정적으로 보고, ENFJ는 ESTJ를 고정적이고 상상력이 부족하다고 볼 수 있다.",
+        "갈등이 생기면 ESTJ는 기준과 책임을 말하고 ENFJ는 사람의 마음과 의미를 말해 같은 문제를 다른 언어로 다룬다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 ESTJ에게 사람들의 감정과 큰 그림을 보게 한다.",
+        "ESTJ는 ENFJ에게 현실적인 안정성과 실행 가능한 절차를 제공한다.",
+        "역할을 나누면 사람을 움직이는 힘과 구조를 세우는 힘이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ENFJ의 감정 리더십과 ESTJ의 구조 리더십을 역할로 나눈다.",
+        "ESTJ는 사람들의 마음이 성과에 영향을 준다는 점을 인정한다.",
+        "ENFJ는 이상을 실행 절차와 책임으로 번역한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ESTJ:ENFP",
+    "originalResearchHash": "8921844fd05cf07da3fb2fcf6e4836375acb322d4903271de03a598a2f6ec667",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "5448ad65b07e5a98547606e80723e562d29114d39ddbb11485730fe7b234511a",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "4f7b95ac7142612629b107ea6252379dbcac8b1266ecdd97f5ddcfeb3c006738",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 외향적 에너지가 있어 초반의 활력은 어느 정도 맞을 수 있다.",
+        "서로에게 큰 그림과 실행이라는 성장 자극을 제공한다.",
+        "서로 다른 방식이지만 관계와 삶을 가만히 두기보다 움직이게 하려는 에너지가 강해 초반에는 추진감이 생긴다."
+      ],
+      "friction": [
+        "ENFP는 진정성, 관계, 이상, 변화 가능성을 중시하고 ESTJ는 전통, 안정, 실용성, 일관성을 중시한다.",
+        "ESTJ는 ENFP를 비현실적이거나 산만하게 보고, ENFP는 ESTJ를 고지식하거나 상상력이 부족하다고 볼 수 있다.",
+        "초반 흥미 뒤에는 안정과 자유 사이의 갈등이 커질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENFP는 ESTJ가 더 큰 그림과 변화 가능성을 보게 한다.",
+        "ESTJ는 ENFP가 아이디어를 현실 속에서 안정적으로 실행하도록 돕는다.",
+        "가능성과 기준이 균형을 이루면 새로운 시도도 실제 결과로 이어진다."
+      ],
+      "repairStrategy": [
+        "ENFP의 아이디어를 모두 자르지 말고 작은 실험으로 검증한다.",
+        "ENFP는 ESTJ의 기준을 사랑 없는 통제로만 보지 않는다.",
+        "자유 시간과 책임 시간을 명확히 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ESTJ:ISTJ",
+    "originalResearchHash": "b54c5cfefbcb9f1af7319a9f1f8a5198276333464d1666c74d33a6f6d44ae202",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "98e3bc76b19ee8d4b3e0594d42a32833e5a86000e2d9d70036130930cecf79f2",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "81ba48a16ef57cf19989f7d86c26af0a9e13d515a0118ee1afefa72252dea9fe",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 실용성, 절차, 정확성, 책임감, 전통을 중시한다.",
+        "약속을 지키고 일을 제대로 처리하는 사람으로 서로를 신뢰하기 쉽다.",
+        "생활비, 가족 행사, 장기 계획처럼 반복 관리가 필요한 영역에서 서로를 안정적인 파트너로 본다."
+      ],
+      "friction": [
+        "ESTJ는 더 빠르고 외향적으로 문제를 처리하려 하고, ISTJ는 조용하고 신중한 속도를 선호한다.",
+        "ESTJ가 대화를 주도하거나 몰아붙이면 ISTJ는 부담을 느낀다.",
+        "ISTJ가 충분히 검토하려는 시간을 ESTJ가 지연으로 해석하면 결정 속도와 책임 압박에서 긴장이 커진다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 ISTJ의 실행 속도를 높이고 외부 조율을 도와준다.",
+        "ISTJ는 ESTJ에게 신중함과 세부 검토의 안정감을 제공한다.",
+        "둘이 속도를 맞추면 빠른 실행과 정확한 검토가 함께 작동한다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 ISTJ에게 생각할 시간을 준다.",
+        "ISTJ는 필요한 불편함을 침묵하지 말고 구체적으로 말한다.",
+        "업무식 점검 외에 감정과 휴식의 시간을 별도로 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ESTJ:ISFJ",
+    "originalResearchHash": "ad11baea37ebbdc51e40fd12a6e423ffe3b9facea82e4c61090e5197b49324c6",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "c44b1899e7cb04e88a7fb9991b7ea86d28497d3e38031e42b52431f8b679e93d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "2777e6c03162f2e0767272c46c69445d0cb3c462316374d8b9e7c85cbc95a90d",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 실용적이고 책임감 있으며 전통, 규칙, 사회적 의무를 중요하게 여긴다.",
+        "일상, 가정, 조직 안에서 안정적인 관계를 만들기 쉽다.",
+        "가계, 가족 행사, 건강한 생활 루틴처럼 꾸준한 관리가 필요한 영역에서 서로의 성실함을 알아본다."
+      ],
+      "friction": [
+        "ESTJ는 직설적이고 감정적으로 거리감이 있지만 ISFJ는 관계의 조화와 정서적 연결을 더 중요하게 여긴다.",
+        "ESTJ의 말은 ISFJ에게 무뚝뚝하거나 상처가 될 수 있고, ISFJ는 비판을 개인적으로 받아들일 수 있다.",
+        "ISFJ가 조용히 서운함을 쌓고 ESTJ가 문제를 해결했다고 생각하면 정서적 거리감이 늦게 드러난다."
+      ],
+      "positiveInfluence": [
+        "ISFJ는 ESTJ에게 말과 행동의 정서적 결과를 알려준다.",
+        "ESTJ는 ISFJ가 감정에만 머무르지 않고 객관적으로 판단하도록 돕는다.",
+        "가정과 생활에서는 안정적 운영과 세심한 돌봄이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 비판 전에 감사와 수고 인정을 먼저 말한다.",
+        "ISFJ는 상처를 쌓아두지 말고 구체적인 말로 전달한다.",
+        "가정 운영과 정서적 돌봄을 모두 공동 책임으로 본다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ESTJ:ESTJ",
+    "originalResearchHash": "609c613d3d84694aab21c10bb35108f8742625cf0fa8438873a28abf264b9de9",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "f7e01df398da5d15c287fdbf8a0be706b82ba1a10bb445a114423e6614ae453f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "f7e01df398da5d15c287fdbf8a0be706b82ba1a10bb445a114423e6614ae453f",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 실용성, 절차, 정확성, 책임 이행을 중시해 초반부터 믿을 수 있는 사람으로 인식하기 쉽다.",
+        "일정, 규칙, 조직 구성, 책임 분담이 명확해져 협업과 생활 운영이 빠르게 정돈된다.",
+        "돈, 시간, 가족 역할처럼 현실적인 주제를 감정싸움보다 관리 과제로 다루는 데 익숙하다."
+      ],
+      "friction": [
+        "각자 경험과 기존 방식에 대한 확신이 강해 서로 다른 기준을 따를 때 논쟁이 격해진다.",
+        "둘 다 감정보다 논리와 결정을 우선해 관계가 업무 협업처럼 건조해질 수 있다.",
+        "서로의 기준이 충돌하면 양보보다 설득과 지시가 먼저 나와 집 안에서도 권한 다툼처럼 번질 수 있다."
+      ],
+      "positiveInfluence": [
+        "서로에게 신뢰 가능한 실행 파트너가 되어 안정적이고 체계적인 관계를 만든다.",
+        "공동 목표가 있을 때 추진력과 책임감이 배가된다.",
+        "돈, 일정, 가족 역할처럼 현실 과제를 빠르게 정리해 관계의 기반을 단단하게 만든다."
+      ],
+      "repairStrategy": [
+        "논쟁에서 이기는 것보다 공동 기준을 새로 합의한다.",
+        "상대의 방식이 틀렸다고 말하기 전에 그 방식이 나온 경험을 듣는다.",
+        "정기적으로 감정 표현과 감사 표현을 생활 규칙처럼 넣는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ESTJ:ESFJ",
+    "originalResearchHash": "d99e235e723a78acce3821b4ac920192ea88966df6681dba372419e532b9b240",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "62998f44351b352111e95ba2bc4dfed4478f17e1a42bbd8cd385a4a9524eabba",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "d870b0ebdbb912ebb804abf8ead12956ecb2a0b6af35bdb32a7f7180951a1457",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 현실적이고 책임감이 있으며 절차와 역할을 중요하게 여긴다.",
+        "공동체, 가족, 조직 안에서 안정적인 관계를 만들기 쉽고, 주변 사람을 방치하지 않으려 한다.",
+        "가정과 주변 관계를 방치하지 않고 각자의 방식으로 챙기려는 생활력이 강하다."
+      ],
+      "friction": [
+        "ESTJ는 문제를 바로잡고 사실을 말하는 데 집중하지만 ESFJ는 관계의 정서적 분위기를 더 중요하게 본다.",
+        "둘 다 외향적이라 말할 기회를 두고 경쟁하듯 대화할 수 있다.",
+        "ESTJ의 직설성은 ESFJ에게 차갑게 느껴질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 ESTJ에게 정서적 배려와 사람 중심 감각을 더해준다.",
+        "ESTJ는 ESFJ에게 기준, 결정, 실행력을 보완해 준다.",
+        "둘이 균형을 잡으면 따뜻한 관계 관리와 현실적 운영이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 피드백 전에 상대의 수고와 감정을 먼저 인정한다.",
+        "ESFJ는 감정적 불편함을 돌려 말하지 말고 구체적으로 표현한다.",
+        "역할과 감정 관리를 모두 가족 운영 항목으로 다룬다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ESTJ:ISTP",
+    "originalResearchHash": "1401a63b3960ee2cdbfb1481beaafaacb6d04c3181abcee2346f85fc2e4bcd50",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "b1cf7047b561a65d93e9361a78ea44cb9bd539f6c0fd1f7ac0e4cf70710083df",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "c844cc722b8b214101ede6af8c208d6c9075bba5c2b5f23ad3ba7b27bc60012b",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 현실적이고 실제 문제 해결과 능력을 중시한다.",
+        "말보다 행동과 결과를 중요하게 보아 실무 상황에서는 서로의 유능함을 알아보기 쉽다.",
+        "감정적 말싸움보다 지금 고쳐야 할 문제를 찾는 쪽으로 에너지가 모일 때 협력이 빠르다."
+      ],
+      "friction": [
+        "ISTP는 자유롭고 즉흥적인 편이고 ESTJ는 구조와 계획을 선호한다.",
+        "ESTJ는 ISTP를 느슨하게 보고, ISTP는 ESTJ를 지나치게 관리하고 간섭한다고 느낀다.",
+        "장기 책임이나 가족 일정에서는 ESTJ가 확정과 보고를 원하고 ISTP가 최소한의 간섭을 원해 피로가 쌓인다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 ISTP에게 지속성과 조직력을 더해준다.",
+        "ISTP는 ESTJ에게 과도한 통제를 내려놓고 상황에 유연하게 반응하는 법을 보여준다.",
+        "실행 기준과 현장 판단을 나누면 현실 문제 해결력이 크게 올라간다."
+      ],
+      "repairStrategy": [
+        "개인 공간과 공동 책임의 범위를 명확히 나눈다.",
+        "ESTJ는 ISTP의 침묵과 자유 욕구를 반항으로 해석하지 않는다.",
+        "ISTP는 중요한 책임은 말없이 넘기지 말고 일정으로 확인한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ESTJ:ISFP",
+    "originalResearchHash": "ee9f78d55d4a868563af6a36f88000cd08084f491c21f2cbc6de7d64d5f27dd7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "4a4276a0317d433063de025b1ba842a859adc1d1934af2af507877e83adeb4f4",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "bc1188a20c703cb9b46e7f443b324deab6e4c94b10b8a2e2cc58c47ea1a576db",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "현실 감각을 어느 정도 공유해 실제 생활의 문제를 함께 다룰 수 있다.",
+        "둘 다 말보다 행동으로 보여주는 면이 있어 초반에는 담백한 매력이 있다.",
+        "생활 속 작은 선택에서 각자 현실적인 감각을 갖고 있어 감정만으로 관계를 끌고 가지 않는다."
+      ],
+      "friction": [
+        "ISFP는 자기 방식과 내면의 감정을 중시하고 ESTJ는 계획, 질서, 책임을 더 중요하게 여긴다.",
+        "ESTJ가 계획을 당연하게 여기면 ISFP는 통제당한다고 느끼고, ISFP의 유연함은 ESTJ에게 무책임하게 보인다.",
+        "ISFP는 ESTJ의 기준 중심 피드백을 차갑게 받아들일 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISFP는 ESTJ에게 개인의 감정과 자유를 존중하는 법을 보여준다.",
+        "ESTJ는 ISFP에게 현실적 책임과 생활 구조를 보완한다.",
+        "강한 기준과 부드러운 감각이 균형을 이루면 생활은 안정되고 관계의 온도도 살아난다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 정답보다 상대의 선택 공간을 남긴다.",
+        "ISFP는 싫은 감정을 침묵으로만 처리하지 말고 구체적으로 말한다.",
+        "공동 규칙과 개인 자유 영역을 따로 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ESTJ:ESTP",
+    "originalResearchHash": "f136b8a3a67be005a750216ae7b9bd18d6faf8334f9f55698c017ed17f4f443e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "eaba39767fb89815571382185573f8019d9fe187a5caa7d5ce57aae2f265d2f1",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "a42a2a3e92e4b4afe4b5b72d194df8ce076cb8df4b4982fb1937e39ce7c722e8",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 현실적이고 실제적인 문제에 관심이 많아 초반에는 말이 잘 통한다.",
+        "직접적인 소통과 활동 에너지가 있어 사람을 만나고 움직이는 데 호흡이 맞는다.",
+        "위기나 현장 문제 앞에서는 오래 고민하기보다 바로 움직이는 편이라 생활의 실행 속도가 빠르다."
+      ],
+      "friction": [
+        "ESTJ는 계획과 질서를 중시하고 ESTP는 자유롭고 즉흥적인 흐름을 선호한다.",
+        "ESTP가 계획을 가볍게 바꾸면 ESTJ는 무책임하게 느끼고, ESTP는 ESTJ를 답답하게 본다.",
+        "돈과 약속에서는 ESTJ가 사전 계획을 요구하고 ESTP가 그때의 상황 판단을 앞세우며 반복적으로 부딪힌다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 ESTJ에게 현재를 즐기고 유연하게 반응하는 법을 보여준다.",
+        "ESTJ는 ESTP에게 책임감과 지속성을 보완해 준다.",
+        "둘이 역할을 나누면 현장 대응력과 장기 운영력이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "절대 바꾸면 안 되는 약속과 자유롭게 바꿀 수 있는 약속을 구분한다.",
+        "ESTJ는 즉흥 변경을 인격 문제가 아니라 스타일 차이로 해석한다.",
+        "ESTP는 중요한 약속만큼은 사전에 확인하고 책임 있게 지킨다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ESTJ:ESFP",
+    "originalResearchHash": "6d3b3c6aa33a2bc691cb3b80568768766df3aef4ef4cdbcbcb400b7b2a3caae9",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "692f4c6a8626d6ca3cbce39c70b26e40d9330271487f48966256ba0f003c83cf",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "78ac7b30a0664f322a8ce6bf06dffbd4a088a7ff1c5ef82fd404abfd960eda34",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 외향적이고 현실 세계의 경험을 중시해 활동과 사람을 통해 가까워지기 쉽다.",
+        "실용적이고 현실적인 일에 관심을 공유하며 비교적 직접적으로 소통한다.",
+        "집 안에만 머무르기보다 밖에서 사람을 만나고 경험을 쌓으며 관계에 활력을 넣는 데 익숙하다."
+      ],
+      "friction": [
+        "ESTJ는 계획과 책임을 중시하고 ESFP는 순간의 재미와 자연스러운 흐름을 더 중시한다.",
+        "ESFP가 즉흥적으로 바꾸는 일은 ESTJ에게 무책임하게 보이고, ESTJ의 엄격함은 ESFP에게 재미없게 보인다.",
+        "돈과 시간을 쓰는 방식에서도 ESTJ는 예산과 목적을 보려 하고 ESFP는 현재의 만족과 분위기를 먼저 보기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 ESTJ가 너무 빡빡해지지 않도록 풀어준다.",
+        "ESTJ는 ESFP가 중요한 일에서는 책임 있게 움직이도록 돕는다.",
+        "즐거움과 책임을 나누면 관계가 활기와 안정성을 동시에 얻는다."
+      ],
+      "repairStrategy": [
+        "즐거움 예산과 책임 예산을 함께 계획한다.",
+        "ESFP는 중요한 약속을 가볍게 바꾸지 않는다.",
+        "ESTJ는 계획 안에 즉흥과 놀이의 여지를 의도적으로 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ESTP:INTJ",
+    "originalResearchHash": "04e9980452d0cbd1e90cb1d7e862cc5149918bfc48e1b141c54fa01f26cdbaab",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "52ff85368acaf47f2213da71cc6da4b77ae4c4862eb33195719f24413f4af260",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "38db4b484df50dbdb38f56cdf023ebae140fbf63fd9db2c6630a204f733501a7",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ESTP는 지금 눈앞의 기회와 사람의 반응을 빠르게 읽고, INTJ는 그 선택이 장기적으로 어떤 결과를 만들지 계산한다.",
+        "둘 다 무능하거나 흐릿한 태도보다 분명한 판단과 실제 성과를 중시한다.",
+        "서로의 독립성을 인정하면 전략과 행동이 빠르게 맞물릴 수 있다."
+      ],
+      "friction": [
+        "INTJ는 계획과 예측을 통해 통제하려 하고, ESTP는 현장에서 즉각적으로 움직이며 기회를 잡으려 한다.",
+        "INTJ의 신중함은 ESTP에게 답답함으로 보이고, ESTP의 위험 감수는 INTJ에게 불필요한 변수로 보일 수 있다.",
+        "갈등이 생기면 INTJ는 장기 손익을 따지고 ESTP는 지금 가능한 행동을 요구하면서 속도가 충돌한다."
+      ],
+      "positiveInfluence": [
+        "INTJ는 ESTP의 행동력을 장기 전략 안에 넣어 주고, ESTP는 INTJ의 계획을 실제 상황에서 실행하게 만든다.",
+        "서로를 무모함과 과도한 계산으로 낙인찍지 않으면 강한 실행 조합이 된다.",
+        "위기 대응과 미래 설계를 나눠 맡을 때 관계의 효율이 높아진다."
+      ],
+      "repairStrategy": [
+        "INTJ는 ESTP의 즉흥성을 무조건 무모함으로 보지 말고 실제 기회인지 함께 검토한다.",
+        "ESTP는 큰 지출이나 위험한 선택 전에 INTJ가 확인할 시간을 준다.",
+        "계획은 INTJ가 세우되 ESTP가 움직일 수 있는 현장 자유를 남겨 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ESTP:INTP",
+    "originalResearchHash": "2e0cb0f6f4fecd98cc4179d3f0a99d0f9cc298ed58ce8009d3de21c56a1cb7f3",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "63d0fafe27d2351e2a6fe67a2becc1a226564bd296f3fbdd4e759526fd49636d",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "cb23ccc5f6218191b3fffeb97713625e7d5efe0d790ff71bb995c4ddbd76a48b",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "INTP는 원리와 가능성을 깊게 탐구하고, ESTP는 그것이 현실에서 어떻게 쓰일지 바로 시험한다.",
+        "둘 다 감정적 의례보다 납득 가능한 설명과 실제 효과를 중요하게 본다.",
+        "서로에게 과한 통제나 형식을 요구하지 않아 자유로운 대화와 행동이 가능하다."
+      ],
+      "friction": [
+        "INTP는 생각을 더 파고들고 싶어 하지만, ESTP는 오래 말하기보다 바로 해보려 한다.",
+        "ESTP는 INTP를 실행이 느리다고 느낄 수 있고, INTP는 ESTP를 충분한 검토 없이 움직인다고 볼 수 있다.",
+        "갈등이 생기면 INTP는 논리적 정합성을 따지고 ESTP는 지금 효과가 있는지를 따지면서 기준이 달라진다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 INTP의 아이디어를 현실의 행동으로 끌어내고, INTP는 ESTP의 즉흥성을 더 정교한 판단으로 다듬어 준다.",
+        "서로의 속도 차이를 인정하면 생각과 실행 사이의 간격이 줄어든다.",
+        "새로운 기술, 취미, 사업 아이디어처럼 실험 가능한 분야에서 좋은 자극을 준다."
+      ],
+      "repairStrategy": [
+        "ESTP는 INTP가 생각을 정리할 시간을 존중하고 즉각 결론을 압박하지 않는다.",
+        "INTP는 중요한 생활 문제를 생각 중이라는 말로만 남기지 말고 결정 시점을 제시한다.",
+        "둘 다 감정 표현이 약해질 수 있으므로 불편함은 농담이나 침묵으로 넘기지 않는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ESTP:ENTJ",
+    "originalResearchHash": "921ea1c6e71801c4947eb0f3ca8bfafbd0a3b9db2e511bcb433251e5dc7de3a3",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "c5d1960bec1560f57a291e7cf461094a7e73de94a3be7fc529b5821d837419c4",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "6c2c1da2f53156d2ec9ee3cc8c64f7ec3a22ca8f44568df75cc12c64c5c6862f",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 에너지가 크고 목표가 보이면 빠르게 움직이는 편이다.",
+        "ENTJ는 구조와 지휘를 만들고, ESTP는 현장의 흐름과 사람의 반응을 읽어 즉시 실행한다.",
+        "성과와 행동을 중시하기 때문에 함께 움직일 때 속도감 있는 파트너십이 된다."
+      ],
+      "friction": [
+        "ENTJ는 장기 전략과 통제된 실행을 원하지만, ESTP는 현장 판단과 즉흥 대응을 더 신뢰한다.",
+        "ENTJ의 강한 지시는 ESTP에게 자유를 막는 압박으로 느껴지고, ESTP의 임기응변은 ENTJ에게 계획을 흔드는 행동으로 보일 수 있다.",
+        "갈등이 생기면 둘 다 물러서기보다 자기 방식의 실행력을 밀어붙이기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 ESTP의 행동력을 더 큰 목표와 성과로 묶어 주고, ESTP는 ENTJ가 놓칠 수 있는 현장 변수를 빠르게 잡아낸다.",
+        "서로를 경쟁자로 보지 않으면 강한 추진 팀이 된다.",
+        "역할이 명확할수록 리더십과 순발력이 동시에 살아난다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 ESTP에게 명령보다 선택 가능한 목표와 권한을 함께 준다.",
+        "ESTP는 즉흥 결정을 할 때 관계와 돈에 미칠 영향을 미리 공유한다.",
+        "둘 다 주도권을 잡으려 할 때는 결정권자와 실행 담당을 사안별로 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ESTP:ENTP",
+    "originalResearchHash": "6e8f499ec47d3e350dce6c5c305bdf4a2fad960167783364c3d8deb519d65c77",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "833e4a031a737746b638db4f0f0174e5e0b67e1bd5e715e86a0286688936c6cd",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "34899f89139164d8db0504b0fb058b00ea44c22e48545ab1fbda2da7cf0dab24",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ENTP는 새로운 아이디어와 논쟁으로 가능성을 만들고, ESTP는 그 가능성을 현장에서 바로 시험한다.",
+        "둘 다 지루한 규칙과 반복보다 변화, 자극, 자유로운 시도를 좋아한다.",
+        "함께 있으면 대화와 행동이 빠르게 이어져 관계가 정체되지 않는다."
+      ],
+      "friction": [
+        "ENTP는 말로 가능성을 확장하고 ESTP는 행동으로 효과를 확인하려 한다.",
+        "ESTP는 ENTP의 긴 논쟁을 피곤하게 느낄 수 있고, ENTP는 ESTP가 생각보다 반응이 앞선다고 느낄 수 있다.",
+        "둘 다 즉흥성이 강해 장기 책임과 감정 정리는 뒤로 밀릴 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ESTP에게 더 넓은 관점과 새로운 선택지를 제공한다.",
+        "ESTP는 ENTP의 아이디어가 현실에서 통하는지 빠르게 검증해 준다.",
+        "재미와 실험이 있는 관계에서는 서로의 활력을 크게 키운다."
+      ],
+      "repairStrategy": [
+        "ENTP는 논쟁이 길어질 때 ESTP가 실제 행동 기준을 원한다는 점을 기억한다.",
+        "ESTP는 바로 움직이기 전에 ENTP가 제기한 리스크를 한 번 검토한다.",
+        "새로운 시도는 예산, 일정, 책임 범위를 먼저 정한 뒤 실행한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ESTP:INFJ",
+    "originalResearchHash": "395ee2e8b90cfe5a9cac94b8382a1a1c2f9695d8727862aa4d53b598edbaa863",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "5ab345f1eb82e8871f7e21871185ac93502a0b1b3bbbe299388a5d249b13f738",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "953872c6f5ff4bedb10a5f58d19fccf156de03ed94e4c1a0363184c43de4e187",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ESTP는 현장의 흐름을 빠르게 읽고, INFJ는 사람과 관계의 숨은 흐름을 깊게 읽는다.",
+        "둘 다 상황을 관찰하는 힘이 있지만, ESTP는 눈앞의 신호에 민감하고 INFJ는 장기적 의미에 민감하다.",
+        "서로를 보완하면 행동력과 통찰이 함께 살아나는 관계가 된다."
+      ],
+      "friction": [
+        "INFJ는 관계의 의미와 정서적 맥락을 중요하게 보지만, ESTP는 현재의 행동과 직접적인 반응을 더 신뢰한다.",
+        "ESTP의 빠른 말과 행동은 INFJ에게 거칠게 느껴질 수 있고, INFJ의 깊은 해석은 ESTP에게 복잡하게 느껴질 수 있다.",
+        "갈등이 생기면 INFJ는 조용히 상처를 해석하고 ESTP는 빨리 분위기를 바꾸려 하면서 문제의 깊이를 다르게 본다."
+      ],
+      "positiveInfluence": [
+        "INFJ는 ESTP가 장기적 방향과 사람의 내면을 더 보게 돕는다.",
+        "ESTP는 INFJ가 현실 속에서 움직이고 경험하도록 끌어낸다.",
+        "서로를 바꾸려 들지 않으면 INFJ의 통찰은 ESTP의 행동에 의미를 붙이고, ESTP의 실행력은 INFJ의 생각을 실제 장면으로 밀어준다."
+      ],
+      "repairStrategy": [
+        "ESTP는 장기적 고민을 장난으로 넘기지 않는다.",
+        "INFJ는 추상적 불안을 구체적인 요청으로 표현한다.",
+        "체험과 대화를 번갈아 배치해 서로의 방식에 시간을 준다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "quadra_style_label_not_pair_relation",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ESTP:INFP",
+    "originalResearchHash": "9489f84fc04b0e11f45e687f134cbce1769e5f401c1554ffd78efe276f94c80a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "75e269c84b07c86ddc6e74883be4446abd65a3522784d4db74874fd544d1d3d0",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "626ddd0a44ca3dbaae251a928ec09d09fa8aceab9ee0d176f1a6b05e2a672677",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 강압적인 규칙보다 자기다운 선택과 자유를 중요하게 여긴다.",
+        "INFP는 내면의 진심과 의미를 지키고, ESTP는 현실의 경험과 행동을 통해 자유를 확인한다.",
+        "서로를 통제하지 않는다는 전제가 있으면 각자의 세계를 흥미롭게 바라볼 수 있다."
+      ],
+      "friction": [
+        "INFP는 말과 행동 뒤의 진심을 확인하고 싶어 하지만, ESTP는 복잡한 의미보다 지금의 반응과 행동을 먼저 본다.",
+        "ESTP의 직설과 장난은 INFP에게 상처가 될 수 있고, INFP의 깊은 감정 설명은 ESTP에게 부담으로 느껴질 수 있다.",
+        "서로 자유를 말하지만 한쪽은 마음의 자유를, 한쪽은 행동의 자유를 원하기 때문에 같은 단어를 다르게 쓰기 쉽다."
+      ],
+      "positiveInfluence": [
+        "INFP는 ESTP에게 행동의 감정적 영향과 관계의 진정성을 보게 한다.",
+        "ESTP는 INFP에게 생각과 감정을 현실의 경험으로 풀어내게 돕는다.",
+        "서로가 속도를 강요하지 않으면 INFP의 깊이와 ESTP의 생동감이 관계에 다른 온도를 더한다."
+      ],
+      "repairStrategy": [
+        "ESTP는 농담과 직설이 상대에게 남긴 감정적 흔적을 확인한다.",
+        "INFP는 상처를 침묵으로 쌓지 말고 구체적인 행동 요청으로 표현한다.",
+        "무거운 대화 뒤에는 함께 움직이는 활동으로 관계의 긴장을 풀어준다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ESTP:ENFJ",
+    "originalResearchHash": "c68f29be425145c618c9b9b3b7b553366d94074bde5994a3a86117ff0f73e08a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "2d89a77cccb2229e5f02a6913edde9a264fdad2c7e1122f1373a7a7a1d1eadc0",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "a4591e42a78343bd5db260f5c33bf6d05f57eaf43d494a42f6d7a93b7da0401a",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 사람과 현장을 움직이는 힘이 있고, 가만히 앉아 있는 관계보다 살아 있는 상호작용을 좋아한다.",
+        "ENFJ는 관계의 방향과 분위기를 만들고, ESTP는 실제 행동과 순발력으로 상황을 바꾼다.",
+        "공동 목표가 분명하면 한쪽은 사람을 묶고 한쪽은 현장을 뚫는 식으로 역할이 나뉜다."
+      ],
+      "friction": [
+        "ENFJ는 마음의 의미와 관계의 방향을 확인하고 싶어 하지만, ESTP는 지금 할 수 있는 행동과 분위기 전환을 먼저 본다.",
+        "ENFJ의 조율과 설득은 ESTP에게 압박으로 느껴질 수 있고, ESTP의 직설과 장난은 ENFJ에게 배려 부족으로 느껴질 수 있다.",
+        "갈등이 생기면 ENFJ는 대화로 회복하려 하고 ESTP는 행동으로 넘기려 하면서 서로가 원하는 해결 방식이 달라진다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 ESTP가 사람들의 마음과 관계의 후속 효과를 더 보게 한다.",
+        "ESTP는 ENFJ가 지나치게 의미를 붙이기보다 지금 행동으로 옮기도록 돕는다."
+      ],
+      "repairStrategy": [
+        "ESTP는 농담과 행동 전에 상대의 감정 반응을 확인한다.",
+        "ENFJ는 감정 요구를 구체적인 행동 요청으로 바꾼다.",
+        "활동적인 데이트와 깊은 대화 시간을 모두 확보한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "quadra_style_label_not_pair_relation",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ESTP:ENFP",
+    "originalResearchHash": "577e2b71b79125d0f622079dff3297c7562918d786a3fd7faa5b08e3d9b063f4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "a98598fa4e1d56416b1bfb4dcbd68d746bb449c8bc3b2d51006a70bb2251ffd7",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "3e221b5e2a3571d5859adf7b9bb078db050833ad9c77c1c2173d6fa58bd16784",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 에너지가 크고 새로운 경험에 빠르게 반응한다.",
+        "ENFP는 가능성과 사람의 마음을 열고, ESTP는 눈앞의 현실과 행동으로 분위기를 움직인다.",
+        "초반에는 서로의 활기와 즉흥성이 잘 맞아 지루하지 않은 관계가 되기 쉽다."
+      ],
+      "friction": [
+        "ENFP는 감정과 가능성의 의미를 중요하게 보지만, ESTP는 지금 통하는 행동과 현실 감각을 더 신뢰한다.",
+        "ESTP의 직설적이고 장난스러운 반응은 ENFP에게 마음을 가볍게 다루는 태도로 느껴질 수 있고, ENFP의 감정적 해석은 ESTP에게 과한 의미 부여로 보일 수 있다.",
+        "둘 다 즉흥성이 있어 즐거움은 빠르지만 장기 책임과 조용한 감정 점검은 쉽게 밀릴 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 ENFP가 생각과 감정 속에서 맴돌 때 실제 경험과 행동으로 나오게 만든다.",
+        "ENFP는 ESTP가 순간의 재미만 보지 않고 사람의 마음과 관계의 의미를 생각하게 돕는다.",
+        "서로의 속도를 존중하면 활기와 정서적 풍부함이 함께 생긴다."
+      ],
+      "repairStrategy": [
+        "ESTP는 농담과 직설이 ENFP에게 상처가 될 수 있음을 알고 중요한 대화에서는 톤을 낮춘다.",
+        "ENFP는 ESTP에게 감정의 의미를 길게 설명하기보다 지금 필요한 행동을 짧게 요청한다.",
+        "즐거운 활동만으로 갈등을 덮지 말고, 중요한 문제는 짧고 직접적인 대화로 마무리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ESTP:ISTJ",
+    "originalResearchHash": "6f8fe026b038a95db8dbc3a637b2805271638cc8f6467bda01342b7c8eeba28f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "35283fcc0e8e9a347475e4679de6c0623dbcc6c2a86ff6fea9fa1ce07bef5850",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "3ed2b3159d0fd78588677673f1b2960ae10bd9810806ef43b5c85db9f6ca5a34",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 현실 감각이 강하고 말보다 실제 책임과 행동을 중시한다.",
+        "ISTJ는 검증된 절차로 안정성을 만들고, ESTP는 현장 감각으로 빠르게 문제를 해결한다.",
+        "공동의 목표가 분명하면 실무적으로는 서로의 능력을 인정하기 쉽다."
+      ],
+      "friction": [
+        "ISTJ는 계획과 약속을 지켜야 안심하지만, ESTP는 상황이 바뀌면 바로 방향을 바꾸는 편이다.",
+        "ESTP는 ISTJ를 답답하고 보수적으로 볼 수 있고, ISTJ는 ESTP를 충동적이고 예측하기 어렵다고 느낄 수 있다.",
+        "갈등이 생기면 ISTJ는 기준을 강화하고 ESTP는 자유와 융통성을 요구하면서 부딪힌다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 ESTP에게 장기 책임과 안정적인 관리 방식을 제공한다.",
+        "ESTP는 ISTJ에게 돌발 상황에서의 유연성과 빠른 현장 대응을 알려 준다.",
+        "절차와 즉흥의 역할을 나누면 현실 문제에 강한 조합이 된다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 ESTP의 즉흥성을 모두 문제로 보지 말고 안전한 범위 안의 선택지를 열어 둔다.",
+        "ESTP는 약속 변경이 필요할 때 미리 알리고 대안을 제시한다.",
+        "돈과 일정은 장기 고정 항목과 자유 지출 항목을 분리해 관리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ESTP:ISFJ",
+    "originalResearchHash": "86b086e8f0d731d8330f54442ab4eb3e42922e7d102a8c839f0b179f1243f7f2",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "ea7eba76a7902b1020a75b809b6a4dce4712c46eca021097309573857a55c93b",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "ec1679edbd76a27151de162502500e0598f5277514ba21dfb738c66686ad71e3",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ISFJ는 따뜻한 돌봄과 안정된 루틴을 만들고, ESTP는 활력과 현실 대응력을 제공한다.",
+        "두 사람 모두 말뿐인 약속보다 실제 행동으로 드러나는 도움을 중요하게 볼 수 있다.",
+        "ISFJ의 세심함과 ESTP의 순발력이 맞으면 생활 속 문제를 빠르게 해결하면서도 정서적 기반을 만들 수 있다."
+      ],
+      "friction": [
+        "ISFJ는 예측 가능한 관계와 배려 있는 표현을 원하지만, ESTP는 자유로운 교류와 즉각적인 행동을 선호한다.",
+        "ESTP의 장난과 직설은 ISFJ에게 가볍거나 무례하게 느껴질 수 있고, ISFJ의 걱정과 확인은 ESTP에게 간섭으로 느껴질 수 있다.",
+        "갈등이 생기면 ISFJ는 서운함을 쌓아 두고 ESTP는 분위기를 바꾸려 하면서 문제의 깊이가 달라진다."
+      ],
+      "positiveInfluence": [
+        "ISFJ는 ESTP에게 관계를 오래 지키는 세심함과 책임감을 알려 준다.",
+        "ESTP는 ISFJ가 걱정에만 머물지 않고 더 넓은 경험을 하도록 움직이게 만든다.",
+        "서로의 선의를 인정하면 안정과 활력이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESTP는 ISFJ가 중요하게 여기는 약속과 기념일을 가볍게 넘기지 않는다.",
+        "ISFJ는 ESTP의 외부 활동을 곧바로 관계 소홀로 해석하지 말고 필요한 안정 기준을 말한다.",
+        "생활비와 자유 활동비를 분리해 돌봄과 즐거움이 서로를 침범하지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ESTP:ESTJ",
+    "originalResearchHash": "77f5e4c80664cffac42fc9ce9950b468dc5a5c83723c8dd978a36a17a307e552",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "a42a2a3e92e4b4afe4b5b72d194df8ce076cb8df4b4982fb1937e39ce7c722e8",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "eaba39767fb89815571382185573f8019d9fe187a5caa7d5ce57aae2f265d2f1",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 현실적이고 활동적인 문제 해결에 강하다.",
+        "ESTJ는 구조와 책임을 세우고, ESTP는 현장 상황을 읽어 빠르게 움직인다.",
+        "공동의 목표가 있으면 말보다 결과로 서로를 인정하며 강한 추진력을 만들고, 위기 상황에서도 바로 움직이는 실행 감각이 잘 맞는다."
+      ],
+      "friction": [
+        "ESTJ는 계획과 규칙을 통해 성과를 만들고, ESTP는 즉흥성과 융통성으로 기회를 잡는다.",
+        "ESTJ의 지시는 ESTP에게 통제로 느껴질 수 있고, ESTP의 자유로운 방식은 ESTJ에게 무책임하거나 위험하게 보일 수 있다.",
+        "둘 다 에너지가 강해 갈등이 생기면 누가 주도권을 잡을지 두고 정면충돌하기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 ESTP에게 지속성과 책임 구조를 제공하고, ESTP는 ESTJ에게 현장의 빠른 감각과 사교적 유연성을 제공한다.",
+        "서로의 권한이 분명하면 성과를 내는 힘이 크다.",
+        "실무, 사업, 생활 운영에서 강한 실행형 조합이 될 수 있다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 ESTP에게 해야 할 일만 지시하지 말고 처리 방식의 자유를 준다.",
+        "ESTP는 큰 결정을 즉흥적으로 처리하기 전에 ESTJ와 기준을 공유한다.",
+        "주도권 싸움이 생기면 사안별 책임자를 정하고 상대 영역에는 과도하게 개입하지 않는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ESTP:ESFJ",
+    "originalResearchHash": "fa7446f515b907d3079081532902c3ea23071d2c54ef48e8bdcf83f1526fd913",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "0920a9497186f64e048104b5c6d9438e790fa65296f735a0d0dfaf711ccfcd42",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "12b91028b2cc871720e8c51ca0e65f39559eed458bd187d9c9e9ed52571e76fc",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 외부 사람과 상황에 빠르게 반응하고 현실적인 도움을 줄 수 있다.",
+        "ESFJ는 관계의 조화와 돌봄을 만들고, ESTP는 분위기를 띄우고 현장에서 문제를 해결한다.",
+        "사회적 활동과 사람 만남이 많은 환경에서는 서로의 활력을 이해하기 쉽다."
+      ],
+      "friction": [
+        "ESFJ는 예의, 반응, 관계의 안정감을 중요하게 보지만, ESTP는 자유로운 행동과 즉각적인 즐거움을 더 중시한다.",
+        "ESTP의 직설과 장난은 ESFJ에게 무심함으로 느껴질 수 있고, ESFJ의 기대와 확인은 ESTP에게 부담으로 느껴질 수 있다.",
+        "갈등이 생기면 ESFJ는 감정을 풀고 관계를 회복하려 하고, ESTP는 분위기를 바꾸거나 행동으로 넘어가려 하면서 충돌한다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 ESTP에게 관계를 세심하게 유지하는 방법을 알려 준다.",
+        "ESTP는 ESFJ가 타인의 기대에만 묶이지 않고 더 자유롭게 행동하도록 자극한다.",
+        "사교성과 현실 해결력이 합쳐지면 주변 사람을 움직이는 힘이 커진다."
+      ],
+      "repairStrategy": [
+        "ESTP는 ESFJ가 중요하게 여기는 표현과 예의를 작게라도 꾸준히 지킨다.",
+        "ESFJ는 ESTP의 자유로운 교류를 모두 위험 신호로 보지 말고 필요한 경계만 명확히 말한다.",
+        "외부 약속, 가족 행사, 둘만의 시간을 달력에 나누어 관계 안정감을 만든다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ESTP:ISTP",
+    "originalResearchHash": "df57c079b9535fef808676d16503bea05931167252ecbc3fc0faeea6216b8cf8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "aa178379a840e48686e96d0e8b98ae29604682f05d5d4382fcf81d60b9146e62",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "3b598a6ba88682e67bb16c2cfd71e91c8e1589e3aa8dcbbf27b0bcc5eea9251d",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 말보다 행동과 현장 판단을 신뢰한다.",
+        "자유로운 개인 시간과 간섭 없는 관계를 편안하게 느끼며, 애정을 과한 설명보다 함께 움직이는 방식으로 확인한다.",
+        "위기나 돌발 상황에서 감정적으로 흔들리기보다 바로 처리하려는 공통점이 있어 함께 있으면 실전 호흡이 빠르다."
+      ],
+      "friction": [
+        "ESTP는 더 넓은 사람 만남과 즉각적인 활동을 원하지만, ISTP는 필요할 때만 움직이고 자기 공간을 지키려 한다.",
+        "ESTP의 장난과 속도는 ISTP에게 과한 자극이 될 수 있고, ISTP의 무덤덤함은 ESTP에게 반응 부족으로 보일 수 있다.",
+        "둘 다 감정 대화를 미루면 문제는 해결된 것처럼 보여도 관계 온도는 낮아질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 ISTP를 더 넓은 활동과 사람 관계로 끌어낸다.",
+        "ISTP는 ESTP에게 과한 자극을 줄이고 기술적 정확성과 침착함을 보완한다.",
+        "둘이 서로의 자유도를 존중하면 현장 대응력과 문제 해결 속도가 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "함께 하는 활동과 혼자 쉬는 시간을 모두 일정에 둔다.",
+        "감정 문제를 농담이나 회피로 넘기지 말고 짧게라도 확인한다.",
+        "공동 책임은 말이 아니라 체크 가능한 행동으로 정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "quadra_style_label_not_pair_relation",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ESTP:ISFP",
+    "originalResearchHash": "95ecddb9a174328cb4eeaf6822ee828ff1112aec33923ae31009848313153954",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "186b1abd20140fcd5e54d6f5543c860721bb90584b8bfb3db736e839b2a9eab7",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "68efa0e9386ea5ee2aa947e81775dd2acb08b80b324ef2d38fa2db0e8fb9fe4f",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 지금의 경험과 직접 느끼는 현실에 강하게 반응한다.",
+        "ISFP는 조용한 진심과 미적 감각으로 관계를 다루고, ESTP는 활동성과 순발력으로 상황을 움직인다.",
+        "강압적인 관계보다 자유롭고 편안한 분위기를 선호한다는 점에서 초반 접점이 생긴다."
+      ],
+      "friction": [
+        "ESTP는 즉각적인 행동과 장난스러운 교류를 즐기지만, ISFP는 자기 감정과 개인 공간을 섬세하게 지키려 한다.",
+        "ESTP의 직설은 ISFP에게 상처가 될 수 있고, ISFP의 침묵과 거리두기는 ESTP에게 이유 없는 벽처럼 느껴질 수 있다.",
+        "둘 다 갈등을 깊게 말로 정리하기보다 행동이나 회피로 넘기면 오해가 커진다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 ISFP가 더 많은 경험과 행동으로 자기 감각을 펼치게 돕는다.",
+        "ISFP는 ESTP가 순간의 자극만 보지 않고 사람의 진심과 상처를 고려하게 만든다.",
+        "서로의 자유를 존중하면 감각적 즐거움과 정서적 섬세함이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESTP는 ISFP의 조용한 반응을 무시하지 말고 상처 여부를 확인한다.",
+        "ISFP는 불편할 때 갑자기 닫히기보다 짧게라도 이유를 말한다.",
+        "활동적인 데이트와 조용한 회복 시간을 번갈아 배치해 에너지 차이를 줄인다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ESTP:ESTP",
+    "originalResearchHash": "387e93dc79252dd74ec02e6f582deda31b47af056600f241d75fc1e12d83f84d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "3d216232fe216880ffff6163ea20715e8bb15704b70739ac570964ba4f57af6c",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "3d216232fe216880ffff6163ea20715e8bb15704b70739ac570964ba4f57af6c",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 현장 감각, 순발력, 자유로운 활동성을 중요하게 여긴다.",
+        "말보다 행동이 빠르고, 상황이 바뀌면 계획보다 즉각적인 판단으로 움직이는 편이다.",
+        "함께 있으면 지루함이 적고 활동, 여행, 운동, 사람 만남에서 빠르게 친해질 수 있다."
+      ],
+      "friction": [
+        "둘 다 자극과 자유를 좋아해 장기 책임과 안정적 루틴이 뒤로 밀릴 수 있다.",
+        "갈등이 생기면 직설과 장난으로 넘기려 하다가 감정이 제대로 소화되지 않을 수 있다.",
+        "돈과 위험 감수에서 서로를 말리기보다 함께 달릴 수 있어 현실 점검 장치가 필요하다."
+      ],
+      "positiveInfluence": [
+        "서로의 활동성과 즉흥성을 이해하기 때문에 답답한 통제가 적다.",
+        "함께 위기나 돌발 상황을 처리할 때 빠른 행동력이 나온다.",
+        "비슷한 장단점을 보며 자신의 충동성과 자유 욕구를 객관적으로 볼 수 있다."
+      ],
+      "repairStrategy": [
+        "큰 지출과 위험한 선택은 즉흥 결정하지 않고 하루 이상 확인 시간을 둔다.",
+        "감정 문제가 생겼을 때 농담으로 넘기지 말고 서로의 불편한 지점을 짧게 말한다.",
+        "자유로운 활동과 가정의 고정 책임을 구분해 반복되는 루틴을 만든다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ESTP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ESTP:ESFP",
+    "originalResearchHash": "45a9e55cce05aa975e39a8edfbda7ce10ae46494840afc1adb2179b5a0f664f3",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "901a0b1de84c836b5c150fd295ac437fde8962bcc41c73c62d4b1a186eeb35e5",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "7817acf34e0e48673391c6d3e3a6564219a69fbca107e2c8bdf66be210a0d8c9",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 현재의 경험, 사람과의 교류, 몸으로 느끼는 즐거움에 강하게 반응한다.",
+        "ESTP는 현장의 기회와 문제 해결을, ESFP는 분위기와 감정의 생동감을 빠르게 살린다.",
+        "함께 있으면 활동성과 사교성이 커져 주변까지 밝고 역동적인 분위기가 된다."
+      ],
+      "friction": [
+        "ESTP는 문제를 빠르게 해결하고 장난스럽게 넘기려 하지만, ESFP는 감정의 반응과 분위기를 더 중요하게 본다.",
+        "ESTP의 직설은 ESFP에게 상처가 될 수 있고, ESFP의 감정 표현은 ESTP에게 과한 반응처럼 느껴질 수 있다.",
+        "둘 다 현재의 재미와 사람 만남을 좋아해 돈, 일정, 장기 책임이 뒤로 밀릴 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 ESTP에게 사람의 감정과 즐거운 표현을 더해 준다.",
+        "ESTP는 ESFP가 분위기에 휩쓸릴 때 현실적인 판단과 빠른 해결책을 제공한다.",
+        "서로의 활동성을 긍정적으로 쓰면 밝고 강한 현장형 커플이 된다."
+      ],
+      "repairStrategy": [
+        "ESTP는 ESFP의 감정 표현을 과장으로만 보지 말고 관계의 신호로 받아들인다.",
+        "ESFP는 ESTP의 직설을 전부 애정 부족으로 해석하지 말고 필요한 표현을 구체적으로 요청한다.",
+        "즐거운 활동과 생활 책임을 같은 캘린더에 넣어 재미와 안정이 따로 놀지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:INFJ:INTJ",
+    "originalResearchHash": "778bbf144d2a99c6ed79422a46d2475337ace6587a16209808d76360a56be1c5",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "588a7e6213e213faeca707ea4f7a017f4fd53b5e4f62d6b6887d70c98c56a1bf",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "c948ae01b5aa0f13cf9f6fd4093afe520bb5544f07eaf87460f7c0cbbf26ce41",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 겉으로 드러난 분위기보다 안쪽의 패턴과 장기 방향을 읽으려 한다.",
+        "의미 없는 소모적 관계보다 자신의 세계관과 목표에 맞는 깊은 연결을 선호한다.",
+        "혼자 생각을 정리하는 시간이 필요하다는 점을 서로 비교적 자연스럽게 이해한다."
+      ],
+      "friction": [
+        "INFJ는 사람의 감정과 관계의 의미를 중심으로 판단하지만, INTJ는 구조적 타당성과 전략적 효율을 더 우선한다.",
+        "INTJ의 건조한 분석은 INFJ에게 차갑게 느껴질 수 있고, INFJ의 정서적 고려는 INTJ에게 판단을 흐리는 요소처럼 보일 수 있다.",
+        "둘 다 자기 확신이 강해지면 조용하지만 단단하게 물러서지 않는 대립이 생긴다."
+      ],
+      "positiveInfluence": [
+        "INTJ는 INFJ의 통찰을 더 명확한 전략과 판단 기준으로 정리하게 돕는다.",
+        "INFJ는 INTJ가 사람의 감정과 신뢰를 변수로 포함하도록 시야를 넓혀 준다.",
+        "서로의 깊이를 인정하면 이상과 전략이 함께 정교해진다."
+      ],
+      "repairStrategy": [
+        "INFJ는 INTJ의 짧은 표현을 애정 부족으로 단정하기보다 행동 근거를 함께 본다.",
+        "INTJ는 해결책만 제시하지 말고 INFJ가 느낀 감정을 한 번 요약해 준다.",
+        "중요한 대화는 즉흥 감정싸움보다 각자 생각을 정리한 뒤 시간과 주제를 정해 진행한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:INFJ:INTP",
+    "originalResearchHash": "bb45425bc96f29672fc1fa5f68c4aebedc98607a96637e471f9880e8c0617e1d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "f542efda509cfe4d1d15b6bc574fe829e7b12119fd2aaed86089f489031a7a20",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "c65ff13e2f26d1b50a95645b36d6f127feabb0da4250b62701dbf89c8e4e9134",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 깊은 통찰과 추상적 주제를 탐험하는 데 강하게 끌린다.",
+        "INTP는 INFJ의 독특한 통찰을 매력적으로 느끼고, INFJ는 자신의 아이디어가 지적으로 존중받는 데 안도감을 느낀다.",
+        "INFJ의 깊이와 INTP의 구조 분석이 맞물리면 서로의 내면과 생각을 더 선명하게 정리해 주는 관계가 된다."
+      ],
+      "friction": [
+        "INFJ는 감정과 관계의 의미를 함께 다루려 하고, INTP는 논리와 개념 검증을 우선한다.",
+        "INTP의 무심한 분석은 INFJ에게 정서적 거리감으로 느껴질 수 있다.",
+        "INFJ가 너무 많은 감정적 의미를 요구하면 INTP는 압박감을 느낀다."
+      ],
+      "positiveInfluence": [
+        "INTP는 INFJ의 통찰에 논리적 구조를 제공하고, INFJ는 INTP에게 인간적 의미와 정서적 깊이를 열어준다.",
+        "둘이 함께할 때 새로운 깊이의 통찰과 탐구 주제가 열린다."
+      ],
+      "repairStrategy": [
+        "INTP는 해결책보다 감정 확인이 먼저 필요한 순간을 구분한다.",
+        "INFJ는 INTP의 침묵을 애정 부족으로 단정하지 않는다.",
+        "깊은 대화 시간과 각자의 혼자 있는 시간을 모두 일정에 넣는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:INFJ:ENTJ",
+    "originalResearchHash": "0da68d00323371a9b05ab9cf28078c06d2e056291f6180dcfc1b2ba0a4511a4f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "ff70dcf9818480fa94d6d39ab1d80c1a25c619312886773a66aa93c1ea929ebb",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "5eb294b19d64bb416e282d099078bc0c975c117b03c20a172a23ca490c0a88a2",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 미래 방향, 성장, 의미 있는 목표에 강하게 반응한다.",
+        "INFJ는 사람과 가치의 방향을 읽고, ENTJ는 목표를 현실의 구조와 실행으로 밀어붙인다.",
+        "둘 다 가벼운 잡담보다 핵심 있는 대화와 발전 가능성이 있는 관계에서 에너지를 느낀다."
+      ],
+      "friction": [
+        "ENTJ의 빠른 판단과 직설적인 압박은 INFJ에게 정서적 안전을 흔드는 말로 들릴 수 있다.",
+        "INFJ의 우회적인 표현과 신중한 감정 확인은 ENTJ에게 속도가 느리고 결론이 불분명해 보일 수 있다.",
+        "갈등이 생기면 ENTJ는 효율과 해결을 요구하고, INFJ는 관계의 의도와 상처를 먼저 다루려 하면서 우선순위가 엇갈린다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 INFJ의 비전을 실행 가능한 목표와 선택으로 바꾸는 힘을 준다.",
+        "INFJ는 ENTJ가 놓치기 쉬운 사람의 반응, 신뢰, 정서적 여파를 읽어 준다.",
+        "서로를 고치려 하지 않으면 큰 방향성과 사람을 움직이는 감각이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 비판을 말하기 전에 관계를 해치려는 의도가 없다는 점을 분명히 해야 한다.",
+        "INFJ는 상처의 의미만 설명하지 말고 원하는 행동 변화와 결정 기준을 함께 제시한다.",
+        "큰 결정은 ENTJ가 일정과 구조를 잡고 INFJ가 사람과 관계 영향도를 점검하는 방식으로 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:INFJ:ENTP",
+    "originalResearchHash": "f2b36aea5bf9678ada2023f191d12332dca39942929fc6af3c889c344f33adb0",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "f98ecc5a611179b860643540f8584f3985b3688f69674d97bfbdbbc1c37411dc",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "bb60b61c385a3f88801ccbe64b43db181694f1fdfd83920104659aff8ba2ed3b",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 유형 모두 창의적이고 독립적이며 열정적인 면이 있다.",
+        "INFJ의 직관과 감성은 ENTP의 아이디어를 의미 있는 방향으로 이끌 수 있다.",
+        "ENTP의 창의성과 논리적 사고는 INFJ의 비전을 구체화하고 실행 가능한 계획으로 발전시킨다."
+      ],
+      "friction": [
+        "ENTP의 분석적 접근과 INFJ의 감성적 직관 사이에서 균형이 필요하다.",
+        "ENTP의 직설과 장난은 INFJ에게 가벼운 말이 아니라 정서적 안전을 흔드는 신호로 들릴 수 있다.",
+        "INFJ가 오래 참다 내면의 비판성을 드러내면 ENTP도 예상보다 강한 반응에 놀라며 논쟁의 온도가 급격히 오른다."
+      ],
+      "positiveInfluence": [
+        "두 사람은 무한한 가능성을 탐구하며 큰 시너지를 만들 수 있다.",
+        "ENTP는 INFJ에게 새로운 아이디어와 추진력을 주고, INFJ는 ENTP에게 방향성과 의미를 제공한다."
+      ],
+      "repairStrategy": [
+        "ENTP는 INFJ의 감정을 토론거리로만 다루지 않는다.",
+        "INFJ는 ENTP의 질문과 반론을 애정 부족으로 단정하지 않는다.",
+        "아이디어 회의와 감정 대화의 시간을 따로 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:INFJ:INFJ",
+    "originalResearchHash": "752f9a6c517c18cf4fcd652881ed8595d7bd55cb223e62c1b401953dbf17878b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "0e5b312a541488f503381a5ca6030bd0a43211421c16736b5e9ebdaf505bddab",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "0e5b312a541488f503381a5ca6030bd0a43211421c16736b5e9ebdaf505bddab",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 겉으로 많은 것을 드러내기보다 관계의 의미와 방향을 오래 생각한다.",
+        "말의 양보다 의도와 맥락을 중시하기 때문에 깊은 대화가 시작되면 빠르게 같은 결을 알아본다.",
+        "서로의 조용한 집중, 예민한 직감, 사람을 함부로 판단하지 않으려는 태도를 편안하게 받아들인다."
+      ],
+      "friction": [
+        "둘 다 갈등을 크게 키우고 싶어 하지 않기 때문에 불편함을 오래 눌러 두다가 한 번에 멀어질 수 있다.",
+        "상대가 알아서 내 마음을 읽어 주기를 기대하면, 실제 대화보다 해석과 추측이 앞서기 쉽다.",
+        "비슷한 이상과 기준을 가진 만큼 현실적인 실행, 돈, 생활 분담을 누가 먼저 정리할지가 흐려질 수 있다."
+      ],
+      "positiveInfluence": [
+        "서로의 감정적 피로를 잘 이해하고 조용한 회복 시간을 존중해 줄 수 있다.",
+        "한 사람이 비전을 말하면 다른 사람이 그 의미를 더 섬세하게 다듬어 주며 관계의 방향성을 함께 깊게 만든다.",
+        "비슷한 민감함을 약점으로 보지 않고 보호해 주면 심리적으로 매우 안전한 관계가 된다."
+      ],
+      "repairStrategy": [
+        "서운한 일을 해석으로만 남기지 말고 하루 안에 짧게 말하는 규칙을 둔다.",
+        "생활비, 일정, 가족 의무처럼 현실 항목은 감정 대화와 분리해서 문서나 캘린더로 정리한다.",
+        "둘 다 혼자 회복할 시간이 필요하므로 침묵을 거절로 해석하지 않되, 돌아올 시간을 함께 약속한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:INFJ:INFP",
+    "originalResearchHash": "77d3e3932123c674d7191409a739b410acd667d6fb287e984d9a75614cc02027",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "ef22cfc0099e3112fdebc0a72413b411223357c13070405b42430067654a6481",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "1af171fa69178cf3bdb28dc9f081dbc71401a8732a8254b256224d0dc045cf9d",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "겉으로는 둘 다 이상주의적이고 감성적이며 조용해 보여 비슷하게 느껴진다.",
+        "둘 다 깊은 의미와 진정성을 중시하고, 가벼운 관계보다 마음이 안전한 관계를 원한다.",
+        "서로의 내면을 조심스럽게 대하면 말보다 분위기와 가치관에서 빠르게 공감이 생긴다."
+      ],
+      "friction": [
+        "겉으로는 비슷해 보여도 관계를 판단하는 내면 기준이 달라 오해가 생기기 쉽다.",
+        "초반에는 잘 맞는 듯해도 관계가 진전될수록 INFJ는 관계의 방향과 조화를 보려 하고, INFP는 개인의 진정성과 내면 가치를 우선한다.",
+        "둘 다 상처를 바로 터뜨리기보다 안으로 해석하는 편이라, 말하지 않은 기대가 쌓이면 실망이 깊어진다."
+      ],
+      "positiveInfluence": [
+        "서로의 이상과 감수성을 존중하면 정서적 깊이와 창작적 영감을 나눌 수 있다.",
+        "INFJ는 INFP에게 방향성과 구조를, INFP는 INFJ에게 개인적 진정성의 중요성을 일깨울 수 있다."
+      ],
+      "repairStrategy": [
+        "비슷하다는 전제를 내려놓고 실제 의사결정 기준을 확인한다.",
+        "INFJ는 조화를 위해 상대를 유도하려는 태도를 줄인다.",
+        "INFP는 자기 감정만이 아니라 관계 전체의 흐름도 설명한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:INFJ:ENFJ",
+    "originalResearchHash": "da706ee61e63b1d95c3337ff09598fb4d0e1f749657e73e70a1215486ac15ce7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "fcce50086087c3066d2126251c2da437879e03ea925baaaad82592b10909faba",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "c92ef7e96364ac5ba69e404cedc3dccce73a4fbf941dfcc03504a923a5ca3497",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "비슷한 신념과 이상을 공유해 좋은 친구가 되기 쉽다.",
+        "사회와 사람에 대한 관심이 높고, 관계와 대의를 중요하게 본다.",
+        "같은 문제를 약간 다르게 이해해 서로의 사고방식이 흥미롭게 느껴지며, 깊이와 표현의 방향이 다를 뿐 마음의 결은 닮아 있다."
+      ],
+      "friction": [
+        "ENFJ는 넓은 인간관계와 대의에 더 초점이 맞고, INFJ는 대의와 선악 구분을 더 조심스럽게 다룬다.",
+        "두 사람 모두 서로를 이기적이라고 볼 수 있다.",
+        "ENFJ의 외향적 추진력은 INFJ에게 과도한 사회적 압박이 될 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 INFJ의 비전을 사람들 앞에 펼치게 돕고, INFJ는 ENFJ에게 더 깊은 성찰과 조심스러운 판단을 제공한다.",
+        "INFJ는 ENFJ가 놓치기 쉬운 내면의 의미를 짚어주고, ENFJ는 INFJ가 머릿속에만 둔 통찰을 관계와 행동으로 꺼내게 만든다."
+      ],
+      "repairStrategy": [
+        "ENFJ는 INFJ를 계속 밖으로 끌어내려 하지 않는다.",
+        "INFJ는 ENFJ의 넓은 관계망을 가벼움으로 평가하지 않는다.",
+        "대의와 개인 회복 시간을 모두 존중하는 생활 리듬을 만든다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:INFJ:ENFP",
+    "originalResearchHash": "2e1daf624c60d265e6853a2f2a5b1d2ab34191f2c1b4b5bc0c14984d0e880234",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "7eff45c613cbea02e8e00641ff5ea8884a09a964a05a04bb74501092b75a78f0",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "213d96b3a70731884e8097152689d742f016c829271371e640be339ae4b8f5b6",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 유형 모두 깊은 공감과 사람에 대한 관심을 공유한다.",
+        "얕은 관계보다 의미 있고 끈끈한 관계를 선호하며, 서로의 진심을 확인할 때 빠르게 가까워진다.",
+        "ENFP의 활력은 INFJ를 닫힌 해석 밖으로 끌어내고, INFJ의 안정감은 ENFP가 흩어진 감정을 정리하게 돕는다."
+      ],
+      "friction": [
+        "ENFP의 빠른 활동성과 넓은 관심사는 INFJ에게 피로가 될 수 있다.",
+        "INFJ의 조용한 정리와 조직성은 ENFP에게 답답함으로 보일 수 있다.",
+        "ENFP가 즉흥적으로 움직이면 INFJ는 정서적 안전감이 흔들린다고 느낄 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENFP는 INFJ에게 새로운 경험과 재미를 제공하고, INFJ는 ENFP에게 안정감과 균형을 제공한다.",
+        "서로 다른 사교 스타일을 배우며 성장과 발전을 촉진한다.",
+        "가족과 직장에서 상호 보완적인 역할을 수행할 수 있다."
+      ],
+      "repairStrategy": [
+        "ENFP는 INFJ에게 혼자 회복할 시간을 보장한다.",
+        "INFJ는 ENFP의 새 경험 욕구를 무질서로만 보지 않는다.",
+        "관계의 핵심 약속과 자유로운 활동 영역을 나누어 정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:INFJ:ISTJ",
+    "originalResearchHash": "f62745ed5364d557085bc93490b28b7229edf286c5d62ee68521658d7850baf1",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "ac93723ce3512f2005be749bf6f70f767b08e9387af2dc0e85ea87465768c55a",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "e14b21308426f8f51817c5b4600d8b2e3f1e4034cf7d6473de2b6228c6699257",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 가볍고 즉흥적인 관계보다 신뢰, 책임, 오래 갈 수 있는 안정감을 중요하게 여긴다.",
+        "INFJ는 사람과 미래의 의미를 읽고, ISTJ는 검증된 사실과 생활의 질서를 통해 관계를 안정시킨다.",
+        "둘 다 쉽게 마음을 열지 않기 때문에 한 번 신뢰가 생기면 관계를 함부로 흔들지 않는다."
+      ],
+      "friction": [
+        "INFJ는 말 뒤의 의도와 가능성을 보려 하지만, ISTJ는 확인 가능한 사실과 현재의 책임을 우선한다.",
+        "ISTJ의 현실적 지적은 INFJ에게 차갑게 느껴질 수 있고, INFJ의 상징적 표현은 ISTJ에게 모호하고 비현실적으로 보일 수 있다.",
+        "갈등이 생기면 INFJ는 관계의 의미를 묻고 ISTJ는 무엇을 어떻게 고칠지 묻기 때문에 대화의 출발점부터 어긋날 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 INFJ의 이상을 생활 속 실행 계획으로 내려앉히는 힘을 준다.",
+        "INFJ는 ISTJ가 놓치기 쉬운 사람의 감정 변화와 관계의 장기적 분위기를 알려 준다.",
+        "서로의 언어를 번역할 수 있으면 이상과 현실이 함께 단단해지는 조합이 된다."
+      ],
+      "repairStrategy": [
+        "INFJ는 추상적인 서운함만 말하지 말고 실제 장면과 필요한 행동을 함께 말한다.",
+        "ISTJ는 해결책을 제시하기 전에 INFJ의 감정이 왜 생겼는지 먼저 확인한다.",
+        "돈, 일정, 가족 문제는 ISTJ식 규칙과 INFJ식 정서 점검을 모두 포함한 주간 대화로 다룬다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:INFJ:ISFJ",
+    "originalResearchHash": "f45736db5502a58a649a3e929337e6e7713680392edc24ca96668c3b9b5ef1ae",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "0f6bcbe167d41659fa7ab68740cc4a4543be5f4e434039dd2a4fb725036a47ce",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "353b066044f5137280ce4a33151f55e9d2a2cfa1bd167312812fcafaa3e7b957",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 조용하고 섬세하며 관계에서 상처를 주지 않으려는 태도가 강하다.",
+        "서로 비슷한 고민과 예민함을 갖고 있어 비판보다 연민과 이해가 먼저 생긴다.",
+        "가시적인 장애물이 적어 마음이 맞으면 비교적 자연스럽게 협동할 수 있다."
+      ],
+      "friction": [
+        "ISFJ는 과거의 기억과 익숙한 안정성을 중시하고, INFJ는 미래 가능성과 의미를 더 중요하게 본다.",
+        "둘 다 갈등을 크게 드러내지 않아 불편함이 누적될 수 있다.",
+        "ISFJ의 현실적 돌봄과 INFJ의 이상적 조언이 서로의 방식과 어긋날 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISFJ는 INFJ의 이상을 생활 속 안정으로 내려오게 돕고, INFJ는 ISFJ에게 더 넓은 미래 방향을 보여준다.",
+        "서로의 섬세함을 인정하면 조용하고 안정적인 신뢰 관계가 된다."
+      ],
+      "repairStrategy": [
+        "INFJ는 미래 가능성을 말할 때 현실 적용 단계를 함께 제시한다.",
+        "ISFJ는 과거 경험만으로 INFJ의 비전을 닫지 않는다.",
+        "둘 다 불편함을 오래 참지 말고 작은 서운함을 문장으로 확인한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:INFJ:ESTJ",
+    "originalResearchHash": "86490c5244aa5c1571be936eff6f73ee37e40cab6ee8ab246be7d363dd50faaf",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "4a4c65bcc02c4ae40656203f7508ae08f0ff902736647a4214641bdb25efef24",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "8fcba510d201a8781e92bb12166c009462c9e073fedccf53d31c0d723ad463d5",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "초반에는 서로의 다른 강점에 호기심을 느낄 수 있다.",
+        "두 사람 모두 자신이 옳다고 믿는 기준에는 강한 확신을 가진다.",
+        "INFJ는 ESTJ의 실행력과 책임감을 눈여겨보고, ESTJ는 INFJ의 통찰과 사람을 읽는 힘에서 낯선 유능함을 발견한다."
+      ],
+      "friction": [
+        "이 관계는 생활 기준과 가치 판단의 출발점이 달라 갈등이 자주 생기기 쉽다.",
+        "ESTJ의 현실적 지시와 효율 압박은 INFJ에게 정서적 무시와 통제로 느껴질 수 있다.",
+        "INFJ의 우회적 표현과 가치 중심 판단은 ESTJ에게 비현실적이고 답답하게 보일 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 INFJ에게 실행과 현실 기준을, INFJ는 ESTJ에게 사람의 감정과 의미를 보완해 줄 수 있다.",
+        "서로가 성숙하면 INFJ의 통찰은 ESTJ의 판단을 부드럽게 만들고, ESTJ의 실행력은 INFJ의 이상을 현실에 붙인다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 해결책을 제시하기 전 INFJ의 감정과 의미를 먼저 확인한다.",
+        "INFJ는 불편함을 우회적으로 암시하지 말고 구체적 요청으로 말한다.",
+        "논쟁은 사람 평가가 아니라 행동과 기준 조율로 제한한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:INFJ:ESFJ",
+    "originalResearchHash": "b601ef1b7100737f25ab53e732e65c927ea334cfbd888b9e09be2ef6f4ec61d8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "d11c82dc495ec6891a71ccf175de825027259223821c5039e9fa3fd7549555e5",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "3c7c5f8891484b480e9142c16d89cc0a886ed2f9b6999e7712bd474038d330d5",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 관계의 분위기, 배려, 주변 사람의 반응을 민감하게 읽는다.",
+        "INFJ는 관계의 깊은 흐름을 보고, ESFJ는 당장 필요한 돌봄과 사회적 조화를 빠르게 실행한다.",
+        "둘 다 사람을 챙기는 역할에 익숙해 함께 있으면 주변에 따뜻하고 정돈된 분위기를 만들 수 있다."
+      ],
+      "friction": [
+        "ESFJ는 눈에 보이는 예의와 즉각적인 반응을 중요하게 보지만, INFJ는 말로 드러나지 않은 의미와 진심을 더 본다.",
+        "ESFJ의 빠른 개입과 확인은 INFJ에게 사생활 침범처럼 느껴질 수 있고, INFJ의 침묵과 거리두기는 ESFJ에게 차갑게 느껴질 수 있다.",
+        "갈등이 생기면 둘 다 관계를 지키고 싶어 하지만, ESFJ는 외부 조화를 맞추려 하고 INFJ는 내면의 진정성을 확인하려 한다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 INFJ가 혼자 고민하던 관계 문제를 실제 대화와 행동으로 풀어가게 도와준다.",
+        "INFJ는 ESFJ가 지나치게 주변 요구에 끌려갈 때 더 깊은 기준과 장기 방향을 잡아 준다.",
+        "서로의 돌봄 방식이 다르다는 점을 인정하면 따뜻함과 통찰이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESFJ는 INFJ의 혼자 있는 시간을 관계 거절로 해석하지 않도록 미리 확인한다.",
+        "INFJ는 생각이 정리될 때까지 사라지기보다 언제 이야기할지 시간을 알려준다.",
+        "가족 행사와 사회적 약속은 참여 여부, 머무는 시간, 회복 시간을 함께 정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:INFJ:ISTP",
+    "originalResearchHash": "d43deb13ab22284687f1e85266901eb14b2e310890428944a3333d3c1d552c1b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "d70fbd7d4751cbe56d672d5fe437aab969a78e03628e607613ce1c48d624fd3f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "d7242d380106b34a6fe888ad12bd3d7376a28734915fa912468844fac8bad042",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "관계를 시작할 때 큰 시각적 어려움이 없고 서로를 활동적으로 자극할 수 있다.",
+        "서로가 예상보다 쉽게 가까워질 수 있으며, INFJ는 ISTP의 담백한 실전성에서 안정감을 느낀다.",
+        "ISTP는 INFJ의 조용한 통찰에서 평소 지나치기 쉬운 관계의 의미와 장기 방향을 보게 된다."
+      ],
+      "friction": [
+        "일상적 문제나 협력 관계에서는 많은 어려움을 겪을 수 있다.",
+        "ISTP의 현실적이고 담백한 방식은 INFJ에게 정서적 깊이가 부족하게 느껴질 수 있다.",
+        "INFJ의 의미 부여와 감정 민감성은 ISTP에게 복잡하게 느껴질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISTP는 INFJ에게 현실 감각과 실행의 간결함을 주고, INFJ는 ISTP에게 관계의 의미와 장기적 방향을 보여준다.",
+        "서로의 방식을 존중하면 INFJ는 생각을 현실에 붙이고, ISTP는 행동 뒤의 정서적 맥락을 읽는 힘을 얻는다."
+      ],
+      "repairStrategy": [
+        "ISTP는 짧더라도 감정 확인 문장을 의식적으로 표현한다.",
+        "INFJ는 모든 문제에 깊은 의미를 붙이기보다 실용적 해결을 먼저 허용한다.",
+        "협력 업무는 역할과 기대 결과를 명확히 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:INFJ:ISFP",
+    "originalResearchHash": "f4b27df0b9dfb98f3abf5015d738407699fe6f9856b64be5ce67c30ac923610e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "4ba2bc087fc5a2535ed65513ef44981e22b251097196527381672030ea10d01c",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "d4d6a238cd93d7af0b072f88ec458e40b9e941b0a11a477c00953af451571cbc",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 강압적인 관계보다 조용한 존중과 개인의 진심을 중요하게 여긴다.",
+        "INFJ는 관계의 방향과 의미를 섬세하게 보고, ISFP는 사람의 진정성과 감각적 편안함을 세밀하게 감지한다.",
+        "말을 많이 하지 않아도 서로의 조심스러운 태도와 배려를 알아차릴 수 있어 초반의 경계가 비교적 부드럽게 풀린다."
+      ],
+      "friction": [
+        "INFJ는 미래의 방향과 관계의 서사를 묻고 싶어 하지만, ISFP는 지금 느끼는 편안함과 자율성을 먼저 본다.",
+        "INFJ의 해석이 길어지면 ISFP는 평가받는 느낌을 받을 수 있고, ISFP의 침묵은 INFJ에게 마음을 닫은 신호처럼 느껴질 수 있다.",
+        "갈등이 생기면 둘 다 직접적으로 밀어붙이지 않기 때문에 문제가 조용히 누적되기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ISFP는 INFJ가 과도하게 의미를 짊어질 때 현재의 감각과 단순한 휴식을 되찾게 해 준다.",
+        "INFJ는 ISFP가 말로 정리하지 못한 마음의 방향을 조심스럽게 언어화해 줄 수 있다.",
+        "두 사람이 서두르지 않으면 서로에게 정서적 안전감과 자기표현의 여지를 준다."
+      ],
+      "repairStrategy": [
+        "INFJ는 ISFP에게 마음을 추궁하기보다 선택지를 좁힌 질문으로 대화를 시작한다.",
+        "ISFP는 침묵으로 관계를 보호하려 하지 말고 최소한의 감정 상태를 말로 알려준다.",
+        "두 사람 모두 회피가 길어지기 쉬우므로 갈등 주제는 작을 때 짧게 다루는 습관을 만든다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:INFJ:ESTP",
+    "originalResearchHash": "5259a8346469141f78c6b1abf0b2be29d8002a9c7acd490f01040db58ee5248c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "953872c6f5ff4bedb10a5f58d19fccf156de03ed94e4c1a0363184c43de4e187",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "5ab345f1eb82e8871f7e21871185ac93502a0b1b3bbbe299388a5d249b13f738",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로의 관심사와 호감이 맞으면 INFJ의 내면적 비전과 ESTP의 현실적 행동력이 강하게 보완된다.",
+        "INFJ는 ESTP에게 깊이와 장기 방향을 보여주고, ESTP는 INFJ를 생각에서 현실 행동으로 끌어낸다.",
+        "서로를 바꾸려 하지 않으면 의미와 실행, 통찰과 현장감이 함께 살아난다."
+      ],
+      "friction": [
+        "이 관계는 매력은 강하지만 생활 속에서는 서로의 기본 속도가 크게 다르게 드러난다.",
+        "ESTP의 즉각적 행동성과 활동성은 INFJ에게 정서적 안전을 확인할 시간을 빼앗는 피로로 느껴질 수 있다.",
+        "INFJ의 깊은 의미 탐색은 ESTP에게 지나치게 복잡하게 들리고, ESTP의 빠른 전환은 INFJ에게 가벼운 태도로 보일 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 INFJ를 현실과 행동으로 끌어내고, INFJ는 ESTP에게 장기적 의미와 관계의 깊이를 보여준다.",
+        "INFJ는 ESTP의 현재 대응력을 통해 생각을 실제 장면에 연결하고, ESTP는 INFJ를 통해 행동 뒤의 의미를 읽는 법을 배운다."
+      ],
+      "repairStrategy": [
+        "ESTP는 INFJ의 조용한 회복 시간을 존중한다.",
+        "INFJ는 ESTP의 즉흥성을 무책임으로 단정하지 않는다.",
+        "주말과 여가를 활동일과 휴식일로 나누어 설계한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:INFJ:ESFP",
+    "originalResearchHash": "c5e4d2beb5c168c28ea10b765735a33503b9ef262489c48dc58d7eb30387f59b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "20d4c39ef86dccc8c3aab3eeb61b25e7147868635b2b98bf1f9984035d40beda",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "ce58ac131537053c6ab97faf449a0b4711c183e951405a7603f3575de57f2850",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "INFJ는 관계의 의미와 사람의 속마음을 읽고, ESFP는 지금 이 순간의 분위기와 감각을 빠르게 살린다.",
+        "둘 다 사람을 차갑게 대하기보다 따뜻한 반응과 정서적 생동감을 중요하게 본다.",
+        "INFJ의 조용한 통찰과 ESFP의 활발한 표현이 만나면 서로에게 평소 부족했던 삶의 온도를 제공한다."
+      ],
+      "friction": [
+        "INFJ는 관계의 방향과 장기적 의미를 확인하고 싶어 하지만, ESFP는 현재의 즐거움과 즉각적인 반응을 더 중시한다.",
+        "ESFP의 즉흥성과 넓은 교류는 INFJ에게 피로가 될 수 있고, INFJ의 깊은 해석과 진지함은 ESFP에게 무겁게 느껴질 수 있다.",
+        "갈등이 생기면 INFJ는 숨은 의미를 파고들고, ESFP는 분위기를 빨리 바꾸려 하면서 문제의 깊이를 서로 다르게 볼 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 INFJ가 머릿속에서만 돌리던 생각을 실제 경험과 행동으로 끌어내 준다.",
+        "INFJ는 ESFP에게 순간의 감정 뒤에 있는 관계의 흐름과 선택의 의미를 짚어 준다.",
+        "서로의 리듬을 존중하면 깊이와 생동감이 함께 살아나는 관계가 된다."
+      ],
+      "repairStrategy": [
+        "INFJ는 ESFP의 즉흥성을 가벼움으로 단정하지 말고 실제 애정 표현 방식으로 읽어야 한다.",
+        "ESFP는 INFJ가 진지한 대화를 꺼낼 때 분위기를 깨는 말로 받아들이지 말고 관계 점검 시간으로 받아들인다.",
+        "외부 약속과 둘만의 조용한 시간을 주 단위로 나누어 서로의 에너지 리듬을 보호한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:INFP:INTJ",
+    "originalResearchHash": "5afa250a1566d53ce2d24baca849d96a3c8dfa6fbce0d6de3dad3f23a2a3a26b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "ca77c6281545f314c0053b1080189d168507ec50a5ec956f414588ccc0726cda",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "ac68d3f0da9cc32dfb105f6b59f20cd41d30f5f6989117f7a86a997e7bc2c635",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "INFP의 Fi는 INTJ의 3차 Fi에 도움을 주고, INTJ의 Te는 INFP의 열등 Te에 도움을 줄 수 있다.",
+        "이질감이 적으면서 상호 보완이 가능하다.",
+        "둘 다 내면의 기준이 강해 얕은 호감보다 '이 사람이 나를 이해하는가'를 중요하게 본다."
+      ],
+      "friction": [
+        "INTJ의 Te 실행 기준은 INFP에게 냉정하게 느껴질 수 있다.",
+        "INFP의 감성적 가치 기준은 INTJ에게 불분명하고 비효율적으로 보일 수 있다.",
+        "INTJ는 문제를 고치려 하고 INFP는 먼저 마음을 존중받길 원해 대화의 순서가 자주 어긋난다."
+      ],
+      "positiveInfluence": [
+        "INTJ는 INFP의 아이디어를 현실 구조로 바꾸고, INFP는 INTJ에게 자기 감정과 가치의 깊이를 열어준다.",
+        "서로의 언어를 번역하면 차가운 전략과 따뜻한 가치가 함께 작동한다."
+      ],
+      "repairStrategy": [
+        "INTJ는 피드백을 감정 안전감과 함께 전달한다.",
+        "INFP는 구조화 도움을 통제로만 받아들이지 않는다.",
+        "비전과 실행 계획을 별도 단계로 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:INFP:INTP",
+    "originalResearchHash": "9eac24bc1aed6cf1bb7cb8b93a0889816c0d6a19c9474cd5dd693c297c0b2e65",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "d1c14ea3860d2e65819b292a1ee9b9e9d82ea1ce96253feed8c307f0fc23335f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "12496d46192eed232178d20491d539bcf3f4f7495b6ca1627682623f3222dc7d",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "부기능 Ne와 3차 Si가 같아 아이디어, 가능성, 취향에서 겹치는 부분이 많다.",
+        "내향적이고 추상적 관심사를 공유하기 쉽다.",
+        "겉으로 크게 표현하지 않아도 자기만의 세계가 있다는 점을 서로 빨리 알아본다.",
+        "혼자 있는 시간과 생각의 여백을 서로 비교적 자연스럽게 존중한다."
+      ],
+      "friction": [
+        "주기능과 열등기능이 달라 한 글자 차이치고 성향 차이가 크다.",
+        "INFP는 Fi로 감성적 상상에, INTP는 Ti로 과학적·논리적 공상에 초점을 둔다.",
+        "INFP는 말투와 태도에서 상처를 읽고, INTP는 내용이 맞으면 됐다고 생각해 오해가 반복된다."
+      ],
+      "positiveInfluence": [
+        "INTP는 INFP에게 논리적 검증을, INFP는 INTP에게 가치와 감정의 방향성을 제공한다.",
+        "서로의 기준을 존중하면 논리와 진정성이 한쪽으로 치우치지 않는다."
+      ],
+      "repairStrategy": [
+        "INTP는 비판 전에 감정적 안전감을 확인한다.",
+        "INFP는 논리적 반론을 가치 공격으로만 받아들이지 않는다.",
+        "생활 책임은 추상 대화와 별도로 체크리스트화한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:INFP:ENTJ",
+    "originalResearchHash": "699839ce73fd05100ee9399ba7f28c8e9fec83fc0971ed226fd807f518fe302e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "bf6165c959305603b02dc6a38d5f2449a53f9f5ba0124431fa25acb24ee269d0",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "c6ec53d686f89609621aaedb6745519fb058cbb04dec17ac81457408d2a81d9a",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "주 기능과 열등 기능이 반대여서 이중성 관계와 유사한 보완성이 있다.",
+        "둘 다 개인주의 성향이 강해 ESTJ보다 공감 가는 요소가 많을 수 있다.",
+        "INFP는 ENTJ의 결단력을 안정감으로 볼 수 있고, ENTJ는 INFP의 진정성을 드문 깊이로 느낄 수 있다."
+      ],
+      "friction": [
+        "서로가 서로의 약점을 찌르기 때문에 답답함이 생긴다.",
+        "ENTJ의 강한 실행과 지휘는 INFP에게 압박이고, INFP의 감성적 기준은 ENTJ에게 비효율로 보일 수 있다.",
+        "INFP가 상처를 말하지 않고 물러나면 ENTJ는 더 강하게 밀어붙여 압박과 회피의 고리가 생긴다."
+      ],
+      "positiveInfluence": [
+        "친해지면 ENTJ는 INFP의 실행을 돕고, INFP는 ENTJ에게 인간적 의미와 내면 가치를 보완한다.",
+        "둘이 존중을 잃지 않으면 실행력과 내면의 방향성이 함께 커진다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 효율보다 INFP의 가치와 감정을 먼저 인정한다.",
+        "INFP는 필요한 구조와 결정 책임을 모두 폭력으로 해석하지 않는다.",
+        "공동 목표와 개인 창작·휴식 영역을 명확히 분리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:INFP:ENTP",
+    "originalResearchHash": "5fa30ebe1080fc0b061b01e000b265e1c36751f088b070b82e55e15851eeeb03",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "b31d04ae7da482276c74c6cc25d6090556aa73b089718e09a7768990deb77243",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "0c70470f086b3706d9621299777cf2baddd2f68547e5f8e290b6b547f1f151d9",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "INFP는 ENTP를 흥미로운 사람으로 생각하기 쉽다.",
+        "INFP의 부기능 Ne가 ENTP의 주기능 Ne와 맞닿아 초반에는 사이가 좋을 수 있다.",
+        "평범한 대화보다 생각을 흔들고 세계를 넓히는 대화에서 서로에게 흥미를 느낀다."
+      ],
+      "friction": [
+        "관계가 불균형적이며 INFP가 ENTP에게 간섭하는 경향이 생길 수 있다.",
+        "ENTP는 INFP의 도움이나 충고에서 기대한 도움을 얻지 못하고 통제에서 벗어나려 한다.",
+        "ENTP는 INFP가 자신에게 무엇을 원하는지 이해하지 못해 갈등이 커질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 INFP의 상상력을 넓히고, INFP는 ENTP의 아이디어에 가치와 감정의 기준을 제공한다.",
+        "서로를 이기려 하지 않으면 아이디어와 내면의 기준이 함께 깊어진다."
+      ],
+      "repairStrategy": [
+        "INFP는 ENTP를 고치려는 충고를 줄인다.",
+        "ENTP는 INFP의 가치 기준을 가볍게 조롱하지 않는다.",
+        "토론과 감정 대화를 분리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:INFP:INFJ",
+    "originalResearchHash": "fb36e22a665344f3e033567dffe783d48f476e2aec94c210dc3ed36928631a0d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "1af171fa69178cf3bdb28dc9f081dbc71401a8732a8254b256224d0dc045cf9d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "ef22cfc0099e3112fdebc0a72413b411223357c13070405b42430067654a6481",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "MBTI에서는 J/P만 달라 겉으로는 상당히 비슷해 보인다.",
+        "초반에는 생각보다 쉽게 가까워질 수 있다.",
+        "둘 다 깊은 의미, 인간의 가능성, 섬세한 정서를 중요하게 본다.",
+        "가벼운 잡담보다 마음속 세계와 삶의 방향을 나누는 대화에서 빠르게 친밀해진다."
+      ],
+      "friction": [
+        "실제로는 사용하는 기능이 전부 달라 성향 차이가 크다.",
+        "INFP는 개인과 자율성을, INFJ는 관계의 방향과 공동체적 조율을 더 볼 수 있다.",
+        "INFJ의 해석은 INFP에게 마음을 정리당하는 느낌으로, INFP의 유보는 INFJ에게 불확실성으로 들어간다."
+      ],
+      "positiveInfluence": [
+        "서로의 이상과 감수성을 인정하면 깊은 대화와 창작적 영감을 나눌 수 있다.",
+        "INFJ는 흐름을 잡아주고 INFP는 감정의 진짜 결을 살려 관계의 깊이를 만든다."
+      ],
+      "repairStrategy": [
+        "비슷하다는 전제를 버리고 실제 판단 기준을 확인한다.",
+        "INFJ는 유도하지 말고 직접 요청한다.",
+        "INFP는 자기 감정과 필요한 자유를 구체적으로 설명한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:INFP:INFP",
+    "originalResearchHash": "3154eadac02c27168338a5805ea7c91fbdd8d12ba0754c36b36546c2d9e43b05",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "a5728cee5136c4b88da4d7f6303f479a723819316d856a62ecc8e9aae1cb3a9b",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "a5728cee5136c4b88da4d7f6303f479a723819316d856a62ecc8e9aae1cb3a9b",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "같은 기능을 같은 순서로 사용해 생각과 감정의 흐름을 이해하기 쉽다.",
+        "진정성, 자율성, 깊은 감수성, 이상주의를 공유한다.",
+        "관계에서 겉조건보다 '이 사람이 내 마음의 결을 알아주는가'를 더 크게 본다.",
+        "서로의 꿈을 우습게 다루지 않는 태도 자체가 강한 안정감이 된다."
+      ],
+      "friction": [
+        "상호 보완은 약해 둘 다 실행과 현실 구조를 미룰 수 있다.",
+        "한쪽이 불건강해지면 다른 한쪽도 비관과 회피에 쉽게 영향을 받는다.",
+        "서로를 마음속 이미지로 크게 이상화한 만큼 작은 말투와 태도에도 실망이 깊게 남는다.",
+        "둘 다 마음이 닫히면 먼저 풀기보다 조용히 멀어지는 쪽으로 흐르기 쉽다."
+      ],
+      "positiveInfluence": [
+        "서로의 섬세함과 독특한 세계를 인정하며 안전한 정서 공간을 만든다.",
+        "말하지 못한 상처와 꿈을 조심스럽게 받아주며 자기다움을 회복하게 만든다.",
+        "관계 안에서 평가받기보다 이해받는 감각을 강하게 준다."
+      ],
+      "repairStrategy": [
+        "감정 공감 뒤에 구체적 행동 약속을 붙인다.",
+        "생활 관리와 돈 문제는 따로 문서화한다.",
+        "서로의 비관이 번지기 전에 외부 활동과 운동을 넣는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:INFP:ENFJ",
+    "originalResearchHash": "9752f9866b1972fb0321faee12a7884e9dc744435a9fd1c8353100f381ff1c81",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "eca981c09641f3ad51204fa380f57288b9e85802ee0daf6711941459949e006c",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "a19376126fef3ac86eb240a63eaa67855739c382cf82b3ac42e636625a6d5e0b",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 유형 모두 NF로 사람과 가치, 의미를 중요하게 본다.",
+        "서로가 보지 못하는 부분을 보며 상호 보완적 영향을 줄 수 있다.",
+        "사랑을 단순한 호감보다 서로를 이해하고 성장시키는 과정으로 보려는 점이 닮았다.",
+        "둘 다 사람의 가능성을 믿고, 관계가 삶의 방향을 바꿀 수 있다고 본다."
+      ],
+      "friction": [
+        "Fe-Fi 관점 차이를 해소하지 못하면 관계가 틀어진다.",
+        "ENFJ는 공동체 조화와 외부 감정 기준을, INFP는 개인의 진정성과 내면 가치를 우선한다.",
+        "ENFJ가 확인하려고 다가올수록 INFP는 자기 감정이 밀린다고 느껴 안으로 접을 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 INFP를 사회적 장으로 이끌고, INFP는 ENFJ에게 개인의 진정성을 더 깊게 보게 한다.",
+        "둘이 균형을 잡으면 따뜻한 영향력과 개인의 깊이가 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ENFJ는 조화라는 이름으로 INFP의 감정을 일반화하지 않는다.",
+        "INFP는 ENFJ의 외부 조율을 가식으로만 보지 않는다.",
+        "공동체 약속과 개인 가치의 예외 범위를 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:INFP:ENFP",
+    "originalResearchHash": "2f58438d45a40217cef0b4a27356b9ff55df60362491d8a1dbfb5936dd6d0331",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "7fb41219fa290787bd6b05dec7cccc5f70bb59cb2759009a6b2f7237c67f9562",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "077d3093a2a4c276dc923b882c473ce3f976f7533af9d2cdb8f77ba728910da0",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "성격, 가치관, 취향이 비슷해 동일 관계보다 좋은 시너지가 날 수 있다.",
+        "두 유형 모두 Fi-Ne 축을 공유해 진정성, 가능성, 창의성을 중시한다.",
+        "서로의 꿈과 감정선을 쉽게 알아보고, 평범한 관계보다 의미 있는 연결을 원한다."
+      ],
+      "friction": [
+        "ENFP는 더 잘 나서고 행동으로 옮기며, INFP는 더 안쪽에서 오래 숙성한다.",
+        "ENFP의 빠른 확장성이 INFP에게 피로가 될 수 있고, INFP의 조심스러움은 ENFP에게 답답할 수 있다.",
+        "ENFP의 빠른 전환은 INFP에게 가볍게 느껴지고, INFP의 침잠은 ENFP에게 거리감으로 보일 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENFP는 INFP의 아이디어를 밖으로 꺼내고, INFP는 ENFP의 감정과 가치에 깊이를 더한다.",
+        "서로의 자유를 존중하면 따뜻한 상상력과 관계의 생동감이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ENFP는 INFP의 혼자 있는 시간을 존중한다.",
+        "INFP는 ENFP의 외부 활동 욕구를 가벼움으로 보지 않는다.",
+        "새로운 시도와 회복 시간을 일정에 함께 넣는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:INFP:ISTJ",
+    "originalResearchHash": "f6b7f63ad923043f8f75d22776d9a5dd6437673a97c367fd0e11dde09cda5a3f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "d2d408505f9625d420d68fa1795fc7c3d48c6bbf0123ee9f38ebe9c4946f3b41",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "880add597de553f386c1a41dfc2fd9646a09e2cbc9108824caf35c435c189b33",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "상대의 강점이 자신의 약점, 자신의 강점이 상대의 약점으로 작동할 수 있다.",
+        "이질감이 비교적 적으면서도 상호 보완 가능성이 있다.",
+        "둘 다 관계를 가볍게 소비하지 않고 오래 갈 수 있는 신뢰를 중시한다.",
+        "표현 방식은 달라도 쉽게 무너지지 않는 책임감 있는 관계를 원한다."
+      ],
+      "friction": [
+        "ISTJ의 통제와 절차는 INFP에게 억압으로 느껴질 수 있다.",
+        "INFP의 느슨함과 이상주의는 ISTJ에게 신중함과 절제심 부족으로 보일 수 있다.",
+        "ISTJ의 지적은 INFP에게 생활 조언이 아니라 자기 세계를 평가받는 말처럼 꽂힐 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 INFP에게 현실적 기준과 절제를, INFP는 ISTJ에게 가치와 가능성의 부드러움을 제공한다.",
+        "질서와 따뜻함을 함께 놓으면 둘 다 혼자서는 약한 부분을 보완한다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 통제를 줄이고 존중을 먼저 보여준다.",
+        "INFP는 최소한의 약속과 생활 기준을 지킨다.",
+        "규칙은 강요가 아니라 서로의 안전망으로 설명한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:INFP:ISFJ",
+    "originalResearchHash": "6bc97d1cd4e3bec41dfb5ad54a13deb086fd450291a8c7d33332ce51e1573ebd",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "e24c200461f9ee61ed6a459801199cfc733d1be5fe15ce2f017d4abc9b424e33",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "b849eb2b334b8cace272470cc0f79da4e9fda4f147877c732c7c82970d8d1d04",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ISFJ의 Si는 INFP의 3차 Si를 돕고, INFP의 Ne는 ISFJ의 열등 Ne를 돕는다.",
+        "이질감이 비교적 적으면서 좋은 상호 보완이 가능하다.",
+        "둘 다 따뜻하고 조심스러운 관계를 선호해 초반에는 부드러운 안정감을 만들 수 있다."
+      ],
+      "friction": [
+        "ISFJ는 안정과 역할을, INFP는 자율성과 가능성을 더 중시한다.",
+        "ISFJ의 돌봄이 INFP에게 통제로 느껴질 수 있고, INFP의 느슨함은 ISFJ에게 불안으로 보일 수 있다.",
+        "ISFJ가 익숙한 규칙을 요구하면 INFP는 자기만의 의미와 길이 좁아진다고 느낀다."
+      ],
+      "positiveInfluence": [
+        "ISFJ는 INFP에게 생활 안정과 기억의 기반을, INFP는 ISFJ에게 새로운 가능성과 부드러운 상상을 제공한다.",
+        "서로의 방식을 존중하면 조용한 돌봄과 내면의 의미가 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ISFJ는 돌봄을 규칙 강요로 바꾸지 않는다.",
+        "INFP는 최소한의 생활 안정 약속을 지킨다.",
+        "새로운 시도와 익숙한 루틴을 함께 배치한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:INFP:ESTJ",
+    "originalResearchHash": "243c9c5b7e86bf81370742b0a975d438d1243ac95fd64e1214e2b8629144f7cc",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "a325368869a08a7f2c55fc5cae185789ead0de92b523214d5992629a229ec513",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "a7d4674f712bc896bbe9bda3c0ce526fd398b7c632b6d55db6fb22ca1fbb6282",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "같은 심리 기능을 반대 순서로 사용해 이론상 상호 보완이 강하다.",
+        "비슷한 가치관이나 지향점을 발견하면 이를 계기로 가까워질 수 있다.",
+        "둘 다 의미 없는 관계보다 자기 기준에 맞는 관계를 원한다는 점에서는 통한다.",
+        "한쪽은 현실의 결과를, 한쪽은 관계의 의미를 붙잡아 서로 다른 안정감을 만든다."
+      ],
+      "friction": [
+        "현실적으로는 성향 차이가 매우 커 친해지기까지 어렵다.",
+        "ESTJ는 INFP의 감정 중심 판단과 느린 현실 처리 방식을 미숙하거나 비효율적으로 볼 수 있다.",
+        "INFP는 ESTJ의 효율과 통제를 자기 가치에 대한 압박으로 느낄 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 INFP에게 실행과 구조를, INFP는 ESTJ에게 감정과 가치의 깊이를 보완한다.",
+        "서로를 평가하지 않고 역할을 나누면 현실성과 감정의 온도가 같이 살아난다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 INFP를 고치려 하기 전 가치와 감정을 인정한다.",
+        "INFP는 실행과 책임을 모두 억압으로 해석하지 않는다.",
+        "공동 목표와 개인 자유 영역을 명확히 분리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:INFP:ESFJ",
+    "originalResearchHash": "2791c226261fccabcd67d4a6aba44f6d96f53107d621cd1375945652e35b9717",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "53be18c8f56a8e3c48f27700800807e9415aa28a6086ddc1b3e4d6e9b8354de5",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "b8354baf8fd1c77cfc37a349caea448b5d3cc006b506b848e83408c4d6a06504",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "주 기능과 열등 기능의 지표가 같아 한 글자만 겹치는 것치고 공감대가 있다.",
+        "ESFJ는 사교성이 높아 관계가 그럭저럭 무난하게 시작될 수 있다.",
+        "둘 다 사람을 따뜻하게 대하려는 마음과 관계의 의미를 중요하게 본다.",
+        "상대가 상처받지 않게 말하려는 조심성은 초반의 안정감을 만든다."
+      ],
+      "friction": [
+        "Fe-Fi 관점 차이를 극복하지 못하면 사이가 틀어진다.",
+        "ESFJ는 외부 조화와 사회적 정서를, INFP는 개인의 진정성과 내면 가치를 더 중시한다.",
+        "INFP가 내면의 불편함을 숨기면 ESFJ는 더 챙기려 하고, 그 챙김이 다시 부담으로 돌아온다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 INFP에게 사회적 연결과 돌봄을, INFP는 ESFJ에게 개인의 내면과 진정성을 보게 한다.",
+        "서로를 설득하려 하지 않으면 다정함과 깊이가 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESFJ는 사회적 조화를 INFP에게 강요하지 않는다.",
+        "INFP는 ESFJ의 배려를 가식으로 단정하지 않는다.",
+        "가족 행사와 개인 회복 시간을 모두 일정에 넣는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:INFP:ISTP",
+    "originalResearchHash": "bf57b263de2168d789b4e794fcac5e5a56c93d7432e3e282e17d816f932a0249",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "dfabda27c77c48532c2c14770bf11b12b357a24b3ac7be8843a5163513afbd88",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "ba5429f6e8b79e430fe73417fde5321c479d5f9457d01a6eb673337abd402045",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "기능 차이 때문에 관점 이해가 어렵지만 성향이 비슷하고 공감대가 겹치는 경우도 많다.",
+        "둘 다 개인 공간과 자율성을 중요하게 여길 수 있다.",
+        "서로에게 매일 과한 반응을 요구하지 않아 조용한 거리감이 편하게 작동할 수 있다."
+      ],
+      "friction": [
+        "ISTP의 논리·감각 중심 접근은 INFP에게 차갑게 느껴질 수 있다.",
+        "INFP의 감정·가치 중심 접근은 ISTP에게 복잡하고 비현실적으로 느껴질 수 있다.",
+        "INFP가 상처를 분위기로만 드러내면 ISTP는 무엇을 고쳐야 하는지 알기 어렵다."
+      ],
+      "positiveInfluence": [
+        "ISTP는 INFP에게 간결한 현실 판단을 주고, INFP는 ISTP에게 감정과 의미의 층위를 보여준다.",
+        "둘이 서로의 속도를 인정하면 조용하지만 단단한 독립형 관계가 된다."
+      ],
+      "repairStrategy": [
+        "ISTP는 감정 확인 문장을 짧게라도 표현한다.",
+        "INFP는 모든 침묵을 무관심으로 해석하지 않는다.",
+        "실용적 해결과 정서적 공감을 순서대로 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:INFP:ISFP",
+    "originalResearchHash": "376906faf7aaf97dddb85dd566e8706c781fde7cf7c8406beb80838d9c05fdba",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "fe762a34d6ecb3120dbed06b0f6852678f426993c0413ebc212a075c419175e2",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "121074ee3a1bfba44886ee9e934aff9e03dc261cf5159b2e97dd213fd9a16cbb",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "주기능 Fi와 열등기능 Te가 같아 감성적·예술적 면과 효율 판단의 어려움을 공유한다.",
+        "가치관과 취향이 유사해 서로 이해하기 쉽다.",
+        "말로 전부 설명하지 않아도 분위기, 취향, 작은 행동에서 마음을 읽는 감각이 있다.",
+        "서로의 개성과 자유를 함부로 고치려 하지 않는 점도 편안하게 작동한다."
+      ],
+      "friction": [
+        "INFP는 Ne로 가능성을 미리 시뮬레이션하고, ISFP는 Se로 눈앞의 상황에 대응한다.",
+        "INFP의 추상적 공상은 ISFP에게 길게 느껴지고, ISFP의 현재 중심성은 INFP에게 깊이가 부족하게 보일 수 있다.",
+        "상처를 바로 꺼내지 않는 점이 닮아 있어, 조용한 동안에도 속으로는 거리가 벌어질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISFP는 INFP에게 감각적 실행을, INFP는 ISFP에게 가능성과 이야기의 확장을 제공한다.",
+        "서로의 감수성을 존중하면 부드럽고 창의적인 관계가 된다."
+      ],
+      "repairStrategy": [
+        "INFP는 생각을 너무 길게 돌리지 말고 작은 행동으로 옮긴다.",
+        "ISFP는 현재 감정만이 아니라 장기 방향도 함께 말한다.",
+        "생활 루틴은 외부 도구로 보완한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:INFP:ESTP",
+    "originalResearchHash": "4f617c300e5241c82c42b9bb7e9da595af4a1d5850fa2e2f62ade265873974c6",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "626ddd0a44ca3dbaae251a928ec09d09fa8aceab9ee0d176f1a6b05e2a672677",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "75e269c84b07c86ddc6e74883be4446abd65a3522784d4db74874fd544d1d3d0",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "P 유형 간이라 갈등 관계 중에서도 비교적 괜찮게 흘러갈 여지는 있다.",
+        "서로 존중하면 이중성 관계처럼 상호 보완 가능성도 있다.",
+        "ESTP는 INFP를 현실의 장면으로 끌어내고, INFP는 ESTP에게 관계의 의미를 묻게 만든다."
+      ],
+      "friction": [
+        "가치관과 취향 차이가 커 갈등이 벌어지는 경우가 많다.",
+        "ESTP는 INFP를 무시하거나, 반대로 취미와 재능을 칭찬하는 식으로 극단적으로 볼 수 있다.",
+        "ESTP의 현실 행동성과 INFP의 내면 가치 중심성이 충돌한다.",
+        "현재의 재미와 내면의 안전감 중 무엇을 먼저 볼지에서 계속 속도 차이가 난다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 INFP에게 현실 행동과 즉각 대응을, INFP는 ESTP에게 감정과 가치의 깊이를 보여준다.",
+        "서로를 가볍게 다루지 않으면 행동력과 감수성이 동시에 성장한다."
+      ],
+      "repairStrategy": [
+        "ESTP는 INFP의 감수성을 약점으로 놀리지 않는다.",
+        "INFP는 ESTP의 즉흥성을 무조건 천박함으로 보지 않는다.",
+        "활동 시간과 회복 시간을 번갈아 설계한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INFP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:INFP:ESFP",
+    "originalResearchHash": "180683c02c77db4b849aa3bb20e1788bab9607317c54b26589d345d653ee9a55",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "581eabd5368af0780169ddd8a9ad495591f73e6018a5d7982df531760aef33c2",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "4e52bf84122597abbd14452fbc85ba1d860b84619276d5933494442f6d311673",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 Fi 축을 공유해 관계 초반에는 흥미와 친밀감이 생길 수 있다.",
+        "갈등을 피하는 성향이 있어 겉으로는 부드럽게 보일 수 있다.",
+        "ESFP는 현재의 생동감을, INFP는 그 순간의 의미를 느끼며 서로에게 다른 방식의 온기를 준다."
+      ],
+      "friction": [
+        "ESFP는 INFP가 자신의 도움을 필요로 한다고 여기며 간섭할 수 있다.",
+        "INFP는 ESFP가 무엇을 바라는지 이해하지 못해 갈등이 커진다.",
+        "둘 다 불만을 말하지 못해 문제가 계속 커질 수 있다.",
+        "INFP는 진심의 깊이를 원하고 ESFP는 지금의 반응을 원해 사랑을 확인하는 방식이 다르다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 INFP를 현재 경험과 행동으로 끌어내고, INFP는 ESFP에게 감정의 의미와 상상력을 더한다.",
+        "서로를 가볍게 보지 않으면 따뜻한 표현과 깊은 공감이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESFP는 도움을 주기 전에 INFP가 원하는지 묻는다.",
+        "INFP는 불편함을 숨기지 말고 구체적으로 표현한다.",
+        "즐거운 경험 뒤에 조용한 회복 시간을 배치한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:INTJ:INTJ",
+    "originalResearchHash": "8978b7213fa528bea3329c70cf9893f51ec3e700d753df2d18d844f83db19b64",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "b5ad4d0b14cd32671129f10d239a0de4ecde508caf385701d6ae5205ca357dc7",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "b5ad4d0b14cd32671129f10d239a0de4ecde508caf385701d6ae5205ca357dc7",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 지식, 논리, 진리, 정의, 과학과 예술의 진보 같은 큰 주제에서 빠르게 유대감을 느낀다.",
+        "잡담보다 내용 있는 토론을 선호하고, 서로의 언어가 비슷하다고 느낀다.",
+        "일반적인 제도나 통념보다 더 나은 세계와 더 정교한 구조를 함께 상상한다."
+      ],
+      "friction": [
+        "서로 분석적인 경쟁심이 강해 토론이 의견 교환이 아니라 승패 싸움으로 변하기 쉽다.",
+        "비슷한 방식으로 생각한다고 믿다가 결론이 달라지면 누구보다 강하게 적대할 수 있다.",
+        "관계의 세월보다 논쟁에서 이기는 일을 더 앞세우면 관계가 급격히 식는다."
+      ],
+      "positiveInfluence": [
+        "둘이 함께 구조를 만들면 여러 사람보다 빠르게 정교한 시스템을 세울 수 있다.",
+        "서로의 사고방식이 거울처럼 작동해 자기 장단점을 더 명확히 보게 된다.",
+        "문화, 과학, 예술, 지식에 대한 존중이 관계의 깊이를 만든다."
+      ],
+      "repairStrategy": [
+        "논쟁의 목표를 승리가 아니라 공동 결론으로 합의한다.",
+        "제3자의 강제 화해보다 각자 생각할 시간을 준 뒤 다시 논점과 감정을 분리한다.",
+        "현실 과제는 추상 토론과 분리해 담당자, 기한, 실행 기준을 정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:INTJ:INTP",
+    "originalResearchHash": "891ffd04c34bc1d3d9a95c7f2425c9b55dbe97272bf3f5aa95b8e1d4c717351f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "5a125cc720eaf22fa36b6ecabde8d5fcbb7c2a53b37eb15e22673e3445ca377e",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "42db8402f72f7d4efd266db9a0ef824cf0c3f27d739d902520aa08371430ca7f",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 지식, 논리, 원리, 추상적 대화를 좋아한다.",
+        "감정적 교류보다 사고의 자극에서 친밀감이 시작된다.",
+        "가벼운 분위기보다 각자의 관심사를 깊게 파고드는 대화에서 서로를 알아본다.",
+        "서로에게 과한 사교성과 감정 표현을 요구하지 않아 지적 거리감이 오히려 편안함이 된다."
+      ],
+      "friction": [
+        "INTJ는 결론과 실행을 원하고 INTP는 가능성과 분석을 더 오래 열어두려 한다.",
+        "INTJ의 일정과 기준은 INTP에게 압박으로 느껴지고, INTP의 미결정성은 INTJ에게 답답함으로 보인다.",
+        "생활 문제에서는 INTJ가 마감과 구조를 요구하고, INTP는 아직 생각이 끝나지 않았다는 태도로 갈등을 키울 수 있다."
+      ],
+      "positiveInfluence": [
+        "INTP는 INTJ의 전략에 더 넓은 이론적 가능성을 열어주고, INTJ는 INTP의 분석을 실행 가능한 계획으로 닫아준다.",
+        "서로를 존중하면 아이디어가 공상에 머물지 않고 실제 설계로 이어진다."
+      ],
+      "repairStrategy": [
+        "분석할 시간과 결정할 시간을 따로 정한다.",
+        "INTJ는 INTP의 탐색을 게으름으로 단정하지 않는다.",
+        "INTP는 합의된 마감과 생활 규칙을 지킨다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:INTJ:ENTJ",
+    "originalResearchHash": "da193bdb3664cce46d39b04a3353dccc082b10e9a5d0c6a22feeca566ac684f4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "7c239b12335a21d8e078cd866698abd0d4e57e61725c4ee6279c1e45163f442f",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "22026d31f55ff9e0ece96117745371224a453b5227aae8e8113def4d149841a3",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 목표, 성과, 전략, 능력 중심의 판단을 편하게 느낀다.",
+        "감정적 돌려 말하기보다 직접적인 기준과 실행 계획을 선호한다.",
+        "서로의 야망과 기준을 빠르게 알아보고, 평범한 안정만으로는 만족하지 않는다는 점에서 통한다."
+      ],
+      "friction": [
+        "ENTJ의 외향적 지휘와 속도는 INTJ에게 침범처럼 느껴질 수 있다.",
+        "둘 다 통제권을 원해 누가 최종 결정을 내릴지에서 충돌한다.",
+        "ENTJ는 바로 실행하자고 압박하고, INTJ는 더 정교한 검토가 필요하다고 버티면서 주도권 싸움이 생긴다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 INTJ의 전략을 빠르게 밖으로 밀어내고, INTJ는 ENTJ의 실행에 장기 구조와 리스크 검토를 붙인다.",
+        "둘이 경쟁자가 아니라 파트너로 서면 목표 달성 속도와 완성도가 같이 올라간다."
+      ],
+      "repairStrategy": [
+        "최종 결정권과 자문 영역을 명확히 나눈다.",
+        "속도를 올릴 때는 INTJ에게 검토 시간을 보장한다.",
+        "성과 회의와 감정 대화는 따로 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:INTJ:ENTP",
+    "originalResearchHash": "d8261864a03c1a0e46e81b2517618c0f9d33679ac998f09ecea25f2b06ff55cb",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "b917e453a20d63c6d3bbb4979ecbddda440c441eb00ac7af089f5c1cebea7ad5",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "22e2efbb02e16bcc44fbe380e2600265d6d4d84c32d686140c5cd9db9cd1b04e",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 새로운 관점, 지식적 토론, 기존 규칙을 깨는 사고에서 빠르게 흥미를 느낀다.",
+        "감정적 교류보다 두뇌의 자극으로 관계가 시작되는 경향이 있다.",
+        "과학, 철학, 예술, 사회 변화 같은 추상적 주제를 함께 오래 다룰 수 있다."
+      ],
+      "friction": [
+        "둘 다 분석적으로 경쟁적이라 토론이 '내가 맞고 네가 틀리다'로 흐르기 쉽다.",
+        "ENTP는 자연스러운 흐름과 가벼운 대화를 선호하지만 INTJ는 조직적 과정과 엄숙한 집중을 원한다.",
+        "ENTP의 자유로운 일정과 INTJ의 빡빡한 계획이 생활에서 계속 충돌한다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 INTJ에게 여유, 유머, 삶을 즐기는 감각을 제공한다.",
+        "INTJ는 ENTP에게 흐트러진 계획을 정리하고 끈기와 책임감을 보완해준다.",
+        "둘이 신뢰와 공감을 확보하면 독특한 아이디어와 실행 구조를 동시에 만들 수 있다."
+      ],
+      "repairStrategy": [
+        "토론이 승부로 변하면 멈추고 합의해야 할 현실 과제를 따로 적는다.",
+        "INTJ는 ENTP의 여유 시간을 무책임으로 단정하지 않는다.",
+        "ENTP는 INTJ가 지키고 싶은 핵심 일정과 정리 기준을 존중한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [
+      "pcpr:material:CH01.P3:pair-is-not-development-test"
+    ],
+    "coverageClass": "selected_conditional_candidate",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:INTJ:INFJ",
+    "originalResearchHash": "e02255d2636390c73a9404d980d396227eb18c27865b19a723e3f39ee4bb2c8b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "c948ae01b5aa0f13cf9f6fd4093afe520bb5544f07eaf87460f7c0cbbf26ce41",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "588a7e6213e213faeca707ea4f7a017f4fd53b5e4f62d6b6887d70c98c56a1bf",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 직관적이고 깊은 의미, 미래 방향, 큰 그림에 관심이 많다.",
+        "가벼운 관계보다 내면의 세계와 장기 비전을 나누는 관계를 선호한다.",
+        "겉으로 드러난 사실보다 그 뒤의 의도, 흐름, 상징을 읽으려는 태도에서 서로를 흥미롭게 본다."
+      ],
+      "friction": [
+        "INTJ는 논리와 효율을 앞세우고 INFJ는 의미와 사람의 감정 흐름을 더 중시한다.",
+        "INTJ의 직설은 INFJ에게 차갑게 들어가고, INFJ의 암시적 표현은 INTJ에게 불명확하게 느껴진다.",
+        "문제가 생기면 INTJ는 해결책부터 제시하고, INFJ는 먼저 감정의 맥락을 알아주길 원해 대화 순서가 어긋난다."
+      ],
+      "positiveInfluence": [
+        "INFJ는 INTJ에게 관계의 맥락과 사람의 의미를 보게 하고, INTJ는 INFJ에게 현실적 전략과 실행 기준을 제공한다.",
+        "두 사람이 균형을 잡으면 비전이 감정에만 머물지 않고 실제 방향으로 정리된다."
+      ],
+      "repairStrategy": [
+        "INTJ는 결론 전에 감정 확인을 먼저 한다.",
+        "INFJ는 암시보다 구체적인 요청을 말한다.",
+        "비전 대화와 생활 실행표를 함께 만든다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:INTJ:INFP",
+    "originalResearchHash": "3714271760948571217697ec04f6dcdd8f4980c284995d58f1a146286e8c048f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "ac68d3f0da9cc32dfb105f6b59f20cd41d30f5f6989117f7a86a997e7bc2c635",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "ca77c6281545f314c0053b1080189d168507ec50a5ec956f414588ccc0726cda",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 지적 자극과 추상적 대화를 통해 관계를 추구한다.",
+        "문화, 과학, 예술의 가치를 높게 보고 세상이 더 나아질 수 있다고 믿는다.",
+        "세부 잡무보다 큰 관념과 변화 가능성에 더 빠르게 몰입한다.",
+        "겉으로는 조용해 보여도 내면에는 자기만의 기준과 이상을 강하게 품고 있다."
+      ],
+      "friction": [
+        "INTJ는 논리와 효율을 보고 INFP는 가치와 윤리를 본다.",
+        "INFP는 자연스러운 흐름과 가벼운 대화를 편하게 느끼지만 INTJ는 통제된 집중과 정돈된 과정을 원한다.",
+        "INTJ는 INFP를 게으르다고 보고, INFP는 INTJ를 지나치게 형식적이고 차갑다고 볼 수 있다."
+      ],
+      "positiveInfluence": [
+        "INFP는 INTJ의 내면 가치와 인간적 의미를 열어준다.",
+        "INTJ는 INFP의 이상을 현실적 구조와 실행 계획으로 내려놓게 돕는다.",
+        "서로의 해석 방향이 다르기 때문에 문제를 논리와 윤리 양쪽에서 검토할 수 있다."
+      ],
+      "repairStrategy": [
+        "INTJ는 가치와 감정을 비효율로만 처리하지 않는다.",
+        "INFP는 윤리적 불편함을 추상적으로 말하지 말고 구체적인 요청으로 바꾼다.",
+        "정리정돈과 일정은 최소 기준을 합의하고, 나머지는 각자의 방식으로 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:INTJ:ENFJ",
+    "originalResearchHash": "1874f74e319112dec40785d48528cd66984576a91e586b1d87febcb12045d782",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "d07e061f0276e54945b7fb51a6ca8ac62937b8c71ffde7e4f75debec384458f4",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "d4627bd77ff529c704845a5195fb8bf33abe8ac77f4402006e2734931010c315",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 더 나은 방향으로 사람과 상황을 변화시키고 싶어 한다.",
+        "초반에는 서로의 전혀 다른 에너지와 강점이 흥미롭게 느껴진다.",
+        "INTJ는 구조를 보고 ENFJ는 사람을 보지만, 둘 다 지금보다 나은 미래를 만들고 싶다는 욕구가 강하다."
+      ],
+      "friction": [
+        "ENFJ는 관계와 분위기를 움직이고 INTJ는 구조와 효율을 움직인다.",
+        "ENFJ의 정서적 개입은 INTJ에게 부담이고, INTJ의 냉정한 판단은 ENFJ에게 무정함으로 보일 수 있다.",
+        "갈등 상황에서 ENFJ는 대화를 통해 확인받고 싶어 하고, INTJ는 혼자 정리한 뒤 결론만 말하려 해 온도 차이가 커진다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 INTJ에게 사람을 움직이는 언어를 가르치고, INTJ는 ENFJ에게 전략적 선명함을 준다.",
+        "둘이 합을 맞추면 사람의 마음을 읽는 힘과 방향을 설계하는 힘이 같이 살아난다."
+      ],
+      "repairStrategy": [
+        "ENFJ는 INTJ의 혼자 있는 시간을 거절로 해석하지 않는다.",
+        "INTJ는 필요한 감정 표현을 일정처럼이라도 실행한다.",
+        "관계 행사와 개인 회복 시간을 균형 있게 배치한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:INTJ:ENFP",
+    "originalResearchHash": "19c19b13d7044ad634f95ab11a311b03e1d06fc1d3968f6382e99080e16eab15",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "ffaaee04cec941d7ece6b3228430b748eb9010baa609b49ce8de51b93d5bc6ef",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "a2a51af3de246694cf24d12ab55d50c2738f7dc483b274213800f2aa9410bf0c",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 새로운 가능성과 기존 틀을 넘어서는 방향에 관심을 가진다.",
+        "서로의 전혀 다른 방식에서 배울 수 있는 여지가 크다.",
+        "INTJ는 큰 그림을 구조화하고 ENFP는 그 안에 사람, 감정, 기회를 불어넣는다.",
+        "둘 다 평범한 반복만으로는 만족하지 않아 관계 안에서도 성장과 변화를 기대한다."
+      ],
+      "friction": [
+        "ENFP는 열린 가능성과 감정 흐름을 따르고 INTJ는 장기 전략과 구조를 선호한다.",
+        "ENFP의 변화무쌍함은 INTJ에게 혼란이고, INTJ의 엄격함은 ENFP에게 구속으로 느껴진다.",
+        "갈등이 생기면 ENFP는 관계의 온도를 먼저 살피고, INTJ는 문제의 원인과 해결책부터 잡으려 해 대화 순서가 어긋난다."
+      ],
+      "positiveInfluence": [
+        "ENFP는 INTJ에게 인간적 활력과 열린 가능성을 제공하고, INTJ는 ENFP에게 실행 구조와 집중력을 준다.",
+        "서로를 교정하려 하지 않으면 자유로운 상상과 냉정한 설계가 함께 움직인다."
+      ],
+      "repairStrategy": [
+        "ENFP는 핵심 약속과 재정 기준을 지킨다.",
+        "INTJ는 즉흥적 즐거움과 감정 표현을 일정 밖의 낭비로만 보지 않는다.",
+        "큰 목표는 함께 정하되 접근 방식에는 여지를 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:INTJ:ISTJ",
+    "originalResearchHash": "a83eed6bdbca10d505b535f6b3c022733af1c4e5cf95af7fcbb52097acaeba99",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "1de2fde7842d8448ac51501eb6c6f64f6b88ab4a2e13d8169c133733b80147a0",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "d904c447ebc6c781116138c5157316b554699823d41542a67650a735c65c7d09",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 책임, 체계, 정확성, 실질적 결과를 중요하게 보며 과장된 분위기를 선호하지 않는다.",
+        "정리된 일정과 명확한 기준이 있을 때 편안함을 느낀다.",
+        "말로 감정을 크게 확인하기보다 약속을 지키고 맡은 일을 끝내는 방식으로 신뢰를 만든다."
+      ],
+      "friction": [
+        "ISTJ는 검증된 전례를 중시하고 INTJ는 기존 시스템을 재설계하려 하므로 변화 속도에서 충돌한다.",
+        "INTJ의 추상적 비전은 ISTJ에게 비현실로, ISTJ의 보수성은 INTJ에게 답답함으로 보인다.",
+        "갈등이 생기면 ISTJ는 근거와 절차를 요구하고, INTJ는 왜 더 좋은 구조를 못 보느냐고 밀어붙이기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 INTJ의 비전을 현실 절차로 고정하고, INTJ는 ISTJ에게 더 큰 방향을 제시한다.",
+        "둘이 역할을 나누면 안정적인 운영력과 장기 전략이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "변화 제안에는 실제 근거와 단계표를 붙인다.",
+        "전례를 지킬 영역과 실험할 영역을 분리한다.",
+        "감정 표현이 부족해지지 않도록 정기적인 확인 시간을 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:INTJ:ISFJ",
+    "originalResearchHash": "1d05cca4ce699ea774fe055b5541ccd638b84e8d9772f6fd1c35c70a23987925",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "08c7651aa71adf50b82fff5db721ca950b4f05aab01c639815a0d66e2128a839",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "7c3471fd8bb1e16068489e80b03a47f8585ecf01f4b56d2e08a667625827abed",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 내향적이고 진지한 관계를 선호하며 가벼운 소란을 좋아하지 않는다.",
+        "상대에게 책임 있게 행동하려는 기본 태도는 공유할 수 있다.",
+        "겉으로 요란하게 표현하지 않아도 가까운 사람에게 오래 책임을 다하려는 마음은 비슷하다."
+      ],
+      "friction": [
+        "ISFJ는 안정, 전통, 사람의 감정과 필요를 보고 INTJ는 구조, 효율, 장기 전략을 본다.",
+        "ISFJ의 배려와 챙김은 INTJ에게 간섭으로 느껴질 수 있고, INTJ의 냉정함은 ISFJ에게 무심함으로 보인다.",
+        "가족 문제에서는 ISFJ가 정서와 의무를 먼저 보고, INTJ가 효율과 경계를 먼저 봐 같은 상황을 전혀 다르게 해석한다."
+      ],
+      "positiveInfluence": [
+        "ISFJ는 INTJ에게 생활의 세심함과 정서적 돌봄을 가르치고, INTJ는 ISFJ에게 더 큰 구조와 독립적 판단을 보여준다.",
+        "둘이 균형을 잡으면 따뜻한 생활 관리와 장기 판단이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "INTJ는 ISFJ의 챙김을 통제보다 애정 신호로 읽는다.",
+        "ISFJ는 INTJ의 혼자 있는 시간을 거절로 해석하지 않는다.",
+        "가족 의무와 개인 자율성의 경계를 문장으로 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:INTJ:ESTJ",
+    "originalResearchHash": "bda2641269c32504828c3c37237b4ef61581d6bfa8dd8200161cfba7af6cb556",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "ca6e3a337a4f552d210ddb9345681a5ce90cff73a0a2effea036cdcfdaf4f21b",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "3f49841298b241ea98454f2f62537d03b71f39335cd4add060f0428e8132c948",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 목표, 성과, 책임, 체계적 실행을 중요하게 본다.",
+        "감정보다 현실적 해결과 명확한 기준을 선호한다.",
+        "약속을 지키고 결과를 만드는 사람을 신뢰하기 때문에 생활과 일의 기본 질서는 빠르게 맞출 수 있다.",
+        "서로가 허술한 사람을 견디기 어려워한다는 점도 빠른 공감대가 된다."
+      ],
+      "friction": [
+        "ESTJ는 검증된 절차와 조직 질서를 중시하고 INTJ는 더 나은 구조가 보이면 규칙을 바꾸려 한다.",
+        "ESTJ의 즉각적 지휘는 INTJ에게 압박이 되고, INTJ의 추상적 재설계는 ESTJ에게 비현실로 보인다.",
+        "둘 다 기준이 강해 사소한 생활 규칙도 누가 옳은지 따지는 힘겨루기로 번질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 INTJ의 전략을 운영 현장에 밀어붙이고, INTJ는 ESTJ의 실행에 장기 비전을 제공한다.",
+        "서로의 역할을 인정하면 운영력과 혁신성이 동시에 살아난다."
+      ],
+      "repairStrategy": [
+        "규칙을 바꿀 때는 실험 기간과 평가 기준을 정한다.",
+        "ESTJ는 INTJ에게 검토 시간을 주고, INTJ는 실행 가능한 단계표를 제시한다.",
+        "생활 질서와 감정 확인을 따로 관리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:INTJ:ESFJ",
+    "originalResearchHash": "093fc227fe85e8e1dd862b457bf692bc6ca5365c51867ec0e1da646e808aabb1",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "0456f86bf6c647ae6a76ca4d223bbc50004f354235f453e01ec355181da446dd",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "341b6d52284bd38b539ba4be14da0e4679e793a2cb84dd8edb894e39812df125",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 관계나 생활을 안정적으로 유지하려는 의지는 가질 수 있다.",
+        "서로의 약점을 보완하면 사회적 조율과 전략적 판단이 함께 작동한다.",
+        "ESFJ는 관계망을 살리고 INTJ는 장기 판단을 세우기 때문에 역할이 분명하면 생활 운영력이 좋아진다."
+      ],
+      "friction": [
+        "ESFJ는 사회적 조화와 예의를 중시하고 INTJ는 논리와 효율을 우선한다.",
+        "ESFJ의 관계 중심 요구는 INTJ에게 부담이고, INTJ의 직설은 ESFJ에게 무례하게 들릴 수 있다.",
+        "가족 행사, 체면, 주변 사람 챙김에서 가치 차이가 크게 드러난다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 INTJ에게 사회적 감각과 관계 유지 기술을 알려주고, INTJ는 ESFJ에게 구조적 판단과 장기 전략을 제공한다.",
+        "서로의 방식을 인정하면 감정 관리와 현실 판단이 한쪽으로 치우치지 않는다."
+      ],
+      "repairStrategy": [
+        "ESFJ는 INTJ에게 사회적 의무의 이유와 범위를 구체적으로 말한다.",
+        "INTJ는 최소한의 예의와 표현을 전략이 아니라 관계 유지 비용으로 인정한다.",
+        "행사와 휴식의 한계를 미리 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:INTJ:ISTP",
+    "originalResearchHash": "4453b136f4f2291fe9f99ca1c45b66063953d91bdce3c9f88a89513771ab58e2",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "da41d37cc99ba0fa2278ff395ccf6b56bee87d449fd5e2e215a329bcea97bcb2",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "9b9988e4001d57223f651e2e892a7e07d6c550379c9141818116cb73ee86204e",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 독립적이고 불필요한 감정 표현보다 문제 해결을 선호한다.",
+        "각자 자기 영역과 개인 시간을 존중할 수 있다.",
+        "말보다 실제로 작동하는 해결책을 신뢰하기 때문에 과장된 감정극 없이도 관계가 유지될 수 있다.",
+        "서로의 유능함을 행동으로 확인할 때 신뢰가 쌓이는 조합이다."
+      ],
+      "friction": [
+        "INTJ는 장기 전략과 추상 구조를 보고 ISTP는 당장 작동하는 현실과 도구를 본다.",
+        "INTJ의 계획은 ISTP에게 과하게 느껴지고, ISTP의 즉흥 대응은 INTJ에게 불안정하게 보인다.",
+        "갈등이 생기면 INTJ는 원인과 미래 리스크를 따지고, ISTP는 지금 해결하면 된다는 태도로 넘어가려 한다."
+      ],
+      "positiveInfluence": [
+        "ISTP는 INTJ의 전략을 현장에서 시험하게 하고, INTJ는 ISTP의 실용성을 장기 방향에 연결한다.",
+        "이 조합은 이론과 손에 잡히는 실행을 연결할 때 강한 현실 감각을 얻는다."
+      ],
+      "repairStrategy": [
+        "INTJ는 모든 행동을 장기 계획에 묶지 않는다.",
+        "ISTP는 핵심 일정과 약속만큼은 예측 가능하게 지킨다.",
+        "실험과 검토를 분리해 현장 피드백을 계획에 반영한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:INTJ:ISFP",
+    "originalResearchHash": "fe7381a99c37beef4ce2e32da29196ea0c4afa0b781898ea8508e52743c57bce",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "d2e3cf0cc843a253a6f74be4267a7b6715e827c3590ecba3735046fa3b603273",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "a15ee85dbfaa4d39150cdf0b46be5ca785bb0cc9abae24d0c8292aa4b3efc977",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로의 강점이 상대의 약점을 보완하는 구조라 이질감이 있으면서도 끌림이 생긴다.",
+        "ISFP는 INTJ에게 감각적 디테일과 섬세한 현실 접점을 제공한다.",
+        "INTJ는 ISFP에게 방향, 구조, 장기 판단의 틀을 제공할 수 있다."
+      ],
+      "friction": [
+        "ISFP가 감정적으로 마음을 열기까지 시간이 걸려 INTJ는 관계의 흐름을 예측하기 어렵다.",
+        "INTJ의 건설적 비판은 ISFP에게 상처로 들어가고, ISFP의 섬세한 반응은 INTJ에게 비논리적으로 보일 수 있다.",
+        "감정과 논리의 우선순위가 달라 문제를 해결하는 속도와 방식이 갈린다."
+      ],
+      "positiveInfluence": [
+        "ISFP는 INTJ를 현장의 감각과 미학, 인간적 섬세함 쪽으로 열어준다.",
+        "INTJ는 ISFP의 가치와 감각을 장기 계획과 실행 구조로 옮겨준다.",
+        "서로의 차이를 인정하면 딱딱한 전략과 살아 있는 감각이 함께 작동한다."
+      ],
+      "repairStrategy": [
+        "INTJ는 피드백 전에 상대의 감정과 의도를 먼저 인정한다.",
+        "ISFP는 상처받은 지점을 침묵으로 닫지 말고 구체적인 행동 요청으로 바꾼다.",
+        "생활 결정은 논리 기준과 감각적 만족을 모두 반영해 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:INTJ:ESTP",
+    "originalResearchHash": "c410006dddc023668b89bd81c7a462a2e93277375eae97c55516961cda36cc48",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "38db4b484df50dbdb38f56cdf023ebae140fbf63fd9db2c6630a204f733501a7",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "52ff85368acaf47f2213da71cc6da4b77ae4c4862eb33195719f24413f4af260",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 비효율과 허황된 말보다 실제 작동 여부를 중요하게 본다.",
+        "문제가 있으면 돌려 말하기보다 핵심을 잡고 해결하려는 면이 있다.",
+        "상대가 능력 있고 자신감 있게 움직일 때 빠르게 관심을 보이며, 말보다 결과로 사람을 판단한다."
+      ],
+      "friction": [
+        "ESTP는 현장과 즉흥을 즐기고 INTJ는 장기 구조와 통제를 선호한다.",
+        "ESTP의 사교성과 활동성은 INTJ에게 피로가 되고, INTJ의 분석은 ESTP에게 지나치게 무겁게 느껴진다.",
+        "돈과 일정에서도 ESTP는 기회를 보면 움직이고, INTJ는 리스크를 계산한 뒤 움직이려 해 타이밍이 엇갈린다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 INTJ에게 현실의 속도와 감각을 가르치고, INTJ는 ESTP에게 장기 리스크와 전략을 보완한다.",
+        "서로를 존중하면 빠른 실행력과 깊은 판단력이 함께 붙는다."
+      ],
+      "repairStrategy": [
+        "ESTP는 INTJ에게 혼자 충전할 시간을 보장한다.",
+        "INTJ는 모든 즉흥성을 무책임으로 보지 않는다.",
+        "위험한 결정은 사전 기준을 두고 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:INTJ:ESFP",
+    "originalResearchHash": "dfe85e4da0b45ae851588948dedb45ac6ddbf81381ce954380d880fc5de9489b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "c83ed4aee18250f38d0b604d2396ce85c4ea575a2dbd8929b9d03404ae41ada9",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "df675c709b51b5c9128cc4deb0971fd3f22f860f55fb6a1044e1868ec9c52eeb",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로에게 없는 강점이 뚜렷해 초반에는 강한 신선함을 느낄 수 있다.",
+        "ESFP는 현실의 즐거움과 사람의 반응을, INTJ는 장기 구조와 전략을 제공한다.",
+        "둘 다 자기 방식이 분명해 상대의 강점이 확실할 때 매력을 빠르게 느낀다."
+      ],
+      "friction": [
+        "ESFP는 지금의 경험과 즐거움을 중시하고 INTJ는 미래의 목표와 효율을 중시한다.",
+        "ESFP의 표현과 활동성은 INTJ에게 과하고, INTJ의 분석과 침묵은 ESFP에게 차갑다.",
+        "데이트와 소비에서도 ESFP는 지금 즐거운 선택을 원하고, INTJ는 장기 손익과 의미를 따져 분위기가 꺾일 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 INTJ가 몸과 현재를 느끼게 하고, INTJ는 ESFP가 장기 선택을 생각하게 한다.",
+        "서로를 억누르지 않으면 현재의 생동감과 미래의 설계가 같이 살아난다."
+      ],
+      "repairStrategy": [
+        "INTJ는 계획 안에 즐거움과 즉흥성을 일부러 넣는다.",
+        "ESFP는 장기 재정과 목표의 최소 기준을 존중한다.",
+        "사교 일정과 개인 회복 시간을 분리해 잡는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:INTP:INTJ",
+    "originalResearchHash": "9d47ac9bdec0e160ff0d0a2fcf5da060649b0f55f6a34b24d941680cd18da1ca",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "42db8402f72f7d4efd266db9a0ef824cf0c3f27d739d902520aa08371430ca7f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "5a125cc720eaf22fa36b6ecabde8d5fcbb7c2a53b37eb15e22673e3445ca377e",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 새로운 지식과 다른 방식의 사고를 나누는 토론에서 친밀감을 느낀다.",
+        "통념과 제도에 큰 관심이 없고, 과학·철학·예술의 진보 같은 큰 주제를 좋아한다.",
+        "잡담보다 내용 있는 토론을 선호하고 외부에서 보기에는 심오하거나 논쟁적으로 보일 수 있다."
+      ],
+      "friction": [
+        "분석 경쟁이 강해 토론이 내가 맞고 네가 틀리다는 싸움으로 변하기 쉽다.",
+        "INTP는 자연스러운 흐름과 여유를 편하게 느끼고 INTJ는 조직적 계획과 엄숙한 집중을 선호한다.",
+        "INTJ는 INTP를 게으르다고 보고 INTP는 INTJ를 지나치게 형식적이라고 볼 수 있다."
+      ],
+      "positiveInfluence": [
+        "INTP는 INTJ의 경직된 일상에 여유와 자유 시간을 제공한다.",
+        "INTJ는 INTP의 흐트러진 계획을 정리하고 끈기와 책임 의식을 보완한다.",
+        "둘의 지적 유대는 매우 강하지만 신뢰와 공감의 자세가 함께 필요하다."
+      ],
+      "repairStrategy": [
+        "논쟁에서 이기는 것과 관계를 지키는 것을 분리한다.",
+        "INTP는 최소한의 정리와 책임 기준을 지킨다.",
+        "INTJ는 모든 여유를 게으름으로 해석하지 않는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:INTP:INTP",
+    "originalResearchHash": "b43b3d005809226c423c373677bd9c42c3bd3b68127993b688a97eb7d0b234f6",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "f3c3ca726a9e76e07a9a8ef23f154e6b265f0273c2d5c76cebf83a2ad2f253f9",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "f3c3ca726a9e76e07a9a8ef23f154e6b265f0273c2d5c76cebf83a2ad2f253f9",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로의 사고 방식, 귀차니즘, 지적 몰입, 개인주의를 가장 쉽게 이해한다.",
+        "같은 유형을 객관적으로 보며 자기 개발의 거울로 삼을 수 있다.",
+        "각자의 혼자 있는 시간과 관심사 몰입을 크게 문제 삼지 않아 관계의 압박이 적다."
+      ],
+      "friction": [
+        "기능상 보완이 약해 관계가 단조롭게 흐를 수 있고, 불편한 감정도 서로 알아서 정리하겠거니 넘기기 쉽다.",
+        "둘 다 실행과 생활 관리가 약하면 아이디어만 많고 현실이 방치된다.",
+        "돈, 집안일, 가족 일정처럼 누군가는 닫아야 하는 문제를 서로 미루면 생활의 신뢰가 약해진다."
+      ],
+      "positiveInfluence": [
+        "서로의 특이함을 이상하게 보지 않고 편하게 받아들인다.",
+        "관심사가 맞으면 깊은 지적 대화와 공동 탐구가 가능하다.",
+        "각자의 독립성을 존중하기 때문에 과한 감정 요구 없이 오래 생각을 나누는 관계가 된다."
+      ],
+      "repairStrategy": [
+        "생활 책임을 자동화하거나 외부 도움으로 구조화한다.",
+        "감정 확인을 짧은 문장으로라도 정기적으로 한다.",
+        "공동 프로젝트는 마감과 산출물을 먼저 정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:INTP:ENTJ",
+    "originalResearchHash": "8ef4da366b3e1bf4ef642724d23d1e6298c8ca31414f0aabdc048e9541c0d1fb",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "697c391f5775aada8a532f208b2785773d7a885974380223b84e5ef56f7a78c6",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "307a3404c5ba218a109e2919131a1341494c5b35cfbbfc6d36bb9c3f314a9aa2",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘이 있을 때는 특정 강점에 끌리며 잘 지낼 수 있고, 서로의 지적 능력과 문제 해결력을 빠르게 알아본다.",
+        "지적 능력과 전략적 사고에서 서로를 인정할 수 있다.",
+        "둘 다 문제를 감정만으로 덮기보다 구조와 원인을 찾아보려는 태도가 있다."
+      ],
+      "friction": [
+        "사회적 환경에서는 각자의 강점을 활용해 경쟁하기 쉽고, 주도권을 누가 쥐는지에 따라 긴장이 커진다.",
+        "ENTJ는 INTP의 거리 두기를 의도적 냉담함으로 오해할 수 있다.",
+        "ENTJ의 지휘와 속도는 INTP에게 통제와 압박으로 느껴진다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 INTP의 아이디어를 실행과 목표로 밀어붙인다.",
+        "INTP는 ENTJ의 전략에 더 깊은 원리와 반례 검토를 제공한다.",
+        "권한과 자율성을 분리하면 추진력과 분석력이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 INTP의 혼자 있는 시간을 의도적 회피로 보지 않는다.",
+        "INTP는 필요한 결정과 책임을 계속 미루지 않는다.",
+        "실행권과 검토권을 분리해 각자의 강점을 살린다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:INTP:ENTP",
+    "originalResearchHash": "2be105fa8d60cea13153b02669c8e8988a4739d8fcd1bdacda55952f554b99b8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "c13cd91533ac746a418b3a7ee82936abcc3d888df682e72beda7a1409e40622d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "1602f8c1ccb9a7dcecee11c230adc2816aef6ca0b3b38f73f823c83389c262bb",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "비슷한 관심사와 아이디어를 공유해 서로의 닮은 점을 빠르게 알아차린다.",
+        "가능성, 토론, 새로운 관점에 강하게 끌리고 서로의 독특한 발상을 억지로 평범하게 만들려 하지 않는다.",
+        "둘 다 지루한 결론보다 새로운 설명과 반례를 찾는 과정에서 관계의 재미를 느낀다."
+      ],
+      "friction": [
+        "한쪽이 확실하다고 보는 것을 다른 한쪽은 변동 가능한 것으로 본다.",
+        "가까운 목표는 맞아도 최종 목표와 이해 방식에서 의견이 갈린다.",
+        "ENTP는 대화를 밖으로 확장하려 하고 INTP는 안에서 더 정밀하게 파고들어 결정과 실행이 늦어질 수 있다."
+      ],
+      "positiveInfluence": [
+        "서로의 인식 차이는 관계의 발전성을 만들고 아이디어를 더 풍부하게 한다.",
+        "ENTP는 INTP의 사고를 밖으로 끌어내고, INTP는 ENTP의 발상을 더 정교하게 검토한다."
+      ],
+      "repairStrategy": [
+        "아이디어 대화와 실제 결정 시간을 분리한다.",
+        "논쟁을 놀이로 쓰되 상대의 자존심을 공격하지 않는다.",
+        "최종 목표는 문장으로 합의하고 세부 방식에는 여지를 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:INTP:INFJ",
+    "originalResearchHash": "c954ffd4e75027fb63cf73d3f98dcc76f32c20a3f730eef72f6b40e603a1b2df",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "c65ff13e2f26d1b50a95645b36d6f127feabb0da4250b62701dbf89c8e4e9134",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "f542efda509cfe4d1d15b6bc574fe829e7b12119fd2aaed86089f489031a7a20",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로 이해할수록 신기함을 느끼고 비슷한 점을 발견하며, 표면적인 사교보다 깊은 주제에서 더 쉽게 가까워진다.",
+        "둘 다 관계를 먼저 시작하지 않는 편이지만, 시작된다면 INTP가 먼저 움직일 수 있다.",
+        "적정선을 유지하면 서로를 배려하는 좋은 관계와 시너지가 가능하다."
+      ],
+      "friction": [
+        "깊은 대화나 깊은 연애로 들어가면 쉽지 않다.",
+        "INFJ는 마음을 열수록 더 많은 표현과 공유를 원하지만 INTP는 어떤 주제에는 소통의 필요성을 느끼지 못한다.",
+        "INFJ는 말이 어떻게 전달되었는지를 중시하고 INTP는 결론과 객관적 판단을 중시한다."
+      ],
+      "positiveInfluence": [
+        "INFJ는 INTP에게 감정과 관계의 하모니를 알려주고, INTP는 INFJ에게 객관적 상황 판단과 이상적인 방향을 제시한다.",
+        "서로 적정 거리를 유지하면 배려와 지적 자극을 동시에 얻는다."
+      ],
+      "repairStrategy": [
+        "INTP는 해결책 전에 INFJ가 원하는 감정 확인을 먼저 한다.",
+        "INFJ는 공유의 목적이 결론인지 위로인지 구체적으로 알려준다.",
+        "깊은 대화 뒤에는 결론과 감정을 따로 정리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:INTP:INFP",
+    "originalResearchHash": "27e4f32fb07ca63aa1982fe21bc351582aa3eb647bb26c0b1e36dc4280a833ef",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "12496d46192eed232178d20491d539bcf3f4f7495b6ca1627682623f3222dc7d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "d1c14ea3860d2e65819b292a1ee9b9e9d82ea1ce96253feed8c307f0fc23335f",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "부기능 Ne와 3차 Si가 겹쳐 초반에 끌릴 수 있고, 둘 다 평범한 대화보다 상상과 가능성이 섞인 대화에서 마음이 열린다.",
+        "둘 다 가능성, 상상, 개인의 세계를 중시한다.",
+        "서로의 독특한 관심사와 내면 세계를 비교적 쉽게 존중할 수 있다."
+      ],
+      "friction": [
+        "INTP는 가치관 담론을 싫어하는 편이고 INFP는 가치관 담론을 좋아하는 편이라 부딪치기 쉽다.",
+        "INTP는 논리적 해석을, INFP는 정서적 가치 해석을 우선한다.",
+        "갈등이 생기면 INTP는 결론을 찾고 INFP는 마음의 의미를 확인하려 해 대화 목적이 어긋난다."
+      ],
+      "positiveInfluence": [
+        "INFP는 INTP에게 감정과 가치의 의미를 알려준다.",
+        "INTP는 INFP에게 논리적 구조와 검증을 제공한다.",
+        "서로의 언어를 번역하면 가능성 탐색과 진정성의 균형이 생긴다."
+      ],
+      "repairStrategy": [
+        "INTP는 가치 이야기를 비논리로만 자르지 않는다.",
+        "INFP는 감정적 의미를 구체적 요청으로 바꾼다.",
+        "논리와 감정 대화를 순서대로 나누어 진행한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:INTP:ENFJ",
+    "originalResearchHash": "463da0ee0f896b17c7418f32676e0ac6914230d625603c329e98041d87f5ea8f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "14a6596211c2fee58e7fb91272631854b07ae36adf2b2d7c6c265e2a890a82a1",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "780bf11f043b16c3a15a07cb19574359dd184a82e697a0670ce3e987d65dd3a8",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "INTP와 ENFJ는 서로에게 없는 것을 강하게 느끼는 조합이다.",
+        "INTP는 ENFJ의 사람을 읽는 힘과 관계를 움직이는 능력에 흥미를 느끼고, ENFJ는 INTP의 차분한 분석과 독립적 사고에 끌릴 수 있다.",
+        "둘 다 깊은 주제와 성장 가능성에는 관심이 있어, 감정과 논리를 분리해 다루면 대화의 폭이 넓어진다."
+      ],
+      "friction": [
+        "ENFJ는 정서적 반응과 관계 확인을 원하고, INTP는 문제를 논리 분석이나 침묵으로 처리하려 한다.",
+        "ENFJ의 적극적인 개입은 INTP에게 압박처럼 느껴지고, INTP의 거리감은 ENFJ에게 무시나 냉담함처럼 보일 수 있다.",
+        "갈등이 생기면 ENFJ는 마음의 온도부터 회복하려 하지만 INTP는 원인과 결론부터 찾으려 해 대화 순서가 어긋난다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 INTP가 관계 안에서 자신의 생각을 더 따뜻하게 표현하도록 돕는다.",
+        "INTP는 ENFJ가 사람의 반응에 휩쓸리지 않고 상황을 객관적으로 검토하도록 돕는다.",
+        "서로의 방식을 존중하면 지적 통찰과 관계 리더십이 함께 작동하는 성장형 관계가 된다."
+      ],
+      "repairStrategy": [
+        "INTP는 침묵이 필요할 때 시간과 복귀 시점을 말해 ENFJ의 불안을 줄인다.",
+        "ENFJ는 감정 확인을 요구하기 전에 INTP가 생각을 정리할 여지를 준다.",
+        "감정 대화, 문제 분석, 실행 역할을 한 번에 섞지 말고 순서대로 나누어 다룬다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:INTP:ENFP",
+    "originalResearchHash": "2205ca21ee1a4537a324391d591cf5a9029516a301a87dc0bbbb464863169aa5",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "18771e01e1b906c47aef415b5cd932fd43cadca8802ba0c5a0b6bf3b49ba4ed0",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "5909ece18bf69864110a319d4a897eeba48ff660edd782b5610a95b83356d540",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로 호감이 있으면 친구나 연인으로 좋은 관계가 될 수 있다.",
+        "ENFP는 INTP를 더 활발하게 만들고 어두운 상태에서 끌어내는 기질이 있다.",
+        "둘 다 가능성과 새로운 관점을 좋아해 대화가 열리면 빠르게 재미가 붙고, 서로의 생각을 가볍게 확장해 주는 활력이 생긴다."
+      ],
+      "friction": [
+        "INTP는 ENFP의 장점보다 단점을 더 빨리 캐치하고 지적할 수 있다.",
+        "지적이 반복되면 작은 싸움이 벌어지고, 타협하지 못하면 관계가 어려워진다.",
+        "ENFP는 정서적 반응과 인정 욕구가 강하고 INTP는 말의 정확성을 우선해, 칭찬보다 분석이 먼저 나오면 상처가 쌓인다."
+      ],
+      "positiveInfluence": [
+        "ENFP는 INTP에게 활력과 외부 가능성을 제공한다.",
+        "INTP는 ENFP에게 사고의 검증과 논리적 정리를 제공한다.",
+        "칭찬과 비판의 균형을 잡으면 자유로운 상상과 냉정한 검토가 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ENFP는 INTP의 지적을 감정적으로만 받지 말고 타협선을 찾는다.",
+        "INTP는 ENFP의 좋은 점을 놓치지 않고 말로 인정한다.",
+        "비판은 행동 하나에 한정하고 사람 전체를 평가하지 않는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:INTP:ISTJ",
+    "originalResearchHash": "d2302be1aba51c93176f95f6f00b7c314eb7a0f410875dee5cd34029e8dfaacc",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "86924c5271768aac3abb6060479ff0b7a760a185b3a7afd3f6bd6be023c65bc6",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "60b55b4ce8ffa96674534d7cfec574f5dceafe681e92b5d8bf6509603f49b455",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 유형 모두 세부 경험과 지식의 일부를 공유할 수 있으며 조용하고 실질적인 면이 있다.",
+        "관계 구조상 서로의 약한 기능을 자극하거나 보완하는 부분이 있다.",
+        "둘 다 과한 감정 표현보다 조용한 신뢰와 실제 이행을 더 편하게 느낄 수 있다."
+      ],
+      "friction": [
+        "ISTJ는 규칙과 절차를 중시하고 INTP는 자율과 가능성을 중시한다.",
+        "ISTJ의 현실 기준은 INTP에게 잔소리로, INTP의 느슨함은 ISTJ에게 무책임으로 보일 수 있다.",
+        "돈, 시간 약속, 집안일처럼 반복 책임이 필요한 영역에서 ISTJ는 확정을 원하고 INTP는 여지를 남기려 한다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 INTP에게 생활의 안정과 책임을 제공한다.",
+        "INTP는 ISTJ에게 더 넓은 가능성과 다른 관점을 보여준다.",
+        "서로의 기준을 인정하면 안정성과 사고 확장이 함께 생긴다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 모든 느슨함을 무책임으로 단정하지 않는다.",
+        "INTP는 최소 생활 약속과 돈 관리 기준을 지킨다.",
+        "전례를 지킬 영역과 실험할 영역을 분리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:INTP:ISFJ",
+    "originalResearchHash": "69c7c4c43f77b86fa7fcea60b5b9f8c2d45233f85b80f39b39a07fda027804bf",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "8a0d4e9bbbed765af00787eb2c9365184a556f81a594d38151b5a8021986f5e5",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "b32045d0fedbf990073d4cc106edb0e5f0c43d24cc58b9cf2e9738794914ac2b",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "쉽게 친해지고 서로를 활동적으로 자극할 수 있다.",
+        "서로의 부족한 기능을 어느 정도 보완하며 여가 활동에서 편안함을 느낀다.",
+        "ISFJ는 관계와 생활의 세부를 챙기고, INTP는 문제를 원리와 가능성으로 풀어 서로 다른 안정감을 제공한다."
+      ],
+      "friction": [
+        "여가에서는 잘 맞아도 일상을 함께하는 구조에서는 생활 리듬과 기준이 어긋날 수 있다.",
+        "ISFJ의 안정과 루틴 욕구는 INTP에게 통제처럼 느껴질 수 있다.",
+        "INTP가 감정을 분석이나 침묵으로 처리하면 ISFJ는 애정 확인을 받지 못했다고 느낀다."
+      ],
+      "positiveInfluence": [
+        "ISFJ는 INTP에게 생활의 안정과 관계의 세심함을 알려준다.",
+        "INTP는 ISFJ에게 더 자유로운 사고와 가능성을 열어준다.",
+        "서로의 속도를 존중하면 돌봄과 분석이 함께 작동하는 실용적인 보완 관계가 된다."
+      ],
+      "repairStrategy": [
+        "INTP는 최소한의 생활 약속과 감정 확인을 지킨다.",
+        "ISFJ는 INTP의 혼자 있는 시간을 거절로 해석하지 않는다.",
+        "여가와 일상 책임을 구분해 역할을 정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:INTP:ESTJ",
+    "originalResearchHash": "98b66858f926c3ad7ec4ea5fe8bfc23a19e4e4f25de6303ed190278e2898e669",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "062c81179613424d3593bc1b684eec2841bf0d580772e9cf1332874c2629d6da",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "a8cb7aac585cf2c96f8ddab7a51008491fbbead476e40cb7aad962ec9e589e4a",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "INTP의 구조 분석과 ESTJ의 현실 실행력이 만나면 관계가 감정만으로 흐르지 않고 문제 해결 중심으로 정리된다.",
+        "ESTJ는 INTP의 생각을 실제 일정과 책임으로 끌어내고, INTP는 ESTJ의 실행에 원리와 다른 가능성을 더한다.",
+        "둘 다 문제를 감정으로만 다루기보다 기준과 설명을 찾으려는 면이 있어 대화 접점이 생긴다."
+      ],
+      "friction": [
+        "ESTJ의 절차와 통제는 INTP에게 압박이고, INTP의 느슨함은 ESTJ에게 무책임으로 보인다.",
+        "상대의 부기능과 관련된 영역이 약점으로 전락하면 관계가 빠르게 피로해진다.",
+        "ESTJ는 빠른 결정과 실행을 요구하고 INTP는 더 생각할 여지를 원해 생활 책임과 시간 약속에서 반복적으로 부딪힌다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 INTP의 생각을 현실 일정으로 끌어낸다.",
+        "INTP는 ESTJ에게 다른 가능성과 원리적 관점을 제공한다.",
+        "최소 기준과 자율 방식을 나누면 실행과 분석이 서로를 밀어준다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 INTP에게 방법의 자율성을 남긴다.",
+        "INTP는 합의한 결과물과 기한만큼은 지킨다.",
+        "생활 규칙은 최소 기준으로 정하고 세부 방식은 각자에게 맡긴다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:INTP:ESFJ",
+    "originalResearchHash": "4d2c712211adfd3d7cd6ce22ea18af310611bd8409a2c6676e965b7a15ec3a9e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "b05461de872df2fdc82681df0fe3da281935874b512f294ee9a07c34eff75fb7",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "91f5afbc183a6c78c382b889b6d7e892c76e5ccdb9185561783d2cdfbfe1a221",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+        "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+        "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+      ],
+      "friction": [
+        "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+        "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+        "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+        "둘이 성숙할수록 상호 보완 효과가 커진다.",
+        "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+        "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+        "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:INTP:ISTP",
+    "originalResearchHash": "42dacbacf78215cf55d1501a9ee566d69100e25615960dbf3fe89951aa394ca4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "9dc65ec0487a31d043647278f92336b1fb772b733cf2068ba93d37bf226b2ce0",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "d82f2e82f5949e40fe317c71c81650f4c9c4b3ac24fd15c91d4984585898d1fa",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 독립성이 강하고 감정 과잉보다 실제 문제 해결을 편하게 느낀다.",
+        "INTP는 원리와 가능성을 파고들고, ISTP는 도구와 현장에서 바로 작동하는 방식을 찾는다.",
+        "서로에게 과한 관계 확인을 요구하지 않아 초반에는 자유롭고 부담이 적은 관계가 된다."
+      ],
+      "friction": [
+        "INTP는 생각을 더 열어두고 분석하려 하지만, ISTP는 지금 작동하는 해결을 빠르게 선택하려 한다.",
+        "둘 다 감정 표현이 약해 서운함이나 불안을 말하지 않고 넘기다가 관계가 건조해질 수 있다.",
+        "생활에서는 둘 다 자유를 원해 집안일, 돈 관리, 장기 약속처럼 닫아야 하는 책임이 뒤로 밀리기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ISTP는 INTP가 생각에만 머물지 않고 실제 행동과 실험으로 옮기게 돕는다.",
+        "INTP는 ISTP가 눈앞의 해결을 넘어 원리와 장기 가능성을 보게 만든다.",
+        "각자의 독립성을 존중하면 분석과 실전 감각이 만나는 담백한 파트너십이 된다."
+      ],
+      "repairStrategy": [
+        "집안일과 돈 관리는 감정이 아니라 체크리스트와 일정으로 관리한다.",
+        "둘 다 감정 표현이 약하다는 전제를 두고 짧은 안부와 고마움 표현을 루틴화한다.",
+        "분석이 필요한 일과 즉시 해결할 일을 구분해 각자의 강점에 맡긴다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:INTP:ISFP",
+    "originalResearchHash": "c2c5fd7c4eeb3b034072691cbdeb47b2445bf8450c9d68c343315d4ac7e3ec84",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "d66732c9d6009d09ab19008ab6853b43be4dfaa4bfc2be1bda5b23c8ed8b0609",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "05a695f46896c69219628444548b307de823c62acf85dbe14e43690eb92b85c1",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 개인 공간을 중시하고 조용한 것을 선호한다.",
+        "공통 관심사를 찾으면 말보다 취미와 경험을 통해 차이를 맞출 수 있고, 서로의 사적인 시간을 함부로 침범하지 않는다.",
+        "서로를 과하게 몰아붙이지 않는 거리감이 있어 초반에는 부담이 적게 느껴진다."
+      ],
+      "friction": [
+        "INTP는 논리와 원리를 보고 ISFP는 감정과 직접 경험을 본다.",
+        "ISFP의 섬세한 감정 기준은 INTP에게 불명확하고, INTP의 분석적 말은 ISFP에게 차갑다.",
+        "ISFP가 말없이 상처를 정리하고 INTP가 문제를 이미 끝난 논리로 보면 회복 타이밍이 크게 어긋난다."
+      ],
+      "positiveInfluence": [
+        "ISFP는 INTP에게 감각과 정서의 현실성을 알려준다.",
+        "INTP는 ISFP에게 관점의 폭과 원리적 설명을 제공한다.",
+        "공통 취미를 기반으로 하면 말보다 경험을 통해 서로를 이해하는 길이 생긴다."
+      ],
+      "repairStrategy": [
+        "INTP는 비판 전에 감정의 온도를 확인한다.",
+        "ISFP는 상처받은 지점을 침묵보다 구체적 요청으로 말한다.",
+        "공통 취미와 조용한 시간을 관계 기반으로 삼는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:INTP:ESTP",
+    "originalResearchHash": "6dea787aa91ced629d9966c8fe02ece4de9e110b90a2c467bceba6297c63dbd4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "cb23ccc5f6218191b3fffeb97713625e7d5efe0d790ff71bb995c4ddbd76a48b",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "63d0fafe27d2351e2a6fe67a2becc1a226564bd296f3fbdd4e759526fd49636d",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 새로운 자극과 문제 해결에서 재미를 느낄 수 있다.",
+        "INTP는 가능성과 원리를 머릿속에서 실험하고, ESTP는 현실 현장에서 바로 부딪혀 본다.",
+        "감정적 의례보다 솔직하고 직접적인 상호작용을 선호해 초반에는 가볍고 활기 있게 가까워질 수 있다."
+      ],
+      "friction": [
+        "ESTP는 즉각 행동과 현재의 재미를 원하고, INTP는 더 생각하고 분석할 시간을 원한다.",
+        "ESTP의 빠른 결정과 장난 섞인 압박은 INTP에게 과한 자극이 되고, INTP의 유보와 침묵은 ESTP에게 답답함으로 보인다.",
+        "돈, 약속, 데이트 방식에서도 ESTP는 경험과 즉흥을 중시하고 INTP는 관심사와 개인 시간을 중시해 리듬 차이가 크다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 INTP를 머릿속 세계에서 끌어내 실제 경험과 행동으로 연결한다.",
+        "INTP는 ESTP가 즉흥적으로 놓칠 수 있는 원리, 리스크, 장기 결과를 짚어준다.",
+        "서로를 바꾸려 하지 않으면 아이디어와 현장성이 함께 살아나는 역동적인 관계가 된다."
+      ],
+      "repairStrategy": [
+        "외부 활동과 개인 시간을 미리 나누어 서로의 에너지 소모를 줄인다.",
+        "ESTP는 INTP의 유보를 거절로 보지 말고 생각 시간으로 인정한다.",
+        "INTP는 중요한 결정에서 분석만 하지 말고 실행 가능한 선택지를 제시한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:INTP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:INTP:ESFP",
+    "originalResearchHash": "4b38c8b31fb64092252aeab8ee411adc4532e9c85113c4ac8d23d8792ab8f37f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "57b0d14af8614f5518631b68e1fa8be9429e44e745db719bd0c0d56bce7729be",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "1d8de7191593d49b4a3886fc5e2c03019a130c0e1008a7c10eb56145140655d4",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "처음에는 전혀 다른 모습이 매력적으로 보일 수 있다.",
+        "실제로는 개그 콤비처럼 의외의 재미가 생길 수 있고, 서로의 전혀 다른 반응이 관계 초반의 웃음과 호기심을 만든다.",
+        "서로의 세계가 달라 초반에는 상대가 가진 에너지와 관점이 신선한 자극이 된다."
+      ],
+      "friction": [
+        "사소한 부분에서 계속 엇나가고, 관계를 개선하려는 시도가 오히려 악화될 수 있다.",
+        "ESFP는 현재의 경험과 표현을 중시하고 INTP는 원리와 분석을 중시한다.",
+        "ESFP의 즉각적 감정 표현은 INTP에게 과하고, INTP의 무심함은 ESFP에게 차갑다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 INTP에게 현재의 즐거움과 현장 감각을 보여준다.",
+        "INTP는 ESFP에게 관점과 분석을 제공한다.",
+        "서로를 바꾸려 하지 않을 때 유머와 현실 감각, 분석이 예상 밖의 균형을 만들 수 있다."
+      ],
+      "repairStrategy": [
+        "INTP는 ESFP의 감정 표현을 과장으로만 보지 않는다.",
+        "ESFP는 INTP의 조용함을 무관심으로 단정하지 않는다.",
+        "즐거움과 개인 시간을 모두 일정에 넣어 균형을 맞춘다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ISFJ:INTJ",
+    "originalResearchHash": "9ef39f5dd3267ac662f4e02912c4e9e83fcf8d1ec1b0c2a388a3c79b76b23f64",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "7c3471fd8bb1e16068489e80b03a47f8585ecf01f4b56d2e08a667625827abed",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "08c7651aa71adf50b82fff5db721ca950b4f05aab01c639815a0d66e2128a839",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 개인 공간과 조용한 시간을 중요하게 여길 수 있다.",
+        "서로를 잘 모를 때는 신비롭고 존중할 만한 사람으로 이상화하기 쉽다.",
+        "공통 관심사가 있으면 차분한 거리감을 유지하며 지낼 수 있고, 관계를 가볍게 소비하지 않는 진지함에서 접점을 찾는다."
+      ],
+      "friction": [
+        "ISFJ가 중요하게 보는 안정과 관계 배려를 INTJ는 비효율로 볼 수 있다.",
+        "INTJ가 중요하게 보는 미래 설계와 시스템 재구성을 ISFJ는 차갑고 불안하게 느낄 수 있다.",
+        "가치관이 반대처럼 느껴져 서로에게 매혹과 불편함이 동시에 생긴다."
+      ],
+      "positiveInfluence": [
+        "INTJ는 ISFJ에게 큰 구조와 새로운 관점을 보여줄 수 있다.",
+        "ISFJ는 INTJ에게 생활 안정과 정서적 세심함을 보완해줄 수 있다.",
+        "공통 관심사를 만들면 형식적인 거리에서 실제 협력으로 넘어갈 수 있다."
+      ],
+      "repairStrategy": [
+        "INTJ는 비판 전에 관계 안전감을 먼저 제공한다.",
+        "ISFJ는 불안을 간접 표현하지 말고 구체적 요구로 말한다.",
+        "두 사람이 함께 즐길 공통 관심사를 만든다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ISFJ:INTP",
+    "originalResearchHash": "9094b58b8605fe7ed861d6506b0fa0290879cf92c926c904ecdd2de5d170f598",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "b32045d0fedbf990073d4cc106edb0e5f0c43d24cc58b9cf2e9738794914ac2b",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "8a0d4e9bbbed765af00787eb2c9365184a556f81a594d38151b5a8021986f5e5",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로에게 빠르게 자극을 주고 관계 시작이 비교적 쉽다.",
+        "ISFJ의 생활 안정과 INTP의 분석적 관점이 서로에게 신선하게 작용한다.",
+        "ISFJ는 관계의 온도를 챙기고 INTP는 문제의 구조를 정리해, 감정만으로 흐르지 않는 담백한 보완성이 생긴다."
+      ],
+      "friction": [
+        "함께 붙어 있는 시간이 길어지면 서로에게 싫증이나 피로가 생기기 쉽다.",
+        "협동이 어려울 때 문제를 직접 해결하기보다 조언만 주고받는 패턴이 생긴다.",
+        "서로의 행동 예측이 어려워 안정적으로 기대기에는 불안정하고, ISFJ의 확인 욕구와 INTP의 거리 조절이 반복해서 엇갈린다."
+      ],
+      "positiveInfluence": [
+        "관계에 휴식이 있으면 다시 긍정적 자극을 회복할 수 있다.",
+        "ISFJ는 INTP에게 생활의 구조를, INTP는 ISFJ에게 사고의 확장을 줄 수 있다.",
+        "짧은 프로젝트나 제한된 협업에서는 꽤 좋은 보완성이 나온다."
+      ],
+      "repairStrategy": [
+        "함께하는 시간과 각자 회복하는 시간을 분리한다.",
+        "조언만 하지 말고 실제 맡을 행동을 정한다.",
+        "문제가 생기면 해결책보다 감정 확인을 먼저 넣는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ISFJ:ENTJ",
+    "originalResearchHash": "0ff5a02d43ccba24fe4159ad28895250c4c8f7a493dfc97d8564df5bb86a1d06",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "9b50d1ad0ca37f4700d5545db6e257e3e9789c102861f6ebba60a6aec71af46c",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "9fe81666223c3778f7a153813d346b7c647409936175b63624848f39ec767e6f",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "초반에는 서로의 다른 힘을 매력적이고 흥미롭게 본다.",
+        "둘 다 책임과 목표를 중요하게 본다는 점에서는 접점이 있다.",
+        "공통 목표가 있으면 ENTJ는 방향과 결정을 잡고 ISFJ는 생활의 지속성과 세부 책임을 받쳐 주며 역할이 분명해진다."
+      ],
+      "friction": [
+        "ENTJ의 직선적인 해결 방식과 효율 중심 판단은 ISFJ에게 정서적 배려가 빠진 압박으로 느껴질 수 있다.",
+        "ISFJ의 관계 배려와 안정 욕구는 ENTJ에게 결정이 늦고 문제의 핵심을 피하는 태도처럼 보일 수 있다.",
+        "갈등이 생기면 한쪽은 해결책을 앞세우고 한쪽은 마음의 안전을 먼저 확인하려 해서 대화의 출발점이 어긋난다."
+      ],
+      "positiveInfluence": [
+        "아주 명확한 역할 분담과 존중이 있으면 목표 달성 면에서 서로 배울 지점은 있다.",
+        "ENTJ는 ISFJ에게 자기 주장과 경계 설정을 가르칠 수 있다.",
+        "ISFJ는 ENTJ에게 사람의 감정과 생활 기반을 보게 만들 수 있다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 피드백의 강도를 낮추고 순서를 바꾼다.",
+        "ISFJ는 상처를 참지 말고 바로 구체적으로 말한다.",
+        "의사결정 권한과 감정 회복 시간을 명확히 분리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ISFJ:ENTP",
+    "originalResearchHash": "bdea7c344a32d935bead2ee2c024042b9e70541ebbe30278e5cc14dba6152f67",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "65a331d9123350c3b46423f16e8560e601cec4de08b941dc1c29206bd0d33178",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "e9a4383e38b4eeb1eda3f28e53390f7601113934b649d1f1de647f32ed7d4714",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "같은 심리 기능을 반대 순서로 사용해 서로에게 부족한 부분이 강하게 보인다.",
+        "ISFJ는 ENTP의 사교성, 아이디어, 거침없는 행동력을 흥미롭게 느낄 수 있다.",
+        "ENTP는 ISFJ의 따뜻함, 계획성, 안정적인 책임감에서 보호받는 느낌을 받을 수 있다."
+      ],
+      "friction": [
+        "관계를 이상화하면 실제 생활 차이에서 갈등을 크게 겪는다.",
+        "ISFJ는 ENTP의 즉흥성과 변화 욕구를 불안하게 느끼고, ENTP는 ISFJ의 조심스러움과 전통성을 답답하게 본다.",
+        "약속, 돈, 가족 책임을 다루는 속도가 달라서 ISFJ는 혼자 챙긴다고 느끼고 ENTP는 관계가 자신을 묶는다고 느끼기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ISFJ는 ENTP에게 안정과 지속성을 제공하고, ENTP는 ISFJ에게 새로운 관점과 활력을 준다.",
+        "서로의 약점을 자연스럽게 보호해주는 보완성이 크다.",
+        "공통 목표가 있으면 생활 안정과 아이디어 확장이 동시에 살아난다."
+      ],
+      "repairStrategy": [
+        "관계를 궁합 이름으로 이상화하지 말고 실제 생활 기준을 맞춘다.",
+        "ENTP는 즉흥 변화를 예고하고, ISFJ는 변화 자체를 전부 위험으로 보지 않는다.",
+        "둘이 함께 추구할 목표와 프로젝트를 분명히 정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ISFJ:INFJ",
+    "originalResearchHash": "a5bb14992ce3c07930a2ba5c1fc3ec21e022e1a615c69f7be6e6981e087fb833",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "353b066044f5137280ce4a33151f55e9d2a2cfa1bd167312812fcafaa3e7b957",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "0f6bcbe167d41659fa7ab68740cc4a4543be5f4e434039dd2a4fb725036a47ce",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사람의 감정과 관계의 온도를 중요하게 보고, 가까운 사람을 함부로 대하지 않는다.",
+        "겉으로는 조용하지만 관계 안에서는 책임감과 헌신이 강해 오래 지켜보며 신뢰를 쌓는다.",
+        "ISFJ는 생활의 안정과 실제 돌봄을, INFJ는 관계의 의미와 장기 방향을 챙기며 서로 다른 층을 보완한다."
+      ],
+      "friction": [
+        "ISFJ는 검증된 경험과 구체적 사실을 중시하고, INFJ는 직관적 의미와 미래 가능성을 먼저 본다.",
+        "INFJ의 상징적이고 긴 설명은 ISFJ에게 현실감이 부족하게 들릴 수 있고, ISFJ의 신중함은 INFJ에게 답답하게 보일 수 있다.",
+        "갈등이 생기면 둘 다 상대를 배려하다가 정작 핵심 불만을 늦게 말해 조용한 거리감이 쌓이기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ISFJ는 INFJ의 이상이 생활 속에서 지속되도록 루틴과 현실 기반을 제공한다.",
+        "INFJ는 ISFJ가 익숙한 방식 안에만 머물지 않고 관계의 더 큰 의미를 보게 돕는다.",
+        "서로의 속도를 존중하면 따뜻함과 깊이가 함께 있는 안정적인 관계가 된다."
+      ],
+      "repairStrategy": [
+        "INFJ는 큰 의미를 말할 때 ISFJ가 실행할 수 있는 구체적 행동으로 함께 번역한다.",
+        "ISFJ는 익숙하지 않은 제안을 바로 불안으로 처리하지 말고 작은 시도 범위를 정한다.",
+        "서운함은 서로 배려한다는 이유로 미루지 말고 짧은 문장으로 빠르게 확인한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ISFJ:INFP",
+    "originalResearchHash": "cdb479a276c6f929101367489af45cc1f1861d58f163986a3cb82720e734d23f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "b849eb2b334b8cace272470cc0f79da4e9fda4f147877c732c7c82970d8d1d04",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "e24c200461f9ee61ed6a459801199cfc733d1be5fe15ce2f017d4abc9b424e33",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "비교적 이질감이 적고 서로에게 필요한 도움을 줄 수 있다.",
+        "ISFJ는 INFP에게 생활의 안정과 구체적 루틴을 보완해준다.",
+        "INFP는 ISFJ에게 새로운 가능성과 의미를 보게 도와주며, 둘 다 조심스러운 배려 속에서 마음을 여는 편이다."
+      ],
+      "friction": [
+        "ISFJ는 INFP의 이상과 감정 중심 판단을 불안하게 볼 수 있다.",
+        "INFP는 ISFJ의 관습성과 눈치 보는 습관을 답답하게 느낄 수 있다.",
+        "서로 도와준다고 생각하지만 실제로는 상대의 방식에 간섭하게 되고, 생활 책임이 흐려지면 ISFJ는 혼자 버틴다고 느끼기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ISFJ의 안정감과 INFP의 가능성 감각이 결합하면 부드러운 보완이 된다.",
+        "INFP는 ISFJ가 더 넓은 관점을 받아들이게 돕는다.",
+        "ISFJ는 INFP가 현실에서 지속 가능한 루틴을 만들도록 돕는다."
+      ],
+      "repairStrategy": [
+        "서로의 조언을 지시가 아니라 보완으로 해석한다.",
+        "생활 계획과 감정 대화를 따로 시간을 내서 다룬다.",
+        "ISFJ는 의미를, INFP는 현실 행동을 조금씩 맡는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ISFJ:ENFJ",
+    "originalResearchHash": "16ccc818f5b89eb4d59286c5b4f076483e0e9b0deafd2e9496a36246efceadda",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "afdfe234ad109aa6cbc55439b9fc590d3f0d6e996a8f4a746a08ee7efde6911d",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "6f3f77258e950d4af75b4a63c53d5a16c882fb4918ee548229ad28aa37c99dc7",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사람을 돕고 관계의 조화를 유지하려는 마음이 강하다.",
+        "상대의 감정과 필요를 빠르게 살피며, 가까운 사람의 성장을 진심으로 바라는 공통점이 있다.",
+        "ISFJ는 세부와 생활 안정으로, ENFJ는 방향 제시와 관계 확장으로 서로의 돌봄 방식을 넓힌다."
+      ],
+      "friction": [
+        "ENFJ는 표현과 대화를 통해 관계를 움직이려 하고, ISFJ는 조용한 실천과 익숙한 루틴으로 안정감을 만든다.",
+        "ENFJ의 빠른 설득과 오지랖은 ISFJ에게 부담이 될 수 있고, ISFJ의 신중함은 ENFJ에게 반응이 부족해 보일 수 있다.",
+        "둘 다 타인의 감정을 먼저 보지만 자기 감정은 늦게 확인해, 관계를 위해 참다가 한꺼번에 지칠 수 있다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 ISFJ가 더 넓은 관계와 기회를 받아들이도록 격려한다.",
+        "ISFJ는 ENFJ의 큰 비전이 일상에서 무너지지 않도록 세부와 지속성을 보완한다.",
+        "서로의 헌신이 건강하게 맞물리면 사람을 살리는 따뜻한 팀워크가 된다."
+      ],
+      "repairStrategy": [
+        "ENFJ는 ISFJ에게 즉각적인 감정 답변을 요구하기보다 생각할 시간을 준다.",
+        "ISFJ는 행동으로 챙겼다는 사실만 믿지 말고 고마움과 사랑을 말로도 표현한다.",
+        "도움과 돌봄의 역할을 자연스럽게 떠안지 말고 일정과 책임으로 나누어 확인한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ISFJ:ENFP",
+    "originalResearchHash": "7ee3994dcf33432b9c3bc3f1dec0bef87cc8adb2afe700f98edb7fa6ce22419d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "64ce6132ad4229ce42b798f60e9e19dad9ca345610ac6fb4be79ecdeb9803885",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "9fde4dc476eadb193156caab28eecbb696582532c6e4c42b57cabc32d3f54efe",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로의 약점을 건드리면서도 친해지면 좋은 상호 보완이 가능하다.",
+        "ENFP는 ISFJ에게 새로운 가능성과 활력을 줄 수 있다.",
+        "ISFJ는 ENFP에게 안정과 현실적 기반을 제공할 수 있고, 둘 다 가까운 사람을 쉽게 버리지 않는 따뜻함을 가지고 있다."
+      ],
+      "friction": [
+        "ENFP는 ISFJ의 익숙한 기준과 조심스러운 관계 운영을 답답하게 느낄 수 있다.",
+        "ISFJ는 ENFP의 즉흥적인 변화와 넓은 관심사가 관계의 책임 흐름을 흔든다고 느끼기 쉽다.",
+        "둘 다 감정 기능을 쓰지만 한쪽은 안정된 배려를, 한쪽은 자유로운 가능성을 향해 움직여 가치관의 방향이 엇갈린다."
+      ],
+      "positiveInfluence": [
+        "친해지면 ISFJ는 변화에 더 열리고 ENFP는 생활의 기준을 배울 수 있다.",
+        "서로의 부족한 부분을 찌르는 만큼 성장 자극이 강하다.",
+        "공통의 목표가 있으면 안정과 가능성이 함께 움직인다."
+      ],
+      "repairStrategy": [
+        "ENFP는 약속과 생활 기준을 가볍게 넘기지 않는다.",
+        "ISFJ는 ENFP의 변화 욕구를 전부 불안정으로 해석하지 않는다.",
+        "관계의 공통 목표와 자유 범위를 문장으로 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ISFJ:ISTJ",
+    "originalResearchHash": "838558a750ee9bfaee887784e34a838114ef182ff6a175d6a075ef507f72c0d7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "560d5c03968fb504f6817007f328bd347dcdafe6415c556724431478ba5151ca",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "0f61c1c6495946766f1801bd5aad6ae5467ae17065ac41e3726500f057cc0bd3",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 검증된 방식, 책임, 약속, 생활의 안정감을 중요하게 본다.",
+        "말보다 행동과 꾸준한 이행으로 신뢰를 쌓으며, 관계를 쉽게 가볍게 여기지 않는다.",
+        "가정, 돈, 일정, 장기 계획을 현실적으로 다루기 때문에 함께 생활 기반을 만드는 힘이 강하다."
+      ],
+      "friction": [
+        "ISFJ는 정서적 배려와 조화를 더 중시하고, ISTJ는 사실과 원칙, 효율을 더 앞세운다.",
+        "ISTJ의 건조한 피드백은 ISFJ에게 상처가 될 수 있고, ISFJ의 간접적 표현은 ISTJ에게 모호하게 들릴 수 있다.",
+        "둘 다 변화를 조심스러워해 문제가 생겨도 익숙한 방식만 반복하며 관계가 정체될 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 ISFJ에게 객관적 기준과 실무 판단을 제공하고, ISFJ는 ISTJ에게 사람의 감정과 관계 온도를 보완한다.",
+        "서로의 성실함을 인정하면 믿고 맡길 수 있는 장기 파트너가 된다.",
+        "생활 관리와 가족 책임에서는 안정성과 신뢰가 매우 강하게 작동한다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 사실을 말하기 전에 ISFJ가 느낄 감정적 영향을 한 번 더 고려한다.",
+        "ISFJ는 서운함을 눈치로 알아주길 기다리지 말고 구체적 요청으로 말한다.",
+        "생활 점검과 별도로 감정, 휴식, 애정 표현을 확인하는 시간을 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ISFJ:ISFJ",
+    "originalResearchHash": "5ccaf92d75ab2d28d909987c2476eed3eba2903aedea6fc37459ff8f250fefc7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "ce3d4c7af0a0956049bfe95f3d0a60f062858a3d0592173a1d9031aee789dfd4",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "ce3d4c7af0a0956049bfe95f3d0a60f062858a3d0592173a1d9031aee789dfd4",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 상황과 문제를 비슷하게 인식하고 비슷한 방식으로 대응한다.",
+        "상대가 중요하게 여기는 안정, 배려, 책임의 가치를 쉽게 알아본다.",
+        "두 사람이 서로에게 매력을 느끼면 조용하고 돌봄이 많은 관계가 되며, 작은 약속을 지키는 태도에서 신뢰가 빠르게 쌓인다."
+      ],
+      "friction": [
+        "상호 보완보다 유사성이 크기 때문에 새로운 자극이 부족해질 수 있다.",
+        "한쪽이 불건강해지면 다른 한쪽도 비슷한 불안과 회피 패턴으로 끌려가기 쉽다.",
+        "함께 나눌 정보와 새로운 경험이 줄면 관계가 금방 고갈되고, 둘 다 참기만 하면 서운함을 확인할 기회가 사라진다."
+      ],
+      "positiveInfluence": [
+        "서로의 장단점을 다른 각도에서 보게 만들어 자기 이해를 높인다.",
+        "생활의 안정과 정서적 돌봄을 서로에게 제공한다.",
+        "말하지 않아도 필요한 배려와 루틴을 알아차리는 편안함이 있다."
+      ],
+      "repairStrategy": [
+        "정기적으로 새로운 활동이나 외부 접점을 넣어 관계 고갈을 막는다.",
+        "서운한 감정은 쌓아두지 말고 작게 자주 말한다.",
+        "돌봄을 주고받을 때 고마움을 명시적으로 표현한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [
+      "pcpr:material:CH01.P3:same-type-not-same-power"
+    ],
+    "coverageClass": "selected_conditional_candidate",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ISFJ:ESTJ",
+    "originalResearchHash": "2042eb0cff4b14d5a899f271e4a48db5679fa63727f39ae4613064a1cc7a2ab4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "2777e6c03162f2e0767272c46c69445d0cb3c462316374d8b9e7c85cbc95a90d",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "c44b1899e7cb04e88a7fb9991b7ea86d28497d3e38031e42b52431f8b679e93d",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 책임감, 현실 감각, 전통적 안정, 사회적 의무를 중요하게 본다.",
+        "가정과 조직에서 해야 할 일을 방치하지 않고, 생활을 정돈하는 데 강한 공통점이 있다.",
+        "돈, 일정, 가족 역할처럼 장기적으로 관리해야 하는 영역에서 서로를 믿을 만한 사람으로 볼 수 있다."
+      ],
+      "friction": [
+        "ESTJ는 기준과 결정을 빠르게 말하고, ISFJ는 관계의 온도와 정서적 안전을 먼저 살핀다.",
+        "ESTJ의 직설은 ISFJ에게 차갑거나 공격적으로 느껴지고, ISFJ의 조심스러운 표현은 ESTJ에게 답답하게 보일 수 있다.",
+        "갈등이 생기면 ESTJ는 해결책을 제시했다고 느끼지만 ISFJ는 마음이 돌봄받지 못했다고 느낀다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 ISFJ가 자기주장을 더 분명히 하고 문제를 객관화하도록 돕는다.",
+        "ISFJ는 ESTJ에게 말의 강도와 정서적 배려가 관계 안정에 미치는 영향을 알려준다.",
+        "역할 분담이 맞으면 가정 운영과 경제 관리에서 매우 안정적인 팀이 된다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 조언과 지시를 하기 전에 ISFJ의 수고와 감정을 먼저 인정한다.",
+        "ISFJ는 상처를 참아 관계를 지키려 하지 말고 빠르게 구체적 문장으로 말한다.",
+        "돈과 집안일뿐 아니라 정서적 돌봄도 공동 책임으로 나누어 확인한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ISFJ:ESFJ",
+    "originalResearchHash": "42215ffb74b3e3280f9e26cc07a13d0a42a76a113482aacaf59f9477d6975a63",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "149d963716412543a683ce103a896c26d04e2aac3b57aae29aed13e1ec6b7dbf",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "9836e0aabf05765eabb1f462707cc08c2c1fb5ae9a0331873a786d16d6c6aed3",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 비슷한 동기와 가치관을 가지고 사람과 관계의 안정을 중요하게 본다.",
+        "한 사람이 생각의 길을 열면 다른 사람이 그것을 더 분명하게 정리할 수 있다.",
+        "관심사와 아이디어가 비슷해 빠르게 서로의 마음을 알아차리고, 가족과 가까운 사람을 챙기는 일을 자연스러운 책임으로 받아들인다."
+      ],
+      "friction": [
+        "ESFJ의 외향적 활동성과 ISFJ의 조용한 독립성이 충돌할 수 있다.",
+        "같은 문제를 이해하는 방식이 조금 달라 서로가 답답하게 느껴질 수 있다.",
+        "관계와 체면을 둘 다 중시해 불편한 말을 늦게 꺼내고, 표현량과 사교 범위가 달라 서운함이 조용히 쌓일 수 있다."
+      ],
+      "positiveInfluence": [
+        "친구나 프로젝트 파트너로 좋은 시너지를 낸다.",
+        "서로에게 건설적 비판을 해도 비교적 유용하게 받아들인다.",
+        "관계 관리와 실무 운영에서 안정적인 협력이 가능하다."
+      ],
+      "repairStrategy": [
+        "사교 일정은 ESFJ 기준이 아니라 두 사람의 체력 기준으로 조정한다.",
+        "불편한 감정은 체면 때문에 덮지 않는다.",
+        "서로의 방식이 다르더라도 목적은 비슷하다는 점을 먼저 확인한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ISFJ:ISTP",
+    "originalResearchHash": "c1aba80afef7f26a3624fc73810821e7343ea8a1f491f3f96996b4968c935078",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "bce7a22425237ed9678da6e1bd6ee9a62d2da94d924de6a9e16dc6eab8308b48",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "522e6e34dab54621393ad0fc40e5667bbf030f75bc3c7f9985c2568d29148e5f",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 과한 말보다 실제 행동과 실용적인 도움을 더 신뢰한다.",
+        "문제가 생기면 감정에만 머무르기보다 손에 잡히는 해결책을 찾으려는 접점이 있다.",
+        "ISFJ는 생활의 안정과 세심한 돌봄을, ISTP는 위기 대응과 현장 해결력을 제공한다."
+      ],
+      "friction": [
+        "ISFJ는 정서적 확인과 익숙한 루틴을 원하고, ISTP는 간섭 없는 자율성과 개인 시간을 원한다.",
+        "ISFJ의 챙김은 ISTP에게 통제처럼 느껴질 수 있고, ISTP의 침묵은 ISFJ에게 무심함처럼 느껴질 수 있다.",
+        "갈등이 생기면 ISFJ는 관계의 온도를 회복하고 싶어 하지만 ISTP는 문제를 짧게 처리하고 혼자 쉬려 해 속도 차이가 커진다."
+      ],
+      "positiveInfluence": [
+        "ISTP는 ISFJ가 불안 속에 오래 머물지 않고 실제 해결책으로 이동하게 돕는다.",
+        "ISFJ는 ISTP가 관계와 생활 책임을 너무 가볍게 넘기지 않도록 안정감을 보완한다.",
+        "서로의 자유와 돌봄 방식을 인정하면 조용하지만 실속 있는 관계가 된다."
+      ],
+      "repairStrategy": [
+        "ISFJ는 챙김을 지시나 확인 압박으로 바꾸지 않는다.",
+        "ISTP는 혼자 있고 싶을 때 관계를 끊는 느낌이 들지 않도록 시간과 복귀 시점을 말한다.",
+        "집안일, 돈, 약속처럼 반복되는 책임은 감정이 아니라 체크리스트로 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ISFJ:ISFP",
+    "originalResearchHash": "5a3bfa4e541c52048942815a49a960789600cb6c587a9ae8668a46d776b5acc2",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "9f53a627802bb00449d86b547b91d39e8eae1179c9f8b33f1f381b20818a094c",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "b05dba3dac94b770031a759e79036b3c692a2fe78f52e6e13a91e7e7caf34a76",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "겉으로는 조용하고 부드러워 보여 초반에는 비슷하다고 느끼기 쉽다.",
+        "둘 다 감정과 개인적 편안함을 중요하게 여기는 면이 있다.",
+        "강압적 관계보다 조용한 친밀감을 선호하고, 말보다 태도와 작은 행동에서 상대의 마음을 읽으려 한다."
+      ],
+      "friction": [
+        "ISFJ는 안정과 역할을 중시하고 ISFP는 개인 감정과 자유를 더 중시한다.",
+        "관계가 깊어질수록 생활 기준과 의무감의 차이가 크게 보인다.",
+        "ISFJ의 챙김이 ISFP에게는 통제나 잔소리로 느껴지고, ISFP의 침묵은 ISFJ에게 서운함과 불안으로 쌓인다."
+      ],
+      "positiveInfluence": [
+        "ISFP는 ISFJ에게 감정의 자연스러움을, ISFJ는 ISFP에게 생활의 안정감을 줄 수 있다.",
+        "서로의 조용함을 존중하면 부담이 적은 관계가 된다.",
+        "취향과 감정 표현을 함께 다룰 때 관계가 부드러워진다."
+      ],
+      "repairStrategy": [
+        "ISFJ는 챙김을 지시처럼 말하지 않는다.",
+        "ISFP는 자유가 필요할 때 이유와 범위를 설명한다.",
+        "생활 규칙과 개인 시간을 분리해 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ISFJ:ESTP",
+    "originalResearchHash": "62adbcdb7bc5e43048626552d32f9fa5e2e7bcff6c42fb842d97e387fa7366ee",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "ec1679edbd76a27151de162502500e0598f5277514ba21dfb738c66686ad71e3",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "ea7eba76a7902b1020a75b809b6a4dce4712c46eca021097309573857a55c93b",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로의 이야기를 흥미롭게 듣는 순간은 있다.",
+        "함께 일하더라도 업무가 다르면 따뜻하게 배려하는 관계가 가능하다.",
+        "현실 접점이 분명할 때는 ESTP의 현장 대응력과 ISFJ의 생활 관리력이 서로 다른 방식으로 도움이 된다는 점을 인정할 수 있다."
+      ],
+      "friction": [
+        "함께 목표를 성취하려 할수록 서로의 방식이 불충분하고 의미 없게 보인다.",
+        "ESTP의 즉흥성과 행동성은 ISFJ에게 불안하고, ISFJ의 조심스러움은 ESTP에게 답답하다.",
+        "서로의 능력을 깊게 신뢰하지 못해 비판적이고 부정적으로 흐르기 쉽다."
+      ],
+      "positiveInfluence": [
+        "업무 영역을 분리하면 서로에게 필요한 도움만 주고받을 수 있다.",
+        "ESTP는 ISFJ에게 현재 행동의 에너지를, ISFJ는 ESTP에게 생활 안정감을 줄 수 있다.",
+        "상대의 역할을 과하게 침범하지 않을 때 관계 온도가 유지된다."
+      ],
+      "repairStrategy": [
+        "함께할 일과 각자 처리할 일을 분명히 나눈다.",
+        "ISFJ는 ESTP의 즉흥성을 전부 무책임으로 해석하지 않는다.",
+        "ESTP는 ISFJ의 안정 욕구를 잔소리로만 듣지 않는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ISFJ:ESFP",
+    "originalResearchHash": "fab0bb0312d31ff541b6edc333548dda6e437ab0375e8128ea092fcf61443c2f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "31497f79d3c059a631677e3f5cc465d2ee1c37574ca8b52001fe00869ecd5501",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "24d07254bfcf86fbfad140d80a8c859ab805fcd69f2e725f84545e0a8967b047",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사람의 감정과 실제 생활의 만족을 중요하게 보고, 가까운 사람에게 다정함을 보일 수 있다.",
+        "ISFJ는 ESFP의 밝은 표현과 현재를 즐기는 힘에 끌리고, ESFP는 ISFJ의 세심한 챙김에서 편안함을 느낀다.",
+        "함께 있으면 한쪽은 생활 기반을 만들고 다른 한쪽은 관계에 활기를 넣는 식의 보완이 가능하다."
+      ],
+      "friction": [
+        "ISFJ는 안정적인 루틴과 예측 가능한 약속을 원하고, ESFP는 즉흥적인 재미와 자유로운 흐름을 원한다.",
+        "ESFP가 계획을 가볍게 바꾸면 ISFJ는 배려받지 못한다고 느끼고, ISFJ의 세심한 확인은 ESFP에게 잔소리처럼 들릴 수 있다.",
+        "돈과 시간 사용에서도 ISFJ는 안전과 필요를 먼저 보고 ESFP는 현재의 분위기와 경험 가치를 먼저 보기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 ISFJ가 너무 의무와 걱정에만 머물지 않고 현재의 즐거움을 느끼게 돕는다.",
+        "ISFJ는 ESFP가 중요한 관계와 생활 책임을 지속적으로 지키도록 안정감을 제공한다.",
+        "즐거움과 안정의 비율을 맞추면 따뜻하고 생기 있는 생활형 관계가 된다."
+      ],
+      "repairStrategy": [
+        "ESFP는 즉흥 변경이 필요할 때 ISFJ에게 미리 알려 안정감을 준다.",
+        "ISFJ는 즐거움과 소비를 모두 불안 요소로 보지 말고 계획 안에 여지를 둔다.",
+        "생활비, 데이트비, 가족 일정, 개인 시간을 따로 나누어 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ISFP:INTJ",
+    "originalResearchHash": "b3ee46d3605138ed7acee1d40812204d2df64975e028a1e34a96c1286dbe4021",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "a15ee85dbfaa4d39150cdf0b46be5ca785bb0cc9abae24d0c8292aa4b3efc977",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "d2e3cf0cc843a253a6f74be4267a7b6715e827c3590ecba3735046fa3b603273",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로의 강점이 상대의 약점으로 작용해 보완성이 있다.",
+        "ISFP는 INTJ에게 감각과 현실 장면을 제공하고, INTJ는 ISFP에게 구조와 방향을 제공한다.",
+        "ISFP가 INTJ에게 좋은 영향을 줄 수 있는 관계로 언급된다."
+      ],
+      "friction": [
+        "관계 진행 방식이 달라 서로를 이해하는 데 시간이 필요하다.",
+        "ISFP가 마음을 열기까지 오래 걸리면 INTJ는 답답해할 수 있다.",
+        "INTJ의 분석적 말투가 ISFP에게 차갑게 느껴질 수 있다.",
+        "INTJ가 고치려는 말투로 다가오면 ISFP는 논쟁하지 않고 조용히 마음을 접는다."
+      ],
+      "positiveInfluence": [
+        "ISFP는 INTJ의 건조한 계획에 감각과 인간미를 더한다.",
+        "INTJ는 ISFP가 재능을 구조화하고 장기 방향을 잡도록 돕는다.",
+        "예술과 전략이 만나는 프로젝트에서 좋은 시너지가 난다."
+      ],
+      "repairStrategy": [
+        "INTJ는 피드백 전에 ISFP의 감정 안전감을 확인한다.",
+        "ISFP는 마음을 닫기 전에 필요한 시간을 말한다.",
+        "공동 프로젝트나 취향 기반 활동으로 접점을 만든다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ISFP:INTP",
+    "originalResearchHash": "a1e67125c1672878ddebb32c796d99e799bfdedf4e29c85700eeb891d8a5da91",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "05a695f46896c69219628444548b307de823c62acf85dbe14e43690eb92b85c1",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "d66732c9d6009d09ab19008ab6853b43be4dfaa4bfc2be1bda5b23c8ed8b0609",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로를 잘 모를 때는 신비스럽고 흥미롭게 느낄 수 있다.",
+        "둘 다 개인 공간을 중요하게 여기고 조용한 시간을 선호한다.",
+        "공통 관심사가 있으면 일정한 거리에서 어울릴 수 있다.",
+        "서로에게 과한 사회성을 요구하지 않아 사적인 리듬을 지키기 쉽다."
+      ],
+      "friction": [
+        "ISFP가 중요하게 보는 감정과 가치가 INTP에게는 비논리적으로 보일 수 있다.",
+        "INTP의 분석과 거리감은 ISFP에게 차갑고 무심하게 느껴질 수 있다.",
+        "가치관이 반대로 느껴져 오해가 반복된다.",
+        "ISFP는 태도와 분위기에서 상처를 읽고, INTP는 말의 내용이 맞으면 충분하다고 생각해 어긋난다."
+      ],
+      "positiveInfluence": [
+        "INTP는 ISFP에게 개념적 사고와 객관적 거리감을 제공할 수 있다.",
+        "ISFP는 INTP에게 감정의 실제 온도와 생활 감각을 보여준다.",
+        "공통 취미나 작업이 있으면 조용한 협력이 가능하다."
+      ],
+      "repairStrategy": [
+        "감정 문제를 논리 문제처럼만 처리하지 않는다.",
+        "ISFP는 서운함을 은근히 드러내지 말고 구체적으로 말한다.",
+        "공통 취미나 프로젝트를 관계의 접점으로 만든다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ISFP:ENTJ",
+    "originalResearchHash": "831ec9e2f9a527e6f1cbab136f753544becad83ca7985c1c6e1b921ad7c4c060",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "1a8c474419444785584183b977d70a7902b3bc4f8644a651cb9ff90b8f001f1c",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "d2031b2e2cfccfbb3db01d62bfcc22a7d1bed2ba60b543522cab1aa5da9efeab",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "많은 특성이 반대지만 의식 기능을 공유해 깊은 이해의 가능성이 있다.",
+        "ISFP의 섬세한 감각과 ENTJ의 구조화 능력이 서로를 보완한다.",
+        "ISFP의 발달된 Ni는 ENTJ와 철학적 주제까지 나눌 수 있게 돕는다.",
+        "서로가 가진 결핍이 선명해서 초반에는 강한 안정감과 신선함이 동시에 생긴다."
+      ],
+      "friction": [
+        "ENTJ의 건설적 비판도 ISFP에게는 상처로 들어갈 수 있다.",
+        "ENTJ는 감정 표현에 대한 인내심이 부족해 ISFP를 고통스럽게 만들 수 있다.",
+        "ISFP는 ENTJ의 속도와 압박을 통제로 느낄 수 있다.",
+        "ENTJ가 성과 기준으로 몰아붙이면 ISFP는 설명하기보다 표정과 행동으로 거리를 둔다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 ISFP의 디테일과 미학을 높이 평가할 수 있다.",
+        "ISFP는 ENTJ에게 인간적 감각과 섬세함을 더한다.",
+        "서로 존중하면 감각과 실행력이 결합된 강한 시너지가 난다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 피드백을 평가가 아니라 요청 형태로 바꾼다.",
+        "ISFP는 상처받은 지점을 침묵하지 않고 짧게 말한다.",
+        "감각적 취향과 현실 계획을 함께 존중한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ISFP:ENTP",
+    "originalResearchHash": "12ed267563896c96f61a8a6fd76e86b30b8ba72407815acffae5587ed16536f1",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "a846eb755532f134b3b0dd54e1712eb0e9653ada7c723c225079ebdd5396e528",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "41c2cfb63fc60751886140755bbed3219845825f6241044af7739e83b8c393b5",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "개방성과 개인주의, 관습에 대한 의문처럼 겹치는 지점은 있다.",
+        "초반에는 서로의 자유로움과 색다른 방식에 흥미를 느낄 수 있다.",
+        "기존 규칙을 의심하는 태도에서는 공통점이 생긴다.",
+        "둘 다 남이 정한 틀에 그대로 갇히는 관계보다는 자기 방식이 살아 있는 관계를 원한다."
+      ],
+      "friction": [
+        "ENTP의 논쟁성과 말의 속도는 ISFP에게 큰 피로와 상처를 줄 수 있다.",
+        "ISFP의 감정 침묵은 ENTP에게 답답함과 추측 싸움을 만든다.",
+        "극단적으로는 관계를 끊은 뒤에야 해방감을 느끼는 갈등으로 갈 수 있다.",
+        "ENTP가 장난처럼 던진 말도 ISFP에게는 자기 취향과 감정을 가볍게 다루는 태도로 남는다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ISFP에게 생각의 폭을 넓혀줄 수 있다.",
+        "ISFP는 ENTP에게 사람의 감정과 진정성의 무게를 보게 한다.",
+        "서로의 자유를 존중하면 짧은 프로젝트에서는 창의적 긴장이 생긴다."
+      ],
+      "repairStrategy": [
+        "ENTP는 토론을 감정 문제에 그대로 적용하지 않는다.",
+        "ISFP는 침묵 대신 짧은 감정 문장으로 알려준다.",
+        "갈등 중에는 설득보다 휴식 시간을 먼저 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ISFP:INFJ",
+    "originalResearchHash": "d49ba053dd7437fac4bb902e431dc79dd051e4aa3aa2c1f0ed30b395b5479793",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "d4d6a238cd93d7af0b072f88ec458e40b9e941b0a11a477c00953af451571cbc",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "4ba2bc087fc5a2535ed65513ef44981e22b251097196527381672030ea10d01c",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "대체로 좋은 조합으로, ISFP가 INFJ의 든든한 지지자가 될 수 있다.",
+        "INFJ는 ISFP와 있으면 외로움이 덜하다고 느낄 수 있다.",
+        "ISFP는 이상을 쫓느라 지친 INFJ를 현실과 감각으로 데려올 수 있다.",
+        "둘 다 섬세한 분위기와 진심의 온도를 중요하게 여겨 조용한 지지가 가능하다."
+      ],
+      "friction": [
+        "INFJ의 강한 신념과 세계관을 ISFP가 모두 만족시키기는 어렵다.",
+        "INFJ의 미래 지향성은 현재에 충실한 ISFP와 갈등을 만들 수 있다.",
+        "ISFP는 INFJ가 엉뚱해 보인다고 느낄 수 있다.",
+        "INFJ가 의미를 계속 묻고 방향을 잡으려 하면 ISFP는 현재의 감정과 리듬을 침범받는다고 느낀다."
+      ],
+      "positiveInfluence": [
+        "ISFP는 INFJ에게 현실의 휴식과 감각적 안정감을 준다.",
+        "INFJ는 ISFP에게 의미와 장기 방향성을 보여준다.",
+        "서로 존중하면 감성과 이상, 현실 감각이 부드럽게 연결된다."
+      ],
+      "repairStrategy": [
+        "INFJ는 비전을 강요하지 않고 작은 현실 행동으로 나눈다.",
+        "ISFP는 미래 이야기를 전부 부담으로 듣지 않는다.",
+        "지친 INFJ를 현실로 데려오는 시간을 함께 만든다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ISFP:INFP",
+    "originalResearchHash": "fa34cc7ad08d1ac35d44fe966c6c7bbc2f3eb806e113e80e6b07f102cccc1d03",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "121074ee3a1bfba44886ee9e934aff9e03dc261cf5159b2e97dd213fd9a16cbb",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "fe762a34d6ecb3120dbed06b0f6852678f426993c0413ebc212a075c419175e2",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "최강점과 최약점이 같아 서로를 이해하기 쉽다.",
+        "가치관과 취향이 유사한 경우가 많고 대화가 잘 통한다.",
+        "서로 배려하고 말을 예쁘게 하려는 특성이 있어 부담이 적다.",
+        "감정의 결을 함부로 다루지 않는 태도에서 서로에게 안정감을 준다."
+      ],
+      "friction": [
+        "INFP는 더 감성적이고 ISFP는 더 현실적인 차이가 있다.",
+        "둘 다 결정과 구조가 약하면 관계와 계획이 흐려질 수 있다.",
+        "감정은 잘 통하지만 실행이 늦어질 수 있다.",
+        "서로 상처 주기 싫어 핵심 문제를 미루면 돈, 일정, 관계 방향이 조용히 흔들린다."
+      ],
+      "positiveInfluence": [
+        "감성과 현실 감각이 적당히 보완될 수 있다.",
+        "진짜 친해지면 부담 없이 솔직한 말을 나눌 수 있다.",
+        "예술, 취향, 가치 대화에서 깊은 친밀감이 생긴다."
+      ],
+      "repairStrategy": [
+        "감정 대화 후 반드시 작은 실행을 정한다.",
+        "돈과 일정은 외부 도구로 관리한다.",
+        "서로의 현실성과 감성을 장점으로 인정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ISFP:ENFJ",
+    "originalResearchHash": "ea5ad6515f3db704718df1fd6db885d946bf4b9ba0ea0e5df0d4c04e37c542c8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "16aec1b428f572b47190276a8bba43fb8997fdb7a739aabeb5faa219a2957d58",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "ecd925b759b02c7808eb3ab019c78371988e6018db867d52ef16446ec141c574",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ENFJ가 보호자 역할을 하고 ISFP가 편안함을 느끼면 잘 맞을 수 있다.",
+        "둘 다 배려심이 많아 서로의 다름을 존중하며 맞춰갈 가능성이 있다.",
+        "ENFJ는 ISFP의 예술성과 감각에서 배울 지점이 있다.",
+        "ENFJ가 ISFP의 취향과 사적인 리듬을 존중할 때 ISFP는 깊게 안정된다."
+      ],
+      "friction": [
+        "ENFJ가 ISFP의 영역에 너무 간섭하면 ISFP는 불편해진다.",
+        "취향 문제가 ISFP에게 매우 중요해 갈등 포인트가 될 수 있다.",
+        "ISFP는 ENFJ의 진지한 이야기가 잘 들어오지 않을 수 있다.",
+        "ENFJ의 선의가 반복적인 조언과 확인으로 바뀌면 ISFP는 고쳐지는 느낌을 받는다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 ISFP가 못하는 구조와 보호 역할을 맡아줄 수 있다.",
+        "ISFP는 ENFJ에게 감각과 예술적 섬세함을 열어준다.",
+        "서로 노력하면 이상적인 보완 관계로 발전할 수 있다."
+      ],
+      "repairStrategy": [
+        "ENFJ는 도와주기 전에 ISFP의 동의를 구한다.",
+        "ISFP는 ENFJ의 진지한 이야기를 듣는 태도를 보여준다.",
+        "취향 차이는 평가하지 말고 서로 배울 영역으로 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ISFP:ENFP",
+    "originalResearchHash": "d52f9d7a064c84099c12c5b4de5242669d5e703ce7f91ba9e58b4b8bdfc30011",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "27913c4d50577fe1720995f273dad675c42fc2d4e6074f2018d41b8165e5b41e",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "820c9da4b5b22145bbf1eb5157c2ca93a3e1bc34883543ccf1e722fb4dc38b39",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 사회 기준보다 자신만의 가치관을 중시한다.",
+        "좋아하는 것을 중심으로 가치관이 형성되는 공통점이 있다.",
+        "초반에는 자유롭고 따뜻한 분위기에 끌릴 수 있다.",
+        "관계에서 억지 역할보다 자기다운 표현과 진정성을 중요하게 보는 점이 닮았다."
+      ],
+      "friction": [
+        "관심사와 가치관이 달라 싸우기 쉽다.",
+        "ENFP의 외향적 에너지와 변화 욕구가 ISFP에게 피로가 될 수 있다.",
+        "ISFP는 ENFP의 감정 흐름을 부담스럽게 느끼고 조용히 물러날 수 있다.",
+        "ENFP가 계속 대화와 반응을 요구하면 ISFP는 이해받기보다 몰아붙여진다고 느낀다."
+      ],
+      "positiveInfluence": [
+        "ENFP는 ISFP에게 더 넓은 가능성과 사람 접점을 열어줄 수 있다.",
+        "ISFP는 ENFP에게 현재의 감각과 진정성을 보여준다.",
+        "서로의 가치 차이를 인정하면 창의적 자극이 생긴다."
+      ],
+      "repairStrategy": [
+        "ENFP는 ISFP의 회복 시간과 감각적 경계를 존중한다.",
+        "ISFP는 불편함을 침묵으로 넘기지 않는다.",
+        "관심사 차이는 경쟁이 아니라 각자 영역으로 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ISFP:ISTJ",
+    "originalResearchHash": "d6c005c84ce324d724996e2d815f35e980d87abdb373ad201097a8ea1ba94261",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "4e4c7e6d05f0e34d08fb944b6e7502d745bdee77986391fce6fb9e26808c90ae",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "354fc95bb1c1aea3be75c935dd66f10fb6b3e8bd88a426524f1c092f20c1f5ce",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 내성적이고 개인 공간을 중요하게 여긴다.",
+        "세부적인 것에 주의를 기울이고 조용히 자기 일을 처리하려는 면이 있다.",
+        "개인 시간을 존중하면 비교적 좋은 궁합이 된다.",
+        "말보다 행동과 책임으로 신뢰를 확인하는 점도 서로에게 익숙하다."
+      ],
+      "friction": [
+        "ISFP는 감정과 가치로 결정하고 ISTJ는 목표와 논리로 결정한다.",
+        "ISTJ의 피드백은 ISFP에게 혹평처럼 들릴 수 있다.",
+        "ISFP가 갈등을 숨기면 ISTJ는 문제를 알아차리기 어렵다.",
+        "ISTJ가 기준을 강하게 말할수록 ISFP는 설명보다 거리두기로 반응하기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 ISFP가 갈등을 처리하고 받아들이는 법을 배우도록 돕는다.",
+        "ISFP는 ISTJ에게 공감과 감정 배려를 일깨워줄 수 있다.",
+        "팀으로 일할 때 감각과 구조가 보완된다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 피드백 전에 감정 배려를 넣는다.",
+        "ISFP는 피드백을 모두 거절로 받아들이지 않는다.",
+        "개인 공간과 생활 책임을 명확히 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ISFP:ISFJ",
+    "originalResearchHash": "a770dc689ab096a63eb0b20cc0f806589eb5451bd330bccfb470bafb7d7d8144",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "b05dba3dac94b770031a759e79036b3c692a2fe78f52e6e13a91e7e7caf34a76",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "9f53a627802bb00449d86b547b91d39e8eae1179c9f8b33f1f381b20818a094c",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "겉으로는 조용하고 부드러워 보여 초반에는 비슷하다고 느끼기 쉽다.",
+        "둘 다 배려와 관계의 안정감을 중요하게 여긴다.",
+        "강압적 관계보다 조용하고 따뜻한 분위기를 선호한다.",
+        "말보다 챙김과 행동에서 애정을 느끼는 점도 서로에게 익숙하게 다가온다."
+      ],
+      "friction": [
+        "ISFP는 자유와 자기 가치관을 중시하고 ISFJ는 조화와 역할을 중시한다.",
+        "ISFJ의 챙김과 참견이 ISFP에게는 통제로 느껴질 수 있다.",
+        "ISFP가 자기중심적으로 행동하면 ISFJ는 조화를 깨는 행동으로 받아들일 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISFJ는 ISFP에게 생활 안정감을 제공하고, ISFP는 ISFJ에게 자유와 감각을 보여준다.",
+        "서로의 조용함과 따뜻함을 존중하면 편안한 관계가 된다.",
+        "생활과 취향을 분리해 존중하면 오해가 줄어든다."
+      ],
+      "repairStrategy": [
+        "ISFJ는 챙김을 지시처럼 말하지 않는다.",
+        "ISFP는 자유가 필요할 때 잠수하지 말고 이유를 말한다.",
+        "생활 규칙과 개인 취향 영역을 분리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ISFP:ESTJ",
+    "originalResearchHash": "aae96a8763ce6a5333ee8a4b096ce602beae5404b719a79a1a82fee82bb09027",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "bc1188a20c703cb9b46e7f443b324deab6e4c94b10b8a2e2cc58c47ea1a576db",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "4a4276a0317d433063de025b1ba842a859adc1d1934af2af507877e83adeb4f4",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로의 약점을 찌르지만 친해지면 좋은 보완이 가능하다.",
+        "ISFP의 따뜻함은 감정에 둔감한 ESTJ를 감쌀 수 있다.",
+        "ESTJ는 ISFP에게 현실적 해결과 구조를 제공할 수 있다.",
+        "둘 다 가까운 사람에게 실제 행동으로 책임을 보여주려는 면이 있다."
+      ],
+      "friction": [
+        "ISFP는 부정적인 감정을 숨기고 혼자 정리하려 한다.",
+        "ESTJ는 문제를 직접 해결하고 논리적으로 풀려 해 충돌이 생긴다.",
+        "ESTJ의 빠른 결정과 지시는 ISFP에게 압박이 될 수 있다.",
+        "ESTJ가 효율을 앞세워 평가하면 ISFP는 반박보다 침묵과 회피로 관계를 방어한다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 ISFP의 재능을 구조와 결과로 연결시킬 수 있다.",
+        "ISFP는 ESTJ에게 감정과 수용성의 필요를 보여준다.",
+        "서로 존중하면 따뜻함과 실행력이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 해결 전에 ISFP의 감정 정리 시간을 준다.",
+        "ISFP는 부정적 감정을 전부 숨기지 않는다.",
+        "결정과 감정 회복을 다른 시간에 다룬다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ISFP:ESFJ",
+    "originalResearchHash": "4df20a54ede26633cb17b330bc062003ffff216b046404f39f5caf38ecab2701",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "ec95800b75453943f0d6de3bf04e8df98e98b04f3823253af7e3151d373593a1",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "eb1400e28f0baec45cb8bac41c8b4e604584f60f3dccd705d5709e7dddda2306",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "일대일 대화나 가치관을 주고받는 순간에는 편안함을 느낄 수 있다.",
+        "생활 방식 일부는 비슷해 친구 관계에서는 편할 수 있다.",
+        "둘 다 사람과 관계의 온도를 중요하게 본다.",
+        "상대에게 상처 주지 않으려는 기본 배려가 있어 초반 분위기는 부드럽게 흐른다."
+      ],
+      "friction": [
+        "ESFJ의 전통적이고 체계적인 방식은 ISFP에게 구속처럼 느껴질 수 있다.",
+        "ISFP는 감정을 잘 표현하지 않아 ESFJ가 답답해할 수 있다.",
+        "동거와 장기 생활에서는 규칙과 자유의 차이가 크게 부딪힌다.",
+        "ESFJ가 확인을 요구할수록 ISFP는 더 말이 줄고, 그 침묵이 ESFJ의 불안을 키운다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 ISFP에게 생활 구조와 관계 관리를 제공할 수 있다.",
+        "ISFP는 ESFJ에게 감각적 자유와 개인 취향의 중요성을 보여준다.",
+        "서로 다른 방식의 배려를 배우면 관계가 부드러워진다."
+      ],
+      "repairStrategy": [
+        "생활 규칙은 함께 정하되 개인 취향 영역을 남긴다.",
+        "ISFP는 감정을 전부 숨기지 말고 최소한의 표현을 한다.",
+        "ESFJ는 표현 요구를 압박으로 만들지 않는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ISFP:ISTP",
+    "originalResearchHash": "dd9ce4d8ae5475590c5781eb5b542b01b41a80df0c1379a1dc133abcd2db42a3",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "410a894925fdffe4c4549576996f3e1169f1be232a60b5b9e1c1639980cfb40b",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "00a86f5cadcbcde239e129ab873628a38eed3042ec2f99e07f123a5fc9e4ad28",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "초반에는 관심사와 취향이 겹쳐 쉽게 친해질 수 있다.",
+        "둘 다 개인 공간과 직접 경험을 중요하게 여긴다.",
+        "감각과 현장성을 공유해 함께 즐길 수 있는 활동이 많다.",
+        "말보다 실제로 같이 해보는 활동에서 친밀감이 생기는 점도 닮아 있다."
+      ],
+      "friction": [
+        "ISTP는 ISFP의 감정 변화를 알지만 설명이 없어 답답해할 수 있다.",
+        "ISFP는 감정을 말로 정리하지 못해 ISTP의 논리적 피드백에 더 상처받을 수 있다.",
+        "ISTP가 노력하지 않으면 관계의 감정 온도가 낮아진다.",
+        "둘 다 말이 짧아지면 갈등이 없는 게 아니라 각자 마음속에서 정리 중일 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISTP는 ISFP에게 현실적인 문제 해결을 제공할 수 있다.",
+        "ISFP는 ISTP에게 감정과 취향의 미세한 층을 보여준다.",
+        "취미와 활동을 중심으로 하면 편안한 관계가 된다."
+      ],
+      "repairStrategy": [
+        "ISFP는 기분 나쁜 이유를 한 문장으로라도 말한다.",
+        "ISTP는 해결책 전에 감정 확인을 먼저 한다.",
+        "둘이 함께할 취미와 각자 회복 시간을 분리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ISFP:ISFP",
+    "originalResearchHash": "d990b8436c6b31ebc13857956b68570f0b10b6dbbe116f805b1d4e82106b427d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "a76605be55356caeb5af7cfa078d7e212ffe6f27831ee5cbb1824bf8d0504cda",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "a76605be55356caeb5af7cfa078d7e212ffe6f27831ee5cbb1824bf8d0504cda",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "같은 기능 순서를 사용해 말이 잘 통하고 생각을 나누기 쉽다.",
+        "서로의 감정선과 취향을 비교적 자연스럽게 이해한다.",
+        "서로 맞춰주고 배려하며 편안하게 지낼 수 있다.",
+        "말보다 분위기, 태도, 실제 행동으로 애정을 확인하는 방식도 닮아 있다."
+      ],
+      "friction": [
+        "상호 보완보다 유사성이 커서 관계가 정체될 수 있다.",
+        "한쪽이 불건강해지면 다른 한쪽도 감정 회피와 침묵 패턴에 같이 빠질 수 있다.",
+        "둘 다 결정을 미루면 관계의 방향이 흐려진다.",
+        "불편함을 크게 싸우기보다 마음속에서 정리해버리면 어느 순간 둘 다 이미 멀어진 상태가 된다."
+      ],
+      "positiveInfluence": [
+        "서로의 감수성과 취향을 존중하며 안전한 정서 공간을 만든다.",
+        "같은 고민을 다르게 비춰주며 자기 이해를 돕는다.",
+        "예술, 취미, 감각적 경험을 공유할 때 친밀감이 깊어진다."
+      ],
+      "repairStrategy": [
+        "결정해야 할 일은 날짜를 정해 미루지 않는다.",
+        "서운한 감정은 침묵하지 말고 짧게라도 말한다.",
+        "취향 공유와 생활 책임을 분리해 관리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ISFP:ESTP",
+    "originalResearchHash": "4b44145f97632b56c43c00f1af328fdfbc38e69b5a554b26adba687945c79a22",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "68efa0e9386ea5ee2aa947e81775dd2acb08b80b324ef2d38fa2db0e8fb9fe4f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "186b1abd20140fcd5e54d6f5543c860721bb90584b8bfb3db736e839b2a9eab7",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 현장 감각과 직접 경험을 중요하게 여긴다.",
+        "활동과 감각적 즐거움에서 접점이 생길 수 있다.",
+        "데이트나 취미에서 즉각적인 재미를 공유할 수 있다.",
+        "몸으로 느끼는 경험과 즉각적인 분위기에서 빠르게 가까워지는 조합이다.",
+        "말보다 함께 움직이는 시간에서 호감이 더 빨리 확인된다."
+      ],
+      "friction": [
+        "ESTP의 팩폭과 장난은 ISFP에게 깊은 상처가 될 수 있다.",
+        "ESTP는 ISFP의 반응을 재밌게 보고 더 자극할 수 있다.",
+        "ISFP는 집에서 취미를 즐기고 ESTP는 밖에서 활동하려 해 데이트 장소로 다투기 쉽다.",
+        "ESTP가 분위기를 띄우려 할수록 ISFP는 말보다 표정과 거리두기로 거절을 표시할 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 ISFP에게 행동력과 외부 경험을 열어준다.",
+        "ISFP는 ESTP에게 감정의 섬세함과 배려의 필요성을 보여준다.",
+        "장난의 선을 지키면 활력 있는 관계가 가능하다."
+      ],
+      "repairStrategy": [
+        "ESTP는 장난과 팩폭의 선을 명확히 낮춘다.",
+        "ISFP는 상처받은 지점을 즉시 짧게 말한다.",
+        "집 안 취미와 외부 활동 데이트를 번갈아 잡는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISFP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ISFP:ESFP",
+    "originalResearchHash": "a8318454ea718950da9e58382a187fa1b841b5b8004b4c86924c7d6f50709a8b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "fc42963e3aaaf19109b43ee279d47bc13a62dff1303b6249857a1b81ec454d2f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "19679c639f31c07206b00c257c78f7e724401111683675f29820605ef5a55441",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "성격, 가치관, 취향이 비슷해 친구로서 취향 공유가 쉽다.",
+        "한 사람은 일을 벌이고 한 사람은 따라가며 좋은 시너지를 낼 수 있다.",
+        "감각적 즐거움과 현재의 경험을 함께 즐긴다.",
+        "음악, 음식, 옷, 공간처럼 몸으로 느끼는 취향이 맞을 때 관계가 빠르게 살아난다."
+      ],
+      "friction": [
+        "E/I 차이로 활동량과 에너지 속도 차이가 크다.",
+        "ESFP의 외향적 속도가 ISFP에게 피로가 될 수 있다.",
+        "ISFP의 조용한 회복 욕구를 ESFP가 거리두기로 오해할 수 있다.",
+        "ESFP가 계속 반응과 동행을 요구하면 ISFP는 즐거움보다 압박을 먼저 느낀다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 ISFP를 밖으로 데리고 나오고, ISFP는 ESFP에게 깊은 감정선을 더한다.",
+        "공연, 취미, 여행, 예술 활동에서 즐거운 시너지가 나온다.",
+        "서로의 취향을 빠르게 알아보고 함께 즐길 수 있다."
+      ],
+      "repairStrategy": [
+        "외부 활동 후 ISFP의 회복 시간을 보장한다.",
+        "즐거운 계획과 생활 책임을 따로 정리한다.",
+        "서운함을 농담으로 넘기지 말고 직접 확인한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ISTJ:INTJ",
+    "originalResearchHash": "20483dcf84ca3204f30c1f7fce5d746e5e01f9243f5ab851a61a6d876bd05814",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "d904c447ebc6c781116138c5157316b554699823d41542a67650a735c65c7d09",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "1de2fde7842d8448ac51501eb6c6f64f6b88ab4a2e13d8169c133733b80147a0",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 이성적이고 신중하며 체계적인 삶의 안정성을 중요하게 본다.",
+        "개인 공간과 조용한 생활 리듬을 존중하고, 과한 감정 요구 없이 각자의 몰입 시간을 지켜줄 수 있다.",
+        "감정적 불꽃보다 지적 연결과 논리적 기준을 통해 신뢰를 쌓고, 말보다 일관된 행동을 더 믿는다."
+      ],
+      "friction": [
+        "ISTJ는 검증된 전통을 보고 INTJ는 시스템 재설계를 보며 방향이 부딪힌다.",
+        "ISTJ의 사실 중심 언어와 INTJ의 추상적 의미 해석이 서로 답답하게 느껴진다.",
+        "둘 다 내향적으로 고립되면 관계의 활력이 줄어들고, 감정 표현이 적어 불만이 조용히 쌓인다."
+      ],
+      "positiveInfluence": [
+        "INTJ의 비전에 ISTJ의 현실 감각이 붙으면 실행 가능한 계획이 된다.",
+        "ISTJ는 INTJ의 아이디어를 땅에 내리고, INTJ는 ISTJ에게 더 큰 가능성을 열어준다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 INTJ의 새 설계를 바로 비현실로 자르지 않는다.",
+        "INTJ는 ISTJ가 요구하는 실제 근거와 단계표를 제공한다.",
+        "사회적 고립을 막기 위해 외부 일정도 최소한으로 유지한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ISTJ:INTP",
+    "originalResearchHash": "5ea10d0a9a99ed2de8e155119417221b9900deaf1f65fb9ba964249cb3ca6f34",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "60b55b4ce8ffa96674534d7cfec574f5dceafe681e92b5d8bf6509603f49b455",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "86924c5271768aac3abb6060479ff0b7a760a185b3a7afd3f6bd6be023c65bc6",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ISTJ와 INTP는 둘 다 혼자 생각을 정리하는 시간과 과도하지 않은 관계 거리를 편안하게 느낀다.",
+        "ISTJ는 검증된 사실과 실행 절차를, INTP는 원리와 개념의 정확성을 중요하게 본다.",
+        "감정 과잉보다 납득 가능한 설명과 실제 근거를 선호한다는 점에서 차분한 대화가 가능하다."
+      ],
+      "friction": [
+        "ISTJ는 결론과 실행을 원하지만, INTP는 더 많은 가능성과 논리적 검토를 계속 이어가려 한다.",
+        "ISTJ는 INTP를 실천이 느리고 현실감이 약하다고 느낄 수 있고, INTP는 ISTJ를 답은 빠르지만 사고가 닫혀 있다고 느낄 수 있다.",
+        "갈등이 생기면 ISTJ는 약속과 책임을 꺼내고, INTP는 논리적 전제부터 다시 따지면서 대화가 길어진다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 INTP에게 실행과 마감, 현실의 기준을 제공한다.",
+        "INTP는 ISTJ에게 익숙한 절차 뒤에 있는 원리를 다시 점검하게 해 준다.",
+        "서로의 속도를 인정하면 안정된 실행과 깊은 분석이 함께 가능하다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 INTP에게 결론만 요구하지 말고 검토할 시간과 결정 시점을 함께 정한다.",
+        "INTP는 생각 중이라는 말로 책임을 미루지 말고 약속 가능한 행동을 제시한다.",
+        "감정 대화는 논리 검증이 아니라 관계 상태 확인이라는 점을 서로 합의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ISTJ:ENTJ",
+    "originalResearchHash": "bdc88d5714502fbf06fae81a623e5b2c6f5f62b69cc4b98fa49c06ac7e9ea6d9",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "bebe69a636f5ceb2354c8eff042951c880a5e32ada58c89d93167c4a7f0d22d6",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "cd9fdf9c3842cb6fe14e176b15c7e7f73256460ad5bf26167776b78fd09fa0d9",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ISTJ와 ENTJ는 둘 다 책임, 결과, 효율, 실질적 성과를 중요하게 여긴다.",
+        "두 사람 모두 말보다 실행과 능력으로 신뢰를 판단하기 때문에 공동 목표가 있으면 빠르게 움직인다.",
+        "ISTJ는 안정된 절차와 세부 완성도를, ENTJ는 큰 목표와 추진력을 제공한다."
+      ],
+      "friction": [
+        "ISTJ는 검증된 방식과 단계적 실행을 선호하지만, ENTJ는 더 빠른 결정과 큰 방향 전환을 밀어붙이려 한다.",
+        "ENTJ의 강한 압박은 ISTJ에게 무리한 지시로 느껴질 수 있고, ISTJ의 신중함은 ENTJ에게 답답한 지연으로 보일 수 있다.",
+        "갈등이 생기면 ENTJ는 속도와 성과를 요구하고 ISTJ는 근거와 절차를 요구하면서 주도권 싸움이 생기기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 ISTJ가 익숙한 절차에만 머물지 않고 더 큰 목표를 보게 만든다.",
+        "ISTJ는 ENTJ의 추진력이 현실의 세부와 품질을 놓치지 않도록 잡아 준다.",
+        "서로의 권한을 인정하면 전략과 실행 완성도가 모두 살아난다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 ISTJ에게 결론만 요구하지 말고 근거와 절차를 검토할 시간을 준다.",
+        "ISTJ는 지나친 신중함으로 모든 변화를 막지 말고 결정 가능한 기준을 제시한다.",
+        "큰 목표는 ENTJ가 방향을 잡고 ISTJ가 실행 세부와 리스크를 점검하는 방식으로 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ISTJ:ENTP",
+    "originalResearchHash": "92ed534906bbf1f1902e3bf7e6cfd6160ac3346f2575033192d162942799d730",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "bb153f3c5ac0da22e342acf9f01cc9aca46bbdf73a135a8e62f7dadc1732ff8e",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "df6da54047e33b60a6ce9445aa8a2a783c40e9b658045c91e895132935f74b2f",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ISTJ는 검증된 절차와 책임으로 현실을 안정시키고, ENTP는 새로운 아이디어와 질문으로 막힌 판을 흔든다.",
+        "서로가 잘 못하는 영역을 상대가 자연스럽게 해내는 모습을 보며 신기함과 자극을 느낄 수 있다.",
+        "공동 목표가 분명하면 ISTJ는 마무리와 지속성을, ENTP는 돌파구와 대안을 제공한다."
+      ],
+      "friction": [
+        "ISTJ는 정해진 약속과 일관성을 중요하게 보지만, ENTP는 규칙 자체를 의심하고 다른 가능성을 시험하려 한다.",
+        "ENTP의 농담 섞인 반박은 ISTJ에게 불성실함이나 약속을 가볍게 여기는 태도로 보일 수 있고, ISTJ의 기준은 ENTP에게 답답한 통제로 느껴질 수 있다.",
+        "갈등이 생기면 ISTJ는 결론과 책임을 요구하고 ENTP는 그 결론이 왜 필요한지 다시 토론하면서 문제 해결이 늦어진다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ISTJ가 익숙한 방식에만 머물지 않도록 새로운 관점과 변화 가능성을 열어 준다.",
+        "ISTJ는 ENTP가 아이디어만 벌이지 않고 실제 책임과 결과로 연결되게 돕는다.",
+        "서로를 고치려 하지 않으면 안정성과 창의성이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 ENTP의 질문을 곧바로 반항으로 보지 말고 개선 아이디어인지 확인한다.",
+        "ENTP는 장난과 논쟁을 하더라도 약속, 마감, 돈 문제에서는 결론을 남겨야 한다.",
+        "새로운 시도는 실험 범위와 책임자를 정해 ISTJ의 불안을 줄인다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ISTJ:INFJ",
+    "originalResearchHash": "58114cae59f5ed3988280b1bde3c9c0743aafd3d5dafd94dd4deb47bed79212b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "e14b21308426f8f51817c5b4600d8b2e3f1e4034cf7d6473de2b6228c6699257",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "ac93723ce3512f2005be749bf6f70f767b08e9387af2dc0e85ea87465768c55a",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ISTJ와 INFJ는 둘 다 가볍고 즉흥적인 관계보다 신뢰, 책임, 오래 갈 수 있는 안정감을 중요하게 본다.",
+        "ISTJ는 검증된 사실과 생활의 질서를 통해 관계를 지키고, INFJ는 사람과 관계의 숨은 흐름을 통해 방향을 읽는다.",
+        "두 사람 모두 쉽게 마음을 열지 않기 때문에 한 번 신뢰가 쌓이면 관계를 함부로 흔들지 않는다."
+      ],
+      "friction": [
+        "ISTJ는 확인 가능한 사실과 실제 책임을 먼저 보지만, INFJ는 말 뒤의 의도와 관계의 의미를 먼저 본다.",
+        "ISTJ의 현실적 지적은 INFJ에게 차갑게 느껴질 수 있고, INFJ의 상징적 표현은 ISTJ에게 모호하고 비현실적으로 보일 수 있다.",
+        "갈등이 생기면 ISTJ는 무엇을 어떻게 고칠지 묻고, INFJ는 관계의 의도와 감정의 결을 묻기 때문에 대화의 출발점부터 달라진다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 INFJ의 이상을 생활 속 실행 계획으로 내려앉히는 힘을 준다.",
+        "INFJ는 ISTJ가 놓치기 쉬운 사람의 감정 변화와 관계의 장기적 분위기를 알려 준다.",
+        "서로의 언어를 번역할 수 있으면 현실성과 통찰이 함께 단단해진다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 해결책을 제시하기 전에 INFJ의 감정이 왜 생겼는지 먼저 확인한다.",
+        "INFJ는 추상적인 서운함만 말하지 말고 실제 장면과 필요한 행동을 함께 말한다.",
+        "돈, 일정, 가족 문제는 규칙과 정서 점검을 모두 포함한 주간 대화로 다룬다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ISTJ:INFP",
+    "originalResearchHash": "e1368a8cd0f902996a9eef24b99300b29d4f89beda0a667458149fedeed38742",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "880add597de553f386c1a41dfc2fd9646a09e2cbc9108824caf35c435c189b33",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "d2d408505f9625d420d68fa1795fc7c3d48c6bbf0123ee9f38ebe9c4946f3b41",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 혼자만의 시간과 조용한 분위기를 편하게 느끼고, 사적인 영역을 함부로 침범하지 않는다.",
+        "가볍고 피상적인 관계보다 진짜 모습을 보는 연결을 원한다.",
+        "ISTJ는 꾸준한 책임으로, INFP는 진심 어린 태도로 서로에게 안정감을 줄 수 있다."
+      ],
+      "friction": [
+        "ISTJ는 안정과 전통을 보려 하고 INFP는 의미와 이상을 보려 해 서로 답답해질 수 있다.",
+        "ISTJ의 건설적 비판은 INFP에게 감정적 상처로 크게 들어간다.",
+        "생활 방식에서 ISTJ는 계획을 세우고 INFP는 열려 있기를 원해 보호자와 잔소리 관계로 굳을 수 있다."
+      ],
+      "positiveInfluence": [
+        "INFP는 ISTJ에게 삶의 이면과 가능성을 보게 하고, ISTJ는 INFP의 아이디어를 현실화한다.",
+        "서로 차이를 배움으로 쓰면 감정 조율과 실무 실행이 함께 좋아진다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 해결책 전에 공감 문장을 먼저 둔다.",
+        "INFP는 감정만 말하지 말고 필요한 행동과 기준을 구체화한다.",
+        "생활 규칙은 최소 기준만 만들고, 개인의 회복 시간을 보장한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ISTJ:ENFJ",
+    "originalResearchHash": "d3e022352cfa03a9cabbd59cd1267fa7e8b45fc5885dca0baa41c791546aed21",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "7ebe89b60facf72f99aa5a77fe75aa27d03a2e57712d0faf158fc9e0b86297ba",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "cb5ff1e97985f2d51f50b32904b3f1ecd4dda7c342cdd57702df01b338c0f137",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "초반에는 서로의 다른 에너지가 흥미롭게 보일 수 있다.",
+        "둘 다 관계나 상황을 더 낫게 만들고 싶어 하지만 기준이 완전히 다르다.",
+        "ISTJ는 책임과 안정으로, ENFJ는 조율과 격려로 관계를 지키려 하므로 둘 다 가볍게 만나는 태도는 아니다."
+      ],
+      "friction": [
+        "ENFJ는 분위기와 의미를 바로잡으려 하고 ISTJ는 현실적 안정과 효율을 지키려 한다.",
+        "ISTJ는 ENFJ의 개입을 참견으로 느끼고, ENFJ는 ISTJ를 무정하고 몰인정하게 느낄 수 있다.",
+        "논쟁이 시작되면 서로의 가장 아픈 지점을 정확히 건드리기 쉽다."
+      ],
+      "positiveInfluence": [
+        "서로를 존중하면 ISTJ는 관계의 온도를 배우고 ENFJ는 현실적 기준을 배울 수 있다.",
+        "ENFJ는 ISTJ가 놓치기 쉬운 정서 신호를 알려주고, ISTJ는 ENFJ가 흔들릴 때 생활의 기준과 책임감을 잡아준다."
+      ],
+      "repairStrategy": [
+        "ENFJ는 ISTJ의 독립된 판단 영역을 침범하지 않는다.",
+        "ISTJ는 ENFJ의 호의를 참견으로만 해석하지 않는다.",
+        "갈등이 커지기 전에 감정 요구와 현실 요구를 분리해 말한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ISTJ:ENFP",
+    "originalResearchHash": "c2192ce02e5c717ec9cbe64a9ef4cf6f0cd32de6553ae4290edf16af41d72745",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "c7ad74a304f3a8f92d951a040b763ad9d37b6f41614a40c80f08db70c77fc097",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "733b5e81b47d5cfdf6670a3c315dce43d34fd24376cdb71847aa5651de2d5c46",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 진정성 있는 관계를 원하며, 겉치레보다 실제 모습을 확인할 때 신뢰가 생긴다.",
+        "ISTJ의 실행력과 ENFP의 비전이 맞물리면 아이디어를 현실로 내리는 힘이 커진다.",
+        "말보다 행동으로 유대감을 확인하는 경험을 공유하면 관계가 단단해진다."
+      ],
+      "friction": [
+        "ISTJ는 ENFP를 변덕스럽고 비현실적으로 볼 수 있고, ENFP는 ISTJ를 고리타분하고 닫힌 사람으로 볼 수 있다.",
+        "ISTJ의 사실 중심 대화와 ENFP의 의미 중심 대화가 충돌하면 서로 다른 언어를 쓰는 느낌이 난다.",
+        "질서와 즉흥성, 혼자만의 시간과 외부 활동 욕구가 생활에서 계속 부딪힌다."
+      ],
+      "positiveInfluence": [
+        "ENFP는 ISTJ에게 새로운 시야와 정서적 표현을 열어주고, ISTJ는 ENFP에게 체계와 지속력을 준다.",
+        "서로 차이를 인정하면 안정과 혁신이 같이 움직이는 조합이 된다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 비판 전에 감정 확인을 먼저 하고, ENFP는 약속과 일정 변경을 가볍게 넘기지 않는다.",
+        "공동의 생활 규칙을 최소한으로 정하고, 자유시간과 혼자 있는 시간을 따로 확보한다.",
+        "큰 비전은 ENFP가 열고, 실행 계획은 ISTJ가 닫는 식으로 역할을 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "mixed_named_sources_unverified",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ISTJ:ISTJ",
+    "originalResearchHash": "c52e041fe7c5622380f49f3737a6a2903f5b9d4c6b4ffcca4f66e88616e40a82",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "280f855190a73ee46bda41e89d04797155766f274b45cfa7e6d0ef2ddb3ccabf",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "280f855190a73ee46bda41e89d04797155766f274b45cfa7e6d0ef2ddb3ccabf",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로를 실질적인 일을 완수하는 믿음직한 사람으로 빠르게 인식한다.",
+        "절차, 정확성, 책임, 약속 이행이라는 공통 기준이 강해 생활의 기본 약속을 쉽게 맞춘다.",
+        "말뿐인 다정함보다 꾸준한 행동을 더 크게 보므로, 서로의 성실함에서 애정을 확인한다."
+      ],
+      "friction": [
+        "각자가 겪은 과거 경험을 정답으로 믿으면 누구보다 단단하게 부딪힌다.",
+        "둘 다 감정을 뒤로 미루면 관계가 기능적이지만 차갑게 굳는다.",
+        "변화가 들어왔을 때 둘 다 예민해져 관계가 동시에 경직될 수 있고, 먼저 풀어주는 사람이 없으면 침묵이 길어진다."
+      ],
+      "positiveInfluence": [
+        "생활과 협업 환경이 매우 정돈되고 효율적으로 유지된다.",
+        "충성심과 정직함이 강해 오래 가는 안정적 관계를 만들 수 있다.",
+        "둘 다 약속을 가볍게 보지 않아 결혼이나 동거에서도 책임 구조가 빨리 잡힌다."
+      ],
+      "repairStrategy": [
+        "논리로만 결론내기 전에 감정을 한 문장이라도 확인한다.",
+        "각자의 경험을 정답으로 밀지 말고, 집안의 새 기준을 함께 만든다.",
+        "외부 활동과 새로운 경험을 일정에 의도적으로 넣는다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ISTJ:ISFJ",
+    "originalResearchHash": "a79304ce95bbb3fbf9f0f48b29d174e2545093aa6640dee25064aedb21bcc09f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "0f61c1c6495946766f1801bd5aad6ae5467ae17065ac41e3726500f057cc0bd3",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "560d5c03968fb504f6817007f328bd347dcdafe6415c556724431478ba5151ca",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ISTJ와 ISFJ는 둘 다 책임, 성실, 안정된 루틴, 오래 지키는 관계를 중요하게 본다.",
+        "두 사람 모두 세부 사항을 놓치지 않고, 가족과 생활의 질서를 유지하는 데 강하다.",
+        "감정적 흥분보다 조용한 헌신과 반복되는 실천으로 신뢰를 쌓는 방식이 비슷하다."
+      ],
+      "friction": [
+        "ISTJ는 사실, 효율, 원칙을 먼저 보지만 ISFJ는 사람의 감정과 분위기를 더 섬세하게 살핀다.",
+        "ISTJ의 직선적인 판단은 ISFJ에게 차갑게 느껴질 수 있고, ISFJ의 정서적 배려 요구는 ISTJ에게 우회적이고 비효율적으로 보일 수 있다.",
+        "둘 다 자기 방식의 책임감이 강해지면 조용히 서운함을 쌓다가 생활 규칙이나 가족 문제에서 부딪히기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ISFJ는 ISTJ에게 관계의 온도와 사람을 챙기는 표현을 알려 준다.",
+        "ISTJ는 ISFJ에게 감정에 휩쓸리지 않는 판단 기준과 현실적인 정리력을 제공한다.",
+        "서로의 성실함을 인정하면 매우 안정적인 생활 파트너가 될 수 있다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 ISFJ의 감정 반응을 비효율로 보지 말고 관계 유지에 필요한 정보로 받아들인다.",
+        "ISFJ는 서운함을 돌려 말하기보다 원하는 행동과 기준을 직접 말한다.",
+        "생활 규칙과 가족 의무는 둘 다 납득할 수 있도록 역할과 휴식까지 함께 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ISTJ:ESTJ",
+    "originalResearchHash": "94f5b41cfd92ef45bf9b4478acb7d5c328ab6c8a2404ddf4d629ef32fb0c7982",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "81ba48a16ef57cf19989f7d86c26af0a9e13d515a0118ee1afefa72252dea9fe",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "98e3bc76b19ee8d4b3e0594d42a32833e5a86000e2d9d70036130930cecf79f2",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "서로를 실무를 완벽히 수행하는 신뢰 가능한 파트너로 빠르게 인식한다.",
+        "절차, 정확성, 약속 이행, 정리정돈이라는 기준을 공유해 생활의 기본 질서가 빠르게 잡힌다.",
+        "정직하고 직설적인 소통 덕분에 관계 초기에 신뢰 체계가 빠르게 정렬된다."
+      ],
+      "friction": [
+        "ESTJ의 높은 활동성과 빠른 압박은 ISTJ에게 피로가 된다.",
+        "ESTJ가 대화를 주도하고 ISTJ가 듣기만 하는 구도가 굳으면 ISTJ는 묵살당한다고 느낀다.",
+        "서로의 경험 데이터와 전통이 다르면 논리 싸움이 매우 강하게 번진다."
+      ],
+      "positiveInfluence": [
+        "함께 있으면 생활과 업무 시스템이 빠르게 정돈된다.",
+        "불필요한 감정 소모 없이 장기적인 안정 기반을 만들 수 있다.",
+        "목표가 정해지면 실무적 결과를 강하게 밀어붙인다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 해결을 압박하기 전에 ISTJ가 생각할 시간을 준다.",
+        "ISTJ는 침묵으로 버티지 말고 필요한 기준을 말로 꺼낸다.",
+        "집안 규칙은 만들되 감정 확인 시간을 의도적으로 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ISTJ:ESFJ",
+    "originalResearchHash": "6799a0532c49551830786814fe7cc75a593890718818e3b95051e29c922d8f64",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "7b423047419c0a03b067eddeda5be37bd10c9a032b1073b94f4bdfe17f769566",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "a1cba90cd92422ee98e8831d434ae7d4d2b3f3c48db3aa001d6dc57ac67e3f88",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ISTJ와 ESFJ는 둘 다 책임, 예의, 가족과 생활의 안정, 오래 가는 관계를 중요하게 본다.",
+        "두 사람 모두 해야 할 일을 놓치지 않으려 하고, 공동체 안에서 자기 역할을 성실히 수행하려 한다.",
+        "생활 운영과 가족 의무에서는 서로의 성실함을 빠르게 신뢰할 수 있다."
+      ],
+      "friction": [
+        "ISTJ는 사실과 효율을 기준으로 판단하지만, ESFJ는 사람의 감정과 관계의 조화를 먼저 살핀다.",
+        "ESFJ의 적극적인 확인과 사회적 기대는 ISTJ에게 부담이 될 수 있고, ISTJ의 짧고 건조한 피드백은 ESFJ에게 차갑게 느껴질 수 있다.",
+        "갈등이 생기면 ISTJ는 문제를 고치는 기준을 말하고, ESFJ는 마음과 분위기를 회복하는 표현을 원하면서 서로 필요한 답을 놓친다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 ISTJ에게 관계를 따뜻하게 표현하고 주변 사람을 챙기는 감각을 더해 준다.",
+        "ISTJ는 ESFJ에게 감정에 휩쓸리지 않는 현실 판단과 안정된 구조를 제공한다.",
+        "역할이 잘 나뉘면 생활력과 사회적 조율이 모두 강한 관계가 된다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 ESFJ에게 필요한 감정 표현과 감사 표현을 의식적으로 말해야 한다.",
+        "ESFJ는 돌려 말하기보다 어떤 반응과 행동이 필요한지 구체적으로 요청한다.",
+        "가족 행사와 사회적 약속은 실무 분담뿐 아니라 각자의 회복 시간까지 함께 정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ISTJ:ISTP",
+    "originalResearchHash": "7347407cd7222d820c097d46ee79850be46867ef511fff53ba79174fc1893e6c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "cbe8bed640d9fe97216e9bd253f4ce615178389f9fda151ea5ea17c4a7e7b468",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "831cdc4c03e8a31f9669146e6831f3584fdc6d1fca151da4ece805e3492e8f72",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ISTJ와 ISTP는 둘 다 말보다 행동을 중시하고, 감정 과잉보다 실제 해결책을 선호한다.",
+        "두 사람 모두 현실 감각이 강해 허황된 약속보다 눈에 보이는 책임과 능력을 더 신뢰한다.",
+        "초반에는 서로를 과하게 부담스럽게 만들지 않는 조용한 안정감이 있다."
+      ],
+      "friction": [
+        "ISTJ는 약속과 절차를 통해 안정을 만들고, ISTP는 상황에 맞는 자율 판단을 통해 효율을 만든다.",
+        "ISTJ는 ISTP를 불안정하거나 책임감이 약하다고 느낄 수 있고, ISTP는 ISTJ를 답답하고 통제적이라고 느낄 수 있다.",
+        "갈등이 생기면 ISTJ는 규칙과 약속을 꺼내고, ISTP는 지금 상황에 맞는 융통성을 요구하면서 부딪히기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 ISTP에게 지속성과 책임 구조를 제공하고, ISTP는 ISTJ에게 유연성과 현장 대응력을 제공한다.",
+        "둘이 서로의 방식을 존중하면 안정성과 실전성이 함께 살아난다.",
+        "생활 문제를 해결하는 능력은 좋은 편이라 감정만 격해지지 않으면 현실 조율이 가능하다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 ISTP에게 규칙을 설명하기 전에 왜 필요한지 먼저 말해야 한다.",
+        "ISTP는 자유를 요구할 때 책임을 피하는 인상을 주지 않도록 최소한의 약속 시간을 지켜야 한다.",
+        "감정 표현이 약한 조합이므로 문제를 덮지 말고 짧고 구체적인 대화 시간을 정해야 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ISTJ:ISFP",
+    "originalResearchHash": "bcd2ff459f86ada13526da59fc54aedf1e86d520d89b5419d1ed373eb2f401ca",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "354fc95bb1c1aea3be75c935dd66f10fb6b3e8bd88a426524f1c092f20c1f5ce",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "4e4c7e6d05f0e34d08fb944b6e7502d745bdee77986391fce6fb9e26808c90ae",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 내향적이고 개인 공간을 중요하게 본다.",
+        "디테일에 집중하며 혼자 일할 시간이 필요하다는 점을 이해한다.",
+        "과한 감정 표현보다 조용한 배려와 실제 행동을 편하게 느껴 초반에는 부담이 적고, 서로의 사적인 리듬을 비교적 자연스럽게 인정한다."
+      ],
+      "friction": [
+        "ISFP는 감정과 느낌으로 결정하고 ISTJ는 논리와 목표로 결정한다.",
+        "ISTJ의 피드백은 ISFP에게 혹평처럼 들릴 수 있다.",
+        "ISTJ는 책임과 기준을 말한다고 생각하지만, ISFP는 자기 취향과 감정을 평가받는다고 느끼며 조용히 물러난다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 ISFP에게 갈등을 현실적으로 다루는 법을 도와주고, ISFP는 ISTJ에게 공감의 언어를 가르쳐준다.",
+        "ISTJ의 안정감과 ISFP의 부드러운 감각이 만나면 생활은 차분하고 관계의 온도는 한층 부드러워진다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 조언을 줄 때 감정 완충 문장을 먼저 둔다.",
+        "ISFP는 ISTJ의 피드백을 인신공격이 아니라 개선 요청으로 분리해 듣는다.",
+        "갈등은 즉흥 감정으로 밀지 말고 차분히 시간을 두고 다룬다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ISTJ:ESTP",
+    "originalResearchHash": "e5f637b7ca052e52329423b37e2c678aa30c3a1d10f47f8b51951b2809137328",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "3ed2b3159d0fd78588677673f1b2960ae10bd9810806ef43b5c85db9f6ca5a34",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "35283fcc0e8e9a347475e4679de6c0623dbcc6c2a86ff6fea9fa1ce07bef5850",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "둘 다 실용주의와 논리를 중시하고, 실제 과업을 끝내는 데 관심이 있다.",
+        "추상보다 행동과 구체적 경험을 선호한다.",
+        "감정에 호소하기보다 논리적 판단으로 돌아가려는 공통점이 있어 위기 상황에서는 빠르게 현실 대응으로 모일 수 있다."
+      ],
+      "friction": [
+        "ISTJ의 계획성과 ESTP의 즉흥성이 생활에서 강하게 부딪힌다.",
+        "ESTP의 높은 사교 에너지는 ISTJ에게 압도적인 피로가 된다.",
+        "ESTP는 즉시 문제를 파헤치고 ISTJ는 혼자 생각할 시간이 필요해 재촉과 회피 구도가 생긴다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 ISTJ에게 현재를 즐기는 법과 현장 대응을 가르쳐준다.",
+        "ISTJ는 ESTP에게 조직력, 인내심, 책임감을 전달한다.",
+        "공동 목표가 분명하면 현실 문제 해결 속도가 빠르다."
+      ],
+      "repairStrategy": [
+        "ESTP는 계획을 전부 깨지 말고 최소 일정만 지킨다.",
+        "ISTJ는 모든 즉흥성을 무책임으로 보지 않는다.",
+        "함께하는 활동과 각자 쉬는 시간을 명확히 분리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ISTJ:ESFP",
+    "originalResearchHash": "b670dc8d5a04f30ede7f7ccf1d51f20a742f5f9ff004b9d3c495385bb042f936",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "4e1143ef30cd546b8e11e3c70dae10c71d4666568569b172597d51ed9fb9b036",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "2a99e5a4ed20052e1a20d09dd6fbf0fe34e9922ffff12355341815fffe0a3c14",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ISTJ는 책임과 절차로 생활을 안정시키고, ESFP는 밝은 표현과 현재의 즐거움으로 관계에 생기를 더한다.",
+        "두 사람 모두 현실 감각이 있어 말뿐인 약속보다 실제 행동과 경험을 통해 관계를 느낀다.",
+        "서로의 역할이 분명하면 ISTJ는 기반을 만들고 ESFP는 분위기를 살리는 조합이 된다."
+      ],
+      "friction": [
+        "ISTJ는 계획과 약속이 지켜져야 안심하지만, ESFP는 상황과 기분에 따라 유연하게 움직이는 편이다.",
+        "ISTJ의 기준과 지적은 ESFP에게 차갑거나 답답하게 느껴질 수 있고, ESFP의 즉흥성과 감정 표현은 ISTJ에게 산만하거나 책임감 부족으로 보일 수 있다.",
+        "갈등이 생기면 ISTJ는 규칙을 강화하고 ESFP는 분위기와 감정을 앞세우며 서로의 언어가 달라진다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 ESFP에게 장기 책임과 생활 안정의 힘을 제공한다.",
+        "ESFP는 ISTJ가 지나치게 무겁고 반복적인 생활에 갇히지 않도록 즐거움과 표현을 더해 준다.",
+        "안정과 활력의 역할을 나누면 생활과 관계가 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 ESFP에게 규칙을 말할 때 비판보다 안정이 필요한 이유를 먼저 설명한다.",
+        "ESFP는 즉흥 약속이나 지출이 생길 때 ISTJ가 예측할 수 있도록 미리 공유한다.",
+        "생활비와 즐거움 예산을 분리해 안정과 활력이 서로를 침범하지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ISTP:INTJ",
+    "originalResearchHash": "71a9a991d418503ff303d420a6d1817b9dd897de603f70708bac368a16f6d3fd",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "9b9988e4001d57223f651e2e892a7e07d6c550379c9141818116cb73ee86204e",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "da41d37cc99ba0fa2278ff395ccf6b56bee87d449fd5e2e215a329bcea97bcb2",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ISTP는 눈앞의 구조와 도구가 실제로 작동하는지를 보고, INTJ는 그 선택이 장기적으로 어디로 이어질지를 본다.",
+        "둘 다 감정 과잉보다 논리, 독립성, 실질적 능력을 중요하게 여겨 과한 애정 확인을 요구하지 않는다.",
+        "서로의 개인 공간을 존중하면 조용하지만 집중도 높은 파트너십이 만들어진다."
+      ],
+      "friction": [
+        "INTJ는 큰 그림과 전략을 먼저 세우려 하고, ISTP는 현장에서 직접 만져 보고 판단하려 한다.",
+        "INTJ의 예측과 통제는 ISTP에게 답답한 설계도로 느껴질 수 있고, ISTP의 즉흥 대응은 INTJ에게 불안정한 변수처럼 보일 수 있다.",
+        "갈등이 생기면 INTJ는 방향과 원칙을 묻고, ISTP는 지금 당장 되는 방법을 찾으면서 대화의 초점이 어긋난다."
+      ],
+      "positiveInfluence": [
+        "INTJ는 ISTP의 순간 대응을 장기 전략 안에 배치해 주고, ISTP는 INTJ의 계획을 실제 상황에서 검증해 준다.",
+        "서로를 통제하지 않으면 추상적 전략과 현장 기술이 같이 살아난다.",
+        "이 조합은 말보다 결과로 신뢰를 쌓을 때 강하다."
+      ],
+      "repairStrategy": [
+        "INTJ는 ISTP에게 계획을 설명할 때 통제가 아니라 선택지를 줄이는 이유를 먼저 말한다.",
+        "ISTP는 자유롭게 처리하더라도 중간 공유 시간을 지켜 INTJ의 불확실성을 줄인다.",
+        "큰 결정은 INTJ가 방향을, ISTP가 현실 작동성을 점검하는 방식으로 역할을 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ISTP:INTP",
+    "originalResearchHash": "d0f4ded46078d0457cb06bd573215cb67461b34b214d7323a4e929eed3029b5f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "d82f2e82f5949e40fe317c71c81650f4c9c4b3ac24fd15c91d4984585898d1fa",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "9dc65ec0487a31d043647278f92336b1fb772b733cf2068ba93d37bf226b2ce0",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 감정보다 원리, 구조, 실제 납득 가능성을 중시한다.",
+        "INTP는 개념과 논리의 정확성을 파고들고, ISTP는 그 논리가 현실에서 어떻게 작동하는지 확인한다.",
+        "서로에게 과한 사교성이나 감정 표현을 요구하지 않아 지적 대화와 개인 시간을 함께 존중하기 쉽다."
+      ],
+      "friction": [
+        "INTP는 가능성과 개념을 오래 탐색하고, ISTP는 지나친 이론보다 바로 해볼 수 있는 해법을 선호한다.",
+        "ISTP는 INTP를 말은 많은데 행동이 느리다고 느낄 수 있고, INTP는 ISTP를 충분히 분석하지 않고 움직인다고 볼 수 있다.",
+        "갈등이 생기면 둘 다 감정을 직접 다루기보다 논리로 우회해 서운함이 늦게 드러난다."
+      ],
+      "positiveInfluence": [
+        "INTP는 ISTP에게 더 넓은 원리와 대안을 보여 주고, ISTP는 INTP에게 실행 가능한 첫 단계를 제공한다.",
+        "서로의 속도를 인정하면 사고와 실험이 함께 이루어진다.",
+        "감정 부담이 적은 우정형 연애나 동료형 관계에서 안정감이 생긴다."
+      ],
+      "repairStrategy": [
+        "감정이 불편할 때 논쟁으로 바꾸지 말고 먼저 감정 상태를 짧게 말한다.",
+        "생활 책임은 누가 눈치껏 하기를 기대하지 말고 항목별로 나눈다.",
+        "INTP는 생각을 정리하는 시간을, ISTP는 행동으로 확인하는 시간을 서로 인정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ISTP:ENTJ",
+    "originalResearchHash": "9b073abaceb18aeeaabc88d229bf73aaab9c5997ee56d2e6e1589b40bd928b16",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "fccd4661be4d755acf8a808bffb5aee38fc0a04abb5d735daf6e80b71f986bfb",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "c8c4d88e10daa17919dd5a6ce781bbdbfcd32ee0ae2b9f209794e25141733eaf",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ENTJ는 목표와 성과를 빠르게 구조화하고, ISTP는 현장에서 가장 효율적인 해법을 찾아낸다.",
+        "둘 다 말만 많은 관계보다 실제 결과와 능력을 중요하게 보기 때문에 함께 일할 때 강한 생산성이 나온다.",
+        "감정적 의존보다 각자의 역할과 역량을 존중하는 관계에서 서로를 빠르게 인정한다."
+      ],
+      "friction": [
+        "ENTJ는 방향과 속도를 강하게 밀고 가지만, ISTP는 자기 판단으로 움직일 자유가 필요하다.",
+        "ENTJ의 지시와 압박은 ISTP에게 통제로 느껴지고, ISTP의 침착한 거리두기는 ENTJ에게 비협조처럼 보일 수 있다.",
+        "갈등이 생기면 ENTJ는 책임과 성과를 요구하고, ISTP는 상황에 맞는 융통성과 자율성을 요구한다."
+      ],
+      "positiveInfluence": [
+        "ENTJ는 ISTP의 실전 감각을 더 큰 성과로 연결해 주고, ISTP는 ENTJ의 전략을 실제 현장에서 검증한다.",
+        "서로의 역할이 분명하면 추진력과 기술력이 결합된다.",
+        "감정 설득보다 결과 기반 신뢰가 쌓일 때 관계가 안정된다."
+      ],
+      "repairStrategy": [
+        "ENTJ는 지시보다 선택권을 포함한 제안을 해야 ISTP의 협조를 얻기 쉽다.",
+        "ISTP는 말없이 처리하기보다 중요한 결정의 진행 상황을 짧게 공유한다.",
+        "논쟁이 생기면 성과 기준과 개인 자유 기준을 분리해 각각 협의한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ISTP:ENTP",
+    "originalResearchHash": "aeb68c640915660c0be9797d3fb55acc1d6e193823a742f85d76e5e8feb30071",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "61f5ffbf6e6c25c77b0e52f445320aeda955c060911ffdd959150dd353bb10f7",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "8b599bc341bcde8e9918cfe9d5a95a6f492f19ea5a6e9a4c5ccd1f1ee3ff9c97",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 정해진 방식에 갇히기보다 직접 시험하고 새로운 방법을 찾는 쪽에 끌린다.",
+        "ENTP는 아이디어와 논쟁으로 가능성을 넓히고, ISTP는 실제 장비와 상황을 다루며 가능성을 검증한다.",
+        "서로에게 지나친 형식과 감정 의례를 요구하지 않아 초반에는 가볍고 자극적인 관계가 된다."
+      ],
+      "friction": [
+        "ENTP는 말로 실험하고 ISTP는 행동으로 실험하기 때문에, 대화와 실행의 속도가 다르게 느껴진다.",
+        "ENTP의 끝없는 반박은 ISTP에게 피곤한 소음처럼 느껴질 수 있고, ISTP의 짧은 반응은 ENTP에게 재미없는 벽처럼 보일 수 있다.",
+        "둘 다 자율성을 중시해 책임과 일정이 흐려지면 관계가 산만해진다."
+      ],
+      "positiveInfluence": [
+        "ENTP는 ISTP에게 더 많은 선택지와 관점을 제공하고, ISTP는 ENTP의 아이디어를 실제로 되는 것과 안 되는 것으로 가른다.",
+        "서로의 실험 방식을 존중하면 창의성과 현실성이 함께 생긴다.",
+        "재미와 도전이 있는 프로젝트에서는 강한 시너지가 나온다."
+      ],
+      "repairStrategy": [
+        "ENTP는 논쟁을 시작하기 전에 ISTP가 지금 대화할 에너지가 있는지 확인한다.",
+        "ISTP는 피곤할 때 갑자기 끊기보다 쉬고 다시 이야기할 시간을 말한다.",
+        "새로운 시도는 좋지만 비용, 일정, 책임자를 먼저 정해 관계의 부담을 줄인다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ISTP:INFJ",
+    "originalResearchHash": "3589ff7cf9662890af1fe721ec36cb7fa7b181c32e28c354b3f009739ad7ed09",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "d7242d380106b34a6fe888ad12bd3d7376a28734915fa912468844fac8bad042",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "d70fbd7d4751cbe56d672d5fe437aab969a78e03628e607613ce1c48d624fd3f",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "INFJ는 사람과 상황의 숨은 흐름을 읽고, ISTP는 눈앞의 문제를 실제로 해결한다.",
+        "둘 다 말이 많지 않아도 자기 세계가 깊고, 쉽게 마음을 열지 않는다는 점을 이해할 수 있다.",
+        "INFJ의 통찰과 ISTP의 실전 감각이 만나면 생각과 행동의 균형이 생긴다."
+      ],
+      "friction": [
+        "INFJ는 감정의 의미와 관계의 방향을 확인하고 싶어 하지만, ISTP는 문제를 단순하게 보고 해결하려 한다.",
+        "ISTP의 짧은 반응은 INFJ에게 마음을 피하는 태도로 보일 수 있고, INFJ의 긴 해석은 ISTP에게 과한 의미 부여로 느껴질 수 있다.",
+        "갈등이 생기면 INFJ는 관계의 깊이를 묻고 ISTP는 지금 무엇을 하면 되는지 묻기 때문에 서로 다른 대답을 기다리게 된다."
+      ],
+      "positiveInfluence": [
+        "INFJ는 ISTP에게 행동 뒤에 남는 사람의 감정과 장기적 의미를 보여 준다.",
+        "ISTP는 INFJ가 생각과 감정에 갇히지 않고 실제 선택으로 내려오게 돕는다.",
+        "서로를 재촉하지 않으면 깊이와 현실성이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "INFJ는 ISTP에게 감정의 맥락을 설명하되 결론과 필요한 행동을 함께 말한다.",
+        "ISTP는 해결책을 주기 전에 INFJ가 느낀 감정을 한 번 인정한다.",
+        "중요한 대화는 길게 끌기보다 시간을 정해 짧고 반복적으로 나눈다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "quadra_style_label_not_pair_relation",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ISTP:INFP",
+    "originalResearchHash": "1a327b689dc51342c5b01faa5a3b52f15a3468f3ded2be9c001caf7cad6867dc",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "ba5429f6e8b79e430fe73417fde5321c479d5f9457d01a6eb673337abd402045",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "dfabda27c77c48532c2c14770bf11b12b357a24b3ac7be8843a5163513afbd88",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "INFP는 사람의 진심과 가치의 의미를 보고, ISTP는 현실에서 무엇이 작동하는지를 본다.",
+        "둘 다 강압적인 관계와 과한 통제를 싫어하며 각자의 내면 공간을 중요하게 여긴다.",
+        "서로의 조용한 독립성을 존중하면 부담 없이 오래 관찰하며 가까워질 수 있다."
+      ],
+      "friction": [
+        "INFP는 감정의 의미를 말로 풀고 싶어 하지만, ISTP는 상황을 단순하게 보고 실제 해결책을 찾으려 한다.",
+        "ISTP의 건조한 반응은 INFP에게 마음을 몰라주는 태도로 느껴질 수 있고, INFP의 깊은 감정 설명은 ISTP에게 부담으로 느껴질 수 있다.",
+        "갈등이 생기면 INFP는 상처와 의도를 묻고, ISTP는 무엇을 고치면 되는지 묻기 때문에 대화의 깊이가 다르게 느껴진다."
+      ],
+      "positiveInfluence": [
+        "INFP는 ISTP에게 행동 뒤에 있는 사람의 마음과 가치를 보게 해 준다.",
+        "ISTP는 INFP가 감정 속에 오래 머물지 않고 현실에서 가능한 선택을 하도록 돕는다.",
+        "서로를 재촉하지 않으면 따뜻함과 실용성이 함께 보완된다."
+      ],
+      "repairStrategy": [
+        "INFP는 ISTP에게 감정의 의미만이 아니라 원하는 행동을 함께 말한다.",
+        "ISTP는 해결책을 말하기 전에 INFP의 감정이 실제로 존재한다는 점을 인정한다.",
+        "감정 대화는 길게 몰아치기보다 짧고 반복 가능한 루틴으로 만든다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ISTP:ENFJ",
+    "originalResearchHash": "0786a4610cf9770b45775a9a4df13dc05163f58c87f5ae4fa6073775af9fe248",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "88e65a90aac6efb846e8afbe0890df01aea9b27d8ce01126eb782499c015d8aa",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "82a30cbee6954a603592e8e093511bd8d498a5294736f3107e73bcca5597b17e",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ENFJ는 사람을 움직이는 분위기와 방향을 만들고, ISTP는 현장에서 실제로 되는 해결책을 제공한다.",
+        "둘 다 위기 상황에서 가만히 있기보다 각자 방식으로 문제를 처리하려는 힘이 있다.",
+        "ENFJ의 대인 감각과 ISTP의 실전 감각이 맞으면 사람과 상황을 동시에 다루는 팀이 된다."
+      ],
+      "friction": [
+        "ENFJ는 마음과 관계의 의미를 확인하고 싶어 하지만, ISTP는 감정 설명보다 실제 행동을 더 신뢰한다.",
+        "ENFJ의 적극적인 조율은 ISTP에게 개입이나 통제로 느껴질 수 있고, ISTP의 거리두기는 ENFJ에게 냉담함으로 보일 수 있다.",
+        "갈등이 생기면 ENFJ는 대화를 통해 관계를 회복하려 하고, ISTP는 혼자 정리할 시간을 원하면서 속도가 어긋난다."
+      ],
+      "positiveInfluence": [
+        "ENFJ는 ISTP에게 감정을 표현하고 관계를 유지하는 언어를 알려 준다.",
+        "ISTP는 ENFJ가 감정과 책임을 과하게 떠안을 때 실제 해결 순서로 부담을 줄여 준다.",
+        "서로의 방식이 다름을 인정하면 정서적 조율과 실전 대응이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ENFJ는 ISTP의 침묵을 곧바로 거절로 해석하지 말고 필요한 혼자 시간을 확인한다.",
+        "ISTP는 감정 대화를 피하기보다 짧게라도 자신의 상태와 돌아올 시간을 알려준다.",
+        "관계 회복 대화는 길게 설득하기보다 핵심 감정, 사실, 다음 행동으로 나누어 진행한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "quadra_style_label_not_pair_relation",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ISTP:ENFP",
+    "originalResearchHash": "42ebb02e49b5c497857fc5588fef168dad7493138e7c1c68766c8e6516b5f48d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "68c36ed3e74b5f1959d7d33149e30707ec140b2209996136434ae79d847dca44",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "b558d263fdda1a02b750a078f69b4dc675903e81b33cc0e109cbf372e4aa3cdc",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 불필요한 형식과 과한 통제를 싫어하고, 각자의 자율성을 중요하게 여긴다.",
+        "ENFP는 가능성과 사람의 마음을 직관적으로 읽고, ISTP는 상황의 원리와 실제 작동 방식을 빠르게 파악한다.",
+        "서로의 독립성을 존중한다면 친구처럼 가볍고 부담 없는 접점은 만들 수 있다."
+      ],
+      "friction": [
+        "ENFP는 감정의 의미와 관계의 가능성을 자주 확인하고 싶어 하지만, ISTP는 말보다 행동과 효율을 더 신뢰한다.",
+        "ISTP의 짧고 건조한 반응은 ENFP에게 무관심처럼 느껴질 수 있고, ENFP의 감정적 확장은 ISTP에게 과한 부담으로 느껴질 수 있다.",
+        "갈등이 생기면 ENFP는 마음을 풀기 위한 대화를 원하고, ISTP는 문제를 단순화하거나 거리를 두려 하면서 서로 더 서운해질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISTP는 ENFP가 복잡하게 느끼는 문제를 실제로 가능한 행동 단위로 줄여 준다.",
+        "ENFP는 ISTP가 사람의 마음과 관계의 맥락을 놓치지 않도록 부드럽게 환기한다.",
+        "서로에게 너무 많은 정서적 역할을 요구하지 않으면 현실성과 따뜻함이 조금씩 보완된다."
+      ],
+      "repairStrategy": [
+        "ENFP는 ISTP에게 긴 감정 설명을 한 번에 쏟기보다 핵심 감정과 필요한 행동을 짧게 말한다.",
+        "ISTP는 거리를 두기 전에 언제 돌아와 대화할지 시간을 분명히 알려 준다.",
+        "갈등 대화는 감정 확인, 사실 확인, 다음 행동을 분리해 짧은 단계로 진행한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ISTP:ISTJ",
+    "originalResearchHash": "b214b4eb6bc351c510bc83aa1e8bd7daa5bcd89e5132a4b91d76a8f60c382c27",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "831cdc4c03e8a31f9669146e6831f3584fdc6d1fca151da4ece805e3492e8f72",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "cbe8bed640d9fe97216e9bd253f4ce615178389f9fda151ea5ea17c4a7e7b468",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ISTP와 ISTJ는 둘 다 말보다 행동을 중시하고 감정 과잉보다 실제 해결책을 선호한다.",
+        "두 사람 모두 현실 감각이 강해 허황된 약속보다 눈에 보이는 책임과 능력을 더 신뢰한다.",
+        "초반에는 서로를 과하게 부담스럽게 만들지 않는 조용한 안정감이 있다."
+      ],
+      "friction": [
+        "ISTJ는 약속과 절차를 통해 안정을 만들고, ISTP는 상황에 맞는 자율 판단을 통해 효율을 만든다.",
+        "ISTJ는 ISTP를 불안정하거나 책임감이 약하다고 느낄 수 있고, ISTP는 ISTJ를 답답하고 통제적이라고 느낄 수 있다.",
+        "갈등이 생기면 ISTJ는 규칙과 약속을 꺼내고, ISTP는 지금 상황에 맞는 융통성을 요구하면서 부딪히기 쉽다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 ISTP에게 지속성과 책임 구조를 제공하고, ISTP는 ISTJ에게 유연성과 현장 대응력을 제공한다.",
+        "둘이 서로의 방식을 존중하면 안정성과 실전성이 함께 살아난다.",
+        "생활 문제를 해결하는 능력은 좋은 편이라 감정만 격해지지 않으면 현실 조율이 가능하다."
+      ],
+      "repairStrategy": [
+        "ISTJ는 ISTP에게 규칙을 설명하기 전에 왜 필요한지 먼저 말해야 한다.",
+        "ISTP는 자유를 요구할 때 책임을 피하는 인상을 주지 않도록 최소한의 약속 시간을 지켜야 한다.",
+        "감정 표현이 약한 조합이므로 문제를 덮지 말고 짧고 구체적인 대화 시간을 정해야 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ISTP:ISFJ",
+    "originalResearchHash": "2a77058a801a785e058b72add2491c95c6340e848b73b9d010750da5f56e0e21",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "522e6e34dab54621393ad0fc40e5667bbf030f75bc3c7f9985c2568d29148e5f",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "bce7a22425237ed9678da6e1bd6ee9a62d2da94d924de6a9e16dc6eab8308b48",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 조용하고 과시적인 관계보다 실제 생활에서 드러나는 신뢰를 중요하게 본다.",
+        "ISFJ는 돌봄과 안정된 루틴으로 관계를 지키고, ISTP는 문제 상황에서 침착하게 해결책을 찾는다.",
+        "서로 말이 많지 않아도 행동으로 마음을 확인할 수 있으면 편안한 안정감이 생긴다."
+      ],
+      "friction": [
+        "ISFJ는 정서적 배려와 예측 가능한 관계를 원하지만, ISTP는 자유로운 거리와 실용적 해결을 선호한다.",
+        "ISFJ의 걱정과 확인은 ISTP에게 간섭으로 느껴질 수 있고, ISTP의 무심한 침묵은 ISFJ에게 서운함으로 쌓일 수 있다.",
+        "갈등이 생기면 ISFJ는 마음을 살피려 하고 ISTP는 문제만 해결하려 하면서 서로 필요한 대답을 받지 못한다."
+      ],
+      "positiveInfluence": [
+        "ISFJ는 ISTP에게 관계를 오래 지키는 섬세함과 책임감을 알려 준다.",
+        "ISTP는 ISFJ가 걱정에만 머물지 않고 실제 행동으로 문제를 줄이도록 돕는다.",
+        "돌봄과 자율의 균형이 잡히면 조용하지만 실속 있는 관계가 된다."
+      ],
+      "repairStrategy": [
+        "ISFJ는 걱정을 돌봄으로만 표현하지 말고 원하는 기준을 직접 말한다.",
+        "ISTP는 해결책만 내놓기 전에 ISFJ의 수고를 인정하는 표현을 먼저 한다.",
+        "개인 시간과 가족 루틴을 따로 정해 돌봄이 통제가 되지 않게 한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ISTP:ESTJ",
+    "originalResearchHash": "b7a15abe862fa9571ad735a2c2bd4f510e553a97a6d7721104237b4710f2bd69",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "c844cc722b8b214101ede6af8c208d6c9075bba5c2b5f23ad3ba7b27bc60012b",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "b1cf7047b561a65d93e9361a78ea44cb9bd539f6c0fd1f7ac0e4cf70710083df",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 현실적이고 실용적인 결과를 중요하게 본다.",
+        "ESTJ는 역할과 절차로 일을 밀고 가고, ISTP는 현장에서 가장 효율적인 방법을 찾아낸다.",
+        "공동의 목표가 분명하면 말보다 행동으로 빠르게 성과를 만들 수 있다."
+      ],
+      "friction": [
+        "ESTJ는 분명한 규칙과 책임을 요구하지만, ISTP는 상황에 따라 방식이 바뀔 자유를 원한다.",
+        "ESTJ의 지시와 점검은 ISTP에게 통제로 느껴지고, ISTP의 독립적 처리 방식은 ESTJ에게 보고 부족이나 책임 회피처럼 보일 수 있다.",
+        "갈등이 생기면 ESTJ는 기준을 강화하고 ISTP는 더 멀어지려 하면서 압박과 회피가 반복될 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESTJ는 ISTP에게 지속성과 마감 의식을 주고, ISTP는 ESTJ에게 현장의 융통성과 실전 감각을 보완한다.",
+        "역할과 권한이 명확하면 서로의 능력을 인정하기 쉽다.",
+        "일과 생활의 실무 영역에서는 강한 문제 해결력을 만들 수 있다."
+      ],
+      "repairStrategy": [
+        "ESTJ는 ISTP에게 일을 맡길 때 결과 기준과 자유롭게 처리할 범위를 함께 제시한다.",
+        "ISTP는 중간 공유를 생략하지 말고 최소한의 보고로 ESTJ의 불안을 줄인다.",
+        "가정의 규칙은 명령이 아니라 서로의 편의를 위한 합의로 정리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ISTP:ESFJ",
+    "originalResearchHash": "3ee0d4f7194638a74d8488fad5a8fcd1e07de6c2ca688e63fdff6fc1c008a705",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "ad258c69529c20bdde58a78217f758925a668d52fe465ea2924d840546c2b568",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "d4e0e7a5f15cfe50998e0e35f6173242322939db886273d4ad106acc1c06922d",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "ESFJ는 사람을 챙기고 관계의 분위기를 살피며, ISTP는 실제 문제를 조용히 해결한다.",
+        "두 사람 모두 현실적인 도움을 줄 수 있다는 점에서는 서로의 유용함을 빠르게 알아본다.",
+        "ESFJ의 따뜻함과 ISTP의 침착함이 맞으면 생활 속 안정감이 생긴다."
+      ],
+      "friction": [
+        "ESFJ는 표현과 반응을 통해 관계를 확인하고 싶어 하지만, ISTP는 감정 표현보다 행동으로 보여 주는 편이다.",
+        "ESFJ의 잦은 확인과 개입은 ISTP에게 부담이 되고, ISTP의 짧은 대답과 개인 시간은 ESFJ에게 차갑게 느껴질 수 있다.",
+        "갈등이 생기면 ESFJ는 마음을 풀려 하고 ISTP는 상황을 단순화하려 하면서 서로 다른 종류의 해결을 요구한다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 ISTP에게 관계를 표현하고 돌보는 기술을 알려 준다.",
+        "ISTP는 ESFJ가 감정에 압도될 때 현실적인 해결 순서를 제시한다.",
+        "서로의 방식이 다르다는 점을 인정하면 따뜻함과 실용성이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESFJ는 ISTP의 말수가 적어도 행동으로 표현되는 애정을 함께 읽어야 한다.",
+        "ISTP는 중요한 날과 가족 약속을 가볍게 넘기지 말고 최소한의 참여 기준을 지킨다.",
+        "외부 일정과 개인 회복 시간을 달력에 함께 넣어 서로의 에너지 차이를 관리한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ISTP:ISTP",
+    "originalResearchHash": "d76e14733f822c14c3d44b7798c2982f438859030e65b5f3e0627797c101f82f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "94ab792742d5c6e0ee1e0b424d69b2874cea933f7b6b60577bd5b52a6fd929b6",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "94ab792742d5c6e0ee1e0b424d69b2874cea933f7b6b60577bd5b52a6fd929b6",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 말보다 행동, 감정보다 실제 작동, 간섭보다 자율성을 중요하게 여긴다.",
+        "서로의 개인 시간과 짧은 표현 방식을 자연스럽게 이해해 불필요한 부담이 적다.",
+        "관심사가 맞으면 도구, 기술, 운동, 취미처럼 함께 직접 해보는 활동에서 빠르게 가까워진다."
+      ],
+      "friction": [
+        "둘 다 감정 표현이 적어 관계가 편하지만 건조해지기 쉽다.",
+        "문제가 생겨도 각자 알아서 처리하려 하다가 서운함이나 책임 문제가 늦게 드러날 수 있다.",
+        "둘 다 계획과 장기 운영을 미루면 돈, 집안일, 가족 일정 같은 현실 부담이 정리되지 않는다."
+      ],
+      "positiveInfluence": [
+        "서로의 자유를 존중해 과한 간섭 없이 안정적인 거리를 만들 수 있다.",
+        "함께 실용적인 문제를 해결할 때 말보다 손발이 잘 맞는다.",
+        "비슷한 장단점을 보며 자기 방식을 객관적으로 점검하는 계기가 된다."
+      ],
+      "repairStrategy": [
+        "애정 표현이 부족한 조합이므로 말보다 행동으로 하는 표현도 서로 확인해 준다.",
+        "돈과 집안일은 감정적으로 몰아붙이지 말고 항목별로 나누어 처리한다.",
+        "각자의 혼자 시간을 존중하되 관계 점검 시간은 짧게라도 정기적으로 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ISTP:ISFP",
+    "originalResearchHash": "a6102fea90dfcc5ea00e7b9b119ada41b548cd7e1811bc9f19b38c4c9cbf5dc8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "00a86f5cadcbcde239e129ab873628a38eed3042ec2f99e07f123a5fc9e4ad28",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "410a894925fdffe4c4549576996f3e1169f1be232a60b5b9e1c1639980cfb40b",
+      "sourceCoverage": "direct"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "처음에는 관심사와 취향이 겹쳐 자연스럽게 가까워지기 쉽다.",
+        "둘 다 개인 공간과 조용한 관계를 선호해 초반 부담이 적다.",
+        "감각적 취미, 실제 경험, 손으로 하는 활동에서 접점을 만들 수 있고, 말보다 함께 해보는 시간 속에서 신뢰가 생긴다."
+      ],
+      "friction": [
+        "ISTP는 논리로 정리하려 하고 ISFP는 감정과 가치로 반응해 갈등의 언어가 다르다.",
+        "ISFP가 감정을 말로 설명하지 않으면 ISTP는 답답해서 분통이 터질 수 있다.",
+        "ISTP의 간단한 피드백이 ISFP에게는 차갑고 날카로운 말로 들어갈 수 있다."
+      ],
+      "positiveInfluence": [
+        "ISFP는 ISTP에게 감정의 온도를 알려주고, ISTP는 ISFP에게 상황을 현실적으로 정리해준다.",
+        "서로의 개인 공간을 존중하면 편안하고 부담 적은 관계가 된다."
+      ],
+      "repairStrategy": [
+        "ISTP는 해결책 전에 상대 감정을 한 문장으로 확인한다.",
+        "ISFP는 불편한 감정을 행동으로만 보이지 말고 구체적으로 말한다.",
+        "감정 대화는 길게 끌기보다 짧게 정리하고, 함께 하는 취미로 다시 연결한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ISTP:ESTP",
+    "originalResearchHash": "fb0959fcf87fba589facd1b4d0fbd825398136d89fd98fab0ba715d397e553d2",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "3b598a6ba88682e67bb16c2cfd71e91c8e1589e3aa8dcbbf27b0bcc5eea9251d",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "aa178379a840e48686e96d0e8b98ae29604682f05d5d4382fcf81d60b9146e62",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 현실 감각, 순발력, 몸으로 부딪히며 배우는 방식을 자연스럽게 이해한다.",
+        "ISTP는 조용히 원리를 파악하고, ESTP는 사람과 현장을 빠르게 움직여 결과를 만든다.",
+        "함께 있으면 말보다 행동이 빠르고, 위기나 돌발 상황에서 서로의 반응 속도를 신뢰하기 쉽다."
+      ],
+      "friction": [
+        "ESTP는 더 넓게 교류하고 즉각적으로 움직이려 하지만, ISTP는 필요할 때만 움직이고 자기 시간을 지키려 한다.",
+        "ESTP의 장난과 활동성은 ISTP에게 과한 자극이 될 수 있고, ISTP의 무표정한 반응은 ESTP에게 재미없는 거리감으로 보일 수 있다.",
+        "둘 다 현재 판단과 자유를 중시하기 때문에 장기 계획, 돈 관리, 감정 대화가 뒤로 밀릴 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESTP는 ISTP가 너무 혼자만의 방식에 머물지 않도록 현장과 사람 속으로 끌어낸다.",
+        "ISTP는 ESTP가 순간의 분위기에 휩쓸릴 때 실제 위험과 작동 원리를 짚어 준다.",
+        "두 사람이 서로의 행동 속도를 존중하면 강한 실전형 파트너십이 된다."
+      ],
+      "repairStrategy": [
+        "ESTP는 ISTP의 조용한 시간을 관계 회피로 몰아가지 않는다.",
+        "ISTP는 ESTP가 원하는 활동성을 전부 거절하기보다 함께할 활동과 혼자 있을 시간을 나누어 제안한다.",
+        "돈, 일정, 위험한 선택은 즉흥 결정보다 하루 정도의 확인 시간을 둔다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "quadra_style_label_not_pair_relation",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  },
+  {
+    "id": "pcpr:pair:ISTP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ISTP:ESFP",
+    "originalResearchHash": "2664c260b4dc7717154adc3fb746bdc727328556036030c5b624226a6406e3f3",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "6ec4e8230764f3f3c46a19a19b0a5ff057475d8796e28ab7c0715129f7be49c3",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "5d89166714cfa7c36c99bcaafe4d1030a7c3fb5af85b460a32c6248ff5cea1c4",
+      "sourceCoverage": "inferred"
+    },
+    "genericReference": {
+      "sharedGround": [
+        "두 사람 모두 지금 눈앞의 현실, 몸으로 느끼는 경험, 직접 해보는 활동에 강하다.",
+        "ESFP는 분위기와 사람을 살리고, ISTP는 상황의 구조와 실제 해결책을 빠르게 잡는다.",
+        "함께 움직이고 경험하는 데서 친밀감이 생기기 쉬워 정적인 관계보다 활동적인 관계에서 잘 맞는다."
+      ],
+      "friction": [
+        "ESFP는 표현과 즉각적인 반응을 원하지만, ISTP는 조용히 관찰하고 필요한 순간에만 말하는 편이다.",
+        "ESFP의 감정 표현과 사교성은 ISTP에게 과한 자극이 될 수 있고, ISTP의 무덤덤함은 ESFP에게 재미없거나 차갑게 느껴질 수 있다.",
+        "둘 다 현재의 즐거움과 자율성을 좋아해 장기 계획과 돈 관리를 미루면 현실 부담이 쌓인다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 ISTP에게 관계의 밝은 표현과 즐거움을 더해 준다.",
+        "ISTP는 ESFP가 순간의 분위기에 휩쓸릴 때 현실적인 판단과 기술적 해결책을 제공한다.",
+        "서로의 활동성을 존중하면 즐거움과 실용성이 함께 살아난다."
+      ],
+      "repairStrategy": [
+        "ESFP는 ISTP의 조용함을 무관심으로 단정하지 말고 행동 표현을 함께 본다.",
+        "ISTP는 중요한 순간에는 짧게라도 감정 반응을 보여 ESFP의 불안을 줄인다.",
+        "데이트와 소비는 즉흥성을 살리되 월별 예산과 회복 시간을 함께 정한다."
+      ]
+    },
+    "parentChildPatternExists": false,
+    "romanticPatternsWithheld": true,
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "일반 Pair 원천에는 parentChild pattern이 없다. raw 일반 문구도 역할 대칭·성과·연애 표현을 별도 감사해야 하며 그대로 고객에게 사용하지 않는다. 부모 parenting·자녀 child/실제 역할/나이/지원 조건이 필요하다. 양육 적합성·발달·성적·미래 성격의 검증 아님."
+  }
+];

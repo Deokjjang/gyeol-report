@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Script from "next/script";
+import Image from "next/image";
 import { useRef, useState, type ReactNode } from "react";
 import { prepareReportShare } from "../../app/reports/shareActions";
 import { copyShareLink, kakaoShareCard, nativeShare, type KakaoSdk } from "../../lib/sharing/shareBrowser";
@@ -17,9 +18,7 @@ type ReportShareActionsProps = { readonly productSlug?: string; readonly classNa
 function KakaoTalkIcon() {
   return (
     <span className={styles.kakaoIcon} aria-hidden="true">
-      <svg viewBox="0 0 24 24" focusable="false">
-        <path d="M12 4C6.8 4 2.6 7.28 2.6 11.32c0 2.6 1.74 4.88 4.36 6.18l-.9 3.3c-.08.3.26.54.52.36l3.92-2.6c.5.06 1 .1 1.5.1 5.2 0 9.4-3.28 9.4-7.34S17.2 4 12 4Z" />
-      </svg>
+      <Image src="/brand/kakao-talk-share.svg" width={24} height={25} alt="" />
     </span>
   );
 }

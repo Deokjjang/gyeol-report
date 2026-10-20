@@ -1,0 +1,7 @@
+[
+  "tests/unit/app/reports/postPaymentExperience.test.tsx",
+  "tests/unit/app/tossPaymentSuccessPageSource.test.ts",
+  "tests/unit/app/dev/bookPreview.test.tsx",
+  "tests/unit/components/ReportShareInteraction.test.tsx",
+  "tests/unit/components/LegalDocuments.test.tsx"
+]

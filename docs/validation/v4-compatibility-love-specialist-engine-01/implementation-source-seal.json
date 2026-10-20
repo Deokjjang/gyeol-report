@@ -1,0 +1,22 @@
+{
+  "generatorInputs": {
+    "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/researchCatalog.ts": "b35385a42b866493761c59812adc150d00f268e7621d3467d74e11a610d5fffe",
+    "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/pairWitness.ts": "f42366470cf25acf87e7ac79ded36d263b92eda72defd4e71c405bf019249130",
+    "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/artifacts.ts": "675173915aabc3b7ba8d5c70d63d1c87c5c0dc746ec11521905e1429df609a0f",
+    "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/selection.ts": "bec8c382c52ad0a44c8b4703f64be5c8bb819b23266ec937389f17104c116b76",
+    "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/candidateIndex.ts": "70046731ad030b798412c3d8362f4e56193a8efd6d7aae6118b5eb6632c59af7",
+    "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/engine.ts": "28738fd9691f662de078b2c43e9c200b16494f654af2e07d9a0040282e9a5b97",
+    "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/policy.ts": "6383cf4551a6d60641eff004c6649ee7372bc71c89d0bdba6a723668ff761dc9",
+    "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/observations.ts": "d2501a4c63668a990846da93399c2aa1f35578cf1594a533abd4bd77ec4caa68",
+    "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/synthetic.ts": "058aef1d59f7cd76e060c5c8dcecd18bf311304a6a0af5ff26ec3d94aaef125a",
+    "tools/compatibility-love-specialist-engine/verify.mjs": "1b1a051c3c4292d454f4a1f2d15988c8e229b11b4bbfdd2cb2ae3798f4184542",
+    "tests/fixtures/compatibility-love-specialist-engine-01/synthetic-knowledge.json": "e32450d13f5fa39f8ec37bc410502a3d66047d9050937769b797ca5f16cfb9d4",
+    "docs/validation/v4-compatibility-love-specialist-engine-01/pair-baseline-digests.json": "9a82d1d1ede6f15d94afe917890b6b2953185275baaf576176eba7ce9d207eef"
+  },
+  "unchangedAcrossFinalExecutions": true,
+  "testFiles": {
+    "tests/unit/report-knowledge/compatibilityLoveSpecialistEngine.test.ts": "fd2cc82f4fd6803b3804aa94501b1c45965cf58fe2b8d5fdf4152126b6d6e4ad",
+    "tests/unit/report-knowledge/compatibilityLoveSpecialistArtifacts.test.ts": "9f89353f83a81327be4bef1eac1cdf770513d7ca5614e28833b85be56ec67e4f"
+  },
+  "testsAreNotGeneratorInputs": true
+}

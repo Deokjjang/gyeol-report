@@ -1,0 +1,1806 @@
+/** Static parent/child research. No runtime binding, age inference or customer approval. */
+import type { ParentChildMaterial } from "./researchTypes";
+export const PC_CH02_MATERIALS: readonly ParentChildMaterial[] = [
+  {
+    "id": "pcpr:material:CH02.P1:a-standards-with-explanation",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "address": "CH02.P1",
+    "mode": "SELF_A",
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "developmentNotAssessed": true,
+    "readerQuestion": "부모 A가 기준과 가치를 제공할 때 남겨야 할 자리는 무엇인가?",
+    "coreMeaning": "A의 일관된 기준 관심을 자녀가 이해할 수 있는 행동 설명과 구분해 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH02.P1.S1",
+        "originalRole": "대표 행동",
+        "knowledge": "A의 parenting 원천은 통제의 정당성을 입증하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH02.P1.S2",
+        "originalRole": "명리 근거",
+        "knowledge": "안전에 필요한 결과는 성인이 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH02.P1.S3",
+        "originalRole": "MBTI 선호",
+        "knowledge": "규칙은 지금 할 수 있는 구체적인 행동으로 설명한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH02.P1.S4",
+        "originalRole": "B와의 관계",
+        "knowledge": "실행이 어렵다면 자녀의 의지보다 설명과 지원을 점검한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "41f807794a6c25d13e93",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5511525de4a015d143f6",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:scope-responsibility",
+        "axis": "DUTY",
+        "definition": "책임의 경계를 구분",
+        "condition": "실제 계약과 동의 우선",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:COMMUNICATION_STYLE:intent-check",
+        "axis": "COMMUNICATION_STYLE",
+        "definition": "표현과 이해된 뜻을 다시 확인",
+        "condition": "해석 차이를 당사자가 확인할 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "topics": [
+      "parentRole",
+      "protection"
+    ],
+    "positive": "예측할 수 있는 기준을 제공할 가능성",
+    "risk": "순종을 좋은 양육의 결과로 삼음",
+    "factBomb": "기준이 분명하다는 부모의 확신이 자녀에게도 이해됐다는 답은 아니다.",
+    "twist": "설명을 줄여 행동 하나로 나누면 기준을 포기하지 않고도 지원할 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 어린 자녀에게 정리를 안내한다면 부모는 다 치우라는 말 대신 한 행동을 보여준다.",
+      "notDevelopmentalObservation": true
+    },
+    "parentResponsibleAction": "규칙의 범위와 이해 가능성을 먼저 확인한다.",
+    "childAvailableChoice": "모르는 부분을 가리키거나 함께 해달라고 요청할 수 있다.",
+    "counterexample": "실제 연령·수행 가능성이 없으면 해당 설명을 발달 단계의 정답으로 제시하지 않는다.",
+    "distinctFromOtherParagraphs": "부모의 기본 기준 제공 방식",
+    "precedingMeaningRefs": [],
+    "requirements": {
+      "fixedRole": "V4 fixed-ab-v1 확인 시 A 부모/B 자녀. 역할 없는 과거 입력·잘못된 버전·교환된 역할의 실제 적합성을 새로 만들지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ENTJ",
+          "sourceKey": "41f807794a6c25d13e93",
+          "domain": "PARENTS"
+        }
+      ],
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. parenting 원천은 A 부모 역할에만 참고.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. child 원천은 미검증 어린 시기 참고이며 성인 자녀에게 자동 전용하지 않음.",
+      "actualNatalAndDirectionRoots": [],
+      "direction": null,
+      "canonicalPair": "지원되는 실제 관계 ID·종류·refs·기둥·양쪽 person ID·성립 조건 필요. 정의나 미상 시주로 검출하지 않음.",
+      "mbtiPair": "일반 forward/reverse 원천 참고. parentChild 전용 pattern 필드는 없다. love/marriagePattern·관계명·reportLine을 양육 사실로 전용하지 않음.",
+      "fusion": "같은 사람의 실제 명리·MBTI 두 root·rule·source assignment·기존 contexts/domain을 확인. 부모/자녀 개인 Fusion을 Pair 점수로 더하지 않음.",
+      "projection": "PARENTS/CHILDREN 원천 존재는 현재 비연애 V4 scoring 기여나 적용 승인이 아님. 후속 별도 검토.",
+      "development": "독립 나이 계산 없음. 실제 기준일·입력 검증·현재 지원 필요 확인 후 맥락 선택. birthDate나 MBTI는 발달·능력 검사 아님.",
+      "guidanceScope": "외부 안내는 각 원천의 나이·상황 범위에 한정. TEEN/ADULT 비교는 각 맥락을 분리하며 양쪽 지침을 같은 사람에게 동시에 자동 적용하지 않음.",
+      "unknownAge": "UNKNOWN 맥락은 일반 확인 질문만. 단계별 훈육·권한·자율성 범위 판정 보류.",
+      "unknownMbti": "해당 개인 MBTI/Fusion 및 Pair 후보 보류. 상대 유형·명리·나이로 보충하지 않음. 원천이 없는 주장을 만들지 않음.",
+      "unknownBirthTime": "시주·시주 관련 관계를 보충하지 않음. 실제 확인된 다른 기둥만 사용.",
+      "recall": "같은 person ID·roleVersion·원천·방향·맥락으로 앞서 실제 표시된 호환 의미만 회수. 후보 존재를 표시 이력으로 보지 않음.",
+      "minorSafety": "미성년 안전·돌봄·성인 감정 조절·지원 확보 책임은 성인에게 남음. 자녀가 부모를 위로·설득·용서하거나 가족을 유지할 의무 없음.",
+      "adultBoundary": "성인 자녀의 선택·동의·독립적 생활 경계 존중. 지원 필요·능력 미확인 상태에서 영구 통제권이나 무조건적 독립을 판정하지 않음.",
+      "professionalBoundary": "폭력·학대·방임·강압을 성향 차이로 정상화하지 않음. 의료·심리·법률·아동보호 판단은 연구 DB로 대체하지 않음."
+    },
+    "repairPlan": {
+      "condition": "순종을 좋은 양육의 결과로 삼음",
+      "parentChecksFirst": "규칙의 범위와 이해 가능성을 먼저 확인한다.",
+      "childExpression": "모르는 부분을 가리키거나 함께 해달라고 요청할 수 있다.",
+      "adultChange": "규칙의 범위와 이해 가능성을 먼저 확인한다.",
+      "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+      "choiceLeftToChild": "모르는 부분을 가리키거나 함께 해달라고 요청할 수 있다.",
+      "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+      "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+      "childMustRepairParent": false
+    },
+    "disallowed": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "pcpr:material:CH02.P1:a-values-with-open-question",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "address": "CH02.P1",
+    "mode": "SELF_A",
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "developmentNotAssessed": true,
+    "readerQuestion": "부모 A가 기준과 가치를 제공할 때 남겨야 할 자리는 무엇인가?",
+    "coreMeaning": "A의 가치 전달 관심과 자녀의 다른 생각을 들을 책임을 구분한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH02.P1.S1",
+        "originalRole": "대표 행동",
+        "knowledge": "정직·배려를 중시하는 자료는 A의 조건부 원천이다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH02.P1.S2",
+        "originalRole": "명리 근거",
+        "knowledge": "가치에 동의하지 않은 의견도 말할 수 있어야 한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH02.P1.S3",
+        "originalRole": "MBTI 선호",
+        "knowledge": "실제 행동의 영향과 인격 평가를 나눈다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH02.P1.S4",
+        "originalRole": "B와의 관계",
+        "knowledge": "부모는 자신의 가치를 자녀가 이미 공유한다고 가정하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "8340bca1aae1ff5a8c69",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:MEANING:value-articulation",
+        "axis": "MEANING",
+        "definition": "자기에게 중요한 이유를 말함",
+        "condition": "본인이 밝힌 가치가 있을 때",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:BOUNDARY:privacy",
+        "axis": "BOUNDARY",
+        "definition": "정보·시간의 사적 범위를 정함",
+        "condition": "공개 동의와 공유 의무 구분",
+        "notIndependentEvidence": true
+      }
+    ],
+    "topics": [
+      "parentRole",
+      "communication"
+    ],
+    "positive": "가치의 이유를 함께 살필 가능성",
+    "risk": "다른 선택을 도덕적으로 부족한 자녀로 평가",
+    "factBomb": "좋은 가치를 말해도 다른 답을 모두 틀렸다고 하면 질문은 닫힌다.",
+    "twist": "부모가 자기 이유를 설명하는 것과 자녀의 답을 고르는 것은 다르다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 약속의 이유를 논의한다면 부모는 자녀가 중요하게 보는 조건도 듣는다.",
+      "notDevelopmentalObservation": true
+    },
+    "parentResponsibleAction": "가치·행동·선택 범위를 구분해 말한다.",
+    "childAvailableChoice": "다른 생각을 말하거나 판단을 보류할 수 있다.",
+    "counterexample": "실제 위법·안전 판단을 성격 해석으로 대신하지 않는다.",
+    "distinctFromOtherParagraphs": "부모의 가치 전달과 자녀의 동의 분리",
+    "precedingMeaningRefs": [],
+    "requirements": {
+      "fixedRole": "V4 fixed-ab-v1 확인 시 A 부모/B 자녀. 역할 없는 과거 입력·잘못된 버전·교환된 역할의 실제 적합성을 새로 만들지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "INFP",
+          "sourceKey": "8340bca1aae1ff5a8c69",
+          "domain": "PARENTS"
+        }
+      ],
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. parenting 원천은 A 부모 역할에만 참고.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. child 원천은 미검증 어린 시기 참고이며 성인 자녀에게 자동 전용하지 않음.",
+      "actualNatalAndDirectionRoots": [],
+      "direction": null,
+      "canonicalPair": "지원되는 실제 관계 ID·종류·refs·기둥·양쪽 person ID·성립 조건 필요. 정의나 미상 시주로 검출하지 않음.",
+      "mbtiPair": "일반 forward/reverse 원천 참고. parentChild 전용 pattern 필드는 없다. love/marriagePattern·관계명·reportLine을 양육 사실로 전용하지 않음.",
+      "fusion": "같은 사람의 실제 명리·MBTI 두 root·rule·source assignment·기존 contexts/domain을 확인. 부모/자녀 개인 Fusion을 Pair 점수로 더하지 않음.",
+      "projection": "PARENTS/CHILDREN 원천 존재는 현재 비연애 V4 scoring 기여나 적용 승인이 아님. 후속 별도 검토.",
+      "development": "독립 나이 계산 없음. 실제 기준일·입력 검증·현재 지원 필요 확인 후 맥락 선택. birthDate나 MBTI는 발달·능력 검사 아님.",
+      "guidanceScope": "외부 안내는 각 원천의 나이·상황 범위에 한정. TEEN/ADULT 비교는 각 맥락을 분리하며 양쪽 지침을 같은 사람에게 동시에 자동 적용하지 않음.",
+      "unknownAge": "UNKNOWN 맥락은 일반 확인 질문만. 단계별 훈육·권한·자율성 범위 판정 보류.",
+      "unknownMbti": "해당 개인 MBTI/Fusion 및 Pair 후보 보류. 상대 유형·명리·나이로 보충하지 않음. 원천이 없는 주장을 만들지 않음.",
+      "unknownBirthTime": "시주·시주 관련 관계를 보충하지 않음. 실제 확인된 다른 기둥만 사용.",
+      "recall": "같은 person ID·roleVersion·원천·방향·맥락으로 앞서 실제 표시된 호환 의미만 회수. 후보 존재를 표시 이력으로 보지 않음.",
+      "minorSafety": "미성년 안전·돌봄·성인 감정 조절·지원 확보 책임은 성인에게 남음. 자녀가 부모를 위로·설득·용서하거나 가족을 유지할 의무 없음.",
+      "adultBoundary": "성인 자녀의 선택·동의·독립적 생활 경계 존중. 지원 필요·능력 미확인 상태에서 영구 통제권이나 무조건적 독립을 판정하지 않음.",
+      "professionalBoundary": "폭력·학대·방임·강압을 성향 차이로 정상화하지 않음. 의료·심리·법률·아동보호 판단은 연구 DB로 대체하지 않음."
+    },
+    "repairPlan": {
+      "condition": "다른 선택을 도덕적으로 부족한 자녀로 평가",
+      "parentChecksFirst": "가치·행동·선택 범위를 구분해 말한다.",
+      "childExpression": "다른 생각을 말하거나 판단을 보류할 수 있다.",
+      "adultChange": "가치·행동·선택 범위를 구분해 말한다.",
+      "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+      "choiceLeftToChild": "다른 생각을 말하거나 판단을 보류할 수 있다.",
+      "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+      "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+      "childMustRepairParent": false
+    },
+    "disallowed": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "pcpr:material:CH02.P1:a-effort-without-future-script",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "address": "CH02.P1",
+    "mode": "SELF_A",
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "developmentNotAssessed": true,
+    "readerQuestion": "부모 A가 기준과 가치를 제공할 때 남겨야 할 자리는 무엇인가?",
+    "coreMeaning": "A가 안정된 미래를 바라는 마음을 현재 탐색 지원과 구분한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH02.P1.S1",
+        "originalRole": "대표 행동",
+        "knowledge": "명문대·직업 성공 원문은 실제 미래나 자녀의 목표로 승인하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH02.P1.S2",
+        "originalRole": "명리 근거",
+        "knowledge": "부모의 걱정과 자녀가 알아보고 싶은 경로는 별개다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH02.P1.S3",
+        "originalRole": "MBTI 선호",
+        "knowledge": "지금 확인할 정보와 시험할 활동으로 질문을 좁힌다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH02.P1.S4",
+        "originalRole": "B와의 관계",
+        "knowledge": "성취 여부로 관심이나 돌봄을 조건화하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "d34d165d4966692ca6cb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:STABILITY:continuity",
+        "axis": "STABILITY",
+        "definition": "유지·인수인계 체계를 갖춤",
+        "condition": "기능·담당·검토 주기 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:AUTONOMY:method-discretion",
+        "axis": "AUTONOMY",
+        "definition": "합의된 결과 안에서 방법을 고름",
+        "condition": "업무·계약의 실제 재량 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "topics": [
+      "parentRole",
+      "learning"
+    ],
+    "positive": "준비할 자료와 지원을 구체화할 가능성",
+    "risk": "안정의 이름으로 진로를 미리 확정",
+    "factBomb": "미래를 걱정한다는 말이 지금의 관심을 들을 일을 대신하지는 않는다.",
+    "twist": "불확실한 경로도 작게 알아보면 현재 선택의 정보가 늘 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 진로 활동을 고른다면 부모는 결과 약속 대신 실제 필요한 자료와 부담을 확인한다.",
+      "notDevelopmentalObservation": true
+    },
+    "parentResponsibleAction": "자신의 성공 기준과 지원할 행동을 나눈다.",
+    "childAvailableChoice": "관심을 바꾸거나 더 알아볼 시간을 요청할 수 있다.",
+    "counterexample": "실제 성적·경제력·진로가 미입력이라면 지원 가능성이나 합격을 단정하지 않는다.",
+    "distinctFromOtherParagraphs": "부모의 기대와 현재 지원의 출발점",
+    "precedingMeaningRefs": [],
+    "requirements": {
+      "fixedRole": "V4 fixed-ab-v1 확인 시 A 부모/B 자녀. 역할 없는 과거 입력·잘못된 버전·교환된 역할의 실제 적합성을 새로 만들지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "d34d165d4966692ca6cb",
+          "domain": "PARENTS"
+        }
+      ],
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. parenting 원천은 A 부모 역할에만 참고.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. child 원천은 미검증 어린 시기 참고이며 성인 자녀에게 자동 전용하지 않음.",
+      "actualNatalAndDirectionRoots": [],
+      "direction": null,
+      "canonicalPair": "지원되는 실제 관계 ID·종류·refs·기둥·양쪽 person ID·성립 조건 필요. 정의나 미상 시주로 검출하지 않음.",
+      "mbtiPair": "일반 forward/reverse 원천 참고. parentChild 전용 pattern 필드는 없다. love/marriagePattern·관계명·reportLine을 양육 사실로 전용하지 않음.",
+      "fusion": "같은 사람의 실제 명리·MBTI 두 root·rule·source assignment·기존 contexts/domain을 확인. 부모/자녀 개인 Fusion을 Pair 점수로 더하지 않음.",
+      "projection": "PARENTS/CHILDREN 원천 존재는 현재 비연애 V4 scoring 기여나 적용 승인이 아님. 후속 별도 검토.",
+      "development": "독립 나이 계산 없음. 실제 기준일·입력 검증·현재 지원 필요 확인 후 맥락 선택. birthDate나 MBTI는 발달·능력 검사 아님.",
+      "guidanceScope": "외부 안내는 각 원천의 나이·상황 범위에 한정. TEEN/ADULT 비교는 각 맥락을 분리하며 양쪽 지침을 같은 사람에게 동시에 자동 적용하지 않음.",
+      "unknownAge": "UNKNOWN 맥락은 일반 확인 질문만. 단계별 훈육·권한·자율성 범위 판정 보류.",
+      "unknownMbti": "해당 개인 MBTI/Fusion 및 Pair 후보 보류. 상대 유형·명리·나이로 보충하지 않음. 원천이 없는 주장을 만들지 않음.",
+      "unknownBirthTime": "시주·시주 관련 관계를 보충하지 않음. 실제 확인된 다른 기둥만 사용.",
+      "recall": "같은 person ID·roleVersion·원천·방향·맥락으로 앞서 실제 표시된 호환 의미만 회수. 후보 존재를 표시 이력으로 보지 않음.",
+      "minorSafety": "미성년 안전·돌봄·성인 감정 조절·지원 확보 책임은 성인에게 남음. 자녀가 부모를 위로·설득·용서하거나 가족을 유지할 의무 없음.",
+      "adultBoundary": "성인 자녀의 선택·동의·독립적 생활 경계 존중. 지원 필요·능력 미확인 상태에서 영구 통제권이나 무조건적 독립을 판정하지 않음.",
+      "professionalBoundary": "폭력·학대·방임·강압을 성향 차이로 정상화하지 않음. 의료·심리·법률·아동보호 판단은 연구 DB로 대체하지 않음."
+    },
+    "repairPlan": {
+      "condition": "안정의 이름으로 진로를 미리 확정",
+      "parentChecksFirst": "자신의 성공 기준과 지원할 행동을 나눈다.",
+      "childExpression": "관심을 바꾸거나 더 알아볼 시간을 요청할 수 있다.",
+      "adultChange": "자신의 성공 기준과 지원할 행동을 나눈다.",
+      "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+      "choiceLeftToChild": "관심을 바꾸거나 더 알아볼 시간을 요청할 수 있다.",
+      "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+      "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+      "childMustRepairParent": false
+    },
+    "disallowed": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "pcpr:material:CH02.P2:a-rest-needs-adult-support",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "address": "CH02.P2",
+    "mode": "SELF_A",
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "developmentNotAssessed": true,
+    "readerQuestion": "부모의 회복·연결 필요를 누가 책임져야 하는가?",
+    "coreMeaning": "A의 책임 관심이 자신의 회복 필요를 숨길 때 성인 지원을 확보할 조건을 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH02.P2.S1",
+        "originalRole": "관계 조건",
+        "knowledge": "자기 욕구를 미루는 설명은 실제 희생 이력이 아니다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH02.P2.S2",
+        "originalRole": "실제 이유",
+        "knowledge": "자녀가 부모의 감정 자원을 채울 의무는 없다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH02.P2.S3",
+        "originalRole": "B와의 장면",
+        "knowledge": "돌봄 공백 없이 쉴 지원과 필요한 업무를 성인이 찾는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH02.P2.S4",
+        "originalRole": "충족될 때",
+        "knowledge": "지원 부족을 자녀의 고마움 부족으로 번역하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "31fe578398dda7ed2b7e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "e5ebcee2b4f04948ce2b",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:RECOVERY_NEED:rest-access",
+        "axis": "RECOVERY_NEED",
+        "definition": "쉬는 방식과 가능한 공간을 확보",
+        "condition": "선호·돌봄·경제 제약을 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:CARE:respectful-nonintervention",
+        "axis": "CARE",
+        "definition": "돕지 않을 선택을 존중",
+        "condition": "보호 의무와 선택 지원을 구분",
+        "notIndependentEvidence": true
+      }
+    ],
+    "topics": [
+      "parentRole",
+      "adultSupport"
+    ],
+    "positive": "돌봄과 보호자 회복을 함께 계획할 가능성",
+    "risk": "헌신 목록을 자녀의 정서적 빚으로 만듦",
+    "factBomb": "많이 해줬다는 말로 아이에게 어른의 피로를 갚게 할 수는 없다.",
+    "twist": "성인에게 도움을 구하는 선택이 돌봄을 이어갈 조건일 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 보호자가 지친 상황이라면 안전 돌봄을 유지할 성인 지원과 휴식 범위를 확인한다.",
+      "notDevelopmentalObservation": true
+    },
+    "parentResponsibleAction": "필요한 지원을 성인이나 적절한 자원에 요청한다.",
+    "childAvailableChoice": "부모를 달래는 역할을 맡지 않고 자신의 필요를 표현할 수 있다.",
+    "counterexample": "실제 피로·지원망·돌봄 공백을 입력 없이 만들어내지 않는다.",
+    "distinctFromOtherParagraphs": "부모의 회복을 자녀 의무와 분리",
+    "precedingMeaningRefs": [],
+    "requirements": {
+      "fixedRole": "V4 fixed-ab-v1 확인 시 A 부모/B 자녀. 역할 없는 과거 입력·잘못된 버전·교환된 역할의 실제 적합성을 새로 만들지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ISFJ",
+          "sourceKey": "31fe578398dda7ed2b7e",
+          "domain": "PARENTS"
+        }
+      ],
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. parenting 원천은 A 부모 역할에만 참고.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. child 원천은 미검증 어린 시기 참고이며 성인 자녀에게 자동 전용하지 않음.",
+      "actualNatalAndDirectionRoots": [],
+      "direction": null,
+      "canonicalPair": "지원되는 실제 관계 ID·종류·refs·기둥·양쪽 person ID·성립 조건 필요. 정의나 미상 시주로 검출하지 않음.",
+      "mbtiPair": "일반 forward/reverse 원천 참고. parentChild 전용 pattern 필드는 없다. love/marriagePattern·관계명·reportLine을 양육 사실로 전용하지 않음.",
+      "fusion": "같은 사람의 실제 명리·MBTI 두 root·rule·source assignment·기존 contexts/domain을 확인. 부모/자녀 개인 Fusion을 Pair 점수로 더하지 않음.",
+      "projection": "PARENTS/CHILDREN 원천 존재는 현재 비연애 V4 scoring 기여나 적용 승인이 아님. 후속 별도 검토.",
+      "development": "독립 나이 계산 없음. 실제 기준일·입력 검증·현재 지원 필요 확인 후 맥락 선택. birthDate나 MBTI는 발달·능력 검사 아님.",
+      "guidanceScope": "외부 안내는 각 원천의 나이·상황 범위에 한정. TEEN/ADULT 비교는 각 맥락을 분리하며 양쪽 지침을 같은 사람에게 동시에 자동 적용하지 않음.",
+      "unknownAge": "UNKNOWN 맥락은 일반 확인 질문만. 단계별 훈육·권한·자율성 범위 판정 보류.",
+      "unknownMbti": "해당 개인 MBTI/Fusion 및 Pair 후보 보류. 상대 유형·명리·나이로 보충하지 않음. 원천이 없는 주장을 만들지 않음.",
+      "unknownBirthTime": "시주·시주 관련 관계를 보충하지 않음. 실제 확인된 다른 기둥만 사용.",
+      "recall": "같은 person ID·roleVersion·원천·방향·맥락으로 앞서 실제 표시된 호환 의미만 회수. 후보 존재를 표시 이력으로 보지 않음.",
+      "minorSafety": "미성년 안전·돌봄·성인 감정 조절·지원 확보 책임은 성인에게 남음. 자녀가 부모를 위로·설득·용서하거나 가족을 유지할 의무 없음.",
+      "adultBoundary": "성인 자녀의 선택·동의·독립적 생활 경계 존중. 지원 필요·능력 미확인 상태에서 영구 통제권이나 무조건적 독립을 판정하지 않음.",
+      "professionalBoundary": "폭력·학대·방임·강압을 성향 차이로 정상화하지 않음. 의료·심리·법률·아동보호 판단은 연구 DB로 대체하지 않음."
+    },
+    "repairPlan": {
+      "condition": "헌신 목록을 자녀의 정서적 빚으로 만듦",
+      "parentChecksFirst": "필요한 지원을 성인이나 적절한 자원에 요청한다.",
+      "childExpression": "부모를 달래는 역할을 맡지 않고 자신의 필요를 표현할 수 있다.",
+      "adultChange": "필요한 지원을 성인이나 적절한 자원에 요청한다.",
+      "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+      "choiceLeftToChild": "부모를 달래는 역할을 맡지 않고 자신의 필요를 표현할 수 있다.",
+      "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+      "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+      "childMustRepairParent": false
+    },
+    "disallowed": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "pcpr:material:CH02.P2:a-alone-time-with-return",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "address": "CH02.P2",
+    "mode": "SELF_A",
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "developmentNotAssessed": true,
+    "readerQuestion": "부모의 회복·연결 필요를 누가 책임져야 하는가?",
+    "coreMeaning": "A의 혼자 정리할 필요와 자녀가 도움받을 통로를 함께 유지할 조건을 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH02.P2.S1",
+        "originalRole": "관계 조건",
+        "knowledge": "개인 시간 설명은 실제 돌봄 이탈의 사실이 아니다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH02.P2.S2",
+        "originalRole": "실제 이유",
+        "knowledge": "쉬는 동안 필요한 안전과 연락 통로는 부모가 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH02.P2.S3",
+        "originalRole": "B와의 장면",
+        "knowledge": "돌아와 응답할 범위와 대체 지원을 구분한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH02.P2.S4",
+        "originalRole": "충족될 때",
+        "knowledge": "자녀가 부모의 휴식을 허락해야 하는 구조로 만들지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "ff09b3cb5318045846ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:RECOVERY_NEED:rest-access",
+        "axis": "RECOVERY_NEED",
+        "definition": "쉬는 방식과 가능한 공간을 확보",
+        "condition": "선호·돌봄·경제 제약을 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:DUTY:scope-responsibility",
+        "axis": "DUTY",
+        "definition": "책임의 경계를 구분",
+        "condition": "실제 계약과 동의 우선",
+        "notIndependentEvidence": true
+      }
+    ],
+    "topics": [
+      "parentRole",
+      "adultSupport"
+    ],
+    "positive": "보호자의 정리 시간과 도움 요청을 함께 남길 가능성",
+    "risk": "휴식을 이유로 모든 요청을 무기한 미룸",
+    "factBomb": "조용히 쉬고 싶다는 필요에도 아이가 누구에게 도움받을지는 남아 있어야 한다.",
+    "twist": "지원 통로를 미리 마련하면 잠깐 멈춤이 관계 단절로 남지 않을 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 대화를 잠시 미룬다면 부모는 안전한 지원 통로와 다시 확인할 때를 말한다.",
+      "notDevelopmentalObservation": true
+    },
+    "parentResponsibleAction": "부모의 시간과 돌봄 지속 계획을 함께 설명한다.",
+    "childAvailableChoice": "도움이 급한지 말하거나 안전한 다른 성인에게 요청할 수 있다.",
+    "counterexample": "긴급 위험이나 실제 돌봄 필요를 휴식 조언으로 축소하지 않는다.",
+    "distinctFromOtherParagraphs": "부모의 쉼과 응답 책임",
+    "precedingMeaningRefs": [],
+    "requirements": {
+      "fixedRole": "V4 fixed-ab-v1 확인 시 A 부모/B 자녀. 역할 없는 과거 입력·잘못된 버전·교환된 역할의 실제 적합성을 새로 만들지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "INTP",
+          "sourceKey": "ff09b3cb5318045846ad",
+          "domain": "PARENTS"
+        }
+      ],
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. parenting 원천은 A 부모 역할에만 참고.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. child 원천은 미검증 어린 시기 참고이며 성인 자녀에게 자동 전용하지 않음.",
+      "actualNatalAndDirectionRoots": [],
+      "direction": null,
+      "canonicalPair": "지원되는 실제 관계 ID·종류·refs·기둥·양쪽 person ID·성립 조건 필요. 정의나 미상 시주로 검출하지 않음.",
+      "mbtiPair": "일반 forward/reverse 원천 참고. parentChild 전용 pattern 필드는 없다. love/marriagePattern·관계명·reportLine을 양육 사실로 전용하지 않음.",
+      "fusion": "같은 사람의 실제 명리·MBTI 두 root·rule·source assignment·기존 contexts/domain을 확인. 부모/자녀 개인 Fusion을 Pair 점수로 더하지 않음.",
+      "projection": "PARENTS/CHILDREN 원천 존재는 현재 비연애 V4 scoring 기여나 적용 승인이 아님. 후속 별도 검토.",
+      "development": "독립 나이 계산 없음. 실제 기준일·입력 검증·현재 지원 필요 확인 후 맥락 선택. birthDate나 MBTI는 발달·능력 검사 아님.",
+      "guidanceScope": "외부 안내는 각 원천의 나이·상황 범위에 한정. TEEN/ADULT 비교는 각 맥락을 분리하며 양쪽 지침을 같은 사람에게 동시에 자동 적용하지 않음.",
+      "unknownAge": "UNKNOWN 맥락은 일반 확인 질문만. 단계별 훈육·권한·자율성 범위 판정 보류.",
+      "unknownMbti": "해당 개인 MBTI/Fusion 및 Pair 후보 보류. 상대 유형·명리·나이로 보충하지 않음. 원천이 없는 주장을 만들지 않음.",
+      "unknownBirthTime": "시주·시주 관련 관계를 보충하지 않음. 실제 확인된 다른 기둥만 사용.",
+      "recall": "같은 person ID·roleVersion·원천·방향·맥락으로 앞서 실제 표시된 호환 의미만 회수. 후보 존재를 표시 이력으로 보지 않음.",
+      "minorSafety": "미성년 안전·돌봄·성인 감정 조절·지원 확보 책임은 성인에게 남음. 자녀가 부모를 위로·설득·용서하거나 가족을 유지할 의무 없음.",
+      "adultBoundary": "성인 자녀의 선택·동의·독립적 생활 경계 존중. 지원 필요·능력 미확인 상태에서 영구 통제권이나 무조건적 독립을 판정하지 않음.",
+      "professionalBoundary": "폭력·학대·방임·강압을 성향 차이로 정상화하지 않음. 의료·심리·법률·아동보호 판단은 연구 DB로 대체하지 않음."
+    },
+    "repairPlan": {
+      "condition": "휴식을 이유로 모든 요청을 무기한 미룸",
+      "parentChecksFirst": "부모의 시간과 돌봄 지속 계획을 함께 설명한다.",
+      "childExpression": "도움이 급한지 말하거나 안전한 다른 성인에게 요청할 수 있다.",
+      "adultChange": "부모의 시간과 돌봄 지속 계획을 함께 설명한다.",
+      "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+      "choiceLeftToChild": "도움이 급한지 말하거나 안전한 다른 성인에게 요청할 수 있다.",
+      "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+      "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+      "childMustRepairParent": false
+    },
+    "disallowed": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "pcpr:material:CH02.P2:a-anchor-without-emotional-debt",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "address": "CH02.P2",
+    "mode": "SELF_A",
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "developmentNotAssessed": true,
+    "readerQuestion": "부모의 회복·연결 필요를 누가 책임져야 하는가?",
+    "coreMeaning": "A가 기대는 어른이 되고 싶은 관심과 자녀가 모든 이야기를 할 의무를 구분한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH02.P2.S1",
+        "originalRole": "관계 조건",
+        "knowledge": "정신적 지주를 바라는 원천은 실제 신뢰의 증거가 아니다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH02.P2.S2",
+        "originalRole": "실제 이유",
+        "knowledge": "가까움은 사생활 전체 공개와 다르다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH02.P2.S3",
+        "originalRole": "B와의 장면",
+        "knowledge": "자녀가 말하고 싶은 범위와 다른 지원자 선택을 인정한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH02.P2.S4",
+        "originalRole": "충족될 때",
+        "knowledge": "거절을 부모에 대한 배신으로 해석하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:CARE:respectful-nonintervention",
+        "axis": "CARE",
+        "definition": "돕지 않을 선택을 존중",
+        "condition": "보호 의무와 선택 지원을 구분",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:BOUNDARY:privacy",
+        "axis": "BOUNDARY",
+        "definition": "정보·시간의 사적 범위를 정함",
+        "condition": "공개 동의와 공유 의무 구분",
+        "notIndependentEvidence": true
+      }
+    ],
+    "topics": [
+      "parentRole",
+      "trust"
+    ],
+    "positive": "필요할 때 돌아올 통로를 마련할 가능성",
+    "risk": "나를 믿는다면 모두 말하라고 요구",
+    "factBomb": "들어줄 준비가 있다는 말에 전부 이야기해야 할 의무는 붙지 않는다.",
+    "twist": "지금 말하지 않아도 된다는 응답이 도움 요청의 여지를 남길 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 고민을 묻는다면 부모는 공개할 범위를 자녀가 고를 수 있게 한다.",
+      "notDevelopmentalObservation": true
+    },
+    "parentResponsibleAction": "경청 의사를 말하고 답변을 강요하지 않는다.",
+    "childAvailableChoice": "말할 내용·시점·안전한 지원자를 선택할 수 있다.",
+    "counterexample": "실제 위험 정보가 있을 때 필요한 전문 보호 판단까지 사생활 일반론으로 미루지 않는다.",
+    "distinctFromOtherParagraphs": "부모의 연결 필요와 자녀 정보 경계",
+    "precedingMeaningRefs": [],
+    "requirements": {
+      "fixedRole": "V4 fixed-ab-v1 확인 시 A 부모/B 자녀. 역할 없는 과거 입력·잘못된 버전·교환된 역할의 실제 적합성을 새로 만들지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ENFJ",
+          "sourceKey": "cb9ee7415c4e3089e7f9",
+          "domain": "PARENTS"
+        }
+      ],
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. parenting 원천은 A 부모 역할에만 참고.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. child 원천은 미검증 어린 시기 참고이며 성인 자녀에게 자동 전용하지 않음.",
+      "actualNatalAndDirectionRoots": [],
+      "direction": null,
+      "canonicalPair": "지원되는 실제 관계 ID·종류·refs·기둥·양쪽 person ID·성립 조건 필요. 정의나 미상 시주로 검출하지 않음.",
+      "mbtiPair": "일반 forward/reverse 원천 참고. parentChild 전용 pattern 필드는 없다. love/marriagePattern·관계명·reportLine을 양육 사실로 전용하지 않음.",
+      "fusion": "같은 사람의 실제 명리·MBTI 두 root·rule·source assignment·기존 contexts/domain을 확인. 부모/자녀 개인 Fusion을 Pair 점수로 더하지 않음.",
+      "projection": "PARENTS/CHILDREN 원천 존재는 현재 비연애 V4 scoring 기여나 적용 승인이 아님. 후속 별도 검토.",
+      "development": "독립 나이 계산 없음. 실제 기준일·입력 검증·현재 지원 필요 확인 후 맥락 선택. birthDate나 MBTI는 발달·능력 검사 아님.",
+      "guidanceScope": "외부 안내는 각 원천의 나이·상황 범위에 한정. TEEN/ADULT 비교는 각 맥락을 분리하며 양쪽 지침을 같은 사람에게 동시에 자동 적용하지 않음.",
+      "unknownAge": "UNKNOWN 맥락은 일반 확인 질문만. 단계별 훈육·권한·자율성 범위 판정 보류.",
+      "unknownMbti": "해당 개인 MBTI/Fusion 및 Pair 후보 보류. 상대 유형·명리·나이로 보충하지 않음. 원천이 없는 주장을 만들지 않음.",
+      "unknownBirthTime": "시주·시주 관련 관계를 보충하지 않음. 실제 확인된 다른 기둥만 사용.",
+      "recall": "같은 person ID·roleVersion·원천·방향·맥락으로 앞서 실제 표시된 호환 의미만 회수. 후보 존재를 표시 이력으로 보지 않음.",
+      "minorSafety": "미성년 안전·돌봄·성인 감정 조절·지원 확보 책임은 성인에게 남음. 자녀가 부모를 위로·설득·용서하거나 가족을 유지할 의무 없음.",
+      "adultBoundary": "성인 자녀의 선택·동의·독립적 생활 경계 존중. 지원 필요·능력 미확인 상태에서 영구 통제권이나 무조건적 독립을 판정하지 않음.",
+      "professionalBoundary": "폭력·학대·방임·강압을 성향 차이로 정상화하지 않음. 의료·심리·법률·아동보호 판단은 연구 DB로 대체하지 않음."
+    },
+    "repairPlan": {
+      "condition": "나를 믿는다면 모두 말하라고 요구",
+      "parentChecksFirst": "경청 의사를 말하고 답변을 강요하지 않는다.",
+      "childExpression": "말할 내용·시점·안전한 지원자를 선택할 수 있다.",
+      "adultChange": "경청 의사를 말하고 답변을 강요하지 않는다.",
+      "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+      "choiceLeftToChild": "말할 내용·시점·안전한 지원자를 선택할 수 있다.",
+      "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+      "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+      "childMustRepairParent": false
+    },
+    "disallowed": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "pcpr:material:CH02.P3:a-question-partner-not-examiner",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "address": "CH02.P3",
+    "mode": "SELF_A",
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "developmentNotAssessed": true,
+    "readerQuestion": "부모의 강점이 실제 지원으로 도착할 조건은 무엇인가?",
+    "coreMeaning": "A의 함께 파고드는 관심을 자녀의 질문을 따라가는 조건부 기여로 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH02.P3.S1",
+        "originalRole": "특징적 강점",
+        "knowledge": "질문을 즐기는 자료는 자녀의 지능을 검증하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH02.P3.S2",
+        "originalRole": "실제 근거",
+        "knowledge": "부모가 설명하고 싶은 주제와 자녀가 가리킨 관심을 나눈다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH02.P3.S3",
+        "originalRole": "B에게 좋은 상황",
+        "knowledge": "자녀의 반응을 보고 멈추거나 방법을 바꾼다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH02.P3.S4",
+        "originalRole": "유지 조건",
+        "knowledge": "배움의 결과를 미리 시험하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "9e14ddceb99de8f8c245",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "e5ebcee2b4f04948ce2b",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:COMMUNICATION_STYLE:intent-check",
+        "axis": "COMMUNICATION_STYLE",
+        "definition": "표현과 이해된 뜻을 다시 확인",
+        "condition": "해석 차이를 당사자가 확인할 때",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:MEANING:value-articulation",
+        "axis": "MEANING",
+        "definition": "자기에게 중요한 이유를 말함",
+        "condition": "본인이 밝힌 가치가 있을 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "topics": [
+      "parentRole",
+      "learning"
+    ],
+    "positive": "관심을 함께 관찰할 가능성",
+    "risk": "질문을 정답 시험으로 바꿈",
+    "factBomb": "설명이 길어질수록 아이의 질문이 작아진다면 더 많이 아는 것이 답은 아닐 수 있다.",
+    "twist": "부모도 같이 찾아보는 태도가 질문의 주도권을 자녀에게 남길 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 어린 자녀가 사물을 가리킨다면 부모는 먼저 무엇을 보고 있는지 확인한다.",
+      "notDevelopmentalObservation": true
+    },
+    "parentResponsibleAction": "자녀의 관심을 보고 응답하며 반응을 기다린다.",
+    "childAvailableChoice": "관심을 옮기거나 멈추고 다른 방식으로 표현할 수 있다.",
+    "counterexample": "실제 언어·감각·발달 특성을 유형으로 추론하지 않는다.",
+    "distinctFromOtherParagraphs": "부모의 탐색 기여와 시험의 차이",
+    "precedingMeaningRefs": [],
+    "requirements": {
+      "fixedRole": "V4 fixed-ab-v1 확인 시 A 부모/B 자녀. 역할 없는 과거 입력·잘못된 버전·교환된 역할의 실제 적합성을 새로 만들지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ENTP",
+          "sourceKey": "9e14ddceb99de8f8c245",
+          "domain": "PARENTS"
+        }
+      ],
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. parenting 원천은 A 부모 역할에만 참고.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. child 원천은 미검증 어린 시기 참고이며 성인 자녀에게 자동 전용하지 않음.",
+      "actualNatalAndDirectionRoots": [],
+      "direction": null,
+      "canonicalPair": "지원되는 실제 관계 ID·종류·refs·기둥·양쪽 person ID·성립 조건 필요. 정의나 미상 시주로 검출하지 않음.",
+      "mbtiPair": "일반 forward/reverse 원천 참고. parentChild 전용 pattern 필드는 없다. love/marriagePattern·관계명·reportLine을 양육 사실로 전용하지 않음.",
+      "fusion": "같은 사람의 실제 명리·MBTI 두 root·rule·source assignment·기존 contexts/domain을 확인. 부모/자녀 개인 Fusion을 Pair 점수로 더하지 않음.",
+      "projection": "PARENTS/CHILDREN 원천 존재는 현재 비연애 V4 scoring 기여나 적용 승인이 아님. 후속 별도 검토.",
+      "development": "독립 나이 계산 없음. 실제 기준일·입력 검증·현재 지원 필요 확인 후 맥락 선택. birthDate나 MBTI는 발달·능력 검사 아님.",
+      "guidanceScope": "외부 안내는 각 원천의 나이·상황 범위에 한정. TEEN/ADULT 비교는 각 맥락을 분리하며 양쪽 지침을 같은 사람에게 동시에 자동 적용하지 않음.",
+      "unknownAge": "UNKNOWN 맥락은 일반 확인 질문만. 단계별 훈육·권한·자율성 범위 판정 보류.",
+      "unknownMbti": "해당 개인 MBTI/Fusion 및 Pair 후보 보류. 상대 유형·명리·나이로 보충하지 않음. 원천이 없는 주장을 만들지 않음.",
+      "unknownBirthTime": "시주·시주 관련 관계를 보충하지 않음. 실제 확인된 다른 기둥만 사용.",
+      "recall": "같은 person ID·roleVersion·원천·방향·맥락으로 앞서 실제 표시된 호환 의미만 회수. 후보 존재를 표시 이력으로 보지 않음.",
+      "minorSafety": "미성년 안전·돌봄·성인 감정 조절·지원 확보 책임은 성인에게 남음. 자녀가 부모를 위로·설득·용서하거나 가족을 유지할 의무 없음.",
+      "adultBoundary": "성인 자녀의 선택·동의·독립적 생활 경계 존중. 지원 필요·능력 미확인 상태에서 영구 통제권이나 무조건적 독립을 판정하지 않음.",
+      "professionalBoundary": "폭력·학대·방임·강압을 성향 차이로 정상화하지 않음. 의료·심리·법률·아동보호 판단은 연구 DB로 대체하지 않음."
+    },
+    "repairPlan": {
+      "condition": "질문을 정답 시험으로 바꿈",
+      "parentChecksFirst": "자녀의 관심을 보고 응답하며 반응을 기다린다.",
+      "childExpression": "관심을 옮기거나 멈추고 다른 방식으로 표현할 수 있다.",
+      "adultChange": "자녀의 관심을 보고 응답하며 반응을 기다린다.",
+      "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+      "choiceLeftToChild": "관심을 옮기거나 멈추고 다른 방식으로 표현할 수 있다.",
+      "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+      "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+      "childMustRepairParent": false
+    },
+    "disallowed": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "pcpr:material:CH02.P3:a-space-with-available-help",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "address": "CH02.P3",
+    "mode": "SELF_A",
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "developmentNotAssessed": true,
+    "readerQuestion": "부모의 강점이 실제 지원으로 도착할 조건은 무엇인가?",
+    "coreMeaning": "A의 사생활 존중 관심이 필요한 지원을 함께 남길 조건을 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH02.P3.S1",
+        "originalRole": "특징적 강점",
+        "knowledge": "개인 시간 자료를 실제 자율성 보장의 사실로 보지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH02.P3.S2",
+        "originalRole": "실제 근거",
+        "knowledge": "혼자 있게 두는 것과 도움에 응답하지 않는 것은 다르다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH02.P3.S3",
+        "originalRole": "B에게 좋은 상황",
+        "knowledge": "사적인 영역과 안전상 확인이 필요한 이유를 설명한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH02.P3.S4",
+        "originalRole": "유지 조건",
+        "knowledge": "공개할 정보와 요청할 지원은 상황별로 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "5d03c8ad1c25fc371767",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:AUTONOMY:method-discretion",
+        "axis": "AUTONOMY",
+        "definition": "합의된 결과 안에서 방법을 고름",
+        "condition": "업무·계약의 실제 재량 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:BOUNDARY:privacy",
+        "axis": "BOUNDARY",
+        "definition": "정보·시간의 사적 범위를 정함",
+        "condition": "공개 동의와 공유 의무 구분",
+        "notIndependentEvidence": true
+      }
+    ],
+    "topics": [
+      "parentRole",
+      "autonomy"
+    ],
+    "positive": "개인 공간과 연결을 함께 남길 가능성",
+    "risk": "관심을 묻지 않는 것을 존중으로만 해석",
+    "factBomb": "간섭하지 않는다는 말만으로 필요할 때 도움받을 사람이 생기지는 않는다.",
+    "twist": "먼저 묻되 답을 강요하지 않는 관심이 독립과 연결을 함께 지킬 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 혼자 시간을 보내고 싶다고 한다면 부모는 필요한 지원 통로를 확인하고 공간을 남긴다.",
+      "notDevelopmentalObservation": true
+    },
+    "parentResponsibleAction": "안전 확인의 목적과 범위를 설명한다.",
+    "childAvailableChoice": "쉬거나 자신의 필요를 나중에 말할 수 있다.",
+    "counterexample": "구체적인 위험 상황에서는 필요한 보호를 자율성 명목으로 생략하지 않는다.",
+    "distinctFromOtherParagraphs": "부모의 비간섭과 응답 가능성 구분",
+    "precedingMeaningRefs": [],
+    "requirements": {
+      "fixedRole": "V4 fixed-ab-v1 확인 시 A 부모/B 자녀. 역할 없는 과거 입력·잘못된 버전·교환된 역할의 실제 적합성을 새로 만들지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ISTP",
+          "sourceKey": "5d03c8ad1c25fc371767",
+          "domain": "PARENTS"
+        }
+      ],
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. parenting 원천은 A 부모 역할에만 참고.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. child 원천은 미검증 어린 시기 참고이며 성인 자녀에게 자동 전용하지 않음.",
+      "actualNatalAndDirectionRoots": [],
+      "direction": null,
+      "canonicalPair": "지원되는 실제 관계 ID·종류·refs·기둥·양쪽 person ID·성립 조건 필요. 정의나 미상 시주로 검출하지 않음.",
+      "mbtiPair": "일반 forward/reverse 원천 참고. parentChild 전용 pattern 필드는 없다. love/marriagePattern·관계명·reportLine을 양육 사실로 전용하지 않음.",
+      "fusion": "같은 사람의 실제 명리·MBTI 두 root·rule·source assignment·기존 contexts/domain을 확인. 부모/자녀 개인 Fusion을 Pair 점수로 더하지 않음.",
+      "projection": "PARENTS/CHILDREN 원천 존재는 현재 비연애 V4 scoring 기여나 적용 승인이 아님. 후속 별도 검토.",
+      "development": "독립 나이 계산 없음. 실제 기준일·입력 검증·현재 지원 필요 확인 후 맥락 선택. birthDate나 MBTI는 발달·능력 검사 아님.",
+      "guidanceScope": "외부 안내는 각 원천의 나이·상황 범위에 한정. TEEN/ADULT 비교는 각 맥락을 분리하며 양쪽 지침을 같은 사람에게 동시에 자동 적용하지 않음.",
+      "unknownAge": "UNKNOWN 맥락은 일반 확인 질문만. 단계별 훈육·권한·자율성 범위 판정 보류.",
+      "unknownMbti": "해당 개인 MBTI/Fusion 및 Pair 후보 보류. 상대 유형·명리·나이로 보충하지 않음. 원천이 없는 주장을 만들지 않음.",
+      "unknownBirthTime": "시주·시주 관련 관계를 보충하지 않음. 실제 확인된 다른 기둥만 사용.",
+      "recall": "같은 person ID·roleVersion·원천·방향·맥락으로 앞서 실제 표시된 호환 의미만 회수. 후보 존재를 표시 이력으로 보지 않음.",
+      "minorSafety": "미성년 안전·돌봄·성인 감정 조절·지원 확보 책임은 성인에게 남음. 자녀가 부모를 위로·설득·용서하거나 가족을 유지할 의무 없음.",
+      "adultBoundary": "성인 자녀의 선택·동의·독립적 생활 경계 존중. 지원 필요·능력 미확인 상태에서 영구 통제권이나 무조건적 독립을 판정하지 않음.",
+      "professionalBoundary": "폭력·학대·방임·강압을 성향 차이로 정상화하지 않음. 의료·심리·법률·아동보호 판단은 연구 DB로 대체하지 않음."
+    },
+    "repairPlan": {
+      "condition": "관심을 묻지 않는 것을 존중으로만 해석",
+      "parentChecksFirst": "안전 확인의 목적과 범위를 설명한다.",
+      "childExpression": "쉬거나 자신의 필요를 나중에 말할 수 있다.",
+      "adultChange": "안전 확인의 목적과 범위를 설명한다.",
+      "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+      "choiceLeftToChild": "쉬거나 자신의 필요를 나중에 말할 수 있다.",
+      "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+      "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+      "childMustRepairParent": false
+    },
+    "disallowed": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "pcpr:material:CH02.P3:a-experience-with-safety-plan",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "address": "CH02.P3",
+    "mode": "SELF_A",
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "developmentNotAssessed": true,
+    "readerQuestion": "부모의 강점이 실제 지원으로 도착할 조건은 무엇인가?",
+    "coreMeaning": "A의 직접 경험을 돕는 관심을 안전한 작은 선택의 조건으로 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH02.P3.S1",
+        "originalRole": "특징적 강점",
+        "knowledge": "경험 중심 원천은 실제 활동 적합성을 판정하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH02.P3.S2",
+        "originalRole": "실제 근거",
+        "knowledge": "성인은 실제 위험·도구·지원 가능성을 먼저 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH02.P3.S3",
+        "originalRole": "B에게 좋은 상황",
+        "knowledge": "자녀가 시도할 작은 방법을 남긴다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH02.P3.S4",
+        "originalRole": "유지 조건",
+        "knowledge": "도움이 필요하면 부모가 다시 지원한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "88e81f230552092ca55c",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "b1ef5ca26a18193d1227",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:AUTONOMY:method-discretion",
+        "axis": "AUTONOMY",
+        "definition": "합의된 결과 안에서 방법을 고름",
+        "condition": "업무·계약의 실제 재량 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:CARE:respectful-nonintervention",
+        "axis": "CARE",
+        "definition": "돕지 않을 선택을 존중",
+        "condition": "보호 의무와 선택 지원을 구분",
+        "notIndependentEvidence": true
+      }
+    ],
+    "topics": [
+      "parentRole",
+      "learning",
+      "protection"
+    ],
+    "positive": "안전한 범위 안에서 직접 해볼 가능성",
+    "risk": "실패해야 배운다며 보호를 철회",
+    "factBomb": "스스로 배우게 둔다는 말이 위험까지 혼자 감당하게 할 이유는 아니다.",
+    "twist": "도울 준비를 남겨두어도 직접 해낸 부분은 자녀에게 남을 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 만들기를 한다면 부모는 안전한 재료를 확인하고 자녀가 배치 방법을 고르게 한다.",
+      "notDevelopmentalObservation": true
+    },
+    "parentResponsibleAction": "안전 준비와 실행 선택을 나눈다.",
+    "childAvailableChoice": "해보거나 도움을 요청하고 중단할 수 있다.",
+    "counterexample": "실제 위험 판단을 명리·MBTI로 대신하지 않는다.",
+    "distinctFromOtherParagraphs": "경험 지원의 구체적인 보호 조건",
+    "precedingMeaningRefs": [],
+    "requirements": {
+      "fixedRole": "V4 fixed-ab-v1 확인 시 A 부모/B 자녀. 역할 없는 과거 입력·잘못된 버전·교환된 역할의 실제 적합성을 새로 만들지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ISFP",
+          "sourceKey": "88e81f230552092ca55c",
+          "domain": "PARENTS"
+        }
+      ],
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. parenting 원천은 A 부모 역할에만 참고.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. child 원천은 미검증 어린 시기 참고이며 성인 자녀에게 자동 전용하지 않음.",
+      "actualNatalAndDirectionRoots": [],
+      "direction": null,
+      "canonicalPair": "지원되는 실제 관계 ID·종류·refs·기둥·양쪽 person ID·성립 조건 필요. 정의나 미상 시주로 검출하지 않음.",
+      "mbtiPair": "일반 forward/reverse 원천 참고. parentChild 전용 pattern 필드는 없다. love/marriagePattern·관계명·reportLine을 양육 사실로 전용하지 않음.",
+      "fusion": "같은 사람의 실제 명리·MBTI 두 root·rule·source assignment·기존 contexts/domain을 확인. 부모/자녀 개인 Fusion을 Pair 점수로 더하지 않음.",
+      "projection": "PARENTS/CHILDREN 원천 존재는 현재 비연애 V4 scoring 기여나 적용 승인이 아님. 후속 별도 검토.",
+      "development": "독립 나이 계산 없음. 실제 기준일·입력 검증·현재 지원 필요 확인 후 맥락 선택. birthDate나 MBTI는 발달·능력 검사 아님.",
+      "guidanceScope": "외부 안내는 각 원천의 나이·상황 범위에 한정. TEEN/ADULT 비교는 각 맥락을 분리하며 양쪽 지침을 같은 사람에게 동시에 자동 적용하지 않음.",
+      "unknownAge": "UNKNOWN 맥락은 일반 확인 질문만. 단계별 훈육·권한·자율성 범위 판정 보류.",
+      "unknownMbti": "해당 개인 MBTI/Fusion 및 Pair 후보 보류. 상대 유형·명리·나이로 보충하지 않음. 원천이 없는 주장을 만들지 않음.",
+      "unknownBirthTime": "시주·시주 관련 관계를 보충하지 않음. 실제 확인된 다른 기둥만 사용.",
+      "recall": "같은 person ID·roleVersion·원천·방향·맥락으로 앞서 실제 표시된 호환 의미만 회수. 후보 존재를 표시 이력으로 보지 않음.",
+      "minorSafety": "미성년 안전·돌봄·성인 감정 조절·지원 확보 책임은 성인에게 남음. 자녀가 부모를 위로·설득·용서하거나 가족을 유지할 의무 없음.",
+      "adultBoundary": "성인 자녀의 선택·동의·독립적 생활 경계 존중. 지원 필요·능력 미확인 상태에서 영구 통제권이나 무조건적 독립을 판정하지 않음.",
+      "professionalBoundary": "폭력·학대·방임·강압을 성향 차이로 정상화하지 않음. 의료·심리·법률·아동보호 판단은 연구 DB로 대체하지 않음."
+    },
+    "repairPlan": {
+      "condition": "실패해야 배운다며 보호를 철회",
+      "parentChecksFirst": "안전 준비와 실행 선택을 나눈다.",
+      "childExpression": "해보거나 도움을 요청하고 중단할 수 있다.",
+      "adultChange": "안전 준비와 실행 선택을 나눈다.",
+      "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+      "choiceLeftToChild": "해보거나 도움을 요청하고 중단할 수 있다.",
+      "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+      "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+      "childMustRepairParent": false
+    },
+    "disallowed": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "pcpr:material:CH02.P4:a-rule-correction-without-humiliation",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "address": "CH02.P4",
+    "mode": "SELF_A",
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "developmentNotAssessed": true,
+    "readerQuestion": "부모의 좋은 의도가 설명·선택·정보를 닫는 때는 언제인가?",
+    "coreMeaning": "A의 규칙 관심이 자녀의 인격 평가로 번지지 않을 조건을 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH02.P4.S1",
+        "originalRole": "과사용 위험",
+        "knowledge": "실제 원천의 규율 관심을 특정 양육 행동으로 확정하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH02.P4.S2",
+        "originalRole": "원인",
+        "knowledge": "지금 바꿀 행동과 사람의 가치를 분리한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH02.P4.S3",
+        "originalRole": "B가 받는 뜻",
+        "knowledge": "자녀가 할 수 있는 다음 행동을 구체적으로 설명한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH02.P4.S4",
+        "originalRole": "조절 행동",
+        "knowledge": "부모도 같은 안전 기준과 존중을 지킨다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "f5fb513fa5e97583225b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5511525de4a015d143f6",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:PRECISION:standard-consistency",
+        "axis": "PRECISION",
+        "definition": "상황 사이 기준 적용의 일관성을 확인",
+        "condition": "같은 기준을 적용해도 되는 조건 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:DUTY:scope-responsibility",
+        "axis": "DUTY",
+        "definition": "책임의 경계를 구분",
+        "condition": "실제 계약과 동의 우선",
+        "notIndependentEvidence": true
+      }
+    ],
+    "topics": [
+      "parentRole",
+      "repair"
+    ],
+    "positive": "필요한 행동을 예측 가능하게 알릴 가능성",
+    "risk": "공개 비교나 수치심으로 복종을 얻음",
+    "factBomb": "규칙을 지키게 했어도 아이가 자신을 설명할 자리를 잃었다면 관계의 비용이 남는다.",
+    "twist": "일관성은 목소리의 크기보다 어른도 지키는 행동에서 확인할 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 규칙을 다시 설명한다면 부모는 지금 필요한 행동 하나와 이유를 말한다.",
+      "notDevelopmentalObservation": true
+    },
+    "parentResponsibleAction": "비난을 멈추고 실행 가능한 설명으로 바꾼다.",
+    "childAvailableChoice": "어려운 부분을 말하거나 보여달라고 요청할 수 있다.",
+    "counterexample": "구체 원천·단계가 없으면 훈육 방법을 처방하지 않는다.",
+    "distinctFromOtherParagraphs": "규칙의 과용과 존중의 경계",
+    "precedingMeaningRefs": [],
+    "requirements": {
+      "fixedRole": "V4 fixed-ab-v1 확인 시 A 부모/B 자녀. 역할 없는 과거 입력·잘못된 버전·교환된 역할의 실제 적합성을 새로 만들지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ESTJ",
+          "sourceKey": "f5fb513fa5e97583225b",
+          "domain": "PARENTS"
+        }
+      ],
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. parenting 원천은 A 부모 역할에만 참고.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. child 원천은 미검증 어린 시기 참고이며 성인 자녀에게 자동 전용하지 않음.",
+      "actualNatalAndDirectionRoots": [],
+      "direction": null,
+      "canonicalPair": "지원되는 실제 관계 ID·종류·refs·기둥·양쪽 person ID·성립 조건 필요. 정의나 미상 시주로 검출하지 않음.",
+      "mbtiPair": "일반 forward/reverse 원천 참고. parentChild 전용 pattern 필드는 없다. love/marriagePattern·관계명·reportLine을 양육 사실로 전용하지 않음.",
+      "fusion": "같은 사람의 실제 명리·MBTI 두 root·rule·source assignment·기존 contexts/domain을 확인. 부모/자녀 개인 Fusion을 Pair 점수로 더하지 않음.",
+      "projection": "PARENTS/CHILDREN 원천 존재는 현재 비연애 V4 scoring 기여나 적용 승인이 아님. 후속 별도 검토.",
+      "development": "독립 나이 계산 없음. 실제 기준일·입력 검증·현재 지원 필요 확인 후 맥락 선택. birthDate나 MBTI는 발달·능력 검사 아님.",
+      "guidanceScope": "외부 안내는 각 원천의 나이·상황 범위에 한정. TEEN/ADULT 비교는 각 맥락을 분리하며 양쪽 지침을 같은 사람에게 동시에 자동 적용하지 않음.",
+      "unknownAge": "UNKNOWN 맥락은 일반 확인 질문만. 단계별 훈육·권한·자율성 범위 판정 보류.",
+      "unknownMbti": "해당 개인 MBTI/Fusion 및 Pair 후보 보류. 상대 유형·명리·나이로 보충하지 않음. 원천이 없는 주장을 만들지 않음.",
+      "unknownBirthTime": "시주·시주 관련 관계를 보충하지 않음. 실제 확인된 다른 기둥만 사용.",
+      "recall": "같은 person ID·roleVersion·원천·방향·맥락으로 앞서 실제 표시된 호환 의미만 회수. 후보 존재를 표시 이력으로 보지 않음.",
+      "minorSafety": "미성년 안전·돌봄·성인 감정 조절·지원 확보 책임은 성인에게 남음. 자녀가 부모를 위로·설득·용서하거나 가족을 유지할 의무 없음.",
+      "adultBoundary": "성인 자녀의 선택·동의·독립적 생활 경계 존중. 지원 필요·능력 미확인 상태에서 영구 통제권이나 무조건적 독립을 판정하지 않음.",
+      "professionalBoundary": "폭력·학대·방임·강압을 성향 차이로 정상화하지 않음. 의료·심리·법률·아동보호 판단은 연구 DB로 대체하지 않음."
+    },
+    "repairPlan": {
+      "condition": "공개 비교나 수치심으로 복종을 얻음",
+      "parentChecksFirst": "비난을 멈추고 실행 가능한 설명으로 바꾼다.",
+      "childExpression": "어려운 부분을 말하거나 보여달라고 요청할 수 있다.",
+      "adultChange": "비난을 멈추고 실행 가능한 설명으로 바꾼다.",
+      "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+      "choiceLeftToChild": "어려운 부분을 말하거나 보여달라고 요청할 수 있다.",
+      "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+      "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+      "childMustRepairParent": false
+    },
+    "disallowed": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "pcpr:material:CH02.P4:a-harmony-must-allow-disagreement",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "address": "CH02.P4",
+    "mode": "SELF_A",
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "developmentNotAssessed": true,
+    "readerQuestion": "부모의 좋은 의도가 설명·선택·정보를 닫는 때는 언제인가?",
+    "coreMeaning": "A의 가정 조화 관심이 자녀의 다른 의견을 닫는 조건을 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH02.P4.S1",
+        "originalRole": "과사용 위험",
+        "knowledge": "원천의 조화 선호는 실제 가족 갈등을 입증하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH02.P4.S2",
+        "originalRole": "원인",
+        "knowledge": "불편한 의견과 관계를 해치는 행동을 나눈다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH02.P4.S3",
+        "originalRole": "B가 받는 뜻",
+        "knowledge": "부모는 의견을 들은 뒤 필요한 규칙을 설명한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH02.P4.S4",
+        "originalRole": "조절 행동",
+        "knowledge": "말하지 않는 평온을 좋은 관계의 증거로 쓰지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "f56616fb042e916a2137",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:CARE:respectful-nonintervention",
+        "axis": "CARE",
+        "definition": "돕지 않을 선택을 존중",
+        "condition": "보호 의무와 선택 지원을 구분",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:COMMUNICATION_STYLE:intent-check",
+        "axis": "COMMUNICATION_STYLE",
+        "definition": "표현과 이해된 뜻을 다시 확인",
+        "condition": "해석 차이를 당사자가 확인할 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "topics": [
+      "parentRole",
+      "communication"
+    ],
+    "positive": "다른 답을 안전하게 들을 기회",
+    "risk": "분위기를 깨지 말라며 의견을 차단",
+    "factBomb": "조용한 집이 모두에게 말할 자리가 있는 집이라는 뜻은 아니다.",
+    "twist": "불편한 질문을 듣는 시간이 실제로 조화를 지킬 단서가 될 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 자녀가 가족 약속에 이견을 말한다면 부모는 불이익 없이 설명할 시간을 남긴다.",
+      "notDevelopmentalObservation": true
+    },
+    "parentResponsibleAction": "자신의 불편과 자녀의 발언권을 구분한다.",
+    "childAvailableChoice": "다른 의견을 말하거나 대화 방식을 고를 수 있다.",
+    "counterexample": "위협이나 실제 학대는 같은 의견 차이의 조율로 축소하지 않는다.",
+    "distinctFromOtherParagraphs": "부모의 조화 욕구와 자녀 발언권",
+    "precedingMeaningRefs": [],
+    "requirements": {
+      "fixedRole": "V4 fixed-ab-v1 확인 시 A 부모/B 자녀. 역할 없는 과거 입력·잘못된 버전·교환된 역할의 실제 적합성을 새로 만들지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ESFJ",
+          "sourceKey": "f56616fb042e916a2137",
+          "domain": "PARENTS"
+        }
+      ],
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. parenting 원천은 A 부모 역할에만 참고.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. child 원천은 미검증 어린 시기 참고이며 성인 자녀에게 자동 전용하지 않음.",
+      "actualNatalAndDirectionRoots": [],
+      "direction": null,
+      "canonicalPair": "지원되는 실제 관계 ID·종류·refs·기둥·양쪽 person ID·성립 조건 필요. 정의나 미상 시주로 검출하지 않음.",
+      "mbtiPair": "일반 forward/reverse 원천 참고. parentChild 전용 pattern 필드는 없다. love/marriagePattern·관계명·reportLine을 양육 사실로 전용하지 않음.",
+      "fusion": "같은 사람의 실제 명리·MBTI 두 root·rule·source assignment·기존 contexts/domain을 확인. 부모/자녀 개인 Fusion을 Pair 점수로 더하지 않음.",
+      "projection": "PARENTS/CHILDREN 원천 존재는 현재 비연애 V4 scoring 기여나 적용 승인이 아님. 후속 별도 검토.",
+      "development": "독립 나이 계산 없음. 실제 기준일·입력 검증·현재 지원 필요 확인 후 맥락 선택. birthDate나 MBTI는 발달·능력 검사 아님.",
+      "guidanceScope": "외부 안내는 각 원천의 나이·상황 범위에 한정. TEEN/ADULT 비교는 각 맥락을 분리하며 양쪽 지침을 같은 사람에게 동시에 자동 적용하지 않음.",
+      "unknownAge": "UNKNOWN 맥락은 일반 확인 질문만. 단계별 훈육·권한·자율성 범위 판정 보류.",
+      "unknownMbti": "해당 개인 MBTI/Fusion 및 Pair 후보 보류. 상대 유형·명리·나이로 보충하지 않음. 원천이 없는 주장을 만들지 않음.",
+      "unknownBirthTime": "시주·시주 관련 관계를 보충하지 않음. 실제 확인된 다른 기둥만 사용.",
+      "recall": "같은 person ID·roleVersion·원천·방향·맥락으로 앞서 실제 표시된 호환 의미만 회수. 후보 존재를 표시 이력으로 보지 않음.",
+      "minorSafety": "미성년 안전·돌봄·성인 감정 조절·지원 확보 책임은 성인에게 남음. 자녀가 부모를 위로·설득·용서하거나 가족을 유지할 의무 없음.",
+      "adultBoundary": "성인 자녀의 선택·동의·독립적 생활 경계 존중. 지원 필요·능력 미확인 상태에서 영구 통제권이나 무조건적 독립을 판정하지 않음.",
+      "professionalBoundary": "폭력·학대·방임·강압을 성향 차이로 정상화하지 않음. 의료·심리·법률·아동보호 판단은 연구 DB로 대체하지 않음."
+    },
+    "repairPlan": {
+      "condition": "분위기를 깨지 말라며 의견을 차단",
+      "parentChecksFirst": "자신의 불편과 자녀의 발언권을 구분한다.",
+      "childExpression": "다른 의견을 말하거나 대화 방식을 고를 수 있다.",
+      "adultChange": "자신의 불편과 자녀의 발언권을 구분한다.",
+      "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+      "choiceLeftToChild": "다른 의견을 말하거나 대화 방식을 고를 수 있다.",
+      "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+      "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+      "childMustRepairParent": false
+    },
+    "disallowed": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "pcpr:material:CH02.P4:a-insight-needs-verification",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "address": "CH02.P4",
+    "mode": "SELF_A",
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "developmentNotAssessed": true,
+    "readerQuestion": "부모의 좋은 의도가 설명·선택·정보를 닫는 때는 언제인가?",
+    "coreMeaning": "A가 자녀의 이유를 잘 안다고 느낄 때 실제 확인이 필요한 조건을 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH02.P4.S1",
+        "originalRole": "과사용 위험",
+        "knowledge": "관찰력 관련 원문을 마음을 읽는 능력으로 승인하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH02.P4.S2",
+        "originalRole": "원인",
+        "knowledge": "표정과 추측은 자녀가 말한 뜻과 다르다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH02.P4.S3",
+        "originalRole": "B가 받는 뜻",
+        "knowledge": "부모는 자신의 해석을 질문으로 돌려 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH02.P4.S4",
+        "originalRole": "조절 행동",
+        "knowledge": "대답이 다르면 기존 해석을 수정한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "d617367bfe748e497cb9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:SOCIAL_ATTUNEMENT:cue-observation",
+        "axis": "SOCIAL_ATTUNEMENT",
+        "definition": "말·표정·참여의 변화를 관찰",
+        "condition": "추측과 관찰을 명확히 분리",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:BOUNDARY:privacy",
+        "axis": "BOUNDARY",
+        "definition": "정보·시간의 사적 범위를 정함",
+        "condition": "공개 동의와 공유 의무 구분",
+        "notIndependentEvidence": true
+      }
+    ],
+    "topics": [
+      "parentRole",
+      "trust"
+    ],
+    "positive": "관찰을 질문의 단서로 쓸 가능성",
+    "risk": "속마음을 안다며 설명을 무효화",
+    "factBomb": "잘 안다는 확신으로 끝까지 듣지 않으면 실제로 알 기회를 놓칠 수 있다.",
+    "twist": "틀린 추측을 고치는 부모의 반응이 질문할 자리를 남길 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 자녀의 표정을 보고 걱정된다면 부모는 이유를 단정하지 않고 필요한 지원을 묻는다.",
+      "notDevelopmentalObservation": true
+    },
+    "parentResponsibleAction": "관찰·추측·실제 설명을 구분한다.",
+    "childAvailableChoice": "추측이 다르다고 말하거나 지금 설명하지 않을 수 있다.",
+    "counterexample": "심리·건강 상태를 표정이나 유형으로 진단하지 않는다.",
+    "distinctFromOtherParagraphs": "부모의 통찰을 실제 확인과 분리",
+    "precedingMeaningRefs": [],
+    "requirements": {
+      "fixedRole": "V4 fixed-ab-v1 확인 시 A 부모/B 자녀. 역할 없는 과거 입력·잘못된 버전·교환된 역할의 실제 적합성을 새로 만들지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "INFJ",
+          "sourceKey": "d617367bfe748e497cb9",
+          "domain": "PARENTS"
+        }
+      ],
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. parenting 원천은 A 부모 역할에만 참고.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용. child 원천은 미검증 어린 시기 참고이며 성인 자녀에게 자동 전용하지 않음.",
+      "actualNatalAndDirectionRoots": [],
+      "direction": null,
+      "canonicalPair": "지원되는 실제 관계 ID·종류·refs·기둥·양쪽 person ID·성립 조건 필요. 정의나 미상 시주로 검출하지 않음.",
+      "mbtiPair": "일반 forward/reverse 원천 참고. parentChild 전용 pattern 필드는 없다. love/marriagePattern·관계명·reportLine을 양육 사실로 전용하지 않음.",
+      "fusion": "같은 사람의 실제 명리·MBTI 두 root·rule·source assignment·기존 contexts/domain을 확인. 부모/자녀 개인 Fusion을 Pair 점수로 더하지 않음.",
+      "projection": "PARENTS/CHILDREN 원천 존재는 현재 비연애 V4 scoring 기여나 적용 승인이 아님. 후속 별도 검토.",
+      "development": "독립 나이 계산 없음. 실제 기준일·입력 검증·현재 지원 필요 확인 후 맥락 선택. birthDate나 MBTI는 발달·능력 검사 아님.",
+      "guidanceScope": "외부 안내는 각 원천의 나이·상황 범위에 한정. TEEN/ADULT 비교는 각 맥락을 분리하며 양쪽 지침을 같은 사람에게 동시에 자동 적용하지 않음.",
+      "unknownAge": "UNKNOWN 맥락은 일반 확인 질문만. 단계별 훈육·권한·자율성 범위 판정 보류.",
+      "unknownMbti": "해당 개인 MBTI/Fusion 및 Pair 후보 보류. 상대 유형·명리·나이로 보충하지 않음. 원천이 없는 주장을 만들지 않음.",
+      "unknownBirthTime": "시주·시주 관련 관계를 보충하지 않음. 실제 확인된 다른 기둥만 사용.",
+      "recall": "같은 person ID·roleVersion·원천·방향·맥락으로 앞서 실제 표시된 호환 의미만 회수. 후보 존재를 표시 이력으로 보지 않음.",
+      "minorSafety": "미성년 안전·돌봄·성인 감정 조절·지원 확보 책임은 성인에게 남음. 자녀가 부모를 위로·설득·용서하거나 가족을 유지할 의무 없음.",
+      "adultBoundary": "성인 자녀의 선택·동의·독립적 생활 경계 존중. 지원 필요·능력 미확인 상태에서 영구 통제권이나 무조건적 독립을 판정하지 않음.",
+      "professionalBoundary": "폭력·학대·방임·강압을 성향 차이로 정상화하지 않음. 의료·심리·법률·아동보호 판단은 연구 DB로 대체하지 않음."
+    },
+    "repairPlan": {
+      "condition": "속마음을 안다며 설명을 무효화",
+      "parentChecksFirst": "관찰·추측·실제 설명을 구분한다.",
+      "childExpression": "추측이 다르다고 말하거나 지금 설명하지 않을 수 있다.",
+      "adultChange": "관찰·추측·실제 설명을 구분한다.",
+      "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+      "choiceLeftToChild": "추측이 다르다고 말하거나 지금 설명하지 않을 수 있다.",
+      "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+      "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+      "childMustRepairParent": false
+    },
+    "disallowed": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  }
+];

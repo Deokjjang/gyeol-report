@@ -1,0 +1,1250 @@
+[
+  {
+    "materialId": "mrpr:material:CH01.P1:goal-method-interface",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: A가 개선안을 요청하고 B가 변경 가능한 항목을 묻는 착수 회의",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "목적·필수 조건·변경 가능한 방법을 구분",
+    "reportAction": "이해한 결과와 필요한 절차 정보를 확인",
+    "question": "목표와 방법 중 제가 결정할 수 있는 것은 무엇인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH01.P1:support-execution-interface",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 정해진 점검 사이 긴급 질문 통로만 열어두는 작업",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "중단 없는 시간과 지원 가능 시간을 설명",
+    "reportAction": "막힌 항목과 요청 자원을 짧게 알림",
+    "question": "어떤 막힘을 어느 통로로 바로 알려야 하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH01.P2:harmony-not-approval",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 의견이 잘 맞지만 최종 승인자는 별도인 변경안",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "결정자와 검토 범위를 실제 규정으로 확인",
+    "reportAction": "동의한 내용과 승인 필요한 항목 구분",
+    "question": "의견 일치와 최종 승인은 같은 절차인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH01.P2:half-harmony-not-completion",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 초안 방향에는 동의했지만 자료 검증이 남은 상황",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "완료와 추가 확인을 별도 표시",
+    "reportAction": "확인 완료·추정·미확인을 나눠 보고",
+    "question": "어떤 검토가 끝나야 완료로 인정되나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH01.P3:model-and-procedure",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 원칙 문서 옆에 실제 작업 예시를 붙이는 착수",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "핵심 원리와 실행 예시를 함께 제시",
+    "reportAction": "어느 단계가 아직 모호한지 질문",
+    "question": "판단 이유와 실제 예시를 함께 볼 수 있을까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH01.P3:same-type-different-role",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 두 사람이 같은 규칙을 말하지만 버전이 다른 경우",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "현재 유효한 기준과 변경자를 확인",
+    "reportAction": "참조한 규칙 버전을 명시",
+    "question": "어느 버전의 기준을 따라야 하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH01.P4:discretion-as-condition",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 결과 기준은 고정하고 내부 작업 순서만 맡기는 위임",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "필수 규칙과 선택 범위를 분리",
+    "reportAction": "선택 가능한 방법을 확인",
+    "question": "제 재량과 사전 확인 경계를 어디에 두나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH01.P4:management-facts-before-compatibility",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 업무 지시자는 있지만 평가 담당자는 따로 있는 조직",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "확인된 권한만 설명하고 지원 절차 안내",
+    "reportAction": "필요한 기준·담당자 확인 요청",
+    "question": "누가 기준·평가·지원 결정을 담당하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH02.P1:manager-model-goal",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: A가 큰 방향만 제시한 뒤 작업 예시를 함께 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "목표에서 필요한 결과물까지 연결",
+    "reportAction": "모호한 결과 예시를 요청",
+    "question": "이 원칙을 적용한 결과물 예시는 무엇인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH02.P1:manager-people-purpose",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 목적 설명 뒤 현재 업무량을 따로 확인하는 착수",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "참여 요구보다 필요한 지원을 확인",
+    "reportAction": "가능 시간·지원 필요를 사실로 전달",
+    "question": "이 목표에 필요한 시간과 지원은 어떻게 확보하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH02.P2:manager-standard-evidence",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 지난 양식과 새 제안의 필수 항목을 대조",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "선례 중 필수·선호 항목을 구분",
+    "reportAction": "새 방식이 충족하는 항목을 제시",
+    "question": "선례 중 반드시 지킬 항목은 어느 것인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH02.P2:manager-checkpoint-intent",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: A가 당일 결정할 항목만 지정해 사전 자료 요청",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "필요 정보와 결정 시한을 먼저 명시",
+    "reportAction": "확인된 것·조사 중인 것을 분리",
+    "question": "이번 점검에서 결정하려는 항목은 무엇인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH02.P3:manager-correct-own-error",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: A가 잘못 준 기준을 정정하고 재작업 시간을 다시 잡음",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "변경 출처·일정·담당 영향을 명시",
+    "reportAction": "이미 수행한 작업과 추가 소요 알림",
+    "question": "변경 전 지시와 추가 작업 시간도 기록할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH02.P3:manager-support-limit",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: A가 병목을 듣고 외부 확인 담당자를 연결",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "담당·일정·자원 중 조정할 항목 결정",
+    "reportAction": "막힌 단계와 필요한 자원 설명",
+    "question": "어떤 자원과 담당자 연결을 요청할 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH02.P4:manager-overcontrol",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 동일 결과를 낸 다른 순서를 허용할지 검토",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "필수 조건 밖 방식 개입을 줄임",
+    "reportAction": "선택한 방법의 이유·결과를 알림",
+    "question": "이 방식은 필수 기준 위반인가요, 선호 차이인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH02.P4:manager-avoid-feedback",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 좋다는 말 뒤 제출 전 수정할 항목을 별도로 적음",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "인격 대신 산출물의 수정 기준 제시",
+    "reportAction": "요청된 수정과 완료 기준 재확인",
+    "question": "수정할 행동과 이미 충족한 기준을 나눠 주실 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH03.P1:report-procedure-understanding",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: B가 첫 결과물의 형식과 검토 시점을 묻음",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "필수 정보와 선택 가능한 부분을 설명",
+    "reportAction": "정해진 정보 안에서 먼저 할 작업 제안",
+    "question": "과정 중 제가 정해 시작할 부분은 무엇인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH03.P1:report-independent-focus",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 완료 상태·막힘만 정해진 시간에 공유",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "점검 목적·긴급 보고 조건을 정함",
+    "reportAction": "상태·위험·결정 필요를 구분",
+    "question": "정기 보고와 즉시 알려야 할 조건을 나눌까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH03.P2:report-private-feedback-space",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 전체 회의 대신 산출물 수정 항목을 따로 전달",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "공개 인격 판단을 중단하고 기준 설명",
+    "reportAction": "안전한 방식으로 수정 사항·시간 확인",
+    "question": "수정 항목을 따로 확인하고 검토할 시간을 받을 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH03.P2:report-definition-before-work",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 당장 개선하라는 요청을 오류 종류로 좁혀 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "현재 해결 목표와 제외 범위 답변",
+    "reportAction": "확인한 범위 안의 첫 검토안 제시",
+    "question": "이번 과제에서 해결할 것과 제외할 것은 무엇인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH03.P3:report-detect-procedure-gap",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 수치 불일치와 영향 받는 작업을 표시",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "판단·지원·우선순위 조정 필요를 검토",
+    "reportAction": "관찰 사실과 추정을 구분해 공유",
+    "question": "이 차이에서 먼저 결정할 항목은 무엇인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH03.P3:report-participation-signal",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: B가 같은 절차 질문이 반복됨을 A에게 알림",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "공통 정보·지원 창구를 보완",
+    "reportAction": "확인된 질문만 전달하고 감정 추정 보류",
+    "question": "반복되는 질문을 공통 안내로 바꿀 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH03.P4:report-overacceptance",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 추가 요청 전에 진행 중인 두 작업 시간을 함께 제시",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "추가 요청의 우선순위·중단할 작업 결정",
+    "reportAction": "실제 소요와 충돌 시간을 제시",
+    "question": "추가 작업을 받으면 어느 기존 작업을 조정하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH03.P4:report-late-synthesis",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 중간 결과와 미확인 항목을 함께 보고",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "중간 상태 공유를 최종 평가와 구분",
+    "reportAction": "완료·진행·막힘과 다음 확인 시각 공유",
+    "question": "완성 전 어떤 상태를 언제 공유하면 되나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: A가 필수 조건을 좁히고 B가 남은 항목을 마무리",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "필수·추가 품질과 일정 구분",
+    "reportAction": "남은 수행과 검토 필요 알림",
+    "question": "어느 항목까지 끝내면 이번 제출은 완료인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH04.P1:shared-analysis-different-scope",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 원인 가설 검토와 수치 검증을 나누는 회의",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "결정과 관련된 검토 범위 설정",
+    "reportAction": "검증 가능·미확인 자료 구분",
+    "question": "어떤 결정을 위해 어디까지 확인하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH04.P2:big-picture-field-interface",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 시제품 결과로 일정 가정을 다시 검토",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "반례를 검토하고 수정 여부 결정",
+    "reportAction": "측정 사실·해석·대안을 분리",
+    "question": "현장 결과가 계획의 어떤 가정을 바꾸나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH04.P2:idea-review-not-personal-approval",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 기존 절차 안에서 작은 시험 범위를 정함",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "필수 기준·시험 승인 범위 명시",
+    "reportAction": "비교할 결과와 되돌림 조건 제안",
+    "question": "필수 기준을 지키며 시험할 범위는 어디인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH04.P3:delegation-with-checkpoints",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 정기 상태 공유와 긴급 예외 통로만 남긴 업무",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "재량·점검·지원 응답 시점 명시",
+    "reportAction": "예외 조건과 현재 상태 공유",
+    "question": "언제 혼자 결정하고 언제 바로 확인하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH04.P3:feedback-credit-visible",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 누가 검증한 자료인지 기록하고 수정도 따로 안내",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "기여 출처와 추가 요청을 분리",
+    "reportAction": "기여 사실과 가용 범위 알림",
+    "question": "기여 기록과 새 업무 요청을 나눠 확인할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH04.P4:manager-response-to-early-risk",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: B가 오류 가능성을 알리고 A가 검토 자원을 배정",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "보고와 인격 평가를 분리하고 지원 검토",
+    "reportAction": "확인된 사실·불확실성을 공유",
+    "question": "이 정보를 바탕으로 어떤 지원과 결정을 확인하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 재작업 뒤 지시문과 검토 시간을 함께 개선",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "자기 지시·지원 조건도 수정 대상에 포함",
+    "reportAction": "확인한 실행상의 개선점을 제안",
+    "question": "다음에는 제 행동과 지원 조건 중 무엇을 함께 바꾸나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH05.P1:manager-to-report-constraint",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: A가 규격은 고정하고 순서는 맡김",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "필수 기준·지원·질문 통로 설명",
+    "reportAction": "방법 선택 범위 재확인",
+    "question": "이 기준 안에서 제가 고를 수 있는 방법은 무엇인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH05.P1:manager-to-report-exploration",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: A가 세 대안 중 하나만 초안 과제로 표시",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "아이디어·검토 요청·확정 지시를 구분",
+    "reportAction": "현재 수행할 안과 보류안을 확인",
+    "question": "이 아이디어는 검토 요청인가요, 실행 지시인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH05.P2:manager-resource-removal",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 자료 요청 책임자와 답변 시각을 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "지원 담당·시점·권한을 확인",
+    "reportAction": "막힌 작업과 필요한 정보 명시",
+    "question": "누구에게 어떤 정보 접근을 요청할 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH05.P2:manager-recognize-evidence",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 검증 자료 작성자를 기록하고 다음 부탁은 따로 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "관찰된 기여와 다음 업무 범위 분리",
+    "reportAction": "수행 사실·가용 시간 확인",
+    "question": "이번 기여 기록과 추가 요청을 구분할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH05.P3:manager-speed-pressure",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 회의 전 질문을 주고 확인 시점을 나눔",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "질문·결정 시한을 미리 주고 반응 기다림",
+    "reportAction": "확인된 것과 추가 검토 필요를 구분",
+    "question": "확인 후 답할 항목과 즉답할 항목을 나눌 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH05.P3:manager-care-as-surveillance",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 정기 보고에서 지원 필요만 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "점검을 결정·지원과 연결하고 중복 질문 축소",
+    "reportAction": "보고에 드는 시간과 필요한 지원 알림",
+    "question": "이 보고는 어떤 결정과 지원에 사용되나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH05.P4:manager-delegation-confirm",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 비용 범위 밖 변경만 사전 확인으로 정함",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "위임 범위·자원·자기 검토 책임 명시",
+    "reportAction": "실행 선택과 예외를 구분해 확인",
+    "question": "제 결정 범위와 상사 확인이 필요한 범위를 기록할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH05.P4:manager-feedback-recheck",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 한 번의 수정 범위를 정해 다음 검토",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "관찰·영향·수정 기준·검토 시점을 제시",
+    "reportAction": "수정 이해와 예상 완료 시점 확인",
+    "question": "다음 검토에서 어느 항목을 확인하면 끝나나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 일정 가정과 실제 작업 시간을 비교",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "정보를 검토하고 변경 여부·지원 결정",
+    "reportAction": "관찰·영향·필요 결정 구분",
+    "question": "이 차이에서 어떤 계획 변경을 검토해 주실 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH06.P1:report-to-manager-customer-observation",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 반복 문의와 미확인 원인을 분리해 보고",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "표본 범위·추가 확인·대응 우선순위 판단",
+    "reportAction": "관찰 사실과 추정·제안 구분",
+    "question": "확인한 반응의 범위와 추가 확인을 나눌까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH06.P2:report-propose-bounded-method",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 기존 기준을 지키는 작은 시험안",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "검토 기준과 허용 범위를 설명",
+    "reportAction": "가정·비교 지표·시험 범위 제안",
+    "question": "어느 범위까지 시험하고 누가 승인하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH06.P2:report-capacity-information",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 추가 요청과 기존 마감의 충돌을 표로 표시",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "중단·연기·지원할 항목 결정",
+    "reportAction": "작업량·소요 근거·충돌 시점 공유",
+    "question": "두 작업이 겹칠 때 우선순위를 정해 주실 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH06.P3:report-unclear-risk-timing",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 완료 전 막힘과 다음 확인 시점을 공유",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "보고 통로·시한·지원 응답을 명확히 함",
+    "reportAction": "상태·영향·다음 확인을 전달",
+    "question": "확정 전에도 어떤 위험을 먼저 알려야 하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH06.P3:report-question-as-final-decision",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 기준 확인 질문과 변경 요청을 따로 제시",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "결정 근거와 변경 가능 여부 설명",
+    "reportAction": "확인 질문·제안·승인 요청 구분",
+    "question": "기준 확인과 변경 제안 중 무엇으로 검토하면 될까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH06.P4:report-decision-ready-brief",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 결정 필요 시각과 미확인 항목을 붙인 짧은 보고",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "결정과 미결 항목을 답변",
+    "reportAction": "사실·선택지·결정 요청을 구분",
+    "question": "이 중 상사 결정이 필요한 항목을 확인해 주실 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH06.P4:report-feedback-clarification",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 더 적극적이라는 평가어를 필요한 행동으로 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "행동 기준·수정 시간·지원 설명",
+    "reportAction": "관찰 예시와 수정 우선순위를 요청",
+    "question": "구체적으로 바꿀 행동과 수정 시간을 알려주실 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P1:vague-instructions",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 개선 요청에 출력 형식·마감 이유가 없는 업무",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "결과·제외 범위·기준 예시 설명",
+    "reportAction": "모호한 항목을 확인 질문으로 제시",
+    "question": "이번 결과물의 필수 항목을 확인할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P1:goal-method-confusion",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 안전선과 무관한 순서 차이로 재작업 요청",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "필수 결과와 선호 방법을 구분",
+    "reportAction": "방법 선택 이유·결과를 설명",
+    "question": "필수 규칙과 선호 방식은 무엇이 다른가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P1:responsibility-without-delegation",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 담당자는 B지만 수정마다 별도 승인 필요",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "실제 결정 범위·응답 책임·지원 확인",
+    "reportAction": "승인 대기·영향·필요 시점 보고",
+    "question": "어느 결정은 제가 하고 어느 결정은 승인받나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 방식은 맡긴다면서 모든 도구를 사후 반려",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "필수 제약과 실제 재량을 공개",
+    "reportAction": "변경 가능한 선택을 확인",
+    "question": "시간·순서·도구 중 무엇을 선택할 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P1:excess-report-frequency",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 같은 상태를 메신저·회의·문서에 반복 설명",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "보고 목적·빈도·중복 채널 정리",
+    "reportAction": "보고 시간·중단 비용을 사실로 알림",
+    "question": "같은 정보를 어떤 한 채널에서 확인하면 될까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P2:report-time-clash",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 확정값 전 필요한 중간 판단 자료를 요청",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "결정 시한과 중간 보고 범위 설명",
+    "reportAction": "미확인 항목·다음 확인 시간 제시",
+    "question": "확정 전 어느 시점의 정보가 필요한가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P2:priority-change-harm",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 새 요청이 들어와 기존 두 작업 중 하나를 미룸",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "변경 사유·우선순위·기한 재조정",
+    "reportAction": "현재 수행과 변경 영향 공유",
+    "question": "새 요청 때문에 어느 작업을 멈추나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P2:rework-with-half-harmony",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 초안 승인 뒤 평가 기준이 추가되는 검토",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "수정 이유·범위·기한 설명",
+    "reportAction": "기존 기준 충족 항목과 추가 소요 제시",
+    "question": "추가 기준과 기존 오류 수정을 나눌까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 더 주도적이어야 한다는 말만 받은 상황",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "관찰 행동·업무 영향·수정 기준 설명",
+    "reportAction": "예시·우선순위·수정 시점 확인",
+    "question": "어떤 관찰 행동이 어떤 기준에 미치지 못했나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P2:final-authority-unsupported",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 서로 다른 승인 의견으로 B가 멈춘 변경안",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "실제 최종 결정자·대리 범위 확인",
+    "reportAction": "상충 지시와 결정 필요 시점 알림",
+    "question": "최종 결정자와 충돌 시 확인 순서는 누구인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P3:public-personal-judgment",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 자료 한 항목 오류를 사람 전체의 문제로 말한 회의",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "공개 인격 판단 중단·구체적 수정 기준 제공",
+    "reportAction": "안전할 때 사실·수정 조건 확인",
+    "question": "산출물의 수정 항목으로 확인할 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P3:fear-of-retaliation",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 지시자에게 직접 말하기 어려워 적절한 지원 통로 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "위험 신호를 정상화하지 않고 조직 지원 확인",
+    "reportAction": "안전한 통로와 필요한 보호 조건 확인",
+    "question": "직접 질문이 어렵다면 어떤 안전한 지원 통로가 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P3:insufficient-credit",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 누가 초안·검증을 했는지 제출 기록을 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "기여 사실을 확인해 정확히 남김",
+    "reportAction": "수행·지원 받은 범위를 구분해 제시",
+    "question": "초안·검토·지원 기여를 나눠 남길까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P3:overload-allocation",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 겹치는 마감과 예상 시간을 함께 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "우선순위·기한·자원 중 조정 결정",
+    "reportAction": "실제 작업량·충돌 범위 공유",
+    "question": "추가 요청에 맞춰 무엇을 빼거나 지원하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P3:insufficient-resources",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 자료 접근 담당자 회신을 기다리는 작업",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "지원 담당·가능 시점·대안 결정",
+    "reportAction": "필요 자원·대기 영향·기한 공유",
+    "question": "필요한 자원은 누가 언제 연결하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P4:late-risk-report",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 잠재 지연과 확정 지연을 다른 상태로 공유",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "불확실 보고의 사용·응답 조건 명시",
+    "reportAction": "확인된 영향과 다음 검토 시점 알림",
+    "question": "확정 전 어떤 불확실성부터 알려야 하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P4:excluded-team-voice",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 사전 자료와 회의 뒤 확인 창구를 제공",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "사전 질문·응답 시간·대체 통로 마련",
+    "reportAction": "안전한 방식으로 검토 의견 제시",
+    "question": "검토 후 의견을 남길 통로와 시한이 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 예산·범위 결정이 필요한 막힘을 B에게 되돌림",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "실제 권한 안에서 결정·상위 확인·지원 수행",
+    "reportAction": "확인 필요한 결정과 영향 정리",
+    "question": "이 중 상사가 결정하거나 상위 확인할 항목은 무엇인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P4:missing-change-history",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 회의 중 수정한 납기·범위를 짧게 남김",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "변경자·이유·시점·영향 기록",
+    "reportAction": "이전 수행과 추가 소요를 구분",
+    "question": "변경 전후 기준과 추가 소요를 함께 기록할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 작업 상태와 개인 온라인 반응을 분리",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "보고 목적·수집 범위·사용처 명시",
+    "reportAction": "업무 상태와 무관 정보의 경계 확인",
+    "question": "이 정보는 어떤 업무 판단에 누가 사용하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P1:clarify-output",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 착수 전에 필수 출력 항목을 함께 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "필수 기준·목적·지원 설명",
+    "reportAction": "이해한 범위와 빈칸 질문",
+    "question": "결과·제외 범위·완료 예시를 확인할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P1:separate-method",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 서로 다른 순서로 만든 결과의 필수 항목 검토",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "선호와 필수 기준 구분",
+    "reportAction": "선택한 방식·결과·위험 공유",
+    "question": "필수 기준을 충족하면 다른 순서도 가능한가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P1:delegate-decision",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 승인 대기 작업의 결정 목록을 작성",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "실제 권한·지원·응답 책임 확인",
+    "reportAction": "대기 영향·필요 시각 제시",
+    "question": "결정 범위와 승인 응답 시점을 정할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P1:make-discretion-visible",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 순서 선택은 맡기고 안전선만 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "선택 범위·지원·예외 설명",
+    "reportAction": "선택할 항목과 확인할 예외 재진술",
+    "question": "실제로 선택할 수 있는 한 항목부터 정할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P1:reduce-duplicate-report",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 같은 상태를 한 문서에서 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "정보 목적·주기·응답을 정함",
+    "reportAction": "중복 준비 시간·긴급 조건 공유",
+    "question": "중복 상태는 한 곳에서 보고 예외만 바로 알릴까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P2:manager-set-report-time",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 잠정 상태와 확정 결과의 보고 시점을 나눔",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "판단 시한·중간 정보·지원 응답 설명",
+    "reportAction": "잠정·확정·미확인을 구분",
+    "question": "잠정 정보와 확정 결과를 언제 각각 확인하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P2:manager-record-priority",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 새 긴급 요청과 중단할 기존 작업을 함께 기록",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "변경자·이유·기한·지원 결정",
+    "reportAction": "현재 수행·추가 소요 확인",
+    "question": "새 요청과 함께 중단할 작업도 정할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P2:manager-close-revision",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 기존 오류 두 개와 새 요구 한 개를 나눔",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "수정 출처·범위·기한·재검토 정리",
+    "reportAction": "기존 기준 충족·추가 소요 알림",
+    "question": "기존 오류와 새 요청을 나눠 완료 기준을 정할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P2:manager-explain-evaluation",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 적극성이라는 말 대신 필요한 사전 확인 행동 제시",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "관찰 항목·기준·지원·재검토 설명",
+    "reportAction": "수정 이해·우선순위 확인",
+    "question": "관찰 예시와 수정 조건을 함께 알려주실 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P2:manager-confirm-final-authority",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 다른 지시자의 요구와 승인 순서를 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "실제 결정 경로·대리 범위 확인",
+    "reportAction": "상충 조건·필요 결정 시점 공유",
+    "question": "충돌 지시 때 최종 확인할 담당자는 누구인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P3:report-request-specific-feedback",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 직접 대응이 어려우면 별도 지원을 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "공개 인격 판단 중단·기준 설명",
+    "reportAction": "안전한 통로에서 구체적 수정 항목 확인",
+    "question": "안전한 방식으로 구체적 수정 항목을 받을 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P3:report-safe-support-route",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 직접 지시자 외 적절한 조직 지원 경로 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "위험을 정상화하지 않고 적절한 지원 확인",
+    "reportAction": "안전·동의·지원 필요를 우선 확인",
+    "question": "직접 말하기 전 어떤 안전한 지원을 확인할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P3:report-state-contribution",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 검증 담당이 빠진 제출 기록의 정정 요청",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "수행 사실 확인·기여 기록 정리",
+    "reportAction": "수행 범위·지원 받은 항목 제시",
+    "question": "제가 수행한 항목과 지원 받은 항목을 나눠 남길까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P3:report-state-capacity",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 겹치는 마감 두 개와 추가 요청을 함께 표시",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "우선순위·자원 조정 결정",
+    "reportAction": "소요·충돌·가능 범위 공유",
+    "question": "가능 범위에 맞춰 우선순위를 정해 주실 수 있나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P3:report-name-blocked-resource",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 승인된 자료 접근 요청의 대기 영향을 공유",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "지원 담당·가능 시점·대안 결정",
+    "reportAction": "필요 자원·막힘·영향 구분",
+    "question": "어떤 담당자와 언제까지 자원을 확인하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P4:agree-early-risk-response",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 위험 상태가 바뀔 때만 예외 보고",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "초기 정보 수용·지원 응답 명시",
+    "reportAction": "상태 변화·영향·다음 확인 전달",
+    "question": "잠정 위험을 언제 알리고 누가 언제 답하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P4:agree-multiple-voice-channels",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 문서 의견 시한 뒤 결정 사항 공유",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "응답 경로·검토 시점·결정 이유 설명",
+    "reportAction": "검토 의견·미확인 항목 전달",
+    "question": "검토 시간과 대체 제출 통로를 정할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P4:agree-retained-manager-decision",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 선택지 보고 뒤 승인·미결 상태를 남김",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "결정 결과·보류 이유·다음 응답 시점 명시",
+    "reportAction": "실행 가능 범위·결정 요청 구분",
+    "question": "수행·제안·승인·지원 담당을 구분할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P4:agree-change-log",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 변경 한 번마다 범위·영향·결정자 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "변경 사유·지원·일정 책임 명시",
+    "reportAction": "추가 수행·영향 사실 확인",
+    "question": "변경자·이유·범위·기한을 함께 남길까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH08.P4:agree-report-purpose",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 작업 상태 보고에서 개인 온라인 반응을 제외",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "목적·범위·사용·지원 통로 명시",
+    "reportAction": "업무 상태와 개인 정보 경계 확인",
+    "question": "업무 판단과 무관한 정보는 어떻게 구분하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH09.P1:recall-goal-execution",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 다음 과제에도 목적과 필수 조건을 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "목표·지원 조건을 설명",
+    "reportAction": "실행 질문·미확인 항목 제시",
+    "question": "다음 과제에서도 먼저 확인할 목표·방법 질문은 무엇인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH09.P1:recall-shared-completion",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 다음 제출에서도 필수 항목과 검토를 분리",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "완료 기준·지원 확인",
+    "reportAction": "남은 수행·검토 필요 공유",
+    "question": "완료 기준과 각자의 남은 역할을 다시 확인할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH09.P2:recall-supported-possibility",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 다음 막힘에서도 지원 담당·시점을 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "확인 가능한 지원·연결 책임 명시",
+    "reportAction": "막힌 단계·필요 자원 설명",
+    "question": "다음 막힘에 활용할 확인된 지원 경로는 무엇인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH09.P2:recall-personal-fusion",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 계획의 가정과 실제 결과를 비교",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "실제 정보를 검토해 결정·지원",
+    "reportAction": "관찰·영향·미확인을 분리",
+    "question": "실제 정보가 바꾸는 가정과 필요한 결정을 구분할까요?"
+  },
+  {
+    "materialId": "mrpr:material:CH09.P3:recall-delegation-principle",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 다음 과제에서 승인 경계를 새로 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "실제 범위·지원·응답을 재확인",
+    "reportAction": "변경된 수행 조건을 알림",
+    "question": "새 과제에서 재량과 승인 경계가 달라졌나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH09.P3:recall-safe-voice",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 직접 대화 전 지원 경로를 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "위험을 정상화하지 않고 지원 확인",
+    "reportAction": "안전·동의·선택 가능한 통로 확인",
+    "question": "관계를 조율하기 전 어떤 안전 조건을 확인하나요?"
+  },
+  {
+    "materialId": "mrpr:material:CH09.P4:recall-decision-responsibility",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 다음 결정에서도 수행과 승인 담당을 확인",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "결정 결과·미결·지원 책임 설명",
+    "reportAction": "실행 상태·결정 필요 전달",
+    "question": "함께 일하기 위해 각자 남길 책임은 무엇인가요?"
+  },
+  {
+    "materialId": "mrpr:material:CH09.P4:recall-contribution-learning",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상: 다음 검토에서 기여·수정·지원 조건을 나눔",
+      "isCustomerHistory": false
+    },
+    "actualAuthority": "UNKNOWN",
+    "actualWorkHistory": "UNKNOWN",
+    "managerAction": "기여 기록과 자기 지원 개선을 구분",
+    "reportAction": "수행·미완료·지원 필요를 알림",
+    "question": "기여·수정·지원에서 다음에 바꿀 항목은 무엇인가요?"
+  }
+]

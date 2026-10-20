@@ -1,0 +1,23 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "OBJECT",
+  "keys": [
+    "results",
+    "writerRepaired",
+    "customerDisplaysIssued"
+  ],
+  "logicalJsonHash": "d79f20fb51eb3075a5a4e19cbfd14507d6c0b77ae77ab10216c359136fc2fd29",
+  "parts": [
+    {
+      "file": "global-publication-risk-registry-part-0001.json",
+      "sha256": "7bbd6901d4c9abc08ec4b5f6f9d0ca7f357d602a19cfbe2c6c10f661db4d0252",
+      "kind": "FIELD",
+      "key": "results"
+    },
+    {
+      "file": "global-publication-risk-registry-part-0002.json",
+      "sha256": "faf4c09acd6ac67568482778deea8192d22d5794440759d4efab68b998a577a3",
+      "kind": "CHUNK"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "ARRAY",
+  "entries": 353,
+  "logicalJsonHash": "1a798e195aae26222c4890e5466884437192f2d28d9cc4f9230c3343f60e8c1b",
+  "parts": [
+    {
+      "file": "synthetic-rehearsal-input-part-0010.json",
+      "sha256": "1afac5e99341c8685ee8821a567e7fa3e11a607b7b60b0823de9fd2dd9af33d3",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-rehearsal-input-part-0011.json",
+      "sha256": "515925f9a511d7666920b030a82bf2f5ae8cef77bad5a16108e061fc6b4c082e",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-rehearsal-input-part-0012.json",
+      "sha256": "136848283ac9c5b231f4927ed2d03f42425f3644a1b240f346bb50dc8ae186c2",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-rehearsal-input-part-0013.json",
+      "sha256": "8a1c904a42d379afcc06e2581c1fa100c98964cfa61c6c93db10e2ecee7612ea",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-rehearsal-input-part-0014.json",
+      "sha256": "c0555204554bee44a06abd84f9b9aefcbf06302cd034259989b71cbd442d37be",
+      "kind": "CHUNK"
+    }
+  ]
+}

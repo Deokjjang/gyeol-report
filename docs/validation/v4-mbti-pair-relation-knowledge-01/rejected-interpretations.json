@@ -1,0 +1,58 @@
+[
+  {
+    "id": "mpr-reject:mbti-socionics-equivalence",
+    "claim": "같은 네 글자이므로 동일한 TIM과 관계표를 적용할 수 있다",
+    "reason": "정의·기호·기능 대응 미확인; 별도 체계 비교 자료도 차이를 논의",
+    "sourceRefs": [
+      "gulenko:systems"
+    ],
+    "disposition": "체계 연결 주장 반려"
+  },
+  {
+    "id": "mpr-reject:optimal-pair",
+    "claim": "Duality로 표시된 MBTI 조합은 더 성공하는 최적 관계다",
+    "reason": "명칭의 계보와 MBTI 대응 미확인; 공식 MBTI 관계 지침도 최적 조합을 정하지 않음",
+    "sourceRefs": [
+      "mbf:relationships",
+      "iis:basic"
+    ],
+    "disposition": "관계 결과 주장 반려"
+  },
+  {
+    "id": "mpr-reject:automatic-supervisor",
+    "claim": "Supervision 명칭으로 누가 상대를 지도·통제해야 하는지 정한다",
+    "reason": "비대칭 모형의 역할도 확인되지 않았으며 실제 역할·동의를 대신할 수 없음",
+    "sourceRefs": [
+      "iis:basic"
+    ],
+    "disposition": "서열·권한 부여 반려"
+  },
+  {
+    "id": "mpr-reject:mind-reading",
+    "claim": "상대 유형을 알면 지금 감정·의도와 과거 갈등을 알 수 있다",
+    "reason": "유형별 기록은 해당 개인의 내면·이력 자료가 아님",
+    "sourceRefs": [
+      "user-source:local"
+    ],
+    "disposition": "개인 사실 창작 반려"
+  },
+  {
+    "id": "mpr-reject:health-law",
+    "claim": "특정 쿼드라·듀얼 관계가 건강 개선을 보장한다",
+    "reason": "Socionics 출처의 건강·회복 주장은 이번 작업에서 독립 검증되지 않음",
+    "sourceRefs": [
+      "iis:basic",
+      "shs:relations"
+    ],
+    "disposition": "건강·진단·효과 주장 반려"
+  },
+  {
+    "id": "mpr-reject:fixed-care-role",
+    "claim": "한쪽 유형이 생활·감정 노동을 맡아야 관계가 유지된다",
+    "reason": "개인 선호를 실제 역할·동의·책임 계약으로 바꿀 수 없음",
+    "sourceRefs": [
+      "user-source:local"
+    ],
+    "disposition": "고정 역할 규범 반려"
+  }
+]

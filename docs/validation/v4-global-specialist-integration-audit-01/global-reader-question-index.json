@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-reader-question-index.json.gz",
+  "payloadHash": "8fea31b8a435fe22877497be9f9dc57d98013a548f1e9b709aa10bac427e3111",
+  "logicalJsonHash": "7f6c7b4d935d893693874fb59d6d3037ef5608f16c118a3e2c53e6c2e0694881",
+  "uncompressedBytes": 40563373
+}

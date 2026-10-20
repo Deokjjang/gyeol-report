@@ -1,0 +1,272 @@
+{
+  "measurement": "Book narrative paragraph text only; spaces included; excludes all headings/cover/table/appendix. Exact sentence duplicates ignore whitespace/punctuation. Cross-person shared counts are not semantic quality scores.",
+  "representatives": [
+    {
+      "product": "comprehensive",
+      "case": "A",
+      "before": {
+        "paragraphs": 52,
+        "bodyCharactersWithSpaces": 10200,
+        "exactRepeatedSentenceOccurrences": 0,
+        "longActorIntroductions": 0,
+        "definitionWrappers": 8
+      },
+      "after": {
+        "paragraphs": 52,
+        "bodyCharactersWithSpaces": 10049,
+        "exactRepeatedSentenceOccurrences": 0,
+        "longActorIntroductions": 0,
+        "definitionWrappers": 5
+      }
+    },
+    {
+      "product": "career",
+      "case": "A",
+      "before": {
+        "paragraphs": 36,
+        "bodyCharactersWithSpaces": 9555,
+        "exactRepeatedSentenceOccurrences": 0,
+        "longActorIntroductions": 0,
+        "definitionWrappers": 13
+      },
+      "after": {
+        "paragraphs": 36,
+        "bodyCharactersWithSpaces": 9359,
+        "exactRepeatedSentenceOccurrences": 0,
+        "longActorIntroductions": 0,
+        "definitionWrappers": 13
+      }
+    },
+    {
+      "product": "love",
+      "case": "A",
+      "before": {
+        "paragraphs": 36,
+        "bodyCharactersWithSpaces": 8329,
+        "exactRepeatedSentenceOccurrences": 0,
+        "longActorIntroductions": 0,
+        "definitionWrappers": 15
+      },
+      "after": {
+        "paragraphs": 36,
+        "bodyCharactersWithSpaces": 8336,
+        "exactRepeatedSentenceOccurrences": 0,
+        "longActorIntroductions": 0,
+        "definitionWrappers": 14
+      }
+    },
+    {
+      "product": "compatibility",
+      "case": "A",
+      "before": {
+        "paragraphs": 36,
+        "bodyCharactersWithSpaces": 9788,
+        "exactRepeatedSentenceOccurrences": 0,
+        "longActorIntroductions": 0,
+        "definitionWrappers": 13
+      },
+      "after": {
+        "paragraphs": 36,
+        "bodyCharactersWithSpaces": 9803,
+        "exactRepeatedSentenceOccurrences": 0,
+        "longActorIntroductions": 0,
+        "definitionWrappers": 13
+      }
+    },
+    {
+      "product": "major",
+      "case": "S",
+      "before": {
+        "paragraphs": 108,
+        "bodyCharactersWithSpaces": 14967,
+        "exactRepeatedSentenceOccurrences": 0,
+        "longActorIntroductions": 0,
+        "definitionWrappers": 1
+      },
+      "after": {
+        "paragraphs": 108,
+        "bodyCharactersWithSpaces": 15375,
+        "exactRepeatedSentenceOccurrences": 0,
+        "longActorIntroductions": 0,
+        "definitionWrappers": 1
+      }
+    },
+    {
+      "product": "annual",
+      "case": "H",
+      "before": {
+        "paragraphs": 83,
+        "bodyCharactersWithSpaces": 10509,
+        "exactRepeatedSentenceOccurrences": 0,
+        "longActorIntroductions": 0,
+        "definitionWrappers": 2
+      },
+      "after": {
+        "paragraphs": 83,
+        "bodyCharactersWithSpaces": 10266,
+        "exactRepeatedSentenceOccurrences": 0,
+        "longActorIntroductions": 0,
+        "definitionWrappers": 1
+      }
+    }
+  ],
+  "crossPerson": [
+    {
+      "product": "comprehensive",
+      "phase": "before",
+      "threeCases": "A/B/C",
+      "sharedExactSentences": 20,
+      "sampleSharedKeys": [
+        "관계가어떤단계이든자신이편안한친밀감의조건을알고전하는일이좋은출발점이됩니다",
+        "그과제에서바꿀부분하나와이미충분한부분하나를구분하면장점을더세게쓰는대신어디에써야하는지판단하게됩니다",
+        "기본성향에다른기둥과십성의조건이더해져한글자만으로전체를정하지않습니다",
+        "누군가질문을못하고머뭇거리는상황에서설명을한번더건네면개인의작은배려가전체참여를돕는일이될수있습니다",
+        "도움을줄때상대가스스로할부분을남겨두면세심함이서로의능력을키우는방향으로전해집니다"
+      ]
+    },
+    {
+      "product": "comprehensive",
+      "phase": "after",
+      "threeCases": "A/B/C",
+      "sharedExactSentences": 20,
+      "sampleSharedKeys": [
+        "관계가어떤단계이든자신이편안한친밀감의조건을알고전하는일이좋은출발점이됩니다",
+        "그과제에서바꿀부분하나와이미충분한부분하나를구분하면장점을더세게쓰는대신어디에써야하는지판단하게됩니다",
+        "기본성향에다른기둥과십성의조건이더해져한글자만으로전체를정하지않습니다",
+        "누군가질문을못하고머뭇거리는상황에서설명을한번더건네면개인의작은배려가전체참여를돕는일이될수있습니다",
+        "도움을줄때상대가스스로할부분을남겨두면세심함이서로의능력을키우는방향으로전해집니다"
+      ]
+    },
+    {
+      "product": "career",
+      "phase": "before",
+      "threeCases": "A/B/C",
+      "sharedExactSentences": 20,
+      "sampleSharedKeys": [
+        "강점이통하는조건을알면다음에맡을과제도더정확히고를수있습니다",
+        "같은직무라도이런조건이반복되면대응에시간을더쓰므로적성과환경의문제를나누어야합니다",
+        "같은직업도맡을문제와결정할범위에따라다음선택의가치가달라집니다",
+        "다른방향의강점이만나는과제인지작은결과로확인하면익숙하지않은역할에서도쓸수있는능력의범위가보입니다",
+        "배운내용을직접확인할과제와구체적인피드백이있는환경인지살펴보세요"
+      ]
+    },
+    {
+      "product": "career",
+      "phase": "after",
+      "threeCases": "A/B/C",
+      "sharedExactSentences": 20,
+      "sampleSharedKeys": [
+        "강점이통하는조건을알면다음에맡을과제도더정확히고를수있습니다",
+        "같은직무라도이런조건이반복되면대응에시간을더쓰므로적성과환경의문제를나누어야합니다",
+        "같은직업도맡을문제와결정할범위에따라다음선택의가치가달라집니다",
+        "다른방향의강점이만나는과제인지작은결과로확인하면익숙하지않은역할에서도쓸수있는능력의범위가보입니다",
+        "배운내용을직접확인할과제와구체적인피드백이있는환경인지살펴보세요"
+      ]
+    },
+    {
+      "product": "love",
+      "phase": "before",
+      "threeCases": "A/B/C",
+      "sharedExactSentences": 21,
+      "sampleSharedKeys": [
+        "가까워질기회가생겨도서로마음을알아갈시간과실제선택이있어야관계로이어집니다",
+        "각자쓸수있는돈과시간도공동책임옆에마련하면생활을잘유지하기위해개인의즐거움을모두미뤄야하는관계에서벗어나기좋습니다",
+        "개인공간을정하는대화에서는함께할의사가있는지와지금쉴시간이필요한지를따로알려주는편이좋습니다",
+        "고를수있는방법은열어두되선택한뒤맡을작은일은함께정하면독립성과책임을서로반대되는목표로두지않아도됩니다",
+        "끝낸뒤잘못된결과만평가하지않고어디에서도움이필요했는지들으면스스로해볼자유와어려울때어른을찾을신뢰가함께남습니다"
+      ]
+    },
+    {
+      "product": "love",
+      "phase": "after",
+      "threeCases": "A/B/C",
+      "sharedExactSentences": 21,
+      "sampleSharedKeys": [
+        "가까워질기회가생겨도서로마음을알아갈시간과실제선택이있어야관계로이어집니다",
+        "각자쓸수있는돈과시간도공동책임옆에마련하면생활을잘유지하기위해개인의즐거움을모두미뤄야하는관계에서벗어나기좋습니다",
+        "개인공간을정하는대화에서는함께할의사가있는지와지금쉴시간이필요한지를따로알려주는편이좋습니다",
+        "고를수있는방법은열어두되선택한뒤맡을작은일은함께정하면독립성과책임을서로반대되는목표로두지않아도됩니다",
+        "끝낸뒤잘못된결과만평가하지않고어디에서도움이필요했는지들으면스스로해볼자유와어려울때어른을찾을신뢰가함께남습니다"
+      ]
+    },
+    {
+      "product": "compatibility",
+      "phase": "before",
+      "threeCases": "A/B/C",
+      "sharedExactSentences": 49,
+      "sampleSharedKeys": [
+        "각자좋아했던장소를하나씩소개하면상대가보는세상을함께걸어보는재미가생깁니다",
+        "공통점의좋은쓰임은늘같은답을내는데보다상대가중요하게보는질문을빠뜨리지않는데있습니다",
+        "관심을보내는방식과관심을알아보는방식이다를수있어내가해준것보다상대가무엇을받았는지물어보는편이좋습니다",
+        "괜찮다는답을오래유지하는것보다감당하기어려워지는지점을일찍알리는편이상대에게도약속을지킬기회를줍니다",
+        "답장을기다린쪽은관심을묻고늦게답한쪽은하루를설명하면서같은대화를다르게시작할수있습니다"
+      ]
+    },
+    {
+      "product": "compatibility",
+      "phase": "after",
+      "threeCases": "A/B/C",
+      "sharedExactSentences": 49,
+      "sampleSharedKeys": [
+        "각자좋아했던장소를하나씩소개하면상대가보는세상을함께걸어보는재미가생깁니다",
+        "공통점의좋은쓰임은늘같은답을내는데보다상대가중요하게보는질문을빠뜨리지않는데있습니다",
+        "관심을보내는방식과관심을알아보는방식이다를수있어내가해준것보다상대가무엇을받았는지물어보는편이좋습니다",
+        "괜찮다는답을오래유지하는것보다감당하기어려워지는지점을일찍알리는편이상대에게도약속을지킬기회를줍니다",
+        "답장을기다린쪽은관심을묻고늦게답한쪽은하루를설명하면서같은대화를다르게시작할수있습니다"
+      ]
+    },
+    {
+      "product": "major",
+      "phase": "before",
+      "threeCases": "A/B/C",
+      "sharedExactSentences": 35,
+      "sampleSharedKeys": [
+        "未丑형되풀이되는부담을점검할자리입니다",
+        "申寅형되풀이되는부담을점검할자리입니다",
+        "겁재는비슷한힘을가진사람과나란히서는모습이에요",
+        "경쟁심과함께해보고싶은마음이같이움직여요",
+        "그래서함께가더라도내가고를자리가남아있어야힘이나죠"
+      ]
+    },
+    {
+      "product": "major",
+      "phase": "after",
+      "threeCases": "A/B/C",
+      "sharedExactSentences": 34,
+      "sampleSharedKeys": [
+        "未丑형은되풀이되는부담을점검할자리입니다",
+        "申寅형은되풀이되는부담을점검할자리입니다",
+        "겁재는비슷한힘을가진사람과나란히서는모습이에요",
+        "경쟁심과함께해보고싶은마음이같이움직여요",
+        "그래서함께가더라도내가고를자리가남아있어야힘이나죠"
+      ]
+    },
+    {
+      "product": "annual",
+      "phase": "before",
+      "threeCases": "A/B/C",
+      "sharedExactSentences": 63,
+      "sampleSharedKeys": [
+        "10월지금이이야기를가장가까운하루에비춰볼때입니다",
+        "2월초를지나며한해의관심이바뀌므로1월부터모든것을새로정할필요는없습니다",
+        "가격과약속계속나가는비용처럼평소작게넘기던숫자의무게가달라져요",
+        "경험있는사람의짧은설명이길게붙들던문제를다른모양으로보여주기도하죠",
+        "계획만하던것을손으로해본경험이있었다면그즐거움을다시볼만합니다"
+      ]
+    },
+    {
+      "product": "annual",
+      "phase": "after",
+      "threeCases": "A/B/C",
+      "sharedExactSentences": 65,
+      "sampleSharedKeys": [
+        "10월지금이이야기를가장가까운하루에비춰볼때입니다",
+        "2월초를지나며한해의관심이바뀌므로1월부터모든것을새로정할필요는없습니다",
+        "가격과약속계속나가는비용처럼평소작게넘기던숫자의무게가달라져요",
+        "경험있는사람의짧은설명이길게붙들던문제를다른모양으로보여주기도하죠",
+        "계획만하던것을손으로해본경험이있었다면그즐거움을다시볼만합니다"
+      ]
+    }
+  ],
+  "internalLeaks": []
+}

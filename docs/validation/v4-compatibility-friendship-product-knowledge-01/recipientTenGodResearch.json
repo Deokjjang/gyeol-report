@@ -1,0 +1,292 @@
+[
+  {
+    "id": "frpr:ten-god:비견",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "god": "비견",
+    "originalEffect": "자기 의견을 더 또렷하게 꺼내게 합니다",
+    "originalLocator": {
+      "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+      "exportName": "godEffects",
+      "pointer": "/비견",
+      "recordSha256": "0d4f1f0f467bcd4ac3a889dd3491bf8f1a5dfa20998c5e5c60f0d4dedf7232d3",
+      "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+    },
+    "friendshipQuestion": "서로의 의견을 내되 같은 취향이나 같은 참여를 요구하지 않을 수 있는가?",
+    "counterexample": "동등한 지지의 상징만으로 실제 친구 관계의 수평성을 입증하지 않는다.",
+    "receivedByB": {
+      "viewer": "B.dayMaster",
+      "target": "A.dayMaster"
+    },
+    "receivedByA": {
+      "viewer": "A.dayMaster",
+      "target": "B.dayMaster"
+    },
+    "definitionIsObservedEffect": false,
+    "noForcedDifference": true
+  },
+  {
+    "id": "frpr:ten-god:겁재",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "god": "겁재",
+    "originalEffect": "가만있기보다 같이 도전하고 싶은 마음을 건드립니다",
+    "originalLocator": {
+      "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+      "exportName": "godEffects",
+      "pointer": "/겁재",
+      "recordSha256": "79fba1a049cb5936bc3f7529dcdded563e1e87397387868fc371e0a2f9c132dd",
+      "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+    },
+    "friendshipQuestion": "같이 도전하자는 자극과 경쟁·비교 압박을 구분할 수 있는가?",
+    "counterexample": "겁재 정의가 질투·사기·자원 침해 사실을 뜻하지 않는다.",
+    "receivedByB": {
+      "viewer": "B.dayMaster",
+      "target": "A.dayMaster"
+    },
+    "receivedByA": {
+      "viewer": "A.dayMaster",
+      "target": "B.dayMaster"
+    },
+    "definitionIsObservedEffect": false,
+    "noForcedDifference": true
+  },
+  {
+    "id": "frpr:ten-god:식신",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "god": "식신",
+    "originalEffect": "긴장을 풀고 직접 해보는 즐거움을 끌어냅니다",
+    "originalLocator": {
+      "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+      "exportName": "godEffects",
+      "pointer": "/식신",
+      "recordSha256": "4dc301fb18b3f52787d05a1c27695be238867f99ddddeae968ba46599031a498",
+      "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+    },
+    "friendshipQuestion": "직접 즐기는 활동의 강도를 상대도 고를 수 있는가?",
+    "counterexample": "즐거움의 전통 의미가 특정 활동의 실제 선호를 증명하지 않는다.",
+    "receivedByB": {
+      "viewer": "B.dayMaster",
+      "target": "A.dayMaster"
+    },
+    "receivedByA": {
+      "viewer": "A.dayMaster",
+      "target": "B.dayMaster"
+    },
+    "definitionIsObservedEffect": false,
+    "noForcedDifference": true
+  },
+  {
+    "id": "frpr:ten-god:상관",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "god": "상관",
+    "originalEffect": "그동안 삼켰던 의견과 다른 방법을 꺼내게 합니다",
+    "originalLocator": {
+      "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+      "exportName": "godEffects",
+      "pointer": "/상관",
+      "recordSha256": "003f2f1a8bfc413952281ab036fc36a75a28b6d6cbb95e33eaa4d7239c769805",
+      "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+    },
+    "friendshipQuestion": "다른 의견을 말하는 자극이 상대를 교정하는 요구로 바뀌지 않는가?",
+    "counterexample": "비판·갈등의 실제 존재나 과거 경험을 부여하지 않는다.",
+    "receivedByB": {
+      "viewer": "B.dayMaster",
+      "target": "A.dayMaster"
+    },
+    "receivedByA": {
+      "viewer": "A.dayMaster",
+      "target": "B.dayMaster"
+    },
+    "definitionIsObservedEffect": false,
+    "noForcedDifference": true
+  },
+  {
+    "id": "frpr:ten-god:편재",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "god": "편재",
+    "originalEffect": "새로운 경험과 실제로 얻을 결과를 함께 생각하게 합니다",
+    "originalLocator": {
+      "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+      "exportName": "godEffects",
+      "pointer": "/편재",
+      "recordSha256": "bda38134065cef3d95a68dd191f1993aa66866fc94adaf4d10b49cd8d372259e",
+      "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+    },
+    "friendshipQuestion": "새 경험의 제안에서 시간·돈의 부담을 각자 고를 수 있는가?",
+    "counterexample": "재물·성공·인맥의 이익을 보장하거나 실제 거래를 가정하지 않는다.",
+    "receivedByB": {
+      "viewer": "B.dayMaster",
+      "target": "A.dayMaster"
+    },
+    "receivedByA": {
+      "viewer": "A.dayMaster",
+      "target": "B.dayMaster"
+    },
+    "definitionIsObservedEffect": false,
+    "noForcedDifference": true
+  },
+  {
+    "id": "frpr:ten-god:정재",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "god": "정재",
+    "originalEffect": "시간과 돈을 어디에 쓰는지 더 구체적으로 보게 합니다",
+    "originalLocator": {
+      "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+      "exportName": "godEffects",
+      "pointer": "/정재",
+      "recordSha256": "6b7b8e234881cc97523be9f69ab1e7b06fdc250fcd9ac7dfdae794ba2143b9de",
+      "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+    },
+    "friendshipQuestion": "꾸준한 약속을 원하는 조건과 만남의 유연성을 함께 확인할 수 있는가?",
+    "counterexample": "규칙성·의무·지속 기간을 상대에게 자동 부여하지 않는다.",
+    "receivedByB": {
+      "viewer": "B.dayMaster",
+      "target": "A.dayMaster"
+    },
+    "receivedByA": {
+      "viewer": "A.dayMaster",
+      "target": "B.dayMaster"
+    },
+    "definitionIsObservedEffect": false,
+    "noForcedDifference": true
+  },
+  {
+    "id": "frpr:ten-god:편관",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "god": "편관",
+    "originalEffect": "안주하던 기준에 긴장을 주고 더 잘하고 싶게 만듭니다",
+    "originalLocator": {
+      "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+      "exportName": "godEffects",
+      "pointer": "/편관",
+      "recordSha256": "5b3b5e62d93ecd6ab665a78c55496b3612cb19e71d703dfbab957b88469a2c26",
+      "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+    },
+    "friendshipQuestion": "도전의 자극이 평가나 통제로 받아들여지는지 확인할 수 있는가?",
+    "counterexample": "관성은 실제 상하 권한·모임의 우열·복종의 증명이 아니다.",
+    "receivedByB": {
+      "viewer": "B.dayMaster",
+      "target": "A.dayMaster"
+    },
+    "receivedByA": {
+      "viewer": "A.dayMaster",
+      "target": "B.dayMaster"
+    },
+    "definitionIsObservedEffect": false,
+    "noForcedDifference": true
+  },
+  {
+    "id": "frpr:ten-god:정관",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "god": "정관",
+    "originalEffect": "약속과 책임을 한 번 더 의식하게 합니다",
+    "originalLocator": {
+      "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+      "exportName": "godEffects",
+      "pointer": "/정관",
+      "recordSha256": "9c91140734c1292c052ae200fbac95aade456cf1a7e91a880ff4de18bc1fa6cb",
+      "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+    },
+    "friendshipQuestion": "안정적인 기준이 친구의 다른 선택을 막지 않을 수 있는가?",
+    "counterexample": "관계 규칙이나 약속이 실제로 합의됐다고 가정하지 않는다.",
+    "receivedByB": {
+      "viewer": "B.dayMaster",
+      "target": "A.dayMaster"
+    },
+    "receivedByA": {
+      "viewer": "A.dayMaster",
+      "target": "B.dayMaster"
+    },
+    "definitionIsObservedEffect": false,
+    "noForcedDifference": true
+  },
+  {
+    "id": "frpr:ten-god:편인",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "god": "편인",
+    "originalEffect": "당연하게 알던 것에도 다시 이유를 묻게 합니다",
+    "originalLocator": {
+      "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+      "exportName": "godEffects",
+      "pointer": "/편인",
+      "recordSha256": "848cd0dcc2b33767cc27d1e2c75ea03b36ea6d4124fd4fa25aad13f92b7f9ab8",
+      "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+    },
+    "friendshipQuestion": "새 관점이나 질문을 원할 때와 조용히 듣길 원할 때를 구분할 수 있는가?",
+    "counterexample": "특별한 이해·비밀 공유·정서 진단의 근거가 아니다.",
+    "receivedByB": {
+      "viewer": "B.dayMaster",
+      "target": "A.dayMaster"
+    },
+    "receivedByA": {
+      "viewer": "A.dayMaster",
+      "target": "B.dayMaster"
+    },
+    "definitionIsObservedEffect": false,
+    "noForcedDifference": true
+  },
+  {
+    "id": "frpr:ten-god:정인",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "god": "정인",
+    "originalEffect": "모르는 것을 물어보고 도움을 받아도 된다는 여유를 줍니다",
+    "originalLocator": {
+      "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+      "exportName": "godEffects",
+      "pointer": "/정인",
+      "recordSha256": "2e86c2ac432487730dbd95193a5fae90fbc20ae6c487e3881f492c3df112d709",
+      "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+    },
+    "friendshipQuestion": "지지를 받으면서도 친구 한 명에게 모든 판단을 맡기지 않을 수 있는가?",
+    "counterexample": "보호·돌봄이 실제로 제공됐거나 친구가 부모 역할이라고 단정하지 않는다.",
+    "receivedByB": {
+      "viewer": "B.dayMaster",
+      "target": "A.dayMaster"
+    },
+    "receivedByA": {
+      "viewer": "A.dayMaster",
+      "target": "B.dayMaster"
+    },
+    "definitionIsObservedEffect": false,
+    "noForcedDifference": true
+  }
+]

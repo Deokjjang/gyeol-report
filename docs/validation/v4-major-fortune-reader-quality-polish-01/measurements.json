@@ -1,0 +1,5650 @@
+{
+  "before": {
+    "A": {
+      "status": "GENERATED",
+      "person": {
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "06:00",
+        "mbtiType": "INFJ",
+        "gender": "MALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "paragraphs": 118,
+      "bodyChars": 15957,
+      "finalLineChars": 82,
+      "annualChars": 10255,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 4,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 14,
+        "의 반대편도 살펴보세요": 10,
+        "연결되는 역할과 약속의 범위 확인": 13
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "상관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 820,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2023:癸卯:natal:파:卯午:month",
+            "major:4:戊寅:year:2023:癸卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_shang_guan:question",
+            "ten_god_shang_guan:work",
+            "ten_god_shang_guan:shadow"
+          ],
+          "features": [
+            "ten_god_shang_guan",
+            "sinsal_hyeonchim"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "편재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 661,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2024:甲辰:natal:반합:辰子:day",
+            "major:4:戊寅:year:2024:甲辰:natal:파:丑辰:year",
+            "major:4:戊寅:year:2024:甲辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:question",
+            "ten_god_zheng_cai:money",
+            "ten_god_zheng_cai:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "정재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 692,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2025:乙巳:cycle:해:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:cycle:형:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:natal:반합:巳丑:year"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:question",
+            "ten_god_zheng_yin:money",
+            "ten_god_zheng_yin:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_yin",
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "편관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 1061,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:4:戊寅:year:2026:丙午:cycle:반합:午寅:cycle",
+            "major:4:戊寅:year:2026:丙午:natal:해:丑午:year",
+            "major:4:戊寅:year:2026:丙午:natal:형:午午:month",
+            "major:4:戊寅:year:2026:丙午:natal:충:子午:day",
+            "major:4:戊寅:year:2026:丙午:natal:파:卯午:hour"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:question",
+            "twelve_sinsal_jangseong:work",
+            "twelve_sinsal_jangseong:shadow"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "정관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 863,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2027:丁未:natal:반합:未卯:hour",
+            "major:4:戊寅:year:2027:丁未:natal:충:丑未:year",
+            "major:4:戊寅:year:2027:丁未:natal:형:未丑:year",
+            "major:4:戊寅:year:2027:丁未:natal:육합:午未:month",
+            "major:4:戊寅:year:2027:丁未:natal:해:子未:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:question",
+            "ten_god_zheng_guan:work",
+            "ten_god_zheng_guan:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "편인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 719,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2028:戊申:cycle:충:寅申:cycle",
+            "major:4:戊寅:year:2028:戊申:cycle:형:申寅:cycle",
+            "major:4:戊寅:year:2028:戊申:natal:반합:申子:day"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "정인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 712,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2029:己酉:natal:반합:酉丑:year",
+            "major:4:戊寅:year:2029:己酉:natal:파:子酉:day",
+            "major:4:戊寅:year:2029:己酉:natal:충:卯酉:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:study"
+          ],
+          "features": [
+            "gwiin_cheoneul",
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "비견",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 654,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2030:庚戌:cycle:반합:戌寅:cycle",
+            "major:4:戊寅:year:2030:庚戌:natal:반합:戌午:month",
+            "major:4:戊寅:year:2030:庚戌:natal:형:丑戌:year",
+            "major:4:戊寅:year:2030:庚戌:natal:육합:卯戌:hour"
+          ],
+          "seeds": [
+            "day_master_gyeonggeum:question",
+            "day_master_gyeonggeum:work",
+            "day_master_gyeonggeum:shadow"
+          ],
+          "features": [
+            "day_master_gyeonggeum"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "겁재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 671,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2031:辛亥:cycle:육합:寅亥:cycle",
+            "major:4:戊寅:year:2031:辛亥:cycle:파:寅亥:cycle",
+            "major:4:戊寅:year:2031:辛亥:natal:반합:亥卯:hour"
+          ],
+          "seeds": [
+            "sinsal_dohwa:question",
+            "sinsal_dohwa:work",
+            "sinsal_dohwa:shadow"
+          ],
+          "features": [
+            "sinsal_dohwa"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "식신",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 698,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2032:壬子:natal:육합:子丑:year",
+            "major:4:戊寅:year:2032:壬子:natal:충:子午:month",
+            "major:4:戊寅:year:2032:壬子:natal:형:子卯:hour"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:question",
+            "ten_god_shi_shen:work",
+            "ten_god_shi_shen:shadow"
+          ],
+          "features": [
+            "ten_god_shi_shen"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "상관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 1063,
+          "blocks": 8,
+          "relationshipIds": [
+            "major:5:丁丑:year:2033:癸丑:natal:해:丑午:month",
+            "major:5:丁丑:year:2033:癸丑:natal:육합:子丑:day"
+          ],
+          "seeds": [
+            "sinsal_hyeonchim:question",
+            "sinsal_hyeonchim:work",
+            "sinsal_hyeonchim:shadow"
+          ],
+          "features": [
+            "sinsal_hyeonchim",
+            "ten_god_shang_guan"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "편재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 382,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:丁丑:year:2034:甲寅:natal:반합:寅午:month"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:work"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "정재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 594,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2035:乙卯:natal:파:卯午:month",
+            "major:5:丁丑:year:2035:乙卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:money"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "편관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 665,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2036:丙辰:cycle:파:丑辰:cycle",
+            "major:5:丁丑:year:2036:丙辰:natal:반합:辰子:day",
+            "major:5:丁丑:year:2036:丙辰:natal:파:丑辰:year",
+            "major:5:丁丑:year:2036:丙辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:strength"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        }
+      ]
+    },
+    "F": {
+      "status": "GENERATED",
+      "person": {
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "",
+        "mbtiType": "",
+        "gender": "MALE",
+        "birthTimeUnknown": true,
+        "birthTimePrecision": "unknown",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "paragraphs": 114,
+      "bodyChars": 15269,
+      "finalLineChars": 82,
+      "annualChars": 10064,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 5,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 14,
+        "의 반대편도 살펴보세요": 9,
+        "연결되는 역할과 약속의 범위 확인": 13
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "상관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 831,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2023:癸卯:natal:파:卯午:month",
+            "major:4:戊寅:year:2023:癸卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_shang_guan:question",
+            "ten_god_shang_guan:work",
+            "ten_god_shang_guan:shadow"
+          ],
+          "features": [
+            "ten_god_shang_guan"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "편재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 661,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2024:甲辰:natal:반합:辰子:day",
+            "major:4:戊寅:year:2024:甲辰:natal:파:丑辰:year"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:question",
+            "ten_god_zheng_cai:money",
+            "ten_god_zheng_cai:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "정재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 692,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2025:乙巳:cycle:해:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:cycle:형:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:natal:반합:巳丑:year"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:question",
+            "ten_god_zheng_yin:money",
+            "ten_god_zheng_yin:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_yin",
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "편관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 953,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2026:丙午:cycle:반합:午寅:cycle",
+            "major:4:戊寅:year:2026:丙午:natal:해:丑午:year",
+            "major:4:戊寅:year:2026:丙午:natal:형:午午:month",
+            "major:4:戊寅:year:2026:丙午:natal:충:子午:day"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:question",
+            "twelve_sinsal_jangseong:work",
+            "twelve_sinsal_jangseong:shadow"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "정관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 753,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2027:丁未:natal:충:丑未:year",
+            "major:4:戊寅:year:2027:丁未:natal:형:未丑:year",
+            "major:4:戊寅:year:2027:丁未:natal:육합:午未:month",
+            "major:4:戊寅:year:2027:丁未:natal:해:子未:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:question",
+            "ten_god_zheng_guan:work",
+            "ten_god_zheng_guan:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "편인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 830,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2028:戊申:cycle:충:寅申:cycle",
+            "major:4:戊寅:year:2028:戊申:cycle:형:申寅:cycle",
+            "major:4:戊寅:year:2028:戊申:natal:반합:申子:day"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "정인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 711,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2029:己酉:natal:반합:酉丑:year",
+            "major:4:戊寅:year:2029:己酉:natal:파:子酉:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:study"
+          ],
+          "features": [
+            "gwiin_cheoneul",
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "비견",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 654,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2030:庚戌:cycle:반합:戌寅:cycle",
+            "major:4:戊寅:year:2030:庚戌:natal:반합:戌午:month",
+            "major:4:戊寅:year:2030:庚戌:natal:형:丑戌:year"
+          ],
+          "seeds": [
+            "day_master_gyeonggeum:question",
+            "day_master_gyeonggeum:work",
+            "day_master_gyeonggeum:shadow"
+          ],
+          "features": [
+            "day_master_gyeonggeum"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "겁재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 659,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2031:辛亥:cycle:육합:寅亥:cycle",
+            "major:4:戊寅:year:2031:辛亥:cycle:파:寅亥:cycle"
+          ],
+          "seeds": [
+            "sinsal_dohwa:question",
+            "sinsal_dohwa:strength",
+            "sinsal_dohwa:shadow"
+          ],
+          "features": [
+            "sinsal_dohwa"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "식신",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 694,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2032:壬子:natal:육합:子丑:year",
+            "major:4:戊寅:year:2032:壬子:natal:충:子午:month"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:question",
+            "ten_god_shi_shen:strength",
+            "ten_god_shi_shen:shadow"
+          ],
+          "features": [
+            "ten_god_shi_shen"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "상관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 985,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:5:丁丑:year:2033:癸丑:natal:해:丑午:month",
+            "major:5:丁丑:year:2033:癸丑:natal:육합:子丑:day"
+          ],
+          "seeds": [
+            "sinsal_gwimun:work"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "편재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 382,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:丁丑:year:2034:甲寅:natal:반합:寅午:month"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:work"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "정재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 594,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2035:乙卯:natal:파:卯午:month",
+            "major:5:丁丑:year:2035:乙卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:money"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "편관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 665,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2036:丙辰:cycle:파:丑辰:cycle",
+            "major:5:丁丑:year:2036:丙辰:natal:반합:辰子:day",
+            "major:5:丁丑:year:2036:丙辰:natal:파:丑辰:year"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:strength"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        }
+      ]
+    },
+    "S": {
+      "status": "GENERATED",
+      "person": {
+        "name": "윤시우",
+        "birthDate": "1983-09-02",
+        "birthTime": "05:10",
+        "gender": "MALE",
+        "mbtiType": "ENTJ",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "employee",
+        "detailJob": "기획자",
+        "relationshipStatus": "",
+        "focusAreas": []
+      },
+      "paragraphs": 108,
+      "bodyChars": 14379,
+      "finalLineChars": 79,
+      "annualChars": 9510,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 3,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 14,
+        "의 반대편도 살펴보세요": 10,
+        "연결되는 역할과 약속의 범위 확인": 14
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "비견",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 687,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2023:癸卯:cycle:해:卯辰:cycle",
+            "major:4:丙辰:year:2023:癸卯:natal:반합:卯亥:year-hour"
+          ],
+          "seeds": [
+            "ten_god_bijian:question",
+            "ten_god_bijian:work",
+            "ten_god_bijian:shadow"
+          ],
+          "features": [
+            "ten_god_bijian",
+            "sinsal_yangin"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "상관",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 865,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:丙辰:year:2024:甲辰:cycle:형:辰辰:cycle",
+            "major:4:丙辰:year:2024:甲辰:natal:반합:辰申:month",
+            "major:4:丙辰:year:2024:甲辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:question",
+            "ten_god_shi_shen:work",
+            "ten_god_shi_shen:shadow"
+          ],
+          "features": [
+            "ten_god_shi_shen",
+            "sinsal_hyeonchim"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "식신",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 704,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2025:乙巳:natal:충:巳亥:year",
+            "major:4:丙辰:year:2025:乙巳:natal:육합:巳申:month",
+            "major:4:丙辰:year:2025:乙巳:natal:형:巳申:month",
+            "major:4:丙辰:year:2025:乙巳:natal:파:巳申:month"
+          ],
+          "seeds": [
+            "gwiin_munchang:question",
+            "gwiin_munchang:work",
+            "gwiin_munchang:shadow"
+          ],
+          "features": [
+            "gwiin_munchang"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "정재",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 777,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2026:丙午:natal:파:卯午:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:question",
+            "ten_god_zheng_cai:money",
+            "ten_god_zheng_cai:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "편재",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 372,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:4:丙辰:year:2027:丁未:natal:삼합:亥卯未:year-hour"
+          ],
+          "seeds": [
+            "twelve_sinsal_yeokma:question",
+            "twelve_sinsal_yeokma:work"
+          ],
+          "features": [
+            "twelve_sinsal_yeokma"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "정관",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 866,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:4:丙辰:year:2028:戊申:cycle:반합:申辰:cycle",
+            "major:4:丙辰:year:2028:戊申:natal:해:申亥:year",
+            "major:4:丙辰:year:2028:戊申:natal:육합:巳申:day",
+            "major:4:丙辰:year:2028:戊申:natal:형:巳申:day",
+            "major:4:丙辰:year:2028:戊申:natal:파:巳申:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:question",
+            "ten_god_zheng_yin:strength",
+            "ten_god_zheng_yin:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "편관",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 717,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2029:己酉:cycle:육합:辰酉:cycle",
+            "major:4:丙辰:year:2029:己酉:natal:반합:酉巳:day",
+            "major:4:丙辰:year:2029:己酉:natal:충:卯酉:hour"
+          ],
+          "seeds": [
+            "ten_god_jie_cai:question",
+            "ten_god_jie_cai:work",
+            "ten_god_jie_cai:shadow"
+          ],
+          "features": [
+            "ten_god_jie_cai",
+            "twelve_sinsal_jangseong"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "정인",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 704,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2030:庚戌:cycle:충:辰戌:cycle",
+            "major:4:丙辰:year:2030:庚戌:natal:육합:卯戌:hour"
+          ],
+          "seeds": [
+            "gwiin_cheondeok:question",
+            "gwiin_cheondeok:work",
+            "gwiin_cheondeok:shadow"
+          ],
+          "features": [
+            "gwiin_cheoneul",
+            "gwiin_cheondeok"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "편인",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 1017,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:5:乙卯:year:2031:辛亥:cycle:반합:亥卯:cycle",
+            "major:5:乙卯:year:2031:辛亥:natal:반합:亥卯:year-hour",
+            "major:5:乙卯:year:2031:辛亥:natal:형:亥亥:year",
+            "major:5:乙卯:year:2031:辛亥:natal:해:申亥:month",
+            "major:5:乙卯:year:2031:辛亥:natal:충:巳亥:day"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "겁재",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 688,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:乙卯:year:2032:壬子:cycle:형:子卯:cycle",
+            "major:5:乙卯:year:2032:壬子:natal:반합:子申:month",
+            "major:5:乙卯:year:2032:壬子:natal:형:子卯:hour"
+          ],
+          "seeds": [
+            "sinsal_yangin:question",
+            "sinsal_yangin:strength",
+            "sinsal_yangin:shadow"
+          ],
+          "features": [
+            "sinsal_yangin",
+            "ten_god_jie_cai"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "비견",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 376,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:乙卯:year:2033:癸丑:natal:반합:丑巳:day"
+          ],
+          "seeds": [
+            "sinsal_yangin:work"
+          ],
+          "features": [
+            "sinsal_yangin"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "상관",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 682,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:乙卯:year:2034:甲寅:natal:육합:寅亥:year",
+            "major:5:乙卯:year:2034:甲寅:natal:파:寅亥:year",
+            "major:5:乙卯:year:2034:甲寅:natal:충:寅申:month",
+            "major:5:乙卯:year:2034:甲寅:natal:형:申寅:month",
+            "major:5:乙卯:year:2034:甲寅:natal:해:寅巳:day",
+            "major:5:乙卯:year:2034:甲寅:natal:형:寅巳:day"
+          ],
+          "seeds": [
+            "sinsal_hongyeom:question",
+            "sinsal_hongyeom:strength",
+            "sinsal_hongyeom:shadow"
+          ],
+          "features": [
+            "sinsal_hongyeom"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "식신",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 372,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:乙卯:year:2035:乙卯:natal:반합:卯亥:year-hour"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:strength"
+          ],
+          "features": [
+            "ten_god_shi_shen"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "정재",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 683,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:乙卯:year:2036:丙辰:cycle:해:卯辰:cycle",
+            "major:5:乙卯:year:2036:丙辰:natal:반합:辰申:month",
+            "major:5:乙卯:year:2036:丙辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:work"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        }
+      ]
+    },
+    "E": {
+      "status": "GENERATED",
+      "person": {
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "06:00",
+        "mbtiType": "",
+        "gender": "MALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "paragraphs": 115,
+      "bodyChars": 15381,
+      "finalLineChars": 82,
+      "annualChars": 10171,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 4,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 14,
+        "의 반대편도 살펴보세요": 10,
+        "연결되는 역할과 약속의 범위 확인": 13
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "상관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 820,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2023:癸卯:natal:파:卯午:month",
+            "major:4:戊寅:year:2023:癸卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_shang_guan:question",
+            "ten_god_shang_guan:work",
+            "ten_god_shang_guan:shadow"
+          ],
+          "features": [
+            "ten_god_shang_guan",
+            "sinsal_hyeonchim"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "편재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 661,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2024:甲辰:natal:반합:辰子:day",
+            "major:4:戊寅:year:2024:甲辰:natal:파:丑辰:year",
+            "major:4:戊寅:year:2024:甲辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:question",
+            "ten_god_zheng_cai:money",
+            "ten_god_zheng_cai:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "정재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 692,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2025:乙巳:cycle:해:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:cycle:형:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:natal:반합:巳丑:year"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:question",
+            "ten_god_zheng_yin:money",
+            "ten_god_zheng_yin:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_yin",
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "편관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 1061,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:4:戊寅:year:2026:丙午:cycle:반합:午寅:cycle",
+            "major:4:戊寅:year:2026:丙午:natal:해:丑午:year",
+            "major:4:戊寅:year:2026:丙午:natal:형:午午:month",
+            "major:4:戊寅:year:2026:丙午:natal:충:子午:day",
+            "major:4:戊寅:year:2026:丙午:natal:파:卯午:hour"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:question",
+            "twelve_sinsal_jangseong:work",
+            "twelve_sinsal_jangseong:shadow"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "정관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 863,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2027:丁未:natal:반합:未卯:hour",
+            "major:4:戊寅:year:2027:丁未:natal:충:丑未:year",
+            "major:4:戊寅:year:2027:丁未:natal:형:未丑:year",
+            "major:4:戊寅:year:2027:丁未:natal:육합:午未:month",
+            "major:4:戊寅:year:2027:丁未:natal:해:子未:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:question",
+            "ten_god_zheng_guan:work",
+            "ten_god_zheng_guan:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "편인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 719,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2028:戊申:cycle:충:寅申:cycle",
+            "major:4:戊寅:year:2028:戊申:cycle:형:申寅:cycle",
+            "major:4:戊寅:year:2028:戊申:natal:반합:申子:day"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "정인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 712,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2029:己酉:natal:반합:酉丑:year",
+            "major:4:戊寅:year:2029:己酉:natal:파:子酉:day",
+            "major:4:戊寅:year:2029:己酉:natal:충:卯酉:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:study"
+          ],
+          "features": [
+            "gwiin_cheoneul",
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "비견",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 654,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2030:庚戌:cycle:반합:戌寅:cycle",
+            "major:4:戊寅:year:2030:庚戌:natal:반합:戌午:month",
+            "major:4:戊寅:year:2030:庚戌:natal:형:丑戌:year",
+            "major:4:戊寅:year:2030:庚戌:natal:육합:卯戌:hour"
+          ],
+          "seeds": [
+            "day_master_gyeonggeum:question",
+            "day_master_gyeonggeum:work",
+            "day_master_gyeonggeum:shadow"
+          ],
+          "features": [
+            "day_master_gyeonggeum"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "겁재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 659,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2031:辛亥:cycle:육합:寅亥:cycle",
+            "major:4:戊寅:year:2031:辛亥:cycle:파:寅亥:cycle",
+            "major:4:戊寅:year:2031:辛亥:natal:반합:亥卯:hour"
+          ],
+          "seeds": [
+            "sinsal_dohwa:question",
+            "sinsal_dohwa:strength",
+            "sinsal_dohwa:shadow"
+          ],
+          "features": [
+            "sinsal_dohwa"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "식신",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 698,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2032:壬子:natal:육합:子丑:year",
+            "major:4:戊寅:year:2032:壬子:natal:충:子午:month",
+            "major:4:戊寅:year:2032:壬子:natal:형:子卯:hour"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:question",
+            "ten_god_shi_shen:work",
+            "ten_god_shi_shen:shadow"
+          ],
+          "features": [
+            "ten_god_shi_shen"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "상관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 991,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:5:丁丑:year:2033:癸丑:natal:해:丑午:month",
+            "major:5:丁丑:year:2033:癸丑:natal:육합:子丑:day"
+          ],
+          "seeds": [
+            "sinsal_hyeonchim:question",
+            "sinsal_hyeonchim:work",
+            "sinsal_hyeonchim:shadow"
+          ],
+          "features": [
+            "sinsal_hyeonchim",
+            "ten_god_shang_guan"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "편재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 382,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:丁丑:year:2034:甲寅:natal:반합:寅午:month"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:work"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "정재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 594,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2035:乙卯:natal:파:卯午:month",
+            "major:5:丁丑:year:2035:乙卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:money"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "편관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 665,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2036:丙辰:cycle:파:丑辰:cycle",
+            "major:5:丁丑:year:2036:丙辰:natal:반합:辰子:day",
+            "major:5:丁丑:year:2036:丙辰:natal:파:丑辰:year",
+            "major:5:丁丑:year:2036:丙辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:strength"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        }
+      ]
+    },
+    "D": {
+      "status": "GENERATED",
+      "person": {
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "",
+        "mbtiType": "INFJ",
+        "gender": "MALE",
+        "birthTimeUnknown": true,
+        "birthTimePrecision": "unknown",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "paragraphs": 118,
+      "bodyChars": 16022,
+      "finalLineChars": 82,
+      "annualChars": 10279,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 5,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 14,
+        "의 반대편도 살펴보세요": 9,
+        "연결되는 역할과 약속의 범위 확인": 13
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "상관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 831,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2023:癸卯:natal:파:卯午:month",
+            "major:4:戊寅:year:2023:癸卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_shang_guan:question",
+            "ten_god_shang_guan:work",
+            "ten_god_shang_guan:shadow"
+          ],
+          "features": [
+            "ten_god_shang_guan"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "편재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 661,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2024:甲辰:natal:반합:辰子:day",
+            "major:4:戊寅:year:2024:甲辰:natal:파:丑辰:year"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:question",
+            "ten_god_zheng_cai:money",
+            "ten_god_zheng_cai:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "정재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 692,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2025:乙巳:cycle:해:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:cycle:형:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:natal:반합:巳丑:year"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:question",
+            "ten_god_zheng_yin:money",
+            "ten_god_zheng_yin:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_yin",
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "편관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 1032,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:4:戊寅:year:2026:丙午:cycle:반합:午寅:cycle",
+            "major:4:戊寅:year:2026:丙午:natal:해:丑午:year",
+            "major:4:戊寅:year:2026:丙午:natal:형:午午:month",
+            "major:4:戊寅:year:2026:丙午:natal:충:子午:day"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:question",
+            "twelve_sinsal_jangseong:work",
+            "twelve_sinsal_jangseong:shadow"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "정관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 753,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2027:丁未:natal:충:丑未:year",
+            "major:4:戊寅:year:2027:丁未:natal:형:未丑:year",
+            "major:4:戊寅:year:2027:丁未:natal:육합:午未:month",
+            "major:4:戊寅:year:2027:丁未:natal:해:子未:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:question",
+            "ten_god_zheng_guan:work",
+            "ten_god_zheng_guan:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "편인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 830,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2028:戊申:cycle:충:寅申:cycle",
+            "major:4:戊寅:year:2028:戊申:cycle:형:申寅:cycle",
+            "major:4:戊寅:year:2028:戊申:natal:반합:申子:day"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "정인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 711,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2029:己酉:natal:반합:酉丑:year",
+            "major:4:戊寅:year:2029:己酉:natal:파:子酉:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:study"
+          ],
+          "features": [
+            "gwiin_cheoneul",
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "비견",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 654,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2030:庚戌:cycle:반합:戌寅:cycle",
+            "major:4:戊寅:year:2030:庚戌:natal:반합:戌午:month",
+            "major:4:戊寅:year:2030:庚戌:natal:형:丑戌:year"
+          ],
+          "seeds": [
+            "day_master_gyeonggeum:question",
+            "day_master_gyeonggeum:work",
+            "day_master_gyeonggeum:shadow"
+          ],
+          "features": [
+            "day_master_gyeonggeum"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "겁재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 671,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2031:辛亥:cycle:육합:寅亥:cycle",
+            "major:4:戊寅:year:2031:辛亥:cycle:파:寅亥:cycle"
+          ],
+          "seeds": [
+            "sinsal_dohwa:question",
+            "sinsal_dohwa:work",
+            "sinsal_dohwa:shadow"
+          ],
+          "features": [
+            "sinsal_dohwa"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "식신",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 694,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2032:壬子:natal:육합:子丑:year",
+            "major:4:戊寅:year:2032:壬子:natal:충:子午:month"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:question",
+            "ten_god_shi_shen:strength",
+            "ten_god_shi_shen:shadow"
+          ],
+          "features": [
+            "ten_god_shi_shen"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "상관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 1109,
+          "blocks": 8,
+          "relationshipIds": [
+            "major:5:丁丑:year:2033:癸丑:natal:해:丑午:month",
+            "major:5:丁丑:year:2033:癸丑:natal:육합:子丑:day"
+          ],
+          "seeds": [
+            "sinsal_gwimun:work"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "편재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 382,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:丁丑:year:2034:甲寅:natal:반합:寅午:month"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:work"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "정재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 594,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2035:乙卯:natal:파:卯午:month",
+            "major:5:丁丑:year:2035:乙卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:money"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "편관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 665,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2036:丙辰:cycle:파:丑辰:cycle",
+            "major:5:丁丑:year:2036:丙辰:natal:반합:辰子:day",
+            "major:5:丁丑:year:2036:丙辰:natal:파:丑辰:year"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:strength"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        }
+      ]
+    },
+    "C": {
+      "status": "GENERATED",
+      "person": {
+        "name": "서윤",
+        "birthDate": "1994-11-18",
+        "birthTime": "07:42",
+        "mbtiType": "ENFP",
+        "gender": "FEMALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "freelancer",
+        "detailJob": "브랜드 디자이너",
+        "relationshipStatus": "single",
+        "focusAreas": []
+      },
+      "paragraphs": 116,
+      "bodyChars": 15525,
+      "finalLineChars": 87,
+      "annualChars": 10525,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 2,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 14,
+        "의 반대편도 살펴보세요": 11,
+        "연결되는 역할과 약속의 범위 확인": 13
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "정재",
+          "cycle": "壬申",
+          "cycleGod": "편재",
+          "chars": 695,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:3:壬申:year:2023:癸卯:natal:반합:卯亥:month",
+            "major:3:壬申:year:2023:癸卯:natal:육합:卯戌:year",
+            "major:3:壬申:year:2023:癸卯:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:question",
+            "ten_god_zheng_guan:money",
+            "ten_god_zheng_guan:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_guan",
+            "gwiin_jaego"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "편관",
+          "cycle": "壬申",
+          "cycleGod": "편재",
+          "chars": 868,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:3:壬申:year:2024:甲辰:cycle:반합:辰申:cycle",
+            "major:3:壬申:year:2024:甲辰:natal:반합:辰申:day-hour",
+            "major:3:壬申:year:2024:甲辰:natal:충:辰戌:year",
+            "major:3:壬申:year:2024:甲辰:natal:형:辰辰:hour"
+          ],
+          "seeds": [
+            "ten_god_qi_sha:question",
+            "ten_god_qi_sha:work",
+            "ten_god_qi_sha:shadow"
+          ],
+          "features": [
+            "ten_god_qi_sha"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "정관",
+          "cycle": "壬申",
+          "cycleGod": "편재",
+          "chars": 952,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:3:壬申:year:2025:乙巳:cycle:육합:巳申:cycle",
+            "major:3:壬申:year:2025:乙巳:cycle:형:巳申:cycle",
+            "major:3:壬申:year:2025:乙巳:cycle:파:巳申:cycle",
+            "major:3:壬申:year:2025:乙巳:natal:충:巳亥:month",
+            "major:3:壬申:year:2025:乙巳:natal:육합:巳申:day",
+            "major:3:壬申:year:2025:乙巳:natal:형:巳申:day",
+            "major:3:壬申:year:2025:乙巳:natal:파:巳申:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:work"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "편인",
+          "cycle": "壬申",
+          "cycleGod": "편재",
+          "chars": 949,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:3:壬申:year:2026:丙午:natal:반합:午戌:year"
+          ],
+          "seeds": [
+            "ten_god_pian_yin:question",
+            "ten_god_pian_yin:study"
+          ],
+          "features": [
+            "ten_god_pian_yin",
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "정인",
+          "cycle": "壬申",
+          "cycleGod": "편재",
+          "chars": 661,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:3:壬申:year:2027:丁未:natal:반합:未亥:month",
+            "major:3:壬申:year:2027:丁未:natal:형:戌未:year",
+            "major:3:壬申:year:2027:丁未:natal:파:未戌:year"
+          ],
+          "seeds": [
+            "gwiin_cheondeok:question",
+            "gwiin_cheondeok:work",
+            "gwiin_cheondeok:shadow"
+          ],
+          "features": [
+            "gwiin_cheondeok"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "비견",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 988,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:4:辛未:year:2028:戊申:natal:반합:申辰:day-hour",
+            "major:4:辛未:year:2028:戊申:natal:해:申亥:month"
+          ],
+          "seeds": [
+            "ten_god_bijian:question",
+            "ten_god_bijian:strength",
+            "ten_god_bijian:shadow"
+          ],
+          "features": [
+            "ten_god_bijian"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "겁재",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 644,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2029:己酉:natal:해:酉戌:year",
+            "major:4:辛未:year:2029:己酉:natal:육합:辰酉:hour"
+          ],
+          "seeds": [
+            "ten_god_qi_sha:strength"
+          ],
+          "features": [
+            "ten_god_qi_sha"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "식신",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 624,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2030:庚戌:cycle:형:戌未:cycle",
+            "major:4:辛未:year:2030:庚戌:cycle:파:未戌:cycle",
+            "major:4:辛未:year:2030:庚戌:natal:충:辰戌:hour"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:question",
+            "ten_god_shi_shen:work",
+            "ten_god_shi_shen:shadow"
+          ],
+          "features": [
+            "ten_god_shi_shen",
+            "gwiin_munchang"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "상관",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 644,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2031:辛亥:cycle:반합:亥未:cycle",
+            "major:4:辛未:year:2031:辛亥:natal:형:亥亥:month",
+            "major:4:辛未:year:2031:辛亥:natal:해:申亥:day"
+          ],
+          "seeds": [
+            "gwiin_munchang:question",
+            "gwiin_munchang:work",
+            "gwiin_munchang:shadow"
+          ],
+          "features": [
+            "gwiin_munchang"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "편재",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 707,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2032:壬子:cycle:해:子未:cycle",
+            "major:4:辛未:year:2032:壬子:natal:삼합:申子辰:day-hour"
+          ],
+          "seeds": [
+            "ten_god_pian_cai:question",
+            "ten_god_pian_cai:money",
+            "ten_god_pian_cai:shadow"
+          ],
+          "features": [
+            "ten_god_pian_cai"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "정재",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 630,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2033:癸丑:cycle:충:丑未:cycle",
+            "major:4:辛未:year:2033:癸丑:cycle:형:未丑:cycle",
+            "major:4:辛未:year:2033:癸丑:natal:형:丑戌:year",
+            "major:4:辛未:year:2033:癸丑:natal:파:丑辰:hour"
+          ],
+          "seeds": [
+            "gwiin_jaego:question",
+            "gwiin_jaego:money",
+            "gwiin_jaego:shadow"
+          ],
+          "features": [
+            "gwiin_jaego"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "편관",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 700,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2034:甲寅:natal:반합:寅戌:year",
+            "major:4:辛未:year:2034:甲寅:natal:육합:寅亥:month",
+            "major:4:辛未:year:2034:甲寅:natal:파:寅亥:month",
+            "major:4:辛未:year:2034:甲寅:natal:충:寅申:day",
+            "major:4:辛未:year:2034:甲寅:natal:형:申寅:day"
+          ],
+          "seeds": [
+            "day_master_muto:question",
+            "day_master_muto:work",
+            "day_master_muto:shadow"
+          ],
+          "features": [
+            "day_master_muto"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "정관",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 722,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2035:乙卯:cycle:반합:卯未:cycle",
+            "major:4:辛未:year:2035:乙卯:natal:반합:卯亥:month",
+            "major:4:辛未:year:2035:乙卯:natal:육합:卯戌:year",
+            "major:4:辛未:year:2035:乙卯:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "day_pillar_musin:question",
+            "day_pillar_musin:work",
+            "day_pillar_musin:shadow"
+          ],
+          "features": [
+            "day_pillar_musin"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "편인",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 741,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2036:丙辰:natal:반합:辰申:day-hour",
+            "major:4:辛未:year:2036:丙辰:natal:충:辰戌:year",
+            "major:4:辛未:year:2036:丙辰:natal:형:辰辰:hour"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun",
+            "ten_god_pian_yin"
+          ]
+        }
+      ]
+    },
+    "S-time": {
+      "status": "REJECTED",
+      "errors": {
+        "code": "INVALID_REPORT_INPUT",
+        "message": "DAYUN_UNCERTAIN",
+        "validationErrors": [
+          "DAYUN_UNCERTAIN"
+        ]
+      }
+    },
+    "S-both": {
+      "status": "REJECTED",
+      "errors": {
+        "code": "INVALID_REPORT_INPUT",
+        "message": "DAYUN_UNCERTAIN",
+        "validationErrors": [
+          "DAYUN_UNCERTAIN"
+        ]
+      }
+    },
+    "S-mbti": {
+      "status": "GENERATED",
+      "person": {
+        "name": "윤시우",
+        "birthDate": "1983-09-02",
+        "birthTime": "05:10",
+        "gender": "MALE",
+        "mbtiType": "",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "employee",
+        "detailJob": "기획자",
+        "relationshipStatus": "",
+        "focusAreas": []
+      },
+      "paragraphs": 105,
+      "bodyChars": 13723,
+      "finalLineChars": 79,
+      "annualChars": 9431,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 3,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 14,
+        "의 반대편도 살펴보세요": 10,
+        "연결되는 역할과 약속의 범위 확인": 14
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "비견",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 687,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2023:癸卯:cycle:해:卯辰:cycle",
+            "major:4:丙辰:year:2023:癸卯:natal:반합:卯亥:year-hour"
+          ],
+          "seeds": [
+            "ten_god_bijian:question",
+            "ten_god_bijian:work",
+            "ten_god_bijian:shadow"
+          ],
+          "features": [
+            "ten_god_bijian",
+            "sinsal_yangin"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "상관",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 865,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:丙辰:year:2024:甲辰:cycle:형:辰辰:cycle",
+            "major:4:丙辰:year:2024:甲辰:natal:반합:辰申:month",
+            "major:4:丙辰:year:2024:甲辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:question",
+            "ten_god_shi_shen:work",
+            "ten_god_shi_shen:shadow"
+          ],
+          "features": [
+            "ten_god_shi_shen",
+            "sinsal_hyeonchim"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "식신",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 704,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2025:乙巳:natal:충:巳亥:year",
+            "major:4:丙辰:year:2025:乙巳:natal:육합:巳申:month",
+            "major:4:丙辰:year:2025:乙巳:natal:형:巳申:month",
+            "major:4:丙辰:year:2025:乙巳:natal:파:巳申:month"
+          ],
+          "seeds": [
+            "gwiin_munchang:question",
+            "gwiin_munchang:work",
+            "gwiin_munchang:shadow"
+          ],
+          "features": [
+            "gwiin_munchang"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "정재",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 697,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2026:丙午:natal:파:卯午:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:question",
+            "ten_god_zheng_cai:money",
+            "ten_god_zheng_cai:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "편재",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 372,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:4:丙辰:year:2027:丁未:natal:삼합:亥卯未:year-hour"
+          ],
+          "seeds": [
+            "twelve_sinsal_yeokma:question",
+            "twelve_sinsal_yeokma:work"
+          ],
+          "features": [
+            "twelve_sinsal_yeokma"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "정관",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 792,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:丙辰:year:2028:戊申:cycle:반합:申辰:cycle",
+            "major:4:丙辰:year:2028:戊申:natal:해:申亥:year",
+            "major:4:丙辰:year:2028:戊申:natal:육합:巳申:day",
+            "major:4:丙辰:year:2028:戊申:natal:형:巳申:day",
+            "major:4:丙辰:year:2028:戊申:natal:파:巳申:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:question",
+            "ten_god_zheng_yin:strength",
+            "ten_god_zheng_yin:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "편관",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 717,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2029:己酉:cycle:육합:辰酉:cycle",
+            "major:4:丙辰:year:2029:己酉:natal:반합:酉巳:day",
+            "major:4:丙辰:year:2029:己酉:natal:충:卯酉:hour"
+          ],
+          "seeds": [
+            "ten_god_jie_cai:question",
+            "ten_god_jie_cai:work",
+            "ten_god_jie_cai:shadow"
+          ],
+          "features": [
+            "ten_god_jie_cai",
+            "twelve_sinsal_jangseong"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "정인",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 704,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2030:庚戌:cycle:충:辰戌:cycle",
+            "major:4:丙辰:year:2030:庚戌:natal:육합:卯戌:hour"
+          ],
+          "seeds": [
+            "gwiin_cheondeok:question",
+            "gwiin_cheondeok:work",
+            "gwiin_cheondeok:shadow"
+          ],
+          "features": [
+            "gwiin_cheoneul",
+            "gwiin_cheondeok"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "편인",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 1092,
+          "blocks": 8,
+          "relationshipIds": [
+            "major:5:乙卯:year:2031:辛亥:cycle:반합:亥卯:cycle",
+            "major:5:乙卯:year:2031:辛亥:natal:반합:亥卯:year-hour",
+            "major:5:乙卯:year:2031:辛亥:natal:형:亥亥:year",
+            "major:5:乙卯:year:2031:辛亥:natal:해:申亥:month",
+            "major:5:乙卯:year:2031:辛亥:natal:충:巳亥:day"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "겁재",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 688,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:乙卯:year:2032:壬子:cycle:형:子卯:cycle",
+            "major:5:乙卯:year:2032:壬子:natal:반합:子申:month",
+            "major:5:乙卯:year:2032:壬子:natal:형:子卯:hour"
+          ],
+          "seeds": [
+            "sinsal_yangin:question",
+            "sinsal_yangin:strength",
+            "sinsal_yangin:shadow"
+          ],
+          "features": [
+            "sinsal_yangin",
+            "ten_god_jie_cai"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "비견",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 376,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:乙卯:year:2033:癸丑:natal:반합:丑巳:day"
+          ],
+          "seeds": [
+            "sinsal_yangin:work"
+          ],
+          "features": [
+            "sinsal_yangin"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "상관",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 682,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:乙卯:year:2034:甲寅:natal:육합:寅亥:year",
+            "major:5:乙卯:year:2034:甲寅:natal:파:寅亥:year",
+            "major:5:乙卯:year:2034:甲寅:natal:충:寅申:month",
+            "major:5:乙卯:year:2034:甲寅:natal:형:申寅:month",
+            "major:5:乙卯:year:2034:甲寅:natal:해:寅巳:day",
+            "major:5:乙卯:year:2034:甲寅:natal:형:寅巳:day"
+          ],
+          "seeds": [
+            "sinsal_hongyeom:question",
+            "sinsal_hongyeom:strength",
+            "sinsal_hongyeom:shadow"
+          ],
+          "features": [
+            "sinsal_hongyeom"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "식신",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 372,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:乙卯:year:2035:乙卯:natal:반합:卯亥:year-hour"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:strength"
+          ],
+          "features": [
+            "ten_god_shi_shen"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "정재",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 683,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:乙卯:year:2036:丙辰:cycle:해:卯辰:cycle",
+            "major:5:乙卯:year:2036:丙辰:natal:반합:辰申:month",
+            "major:5:乙卯:year:2036:丙辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:work"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        }
+      ]
+    },
+    "B": {
+      "status": "GENERATED",
+      "person": {
+        "name": "서진",
+        "birthDate": "1990-07-18",
+        "birthTime": "05:30",
+        "mbtiType": "ENTJ",
+        "gender": "FEMALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "employee",
+        "detailJob": "B2B SaaS 영업기획",
+        "relationshipStatus": "dating",
+        "focusAreas": []
+      },
+      "paragraphs": 118,
+      "bodyChars": 15604,
+      "finalLineChars": 73,
+      "annualChars": 9945,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 3,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 14,
+        "의 반대편도 살펴보세요": 11,
+        "연결되는 역할과 약속의 범위 확인": 12
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "정인",
+          "cycle": "庚辰",
+          "cycleGod": "편관",
+          "chars": 707,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:3:庚辰:year:2023:癸卯:cycle:해:卯辰:cycle",
+            "major:3:庚辰:year:2023:癸卯:natal:반합:卯未:month-hour",
+            "major:3:庚辰:year:2023:癸卯:natal:파:卯午:year"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:question",
+            "ten_god_zheng_yin:study",
+            "ten_god_zheng_yin:shadow"
+          ],
+          "features": [
+            "gwiin_cheoneul",
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "비견",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 1041,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:4:己卯:year:2024:甲辰:cycle:해:卯辰:cycle",
+            "major:4:己卯:year:2024:甲辰:natal:반합:辰申:day",
+            "major:4:己卯:year:2024:甲辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "sinsal_yangin:question",
+            "sinsal_yangin:work",
+            "sinsal_yangin:shadow"
+          ],
+          "features": [
+            "sinsal_yangin"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "겁재",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 700,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:己卯:year:2025:乙巳:natal:육합:巳申:day",
+            "major:4:己卯:year:2025:乙巳:natal:형:巳申:day",
+            "major:4:己卯:year:2025:乙巳:natal:파:巳申:day"
+          ],
+          "seeds": [
+            "ten_god_jie_cai:question",
+            "ten_god_jie_cai:strength",
+            "ten_god_jie_cai:shadow"
+          ],
+          "features": [
+            "ten_god_jie_cai"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "식신",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 897,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:己卯:year:2026:丙午:cycle:파:卯午:cycle",
+            "major:4:己卯:year:2026:丙午:natal:형:午午:year",
+            "major:4:己卯:year:2026:丙午:natal:육합:午未:month",
+            "major:4:己卯:year:2026:丙午:natal:파:卯午:hour"
+          ],
+          "seeds": [
+            "ten_god_shang_guan:question",
+            "ten_god_shang_guan:work",
+            "ten_god_shang_guan:shadow"
+          ],
+          "features": [
+            "ten_god_shang_guan"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "상관",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 362,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:4:己卯:year:2027:丁未:cycle:반합:未卯:cycle",
+            "major:4:己卯:year:2027:丁未:natal:반합:未卯:month-hour",
+            "major:4:己卯:year:2027:丁未:natal:육합:午未:year"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:work"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "편재",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 276,
+          "blocks": 3,
+          "relationshipIds": [],
+          "seeds": [
+            "ten_god_zheng_cai:question",
+            "ten_god_zheng_cai:money"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "정재",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 598,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:己卯:year:2029:己酉:cycle:충:卯酉:cycle",
+            "major:4:己卯:year:2029:己酉:natal:충:卯酉:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:work",
+            "ten_god_zheng_cai:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "편관",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 888,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:4:己卯:year:2030:庚戌:cycle:육합:卯戌:cycle",
+            "major:4:己卯:year:2030:庚戌:natal:반합:戌午:year",
+            "major:4:己卯:year:2030:庚戌:natal:형:戌未:month",
+            "major:4:己卯:year:2030:庚戌:natal:파:未戌:month",
+            "major:4:己卯:year:2030:庚戌:natal:육합:卯戌:hour"
+          ],
+          "seeds": [
+            "ten_god_qi_sha:question",
+            "ten_god_qi_sha:strength",
+            "ten_god_qi_sha:shadow"
+          ],
+          "features": [
+            "ten_god_qi_sha"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "정관",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 724,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:己卯:year:2031:辛亥:cycle:반합:亥卯:cycle",
+            "major:4:己卯:year:2031:辛亥:natal:삼합:亥卯未:month-hour",
+            "major:4:己卯:year:2031:辛亥:natal:해:申亥:day"
+          ],
+          "seeds": [
+            "twelve_sinsal_banan:question",
+            "twelve_sinsal_banan:work",
+            "twelve_sinsal_banan:shadow"
+          ],
+          "features": [
+            "twelve_sinsal_banan"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "편인",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 712,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:己卯:year:2032:壬子:cycle:형:子卯:cycle",
+            "major:4:己卯:year:2032:壬子:natal:반합:子申:day",
+            "major:4:己卯:year:2032:壬子:natal:충:子午:year",
+            "major:4:己卯:year:2032:壬子:natal:해:子未:month",
+            "major:4:己卯:year:2032:壬子:natal:형:子卯:hour"
+          ],
+          "seeds": [
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "정인",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 679,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:己卯:year:2033:癸丑:natal:해:丑午:year",
+            "major:4:己卯:year:2033:癸丑:natal:충:丑未:month",
+            "major:4:己卯:year:2033:癸丑:natal:형:未丑:month"
+          ],
+          "seeds": [
+            "gwiin_cheondeok:question",
+            "gwiin_cheondeok:work",
+            "gwiin_cheondeok:shadow"
+          ],
+          "features": [
+            "gwiin_cheondeok",
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "비견",
+          "cycle": "戊寅",
+          "cycleGod": "편재",
+          "chars": 980,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:5:戊寅:year:2034:甲寅:natal:반합:寅午:year",
+            "major:5:戊寅:year:2034:甲寅:natal:충:寅申:day",
+            "major:5:戊寅:year:2034:甲寅:natal:형:申寅:day"
+          ],
+          "seeds": [
+            "sinsal_yangin:strength"
+          ],
+          "features": [
+            "sinsal_yangin"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "겁재",
+          "cycle": "戊寅",
+          "cycleGod": "편재",
+          "chars": 708,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:戊寅:year:2035:乙卯:natal:반합:卯未:month-hour",
+            "major:5:戊寅:year:2035:乙卯:natal:파:卯午:year"
+          ],
+          "seeds": [
+            "sinsal_dohwa:question",
+            "sinsal_dohwa:strength",
+            "sinsal_dohwa:shadow"
+          ],
+          "features": [
+            "sinsal_dohwa",
+            "twelve_sinsal_jangseong"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "식신",
+          "cycle": "戊寅",
+          "cycleGod": "편재",
+          "chars": 673,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:戊寅:year:2036:丙辰:natal:반합:辰申:day",
+            "major:5:戊寅:year:2036:丙辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "sinsal_hongyeom:question",
+            "sinsal_hongyeom:strength",
+            "sinsal_hongyeom:shadow"
+          ],
+          "features": [
+            "sinsal_hongyeom"
+          ]
+        }
+      ]
+    }
+  },
+  "after": {
+    "A": {
+      "status": "GENERATED",
+      "person": {
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "06:00",
+        "mbtiType": "INFJ",
+        "gender": "MALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "paragraphs": 118,
+      "bodyChars": 16644,
+      "finalLineChars": 82,
+      "annualChars": 10864,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 0,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 0,
+        "의 반대편도 살펴보세요": 0,
+        "연결되는 역할과 약속의 범위 확인": 0
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "상관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 921,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2023:癸卯:natal:파:卯午:month",
+            "major:4:戊寅:year:2023:癸卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_shang_guan:question",
+            "ten_god_shang_guan:work",
+            "ten_god_shang_guan:shadow"
+          ],
+          "features": [
+            "ten_god_shang_guan",
+            "sinsal_hyeonchim"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "편재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 698,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2024:甲辰:natal:반합:辰子:day",
+            "major:4:戊寅:year:2024:甲辰:natal:파:丑辰:year",
+            "major:4:戊寅:year:2024:甲辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:question",
+            "ten_god_zheng_cai:money",
+            "ten_god_zheng_cai:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "정재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 684,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2025:乙巳:cycle:해:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:cycle:형:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:natal:반합:巳丑:year"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:question",
+            "ten_god_zheng_yin:money",
+            "ten_god_zheng_yin:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_yin",
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "편관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 1042,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:4:戊寅:year:2026:丙午:cycle:반합:午寅:cycle",
+            "major:4:戊寅:year:2026:丙午:natal:해:丑午:year",
+            "major:4:戊寅:year:2026:丙午:natal:형:午午:month",
+            "major:4:戊寅:year:2026:丙午:natal:충:子午:day",
+            "major:4:戊寅:year:2026:丙午:natal:파:卯午:hour"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:question",
+            "twelve_sinsal_jangseong:work",
+            "twelve_sinsal_jangseong:shadow"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "정관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 843,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2027:丁未:natal:반합:未卯:hour",
+            "major:4:戊寅:year:2027:丁未:natal:충:丑未:year",
+            "major:4:戊寅:year:2027:丁未:natal:형:未丑:year",
+            "major:4:戊寅:year:2027:丁未:natal:육합:午未:month",
+            "major:4:戊寅:year:2027:丁未:natal:해:子未:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:question",
+            "ten_god_zheng_guan:work",
+            "ten_god_zheng_guan:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "편인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 716,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2028:戊申:cycle:충:寅申:cycle",
+            "major:4:戊寅:year:2028:戊申:cycle:형:申寅:cycle",
+            "major:4:戊寅:year:2028:戊申:natal:반합:申子:day"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "정인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 790,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2029:己酉:natal:반합:酉丑:year",
+            "major:4:戊寅:year:2029:己酉:natal:파:子酉:day",
+            "major:4:戊寅:year:2029:己酉:natal:충:卯酉:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:study"
+          ],
+          "features": [
+            "gwiin_cheoneul",
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "비견",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 660,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2030:庚戌:cycle:반합:戌寅:cycle",
+            "major:4:戊寅:year:2030:庚戌:natal:반합:戌午:month",
+            "major:4:戊寅:year:2030:庚戌:natal:형:丑戌:year",
+            "major:4:戊寅:year:2030:庚戌:natal:육합:卯戌:hour"
+          ],
+          "seeds": [
+            "day_master_gyeonggeum:question",
+            "day_master_gyeonggeum:work",
+            "day_master_gyeonggeum:shadow"
+          ],
+          "features": [
+            "day_master_gyeonggeum"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "겁재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 641,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2031:辛亥:cycle:육합:寅亥:cycle",
+            "major:4:戊寅:year:2031:辛亥:cycle:파:寅亥:cycle",
+            "major:4:戊寅:year:2031:辛亥:natal:반합:亥卯:hour"
+          ],
+          "seeds": [
+            "sinsal_dohwa:question",
+            "sinsal_dohwa:work",
+            "sinsal_dohwa:shadow"
+          ],
+          "features": [
+            "sinsal_dohwa"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "식신",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 687,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2032:壬子:natal:육합:子丑:year",
+            "major:4:戊寅:year:2032:壬子:natal:충:子午:month",
+            "major:4:戊寅:year:2032:壬子:natal:형:子卯:hour"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:question",
+            "ten_god_shi_shen:work",
+            "ten_god_shi_shen:shadow"
+          ],
+          "features": [
+            "ten_god_shi_shen"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "상관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 1286,
+          "blocks": 8,
+          "relationshipIds": [
+            "major:5:丁丑:year:2033:癸丑:natal:해:丑午:month",
+            "major:5:丁丑:year:2033:癸丑:natal:육합:子丑:day"
+          ],
+          "seeds": [
+            "sinsal_hyeonchim:question",
+            "sinsal_hyeonchim:work",
+            "sinsal_hyeonchim:shadow"
+          ],
+          "features": [
+            "sinsal_hyeonchim",
+            "ten_god_shang_guan"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "편재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 457,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:丁丑:year:2034:甲寅:natal:반합:寅午:month"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:work"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "정재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 690,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2035:乙卯:natal:파:卯午:month",
+            "major:5:丁丑:year:2035:乙卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:money"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "편관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 749,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2036:丙辰:cycle:파:丑辰:cycle",
+            "major:5:丁丑:year:2036:丙辰:natal:반합:辰子:day",
+            "major:5:丁丑:year:2036:丙辰:natal:파:丑辰:year",
+            "major:5:丁丑:year:2036:丙辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:strength"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        }
+      ]
+    },
+    "F": {
+      "status": "GENERATED",
+      "person": {
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "",
+        "mbtiType": "",
+        "gender": "MALE",
+        "birthTimeUnknown": true,
+        "birthTimePrecision": "unknown",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "paragraphs": 114,
+      "bodyChars": 16115,
+      "finalLineChars": 82,
+      "annualChars": 10832,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 0,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 0,
+        "의 반대편도 살펴보세요": 0,
+        "연결되는 역할과 약속의 범위 확인": 0
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "상관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 995,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2023:癸卯:natal:파:卯午:month",
+            "major:4:戊寅:year:2023:癸卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_shang_guan:question",
+            "ten_god_shang_guan:work",
+            "ten_god_shang_guan:shadow"
+          ],
+          "features": [
+            "ten_god_shang_guan"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "편재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 698,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2024:甲辰:natal:반합:辰子:day",
+            "major:4:戊寅:year:2024:甲辰:natal:파:丑辰:year"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:question",
+            "ten_god_zheng_cai:money",
+            "ten_god_zheng_cai:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "정재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 684,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2025:乙巳:cycle:해:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:cycle:형:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:natal:반합:巳丑:year"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:question",
+            "ten_god_zheng_yin:money",
+            "ten_god_zheng_yin:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_yin",
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "편관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 934,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2026:丙午:cycle:반합:午寅:cycle",
+            "major:4:戊寅:year:2026:丙午:natal:해:丑午:year",
+            "major:4:戊寅:year:2026:丙午:natal:형:午午:month",
+            "major:4:戊寅:year:2026:丙午:natal:충:子午:day"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:question",
+            "twelve_sinsal_jangseong:work",
+            "twelve_sinsal_jangseong:shadow"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "정관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 741,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2027:丁未:natal:충:丑未:year",
+            "major:4:戊寅:year:2027:丁未:natal:형:未丑:year",
+            "major:4:戊寅:year:2027:丁未:natal:육합:午未:month",
+            "major:4:戊寅:year:2027:丁未:natal:해:子未:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:question",
+            "ten_god_zheng_guan:work",
+            "ten_god_zheng_guan:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "편인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 807,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2028:戊申:cycle:충:寅申:cycle",
+            "major:4:戊寅:year:2028:戊申:cycle:형:申寅:cycle",
+            "major:4:戊寅:year:2028:戊申:natal:반합:申子:day"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "정인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 785,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2029:己酉:natal:반합:酉丑:year",
+            "major:4:戊寅:year:2029:己酉:natal:파:子酉:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:study"
+          ],
+          "features": [
+            "gwiin_cheoneul",
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "비견",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 660,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2030:庚戌:cycle:반합:戌寅:cycle",
+            "major:4:戊寅:year:2030:庚戌:natal:반합:戌午:month",
+            "major:4:戊寅:year:2030:庚戌:natal:형:丑戌:year"
+          ],
+          "seeds": [
+            "day_master_gyeonggeum:question",
+            "day_master_gyeonggeum:work",
+            "day_master_gyeonggeum:shadow"
+          ],
+          "features": [
+            "day_master_gyeonggeum"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "겁재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 612,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2031:辛亥:cycle:육합:寅亥:cycle",
+            "major:4:戊寅:year:2031:辛亥:cycle:파:寅亥:cycle"
+          ],
+          "seeds": [
+            "sinsal_dohwa:question",
+            "sinsal_dohwa:strength",
+            "sinsal_dohwa:shadow"
+          ],
+          "features": [
+            "sinsal_dohwa"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "식신",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 680,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2032:壬子:natal:육합:子丑:year",
+            "major:4:戊寅:year:2032:壬子:natal:충:子午:month"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:question",
+            "ten_god_shi_shen:study",
+            "ten_god_shi_shen:shadow"
+          ],
+          "features": [
+            "ten_god_shi_shen"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "상관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 1340,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:5:丁丑:year:2033:癸丑:natal:해:丑午:month",
+            "major:5:丁丑:year:2033:癸丑:natal:육합:子丑:day"
+          ],
+          "seeds": [
+            "ten_god_shang_guan:study"
+          ],
+          "features": [
+            "ten_god_shang_guan"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "편재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 457,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:丁丑:year:2034:甲寅:natal:반합:寅午:month"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:work"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "정재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 690,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2035:乙卯:natal:파:卯午:month",
+            "major:5:丁丑:year:2035:乙卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:money"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "편관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 749,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2036:丙辰:cycle:파:丑辰:cycle",
+            "major:5:丁丑:year:2036:丙辰:natal:반합:辰子:day",
+            "major:5:丁丑:year:2036:丙辰:natal:파:丑辰:year"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:strength"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        }
+      ]
+    },
+    "S": {
+      "status": "GENERATED",
+      "person": {
+        "name": "윤시우",
+        "birthDate": "1983-09-02",
+        "birthTime": "05:10",
+        "gender": "MALE",
+        "mbtiType": "ENTJ",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "employee",
+        "detailJob": "기획자",
+        "relationshipStatus": "",
+        "focusAreas": []
+      },
+      "paragraphs": 108,
+      "bodyChars": 14967,
+      "finalLineChars": 79,
+      "annualChars": 10028,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 0,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 0,
+        "의 반대편도 살펴보세요": 0,
+        "연결되는 역할과 약속의 범위 확인": 0
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "비견",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 733,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2023:癸卯:cycle:해:卯辰:cycle",
+            "major:4:丙辰:year:2023:癸卯:natal:반합:卯亥:year-hour"
+          ],
+          "seeds": [
+            "ten_god_bijian:question",
+            "ten_god_bijian:work",
+            "ten_god_bijian:shadow"
+          ],
+          "features": [
+            "ten_god_bijian",
+            "sinsal_yangin"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "상관",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 872,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:丙辰:year:2024:甲辰:cycle:형:辰辰:cycle",
+            "major:4:丙辰:year:2024:甲辰:natal:반합:辰申:month",
+            "major:4:丙辰:year:2024:甲辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:question",
+            "ten_god_shi_shen:work",
+            "ten_god_shi_shen:shadow"
+          ],
+          "features": [
+            "ten_god_shi_shen",
+            "sinsal_hyeonchim"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "식신",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 714,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2025:乙巳:natal:충:巳亥:year",
+            "major:4:丙辰:year:2025:乙巳:natal:육합:巳申:month",
+            "major:4:丙辰:year:2025:乙巳:natal:형:巳申:month",
+            "major:4:丙辰:year:2025:乙巳:natal:파:巳申:month"
+          ],
+          "seeds": [
+            "gwiin_munchang:question",
+            "gwiin_munchang:work",
+            "gwiin_munchang:shadow"
+          ],
+          "features": [
+            "gwiin_munchang"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "정재",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 748,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2026:丙午:natal:파:卯午:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:question",
+            "ten_god_zheng_cai:money",
+            "ten_god_zheng_cai:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "편재",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 434,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:4:丙辰:year:2027:丁未:natal:삼합:亥卯未:year-hour"
+          ],
+          "seeds": [
+            "twelve_sinsal_yeokma:question",
+            "twelve_sinsal_yeokma:work"
+          ],
+          "features": [
+            "twelve_sinsal_yeokma"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "정관",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 844,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:4:丙辰:year:2028:戊申:cycle:반합:申辰:cycle",
+            "major:4:丙辰:year:2028:戊申:natal:해:申亥:year",
+            "major:4:丙辰:year:2028:戊申:natal:육합:巳申:day",
+            "major:4:丙辰:year:2028:戊申:natal:형:巳申:day",
+            "major:4:丙辰:year:2028:戊申:natal:파:巳申:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:question",
+            "ten_god_zheng_yin:strength",
+            "ten_god_zheng_yin:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "편관",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 708,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2029:己酉:cycle:육합:辰酉:cycle",
+            "major:4:丙辰:year:2029:己酉:natal:반합:酉巳:day",
+            "major:4:丙辰:year:2029:己酉:natal:충:卯酉:hour"
+          ],
+          "seeds": [
+            "ten_god_jie_cai:question",
+            "ten_god_jie_cai:work",
+            "ten_god_jie_cai:shadow"
+          ],
+          "features": [
+            "ten_god_jie_cai",
+            "twelve_sinsal_jangseong"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "정인",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 718,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2030:庚戌:cycle:충:辰戌:cycle",
+            "major:4:丙辰:year:2030:庚戌:natal:육합:卯戌:hour"
+          ],
+          "seeds": [
+            "gwiin_cheondeok:question",
+            "gwiin_cheondeok:work",
+            "gwiin_cheondeok:shadow"
+          ],
+          "features": [
+            "gwiin_cheoneul",
+            "gwiin_cheondeok"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "편인",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 1116,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:5:乙卯:year:2031:辛亥:cycle:반합:亥卯:cycle",
+            "major:5:乙卯:year:2031:辛亥:natal:반합:亥卯:year-hour",
+            "major:5:乙卯:year:2031:辛亥:natal:형:亥亥:year",
+            "major:5:乙卯:year:2031:辛亥:natal:해:申亥:month",
+            "major:5:乙卯:year:2031:辛亥:natal:충:巳亥:day"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "겁재",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 683,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:乙卯:year:2032:壬子:cycle:형:子卯:cycle",
+            "major:5:乙卯:year:2032:壬子:natal:반합:子申:month",
+            "major:5:乙卯:year:2032:壬子:natal:형:子卯:hour"
+          ],
+          "seeds": [
+            "sinsal_yangin:question",
+            "sinsal_yangin:strength",
+            "sinsal_yangin:shadow"
+          ],
+          "features": [
+            "sinsal_yangin",
+            "ten_god_jie_cai"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "비견",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 449,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:乙卯:year:2033:癸丑:natal:반합:丑巳:day"
+          ],
+          "seeds": [
+            "sinsal_yangin:work"
+          ],
+          "features": [
+            "sinsal_yangin"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "상관",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 731,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:乙卯:year:2034:甲寅:natal:육합:寅亥:year",
+            "major:5:乙卯:year:2034:甲寅:natal:파:寅亥:year",
+            "major:5:乙卯:year:2034:甲寅:natal:충:寅申:month",
+            "major:5:乙卯:year:2034:甲寅:natal:형:申寅:month",
+            "major:5:乙卯:year:2034:甲寅:natal:해:寅巳:day",
+            "major:5:乙卯:year:2034:甲寅:natal:형:寅巳:day"
+          ],
+          "seeds": [
+            "sinsal_hyeonchim:question",
+            "sinsal_hyeonchim:work",
+            "sinsal_hyeonchim:shadow"
+          ],
+          "features": [
+            "sinsal_hyeonchim"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "식신",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 466,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:乙卯:year:2035:乙卯:natal:반합:卯亥:year-hour"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:study"
+          ],
+          "features": [
+            "ten_god_shi_shen"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "정재",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 812,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:乙卯:year:2036:丙辰:cycle:해:卯辰:cycle",
+            "major:5:乙卯:year:2036:丙辰:natal:반합:辰申:month",
+            "major:5:乙卯:year:2036:丙辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:work"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        }
+      ]
+    },
+    "E": {
+      "status": "GENERATED",
+      "person": {
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "06:00",
+        "mbtiType": "",
+        "gender": "MALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "paragraphs": 115,
+      "bodyChars": 16067,
+      "finalLineChars": 82,
+      "annualChars": 10779,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 0,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 0,
+        "의 반대편도 살펴보세요": 0,
+        "연결되는 역할과 약속의 범위 확인": 0
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "상관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 921,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2023:癸卯:natal:파:卯午:month",
+            "major:4:戊寅:year:2023:癸卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_shang_guan:question",
+            "ten_god_shang_guan:work",
+            "ten_god_shang_guan:shadow"
+          ],
+          "features": [
+            "ten_god_shang_guan",
+            "sinsal_hyeonchim"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "편재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 698,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2024:甲辰:natal:반합:辰子:day",
+            "major:4:戊寅:year:2024:甲辰:natal:파:丑辰:year",
+            "major:4:戊寅:year:2024:甲辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:question",
+            "ten_god_zheng_cai:money",
+            "ten_god_zheng_cai:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "정재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 684,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2025:乙巳:cycle:해:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:cycle:형:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:natal:반합:巳丑:year"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:question",
+            "ten_god_zheng_yin:money",
+            "ten_god_zheng_yin:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_yin",
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "편관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 1042,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:4:戊寅:year:2026:丙午:cycle:반합:午寅:cycle",
+            "major:4:戊寅:year:2026:丙午:natal:해:丑午:year",
+            "major:4:戊寅:year:2026:丙午:natal:형:午午:month",
+            "major:4:戊寅:year:2026:丙午:natal:충:子午:day",
+            "major:4:戊寅:year:2026:丙午:natal:파:卯午:hour"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:question",
+            "twelve_sinsal_jangseong:work",
+            "twelve_sinsal_jangseong:shadow"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "정관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 843,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2027:丁未:natal:반합:未卯:hour",
+            "major:4:戊寅:year:2027:丁未:natal:충:丑未:year",
+            "major:4:戊寅:year:2027:丁未:natal:형:未丑:year",
+            "major:4:戊寅:year:2027:丁未:natal:육합:午未:month",
+            "major:4:戊寅:year:2027:丁未:natal:해:子未:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:question",
+            "ten_god_zheng_guan:work",
+            "ten_god_zheng_guan:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "편인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 716,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2028:戊申:cycle:충:寅申:cycle",
+            "major:4:戊寅:year:2028:戊申:cycle:형:申寅:cycle",
+            "major:4:戊寅:year:2028:戊申:natal:반합:申子:day"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "정인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 790,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2029:己酉:natal:반합:酉丑:year",
+            "major:4:戊寅:year:2029:己酉:natal:파:子酉:day",
+            "major:4:戊寅:year:2029:己酉:natal:충:卯酉:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:study"
+          ],
+          "features": [
+            "gwiin_cheoneul",
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "비견",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 660,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2030:庚戌:cycle:반합:戌寅:cycle",
+            "major:4:戊寅:year:2030:庚戌:natal:반합:戌午:month",
+            "major:4:戊寅:year:2030:庚戌:natal:형:丑戌:year",
+            "major:4:戊寅:year:2030:庚戌:natal:육합:卯戌:hour"
+          ],
+          "seeds": [
+            "day_master_gyeonggeum:question",
+            "day_master_gyeonggeum:work",
+            "day_master_gyeonggeum:shadow"
+          ],
+          "features": [
+            "day_master_gyeonggeum"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "겁재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 628,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2031:辛亥:cycle:육합:寅亥:cycle",
+            "major:4:戊寅:year:2031:辛亥:cycle:파:寅亥:cycle",
+            "major:4:戊寅:year:2031:辛亥:natal:반합:亥卯:hour"
+          ],
+          "seeds": [
+            "sinsal_dohwa:question",
+            "sinsal_dohwa:strength",
+            "sinsal_dohwa:shadow"
+          ],
+          "features": [
+            "sinsal_dohwa"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "식신",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 687,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2032:壬子:natal:육합:子丑:year",
+            "major:4:戊寅:year:2032:壬子:natal:충:子午:month",
+            "major:4:戊寅:year:2032:壬子:natal:형:子卯:hour"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:question",
+            "ten_god_shi_shen:work",
+            "ten_god_shi_shen:shadow"
+          ],
+          "features": [
+            "ten_god_shi_shen"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "상관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 1214,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:5:丁丑:year:2033:癸丑:natal:해:丑午:month",
+            "major:5:丁丑:year:2033:癸丑:natal:육합:子丑:day"
+          ],
+          "seeds": [
+            "sinsal_hyeonchim:question",
+            "sinsal_hyeonchim:work",
+            "sinsal_hyeonchim:shadow"
+          ],
+          "features": [
+            "sinsal_hyeonchim",
+            "ten_god_shang_guan"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "편재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 457,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:丁丑:year:2034:甲寅:natal:반합:寅午:month"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:work"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "정재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 690,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2035:乙卯:natal:파:卯午:month",
+            "major:5:丁丑:year:2035:乙卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:money"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "편관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 749,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2036:丙辰:cycle:파:丑辰:cycle",
+            "major:5:丁丑:year:2036:丙辰:natal:반합:辰子:day",
+            "major:5:丁丑:year:2036:丙辰:natal:파:丑辰:year",
+            "major:5:丁丑:year:2036:丙辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:strength"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        }
+      ]
+    },
+    "D": {
+      "status": "GENERATED",
+      "person": {
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "",
+        "mbtiType": "INFJ",
+        "gender": "MALE",
+        "birthTimeUnknown": true,
+        "birthTimePrecision": "unknown",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "paragraphs": 118,
+      "bodyChars": 16869,
+      "finalLineChars": 82,
+      "annualChars": 11048,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 0,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 0,
+        "의 반대편도 살펴보세요": 0,
+        "연결되는 역할과 약속의 범위 확인": 0
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "상관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 995,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2023:癸卯:natal:파:卯午:month",
+            "major:4:戊寅:year:2023:癸卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_shang_guan:question",
+            "ten_god_shang_guan:work",
+            "ten_god_shang_guan:shadow"
+          ],
+          "features": [
+            "ten_god_shang_guan"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "편재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 698,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2024:甲辰:natal:반합:辰子:day",
+            "major:4:戊寅:year:2024:甲辰:natal:파:丑辰:year"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:question",
+            "ten_god_zheng_cai:money",
+            "ten_god_zheng_cai:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "정재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 684,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2025:乙巳:cycle:해:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:cycle:형:寅巳:cycle",
+            "major:4:戊寅:year:2025:乙巳:natal:반합:巳丑:year"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:question",
+            "ten_god_zheng_yin:money",
+            "ten_god_zheng_yin:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_yin",
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "편관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 1013,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:4:戊寅:year:2026:丙午:cycle:반합:午寅:cycle",
+            "major:4:戊寅:year:2026:丙午:natal:해:丑午:year",
+            "major:4:戊寅:year:2026:丙午:natal:형:午午:month",
+            "major:4:戊寅:year:2026:丙午:natal:충:子午:day"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:question",
+            "twelve_sinsal_jangseong:work",
+            "twelve_sinsal_jangseong:shadow"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "정관",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 741,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2027:丁未:natal:충:丑未:year",
+            "major:4:戊寅:year:2027:丁未:natal:형:未丑:year",
+            "major:4:戊寅:year:2027:丁未:natal:육합:午未:month",
+            "major:4:戊寅:year:2027:丁未:natal:해:子未:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:question",
+            "ten_god_zheng_guan:work",
+            "ten_god_zheng_guan:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "편인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 807,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:戊寅:year:2028:戊申:cycle:충:寅申:cycle",
+            "major:4:戊寅:year:2028:戊申:cycle:형:申寅:cycle",
+            "major:4:戊寅:year:2028:戊申:natal:반합:申子:day"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "정인",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 785,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2029:己酉:natal:반합:酉丑:year",
+            "major:4:戊寅:year:2029:己酉:natal:파:子酉:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:study"
+          ],
+          "features": [
+            "gwiin_cheoneul",
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "비견",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 660,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2030:庚戌:cycle:반합:戌寅:cycle",
+            "major:4:戊寅:year:2030:庚戌:natal:반합:戌午:month",
+            "major:4:戊寅:year:2030:庚戌:natal:형:丑戌:year"
+          ],
+          "seeds": [
+            "day_master_gyeonggeum:question",
+            "day_master_gyeonggeum:work",
+            "day_master_gyeonggeum:shadow"
+          ],
+          "features": [
+            "day_master_gyeonggeum"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "겁재",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 625,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2031:辛亥:cycle:육합:寅亥:cycle",
+            "major:4:戊寅:year:2031:辛亥:cycle:파:寅亥:cycle"
+          ],
+          "seeds": [
+            "sinsal_dohwa:question",
+            "sinsal_dohwa:work",
+            "sinsal_dohwa:shadow"
+          ],
+          "features": [
+            "sinsal_dohwa"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "식신",
+          "cycle": "戊寅",
+          "cycleGod": "편인",
+          "chars": 680,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:戊寅:year:2032:壬子:natal:육합:子丑:year",
+            "major:4:戊寅:year:2032:壬子:natal:충:子午:month"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:question",
+            "ten_god_shi_shen:study",
+            "ten_god_shi_shen:shadow"
+          ],
+          "features": [
+            "ten_god_shi_shen"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "상관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 1464,
+          "blocks": 8,
+          "relationshipIds": [
+            "major:5:丁丑:year:2033:癸丑:natal:해:丑午:month",
+            "major:5:丁丑:year:2033:癸丑:natal:육합:子丑:day"
+          ],
+          "seeds": [
+            "ten_god_shang_guan:study"
+          ],
+          "features": [
+            "ten_god_shang_guan"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "편재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 457,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:丁丑:year:2034:甲寅:natal:반합:寅午:month"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:work"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "정재",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 690,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2035:乙卯:natal:파:卯午:month",
+            "major:5:丁丑:year:2035:乙卯:natal:형:子卯:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:money"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "편관",
+          "cycle": "丁丑",
+          "cycleGod": "정관",
+          "chars": 749,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:丁丑:year:2036:丙辰:cycle:파:丑辰:cycle",
+            "major:5:丁丑:year:2036:丙辰:natal:반합:辰子:day",
+            "major:5:丁丑:year:2036:丙辰:natal:파:丑辰:year"
+          ],
+          "seeds": [
+            "twelve_sinsal_jangseong:strength"
+          ],
+          "features": [
+            "twelve_sinsal_jangseong"
+          ]
+        }
+      ]
+    },
+    "C": {
+      "status": "GENERATED",
+      "person": {
+        "name": "서윤",
+        "birthDate": "1994-11-18",
+        "birthTime": "07:42",
+        "mbtiType": "ENFP",
+        "gender": "FEMALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "freelancer",
+        "detailJob": "브랜드 디자이너",
+        "relationshipStatus": "single",
+        "focusAreas": []
+      },
+      "paragraphs": 116,
+      "bodyChars": 15986,
+      "finalLineChars": 87,
+      "annualChars": 10911,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 0,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 0,
+        "의 반대편도 살펴보세요": 0,
+        "연결되는 역할과 약속의 범위 확인": 0
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "정재",
+          "cycle": "壬申",
+          "cycleGod": "편재",
+          "chars": 727,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:3:壬申:year:2023:癸卯:natal:반합:卯亥:month",
+            "major:3:壬申:year:2023:癸卯:natal:육합:卯戌:year",
+            "major:3:壬申:year:2023:癸卯:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:question",
+            "ten_god_zheng_guan:money",
+            "ten_god_zheng_guan:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_guan",
+            "gwiin_jaego"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "편관",
+          "cycle": "壬申",
+          "cycleGod": "편재",
+          "chars": 872,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:3:壬申:year:2024:甲辰:cycle:반합:辰申:cycle",
+            "major:3:壬申:year:2024:甲辰:natal:반합:辰申:day-hour",
+            "major:3:壬申:year:2024:甲辰:natal:충:辰戌:year",
+            "major:3:壬申:year:2024:甲辰:natal:형:辰辰:hour"
+          ],
+          "seeds": [
+            "ten_god_qi_sha:question",
+            "ten_god_qi_sha:work",
+            "ten_god_qi_sha:shadow"
+          ],
+          "features": [
+            "ten_god_qi_sha"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "정관",
+          "cycle": "壬申",
+          "cycleGod": "편재",
+          "chars": 970,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:3:壬申:year:2025:乙巳:cycle:육합:巳申:cycle",
+            "major:3:壬申:year:2025:乙巳:cycle:형:巳申:cycle",
+            "major:3:壬申:year:2025:乙巳:cycle:파:巳申:cycle",
+            "major:3:壬申:year:2025:乙巳:natal:충:巳亥:month",
+            "major:3:壬申:year:2025:乙巳:natal:육합:巳申:day",
+            "major:3:壬申:year:2025:乙巳:natal:형:巳申:day",
+            "major:3:壬申:year:2025:乙巳:natal:파:巳申:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_guan:work"
+          ],
+          "features": [
+            "ten_god_zheng_guan"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "편인",
+          "cycle": "壬申",
+          "cycleGod": "편재",
+          "chars": 901,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:3:壬申:year:2026:丙午:natal:반합:午戌:year"
+          ],
+          "seeds": [
+            "ten_god_pian_yin:question",
+            "ten_god_pian_yin:study"
+          ],
+          "features": [
+            "ten_god_pian_yin",
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "정인",
+          "cycle": "壬申",
+          "cycleGod": "편재",
+          "chars": 676,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:3:壬申:year:2027:丁未:natal:반합:未亥:month",
+            "major:3:壬申:year:2027:丁未:natal:형:戌未:year",
+            "major:3:壬申:year:2027:丁未:natal:파:未戌:year"
+          ],
+          "seeds": [
+            "gwiin_cheondeok:question",
+            "gwiin_cheondeok:work",
+            "gwiin_cheondeok:shadow"
+          ],
+          "features": [
+            "gwiin_cheondeok"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "비견",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 1147,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:4:辛未:year:2028:戊申:natal:반합:申辰:day-hour",
+            "major:4:辛未:year:2028:戊申:natal:해:申亥:month"
+          ],
+          "seeds": [
+            "ten_god_bijian:question",
+            "ten_god_bijian:strength",
+            "ten_god_bijian:shadow"
+          ],
+          "features": [
+            "ten_god_bijian"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "겁재",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 716,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2029:己酉:natal:해:酉戌:year",
+            "major:4:辛未:year:2029:己酉:natal:육합:辰酉:hour"
+          ],
+          "seeds": [
+            "ten_god_qi_sha:strength"
+          ],
+          "features": [
+            "ten_god_qi_sha"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "식신",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 595,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2030:庚戌:cycle:형:戌未:cycle",
+            "major:4:辛未:year:2030:庚戌:cycle:파:未戌:cycle",
+            "major:4:辛未:year:2030:庚戌:natal:충:辰戌:hour"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:question",
+            "ten_god_shi_shen:work",
+            "ten_god_shi_shen:shadow"
+          ],
+          "features": [
+            "ten_god_shi_shen",
+            "gwiin_munchang"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "상관",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 642,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2031:辛亥:cycle:반합:亥未:cycle",
+            "major:4:辛未:year:2031:辛亥:natal:형:亥亥:month",
+            "major:4:辛未:year:2031:辛亥:natal:해:申亥:day"
+          ],
+          "seeds": [
+            "gwiin_munchang:question",
+            "gwiin_munchang:work",
+            "gwiin_munchang:shadow"
+          ],
+          "features": [
+            "gwiin_munchang"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "편재",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 783,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2032:壬子:cycle:해:子未:cycle",
+            "major:4:辛未:year:2032:壬子:natal:삼합:申子辰:day-hour"
+          ],
+          "seeds": [
+            "ten_god_pian_cai:question",
+            "ten_god_pian_cai:money",
+            "ten_god_pian_cai:shadow"
+          ],
+          "features": [
+            "ten_god_pian_cai"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "정재",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 640,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2033:癸丑:cycle:충:丑未:cycle",
+            "major:4:辛未:year:2033:癸丑:cycle:형:未丑:cycle",
+            "major:4:辛未:year:2033:癸丑:natal:형:丑戌:year",
+            "major:4:辛未:year:2033:癸丑:natal:파:丑辰:hour"
+          ],
+          "seeds": [
+            "gwiin_jaego:question",
+            "gwiin_jaego:money",
+            "gwiin_jaego:shadow"
+          ],
+          "features": [
+            "gwiin_jaego"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "편관",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 724,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2034:甲寅:natal:반합:寅戌:year",
+            "major:4:辛未:year:2034:甲寅:natal:육합:寅亥:month",
+            "major:4:辛未:year:2034:甲寅:natal:파:寅亥:month",
+            "major:4:辛未:year:2034:甲寅:natal:충:寅申:day",
+            "major:4:辛未:year:2034:甲寅:natal:형:申寅:day"
+          ],
+          "seeds": [
+            "day_master_muto:question",
+            "day_master_muto:work",
+            "day_master_muto:shadow"
+          ],
+          "features": [
+            "day_master_muto"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "정관",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 755,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2035:乙卯:cycle:반합:卯未:cycle",
+            "major:4:辛未:year:2035:乙卯:natal:반합:卯亥:month",
+            "major:4:辛未:year:2035:乙卯:natal:육합:卯戌:year",
+            "major:4:辛未:year:2035:乙卯:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "day_pillar_musin:question",
+            "day_pillar_musin:work",
+            "day_pillar_musin:shadow"
+          ],
+          "features": [
+            "day_pillar_musin"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "편인",
+          "cycle": "辛未",
+          "cycleGod": "상관",
+          "chars": 763,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:辛未:year:2036:丙辰:natal:반합:辰申:day-hour",
+            "major:4:辛未:year:2036:丙辰:natal:충:辰戌:year",
+            "major:4:辛未:year:2036:丙辰:natal:형:辰辰:hour"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun",
+            "ten_god_pian_yin"
+          ]
+        }
+      ]
+    },
+    "S-time": {
+      "status": "REJECTED",
+      "errors": {
+        "code": "INVALID_REPORT_INPUT",
+        "message": "DAYUN_UNCERTAIN",
+        "validationErrors": [
+          "DAYUN_UNCERTAIN"
+        ]
+      }
+    },
+    "S-both": {
+      "status": "REJECTED",
+      "errors": {
+        "code": "INVALID_REPORT_INPUT",
+        "message": "DAYUN_UNCERTAIN",
+        "validationErrors": [
+          "DAYUN_UNCERTAIN"
+        ]
+      }
+    },
+    "S-mbti": {
+      "status": "GENERATED",
+      "person": {
+        "name": "윤시우",
+        "birthDate": "1983-09-02",
+        "birthTime": "05:10",
+        "gender": "MALE",
+        "mbtiType": "",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "employee",
+        "detailJob": "기획자",
+        "relationshipStatus": "",
+        "focusAreas": []
+      },
+      "paragraphs": 105,
+      "bodyChars": 14309,
+      "finalLineChars": 79,
+      "annualChars": 9947,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 0,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 0,
+        "의 반대편도 살펴보세요": 0,
+        "연결되는 역할과 약속의 범위 확인": 0
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "비견",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 733,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2023:癸卯:cycle:해:卯辰:cycle",
+            "major:4:丙辰:year:2023:癸卯:natal:반합:卯亥:year-hour"
+          ],
+          "seeds": [
+            "ten_god_bijian:question",
+            "ten_god_bijian:work",
+            "ten_god_bijian:shadow"
+          ],
+          "features": [
+            "ten_god_bijian",
+            "sinsal_yangin"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "상관",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 872,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:丙辰:year:2024:甲辰:cycle:형:辰辰:cycle",
+            "major:4:丙辰:year:2024:甲辰:natal:반합:辰申:month",
+            "major:4:丙辰:year:2024:甲辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:question",
+            "ten_god_shi_shen:work",
+            "ten_god_shi_shen:shadow"
+          ],
+          "features": [
+            "ten_god_shi_shen",
+            "sinsal_hyeonchim"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "식신",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 714,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2025:乙巳:natal:충:巳亥:year",
+            "major:4:丙辰:year:2025:乙巳:natal:육합:巳申:month",
+            "major:4:丙辰:year:2025:乙巳:natal:형:巳申:month",
+            "major:4:丙辰:year:2025:乙巳:natal:파:巳申:month"
+          ],
+          "seeds": [
+            "gwiin_munchang:question",
+            "gwiin_munchang:work",
+            "gwiin_munchang:shadow"
+          ],
+          "features": [
+            "gwiin_munchang"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "정재",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 666,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2026:丙午:natal:파:卯午:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:question",
+            "ten_god_zheng_cai:money",
+            "ten_god_zheng_cai:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "편재",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 434,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:4:丙辰:year:2027:丁未:natal:삼합:亥卯未:year-hour"
+          ],
+          "seeds": [
+            "twelve_sinsal_yeokma:question",
+            "twelve_sinsal_yeokma:work"
+          ],
+          "features": [
+            "twelve_sinsal_yeokma"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "정관",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 770,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:丙辰:year:2028:戊申:cycle:반합:申辰:cycle",
+            "major:4:丙辰:year:2028:戊申:natal:해:申亥:year",
+            "major:4:丙辰:year:2028:戊申:natal:육합:巳申:day",
+            "major:4:丙辰:year:2028:戊申:natal:형:巳申:day",
+            "major:4:丙辰:year:2028:戊申:natal:파:巳申:day"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:question",
+            "ten_god_zheng_yin:strength",
+            "ten_god_zheng_yin:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "편관",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 708,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2029:己酉:cycle:육합:辰酉:cycle",
+            "major:4:丙辰:year:2029:己酉:natal:반합:酉巳:day",
+            "major:4:丙辰:year:2029:己酉:natal:충:卯酉:hour"
+          ],
+          "seeds": [
+            "ten_god_jie_cai:question",
+            "ten_god_jie_cai:work",
+            "ten_god_jie_cai:shadow"
+          ],
+          "features": [
+            "ten_god_jie_cai",
+            "twelve_sinsal_jangseong"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "정인",
+          "cycle": "丙辰",
+          "cycleGod": "정재",
+          "chars": 718,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:丙辰:year:2030:庚戌:cycle:충:辰戌:cycle",
+            "major:4:丙辰:year:2030:庚戌:natal:육합:卯戌:hour"
+          ],
+          "seeds": [
+            "gwiin_cheondeok:question",
+            "gwiin_cheondeok:work",
+            "gwiin_cheondeok:shadow"
+          ],
+          "features": [
+            "gwiin_cheoneul",
+            "gwiin_cheondeok"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "편인",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 1191,
+          "blocks": 8,
+          "relationshipIds": [
+            "major:5:乙卯:year:2031:辛亥:cycle:반합:亥卯:cycle",
+            "major:5:乙卯:year:2031:辛亥:natal:반합:亥卯:year-hour",
+            "major:5:乙卯:year:2031:辛亥:natal:형:亥亥:year",
+            "major:5:乙卯:year:2031:辛亥:natal:해:申亥:month",
+            "major:5:乙卯:year:2031:辛亥:natal:충:巳亥:day"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "겁재",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 683,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:乙卯:year:2032:壬子:cycle:형:子卯:cycle",
+            "major:5:乙卯:year:2032:壬子:natal:반합:子申:month",
+            "major:5:乙卯:year:2032:壬子:natal:형:子卯:hour"
+          ],
+          "seeds": [
+            "sinsal_yangin:question",
+            "sinsal_yangin:strength",
+            "sinsal_yangin:shadow"
+          ],
+          "features": [
+            "sinsal_yangin",
+            "ten_god_jie_cai"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "비견",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 449,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:乙卯:year:2033:癸丑:natal:반합:丑巳:day"
+          ],
+          "seeds": [
+            "sinsal_yangin:work"
+          ],
+          "features": [
+            "sinsal_yangin"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "상관",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 731,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:乙卯:year:2034:甲寅:natal:육합:寅亥:year",
+            "major:5:乙卯:year:2034:甲寅:natal:파:寅亥:year",
+            "major:5:乙卯:year:2034:甲寅:natal:충:寅申:month",
+            "major:5:乙卯:year:2034:甲寅:natal:형:申寅:month",
+            "major:5:乙卯:year:2034:甲寅:natal:해:寅巳:day",
+            "major:5:乙卯:year:2034:甲寅:natal:형:寅巳:day"
+          ],
+          "seeds": [
+            "sinsal_hyeonchim:question",
+            "sinsal_hyeonchim:work",
+            "sinsal_hyeonchim:shadow"
+          ],
+          "features": [
+            "sinsal_hyeonchim"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "식신",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 466,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:5:乙卯:year:2035:乙卯:natal:반합:卯亥:year-hour"
+          ],
+          "seeds": [
+            "ten_god_shi_shen:study"
+          ],
+          "features": [
+            "ten_god_shi_shen"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "정재",
+          "cycle": "乙卯",
+          "cycleGod": "식신",
+          "chars": 812,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:乙卯:year:2036:丙辰:cycle:해:卯辰:cycle",
+            "major:5:乙卯:year:2036:丙辰:natal:반합:辰申:month",
+            "major:5:乙卯:year:2036:丙辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:work"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        }
+      ]
+    },
+    "B": {
+      "status": "GENERATED",
+      "person": {
+        "name": "서진",
+        "birthDate": "1990-07-18",
+        "birthTime": "05:30",
+        "mbtiType": "ENTJ",
+        "gender": "FEMALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "context": {
+        "jobStatus": "employee",
+        "detailJob": "B2B SaaS 영업기획",
+        "relationshipStatus": "dating",
+        "focusAreas": []
+      },
+      "paragraphs": 118,
+      "bodyChars": 16265,
+      "finalLineChars": 73,
+      "annualChars": 10526,
+      "exactDuplicateParagraphExtras": 0,
+      "normalizedIdenticalLongSentenceExtras": 0,
+      "phrases": {
+        "선택에 보탤 내 바탕은": 0,
+        "의 반대편도 살펴보세요": 0,
+        "연결되는 역할과 약속의 범위 확인": 0
+      },
+      "years": [
+        {
+          "year": 2023,
+          "annual": "癸卯",
+          "tenGod": "정인",
+          "cycle": "庚辰",
+          "cycleGod": "편관",
+          "chars": 745,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:3:庚辰:year:2023:癸卯:cycle:해:卯辰:cycle",
+            "major:3:庚辰:year:2023:癸卯:natal:반합:卯未:month-hour",
+            "major:3:庚辰:year:2023:癸卯:natal:파:卯午:year"
+          ],
+          "seeds": [
+            "ten_god_zheng_yin:question",
+            "ten_god_zheng_yin:study",
+            "ten_god_zheng_yin:shadow"
+          ],
+          "features": [
+            "gwiin_cheoneul",
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2024,
+          "annual": "甲辰",
+          "tenGod": "비견",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 1190,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:4:己卯:year:2024:甲辰:cycle:해:卯辰:cycle",
+            "major:4:己卯:year:2024:甲辰:natal:반합:辰申:day",
+            "major:4:己卯:year:2024:甲辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "sinsal_yangin:question",
+            "sinsal_yangin:work",
+            "sinsal_yangin:shadow"
+          ],
+          "features": [
+            "sinsal_yangin"
+          ]
+        },
+        {
+          "year": 2025,
+          "annual": "乙巳",
+          "tenGod": "겁재",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 687,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:己卯:year:2025:乙巳:natal:육합:巳申:day",
+            "major:4:己卯:year:2025:乙巳:natal:형:巳申:day",
+            "major:4:己卯:year:2025:乙巳:natal:파:巳申:day"
+          ],
+          "seeds": [
+            "ten_god_jie_cai:question",
+            "ten_god_jie_cai:strength",
+            "ten_god_jie_cai:shadow"
+          ],
+          "features": [
+            "ten_god_jie_cai"
+          ]
+        },
+        {
+          "year": 2026,
+          "annual": "丙午",
+          "tenGod": "식신",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 876,
+          "blocks": 6,
+          "relationshipIds": [
+            "major:4:己卯:year:2026:丙午:cycle:파:卯午:cycle",
+            "major:4:己卯:year:2026:丙午:natal:형:午午:year",
+            "major:4:己卯:year:2026:丙午:natal:육합:午未:month",
+            "major:4:己卯:year:2026:丙午:natal:파:卯午:hour"
+          ],
+          "seeds": [
+            "ten_god_shang_guan:question",
+            "ten_god_shang_guan:work",
+            "ten_god_shang_guan:shadow"
+          ],
+          "features": [
+            "ten_god_shang_guan"
+          ]
+        },
+        {
+          "year": 2027,
+          "annual": "丁未",
+          "tenGod": "상관",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 359,
+          "blocks": 3,
+          "relationshipIds": [
+            "major:4:己卯:year:2027:丁未:cycle:반합:未卯:cycle",
+            "major:4:己卯:year:2027:丁未:natal:반합:未卯:month-hour",
+            "major:4:己卯:year:2027:丁未:natal:육합:午未:year"
+          ],
+          "seeds": [
+            "sinsal_gwimun:question",
+            "sinsal_gwimun:work"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2028,
+          "annual": "戊申",
+          "tenGod": "편재",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 282,
+          "blocks": 3,
+          "relationshipIds": [],
+          "seeds": [
+            "ten_god_zheng_cai:question",
+            "ten_god_zheng_cai:money"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2029,
+          "annual": "己酉",
+          "tenGod": "정재",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 616,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:己卯:year:2029:己酉:cycle:충:卯酉:cycle",
+            "major:4:己卯:year:2029:己酉:natal:충:卯酉:hour"
+          ],
+          "seeds": [
+            "ten_god_zheng_cai:work",
+            "ten_god_zheng_cai:shadow"
+          ],
+          "features": [
+            "ten_god_zheng_cai"
+          ]
+        },
+        {
+          "year": 2030,
+          "annual": "庚戌",
+          "tenGod": "편관",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 887,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:4:己卯:year:2030:庚戌:cycle:육합:卯戌:cycle",
+            "major:4:己卯:year:2030:庚戌:natal:반합:戌午:year",
+            "major:4:己卯:year:2030:庚戌:natal:형:戌未:month",
+            "major:4:己卯:year:2030:庚戌:natal:파:未戌:month",
+            "major:4:己卯:year:2030:庚戌:natal:육합:卯戌:hour"
+          ],
+          "seeds": [
+            "ten_god_qi_sha:question",
+            "ten_god_qi_sha:strength",
+            "ten_god_qi_sha:shadow"
+          ],
+          "features": [
+            "ten_god_qi_sha"
+          ]
+        },
+        {
+          "year": 2031,
+          "annual": "辛亥",
+          "tenGod": "정관",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 709,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:己卯:year:2031:辛亥:cycle:반합:亥卯:cycle",
+            "major:4:己卯:year:2031:辛亥:natal:삼합:亥卯未:month-hour",
+            "major:4:己卯:year:2031:辛亥:natal:해:申亥:day"
+          ],
+          "seeds": [
+            "twelve_sinsal_banan:question",
+            "twelve_sinsal_banan:work",
+            "twelve_sinsal_banan:shadow"
+          ],
+          "features": [
+            "twelve_sinsal_banan"
+          ]
+        },
+        {
+          "year": 2032,
+          "annual": "壬子",
+          "tenGod": "편인",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 743,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:己卯:year:2032:壬子:cycle:형:子卯:cycle",
+            "major:4:己卯:year:2032:壬子:natal:반합:子申:day",
+            "major:4:己卯:year:2032:壬子:natal:충:子午:year",
+            "major:4:己卯:year:2032:壬子:natal:해:子未:month",
+            "major:4:己卯:year:2032:壬子:natal:형:子卯:hour"
+          ],
+          "seeds": [
+            "sinsal_gwimun:study",
+            "sinsal_gwimun:shadow"
+          ],
+          "features": [
+            "sinsal_gwimun"
+          ]
+        },
+        {
+          "year": 2033,
+          "annual": "癸丑",
+          "tenGod": "정인",
+          "cycle": "己卯",
+          "cycleGod": "정재",
+          "chars": 680,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:4:己卯:year:2033:癸丑:natal:해:丑午:year",
+            "major:4:己卯:year:2033:癸丑:natal:충:丑未:month",
+            "major:4:己卯:year:2033:癸丑:natal:형:未丑:month"
+          ],
+          "seeds": [
+            "gwiin_cheondeok:question",
+            "gwiin_cheondeok:work",
+            "gwiin_cheondeok:shadow"
+          ],
+          "features": [
+            "gwiin_cheondeok",
+            "ten_god_zheng_yin"
+          ]
+        },
+        {
+          "year": 2034,
+          "annual": "甲寅",
+          "tenGod": "비견",
+          "cycle": "戊寅",
+          "cycleGod": "편재",
+          "chars": 1235,
+          "blocks": 7,
+          "relationshipIds": [
+            "major:5:戊寅:year:2034:甲寅:natal:반합:寅午:year",
+            "major:5:戊寅:year:2034:甲寅:natal:충:寅申:day",
+            "major:5:戊寅:year:2034:甲寅:natal:형:申寅:day"
+          ],
+          "seeds": [
+            "sinsal_yangin:strength"
+          ],
+          "features": [
+            "sinsal_yangin"
+          ]
+        },
+        {
+          "year": 2035,
+          "annual": "乙卯",
+          "tenGod": "겁재",
+          "cycle": "戊寅",
+          "cycleGod": "편재",
+          "chars": 733,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:戊寅:year:2035:乙卯:natal:반합:卯未:month-hour",
+            "major:5:戊寅:year:2035:乙卯:natal:파:卯午:year"
+          ],
+          "seeds": [
+            "sinsal_dohwa:question",
+            "sinsal_dohwa:strength",
+            "sinsal_dohwa:shadow"
+          ],
+          "features": [
+            "sinsal_dohwa",
+            "twelve_sinsal_jangseong"
+          ]
+        },
+        {
+          "year": 2036,
+          "annual": "丙辰",
+          "tenGod": "식신",
+          "cycle": "戊寅",
+          "cycleGod": "편재",
+          "chars": 784,
+          "blocks": 5,
+          "relationshipIds": [
+            "major:5:戊寅:year:2036:丙辰:natal:반합:辰申:day",
+            "major:5:戊寅:year:2036:丙辰:natal:해:卯辰:hour"
+          ],
+          "seeds": [
+            "ten_god_shang_guan:study"
+          ],
+          "features": [
+            "ten_god_shang_guan"
+          ]
+        }
+      ]
+    }
+  },
+  "crossPersonSharedLongSentences": {
+    "before": [
+      {
+        "pair": "S/A",
+        "sharedDistinctLongSentences": 76,
+        "sharedOccurrencesMin": 77,
+        "examples": [
+          "크게 보이는 조건보다 오래 편할 조건을 고르는 순간을 두고 마음이 편한 선택도 골라볼 만해요.",
+          "새 대운의 십성과는 별개로, 원국의 정재 성향과 MBTI에서 평소 선택 방식을 읽어봅니다.",
+          "남이 잘하는 모습을 보고 끝내는 게 아니라 나도 해볼 수 있겠다는 욕심으로 바뀌기 쉽죠.",
+          "<YEAR>년의 학습 습관을 생각할 때는 원국 귀문관살 성향을 이런 질문에 비춰보세요.",
+          "<YEAR>년의 역할 선택을 생각할 때는 원국 식신 성향을 이런 질문에 비춰보세요."
+        ]
+      },
+      {
+        "pair": "S/B",
+        "sharedDistinctLongSentences": 111,
+        "sharedOccurrencesMin": 113,
+        "examples": [
+          "지금의 경험에 이 흐름을 적용해본다면, ‘연봉뿐 아니라 실제 남는 저녁을 따져보는 선택’ 같은 장면을 떠올릴 수 있습니다.",
+          "큰 배경인 ‘반복되는 수입과 생활의 축적’ 속에서 <YEAR>년에는 ‘신뢰가 이름과 자리가 되는 과정’에 주목합니다.",
+          "큰 배경인 ‘반복되는 수입과 생활의 축적’ 속에서 <YEAR>년에는 ‘배움과 도움으로 다지는 기반’에 주목합니다.",
+          "큰 배경인 ‘반복되는 수입과 생활의 축적’ 속에서 <YEAR>년에는 ‘손으로 만들어 남기는 결과’에 주목합니다.",
+          "큰 배경인 ‘반복되는 수입과 생활의 축적’ 속에서 <YEAR>년에는 ‘익숙한 답을 바꾸는 목소리’에 주목합니다."
+        ]
+      },
+      {
+        "pair": "S/C",
+        "sharedDistinctLongSentences": 57,
+        "sharedOccurrencesMin": 57,
+        "examples": [
+          "남이 잘하는 모습을 보고 끝내는 게 아니라 나도 해볼 수 있겠다는 욕심으로 바뀌기 쉽죠.",
+          "<YEAR>년의 학습 습관을 생각할 때는 원국 귀문관살 성향을 이런 질문에 비춰보세요.",
+          "<YEAR>년의 역할 선택을 생각할 때는 원국 천덕귀인 성향을 이런 질문에 비춰보세요.",
+          "<YEAR>년의 역할 선택을 생각할 때는 원국 문창귀인 성향을 이런 질문에 비춰보세요.",
+          "<YEAR>년의 역할 선택을 생각할 때는 원국 식신 성향을 이런 질문에 비춰보세요."
+        ]
+      },
+      {
+        "pair": "A/B",
+        "sharedDistinctLongSentences": 63,
+        "sharedOccurrencesMin": 64,
+        "examples": [
+          "새 대운의 십성과는 별개로, 원국의 정재 성향과 MBTI에서 평소 선택 방식을 읽어봅니다.",
+          "남이 잘하는 모습을 보고 끝내는 게 아니라 나도 해볼 수 있겠다는 욕심으로 바뀌기 쉽죠.",
+          "<YEAR>년의 지출 기준을 생각할 때는 원국 정재 성향을 이런 질문에 비춰보세요.",
+          "<YEAR>년의 역할 선택을 생각할 때는 원국 상관 성향을 이런 질문에 비춰보세요.",
+          "혼자 다 알아야 한다는 부담을 내려놓을 때 좋은 설명과 사람이 더 잘 들어옵니다."
+        ]
+      },
+      {
+        "pair": "A/C",
+        "sharedDistinctLongSentences": 54,
+        "sharedOccurrencesMin": 55,
+        "examples": [
+          "모든 문제를 직접 해결하는 사람에서 중요한 결정을 맡길 수 있는 사람으로 커질 여지가 있죠.",
+          "남이 잘하는 모습을 보고 끝내는 게 아니라 나도 해볼 수 있겠다는 욕심으로 바뀌기 쉽죠.",
+          "<YEAR>년의 학습 습관을 생각할 때는 원국 귀문관살 성향을 이런 질문에 비춰보세요.",
+          "<YEAR>년의 역할 선택을 생각할 때는 원국 식신 성향을 이런 질문에 비춰보세요.",
+          "혼자 다 알아야 한다는 부담을 내려놓을 때 좋은 설명과 사람이 더 잘 들어옵니다."
+        ]
+      },
+      {
+        "pair": "B/C",
+        "sharedDistinctLongSentences": 40,
+        "sharedOccurrencesMin": 40,
+        "examples": [
+          "남이 잘하는 모습을 보고 끝내는 게 아니라 나도 해볼 수 있겠다는 욕심으로 바뀌기 쉽죠.",
+          "<YEAR>년의 역할 선택을 생각할 때는 원국 천덕귀인 성향을 이런 질문에 비춰보세요.",
+          "혼자 다 알아야 한다는 부담을 내려놓을 때 좋은 설명과 사람이 더 잘 들어옵니다.",
+          "편한 일만 늘어나는 흐름은 아니지만 어려운 순간에 앞에 설 존재감도 같이 봐요.",
+          "상황이 급해지면 긴장도 커지지만, 먼저 정리해야 할 것이 오히려 선명해집니다."
+        ]
+      }
+    ],
+    "after": [
+      {
+        "pair": "S/A",
+        "sharedDistinctLongSentences": 73,
+        "sharedOccurrencesMin": 73,
+        "examples": [
+          "‘크게 보이는 조건보다 오래 편할 조건을 고르는 순간’ 같은 상황을 만난다면, ‘생활을 지킬 여유’를 어떻게 다룰지 생각해볼 수 있어요.",
+          "‘고친 방법의 전후 차이와 다른 사람이 써볼 조건’을 함께 맡을 범위와 종료 조건에 맞춰보세요.",
+          "같은 부담이 되풀이된다면 ‘불편했던 절차와 바꿔볼 범위’를 어디까지 감당할지 다시 정해보세요.",
+          "새 대운의 십성과는 별개로, 원국의 정재 성향과 MBTI에서 평소 선택 방식을 읽어봅니다.",
+          "기존 일정과 새 요구가 다르다면 ‘도움받을 부분과 혼자 써볼 과제’를 먼저 조정해보세요."
+        ]
+      },
+      {
+        "pair": "S/B",
+        "sharedDistinctLongSentences": 100,
+        "sharedOccurrencesMin": 100,
+        "examples": [
+          "‘오래 다듬은 방식을 내 이름으로 꺼내는 자리’ 같은 상황을 만난다면, ‘꾸준히 보여줄 솜씨’를 어떻게 다룰지 생각해볼 수 있습니다.",
+          "‘앞으로 맡을 역할을 스스로 고르는 순간’ 같은 상황을 만난다면, ‘오래 지킬 선택’을 어떻게 다룰지 생각해볼 수 있어요.",
+          "지금의 경험에 이 흐름을 적용해본다면, ‘연봉뿐 아니라 실제 남는 저녁을 따져보는 선택’ 같은 장면을 떠올릴 수 있어요.",
+          "겉으로 말하지 못한 불편이 있다면 ‘내가 직접 고를 부분과 함께 지킬 기준’을 상대가 이해한 내용과 나란히 놓아보세요.",
+          "생활에서 ‘다음 달에도 이어갈 수 있는 리듬’에 편안함을 느껴왔다면, 그 시간을 모두 버릴 필요는 없습니다."
+        ]
+      },
+      {
+        "pair": "S/C",
+        "sharedDistinctLongSentences": 49,
+        "sharedOccurrencesMin": 49,
+        "examples": [
+          "겉으로 말하지 못한 불편이 있다면 ‘내가 직접 고를 부분과 함께 지킬 기준’을 상대가 이해한 내용과 나란히 놓아보세요.",
+          "함께 추진할 일이 있다면 ‘외부 제안에 투입할 시간과 돌아올 몫’을 공통 목표와 각자의 기여에 비춰 정해보세요.",
+          "같은 부담이 되풀이된다면 ‘맡을 범위와 끝냈다고 볼 기준’을 어디까지 감당할지 다시 정해보세요.",
+          "같은 부담이 되풀이된다면 ‘불편했던 절차와 바꿔볼 범위’를 어디까지 감당할지 다시 정해보세요.",
+          "기존 일정과 새 요구가 다르다면 ‘먼저 처리할 요구와 도움을 청할 기준’을 먼저 조정해보세요."
+        ]
+      },
+      {
+        "pair": "A/B",
+        "sharedDistinctLongSentences": 55,
+        "sharedOccurrencesMin": 55,
+        "examples": [
+          "같은 부담이 되풀이된다면 ‘먼저 처리할 요구와 도움을 청할 기준’을 어디까지 감당할지 다시 정해보세요.",
+          "새 대운의 십성과는 별개로, 원국의 정재 성향과 MBTI에서 평소 선택 방식을 읽어봅니다.",
+          "남이 잘하는 모습을 보고 끝내는 게 아니라 나도 해볼 수 있겠다는 욕심으로 바뀌기 쉽죠.",
+          "‘내가 직접 고를 부분과 함께 지킬 기준’을 작은 시도로 확인한 뒤 연결을 넓혀보세요.",
+          "혼자 다 알아야 한다는 부담을 내려놓을 때 좋은 설명과 사람이 더 잘 들어옵니다."
+        ]
+      },
+      {
+        "pair": "A/C",
+        "sharedDistinctLongSentences": 50,
+        "sharedOccurrencesMin": 50,
+        "examples": [
+          "같은 부담이 되풀이된다면 ‘불편했던 절차와 바꿔볼 범위’를 어디까지 감당할지 다시 정해보세요.",
+          "모든 문제를 직접 해결하는 사람에서 중요한 결정을 맡길 수 있는 사람으로 커질 여지가 있죠.",
+          "남이 잘하는 모습을 보고 끝내는 게 아니라 나도 해볼 수 있겠다는 욕심으로 바뀌기 쉽죠.",
+          "‘내가 직접 고를 부분과 함께 지킬 기준’을 작은 시도로 확인한 뒤 연결을 넓혀보세요.",
+          "‘먼저 처리할 요구와 도움을 청할 기준’을 작은 시도로 확인한 뒤 연결을 넓혀보세요."
+        ]
+      },
+      {
+        "pair": "B/C",
+        "sharedDistinctLongSentences": 38,
+        "sharedOccurrencesMin": 38,
+        "examples": [
+          "겉으로 말하지 못한 불편이 있다면 ‘내가 직접 고를 부분과 함께 지킬 기준’을 상대가 이해한 내용과 나란히 놓아보세요.",
+          "같은 부담이 되풀이된다면 ‘처음 보여줄 결과의 완성 기준’을 어디까지 감당할지 다시 정해보세요.",
+          "남이 잘하는 모습을 보고 끝내는 게 아니라 나도 해볼 수 있겠다는 욕심으로 바뀌기 쉽죠.",
+          "‘내가 직접 고를 부분과 함께 지킬 기준’을 작은 시도로 확인한 뒤 연결을 넓혀보세요.",
+          "혼자 다 알아야 한다는 부담을 내려놓을 때 좋은 설명과 사람이 더 잘 들어옵니다."
+        ]
+      }
+    ]
+  },
+  "definition": "UTF-16 characters including spaces; sum of generated opening + all section block text; exclude title/cover/contents/appendix/notes/separators. finalLine separate. Duplicate paragraphs and >=30-char identical sentences normalize whitespace/year only; these are lexical measures, not semantic quality verdicts.",
+  "unchangedLocks": true,
+  "crossProductHashes": [
+    {
+      "id": "comprehensive",
+      "hashes": [
+        "79e6f83b152d9efbeea6ffacbeba6b65682da18728571b1f45457449d3d3b1f0",
+        "2900b5ded09c8403b3900dbbf1aa8b2ee8be4f759c0158e45a44eb0301c296cc",
+        "58743a77315ab1692f1b8a353a676398adc191f011a3de918f749d8d6ae55665"
+      ]
+    },
+    {
+      "id": "career",
+      "hashes": [
+        "cf8006c7ef39a7c986ec15d30977d2f77050ba18140893d1daf964a2bf99e509",
+        "56b68d15525f3800f20bb50327a36c60d4f800ae26e4e9080fc2d5c3c113f50a",
+        "4f1a98cf950f73182c3e560916fe0dc70e43575c420a5bf388eb676a2eb30935"
+      ]
+    },
+    {
+      "id": "love",
+      "hashes": [
+        "4a610a2e2e166190b4d70a60f06e518da9e7d04740ec09aea209ecc447ae1f75",
+        "f50b3e2b28c46dbb253c6ac5129d1ed8733fb513b50c247d83c4093636bc2739",
+        "3c826b32120ba77d6600b5d27b2a963bd0ff2d6e8b611f1f335437e7a0430416"
+      ]
+    },
+    {
+      "id": "compatibility",
+      "hashes": [
+        "55b8e4d7439587f853e5c6a6a2d511754728254901b4de4e3df27319c82399f8",
+        "4451cb445500b0a758f77bc7b95dd48e403014850ad9808311bf352394d34a32",
+        "0e0a0e3da84d6d8e45824affddbfdafdcac7915b0a0c849d08318de95417725c"
+      ]
+    },
+    {
+      "id": "annual",
+      "hashes": [
+        "88b5179bf8684d3da7ae25c18046a96ed8d43c3380ee8a07daaa871771e79157",
+        "3e486ff6dc1ce5d4b22fc8aa882373efbc7fa7eb6deafa88324e96ee9f0a02b5",
+        "577476b74cd84911bd6f1d3eeacc23db212a3ef246bd33bc9b35534996bdd05f"
+      ]
+    }
+  ],
+  "verification": {
+    "baselineTests": {
+      "total": 150,
+      "passed": 146,
+      "preExistingFailed": 4
+    },
+    "finalEffectiveTests": {
+      "total": 183,
+      "passed": 179,
+      "preExistingFailed": 4,
+      "newFailed": 0,
+      "readerRerun": 33,
+      "interactionRerun": 19
+    },
+    "captureTests": 16,
+    "oldSnapshotTests": 9,
+    "tsBaseline": 390,
+    "tsAfter": 390,
+    "newTsDiagnostics": 0,
+    "lint": "PASS",
+    "build": "FAIL - existing invalid Next Page exports",
+    "oldSnapshots": [
+      {
+        "id": "S",
+        "hash": "84b55f44cb111c8b2753137186a8772324caf73be9a347b73350c7898d9da1ef",
+        "book": "0cb5bf03fbce81b1089142401b035d8efb410375c3fa97f4b6d6786a227068e2"
+      },
+      {
+        "id": "A",
+        "hash": "157e9078bfd0b44eb9e6f9f20980fcb9a48e51155877236c6fb7ed916ecf00dd",
+        "book": "4e1b8adf6b8687984bbb1311a294186a34175e7876b3b131959ba242c9456a07"
+      },
+      {
+        "id": "B",
+        "hash": "bf97e6b635709b62b5d428f7561a5ce23377d095aefe509ebdfaa05ad9b42e17",
+        "book": "243f005ae81e91d0a16e008e9869ff5848d5b97231c1c229a73c64478fcfcb1d"
+      },
+      {
+        "id": "C",
+        "hash": "2688084e392f602bd3ef0ad96358270b1543c7bd9c396fa230eaed2c5c6f6fb7",
+        "book": "e85d0ba3da8b36be3d018dedbf84e113a23bfd0c934332a2d978c05ad490ec85"
+      },
+      {
+        "id": "D",
+        "hash": "0331b56291240a5f53f44eb2e91c96026f58218905c893e857d2d54b3653ed04",
+        "book": "f0c9071a1c738a4c75d1b0d5ff0aeecc3ff4723b69bcaa075fca5464467b9b22"
+      },
+      {
+        "id": "E",
+        "hash": "8a9aa33293c78e64875a230155b6a552e7877cb4727d12ea50d0c1a6570834ee",
+        "book": "da59676a2dc33caca8b24e20843c1e7a31020cb00d2332df393649d91e3cf72e"
+      },
+      {
+        "id": "F",
+        "hash": "9f77426501f75a13ee85affe17f9070e0144b6b6c4f247dc8fcd3487ccd603a7",
+        "book": "e00fa4138bc6e472663760494001cdf93ffd32d2b5f8ad0160f6b54db365c82f"
+      },
+      {
+        "id": "S-mbti",
+        "hash": "525378746c404b8118248884c46b67b02da4dc70f78fda89f69b6ee131d7b009",
+        "book": "2cfaafb4a3fc6e844e1c92b6ea2a928fa58b3497ab3326065fc32fa62d82fa79"
+      }
+    ]
+  }
+}

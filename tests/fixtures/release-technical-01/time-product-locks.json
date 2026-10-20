@@ -1,0 +1,71 @@
+{
+  "major": {
+    "baseSha": "964e6b9a1b248c67e695f112615873f232d9320e",
+    "payload": {
+      "productKey": "major_fortune",
+      "productSlug": "major-fortune",
+      "person": {
+        "name": "나영",
+        "birthDate": "1984-07-27",
+        "birthTime": "15:30",
+        "mbtiType": "INTP",
+        "gender": "FEMALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "employee",
+        "detailJob": "제조업 재무기획 과장",
+        "relationshipStatus": "marriage_preparing",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v3"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-01T12:00:00+09:00"
+    },
+    "hashes": [
+      "bff2f1ccbc222b5b33e7df9a86ba6907afac782c8afda99de9b47e3b4dfd317d",
+      "9957f1348ea06e4a098dec827a23a4f07f721f41e2cc2d0433f12bff721d89c6",
+      "6e5e255f8400110d10a0230af508f98db941a99936bb363a30a2f2f3957b23cd"
+    ]
+  },
+  "annual": {
+    "baseSha": "964e6b9a1b248c67e695f112615873f232d9320e",
+    "payload": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "06:00",
+        "mbtiType": "INFJ",
+        "gender": "MALE",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v3",
+        "selectedYear": "2026"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-01T12:00:00+09:00"
+    },
+    "hashes": [
+      "382fe497a223d7f3eff4024ca980d4c521592bf06e8ee56a78f1635895a1da57",
+      "6c885a9c3b98185df7bf7959a4b2cd1fc6e5b4723ed9cfab85b62eacfd546be8",
+      "da933fc11732c159856aeb881d6fe884247e20d0af696f355319f7ab2a27ef08"
+    ]
+  }
+}

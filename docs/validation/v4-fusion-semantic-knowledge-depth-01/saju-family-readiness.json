@@ -1,0 +1,181 @@
+[
+  {
+    "id": "fkr:source-family:yin_yang",
+    "label": "음양",
+    "calculationAvailability": "기존 원국 음양 산출과 foundation producer가 존재",
+    "distinction": "음양 방향은 실제 공적/사적 행동이나 성별 역할이 아님",
+    "relatedAxes": [
+      "ENERGY_DIRECTION",
+      "ACTION_TEMPO"
+    ],
+    "comparison": "사적 정리·외부 교환의 실제 trait와 조건부 비교",
+    "requires": "미상 시주·분포 강도·실제 맥락 확인",
+    "forbidden": "음양을 MBTI E/I와 동일한 원인으로 처리 금지",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "fkr:source-family:five_elements",
+    "label": "오행",
+    "calculationAvailability": "SajuCalcResult.elements visible/weighted/labels 및 기존 canonical 계산",
+    "distinction": "원소 상징과 현대 성격·자원 능력은 다른 층위",
+    "relatedAxes": [
+      "EXPANSION",
+      "EXPRESSION",
+      "STABILITY",
+      "PRECISION",
+      "DEPTH"
+    ],
+    "comparison": "여러 오행을 한 축으로 고정하지 않고 실제 행동 대상 비교",
+    "requires": "월령·통근·원국 전체·기존 강약 상태·미상 입력 확인",
+    "forbidden": "오행 수만으로 능력·질병·재물 결과 생성 금지",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "fkr:source-family:day_master",
+    "label": "일간",
+    "calculationAvailability": "SajuCalcResult.dayMaster와 원국 기둥에서 기존 산출",
+    "distinction": "일간의 상징은 같은 MBTI 유형의 실제 행동을 보증하지 않음",
+    "relatedAxes": [
+      "AUTONOMY",
+      "MEANING"
+    ],
+    "comparison": "본인이 중요하게 여기는 선택 이유와 상징적 기준의 비동등성 조사",
+    "requires": "일간·월령·통근·투출·원국 조건 보존",
+    "forbidden": "일간 이름으로 타입·직업 적합·기질 확정 금지",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "fkr:source-family:day_pillar",
+    "label": "60일주",
+    "calculationAvailability": "기존 간지 조합·장간·일간 대비 십성 산출",
+    "distinction": "동일 일주도 월령·시주·역할에 따라 적용 조건이 다름",
+    "relatedAxes": [
+      "DEPTH",
+      "LEARNING",
+      "GOAL_DRIVE"
+    ],
+    "comparison": "일주 coreMeaning을 단일 MBTI trait와 즉시 일치시키지 않음",
+    "requires": "지장간·계절·근거 강약·원래 검증 상태 확인",
+    "forbidden": "60일주를 60개의 실증 성격 유형으로 승격 금지",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "fkr:source-family:ten_gods",
+    "label": "십성",
+    "calculationAvailability": "기존 일간 대비 생극·음양 관계 계산",
+    "distinction": "정재/편재·정인/편인 등 같은 family 안의 차이 보존",
+    "relatedAxes": [
+      "RESOURCE_SENSE",
+      "LEARNING",
+      "CARE",
+      "DUTY",
+      "CREATION"
+    ],
+    "comparison": "같은 태그보다 행동 주체·자원·역할 차이를 비교",
+    "requires": "구체 십성·강약·위치·통근·중첩 확인",
+    "forbidden": "십성 출현만으로 고정 성격·실제 행동 승인 금지",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "fkr:source-family:twelve_stages",
+    "label": "십이운성",
+    "calculationAvailability": "기존 십이운성 producer·canonical 표 표시 경로 존재",
+    "distinction": "전통 단계 상징은 실제 발달 나이·수명·현재 사건이 아님",
+    "relatedAxes": [
+      "INITIATIVE",
+      "PERSISTENCE",
+      "RECOVERY_NEED"
+    ],
+    "comparison": "시작·유지·회복 기능을 생활 질문으로 검토하되 시기 사실로 사용 금지",
+    "requires": "적용 기준·기둥·전통 계보·scope 확인",
+    "forbidden": "단계 이름으로 실제 삶의 최고점·실패·건강 확정 금지",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "fkr:source-family:markers",
+    "label": "신살·귀인",
+    "calculationAvailability": "일부는 canonical 검출, 일부는 DB-only/불일치/지원 제한; 항목별 확인 필요",
+    "distinction": "현침의 자형·귀인의 도움 수혜·매력 노출 상징과 실제 행동을 분리",
+    "relatedAxes": [
+      "PRECISION",
+      "CARE",
+      "CHARISMA"
+    ],
+    "comparison": "도움 방향·주목 대상·독립 현대 적용 근거를 먼저 확인",
+    "requires": "실제 검출 ID·기준 기둥·지원 범위·전통/현대 상태 보존",
+    "forbidden": "명칭을 실제 재능·진심 탐지·상대 호감·보답으로 변환 금지",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "fkr:source-family:hidden_stems",
+    "label": "지장간",
+    "calculationAvailability": "기존 HIDDEN_STEMS와 일간 대비 십성·가중치 산출",
+    "distinction": "같은 장간 사실을 천간·십성·facet로 분해해 독립 세 사실로 세지 않음",
+    "relatedAxes": [
+      "LEARNING",
+      "DUTY",
+      "RESOURCE_SENSE"
+    ],
+    "comparison": "지장간은 구조 참조이며 자체로 행동의 강도를 증명하지 않음",
+    "requires": "실제 자리·투출·통근·중첩·원천 lineage 확인",
+    "forbidden": "장간의 개수·가중치로 잠재 행동·무의식 확정 금지",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "fkr:source-family:composite",
+    "label": "원국 복합 구조",
+    "calculationAvailability": "기존 rule별 detected/held/unsupported 구분; 연구 성립과 완성 격국은 다름",
+    "distinction": "구조의 연결·억제·여력 조건이 없으면 단순 성격화 금지",
+    "relatedAxes": [
+      "GOAL_DRIVE",
+      "CREATION",
+      "BOUNDARY",
+      "STABILITY"
+    ],
+    "comparison": "구조의 실제 전제와 primary trait의 행동 대상이 같은 과제인지 조사",
+    "requires": "각 support.v4RuleIds·counterconditions·미상 시주·원국 scope 확인",
+    "forbidden": "구조 연구 ID를 실제 Evidence로 변환 금지",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "fkr:source-family:relations",
+    "label": "천간·지지 관계",
+    "calculationAvailability": "참여자·natal/cross_person/transit producer를 구분; natal 미지원5종 유지",
+    "distinction": "충·합·형의 정의는 개인 성향·실제 갈등·동의가 아님",
+    "relatedAxes": [
+      "ADAPTABILITY",
+      "BOUNDARY",
+      "SOCIAL_ATTUNEMENT"
+    ],
+    "comparison": "관계 조건과 개인의 대응 선호를 별도 자료로 비교",
+    "requires": "참여 기둥·owner·성립·합화 여부·왕쇠·방향 확인",
+    "forbidden": "A의 MBTI와 B의 명리로 개인 Fusion 구성 금지",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "fkr:source-family:temporal",
+    "label": "기간 상호작용",
+    "calculationAvailability": "기존 대운·세운·월운·절입·교운 결과를 재사용해야 함",
+    "distinction": "기간 사실과 원국 특성·MBTI 행동 선호는 역할이 다름",
+    "relatedAxes": [
+      "CHANGE_ORIENTATION",
+      "STABILITY",
+      "RECOVERY_NEED"
+    ],
+    "comparison": "행동을 참고할 수 있어도 MBTI는 기간·사건 계산이 아님",
+    "requires": "실제 구간·전환·참여자·교집합·미상 입력·producer 확인",
+    "forbidden": "전환 전 관계를 연도 전체 또는 고정 성격으로 확대 금지",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  }
+]

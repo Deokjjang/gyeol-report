@@ -1,0 +1,12 @@
+{
+  "deploymentId": "dpl_9dqY5ZwpV7AcChT246QAiy3Rk4RW",
+  "projectId": "prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+  "gitCommitSha": "5f18ee5da8b5ee6376155846088127e8dff1cf54",
+  "gitCommitRef": "v4/career-money-study-specialist-engine-01",
+  "target": null,
+  "readyState": "READY",
+  "url": "https://gyeol-report-l298olc8e-gyeol-report-s-projects.vercel.app",
+  "createdAt": 1791999772132,
+  "readyAt": 1791999875474,
+  "checkedAt": "2026-10-14 17:45:40 UTC"
+}

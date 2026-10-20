@@ -1,0 +1,92 @@
+[
+  {
+    "family": "career-product-research",
+    "records": 839,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "compatibility-business-partner-research",
+    "records": 1917,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "compatibility-coworker-research",
+    "records": 1948,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "compatibility-friendship-research",
+    "records": 2138,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "compatibility-love-research",
+    "records": 851,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "compatibility-manager-report-research",
+    "records": 1741,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "compatibility-marriage-research",
+    "records": 1133,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "compatibility-parent-child-research",
+    "records": 1209,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "composite-structure-research",
+    "records": 301,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "comprehensive-product-research",
+    "records": 512,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "fusion-knowledge-research",
+    "records": 374,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "love-product-research",
+    "records": 764,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "major-fortune-product-research",
+    "records": 863,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "mbti-foundation-research",
+    "records": 531,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "mbti-pair-research",
+    "records": 279,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "relation-research",
+    "records": 246,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "semantic-axis-research",
+    "records": 370,
+    "notAutomaticallyCustomerUsed": true
+  },
+  {
+    "family": "temporal-interaction-research",
+    "records": 410,
+    "notAutomaticallyCustomerUsed": true
+  }
+]

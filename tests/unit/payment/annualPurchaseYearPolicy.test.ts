@@ -8,8 +8,11 @@ import { generateProductReport } from "../../../src/lib/report-generation/genera
 import { getAnnualFortuneYearAccess, getAnnualFortuneCommerceYearPolicy } from "../../../src/lib/report-knowledge/annualFortuneYearRules";
 import { createAnnualCommerceAcceptance, getAnnualPurchasePolicyDate } from "../../../src/lib/payment/annualPurchasePolicy";
 
-const mocks = vi.hoisted(() => ({ runtime: vi.fn() }));
+const mocks = vi.hoisted(() => ({ runtime: vi.fn(), bind: vi.fn() }));
 vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOrderPersistenceRuntime: mocks.runtime }));
+// Keep the live same-origin and binding code; only external ports are synthetic.
+vi.mock("../../../src/lib/account/supabase", () => ({ createAccountPort: () => ({ currentUser: async () => null, finish: (response: Response) => response }) }));
+vi.mock("../../../src/lib/library/supabase", () => ({ createLibraryPort: () => ({ bind: mocks.bind }) }));
 import { POST } from "../../../src/app/api/payment-checkout/prepare/route";
 
 const beforeRollover = new Date("2026-12-31T14:59:59.000Z");
@@ -37,7 +40,8 @@ beforeAll(async () => {
 afterAll(async () => { await db?.close(); });
 beforeEach(async () => {
   await db.exec("truncate payment_orders cascade");
-  mocks.runtime.mockReturnValue(createDurablePaymentOrderAdapter(store));
+  mocks.bind.mockReset().mockResolvedValue(true);
+  mocks.runtime.mockReset().mockReturnValue(createDurablePaymentOrderAdapter(store));
   vi.stubEnv("NODE_ENV", "test");
   vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_toss_client_key");
   vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_toss_secret_key");
@@ -47,8 +51,8 @@ beforeEach(async () => {
 afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
 
 async function checkout(year: string, snapshotExtra: Record<string, unknown> = {}, payloadExtra: Record<string, unknown> = {}) {
-  const response = await POST(new Request("http://localhost/api/payment-checkout/prepare", {
-    method: "POST", headers: { "content-type": "application/json" },
+  const response = await POST(new Request("https://gyeolreport.com/api/payment-checkout/prepare", {
+    method: "POST", headers: { "content-type": "application/json", origin: "https://gyeolreport.com" },
     body: JSON.stringify({ consent: adultCheckoutConsent(), provider: "toss", productType: "annual_fortune", inputSnapshot: { ...snapshotExtra, reportInputPayload: { ...payloadFor(year), ...payloadExtra } } }),
   }));
   return { status: response.status, body: await response.json() };
@@ -76,6 +80,27 @@ async function expectCompleted(reportId: string) {
 }
 
 describe("annual purchase policy — real prepare / SQL / worker, no providers", () => {
+  it.each([null, "https://evil.test"])("rejects origin %s before persistence and binding", async origin => {
+    const response = await POST(new Request("https://gyeolreport.com/api/payment-checkout/prepare", {
+      method: "POST", headers: origin ? { origin } : {}, body: "{}",
+    }));
+    expect(response.status).toBe(403);
+    expect(mocks.runtime).not.toHaveBeenCalled();
+    expect(mocks.bind).not.toHaveBeenCalled();
+    expect((await db.query("select payment_order_id from payment_orders")).rows).toEqual([]);
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
+  it("binding failure never delivers a checkout session", async () => {
+    mocks.bind.mockResolvedValue(false);
+    const result = await checkout("2021");
+    expect(result.status).toBe(503);
+    expect(result.body).toMatchObject({ ok: false, error: { code: "PAYMENT_CHECKOUT_UNAVAILABLE" } });
+    expect(result.body).not.toHaveProperty("checkoutSession");
+    expect(result.body).not.toHaveProperty("tossCheckoutRequest");
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
   it.each([
     [beforeRollover, "2021", 200], [beforeRollover, "2020", 400], [beforeRollover, "2027", 400],
     [afterRollover, "2021", 400], [afterRollover, "2022", 200], [afterRollover, "2027", 200],
@@ -134,13 +159,15 @@ describe("annual purchase policy — real prepare / SQL / worker, no providers",
     const payload = productKey === "saju_mbti_compatibility"
       ? { productKey, productSlug, relationshipType: "love", personA: person, personB: { ...person, name: "상대", mbtiType: "INTP" } }
       : { ...payloadFor("2021"), productKey, productSlug, productOptions: {} };
-    const response = await POST(new Request("http://localhost/api/payment-checkout/prepare", {
-      method: "POST", body: JSON.stringify({ consent: adultCheckoutConsent(), provider: "toss", productType: productKey, inputSnapshot: { reportInputPayload: payload } }),
+    const response = await POST(new Request("https://gyeolreport.com/api/payment-checkout/prepare", {
+      method: "POST", headers: { origin: "https://gyeolreport.com" }, body: JSON.stringify({ consent: adultCheckoutConsent(), provider: "toss", productType: productKey, inputSnapshot: { reportInputPayload: payload } }),
     }));
     expect(response.status).toBe(200);
     const body = await response.json();
     expect(body.paymentOrder).toMatchObject({ productType: productKey, amount: 1490 });
-    expect(await inputSnapshot()).toEqual({ reportInputPayload: payload });
+    expect(await inputSnapshot()).toEqual({ reportInputPayload: payload, bookGeneration: { version: "v4", evaluatedAt: beforeRollover.toISOString() } });
+    expect(mocks.bind).toHaveBeenCalledTimes(1);
+    expect(mocks.bind.mock.calls[0][0]).toMatchObject({ buyerId: null, claimHash: expect.stringMatching(/^[a-f0-9]{64}$/) });
     const orderId = body.paymentOrder.providerOrderId as string;
     expect(await confirmPaidReport({ orderId, paymentKey: "mock", amount: 1490 }, store,
       async () => ({ ok: true, confirm: { provider: "toss", paymentKeyReceived: true, orderId, amount: 1490, status: "DONE" } }))).toMatchObject({ ok: true });

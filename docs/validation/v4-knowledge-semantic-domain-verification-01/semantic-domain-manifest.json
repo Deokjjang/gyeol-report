@@ -1,0 +1,33 @@
+{
+  "version": "semantic-domain-v1",
+  "baseSha": "15f13b3b27f67695f2aebb16e738d40b1d3dba95",
+  "domainQueueTotal": 2966,
+  "domainQueueClassified": 2966,
+  "actualMeaningReviewed": 31,
+  "actualMeaningReviewedInDomainQueue": 5,
+  "meaningReviewPendingInDomainQueue": 2961,
+  "domainExplicitProhibitions": 1040,
+  "inheritedExplicitProhibitions": 464,
+  "inheritedSourceIncomplete": 331,
+  "sourceIncomplete": 331,
+  "productPolicyReview": 2145,
+  "unsupportedProducers": 0,
+  "decisionStates": {
+    "CONDITIONAL_CROSSWALK_REVIEWED": 1,
+    "EXPLICITLY_PROHIBITED": 1040,
+    "POLICY_REVIEW_REQUIRED": 1094,
+    "REVIEWED_MEANING_NOT_CUSTOMER_APPROVED": 1,
+    "SEMANTIC_REVIEW_REQUIRED": 499,
+    "SOURCE_INCOMPLETE": 331
+  },
+  "sourceGroups": 192,
+  "inheritedSourceGroupBlockers": 188,
+  "ancestryAudits": 5104,
+  "friendshipChildPolicyBlocks": 63,
+  "humanOperatorReviewed": 0,
+  "humanReviewRequired": 2966,
+  "customerApproval": 0,
+  "runtimeConnection": 0,
+  "actualEvidenceIssued": 0,
+  "deterministicClockExcluded": true
+}

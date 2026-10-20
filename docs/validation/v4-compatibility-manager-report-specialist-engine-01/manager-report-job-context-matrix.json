@@ -1,0 +1,2348 @@
+[
+  {
+    "original": {
+      "id": "mrpr:job:software",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "software",
+      "jobLabel": "개발·IT 구현",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:software",
+      "priorRecordHash": "4f6f4aec4ecc2b151b1e4fbfd81ecad93008fa992a54215300c9018953a5794e",
+      "tasks": "요구 정의·구현·검토·배포 확인",
+      "personAStage": "A는 요구 범위·변경·검토 자원 결정",
+      "personBStage": "B는 구현 상태·검증·막힘 보고",
+      "requiredInformation": "완료 기준·접근·의존성",
+      "output": "검토 가능한 변경안",
+      "qualityCriterion": "요구 충족·검증 결과",
+      "problem": "지시 변경을 구현 오류로 기록",
+      "usefulContribution": "요구·검증·변경 영향 구분",
+      "handoff": "미검증·버전·결정 필요",
+      "revisionDone": "수정 종료·검토 시점",
+      "nextProcedure": "배포 권한·보안 절차 별도",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:finance",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "finance",
+      "jobLabel": "재무기획",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:finance",
+      "priorRecordHash": "a58e3b5a3e83c8d8f0ce9c19b89cb307467b5c4395ccbf03ca007924786a1087",
+      "tasks": "재무 자료 수집·가정·검토",
+      "personAStage": "A는 검토 목적·접근 권한·승인자 확인",
+      "personBStage": "B는 자료 출처·미확인 가정 보고",
+      "requiredInformation": "기준 시점·자료 출처·자격",
+      "output": "검토용 수치·가정표",
+      "qualityCriterion": "가정·사실 분리",
+      "problem": "미확인 수치를 확정 성과로 요구",
+      "usefulContribution": "근거·범위·민감도 표시",
+      "handoff": "검토 버전·승인 상태",
+      "revisionDone": "오류 수정과 가정 변경 분리",
+      "nextProcedure": "투자·법률 판단은 자격·정책 별도",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:teaching",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "teaching",
+      "jobLabel": "교육·강의",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:teaching",
+      "priorRecordHash": "ff682f71105365a5538a5e537ebc9e800ee7aa44cfbc18b8e858cf4cd30b0ce8",
+      "tasks": "목표·자료·수업·피드백",
+      "personAStage": "A는 학습 목표·지원·평가 기준 확인",
+      "personBStage": "B는 진행·자료·확인 질문 보고",
+      "requiredInformation": "대상·목표·자격·동의",
+      "output": "수업안·자료",
+      "qualityCriterion": "목표와 활동의 정합성",
+      "problem": "학생 반응을 교사 능력으로 단정",
+      "usefulContribution": "관찰 범위·자료 조정안",
+      "handoff": "미완료·지원 필요",
+      "revisionDone": "피드백 기준·재검토",
+      "nextProcedure": "학생 보호·평가 권한 별도",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:retail",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "retail",
+      "jobLabel": "판매·매장 운영",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:retail",
+      "priorRecordHash": "d77fa92a4665afe8486aa952ad7cbc8247ae30aa6f9906a544790028e73d8426",
+      "tasks": "진열·재고·응대·정리",
+      "personAStage": "A는 인력·예외 처리·지원 기준 확인",
+      "personBStage": "B는 재고·관찰 문의·처리 상태 알림",
+      "requiredInformation": "상품·정책·기한",
+      "output": "업무 상태·예외 요청",
+      "qualityCriterion": "관찰·추정·승인 필요 구분",
+      "problem": "고객 반응을 팀원 인격 평가로 사용",
+      "usefulContribution": "반응 범위·지원 필요 제시",
+      "handoff": "미결 응대·다음 담당",
+      "revisionDone": "정책·예외·지원 결정",
+      "nextProcedure": "판매·환불 권한 임의 생성 금지",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:accounting",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "accounting",
+      "jobLabel": "회계·증빙 검토",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:accounting",
+      "priorRecordHash": "a9c491e3a922feff9f4a16d804e12ab47103986e751902ddd323c05cc3f159e0",
+      "tasks": "자료 수집·분류·대조·검토",
+      "personAStage": "A는 기준·자격·결재·지원 확인",
+      "personBStage": "B는 불일치·미확인 자료·기한 알림",
+      "requiredInformation": "회계 기준·증빙·권한",
+      "output": "대조·검토·미결 기록",
+      "qualityCriterion": "원자료·추정·승인 구분",
+      "problem": "미확인 수치 확정 요구",
+      "usefulContribution": "불일치·영향·추가 증빙",
+      "handoff": "검토자·미결·버전",
+      "revisionDone": "오류 수정·기준 변경 분리",
+      "nextProcedure": "세무·회계 법률 판단은 자격·정책 별도",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:research",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "research",
+      "jobLabel": "전문 연구·분석",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:research",
+      "priorRecordHash": "a267959d7d78ee943a6f4f7ac39383839229cf62b70f5efeebbb8b4494744faf",
+      "tasks": "질문·자료·검증·한계 정리",
+      "personAStage": "A는 연구 질문·범위·검토 자원 결정",
+      "personBStage": "B는 자료 출처·가정·반례 보고",
+      "requiredInformation": "자료 동의·방법·기한",
+      "output": "근거·한계·검토안",
+      "qualityCriterion": "확인·미검증 구분",
+      "problem": "좋은 결과만 요구해 반례 배제",
+      "usefulContribution": "반례·검증 범위·미확인 표시",
+      "handoff": "자료 버전·추가 검토",
+      "revisionDone": "질문 변경과 오류 수정 구분",
+      "nextProcedure": "결과·성과 날조 금지",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:small_business",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "small_business",
+      "jobLabel": "소규모 사업 운영",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:small_business",
+      "priorRecordHash": "5ba1f5fd038759fde0182de94b4ad2bfb260e25ddddedcca18d7407ffd332ef4",
+      "tasks": "요청·자원·납기·운영 검토",
+      "personAStage": "A는 우선순위·지원·실제 계약 권한 확인",
+      "personBStage": "B는 수행·비용 가정·막힘 알림",
+      "requiredInformation": "계약 범위·가용 자원",
+      "output": "운영 상태·결정 요청",
+      "qualityCriterion": "제안·확정 약속 구분",
+      "problem": "운영자 책임을 팀원에게 이전",
+      "usefulContribution": "영향·선택지·결정 필요",
+      "handoff": "미결·담당·지원 경로",
+      "revisionDone": "범위·납기 변경 승인",
+      "nextProcedure": "지분·손실 분담은 이 관계에서 추정 금지",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:care",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "care",
+      "jobLabel": "의료·돌봄 지원",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:care",
+      "priorRecordHash": "281113f069ce5c28b84446679b34ad2318ad8c78bb5bb0004161f14b94c7f31d",
+      "tasks": "돌봄 계획·상태·지원·인수",
+      "personAStage": "A는 자격·절차·인력·지원 경로 확인",
+      "personBStage": "B는 관찰 상태·막힘·긴급 조건 보고",
+      "requiredInformation": "대상 동의·자격·안전 절차",
+      "output": "확인된 상태·인수 기록",
+      "qualityCriterion": "관찰·추정·긴급 구분",
+      "problem": "지원 부족을 헌신으로 메움",
+      "usefulContribution": "필요 지원·실제 범위 명시",
+      "handoff": "다음 담당·질문·미결",
+      "revisionDone": "안전 절차에 따른 조정",
+      "nextProcedure": "건강 판단·자격 우회 금지",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:marketing",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "marketing",
+      "jobLabel": "마케팅·캠페인 기획",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:marketing",
+      "priorRecordHash": "28ef6fae7737477b5c80ffc105c529c2a41cd2e76c2a83fdb60d3e7717eb4f71",
+      "tasks": "목표·가설·실행안·결과 검토",
+      "personAStage": "A는 목표 지표·범위·자료 지원 결정",
+      "personBStage": "B는 실행 상태·표본·추정 구분",
+      "requiredInformation": "목적·대상·동의·예산",
+      "output": "검토용 실행안·관찰표",
+      "qualityCriterion": "지표·표본·가정 명시",
+      "problem": "상사 기대 수치를 실제 결과로 요구",
+      "usefulContribution": "가설·측정·변경 영향",
+      "handoff": "미확정 지표·승인 필요",
+      "revisionDone": "기준 변경과 측정 오류 분리",
+      "nextProcedure": "광고·개인정보·예산 승인 별도",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:video",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "video",
+      "jobLabel": "영상·콘텐츠 편집",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:video",
+      "priorRecordHash": "23e66f3608d10fed08a2abe2555ec287f28cd4887862e56c6e613d1646aa8a70",
+      "tasks": "기획·촬영·편집·검수",
+      "personAStage": "A는 길이·용도·권리·최종 승인 확인",
+      "personBStage": "B는 컷 상태·미확인 소재·수정 소요",
+      "requiredInformation": "브리프·저작권·자원",
+      "output": "검수용 편집본",
+      "qualityCriterion": "필수 메시지·규격",
+      "problem": "늦은 방향 변경으로 재편집",
+      "usefulContribution": "스토리·시점·변경 영향 표시",
+      "handoff": "소재 권리·버전·미완료",
+      "revisionDone": "수정 차수·종료선",
+      "nextProcedure": "추가 촬영·외주 결정 별도",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:project_planning",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "project_planning",
+      "jobLabel": "기획·전략",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:project_planning",
+      "priorRecordHash": "1fa349020ae8f25c5211523986e9b7853719908bb79b643635362288253549f8",
+      "tasks": "목표·범위·일정·의존성 조정",
+      "personAStage": "A는 우선순위·범위·자원 결정 확인",
+      "personBStage": "B는 계획·실제 차이·결정 필요 보고",
+      "requiredInformation": "목표·가용 자원·승인 경로",
+      "output": "계획·위험·미결 목록",
+      "qualityCriterion": "가정·확정 일정 구분",
+      "problem": "새 우선순위와 기존 납기 동시 유지",
+      "usefulContribution": "영향·선택지·중단 작업",
+      "handoff": "대기 결정·담당·시점",
+      "revisionDone": "변경 이유·범위·기한 기록",
+      "nextProcedure": "실제 권한·성과 추정 금지",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:ux",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "ux",
+      "jobLabel": "사용자 경험 설계",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:ux",
+      "priorRecordHash": "0b30e7a42621e45687990c6e797fd37a0e7444fb14b4b35fdf2d4581e45d0c95",
+      "tasks": "문제 정의·사용 자료·흐름·검토",
+      "personAStage": "A는 검증 목표·범위·접근 지원",
+      "personBStage": "B는 관찰·해석·가설·막힘 구분",
+      "requiredInformation": "대상·자료 동의·과제",
+      "output": "검토 가능한 흐름·가설",
+      "qualityCriterion": "관찰과 추정 구분",
+      "problem": "개인 취향을 사용자 사실로 요구",
+      "usefulContribution": "가설별 검토 질문",
+      "handoff": "미검증·설계 제약·승인 필요",
+      "revisionDone": "기준 변경과 오류 수정 분리",
+      "nextProcedure": "사용자 조사·자료 처리 권한 별도",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:sales",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "sales",
+      "jobLabel": "영업·고객 제안",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:sales",
+      "priorRecordHash": "073767a3759e137fb0de07feec53c6323bf771876bd633e2d5badce1691ee295",
+      "tasks": "요청 파악·제안·협의·후속",
+      "personAStage": "A는 제안 범위·할인·약속 권한 확인",
+      "personBStage": "B는 고객 요구·관찰·미확인 약속 보고",
+      "requiredInformation": "제품 정보·계약 한도",
+      "output": "검토용 제안·후속 목록",
+      "qualityCriterion": "확정 약속과 제안 구분",
+      "problem": "성과 압박으로 권한 밖 약속",
+      "usefulContribution": "조건·승인 필요·범위 제시",
+      "handoff": "미확정·응답 담당",
+      "revisionDone": "변경 조건·약속 승인",
+      "nextProcedure": "매출·수익 보장 금지",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:customer_support",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "customer_support",
+      "jobLabel": "고객 지원·서비스",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:customer_support",
+      "priorRecordHash": "0378b762386291300c84c5c3eb551a197d85bee9fadd61ce5a732ef1421307a3",
+      "tasks": "문의 접수·확인·응답·연결",
+      "personAStage": "A는 대응 기준·예외 권한·지원 확인",
+      "personBStage": "B는 문의 사실·범위·막힘 보고",
+      "requiredInformation": "정책·동의·응답 시한",
+      "output": "처리·미결·연결 상태",
+      "qualityCriterion": "사실과 약속 구분",
+      "problem": "고객 감정을 팀원 능력으로 평가",
+      "usefulContribution": "반복 문의·정보 공백·필요 결정",
+      "handoff": "미결·담당·다음 응답",
+      "revisionDone": "기준·지원·수정 응답 확인",
+      "nextProcedure": "환불·보상 권한 임의 부여 금지",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:photography",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "photography",
+      "jobLabel": "사진가·프리랜서 사진가",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:photography",
+      "priorRecordHash": "3ad978e11fe0cc41d9ad5d0de96406b22fe0a182da76b27a898083d936972dab",
+      "tasks": "촬영 목적·선별·보정·전달",
+      "personAStage": "A는 납품 기준·변경 승인·장비 지원 확인",
+      "personBStage": "B는 촬영·선별 상태·추가 촬영 필요 보고",
+      "requiredInformation": "용도·촬영 조건·사용 허가",
+      "output": "승인된 이미지 묶음",
+      "qualityCriterion": "합의 규격·사용 범위",
+      "problem": "취향 변경으로 반복 보정",
+      "usefulContribution": "변경 전후 샘플 비교",
+      "handoff": "파일 버전·미완료·권리 확인",
+      "revisionDone": "수정 범위·기한 승인",
+      "nextProcedure": "추가 촬영은 비용·권한 재확인",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:logistics",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "logistics",
+      "jobLabel": "생산·물류·현장",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:logistics",
+      "priorRecordHash": "11cd1d5d756321182e20ff64d1dfa2e9fe2d9fa3267d9b81302849962c46fcbb",
+      "tasks": "접수·분류·이동·인수 확인",
+      "personAStage": "A는 안전선·순서·지원·예외 판단",
+      "personBStage": "B는 물량·지연 가능·인수 상태 알림",
+      "requiredInformation": "경로·자격·안전·실제 물량",
+      "output": "진행·인수·예외 기록",
+      "qualityCriterion": "수신과 실제 인수 구분",
+      "problem": "부족 자원을 속도 압박으로 메움",
+      "usefulContribution": "막힘·위험·지원 요청",
+      "handoff": "미인수·다음 담당·필요 시각",
+      "revisionDone": "절차에 맞는 배분·기한 조정",
+      "nextProcedure": "안전·자격 우회 금지",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:counsel_support",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "counsel_support",
+      "jobLabel": "상담·지원 업무",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:counsel_support",
+      "priorRecordHash": "55a1ce8a3a320d989c8ab2f0e60a4eb2532df6a6999034a3389929442c582a21",
+      "tasks": "접수·범위 확인·지원 연결",
+      "personAStage": "A는 자격·지원 범위·위기 절차 확인",
+      "personBStage": "B는 사실·요청·연결 필요 보고",
+      "requiredInformation": "동의·비밀 보호·업무 범위",
+      "output": "지원 연결·미결 기록",
+      "qualityCriterion": "상담·일반 지원 구분",
+      "problem": "팀원에게 타인 감정 전부 책임 요구",
+      "usefulContribution": "범위·지원 담당 확인",
+      "handoff": "보호 필요한 정보·다음 통로",
+      "revisionDone": "담당·응답·범위 확인",
+      "nextProcedure": "진단·치료·법률 역할 생성 금지",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:cafe",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "cafe",
+      "jobLabel": "카페·소상공인 운영",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:cafe",
+      "priorRecordHash": "4e8784c9c7afcc1818505f3e526a1aa5b6d85e7b3d4207de9b4417da581e4b88",
+      "tasks": "준비·주문·제조·정리·교대",
+      "personAStage": "A는 인력·우선순위·안전선·지원 확인",
+      "personBStage": "B는 재고·주문 상태·막힘 보고",
+      "requiredInformation": "실제 영업·위생·자격 조건",
+      "output": "상태·교대·미완료 기록",
+      "qualityCriterion": "안전·확인된 주문 구분",
+      "problem": "인력 부족을 팀원 속도 문제로 축소",
+      "usefulContribution": "병목·필요 지원·대기 구분",
+      "handoff": "재고·미결 주문·다음 담당",
+      "revisionDone": "작업 배분·지원 결정",
+      "nextProcedure": "실제 안전·법정 절차 우선",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:translation",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "translation",
+      "jobLabel": "전문 번역·언어 중개",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:translation",
+      "priorRecordHash": "42c33c3312092ba0ba9c3aef6915163b2bd4385639f720f09c5f29f0f42156cc",
+      "tasks": "범위·용어·번역·검토",
+      "personAStage": "A는 대상 독자·용어 기준·검토 지원",
+      "personBStage": "B는 모호한 원문·대안·일정 보고",
+      "requiredInformation": "원문 버전·전문 자격 필요",
+      "output": "번역 초안·질문표",
+      "qualityCriterion": "뜻·용어·누락 검토",
+      "problem": "기준 없는 문체 교정 반복",
+      "usefulContribution": "용어·의미·취향 구분",
+      "handoff": "미확인 문구·검토자",
+      "revisionDone": "오역과 새 용어 기준 분리",
+      "nextProcedure": "공증·전문 검수 권한 별도",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:brand_design",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "brand_design",
+      "jobLabel": "브랜드·시각 디자인",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:brand_design",
+      "priorRecordHash": "33b7fc738e31f8a3e16c34886244b99147662cef687e164faae1891790a03f10",
+      "tasks": "브리프·시안·피드백·납품",
+      "personAStage": "A는 필수 브랜드 기준·검토 횟수 확인",
+      "personBStage": "B는 시안 차이·가정·수정 소요 알림",
+      "requiredInformation": "용도·규격·권리·브리프",
+      "output": "승인용 시안",
+      "qualityCriterion": "필수 기준과 취향 구분",
+      "problem": "상사 아이디어마다 전면 재작업",
+      "usefulContribution": "비교 기준·변경 비용 제시",
+      "handoff": "시안 상태·승인 범위",
+      "revisionDone": "수정 항목·기한 재확인",
+      "nextProcedure": "추가 범위는 별도 결정",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:writing",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "writing",
+      "jobLabel": "글·정보 콘텐츠",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:writing",
+      "priorRecordHash": "40b664c26cc0ea997a2aabdbb107dd77b2390b991e388efaaee5980e68b5cddc",
+      "tasks": "브리프·자료·초고·편집·검수",
+      "personAStage": "A는 목적·독자·필수 기준·수정 범위 확인",
+      "personBStage": "B는 출처·초안 가정·추가 소요 보고",
+      "requiredInformation": "브리프·권리·근거",
+      "output": "검토용 원고·질문표",
+      "qualityCriterion": "사실·인용·추정 구분",
+      "problem": "취향 변경을 오류 수정으로 반복",
+      "usefulContribution": "수정 출처·범위·시간 제시",
+      "handoff": "원고 버전·미확인·검토자",
+      "revisionDone": "수정 차수·종료 기준",
+      "nextProcedure": "사실·저작권·승인 별도 확인",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:administration",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "administration",
+      "jobLabel": "행정·공공 사무",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:administration",
+      "priorRecordHash": "ea8633f3d750410bf4dc1bbde54eadd8017615a1cdabf8eb36160bf998db0011",
+      "tasks": "접수·규칙 확인·처리·결재",
+      "personAStage": "A는 최신 규칙·결재 경로·예외 결정",
+      "personBStage": "B는 처리 상태·누락·상충 지시 알림",
+      "requiredInformation": "규칙 버전·기한·권한",
+      "output": "처리·결재 상태",
+      "qualityCriterion": "수신·검토·승인 구분",
+      "problem": "복수 지시자 요구 충돌",
+      "usefulContribution": "버전·결정 요청 표시",
+      "handoff": "미결·담당·필요 시점",
+      "revisionDone": "예외 승인·수정 기록",
+      "nextProcedure": "공식 권한은 실제 확인",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "mrpr:job:hands_on_service",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "hands_on_service",
+      "jobLabel": "미용·공방 등 손기술 서비스",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:hands_on_service",
+      "priorRecordHash": "cad0658302607d5fb3c6127e03e2705fa1de04308de48f347d916936b7f2c533",
+      "tasks": "예약·조건 확인·작업·인수",
+      "personAStage": "A는 자격·안전선·지원·예외 결정",
+      "personBStage": "B는 실제 상태·작업 가능 범위·막힘 보고",
+      "requiredInformation": "동의·규격·자격·안전",
+      "output": "작업·확인·미결 기록",
+      "qualityCriterion": "확인된 상태·추정 분리",
+      "problem": "납기 압박으로 필수 확인 생략",
+      "usefulContribution": "지원·추가 확인·변경 영향",
+      "handoff": "인수 조건·다음 담당",
+      "revisionDone": "수정 범위·동의·지원 확인",
+      "nextProcedure": "안전·자격·고객 동의 우회 금지",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "mrpr:material:CH02.P1:manager-people-purpose",
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P3:manager-support-limit",
+        "mrpr:material:CH03.P3:report-participation-signal",
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:final-authority-unsupported",
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH09.P1:recall-shared-completion",
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P4:recall-decision-responsibility"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "output",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "professionalQualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "actualCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  }
+]

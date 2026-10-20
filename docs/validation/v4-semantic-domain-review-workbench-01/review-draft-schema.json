@@ -1,0 +1,31 @@
+{
+  "format": "semantic-domain-review-workbench-v1",
+  "purpose": "REVIEW_DRAFT_NOT_APPROVAL",
+  "allowedDecisions": [
+    "UNSELECTED",
+    "APPROVE_FOR_FURTHER_REVIEW",
+    "REJECT_APPLICATION",
+    "REQUEST_SOURCE",
+    "REQUEST_PRODUCER",
+    "REQUEST_CONTEXT",
+    "REQUEST_MEANING_REVISION",
+    "REQUEST_POLICY_REVIEW",
+    "KEEP_WITHHELD"
+  ],
+  "requiredReviewFields": [
+    "ORIGINAL",
+    "SOURCE",
+    "MEANING",
+    "CONDITIONS",
+    "COUNTEREXAMPLES",
+    "PROHIBITIONS",
+    "SCOPE",
+    "REMAINING_GATES"
+  ],
+  "additionalProperties": false,
+  "scopeIsExact": true,
+  "selectedDecisionDoesNotAuthenticateReviewer": true,
+  "officialApprovalConversion": "FORBIDDEN",
+  "maxBytes": 2097152,
+  "maxDecisions": 1000
+}

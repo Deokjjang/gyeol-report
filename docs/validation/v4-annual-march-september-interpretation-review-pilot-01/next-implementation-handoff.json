@@ -1,0 +1,124 @@
+{
+  "interpretationReviewPilot": "IMPLEMENTED",
+  "meaningApproved": false,
+  "humanReviewCompleted": false,
+  "productApproved": false,
+  "customerApproved": false,
+  "customerClaims": 0,
+  "customerReaderBridges": 0,
+  "customerBookAllocations": 0,
+  "wholeBookCompleted": false,
+  "customerReady": false,
+  "verifiedMonthContracts": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "june": "ROLE_SOURCE_DECISION_REQUIRED",
+  "november": "ACTUAL_CONTEXT_TIMESTAMP_REQUIRED",
+  "annualCandidates": 42,
+  "majorCandidates": 2,
+  "originalUnits": 422,
+  "originalNativeReceipts": 703,
+  "originalTypedRoots": 246,
+  "unmatchedUnits": 396,
+  "sourceIntegrityFail": 30,
+  "existingFactualLedgerRecords": 1052,
+  "newFactRoots": 0,
+  "newMeaningIdentities": 0,
+  "newClaimIdentities": 0,
+  "actualReview": {
+    "status": "INTERPRETATION_REVIEW_PILOT_IMPLEMENTED",
+    "actualFixtures": [
+      "fixture-annual-A",
+      "fixture-annual-F",
+      "fixture-annual-C2028",
+      "fixture-annual-ranged-transition"
+    ],
+    "march": [
+      {
+        "fixture": "fixture-annual-A",
+        "state": "TECHNICALLY_ELIGIBLE_FOR_REVIEW",
+        "candidateId": "annual-comparison-candidate:v1:a994a6c2a23d46974cf934092cd5ffd59eaaa80c5c390cb6d340abb11ee96348"
+      },
+      {
+        "fixture": "fixture-annual-F",
+        "state": "TECHNICALLY_WITHHELD",
+        "candidateId": null
+      },
+      {
+        "fixture": "fixture-annual-C2028",
+        "state": "TECHNICALLY_ELIGIBLE_FOR_REVIEW",
+        "candidateId": "annual-comparison-candidate:v1:3af223036089d3a27ac0c91f0f27fbf9feb1144ad0489ae911277510b2c20cfa"
+      },
+      {
+        "fixture": "fixture-annual-ranged-transition",
+        "state": "TECHNICALLY_WITHHELD",
+        "candidateId": null
+      }
+    ],
+    "september": [
+      {
+        "fixture": "fixture-annual-A",
+        "state": "TECHNICALLY_ELIGIBLE_FOR_REVIEW",
+        "candidateId": "annual-comparison-candidate:v1:639dcbf7b42bfd5d127761fcc14013d4357d0efaa530a6e5120415e84363464a"
+      },
+      {
+        "fixture": "fixture-annual-F",
+        "state": "TECHNICALLY_WITHHELD",
+        "candidateId": null
+      },
+      {
+        "fixture": "fixture-annual-C2028",
+        "state": "TECHNICALLY_ELIGIBLE_FOR_REVIEW",
+        "candidateId": "annual-comparison-candidate:v1:edf6c7d8fe927df69643d407db29c3e4b68d7230b6e47e97637cc1f95be1215c"
+      },
+      {
+        "fixture": "fixture-annual-ranged-transition",
+        "state": "TECHNICALLY_ELIGIBLE_FOR_REVIEW",
+        "candidateId": "annual-comparison-candidate:v1:9f4670cc4754d0a8c469db3a6093380e5fdb34843d965fde32ec1f96968e0070"
+      }
+    ],
+    "eligibleCases": 5,
+    "withheldCases": 3,
+    "factExplanationRecords": 136,
+    "interpretationReviewDraftSentences": 35,
+    "withheldInferenceAttempts": 20,
+    "evidenceLinkedDraftSentences": 171,
+    "unsupportedUnlabeledSentences": 0,
+    "reviewDraftParagraphs": 40,
+    "existingFactualLedgerRecords": 1052,
+    "humanReviewCompleted": false,
+    "meaningApproved": false,
+    "productApproved": false,
+    "customerApproved": false,
+    "customerClaims": 0,
+    "customerReaderBridges": 0,
+    "customerBookAllocations": 0,
+    "newFactRoots": 0,
+    "independentMeaningsAdded": 0,
+    "originalResearchSourcesVerified": 2,
+    "directModernMeaningSourceVerified": false,
+    "readerQuestions": 2060
+  },
+  "sourceSupport": "Original Research Record proof is not direct verification of a modern effect or traditional exact meaning",
+  "existingRegistry": "C2028 actual address mismatch preserved; ranged structural registration confers no approval",
+  "reviewer": null,
+  "officialApprovalEnvelope": null,
+  "nextImplementationTask": "NOT_STARTED; separate instruction and genuine source/Meaning/Product/Customer review required",
+  "remainingBlockers": [
+    "Direct source for modern advice effects unverified",
+    "Required actual user Context not linked",
+    "Human Meaning/Product/Customer review pending",
+    "Original June and November holds and Source Integrity FAIL30 preserved",
+    "Known protected-hash failures, legacy Workbench setup failure blocking87 assertions, and October5000ms sensitivity separate",
+    "Historical ignored/unrecorded temporary data remains UNVERIFIED"
+  ]
+}

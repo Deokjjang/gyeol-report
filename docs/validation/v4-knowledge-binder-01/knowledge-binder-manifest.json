@@ -1,0 +1,151 @@
+{
+  "version": "knowledge-binder-v1",
+  "baseSha": "daec9f64e0d871688ea1b657621127170f9c7529",
+  "researchRecords": 18610,
+  "interpretationCandidates": 4270,
+  "nonCandidateRecords": 14340,
+  "foundationSlots": 4799,
+  "fixtureOccurrences": 27,
+  "customerEligible": 0,
+  "runtimeConnection": 0,
+  "specialistClaimsEmitted": 0,
+  "bookChanges": 0,
+  "graphStatus": "PARTIAL_INPUTS_INDIVIDUAL_REQUIREMENTS_EVALUATED",
+  "coverage": {
+    "candidateOccurrences": 5073,
+    "sourceMatchOccurrences": 10536,
+    "actualEvidenceMatchOccurrences": 917,
+    "sourceGroupPassOccurrences": 0,
+    "structurallyMatched": 81,
+    "approvalPending": 0,
+    "customerEligible": 0,
+    "withheld": 5073,
+    "gateStates": {
+      "SOURCE_INTEGRITY": {
+        "PASS": 5043,
+        "FAIL": 30,
+        "UNKNOWN": 0,
+        "NOT_APPLICABLE": 0,
+        "REVIEW_REQUIRED": 0
+      },
+      "INTERPRETATION_REVIEW": {
+        "PASS": 0,
+        "FAIL": 0,
+        "UNKNOWN": 0,
+        "NOT_APPLICABLE": 0,
+        "REVIEW_REQUIRED": 5073
+      },
+      "PRODUCER_SUPPORT": {
+        "PASS": 2012,
+        "FAIL": 374,
+        "UNKNOWN": 2687,
+        "NOT_APPLICABLE": 0,
+        "REVIEW_REQUIRED": 0
+      },
+      "ACTUAL_CALCULATED_FACT": {
+        "PASS": 116,
+        "FAIL": 1519,
+        "UNKNOWN": 3438,
+        "NOT_APPLICABLE": 0,
+        "REVIEW_REQUIRED": 0
+      },
+      "ACTUAL_OWNER": {
+        "PASS": 177,
+        "FAIL": 62,
+        "UNKNOWN": 4834,
+        "NOT_APPLICABLE": 0,
+        "REVIEW_REQUIRED": 0
+      },
+      "ACTUAL_DIRECTION": {
+        "PASS": 302,
+        "FAIL": 0,
+        "UNKNOWN": 51,
+        "NOT_APPLICABLE": 4720,
+        "REVIEW_REQUIRED": 0
+      },
+      "ALL_ANCESTOR_DOMAINS": {
+        "PASS": 86,
+        "FAIL": 1790,
+        "UNKNOWN": 3197,
+        "NOT_APPLICABLE": 0,
+        "REVIEW_REQUIRED": 0
+      },
+      "TIME_INTERSECTION": {
+        "PASS": 2,
+        "FAIL": 0,
+        "UNKNOWN": 1170,
+        "NOT_APPLICABLE": 3901,
+        "REVIEW_REQUIRED": 0
+      },
+      "ACTUAL_USER_STATE": {
+        "PASS": 858,
+        "FAIL": 40,
+        "UNKNOWN": 4175,
+        "NOT_APPLICABLE": 0,
+        "REVIEW_REQUIRED": 0
+      },
+      "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+        "PASS": 0,
+        "FAIL": 372,
+        "UNKNOWN": 0,
+        "NOT_APPLICABLE": 0,
+        "REVIEW_REQUIRED": 4701
+      },
+      "PRODUCT_SPECIALISM": {
+        "PASS": 2596,
+        "FAIL": 0,
+        "UNKNOWN": 2477,
+        "NOT_APPLICABLE": 0,
+        "REVIEW_REQUIRED": 0
+      },
+      "CUSTOMER_APPROVAL": {
+        "PASS": 0,
+        "FAIL": 0,
+        "UNKNOWN": 0,
+        "NOT_APPLICABLE": 0,
+        "REVIEW_REQUIRED": 5073
+      }
+    },
+    "reasons": {
+      "ACTUAL_ANCESTRY_NOT_SUPPLIED": 4947,
+      "ACTUAL_DIRECTION_ID_REQUIRED": 51,
+      "ACTUAL_EVIDENCE_NOT_FOUND": 1797,
+      "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 1939,
+      "ACTUAL_OWNER_REQUIREMENT_MISSING": 2957,
+      "ACTUAL_PERIOD_REQUIRED": 316,
+      "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED": 56,
+      "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 368,
+      "ALL_AND_GROUP_SOURCES_REQUIRED": 177,
+      "CODEX_MODEL_REVIEW_IS_NOT_OPERATOR_APPROVAL": 3,
+      "CONDITIONAL_INTERSECTION": 1,
+      "CONTRACT_NOT_MACHINE_CHECKABLE": 4899,
+      "CUSTOMER_APPROVAL_PENDING": 5073,
+      "DISALLOWED_ANCESTOR_DOMAIN": 496,
+      "EXACT_PRODUCER_REQUIREMENT_MISSING": 2957,
+      "INCOMPATIBLE_SOURCE_GROUP": 33,
+      "INCOMPLETE_REQUIRED_ANCESTRY": 1373,
+      "INHERITED_SOURCE_GROUP_HELD": 188,
+      "INTRODUCED_MEANING_CONTRACT_MISSING": 4,
+      "MISSING_PARTICIPANT": 113,
+      "OPERATOR_APPROVAL_PENDING": 5073,
+      "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 5073,
+      "REQUIRED_ANCESTOR_WITHHELD": 13,
+      "REQUIRED_FUSION_ANCESTOR_NOT_MATCHED": 3,
+      "REQUIRED_GRAPH_NODE_WITHHELD": 13,
+      "REQUIRED_USER_STATE_NOT_VERIFIED": 1787,
+      "RULE_SPECIFIC_FUSION_NOT_FOUND": 104,
+      "SEMANTIC_REVIEW_REQUIRED": 5070,
+      "SOURCE_GROUP_OWNER_TYPE_MISMATCH": 167,
+      "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH": 30,
+      "SOURCE_REFERENCE_UNRESOLVED": 33,
+      "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 2477,
+      "UNADDRESSABLE_PRODUCER_OBSERVATION": 3,
+      "UNKNOWN_INTERVAL": 856,
+      "UNKNOWN_MBTI": 480,
+      "UNSUPPORTED_PRODUCER": 270,
+      "WRONG_OWNER": 62
+    },
+    "distinctFactRoots": 358,
+    "factRootReferenceOccurrences": 2958
+  }
+}

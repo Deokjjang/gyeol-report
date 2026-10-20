@@ -1,3 +1,4 @@
+import type { V4CustomerReport } from "../interpretation-v4/runtimeTypes";
 import type { BirthTimeContexts, BirthTimePrecision } from "../saju/birthTimePrecisionTypes";
 import type { AnnualFortuneReportDraft } from "./annualFortuneReportDraftTypes";
 import type { AnnualV3Draft } from "../interpretation-v3/annualEditorial";
@@ -34,6 +35,7 @@ export type ComprehensiveV2ProductPreviewDraft =
   };
 
 export type ProductPreviewSnapshotDraft =
+  | V4CustomerReport
   | CareerReportDraft
   | CareerV3Draft
   | LoveMarriageChildReportDraft

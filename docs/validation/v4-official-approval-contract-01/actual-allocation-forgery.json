@@ -1,0 +1,16 @@
+{
+  "baseSha": "16afa43981db46a4cd936f120bfcc5cf86d58c54",
+  "originalFixture": "fixture-comprehensive-A",
+  "originalAssignments": 0,
+  "attemptedForgedAssignments": 1,
+  "rejected": true,
+  "observedErrors": [
+    "CURRENT_ACTUAL_RESEARCH_ASSIGNMENTS_MUST_BE_ZERO",
+    "ORIGINAL_READER_COVERAGE_MISSING",
+    "READER_PLAN_ADDRESS_OR_PRIMARY_CHANGED",
+    "UNVERIFIED_PLAN_ASSIGNMENT"
+  ],
+  "originalPlanValidated": true,
+  "actualApprovalsIssued": 0,
+  "actualBookAllocations": 0
+}

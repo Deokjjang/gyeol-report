@@ -1,3 +1,6 @@
+// These persisted legacy fixtures enter after the independently tested owner lookup.
+vi.mock("../../../src/lib/book/ownerAccess", () => ({ loadOwnedTicketBook: async () => ({ kind: "absent" }) }));
+import type { ProductPreviewSnapshotDraft } from "../../../src/lib/report-generation/productPreviewSnapshot";
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { createSingleProductOptions as formOptions } from "../../../src/lib/report-generation/reportInputPresentation";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -86,7 +89,7 @@ beforeAll(async () => {
     const readback = await readPublishedReport(store, String(paid.reportId));
     expect(readback.status).toBe("COMPLETED");
     const snapshot = readback.snapshot as ProductPreviewSnapshot;
-    const before = createProductPreviewSnapshot({ reportId: snapshot.reportId, createdAtIso: snapshot.createdAtIso, productKey: c.product, productSlug: c.slug, draft: generated.draft, evidencePacket: generated.evidencePacket });
+    const before = createProductPreviewSnapshot({ reportId: snapshot.reportId, createdAtIso: snapshot.createdAtIso, productKey: c.product, productSlug: c.slug, draft: generated.draft as ProductPreviewSnapshotDraft, evidencePacket: generated.evidencePacket });
     expect(before.ok).toBe(true); if (!before.ok) continue;
     expect(snapshot.productVersion).toBe("v3");
     manifests[c.key] = completenessManifest(before.value);

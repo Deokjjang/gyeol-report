@@ -10,9 +10,8 @@ import {
 } from "../../../src/lib/report-generation/openaiCompatibilityReportWriterPrompt";
 import type {
   CompatibilityGenerationInput,
-  CompatibilityRelationshipType,
 } from "../../../src/lib/report-generation/reportInputAdapter";
-import { COMPATIBILITY_RELATIONSHIP_TYPES } from "../../../src/lib/report-generation/reportInputTypes";
+import { COMPATIBILITY_RELATIONSHIP_TYPES, type CompatibilityRelationshipType } from "../../../src/lib/report-generation/reportInputTypes";
 
 const sourcePath = join(
   process.cwd(),

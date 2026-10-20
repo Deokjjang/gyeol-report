@@ -1,0 +1,242 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-compatibility-love-product-knowledge-01
+
+ ❯ tests/unit/report-knowledge/compatibilityLoveResearch.test.ts (556 tests | 33 failed) 934ms
+   × 'clr:material:CH09.P1:recall-trust-as-…' only recalls earlier, type-compatible, actually introduced meanings 4ms
+   × 'clr:material:CH09.P1:recall-mutual-ca…' only recalls earlier, type-compatible, actually introduced meanings 1ms
+   × 'clr:material:CH09.P2:recall-symbol-gr…' only recalls earlier, type-compatible, actually introduced meanings 0ms
+   × 'clr:material:CH09.P2:recall-independe…' only recalls earlier, type-compatible, actually introduced meanings 0ms
+   × 'clr:material:CH09.P3:recall-response-…' only recalls earlier, type-compatible, actually introduced meanings 0ms
+   × 'clr:material:CH09.P3:recall-request-n…' only recalls earlier, type-compatible, actually introduced meanings 0ms
+   × 'clr:material:CH09.P4:closing-response…' only recalls earlier, type-compatible, actually introduced meanings 0ms
+   × 'clr:material:CH09.P4:closing-new-and-…' only recalls earlier, type-compatible, actually introduced meanings 0ms
+   × actual offline 'A': '두 사람 MBTI 기지' preserves source ownership and generation 1ms
+   × actual offline 'B': 'A만 MBTI 기지' preserves source ownership and generation 0ms
+   × actual offline 'C': 'B만 MBTI 기지' preserves source ownership and generation 0ms
+   × actual offline 'D': '양쪽 MBTI 미상' preserves source ownership and generation 0ms
+   × actual offline 'E': 'A 출생시간 미상' preserves source ownership and generation 0ms
+   × actual offline 'F': 'B 출생시간 미상' preserves source ownership and generation 0ms
+   × actual offline 'G': '양쪽 시간 확정' preserves source ownership and generation 0ms
+   × actual offline 'H': '같은 INTP 유형' preserves source ownership and generation 0ms
+   × actual offline 'I': '서로 다른 INTP/ESFJ' preserves source ownership and generation 0ms
+   × actual offline 'J': '수신자 십성 AB 정관·BA 정재' preserves source ownership and generation 0ms
+   × actual offline 'K': '양쪽 비견: 차이를 창작하지 않음' preserves source ownership and generation 0ms
+   × actual offline 'L': '실제 합 존재' preserves source ownership and generation 0ms
+   × actual offline 'M': '실제 충 존재' preserves source ownership and generation 0ms
+   × actual offline 'N': '합과 충 공존' preserves source ownership and generation 0ms
+   × actual offline 'O': 'cross-branch 관계 없음; 방향 십성은 존재' preserves source ownership and generation 0ms
+   × actual offline 'P': '독립 개인 자료와 여러 실제 합 존재; 긍정 결과 보장 아님' preserves source ownership and generation 0ms
+   × actual offline 'Q': '동일 원국·MBTI 미상: signed-axis friction 비…' preserves source ownership and generation 0ms
+   × actual offline 'R': '양쪽 유형 미상: MBTI Pair별 repair 출처 없음; 일반…' preserves source ownership and generation 0ms
+   × actual offline 'S': '子未 원진은 연구에만, 실제 harm은 존재' preserves source ownership and generation 0ms
+   × actual offline 'T': '子未 해≠원진: producer/연구 지원 범위 불일치 보류' preserves source ownership and generation 0ms
+   × actual offline 'U': '이름만 교환: person identity는 변경, 계산은 유지' preserves source ownership and generation 0ms
+   × actual offline 'V': '전체 A/B 입력 순서 교환' preserves source ownership and generation 0ms
+   × actual offline 'W': '동일 입력·고정 시각 재실행' preserves source ownership and generation 0ms
+   × actual offline 'X': '다른 6관계는 감사·격리만' preserves source ownership and generation 0ms
+   × compares whole-role swap versus name-only swap using actual canonical evidence and independent profiles 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 33 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > 'clr:material:CH09.P1:recall-trust-as-…' only recalls earlier, type-compatible, actually introduced meanings
+AssertionError: expected [ 'A:ISTJ', 'B:ISFJ' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "A:ISTJ",
++   "B:ISFJ",
++ ]
+
+ ❯ tests/unit/report-knowledge/compatibilityLoveResearch.test.ts:60:333
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/33]⎯
+
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > 'clr:material:CH09.P1:recall-mutual-ca…' only recalls earlier, type-compatible, actually introduced meanings
+AssertionError: expected [ 'A:ENFJ', 'B:ESFJ' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "A:ENFJ",
++   "B:ESFJ",
++ ]
+
+ ❯ tests/unit/report-knowledge/compatibilityLoveResearch.test.ts:60:333
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/33]⎯
+
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > 'clr:material:CH09.P2:recall-symbol-gr…' only recalls earlier, type-compatible, actually introduced meanings
+AssertionError: expected [ 'A:ESFP', 'B:ISTJ' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "A:ESFP",
++   "B:ISTJ",
++ ]
+
+ ❯ tests/unit/report-knowledge/compatibilityLoveResearch.test.ts:60:333
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/33]⎯
+
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > 'clr:material:CH09.P2:recall-independe…' only recalls earlier, type-compatible, actually introduced meanings
+AssertionError: expected [ 'A:INTP', 'B:INFJ' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "A:INTP",
++   "B:INFJ",
++ ]
+
+ ❯ tests/unit/report-knowledge/compatibilityLoveResearch.test.ts:60:333
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/33]⎯
+
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > 'clr:material:CH09.P3:recall-response-…' only recalls earlier, type-compatible, actually introduced meanings
+AssertionError: expected [ 'A:ESFP', 'B:INTP' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "A:ESFP",
++   "B:INTP",
++ ]
+
+ ❯ tests/unit/report-knowledge/compatibilityLoveResearch.test.ts:60:333
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/33]⎯
+
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > 'clr:material:CH09.P3:recall-request-n…' only recalls earlier, type-compatible, actually introduced meanings
+AssertionError: expected [ 'A:ISFJ', 'B:ISTP' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "A:ISFJ",
++   "B:ISTP",
++ ]
+
+ ❯ tests/unit/report-knowledge/compatibilityLoveResearch.test.ts:60:333
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/33]⎯
+
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > 'clr:material:CH09.P4:closing-response…' only recalls earlier, type-compatible, actually introduced meanings
+AssertionError: expected [ 'A:INTP', 'B:ESFJ' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "A:INTP",
++   "B:ESFJ",
++ ]
+
+ ❯ tests/unit/report-knowledge/compatibilityLoveResearch.test.ts:60:333
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/33]⎯
+
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > 'clr:material:CH09.P4:closing-new-and-…' only recalls earlier, type-compatible, actually introduced meanings
+AssertionError: expected [ 'A:ISTJ', 'B:ENFP' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "A:ISTJ",
++   "B:ENFP",
++ ]
+
+ ❯ tests/unit/report-knowledge/compatibilityLoveResearch.test.ts:60:333
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/33]⎯
+
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'A': '두 사람 MBTI 기지' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'B': 'A만 MBTI 기지' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'C': 'B만 MBTI 기지' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'D': '양쪽 MBTI 미상' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'E': 'A 출생시간 미상' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'F': 'B 출생시간 미상' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'G': '양쪽 시간 확정' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'H': '같은 INTP 유형' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'I': '서로 다른 INTP/ESFJ' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'J': '수신자 십성 AB 정관·BA 정재' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'K': '양쪽 비견: 차이를 창작하지 않음' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'L': '실제 합 존재' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'M': '실제 충 존재' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'N': '합과 충 공존' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'O': 'cross-branch 관계 없음; 방향 십성은 존재' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'P': '독립 개인 자료와 여러 실제 합 존재; 긍정 결과 보장 아님' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'Q': '동일 원국·MBTI 미상: signed-axis friction 비…' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'R': '양쪽 유형 미상: MBTI Pair별 repair 출처 없음; 일반…' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'S': '子未 원진은 연구에만, 실제 harm은 존재' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'T': '子未 해≠원진: producer/연구 지원 범위 불일치 보류' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'U': '이름만 교환: person identity는 변경, 계산은 유지' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'V': '전체 A/B 입력 순서 교환' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'W': '동일 입력·고정 시각 재실행' preserves source ownership and generation
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > actual offline 'X': '다른 6관계는 감사·격리만' preserves source ownership and generation
+AssertionError: {"code":"INVALID_REPORT_INPUT","message":"V4_EXPLICIT_CLOCK_REQUIRED","validationErrors":["V4_EXPLICIT_CLOCK_REQUIRED"]}: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/report-knowledge/compatibilityLoveResearch.test.ts:85:128
+     83|  for(const [i,payload]of c.variants.entries()){
+     84|   const g=await generateV4ShadowReport(payload,"2026-10-12T12:00:00+09…
+     85|   if(!g.ok){observations.push({letter:c.letter,variant:i,ok:false,payl…
+       |                                                                                                                                ^
+     86|   const e=g.evidencePacket as V4RuntimeEvidence;expect(e.composition.p…
+     87|   const r=e.composition.result as CompatibilityProduct,ev=r.evidence,d…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/33]⎯
+
+ FAIL  tests/unit/report-knowledge/compatibilityLoveResearch.test.ts > compares whole-role swap versus name-only swap using actual canonical evidence and independent profiles
+AssertionError: expected [ { letter: 'U', variant: +0, …(3) } ] to have a length of 2 but got 1
+
+- Expected
++ Received
+
+- 2
++ 1
+
+ ❯ tests/unit/report-knowledge/compatibilityLoveResearch.test.ts:101:100
+     99| },120000);
+    100| it("compares whole-role swap versus name-only swap using actual canoni…
+    101|  const u=observations.filter(r=>r.letter==="U"),v=observations.filter(…
+       |                                                                                                    ^
+    102|  expect(u[0].hashes?.personA).toBe(u[1].hashes?.personA);expect(u[0].h…
+    103|  expect(v[0].hashes?.personA).toBe(v[1].hashes?.personB);expect(v[0].h…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/33]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  33 failed | 523 passed (556)
+   Start at  23:40:25
+   Duration  3.90s (transform 2.24s, setup 18ms, import 2.75s, tests 934ms, environment 0ms)

@@ -1,0 +1,73 @@
+{
+  "status": "ACTUAL_CONTEXT_TIMESTAMP_REQUIRED",
+  "implemented": [
+    "Exact original November source and hypothetical scene proof",
+    "Every actual November canonical segment and Ipdong boundary",
+    "Original reading period classifier and separate reading/evaluation/generated/policy clocks",
+    "Payload provenance and authenticated timestamp absence diagnostics",
+    "One-window current-fact Native Binder",
+    "Explicit withhold and caller-forgery rejection"
+  ],
+  "verifiedMonthsBefore": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "verifiedMonthsAfter": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "remainingMonths": [
+    6,
+    11
+  ],
+  "novemberCandidates": 0,
+  "currentFactBindings": 8,
+  "annualCandidatesBefore": 42,
+  "annualCandidatesAfter": 42,
+  "majorCandidates": 2,
+  "unmatchedUnits": 396,
+  "newFactRoots": 0,
+  "customerClaims": 0,
+  "customerApprovals": 0,
+  "customerReaderBridges": 0,
+  "plannerAssignments": 0,
+  "requiredContextSourceContract": [
+    "Original input source identity/hash and producer/version",
+    "Payload hash plus fixture/owner identity",
+    "Authenticated original observation timestamp tied to actual observed fields",
+    "Exact observation scope, never a promise of future state"
+  ],
+  "notAuthorizedNow": [
+    "Existing UserContext schema expansion",
+    "Invented capturedAt",
+    "Customer runtime or DB writes",
+    "11/12 promotion without original timestamp source"
+  ],
+  "nextImplementationTask": "Not started. Separate user instruction and verified original source required before implementing authenticated Context observation input/provenance. Do not create a positive fixture from a clock copy.",
+  "remainingBlockers": [
+    "No original authenticated context observation timestamp; ACTUAL_CONTEXT_TIMESTAMP_REQUIRED for all four Annual fixtures",
+    "November original candidates 0; month contracts 10/12",
+    "June ROLE_SOURCE_DECISION_REQUIRED unchanged",
+    "30 original Source Integrity FAIL unchanged",
+    "Meaning/Product/Customer approval pending; no Claims/Reader/Planner authorization",
+    "Two exact-Base protected-hash failures and one 5000ms timeout reproduced on exact Base; first full October run had two 240000ms timeouts overlapping confirmed system sleep; both passed unchanged rerun; broader timing stability not declared fixed",
+    "Historical ignored/unrecorded temporary worktree losses remain UNVERIFIED"
+  ],
+  "automaticFollowupStarted": false
+}

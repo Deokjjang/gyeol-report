@@ -1,0 +1,12 @@
+{
+  "preExistingWorktrees": 29,
+  "headBranchStatusAndFileHashesEqual": true,
+  "existingTrackedFileLocks": 3073,
+  "originalCheckout": "/Users/Deokmin/Dev/projects/gyeol-report",
+  "originalBranch": "v4/annual-editorial-quality-fix-01",
+  "originalHead": "c048218cc5961e0f53a1deab2603511e17559fc3",
+  "originalStatus": " M .gitignore\n M AGENTS.md\n?? supabase/.temp/\n",
+  "dirtyFilesCount": 11,
+  "allExistingFileHashDifferences": [],
+  "snapshotScope": "every tracked and nonignored untracked file in29pre-existing worktrees; new worktree excluded"
+}

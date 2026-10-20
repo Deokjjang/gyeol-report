@@ -1,0 +1,58 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "ARRAY",
+  "entries": 140,
+  "logicalJsonHash": "ad4deba2643aabe59072abbfd31f1a5fd05379adbdeabee8eff3465709b18c2d",
+  "parts": [
+    {
+      "file": "editorial-handoff-part-0033.json",
+      "sha256": "e0ff878e4d38b3d7a1bf9d1da21473bcaa1b68fab6c3894621f7142dda252f7e",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "editorial-handoff-part-0034.json",
+      "sha256": "18f6cef222a35880ee4c58424dfdc335f1d7ef15ce81b36c492313f88020583d",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "editorial-handoff-part-0035.json",
+      "sha256": "2918f92ba5b69a16e4f8ceced57a6fc049603016275e8411af6b671fc884e451",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "editorial-handoff-part-0036.json",
+      "sha256": "03cef81c2e29844a880494f82c3fb2df2187f186e2b72ccca1601c78236d8699",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "editorial-handoff-part-0037.json",
+      "sha256": "1b50647c1d5604fc0e62ceec9296128933036c7f96e2414eedf14b41983ed799",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "editorial-handoff-part-0038.json",
+      "sha256": "9d658eaa3d627a0ae39e761505614711338e877ded502154f811b4506aed251b",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "editorial-handoff-part-0039.json",
+      "sha256": "ec0134d35414decf2a644cea1ccbe390f35ab0ebdcfee419af1b877ee964d73e",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "editorial-handoff-part-0040.json",
+      "sha256": "be7fdcbcd837063206e90cc483441bbbcd1232c3368a36894d71209a2193c512",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "editorial-handoff-part-0041.json",
+      "sha256": "64949ca283f82f07d3acdcf442efa0d80ccea0e751a1b9aef09b6df05f12ec69",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "editorial-handoff-part-0042.json",
+      "sha256": "0f90089d6722241efcc77db63c5d07b322bde44b53e8ee4d9972f89c9c5581be",
+      "kind": "CHUNK"
+    }
+  ]
+}

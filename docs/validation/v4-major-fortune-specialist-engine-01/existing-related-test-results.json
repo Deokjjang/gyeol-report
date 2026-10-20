@@ -1,0 +1,60 @@
+{
+  "passed": 478,
+  "failed": 0,
+  "pending": 0,
+  "files": [
+    {
+      "file": "unit/report-knowledge/actualEvidenceGraph.test.ts",
+      "tests": 56
+    },
+    {
+      "file": "unit/report-knowledge/careerSpecialistEngine.test.ts",
+      "tests": 78
+    },
+    {
+      "file": "unit/report-knowledge/comprehensiveSpecialistEngine.test.ts",
+      "tests": 62
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeBinder.test.ts",
+      "tests": 74
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeSemanticDomainVerification.test.ts",
+      "tests": 43
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeSourceVerification.test.ts",
+      "tests": 37
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeUnifiedCatalog.test.ts",
+      "tests": 12
+    },
+    {
+      "file": "unit/report-knowledge/koreanEditorialPreservation.test.ts",
+      "tests": 18
+    },
+    {
+      "file": "unit/report-knowledge/loveSpecialistEngine.test.ts",
+      "tests": 56
+    },
+    {
+      "file": "unit/report-knowledge/productSpecialistFoundation.test.ts",
+      "tests": 42
+    }
+  ],
+  "initialRun": {
+    "passed": 421,
+    "failedAssertions": 1,
+    "pendingAfterHookTimeout": 56,
+    "catalogFirstAssertionMs": 5012.515792000006,
+    "loveHookError": "Hook timed out in 240000ms"
+  },
+  "isolatedReruns": {
+    "knowledgeUnifiedCatalog": 12,
+    "loveSpecialistEngine": 56,
+    "sameSourceFixturesAndOriginalLimits": true
+  },
+  "noSkipOrFixtureEdits": true
+}

@@ -1,0 +1,23 @@
+{
+  "newRecords": 863,
+  "sourceReferences": 735,
+  "independentCalculatedFacts": 0,
+  "independentCustomerApprovedClaims": 0,
+  "relativeSlotQuestions": 168,
+  "questionViewsNotCountedAs168Meanings": true,
+  "exactSameFieldMatchesAmongAuthoredStudies": [],
+  "sharedSafetyPoliciesNotNewMeanings": true,
+  "sharedTenGodDefinitionsNotNewFactRoots": true,
+  "priorResearchWholeRecordCopiedOnlyInExplicitReferenceCrosswalks": true,
+  "coreMeaningReview": "human-review.md",
+  "semanticSimilarityProof": false,
+  "informationFunctions": [
+    "new_fact_only_from_existing_calculation",
+    "new_conditional_application",
+    "comparison",
+    "continuity",
+    "withhold"
+  ],
+  "newScores": 0,
+  "newWeights": 0
+}

@@ -279,7 +279,7 @@ function createLongformReadings(): ComprehensiveReportV2Draft["longformReadings"
   }));
 }
 
-function createSajuFeatureChapter(): ComprehensiveReportV2Draft["sajuFeatureChapter"] {
+function createSajuFeatureChapter(): NonNullable<ComprehensiveReportV2Draft["sajuFeatureChapter"]> {
   return {
     titleKo: "명리 특징 해석",
     subtitleKo: "공통 만세력표는 근거이고, 이 챕터는 원국 특징을 현실 언어로 풀어보는 해석입니다.",

@@ -1,0 +1,13 @@
+{
+  "keyboard": "PASS",
+  "focusVisible": "PASS",
+  "labelsAndLiveStatus": "PASS",
+  "axe": {
+    "violations": [],
+    "passes": 22,
+    "incomplete": [],
+    "screenReaderSession": "UNVERIFIED"
+  },
+  "nativeScreenReader": "UNVERIFIED_NO_VOICEOVER_SESSION",
+  "automaticAuditIsNotCompleteHumanUsabilityApproval": true
+}

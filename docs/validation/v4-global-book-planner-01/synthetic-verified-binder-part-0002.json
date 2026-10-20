@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "synthetic-verified-binder-part-0002.json.gz",
+  "payloadHash": "d6ccb6735f54f0b9c72f7086d0e3757c7d4cb26800e0514307f59460d48dfe38",
+  "logicalJsonHash": "44a027f98d50a1ce2bfbbd7f4670116aec1286f6bdcac439450fd314be839fd8",
+  "uncompressedBytes": 1757547
+}

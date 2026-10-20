@@ -1,0 +1,34 @@
+{
+  "task": "V4-OFFICIAL-APPROVAL-CONTRACT-01",
+  "baseSha": "16afa43981db46a4cd936f120bfcc5cf86d58c54",
+  "status": "OFFLINE_IMPLEMENTED",
+  "protectedFiles": 6058,
+  "realResearch": {
+    "routes": 12,
+    "graphs": 27,
+    "evaluations": 5073,
+    "sourceMatches": 11170,
+    "evidenceMatches": 1489,
+    "structuralMatches": 81,
+    "operatorApproved": 0,
+    "customerApproved": 0,
+    "customerEligible": 0,
+    "customerSelections": 0,
+    "claims": 0,
+    "bookAllocations": 0
+  },
+  "synthetic": {
+    "routes": 12,
+    "plannerAssignments": 1085,
+    "separateFriendshipDisplayAssignments": 180,
+    "negativeCases": 90,
+    "negativeFailures": 0,
+    "actualApprovalsIssued": 0,
+    "publicKeyMaterialPersisted": false,
+    "privateKeyMaterialPersisted": false
+  },
+  "runtimeConnection": 0,
+  "realTrustedKeysRegistered": 0,
+  "existingBinderChanges": 0,
+  "existingPlannerChanges": 0
+}

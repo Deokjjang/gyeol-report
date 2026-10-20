@@ -1,0 +1,589 @@
+[
+  {
+    "id": "comprehensive/A",
+    "input": {
+      "kind": "comprehensiveV2",
+      "productKey": "saju_mbti_full",
+      "productSlug": "saju-mbti-full",
+      "person": {
+        "birthTimePrecision": "exact",
+        "name": "김하린",
+        "birthDate": "1992-03-17",
+        "birthTime": "09:20",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "FEMALE",
+        "mbtiType": "ENFJ",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "userContext": {
+        "relationshipStatus": "",
+        "jobStatus": "",
+        "detailJob": "",
+        "focusAreas": []
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "comprehensive/F",
+    "input": {
+      "kind": "comprehensiveV2",
+      "productKey": "saju_mbti_full",
+      "productSlug": "saju-mbti-full",
+      "person": {
+        "birthTimePrecision": "unknown",
+        "name": "김하린",
+        "birthDate": "1992-03-17",
+        "birthTime": "",
+        "birthTimeUnknown": true,
+        "approximateBirthTimeSlot": "",
+        "gender": "FEMALE",
+        "mbtiType": "",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "userContext": {
+        "relationshipStatus": "",
+        "jobStatus": "",
+        "detailJob": "",
+        "focusAreas": []
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "career/A",
+    "input": {
+      "kind": "careerMoneyStudy",
+      "productKey": "career_money_study",
+      "productSlug": "career-money-study",
+      "person": {
+        "birthTimePrecision": "exact",
+        "name": "박도윤",
+        "birthDate": "1988-11-06",
+        "birthTime": "16:45",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "MALE",
+        "mbtiType": "ISTJ",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "userContext": {
+        "relationshipStatus": "",
+        "jobStatus": "",
+        "detailJob": "개발자",
+        "focusAreas": []
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "career/F",
+    "input": {
+      "kind": "careerMoneyStudy",
+      "productKey": "career_money_study",
+      "productSlug": "career-money-study",
+      "person": {
+        "birthTimePrecision": "unknown",
+        "name": "박도윤",
+        "birthDate": "1988-11-06",
+        "birthTime": "",
+        "birthTimeUnknown": true,
+        "approximateBirthTimeSlot": "",
+        "gender": "MALE",
+        "mbtiType": "",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "userContext": {
+        "relationshipStatus": "",
+        "jobStatus": "",
+        "detailJob": "개발자",
+        "focusAreas": []
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "love/A",
+    "input": {
+      "kind": "loveMarriageChild",
+      "productKey": "love_marriage_child",
+      "productSlug": "love-marriage-child",
+      "person": {
+        "birthTimePrecision": "exact",
+        "name": "최서아",
+        "birthDate": "1996-05-24",
+        "birthTime": "22:10",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "FEMALE",
+        "mbtiType": "INFP",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "userContext": {
+        "relationshipStatus": "single",
+        "jobStatus": "",
+        "detailJob": "",
+        "focusAreas": []
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "love/F",
+    "input": {
+      "kind": "loveMarriageChild",
+      "productKey": "love_marriage_child",
+      "productSlug": "love-marriage-child",
+      "person": {
+        "birthTimePrecision": "unknown",
+        "name": "최서아",
+        "birthDate": "1996-05-24",
+        "birthTime": "",
+        "birthTimeUnknown": true,
+        "approximateBirthTimeSlot": "",
+        "gender": "FEMALE",
+        "mbtiType": "",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "userContext": {
+        "relationshipStatus": "single",
+        "jobStatus": "",
+        "detailJob": "",
+        "focusAreas": []
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "compatibility/A",
+    "input": {
+      "kind": "compatibility",
+      "productKey": "saju_mbti_compatibility",
+      "productSlug": "compatibility",
+      "relationshipType": "love",
+      "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+      "personA": {
+        "birthTimePrecision": "exact",
+        "name": "이준혁",
+        "birthDate": "1991-08-12",
+        "birthTime": "07:30",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "MALE",
+        "mbtiType": "ESTP",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "personB": {
+        "birthTimePrecision": "exact",
+        "name": "정유진",
+        "birthDate": "1994-01-19",
+        "birthTime": "13:40",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "FEMALE",
+        "mbtiType": "ISFJ",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "compatibility/marriage",
+    "input": {
+      "kind": "compatibility",
+      "productKey": "saju_mbti_compatibility",
+      "productSlug": "compatibility",
+      "relationshipType": "marriage",
+      "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+      "personA": {
+        "birthTimePrecision": "exact",
+        "name": "이준혁",
+        "birthDate": "1991-08-12",
+        "birthTime": "07:30",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "MALE",
+        "mbtiType": "ESTP",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "personB": {
+        "birthTimePrecision": "exact",
+        "name": "정유진",
+        "birthDate": "1994-01-19",
+        "birthTime": "13:40",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "FEMALE",
+        "mbtiType": "ISFJ",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "compatibility/parentChild",
+    "input": {
+      "kind": "compatibility",
+      "productKey": "saju_mbti_compatibility",
+      "productSlug": "compatibility",
+      "relationshipType": "parentChild",
+      "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+      "personA": {
+        "birthTimePrecision": "exact",
+        "name": "이준혁",
+        "birthDate": "1991-08-12",
+        "birthTime": "07:30",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "MALE",
+        "mbtiType": "ESTP",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "personB": {
+        "birthTimePrecision": "exact",
+        "name": "정유진",
+        "birthDate": "1994-01-19",
+        "birthTime": "13:40",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "FEMALE",
+        "mbtiType": "ISFJ",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "compatibility/coworker",
+    "input": {
+      "kind": "compatibility",
+      "productKey": "saju_mbti_compatibility",
+      "productSlug": "compatibility",
+      "relationshipType": "coworker",
+      "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+      "personA": {
+        "birthTimePrecision": "exact",
+        "name": "이준혁",
+        "birthDate": "1991-08-12",
+        "birthTime": "07:30",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "MALE",
+        "mbtiType": "ESTP",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "personB": {
+        "birthTimePrecision": "exact",
+        "name": "정유진",
+        "birthDate": "1994-01-19",
+        "birthTime": "13:40",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "FEMALE",
+        "mbtiType": "ISFJ",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "compatibility/managerReport",
+    "input": {
+      "kind": "compatibility",
+      "productKey": "saju_mbti_compatibility",
+      "productSlug": "compatibility",
+      "relationshipType": "managerReport",
+      "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+      "personA": {
+        "birthTimePrecision": "exact",
+        "name": "이준혁",
+        "birthDate": "1991-08-12",
+        "birthTime": "07:30",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "MALE",
+        "mbtiType": "ESTP",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "personB": {
+        "birthTimePrecision": "exact",
+        "name": "정유진",
+        "birthDate": "1994-01-19",
+        "birthTime": "13:40",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "FEMALE",
+        "mbtiType": "ISFJ",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "compatibility/businessPartner",
+    "input": {
+      "kind": "compatibility",
+      "productKey": "saju_mbti_compatibility",
+      "productSlug": "compatibility",
+      "relationshipType": "businessPartner",
+      "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+      "personA": {
+        "birthTimePrecision": "exact",
+        "name": "이준혁",
+        "birthDate": "1991-08-12",
+        "birthTime": "07:30",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "MALE",
+        "mbtiType": "ESTP",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "personB": {
+        "birthTimePrecision": "exact",
+        "name": "정유진",
+        "birthDate": "1994-01-19",
+        "birthTime": "13:40",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "FEMALE",
+        "mbtiType": "ISFJ",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "compatibility/friendship",
+    "input": {
+      "kind": "compatibility",
+      "productKey": "saju_mbti_compatibility",
+      "productSlug": "compatibility",
+      "relationshipType": "friendship",
+      "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+      "personA": {
+        "birthTimePrecision": "exact",
+        "name": "이준혁",
+        "birthDate": "1991-08-12",
+        "birthTime": "07:30",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "MALE",
+        "mbtiType": "ESTP",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "personB": {
+        "birthTimePrecision": "exact",
+        "name": "정유진",
+        "birthDate": "1994-01-19",
+        "birthTime": "13:40",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "FEMALE",
+        "mbtiType": "ISFJ",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "major/A",
+    "input": {
+      "kind": "majorFortune",
+      "productKey": "major_fortune",
+      "productSlug": "major-fortune",
+      "person": {
+        "birthTimePrecision": "exact",
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "06:00",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "MALE",
+        "mbtiType": "INFJ",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "userContext": {
+        "relationshipStatus": "married",
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "focusAreas": []
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "major/F",
+    "input": {
+      "kind": "majorFortune",
+      "productKey": "major_fortune",
+      "productSlug": "major-fortune",
+      "person": {
+        "birthTimePrecision": "unknown",
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "",
+        "birthTimeUnknown": true,
+        "approximateBirthTimeSlot": "",
+        "gender": "MALE",
+        "mbtiType": "",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "userContext": {
+        "relationshipStatus": "married",
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "focusAreas": []
+      },
+      "productOptions": {}
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "annual/A",
+    "input": {
+      "kind": "annualFortune",
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "birthTimePrecision": "exact",
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "06:00",
+        "birthTimeUnknown": false,
+        "approximateBirthTimeSlot": "",
+        "gender": "MALE",
+        "mbtiType": "INFJ",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "userContext": {
+        "relationshipStatus": "married",
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "selectedYear": "2026"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  },
+  {
+    "id": "annual/F",
+    "input": {
+      "kind": "annualFortune",
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "birthTimePrecision": "unknown",
+        "name": "도윤",
+        "birthDate": "1985-06-30",
+        "birthTime": "",
+        "birthTimeUnknown": true,
+        "approximateBirthTimeSlot": "",
+        "gender": "MALE",
+        "mbtiType": "",
+        "calendarType": "solar",
+        "timezone": "Asia/Seoul"
+      },
+      "userContext": {
+        "relationshipStatus": "married",
+        "jobStatus": "business_owner",
+        "detailJob": "온라인 교육사업 대표",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "selectedYear": "2026"
+      }
+    },
+    "clock": {
+      "evaluatedAt": "2026-10-12T12:00:00+09:00"
+    },
+    "isFictional": true
+  }
+]

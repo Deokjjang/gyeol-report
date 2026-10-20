@@ -1,0 +1,61 @@
+{
+  "version": "actual-evidence-graph-v1",
+  "inherited": {
+    "researchFamilies": 20,
+    "researchRecords": 18610,
+    "foundationSlots": 4799,
+    "originalReferences": 75588,
+    "technicallyRecovered": 3288,
+    "heldReferences": 3202,
+    "domainQueue": 2966,
+    "scopedProhibitions": 1040,
+    "incompleteQueue": 331,
+    "productPolicyReview": 2145,
+    "ancestryAudits": 5104,
+    "sourceGroups": 192,
+    "sourceGroupBlockers": 188,
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "actualEvidenceIssuedByPriorEngine": 0
+  },
+  "fixtures": 27,
+  "products": [
+    "annual_fortune",
+    "career_money_study",
+    "love_marriage_child",
+    "major_fortune",
+    "saju_mbti_compatibility",
+    "saju_mbti_full"
+  ],
+  "relationships": [
+    "businessPartner",
+    "coworker",
+    "friendship",
+    "love",
+    "managerReport",
+    "marriage",
+    "parentChild"
+  ],
+  "validGraphs": 27,
+  "partialGraphs": 27,
+  "customerApproval": 0,
+  "researchRuntimeConnection": 0,
+  "specialistClaimsEmitted": 0,
+  "bookChanges": 0,
+  "coverage": {
+    "nodes": 109333,
+    "edges": 351274,
+    "actualProducerFacts": 3095,
+    "actualEvidenceIds": 93909,
+    "canonicalFactRoots": 47170,
+    "duplicateRootReferences": 299553,
+    "completeAncestry": 107958,
+    "incompleteAncestry": 1375,
+    "sourceVerificationLinks": 28556,
+    "semanticDomainLinks": 2480,
+    "fusionComplete": 9716,
+    "fusionIncomplete": 1,
+    "withheldNodes": 2747
+  },
+  "countsAreFixtureOccurrencesNotDistinctHumanFacts": true
+}

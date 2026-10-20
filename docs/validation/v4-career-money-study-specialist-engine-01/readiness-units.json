@@ -1,0 +1,99 @@
+{
+  "distinctSourceKeys": 117,
+  "sourceKeyOccurrences": 198,
+  "verifiedSourceKeyOccurrences": 198,
+  "sourceResolutionMethods": {
+    "EXACT_ORIGINAL_ID": 60,
+    "QUALIFIED_MBTI_REFERENCE_TO_EXACT_ORIGINAL_TRAIT": 122,
+    "EXACT_ORIGINAL_INPUT_ENUM_REFERENCE_ONLY": 16
+  },
+  "nativeRequirementTemplates": 48,
+  "candidateFixtureOccurrences": 804,
+  "materialFixtureOccurrences": 576,
+  "questionFixtureOccurrences": 540,
+  "customerAnswerableQuestions": 0,
+  "classifierOnlyProbeCount": 99,
+  "probeScopes": {
+    "EXISTING_A_T_CLASSIFIER_ONLY_NOT_BINDER_COHORT": 24,
+    "EXISTING_JOB_TEST_TEXT_CLASSIFIER_ONLY": 23,
+    "EXISTING_JOB_STATUS_VARIANT_CLASSIFIER_ONLY": 52
+  },
+  "unknownFunctionProbes": 27,
+  "overrideProbes": 7,
+  "actualMeaningRelationOccurrences": {
+    "MEANING_RELATION_REVIEW_REQUIRED": 8702,
+    "SAME_FACT": 280
+  },
+  "actualConflictEdgeKinds": {
+    "LEARNING_MEANING_CONFLICT": 60,
+    "RECOMMENDATION_PROOF_MISMATCH": 48,
+    "ECONOMIC_MEANING_CONFLICT": 60,
+    "DIFFERENT_APPLICATION": 8699,
+    "DIFFERENT_WORK_FUNCTION": 6136,
+    "RECALL_REQUIRES_INTRODUCTION": 132,
+    "SAME_UNDERLYING_FACT": 1872,
+    "CONDITIONAL_TENSION": 2
+  },
+  "originalRecommendationRows": 9,
+  "partialRecommendationRows": 9,
+  "originalAvoidRows": 9,
+  "partialAvoidRows": 9,
+  "completeRecommendationProofMatches": 0,
+  "completeAvoidProofMatches": 0,
+  "sourceGroupRecords": 0,
+  "unresolvedOriginalConditionOccurrences": 677,
+  "producerGateAfter": {
+    "PASS": 436,
+    "FAIL": 11,
+    "UNKNOWN": 357,
+    "NOT_APPLICABLE": 0,
+    "REVIEW_REQUIRED": 0
+  },
+  "unitPolicy": "Source references, Graph witnesses, canonical roots, meaning identities, classifier context, legacy proof and customer eligibility are distinct units.",
+  "jobStatusesInExistingResearchProbes": [
+    "",
+    "business_owner",
+    "employee",
+    "freelancer",
+    "homemaker",
+    "job_seeker",
+    "self_employed",
+    "student",
+    "unemployed"
+  ],
+  "jobStatusEnumValidatedSeparately": [
+    "",
+    "student",
+    "job_seeker",
+    "employee",
+    "freelancer",
+    "self_employed",
+    "business_owner",
+    "homemaker",
+    "unemployed",
+    "other"
+  ],
+  "jobStatusEnumVerification": "Ten it.each(JOB_STATUSES) cases invoke existing producer via observeCareerInput; all PASS. Not added to 3-case Binder cohort.",
+  "jobStatusScopeOccurrences": {
+    "UNKNOWN": 576
+  },
+  "detailJobReferenceOccurrences": {
+    "GENERAL_REFERENCE_ONLY": 338,
+    "EXACT_REFERENCE_ONLY": 46,
+    "MISSING": 192
+  },
+  "workFunctionObservationOccurrences": {
+    "DIFFERENT_FUNCTION": 224,
+    "SUPPORTED_OBSERVATION": 160,
+    "UNKNOWN": 192
+  },
+  "economicRequirementsMatched": 0,
+  "economicRequirementsUnknown": 576,
+  "learningRequirementsMatched": 0,
+  "learningRequirementsUnknown": 576,
+  "recallWithheldOccurrences": 60,
+  "sourceGroupBlockedCandidateFixtureOccurrences": 0,
+  "legacyRecommendationRequiredAndExists": 48,
+  "recommendationProofMissingRequiredOccurrences": 48,
+  "domainPolicyWithheldOccurrences": 0
+}

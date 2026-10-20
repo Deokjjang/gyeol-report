@@ -1,0 +1,56 @@
+{
+  "status": "APRIL_TECHNICAL_RELATION_CONTRACT_COMPLETE_NOT_CUSTOMER_AUTHORIZATION",
+  "verifiedMonthsBefore": [
+    3,
+    5,
+    7,
+    9,
+    10,
+    12
+  ],
+  "verifiedMonthsAfter": [
+    3,
+    4,
+    5,
+    7,
+    9,
+    10,
+    12
+  ],
+  "remainingMonths": [
+    1,
+    2,
+    6,
+    8,
+    11
+  ],
+  "aprilCandidates": 2,
+  "aprilTypedBindings": 7,
+  "withheldFixtures": [
+    "fixture-annual-F",
+    "fixture-annual-ranged-transition"
+  ],
+  "annualCandidatesBefore": 29,
+  "annualCandidatesAfter": 31,
+  "majorCandidates": 2,
+  "unmatchedUnits": 396,
+  "nextImplementationTask": "Separately scoped remaining-month Source contracts and explicit withheld-condition review after a new user instruction. Not started.",
+  "blockers": [
+    "5 monthly contracts remain incomplete",
+    "Actual unknown-hour element relations and conditional Dayun relation remain withheld",
+    "30 pre-existing Source Integrity FAIL unchanged",
+    "10 monthly ten-god research items remain ROLE_AMBIGUOUS",
+    "Meaning, Product and Customer approvals pending",
+    "Two exact-Base stale preservation-hash tests remain failing",
+    "An additional unchanged October Focus 5000ms timeout is reproduced on exact Base and feature branch; not fixed in this scope",
+    "Historical ignored/unrecorded temporary-worktree loss remains UNVERIFIED"
+  ],
+  "customerClaims": 0,
+  "customerApprovals": 0,
+  "customerReaderBridges": 0,
+  "newFactRoots": 0,
+  "newUnits": 0,
+  "independentFactsAdded": 0,
+  "plannerRuntimeWriterBookChanges": 0,
+  "automaticFollowupStarted": false
+}

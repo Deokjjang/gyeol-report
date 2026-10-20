@@ -1,0 +1,118 @@
+{
+  "baseSha": "071acdc456ddba3b8467667d53f4ff809c9b39dd",
+  "checkedAtKst": "2026-10-13",
+  "environment": {
+    "node": "v25.9.0",
+    "npm": "11.12.1",
+    "next": "16.2.4",
+    "vitest": "4.1.5"
+  },
+  "baseline": {
+    "testedBeforeNewFiles": true,
+    "knownFailureTests": {
+      "command": "npm test -- tests/unit/interpretation-v4/foundationAdapter.test.ts tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "exitCode": 1,
+      "pass": 36,
+      "fail": 3,
+      "log": "logs/baseline-tests.log"
+    },
+    "typescript": {
+      "check": "standalone TypeScript noEmit",
+      "diagnostics": 0,
+      "exitCode": 0,
+      "log": "logs/typescript-before.log"
+    }
+  },
+  "final": {
+    "newTests": {
+      "command": "npm test -- tests/unit/report-knowledge/fusionKnowledgeResearch.test.ts",
+      "exitCode": 0,
+      "pass": 201,
+      "fail": 0,
+      "includedInRelatedSuite": true,
+      "log": "logs/new-tests.log"
+    },
+    "relatedTests": {
+      "command": "npm test -- tests/unit/report-knowledge/sajuFoundationKnowledge.test.ts tests/unit/report-knowledge/sajuFoundationCompletion.test.ts tests/unit/report-knowledge/sajuFoundationDeepKnowledge.test.ts tests/unit/report-knowledge/sajuCompositeStructureResearch.test.ts tests/unit/report-knowledge/sajuRelationResearch.test.ts tests/unit/report-knowledge/sajuTemporalInteractionResearch.test.ts tests/unit/report-knowledge/mbtiFoundationResearch.test.ts tests/unit/report-knowledge/mbtiPairResearch.test.ts tests/unit/report-knowledge/mbtiTypeKnowledgeBase.test.ts tests/unit/report-knowledge/mbtiKnowledgeBase.test.ts tests/unit/report-knowledge/mbtiProductRouting.test.ts tests/unit/report-knowledge/mbtiCompatibilityCandidateEngine.test.ts tests/unit/report-knowledge/mbti/sourceRuntimeAdapter.test.ts tests/unit/interpretation-v4/semanticFoundation.test.ts tests/unit/interpretation-v4/foundationNatal.test.ts tests/unit/interpretation-v4/foundationTenGodSynthesis.test.ts tests/unit/interpretation-v4/foundationSupplement.test.ts tests/unit/interpretation-v4/foundationSupplementRegistry.test.ts tests/unit/interpretation-v4/foundationIntegratedProfile.test.ts tests/unit/interpretation-v4/mbtiSemanticProfile.test.ts tests/unit/interpretation-v4/fusionCore.test.ts tests/unit/interpretation-v4/fusionSemanticProfile.test.ts tests/unit/interpretation-v4/foundationAdapter.test.ts tests/unit/report-generation/customerDayunGeneration.test.ts tests/unit/report-knowledge/semanticAxisResearch.test.ts tests/unit/report-knowledge/fusionKnowledgeResearch.test.ts tests/unit/report-knowledge/fusionKnowledgeBase.test.ts tests/unit/report-knowledge/sajuMbtiBridgeScorer.test.ts tests/unit/report-knowledge/bridge/myeongliMbtiBridgeEngine.test.ts tests/unit/report-knowledge/bridge/productBridgeAdapter.test.ts tests/unit/report-generation/fusionBridgeFactRegression.test.ts tests/unit/interpretation-v4/personalResonanceProfile.test.ts tests/unit/interpretation-v4/personalResonance.test.ts tests/unit/report-knowledge/compatibilityTypes.test.ts tests/unit/report-knowledge/compatibilityScoreEngine.test.ts tests/unit/report-knowledge/compatibilitySajuBridge.test.ts tests/unit/report-knowledge/compatibilityMbtiBridge.test.ts tests/unit/report-knowledge/compatibilityRelationRules.test.ts tests/unit/interpretation-v4/compatibilitySafety.test.ts tests/unit/interpretation-v4/compatibilityTitleSafety.test.ts",
+      "files": 40,
+      "pass": 2544,
+      "fail": 3,
+      "exitCode": 1,
+      "log": "logs/related-tests.log"
+    },
+    "sixProductTests": {
+      "command": "npm test -- tests/unit/interpretation-v4/sixProductIntegration.test.ts",
+      "files": 1,
+      "pass": 64,
+      "fail": 0,
+      "exitCode": 0,
+      "log": "logs/six-product-tests.log"
+    },
+    "combinedNonDuplicatedTests": {
+      "files": 41,
+      "pass": 2608,
+      "baselineFailures": 3,
+      "newFailures": 0
+    },
+    "typescript": {
+      "command": "npx tsc --noEmit --incremental false",
+      "diagnostics": 0,
+      "newDiagnostics": 0,
+      "exitCode": 0,
+      "log": "logs/typescript-after.log"
+    },
+    "lint": {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "log": "logs/lint.log"
+    },
+    "productionBuild": {
+      "command": "OPENAI_REPORT_WRITER_ENABLED=0 TOSS_CONFIRM_API_ENABLED=0 PAID_REPORT_RELIABILITY_ENABLED=0 npm run build -- --webpack",
+      "exitCode": 0,
+      "staticPages": 47,
+      "nftWarnings": 0,
+      "newWarnings": 0,
+      "log": "logs/build-final.log"
+    },
+    "diffCheck": {
+      "commands": [
+        "git diff --check",
+        "git diff --cached --check"
+      ],
+      "exitCode": 0,
+      "stagedNewFileCount": 68,
+      "existingFilesModified": 0
+    },
+    "sourceHashAudit": {
+      "exitCode": 0,
+      "inheritedRecords": 2991,
+      "primaryTraits": 1213,
+      "sajuLocators": 22,
+      "existingFileLocks": 2133,
+      "log": "logs/source-audit.log"
+    }
+  },
+  "unchangedKnownFailures": [
+    {
+      "file": "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+      "line": 116,
+      "name": "only foundation modules reference the foundation; no writer/UI/calculation import",
+      "message": "src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true"
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "line": 50,
+      "name": "rejects major_fortune bypass before order writes and allows stable input",
+      "message": "Unexpected end of JSON input"
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "line": 50,
+      "name": "rejects annual_fortune bypass before order writes and allows stable input",
+      "message": "Unexpected end of JSON input"
+    }
+  ],
+  "intermediateIssueResolved": "Two original offline tests treated source-path literals as imports. Kept original tests; moved full source locators to this audit catalog and referenced audit keys in research modules. Final original tests pass.",
+  "logsPolicy": "Captured command stdout/stderr; terminal CR and trailing whitespace normalized for git diff-check. Empty TypeScript logs mean zero diagnostics; exit code recorded separately.",
+  "scope": "No full unrelated suite or content-quality sweep; required related and six-product regressions only. No runtime binding implemented."
+}

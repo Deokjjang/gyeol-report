@@ -1,0 +1,712 @@
+[
+  {
+    "id": "frpr:material:CH09.P3:recall-changed-lives",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3",
+    "mode": "RECALL",
+    "readerQuestion": "각자의 생활이 달라져도 어떤 선택을 다시 할 수 있을까?",
+    "coreMeaning": "생활 변화에 맞게 관계의 형태를 바꾸는 것과 우정의 가치를 지우는 것을 구별한다.",
+    "additionalMeaning": "연락의 재개·활동의 축소·거리 두기·종료는 당사자의 별도 선택이다.",
+    "conceptIds": [
+      "frpr:concept:16",
+      "frpr:concept:17",
+      "frpr:concept:18",
+      "frpr:concept:21",
+      "frpr:concept:22",
+      "frpr:concept:23"
+    ],
+    "positive": "앞에서 합의한 조정 원칙을 현재의 가용 시간과 필요에 맞게 재검토할 수 있다.",
+    "risk": "예전 방식만 진짜 우정이라며 현재의 삶을 무시한다.",
+    "bluntWeakness": "오래 알고 지냈다는 이유로 지금의 삶을 예전 자리에 묶어 둘 수는 없다.",
+    "twist": "덜 자주 만나도 서로 선택한 범위가 분명하면 다른 형태의 관계가 가능할 수 있다.",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "가상의 이사 이후 두 친구가 예전 주간 만남 대신 가능한 연락 방식을 다시 묻는 장면.",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "A": "현재 가능한 시간과 유지하고 싶은 활동을 말한다.",
+      "B": "예전 빈도와 비교해 평가하기보다 지금의 범위에 동의할지 고른다."
+    },
+    "counterexample": "한쪽만 계속 조정을 감당하거나 위해가 반복되면 유지가 최선이라고 결론내리지 않는다.",
+    "distinction": "CH08의 즉시 조정을 새 생활 맥락에 회수하며 실제 이사나 오래된 우정을 가정하지 않는다.",
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceRef": "frpr:inventory:personal-natal",
+        "requirement": "실제 해당 개인의 natal evidence와 source 의미·성립 조건의 연결을 별도로 검토. 정의의 존재만으로 성향을 승인하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "A",
+        "sourceRef": "frpr:inventory:individual-mbti",
+        "requirement": "본인의 입력 유형·허용 domain·원천 상태·실제 root. Pair 참고나 상대 trait로 개인을 대체하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "A",
+        "sourceRef": "frpr:inventory:individual-fusion",
+        "requirement": "같은 개인의 실제 명리 root와 실제 MBTI root 및 같은 Context가 함께 필요. Pair Fusion을 새로 만들지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "B",
+        "sourceRef": "frpr:inventory:personal-natal",
+        "requirement": "실제 해당 개인의 natal evidence와 source 의미·성립 조건의 연결을 별도로 검토. 정의의 존재만으로 성향을 승인하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "B",
+        "sourceRef": "frpr:inventory:individual-mbti",
+        "requirement": "본인의 입력 유형·허용 domain·원천 상태·실제 root. Pair 참고나 상대 trait로 개인을 대체하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "B",
+        "sourceRef": "frpr:inventory:individual-fusion",
+        "requirement": "같은 개인의 실제 명리 root와 실제 MBTI root 및 같은 Context가 함께 필요. Pair Fusion을 새로 만들지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceRef": "frpr:source:khullar",
+        "requirement": "문헌의 범위·한계와 편집 적용 분리. 실제 고객 관찰·타입 효과의 증명 아님.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceRef": "frpr:source:deci",
+        "requirement": "문헌의 범위·한계와 편집 적용 분리. 실제 고객 관찰·타입 효과의 증명 아님.",
+        "notPersonObservation": true
+      }
+    ],
+    "facetRefs": [
+      "sar:facet:BOUNDARY:renegotiation",
+      "sar:facet:STABILITY:protective-change"
+    ],
+    "roleContributions": [
+      {
+        "address": "CH09.P3.S1",
+        "originalRole": "조율 원칙",
+        "knowledge": "조율 원칙은 앞서 실제 표시된 회복·경계 후보에서만 회수한다.",
+        "independentFact": false
+      },
+      {
+        "address": "CH09.P3.S2",
+        "originalRole": "개인별 이유",
+        "knowledge": "개인별 이유는 각자의 현재 맥락과 자기 근거를 유지한다.",
+        "independentFact": false
+      },
+      {
+        "address": "CH09.P3.S3",
+        "originalRole": "실천 행동",
+        "knowledge": "실천은 연락·활동·공개 범위를 지금 가능한 조건으로 다시 묻는 것이다.",
+        "independentFact": false
+      },
+      {
+        "address": "CH09.P3.S4",
+        "originalRole": "지속 조건",
+        "knowledge": "지속 조건은 같은 방식의 고수가 아니라 상호 선택과 안전이다.",
+        "independentFact": false
+      }
+    ],
+    "actualRelationshipFacts": {
+      "oldFriends": "UNKNOWN",
+      "childhoodFriends": "UNKNOWN",
+      "sameSchool": "UNKNOWN",
+      "sameWorkplace": "UNKNOWN",
+      "regularMeetings": "UNKNOWN",
+      "pastConflict": "UNKNOWN",
+      "moneyTransactions": "UNKNOWN",
+      "sharedSecrets": "UNKNOWN",
+      "jealousy": "UNKNOWN",
+      "oneSidedRelationship": "UNKNOWN",
+      "currentlyEstranged": "UNKNOWN",
+      "closeness": "UNKNOWN",
+      "friendshipDuration": "UNKNOWN",
+      "currentContactFrequency": "UNKNOWN"
+    },
+    "binding": {
+      "ownerRoots": [
+        "A",
+        "B"
+      ],
+      "direction": null,
+      "tenGodViewer": null,
+      "tenGodTarget": null,
+      "actualCanonicalMembershipRequired": false,
+      "actualContextRequired": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ],
+      "pairIsIndividualFact": false,
+      "allAncestorOwnerDomainContextReviewRequired": true,
+      "samePersonFusionRootsRequired": true,
+      "insufficientEvidence": "withhold_not_invent",
+      "sourceUsePolicy": "only_systems_actually_supporting_claim",
+      "missingMbti": "withhold_own_mbti_pair_and_fusion_claims",
+      "validNatalNotDiscarded": true,
+      "introducedGroups": [
+        {
+          "materialIds": [
+            "frpr:material:CH08.P3:b-repair-boundary"
+          ],
+          "allActuallyDisplayed": true,
+          "samePeopleContextRootsAndDirection": true,
+          "compatibleDisplayedSubsetOnly": true
+        },
+        {
+          "materialIds": [
+            "frpr:material:CH08.P4:repair-recheck"
+          ],
+          "allActuallyDisplayed": true,
+          "samePeopleContextRootsAndDirection": true,
+          "compatibleDisplayedSubsetOnly": true
+        }
+      ]
+    },
+    "origin": "authored_conditional_editorial_research",
+    "empiricalFriendshipPrediction": false,
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "frpr:material:CH09.P1:recall-chosen-enjoyment",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1",
+    "mode": "RECALL",
+    "readerQuestion": "앞에서 확인한 좋은 힘 중 실제로 이어갈 수 있는 것은 무엇일까?",
+    "coreMeaning": "좋았던 조건을 선택한 활동과 각자의 가능한 범위로 회수한다.",
+    "additionalMeaning": "후보에 있던 장점을 실제로 소개한 내용처럼 요약하지 않는다.",
+    "conceptIds": [
+      "frpr:concept:21",
+      "frpr:concept:3"
+    ],
+    "positive": "앞서 확인한 참여 방식이 다음 만남의 선택 기준이 될 수 있다.",
+    "risk": "이전 근거와 무관한 평생 우정의 결론을 덧붙인다.",
+    "bluntWeakness": "좋은 말로 마무리한다고 앞에서 없던 강점이 생기지는 않는다.",
+    "twist": "함께하는 활동을 작게 정하는 것이 오래 이어갈 가능한 조건일 수 있다.",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "앞에서 소개된 공동 활동을 다음에 짧게 다시 해 볼지 묻는 가상 장면.",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "A": "앞서 표시된 본인의 기여 중 다음에도 가능한 것을 고른다.",
+      "B": "앞서 표시된 본인의 조건과 지금의 가능 범위를 확인한다."
+    },
+    "counterexample": "이전 후보가 표시되지 않았거나 현재 상황이 바뀌면 회수하지 않는다.",
+    "distinction": "CH04의 새로운 설명이 아니라 실제 표시된 긍정 조건만 추적하는 회수다.",
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceRef": "frpr:inventory:personal-natal",
+        "requirement": "실제 해당 개인의 natal evidence와 source 의미·성립 조건의 연결을 별도로 검토. 정의의 존재만으로 성향을 승인하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "A",
+        "sourceRef": "frpr:inventory:individual-mbti",
+        "requirement": "본인의 입력 유형·허용 domain·원천 상태·실제 root. Pair 참고나 상대 trait로 개인을 대체하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "A",
+        "sourceRef": "frpr:inventory:individual-fusion",
+        "requirement": "같은 개인의 실제 명리 root와 실제 MBTI root 및 같은 Context가 함께 필요. Pair Fusion을 새로 만들지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "B",
+        "sourceRef": "frpr:inventory:personal-natal",
+        "requirement": "실제 해당 개인의 natal evidence와 source 의미·성립 조건의 연결을 별도로 검토. 정의의 존재만으로 성향을 승인하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "B",
+        "sourceRef": "frpr:inventory:individual-mbti",
+        "requirement": "본인의 입력 유형·허용 domain·원천 상태·실제 root. Pair 참고나 상대 trait로 개인을 대체하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "B",
+        "sourceRef": "frpr:inventory:individual-fusion",
+        "requirement": "같은 개인의 실제 명리 root와 실제 MBTI root 및 같은 Context가 함께 필요. Pair Fusion을 새로 만들지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceRef": "frpr:source:hall",
+        "requirement": "문헌의 범위·한계와 편집 적용 분리. 실제 고객 관찰·타입 효과의 증명 아님.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceRef": "frpr:source:deci",
+        "requirement": "문헌의 범위·한계와 편집 적용 분리. 실제 고객 관찰·타입 효과의 증명 아님.",
+        "notPersonObservation": true
+      }
+    ],
+    "facetRefs": [
+      "sar:facet:RELATION_STYLE:shared-participation",
+      "sar:facet:AUTONOMY:choice-ownership"
+    ],
+    "roleContributions": [
+      {
+        "address": "CH09.P1.S1",
+        "originalRole": "긍정적 특징",
+        "knowledge": "긍정적 특징은 실제 표시된 CH04의 호환 의미에서만 가져온다.",
+        "independentFact": false
+      },
+      {
+        "address": "CH09.P1.S2",
+        "originalRole": "실제 명리·MBTI",
+        "knowledge": "명리·MBTI는 앞서 확인된 양쪽 실제 root를 그대로 추적한다.",
+        "independentFact": false
+      },
+      {
+        "address": "CH09.P1.S3",
+        "originalRole": "함께하는 장점",
+        "knowledge": "함께하는 장점도 같은 사람과 같은 활동 맥락에서만 회수한다.",
+        "independentFact": false
+      },
+      {
+        "address": "CH09.P1.S4",
+        "originalRole": "지속 조건",
+        "knowledge": "지속 조건은 미래 보장이 아니라 다시 선택할 수 있는 범위다.",
+        "independentFact": false
+      }
+    ],
+    "actualRelationshipFacts": {
+      "oldFriends": "UNKNOWN",
+      "childhoodFriends": "UNKNOWN",
+      "sameSchool": "UNKNOWN",
+      "sameWorkplace": "UNKNOWN",
+      "regularMeetings": "UNKNOWN",
+      "pastConflict": "UNKNOWN",
+      "moneyTransactions": "UNKNOWN",
+      "sharedSecrets": "UNKNOWN",
+      "jealousy": "UNKNOWN",
+      "oneSidedRelationship": "UNKNOWN",
+      "currentlyEstranged": "UNKNOWN",
+      "closeness": "UNKNOWN",
+      "friendshipDuration": "UNKNOWN",
+      "currentContactFrequency": "UNKNOWN"
+    },
+    "binding": {
+      "ownerRoots": [
+        "A",
+        "B"
+      ],
+      "direction": null,
+      "tenGodViewer": null,
+      "tenGodTarget": null,
+      "actualCanonicalMembershipRequired": false,
+      "actualContextRequired": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ],
+      "pairIsIndividualFact": false,
+      "allAncestorOwnerDomainContextReviewRequired": true,
+      "samePersonFusionRootsRequired": true,
+      "insufficientEvidence": "withhold_not_invent",
+      "sourceUsePolicy": "only_systems_actually_supporting_claim",
+      "missingMbti": "withhold_own_mbti_pair_and_fusion_claims",
+      "validNatalNotDiscarded": true,
+      "introducedGroups": [
+        {
+          "materialIds": [
+            "frpr:material:CH04.P1:shared-interest-specific"
+          ],
+          "allActuallyDisplayed": true,
+          "samePeopleContextRootsAndDirection": true,
+          "compatibleDisplayedSubsetOnly": true
+        },
+        {
+          "materialIds": [
+            "frpr:material:CH04.P2:difference-with-choice"
+          ],
+          "allActuallyDisplayed": true,
+          "samePeopleContextRootsAndDirection": true,
+          "compatibleDisplayedSubsetOnly": true
+        },
+        {
+          "materialIds": [
+            "frpr:material:CH04.P3:low-performance-company"
+          ],
+          "allActuallyDisplayed": true,
+          "samePeopleContextRootsAndDirection": true,
+          "compatibleDisplayedSubsetOnly": true
+        }
+      ]
+    },
+    "origin": "authored_conditional_editorial_research",
+    "empiricalFriendshipPrediction": false,
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "frpr:material:CH09.P2:recall-symbol-limits",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2",
+    "mode": "RECALL",
+    "readerQuestion": "명리에서 설명한 좋은 가능성을 생활에서 어디까지 활용할까?",
+    "coreMeaning": "좋은 기운은 실제 검출·해석 조건·앞선 표시 이력이 함께 있을 때만 회수한다.",
+    "additionalMeaning": "근거가 부족하면 일반적인 행운으로 채우지 않는다.",
+    "conceptIds": [
+      "frpr:concept:21",
+      "frpr:concept:26"
+    ],
+    "positive": "관계의 상징을 실제 선택을 점검하는 제한된 참고로 사용할 수 있다.",
+    "risk": "합이나 귀인 표현으로 우정의 깊이·지속·성공을 보장한다.",
+    "bluntWeakness": "좋은 기운이라는 말은 상대를 믿어도 된다는 보증서가 아니다.",
+    "twist": "설명할 근거가 없다고 멈추는 것이 친구에 대한 잘못된 확신을 줄일 수 있다.",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "앞에서 확인한 관계 설명을 참고하되 다음 약속은 실제 시간과 동의로 고르는 가상 장면.",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "A": "명리 설명을 실제 약속이나 비밀 공개의 근거로 대체하지 않는다.",
+      "B": "앞서 제시된 해석의 조건과 미검출 범위를 함께 확인한다."
+    },
+    "counterexample": "현재 원고에 해당 근거가 제시되지 않았으면 새로운 상징을 추가하지 않는다.",
+    "distinction": "CH01.P2의 새로운 관계 설명과 달리 같은 계산·소유·조건·표시를 회수한다.",
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceRef": "frpr:inventory:personal-natal",
+        "requirement": "실제 해당 개인의 natal evidence와 source 의미·성립 조건의 연결을 별도로 검토. 정의의 존재만으로 성향을 승인하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "A",
+        "sourceRef": "frpr:inventory:individual-mbti",
+        "requirement": "본인의 입력 유형·허용 domain·원천 상태·실제 root. Pair 참고나 상대 trait로 개인을 대체하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "A",
+        "sourceRef": "frpr:inventory:individual-fusion",
+        "requirement": "같은 개인의 실제 명리 root와 실제 MBTI root 및 같은 Context가 함께 필요. Pair Fusion을 새로 만들지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "B",
+        "sourceRef": "frpr:inventory:personal-natal",
+        "requirement": "실제 해당 개인의 natal evidence와 source 의미·성립 조건의 연결을 별도로 검토. 정의의 존재만으로 성향을 승인하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "B",
+        "sourceRef": "frpr:inventory:individual-mbti",
+        "requirement": "본인의 입력 유형·허용 domain·원천 상태·실제 root. Pair 참고나 상대 trait로 개인을 대체하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "B",
+        "sourceRef": "frpr:inventory:individual-fusion",
+        "requirement": "같은 개인의 실제 명리 root와 실제 MBTI root 및 같은 Context가 함께 필요. Pair Fusion을 새로 만들지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceRef": "frpr:inventory:canonical-pair",
+        "requirement": "양쪽 실제 소유자·기둥 refs·지원 kind·성립 조건·전통 검토 상태를 모두 확인. 미지원 관계 보류.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceRef": "frpr:source:deci",
+        "requirement": "문헌의 범위·한계와 편집 적용 분리. 실제 고객 관찰·타입 효과의 증명 아님.",
+        "notPersonObservation": true
+      }
+    ],
+    "facetRefs": [
+      "sar:facet:BOUNDARY:privacy",
+      "sar:facet:MEANING:purpose-check"
+    ],
+    "roleContributions": [
+      {
+        "address": "CH09.P2.S1",
+        "originalRole": "검증된 좋은 기운",
+        "knowledge": "검증된 좋은 기운이 실제로 표시된 경우에만 해당 의미를 회수한다.",
+        "independentFact": false
+      },
+      {
+        "address": "CH09.P2.S2",
+        "originalRole": "근거와 의미",
+        "knowledge": "근거의 전통 검토 상태와 실제 refs를 끝까지 보존한다.",
+        "independentFact": false
+      },
+      {
+        "address": "CH09.P2.S3",
+        "originalRole": "관계의 가능성",
+        "knowledge": "가능성은 관계 전체의 미래가 아니라 앞서 제시한 조건에 한정한다.",
+        "independentFact": false
+      },
+      {
+        "address": "CH09.P2.S4",
+        "originalRole": "현실적 활용",
+        "knowledge": "현실적 활용은 시간·동의·경계의 직접 확인이다.",
+        "independentFact": false
+      }
+    ],
+    "actualRelationshipFacts": {
+      "oldFriends": "UNKNOWN",
+      "childhoodFriends": "UNKNOWN",
+      "sameSchool": "UNKNOWN",
+      "sameWorkplace": "UNKNOWN",
+      "regularMeetings": "UNKNOWN",
+      "pastConflict": "UNKNOWN",
+      "moneyTransactions": "UNKNOWN",
+      "sharedSecrets": "UNKNOWN",
+      "jealousy": "UNKNOWN",
+      "oneSidedRelationship": "UNKNOWN",
+      "currentlyEstranged": "UNKNOWN",
+      "closeness": "UNKNOWN",
+      "friendshipDuration": "UNKNOWN",
+      "currentContactFrequency": "UNKNOWN"
+    },
+    "binding": {
+      "ownerRoots": [
+        "A",
+        "B"
+      ],
+      "direction": null,
+      "tenGodViewer": null,
+      "tenGodTarget": null,
+      "actualCanonicalMembershipRequired": true,
+      "actualContextRequired": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ],
+      "pairIsIndividualFact": false,
+      "allAncestorOwnerDomainContextReviewRequired": true,
+      "samePersonFusionRootsRequired": true,
+      "insufficientEvidence": "withhold_not_invent",
+      "sourceUsePolicy": "only_systems_actually_supporting_claim",
+      "missingMbti": "withhold_own_mbti_pair_and_fusion_claims",
+      "validNatalNotDiscarded": true,
+      "introducedGroups": [
+        {
+          "materialIds": [
+            "frpr:material:CH01.P2:symbol-not-trust"
+          ],
+          "allActuallyDisplayed": true,
+          "samePeopleContextRootsAndDirection": true,
+          "compatibleDisplayedSubsetOnly": true
+        }
+      ]
+    },
+    "origin": "authored_conditional_editorial_research",
+    "empiricalFriendshipPrediction": false,
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "frpr:material:CH09.P4:recall-without-prophecy",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4",
+    "mode": "RECALL",
+    "readerQuestion": "우리라는 관계를 어떤 기준으로 기억하면 좋을까?",
+    "coreMeaning": "앞서 확인된 상호작용만 묶어 서로의 삶을 존중할 선택 기준으로 남긴다.",
+    "additionalMeaning": "평생·운명·절교 예언이나 새 실제 경험을 마지막 문장에 만들지 않는다.",
+    "conceptIds": [
+      "frpr:concept:21",
+      "frpr:concept:22",
+      "frpr:concept:23",
+      "frpr:concept:26"
+    ],
+    "positive": "각자의 가능 범위와 우정의 좋은 순간을 함께 기억할 수 있다.",
+    "risk": "모든 차이를 극복하고 계속 가까워야 한다는 의무로 마무리한다.",
+    "bluntWeakness": "좋은 친구의 결론은 상대의 남은 삶에 대한 소유권이 아니다.",
+    "twist": "관계가 변하더라도 앞서 확인한 좋은 의미와 현재의 거절권은 함께 남을 수 있다.",
+    "scene": {
+      "status": "hypothetical_only",
+      "text": "앞서 표시된 좋은 활동과 조정 원칙을 다음 만남의 짧은 기준으로 고르는 가상 장면.",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "A": "본인의 선택과 상대의 별도 삶을 함께 인정한다.",
+      "B": "지금 동의할 수 있는 관계의 범위만 답한다."
+    },
+    "counterexample": "표시된 선행 의미가 없거나 서로 다른 사람·상황의 후보뿐이면 연결하지 않는다.",
+    "distinction": "CH09.P1의 활동 회수와 달리 독점·미래 보장 없이 마지막 기준을 묶는 역할이다.",
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceRef": "frpr:inventory:personal-natal",
+        "requirement": "실제 해당 개인의 natal evidence와 source 의미·성립 조건의 연결을 별도로 검토. 정의의 존재만으로 성향을 승인하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "A",
+        "sourceRef": "frpr:inventory:individual-mbti",
+        "requirement": "본인의 입력 유형·허용 domain·원천 상태·실제 root. Pair 참고나 상대 trait로 개인을 대체하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "A",
+        "sourceRef": "frpr:inventory:individual-fusion",
+        "requirement": "같은 개인의 실제 명리 root와 실제 MBTI root 및 같은 Context가 함께 필요. Pair Fusion을 새로 만들지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "B",
+        "sourceRef": "frpr:inventory:personal-natal",
+        "requirement": "실제 해당 개인의 natal evidence와 source 의미·성립 조건의 연결을 별도로 검토. 정의의 존재만으로 성향을 승인하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "B",
+        "sourceRef": "frpr:inventory:individual-mbti",
+        "requirement": "본인의 입력 유형·허용 domain·원천 상태·실제 root. Pair 참고나 상대 trait로 개인을 대체하지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "B",
+        "sourceRef": "frpr:inventory:individual-fusion",
+        "requirement": "같은 개인의 실제 명리 root와 실제 MBTI root 및 같은 Context가 함께 필요. Pair Fusion을 새로 만들지 않음.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceRef": "frpr:source:deci",
+        "requirement": "문헌의 범위·한계와 편집 적용 분리. 실제 고객 관찰·타입 효과의 증명 아님.",
+        "notPersonObservation": true
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceRef": "frpr:source:khullar",
+        "requirement": "문헌의 범위·한계와 편집 적용 분리. 실제 고객 관찰·타입 효과의 증명 아님.",
+        "notPersonObservation": true
+      }
+    ],
+    "facetRefs": [
+      "sar:facet:AUTONOMY:choice-ownership",
+      "sar:facet:BOUNDARY:renegotiation"
+    ],
+    "roleContributions": [
+      {
+        "address": "CH09.P4.S1",
+        "originalRole": "특징적인 상호작용",
+        "knowledge": "특징적인 상호작용은 실제 표시 이력과 같은 양쪽 근거에서만 회수한다.",
+        "independentFact": false
+      },
+      {
+        "address": "CH09.P4.S2",
+        "originalRole": "함께 만드는 가치",
+        "knowledge": "함께 만드는 가치는 활동·지원·경계 중 이미 소개된 호환 의미다.",
+        "independentFact": false
+      },
+      {
+        "address": "CH09.P4.S3",
+        "originalRole": "기억할 기준",
+        "knowledge": "기억할 기준은 상대를 대신 판단하지 않고 가능한 선택을 묻는 것이다.",
+        "independentFact": false
+      },
+      {
+        "address": "CH09.P4.S4",
+        "originalRole": "관계별 결론",
+        "knowledge": "우정의 결론은 관계 지속을 보장하지 않으며 변화와 거리 둘 선택을 남긴다.",
+        "independentFact": false
+      }
+    ],
+    "actualRelationshipFacts": {
+      "oldFriends": "UNKNOWN",
+      "childhoodFriends": "UNKNOWN",
+      "sameSchool": "UNKNOWN",
+      "sameWorkplace": "UNKNOWN",
+      "regularMeetings": "UNKNOWN",
+      "pastConflict": "UNKNOWN",
+      "moneyTransactions": "UNKNOWN",
+      "sharedSecrets": "UNKNOWN",
+      "jealousy": "UNKNOWN",
+      "oneSidedRelationship": "UNKNOWN",
+      "currentlyEstranged": "UNKNOWN",
+      "closeness": "UNKNOWN",
+      "friendshipDuration": "UNKNOWN",
+      "currentContactFrequency": "UNKNOWN"
+    },
+    "binding": {
+      "ownerRoots": [
+        "A",
+        "B"
+      ],
+      "direction": null,
+      "tenGodViewer": null,
+      "tenGodTarget": null,
+      "actualCanonicalMembershipRequired": false,
+      "actualContextRequired": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ],
+      "pairIsIndividualFact": false,
+      "allAncestorOwnerDomainContextReviewRequired": true,
+      "samePersonFusionRootsRequired": true,
+      "insufficientEvidence": "withhold_not_invent",
+      "sourceUsePolicy": "only_systems_actually_supporting_claim",
+      "missingMbti": "withhold_own_mbti_pair_and_fusion_claims",
+      "validNatalNotDiscarded": true,
+      "introducedGroups": [
+        {
+          "materialIds": [
+            "frpr:material:CH04.P2:difference-with-choice"
+          ],
+          "allActuallyDisplayed": true,
+          "samePeopleContextRootsAndDirection": true,
+          "compatibleDisplayedSubsetOnly": true
+        },
+        {
+          "materialIds": [
+            "frpr:material:CH05.P4:ab-other-friends"
+          ],
+          "allActuallyDisplayed": true,
+          "samePeopleContextRootsAndDirection": true,
+          "compatibleDisplayedSubsetOnly": true
+        },
+        {
+          "materialIds": [
+            "frpr:material:CH06.P4:ba-availability-boundary"
+          ],
+          "allActuallyDisplayed": true,
+          "samePeopleContextRootsAndDirection": true,
+          "compatibleDisplayedSubsetOnly": true
+        },
+        {
+          "materialIds": [
+            "frpr:material:CH08.P3:b-repair-boundary"
+          ],
+          "allActuallyDisplayed": true,
+          "samePeopleContextRootsAndDirection": true,
+          "compatibleDisplayedSubsetOnly": true
+        }
+      ]
+    },
+    "origin": "authored_conditional_editorial_research",
+    "empiricalFriendshipPrediction": false,
+    "newCalculatedFacts": 0
+  }
+]

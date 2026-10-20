@@ -1,0 +1,155 @@
+/** Static offline love, marriage and parenting research. No customer approval or runtime connection. */
+import type { StatusResearch } from "./researchTypes";
+
+export const LOVE_RELATIONSHIP_STATUS_RESEARCH: readonly StatusResearch[] = [
+  {
+    "id": "lkr:status:unknown",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "actualValue": "",
+    "originalContextHash": "a2e0076a3cca6e9a05ce81d5e35b41e84db46c6f33a30b3e255bd76283440048",
+    "currentQuestion": "어떤 관계인지 정하지 않고 마음을 전한다면 필요한 조건은?",
+    "observation": "현재 상대·단계는 모름",
+    "expression": "말·글·행동 중 가능한 통로를 조건부로 선택",
+    "pace": "관계 이름을 정할 속도는 추정하지 않음",
+    "practicalAction": "중요한 표현 하나와 거절 가능한 범위를 정리",
+    "familyMoneyTime": "공동생활을 선택한다면 필요한 조건만 질문",
+    "prohibited": "현재 연인·배우자·이별·썸 추정 금지",
+    "materialRefs": [
+      "lkr:material:CH04.P1:unknown-open-context",
+      "lkr:material:CH04.P2:unknown-channel-choice",
+      "lkr:material:CH04.P3:unknown-no-stage-script",
+      "lkr:material:CH04.P4:unknown-no-deficit"
+    ],
+    "statusIsScore": false
+  },
+  {
+    "id": "lkr:status:single",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "actualValue": "single",
+    "originalContextHash": "66525990d5e1f94f79a0d7df6ccb5cdacaea6daf7617d400f6622a3f562d47d2",
+    "currentQuestion": "만남을 선택한다면 어떤 관심을 어떻게 전할까?",
+    "observation": "새로운 상대가 있다고 가정하지 않음",
+    "expression": "작은 제안과 답할 여지를 함께 남김",
+    "pace": "제안은 빠르게 하더라도 관계 확정은 별도",
+    "practicalAction": "편했던 장면과 중요 기준을 하나씩 적기",
+    "familyMoneyTime": "미래 공동생활을 선택할 경우만 준비 질문",
+    "prohibited": "솔로 결함화·연애 의무·실제 경험 생성 금지",
+    "materialRefs": [
+      "lkr:material:CH04.P1:single-interest",
+      "lkr:material:CH04.P2:single-small-invite",
+      "lkr:material:CH04.P3:single-overhelp",
+      "lkr:material:CH04.P4:single-open-choice"
+    ],
+    "statusIsScore": false
+  },
+  {
+    "id": "lkr:status:some",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "actualValue": "some",
+    "originalContextHash": "9bfe14513d874d4e898177e115c4888fd9c5e6e17b9caab0f207d74c9560e280",
+    "currentQuestion": "반응에서 실제 확인한 것과 내가 붙인 뜻은?",
+    "observation": "관찰한 연락·약속과 의미 부여를 분리",
+    "expression": "다음 만남 의사를 짧게 묻기",
+    "pace": "현재 가능한 답과 관계 정의의 답을 분리",
+    "practicalAction": "관찰·추측·확인 질문을 세 칸으로 나눔",
+    "familyMoneyTime": "미래 생활의 조건은 현재 관계 확정과 분리",
+    "prohibited": "상대 호감·밀당·확정 관계·결혼 의사 추정 금지",
+    "materialRefs": [
+      "lkr:material:CH04.P1:some-observed",
+      "lkr:material:CH04.P2:some-response-window",
+      "lkr:material:CH04.P3:some-reading-delay",
+      "lkr:material:CH04.P4:some-answer-not-label"
+    ],
+    "statusIsScore": false
+  },
+  {
+    "id": "lkr:status:dating",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "actualValue": "dating",
+    "originalContextHash": "59ed4310ef0c0b0c33cefefec17466e425e089104db3b51fbfbd058581e09c06",
+    "currentQuestion": "익숙한 표현이 지금도 반가운가?",
+    "observation": "기존 방식과 현재 답을 분리",
+    "expression": "표현의 통로와 빈도를 다시 물음",
+    "pace": "생활 변화가 있을 때 합의를 갱신",
+    "practicalAction": "반가운 표현과 바꿀 표현을 하나씩 듣기",
+    "familyMoneyTime": "함께 살기를 선택한다면 책임·돈·시간을 별도 질문",
+    "prohibited": "교제 기간·실제 갈등·상대 마음·동거 추정 금지",
+    "materialRefs": [
+      "lkr:material:CH04.P1:dating-current-interest",
+      "lkr:material:CH04.P2:dating-expression-update",
+      "lkr:material:CH04.P3:dating-unspoken-score",
+      "lkr:material:CH04.P4:dating-renew-small"
+    ],
+    "statusIsScore": false
+  },
+  {
+    "id": "lkr:status:marriage_preparing",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "actualValue": "marriage_preparing",
+    "originalContextHash": "a165c6d2d5d52a8b897eb962c32d657d78504bb495a08de1782740c37ba8fe8c",
+    "currentQuestion": "준비를 끝내는 일과 서로 마음을 듣는 일은 어떻게 다를까?",
+    "observation": "결정 과제와 애정의 수신을 분리",
+    "expression": "준비 외의 관심 질문을 따로 남김",
+    "pace": "과제 마감과 두 사람의 검토 시간을 구분",
+    "practicalAction": "조사·검토·동의·변경 단계 구분",
+    "familyMoneyTime": "비용 부담·가족 요청·일정·가사 기대 각각 상의",
+    "prohibited": "실제 예산·양가 갈등·영구 역할·상대 능력 추정 금지",
+    "materialRefs": [
+      "lkr:material:CH04.P1:preparing-affection-not-task",
+      "lkr:material:CH04.P2:preparing-decision-pace",
+      "lkr:material:CH04.P3:preparing-finance-consent",
+      "lkr:material:CH04.P4:preparing-both-directions"
+    ],
+    "statusIsScore": false
+  },
+  {
+    "id": "lkr:status:married",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "actualValue": "married",
+    "originalContextHash": "5ce6c28922ab6544a80d1a1f91670f167cf6832b8914d2c73d22757591c513f4",
+    "currentQuestion": "생활 역할 외에 지금의 사람을 어떻게 알아갈까?",
+    "observation": "혼인 상태 외에 동거 형태·자녀·기간은 모름",
+    "expression": "반가웠던 행동과 현재 관심을 물음",
+    "pace": "개인 정리와 재대화 통로를 함께 조율",
+    "practicalAction": "생활 과제 하나와 개인 관심 하나를 분리",
+    "familyMoneyTime": "지출·가사·쉬는 시간과 애정 질문을 따로 둠",
+    "prohibited": "새 썸 시작 스크립트·자녀 존재·배우자 MBTI 추정 금지",
+    "materialRefs": [
+      "lkr:material:CH04.P1:married-person-interest",
+      "lkr:material:CH04.P2:married-talk-not-demand",
+      "lkr:material:CH04.P3:married-labor-invisible",
+      "lkr:material:CH04.P4:married-current-choice"
+    ],
+    "statusIsScore": false
+  }
+];

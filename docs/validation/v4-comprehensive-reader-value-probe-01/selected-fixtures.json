@@ -1,0 +1,56 @@
+[
+  {
+    "fixtureId": "fixture-comprehensive-A",
+    "alias": "검토 가",
+    "hashes": {
+      "input": "fc17b4b2b0e144c1f91d095810968743238a00750a919e9fa53c64ec925bac17",
+      "calculation": "89e0559c46846256e5fcc6ea353e9d9d58380c865a0514aab87c00d54fd8f3b5",
+      "profiles": "0d36ef50d88965915b021a553da2c98c644d92ddb4edaf934200b09c1dfc66d9",
+      "evidence": "26185b5ba4107b16cf516a1125db5d3a71d6ad31d99edc8fd78bf600fe925c84",
+      "narrative": "555e5b77c1cbbd44b95d9e515763adc79419d290fe1e9f4d617f9af676e48b7b",
+      "book": "a159ae6501c9f57cea682aa62a54cbecadfa8460022330ed812cf30e81d4e27f"
+    },
+    "mbtiInput": "ENFJ",
+    "timeInput": "EXACT",
+    "graphInput": {
+      "sameGeneratedEvidencePacket": true,
+      "profilesFromSameStoredCalculation": true,
+      "birthCalendarRecalculationsByGraph": 0,
+      "owner": "fixture-person-1",
+      "allOriginalGraphNodesMatched": 3628,
+      "originalFixture": "fixture-comprehensive-A",
+      "originalNodeAndRootAddressesPreserved": true
+    },
+    "sameABInput": true,
+    "fixedClock": "2026-10-12T12:00:00+09:00",
+    "rawPrivateInputExported": false,
+    "cohortLimit": "Same base birth input with different time/MBTI availability, not an independent-person cohort"
+  },
+  {
+    "fixtureId": "fixture-comprehensive-F",
+    "alias": "검토 나",
+    "hashes": {
+      "input": "ee56f4ed124d7e74bdf95786d90e13a8c77455a8d41155b70af90f33062cfc42",
+      "calculation": "eaacda485c5d1989132773fc94dda31f27d463d0df6b8362cc630b0f027126cd",
+      "profiles": "0867ce7c4ed41c296bfaa611aaf1391a1e54d87cd95f1b6a10088329c1e88106",
+      "evidence": "68ad2a420cc7a5b0801cbc72826fa3c1947b6a8f6090a8d72b91b4a3dce5e4b4",
+      "narrative": "00062a59e44716cd5801b5705549f6831739d505dded0813f73117267083a255",
+      "book": "936b3e5fb0c45a007d933824729eafb49c0081e21afb1e3c371dd3c879e155fb"
+    },
+    "mbtiInput": "UNKNOWN",
+    "timeInput": "UNKNOWN",
+    "graphInput": {
+      "sameGeneratedEvidencePacket": true,
+      "profilesFromSameStoredCalculation": true,
+      "birthCalendarRecalculationsByGraph": 0,
+      "owner": "fixture-person-2",
+      "allOriginalGraphNodesMatched": 163,
+      "originalFixture": "fixture-comprehensive-F",
+      "originalNodeAndRootAddressesPreserved": true
+    },
+    "sameABInput": true,
+    "fixedClock": "2026-10-12T12:00:00+09:00",
+    "rawPrivateInputExported": false,
+    "cohortLimit": "Same base birth input with different time/MBTI availability, not an independent-person cohort"
+  }
+]

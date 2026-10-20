@@ -1,0 +1,758 @@
+{
+  "newMaterialsEmpiricallyValidated": 0,
+  "newMaterialsIndividuallyApplied": 0,
+  "legacyModernCorrespondences": [
+    {
+      "id": "fkr:legacy:entj-needle",
+      "reason": "전통 상징·원문 존재에서 실제 현대 능력·호감으로 승격할 직접 근거 부족",
+      "required": "별도 현대 적용 타당성·개인 행동·동의·반례"
+    },
+    {
+      "id": "fkr:legacy:intj-charm",
+      "reason": "전통 상징·원문 존재에서 실제 현대 능력·호감으로 승격할 직접 근거 부족",
+      "required": "별도 현대 적용 타당성·개인 행동·동의·반례"
+    },
+    {
+      "id": "fkr:legacy:entp-needle",
+      "reason": "전통 상징·원문 존재에서 실제 현대 능력·호감으로 승격할 직접 근거 부족",
+      "required": "별도 현대 적용 타당성·개인 행동·동의·반례"
+    },
+    {
+      "id": "fkr:legacy:infp-needle",
+      "reason": "전통 상징·원문 존재에서 실제 현대 능력·호감으로 승격할 직접 근거 부족",
+      "required": "별도 현대 적용 타당성·개인 행동·동의·반례"
+    },
+    {
+      "id": "fkr:legacy:istj-needle",
+      "reason": "전통 상징·원문 존재에서 실제 현대 능력·호감으로 승격할 직접 근거 부족",
+      "required": "별도 현대 적용 타당성·개인 행동·동의·반례"
+    },
+    {
+      "id": "fkr:legacy:estj-needle",
+      "reason": "전통 상징·원문 존재에서 실제 현대 능력·호감으로 승격할 직접 근거 부족",
+      "required": "별도 현대 적용 타당성·개인 행동·동의·반례"
+    },
+    {
+      "id": "fkr:legacy:isfp-love",
+      "reason": "전통 상징·원문 존재에서 실제 현대 능력·호감으로 승격할 직접 근거 부족",
+      "required": "별도 현대 적용 타당성·개인 행동·동의·반례"
+    },
+    {
+      "id": "fkr:legacy:isfp-needle",
+      "reason": "전통 상징·원문 존재에서 실제 현대 능력·호감으로 승격할 직접 근거 부족",
+      "required": "별도 현대 적용 타당성·개인 행동·동의·반례"
+    },
+    {
+      "id": "fkr:legacy:estp-needle",
+      "reason": "전통 상징·원문 존재에서 실제 현대 능력·호감으로 승격할 직접 근거 부족",
+      "required": "별도 현대 적용 타당성·개인 행동·동의·반례"
+    },
+    {
+      "id": "fkr:legacy:esfp-charm",
+      "reason": "전통 상징·원문 존재에서 실제 현대 능력·호감으로 승격할 직접 근거 부족",
+      "required": "별도 현대 적용 타당성·개인 행동·동의·반례"
+    }
+  ],
+  "specificComplementSourcesBound": 0,
+  "complementSources": "96개는 실제 source node/Evidence 바인딩 전 조건부 연구 상태",
+  "inheritedInsufficient": [
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchENTJ:MBTI_RESEARCH_ENTJ:mkr:ENTJ:growth:01",
+      "originalId": "mkr:ENTJ:growth:01",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchENTJ:MBTI_RESEARCH_ENTJ:mkr:ENTJ:growth:02",
+      "originalId": "mkr:ENTJ:growth:02",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchENTP:MBTI_RESEARCH_ENTP:mkr:ENTP:growth:01",
+      "originalId": "mkr:ENTP:growth:01",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchENTP:MBTI_RESEARCH_ENTP:mkr:ENTP:growth:02",
+      "originalId": "mkr:ENTP:growth:02",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchESFJ:MBTI_RESEARCH_ESFJ:mkr:ESFJ:growth:01",
+      "originalId": "mkr:ESFJ:growth:01",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchESFJ:MBTI_RESEARCH_ESFJ:mkr:ESFJ:growth:02",
+      "originalId": "mkr:ESFJ:growth:02",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchINFP:MBTI_RESEARCH_INFP:mkr:INFP:growth:01",
+      "originalId": "mkr:INFP:growth:01",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchINFP:MBTI_RESEARCH_INFP:mkr:INFP:growth:02",
+      "originalId": "mkr:INFP:growth:02",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchINTJ:MBTI_RESEARCH_INTJ:mkr:INTJ:growth:01",
+      "originalId": "mkr:INTJ:growth:01",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchINTJ:MBTI_RESEARCH_INTJ:mkr:INTJ:growth:02",
+      "originalId": "mkr:INTJ:growth:02",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchINTP:MBTI_RESEARCH_INTP:mkr:INTP:growth:01",
+      "originalId": "mkr:INTP:growth:01",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchINTP:MBTI_RESEARCH_INTP:mkr:INTP:growth:02",
+      "originalId": "mkr:INTP:growth:02",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchISFJ:MBTI_RESEARCH_ISFJ:mkr:ISFJ:growth:01",
+      "originalId": "mkr:ISFJ:growth:01",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchISFJ:MBTI_RESEARCH_ISFJ:mkr:ISFJ:growth:02",
+      "originalId": "mkr:ISFJ:growth:02",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchISFP:MBTI_RESEARCH_ISFP:mkr:ISFP:investment:01",
+      "originalId": "mkr:ISFP:investment:01",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchISFP:MBTI_RESEARCH_ISFP:mkr:ISFP:investment:02",
+      "originalId": "mkr:ISFP:investment:02",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchISFP:MBTI_RESEARCH_ISFP:mkr:ISFP:growth:01",
+      "originalId": "mkr:ISFP:growth:01",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchISFP:MBTI_RESEARCH_ISFP:mkr:ISFP:growth:02",
+      "originalId": "mkr:ISFP:growth:02",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchISTJ:MBTI_RESEARCH_ISTJ:mkr:ISTJ:growth:01",
+      "originalId": "mkr:ISTJ:growth:01",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchISTJ:MBTI_RESEARCH_ISTJ:mkr:ISTJ:growth:02",
+      "originalId": "mkr:ISTJ:growth:02",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchISTP:MBTI_RESEARCH_ISTP:mkr:ISTP:growth:01",
+      "originalId": "mkr:ISTP:growth:01",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:mbti-foundation-research/mbtiResearchISTP:MBTI_RESEARCH_ISTP:mkr:ISTP:growth:02",
+      "originalId": "mkr:ISTP:growth:02",
+      "requiredReview": "원천 성향의 개인 적합성·조건·반례; 실증 검증 없음",
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "review": null,
+        "class": null,
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsBanhap:RELATION_COMBINATIONS_BANHAP:rr:combination:banhap:申子",
+      "originalId": "rr:combination:banhap:申子",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsBanhap:RELATION_COMBINATIONS_BANHAP:rr:combination:banhap:申辰",
+      "originalId": "rr:combination:banhap:申辰",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsBanhap:RELATION_COMBINATIONS_BANHAP:rr:combination:banhap:子辰",
+      "originalId": "rr:combination:banhap:子辰",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsBanhap:RELATION_COMBINATIONS_BANHAP:rr:combination:banhap:亥卯",
+      "originalId": "rr:combination:banhap:亥卯",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsBanhap:RELATION_COMBINATIONS_BANHAP:rr:combination:banhap:亥未",
+      "originalId": "rr:combination:banhap:亥未",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsBanhap:RELATION_COMBINATIONS_BANHAP:rr:combination:banhap:卯未",
+      "originalId": "rr:combination:banhap:卯未",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsBanhap:RELATION_COMBINATIONS_BANHAP:rr:combination:banhap:寅午",
+      "originalId": "rr:combination:banhap:寅午",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsBanhap:RELATION_COMBINATIONS_BANHAP:rr:combination:banhap:寅戌",
+      "originalId": "rr:combination:banhap:寅戌",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsBanhap:RELATION_COMBINATIONS_BANHAP:rr:combination:banhap:午戌",
+      "originalId": "rr:combination:banhap:午戌",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsBanhap:RELATION_COMBINATIONS_BANHAP:rr:combination:banhap:巳酉",
+      "originalId": "rr:combination:banhap:巳酉",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsBanhap:RELATION_COMBINATIONS_BANHAP:rr:combination:banhap:巳丑",
+      "originalId": "rr:combination:banhap:巳丑",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsBanhap:RELATION_COMBINATIONS_BANHAP:rr:combination:banhap:酉丑",
+      "originalId": "rr:combination:banhap:酉丑",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsPa:RELATION_COMBINATIONS_PA:rr:combination:pa:子酉",
+      "originalId": "rr:combination:pa:子酉",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsPa:RELATION_COMBINATIONS_PA:rr:combination:pa:丑辰",
+      "originalId": "rr:combination:pa:丑辰",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsPa:RELATION_COMBINATIONS_PA:rr:combination:pa:寅亥",
+      "originalId": "rr:combination:pa:寅亥",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsPa:RELATION_COMBINATIONS_PA:rr:combination:pa:卯午",
+      "originalId": "rr:combination:pa:卯午",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsPa:RELATION_COMBINATIONS_PA:rr:combination:pa:巳申",
+      "originalId": "rr:combination:pa:巳申",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsPa:RELATION_COMBINATIONS_PA:rr:combination:pa:未戌",
+      "originalId": "rr:combination:pa:未戌",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsWonjin:RELATION_COMBINATIONS_WONJIN:rr:combination:wonjin:子未",
+      "originalId": "rr:combination:wonjin:子未",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsWonjin:RELATION_COMBINATIONS_WONJIN:rr:combination:wonjin:丑午",
+      "originalId": "rr:combination:wonjin:丑午",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsWonjin:RELATION_COMBINATIONS_WONJIN:rr:combination:wonjin:寅酉",
+      "originalId": "rr:combination:wonjin:寅酉",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsWonjin:RELATION_COMBINATIONS_WONJIN:rr:combination:wonjin:卯申",
+      "originalId": "rr:combination:wonjin:卯申",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsWonjin:RELATION_COMBINATIONS_WONJIN:rr:combination:wonjin:辰亥",
+      "originalId": "rr:combination:wonjin:辰亥",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationCombinationsWonjin:RELATION_COMBINATIONS_WONJIN:rr:combination:wonjin:巳戌",
+      "originalId": "rr:combination:wonjin:巳戌",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationProfileBanhap:RELATION_PROFILE_BANHAP:rr:profile:banhap",
+      "originalId": "rr:profile:banhap",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationProfilePa:RELATION_PROFILE_PA:rr:profile:pa",
+      "originalId": "rr:profile:pa",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:relation-research/relationProfileWonjin:RELATION_PROFILE_WONJIN:rr:profile:wonjin",
+      "originalId": "rr:profile:wonjin",
+      "requiredReview": "참여 기둥·owner·관계 유형·동의·왕쇠·미지원 producer",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": null,
+        "traditionalClass": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:temporal-interaction-research/temporalUnverified:TEMPORAL_UNVERIFIED:tr:held:transition-lead-lag",
+      "originalId": "tr:held:transition-lead-lag",
+      "requiredReview": "원국/대운/세운/월운·구간 교집합·전환 시각",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": "E",
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:temporal-interaction-research/temporalUnverified:TEMPORAL_UNVERIFIED:tr:held:domain-effects",
+      "originalId": "tr:held:domain-effects",
+      "requiredReview": "원국/대운/세운/월운·구간 교집합·전환 시각",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": "E",
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:temporal-interaction-research/temporalUnverified:TEMPORAL_UNVERIFIED:tr:held:month-wolun-lineage",
+      "originalId": "tr:held:month-wolun-lineage",
+      "requiredReview": "원국/대운/세운/월운·구간 교집합·전환 시각",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": "E",
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    },
+    {
+      "id": "fkr:survey:survey:record:temporal-interaction-research/temporalUnverified:TEMPORAL_UNVERIFIED:tr:held:legacy-impact",
+      "originalId": "tr:held:legacy-impact",
+      "requiredReview": "원국/대운/세운/월운·구간 교집합·전환 시각",
+      "originalState": {
+        "verification": null,
+        "review": null,
+        "class": "E",
+        "traditionalClass": null,
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      }
+    }
+  ],
+  "unavailablePrimarySource": [
+    {
+      "url": "https://www.myersbriggs.org/my-mbti-personality-type/mbti-basics/ethical-use-of-the-mbti-instrument/",
+      "status": "tool_access_failed",
+      "supports": "none; no claim attributed"
+    }
+  ],
+  "productionSelectionFrequency": "not_measured",
+  "statisticalIndependence": "not_established"
+}

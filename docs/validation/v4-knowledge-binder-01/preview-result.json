@@ -1,0 +1,15 @@
+{
+  "version": "binder-preview-verification-v1",
+  "scope": "Implementation commit; final documentation commit is verified separately",
+  "projectId": "prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+  "deploymentId": "dpl_9WzBqcvHE7oNkmzs4xHtGPWV2Cy3",
+  "url": "https://gyeol-report-euxswoeqo-gyeol-report-s-projects.vercel.app",
+  "target": "preview",
+  "apiTarget": null,
+  "state": "READY",
+  "gitSha": "6a1c901f6dfaf97d29dacf5050a3a4bff6688caf",
+  "gitBranch": "v4/knowledge-binder-01",
+  "repository": "Deokjjang/gyeol-report",
+  "source": "git",
+  "productionDeployed": false
+}

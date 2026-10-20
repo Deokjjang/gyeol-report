@@ -1,0 +1,137 @@
+[
+  {
+    "name": "global-case-01.json",
+    "engineId": "comprehensive",
+    "fixtureId": "fixture-comprehensive-A"
+  },
+  {
+    "name": "global-case-02.json",
+    "engineId": "comprehensive",
+    "fixtureId": "fixture-comprehensive-F"
+  },
+  {
+    "name": "global-case-03.json",
+    "engineId": "career",
+    "fixtureId": "fixture-career-A"
+  },
+  {
+    "name": "global-case-04.json",
+    "engineId": "career",
+    "fixtureId": "fixture-career-F"
+  },
+  {
+    "name": "global-case-05.json",
+    "engineId": "love",
+    "fixtureId": "fixture-love-A"
+  },
+  {
+    "name": "global-case-06.json",
+    "engineId": "love",
+    "fixtureId": "fixture-love-F"
+  },
+  {
+    "name": "global-case-07.json",
+    "engineId": "compatibility-love",
+    "fixtureId": "fixture-compatibility-A"
+  },
+  {
+    "name": "global-case-08.json",
+    "engineId": "compatibility-marriage",
+    "fixtureId": "fixture-compatibility-marriage"
+  },
+  {
+    "name": "global-case-09.json",
+    "engineId": "compatibility-parent-child",
+    "fixtureId": "fixture-compatibility-parentChild"
+  },
+  {
+    "name": "global-case-10.json",
+    "engineId": "compatibility-coworker",
+    "fixtureId": "fixture-compatibility-coworker"
+  },
+  {
+    "name": "global-case-11.json",
+    "engineId": "compatibility-manager-report",
+    "fixtureId": "fixture-compatibility-managerReport"
+  },
+  {
+    "name": "global-case-12.json",
+    "engineId": "compatibility-business-partner",
+    "fixtureId": "fixture-compatibility-businessPartner"
+  },
+  {
+    "name": "global-case-13.json",
+    "engineId": "compatibility-friendship",
+    "fixtureId": "fixture-compatibility-friendship"
+  },
+  {
+    "name": "global-case-14.json",
+    "engineId": "major-fortune",
+    "fixtureId": "fixture-major-A"
+  },
+  {
+    "name": "global-case-15.json",
+    "engineId": "major-fortune",
+    "fixtureId": "fixture-major-F"
+  },
+  {
+    "name": "global-case-16.json",
+    "engineId": "annual-fortune",
+    "fixtureId": "fixture-annual-A"
+  },
+  {
+    "name": "global-case-17.json",
+    "engineId": "annual-fortune",
+    "fixtureId": "fixture-annual-F"
+  },
+  {
+    "name": "global-case-18.json",
+    "engineId": "major-fortune",
+    "fixtureId": "fixture-major-transition-C"
+  },
+  {
+    "name": "global-case-19.json",
+    "engineId": "annual-fortune",
+    "fixtureId": "fixture-annual-transition-C2028"
+  },
+  {
+    "name": "global-case-20.json",
+    "engineId": "compatibility-love",
+    "fixtureId": "fixture-compatibility-unknown-both"
+  },
+  {
+    "name": "global-case-21.json",
+    "engineId": "compatibility-love",
+    "fixtureId": "fixture-compatibility-slot-swap"
+  },
+  {
+    "name": "global-case-22.json",
+    "engineId": "comprehensive",
+    "fixtureId": "fixture-same-natal-different-mbti"
+  },
+  {
+    "name": "global-case-23.json",
+    "engineId": "comprehensive",
+    "fixtureId": "fixture-same-mbti-different-natal"
+  },
+  {
+    "name": "global-case-24.json",
+    "engineId": "career",
+    "fixtureId": "fixture-same-natal-career"
+  },
+  {
+    "name": "global-case-25.json",
+    "engineId": "annual-fortune",
+    "fixtureId": "fixture-annual-ranged-transition"
+  },
+  {
+    "name": "global-case-26.json",
+    "engineId": "annual-fortune",
+    "fixtureId": "fixture-annual-before-first-dayun"
+  },
+  {
+    "name": "global-case-27.json",
+    "engineId": "compatibility-love",
+    "fixtureId": "fixture-compatibility-no-detected-pair"
+  }
+]

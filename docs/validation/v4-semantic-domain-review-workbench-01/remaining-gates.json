@@ -1,0 +1,28 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "ARRAY",
+  "entries": 6965,
+  "logicalJsonHash": "f09e1ff44e67faa4a31278216f5ab2daec73d5650bdd166105a5a92e508fe04d",
+  "parts": [
+    {
+      "file": "remaining-gates-part-0001.json",
+      "sha256": "bd8575d9441d079596e8929201cbae5ec678c722f703696041f55f0bb60111e4",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "remaining-gates-part-0002.json",
+      "sha256": "9bdac2257f301b77d1bc364d3fa47fc088a92c1dbd79899bd94bb7d21292ffb9",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "remaining-gates-part-0003.json",
+      "sha256": "713b8859bdd69a532d1c77ed56ba786272462eaca44c8813621348bbb17c1723",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "remaining-gates-part-0004.json",
+      "sha256": "fa8958c29674941cc4229ca31e2d7728893cc0da78db7e22a4d64984d2e7d178",
+      "kind": "CHUNK"
+    }
+  ]
+}

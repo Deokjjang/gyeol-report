@@ -1,0 +1,372 @@
+[
+  {
+    "reviewUnitId": "review-unit-v1:04ff78e189998bf73cbdbe78eb8cc745bfdd1180b12c62ed71ccecf063434eb1",
+    "positive": "전거를 확인한 범위의 연구만 보존",
+    "risk": "ID가 있다는 이유로 시험 행운을 자동 승인",
+    "twist": "보류를 명확히 하면 유효한 다른 긍정 자료를 보호",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:14f117b796f0276b39f4a7f16bb95db9f7cd0bcb097ec661f1fe24c47bcfa895",
+    "positive": "많은 제안 중 감당 가능한 거래를 고름",
+    "risk": "유입 가능성을 회수 완료로 착각",
+    "twist": "접점 축소가 중요한 제안의 이행력을 높임",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:16113b812644bbaccbedaba0d56728a43edd2f262d9ce397b35a6222eabc8944",
+    "positive": "거절과 도움 요청을 말할 통로",
+    "risk": "예의나 가족 관계를 이유로 불편한 접촉을 강요",
+    "twist": "다른 인사 방법을 고르는 것으로 존중을 연습할 수 있다.",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:26bc543d779c926a91bdd35019d6437aa65a7f674be5a7988a97eb3b01599cb6",
+    "positive": "지속할 수 있는 작업 크기를 고를 여지",
+    "risk": "가용 자원을 지나치게 적게 잡아 실험을 모두 미룰 수 있음",
+    "twist": "작은 범위가 반복 검증의 기회를 늘릴 수 있음",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:27ffd5b0576085ca6e0bace7a984e8afe0ef404872cf7ec92b7947091ad90ecc",
+    "positive": "조사를 끝낼 질문과 작은 적용을 연결",
+    "risk": "더 이해할 때까지 결정을 무기한 유예",
+    "twist": "자료를 줄여 첫 적용을 선명하게 함",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:3a09a215d6292844220e662009d0ed0cd27f298c369a333dc580bc22747f2400",
+    "positive": "비교 가능한 의견",
+    "risk": "성향 근거로 승인 권한 생성",
+    "twist": "권한 확인이 논쟁할 범위를 좁힐 수 있다.",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:431a7dd96215f14384db9d0223c9ec6159bd81af7c399a9cb71015f2932456dc",
+    "positive": "결속과 제약이 공존하는 구성을 한 가지 길흉으로 축약하지 않을 수 있다.",
+    "risk": "합이 있으니 형·파가 사라졌다고 하거나 셋이면 위험3배라고 할 수 없다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:449dc748b29d61562990b1d3bf3363854b75903a2e8a54a7f5e53053722a59c4",
+    "positive": "공통된 출발 기능도 서로 다른 작용을 가질 수 있음을 검토한다.",
+    "risk": "형과 해의 공존을 숨은 적의나 관재로 바꾸지 않는다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:459a3a3dbc231af64f19c184387dca52bfed0be7daf90a7439b37e670e6942a4",
+    "positive": "서로 가능한 연결을 남길 가능성",
+    "risk": "답변 지연을 애정 부족으로 평가",
+    "twist": "예측 가능한 연락 합의가 연결을 지속할 여지가 될 수 있다.",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5",
+    "positive": "같은 토라도 다른 저장 구성을 가진다는 비교가 가능하다.",
+    "risk": "토가 같으니 무작용이라는 해석과 개고재물 예언을 모두 제한한다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:546099cb92d114feb3abed80b1d90e979e39913e139c39d6191d43370e677a1f",
+    "positive": "B가 원하던 경험을 작은 선택지로 접할 수 있다.",
+    "risk": "A가 B의 참여를 확정해 놓고 뒤늦게 알린다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5993b08182efc78df3dd9bd976e7ab85c58444220e40e9f08422ce213e646785",
+    "positive": "자율 판단과 공동 확인의 경계를 구분",
+    "risk": "내 방식만을 정답으로 고집",
+    "twist": "도움을 구하는 선택도 자기 결정권을 지킬 수 있음",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5ac48e6169d0fa0914c14e3748447872e45d17307c9c6802adf52a6db12afcfa",
+    "positive": "거절과 도움 요청을 말할 통로",
+    "risk": "예의나 가족 관계를 이유로 불편한 접촉을 강요",
+    "twist": "다른 인사 방법을 고르는 것으로 존중을 연습할 수 있다.",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+    "positive": "공통된 출발 기능도 서로 다른 작용을 가질 수 있음을 검토한다.",
+    "risk": "형과 해의 공존을 숨은 적의나 관재로 바꾸지 않는다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:6fb89263ce5aa9a307d3c4a07f239f5bf1b4f5ba9580513ce355373983f20625",
+    "positive": "마음을 존중받는 대화를 찾아갈 가능성",
+    "risk": "상대의 다른 이유를 유대의 부족으로 판단",
+    "twist": "같은 행동에 다른 의미가 있어도 관계를 알아갈 수 있다.",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:7e49413ef271e70f0cc3ab43744f20160f0e5445317ea4973c799eff33450e20",
+    "positive": "공통된 출발 기능도 서로 다른 작용을 가질 수 있음을 검토한다.",
+    "risk": "형과 해의 공존을 숨은 적의나 관재로 바꾸지 않는다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:85c43ec8805b90d79e0c3c10e168f1b4a82c1ef7bd80f8052abb810a16b1172c",
+    "positive": "불명확한 요구를 구체화할 여지",
+    "risk": "취향 피드백을 매번 새 방향으로 받아들일 수 있음",
+    "twist": "빠른 초안도 폐기할 질문을 정하면 낭비가 줄어듦",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:919a3b43cc1c6e772d3b28080628cdac715284178b547d744f180f4465d50856",
+    "positive": "남의 평가와 자기 판단을 구분할 여지",
+    "risk": "생각을 공유하지 않아 타인은 기준을 추측",
+    "twist": "중간 생각을 조금 공유하면 독립 판단을 유지하기 쉬움",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:9349b850cda441b851a1d67911aef1048039ec21b5d3bf765dab4a833d0047d1",
+    "positive": "최신 정보의 확인",
+    "risk": "변경 기록을 승인 완료로 오인",
+    "twist": "짧은 차이 기록이 옛 파일의 혼선을 줄일 수 있다.",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:a3a3921b97ea4748bc3cbf8ea59d8d7919b7b009690bf4892c135b445be2e878",
+    "positive": "토생금과 배합의 관계를 분리하여 필요한 지원을 살필 수 있다.",
+    "risk": "辰이 수국·충 등에 관여하면 같은 기능으로 고정할 수 없다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:a7a734c1d533c29e541b60a61bd6d9ce07c642004364b4cf4ad502ffeefe6fe3",
+    "positive": "결정권·지원·거절 기준을 책임과 맞춤",
+    "risk": "견디는 능력으로 회복 필요를 가림",
+    "twist": "책임을 줄여 핵심 판단의 질을 높임",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:aee379e4082b818dfb42ec7906d9204c9bf4b425c19745459c88e0cfe32355a9",
+    "positive": "관계 조건을 차분히 확인하는 힘은 유지",
+    "risk": "상대의 행동 패턴에서 진심을 확정",
+    "twist": "직접 묻는 한 질문이 긴 분석보다 정확할 수 있음",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:afb46395b309ac2a5b1927d84353d5b4d4502bdc7f53896d3d6c75011b691702",
+    "positive": "겹친 수정의 비교",
+    "risk": "최신이라는 표시로 내용 검토 생략",
+    "twist": "충돌 항목만 모으면 전면 비교를 줄일 수 있다.",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e",
+    "positive": "같은 토라도 다른 저장 구성을 가진다는 비교가 가능하다.",
+    "risk": "토가 같으니 무작용이라는 해석과 개고재물 예언을 모두 제한한다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:ba09ae15fbce32dd35c706607bd987416b3d2664c2606aa88846766740f6338e",
+    "positive": "평범한 만남에 자기 취향의 이야기를 더할 가능성",
+    "risk": "매번 특별해야 한다는 기준을 스스로 만들기",
+    "twist": "새로운 준비 없이 같이 쉬는 시간도 경험의 일부가 된다.",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:bbad7836b4a303f2d9dfc68f1d69142edfe0c96336d9e6e68e8f7fa20439bed6",
+    "positive": "기여·비용·명의를 드러내 협업 지속",
+    "risk": "친분으로 부담을 숨겨 분담이 불명확",
+    "twist": "분담을 작게 정하는 편이 다음 협업을 쉽게 할 수 있음",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:bd476818775f92259e906e1c23d5c41863f55d716e34d119ab6df087ff40fc5e",
+    "positive": "작은 이견을 일찍 들을 가능성",
+    "risk": "좋은 자녀라는 평가 때문에 거절을 어렵게 만듦",
+    "twist": "새로운 의견을 듣는 것이 약속을 가볍게 보는 일만은 아니다.",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:c3dd46879f874810f1034bb06230e4a7559448eab2f26ca20fa8f49a698d611e",
+    "positive": "서로 다른 속도에도 선택을 맞출 여지",
+    "risk": "먼저 준비한 일을 취소하기 어렵게 만들어 동의를 받기",
+    "twist": "준비 규모를 줄이면 거절도 편해질 수 있다.",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:c689f40eeb08bd8c45d83c9a4d6320579e2d550d252d8078eb139979082f9ec8",
+    "positive": "B가 문제를 보는 선택지를 넓히면서도 자신의 결정을 유지할 수 있다.",
+    "risk": "A가 해법에 동의하지 않는 B를 비합리적이라고 평가한다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8",
+    "positive": "같은 토라도 다른 저장 구성을 가진다는 비교가 가능하다.",
+    "risk": "토가 같으니 무작용이라는 해석과 개고재물 예언을 모두 제한한다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:d8e73cd04aa3771a6c77552940ac9b45eac3102fced4bed5485bf414cce96dc5",
+    "positive": "공통된 출발 기능도 서로 다른 작용을 가질 수 있음을 검토한다.",
+    "risk": "형과 해의 공존을 숨은 적의나 관재로 바꾸지 않는다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e052b32db11df0eaf51eec4bdb294b8db34009c9bc6b6927374419f28ee1bed2",
+    "positive": "도움을 구할 구체적인 질문과 적용할 과제를 정할 수 있다.",
+    "risk": "원국 귀인을 새로 발생한 월운 근거로 복제하거나 후원자 출현을 보장하지 않는다.",
+    "twist": "도움을 받되 결정과 수행을 본인이 맡는 것이 기반을 키울 수 있다.",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e48e51851f8ee6ad275f5b31cb17400a31bbf895c7a713f7bfe8b46238def6c8",
+    "positive": "작은 호의를 거절하거나 규모를 줄일 수 있다면 부담을 조절할 수 있다.",
+    "risk": "A가 먼저 크게 베푼 뒤 B에게 같은 비용이나 시간을 요구한다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe",
+    "positive": "같은 토라도 다른 저장 구성을 가진다는 비교가 가능하다.",
+    "risk": "토가 같으니 무작용이라는 해석과 개고재물 예언을 모두 제한한다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:f414eea3d7da6f6f5f1a4949bba88ec732d97f0cef676c918805206a75932afa",
+    "positive": "가능한 도움을 분명하게 제안할 여지",
+    "risk": "따뜻한 사람이 거절하면 배신처럼 해석",
+    "twist": "거절이 분명할수록 가능한 호의는 오래 남을 수 있음",
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+    "positive": "같은 토라도 다른 저장 구성을 가진다는 비교가 가능하다.",
+    "risk": "토가 같으니 무작용이라는 해석과 개고재물 예언을 모두 제한한다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:ff5bf0f98d07ec27f4fda6b18c6529cb37f35f84a5da251e4da592277581d47f",
+    "positive": "결속과 제약이 공존하는 구성을 한 가지 길흉으로 축약하지 않을 수 있다.",
+    "risk": "합이 있으니 형·파가 사라졌다고 하거나 셋이면 위험3배라고 할 수 없다.",
+    "twist": null,
+    "relation": "CONDITIONAL_TENSION",
+    "explanation": "가능한 이점과 과용 위험은 같은 사건에 대한 상반된 계산 결과가 아니다. 원래 조건·대상·기간을 대조한 뒤 사람이 판단한다.",
+    "state": "PROPOSED",
+    "confirmedConflict": false
+  }
+]

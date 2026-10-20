@@ -1,0 +1,102 @@
+[
+  {
+    "name": "annual-fortune-product-research",
+    "expected": 1792,
+    "actual": 1792
+  },
+  {
+    "name": "career-product-research",
+    "expected": 839,
+    "actual": 839
+  },
+  {
+    "name": "compatibility-business-partner-research",
+    "expected": 1917,
+    "actual": 1917
+  },
+  {
+    "name": "compatibility-coworker-research",
+    "expected": 1948,
+    "actual": 1948
+  },
+  {
+    "name": "compatibility-friendship-research",
+    "expected": 2138,
+    "actual": 2138
+  },
+  {
+    "name": "compatibility-love-research",
+    "expected": 851,
+    "actual": 851
+  },
+  {
+    "name": "compatibility-manager-report-research",
+    "expected": 1741,
+    "actual": 1741
+  },
+  {
+    "name": "compatibility-marriage-research",
+    "expected": 1133,
+    "actual": 1133
+  },
+  {
+    "name": "compatibility-parent-child-research",
+    "expected": 1209,
+    "actual": 1209
+  },
+  {
+    "name": "composite-structure-research",
+    "expected": 301,
+    "actual": 301
+  },
+  {
+    "name": "comprehensive-product-research",
+    "expected": 512,
+    "actual": 512
+  },
+  {
+    "name": "fusion-knowledge-research",
+    "expected": 374,
+    "actual": 374
+  },
+  {
+    "name": "korean-editorial-research",
+    "expected": 392,
+    "actual": 392
+  },
+  {
+    "name": "love-product-research",
+    "expected": 764,
+    "actual": 764
+  },
+  {
+    "name": "major-fortune-product-research",
+    "expected": 863,
+    "actual": 863
+  },
+  {
+    "name": "mbti-foundation-research",
+    "expected": 531,
+    "actual": 531
+  },
+  {
+    "name": "mbti-pair-research",
+    "expected": 279,
+    "actual": 279
+  },
+  {
+    "name": "relation-research",
+    "expected": 246,
+    "actual": 246
+  },
+  {
+    "name": "semantic-axis-research",
+    "expected": 370,
+    "actual": 370
+  },
+  {
+    "name": "temporal-interaction-research",
+    "expected": 410,
+    "actual": 410
+  }
+]

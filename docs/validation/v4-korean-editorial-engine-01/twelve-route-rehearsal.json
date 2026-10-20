@@ -1,0 +1,132 @@
+[
+  {
+    "engine": "comprehensive",
+    "displayFixture": false,
+    "nativeAssignments": 4,
+    "sentences": 5,
+    "paragraphs": 4,
+    "shortages": 0,
+    "syntheticDisplayRecords": 4,
+    "actualClaims": 0
+  },
+  {
+    "engine": "career",
+    "displayFixture": false,
+    "nativeAssignments": 5,
+    "sentences": 3,
+    "paragraphs": 2,
+    "shortages": 3,
+    "syntheticDisplayRecords": 2,
+    "actualClaims": 0
+  },
+  {
+    "engine": "love",
+    "displayFixture": false,
+    "nativeAssignments": 7,
+    "sentences": 3,
+    "paragraphs": 2,
+    "shortages": 5,
+    "syntheticDisplayRecords": 2,
+    "actualClaims": 0
+  },
+  {
+    "engine": "major-fortune",
+    "displayFixture": false,
+    "nativeAssignments": 17,
+    "sentences": 4,
+    "paragraphs": 2,
+    "shortages": 166,
+    "syntheticDisplayRecords": 2,
+    "actualClaims": 0
+  },
+  {
+    "engine": "annual-fortune",
+    "displayFixture": false,
+    "nativeAssignments": 12,
+    "sentences": 4,
+    "paragraphs": 2,
+    "shortages": 10,
+    "syntheticDisplayRecords": 2,
+    "actualClaims": 0
+  },
+  {
+    "engine": "compatibility-love",
+    "displayFixture": false,
+    "nativeAssignments": 160,
+    "sentences": 4,
+    "paragraphs": 2,
+    "shortages": 178,
+    "syntheticDisplayRecords": 2,
+    "actualClaims": 0
+  },
+  {
+    "engine": "compatibility-marriage",
+    "displayFixture": false,
+    "nativeAssignments": 160,
+    "sentences": 4,
+    "paragraphs": 2,
+    "shortages": 178,
+    "syntheticDisplayRecords": 2,
+    "actualClaims": 0
+  },
+  {
+    "engine": "compatibility-parent-child",
+    "displayFixture": false,
+    "nativeAssignments": 160,
+    "sentences": 4,
+    "paragraphs": 2,
+    "shortages": 178,
+    "syntheticDisplayRecords": 2,
+    "actualClaims": 0
+  },
+  {
+    "engine": "compatibility-coworker",
+    "displayFixture": false,
+    "nativeAssignments": 140,
+    "sentences": 4,
+    "paragraphs": 2,
+    "shortages": 178,
+    "syntheticDisplayRecords": 2,
+    "actualClaims": 0
+  },
+  {
+    "engine": "compatibility-manager-report",
+    "displayFixture": false,
+    "nativeAssignments": 140,
+    "sentences": 4,
+    "paragraphs": 2,
+    "shortages": 178,
+    "syntheticDisplayRecords": 2,
+    "actualClaims": 0
+  },
+  {
+    "engine": "compatibility-business-partner",
+    "displayFixture": false,
+    "nativeAssignments": 140,
+    "sentences": 4,
+    "paragraphs": 2,
+    "shortages": 178,
+    "syntheticDisplayRecords": 2,
+    "actualClaims": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "displayFixture": false,
+    "nativeAssignments": 140,
+    "sentences": 5,
+    "paragraphs": 4,
+    "shortages": 176,
+    "syntheticDisplayRecords": 4,
+    "actualClaims": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "displayFixture": true,
+    "nativeAssignments": 180,
+    "sentences": 7,
+    "paragraphs": 6,
+    "shortages": 174,
+    "syntheticDisplayRecords": 6,
+    "actualClaims": 0
+  }
+]

@@ -1,3 +1,7 @@
+// These persisted legacy fixtures enter after the independently tested owner lookup.
+vi.mock("../../../../src/lib/book/ownerAccess", () => ({ loadOwnedTicketBook: async () => ({ kind: "absent" }) }));
+import type { ReportOutput } from "../../../../src/lib/report/types";
+import type { CompatibilityPersonChartSummary } from "../../../../src/lib/report-knowledge/compatibilityTypes";
 import { renderToStaticMarkup } from "react-dom/server";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -53,19 +57,19 @@ vi.mock("../../../../src/lib/reports/supabasePaidReportResultAdapter", () => ({
 const mockGetPaidReportResult = vi.mocked(getPaidReportResult);
 const createdAt = "2026-06-12T10:00:00.000Z";
 const updatedAt = "2026-06-12T10:00:01.000Z";
-const productPreviewReport = {
+const productPreviewReport: ReportOutput = {
   version: "v1",
   titleKo: "상품 미리보기",
   subtitleKo: "상품 미리보기 snapshot",
   sections: [],
   notices: [],
-} as const;
+};
 
 function createCompatibilityChartSummary(input: {
   readonly role: "personA" | "personB";
   readonly displayName: string;
   readonly mbti: "ENTJ" | "INTP";
-}) {
+}): CompatibilityPersonChartSummary {
   return {
     role: input.role,
     displayName: input.displayName,

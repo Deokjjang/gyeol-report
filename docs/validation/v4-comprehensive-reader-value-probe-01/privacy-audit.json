@@ -1,0 +1,193 @@
+{
+  "status": "PASS",
+  "filesScanned": 44,
+  "fixtureNameAndBirthDateTermsChecked": 37,
+  "originalPersonHashesChecked": 0,
+  "rawInputsExported": false,
+  "realCustomerAccesses": 0,
+  "externalProseApiCalls": 0,
+  "originalPublicGraphIdsOwnersAndRootsPreserved": true,
+  "aliases": [
+    "검토 가",
+    "검토 나"
+  ],
+  "publicFiles": [
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/README.md",
+      "sha256": "86bdcd585251ff4041e2836323c90b5253a957238f0a3d94d7147ac145643d9b"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/actual-graph-witness-ledger.json",
+      "sha256": "aa5dd8aa67dae1996ad2aa21130e84696d000ce0db6782e87cd7788256be64cb"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/baseline-failure-comparison.json",
+      "sha256": "0b76b63fe08734b49b233ffd45d5093ca0664c2ff358c9d4fa2712b3ff7600d2"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/baseline-published-edition-audit.json",
+      "sha256": "07bbf23cb4dab5d9e51b904e676fce48d955de21571fda34219a71a9619bc3e7"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/baseline-published-paragraphs.json",
+      "sha256": "a2e6c16af12bbb0914ea42ba20a085a8fb9408ef8b9a55cef5f64378a19e7cc6"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/baseline-timeout-comparison.json",
+      "sha256": "965a7a18be28c6b0d3c2399403153e8d8559596c1436d2c749fb3dc488928702"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/book-preservation.json",
+      "sha256": "24c85925a2faca5d185fd18b12f49c4cd40a2fd74c73483b1fd1e40266ff6059"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/browser-validation.json",
+      "sha256": "7e2fa2229f6a43fee7686a6e5dd383df593003845de32c6d49d02d2709e5d9f4"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/comparison-html-integrity.json",
+      "sha256": "8bafd5066970df450b0afb22d2d3b0cf6ddb0977d32468c68ba88a101671471f"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/conditional-meaning-coverage.json",
+      "sha256": "35ac62a91a53f0048c4fba7908920ab76612b7107a805a4981028bfac0ac7382"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/deterministic-rebuild.json",
+      "sha256": "5a69462e5e20df99ef3b5cbdbedeb6874f0ff6dd61c1c6466b229f215351caef"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/experiment-manifest.json",
+      "sha256": "5db834413d063219636f2b0e68bed4a2442de037f14deea2511f555a110ce2f9"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/experiment-source-hashes.json",
+      "sha256": "fd76ca1385c4a361b2696059cf778d0ebe4cf3d874b660d5beca499e10bcb96b"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/experimental-prose.json",
+      "sha256": "b30004abfb99a082e1ef31bc1afe965288e88526cbe73f869c6dbd92c892fe8f"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/final-report-fields.json",
+      "sha256": "6a5c843eec495827fef518ba4a1c611f5f77b204b1441a04b3adfdb4766f4c70"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/global-deterministic-validation.json",
+      "sha256": "48cd18643f895dd44a18f576bd25765224d47083a40a6dafcf53bbc2ff16fe43"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/grounding-violation-audit.json",
+      "sha256": "29caeddc7ddd653225b5fb8506746fce97764327cac54ef1d8c445483a1fdd6d"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/model-evaluation-limitations.json",
+      "sha256": "c63afe66a76a5ffd0e04c4911d002bb87e1c1df3c463433048ee64acb7068173"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/negative-grounding-tests.json",
+      "sha256": "aac1ca333805c9ed7c5f36086081ed4ed7dd745cd8829c447b4ab32cc7eadba6"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/next-stage-decision.json",
+      "sha256": "1345c052c2cb6a9f534ca3a728f6db4f2365a1600fb7ab090f36af5d2500f5b9"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/nft-isolation.json",
+      "sha256": "2e10e663b47fc3e6829402f29d0249d2c2b8c8b01b093b15dd8aca60487862d1"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/original-preservation.json",
+      "sha256": "6563ab77b00a3f82c220613a7f3098c93d39ed0cd3027146e680e3df8d26bef4"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/paragraph-comparison.json",
+      "sha256": "502303285d54869603fe0c039865a04f9cd08022042d78432d6dc4a31557b165"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/quality-evaluation.json",
+      "sha256": "35f815b481faf7ea6d05b3d650577753fe37e01de305ee466fe6fbe26d6d5fb2"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/reader-bridge-audit.json",
+      "sha256": "e60a3b23923e7153ab6af68ee5c16bd975b7f4b4829f45d5e0156b071e28a4ee"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/reader-value-comparison.html",
+      "sha256": "5be22a962a5193991e8de16f55d7a8f827f0e35ae436572cffdfd0c1b8cd5ff3"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/remaining-blockers.json",
+      "sha256": "9407848f96649db1a1575cdfadcef1e47e139192a59ea366b4c909011ee66087"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/research-inventory.json",
+      "sha256": "e874e2b757c51dcfc1e83e76f8b43c8e350823f0ca08ac3a290147c69f9bdb47"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/research-source-ledger.json",
+      "sha256": "48a457043f5320cde86d2969c722fc4f9ba99df6813b69c5b15f1e808a9be3ca"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/research-value-assessment.json",
+      "sha256": "0d9abc9ae35f0457093257e6c3ec3ffa4f04cb0df9d2f48e8f5265736d777065"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/selected-fixtures.json",
+      "sha256": "527cfbfc28e8ab8d3a90e94b112b839fb904e03d2d547f803c9892ffd6d08df7"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/semantic-repetition-analysis.json",
+      "sha256": "da2f8bda69632d00fdfc7c3226b692bdb85846733142260612c9d73b1aacfbf8"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/sentence-claim-ledger.json",
+      "sha256": "f6330ae68997df12c74dca3317c691abe0af5670252891fe903d740f4965cc0e"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/technical-validation.json",
+      "sha256": "b5f21e4e8bf9cdb2766cbc70779f9621a3835d45ae9044bc5761487816782117"
+    },
+    {
+      "file": "docs/validation/v4-comprehensive-reader-value-probe-01/workspace-preservation.json",
+      "sha256": "082323318f6e692bca6fc953214df65b10e2f659055561bc803d83a4f02772db"
+    },
+    {
+      "file": "tests/unit/report-knowledge/comprehensiveReaderValueProbe.test.ts",
+      "sha256": "529be8be3c82e31286654367b75f5a94af092aeec34f60673bd6df78fc392f20"
+    },
+    {
+      "file": "tools/comprehensive-reader-value-probe/context.mjs",
+      "sha256": "bd9a8561fe7da786a7d0581f598ed82b28b1314061c711c9b25abfea4971b4ef"
+    },
+    {
+      "file": "tools/comprehensive-reader-value-probe/guards.mjs",
+      "sha256": "8a04a947ffa0cafd514437ec4b6ec60e173b1e365e48c643c5708fd17eef4b37"
+    },
+    {
+      "file": "tools/comprehensive-reader-value-probe/html.mjs",
+      "sha256": "653b36f07e983627dac17078a02ac8d021930b57cd850ed71cd5f9e58a6a1fcb"
+    },
+    {
+      "file": "tools/comprehensive-reader-value-probe/model-reviews.json",
+      "sha256": "5cdd026cb0fdaf90d5f422da853ee545216c0535188ec7cc436d23eaa2d3d0e2"
+    },
+    {
+      "file": "tools/comprehensive-reader-value-probe/negative-cases.mjs",
+      "sha256": "610cf5a74462b42fda65930722e660c8e40cba8a53ebe0dfd0681b9c0a64a70c"
+    },
+    {
+      "file": "tools/comprehensive-reader-value-probe/prototypes.json",
+      "sha256": "ccd479efebdd459866639786e20ebce47ce719f6c60d1a2deb1d38d9c58cf97c"
+    },
+    {
+      "file": "tools/comprehensive-reader-value-probe/run.mjs",
+      "sha256": "2a769dfc22f9853b410fca179a04391883415c8ee558acaea9e964e37b3de102"
+    },
+    {
+      "file": "tools/comprehensive-reader-value-probe/verify-html.mjs",
+      "sha256": "a08d0f761ae5d1ff655e82b613e8566b56f7b7c8c2a2c77ba48707a1793e2104"
+    }
+  ],
+  "auditItselfExcludedFromHashList": true
+}

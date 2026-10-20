@@ -1,0 +1,293 @@
+/** Offline authored semantic research. Import only from research tests; no runtime connection. */
+import type { CompositeResearch } from "./semanticResearchTypes";
+
+export const COMPOSITE_MEANINGS: readonly CompositeResearch[] = [
+  {
+    "id": "sar:composite:reviewed-start",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:foundationSynthesis",
+      "authored:semantic-decomposition"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "axes": [
+      "PRECISION",
+      "ACTION_TEMPO"
+    ],
+    "definition": "검토를 배정한 신속한 시작",
+    "positive": "필수 검토 항목을 미리 정하고 작은 시험을 시작할 수 있음",
+    "condition": "정확성과 빠른 실행의 신호가 같은 과제에 독립적으로 있음",
+    "forbidden": "빠르므로 꼼꼼하다는 추론 금지",
+    "counterexample": "검토되지 않은 즉흥 행동은 반례",
+    "notNewAxis": true,
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "sar:composite:sustainable-support",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:foundationSynthesis",
+      "authored:semantic-decomposition"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "axes": [
+      "CARE",
+      "BOUNDARY"
+    ],
+    "definition": "지속 가능한 지원",
+    "positive": "필요와 동의를 확인하고 가능한 지원 한도를 정함",
+    "condition": "지원 요청과 실제 여력이 확인됨",
+    "forbidden": "돌봄을 거절했으므로 냉정하다는 판단 금지",
+    "counterexample": "한도를 말해도 도움을 전혀 제공하지 않을 수 있음",
+    "notNewAxis": true,
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "sar:composite:private-expression",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:foundationSynthesis",
+      "authored:semantic-decomposition"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "axes": [
+      "ENERGY_DIRECTION",
+      "EXPRESSION"
+    ],
+    "definition": "안에서 정리한 뒤 밖으로 표현",
+    "positive": "사적 초안과 공개 전달을 다른 단계로 사용할 수 있음",
+    "condition": "에너지 방향과 표현 통로의 출처가 각각 있음",
+    "forbidden": "내향이면 표현력이 약하다는 추론 금지",
+    "counterexample": "직업상 발표량만으로 사적 정리를 알 수 없음",
+    "notNewAxis": true,
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "sar:composite:adaptive-base",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:foundationSynthesis",
+      "authored:semantic-decomposition"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "axes": [
+      "STABILITY",
+      "ADAPTABILITY"
+    ],
+    "definition": "기반을 남기는 조정",
+    "positive": "지켜야 할 기반과 바꿀 방법을 나눔",
+    "condition": "실제 변경 조건과 유지할 자원이 있음",
+    "forbidden": "안정과 적응이 상쇄된다는 처리 금지",
+    "counterexample": "강제 변경에 따름은 자발적 적응과 다름",
+    "notNewAxis": true,
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "sar:composite:focused-range",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:foundationSynthesis",
+      "authored:semantic-decomposition"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "axes": [
+      "GOAL_DRIVE",
+      "EXPANSION"
+    ],
+    "definition": "확장 속의 집중",
+    "positive": "확대할 범위와 끝낼 목표를 구분",
+    "condition": "현재 자원과 목표가 명시됨",
+    "forbidden": "크게 벌이면 목표 달성도 높다는 추론 금지",
+    "counterexample": "범위를 줄여 완수하는 선택도 가능",
+    "notNewAxis": true,
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "sar:composite:allocated-responsibility",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:foundationSynthesis",
+      "authored:semantic-decomposition"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "axes": [
+      "DUTY",
+      "LEADERSHIP"
+    ],
+    "definition": "위임할 수 있는 책임",
+    "positive": "역할을 분명히 하고 타인의 결정권을 남김",
+    "condition": "실제 조율 권한과 책임 범위가 확인됨",
+    "forbidden": "모두 떠안는 일을 좋은 리더십으로 미화 금지",
+    "counterexample": "실무 책임만 있고 위임권은 없을 수 있음",
+    "notNewAxis": true,
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "sar:composite:curious-method",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:foundationSynthesis",
+      "authored:semantic-decomposition"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "axes": [
+      "CURIOSITY",
+      "LEARNING"
+    ],
+    "definition": "질문을 연습으로 연결",
+    "positive": "관심 질문을 과제와 피드백으로 확인",
+    "condition": "실제 학습 자료와 연습 기회가 있음",
+    "forbidden": "질문이 많으면 성적이 높다는 추론 금지",
+    "counterexample": "탐색만 하고 연습하지 않을 수 있음",
+    "notNewAxis": true,
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "sar:composite:clear-warmth",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:foundationSynthesis",
+      "authored:semantic-decomposition"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "axes": [
+      "COMMUNICATION_STYLE",
+      "SOCIAL_ATTUNEMENT"
+    ],
+    "definition": "직설과 상대 신호의 공존",
+    "positive": "핵심 요청을 말하고 이해 여부를 확인",
+    "condition": "발언 내용과 실제 반응 확인의 자료가 있음",
+    "forbidden": "명확한 말은 항상 상처 준다는 추론 금지",
+    "counterexample": "불편을 읽어도 무시할 수 있음",
+    "notNewAxis": true,
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "sar:composite:funded-option",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:foundationSynthesis",
+      "authored:semantic-decomposition"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "axes": [
+      "OPPORTUNITY_SENSE",
+      "RESOURCE_SENSE"
+    ],
+    "definition": "여력 안에서 보는 기회",
+    "positive": "새 선택의 필요 자원과 감당 한도를 확인",
+    "condition": "기회와 자원 흐름이 각각 확인됨",
+    "forbidden": "기회를 보면 재물이 늘어난다는 추론 금지",
+    "counterexample": "외부 제안이 있어도 실행 여력이 없을 수 있음",
+    "notNewAxis": true,
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "sar:composite:valued-effort",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:foundationSynthesis",
+      "authored:semantic-decomposition"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "axes": [
+      "MEANING",
+      "PERSISTENCE"
+    ],
+    "definition": "이유를 가진 지속",
+    "positive": "계속할 가치와 바꿀 조건을 말할 수 있음",
+    "condition": "본인의 가치 진술과 실제 지속 조건이 있음",
+    "forbidden": "오래 했으므로 가치 있는 일이라는 역추론 금지",
+    "counterexample": "의무 때문에 원치 않게 지속할 수 있음",
+    "notNewAxis": true,
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "sar:composite:accountable-choice",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:foundationSynthesis",
+      "authored:semantic-decomposition"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "axes": [
+      "AUTONOMY",
+      "DUTY"
+    ],
+    "definition": "책임을 남기는 자율성",
+    "positive": "개인 방법을 고르되 공동 약속을 갱신",
+    "condition": "선택권과 합의된 공동 역할이 확인됨",
+    "forbidden": "독립이면 협업을 싫어한다는 판단 금지",
+    "counterexample": "권한 없이 책임만 떠안을 수 있음",
+    "notNewAxis": true,
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "sar:composite:restored-output",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:foundationSynthesis",
+      "authored:semantic-decomposition"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "axes": [
+      "CREATION",
+      "RECOVERY_NEED"
+    ],
+    "definition": "제작과 회복의 배분",
+    "positive": "제작 구간과 쉬는 구간을 구별",
+    "condition": "실제 부하와 제작 목표가 있음",
+    "forbidden": "창작자이므로 번아웃이라는 진단 금지",
+    "counterexample": "회복 필요 신호가 현재 피로 사실은 아님",
+    "notNewAxis": true,
+    "notIndependentEvidence": true
+  }
+];

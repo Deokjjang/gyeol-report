@@ -1,0 +1,92 @@
+[
+  {
+    "left": "kc:v1:1135d377127b1d51f5f392d5f52ed47738f78395add7ffe3cab74e9c0fd061a1",
+    "right": "kc:v1:2a94fa2b4fc69c19549c04dcc463e5f8c9ff35588d13c92ab46b925048287ef3",
+    "originalRecordHashes": [
+      "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "4ac4c1b1a60cf20ad659d3458d75ac3f277606318e033096aeb7e43090eeeaa8"
+    ],
+    "relation": "DIFFERENT_CONTEXT",
+    "reason": "관계 분석에서 당사자 뜻을 묻는 것과 산출물 버전 통합을 확인하는 것은 모두 확인 질문을 쓰더라도 대상·권한·원천이 다르다.",
+    "state": "MEANING_REVIEW_PROPOSED",
+    "operatorApproved": false,
+    "meaningIdentityActuallyApproved": false,
+    "sameFactEstablished": false,
+    "proposalHash": "9374a6c175054982d16eaff7f18ec8b85ccf718a31fb177af27359dcdc6c78ba"
+  },
+  {
+    "left": "kc:v1:0d833ac1ce2b1eea3f758e286210d16d8f853122d1d5afacf1bae212045d58c7",
+    "right": "kc:v1:1d11fcaf70c31043139efd97a834f52c2bf8d1b2b036b104b90df6416906b7b7",
+    "originalRecordHashes": [
+      "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+      "1a331b7dffc8a7563c17c6cc651e3714c0ef652321237e7a3fc19ad267a6f450"
+    ],
+    "relation": "DIFFERENT_RELATIONSHIP_ROLE",
+    "reason": "가상 양육의 접촉 동의와 성인 자녀 연락 경계는 자율성을 공유하지만 보호 책임·발달 맥락·source owner를 교환할 수 없다.",
+    "state": "MEANING_REVIEW_PROPOSED",
+    "operatorApproved": false,
+    "meaningIdentityActuallyApproved": false,
+    "sameFactEstablished": false,
+    "proposalHash": "00a781aba59595ecefe3917e0394db6f9ac0251448efc85e24a29f2185c2d36c"
+  },
+  {
+    "left": "kc:v1:64063b7c566a59c119b3cecbac692e20ac54bcc9c141c8c4bb4a23c0c668ba87",
+    "right": "kc:v1:0565b44bc9f8f0d76def20e0b94c11c93da638f66e46dd2c6729bc4024c82148",
+    "originalRecordHashes": [
+      "f9b5b7b49f57207669900188d33aa6143ddb53e3fee1deb53b591798540cc860",
+      "09654a0fa2bdd6e0129e817aae6425be395f3e65915265ecbcbfc3a0765463a9"
+    ],
+    "relation": "RELATED_BUT_NOT_EQUIVALENT",
+    "reason": "A의 제안과 수신자의 선택을 분리한다는 조건은 관련되지만 연애 일정과 친구 문제 해결 개입은 다른 요청·관계 맥락이다.",
+    "state": "MEANING_REVIEW_PROPOSED",
+    "operatorApproved": false,
+    "meaningIdentityActuallyApproved": false,
+    "sameFactEstablished": false,
+    "proposalHash": "d48dfb4676781c93c0da65ba948d12dd3b3290f8458586f49107c6220c1135dc"
+  },
+  {
+    "left": "kc:v1:33f393caeba9d0a42a370288067f39ef9a74bd316d5741e6899709118a5922c8",
+    "right": "kc:v1:41cfc8c9066bd01f9af7b674c685af42f40626396ab4ef4917a215290f9b387f",
+    "originalRecordHashes": [
+      "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653",
+      "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a"
+    ],
+    "relation": "DIFFERENT_CONTEXT",
+    "reason": "丑未 충과 寅巳 해는 관계 종류·참여 글자·전통 정의가 다르다. 교차 검출의 존재를 같은 생활 결과로 합치지 않는다.",
+    "state": "MEANING_REVIEW_PROPOSED",
+    "operatorApproved": false,
+    "meaningIdentityActuallyApproved": false,
+    "sameFactEstablished": false,
+    "proposalHash": "4e63f87c5a072c05612a2e54fc641d9ae30099fb865e990f48a174c07b31829b"
+  },
+  {
+    "left": "kc:v1:41cfc8c9066bd01f9af7b674c685af42f40626396ab4ef4917a215290f9b387f",
+    "right": "kc:v1:0ebc2fd31a00dec595ba3b2ecd0d8af31282c9c1c0b0461bc4887bffede52e3f",
+    "originalRecordHashes": [
+      "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a",
+      "a81e52769579182e09ee357e41ccf6bdb00471c81e84476ed7b487404e61421e"
+    ],
+    "relation": "DIFFERENT_CONTEXT",
+    "reason": "寅巳 해와 辰酉 육합은 다른 구성과 서로 다른 전문 정책을 가진다. 상하 권한이나 사업 지분으로 전이하지 않는다.",
+    "state": "MEANING_REVIEW_PROPOSED",
+    "operatorApproved": false,
+    "meaningIdentityActuallyApproved": false,
+    "sameFactEstablished": false,
+    "proposalHash": "eac2c63fb01f1514beca5ff8d0ae6def058c926fc590298428619ffc053d3f6a"
+  },
+  {
+    "left": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+    "right": "kc:v1:782ba0c10ba719cad1f530caa8d037c6fa48f5322f076f9fe171ed44d4720a77",
+    "originalRecordHashes": [
+      "f2950e5c9c0b01f173ba811bdb29a27df97a078ea57db6dfa44f66a73a71f26d",
+      "275d4b552a0ea163e44e08297d052ae80526617d0113c8ddfdafd8c57f247f1f"
+    ],
+    "relation": "DIFFERENT_TEMPORAL_SCOPE",
+    "reason": "편관의 10년 주기 역할과 월운 未 target 천을귀인 관찰은 시간·기준점·원천이 다르다. 도움이나 압박을 실제 사건으로 합치지 않는다.",
+    "state": "MEANING_REVIEW_PROPOSED",
+    "operatorApproved": false,
+    "meaningIdentityActuallyApproved": false,
+    "sameFactEstablished": false,
+    "proposalHash": "facc8121870f499725afb9dd9a9dec57cc0e37eab9750b0c28f0d884da37b8ad"
+  }
+]

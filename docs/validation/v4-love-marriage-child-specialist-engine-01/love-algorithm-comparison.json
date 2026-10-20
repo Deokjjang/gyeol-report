@@ -1,0 +1,185 @@
+[
+  {
+    "method": "FIRST_ELIGIBLE",
+    "selected": [
+      {
+        "questionId": "synthetic:love:q:01",
+        "candidateId": "synthetic:love:a"
+      },
+      {
+        "questionId": "synthetic:love:q:02",
+        "candidateId": "synthetic:love:c"
+      },
+      {
+        "questionId": "synthetic:love:q:03",
+        "candidateId": "synthetic:love:d"
+      },
+      {
+        "questionId": "synthetic:love:q:04",
+        "candidateId": "synthetic:love:e"
+      },
+      {
+        "questionId": "synthetic:love:q:05",
+        "candidateId": "synthetic:love:f"
+      },
+      {
+        "questionId": "synthetic:love:q:06",
+        "candidateId": "synthetic:love:g"
+      }
+    ],
+    "coveredQuestions": 6,
+    "importanceCovered": 6,
+    "requiredMeaningUnits": 6,
+    "independentMeanings": 6,
+    "roots": {
+      "distinct": 1,
+      "references": 6,
+      "repeated": 5
+    },
+    "conflicts": [],
+    "missingQuestions": [
+      "synthetic:love:q:07"
+    ],
+    "search": {
+      "visits": 0,
+      "complete": true
+    },
+    "notSelected": [
+      {
+        "id": "synthetic:love:b",
+        "reasons": [
+          "QUESTION_ASSIGNED_TWICE"
+        ]
+      },
+      {
+        "id": "synthetic:love:h",
+        "reasons": [
+          "LOVE_NON_RECALL_FACET_BUDGET"
+        ]
+      }
+    ],
+    "invalidPartnerChildInferences": 0,
+    "customerClaimsEmitted": 0
+  },
+  {
+    "method": "QUESTION_FIT_FIRST",
+    "selected": [
+      {
+        "questionId": "synthetic:love:q:01",
+        "candidateId": "synthetic:love:a"
+      },
+      {
+        "questionId": "synthetic:love:q:02",
+        "candidateId": "synthetic:love:c"
+      },
+      {
+        "questionId": "synthetic:love:q:03",
+        "candidateId": "synthetic:love:d"
+      },
+      {
+        "questionId": "synthetic:love:q:04",
+        "candidateId": "synthetic:love:e"
+      },
+      {
+        "questionId": "synthetic:love:q:05",
+        "candidateId": "synthetic:love:f"
+      },
+      {
+        "questionId": "synthetic:love:q:06",
+        "candidateId": "synthetic:love:g"
+      }
+    ],
+    "coveredQuestions": 6,
+    "importanceCovered": 6,
+    "requiredMeaningUnits": 6,
+    "independentMeanings": 6,
+    "roots": {
+      "distinct": 1,
+      "references": 6,
+      "repeated": 5
+    },
+    "conflicts": [],
+    "missingQuestions": [
+      "synthetic:love:q:07"
+    ],
+    "search": {
+      "visits": 0,
+      "complete": true
+    },
+    "notSelected": [
+      {
+        "id": "synthetic:love:b",
+        "reasons": [
+          "QUESTION_ASSIGNED_TWICE"
+        ]
+      },
+      {
+        "id": "synthetic:love:h",
+        "reasons": [
+          "LOVE_NON_RECALL_FACET_BUDGET"
+        ]
+      }
+    ],
+    "invalidPartnerChildInferences": 0,
+    "customerClaimsEmitted": 0
+  },
+  {
+    "method": "CONSTRAINT_AWARE_SELECTION",
+    "selected": [
+      {
+        "questionId": "synthetic:love:q:01",
+        "candidateId": "synthetic:love:b"
+      },
+      {
+        "questionId": "synthetic:love:q:02",
+        "candidateId": "synthetic:love:c"
+      },
+      {
+        "questionId": "synthetic:love:q:03",
+        "candidateId": "synthetic:love:d"
+      },
+      {
+        "questionId": "synthetic:love:q:04",
+        "candidateId": "synthetic:love:e"
+      },
+      {
+        "questionId": "synthetic:love:q:05",
+        "candidateId": "synthetic:love:f"
+      },
+      {
+        "questionId": "synthetic:love:q:06",
+        "candidateId": "synthetic:love:g"
+      },
+      {
+        "questionId": "synthetic:love:q:07",
+        "candidateId": "synthetic:love:h"
+      }
+    ],
+    "coveredQuestions": 7,
+    "importanceCovered": 8,
+    "requiredMeaningUnits": 7,
+    "independentMeanings": 7,
+    "roots": {
+      "distinct": 2,
+      "references": 7,
+      "repeated": 5
+    },
+    "conflicts": [],
+    "missingQuestions": [],
+    "search": {
+      "visits": 57,
+      "complete": true
+    },
+    "notSelected": [
+      {
+        "id": "synthetic:love:a",
+        "reasons": [
+          "LOVE_NON_RECALL_FACET_BUDGET",
+          "QUESTION_ASSIGNED_TWICE"
+        ]
+      }
+    ],
+    "invalidPartnerChildInferences": 0,
+    "customerClaimsEmitted": 0
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "category": "love",
+    "priorMeaning": "친밀감·연락·애정 요청",
+    "businessDifference": "시장 수요·출자·외부 계약·손실·철수는 애정 표현의 변형이 아님",
+    "priorSourcePreserved": true,
+    "meaningCopiedByLabelChange": false,
+    "scoreChanged": false
+  },
+  {
+    "category": "marriage",
+    "priorMeaning": "공동생활·가족·생활 책임",
+    "businessDifference": "생활비와 사업 현금흐름·지분·고객 의무를 동일시하지 않음",
+    "priorSourcePreserved": true,
+    "meaningCopiedByLabelChange": false,
+    "scoreChanged": false
+  },
+  {
+    "category": "parentChild",
+    "priorMeaning": "발달·보호·지원과 실제 연령·권한",
+    "businessDifference": "보호자 역할이나 부모 권한을 사업 파트너에 전용하지 않음",
+    "priorSourcePreserved": true,
+    "meaningCopiedByLabelChange": false,
+    "scoreChanged": false
+  },
+  {
+    "category": "coworker",
+    "priorMeaning": "같은 조직의 산출·인계·피드백",
+    "businessDifference": "고용·조직 지원을 전제로 하지 않고 출자·손익·대외 의무·종료를 독립 확인",
+    "priorSourcePreserved": true,
+    "meaningCopiedByLabelChange": false,
+    "scoreChanged": false
+  },
+  {
+    "category": "managerReport",
+    "priorMeaning": "지시·위임·보고·평가·지원의 비대칭",
+    "businessDifference": "A를 관리자 B를 팀원으로 두지 않음. 실제 결정권은 계약·구조로 확인. 지분·손실을 자동 공유하지 않음",
+    "priorSourcePreserved": true,
+    "meaningCopiedByLabelChange": false,
+    "scoreChanged": false
+  }
+]

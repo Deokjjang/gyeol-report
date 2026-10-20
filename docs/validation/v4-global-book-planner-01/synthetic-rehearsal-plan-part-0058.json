@@ -1,0 +1,1542 @@
+[
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/81",
+      "recordSha256": "69df2b629ec87219c5c15bb596e98a400a2048654bb45dc8ec2acb2f90ed25c7",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "69df2b629ec87219c5c15bb596e98a400a2048654bb45dc8ec2acb2f90ed25c7",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/82",
+      "recordSha256": "760a3c35da7fd00b879dc887702bd11a8241a306683e1322b282c2f6fd9a1f4b",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "760a3c35da7fd00b879dc887702bd11a8241a306683e1322b282c2f6fd9a1f4b",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/83",
+      "recordSha256": "34c0857a852682ef6070953c7ed2a181758c03009268c03be1c6cd226a6996d0",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "34c0857a852682ef6070953c7ed2a181758c03009268c03be1c6cd226a6996d0",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/84",
+      "recordSha256": "2e210886c084ea0198b2bf661164dee84fe00d893030142b70f36982e2aa89bd",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "2e210886c084ea0198b2bf661164dee84fe00d893030142b70f36982e2aa89bd",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/85",
+      "recordSha256": "ef77e4cad8b0defbaf73abbb5e388ab2285c47eedfea2a33e1fea20b61af4c78",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "ef77e4cad8b0defbaf73abbb5e388ab2285c47eedfea2a33e1fea20b61af4c78",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/86",
+      "recordSha256": "6f9ce237dbe68b6416a10b55a6d94623cabeb1fea9d9d05f0f2cc5fce419bf58",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "6f9ce237dbe68b6416a10b55a6d94623cabeb1fea9d9d05f0f2cc5fce419bf58",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/87",
+      "recordSha256": "95cb0c85671bea0acf3fb912456d4ba33f6b597c5c026e262a719866c3abdc85",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "95cb0c85671bea0acf3fb912456d4ba33f6b597c5c026e262a719866c3abdc85",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/88",
+      "recordSha256": "10e38415b4738ed4797417243a229df93de2e02bc6f1fc1c3aae18ecc4cadbef",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "10e38415b4738ed4797417243a229df93de2e02bc6f1fc1c3aae18ecc4cadbef",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/89",
+      "recordSha256": "c9d112691b422d592a23ce962cc847b56cecbfbdf5e8d92cbc7f61c2902e1229",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "c9d112691b422d592a23ce962cc847b56cecbfbdf5e8d92cbc7f61c2902e1229",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/90",
+      "recordSha256": "a219c9a6423764dac4a038af693f9ac5d897346e76777cd4a757ff0663ecaad0",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "a219c9a6423764dac4a038af693f9ac5d897346e76777cd4a757ff0663ecaad0",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/91",
+      "recordSha256": "cc1b885d1275074e4a434a888e02728db4d9207e0a17c19ddd33cf5c8c94a014",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "cc1b885d1275074e4a434a888e02728db4d9207e0a17c19ddd33cf5c8c94a014",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/92",
+      "recordSha256": "f9b6f3cab9c63e865e0b4002a5451a757a88878210e9cfe2e5cb21f67045a9de",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "f9b6f3cab9c63e865e0b4002a5451a757a88878210e9cfe2e5cb21f67045a9de",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/93",
+      "recordSha256": "02ecf05b304d6c9f266ebb398e4920d67748fb5515cee2fb4c2bb600e967360b",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "02ecf05b304d6c9f266ebb398e4920d67748fb5515cee2fb4c2bb600e967360b",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/94",
+      "recordSha256": "ed3d8f562f753f7325a0625817a89278aa263320d1e4cf223ad1aba43f2f83c0",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "ed3d8f562f753f7325a0625817a89278aa263320d1e4cf223ad1aba43f2f83c0",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/95",
+      "recordSha256": "7bc8b3f4204bb6d15ddd5a9ce02ad3e64084d434b411b94448b28749b00d0167",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "7bc8b3f4204bb6d15ddd5a9ce02ad3e64084d434b411b94448b28749b00d0167",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/96",
+      "recordSha256": "51440317cec655b11a41565da82eb179311849f77381c82af65966c7fceb6473",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "51440317cec655b11a41565da82eb179311849f77381c82af65966c7fceb6473",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/97",
+      "recordSha256": "94ad47b4b1c80de5036270c77e494e49d691076b8ad3044da69c33dd7c2e1745",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "94ad47b4b1c80de5036270c77e494e49d691076b8ad3044da69c33dd7c2e1745",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/98",
+      "recordSha256": "f0db76af9db5d40d6ae2538e9166a3ae9ea18afb31dbe27c8c9620dc2a670fa0",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "f0db76af9db5d40d6ae2538e9166a3ae9ea18afb31dbe27c8c9620dc2a670fa0",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/99",
+      "recordSha256": "66fb118c3f252d5008838210fcd774c827d756c7367807fd36e0773593c82122",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "66fb118c3f252d5008838210fcd774c827d756c7367807fd36e0773593c82122",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/100",
+      "recordSha256": "7c7fa199829d5c602d5c03a11a821219756372511ceabf91320a1f4d3ffb7721",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "7c7fa199829d5c602d5c03a11a821219756372511ceabf91320a1f4d3ffb7721",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/101",
+      "recordSha256": "58273aecb97c3bdeb345a07f10e8fdf29a19b005e8063074c0c60da6d81d851b",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "58273aecb97c3bdeb345a07f10e8fdf29a19b005e8063074c0c60da6d81d851b",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/102",
+      "recordSha256": "71dc4115212f50c783e565ab6c26900bbfcfb4e37598e5e8aa46c05d724d8825",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "71dc4115212f50c783e565ab6c26900bbfcfb4e37598e5e8aa46c05d724d8825",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/103",
+      "recordSha256": "333d58802292dcc445508ae442b66755aa9275cf2d4e242f6e8f515f3b62a606",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "333d58802292dcc445508ae442b66755aa9275cf2d4e242f6e8f515f3b62a606",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/104",
+      "recordSha256": "2080cdb22945cdf2e32f236cb7f0f7d89c4b8dd57d781aa695dd72be70b125fa",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "2080cdb22945cdf2e32f236cb7f0f7d89c4b8dd57d781aa695dd72be70b125fa",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/105",
+      "recordSha256": "287ab1dc47e3295878bf15cb7a106565d5c99e008e8f562d77f145d6b823fc28",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "287ab1dc47e3295878bf15cb7a106565d5c99e008e8f562d77f145d6b823fc28",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/106",
+      "recordSha256": "d2fe727f70159b0c535191a460aedd499c11467fdbe469d9543393feb0c24ec8",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "d2fe727f70159b0c535191a460aedd499c11467fdbe469d9543393feb0c24ec8",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/107",
+      "recordSha256": "57cecd0cdeb1ea7f6379a2edf5223bdd4db76f2aecd2a15775ae5bae053559a6",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "57cecd0cdeb1ea7f6379a2edf5223bdd4db76f2aecd2a15775ae5bae053559a6",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/108",
+      "recordSha256": "5fc7f7a231480a237286c7738339749310980dc291371b59dd5751f48efc48ea",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "5fc7f7a231480a237286c7738339749310980dc291371b59dd5751f48efc48ea",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/109",
+      "recordSha256": "9c00c87ba1d167bf150e4c6e1d700672782657336cfd78fdd658fdfb30be5b54",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "9c00c87ba1d167bf150e4c6e1d700672782657336cfd78fdd658fdfb30be5b54",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/110",
+      "recordSha256": "cf8ae26bd3a51baeb6be41624ac105a89c4339ac0f2640ad45f5d0361520121d",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "cf8ae26bd3a51baeb6be41624ac105a89c4339ac0f2640ad45f5d0361520121d",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/111",
+      "recordSha256": "26bafeb0e17b87e91211ffaa0757ff73c467ff111a2ec4ee34ef34a1f4e3ae3c",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "26bafeb0e17b87e91211ffaa0757ff73c467ff111a2ec4ee34ef34a1f4e3ae3c",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/112",
+      "recordSha256": "e32ec782d18e30a64f0eaf7093135e1dca6fa9cc3bef726ae3cbcb93f5927664",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "e32ec782d18e30a64f0eaf7093135e1dca6fa9cc3bef726ae3cbcb93f5927664",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/113",
+      "recordSha256": "b001041d4545c794643bf2f7adb803c262e93a7df291dc1597a7708b3673b0d1",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "b001041d4545c794643bf2f7adb803c262e93a7df291dc1597a7708b3673b0d1",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/114",
+      "recordSha256": "1e80f0f3eec82e174fea829fe4c20bcebbab052dd4f17342882ac1702e0fb87d",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "1e80f0f3eec82e174fea829fe4c20bcebbab052dd4f17342882ac1702e0fb87d",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/115",
+      "recordSha256": "67ef90f4ae4d35416167286184555e50b9cc317d3d9ae09ce7677a844d642603",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "67ef90f4ae4d35416167286184555e50b9cc317d3d9ae09ce7677a844d642603",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/116",
+      "recordSha256": "e23cb81a5f7bc135f04c4c5e99af249bd99d4369d6d16b669689f227b2dc2ec2",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "e23cb81a5f7bc135f04c4c5e99af249bd99d4369d6d16b669689f227b2dc2ec2",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/117",
+      "recordSha256": "57f609be2178bfbc6057840a40c7992d7b8010faf9b2b8d3c4aa050fe953ef2e",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "57f609be2178bfbc6057840a40c7992d7b8010faf9b2b8d3c4aa050fe953ef2e",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/118",
+      "recordSha256": "4714553dcc972e5aa6e9a33cc38fa77d533dd0cba1fce535f21e373eb4095c76",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "4714553dcc972e5aa6e9a33cc38fa77d533dd0cba1fce535f21e373eb4095c76",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/119",
+      "recordSha256": "f038ee30a55f7dff24abfb24fd9fb06bbe16c392c252d656bfc93724e4b94ed5",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "f038ee30a55f7dff24abfb24fd9fb06bbe16c392c252d656bfc93724e4b94ed5",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/120",
+      "recordSha256": "c1286c62863a0abc80f86b0a035769da05204fc75a4b2d3f2520e9bc337360ba",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "c1286c62863a0abc80f86b0a035769da05204fc75a4b2d3f2520e9bc337360ba",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/2",
+      "recordSha256": "c71c6895068435fc18387a6afbbf8f12915d33b1629b6edb48af3b760153cb81",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "c71c6895068435fc18387a6afbbf8f12915d33b1629b6edb48af3b760153cb81",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/3",
+      "recordSha256": "c790c39e7bfe282776d24125a79b77e8d13f8ac9766e151251ef204fa4cf9191",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "c790c39e7bfe282776d24125a79b77e8d13f8ac9766e151251ef204fa4cf9191",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/4",
+      "recordSha256": "ada25f4e103aae7f79a0e6e9c8a0c6a9011047a9e54e4e4f926432a25622ebf0",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "ada25f4e103aae7f79a0e6e9c8a0c6a9011047a9e54e4e4f926432a25622ebf0",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/5",
+      "recordSha256": "8c1b8e140a33ed62c03df4d0100b0ae5ae67bc966e6db097737a947d400183f7",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "8c1b8e140a33ed62c03df4d0100b0ae5ae67bc966e6db097737a947d400183f7",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/6",
+      "recordSha256": "455b82c5d2759a2002372322cd8d630dd608d544ffea19cc1fc5a263e8983e27",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "455b82c5d2759a2002372322cd8d630dd608d544ffea19cc1fc5a263e8983e27",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/7",
+      "recordSha256": "df600cfb9595c59b64c2c35a24cf5b25aa9e93f34a864a9fd525cc83df1a3e94",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "df600cfb9595c59b64c2c35a24cf5b25aa9e93f34a864a9fd525cc83df1a3e94",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/8",
+      "recordSha256": "6c3f6a02dd58b2e7b4fb62499f37edd967a87cc0f54396be8e3b4a23b359640e",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "6c3f6a02dd58b2e7b4fb62499f37edd967a87cc0f54396be8e3b4a23b359640e",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/9",
+      "recordSha256": "d6759cce186f8a1cf21e68a5b3afda5737c86536377e8fcdcbabf365d091eba5",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "d6759cce186f8a1cf21e68a5b3afda5737c86536377e8fcdcbabf365d091eba5",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/10",
+      "recordSha256": "b79cecf4ddb68bdb83b0747654caf3139cfe56653b0a8562f522e0d4e3315fea",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "b79cecf4ddb68bdb83b0747654caf3139cfe56653b0a8562f522e0d4e3315fea",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/11",
+      "recordSha256": "0d42733bfb853d9517bddfe34f8bc608d89b8f812646443de033babb17ca19c7",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "0d42733bfb853d9517bddfe34f8bc608d89b8f812646443de033babb17ca19c7",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/12",
+      "recordSha256": "43c12d042390e5ecced9a722c6b6df1920007d0ad43c8e916cea6ee233b2677a",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "43c12d042390e5ecced9a722c6b6df1920007d0ad43c8e916cea6ee233b2677a",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/13",
+      "recordSha256": "995294e6704cabb89773711ea4f5d44013f9c96850cd132e150667c2c0b3fdea",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "995294e6704cabb89773711ea4f5d44013f9c96850cd132e150667c2c0b3fdea",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/14",
+      "recordSha256": "f87f58379ad0108d14e98b63365e66e7e749fe38e8b73e5ef0eda384c7f5f4d0",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "f87f58379ad0108d14e98b63365e66e7e749fe38e8b73e5ef0eda384c7f5f4d0",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/15",
+      "recordSha256": "bb972beb5bba87bf9aa0ed7f24b316328940ca3df5845044d052ca58add3c7c5",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "bb972beb5bba87bf9aa0ed7f24b316328940ca3df5845044d052ca58add3c7c5",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/16",
+      "recordSha256": "19a89c676401e5e174155ba3b1dbec391672f1efc043fa9ea72f625767fb7c64",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "19a89c676401e5e174155ba3b1dbec391672f1efc043fa9ea72f625767fb7c64",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/17",
+      "recordSha256": "faa60da753b759d7c1b37e7dc2dcb7dfdd7dc5b51147c5fe71cab0767606c13e",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "faa60da753b759d7c1b37e7dc2dcb7dfdd7dc5b51147c5fe71cab0767606c13e",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/18",
+      "recordSha256": "f83a232caebcc91a97698f0280987353004ae65e3a9fc5c78a4c4e06fbef5d53",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "f83a232caebcc91a97698f0280987353004ae65e3a9fc5c78a4c4e06fbef5d53",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/19",
+      "recordSha256": "392d0f068a77a9362da98296c267f08a1d009a1c64bdd7853f9176e2e82f9f9b",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "392d0f068a77a9362da98296c267f08a1d009a1c64bdd7853f9176e2e82f9f9b",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/20",
+      "recordSha256": "b44c8c0443b271e0a400f6b83440c390589796f5506f2d60257f5a27eb285258",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "b44c8c0443b271e0a400f6b83440c390589796f5506f2d60257f5a27eb285258",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/21",
+      "recordSha256": "01c4b1de9ced0d108b807dd95c3a1b4f989b0b96dce3f6b85d22b7fddb696717",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "01c4b1de9ced0d108b807dd95c3a1b4f989b0b96dce3f6b85d22b7fddb696717",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/22",
+      "recordSha256": "0fafb31b0f0f66e7ddac2857d028229a857043925429b7c1d723ae43c9b5448a",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "0fafb31b0f0f66e7ddac2857d028229a857043925429b7c1d723ae43c9b5448a",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/23",
+      "recordSha256": "bd905d378b38730d2c56d2a1b7f07f2da4f96ab33476903cf339df3af38a3fa3",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "bd905d378b38730d2c56d2a1b7f07f2da4f96ab33476903cf339df3af38a3fa3",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/24",
+      "recordSha256": "a568b2e00702c72b4e93f2cae28835f644c3984fea5b5a522b54d2ed4ea4ddbc",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "a568b2e00702c72b4e93f2cae28835f644c3984fea5b5a522b54d2ed4ea4ddbc",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/25",
+      "recordSha256": "c011b4031bd37be58aa06a6234f7debdd4c3aaeaea1637e62eb2e7c02435d8ab",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "c011b4031bd37be58aa06a6234f7debdd4c3aaeaea1637e62eb2e7c02435d8ab",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/26",
+      "recordSha256": "7071eefbe0d07f8a23a960f10c4bc0e2df2dbf4cdbe81288fb47c82caf5ec042",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "7071eefbe0d07f8a23a960f10c4bc0e2df2dbf4cdbe81288fb47c82caf5ec042",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/27",
+      "recordSha256": "1820cbf026acaaaedfba632d996a7529a4efba9300c341e9b9a8d15a74f463e9",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "1820cbf026acaaaedfba632d996a7529a4efba9300c341e9b9a8d15a74f463e9",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/28",
+      "recordSha256": "d87558cbd66e11570e589b353f47edc551046594074f2095186b14c636b05c82",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "d87558cbd66e11570e589b353f47edc551046594074f2095186b14c636b05c82",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/29",
+      "recordSha256": "35eea8f3492473ac4a616a2672297f7be445fa9539ed797945f80fbc86a84dcc",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "35eea8f3492473ac4a616a2672297f7be445fa9539ed797945f80fbc86a84dcc",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/30",
+      "recordSha256": "fee7481f719d448eef747e0c0ebbb79cf48bb48abf68a51cd71b6d5549899856",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "fee7481f719d448eef747e0c0ebbb79cf48bb48abf68a51cd71b6d5549899856",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/31",
+      "recordSha256": "cb60f8d6cb28477e58e7ec7a84d93e226ba0ad2c6f7600aeaea380b3c73181b8",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "cb60f8d6cb28477e58e7ec7a84d93e226ba0ad2c6f7600aeaea380b3c73181b8",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/32",
+      "recordSha256": "fde90077a7dae52c3d09f435ea6872c84cffd3680ce11e0f9470ffa7b64fd677",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "fde90077a7dae52c3d09f435ea6872c84cffd3680ce11e0f9470ffa7b64fd677",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/33",
+      "recordSha256": "dc5c8da6b8e50aff8fef57676570d4f95f9b2c9ac3e61dc9936d0844c0eaf35f",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "dc5c8da6b8e50aff8fef57676570d4f95f9b2c9ac3e61dc9936d0844c0eaf35f",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/34",
+      "recordSha256": "95d157f763ce4556261591c97e3ab4b36201d28edb6c386b6046de4ddbd87d96",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "95d157f763ce4556261591c97e3ab4b36201d28edb6c386b6046de4ddbd87d96",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/35",
+      "recordSha256": "a0f8d28d92c04305ec2fad317b036f71b1948417b6fa2755408fd1d0554d4d31",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "a0f8d28d92c04305ec2fad317b036f71b1948417b6fa2755408fd1d0554d4d31",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/36",
+      "recordSha256": "75b7a8139b355d94fd12aecdc9768afab57a2b3ab920bd1a5827866d906c665b",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "75b7a8139b355d94fd12aecdc9768afab57a2b3ab920bd1a5827866d906c665b",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/37",
+      "recordSha256": "9ef97b2b4f95ad10d937f21877cc1a3a6471142db09881e8286f7daf6640f038",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "9ef97b2b4f95ad10d937f21877cc1a3a6471142db09881e8286f7daf6640f038",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/38",
+      "recordSha256": "a513e0102950b86271fceefc8c157213c31cd240a07a25699e88852d0050e8f2",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "a513e0102950b86271fceefc8c157213c31cd240a07a25699e88852d0050e8f2",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/39",
+      "recordSha256": "9478dccd0a77012d9a5d19293b2352c4b9d5e6fb07e329341091e907d16674e5",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "9478dccd0a77012d9a5d19293b2352c4b9d5e6fb07e329341091e907d16674e5",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/40",
+      "recordSha256": "ad4cd6151a64161dc5e535e738d39815251cef6b6db19bbd8cb1ae0a0028527d",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "ad4cd6151a64161dc5e535e738d39815251cef6b6db19bbd8cb1ae0a0028527d",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/41",
+      "recordSha256": "4c73f219d8491ac4b7f76f897b579c2e08e0b4cabd63f80f9737684530783ae0",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "4c73f219d8491ac4b7f76f897b579c2e08e0b4cabd63f80f9737684530783ae0",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/42",
+      "recordSha256": "3de646177e0d7db6d82641e1de7c5d5e18ccdbf7b8e6b921382c3fb2951c6eae",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "3de646177e0d7db6d82641e1de7c5d5e18ccdbf7b8e6b921382c3fb2951c6eae",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/43",
+      "recordSha256": "898c842d8270dc23058aad785c8a7787dac5e8f7575b4d6b57286a9554b9f006",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "898c842d8270dc23058aad785c8a7787dac5e8f7575b4d6b57286a9554b9f006",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/44",
+      "recordSha256": "a261eaff06b6f6f5eac95ad1e1aa48a9924417e764fef8aab07deb48c30f8d0b",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "a261eaff06b6f6f5eac95ad1e1aa48a9924417e764fef8aab07deb48c30f8d0b",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/45",
+      "recordSha256": "3d576bc758aa53ace610ae08b527e79383f13c370b9a7fef402ed03cda3386c2",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "3d576bc758aa53ace610ae08b527e79383f13c370b9a7fef402ed03cda3386c2",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/46",
+      "recordSha256": "866b0fa4bdf220ef1c88792c5a18bdbaebcbb9fe982dfcc75a2032e05bd95e37",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "866b0fa4bdf220ef1c88792c5a18bdbaebcbb9fe982dfcc75a2032e05bd95e37",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/47",
+      "recordSha256": "4a13dc59595ff5abc2528cb4fe80f1b340d9639dbc416ba34343714ff73c9774",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "4a13dc59595ff5abc2528cb4fe80f1b340d9639dbc416ba34343714ff73c9774",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/48",
+      "recordSha256": "305d8972b7c2334c70baf6745ee752529d8302a2a0e0bcc21e9d2fbe5c43d38b",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "305d8972b7c2334c70baf6745ee752529d8302a2a0e0bcc21e9d2fbe5c43d38b",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/49",
+      "recordSha256": "d26b5c463bdb3dc4ed2d7710040baa531bdf3d28fe0b30a9da555349cc029043",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "d26b5c463bdb3dc4ed2d7710040baa531bdf3d28fe0b30a9da555349cc029043",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/50",
+      "recordSha256": "ac74f03918cd30293ed5676fbbbc3f7ce614c39c4df6850f7748d46c8e5e9791",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "ac74f03918cd30293ed5676fbbbc3f7ce614c39c4df6850f7748d46c8e5e9791",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/51",
+      "recordSha256": "d5a35973c44b9481225a432139229604f0dcdc32794f7a7693fefd70406f3563",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "d5a35973c44b9481225a432139229604f0dcdc32794f7a7693fefd70406f3563",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/52",
+      "recordSha256": "4d6a50baeae3e79e1c48abe5faffd8336a6d7e73c3960177a7dced92497782d7",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "4d6a50baeae3e79e1c48abe5faffd8336a6d7e73c3960177a7dced92497782d7",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/53",
+      "recordSha256": "fd9c98fbdf46bf5fcf631f71826ff0dab42071041fd6fc33e3dfdb62e0632de9",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "fd9c98fbdf46bf5fcf631f71826ff0dab42071041fd6fc33e3dfdb62e0632de9",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/54",
+      "recordSha256": "6dd8aea3c98cc1c054d1e62a3bacbe567ac170b77c0cb90af2451dc8c75142e9",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "6dd8aea3c98cc1c054d1e62a3bacbe567ac170b77c0cb90af2451dc8c75142e9",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/55",
+      "recordSha256": "41fd0a1b161c45d13ef47e84977a1cf2cf4b5f5524e5c37c0e964295cd456e4d",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "41fd0a1b161c45d13ef47e84977a1cf2cf4b5f5524e5c37c0e964295cd456e4d",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/56",
+      "recordSha256": "b1db651392a640fffa1a548264a29bfde3cec6778ac0d2e05300499e59ea6ced",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "b1db651392a640fffa1a548264a29bfde3cec6778ac0d2e05300499e59ea6ced",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/57",
+      "recordSha256": "5cbab5b55f18bbdeb8f2645e02adff9a44f9d76c0ecb9204463ebc1c83707f9f",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "5cbab5b55f18bbdeb8f2645e02adff9a44f9d76c0ecb9204463ebc1c83707f9f",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/58",
+      "recordSha256": "2c2518922df6800502bc8ae11210beea62f765135a2f35e02adcae3a44f99360",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "2c2518922df6800502bc8ae11210beea62f765135a2f35e02adcae3a44f99360",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/59",
+      "recordSha256": "bdf2390a6d6fa53e7c40056c99b4f378b67aed069d74553793fced7d117a3f3b",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "bdf2390a6d6fa53e7c40056c99b4f378b67aed069d74553793fced7d117a3f3b",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/60",
+      "recordSha256": "3a6f8cd75a227b47d099433763d3195c37233fa44f0ebd43f4c799ec722732dd",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "3a6f8cd75a227b47d099433763d3195c37233fa44f0ebd43f4c799ec722732dd",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/61",
+      "recordSha256": "75c24b020cc33b9fe945c52c191133c8410d25dab49ed52577ac6d034ca8f879",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "75c24b020cc33b9fe945c52c191133c8410d25dab49ed52577ac6d034ca8f879",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/62",
+      "recordSha256": "716aa65020cb2fcffe74ab83937497b2b5b2b997a5872641cd3f637fe1a3d04e",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "716aa65020cb2fcffe74ab83937497b2b5b2b997a5872641cd3f637fe1a3d04e",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/63",
+      "recordSha256": "1720ac8bdd5d7c58278760544bb3843567bb8a7faa65b1c1bc297863e9a7a433",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "1720ac8bdd5d7c58278760544bb3843567bb8a7faa65b1c1bc297863e9a7a433",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/64",
+      "recordSha256": "165545ab8ff3069675869d89c79eb77a70271690ea95026cb8f17dd87f31e565",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "165545ab8ff3069675869d89c79eb77a70271690ea95026cb8f17dd87f31e565",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/65",
+      "recordSha256": "9dd87a53591748fa97ea0e6a20d868ad7d4a37af0763631fb2d5365b948b73e8",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "9dd87a53591748fa97ea0e6a20d868ad7d4a37af0763631fb2d5365b948b73e8",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/66",
+      "recordSha256": "571ace859501e8ce22ff44ebe5af589138bcedea7c4803e31cdde869afd8dd24",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "571ace859501e8ce22ff44ebe5af589138bcedea7c4803e31cdde869afd8dd24",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/67",
+      "recordSha256": "ca625b0585bf4f738521b16154c6ab13a838b1e86841a5afcc9b773345e0ac80",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "ca625b0585bf4f738521b16154c6ab13a838b1e86841a5afcc9b773345e0ac80",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/68",
+      "recordSha256": "fc80038655cf75b70824e5fe33e1679cc384b330f2f3090905b248c4790e8d24",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "fc80038655cf75b70824e5fe33e1679cc384b330f2f3090905b248c4790e8d24",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/69",
+      "recordSha256": "9336ef54d70b225de02893874fb13c91ce99ceb10fbfc7d6b31fafd81bfe0e0e",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "9336ef54d70b225de02893874fb13c91ce99ceb10fbfc7d6b31fafd81bfe0e0e",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/70",
+      "recordSha256": "2f2541036c1f8bdb0d97c8a960adb4c6998ac5356f840b2feba51802d167dc82",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "2f2541036c1f8bdb0d97c8a960adb4c6998ac5356f840b2feba51802d167dc82",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/71",
+      "recordSha256": "bfea12e4b7ad922f9e91e468d87b87e93bb74f995985a36abaac753477d7ab0f",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "bfea12e4b7ad922f9e91e468d87b87e93bb74f995985a36abaac753477d7ab0f",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/72",
+      "recordSha256": "9889deb7f774b80b7f0523a766664bfc75a91104b270358bf8b191376d26957c",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "9889deb7f774b80b7f0523a766664bfc75a91104b270358bf8b191376d26957c",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/73",
+      "recordSha256": "123013baea74bd28ec03eec2e00bd59b97428af1b3c396f91dbd7c549c807341",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "123013baea74bd28ec03eec2e00bd59b97428af1b3c396f91dbd7c549c807341",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/74",
+      "recordSha256": "71bcd10a6877b3895d2895da4892329b4f10f0ec32df8e0d0f7d5dfd3abf66a3",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "71bcd10a6877b3895d2895da4892329b4f10f0ec32df8e0d0f7d5dfd3abf66a3",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/75",
+      "recordSha256": "007d81757f11b57216e2d52243c0d1742a8785e2e5e5dec55cce320e79c172fb",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "007d81757f11b57216e2d52243c0d1742a8785e2e5e5dec55cce320e79c172fb",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/76",
+      "recordSha256": "fbf2cabec58fd7a8bd4d8e86019ec675d80b5025e6b677e7b707718a4d8fa5ce",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "fbf2cabec58fd7a8bd4d8e86019ec675d80b5025e6b677e7b707718a4d8fa5ce",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/77",
+      "recordSha256": "cb09378abd6285ac3c6cbd075ce74737afe50d64050cf064d2d46c57b3dd943f",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "cb09378abd6285ac3c6cbd075ce74737afe50d64050cf064d2d46c57b3dd943f",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/78",
+      "recordSha256": "3d248d4922d52b6cf2cca324f65b96ea5e60fb3c8aee9e1d08412a040ea7bb45",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "3d248d4922d52b6cf2cca324f65b96ea5e60fb3c8aee9e1d08412a040ea7bb45",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/79",
+      "recordSha256": "8551ac6fb6ad299bec664876d60f85d4de5e2af50457ebba93149ffa46e18096",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "8551ac6fb6ad299bec664876d60f85d4de5e2af50457ebba93149ffa46e18096",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/80",
+      "recordSha256": "c2950743ff9a39601f2e1b7cc917ba6c149c96154490abc362b3057dc044249c",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "c2950743ff9a39601f2e1b7cc917ba6c149c96154490abc362b3057dc044249c",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/121",
+      "recordSha256": "5216c6ec2619f672af4dea11225b06037fad714821570a53c34d8656502d3599",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "5216c6ec2619f672af4dea11225b06037fad714821570a53c34d8656502d3599",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/122",
+      "recordSha256": "9e77d3aa37eeb3ae42c1ef62ddc973984dcf4129a075df4bb34ba537fded9ecb",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "9e77d3aa37eeb3ae42c1ef62ddc973984dcf4129a075df4bb34ba537fded9ecb",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/123",
+      "recordSha256": "90c3b002bdc9faecf47e88af24b7109adc6283d6eccd563d9f7fa7dda60d0b3d",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "90c3b002bdc9faecf47e88af24b7109adc6283d6eccd563d9f7fa7dda60d0b3d",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/124",
+      "recordSha256": "e6b9cd61a1c629179839134d27249ac833ce5b0b1bc11ffdc5dd6a579ef70d84",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "e6b9cd61a1c629179839134d27249ac833ce5b0b1bc11ffdc5dd6a579ef70d84",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/125",
+      "recordSha256": "4d5f880ca67211857db42e634f7fbaaff68ba895450c9691a6d592cebcac4b44",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "4d5f880ca67211857db42e634f7fbaaff68ba895450c9691a6d592cebcac4b44",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/126",
+      "recordSha256": "c70d7b92954bce1a69acc97477603939a712da44b9168b29d0cdc2a007ee246a",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "c70d7b92954bce1a69acc97477603939a712da44b9168b29d0cdc2a007ee246a",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/127",
+      "recordSha256": "794402fdb7cd6fffe285f74435b46e50983a2d583d2fa8b344083c6842537006",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "794402fdb7cd6fffe285f74435b46e50983a2d583d2fa8b344083c6842537006",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/128",
+      "recordSha256": "7df97704c2fceba1ec9816bc6f06764d981b7257b94934245895d65d13c3e2fb",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "7df97704c2fceba1ec9816bc6f06764d981b7257b94934245895d65d13c3e2fb",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/129",
+      "recordSha256": "a116f1809217cb44f48ebd580e2dfa09d790fde62bb8b484998558afa863d35f",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "a116f1809217cb44f48ebd580e2dfa09d790fde62bb8b484998558afa863d35f",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/130",
+      "recordSha256": "1d89464b02e4c9ef8c0e6ce2a97669b3496c940f2525aaf82aa9df7a8ea33904",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "1d89464b02e4c9ef8c0e6ce2a97669b3496c940f2525aaf82aa9df7a8ea33904",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/131",
+      "recordSha256": "a1326014c886b6cff2b0b1515b89b78cf5b2dca1e3510fa3b307e25e6fa87ac1",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "a1326014c886b6cff2b0b1515b89b78cf5b2dca1e3510fa3b307e25e6fa87ac1",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/132",
+      "recordSha256": "c016736ceca3ac7d4043d904ae1bca22d3812e8e1540e1f6b271e6e9642711be",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "c016736ceca3ac7d4043d904ae1bca22d3812e8e1540e1f6b271e6e9642711be",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/133",
+      "recordSha256": "86ae35b3dc536f038c01cb05f1d76aa89a44e8cbaade3f78e03e94e0ee8e5df4",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "86ae35b3dc536f038c01cb05f1d76aa89a44e8cbaade3f78e03e94e0ee8e5df4",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/134",
+      "recordSha256": "0f74d9c4af20d4b9060d12f68df76d0cc9a7dbf8116f258ad3eda3dbb6ae6f30",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "0f74d9c4af20d4b9060d12f68df76d0cc9a7dbf8116f258ad3eda3dbb6ae6f30",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/135",
+      "recordSha256": "e294b5dd580f9bb1261ee434828ca4e9d6633b5cfc74ebd24aaa4db565e78dc7",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "e294b5dd580f9bb1261ee434828ca4e9d6633b5cfc74ebd24aaa4db565e78dc7",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/136",
+      "recordSha256": "1f95d20320a16bd584aa8b23dbf8cd65e915342e7100a2b2b50d6c4fb1a9aa15",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "1f95d20320a16bd584aa8b23dbf8cd65e915342e7100a2b2b50d6c4fb1a9aa15",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/137",
+      "recordSha256": "84b3cc9858cca0e090f14976c5e4db9804559b5725fdc0dcd20612924d4033d9",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "84b3cc9858cca0e090f14976c5e4db9804559b5725fdc0dcd20612924d4033d9",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/138",
+      "recordSha256": "014ad7a96e9787546ed419c9a9d1c379ab6817756276cdd062f3242888548f90",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "014ad7a96e9787546ed419c9a9d1c379ab6817756276cdd062f3242888548f90",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/139",
+      "recordSha256": "f22a71f8764cf7acdd5a21d953cee2d979decd886484cfb3883faf41faa9a2b8",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "f22a71f8764cf7acdd5a21d953cee2d979decd886484cfb3883faf41faa9a2b8",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/140",
+      "recordSha256": "316aef95f16d35c85f18edcdbabc665265cb4f72cf0dbb10330cf4c54e94438f",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "316aef95f16d35c85f18edcdbabc665265cb4f72cf0dbb10330cf4c54e94438f",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/1",
+      "recordSha256": "d0ca84a64230b77888fcff9327edc043aeb27f5baec70650990c9de6eb424a42",
+      "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+      "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+    },
+    "hash": "d0ca84a64230b77888fcff9327edc043aeb27f5baec70650990c9de6eb424a42",
+    "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+  }
+]

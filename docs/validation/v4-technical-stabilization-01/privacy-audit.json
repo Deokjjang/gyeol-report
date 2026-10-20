@@ -1,0 +1,157 @@
+{
+  "status": "PASS",
+  "newKnowledgeOrManuscriptCopiesCommitted": false,
+  "newFixtureFilesScanned": [
+    "tests/fixtures/technical-stabilization-01/source-revision-contract.json",
+    "tests/fixtures/technical-stabilization-01/module-contract.json",
+    "tests/fixtures/technical-stabilization-01/current-edition-locks.json",
+    "tests/helpers/versionedEditorialLocks.ts",
+    "tests/helpers/moduleDependencyGraph.ts",
+    "tests/helpers/versionedProtection.ts"
+  ],
+  "newSecretFindings": [],
+  "rawFictionalBooksExternalOnly": true,
+  "previewFixturePeopleAreSynthetic": true,
+  "actualCustomerDataAccessed": false,
+  "actualCredentialsAccessedOrCopied": false,
+  "envLocalCopied": false,
+  "newEnvironmentalConfiguration": false,
+  "networkDuringGeneration": "fetch and http/https disabled; tests use mock ports/PGlite",
+  "originalIgnoredFilesCopied": false,
+  "fullScopeAudit": {
+    "phase": "pre-report-v2",
+    "status": "PASS",
+    "scanned": [
+      {
+        "file": "tests/unit/app/dev/bookReading13b.test.tsx",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/interpretation-v4/koreanNarrativeCore.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/report-knowledge/compatibilityLoveResearch.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts",
+        "scope": "added lines only; existing test data retained"
+      },
+      {
+        "file": "tests/fixtures/technical-stabilization-01/current-edition-locks.json",
+        "scope": "entire new file",
+        "sha256": "d749a43a089276031345c75adaa342ae9097535695ded87cdf81c2951c3e7e26"
+      },
+      {
+        "file": "tests/fixtures/technical-stabilization-01/module-contract.json",
+        "scope": "entire new file",
+        "sha256": "d92efb9806521bcca82d1e146dd7af3c1b99cf481cf85418c63b78b855147970"
+      },
+      {
+        "file": "tests/fixtures/technical-stabilization-01/source-revision-contract.json",
+        "scope": "entire new file",
+        "sha256": "1c2495895978aeccdfd43f30b84e474d7fbc7c5b7b45b616b1c63c5edc8ae9b1"
+      },
+      {
+        "file": "tests/helpers/moduleDependencyGraph.ts",
+        "scope": "entire new file",
+        "sha256": "28e1700cb6922c125f05d516c207c16ad630b9b58a6a6d51597e608c13280cc9"
+      },
+      {
+        "file": "tests/helpers/versionedEditorialLocks.ts",
+        "scope": "entire new file",
+        "sha256": "cd96feb465fccce011edb55a99e71533cc1c1f54fec4887ca2ccf6d0ea137025"
+      },
+      {
+        "file": "tests/helpers/versionedProtection.ts",
+        "scope": "entire new file",
+        "sha256": "03c0fa391592bb8326d618837032111775b7c04ba794e20e20bdedbb1c2e9d54"
+      },
+      {
+        "file": "tests/unit/interpretation-v4/editionContracts.test.ts",
+        "scope": "entire new file",
+        "sha256": "a976526d238284e6a0697caae8b002469cab9fbb14cfdc290cf8bb19cefb9eea"
+      },
+      {
+        "file": "tests/unit/interpretation-v4/moduleContracts.test.ts",
+        "scope": "entire new file",
+        "sha256": "3173d06ea256793b254c8b7b61b1941dd67f2ed790e3437b75aa766f50e92f0f"
+      },
+      {
+        "file": "tests/unit/interpretation-v4/sourceRevisionContracts.test.ts",
+        "scope": "entire new file",
+        "sha256": "a12844de2916cbb213b48715b025dc3ee94deab666a728263e5e7383cf64e49a"
+      }
+    ],
+    "findings": [],
+    "matchedValuesNeverPrinted": true,
+    "envLocalPresent": false,
+    "envFilesCopied": false,
+    "productionCustomerDataAccessed": false,
+    "rawGeneratedBooksCommitted": false,
+    "testCredentialsAreExistingMockOnlyValues": true,
+    "operatingApiKeysAccessed": false
+  },
+  "postReportFullScanReceipt": "/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/privacy-final-v2.json"
+}

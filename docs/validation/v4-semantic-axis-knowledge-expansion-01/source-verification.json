@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-10-13",
+  "repositoryReferences": [
+    {
+      "id": "repo:deepMarkers",
+      "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepMarkers.ts",
+      "status": "repository_checked_not_empirical",
+      "whyStoredInDocs": "Earlier source-isolation tests treat literal research-directory paths anywhere in src as imports; full auditable paths remain here, with no runtime consumer."
+    },
+    {
+      "id": "repo:temporalResearch",
+      "file": "src/lib/report-knowledge/temporal-interaction-research/temporalConcepts.ts",
+      "status": "repository_checked_not_empirical",
+      "whyStoredInDocs": "Earlier source-isolation tests treat literal research-directory paths anywhere in src as imports; full auditable paths remain here, with no runtime consumer."
+    },
+    {
+      "id": "repo:mbtiPairResearch",
+      "file": "src/lib/report-knowledge/mbti-pair-research/mbtiPairINTJ.ts",
+      "status": "repository_checked_not_empirical",
+      "whyStoredInDocs": "Earlier source-isolation tests treat literal research-directory paths anywhere in src as imports; full auditable paths remain here, with no runtime consumer."
+    }
+  ],
+  "externalPrimaryReferences": [
+    {
+      "id": "primary:skos",
+      "url": "https://www.w3.org/TR/skos-reference/",
+      "checked": "mapping properties distinguish related/close/exact, not a claim of empirical personality validity"
+    },
+    {
+      "id": "primary:prov",
+      "url": "https://www.w3.org/TR/prov-o/",
+      "checked": "derivation entities/activity, not proof of truth"
+    },
+    {
+      "id": "primary:mbti-relationships",
+      "url": "https://www.myersbriggs.org/type-in-my-life/personality-type-and-relationships/home.htm",
+      "checked": "no best or more successful combinations, not independent empirical validation of newly authored candidates"
+    }
+  ],
+  "inheritedTraditionalReferences": "Prior source catalogs and review states preserved; historical originals not newly all re-accessed. No promotion to empirical or individually applicable evidence."
+}

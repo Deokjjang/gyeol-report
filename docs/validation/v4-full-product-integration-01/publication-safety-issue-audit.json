@@ -1,0 +1,99 @@
+{
+  "status": "NOT_STARTED",
+  "customerRuntimeEnabled": false,
+  "wholeBookCompleted": false,
+  "customerReady": false,
+  "required": [
+    "Exact original Reader/Scheduler bridges",
+    "Source/domain/meaning resolution without gate changes",
+    "Real approvals and independently authorized customer activation",
+    "CHILDREN and adult-child authority review",
+    "Legacy fallback and existing pair publication risk review",
+    "Human reading"
+  ],
+  "nextTask": "Publication Safety",
+  "resolvedInThisTask": [
+    "Executable offline chain on twelve fresh actual-calculation fixture routes",
+    "Authenticated exact native question/address placement and existing BookPage adapter",
+    "Question-level coverage with no false completion or customer authorization",
+    "Existing Publisher/reopen and source/narrative/Book preservation"
+  ],
+  "inheritedIssues": [
+    {
+      "id": "A",
+      "state": "SOURCE_TECHNICAL_UNRESOLVED",
+      "reference": "docs/validation/v4-global-source-domain-resolution-01/README.md",
+      "referenceSha256": "3554609a29bf31e7889676e63663c614d4b64f364b68a825142c7bfbe91d6442",
+      "finding": "Prior 3202 unresolved source references retained; no invented alias/source/meaning.",
+      "repaired": false
+    },
+    {
+      "id": "B",
+      "state": "DOMAIN_REVIEW_PENDING",
+      "reference": "docs/validation/v4-global-source-domain-resolution-01/README.md",
+      "referenceSha256": "3554609a29bf31e7889676e63663c614d4b64f364b68a825142c7bfbe91d6442",
+      "finding": "Prior 2966 domain-review items and original prohibitions retained.",
+      "repaired": false
+    },
+    {
+      "id": "C",
+      "state": "READER_SCHEDULER_BRIDGE_UNVERIFIED",
+      "reference": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/readerBridge.ts",
+      "referenceSha256": "38062260deac89008cca75782d207a5e6bc1ca0a206e958acc17021e0a8e2f81",
+      "finding": "Customer bridges 0; all 2060 original IDs retained; no chapter/title/topic inference.",
+      "repaired": false
+    },
+    {
+      "id": "D",
+      "state": "CHILDREN_PROVENANCE",
+      "reference": "docs/validation/v4-global-specialist-integration-audit-01/README.md",
+      "referenceSha256": "57cbb07b93607398a821e6f5a8aa328c29f0981d18675b2a3af46a5f450faa8e",
+      "finding": "Inherited existing Writer provenance risks remain; full ancestry in the new path not bypassed.",
+      "repaired": false
+    },
+    {
+      "id": "E",
+      "state": "LEGACY_EDITION_FALLBACK",
+      "reference": "src/lib/interpretation-v4/compatibilityProductAdapter.ts",
+      "referenceSha256": "bfc8e0844c7eb5bf0711c463745fda00b1cae460ffb19e95e82697d4fd4c7456",
+      "finding": "Existing publish predicate and publishedEdition/readerEdition distinction unchanged.",
+      "repaired": false
+    },
+    {
+      "id": "F",
+      "state": "ADULT_CHILD_AUTHORITY",
+      "reference": "docs/validation/v4-compatibility-parent-child-specialist-engine-01/README.md",
+      "referenceSha256": "4cec30247b8a7e2978a203e0b151df27086d9f56017fe74e191de3559f8dba6a",
+      "finding": "Inherited V-case final-parent-authority sentence remains a Writer risk; not approved or repaired.",
+      "repaired": false
+    },
+    {
+      "id": "G",
+      "state": "MAJOR_SOURCE_IDENTITY",
+      "reference": "docs/validation/v4-global-source-domain-resolution-01/README.md",
+      "referenceSha256": "3554609a29bf31e7889676e63663c614d4b64f364b68a825142c7bfbe91d6442",
+      "finding": "Prior 10 mfpr:god references across 3 fixtures remain 30 SOURCE_INTEGRITY failures; tr:god traditionalRef description is not an exact edition/ID.",
+      "repaired": false
+    },
+    {
+      "id": "H",
+      "state": "PAIR_READER_PUBLISH_FAILURES",
+      "reference": "docs/validation/v4-global-specialist-integration-audit-01/README.md",
+      "referenceSha256": "57cbb07b93607398a821e6f5a8aa328c29f0981d18675b2a3af46a5f450faa8e",
+      "finding": "Prior relationship-specific risk registry preserved; preservation generation did not rerun every older risk fixture.",
+      "repaired": false
+    }
+  ],
+  "additionalContractGap": {
+    "file": "src/lib/report-generation/productPreviewSnapshot.ts",
+    "finding": "Protected factory TypeScript draft union omits V4 although runtime accepts V4. The new offline adapter validates the exact preview DTO via the existing unknown-schema, Publisher and Reader; no false legacy draft cast or protected factory edit.",
+    "customerAuthorizationGranted": false
+  },
+  "requiredBeforeCustomerActivation": [
+    "Exact Reader/question/material/meaning bridges and Producer scopes",
+    "Sources/domains/full ancestry and four separate real approvals/current trust and revocation",
+    "Independently authorized Binder/Planner/customer runtime activation",
+    "Publication Safety and human reading"
+  ],
+  "productionActionsExecuted": false
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "file": "src/lib/interpretation-v4/loveReleaseContracts.ts",
+    "sha256": "ea860d14a254f063ad1b3925a7e2f64cc6f87af5afcd48b4c69902fb04ae0f54",
+    "lineCount": 71
+  },
+  {
+    "file": "src/lib/interpretation-v4/loveReleaseMaterials.ts",
+    "sha256": "02031ba8afae5765f32f3bf99b15e74bdfdc2ecf109723e4f3b38b052eea78c8",
+    "lineCount": 218
+  },
+  {
+    "file": "src/lib/interpretation-v4/loveReleaseApplications.ts",
+    "sha256": "994d357e1460678987f61b7647a06d085a9a06c0fd8c069a99de5702912d5aef",
+    "lineCount": 253
+  },
+  {
+    "file": "src/lib/interpretation-v4/loveReleaseParenting.ts",
+    "sha256": "d745ca4b6bd814308c7fafc946a9635f036fc501efc34003f35b84d583755bd7",
+    "lineCount": 95
+  },
+  {
+    "file": "src/lib/interpretation-v4/loveReleaseContext.ts",
+    "sha256": "07c72c4df615e804f6b7ab27a148b324e1cf7afe43d25c57c83fcec149217161",
+    "lineCount": 11
+  },
+  {
+    "file": "src/lib/interpretation-v4/loveReleaseSources.ts",
+    "sha256": "155ca2b1980317c40cd2b3348efcb2dd53ab3a065ab258c84497b919dab668d4",
+    "lineCount": 29
+  },
+  {
+    "file": "src/lib/interpretation-v4/loveReleaseRenderer.ts",
+    "sha256": "d4f40b5d69a1f1dfaf8fd911b52559a466ba27b7877e34ad801328b98a18e1ee",
+    "lineCount": 314
+  },
+  {
+    "file": "src/lib/interpretation-v4/loveReleaseValidator.ts",
+    "sha256": "9585069af3af4456ca23e2e41428055806c81083ac9e892f3c0cf1069de5353d",
+    "lineCount": 55
+  },
+  {
+    "file": "src/lib/interpretation-v4/loveProductAdapter.ts",
+    "sha256": "4fb3dd05678729378602384aa304327f280122926b5b6303f25742ab5b682315",
+    "lineCount": 60
+  },
+  {
+    "file": "src/lib/interpretation-v4/loveComposer.ts",
+    "sha256": "20d71d2e166da2a9858199c507960433ffd728b6238faad8b449798cd5f42a57",
+    "lineCount": 89
+  },
+  {
+    "file": "src/lib/interpretation-v4/relationshipProductView.ts",
+    "sha256": "5890c8ec936036dc78a7870aa1a8f5ed660a46df8c04f37fdffd0594e435d2d2",
+    "lineCount": 93
+  },
+  {
+    "file": "src/lib/interpretation-v4/relationshipProductNarrative.ts",
+    "sha256": "53be4a83a37c4497d262ee99e37d18906d33500547eb793f7d35a88f345cb30c",
+    "lineCount": 103
+  },
+  {
+    "file": "src/lib/interpretation-v4/loveContext.ts",
+    "sha256": "213b660bc05bf33ef20cb2616f2b2e82a48b620bd1c9049aa5251affb37bb44e",
+    "lineCount": 18
+  },
+  {
+    "file": "src/lib/interpretation-v4/narrativeContext.ts",
+    "sha256": "7c5fd219c33f07bfe98cebb3721d0a0a7cd7fbda8075da3f235462aff79eb24e",
+    "lineCount": 68
+  },
+  {
+    "file": "src/lib/report-generation/reportInputTypes.ts",
+    "sha256": "0052f84a359e3390ebad37107d777f04faa0809b05a20b2276c4ad99b466a20d",
+    "lineCount": 170
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti/sourceRuntimeAdapter.ts",
+    "sha256": "6672b6f6dd22b310414b3e8694ee3fed7a75d2350c37365dd056d346d43f8dad",
+    "lineCount": 349
+  }
+]

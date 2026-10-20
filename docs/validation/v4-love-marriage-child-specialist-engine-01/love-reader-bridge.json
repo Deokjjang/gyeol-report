@@ -1,0 +1,142 @@
+{
+  "contract": {
+    "releaseSource": "src/lib/interpretation-v4/loveReleaseRenderer.ts#eligible/application",
+    "nonRecallFacetMax": 6,
+    "recallExemptFromGlobalFacetGate": true,
+    "sameChapterFacetMax": 1,
+    "facetUnit": "LOVE_RELEASE_MATERIALS key",
+    "rootHardCap": null,
+    "rootUnit": "LoveReleaseSource.atom.id",
+    "rootUsePolicy": "Existing use count is a sorting preference",
+    "canonicalRootBridge": "IDENTITY_BRIDGE_UNVERIFIED",
+    "researchFacetBridge": "IDENTITY_BRIDGE_UNVERIFIED_NO_NEW_FACET_BUDGET",
+    "selectorThemeUnit": "duplicateGroupId ?? semanticOverlapGroup ?? semanticTheme",
+    "selectorThemeMax": 1,
+    "readerBridge": "READER_L_QUESTION_BRIDGE_UNVERIFIED",
+    "directTake": [
+      "L1",
+      "L3",
+      "L4",
+      "L5",
+      "L6",
+      "L7",
+      "L8",
+      "L9"
+    ],
+    "L2": "RETAINED_LEGACY_ATTRACTION_PARTNER_NOT_DIRECT_TAKE",
+    "actualDisplayLedgerIssued": false
+  },
+  "reader": [
+    {
+      "chapterId": "CH01",
+      "originalQuestionRefs": [
+        "L1",
+        "L3",
+        "L6",
+        "L5",
+        "L2"
+      ],
+      "noNumberBasedIdentity": true,
+      "state": "READER_L_QUESTION_BRIDGE_UNVERIFIED"
+    },
+    {
+      "chapterId": "CH02",
+      "originalQuestionRefs": [
+        "L1",
+        "L2",
+        "L4",
+        "L3",
+        "L5",
+        "L7"
+      ],
+      "noNumberBasedIdentity": true,
+      "state": "READER_L_QUESTION_BRIDGE_UNVERIFIED"
+    },
+    {
+      "chapterId": "CH03",
+      "originalQuestionRefs": [
+        "L2",
+        "L6",
+        "L5",
+        "L7"
+      ],
+      "noNumberBasedIdentity": true,
+      "state": "READER_L_QUESTION_BRIDGE_UNVERIFIED"
+    },
+    {
+      "chapterId": "CH04",
+      "originalQuestionRefs": [
+        "L2",
+        "L3",
+        "L5",
+        "L7",
+        "L9"
+      ],
+      "noNumberBasedIdentity": true,
+      "state": "READER_L_QUESTION_BRIDGE_UNVERIFIED"
+    },
+    {
+      "chapterId": "CH05",
+      "originalQuestionRefs": [
+        "L3",
+        "L4",
+        "L6",
+        "L5",
+        "L9"
+      ],
+      "noNumberBasedIdentity": true,
+      "state": "READER_L_QUESTION_BRIDGE_UNVERIFIED"
+    },
+    {
+      "chapterId": "CH06",
+      "originalQuestionRefs": [
+        "L7",
+        "L1",
+        "L5",
+        "L9"
+      ],
+      "noNumberBasedIdentity": true,
+      "state": "READER_L_QUESTION_BRIDGE_UNVERIFIED"
+    },
+    {
+      "chapterId": "CH07",
+      "originalQuestionRefs": [
+        "L6",
+        "L8",
+        "L3",
+        "L7",
+        "L5"
+      ],
+      "noNumberBasedIdentity": true,
+      "state": "READER_L_QUESTION_BRIDGE_UNVERIFIED"
+    },
+    {
+      "chapterId": "CH08",
+      "originalQuestionRefs": [
+        "L6",
+        "L8",
+        "L3",
+        "L7",
+        "L5",
+        "L9"
+      ],
+      "noNumberBasedIdentity": true,
+      "state": "READER_L_QUESTION_BRIDGE_UNVERIFIED"
+    },
+    {
+      "chapterId": "CH09",
+      "originalQuestionRefs": [
+        "L1",
+        "L2",
+        "L9",
+        "L3",
+        "L5",
+        "L7",
+        "L6"
+      ],
+      "noNumberBasedIdentity": true,
+      "state": "READER_L_QUESTION_BRIDGE_UNVERIFIED"
+    }
+  ],
+  "originalTitlePurposeRoleUnchanged": true
+}

@@ -1,0 +1,20 @@
+{
+  "originalGraphDistinctBatchRootsByType": {
+    "SOURCE_ATTRIBUTION": 17376,
+    "PRODUCER_OBSERVATION": 2069,
+    "SELF_REPORTED_INPUT": 23
+  },
+  "binderUsedDistinctRootsByType": {
+    "SOURCE_ATTRIBUTION": 178,
+    "PRODUCER_OBSERVATION": 173,
+    "SELF_REPORTED_INPUT": 7
+  },
+  "binderReceiptRootReferencesByType": {
+    "SELF_REPORTED_INPUT": 207,
+    "SOURCE_ATTRIBUTION": 566,
+    "PRODUCER_OBSERVATION": 2185
+  },
+  "newIndependentFacts": 0,
+  "sourceAttributionAndSelfReportedTypeAreNotIndependentCalculatedPersonalityFacts": true,
+  "fusionIsNotAThirdIndependentFact": true
+}

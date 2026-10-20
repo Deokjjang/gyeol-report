@@ -1,0 +1,9 @@
+{
+  "historicalDefault5SecondFailure": "Preserved in base report; not forced to recur",
+  "currentDefault": {
+    "passed": 383,
+    "failed": 0
+  },
+  "testsSettingsTimeoutChanged": false,
+  "baselineSource": "docs/validation/v4-semantic-domain-review-workbench-01/baseline-timeout-comparison.json"
+}

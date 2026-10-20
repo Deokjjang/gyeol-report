@@ -1,0 +1,365 @@
+[
+  {
+    "group": "comprehensive",
+    "baselinePassed": 31,
+    "baselineFailed": 0,
+    "finalPassed": 31,
+    "finalFailed": 0,
+    "newFailures": [],
+    "resolvedFailures": [],
+    "changedCauses": [],
+    "existingFailures": []
+  },
+  {
+    "group": "career",
+    "baselinePassed": 36,
+    "baselineFailed": 0,
+    "finalPassed": 36,
+    "finalFailed": 0,
+    "newFailures": [],
+    "resolvedFailures": [],
+    "changedCauses": [],
+    "existingFailures": []
+  },
+  {
+    "group": "love",
+    "baselinePassed": 75,
+    "baselineFailed": 2,
+    "finalPassed": 75,
+    "finalFailed": 2,
+    "newFailures": [],
+    "resolvedFailures": [],
+    "changedCauses": [],
+    "existingFailures": [
+      {
+        "name": "Love reader edition 'major' remains identical at the release boundary",
+        "cause": {
+          "error": "AssertionError",
+          "location": "tests/unit/interpretation-v4/loveRelease.test.ts:123:123"
+        },
+        "baselineMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "finalMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+      },
+      {
+        "name": "Love reader edition 'annual' remains identical at the release boundary",
+        "cause": {
+          "error": "AssertionError",
+          "location": "tests/unit/interpretation-v4/loveRelease.test.ts:123:123"
+        },
+        "baselineMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "finalMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+      }
+    ]
+  },
+  {
+    "group": "compatibility",
+    "baselinePassed": 54,
+    "baselineFailed": 2,
+    "finalPassed": 54,
+    "finalFailed": 2,
+    "newFailures": [],
+    "resolvedFailures": [],
+    "changedCauses": [],
+    "existingFailures": [
+      {
+        "name": "Compatibility reader release 'major' text, evidence and Book stay exactly at 8410716",
+        "cause": {
+          "error": "AssertionError",
+          "location": "tests/unit/interpretation-v4/compatibilityRelease.test.ts:152:121"
+        },
+        "baselineMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "finalMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+      },
+      {
+        "name": "Compatibility reader release 'annual' text, evidence and Book stay exactly at 8410716",
+        "cause": {
+          "error": "AssertionError",
+          "location": "tests/unit/interpretation-v4/compatibilityRelease.test.ts:152:121"
+        },
+        "baselineMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "finalMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+      }
+    ]
+  },
+  {
+    "group": "major",
+    "baselinePassed": 72,
+    "baselineFailed": 0,
+    "finalPassed": 72,
+    "finalFailed": 0,
+    "newFailures": [],
+    "resolvedFailures": [],
+    "changedCauses": [],
+    "existingFailures": []
+  },
+  {
+    "group": "shared",
+    "baselinePassed": 120,
+    "baselineFailed": 4,
+    "finalPassed": 120,
+    "finalFailed": 4,
+    "newFailures": [],
+    "resolvedFailures": [],
+    "changedCauses": [],
+    "existingFailures": [
+      {
+        "name": "uncertain Annual fails before order, local redeem or production queue; exact correction can retry",
+        "cause": {
+          "error": "AssertionError",
+          "location": "tests/unit/api/bookAnnualPreflight.test.ts:31:24"
+        },
+        "baselineMessage": "AssertionError: expected 403 to be 400 // Object.is equality",
+        "finalMessage": "AssertionError: expected 403 to be 400 // Object.is equality"
+      },
+      {
+        "name": "Phase13B stable chapter navigation and complete presentation 'career': front and end navigation share real targets and numbers",
+        "cause": {
+          "error": "AssertionError",
+          "location": "tests/unit/app/dev/bookReading13b.test.tsx:29:41"
+        },
+        "baselineMessage": "AssertionError: expected [ { title: '이 책의 주인공', …(2) }, …(12) ] to deeply equal [ …(9) ]",
+        "finalMessage": "AssertionError: expected [ { title: '이 책의 주인공', …(2) }, …(12) ] to deeply equal [ …(9) ]"
+      },
+      {
+        "name": "Phase13B stable chapter navigation and complete presentation 'love': front and end navigation share real targets and numbers",
+        "cause": {
+          "error": "AssertionError",
+          "location": "tests/unit/app/dev/bookReading13b.test.tsx:29:41"
+        },
+        "baselineMessage": "AssertionError: expected [ { title: '이 책의 주인공', …(2) }, …(47) ] to deeply equal [ { title: '사랑할 때의 나', …(2) }, …(8) ]",
+        "finalMessage": "AssertionError: expected [ { title: '이 책의 주인공', …(2) }, …(48) ] to deeply equal [ { title: '사랑할 때의 나', …(2) }, …(8) ]"
+      },
+      {
+        "name": "Phase13B stable chapter navigation and complete presentation 'compatibility': front and end navigation share real targets and numbers",
+        "cause": {
+          "error": "AssertionError",
+          "location": "tests/unit/app/dev/bookReading13b.test.tsx:29:41"
+        },
+        "baselineMessage": "AssertionError: expected [ { title: '우리라는 사이', …(2) }, …(52) ] to deeply equal [ Array(9) ]",
+        "finalMessage": "AssertionError: expected [ { title: '우리라는 사이', …(2) }, …(52) ] to deeply equal [ Array(9) ]"
+      }
+    ]
+  },
+  {
+    "group": "protected",
+    "baselinePassed": 10,
+    "baselineFailed": 21,
+    "finalPassed": 10,
+    "finalFailed": 21,
+    "newFailures": [],
+    "resolvedFailures": [],
+    "changedCauses": [],
+    "existingFailures": [
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers new checkout at Thu Dec 31 2026 23:59:59 GMT+0900 (Korean Standard Time) for 2021 returns 200",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers new checkout at Thu Dec 31 2026 23:59:59 GMT+0900 (Korean Standard Time) for 2020 returns 400",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers new checkout at Thu Dec 31 2026 23:59:59 GMT+0900 (Korean Standard Time) for 2027 returns 400",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers new checkout at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) for 2021 returns 400",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers new checkout at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) for 2022 returns 200",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers new checkout at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) for 2027 returns 200",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers rejects spoofed old acceptance both beside and inside the public payload",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers paid 2021 generates after rollover/delay at Fri Jan 01 2027 00:00:00 GMT+0900 (Korean Standard Time) using original selected-year Dayun",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers paid 2021 generates after rollover/delay at Mon Feb 15 2027 00:00:00 GMT+0900 (Korean Standard Time) using original selected-year Dayun",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers writer outage in 2027 immediately delivers fallback using the accepted 2026 policy",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers other product saju_mbti_full keeps price, input and paid generation without annual context",
+        "cause": {
+          "error": "AssertionError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:140:29"
+        },
+        "baselineMessage": "AssertionError: expected 403 to be 200 // Object.is equality",
+        "finalMessage": "AssertionError: expected 403 to be 200 // Object.is equality"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers other product career_money_study keeps price, input and paid generation without annual context",
+        "cause": {
+          "error": "AssertionError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:140:29"
+        },
+        "baselineMessage": "AssertionError: expected 403 to be 200 // Object.is equality",
+        "finalMessage": "AssertionError: expected 403 to be 200 // Object.is equality"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers other product love_marriage_child keeps price, input and paid generation without annual context",
+        "cause": {
+          "error": "AssertionError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:140:29"
+        },
+        "baselineMessage": "AssertionError: expected 403 to be 200 // Object.is equality",
+        "finalMessage": "AssertionError: expected 403 to be 200 // Object.is equality"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers other product major_fortune keeps price, input and paid generation without annual context",
+        "cause": {
+          "error": "AssertionError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:140:29"
+        },
+        "baselineMessage": "AssertionError: expected 403 to be 200 // Object.is equality",
+        "finalMessage": "AssertionError: expected 403 to be 200 // Object.is equality"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers other product saju_mbti_compatibility keeps price, input and paid generation without annual context",
+        "cause": {
+          "error": "AssertionError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:140:29"
+        },
+        "baselineMessage": "AssertionError: expected 403 to be 200 // Object.is equality",
+        "finalMessage": "AssertionError: expected 403 to be 200 // Object.is equality"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers automatic retries and real deterministic fallback preserve accepted policy",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers admin retry and duplicate callbacks leave original durable context and identity intact",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers missing paid context never invokes generation, reaches attention, preserves PAID",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers invalid-date paid context never invokes generation, reaches attention, preserves PAID",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers tampered-year paid context never invokes generation, reaches attention, preserves PAID",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      },
+      {
+        "name": "annual purchase policy — real prepare / SQL / worker, no providers wrong-version paid context never invokes generation, reaches attention, preserves PAID",
+        "cause": {
+          "error": "SyntaxError",
+          "location": "tests/unit/payment/annualPurchaseYearPolicy.test.ts:54:58"
+        },
+        "baselineMessage": "SyntaxError: Unexpected end of JSON input",
+        "finalMessage": "SyntaxError: Unexpected end of JSON input"
+      }
+    ]
+  },
+  {
+    "group": "access",
+    "baselinePassed": 36,
+    "baselineFailed": 1,
+    "finalPassed": 36,
+    "finalFailed": 1,
+    "newFailures": [],
+    "resolvedFailures": [],
+    "changedCauses": [],
+    "existingFailures": [
+      {
+        "name": "publication-based paid access and retention — real SQL one microsecond before expiry is readable; exact deadline and later are expired on direct/shared paths",
+        "cause": {
+          "error": "AssertionError",
+          "location": "tests/unit/payment/reportPublishExpiry.test.tsx:134:52"
+        },
+        "baselineMessage": "AssertionError: expected '<main class=\"_page_f73ad5\"><div class…' to contain '리포트 공유하기'",
+        "finalMessage": "AssertionError: expected '<main class=\"_page_f73ad5\"><div class…' to contain '리포트 공유하기'"
+      }
+    ]
+  }
+]

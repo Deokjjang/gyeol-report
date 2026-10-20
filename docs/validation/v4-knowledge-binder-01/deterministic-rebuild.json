@@ -1,0 +1,9 @@
+{
+  "generatedFilesCompared": 83,
+  "allBytesEqual": true,
+  "outputDigest": "e9c187c8f57f5dcd65e9b40cd07c2fe91b8ec8303fa1c288fc4f969458dc4c73",
+  "runOne": "CLI default output",
+  "runTwo": "external rebuild-release",
+  "timingsExcluded": true,
+  "originalGraphMirrorFilesEqual": 105
+}

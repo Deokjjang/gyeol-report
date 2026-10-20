@@ -1,0 +1,123 @@
+import type { AnnualJieRelationFact } from "../report-knowledge/annualMonthJie";
+import type { AnnualBranchInteractionType, TenGod } from "../report-knowledge/annualFortuneTypes";
+import { withKoreanParticle as p } from "../report-knowledge/koreanCopyUtils";
+import type { AnnualEvidence, AnnualMonthEvidence } from "./annualEvidence";
+import { majorContext } from "./majorContext";
+import { annualMonthPractice } from "./annualMonthPractice";
+
+const positions = { year: "연지", month: "월지", day: "일지", hour: "시지" } as const;
+// Short readings of annualMonthRelationFacts.branchReadings and the reviewed
+// foundationRelations semantics. The scope comes from facts, never these words.
+const meanings: Record<AnnualBranchInteractionType, string> = {
+  충: "기존 리듬과 다른 요구 사이에서 일정과 역할을 조정할 관계입니다.",
+  형: "반복되는 부담을 알아차리고 책임의 기준을 다듬을 관계입니다.",
+  파: "이미 맞춘 절차나 역할을 다시 확인할 관계입니다.",
+  해: "겉으로 드러나지 않은 기대 차이를 확인할 관계입니다.",
+  육합: "서로 맞춰 함께 움직일 접점입니다.",
+  삼합: "여러 기운이 같은 방향으로 힘을 모을 접점입니다.",
+  반합: "일부가 맞닿는 접점이며, 완성된 합의까지 뜻하지는 않아요.",
+};
+// Reviewed relationActions supply the constraint; the actual monthly topic
+// supplies the decision. A natal day branch does not imply a romantic scene.
+function application(type: AnnualBranchInteractionType, practice: ReturnType<typeof annualMonthPractice>) {
+  const constraints: Record<AnnualBranchInteractionType, string> = {
+    충: "새로 할 일 때문에 미뤄야 할 기존 약속이 있는지도 살펴보세요.",
+    형: "반복할수록 부담이 커진다면, 의지만 더 쓰기보다 맡은 범위와 쉬어 갈 때를 바꿔보세요.",
+    파: "바꾼 뒤에는 함께하던 사람도 달라진 순서를 알고 있는지 확인해보세요.",
+    해: "설명한 내용과 상대가 이해한 내용을 맞춰보면, 말하지 않은 기대를 찾기 좋습니다.",
+    육합: "서로 맞는 부분과 각자 결정할 부분을 나누면, 함께 움직이면서도 자신의 선택을 지킬 수 있어요.",
+    삼합: "시작할 때의 열정뿐 아니라 누가 무엇을 끝낼지도 정해두면, 모인 힘을 결과로 이어가기 좋습니다.",
+    반합: "한 번의 연결로 역할과 비용까지 합의됐다고 여기지 말고, 다음에도 함께할 조건을 따로 물어보세요.",
+  };
+  return { action: `${practice.action} ${constraints[type]}`, avoid: practice.avoid };
+}
+// Once a relation's meaning has been explained, retain its concrete actors
+// and a short reading. The following action supplies the monthly application.
+const reminders: Record<AnnualBranchInteractionType, string> = {
+  충: "일정과 역할을 조정할 조건입니다.", 형: "되풀이되는 부담을 살필 조건입니다.",
+  파: "기존 약속을 다시 맞출 조건입니다.", 해: "숨은 기대 차이를 확인할 조건입니다.",
+  육합: "함께 맞춰볼 접점입니다.", 삼합: "같은 방향으로 힘을 모을 접점입니다.", 반합: "일부가 맞닿는 접점입니다.",
+};
+const harmony = (type: string) => ["육합", "삼합", "반합"].includes(type);
+type BranchFact = Exclude<AnnualJieRelationFact, { source: "month_natal_element" }>;
+
+/** Only bind facts carried by the selected canonical segment. An ID alone is
+ * insufficient: actors, scope and the active cycle must also agree. */
+export function annualMonthInteractions(e: AnnualEvidence, m: AnnualMonthEvidence, god: TenGod, used: Set<string> = new Set(),
+  practice = annualMonthPractice(majorContext(e.input), god, 0)) {
+  const s = m.focus;
+  const bind = (f: AnnualJieRelationFact) => {
+    if (f.source === "month_natal_element" || f.certainty !== "confirmed" || !s.evidenceIds.includes(f.id)
+      || f.monthBranch !== s.monthPillar.branch || !f.participants.includes(s.monthPillar.branch)) return null;
+    let actor: string, day = false;
+    if (f.source === "month_natal_branch") {
+      // A canonical fact may list positions occupied by either participant.
+      // Name only the natal counterpart, not a duplicate of the transit branch.
+      const counterpart = f.participants.filter(b => b !== s.monthPillar.branch);
+      const actual = f.affectedPillars.filter(position => {
+        const branch = e.calculation.pillars[position]?.branch;
+        return branch && (counterpart.length ? counterpart.includes(branch) : f.participants.includes(branch));
+      });
+      if (!actual.length) return null;
+      actor = `원국 ${actual.map(position => `${positions[position]} ${e.calculation.pillars[position]!.branch}`).join("·")}`;
+      day = actual.includes("day");
+    } else {
+      const other = f.counterpart;
+      if (f.source === "month_annual_branch") {
+        if (other.scope !== "annual" || other.pillar !== s.effectiveAnnualPillar.stem + s.effectiveAnnualPillar.branch) return null;
+        actor = `${other.pillar} 세운의 지지 ${other.pillar.slice(-1)}`;
+      } else {
+        if (other.scope !== "dayun" || s.activeDayunContext.status !== "active"
+          || !s.activeDayunContext.cycles.some(c => c.index === other.cycleIndex && c.ganji === other.pillar)) return null;
+        actor = `${other.pillar} 대운의 지지 ${other.pillar.slice(-1)}`;
+      }
+      if (!f.participants.some(b => b === other.pillar.slice(-1))) return null;
+    }
+    return { fact: f as BranchFact, actor, day };
+  };
+  const bound = s.relationFacts.map(bind).filter(r => r !== null);
+  // Reuse the canonical reading's categorical preference: natal day/month
+  // pressure, then period pressure, then an available natal connection.
+  const primary = bound.find(r => r.fact.source === "month_natal_branch" && ["충", "형"].includes(r.fact.type)
+    && (r.day || r.actor.includes("월지")))
+    ?? bound.find(r => r.fact.source === "month_dayun_branch" && ["충", "형"].includes(r.fact.type))
+    ?? bound.find(r => r.fact.source === "month_annual_branch" && ["충", "형"].includes(r.fact.type))
+    ?? bound.find(r => r.fact.source === "month_natal_branch") ?? bound[0];
+  if (!primary) return null;
+  const secondary = bound.find(r => r !== primary && harmony(r.fact.type) !== harmony(primary.fact.type));
+  const when = s.uncertainty.length ? `${m.month}월 대운 전환 시점이 확정되지 않은` : s.boundaryReason.some(b => b.startsWith("dayun"))
+    ? `${m.month}월 ${Number(s.startKst.slice(8, 10))}일 ${s.boundaryReason.includes("dayun_uncertainty_end") ? "전환 가능 범위를 지난 뒤" : "대운 전환 뒤"}`
+    : s.boundaryReason.some(b => b.startsWith("jie:")) ? `${m.month}월 절입 뒤` : `${m.month}월 초의 절입 전`;
+  const next = m.segments.find(next => next.startKst === s.endKstExclusive && next.boundaryReason.some(b => b.startsWith("dayun")));
+  const end = next ? `, ${Number(s.endKstExclusive.slice(8, 10))}일 ${next.boundaryReason.includes("dayun_uncertainty_start") ? "전환 시점의 불확실성이 시작되기 전까지" : next.boundaryReason.includes("dayun_uncertainty_end") ? "전환 가능 범위가 끝나기 전까지" : "대운 전환 직전까지"}` : "";
+  const describe = (r: typeof primary) => {
+    const key = `definition:${r.fact.type}`;
+    const meaning = used.has(key) ? reminders[r.fact.type] : meanings[r.fact.type];
+    used.add(key);
+    return `${r.actor}, 월운 지지 ${s.monthPillar.branch} 사이의 ${r.fact.participants.join("·")} ${p(r.fact.type, "topic")} ${meaning}`;
+  };
+  const relationKey = (r: typeof primary) => `relation:${r.fact.source}:${r.actor}:${s.monthPillar.branch}:${r.fact.type}`;
+  const continued = used.has(relationKey(primary));
+  const newSecondary = secondary && !used.has(relationKey(secondary)) ? secondary : undefined;
+  const interpretation = continued
+    ? `${when}${end} 구간에는 앞서 살펴본 ${primary.actor}, 월운 사이의 ${p(primary.fact.type, "subject")} 이어집니다.`
+    : `${when}${end} 구간을 보면 ${describe(primary)}`;
+  const connection = newSecondary ? ` 한편 ${describe(newSecondary)}` : "";
+  used.add(relationKey(primary));
+  if (newSecondary) used.add(relationKey(newSecondary));
+  const applicationKey = `application:${primary.fact.type}:${practice.setting}`;
+  const repeatedApplication = used.has(applicationKey);
+  used.add(applicationKey);
+  // A supportive contact does not remove a separate tension. Keep both scopes
+  // above, and use the tension's reviewed adjustment criterion when both exist.
+  const constraint = harmony(primary.fact.type) && secondary ? secondary.fact.type : primary.fact.type;
+  const constraintKey = `application-constraint:${constraint}`;
+  const applied = used.has(constraintKey) ? { action: practice.action, avoid: practice.avoid } : application(constraint, practice);
+  used.add(constraintKey);
+  const bridge = used.has("relationship-limit") ? "" : " 이 관계만으로 현실의 결과가 정해지는 것은 아닙니다.";
+  used.add("relationship-limit");
+  const use = ` 실제 선택에서는 ${practice.question} 살펴보는 데 참고할 만해요.`;
+  return { primary: primary.fact, secondary: newSecondary?.fact, text: interpretation + connection + bridge + use,
+    action: applied.action, avoid: applied.avoid, repeatedApplication,
+    sourceRefs: [primary.fact.id, ...(secondary ? [secondary.fact.id] : [])] };
+}

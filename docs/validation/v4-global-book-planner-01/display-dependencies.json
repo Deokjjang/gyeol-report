@@ -1,0 +1,18 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "ARRAY",
+  "entries": 13,
+  "logicalJsonHash": "1c637922ff882e190e424dbf5fc17d3e348d814b05171bf7355c82a1a7c717bf",
+  "parts": [
+    {
+      "file": "display-dependencies-part-0001.json",
+      "sha256": "0d1d1996fdba7e2139fba5f2a9b3ff27f619aa0f330e3e458ec5a85cda83852a",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "display-dependencies-part-0002.json",
+      "sha256": "f502cdc184aefa3cfb8a607d8deb9c6c3840880060d05a001d6b9a8daeeaaef0",
+      "kind": "ITEM"
+    }
+  ]
+}

@@ -1,0 +1,578 @@
+[
+  {
+    "address": "CH01.P1.S1",
+    "roleDescription": "특징적인 조합"
+  },
+  {
+    "address": "CH01.P1.S2",
+    "roleDescription": "대표 성향 대비"
+  },
+  {
+    "address": "CH01.P1.S3",
+    "roleDescription": "함께하는 장면"
+  },
+  {
+    "address": "CH01.P1.S4",
+    "roleDescription": "관계의 상징"
+  },
+  {
+    "address": "CH01.P2.S1",
+    "roleDescription": "실제 명리 관계"
+  },
+  {
+    "address": "CH01.P2.S2",
+    "roleDescription": "쉬운 의미"
+  },
+  {
+    "address": "CH01.P2.S3",
+    "roleDescription": "상호 영향"
+  },
+  {
+    "address": "CH01.P2.S4",
+    "roleDescription": "강점과 주의 조건"
+  },
+  {
+    "address": "CH01.P3.S1",
+    "roleDescription": "A의 실제 MBTI"
+  },
+  {
+    "address": "CH01.P3.S2",
+    "roleDescription": "B의 실제 MBTI"
+  },
+  {
+    "address": "CH01.P3.S3",
+    "roleDescription": "공통점과 차이"
+  },
+  {
+    "address": "CH01.P3.S4",
+    "roleDescription": "상호작용"
+  },
+  {
+    "address": "CH01.P4.S1",
+    "roleDescription": "좋은 점"
+  },
+  {
+    "address": "CH01.P4.S2",
+    "roleDescription": "조심할 차이"
+  },
+  {
+    "address": "CH01.P4.S3",
+    "roleDescription": "관계별 조건"
+  },
+  {
+    "address": "CH01.P4.S4",
+    "roleDescription": "앞으로의 질문"
+  },
+  {
+    "address": "CH02.P1.S1",
+    "roleDescription": "대표 행동"
+  },
+  {
+    "address": "CH02.P1.S2",
+    "roleDescription": "명리 근거"
+  },
+  {
+    "address": "CH02.P1.S3",
+    "roleDescription": "MBTI 선호"
+  },
+  {
+    "address": "CH02.P1.S4",
+    "roleDescription": "B와의 관계"
+  },
+  {
+    "address": "CH02.P2.S1",
+    "roleDescription": "관계 조건"
+  },
+  {
+    "address": "CH02.P2.S2",
+    "roleDescription": "실제 이유"
+  },
+  {
+    "address": "CH02.P2.S3",
+    "roleDescription": "B와의 장면"
+  },
+  {
+    "address": "CH02.P2.S4",
+    "roleDescription": "충족될 때"
+  },
+  {
+    "address": "CH02.P3.S1",
+    "roleDescription": "특징적 강점"
+  },
+  {
+    "address": "CH02.P3.S2",
+    "roleDescription": "실제 근거"
+  },
+  {
+    "address": "CH02.P3.S3",
+    "roleDescription": "B에게 좋은 상황"
+  },
+  {
+    "address": "CH02.P3.S4",
+    "roleDescription": "유지 조건"
+  },
+  {
+    "address": "CH02.P4.S1",
+    "roleDescription": "과사용 위험"
+  },
+  {
+    "address": "CH02.P4.S2",
+    "roleDescription": "원인"
+  },
+  {
+    "address": "CH02.P4.S3",
+    "roleDescription": "B가 받는 뜻"
+  },
+  {
+    "address": "CH02.P4.S4",
+    "roleDescription": "조절 행동"
+  },
+  {
+    "address": "CH03.P1.S1",
+    "roleDescription": "독립적 행동"
+  },
+  {
+    "address": "CH03.P1.S2",
+    "roleDescription": "명리 근거"
+  },
+  {
+    "address": "CH03.P1.S3",
+    "roleDescription": "MBTI 선호"
+  },
+  {
+    "address": "CH03.P1.S4",
+    "roleDescription": "A와의 관계"
+  },
+  {
+    "address": "CH03.P2.S1",
+    "roleDescription": "관계 조건"
+  },
+  {
+    "address": "CH03.P2.S2",
+    "roleDescription": "독립적 이유"
+  },
+  {
+    "address": "CH03.P2.S3",
+    "roleDescription": "A와의 장면"
+  },
+  {
+    "address": "CH03.P2.S4",
+    "roleDescription": "충족될 때"
+  },
+  {
+    "address": "CH03.P3.S1",
+    "roleDescription": "특징적 강점"
+  },
+  {
+    "address": "CH03.P3.S2",
+    "roleDescription": "독립적 근거"
+  },
+  {
+    "address": "CH03.P3.S3",
+    "roleDescription": "A에게 좋은 상황"
+  },
+  {
+    "address": "CH03.P3.S4",
+    "roleDescription": "유지 조건"
+  },
+  {
+    "address": "CH03.P4.S1",
+    "roleDescription": "과사용 위험"
+  },
+  {
+    "address": "CH03.P4.S2",
+    "roleDescription": "원인"
+  },
+  {
+    "address": "CH03.P4.S3",
+    "roleDescription": "A가 받는 뜻"
+  },
+  {
+    "address": "CH03.P4.S4",
+    "roleDescription": "조절 행동"
+  },
+  {
+    "address": "CH04.P1.S1",
+    "roleDescription": "검증된 공통점 또는 다른 기여"
+  },
+  {
+    "address": "CH04.P1.S2",
+    "roleDescription": "각자 근거"
+  },
+  {
+    "address": "CH04.P1.S3",
+    "roleDescription": "함께하는 행동"
+  },
+  {
+    "address": "CH04.P1.S4",
+    "roleDescription": "강점의 조건"
+  },
+  {
+    "address": "CH04.P2.S1",
+    "roleDescription": "검증된 보완 또는 다른 장점"
+  },
+  {
+    "address": "CH04.P2.S2",
+    "roleDescription": "실제 근거"
+  },
+  {
+    "address": "CH04.P2.S3",
+    "roleDescription": "도움의 장면"
+  },
+  {
+    "address": "CH04.P2.S4",
+    "roleDescription": "좋은 차이의 경계"
+  },
+  {
+    "address": "CH04.P3.S1",
+    "roleDescription": "관계별 상황"
+  },
+  {
+    "address": "CH04.P3.S2",
+    "roleDescription": "A의 기여"
+  },
+  {
+    "address": "CH04.P3.S3",
+    "roleDescription": "B의 기여"
+  },
+  {
+    "address": "CH04.P3.S4",
+    "roleDescription": "함께 얻는 결과"
+  },
+  {
+    "address": "CH04.P4.S1",
+    "roleDescription": "가치 있는 특징"
+  },
+  {
+    "address": "CH04.P4.S2",
+    "roleDescription": "좋은 관계의 조건"
+  },
+  {
+    "address": "CH04.P4.S3",
+    "roleDescription": "과사용 위험"
+  },
+  {
+    "address": "CH04.P4.S4",
+    "roleDescription": "활용 방향"
+  },
+  {
+    "address": "CH05.P1.S1",
+    "roleDescription": "A→B 영향"
+  },
+  {
+    "address": "CH05.P1.S2",
+    "roleDescription": "받는 사람 기준 십성"
+  },
+  {
+    "address": "CH05.P1.S3",
+    "roleDescription": "구체적 행동"
+  },
+  {
+    "address": "CH05.P1.S4",
+    "roleDescription": "B에게 남는 의미"
+  },
+  {
+    "address": "CH05.P2.S1",
+    "roleDescription": "도움 되는 강점"
+  },
+  {
+    "address": "CH05.P2.S2",
+    "roleDescription": "실제 근거"
+  },
+  {
+    "address": "CH05.P2.S3",
+    "roleDescription": "관계별 장면"
+  },
+  {
+    "address": "CH05.P2.S4",
+    "roleDescription": "발휘 조건"
+  },
+  {
+    "address": "CH05.P3.S1",
+    "roleDescription": "부담 행동"
+  },
+  {
+    "address": "CH05.P3.S2",
+    "roleDescription": "검증된 차이"
+  },
+  {
+    "address": "CH05.P3.S3",
+    "roleDescription": "의도와 경험"
+  },
+  {
+    "address": "CH05.P3.S4",
+    "roleDescription": "악화 조건"
+  },
+  {
+    "address": "CH05.P4.S1",
+    "roleDescription": "조정할 행동"
+  },
+  {
+    "address": "CH05.P4.S2",
+    "roleDescription": "B의 필요"
+  },
+  {
+    "address": "CH05.P4.S3",
+    "roleDescription": "확인할 실천"
+  },
+  {
+    "address": "CH05.P4.S4",
+    "roleDescription": "A→B 가능성"
+  },
+  {
+    "address": "CH06.P1.S1",
+    "roleDescription": "B→A 영향"
+  },
+  {
+    "address": "CH06.P1.S2",
+    "roleDescription": "받는 사람 기준 십성"
+  },
+  {
+    "address": "CH06.P1.S3",
+    "roleDescription": "다른 방향 행동"
+  },
+  {
+    "address": "CH06.P1.S4",
+    "roleDescription": "A에게 남는 의미"
+  },
+  {
+    "address": "CH06.P2.S1",
+    "roleDescription": "도움 되는 강점"
+  },
+  {
+    "address": "CH06.P2.S2",
+    "roleDescription": "독립적 근거"
+  },
+  {
+    "address": "CH06.P2.S3",
+    "roleDescription": "관계별 장면"
+  },
+  {
+    "address": "CH06.P2.S4",
+    "roleDescription": "발휘 조건"
+  },
+  {
+    "address": "CH06.P3.S1",
+    "roleDescription": "부담 행동"
+  },
+  {
+    "address": "CH06.P3.S2",
+    "roleDescription": "검증된 차이"
+  },
+  {
+    "address": "CH06.P3.S3",
+    "roleDescription": "의도와 경험"
+  },
+  {
+    "address": "CH06.P3.S4",
+    "roleDescription": "악화 조건"
+  },
+  {
+    "address": "CH06.P4.S1",
+    "roleDescription": "조정할 행동"
+  },
+  {
+    "address": "CH06.P4.S2",
+    "roleDescription": "A의 필요"
+  },
+  {
+    "address": "CH06.P4.S3",
+    "roleDescription": "확인할 실천"
+  },
+  {
+    "address": "CH06.P4.S4",
+    "roleDescription": "B→A 가능성"
+  },
+  {
+    "address": "CH07.P1.S1",
+    "roleDescription": "불일치 또는 확인할 조건"
+  },
+  {
+    "address": "CH07.P1.S2",
+    "roleDescription": "각자의 성향"
+  },
+  {
+    "address": "CH07.P1.S3",
+    "roleDescription": "다른 이해"
+  },
+  {
+    "address": "CH07.P1.S4",
+    "roleDescription": "답답함의 이유"
+  },
+  {
+    "address": "CH07.P2.S1",
+    "roleDescription": "실제 충돌 또는 부재"
+  },
+  {
+    "address": "CH07.P2.S2",
+    "roleDescription": "쉬운 의미"
+  },
+  {
+    "address": "CH07.P2.S3",
+    "roleDescription": "다른 반응"
+  },
+  {
+    "address": "CH07.P2.S4",
+    "roleDescription": "긍정적 여지"
+  },
+  {
+    "address": "CH07.P3.S1",
+    "roleDescription": "반복 문제"
+  },
+  {
+    "address": "CH07.P3.S2",
+    "roleDescription": "방향별 원인"
+  },
+  {
+    "address": "CH07.P3.S3",
+    "roleDescription": "악화 장면"
+  },
+  {
+    "address": "CH07.P3.S4",
+    "roleDescription": "직설적 결론"
+  },
+  {
+    "address": "CH07.P4.S1",
+    "roleDescription": "주의 상황"
+  },
+  {
+    "address": "CH07.P4.S2",
+    "roleDescription": "A의 기대"
+  },
+  {
+    "address": "CH07.P4.S3",
+    "roleDescription": "B의 기대"
+  },
+  {
+    "address": "CH07.P4.S4",
+    "roleDescription": "다르게 전달되는 뜻"
+  },
+  {
+    "address": "CH08.P1.S1",
+    "roleDescription": "앞선 갈등 질문"
+  },
+  {
+    "address": "CH08.P1.S2",
+    "roleDescription": "실제 원인"
+  },
+  {
+    "address": "CH08.P1.S3",
+    "roleDescription": "각자 필요"
+  },
+  {
+    "address": "CH08.P1.S4",
+    "roleDescription": "조정 기준"
+  },
+  {
+    "address": "CH08.P2.S1",
+    "roleDescription": "A의 전략"
+  },
+  {
+    "address": "CH08.P2.S2",
+    "roleDescription": "필요한 이유"
+  },
+  {
+    "address": "CH08.P2.S3",
+    "roleDescription": "실천 방법"
+  },
+  {
+    "address": "CH08.P2.S4",
+    "roleDescription": "B에게 남는 변화"
+  },
+  {
+    "address": "CH08.P3.S1",
+    "roleDescription": "B의 전략"
+  },
+  {
+    "address": "CH08.P3.S2",
+    "roleDescription": "필요한 이유"
+  },
+  {
+    "address": "CH08.P3.S3",
+    "roleDescription": "다른 실천 방법"
+  },
+  {
+    "address": "CH08.P3.S4",
+    "roleDescription": "A에게 남는 변화"
+  },
+  {
+    "address": "CH08.P4.S1",
+    "roleDescription": "공동 목표"
+  },
+  {
+    "address": "CH08.P4.S2",
+    "roleDescription": "A의 역할"
+  },
+  {
+    "address": "CH08.P4.S3",
+    "roleDescription": "B의 역할"
+  },
+  {
+    "address": "CH08.P4.S4",
+    "roleDescription": "관계별 원칙"
+  },
+  {
+    "address": "CH09.P1.S1",
+    "roleDescription": "긍정적 특징"
+  },
+  {
+    "address": "CH09.P1.S2",
+    "roleDescription": "실제 명리·MBTI"
+  },
+  {
+    "address": "CH09.P1.S3",
+    "roleDescription": "함께하는 장점"
+  },
+  {
+    "address": "CH09.P1.S4",
+    "roleDescription": "지속 조건"
+  },
+  {
+    "address": "CH09.P2.S1",
+    "roleDescription": "검증된 좋은 기운"
+  },
+  {
+    "address": "CH09.P2.S2",
+    "roleDescription": "근거와 의미"
+  },
+  {
+    "address": "CH09.P2.S3",
+    "roleDescription": "관계의 가능성"
+  },
+  {
+    "address": "CH09.P2.S4",
+    "roleDescription": "현실적 활용"
+  },
+  {
+    "address": "CH09.P3.S1",
+    "roleDescription": "조율 원칙"
+  },
+  {
+    "address": "CH09.P3.S2",
+    "roleDescription": "개인별 이유"
+  },
+  {
+    "address": "CH09.P3.S3",
+    "roleDescription": "실천 행동"
+  },
+  {
+    "address": "CH09.P3.S4",
+    "roleDescription": "지속 조건"
+  },
+  {
+    "address": "CH09.P4.S1",
+    "roleDescription": "특징적인 상호작용"
+  },
+  {
+    "address": "CH09.P4.S2",
+    "roleDescription": "함께 만드는 가치"
+  },
+  {
+    "address": "CH09.P4.S3",
+    "roleDescription": "기억할 기준"
+  },
+  {
+    "address": "CH09.P4.S4",
+    "roleDescription": "관계별 결론"
+  }
+]

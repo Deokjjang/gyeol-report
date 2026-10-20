@@ -1,0 +1,28 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-love-marriage-child-product-knowledge-01
+
+ ❯ tests/unit/report-knowledge/loveProductResearch.test.ts (398 tests | 2 failed) 205586ms
+   × 'lkr:material:CH08.P1:parent-infj-opin…' has distinct meaning, conditional scenes, source restrictions and substantive role contributions 5ms
+   × 'lkr:material:CH08.P2:parent-estj-rule…' has distinct meaning, conditional scenes, source restrictions and substantive role contributions 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/report-knowledge/loveProductResearch.test.ts > 'lkr:material:CH08.P1:parent-infj-opin…' has distinct meaning, conditional scenes, source restrictions and substantive role contributions
+AssertionError: expected 9 to be greater than 10
+ ❯ tests/unit/report-knowledge/loveProductResearch.test.ts:64:294
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/report-knowledge/loveProductResearch.test.ts > 'lkr:material:CH08.P2:parent-estj-rule…' has distinct meaning, conditional scenes, source restrictions and substantive role contributions
+AssertionError: expected 10 to be greater than 10
+ ❯ tests/unit/report-knowledge/loveProductResearch.test.ts:64:294
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 396 passed (398)
+   Start at  22:35:43
+   Duration  207.94s (transform 2.21s, setup 17ms, import 2.16s, tests 205.59s, environment 0ms)

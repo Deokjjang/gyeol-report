@@ -1,0 +1,274 @@
+{
+  "status": "PASS",
+  "filesScanned": 65,
+  "gzipLeavesDecodedAndScanned": 5,
+  "privateNameAndBirthDateTermsChecked": 37,
+  "nonNullOriginalPersonIdRejected": true,
+  "rawCustomerAccesses": 0,
+  "externalProseApiCalls": 0,
+  "originalGraphRootsAndOwnersPreserved": true,
+  "rawGenerationAndWorkspaceSnapshotsExternal": true,
+  "files": [
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/README.md",
+      "sha256": "5695998ba101d7d909057fc8e7a8da4460998fc8c8528281904e2b206302fa8d"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/book-preservation.json",
+      "sha256": "764a8e3a20a263609bbce041dbe740d5129924d8dfe36a30d41ee8fbd7ad0491"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/business-partner-baseline.json",
+      "sha256": "8225721eb54b00190f22b88d5be1ceab3d2cf002bf87c906cc2647807df65f88"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/claim-meaning-contracts.json",
+      "sha256": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/conditional-scene-audit.json",
+      "sha256": "5b8404bcd2c80ce4a8e9f4e96b0b277d50ea58fe66f6d5a3ad136a4fae82c189"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/deterministic-rebuild.json",
+      "sha256": "b70539902c98db3e6e3f95d12303f16cd05edd3c4ffb7b1826e1fe3a938e6f4c"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/editorial-function-coverage.json",
+      "sha256": "c1866202c6cda1e7bfef62f1949a0141d8c48c61c3b0d272b27cff4ba10cf4b8"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/editorial-handoff-validation.json",
+      "sha256": "3b3740b02b29f4420c22687c089967403981056d526958792e0a11145a13c19b"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/editorial-shortage-matrix.json",
+      "sha256": "73ccfc522ea5879eb79d1f37e2cf5ac79641e82e1659d4492e033d0f437ec346"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/editorial-shortage-matrix.json.gz",
+      "sha256": "4f76350912a8a7ab80b55cf16844c0ab90abd48ce4f28d1b3bec3041014bfdcc"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/execution-source-seal.json",
+      "sha256": "c785cf5fc722ee464e7257a681560ffa4daf6bbb6a0fa8b6bcfd66a2a17c05be"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/existing-editorial-code-intake.json",
+      "sha256": "f5b66460a4f79376e8dd3f7f63a63b7b712e04504975b479115bed72970ff038"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/expression-material-audit.json",
+      "sha256": "6c19e6242c9e88c6b649f1a241bf331e594a3cb6e53ecdfe52b253b6e0b06a65"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/final-report-fields.json",
+      "sha256": "b005ae952587732d5a8d917ab2620bdfc6b59faa456dcc07e97dae6f22d469ca"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/full-product-integration-handoff.json",
+      "sha256": "e501fc6cc90100ac336be270bbc90ac0fe8af3b066cbeadcfdebf830bfd5391f"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/grammar-negative-tests.json",
+      "sha256": "8b40c21dff7dea0d5959178d14b7137b33e714e86412968de1f4b429d8ef74ff"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/independent-rebuild-validation.json",
+      "sha256": "74d094b9cc90a35796b3da2deb46567b12189e8a13347079c4718ecd70a72107"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/known-failure-comparison.json",
+      "sha256": "68ac3d0571d4ee4f3547066c46c6c23ad7921881ac9888906b1e8252d48a8427"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/korean-editorial-manifest.json",
+      "sha256": "e4998ff01a250d9d0d6f642ec0d7b8a041b6d05f70f0d6d9e91be5fc9f4f1092"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/korean-grammar-validation.json",
+      "sha256": "c68ce9e157fe2f894cde8b4a964f39452c2dde1a253ffbea6bb7cf0781979d04"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/meaning-preservation-audit.json",
+      "sha256": "3d902c24308709baab3bcdc9fb9dcbf09f7bcbb36c42410cd9e801afb2fa20fe"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/nft-trace-preservation.json",
+      "sha256": "42be5d345cf7ee5eb5c8a01d87b65f3423b117569df98bbc1f508cf8c1afbabe"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/official-approval-boundary.json",
+      "sha256": "92a7502be50971c2cf2db3e7dd388693fe44578a3e268b76828857916382903f"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/product-style-matrix.json",
+      "sha256": "379f81e0d5e8c1f554338c9b4d76cd31e78b629002217c5e159ea6c478813d70"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/rejected-expression-validation.json",
+      "sha256": "2dc83ff8b4bd00f6cda047feaa58016e3fa416b102e992a6f3529b3337ed4293"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/relationship-style-matrix.json",
+      "sha256": "f4cce225457ebbb7bc560f20d079b180b76bcb5f77ccd8b3168d65221dda36eb"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/relationship-style-matrix.json.gz",
+      "sha256": "63c4e41199c4142e30f37e55e72bd41b9c5a028f098e6bf3074d99cc3718be5e"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/repair-recall-audit.json",
+      "sha256": "f799d14061b5ca37a68d1801138f8d647bfe82d59dab108dea787066f2e19677"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/research-record-intake.json",
+      "sha256": "172c429953ef0737cc5f0db0328a27152c0fd7da36e9cc29f8789cb6be9b8389"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/semantic-repetition-audit.json",
+      "sha256": "db44673804631934d707428281cd7bcc41bcc085f5d692b65c44e9654eb5cfdc"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/sentence-claim-ledger.json",
+      "sha256": "7e0255f486943d6075712129b26a42d6b3288dac8611b3625fd7aead61e59404"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/sentence-claim-ledger.json.gz",
+      "sha256": "42b83f63a8371e32d7b743dae6ff3a0ac29c73c4682ae0b99285c082a2fdf5a5"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/source-preservation.json",
+      "sha256": "4527a64cc7ce69f7f5881ca481ec8de99119ccf968364962b99a205ec8c04ef6"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/synthetic-editorial-paragraphs.json",
+      "sha256": "7d79ca03405e86f9e535ef3cdb69b4b81340d3d7b0a5bbbc0acdf013dbe0fe45"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/synthetic-editorial-paragraphs.json.gz",
+      "sha256": "21f22cac10a648b0020037168d88cbb9e46fdc325ed46b3fa275a5d375e61c70"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/synthetic-editorial-sentences.json",
+      "sha256": "3746b7320db9361433e0c8a25a474c4aec443f8e64ec4653a86b988c9ca26624"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/synthetic-editorial-sentences.json.gz",
+      "sha256": "42b83f63a8371e32d7b743dae6ff3a0ac29c73c4682ae0b99285c082a2fdf5a5"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/synthetic-korean-preview.html",
+      "sha256": "7828b64fe78c1a095799552ded427ad9655cbe0c581b4958f8681b7547c55ae8"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/technical-validation.json",
+      "sha256": "96f77c04b6072e8c1c4b4abe58817fd803931edb8266e323e6f5c536216af210"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/term-explanation-audit.json",
+      "sha256": "cc52f3fd329d2433d110e5a996b88b6c491d82fadf8c93754b83e99b94f8f1e3"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/transition-rhythm-audit.json",
+      "sha256": "e789497ca64ec75011bfc762a6f99d58d81b0f295cf23cfffafc988ce639dad7"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/twelve-route-rehearsal.json",
+      "sha256": "e9105f79bed5c35911825cdddcf857379663b5c1146e325b10df4f937b8de802"
+    },
+    {
+      "file": "docs/validation/v4-korean-editorial-engine-01/whole-draft-quality-audit.json",
+      "sha256": "91015f1ea939c8356c84eaed5f4ed2d0a5d27cdf5e855fcf785189da5a6d5314"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/approvalIntake.ts",
+      "sha256": "c1f62a01dbb9704a4553d499608ef445821d08578879ff2be8e8a4c633ca5f8e"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/claimEnvelope.ts",
+      "sha256": "fb3b173c031d18dec889cf2da21ab71de9b8546bf3b5b5ab1e2b98bdd3ceb4bf"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/editorialInput.ts",
+      "sha256": "5de97df3f9a3c2db46ef3c4e81cbbb9f751af6d6ba09a0cf555af4d776467ce5"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/engine.ts",
+      "sha256": "285c376533fc253e0948dd01c352550830d77d864d847228920bf4271350aa3c"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/introducedMeaningLedger.ts",
+      "sha256": "3dca69172f70aa21c5b6d87be11fcdc26a14dc5fdae1ecd4d6e7a3fe1cbb5764"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/meaningPreservation.ts",
+      "sha256": "436ca834f77cfeff7c360163b0ef287cd86b5be85644215f8125403beb10aa09"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/narrativeMemoryAdapter.ts",
+      "sha256": "070e6373f30ba12c6a291dd0920de8bddbf4acbf38e8c0cc35f2af4fc13a1879"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/researchRegistry.ts",
+      "sha256": "01e48ca0fd223afe1f139e6113a7070335eee074d0d28019ad9219c6afc901bb"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/researchValidation.ts",
+      "sha256": "3e9493ee46e1033f0a9a40aba3931365c37f2d08703a8c4740419f4877a87aaa"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/semanticRepetition.ts",
+      "sha256": "0304e3f5d0c60163f957bbb0cc09d49d7cfc461c4ff00fbc5fc19f78d3b67c77"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/sentenceComposer.ts",
+      "sha256": "bff6aba90fb07753c540a52e8eedca0a1bc51a7fa52e0d73f0f88a2cc72d257f"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/sourcePin.ts",
+      "sha256": "aac9c17f810b0736dc1581e23fcf93eb172c4a2fcb81375949a0c41064548be1"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/termExplanation.ts",
+      "sha256": "97f9e4b366f2d21022de1d09f48aeca38e2e81837dc264a6244f7b802b6fd765"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/transitionComposer.ts",
+      "sha256": "0ad897b6f918376dce7787f4e63bf06ba98e16ceb9d33f05a907d8aebd4c4eee"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/typedKoreanSlots.ts",
+      "sha256": "b91fd6d619a3816cc2924f98cd2072927b2eba37250bdb378d510276406a268b"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/types.ts",
+      "sha256": "b1c9300ca82ee33a0cdd6ddd47f88b949e5fda21ce6ce0b62b5f859e85461786"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/wholeDraftAudit.ts",
+      "sha256": "9ece020ffce5192f493ec8284b33817fad7be542c83f9d62972f016e6d24b7d6"
+    },
+    {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "sha256": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d"
+    },
+    {
+      "file": "tests/unit/report-knowledge/koreanEditorialEngine.test.ts",
+      "sha256": "c96e42c500cfbd52f1b4ce381c044a57ea6de132438f1caeda77f31fcf87ce83"
+    },
+    {
+      "file": "tests/unit/report-knowledge/koreanEditorialSlots.test.ts",
+      "sha256": "9e5eb7805ba5a6854c33cd096a96a09b0f74579bd20083ff15696fe5e61a7063"
+    },
+    {
+      "file": "tools/korean-editorial-engine/bootstrap.mjs",
+      "sha256": "9e1fb8ebfd592e2ce63c47beca7f19727c88013cbe52241cf0ff020f83d95ac0"
+    },
+    {
+      "file": "tools/korean-editorial-engine/verify.mjs",
+      "sha256": "c5793be70819b78f18a7e95a20db4268160931685a5b0469853123dbd2ac7612"
+    }
+  ],
+  "auditItselfExcluded": true
+}

@@ -1,0 +1,134 @@
+{
+  "initialAudit": {
+    "numTotalTests": 622,
+    "numPassedTests": 620,
+    "numFailedTests": 2,
+    "numPendingTests": 0
+  },
+  "finalAudit": {
+    "numTotalTests": 622,
+    "numPassedTests": 622,
+    "numFailedTests": 0,
+    "numPendingTests": 0
+  },
+  "contractIdentityAndRuntime": {
+    "numTotalTests": 62,
+    "numPassedTests": 62,
+    "numFailedTests": 0,
+    "numPendingTests": 0
+  },
+  "affectedExistingResearchAndPublication": {
+    "numTotalTests": 5639,
+    "numPassedTests": 5639,
+    "numFailedTests": 0,
+    "numPendingTests": 0
+  },
+  "fixedTests": [
+    {
+      "file": "unit/report-knowledge/knowledgeSemanticDomainVerification.test.ts",
+      "name": "33 preserves all original catalog and research bytes/keys",
+      "error": "AssertionError: src/lib/interpretation-v4/compatibilityProductAdapter.ts: expected 'a02bfc2e1cfab018a8b1fa8ab43e679aec6a1…' to be 'bfc8e0844c7eb5bf0711c463745fda00b1cae…' // Object.is equality"
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeSourceVerification.test.ts",
+      "name": "21 preserves every frozen base source/file hash including all research and original catalogs",
+      "error": "AssertionError: src/lib/interpretation-v4/compatibilityProductAdapter.ts: expected 'a02bfc2e1cfab018a8b1fa8ab43e679aec6a1…' to be 'bfc8e0844c7eb5bf0711c463745fda00b1cae…' // Object.is equality"
+    }
+  ],
+  "newFailures": 0,
+  "totalFinalSelectedTests": 6323,
+  "wholeRepositorySuiteExecuted": false,
+  "existing7152Cohort": "Affected versionedProtection consumers and Publication Safety rerun; no whole-suite claim",
+  "files": [
+    {
+      "file": "unit/report-knowledge/actualEvidenceGraph.test.ts",
+      "passed": 56,
+      "failed": 0
+    },
+    {
+      "file": "unit/report-knowledge/fullProductIntegration.test.ts",
+      "passed": 74,
+      "failed": 0
+    },
+    {
+      "file": "unit/report-knowledge/globalBookPlanner.test.ts",
+      "passed": 125,
+      "failed": 0
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeBinder.test.ts",
+      "passed": 74,
+      "failed": 0
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeSemanticDomainVerification.test.ts",
+      "passed": 43,
+      "failed": 0
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeSourceVerification.test.ts",
+      "passed": 37,
+      "failed": 0
+    },
+    {
+      "file": "unit/report-knowledge/koreanEditorialEngine.test.ts",
+      "passed": 213,
+      "failed": 0
+    },
+    {
+      "file": "unit/protected-staging/revisions.test.ts",
+      "passed": 11,
+      "failed": 0
+    },
+    {
+      "file": "unit/interpretation-v4/moduleContracts.test.ts",
+      "passed": 18,
+      "failed": 0
+    },
+    {
+      "file": "unit/interpretation-v4/sourceRevisionContracts.test.ts",
+      "passed": 33,
+      "failed": 0
+    },
+    {
+      "file": "unit/interpretation-v4/publicationSafety.test.ts",
+      "passed": 30,
+      "failed": 0
+    },
+    {
+      "file": "unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts",
+      "passed": 1362,
+      "failed": 0
+    },
+    {
+      "file": "unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts",
+      "passed": 22,
+      "failed": 0
+    },
+    {
+      "file": "unit/report-knowledge/compatibilityCoworkerResearch.test.ts",
+      "passed": 1175,
+      "failed": 0
+    },
+    {
+      "file": "unit/report-knowledge/compatibilityLoveResearch.test.ts",
+      "passed": 557,
+      "failed": 0
+    },
+    {
+      "file": "unit/report-knowledge/compatibilityManagerReportResearch.test.ts",
+      "passed": 1123,
+      "failed": 0
+    },
+    {
+      "file": "unit/report-knowledge/compatibilityMarriageResearch.test.ts",
+      "passed": 626,
+      "failed": 0
+    },
+    {
+      "file": "unit/report-knowledge/compatibilityParentChildResearch.test.ts",
+      "passed": 744,
+      "failed": 0
+    }
+  ]
+}

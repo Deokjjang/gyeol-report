@@ -1,3 +1,4 @@
+import { parseSupabasePaidReportLookupRpcResult } from "../../../src/lib/persistence/supabasePaidReportLookupRpcRow";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -201,12 +202,14 @@ function createFakeQueryClient(
     async findReportByAccessTokenHash(accessTokenHash) {
       calls.findAccessTokenHashes.push(accessTokenHash);
 
-      return (
-        options.findResult ?? {
-          ok: true,
-          data: createRow({ access_token_hash: accessTokenHash }),
-        }
-      );
+      const result = options.findResult ?? {
+        ok: true as const,
+        data: createRow({ access_token_hash: accessTokenHash }),
+      };
+      if (!result.ok) return result;
+      const parsed = parseSupabasePaidReportLookupRpcResult(result.data);
+      if (!parsed.ok) return expect.unreachable("Invalid paid lookup fixture");
+      return { ok: true as const, data: parsed.row };
     },
 
     async listReports(input) {
@@ -403,6 +406,7 @@ describe("createSupabaseReportPersistenceAdapter", () => {
     if (result.ok) {
       expect(result.record.reportId).toBe("report_supabase_test");
       expect(result.record.accessMode).toBe("paid");
+      if (!("report" in result.record)) return expect.unreachable();
       expect(result.record.report).toEqual(minimalReport);
     }
 

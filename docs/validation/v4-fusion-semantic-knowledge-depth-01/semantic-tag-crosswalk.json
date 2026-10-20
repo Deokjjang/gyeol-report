@@ -1,0 +1,4557 @@
+[
+  {
+    "materialId": "fkr:legacy:entj-wealth-pressure-structure",
+    "originalMyeongliTag": "wealth",
+    "originalMbtiTag": "wealth",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:entj-made-value-structure",
+    "originalMyeongliTag": "wealth",
+    "originalMbtiTag": "wealth",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:intp-pressure-learning-structure",
+    "originalMyeongliTag": "inquiry",
+    "originalMbtiTag": "inquiry",
+    "relatedTags": [
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:entp-question-authority-structure",
+    "originalMyeongliTag": "precision",
+    "originalMbtiTag": "precision",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:entj-wealth",
+    "originalMyeongliTag": "wealth",
+    "originalMbtiTag": "wealth",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:entj-pressure",
+    "originalMyeongliTag": "leadership",
+    "originalMbtiTag": "leadership",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:entj-needle",
+    "originalMyeongliTag": "precision",
+    "originalMbtiTag": "decisive-correction",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:entj-alone",
+    "originalMyeongliTag": "solitude",
+    "originalMbtiTag": "sociability",
+    "relatedTags": [
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:intj-inquiry",
+    "originalMyeongliTag": "inquiry",
+    "originalMbtiTag": "inquiry",
+    "relatedTags": [
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:intj-charm",
+    "originalMyeongliTag": "intimate-attraction",
+    "originalMbtiTag": "reserved-affection",
+    "relatedTags": [
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:intj-money",
+    "originalMyeongliTag": "consistency",
+    "originalMbtiTag": "consistency",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:intp-inquiry",
+    "originalMyeongliTag": "inquiry",
+    "originalMbtiTag": "inquiry",
+    "relatedTags": [
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:intp-space",
+    "originalMyeongliTag": "autonomy",
+    "originalMbtiTag": "autonomy",
+    "relatedTags": [
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:intp-expression",
+    "originalMyeongliTag": "expression-gap",
+    "originalMbtiTag": "expression",
+    "relatedTags": [
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:entp-rules",
+    "originalMyeongliTag": "consistency",
+    "originalMbtiTag": "experimentation",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "mobility",
+        "researchRef": "sar:tag:mobility",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:entp-needle",
+    "originalMyeongliTag": "precision",
+    "originalMbtiTag": "precision",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:infj-depth",
+    "originalMyeongliTag": "inquiry",
+    "originalMbtiTag": "inquiry",
+    "relatedTags": [
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:infj-marriage",
+    "originalMyeongliTag": "solitude",
+    "originalMbtiTag": "solitude",
+    "relatedTags": [
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:infp-expression",
+    "originalMyeongliTag": "expression",
+    "originalMbtiTag": "expression",
+    "relatedTags": [
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:infp-needle",
+    "originalMyeongliTag": "precision",
+    "originalMbtiTag": "precision",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:enfj-help",
+    "originalMyeongliTag": "help",
+    "originalMbtiTag": "help",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:enfj-expression",
+    "originalMyeongliTag": "expression-gap",
+    "originalMbtiTag": "expression",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:enfp-connection",
+    "originalMyeongliTag": "inquiry",
+    "originalMbtiTag": "inquiry",
+    "relatedTags": [
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:enfp-expression",
+    "originalMyeongliTag": "expression-gap",
+    "originalMbtiTag": "expression",
+    "relatedTags": [
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:enfp-alone",
+    "originalMyeongliTag": "solitude",
+    "originalMbtiTag": "sociability",
+    "relatedTags": [
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:enfp-budget",
+    "originalMyeongliTag": "consistency",
+    "originalMbtiTag": "experience-spending",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:istj-needle",
+    "originalMyeongliTag": "precision",
+    "originalMbtiTag": "precision",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:istj-love",
+    "originalMyeongliTag": "consistency",
+    "originalMbtiTag": "consistency",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:istj-marriage",
+    "originalMyeongliTag": "consistency",
+    "originalMbtiTag": "consistency",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:isfj-learning",
+    "originalMyeongliTag": "learning",
+    "originalMbtiTag": "learning",
+    "relatedTags": [
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:isfj-love",
+    "originalMyeongliTag": "consistency",
+    "originalMbtiTag": "consistency",
+    "relatedTags": [
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:estj-needle",
+    "originalMyeongliTag": "precision",
+    "originalMbtiTag": "precision",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:estj-status",
+    "originalMyeongliTag": "leadership",
+    "originalMbtiTag": "leadership",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "status",
+        "researchRef": "sar:tag:status",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:esfj-help",
+    "originalMyeongliTag": "help",
+    "originalMbtiTag": "help",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:esfj-alone",
+    "originalMyeongliTag": "solitude",
+    "originalMbtiTag": "sociability",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:istp-study",
+    "originalMyeongliTag": "practical-learning",
+    "originalMbtiTag": "practical-learning",
+    "relatedTags": [
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:istp-love",
+    "originalMyeongliTag": "autonomy",
+    "originalMbtiTag": "autonomy",
+    "relatedTags": [
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:istp-marriage",
+    "originalMyeongliTag": "solitude",
+    "originalMbtiTag": "solitude",
+    "relatedTags": [
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:isfp-love",
+    "originalMyeongliTag": "intimate-attraction",
+    "originalMbtiTag": "reserved-affection",
+    "relatedTags": [
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:isfp-needle",
+    "originalMyeongliTag": "precision",
+    "originalMbtiTag": "precision",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:estp-needle",
+    "originalMyeongliTag": "precision",
+    "originalMbtiTag": "precision",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:estp-study",
+    "originalMyeongliTag": "learning",
+    "originalMbtiTag": "practical-learning",
+    "relatedTags": [
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:esfp-charm",
+    "originalMyeongliTag": "first-attraction",
+    "originalMbtiTag": "first-attraction",
+    "relatedTags": [
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:legacy:esfp-expression",
+    "originalMyeongliTag": "expression-gap",
+    "originalMbtiTag": "expression",
+    "relatedTags": [
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C001",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C002",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C003",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C004",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C005",
+    "relatedTags": [
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C006",
+    "relatedTags": [
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C007",
+    "relatedTags": [
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C008",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C009",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C010",
+    "relatedTags": [
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C011",
+    "relatedTags": [
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C012",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C013",
+    "relatedTags": [
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C014",
+    "relatedTags": [
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C015",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C016",
+    "relatedTags": [],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C017",
+    "relatedTags": [
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C018",
+    "relatedTags": [
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C019",
+    "relatedTags": [],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C020",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C021",
+    "relatedTags": [
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C022",
+    "relatedTags": [
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C023",
+    "relatedTags": [
+      {
+        "tag": "mobility",
+        "researchRef": "sar:tag:mobility",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C024",
+    "relatedTags": [
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C025",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C026",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C027",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C028",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C029",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C030",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C031",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "status",
+        "researchRef": "sar:tag:status",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C032",
+    "relatedTags": [
+      {
+        "tag": "status",
+        "researchRef": "sar:tag:status",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C033",
+    "relatedTags": [
+      {
+        "tag": "status",
+        "researchRef": "sar:tag:status",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C034",
+    "relatedTags": [],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C035",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C036",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C037",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C038",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C039",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "mobility",
+        "researchRef": "sar:tag:mobility",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C040",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C041",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C042",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C043",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "mobility",
+        "researchRef": "sar:tag:mobility",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C044",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "mobility",
+        "researchRef": "sar:tag:mobility",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C045",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C046",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C047",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C048",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C049",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C050",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C051",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C052",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C053",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C054",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C055",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C056",
+    "relatedTags": [
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C057",
+    "relatedTags": [
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C058",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C059",
+    "relatedTags": [
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C060",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C061",
+    "relatedTags": [
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C062",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C063",
+    "relatedTags": [
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C064",
+    "relatedTags": [
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C065",
+    "relatedTags": [
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C066",
+    "relatedTags": [
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C067",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C068",
+    "relatedTags": [
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C069",
+    "relatedTags": [
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C070",
+    "relatedTags": [
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C071",
+    "relatedTags": [
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C072",
+    "relatedTags": [
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C073",
+    "relatedTags": [
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C074",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C075",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C076",
+    "relatedTags": [
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C077",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C078",
+    "relatedTags": [
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C079",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C080",
+    "relatedTags": [
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C081",
+    "relatedTags": [
+      {
+        "tag": "precision",
+        "researchRef": "sar:tag:precision",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "decisive-correction",
+        "researchRef": "sar:tag:decisive-correction",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C082",
+    "relatedTags": [
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C083",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "mobility",
+        "researchRef": "sar:tag:mobility",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C084",
+    "relatedTags": [
+      {
+        "tag": "mobility",
+        "researchRef": "sar:tag:mobility",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C085",
+    "relatedTags": [
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C086",
+    "relatedTags": [
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C087",
+    "relatedTags": [
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C088",
+    "relatedTags": [
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C089",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C090",
+    "relatedTags": [
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C091",
+    "relatedTags": [
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C092",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "mobility",
+        "researchRef": "sar:tag:mobility",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C093",
+    "relatedTags": [
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C094",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C095",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:complement:C096",
+    "relatedTags": [
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:intj-official-process",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:intj-expertise-price",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:intp-review-window",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:entj-resource-learning",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:entj-score-question",
+    "relatedTags": [
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:entp-accountable-method",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:infj-fair-role",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:infj-value-budget",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:infp-paid-output",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:infp-chosen-learning",
+    "relatedTags": [
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:enfj-care-budget",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "help",
+        "researchRef": "sar:tag:help",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:enfj-shared-choice",
+    "relatedTags": [
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:enfp-renewable-routine",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "mobility",
+        "researchRef": "sar:tag:mobility",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:enfp-question-practice",
+    "relatedTags": [
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:istj-safe-question",
+    "relatedTags": [
+      {
+        "tag": "first-attraction",
+        "researchRef": "sar:tag:first-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression-gap",
+        "researchRef": "sar:tag:expression-gap",
+        "relation": "NO_TRAIT_INFERENCE",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:isfj-guided-depth",
+    "relatedTags": [
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:isfj-budgeted-making",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "expression",
+        "researchRef": "sar:tag:expression",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experimentation",
+        "researchRef": "sar:tag:experimentation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:estj-learning-handoff",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:esfj-shared-budget",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:istp-tool-understanding",
+    "relatedTags": [
+      {
+        "tag": "wealth",
+        "researchRef": "sar:tag:wealth",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "inquiry",
+        "researchRef": "sar:tag:inquiry",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "experience-spending",
+        "researchRef": "sar:tag:experience-spending",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:isfp-exit-notice",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "intimate-attraction",
+        "researchRef": "sar:tag:intimate-attraction",
+        "relation": "NOT_EQUIVALENT",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "solitude",
+        "researchRef": "sar:tag:solitude",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "sociability",
+        "researchRef": "sar:tag:sociability",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "reserved-affection",
+        "researchRef": "sar:tag:reserved-affection",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:estp-small-goal-base",
+    "relatedTags": [
+      {
+        "tag": "accumulation",
+        "researchRef": "sar:tag:accumulation",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:estp-check-act",
+    "relatedTags": [
+      {
+        "tag": "learning",
+        "researchRef": "sar:tag:learning",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "practical-learning",
+        "researchRef": "sar:tag:practical-learning",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  },
+  {
+    "materialId": "fkr:candidate:esfp-procedure-choice",
+    "relatedTags": [
+      {
+        "tag": "leadership",
+        "researchRef": "sar:tag:leadership",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "autonomy",
+        "researchRef": "sar:tag:autonomy",
+        "relation": "RELATED_CONDITIONAL",
+        "exactEquivalenceApproved": false
+      },
+      {
+        "tag": "consistency",
+        "researchRef": "sar:tag:consistency",
+        "relation": "ONE_TO_MANY",
+        "exactEquivalenceApproved": false
+      }
+    ],
+    "use": "reference_only_no_new_semanticConnection"
+  }
+]

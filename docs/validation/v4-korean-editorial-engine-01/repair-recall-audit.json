@@ -1,0 +1,900 @@
+{
+  "independentFriendship": {
+    "nativeAssignments": 180,
+    "generatedParagraphs": 6,
+    "displayRecords": [
+      {
+        "version": "korean-editorial-synthetic-display-v1",
+        "fixture": "synthetic:friendship:selection",
+        "material": "synthetic:friendship:material:CH01.P1.S1",
+        "claim": "synthetic:friendship:claim:CH01.P1.S1",
+        "meaning": "synthetic:friendship:meaning:CH01.P1.S1",
+        "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+        "direction": null,
+        "temporalHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "sourceHash": "d88bbc800f02dacf56c4040832d0c305cfb4804a41405be5e41cd21e4bf3c9e7",
+        "roots": [
+          "synthetic:friendship:root:information:CH01.P1.S1"
+        ],
+        "readerAddress": {
+          "chapterId": "CH01",
+          "periodId": null,
+          "paragraphId": "P1",
+          "sentenceRole": "S1",
+          "originalAddress": "CH01.P1.S1",
+          "level": "SENTENCE_ROLE"
+        },
+        "sourceGroupsHash": "247f12bd1f3da0d54c6be803d238838ec084fba5054f5a4f1cbb48ba60a472ca",
+        "semanticUnits": [
+          {
+            "id": "synthetic:kee:definition:24:primary",
+            "payloadHash": "52dd290b98b817b360e61a44f7c81e902f9a51433e41ecab1cf0f0faffd70f05"
+          },
+          {
+            "id": "synthetic:kee:definition:24:action",
+            "payloadHash": "652c730febce623ff7054a518a74a842400d95e6d2901ce11b0042bf7ac80c4e"
+          }
+        ],
+        "sentenceIds": [
+          "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+          "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+        ],
+        "sentenceTextHash": "58d4e4cf644ba0678c88f6d1af423ad8a7e5061990cd8bca01ae18045467cad7",
+        "actuallyGeneratedAndValidated": true,
+        "actualCustomerDisplay": false
+      },
+      {
+        "version": "korean-editorial-synthetic-display-v1",
+        "fixture": "synthetic:friendship:selection",
+        "material": "synthetic:friendship:material:CH01.P1.S2",
+        "claim": "synthetic:friendship:claim:CH01.P1.S2",
+        "meaning": "synthetic:friendship:meaning:CH01.P1.S2",
+        "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+        "direction": null,
+        "temporalHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "sourceHash": "3b2e3714fdb759ab921ffaa0140f23d584049a4a9abf6cbd9031aac28541bb7a",
+        "roots": [
+          "synthetic:friendship:root:information:CH01.P1.S2"
+        ],
+        "readerAddress": {
+          "chapterId": "CH01",
+          "periodId": null,
+          "paragraphId": "P1",
+          "sentenceRole": "S2",
+          "originalAddress": "CH01.P1.S2",
+          "level": "SENTENCE_ROLE"
+        },
+        "sourceGroupsHash": "b7c3a513180f9e05a0a29a0bf1e935a9f98e32c908d85db58f08b61055cb6841",
+        "semanticUnits": [
+          {
+            "id": "synthetic:kee:definition:25:primary",
+            "payloadHash": "c280c48b32e773f795a1c7194878adf79e48885baf99d68008bedd46cf0f024d"
+          }
+        ],
+        "sentenceIds": [
+          "kee:sentence:867d58352e0fd5916e93afa46227d137ee023cbc35320f19d3f048ce095c93df"
+        ],
+        "sentenceTextHash": "c675dfc22dc68394c63bb460a29ad6e39b90ec1e1474e2163b0737594f725367",
+        "actuallyGeneratedAndValidated": true,
+        "actualCustomerDisplay": false
+      },
+      {
+        "version": "korean-editorial-synthetic-display-v1",
+        "fixture": "synthetic:friendship:selection",
+        "material": "synthetic:friendship:material:CH04.P1",
+        "claim": "synthetic:friendship:claim:CH04.P1",
+        "meaning": "synthetic:friendship:meaning:CH04.P1",
+        "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+        "direction": null,
+        "temporalHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "sourceHash": "4c4277dd96e2aa244aaad0b654d1605b7415fd48156ab745b719f0ddcf1f1497",
+        "roots": [
+          "synthetic:friendship:root:information:CH04.P1"
+        ],
+        "readerAddress": {
+          "chapterId": "CH04",
+          "periodId": null,
+          "paragraphId": "P1",
+          "sentenceRole": null,
+          "originalAddress": "CH04.P1",
+          "level": "PARAGRAPH"
+        },
+        "sourceGroupsHash": "66d475e5ddf8e6a82323728586d4d171456a0767a7f726b055d352f09e38767d",
+        "semanticUnits": [
+          {
+            "id": "synthetic:kee:definition:26:primary",
+            "payloadHash": "0cf7af3fc9e210984179ee7f17a5e3ba3f78a38bf6282907702343ea11e1af63"
+          }
+        ],
+        "sentenceIds": [
+          "kee:sentence:3fd737da9d75afd208b0bbc66aedc33caecf093eee51911c86244d3591f5b41f"
+        ],
+        "sentenceTextHash": "7e27fdf4004edf839565554b6edbef4467a40098ad0cb194cc00a92ae2e64f79",
+        "actuallyGeneratedAndValidated": true,
+        "actualCustomerDisplay": false
+      },
+      {
+        "version": "korean-editorial-synthetic-display-v1",
+        "fixture": "synthetic:friendship:selection",
+        "material": "synthetic:friendship:material:CH07.P1.S1",
+        "claim": "synthetic:friendship:claim:CH07.P1.S1",
+        "meaning": "synthetic:friendship:meaning:CH07.P1.S1",
+        "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+        "direction": null,
+        "temporalHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "sourceHash": "dab6d35b50cffda9a9e77e864537fcd41d0bcfd179d122f4a92f3235dbfa18d2",
+        "roots": [
+          "synthetic:friendship:root:information:CH07.P1.S1"
+        ],
+        "readerAddress": {
+          "chapterId": "CH07",
+          "periodId": null,
+          "paragraphId": "P1",
+          "sentenceRole": "S1",
+          "originalAddress": "CH07.P1.S1",
+          "level": "SENTENCE_ROLE"
+        },
+        "sourceGroupsHash": "991ad2429321cd02d05c26b76a4c2c1c57446e7a027fb2c05bfcda176d0bec9a",
+        "semanticUnits": [
+          {
+            "id": "synthetic:kee:definition:27:primary",
+            "payloadHash": "ace255096eadab68d26f23229561b82b0fc52bf44df9cced34e64e93a08e3a35"
+          }
+        ],
+        "sentenceIds": [
+          "kee:sentence:4b491129990705575d77014c12ba15ec807b5bb2d228b6fafd1512d82e62c0c2"
+        ],
+        "sentenceTextHash": "5d3e715ab2dca8d69ab8035be79e7bbf71b2ff331debad2f34c1280af7604e8f",
+        "actuallyGeneratedAndValidated": true,
+        "actualCustomerDisplay": false
+      },
+      {
+        "version": "korean-editorial-synthetic-display-v1",
+        "fixture": "synthetic:friendship:selection",
+        "material": "synthetic:friendship:material:CH08.P1.S1",
+        "claim": "synthetic:friendship:claim:CH08.P1.S1",
+        "meaning": "synthetic:friendship:meaning:CH08.P1.S1",
+        "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+        "direction": null,
+        "temporalHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "sourceHash": "6ecd0e46805e1022fd4c873368b826bed97a91c43f0c041be2325df2e092820b",
+        "roots": [
+          "synthetic:friendship:root:information:CH08.P1.S1"
+        ],
+        "readerAddress": {
+          "chapterId": "CH08",
+          "periodId": null,
+          "paragraphId": "P1",
+          "sentenceRole": "S1",
+          "originalAddress": "CH08.P1.S1",
+          "level": "SENTENCE_ROLE"
+        },
+        "sourceGroupsHash": "a0c920554948a5816b8d7fb35ddf1fde0172770782ceccd88a26dfa68bbc43af",
+        "semanticUnits": [
+          {
+            "id": "synthetic:kee:definition:28:primary",
+            "payloadHash": "68a40996feb9fa46a330745d4447a5a08f79d6b0e4d49d62d605c9ccbc2a523a"
+          }
+        ],
+        "sentenceIds": [
+          "kee:sentence:83043b8710427925a11b86760df41e4670c37dc600fd9723d47e3873a47c7f5b"
+        ],
+        "sentenceTextHash": "2350c4edf39cae6d8364e1467f7c796beabe8419d42432c4ad9b99188ba03e28",
+        "actuallyGeneratedAndValidated": true,
+        "actualCustomerDisplay": false
+      },
+      {
+        "version": "korean-editorial-synthetic-display-v1",
+        "fixture": "synthetic:friendship:selection",
+        "material": "synthetic:friendship:material:CH09.P1",
+        "claim": "synthetic:friendship:claim:CH04.P1",
+        "meaning": "synthetic:friendship:meaning:CH04.P1",
+        "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+        "direction": null,
+        "temporalHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "sourceHash": "fbdd0d65e76ca99297c8f8996e36c498028742ad2384a7d48343f8456ee22383",
+        "roots": [
+          "synthetic:friendship:root:information:CH04.P1"
+        ],
+        "readerAddress": {
+          "chapterId": "CH09",
+          "periodId": null,
+          "paragraphId": "P1",
+          "sentenceRole": null,
+          "originalAddress": "CH09.P1",
+          "level": "PARAGRAPH"
+        },
+        "sourceGroupsHash": "d17064a99fc60adb637582a8d49d7abb5c4c2533993022c929d4908a3ee993d5",
+        "semanticUnits": [
+          {
+            "id": "synthetic:kee:definition:29:primary",
+            "payloadHash": "0cf7af3fc9e210984179ee7f17a5e3ba3f78a38bf6282907702343ea11e1af63"
+          }
+        ],
+        "sentenceIds": [
+          "kee:sentence:641b6881b963fd9bf7907cef08a98e33c2e1aaafe24b5b7ad672b5b4e1f2b868"
+        ],
+        "sentenceTextHash": "bf6ea8d2487d07029489290fb337f7c725a483485aa2047f8676e660c9682060",
+        "actuallyGeneratedAndValidated": true,
+        "actualCustomerDisplay": false
+      }
+    ],
+    "repair": [
+      {
+        "id": "kee:sentence:83043b8710427925a11b86760df41e4670c37dc600fd9723d47e3873a47c7f5b",
+        "readerAddress": {
+          "chapterId": "CH08",
+          "periodId": null,
+          "paragraphId": "P1",
+          "sentenceRole": "S1",
+          "originalAddress": "CH08.P1.S1",
+          "level": "SENTENCE_ROLE"
+        },
+        "questionId": "synthetic:friendship:q:CH08.P1.S1",
+        "materialId": "synthetic:friendship:material:CH08.P1.S1",
+        "primaryClaimId": "synthetic:friendship:claim:CH08.P1.S1",
+        "meaningId": "synthetic:friendship:meaning:CH08.P1.S1",
+        "semanticUnits": [
+          "synthetic:kee:definition:28:primary"
+        ],
+        "function": "positive",
+        "kind": "CONDITIONAL_APPLICATION",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/141",
+            "recordSha256": "6ecd0e46805e1022fd4c873368b826bed97a91c43f0c041be2325df2e092820b",
+            "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+            "sourceVersion": "synthetic-friendship-v1"
+          },
+          "hash": "6ecd0e46805e1022fd4c873368b826bed97a91c43f0c041be2325df2e092820b",
+          "version": "synthetic-friendship-v1"
+        },
+        "evidenceIds": [
+          "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+          "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+          "aeg:node:cd03f9432d2e46e577b0b6eccceebacd05c0d50c97b87e2ff6fd3f5e035495be",
+          "aeg:node:df43146bb0e8a4e9ec6d111f6b60cbe7d2a5f1e2017d61c5b1ec7432e51f3e16"
+        ],
+        "factRoots": [
+          "synthetic:friendship:root:information:CH08.P1.S1"
+        ],
+        "semanticMeaningKey": "synthetic:kee:definition:28:meaning",
+        "practicalAdviceIdentity": "synthetic:kee:definition:28:advice",
+        "originalMeaningHash": "8dbced6e37155f9f44eb0bce5dcdb0c60188adf7563e25e0ea8c3f1d10d27433",
+        "originalAssignmentHash": "45cd2cbedb4052168b383acee2b912fc398b7a06f394e05878d4379ac4106c5c",
+        "originalApprovalState": {
+          "native": "ISOLATED_AUTHENTIC_SYNTHETIC_PROVIDER",
+          "official": "OFFLINE_IMPLEMENTED_REAL_ACTIVATION_PENDING",
+          "actualOperatorApproved": 0,
+          "actualCustomerApproved": 0
+        },
+        "factRootOwnership": [
+          {
+            "id": "synthetic:friendship:root:natalA",
+            "owner": "synthetic:friendship:owner:A",
+            "producer": {
+              "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+              "symbol": "declaredFriendshipFixture",
+              "version": "synthetic-friendship-v1",
+              "system": "synthetic-only"
+            },
+            "temporal": null,
+            "independentFact": true,
+            "type": "PRODUCER_OBSERVATION"
+          },
+          {
+            "id": "synthetic:friendship:root:natalB",
+            "owner": "synthetic:friendship:owner:B",
+            "producer": {
+              "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+              "symbol": "declaredFriendshipFixture",
+              "version": "synthetic-friendship-v1",
+              "system": "synthetic-only"
+            },
+            "temporal": null,
+            "independentFact": true,
+            "type": "PRODUCER_OBSERVATION"
+          },
+          {
+            "id": "synthetic:friendship:root:information:CH08.P1.S1",
+            "owner": "synthetic:friendship:owner:A",
+            "producer": {
+              "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+              "symbol": "declaredFriendshipFixture",
+              "version": "synthetic-friendship-v1",
+              "system": "synthetic-only"
+            },
+            "temporal": null,
+            "independentFact": true,
+            "type": "PRODUCER_OBSERVATION"
+          },
+          {
+            "id": "synthetic:friendship:root:context:CH08.P1.S1",
+            "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+            "producer": {
+              "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+              "symbol": "declaredFriendshipFixture",
+              "version": "synthetic-friendship-v1",
+              "system": "synthetic-only"
+            },
+            "temporal": null,
+            "independentFact": true,
+            "type": "PRODUCER_OBSERVATION"
+          }
+        ],
+        "directionWitnesses": [],
+        "ancestryRoots": [
+          "synthetic:friendship:root:context:CH08.P1.S1",
+          "synthetic:friendship:root:information:CH08.P1.S1",
+          "synthetic:friendship:root:natalA",
+          "synthetic:friendship:root:natalB"
+        ],
+        "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+        "direction": null,
+        "temporal": [],
+        "certainty": "conditional",
+        "conditionalScope": {
+          "id": "synthetic:kee:condition:7f479a302b6f8e89c5ad3f44c7cdd2e7f0087647e3dca1e574f5155a273befa6",
+          "clause": "서로 다시 대화하기를 원하고 안전한 상황이라면,"
+        },
+        "negationScope": "NO_NEGATION",
+        "originalConditions": {
+          "catalogKey": "kc:v1:8214888740b2be525cb11288959f589e5b64fd254bbe9e746446e8b7d63fd2ae",
+          "originalId": "synthetic:friendship:material:CH08.P1.S1",
+          "knowledgeKind": "RELATIONSHIP_SPECIALIST",
+          "adapter": "INDEPENDENT_FRIENDSHIP_SYNTHETIC",
+          "products": [
+            "saju_mbti_compatibility"
+          ],
+          "relationships": [
+            "friendship"
+          ],
+          "readerQuestion": "synthetic:friendship:q:CH08.P1.S1",
+          "coreMeaning": "synthetic:friendship:meaning:CH08.P1.S1",
+          "chapterId": null,
+          "paragraphId": null,
+          "sentenceRole": null,
+          "claimIdentity": "synthetic:friendship:claim:CH08.P1.S1",
+          "meaningIdentity": "synthetic:friendship:meaning:CH08.P1.S1",
+          "sourceRequirements": [
+            {
+              "id": "synthetic:friendship:material:CH08.P1.S1:fact:information:CH08.P1.S1",
+              "originalField": "/meaning/factIds",
+              "originalDeclaration": {
+                "syntheticOnly": true,
+                "fact": "information:CH08.P1.S1"
+              },
+              "sourceKey": null,
+              "sourceCatalogKeys": [],
+              "owner": "A",
+              "use": "ACTUAL_FACT",
+              "selector": {
+                "kinds": [
+                  "CALCULATED_NATAL_FACT"
+                ],
+                "owner": "A",
+                "evidenceId": "synthetic:friendship:fact:information:CH08.P1.S1",
+                "producer": {
+                  "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredFriendshipFixture",
+                  "version": "synthetic-friendship-v1",
+                  "system": "synthetic-only"
+                },
+                "fields": []
+              },
+              "required": true,
+              "gaps": []
+            },
+            {
+              "id": "synthetic:friendship:material:CH08.P1.S1:fact:natalA",
+              "originalField": "/meaning/factIds",
+              "originalDeclaration": {
+                "syntheticOnly": true,
+                "fact": "natalA"
+              },
+              "sourceKey": null,
+              "sourceCatalogKeys": [],
+              "owner": "A",
+              "use": "ACTUAL_FACT",
+              "selector": {
+                "kinds": [
+                  "CALCULATED_NATAL_FACT"
+                ],
+                "owner": "A",
+                "evidenceId": "synthetic:friendship:fact:natalA",
+                "producer": {
+                  "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredFriendshipFixture",
+                  "version": "synthetic-friendship-v1",
+                  "system": "synthetic-only"
+                },
+                "fields": []
+              },
+              "required": true,
+              "gaps": []
+            },
+            {
+              "id": "synthetic:friendship:material:CH08.P1.S1:fact:natalB",
+              "originalField": "/meaning/factIds",
+              "originalDeclaration": {
+                "syntheticOnly": true,
+                "fact": "natalB"
+              },
+              "sourceKey": null,
+              "sourceCatalogKeys": [],
+              "owner": "B",
+              "use": "ACTUAL_FACT",
+              "selector": {
+                "kinds": [
+                  "CALCULATED_NATAL_FACT"
+                ],
+                "owner": "B",
+                "evidenceId": "synthetic:friendship:fact:natalB",
+                "producer": {
+                  "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredFriendshipFixture",
+                  "version": "synthetic-friendship-v1",
+                  "system": "synthetic-only"
+                },
+                "fields": []
+              },
+              "required": true,
+              "gaps": []
+            },
+            {
+              "id": "synthetic:friendship:material:CH08.P1.S1:fact:context:CH08.P1.S1",
+              "originalField": "/meaning/factIds",
+              "originalDeclaration": {
+                "syntheticOnly": true,
+                "fact": "context:CH08.P1.S1"
+              },
+              "sourceKey": null,
+              "sourceCatalogKeys": [],
+              "owner": "PAIR",
+              "use": "ACTUAL_FACT",
+              "selector": {
+                "kinds": [
+                  "CONTEXT_INPUT"
+                ],
+                "owner": "PAIR",
+                "evidenceId": "synthetic:friendship:fact:context:CH08.P1.S1",
+                "producer": {
+                  "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredFriendshipFixture",
+                  "version": "synthetic-friendship-v1",
+                  "system": "synthetic-only"
+                },
+                "fields": []
+              },
+              "required": true,
+              "gaps": []
+            }
+          ],
+          "sourceGroups": [
+            {
+              "originalIndex": 0,
+              "originalId": "synthetic:friendship:material:CH08.P1.S1:source-group",
+              "semantics": "ALL_DIRECT_SOURCES",
+              "sourceRequirementIds": [
+                "synthetic:friendship:material:CH08.P1.S1:fact:information:CH08.P1.S1",
+                "synthetic:friendship:material:CH08.P1.S1:fact:natalA",
+                "synthetic:friendship:material:CH08.P1.S1:fact:natalB",
+                "synthetic:friendship:material:CH08.P1.S1:fact:context:CH08.P1.S1"
+              ],
+              "typePredicates": [],
+              "originalDeclaration": {
+                "syntheticOnly": true,
+                "factIds": [
+                  "information:CH08.P1.S1",
+                  "natalA",
+                  "natalB",
+                  "context:CH08.P1.S1"
+                ],
+                "allRequired": true
+              },
+              "originalTechnicalState": "DECLARED_SOURCES_VERIFIED",
+              "requiresDisplayedLedger": false
+            }
+          ],
+          "sourceGroupSemantics": "ALL_DIRECT_SOURCES",
+          "requiredOwner": [
+            "A",
+            "B"
+          ],
+          "requiredDirection": [],
+          "requiredParticipants": null,
+          "requiredTemporalScope": null,
+          "compositeLayers": 2,
+          "requiredContext": [],
+          "requiredUserState": [],
+          "producerRequirements": [],
+          "counterexamples": [],
+          "prohibitions": {},
+          "originalReviewState": {
+            "syntheticMeaningReviewed": true
+          },
+          "originalSourceLocators": [],
+          "unresolvedConditions": [],
+          "requiresIntroducedLedger": false,
+          "introducedIds": [],
+          "applicabilityState": "MACHINE_CHECKABLE"
+        },
+        "originalCounterexamples": [],
+        "originalProhibitedInferences": {},
+        "syntheticCounterexamples": [
+          "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+        ],
+        "syntheticProhibitedInferences": [
+          "미입력 과거 경험",
+          "타인의 감정 확정",
+          "미래 사건 보장",
+          "새 명리 또는 MBTI 계산 근거",
+          "실제 권한·계약·지분·수익·동의의 창작"
+        ],
+        "originalSupportingInformation": [
+          {
+            "kind": "SUPPORTING_INFORMATION",
+            "ids": [
+              "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+              "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+              "aeg:node:cd03f9432d2e46e577b0b6eccceebacd05c0d50c97b87e2ff6fd3f5e035495be",
+              "aeg:node:df43146bb0e8a4e9ec6d111f6b60cbe7d2a5f1e2017d61c5b1ec7432e51f3e16"
+            ]
+          }
+        ],
+        "expressionSource": {
+          "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+          "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+          "definitionHash": "ae899a3025b763ea528c94ad545869f54c7f04207053733ca63b667c1fa2d4ed",
+          "provenance": "SYNTHETIC_TEST_ONLY",
+          "researchExpressionCopied": false
+        },
+        "sceneSource": null,
+        "actualText": "서로 다시 대화하기를 원하고 안전한 상황이라면, 다시 말할 범위와 대화를 멈출 선택을 확인해 볼 수 있어요.",
+        "surfaceId": "SOFT",
+        "validationState": "VERIFIED_SYNTHETIC_ONLY",
+        "newIndependentFacts": 0
+      }
+    ],
+    "recall": [
+      {
+        "id": "kee:sentence:641b6881b963fd9bf7907cef08a98e33c2e1aaafe24b5b7ad672b5b4e1f2b868",
+        "readerAddress": {
+          "chapterId": "CH09",
+          "periodId": null,
+          "paragraphId": "P1",
+          "sentenceRole": null,
+          "originalAddress": "CH09.P1",
+          "level": "PARAGRAPH"
+        },
+        "questionId": "synthetic:friendship:q:CH09.P1",
+        "materialId": "synthetic:friendship:material:CH09.P1",
+        "primaryClaimId": "synthetic:friendship:claim:CH04.P1",
+        "meaningId": "synthetic:friendship:meaning:CH04.P1",
+        "semanticUnits": [
+          "synthetic:kee:definition:29:primary"
+        ],
+        "function": "summary",
+        "kind": "RECALL",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/160",
+            "recordSha256": "fbdd0d65e76ca99297c8f8996e36c498028742ad2384a7d48343f8456ee22383",
+            "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+            "sourceVersion": "synthetic-friendship-v1"
+          },
+          "hash": "fbdd0d65e76ca99297c8f8996e36c498028742ad2384a7d48343f8456ee22383",
+          "version": "synthetic-friendship-v1"
+        },
+        "evidenceIds": [
+          "aeg:node:011ff66fcdc024674fd0ba0157010a7d4846da1b642f6214fb657a3d3bd25667",
+          "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+          "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+          "aeg:node:eafe4cef243a3a4277d0823f3d8a0a2ee01d7526d9dc2c4706d97fea95182b7a"
+        ],
+        "factRoots": [
+          "synthetic:friendship:root:information:CH04.P1"
+        ],
+        "semanticMeaningKey": "synthetic:kee:definition:26:meaning",
+        "practicalAdviceIdentity": "synthetic:kee:definition:26:advice",
+        "originalMeaningHash": "e3501fc7a7f824e58436ac190ee8e3aec022016cf6745dea408652b9d1b951de",
+        "originalAssignmentHash": "e47e9615c1e048837d4f6d9b5bc15695aa17ae6c52cae7f33c334f5dfa1388ed",
+        "originalApprovalState": {
+          "native": "ISOLATED_AUTHENTIC_SYNTHETIC_PROVIDER",
+          "official": "OFFLINE_IMPLEMENTED_REAL_ACTIVATION_PENDING",
+          "actualOperatorApproved": 0,
+          "actualCustomerApproved": 0
+        },
+        "factRootOwnership": [
+          {
+            "id": "synthetic:friendship:root:natalA",
+            "owner": "synthetic:friendship:owner:A",
+            "producer": {
+              "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+              "symbol": "declaredFriendshipFixture",
+              "version": "synthetic-friendship-v1",
+              "system": "synthetic-only"
+            },
+            "temporal": null,
+            "independentFact": true,
+            "type": "PRODUCER_OBSERVATION"
+          },
+          {
+            "id": "synthetic:friendship:root:natalB",
+            "owner": "synthetic:friendship:owner:B",
+            "producer": {
+              "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+              "symbol": "declaredFriendshipFixture",
+              "version": "synthetic-friendship-v1",
+              "system": "synthetic-only"
+            },
+            "temporal": null,
+            "independentFact": true,
+            "type": "PRODUCER_OBSERVATION"
+          },
+          {
+            "id": "synthetic:friendship:root:information:CH04.P1",
+            "owner": "synthetic:friendship:owner:A",
+            "producer": {
+              "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+              "symbol": "declaredFriendshipFixture",
+              "version": "synthetic-friendship-v1",
+              "system": "synthetic-only"
+            },
+            "temporal": null,
+            "independentFact": true,
+            "type": "PRODUCER_OBSERVATION"
+          },
+          {
+            "id": "synthetic:friendship:root:context:CH09.P1",
+            "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+            "producer": {
+              "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+              "symbol": "declaredFriendshipFixture",
+              "version": "synthetic-friendship-v1",
+              "system": "synthetic-only"
+            },
+            "temporal": null,
+            "independentFact": true,
+            "type": "PRODUCER_OBSERVATION"
+          }
+        ],
+        "directionWitnesses": [],
+        "ancestryRoots": [
+          "synthetic:friendship:root:context:CH09.P1",
+          "synthetic:friendship:root:information:CH04.P1",
+          "synthetic:friendship:root:natalA",
+          "synthetic:friendship:root:natalB"
+        ],
+        "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+        "direction": null,
+        "temporal": [],
+        "certainty": "conditional",
+        "conditionalScope": {
+          "id": "synthetic:kee:condition:6d05ec99af2d445b47d9a7829ca34cff84ac8d6d11eec5548bc993f8a0fb2b15",
+          "clause": "서로 연락할 방식을 정하는 상황이라면,"
+        },
+        "negationScope": "NO_NEGATION",
+        "originalConditions": {
+          "catalogKey": "kc:v1:75c3d20a9cb7735c32f885c7333b6327d9c25f93c630fc0486e9ed1e776ebe47",
+          "originalId": "synthetic:friendship:material:CH09.P1",
+          "knowledgeKind": "RELATIONSHIP_SPECIALIST",
+          "adapter": "INDEPENDENT_FRIENDSHIP_SYNTHETIC",
+          "products": [
+            "saju_mbti_compatibility"
+          ],
+          "relationships": [
+            "friendship"
+          ],
+          "readerQuestion": "synthetic:friendship:q:CH09.P1",
+          "coreMeaning": "synthetic:friendship:meaning:CH04.P1",
+          "chapterId": null,
+          "paragraphId": null,
+          "sentenceRole": null,
+          "claimIdentity": "synthetic:friendship:claim:CH04.P1",
+          "meaningIdentity": "synthetic:friendship:meaning:CH04.P1",
+          "sourceRequirements": [
+            {
+              "id": "synthetic:friendship:material:CH09.P1:fact:information:CH04.P1",
+              "originalField": "/meaning/factIds",
+              "originalDeclaration": {
+                "syntheticOnly": true,
+                "fact": "information:CH04.P1"
+              },
+              "sourceKey": null,
+              "sourceCatalogKeys": [],
+              "owner": "A",
+              "use": "ACTUAL_FACT",
+              "selector": {
+                "kinds": [
+                  "CALCULATED_NATAL_FACT"
+                ],
+                "owner": "A",
+                "evidenceId": "synthetic:friendship:fact:information:CH04.P1",
+                "producer": {
+                  "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredFriendshipFixture",
+                  "version": "synthetic-friendship-v1",
+                  "system": "synthetic-only"
+                },
+                "fields": []
+              },
+              "required": true,
+              "gaps": []
+            },
+            {
+              "id": "synthetic:friendship:material:CH09.P1:fact:natalA",
+              "originalField": "/meaning/factIds",
+              "originalDeclaration": {
+                "syntheticOnly": true,
+                "fact": "natalA"
+              },
+              "sourceKey": null,
+              "sourceCatalogKeys": [],
+              "owner": "A",
+              "use": "ACTUAL_FACT",
+              "selector": {
+                "kinds": [
+                  "CALCULATED_NATAL_FACT"
+                ],
+                "owner": "A",
+                "evidenceId": "synthetic:friendship:fact:natalA",
+                "producer": {
+                  "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredFriendshipFixture",
+                  "version": "synthetic-friendship-v1",
+                  "system": "synthetic-only"
+                },
+                "fields": []
+              },
+              "required": true,
+              "gaps": []
+            },
+            {
+              "id": "synthetic:friendship:material:CH09.P1:fact:natalB",
+              "originalField": "/meaning/factIds",
+              "originalDeclaration": {
+                "syntheticOnly": true,
+                "fact": "natalB"
+              },
+              "sourceKey": null,
+              "sourceCatalogKeys": [],
+              "owner": "B",
+              "use": "ACTUAL_FACT",
+              "selector": {
+                "kinds": [
+                  "CALCULATED_NATAL_FACT"
+                ],
+                "owner": "B",
+                "evidenceId": "synthetic:friendship:fact:natalB",
+                "producer": {
+                  "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredFriendshipFixture",
+                  "version": "synthetic-friendship-v1",
+                  "system": "synthetic-only"
+                },
+                "fields": []
+              },
+              "required": true,
+              "gaps": []
+            },
+            {
+              "id": "synthetic:friendship:material:CH09.P1:fact:context:CH09.P1",
+              "originalField": "/meaning/factIds",
+              "originalDeclaration": {
+                "syntheticOnly": true,
+                "fact": "context:CH09.P1"
+              },
+              "sourceKey": null,
+              "sourceCatalogKeys": [],
+              "owner": "PAIR",
+              "use": "ACTUAL_FACT",
+              "selector": {
+                "kinds": [
+                  "CONTEXT_INPUT"
+                ],
+                "owner": "PAIR",
+                "evidenceId": "synthetic:friendship:fact:context:CH09.P1",
+                "producer": {
+                  "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredFriendshipFixture",
+                  "version": "synthetic-friendship-v1",
+                  "system": "synthetic-only"
+                },
+                "fields": []
+              },
+              "required": true,
+              "gaps": []
+            }
+          ],
+          "sourceGroups": [
+            {
+              "originalIndex": 0,
+              "originalId": "synthetic:friendship:material:CH09.P1:source-group",
+              "semantics": "ALL_DIRECT_SOURCES",
+              "sourceRequirementIds": [
+                "synthetic:friendship:material:CH09.P1:fact:information:CH04.P1",
+                "synthetic:friendship:material:CH09.P1:fact:natalA",
+                "synthetic:friendship:material:CH09.P1:fact:natalB",
+                "synthetic:friendship:material:CH09.P1:fact:context:CH09.P1"
+              ],
+              "typePredicates": [],
+              "originalDeclaration": {
+                "syntheticOnly": true,
+                "factIds": [
+                  "information:CH04.P1",
+                  "natalA",
+                  "natalB",
+                  "context:CH09.P1"
+                ],
+                "allRequired": true
+              },
+              "originalTechnicalState": "DECLARED_SOURCES_VERIFIED",
+              "requiresDisplayedLedger": false
+            }
+          ],
+          "sourceGroupSemantics": "ALL_DIRECT_SOURCES",
+          "requiredOwner": [
+            "A",
+            "B"
+          ],
+          "requiredDirection": [],
+          "requiredParticipants": null,
+          "requiredTemporalScope": null,
+          "compositeLayers": 2,
+          "requiredContext": [],
+          "requiredUserState": [],
+          "producerRequirements": [],
+          "counterexamples": [],
+          "prohibitions": {},
+          "originalReviewState": {
+            "syntheticMeaningReviewed": true
+          },
+          "originalSourceLocators": [],
+          "unresolvedConditions": [],
+          "requiresIntroducedLedger": false,
+          "introducedIds": [],
+          "applicabilityState": "MACHINE_CHECKABLE"
+        },
+        "originalCounterexamples": [],
+        "originalProhibitedInferences": {},
+        "syntheticCounterexamples": [
+          "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+        ],
+        "syntheticProhibitedInferences": [
+          "미입력 과거 경험",
+          "타인의 감정 확정",
+          "미래 사건 보장",
+          "새 명리 또는 MBTI 계산 근거",
+          "실제 권한·계약·지분·수익·동의의 창작"
+        ],
+        "originalSupportingInformation": [
+          {
+            "kind": "SUPPORTING_INFORMATION",
+            "ids": [
+              "aeg:node:011ff66fcdc024674fd0ba0157010a7d4846da1b642f6214fb657a3d3bd25667",
+              "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+              "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+              "aeg:node:eafe4cef243a3a4277d0823f3d8a0a2ee01d7526d9dc2c4706d97fea95182b7a"
+            ]
+          }
+        ],
+        "expressionSource": {
+          "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+          "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+          "definitionHash": "38b25cac6af3ce1cc45e3bf3a2b354d8e7cffceedc6a8cf2344e21120274c8aa",
+          "provenance": "SYNTHETIC_TEST_ONLY",
+          "researchExpressionCopied": false
+        },
+        "sceneSource": null,
+        "actualText": "서로 연락할 방식을 정하는 상황이라면, 연락할 여유와 답을 재촉하지 않을 범위를 확인해 볼 수 있다는 뜻이에요.",
+        "surfaceId": "SOFT",
+        "validationState": "VERIFIED_SYNTHETIC_ONLY",
+        "newIndependentFacts": 0
+      }
+    ]
+  },
+  "nativePlannedWasNotConvertedToActualCustomerDisplay": true
+}

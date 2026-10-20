@@ -1,0 +1,1323 @@
+{
+  "baseSha": "c565cb76a0bafc411576d8507c7111081934cb10",
+  "total": 12,
+  "previouslyVerified": 1,
+  "newlyVerified": 2,
+  "remaining": 9,
+  "meaningApproved": 0,
+  "customerApproved": 0,
+  "countingPolicy": "Technical contracts, not semantic approvals. July verification is restricted to confirmed active-cycle support; unknown cases remain held. December absent optional next-year data is not a verified next-year comparison. A/B readiness does not mean implementation completed.",
+  "contracts": [
+    {
+      "month": 1,
+      "id": "afpr:month-slot:01",
+      "catalogKey": "kc:v1:fc6b4ed16c89105b4e96c2be1f007aa360b2612bb6fe59f39d1fc83dcd95565f",
+      "proof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 0,
+          "originalId": "afpr:month-slot:01",
+          "recordSha256": "46198ef6865a13a9214287c0567c59d015e18afcef3435162cdc640835ad4ef4",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:fc6b4ed16c89105b4e96c2be1f007aa360b2612bb6fe59f39d1fc83dcd95565f",
+        "originalId": "afpr:month-slot:01",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "46198ef6865a13a9214287c0567c59d015e18afcef3435162cdc640835ad4ef4",
+        "actualHash": "46198ef6865a13a9214287c0567c59d015e18afcef3435162cdc640835ad4ef4",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalRequirements": [
+        "selectedYear + actual civil month bounds",
+        "every canonical segment",
+        "previous December segment if actually available"
+      ],
+      "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+      "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+      "counterexample": "새해 시작을 곧 명리 연주 변경으로 해석하지 않는다.",
+      "disallowed": [
+        "입력받지 않은 과거 경험 단정",
+        "성공·실패·수입·질병·혼인 사건 예언",
+        "근거 없는 시주·복합 관계 생성"
+      ],
+      "originalMeaningIdentity": null,
+      "originalClaimIdentity": null,
+      "priority": "C",
+      "technicalState": "MISSING_ADJACENT_YEAR_SOURCE",
+      "implementedPreviously": false,
+      "implementedNow": false,
+      "customerApproved": false,
+      "reason": "All four actual ledgers begin at January. Previous December is absent; generic prior comparison must be withheld. Do not manufacture an adjacent-year segment.",
+      "requiredAdditionalFactTypesOrContracts": [
+        "ADJACENT_YEAR_CANONICAL_SEGMENT"
+      ],
+      "existingProducersOrValidators": [
+        "buildAnnualMonthCalendar"
+      ],
+      "actualFixtures": 4,
+      "observedSegmentCounts": {
+        "fixture-annual-A": 2,
+        "fixture-annual-F": 2,
+        "fixture-annual-C2028": 2,
+        "fixture-annual-ranged-transition": 2
+      },
+      "previousLastPresent": {
+        "fixture-annual-A": false,
+        "fixture-annual-F": false,
+        "fixture-annual-C2028": false,
+        "fixture-annual-ranged-transition": false
+      },
+      "nextFirstPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "actualContextTimestampProvided": {
+        "fixture-annual-A": false,
+        "fixture-annual-F": false,
+        "fixture-annual-C2028": false,
+        "fixture-annual-ranged-transition": false
+      },
+      "originalReceiptRefs": [
+        {
+          "fixture": "fixture-annual-A",
+          "id": "kb:receipt:fc4520fb73e3fb9a10a294d412ead46038d4fb5f02af0f4e623d5c3b399543bd",
+          "hash": "cb7d501fd85fb444234c30afd4a2d76ea88ca99950b59b8a8a0857c8c835f7f9"
+        },
+        {
+          "fixture": "fixture-annual-F",
+          "id": "kb:receipt:d3cb09aee216e676df1f5a0c603c24a7834954f9413c9be50ea588036ff73030",
+          "hash": "a081f92684f86dac520c355e2bb6a05abdd6c4f2c23968ffb11d9f162f378ff4"
+        },
+        {
+          "fixture": "fixture-annual-C2028",
+          "id": "kb:receipt:4f4087fd46c0cb7df9af7b7caeac127d9081c3b4b0312b5533ee1561bf87d5a8",
+          "hash": "e6bb1e3c1a607f77c010e9d6916933aa15732e47ef7c6ea9604e4032cf5d18ab"
+        },
+        {
+          "fixture": "fixture-annual-ranged-transition",
+          "id": "kb:receipt:201e96344b589c1b531e3a7b0c404e9e677611c5745a2347d7ad4cdcdde7e217",
+          "hash": "c8e8ab8445a0b195f4b65600ebc4c29745752d6042926dc53cd31d1bce30fe8d"
+        }
+      ],
+      "newCandidatesByFixture": {
+        "fixture-annual-A": 0,
+        "fixture-annual-F": 0,
+        "fixture-annual-C2028": 0,
+        "fixture-annual-ranged-transition": 0
+      },
+      "withholdsByFixture": {}
+    },
+    {
+      "month": 2,
+      "id": "afpr:month-slot:02",
+      "catalogKey": "kc:v1:0bd5d11a8985319e3d07e4311d392b51b13e8ca3c28b3e5d6f9cc5ae9c6b7056",
+      "proof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 1,
+          "originalId": "afpr:month-slot:02",
+          "recordSha256": "757b56db6d32f93f0a35671827024b3a9fc53a2cb8440069eed005f55cc8b11b",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:0bd5d11a8985319e3d07e4311d392b51b13e8ca3c28b3e5d6f9cc5ae9c6b7056",
+        "originalId": "afpr:month-slot:02",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "757b56db6d32f93f0a35671827024b3a9fc53a2cb8440069eed005f55cc8b11b",
+        "actualHash": "757b56db6d32f93f0a35671827024b3a9fc53a2cb8440069eed005f55cc8b11b",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalRequirements": [
+        "selectedYear + actual civil month bounds",
+        "every canonical segment",
+        "effective annual before/after + annualStemRelations validity"
+      ],
+      "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+      "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+      "counterexample": "달 전체를 하나의 연주나 하나의 관계로 합치지 않는다.",
+      "disallowed": [
+        "입력받지 않은 과거 경험 단정",
+        "성공·실패·수입·질병·혼인 사건 예언",
+        "근거 없는 시주·복합 관계 생성"
+      ],
+      "originalMeaningIdentity": null,
+      "originalClaimIdentity": null,
+      "priority": "C",
+      "technicalState": "ANNUAL_STEM_RELATION_ADDRESS_REQUIRED",
+      "implementedPreviously": false,
+      "implementedNow": false,
+      "customerApproved": false,
+      "reason": "Effective annual before/after exists. Existing validateNominalStemRelation explicitly returns NO_DEDICATED_SEGMENT_STEM_RELATION_GRAPH_ID, or WRONG_EFFECTIVE_ANNUAL. A nominal relation cannot be extrapolated over pre-Ipchun segments.",
+      "requiredAdditionalFactTypesOrContracts": [
+        "SEGMENT_STEM_RELATION_VALIDITY"
+      ],
+      "existingProducersOrValidators": [
+        "annualNarrativeEvidence.annualStemRelations",
+        "validateNominalStemRelation"
+      ],
+      "actualFixtures": 4,
+      "observedSegmentCounts": {
+        "fixture-annual-A": 2,
+        "fixture-annual-F": 2,
+        "fixture-annual-C2028": 2,
+        "fixture-annual-ranged-transition": 2
+      },
+      "previousLastPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "nextFirstPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "actualContextTimestampProvided": {
+        "fixture-annual-A": false,
+        "fixture-annual-F": false,
+        "fixture-annual-C2028": false,
+        "fixture-annual-ranged-transition": false
+      },
+      "originalReceiptRefs": [
+        {
+          "fixture": "fixture-annual-A",
+          "id": "kb:receipt:4d327233d9bbc90afd878996b7be9ff0cbe79dfa4f615696efa188c346696810",
+          "hash": "d77dc4220aede160973e250bd13545ca7a7e45d69007d8bcb3ab1f9cd61d565c"
+        },
+        {
+          "fixture": "fixture-annual-F",
+          "id": "kb:receipt:1b050ea517bb794145b060d3505b5aa38930fc44f5deb5a56c5f3691d3260e5b",
+          "hash": "fd98763529a0be63fd14b24e813b8f570c10c51cf4bfa6d6d3d6e41da2a7c00e"
+        },
+        {
+          "fixture": "fixture-annual-C2028",
+          "id": "kb:receipt:86a4e655d7c258d2e25c4d17df735419e477346d26ac36d80d01cc513a28e7e7",
+          "hash": "5376c2a714b444ccc7b1afc2c5a66ed20a9fa9ba7d37c412eafff533d4203a12"
+        },
+        {
+          "fixture": "fixture-annual-ranged-transition",
+          "id": "kb:receipt:ea9a8da4672bc6a3955a40f65630a25c3c67de1739aba3d3752613713a18a16b",
+          "hash": "1dca1cbdd809dcd707cbca6a8420668536deea2e29e22f321fbf64e57ca2fd71"
+        }
+      ],
+      "newCandidatesByFixture": {
+        "fixture-annual-A": 0,
+        "fixture-annual-F": 0,
+        "fixture-annual-C2028": 0,
+        "fixture-annual-ranged-transition": 0
+      },
+      "withholdsByFixture": {}
+    },
+    {
+      "month": 3,
+      "id": "afpr:month-slot:03",
+      "catalogKey": "kc:v1:af77e05440dbe5374d7e33e74172991c37295fabdad6892f817993e88331a365",
+      "proof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 2,
+          "originalId": "afpr:month-slot:03",
+          "recordSha256": "ec1daf02dd14578a4d6bd69fe8870144f81ebb0ad94ca1fd9de257ffe1fe9303",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:af77e05440dbe5374d7e33e74172991c37295fabdad6892f817993e88331a365",
+        "originalId": "afpr:month-slot:03",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "ec1daf02dd14578a4d6bd69fe8870144f81ebb0ad94ca1fd9de257ffe1fe9303",
+        "actualHash": "ec1daf02dd14578a4d6bd69fe8870144f81ebb0ad94ca1fd9de257ffe1fe9303",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalRequirements": [
+        "selectedYear + actual civil month bounds",
+        "every canonical segment",
+        "actual before/after month pillar and relation signatures"
+      ],
+      "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+      "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+      "counterexample": "계절 이미지가 활력·성공을 증명하지 않는다.",
+      "disallowed": [
+        "입력받지 않은 과거 경험 단정",
+        "성공·실패·수입·질병·혼인 사건 예언",
+        "근거 없는 시주·복합 관계 생성"
+      ],
+      "originalMeaningIdentity": null,
+      "originalClaimIdentity": null,
+      "priority": "B",
+      "technicalState": "CROSS_PERIOD_COMPARISON_CONTRACT_PENDING",
+      "implementedPreviously": false,
+      "implementedNow": false,
+      "customerApproved": false,
+      "reason": "Month pillars, relation facts and adjacent segment nodes exist. The current Binder tests simultaneous time intersection; a before/after comparison needs a separately scoped comparison witness. Stable signatures must remain continuity, not new change.",
+      "requiredAdditionalFactTypesOrContracts": [
+        "VERIFIED_BEFORE_AFTER_SIGNATURE_PAIR"
+      ],
+      "existingProducersOrValidators": [
+        "buildAnnualMonthCalendar",
+        "compareAnnualSegments"
+      ],
+      "actualFixtures": 4,
+      "observedSegmentCounts": {
+        "fixture-annual-A": 2,
+        "fixture-annual-F": 2,
+        "fixture-annual-C2028": 2,
+        "fixture-annual-ranged-transition": 2
+      },
+      "previousLastPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "nextFirstPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "actualContextTimestampProvided": {
+        "fixture-annual-A": false,
+        "fixture-annual-F": false,
+        "fixture-annual-C2028": false,
+        "fixture-annual-ranged-transition": false
+      },
+      "originalReceiptRefs": [
+        {
+          "fixture": "fixture-annual-A",
+          "id": "kb:receipt:35b2c72751dde1f1e4cb908982f598a76809fe3b7a05db20591a56ab25158544",
+          "hash": "dcda4824c35ec45cf3552cb7b78b6532e78d631dfd9f25081c6cdfd3a36c386c"
+        },
+        {
+          "fixture": "fixture-annual-F",
+          "id": "kb:receipt:fb55d8a584e8bff8636f554474a470a011984f9be57b9c0ee80ca068c5c85aa5",
+          "hash": "8d15faf6df6a5b811e4c47e8f695e81d85d2df4fd3e4108b54d7cd10c9fed841"
+        },
+        {
+          "fixture": "fixture-annual-C2028",
+          "id": "kb:receipt:9491c37f1d422738ee65e7ddf36aa4b5071fc38fdda0bef081de3451f8452ba1",
+          "hash": "3b5dec3325ab28409f57a9bb3abb666b138e0ef5a5ab0c01b39c801d03e4401c"
+        },
+        {
+          "fixture": "fixture-annual-ranged-transition",
+          "id": "kb:receipt:ae91698840a3181f25127f6a0bce633877744fcbfdd250ed93085b772fd7bafe",
+          "hash": "514f42602ccdbf2c43a6bff2ba297f0a5278db31b652f84df99ffdde88c4b722"
+        }
+      ],
+      "newCandidatesByFixture": {
+        "fixture-annual-A": 0,
+        "fixture-annual-F": 0,
+        "fixture-annual-C2028": 0,
+        "fixture-annual-ranged-transition": 0
+      },
+      "withholdsByFixture": {}
+    },
+    {
+      "month": 4,
+      "id": "afpr:month-slot:04",
+      "catalogKey": "kc:v1:563532785f74f14bb015250e87f608b2d041916c7a023c49c14b3a3cf4a54982",
+      "proof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 3,
+          "originalId": "afpr:month-slot:04",
+          "recordSha256": "47cbf493b7d9db5598a9204b131c34f6cb74755a10cafa75c7c016bb5b54cdf4",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:563532785f74f14bb015250e87f608b2d041916c7a023c49c14b3a3cf4a54982",
+        "originalId": "afpr:month-slot:04",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "47cbf493b7d9db5598a9204b131c34f6cb74755a10cafa75c7c016bb5b54cdf4",
+        "actualHash": "47cbf493b7d9db5598a9204b131c34f6cb74755a10cafa75c7c016bb5b54cdf4",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalRequirements": [
+        "selectedYear + actual civil month bounds",
+        "every canonical segment",
+        "actual affectedPillars + participant identity + root ancestry"
+      ],
+      "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+      "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+      "counterexample": "원국 일지 관계만으로 연애 장면을 고정하지 않는다.",
+      "disallowed": [
+        "입력받지 않은 과거 경험 단정",
+        "성공·실패·수입·질병·혼인 사건 예언",
+        "근거 없는 시주·복합 관계 생성"
+      ],
+      "originalMeaningIdentity": null,
+      "originalClaimIdentity": null,
+      "priority": "C",
+      "technicalState": "RELATION_UNIT_WITH_PARTICIPANTS_REQUIRED",
+      "implementedPreviously": false,
+      "implementedNow": false,
+      "customerApproved": false,
+      "reason": "Existing relation Graph nodes carry original affectedPillars/participants/roots. Current verified Units cover day-master/god relations, not relation occurrences. No generic god Unit or missing participant may substitute.",
+      "requiredAdditionalFactTypesOrContracts": [
+        "RELATION_OCCURRENCE_WITH_PARTICIPANTS"
+      ],
+      "existingProducersOrValidators": [
+        "buildAnnualMonthCalendar",
+        "validateAnnualRelation"
+      ],
+      "actualFixtures": 4,
+      "observedSegmentCounts": {
+        "fixture-annual-A": 2,
+        "fixture-annual-F": 2,
+        "fixture-annual-C2028": 3,
+        "fixture-annual-ranged-transition": 3
+      },
+      "previousLastPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "nextFirstPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "actualContextTimestampProvided": {
+        "fixture-annual-A": false,
+        "fixture-annual-F": false,
+        "fixture-annual-C2028": false,
+        "fixture-annual-ranged-transition": false
+      },
+      "originalReceiptRefs": [
+        {
+          "fixture": "fixture-annual-A",
+          "id": "kb:receipt:1604b6399fee8d92e3a57befeb895e5e16c49e0938911fe87758cbb8fe169ff0",
+          "hash": "38bb137a738c6c58f56d5423b62807a166e5b69e2281f43d3d29d582c488e695"
+        },
+        {
+          "fixture": "fixture-annual-F",
+          "id": "kb:receipt:c006420a82b79c7347c9435af262926625657e3657481dcede9c4a9be3d9973c",
+          "hash": "87232a04d27f097007651186820a4ee0da8df8267e587b59cc59b76742fc8c90"
+        },
+        {
+          "fixture": "fixture-annual-C2028",
+          "id": "kb:receipt:1dff78e841ad5bcddfa4e2c5616212af4a5fda4bac544363fe8041703af3de8a",
+          "hash": "cfd3c083e31b83801716e524eef9d90a262ac0259e401f7e459d2c1c01c2f985"
+        },
+        {
+          "fixture": "fixture-annual-ranged-transition",
+          "id": "kb:receipt:6ba4a1976ca64b04500fdc794d060c8adc499c0630ed0643cdce3a961d47855c",
+          "hash": "2a7eb6dd22fcd5af4149379b743afc4a97a4e6b93024b38cd0cd80bff1168984"
+        }
+      ],
+      "newCandidatesByFixture": {
+        "fixture-annual-A": 0,
+        "fixture-annual-F": 0,
+        "fixture-annual-C2028": 0,
+        "fixture-annual-ranged-transition": 0
+      },
+      "withholdsByFixture": {}
+    },
+    {
+      "month": 5,
+      "id": "afpr:month-slot:05",
+      "catalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+      "proof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 4,
+          "originalId": "afpr:month-slot:05",
+          "recordSha256": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+        "originalId": "afpr:month-slot:05",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "actualHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalRequirements": [
+        "selectedYear + actual civil month bounds",
+        "every canonical segment",
+        "month stemTenGod/branchTenGod + main-hidden-stem convention"
+      ],
+      "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+      "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+      "counterexample": "월지의 모든 지장간이 동시에 활성됐다고 설명하지 않는다.",
+      "disallowed": [
+        "입력받지 않은 과거 경험 단정",
+        "성공·실패·수입·질병·혼인 사건 예언",
+        "근거 없는 시주·복합 관계 생성"
+      ],
+      "originalMeaningIdentity": null,
+      "originalClaimIdentity": null,
+      "priority": "A",
+      "technicalState": "PREVIOUSLY_TECHNICALLY_VERIFIED",
+      "implementedPreviously": true,
+      "implementedNow": false,
+      "customerApproved": false,
+      "reason": "Existing explicitly both-role May contract and all eight candidate hashes remain unchanged.",
+      "requiredAdditionalFactTypesOrContracts": [],
+      "existingProducersOrValidators": [
+        "buildAnnualMonthCalendar",
+        "native-month-pair-requirement-v1"
+      ],
+      "actualFixtures": 4,
+      "observedSegmentCounts": {
+        "fixture-annual-A": 2,
+        "fixture-annual-F": 2,
+        "fixture-annual-C2028": 2,
+        "fixture-annual-ranged-transition": 2
+      },
+      "previousLastPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "nextFirstPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "actualContextTimestampProvided": {
+        "fixture-annual-A": false,
+        "fixture-annual-F": false,
+        "fixture-annual-C2028": false,
+        "fixture-annual-ranged-transition": false
+      },
+      "originalReceiptRefs": [
+        {
+          "fixture": "fixture-annual-A",
+          "id": "kb:receipt:57f3787fcbaa14c7f13ea6497ce3db477c71897720c2ca8210ef4c4a880c0026",
+          "hash": "64ec33331edbfcba7597bf27d575092394d5ccb03b2901da3aef35048db6bdee"
+        },
+        {
+          "fixture": "fixture-annual-F",
+          "id": "kb:receipt:50ce3bd8962eee04567959a3dfcb7da26c1539bd387f72c8fc53fcf843e26de9",
+          "hash": "1f01416d2a38e397ef39ed67dc066a632a69aabd49fb84f359d189cf6120a1b7"
+        },
+        {
+          "fixture": "fixture-annual-C2028",
+          "id": "kb:receipt:f9875f12a15fab17bdd8dfb49e6bf6eb9da7d6f47e072e3df593f03155db4671",
+          "hash": "7ac2e4e3e0c8938ed34e452b0a0842cb7851f325978069d269059a73ef296726"
+        },
+        {
+          "fixture": "fixture-annual-ranged-transition",
+          "id": "kb:receipt:84c8e71701d668ba7c7fe03fabda43ac883805914df259ccc64f0abac9645227",
+          "hash": "a871330b4491c5b97dac8e79c33c60b868905f15c1a951419465fa57ba95f61e"
+        }
+      ],
+      "newCandidatesByFixture": {
+        "fixture-annual-A": 0,
+        "fixture-annual-F": 0,
+        "fixture-annual-C2028": 0,
+        "fixture-annual-ranged-transition": 0
+      },
+      "withholdsByFixture": {}
+    },
+    {
+      "month": 6,
+      "id": "afpr:month-slot:06",
+      "catalogKey": "kc:v1:f5ec8a9ad9e2f6f6acea1105299b88c192b5d5621a60d32276ef19a4fe1ede8d",
+      "proof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 5,
+          "originalId": "afpr:month-slot:06",
+          "recordSha256": "d11f10905a2dc8cf7d07f4b32d43ae46c2bbe3c36e100fbe8d7c46415856f409",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:f5ec8a9ad9e2f6f6acea1105299b88c192b5d5621a60d32276ef19a4fe1ede8d",
+        "originalId": "afpr:month-slot:06",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "d11f10905a2dc8cf7d07f4b32d43ae46c2bbe3c36e100fbe8d7c46415856f409",
+        "actualHash": "d11f10905a2dc8cf7d07f4b32d43ae46c2bbe3c36e100fbe8d7c46415856f409",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalRequirements": [
+        "selectedYear + actual civil month bounds",
+        "every canonical segment",
+        "previous same god + current actual relations + source scope"
+      ],
+      "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+      "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+      "counterexample": "상반기 말이 곧 수확·정산 시기라고 정하지 않는다.",
+      "disallowed": [
+        "입력받지 않은 과거 경험 단정",
+        "성공·실패·수입·질병·혼인 사건 예언",
+        "근거 없는 시주·복합 관계 생성"
+      ],
+      "originalMeaningIdentity": null,
+      "originalClaimIdentity": null,
+      "priority": "D",
+      "technicalState": "ROLE_AND_SCOPE_SOURCE_REVIEW_REQUIRED",
+      "implementedPreviously": false,
+      "implementedNow": false,
+      "customerApproved": false,
+      "reason": "Previous same god does not formally declare stem versus branch-main role or exact prior occurrence. Matching labels alone do not authorize previous/current relation scope or an interpretation.",
+      "requiredAdditionalFactTypesOrContracts": [
+        "ROLE_DECLARED_PREVIOUS_GOD_OCCURRENCE"
+      ],
+      "existingProducersOrValidators": [
+        "buildAnnualMonthCalendar",
+        "declaredMonthlyRole"
+      ],
+      "actualFixtures": 4,
+      "observedSegmentCounts": {
+        "fixture-annual-A": 2,
+        "fixture-annual-F": 2,
+        "fixture-annual-C2028": 2,
+        "fixture-annual-ranged-transition": 2
+      },
+      "previousLastPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "nextFirstPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "actualContextTimestampProvided": {
+        "fixture-annual-A": false,
+        "fixture-annual-F": false,
+        "fixture-annual-C2028": false,
+        "fixture-annual-ranged-transition": false
+      },
+      "originalReceiptRefs": [
+        {
+          "fixture": "fixture-annual-A",
+          "id": "kb:receipt:518866287c9c7be4d3536edccc9a484e2e0178c9a4be4c273fc9a2670cee2cbe",
+          "hash": "b80a04bf847a8701f771fbd74e73c466299aca1a44ce968b919797ebfc91e3cf"
+        },
+        {
+          "fixture": "fixture-annual-F",
+          "id": "kb:receipt:f4c3ba3522c3c0622eca8fda4dc85f5a147d29cdba42042b10004fb1ba535a81",
+          "hash": "687b06dd216f43849a86111831b9d13cc52304d75b99a91d5432b13ac7ca7def"
+        },
+        {
+          "fixture": "fixture-annual-C2028",
+          "id": "kb:receipt:8f22773e20f256d4fee71a39670b4f89ade5959c96b9b1bbc5b4d83e57b55e5e",
+          "hash": "40ce4bf1d88263742669cdbae622d1f8ede07ca2d3610786ab7f589f4e198652"
+        },
+        {
+          "fixture": "fixture-annual-ranged-transition",
+          "id": "kb:receipt:65d15a7fc8cdf45246615b3ff46a2b412dcb2c4ec8f51bd37239d158057443ff",
+          "hash": "26e97040301633254d8bfc40c81f37fd49bba5cb8d5b5174bb0762d5dff70184"
+        }
+      ],
+      "newCandidatesByFixture": {
+        "fixture-annual-A": 0,
+        "fixture-annual-F": 0,
+        "fixture-annual-C2028": 0,
+        "fixture-annual-ranged-transition": 0
+      },
+      "withholdsByFixture": {}
+    },
+    {
+      "month": 7,
+      "id": "afpr:month-slot:07",
+      "catalogKey": "kc:v1:7848849efd274ec5680f1ddd23a44e71874f40bf717d84a1a333305e82940587",
+      "proof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 6,
+          "originalId": "afpr:month-slot:07",
+          "recordSha256": "33eff463556f20ad6118ff6e78ebcf461e460e51affd1004dda17253f5abefa1",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:7848849efd274ec5680f1ddd23a44e71874f40bf717d84a1a333305e82940587",
+        "originalId": "afpr:month-slot:07",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "33eff463556f20ad6118ff6e78ebcf461e460e51affd1004dda17253f5abefa1",
+        "actualHash": "33eff463556f20ad6118ff6e78ebcf461e460e51affd1004dda17253f5abefa1",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalRequirements": [
+        "selectedYear + actual civil month bounds",
+        "every canonical segment",
+        "actual boundaries + active cycle + continuing annual pillar"
+      ],
+      "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+      "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+      "counterexample": "교운이 검출되지 않았으면 대운 전환을 창작하지 않는다.",
+      "disallowed": [
+        "입력받지 않은 과거 경험 단정",
+        "성공·실패·수입·질병·혼인 사건 예언",
+        "근거 없는 시주·복합 관계 생성"
+      ],
+      "originalMeaningIdentity": null,
+      "originalClaimIdentity": null,
+      "priority": "B",
+      "technicalState": "NEW_TECHNICAL_CONTRACT_CONFIRMED_ACTIVE_ONLY",
+      "implementedPreviously": false,
+      "implementedNow": true,
+      "customerApproved": false,
+      "reason": "Every July segment is checked with the previous June-last source context. Effective annual continuity must be real; all active cycles and supporting existing Units must be confirmed. A/C link, F/ranged remain withheld.",
+      "requiredAdditionalFactTypesOrContracts": [],
+      "existingProducersOrValidators": [
+        "buildAnnualMonthCalendar",
+        "verifyTemporalTenGodCalculation"
+      ],
+      "actualFixtures": 4,
+      "observedSegmentCounts": {
+        "fixture-annual-A": 2,
+        "fixture-annual-F": 2,
+        "fixture-annual-C2028": 2,
+        "fixture-annual-ranged-transition": 2
+      },
+      "previousLastPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "nextFirstPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "actualContextTimestampProvided": {
+        "fixture-annual-A": false,
+        "fixture-annual-F": false,
+        "fixture-annual-C2028": false,
+        "fixture-annual-ranged-transition": false
+      },
+      "originalReceiptRefs": [
+        {
+          "fixture": "fixture-annual-A",
+          "id": "kb:receipt:159a107a4eb7d31db4fcc7c84603d67932179b139b2a1bbe3d59ccf762b3af0a",
+          "hash": "5be50efdbf5413518b2c7b3824508086f7a4356e12661c41256268d8227e568b"
+        },
+        {
+          "fixture": "fixture-annual-F",
+          "id": "kb:receipt:39d0964115e59127d7c9c9ba86028ccd0f6855b845408de85923ca283989a781",
+          "hash": "14184a99967b5bb408dbd418fbc0d0715ebed238eed99be60f92f4e64639f8f0"
+        },
+        {
+          "fixture": "fixture-annual-C2028",
+          "id": "kb:receipt:931799bad6113020db6636759e2b1d0e2fa1873e18624bebc2f56f50131202dd",
+          "hash": "339ccd143b0c2c05c44c63107b8363afb37a48ac6f1ce50edc2568a53bf52a34"
+        },
+        {
+          "fixture": "fixture-annual-ranged-transition",
+          "id": "kb:receipt:7960bce207b18f0a6b206947d90258d3de023810ba138c7794f817612575b1c6",
+          "hash": "a17bf3b11fba44f7d74fb3dc2d441210ab0ff9d793bac720ebcdde8ca031adf7"
+        }
+      ],
+      "newCandidatesByFixture": {
+        "fixture-annual-A": 2,
+        "fixture-annual-F": 0,
+        "fixture-annual-C2028": 2,
+        "fixture-annual-ranged-transition": 0
+      },
+      "withholdsByFixture": {
+        "fixture-annual-F": [
+          {
+            "month": 7,
+            "segmentPointer": "/composition/result/evidence/raw/calendarMonths/6/segments/0",
+            "reasons": [
+              "AUTHENTIC_ACTIVE_CYCLE_AND_ANNUAL_UNIT_REQUIRED"
+            ]
+          },
+          {
+            "month": 7,
+            "segmentPointer": "/composition/result/evidence/raw/calendarMonths/6/segments/1",
+            "reasons": [
+              "AUTHENTIC_ACTIVE_CYCLE_AND_ANNUAL_UNIT_REQUIRED"
+            ]
+          },
+          {
+            "month": 7,
+            "segmentPointer": "month-7",
+            "reasons": [
+              "EVERY_ORIGINAL_SEGMENT_REQUIRED"
+            ]
+          }
+        ],
+        "fixture-annual-ranged-transition": [
+          {
+            "month": 7,
+            "segmentPointer": "/composition/result/evidence/raw/calendarMonths/6/segments/0",
+            "reasons": [
+              "CONFIRMED_ACTIVE_CYCLE_AND_CONTINUING_ANNUAL_REQUIRED"
+            ]
+          },
+          {
+            "month": 7,
+            "segmentPointer": "/composition/result/evidence/raw/calendarMonths/6/segments/1",
+            "reasons": [
+              "CONFIRMED_ACTIVE_CYCLE_AND_CONTINUING_ANNUAL_REQUIRED"
+            ]
+          },
+          {
+            "month": 7,
+            "segmentPointer": "month-7",
+            "reasons": [
+              "EVERY_ORIGINAL_SEGMENT_REQUIRED"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "month": 8,
+      "id": "afpr:month-slot:08",
+      "catalogKey": "kc:v1:925e02b385aefe225f4657feac4ed7db1fca16a773dafe30e4423ff2a2a9720d",
+      "proof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 7,
+          "originalId": "afpr:month-slot:08",
+          "recordSha256": "b20fb8c21347dccfe1e0dfc36b1d2dc989fba861c548d70b22aa91d569128945",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:925e02b385aefe225f4657feac4ed7db1fca16a773dafe30e4423ff2a2a9720d",
+        "originalId": "afpr:month-slot:08",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "b20fb8c21347dccfe1e0dfc36b1d2dc989fba861c548d70b22aa91d569128945",
+        "actualHash": "b20fb8c21347dccfe1e0dfc36b1d2dc989fba861c548d70b22aa91d569128945",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalRequirements": [
+        "selectedYear + actual civil month bounds",
+        "every canonical segment",
+        "actual uncertainty range if present + conditional counterpart cycle"
+      ],
+      "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+      "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+      "counterexample": "8월에 반드시 교운 범위가 있다고 가정하지 않는다.",
+      "disallowed": [
+        "입력받지 않은 과거 경험 단정",
+        "성공·실패·수입·질병·혼인 사건 예언",
+        "근거 없는 시주·복합 관계 생성"
+      ],
+      "originalMeaningIdentity": null,
+      "originalClaimIdentity": null,
+      "priority": "C",
+      "technicalState": "CONDITIONAL_CYCLE_FACT_CONTRACT_REQUIRED",
+      "implementedPreviously": false,
+      "implementedNow": false,
+      "customerApproved": false,
+      "reason": "Actual uncertainty ranges and candidate cycles may exist in original raw/Graph data. Existing confirmed-only semantic Units cannot represent conditional counterparts. Do not select both as confirmed or infer a missing range.",
+      "requiredAdditionalFactTypesOrContracts": [
+        "CONDITIONAL_DAYUN_COUNTERPART_SCOPE"
+      ],
+      "existingProducersOrValidators": [
+        "calculateCustomerDayun",
+        "buildAnnualMonthCalendar"
+      ],
+      "actualFixtures": 4,
+      "observedSegmentCounts": {
+        "fixture-annual-A": 2,
+        "fixture-annual-F": 2,
+        "fixture-annual-C2028": 2,
+        "fixture-annual-ranged-transition": 3
+      },
+      "previousLastPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "nextFirstPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "actualContextTimestampProvided": {
+        "fixture-annual-A": false,
+        "fixture-annual-F": false,
+        "fixture-annual-C2028": false,
+        "fixture-annual-ranged-transition": false
+      },
+      "originalReceiptRefs": [
+        {
+          "fixture": "fixture-annual-A",
+          "id": "kb:receipt:4ff85d7070d80f404c7b86b1dba5e9e5965ba3e961e6749582cfa3ba9de5df49",
+          "hash": "c8fb56629ce5630065b243db2fc13c13c7c9b2a5e11ca2b488ff5a5c240688a6"
+        },
+        {
+          "fixture": "fixture-annual-F",
+          "id": "kb:receipt:4022e9dd03279f7382d09352b6813bd14c3f728c1151e4881cae3e605fedc674",
+          "hash": "c29fd0412246f0461f61c70abf82df84025ad37e5629d1b5d36d3c2a5dce90d3"
+        },
+        {
+          "fixture": "fixture-annual-C2028",
+          "id": "kb:receipt:1875384c9c5c4bf2e2fbe3348c3b17425630dd3c815eb8c3e278ba4d388b2367",
+          "hash": "307426fb6bfdf92c715a5c27f366ac4f7b70decd45d5fd303691af6b6c8e0d8b"
+        },
+        {
+          "fixture": "fixture-annual-ranged-transition",
+          "id": "kb:receipt:fba5ccc93e12c4015d3a57ef668ae3000ad79f120977779a5136a8347a6524f6",
+          "hash": "41bbb5835093abc706c4e93c5ece2eef549e7889bc1b5efe702582fe01eca4d9"
+        }
+      ],
+      "newCandidatesByFixture": {
+        "fixture-annual-A": 0,
+        "fixture-annual-F": 0,
+        "fixture-annual-C2028": 0,
+        "fixture-annual-ranged-transition": 0
+      },
+      "withholdsByFixture": {}
+    },
+    {
+      "month": 9,
+      "id": "afpr:month-slot:09",
+      "catalogKey": "kc:v1:8c42d5d6e9659a08d4a2164fd53c39e34d05fb54e0a04d64ae1097c3b28a9cdc",
+      "proof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 8,
+          "originalId": "afpr:month-slot:09",
+          "recordSha256": "81de9d7b2756401b029c4d8c2eabdabaffe097fc812ee86ec1a75125831aee82",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:8c42d5d6e9659a08d4a2164fd53c39e34d05fb54e0a04d64ae1097c3b28a9cdc",
+        "originalId": "afpr:month-slot:09",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "81de9d7b2756401b029c4d8c2eabdabaffe097fc812ee86ec1a75125831aee82",
+        "actualHash": "81de9d7b2756401b029c4d8c2eabdabaffe097fc812ee86ec1a75125831aee82",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalRequirements": [
+        "selectedYear + actual civil month bounds",
+        "every canonical segment",
+        "prior month last segment + current first/new Jie segment"
+      ],
+      "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+      "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+      "counterexample": "월 이름이나 계절만으로 결실·평가 결과를 예측하지 않는다.",
+      "disallowed": [
+        "입력받지 않은 과거 경험 단정",
+        "성공·실패·수입·질병·혼인 사건 예언",
+        "근거 없는 시주·복합 관계 생성"
+      ],
+      "originalMeaningIdentity": null,
+      "originalClaimIdentity": null,
+      "priority": "B",
+      "technicalState": "ADJACENT_SEGMENT_COMPARISON_PENDING",
+      "implementedPreviously": false,
+      "implementedNow": false,
+      "customerApproved": false,
+      "reason": "August-last, September-first and actual new-Jie segments are present in the four ledgers. Their non-overlapping windows cannot be selected as one simultaneous Binder fact. Comparison contract remains separate.",
+      "requiredAdditionalFactTypesOrContracts": [
+        "VERIFIED_ADJACENT_SEGMENT_PAIR"
+      ],
+      "existingProducersOrValidators": [
+        "buildAnnualMonthCalendar",
+        "compareAnnualSegments"
+      ],
+      "actualFixtures": 4,
+      "observedSegmentCounts": {
+        "fixture-annual-A": 2,
+        "fixture-annual-F": 2,
+        "fixture-annual-C2028": 2,
+        "fixture-annual-ranged-transition": 2
+      },
+      "previousLastPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "nextFirstPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "actualContextTimestampProvided": {
+        "fixture-annual-A": false,
+        "fixture-annual-F": false,
+        "fixture-annual-C2028": false,
+        "fixture-annual-ranged-transition": false
+      },
+      "originalReceiptRefs": [
+        {
+          "fixture": "fixture-annual-A",
+          "id": "kb:receipt:1353538c79b425da6d30e07f23d74e443d8f95aee344455f7f5dae168aca9e74",
+          "hash": "e7213608b51705c57cf3c35c6ee1a68c78eadd9ead0cd23e8fd16f26cc747a8f"
+        },
+        {
+          "fixture": "fixture-annual-F",
+          "id": "kb:receipt:8bf9faf78ee9b58df4c10bb209609e68c03a14461bc225b4f18c42dc898968bb",
+          "hash": "448d4658da2c98f9d148b84ac96838ebc8283c2bd864e10e2437076b4eb8acb1"
+        },
+        {
+          "fixture": "fixture-annual-C2028",
+          "id": "kb:receipt:3f75faba4ccb55da31331b30829bc40ae31c6907add0e9943d3076cb42a79978",
+          "hash": "5c8df0f216fb0f4ac071fefc9d1fc6d535817cdf3a0a5a73b8b2a10f047520e9"
+        },
+        {
+          "fixture": "fixture-annual-ranged-transition",
+          "id": "kb:receipt:ae4b9e3d9fcb3c5d7aab730e99c7f4466deaeee402856852ec140e3f9f0794dc",
+          "hash": "0511f9c3a56013b28f2d9fcb1ae2dd3f7d547a9d7db25050721b50167338afff"
+        }
+      ],
+      "newCandidatesByFixture": {
+        "fixture-annual-A": 0,
+        "fixture-annual-F": 0,
+        "fixture-annual-C2028": 0,
+        "fixture-annual-ranged-transition": 0
+      },
+      "withholdsByFixture": {}
+    },
+    {
+      "month": 10,
+      "id": "afpr:month-slot:10",
+      "catalogKey": "kc:v1:2e651c7b2ea8498abdbd5de4b63faeb6bdcd8703baf7b13b3251281d48b31614",
+      "proof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 9,
+          "originalId": "afpr:month-slot:10",
+          "recordSha256": "6bafa2af71967a35934e08b7705fed9b7f4ddcfb881788f4b85a084488fd3c94",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:2e651c7b2ea8498abdbd5de4b63faeb6bdcd8703baf7b13b3251281d48b31614",
+        "originalId": "afpr:month-slot:10",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "6bafa2af71967a35934e08b7705fed9b7f4ddcfb881788f4b85a084488fd3c94",
+        "actualHash": "6bafa2af71967a35934e08b7705fed9b7f4ddcfb881788f4b85a084488fd3c94",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalRequirements": [
+        "selectedYear + actual civil month bounds",
+        "every canonical segment",
+        "actual reading instant + focus interval + all unselected segments"
+      ],
+      "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+      "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+      "counterexample": "10월만 현재 월이라고 연구 조건을 고정하지 않는다.",
+      "disallowed": [
+        "입력받지 않은 과거 경험 단정",
+        "성공·실패·수입·질병·혼인 사건 예언",
+        "근거 없는 시주·복합 관계 생성"
+      ],
+      "originalMeaningIdentity": null,
+      "originalClaimIdentity": null,
+      "priority": "B",
+      "technicalState": "DEFERRED_EXACT_FOCUS_CONTRACT",
+      "implementedPreviously": false,
+      "implementedNow": false,
+      "customerApproved": false,
+      "reason": "Original reading instant and focus/unselected segments are present. Graph boundary nodes already carry focus/timePosition; exact reading-instant, focus and all unselected requirement binding is deferred from this two-contract batch. No missing producer is claimed.",
+      "requiredAdditionalFactTypesOrContracts": [
+        "EXPLICIT_READING_FOCUS_BINDING_CONTRACT"
+      ],
+      "existingProducersOrValidators": [
+        "annualNarrativeEvidence",
+        "actual-evidence-graph/periods.ts"
+      ],
+      "actualFixtures": 4,
+      "observedSegmentCounts": {
+        "fixture-annual-A": 2,
+        "fixture-annual-F": 2,
+        "fixture-annual-C2028": 2,
+        "fixture-annual-ranged-transition": 2
+      },
+      "previousLastPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "nextFirstPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "actualContextTimestampProvided": {
+        "fixture-annual-A": false,
+        "fixture-annual-F": false,
+        "fixture-annual-C2028": false,
+        "fixture-annual-ranged-transition": false
+      },
+      "originalReceiptRefs": [
+        {
+          "fixture": "fixture-annual-A",
+          "id": "kb:receipt:6d1da552e088ab8d88dec3e5211ea68140d01601ec3b1e0b04c3589c4c1e3676",
+          "hash": "283bdaa70cb6f3cb899962dc25e77a4a8d581c60788d07822bae558ca27b6b7c"
+        },
+        {
+          "fixture": "fixture-annual-F",
+          "id": "kb:receipt:4caf463162d5f5f813beeb0dcd9a0835cae5802c16f81ebd4f361a276ed2c46a",
+          "hash": "a6d7b0d0988ec9e3bd9f9f82082f106764229a800552f7f2ee666c67507f71df"
+        },
+        {
+          "fixture": "fixture-annual-C2028",
+          "id": "kb:receipt:66ad5d8976468ed4bb965290da070ef97cddc6771d0c23417fb3253552adbb84",
+          "hash": "e071766481ec522224a69a0a593ec40c978106215e60840b084e9231eb79a2d5"
+        },
+        {
+          "fixture": "fixture-annual-ranged-transition",
+          "id": "kb:receipt:9585549243e4d4862b2eb235b75bff3059f40cdb8be0b398e0544476cf39ea01",
+          "hash": "fa80e22d2037695c272517166e164e54a16324219aff81de0cb0e6fee78bdbd4"
+        }
+      ],
+      "newCandidatesByFixture": {
+        "fixture-annual-A": 0,
+        "fixture-annual-F": 0,
+        "fixture-annual-C2028": 0,
+        "fixture-annual-ranged-transition": 0
+      },
+      "withholdsByFixture": {}
+    },
+    {
+      "month": 11,
+      "id": "afpr:month-slot:11",
+      "catalogKey": "kc:v1:291a7f708cf2cf6b7002c06934cbad6b4301ab9b521850bd524ffe59077a573d",
+      "proof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 10,
+          "originalId": "afpr:month-slot:11",
+          "recordSha256": "2a1f4275e2edc58e6c62a68d2bcdb4a2b55aaa9b51f1ea38b43c9be6d5a0affa",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:291a7f708cf2cf6b7002c06934cbad6b4301ab9b521850bd524ffe59077a573d",
+        "originalId": "afpr:month-slot:11",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "2a1f4275e2edc58e6c62a68d2bcdb4a2b55aaa9b51f1ea38b43c9be6d5a0affa",
+        "actualHash": "2a1f4275e2edc58e6c62a68d2bcdb4a2b55aaa9b51f1ea38b43c9be6d5a0affa",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalRequirements": [
+        "selectedYear + actual civil month bounds",
+        "every canonical segment",
+        "period time + context timestamp + actual/conditional scene status"
+      ],
+      "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+      "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+      "counterexample": "예정되지 않은 취업·만남·가족 사건을 넣지 않는다.",
+      "disallowed": [
+        "입력받지 않은 과거 경험 단정",
+        "성공·실패·수입·질병·혼인 사건 예언",
+        "근거 없는 시주·복합 관계 생성"
+      ],
+      "originalMeaningIdentity": null,
+      "originalClaimIdentity": null,
+      "priority": "D",
+      "technicalState": "ACTUAL_CONTEXT_TIMESTAMP_REQUIRED",
+      "implementedPreviously": false,
+      "implementedNow": false,
+      "customerApproved": false,
+      "reason": "Actual period time and original hypothetical scene status are known. Actual user Context timestamp is absent in all four inputs. Reading time cannot substitute; hypothetical research scenes are not customer history.",
+      "requiredAdditionalFactTypesOrContracts": [
+        "ACTUAL_CONTEXT_TIMESTAMP"
+      ],
+      "existingProducersOrValidators": [
+        "annualNarrativeEvidence",
+        "normalized userContext"
+      ],
+      "actualFixtures": 4,
+      "observedSegmentCounts": {
+        "fixture-annual-A": 2,
+        "fixture-annual-F": 2,
+        "fixture-annual-C2028": 2,
+        "fixture-annual-ranged-transition": 2
+      },
+      "previousLastPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "nextFirstPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "actualContextTimestampProvided": {
+        "fixture-annual-A": false,
+        "fixture-annual-F": false,
+        "fixture-annual-C2028": false,
+        "fixture-annual-ranged-transition": false
+      },
+      "originalReceiptRefs": [
+        {
+          "fixture": "fixture-annual-A",
+          "id": "kb:receipt:a24994737afe0cd549b7af4f568f45b8715e4c40981b80690376a7e80e028da8",
+          "hash": "32bd73ab9eaed273a0a6999ef79e284d483672071416b8a59fabb2bc367b4147"
+        },
+        {
+          "fixture": "fixture-annual-F",
+          "id": "kb:receipt:b80e87d3a282d6b3581f1e1b21d07891d717c092408bd14557517bf3af2fc6ac",
+          "hash": "685ff9b844337e588bd11e15cc02b14a37e7f15f033283a3ab8e0a6671309395"
+        },
+        {
+          "fixture": "fixture-annual-C2028",
+          "id": "kb:receipt:b8d31ce74dd39ca41f66315414a812eb3d5e181cda731695558945cd8dbb0372",
+          "hash": "dd18698ea46d6246ed5dcc3767ddfc360a3529502a0544216288a7761edbf6b2"
+        },
+        {
+          "fixture": "fixture-annual-ranged-transition",
+          "id": "kb:receipt:ceb43be3cc696af44e5a0c988b573dcb67a48e61acea955f330e7934e2870ab9",
+          "hash": "c589f29e41a5b5e96258eeae34f636fc3862d3854fb9f8fceb82ed75fd6e7969"
+        }
+      ],
+      "newCandidatesByFixture": {
+        "fixture-annual-A": 0,
+        "fixture-annual-F": 0,
+        "fixture-annual-C2028": 0,
+        "fixture-annual-ranged-transition": 0
+      },
+      "withholdsByFixture": {}
+    },
+    {
+      "month": 12,
+      "id": "afpr:month-slot:12",
+      "catalogKey": "kc:v1:48b395f8d9fda41172c754cd97d97640c42492137e9c6f9a3f0238dea6fcf601",
+      "proof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 11,
+          "originalId": "afpr:month-slot:12",
+          "recordSha256": "ddde19351c827b889f5bb8da48cb3a668f3fac2911d0b2ccdcd74585793cd0a7",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:48b395f8d9fda41172c754cd97d97640c42492137e9c6f9a3f0238dea6fcf601",
+        "originalId": "afpr:month-slot:12",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "ddde19351c827b889f5bb8da48cb3a668f3fac2911d0b2ccdcd74585793cd0a7",
+        "actualHash": "ddde19351c827b889f5bb8da48cb3a668f3fac2911d0b2ccdcd74585793cd0a7",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalRequirements": [
+        "selectedYear + actual civil month bounds",
+        "every canonical segment",
+        "actual last segment + optional next-year canonical segment + boundaries"
+      ],
+      "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+      "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+      "counterexample": "다음 연도 ledger가 없으면 월주 이후 관계를 만들어내지 않는다.",
+      "disallowed": [
+        "입력받지 않은 과거 경험 단정",
+        "성공·실패·수입·질병·혼인 사건 예언",
+        "근거 없는 시주·복합 관계 생성"
+      ],
+      "originalMeaningIdentity": null,
+      "originalClaimIdentity": null,
+      "priority": "A",
+      "technicalState": "NEW_TECHNICAL_CONTRACT_OPTIONAL_NEXT_ABSENT",
+      "implementedPreviously": false,
+      "implementedNow": true,
+      "customerApproved": false,
+      "reason": "All December segments, actual last segment and exact year-end bound exist. Original next-year clause is optional. Absence is explicit; no next-year comparison/segment/Unit is generated. Existing Graph month/boundary facts are bound directly.",
+      "requiredAdditionalFactTypesOrContracts": [],
+      "existingProducersOrValidators": [
+        "buildAnnualMonthCalendar"
+      ],
+      "actualFixtures": 4,
+      "observedSegmentCounts": {
+        "fixture-annual-A": 2,
+        "fixture-annual-F": 2,
+        "fixture-annual-C2028": 2,
+        "fixture-annual-ranged-transition": 2
+      },
+      "previousLastPresent": {
+        "fixture-annual-A": true,
+        "fixture-annual-F": true,
+        "fixture-annual-C2028": true,
+        "fixture-annual-ranged-transition": true
+      },
+      "nextFirstPresent": {
+        "fixture-annual-A": false,
+        "fixture-annual-F": false,
+        "fixture-annual-C2028": false,
+        "fixture-annual-ranged-transition": false
+      },
+      "actualContextTimestampProvided": {
+        "fixture-annual-A": false,
+        "fixture-annual-F": false,
+        "fixture-annual-C2028": false,
+        "fixture-annual-ranged-transition": false
+      },
+      "originalReceiptRefs": [
+        {
+          "fixture": "fixture-annual-A",
+          "id": "kb:receipt:e03b5ccedc0b3270eb819be4817d8193fae1366494472c2a7012a57a3ec58451",
+          "hash": "142a0e69c0274338f8ef1fcf8c8bf4d9d43d73f318992829afd384f213ce23ed"
+        },
+        {
+          "fixture": "fixture-annual-F",
+          "id": "kb:receipt:c1e7a79fc7c0358f994a06bccf93bf3fe96b76b8d43a32b6a69f53e286ec631c",
+          "hash": "56b57e15fe3ee81793549f10d71e83c3472c339e2f43ba3ccef9336acaba1546"
+        },
+        {
+          "fixture": "fixture-annual-C2028",
+          "id": "kb:receipt:ba2cdf2ad99f5efcffef89f9cb5df82d557527b6c0bc617e843b94e08db74c8a",
+          "hash": "c007e55fc1a184826b1cc0be64e1a04e8c7d7fecd64298724ea98803cb3a47ec"
+        },
+        {
+          "fixture": "fixture-annual-ranged-transition",
+          "id": "kb:receipt:cc46eccd1457d8e4d0b95b5063894622aeccc9bcb2f0c7ca2a2dc45c8fd40c80",
+          "hash": "aeee226faf6eda4357929f7c968f162150f2df7ac2f09e62e004d23c40b4e7ce"
+        }
+      ],
+      "newCandidatesByFixture": {
+        "fixture-annual-A": 2,
+        "fixture-annual-F": 2,
+        "fixture-annual-C2028": 2,
+        "fixture-annual-ranged-transition": 2
+      },
+      "withholdsByFixture": {}
+    }
+  ]
+}

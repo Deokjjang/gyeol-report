@@ -1,0 +1,184 @@
+{
+  "missingSourceIsNeverFilled": true,
+  "currentMaterialPredicatePolicy": "Both entered MBTI types required; withhold if one required type is unknown",
+  "notBoundToRuntime": true,
+  "allUnknownMbti36ParagraphCoverage": false,
+  "canonicalUnsupportedKinds": [
+    "stem_hap",
+    "hyeong",
+    "pa",
+    "wonjin"
+  ],
+  "sourceContextReviewRequired": [
+    {
+      "sourceId": "fkr:complement:C074",
+      "originalState": {
+        "review": "conditional_editorial_not_empirical",
+        "contexts": [
+          "love",
+          "social"
+        ],
+        "myeongli": {
+          "features": [],
+          "researchRefs": [],
+          "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+          "applicationStatus": "actual_evidence_still_required",
+          "meaningStatus": "existing_authored_definition_not_individual_fact"
+        },
+        "mbti": {
+          "traitRefs": [],
+          "requiredSourceAxes": [
+            "CARE",
+            "EXPRESSION"
+          ],
+          "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+          "sourceStatus": "specific_source_not_yet_bound"
+        },
+        "sourceAssignmentRequired": true,
+        "noAutomaticMarriageTransfer": true
+      },
+      "policy": "withhold_outside_original_context_or_domain",
+      "actualAssignmentVerified": false
+    },
+    {
+      "sourceId": "fkr:complement:C077",
+      "originalState": {
+        "review": "conditional_editorial_not_empirical",
+        "contexts": [
+          "love",
+          "social"
+        ],
+        "myeongli": {
+          "features": [],
+          "researchRefs": [],
+          "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+          "applicationStatus": "actual_evidence_still_required",
+          "meaningStatus": "existing_authored_definition_not_individual_fact"
+        },
+        "mbti": {
+          "traitRefs": [],
+          "requiredSourceAxes": [
+            "AUTONOMY",
+            "CARE"
+          ],
+          "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+          "sourceStatus": "specific_source_not_yet_bound"
+        },
+        "sourceAssignmentRequired": true,
+        "noAutomaticMarriageTransfer": true
+      },
+      "policy": "withhold_outside_original_context_or_domain",
+      "actualAssignmentVerified": false
+    },
+    {
+      "sourceId": "fkr:complement:C095",
+      "originalState": {
+        "review": "conditional_editorial_not_empirical",
+        "contexts": [
+          "identity",
+          "recovery",
+          "stress",
+          "work"
+        ],
+        "myeongli": {
+          "features": [],
+          "researchRefs": [],
+          "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+          "applicationStatus": "actual_evidence_still_required",
+          "meaningStatus": "existing_authored_definition_not_individual_fact"
+        },
+        "mbti": {
+          "traitRefs": [],
+          "requiredSourceAxes": [
+            "DUTY",
+            "CARE"
+          ],
+          "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+          "sourceStatus": "specific_source_not_yet_bound"
+        },
+        "sourceAssignmentRequired": true,
+        "noAutomaticMarriageTransfer": true
+      },
+      "policy": "withhold_outside_original_context_or_domain",
+      "actualAssignmentVerified": false
+    },
+    {
+      "sourceId": "fkr:complement:C078",
+      "originalState": {
+        "review": "conditional_editorial_not_empirical",
+        "contexts": [
+          "love",
+          "social"
+        ],
+        "myeongli": {
+          "features": [],
+          "researchRefs": [],
+          "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+          "applicationStatus": "actual_evidence_still_required",
+          "meaningStatus": "existing_authored_definition_not_individual_fact"
+        },
+        "mbti": {
+          "traitRefs": [],
+          "requiredSourceAxes": [
+            "RELATION_STYLE",
+            "BOUNDARY"
+          ],
+          "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+          "sourceStatus": "specific_source_not_yet_bound"
+        },
+        "sourceAssignmentRequired": true,
+        "noAutomaticMarriageTransfer": true
+      },
+      "policy": "withhold_outside_original_context_or_domain",
+      "actualAssignmentVerified": false
+    },
+    {
+      "sourceId": "fkr:complement:C090",
+      "originalState": {
+        "review": "conditional_editorial_not_empirical",
+        "contexts": [
+          "identity",
+          "recovery",
+          "stress",
+          "work"
+        ],
+        "myeongli": {
+          "features": [],
+          "researchRefs": [],
+          "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+          "applicationStatus": "actual_evidence_still_required",
+          "meaningStatus": "existing_authored_definition_not_individual_fact"
+        },
+        "mbti": {
+          "traitRefs": [],
+          "requiredSourceAxes": [
+            "STRUCTURE_STYLE",
+            "ADAPTABILITY"
+          ],
+          "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+          "sourceStatus": "specific_source_not_yet_bound"
+        },
+        "sourceAssignmentRequired": true,
+        "noAutomaticMarriageTransfer": true
+      },
+      "policy": "withhold_outside_original_context_or_domain",
+      "actualAssignmentVerified": false
+    },
+    {
+      "sourceId": "mbti:ISTJ:traits:money:cost_and_contract_mind",
+      "originalState": {
+        "type": "ISTJ",
+        "area": "money",
+        "sourceCoverage": "direct",
+        "empiricalVerification": "not_established",
+        "currentRelationshipDomain": "not_projected_requires_separate_domain_review",
+        "romanticTransferApproved": false
+      },
+      "policy": "withhold_outside_original_context_or_domain",
+      "actualAssignmentVerified": false
+    }
+  ],
+  "notAll256DirectionsHaveSpecializedCandidates": true,
+  "maritalAndHouseholdFacts": "UNKNOWN_NOT_IN_SCHEMA",
+  "notNewCalculatedEvidence": true
+}

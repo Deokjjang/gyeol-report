@@ -1,0 +1,23 @@
+{
+  "baseSha": "071acdc456ddba3b8467667d53f4ff809c9b39dd",
+  "inheritedRowsResolvedAndHashMatched": 2991,
+  "inheritedFamilyCounts": {
+    "composite": 301,
+    "completion": 173,
+    "deep": 838,
+    "mbtiIndividual": 531,
+    "mbtiPair": 279,
+    "relation": 246,
+    "foundation": 213,
+    "temporal": 410
+  },
+  "primaryTraitsResolvedAndHashMatched": 1213,
+  "actualSajuLocatorsResolvedAndHashMatched": 22,
+  "existingFileHashesMatched": 2133,
+  "newCoreRegistryIdsUnique": 210,
+  "sourceAliasFilesHashMatched": true,
+  "originalDirectInferredPreserved": true,
+  "runtimeImports": 0,
+  "empiricalPromotion": false,
+  "method": "Read actual export/index records and JSON pointers; compare SHA256 to frozen inventories. Offline module loader rejects fetch. Inventory presence is not scientific verification."
+}

@@ -1,0 +1,15 @@
+{
+  "freshBooks": 17,
+  "bookDigests": 102,
+  "friendshipCases": 20,
+  "friendshipDigests": 140,
+  "profiles": 40,
+  "allOriginalCurrentBytesEqual": true,
+  "existingStoredBookRoundtrip": true,
+  "freshIntegratedActualRoutes": 12,
+  "freshIntegratedStoredRoundtrips": 12,
+  "originalEditionAndReaderUnchanged": true,
+  "syntheticCustomerEdition": false,
+  "actualCustomerBookAllocations": 0,
+  "productionDatabaseWrites": 0
+}

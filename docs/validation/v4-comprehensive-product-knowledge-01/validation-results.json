@@ -1,0 +1,139 @@
+{
+  "baseSha": "6d220856fbfa9a681a74625680387f855b5e77f0",
+  "dateKst": "2026-10-13",
+  "environment": {
+    "node": "v25.9.0",
+    "npm": "11.12.1",
+    "next": "16.2.4",
+    "vitest": "4.1.5"
+  },
+  "baseline": {
+    "knownFailureCommand": "npm test -- tests/unit/interpretation-v4/foundationAdapter.test.ts tests/unit/report-generation/customerDayunGeneration.test.ts",
+    "knownFailurePass": 36,
+    "knownFailures": 3,
+    "knownFailureExitCode": 1,
+    "additionalBaselineDirectory": "/tmp/gyeol-comprehensive-knowledge-baseline-6d22085",
+    "archiveCommand": "git archive 6d220856fbfa9a681a74625680387f855b5e77f0 | tar -x -C /tmp/gyeol-comprehensive-knowledge-baseline-6d22085",
+    "additionalFailureCommand": "npm test -- tests/unit/interpretation-v4/comprehensiveAllocation.test.ts tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts -t 'C9 element composite|recovery-axis Fusion|scheduler is not consumed'",
+    "additionalFailuresReproduced": 3,
+    "otherCasesNotSelectedByCliFilter": 63,
+    "additionalFailureExitCode": 1,
+    "typescriptDiagnostics": 0
+  },
+  "final": {
+    "newTests": {
+      "command": "npm test -- tests/unit/report-knowledge/comprehensiveProductResearch.test.ts",
+      "pass": 603,
+      "fail": 0,
+      "exitCode": 0,
+      "includedInRelatedSuite": true
+    },
+    "relatedTests": {
+      "command": "npm test -- tests/unit/report-knowledge/sajuFoundationKnowledge.test.ts tests/unit/report-knowledge/sajuFoundationCompletion.test.ts tests/unit/report-knowledge/sajuFoundationDeepKnowledge.test.ts tests/unit/report-knowledge/sajuCompositeStructureResearch.test.ts tests/unit/report-knowledge/sajuRelationResearch.test.ts tests/unit/report-knowledge/sajuTemporalInteractionResearch.test.ts tests/unit/report-knowledge/mbtiFoundationResearch.test.ts tests/unit/report-knowledge/mbtiPairResearch.test.ts tests/unit/report-knowledge/mbtiTypeKnowledgeBase.test.ts tests/unit/report-knowledge/mbtiKnowledgeBase.test.ts tests/unit/report-knowledge/mbtiProductRouting.test.ts tests/unit/report-knowledge/mbtiCompatibilityCandidateEngine.test.ts tests/unit/report-knowledge/mbti/sourceRuntimeAdapter.test.ts tests/unit/interpretation-v4/semanticFoundation.test.ts tests/unit/interpretation-v4/foundationNatal.test.ts tests/unit/interpretation-v4/foundationTenGodSynthesis.test.ts tests/unit/interpretation-v4/foundationSupplement.test.ts tests/unit/interpretation-v4/foundationSupplementRegistry.test.ts tests/unit/interpretation-v4/foundationIntegratedProfile.test.ts tests/unit/interpretation-v4/mbtiSemanticProfile.test.ts tests/unit/interpretation-v4/fusionCore.test.ts tests/unit/interpretation-v4/fusionSemanticProfile.test.ts tests/unit/interpretation-v4/foundationAdapter.test.ts tests/unit/report-generation/customerDayunGeneration.test.ts tests/unit/report-knowledge/semanticAxisResearch.test.ts tests/unit/report-knowledge/fusionKnowledgeResearch.test.ts tests/unit/report-knowledge/fusionKnowledgeBase.test.ts tests/unit/report-knowledge/sajuMbtiBridgeScorer.test.ts tests/unit/report-knowledge/bridge/myeongliMbtiBridgeEngine.test.ts tests/unit/report-knowledge/bridge/productBridgeAdapter.test.ts tests/unit/report-generation/fusionBridgeFactRegression.test.ts tests/unit/interpretation-v4/personalResonanceProfile.test.ts tests/unit/interpretation-v4/personalResonance.test.ts tests/unit/report-knowledge/compatibilityTypes.test.ts tests/unit/report-knowledge/compatibilityScoreEngine.test.ts tests/unit/report-knowledge/compatibilitySajuBridge.test.ts tests/unit/report-knowledge/compatibilityMbtiBridge.test.ts tests/unit/report-knowledge/compatibilityRelationRules.test.ts tests/unit/interpretation-v4/compatibilitySafety.test.ts tests/unit/interpretation-v4/compatibilityTitleSafety.test.ts tests/unit/report-knowledge/comprehensiveProductResearch.test.ts tests/unit/interpretation-v4/comprehensiveRelease.test.ts tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts tests/unit/interpretation-v4/comprehensiveManuscript.test.ts tests/unit/interpretation-v4/comprehensiveProduct.test.tsx tests/unit/interpretation-v4/comprehensiveAllocation.test.ts tests/unit/interpretation-v4/comprehensiveRenderability.test.ts tests/unit/interpretation-v4/comprehensiveStability.test.ts",
+      "files": 48,
+      "pass": 3380,
+      "fail": 6,
+      "preexistingConditionalNotRun": 1,
+      "exitCode": 1
+    },
+    "sixProductTests": {
+      "command": "npm test -- tests/unit/interpretation-v4/sixProductIntegration.test.ts",
+      "files": 1,
+      "pass": 64,
+      "fail": 0,
+      "exitCode": 0
+    },
+    "combinedNonDuplicatedTests": {
+      "files": 49,
+      "pass": 3444,
+      "baselineFailures": 6,
+      "newFailures": 0,
+      "preexistingConditionalNotRun": 1
+    },
+    "typescript": {
+      "command": "npx tsc --noEmit --incremental false",
+      "before": 0,
+      "after": 0,
+      "newDiagnostics": 0,
+      "exitCode": 0
+    },
+    "lint": {
+      "command": "npm run lint",
+      "exitCode": 0
+    },
+    "build": {
+      "command": "OPENAI_REPORT_WRITER_ENABLED=0 TOSS_CONFIRM_API_ENABLED=0 PAID_REPORT_RELIABILITY_ENABLED=0 npm run build -- --webpack",
+      "exitCode": 0,
+      "staticPages": 47,
+      "nftWarnings": 0,
+      "newWarnings": 0
+    },
+    "sourceAudit": {
+      "exitCode": 0,
+      "actualLocators": 140,
+      "inheritedRecords": 2991,
+      "primaryTraits": 1213,
+      "fileLocks": 2201
+    },
+    "diffCheck": {
+      "commands": [
+        "git diff --check",
+        "git diff --cached --check"
+      ],
+      "exitCode": 0,
+      "stagedNewFileCount": 74,
+      "existingFilesModified": 0
+    }
+  },
+  "unchangedFailures": [
+    {
+      "file": "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+      "line": 116,
+      "name": "only foundation modules reference the foundation; no writer/UI/calculation import",
+      "message": "careerReleaseMaterials.ts: expected false to be true"
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "line": 50,
+      "name": "rejects major_fortune bypass before order writes and allows stable input",
+      "message": "Unexpected end of JSON input"
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "line": 50,
+      "name": "rejects annual_fortune bypass before order writes and allows stable input",
+      "message": "Unexpected end of JSON input"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+      "line": 99,
+      "name": "C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+      "message": "expected [] to include 'composite'"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+      "line": 113,
+      "name": "recovery-axis Fusion can serve C9 even when its original application is work",
+      "message": "expected false to be true"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+      "line": 145,
+      "name": "scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+      "message": "careerReleaseRenderer.ts references comprehensivePlanCore outside old isolation allowlist"
+    }
+  ],
+  "preexistingConditionalTest": {
+    "file": "tests/unit/interpretation-v4/comprehensiveRelease.test.ts",
+    "name": "former 13D-6B edition reopens without a reader upgrade",
+    "condition": "EDITORIAL_LEGACY_SNAPSHOT fixture not supplied",
+    "countedAsPass": false,
+    "testSourceModified": false
+  },
+  "testSelectionNote": "Baseline CLI filter reproduced only the three additional failures; full final related suite ran all 48 selected files. No tests were deleted or newly skipped.",
+  "lintCorrection": "Renamed the new test local module variable to sourceModule for the existing Next ESLint rule; no production source change.",
+  "logPolicy": "Actual stdout/stderr; terminal CR and trailing whitespace normalized for diff-check. Empty TypeScript logs have zero diagnostics; exit codes recorded separately.",
+  "runtimeConnection": false,
+  "customerApproval": false,
+  "newBindingValidatorImplemented": false
+}

@@ -1,0 +1,1 @@
+{ "framework": "nextjs", "buildCommand": "cd ../../.. && pnpm exec next build tools/protected-staging/reader --webpack", "installCommand": "cd ../../.. && pnpm install --frozen-lockfile" }

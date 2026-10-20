@@ -1,0 +1,292 @@
+[
+  {
+    "method": "FIRST_ELIGIBLE",
+    "selected": [
+      {
+        "id": "synthetic:annual:01-first-shared",
+        "month": 1,
+        "questionId": "synthetic:annual:q:1",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-3",
+        "month": 3,
+        "questionId": "synthetic:annual:q:3",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:april-comparison",
+        "month": 4,
+        "questionId": "synthetic:annual:q:4",
+        "function": "VERIFIED_COMPARISON"
+      },
+      {
+        "id": "synthetic:annual:may-samhap",
+        "month": 5,
+        "questionId": "synthetic:annual:q:5",
+        "function": "VERIFIED_NEW_APPLICATION"
+      },
+      {
+        "id": "synthetic:annual:june-branch",
+        "month": 6,
+        "questionId": "synthetic:annual:q:6",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-7",
+        "month": 7,
+        "questionId": "synthetic:annual:q:7",
+        "function": "CONTINUITY"
+      },
+      {
+        "id": "synthetic:annual:month-8",
+        "month": 8,
+        "questionId": "synthetic:annual:q:8",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-9",
+        "month": 9,
+        "questionId": "synthetic:annual:q:9",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-10",
+        "month": 10,
+        "questionId": "synthetic:annual:q:10",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-11",
+        "month": 11,
+        "questionId": "synthetic:annual:q:11",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-12",
+        "month": 12,
+        "questionId": "synthetic:annual:q:12",
+        "function": "NEW_CALCULATED_FACT"
+      }
+    ],
+    "coveredQuestions": 11,
+    "independentInformation": 10,
+    "distinctRoots": 11,
+    "repeatedRootUses": 0,
+    "repeatedMeanings": 0,
+    "coveredMonths": 11,
+    "uncovered": [
+      {
+        "questionId": "synthetic:annual:q:2",
+        "month": 2,
+        "reasons": [
+          "GLOBAL_RESERVATION_OR_OBJECTIVE",
+          "SAME_ROOT_NOT_NEW_CALCULATED_FACT",
+          "WRONG_EFFECTIVE_ANNUAL"
+        ]
+      }
+    ],
+    "periodErrors": 0,
+    "ambiguousRolesApproved": 0,
+    "unsupportedRelationsUsed": 0,
+    "claimsEmitted": 0,
+    "search": {
+      "visited": 0,
+      "complete": true,
+      "status": "COMPLETE"
+    },
+    "violations": []
+  },
+  {
+    "method": "MONTH_LOCAL_GREEDY",
+    "selected": [
+      {
+        "id": "synthetic:annual:01-first-shared",
+        "month": 1,
+        "questionId": "synthetic:annual:q:1",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-3",
+        "month": 3,
+        "questionId": "synthetic:annual:q:3",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:april-comparison",
+        "month": 4,
+        "questionId": "synthetic:annual:q:4",
+        "function": "VERIFIED_COMPARISON"
+      },
+      {
+        "id": "synthetic:annual:may-samhap",
+        "month": 5,
+        "questionId": "synthetic:annual:q:5",
+        "function": "VERIFIED_NEW_APPLICATION"
+      },
+      {
+        "id": "synthetic:annual:june-branch",
+        "month": 6,
+        "questionId": "synthetic:annual:q:6",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-7",
+        "month": 7,
+        "questionId": "synthetic:annual:q:7",
+        "function": "CONTINUITY"
+      },
+      {
+        "id": "synthetic:annual:month-8",
+        "month": 8,
+        "questionId": "synthetic:annual:q:8",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-9",
+        "month": 9,
+        "questionId": "synthetic:annual:q:9",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-10",
+        "month": 10,
+        "questionId": "synthetic:annual:q:10",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-11",
+        "month": 11,
+        "questionId": "synthetic:annual:q:11",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-12",
+        "month": 12,
+        "questionId": "synthetic:annual:q:12",
+        "function": "NEW_CALCULATED_FACT"
+      }
+    ],
+    "coveredQuestions": 11,
+    "independentInformation": 10,
+    "distinctRoots": 11,
+    "repeatedRootUses": 0,
+    "repeatedMeanings": 0,
+    "coveredMonths": 11,
+    "uncovered": [
+      {
+        "questionId": "synthetic:annual:q:2",
+        "month": 2,
+        "reasons": [
+          "GLOBAL_RESERVATION_OR_OBJECTIVE",
+          "SAME_ROOT_NOT_NEW_CALCULATED_FACT",
+          "WRONG_EFFECTIVE_ANNUAL"
+        ]
+      }
+    ],
+    "periodErrors": 0,
+    "ambiguousRolesApproved": 0,
+    "unsupportedRelationsUsed": 0,
+    "claimsEmitted": 0,
+    "search": {
+      "visited": 0,
+      "complete": true,
+      "status": "COMPLETE"
+    },
+    "violations": []
+  },
+  {
+    "method": "GLOBAL_CONSTRAINT_AWARE",
+    "selected": [
+      {
+        "id": "synthetic:annual:02-jan-alternative",
+        "month": 1,
+        "questionId": "synthetic:annual:q:1",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:feb-critical",
+        "month": 2,
+        "questionId": "synthetic:annual:q:2",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-3",
+        "month": 3,
+        "questionId": "synthetic:annual:q:3",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:april-comparison",
+        "month": 4,
+        "questionId": "synthetic:annual:q:4",
+        "function": "VERIFIED_COMPARISON"
+      },
+      {
+        "id": "synthetic:annual:may-samhap",
+        "month": 5,
+        "questionId": "synthetic:annual:q:5",
+        "function": "VERIFIED_NEW_APPLICATION"
+      },
+      {
+        "id": "synthetic:annual:june-branch",
+        "month": 6,
+        "questionId": "synthetic:annual:q:6",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-7",
+        "month": 7,
+        "questionId": "synthetic:annual:q:7",
+        "function": "CONTINUITY"
+      },
+      {
+        "id": "synthetic:annual:month-8",
+        "month": 8,
+        "questionId": "synthetic:annual:q:8",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-9",
+        "month": 9,
+        "questionId": "synthetic:annual:q:9",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-10",
+        "month": 10,
+        "questionId": "synthetic:annual:q:10",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-11",
+        "month": 11,
+        "questionId": "synthetic:annual:q:11",
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "id": "synthetic:annual:month-12",
+        "month": 12,
+        "questionId": "synthetic:annual:q:12",
+        "function": "NEW_CALCULATED_FACT"
+      }
+    ],
+    "coveredQuestions": 12,
+    "independentInformation": 11,
+    "distinctRoots": 12,
+    "repeatedRootUses": 0,
+    "repeatedMeanings": 0,
+    "coveredMonths": 12,
+    "uncovered": [],
+    "periodErrors": 0,
+    "ambiguousRolesApproved": 0,
+    "unsupportedRelationsUsed": 0,
+    "claimsEmitted": 0,
+    "search": {
+      "visited": 517,
+      "complete": true,
+      "status": "COMPLETE"
+    },
+    "violations": []
+  }
+]

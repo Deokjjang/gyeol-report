@@ -1,4 +1,5 @@
 import "server-only";
+import { majorYearPeriod } from "../../../lib/interpretation-v4/majorPeriodCopy";
 import { projectV4Composition, projectV4Tables, validateV4Publication, type V4RuntimeEvidence } from "../../../lib/interpretation-v4/runtimeProjection";
 import { buildV4Evidence, evaluateEvidence } from "../../../lib/interpretation-v4/evidencePolicy";
 import { canonicalV4Feature, MATERIAL_BY_FEATURE } from "../../../lib/interpretation-v4/materialRegistry";
@@ -12,8 +13,10 @@ import { friendlyTransition } from "../../../lib/interpretation-v4/periodPlanner
 import { godEffects } from "../../../lib/interpretation-v4/compatibilityInteractions";
 import { composeBookNavigation } from "./bookNavigation";
 import { comprehensiveBookContents, COMPREHENSIVE_PLAIN_MEANINGS, COMPREHENSIVE_STAGE_MEANINGS } from "./comprehensiveBook";
-import { comprehensiveRuleHeadings, comprehensiveProductContents } from "../../../lib/book/comprehensiveBookAdapter";
-import { careerRuleHeadings } from "../../../lib/book/careerBookAdapter";
+import { comprehensiveRuleHeadings, comprehensiveProductContents, comprehensiveReaderHeadings, comprehensiveReaderContents } from "../../../lib/book/comprehensiveBookAdapter";
+import { careerRuleHeadings, careerReaderHeadings, careerReaderContents } from "../../../lib/book/careerBookAdapter";
+import { loveReaderPages, loveReaderContents } from "../../../lib/book/loveBookAdapter";
+import { compatibilityReaderPages, compatibilityReaderContents } from "../../../lib/book/compatibilityBookAdapter";
 import { describeReportShare } from "../../../lib/sharing/reportShareMetadata";
 import type { NarrativeBlock, MaterialPacket } from "../../../lib/interpretation-v4/narrativeTypes";
 import type { GenerationPersonInput } from "../../../lib/report-generation/reportInputAdapter";
@@ -69,7 +72,7 @@ export function bookFeatureInventory(e: V4RuntimeEvidence, slot: "person" | "per
     for (const hidden of row.hiddenStems ?? []) if (!entries.some(v => v.key === `hidden:${hidden}`)) entries.push({ key: `hidden:${hidden}`, strong: false,
       display: { name: hidden, person: name, group: "지장간", meaning: [...MATERIAL_BY_FEATURE.values()].find(m => m.label === hidden.split(" ")[1])?.positiveMeaning ?? "표의 해당 기둥 안에 함께 담긴 기운.", manifestation: "" } });
     for (const stage of row.twelveLifeStage ?? []) if (!entries.some(v => v.key === `stage:${stage}`)) entries.push({ key: `stage:${stage}`, strong: false,
-      display: { name: stage, person: name, group: "십이운성", meaning: "일간과 지지의 관계를 성장의 단계에 빗대어 보는 이름.", manifestation: "" } });
+      display: { name: stage, person: name, group: "십이운성", meaning: (e.bookEditorialRevision === "common-editorial-01" ? COMPREHENSIVE_STAGE_MEANINGS[stage] : undefined) ?? "일간과 지지의 관계를 성장의 단계에 빗대어 보는 이름.", manifestation: "" } });
   }
   return e.composition.product === "saju_mbti_full" ? entries.map(entry => ({ ...entry, display: { ...entry.display,
     meaning: (entry.display.group === "십이운성" ? COMPREHENSIVE_STAGE_MEANINGS[entry.display.name] : COMPREHENSIVE_PLAIN_MEANINGS[entry.key]) ?? entry.display.meaning } })) : entries;
@@ -129,7 +132,7 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
       directions: [], relations: unique(c.result.evidence.relations.map(r => r.labelKo)) });
     const index = c.result.compatibilityIndex;
     if (index) pages.push({ kind: "score", id: "compatibility-index", title: "결리포트 궁합 지수", total: index.total,
-      scores: index.scores.map(({ label, value, max }) => ({ label, value, max })), verdict: index.verdict, notice: index.notice, limitations: index.limitations });
+      scores: index.scores.map(({ label, value, max }) => ({ label, value, max })), verdict: index.verdict, notice: index.notice, limitations: index.limitations, ...(index.explanations ? { explanations: index.explanations, scoreVersion: index.version, versionLabel: index.versionLabel } : {}) });
   }
   people.forEach((p, i) => { pages.push({ kind: "manse", title: `${p.name}의 만세력`, person: i }, { kind: "mbti", title: `${p.name}의 MBTI`, person: i }); });
   const openingNotes: BookNote[] = [];
@@ -151,7 +154,9 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
     if (c.product === "major_fortune") {
       const year = c.result.years.find(y => section.id === `year-${y.year}`);
       if (year) {
-        extra.push({ name: `${year.year}년 · ${year.annual.tenGod}`, text: `${year.annual.ganji} 세운 · ${year.cycle.ganji} 대운 · ${year.protagonist}` });
+        // Existing saved manuscripts retain their original Book presentation.
+        const period = year.blocks.some(b => b.proof.sourceRefs.includes("v4:major-reader-periods-01")) ? majorYearPeriod(c.result.evidence, year) : null;
+        extra.push({ name: period?.label ? `${year.annual.ganji} 세운` : `${year.year}년 · ${year.annual.tenGod}`, text: `${year.annual.ganji} 세운 · ${period?.cycle ?? year.cycle.ganji} 대운 · ${year.protagonist}${period?.label ? ` · ${period.label} · 아래 관계는 전환 완료 뒤 기간` : ""}` });
         for (const r of [year.selectedRelation.harmony, year.selectedRelation.tension]) if (r) extra.push({ name: `${r.branches.join("")} ${r.type}`, text: r.plain });
       }
       const transition = c.result.transitions.find(t => section.id === `transition-${t.year}`);
@@ -182,9 +187,13 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
   }
   if (c.product === "major_fortune") {
     const timeline = pages.find(p => p.kind === "timeline")! as Extract<BookPage, { kind: "timeline" }>;
-    timeline.years = c.result.years.map(y => ({ year: y.year, age: y.age, cycle: y.cycle.ganji, annual: y.annual.ganji,
-      theme: y.protagonist, good: y.goodTheme, caution: y.cautionTheme, title: y.title, time: timeLabel[y.timePosition], page: sectionPages.get(`year-${y.year}`)!,
-      importance: y.importance, transition: c.result.transitions.find(t => t.year === y.year) ? friendlyTransition(c.result.transitions.find(t => t.year === y.year)!.dateLabel) : null }));
+    timeline.years = c.result.years.map(y => {
+      const t = c.result.transitions.find(t => t.year === y.year);
+      const period = y.blocks.some(b => b.proof.sourceRefs.includes("v4:major-reader-periods-01")) ? majorYearPeriod(c.result.evidence, y) : null;
+      return { year: y.year, age: y.age, cycle: period?.cycle ?? y.cycle.ganji, annual: y.annual.ganji,
+        theme: y.protagonist, good: y.goodTheme, caution: y.cautionTheme, title: y.title, time: timeLabel[y.timePosition], page: sectionPages.get(`year-${y.year}`)!,
+        importance: y.importance, transition: period?.label || (t ? friendlyTransition(t.dateLabel) : null) };
+    });
     timeline.transitions = c.result.transitions.map(t => ({ date: friendlyTransition(t.dateLabel), exact: t.dateLabel, before: t.before.ganji, after: t.after.ganji, page: sectionPages.get(`transition-${t.year}`)! }));
   }
   if (c.product === "annual_fortune") {
@@ -192,7 +201,7 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
     overview.map = c.result.yearMap;
     overview.months = c.result.months.map(m => ({ month: m.month, title: m.title, theme: /[a-z]/i.test(m.strongestTheme) ? MAJOR_MEANINGS[m.god].theme : m.strongestTheme, time: timeLabel[m.time],
       ganji: m.focus.monthPillar.stem + m.focus.monthPillar.branch, gods: `${m.focus.stemTenGod} · ${m.focus.branchTenGod}`,
-      good: MAJOR_MEANINGS[m.god].gift, caution: m.action?.avoid, importance: m.plan?.importance, boundary: m.boundary,
+      good: MAJOR_MEANINGS[m.god].gift, ...(Object.hasOwn(m, "caution") ? m.caution ? { caution: m.caution } : {} : { caution: m.action?.avoid }), importance: m.plan?.importance, boundary: m.boundary,
       markers: unique(c.result.evidence.months.find(v => v.month === m.month)!.transit.accepted.flatMap(f => f.observations.map(o => o.label))), page: sectionPages.get(`month-${m.month}`)! }));
   }
   const used = new Set([...c.result.narrative.opening, ...Array.from(c.result.narrative.sections).flatMap(s => s.blocks)].flatMap(b => b.proof.features.map(featureKey)));
@@ -208,8 +217,15 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
   const share = describeReportShare({ productSlug: e.input.productSlug, draft: view });
   const integration = c.product === "saju_mbti_full" && "integration" in c.result ? c.result.integration : null;
   const career = c.product === "career_money_study" && "integration" in c.result ? c.result.integration : null;
+  const edition = integration && "readerEdition" in integration && integration.publishedEdition === integration.readerEdition.version ? integration.readerEdition : null;
+  const careerEdition = career && "readerEdition" in career && career.publishedEdition === career.readerEdition.version ? career.readerEdition : null;
+  const love = c.product === "love_marriage_child" && "integration" in c.result ? c.result.integration : null;
+  const loveEdition = love && "readerEdition" in love && love.publishedEdition === love.readerEdition.version ? love.readerEdition : null;
+  const pair = c.product === "saju_mbti_compatibility" && "integration" in c.result ? c.result.integration : null;
+  const pairEdition = pair && "readerEdition" in pair && pair.publishedEdition === pair.readerEdition.version ? pair.readerEdition : null;
   // The closing manual's own title must not replace its first rule subtitle
   // when the preceding chapter happens to be short. Legacy books are unchanged.
-  const navigation = composeBookNavigation(integration ? comprehensiveRuleHeadings(pages, integration.represented) : career ? careerRuleHeadings(pages, career.ruleHeadings) : pages, integration || career ? ["chapter-direction"] : []);
-  return { bookId, title, names, people, context, pages: integration ? comprehensiveProductContents(navigation) : c.product === "saju_mbti_full" ? comprehensiveBookContents(navigation) : navigation, readingDate: e.generatedAt.slice(0, 10), share: { title: `${names} · ${title}`, description: share.description } };
+  const navigation = composeBookNavigation(edition ? comprehensiveReaderHeadings(pages, edition) : careerEdition ? careerReaderHeadings(pages, careerEdition) : loveEdition ? loveReaderPages(pages, loveEdition) : pairEdition ? compatibilityReaderPages(pages, pairEdition) : integration ? comprehensiveRuleHeadings(pages, integration.represented) : career ? careerRuleHeadings(pages, career.ruleHeadings) : pages,
+    edition ? edition.chapters.map(c => c.key === "core" ? "core" : `chapter-${c.key}`) : careerEdition ? careerEdition.chapters.map(c => c.key === "core" ? "core" : `chapter-${c.key}`) : loveEdition ? loveEdition.chapters.map(c => c.key === "core" ? "core" : `chapter-${c.key}`) : pairEdition ? pairEdition.chapters.map(c => c.key === "core" ? "core" : `chapter-${c.key}`) : integration || career ? ["chapter-direction"] : []);
+  return { bookId, title, names, people, context, pages: edition ? comprehensiveReaderContents(navigation, edition) : careerEdition ? careerReaderContents(navigation, careerEdition) : loveEdition ? loveReaderContents(navigation, loveEdition) : pairEdition ? compatibilityReaderContents(navigation, pairEdition) : integration ? comprehensiveProductContents(navigation) : c.product === "saju_mbti_full" ? comprehensiveBookContents(navigation) : navigation, readingDate: e.generatedAt.slice(0, 10), share: { title: `${names} · ${title}`, description: share.description } };
 }

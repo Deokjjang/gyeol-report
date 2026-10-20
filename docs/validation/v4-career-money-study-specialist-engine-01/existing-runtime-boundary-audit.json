@@ -1,0 +1,484 @@
+{
+  "files": [
+    {
+      "file": "src/lib/interpretation-v4/careerProductAdapter.ts",
+      "sha256": "4ea3d5c1a9ee4aa1e5fce8a38deb2ad139365f1933adc98e1b7384711a1a2a34",
+      "imports": [
+        "node:crypto",
+        "./foundationIntegratedProfile",
+        "./mbtiSemanticProfile",
+        "./fusionSemanticProfile",
+        "./claimProfile",
+        "./personalResonanceProfile",
+        "./guidanceProfile",
+        "./careerProductSelection",
+        "./careerProductNarrative",
+        "./materialPacket",
+        "./careerVoices",
+        "./careerWorkNarrative",
+        "./careerRecommendations",
+        "./careerStudy",
+        "./careerBalance",
+        "./operatingRuleRegistry",
+        "./narrativeTitleCore",
+        "./comprehensiveNarrativeAdapter",
+        "./narrativeHumanSurface",
+        "./semanticCore",
+        "./guidanceCore",
+        "./narrativeTypes",
+        "./careerNarrativeTypes",
+        "./careerReleaseRenderer",
+        "./careerReleaseValidator",
+        "./careerReleaseContracts"
+      ],
+      "exportedDeclarations": [
+        "CAREER_PRODUCT_VERSION",
+        "buildV4CareerProduct",
+        "CareerProduct"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerProductSelection.ts",
+      "sha256": "37b2fefdfa7f8dde26c363938a17343a62bc20d4f7aff18f3332f3ce4f82c711",
+      "imports": [
+        "./comprehensiveCandidateAdapter",
+        "./comprehensivePlanCore",
+        "./semanticCore"
+      ],
+      "exportedDeclarations": [
+        "CareerProfiles",
+        "CareerQuestion",
+        "CareerPlacement",
+        "CAREER_VISIBLE_DOMAINS",
+        "selectCareerProductSources"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerProductNarrative.ts",
+      "sha256": "1fad8b0d483e32fbf949daece12a8ef2b20f19d60a8c327fc2953c87e66f53cf",
+      "imports": [
+        "./careerProductSelection",
+        "./careerProductSelection",
+        "./comprehensivePlanCore",
+        "./narrativeCore",
+        "./semanticCore",
+        "./narrativeBlockRenderer",
+        "./narrativeMemory",
+        "./narrativeSceneCore",
+        "./narrativeSceneRegistry",
+        "./comprehensiveNarrativeAdapter",
+        "./narrativeHumanSurface",
+        "./narrativeHumanFirst",
+        "./narrativeMbtiReason",
+        "./narrativePositiveReward",
+        "./narrativeHumanOutcome",
+        "./narrativeTypes"
+      ],
+      "exportedDeclarations": [
+        "careerProof",
+        "createCareerRenderer"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerComposer.ts",
+      "sha256": "9af5586bb256a289d2f25a47b3a117d951a2c0a7216a9ea5959cccc28c4f32ce",
+      "imports": [
+        "../report-generation/reportInputTypes",
+        "./materialPacket",
+        "./copyRealizer",
+        "./editorialGuard",
+        "./careerVoices",
+        "./careerWorkNarrative",
+        "./careerRecommendations",
+        "./careerStudy",
+        "./careerFortune",
+        "./careerBalance",
+        "./careerNatalMoney",
+        "./contentSynthesis",
+        "./narrativeTypes",
+        "./careerNarrativeTypes"
+      ],
+      "exportedDeclarations": [
+        "composeCareerNarrative"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+      "sha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+      "imports": [
+        "./types",
+        "../report-generation/reportInputTypes"
+      ],
+      "exportedDeclarations": [
+        "CAREER_RELEASE_VERSION",
+        "CAREER_READER_CHAPTERS",
+        "CareerReleaseSentence",
+        "CareerReleaseParagraph",
+        "CareerReleaseDraft"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerReleaseRenderer.ts",
+      "sha256": "2cbfe331f99489448900374409c3187cf1d7977e9f110822ab6233c93b7dbed6",
+      "imports": [
+        "./careerProductSelection",
+        "./comprehensivePlanCore",
+        "./narrativeTypes",
+        "./careerNarrativeTypes",
+        "./careerReleaseContracts",
+        "./careerReleaseMaterials",
+        "./careerReleaseSources",
+        "./careerReleaseContext",
+        "./careerStudy",
+        "../report-knowledge/mbti/sourceRuntimeAdapter",
+        "./narrativeMbtiReason",
+        "./narrativeMemory",
+        "./narrativePositiveReward",
+        "./careerReleaseApplications",
+        "./careerNatalMoney",
+        "./copyRealizer",
+        "./contentEvidence",
+        "./careerRecommendations",
+        "./careerWorkNarrative",
+        "./narrativeHumanOutcome",
+        "./careerQualityApplications",
+        "./careerReleaseStudy"
+      ],
+      "exportedDeclarations": [
+        "renderCareerRelease"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerReleaseValidator.ts",
+      "sha256": "6791e0790a11b7b7dd8f1fd452b557ce9e7ead91e1f79b32e8e676417643aef5",
+      "imports": [
+        "./careerReleaseContracts",
+        "./careerReleaseContracts",
+        "./careerProductSelection",
+        "./comprehensivePlanCore",
+        "./careerNarrativeTypes"
+      ],
+      "exportedDeclarations": [
+        "validateCareerRelease",
+        "compareCareerReaders"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerReleaseSources.ts",
+      "sha256": "4c423e39264c9a2830a6005866a0c4525a920552a6a53115f7d9813dcada2d42",
+      "imports": [
+        "./careerProductSelection",
+        "./comprehensivePlanCore",
+        "./semanticCore",
+        "./foundationRanking",
+        "./careerReleaseMaterials",
+        "./foundationTenGods"
+      ],
+      "exportedDeclarations": [
+        "CareerReleaseSource",
+        "collectCareerReleaseSources",
+        "careerAtomName"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerReleaseMaterials.ts",
+      "sha256": "45764d89bae1daada1ae35401ea66a6edb8e75206129d0b9de386384577bcbfa",
+      "imports": [
+        "./semanticCore"
+      ],
+      "exportedDeclarations": [
+        "CAREER_RELEASE_MATERIALS"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerReleaseApplications.ts",
+      "sha256": "f2e95ce7728047c29388330762f85619ea7695f8aab26090ef250af608c2fe27",
+      "imports": [],
+      "exportedDeclarations": [
+        "CAREER_TASKS",
+        "CAREER_WORKFLOWS"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerReleaseContext.ts",
+      "sha256": "82140cbf9d9a77dfac8b67313ce702c0380862f930dcba919979f7a209111ead",
+      "imports": [
+        "./narrativeTypes"
+      ],
+      "exportedDeclarations": [
+        "CAREER_STATUS_COPY",
+        "careerStatusCopy"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerQualityApplications.ts",
+      "sha256": "8f8b61dbfb1266d319aa0a5093e9a418c5bea2452530efd6ae7ce6ceff74b7d9",
+      "imports": [],
+      "exportedDeclarations": [
+        "CAREER_JOB_SCENES",
+        "CAREER_JOB_STEPS",
+        "CAREER_ECONOMIC_USE",
+        "CAREER_WEALTH_APPLICATIONS",
+        "CAREER_GROWTH_RISKS"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerRecommendations.ts",
+      "sha256": "f67140178f0bea75fe9811602af00eb0dcc8db0a11803804caaa391d3528db87",
+      "imports": [
+        "./materialRegistry",
+        "./copyRealizer",
+        "./narrativeTypes",
+        "./types",
+        "./careerNarrativeTypes",
+        "./careerVoices",
+        "./careerWorkNarrative",
+        "./careerRoleScenes",
+        "../report-knowledge/mbti/sourceRuntimeAdapter",
+        "./contentEvidence",
+        "./contentMbti"
+      ],
+      "exportedDeclarations": [
+        "CAREER_ROUTES",
+        "careerRecommendations"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerWorkNarrative.ts",
+      "sha256": "45b6c40ad2249d20c48ea273ba416b6dc60fde440401683d5439534a62ce3cc9",
+      "imports": [
+        "./narrativeContext",
+        "./narrativeTypes",
+        "./copyRealizer"
+      ],
+      "exportedDeclarations": [
+        "careerWorkNarrative"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerStudy.ts",
+      "sha256": "8946c4025a37b9d7dce4171283078ea42a44550141f00d48b00837274b2aaa31",
+      "imports": [
+        "../report-knowledge/mbti/sourceRuntimeAdapter",
+        "./materialRegistry",
+        "./copyRealizer",
+        "./narrativeTypes",
+        "./types"
+      ],
+      "exportedDeclarations": [
+        "CAREER_STUDY_BRIDGES",
+        "careerStudy"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerBalance.ts",
+      "sha256": "fed49a9fea37dc676450290a3c06bb16459b48288708a7a66835a08b3180fedb",
+      "imports": [
+        "./narrativeTypes",
+        "./copyRealizer"
+      ],
+      "exportedDeclarations": [
+        "careerBalance"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerNatalMoney.ts",
+      "sha256": "ce1c68f3f4127b35ae467399294c9f3d6ed155a7686c92abe60ec0410bd7ea19",
+      "imports": [
+        "./copyRealizer",
+        "./narrativeTypes"
+      ],
+      "exportedDeclarations": [
+        "careerNatalMoney"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerVoices.ts",
+      "sha256": "13e2684b836e1d60220829e39ac372a4524387451cb192665d3b93a1db632d66",
+      "imports": [
+        "./copyRealizer",
+        "./narrativeTypes"
+      ],
+      "exportedDeclarations": [
+        "CAREER_VOICES",
+        "selectCareerVoice"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerRoleScenes.ts",
+      "sha256": "988543fb9b16860c1abd87b66a464f70b3d429c30866f1ff920273690eb94b97",
+      "imports": [],
+      "exportedDeclarations": [
+        "CAREER_ROLE_SCENES",
+        "CAREER_ENVIRONMENT_COST"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerReleaseStudy.ts",
+      "sha256": "4a9c287a9417e75c7462d1b59c2e4f7d24788ce9c543a4ffd61bab98cb93609b",
+      "imports": [],
+      "exportedDeclarations": [
+        "CAREER_STUDY_REMEDIES"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/narrativeContext.ts",
+      "sha256": "7c5fd219c33f07bfe98cebb3721d0a0a7cd7fbda8075da3f235462aff79eb24e",
+      "imports": [
+        "../interpretation-v3/careerContextV3",
+        "../interpretation-v3/careerEditorialScenes",
+        "../report-knowledge/userContextTypes",
+        "./narrativeTypes",
+        "./copyRealizer",
+        "./narrativeWorkContext",
+        "./narrativeVariation"
+      ],
+      "exportedDeclarations": [
+        "NarrativeCareerContext",
+        "narrativeContext",
+        "LOVE_STATE_COPY",
+        "loveManifestation"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/foundationIntegratedProfile.ts",
+      "sha256": "b6640f2021a9919159611bd5a52552d26cbffbe64c35e845d74b60cbe1ebcc30",
+      "imports": [
+        "../saju/types",
+        "./semanticCore",
+        "./foundationProfile",
+        "./foundationTenGods",
+        "./foundationNatalProfile",
+        "./foundationSupplement",
+        "./foundationRanking",
+        "./foundationTension",
+        "./foundationDiagnostics"
+      ],
+      "exportedDeclarations": [
+        "INTEGRATED_FOUNDATION_VERSION",
+        "IntegratedFoundationInput",
+        "MyeongliSemanticProfile",
+        "IntegratedProfileResult",
+        "integrateMyeongliFoundation",
+        "buildIntegratedMyeongliProfile"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/mbtiSemanticProfile.ts",
+      "sha256": "b95f7c05b61f27f42f9a2e5ecccf2811610095afaf08737fb269f6b2dbbca96f",
+      "imports": [
+        "./semanticCore",
+        "./mbtiDimensionPriors",
+        "./mbtiSourceAdapter",
+        "./mbtiSemanticAnnotations",
+        "./mbtiSemanticDiagnostics",
+        "./mbtiSemanticCore"
+      ],
+      "exportedDeclarations": [
+        "MbtiAxisSupport",
+        "MbtiAxisLedger",
+        "MbtiSemanticProfile",
+        "aggregateMbtiContributions",
+        "MbtiProfileResult",
+        "projectMbtiSemanticProfile",
+        "buildMbtiSemanticProfile"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+      "sha256": "180e4343baba50532c878d89772eeec8d95fd008cfba46469479cb8ce58bfd17",
+      "imports": [
+        "./semanticCore",
+        "./foundationIntegratedProfile",
+        "./mbtiSemanticProfile",
+        "./fusionCore",
+        "./fusionContext",
+        "./fusionProfileAdapter",
+        "./fusionMeanings",
+        "./fusionTension",
+        "./fusionComplementRegistry",
+        "./fusionRanking",
+        "./fusionDiagnostics"
+      ],
+      "exportedDeclarations": [
+        "buildMyeongliMbtiFusion"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/claimProfile.ts",
+      "sha256": "3f405565d9db8d082489ae36cda987c7e81dd8cfba926a383f3f4c0e47c52241",
+      "imports": [
+        "./foundationIntegratedProfile",
+        "./mbtiSemanticProfile",
+        "./fusionCore",
+        "./fusionDiagnostics",
+        "./claimCore",
+        "./claimRegistry",
+        "./claimEvidence",
+        "./claimEvaluator",
+        "./claimDiagnostics"
+      ],
+      "exportedDeclarations": [
+        "buildClaimProfile"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/personalResonanceProfile.ts",
+      "sha256": "b5a854e34c657e5fe045335cde20abc6b838005a463b123c7fcaceed1b71ea9d",
+      "imports": [
+        "./foundationIntegratedProfile",
+        "./mbtiSemanticProfile",
+        "./fusionCore",
+        "./fusionDiagnostics",
+        "./claimCore",
+        "./claimDiagnostics",
+        "./claimEvidence",
+        "./personalResonanceCore",
+        "./personalResonanceRegistry",
+        "./personalResonanceEvaluator",
+        "./personalResonanceRanking",
+        "./personalResonanceDiagnostics",
+        "./traitArc",
+        "./coreGyeol"
+      ],
+      "exportedDeclarations": [
+        "buildPersonalResonanceProfile"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/guidanceProfile.ts",
+      "sha256": "c0d91205f3726824abb0e7be2a6b7b6d18b486e3b9a119e4d56e68f91355031e",
+      "imports": [
+        "./guidanceCore",
+        "./guidanceContext",
+        "./guidanceProblems",
+        "./guidanceEvidence",
+        "./claimEvidence",
+        "./guidanceEvaluator",
+        "./guidanceConflictResolver",
+        "./guidanceRanking",
+        "./guidanceDiagnostics"
+      ],
+      "exportedDeclarations": [
+        "buildContextualGuidanceProfile"
+      ]
+    }
+  ],
+  "callPath": {
+    "A": "runtimeShadow -> buildV4CareerProduct -> integrated Myeongli/MBTI/Fusion/Claim/Resonance/Guidance; no job text in core semantic calculations",
+    "B": "selectCareerProductSources reuses collectComprehensiveCandidates normalization, not Comprehensive scheduler",
+    "C": "take calls K1-K7; K8/K9 are adapter integration labels, not new selection/ranking; K10 uses operating guidance",
+    "D": "careerRecommendations -> unchanged 8 CAREER_ROUTES -> existing significance ordering/top-three/sparse fallback; adapter may append grounded rationale without reordering",
+    "E": "existing chosen routes/MBTI avoid hints -> avoidEnvironments; unresolved trait hints not repaired",
+    "F": "narrativeContext -> careerContextV3/workManifestation -> careerWorkNarrative existing overrides",
+    "G": "renderCareerRelease -> CH01-CH09 / existing materials/apps/context/study; CH03 uses legacy recommendation proof",
+    "H": "validateCareerRelease retains hardErrors and qualityIssues separately; length/quality issues are not new payment gates",
+    "I": "Adapter publishes release only if original hard errors/opening/required sections pass; otherwise existing legacy edition"
+  },
+  "readerBridge": "READER_INTERNAL_QUESTION_BRIDGE_UNVERIFIED",
+  "reuseUnits": "Release positive facet cap 4; risk/recall exempt from global positive cap; risk exemption in chapter guard; root atom uses sorted by count, not hard capped; Canonical Fact Root bridge unverified",
+  "explicitMbtiScope": "Original careerProductNarrative renderer explicit budget 6; unchanged, no customer wording generated by new specialist",
+  "writerFollowUp": [
+    "Audit current release lengths and generic/legacy fallback in an authorized Writer/Publication phase; no writer change here"
+  ]
+}

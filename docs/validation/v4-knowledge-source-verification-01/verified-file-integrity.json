@@ -1,0 +1,830 @@
+[
+  {
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "sha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+  },
+  {
+    "file": "docs/product/mbti/source/ENFP.json",
+    "sha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+  },
+  {
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "sha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+  },
+  {
+    "file": "docs/product/mbti/source/ENTP.json",
+    "sha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+  },
+  {
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "sha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+  },
+  {
+    "file": "docs/product/mbti/source/ESFP.json",
+    "sha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+  },
+  {
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "sha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+  },
+  {
+    "file": "docs/product/mbti/source/ESTP.json",
+    "sha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+  },
+  {
+    "file": "docs/product/mbti/source/INFJ.json",
+    "sha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+  },
+  {
+    "file": "docs/product/mbti/source/INFP.json",
+    "sha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+  },
+  {
+    "file": "docs/product/mbti/source/INTJ.json",
+    "sha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+  },
+  {
+    "file": "docs/product/mbti/source/INTP.json",
+    "sha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+  },
+  {
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "sha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+  },
+  {
+    "file": "docs/product/mbti/source/ISFP.json",
+    "sha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+  },
+  {
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+  },
+  {
+    "file": "docs/product/mbti/source/ISTP.json",
+    "sha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-business-partner-product-knowledge-01/existing-pair-inventory.json",
+    "sha256": "0c2d83b2aa0e200e81ce7e4bb0160e4f2489be3ab1ab9e32f4f9a986e82c298a"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-business-partner-product-knowledge-01/source-locator-audit.json",
+    "sha256": "b9f370607fef58a120b11c65c37d99048c1560c329dfe6ab36b36bdb3262a34e"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-coworker-product-knowledge-01/career-context-source-audit.json",
+    "sha256": "e52d12bfacdb1ec901db73f610231a59fda0281d7ac8745e4d82685f0cc4891e"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-coworker-product-knowledge-01/existing-pair-inventory.json",
+    "sha256": "0c2d83b2aa0e200e81ce7e4bb0160e4f2489be3ab1ab9e32f4f9a986e82c298a"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-coworker-product-knowledge-01/source-locator-audit.json",
+    "sha256": "c3049f332991a3cd58d720ba658dee0302e5234aa2ca2c16622c0aa6149df689"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-friendship-product-knowledge-01/canonicalRelationCrosswalk.json",
+    "sha256": "61b4271f9c309740ac5131e977f6d9b7db5b80dc1a2957c475e94f9b873c72a6"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-friendship-product-knowledge-01/fusionCrosswalk.json",
+    "sha256": "b943f09c7a76e29b34f06dd675a9f25c64f697f4c99c4453ca37b8aa075d19b1"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-friendship-product-knowledge-01/individualMbtiCrosswalk.json",
+    "sha256": "d31afc643f663f5e03653d40d1bdb29a082d3d29e3ea0f3e47160d3bfdebd436"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-friendship-product-knowledge-01/inherited-foundation-audit.json",
+    "sha256": "8e00aba3b81b2f65606470dc347add7c79a0e331516ea48834a82eaeeebcdc05"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-friendship-product-knowledge-01/mbtiPairCrosswalk.json",
+    "sha256": "27f36f25934d98f012c43740cf7107214e83f34a4af7e938655973b1edd74d6a"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-friendship-product-knowledge-01/recipientTenGodResearch.json",
+    "sha256": "481c99d07bd07780914713442420803a5188700bc1d89cbbf345c84f5a1ea677"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-manager-report-product-knowledge-01/career-context-source-audit.json",
+    "sha256": "e52d12bfacdb1ec901db73f610231a59fda0281d7ac8745e4d82685f0cc4891e"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-manager-report-product-knowledge-01/existing-pair-inventory.json",
+    "sha256": "0c2d83b2aa0e200e81ce7e4bb0160e4f2489be3ab1ab9e32f4f9a986e82c298a"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-manager-report-product-knowledge-01/source-locator-audit.json",
+    "sha256": "8b83965d84ed51957c8bb9d59ce8e27fd3f9b8b1612ded36382fc1856eff5244"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-marriage-product-knowledge-01/source-locator-audit.json",
+    "sha256": "3dd4b5f39a420b521940b7ca49862fb17af17fa1a441f8b129db13959364f73e"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-parent-child-product-knowledge-01/source-locator-audit.json",
+    "sha256": "4537a49ab2d1f6ace8af7eccf9c44a883f05ace325422969126413628cf8297c"
+  },
+  {
+    "file": "docs/validation/v4-fusion-semantic-knowledge-depth-01/source-verification.json",
+    "sha256": "5942f198701ad833588973c613361256586d6e453d05496f2e353004ffde5ee0"
+  },
+  {
+    "file": "docs/validation/v4-semantic-axis-knowledge-expansion-01/evidence-binding-blueprint.md",
+    "sha256": "4be24fb56224e8c1c10b7a88a2c51a089ae31d3b942cf87391429e25c00bd0fb"
+  },
+  {
+    "file": "docs/validation/v4-semantic-axis-knowledge-expansion-01/research-source-inventory.json",
+    "sha256": "d98a034abfa413daf955f2b9ac00d62cd1d0d588dc7c00a0bf5d36715046b5f9"
+  },
+  {
+    "file": "docs/validation/v4-semantic-axis-knowledge-expansion-01/semantic-ontology.json",
+    "sha256": "ba1a6e2430eb6694956d1c8105699ff42b5848c2a3b488289bc55120d60cedf9"
+  },
+  {
+    "file": "src/lib/interpretation-v4/dayMasterMaterials.ts",
+    "sha256": "3e842a9ca0b42ea317a47e9d5994a6ea40e6cf38d5a8865b42bc0f46e97863fb"
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusion.ts",
+    "sha256": "1a19f133ac68a36740b1ae9eb57fd7bc3f0fb1f4e224f1f2dbeace2322bfa2a0"
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusionComplementRegistry.ts",
+    "sha256": "f1fcdee0ffcc7e7eb3946c293e4967f2d7ce274f33fa24c6934ae8b2b324880d"
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusionProfileAdapter.ts",
+    "sha256": "ef0b2a217a4643dd936ebc7f9a21bce5a707dde3d5474d2cc8088d8e3cf56825"
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusionRules.ts",
+    "sha256": "562045161572ad8a440157b23557657c6f9a4621748e9b54217e89adfb7fc6ae"
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+    "sha256": "180e4343baba50532c878d89772eeec8d95fd008cfba46469479cb8ce58bfd17"
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusionTension.ts",
+    "sha256": "0f0eabce50251367a656393a4167c1283357dee03852b1fd918bc800efc7aca2"
+  },
+  {
+    "file": "src/lib/interpretation-v4/materialDepth.ts",
+    "sha256": "e9d4f0d46548a6af00299a742dd47a92e8ffea375bc8bc1199be97e994bcd8f8"
+  },
+  {
+    "file": "src/lib/interpretation-v4/materialRegistry.ts",
+    "sha256": "5f208d3e5805e767a8ac51a98338e08962fb3ca4f55a9c90e0e661916ec52fa7"
+  },
+  {
+    "file": "src/lib/interpretation-v4/mbtiSourceAdapter.ts",
+    "sha256": "6081bf903a1fecc464155d69d1fcf68ecd5076cd5b3e71400c3513cf3af39c32"
+  },
+  {
+    "file": "src/lib/interpretation-v4/semanticCore.ts",
+    "sha256": "6be9b1fdc3f07ad7c74a38a165349c80d9b3f32af5c7fae2d0d8dbabfd22abab"
+  },
+  {
+    "file": "src/lib/interpretation-v4/strength.ts",
+    "sha256": "fc299d2191e02ae3befa90193a26569ed93f9ede7de70307563a04ca732f9f3d"
+  },
+  {
+    "file": "src/lib/interpretation-v4/structureEvidence.ts",
+    "sha256": "5780d1ffc65455c5c12692c88638550d105130a25f84df826b67bf6633b26c20"
+  },
+  {
+    "file": "src/lib/interpretation-v4/structureMaterials.ts",
+    "sha256": "91d7b7c3a34f921501ae4a30145fba1c64eece35f0851c5b0c9248eedf1586ad"
+  },
+  {
+    "file": "src/lib/interpretation-v4/structureRules.ts",
+    "sha256": "4f0affe12664bd670076884d3f9b170f48f82f425702a531b2d6363e192d3395"
+  },
+  {
+    "file": "src/lib/report-knowledge/annual-fortune-product-research/domainResearch.ts",
+    "sha256": "c3bb80b8f76ccc7b3113dfb58b53ba6c0115769f2639604c4416576ba4c2a833"
+  },
+  {
+    "file": "src/lib/report-knowledge/annual-fortune-product-research/observedApplicationResearch.ts",
+    "sha256": "7d083ef7a96bde87861a6a83498b125e324dbbedee0e202e5964c495406b0d6f"
+  },
+  {
+    "file": "src/lib/report-knowledge/annual-fortune-product-research/observedMonthViews.ts",
+    "sha256": "233e490c09ec7fc758262156b217699fed862f050aee281c245a8037aa6182fc"
+  },
+  {
+    "file": "src/lib/report-knowledge/career-product-research/chapterResearch.ts",
+    "sha256": "17c5486621513c29131c23ab27b3b7605d4e4a43d5ed239821908cfe1a70086f"
+  },
+  {
+    "file": "src/lib/report-knowledge/career-product-research/jobFunctionResearch.ts",
+    "sha256": "00794b1c6887d2e05122ba2aae6758a05b0581f475ae93cbf9fc5bb57c57145c"
+  },
+  {
+    "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+    "sha256": "d61a8106d8ab5f948703ac04cccf9151ecdea8f19f7ef95f791e096d232f80dc"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-business-partner-research/bindingPolicy.ts",
+    "sha256": "83f26a61d232ed9df611f7922b4900aad67f0460ab8b2d73d0849541ebd9c4e6"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-business-partner-research/canonicalRelationResearch.ts",
+    "sha256": "2dc7493d03a17808bffc18a55fe612fd8b19c9845203e000fdd140ceb26408d8"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-business-partner-research/chapter01Materials.ts",
+    "sha256": "25c370dc780c784a087e0713fa55192c829809c49f2c181418b1d718aa45ea89"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-business-partner-research/chapter02Materials.ts",
+    "sha256": "93ca0922494dc764fc79436cc332cf746963a8a6c1689ff5400c070ce7b584dc"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-business-partner-research/chapter03Materials.ts",
+    "sha256": "5b8822ba3f4047cc09f4f2dcd74765d846d66cf01c3b22220b949f95a5179478"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-business-partner-research/chapter04Materials.ts",
+    "sha256": "b7b140980fadfafe2ffc39d02814981ac792c06b7f77ec90e2c952759f3e66c3"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-business-partner-research/chapter05Materials.ts",
+    "sha256": "7bbef111787a1de770d9c5650572a96604d974e85e5300c313fc75d49e70c467"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-business-partner-research/chapter06Materials.ts",
+    "sha256": "9ca837350f6d71b30952e72811ea31589709897075f73c714b0deb6890979dde"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-business-partner-research/chapter07Materials.ts",
+    "sha256": "6a5b339164ad44760c8d97c820c4e5d91286d25cbed28ca9517978af24d43033"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-business-partner-research/chapter08Materials.ts",
+    "sha256": "6fb90b44cbba9ca1cc04b6f1aff2a0067d255fa2d6f1e5e85d5b91dd7d246de9"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-business-partner-research/chapter09Materials.ts",
+    "sha256": "55a9c435232491523ab9ccc694d05597fcb8efb9ecac2b717b8fb639064cc805"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-business-partner-research/contractInventory.ts",
+    "sha256": "f0cde76cd056af308b3cd8d5420f682345e1eb4903a4ec08baac5e2782d7944d"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+    "sha256": "7202cac3c5cd3b7ac24bd4e97cadbe3e022403f5e8f6b4cff89c3a82839c3912"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-business-partner-research/workTraitSourceAudit.ts",
+    "sha256": "c7097f491fc156afa3861bb783eacc7e595116cf7a6b0c48df5ba648d6062783"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-coworker-research/canonicalRelationResearch.ts",
+    "sha256": "c6eda2764dbe8737662a04e72a8798d34226b6a253eabb80151e1e4c2bec604b"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-coworker-research/contractInventory.ts",
+    "sha256": "43be759ec4562ca2809663c1f6552721211433e13a049b9d6fea3a54ad6f73e7"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-coworker-research/jobContextResearch.ts",
+    "sha256": "37a49b249f2cbd77fb6d04b7924638879b88f1950f66ec8a0dea1a6f1c741daa"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-coworker-research/sourceRegistry.ts",
+    "sha256": "65571e418ce3c510346c8292b89152a6f95cae323c1e81e7fac60607db87bf0d"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-coworker-research/workTraitSourceAudit.ts",
+    "sha256": "03d0e036a98273328673a945705323de1086882968965a4881efaf25728568a0"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-friendship-research/individualMbtiCrosswalk.ts",
+    "sha256": "f1e24e1ecb5f645925af8811561b1bbefce1fc373cb21a1fa1c21bcf12854181"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-friendship-research/personResearch.ts",
+    "sha256": "6db18c11451aa8435c0372e7df4f217b5a79d23f6a321954f107937f950d98b1"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-friendship-research/sourceInventory.ts",
+    "sha256": "9586b92eb571e6a9791277fddc9148e173828d238b5bf1721cd2c83290b785c5"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-love-research/canonicalRelationResearch.ts",
+    "sha256": "660a9001c5d3afff729011bcac5869629804b03b61bc08a94cf8eac91b6e3945"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-love-research/chapterResearch.ts",
+    "sha256": "11be543f4db58e6807f4aba843b603a2e729250047cf1435007e652fd52358c0"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-love-research/facetAudit.ts",
+    "sha256": "714f881842f506d3779fcc2385e0dc265f8e17fda5fda4f56e29baaff3541b3f"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-love-research/paragraphResearch.ts",
+    "sha256": "9e444d47ad2a55d09dfa3ef93328e505d48e7746bf88e77bf197d6054b760c1e"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-manager-report-research/canonicalRelationResearch.ts",
+    "sha256": "d008888d541940e566824aa6202db4258db7fdfe0aca7553a42641894a787de3"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-manager-report-research/chapter01Materials.ts",
+    "sha256": "e9c398aa6941a536d71db69d0b8847641a459f8b9f31570b4f44139265d8232f"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-manager-report-research/chapter02Materials.ts",
+    "sha256": "3157675f0af22f94e79e8d3c5b47b9be1ce6cc6d51e1039bb07fe653d1480905"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-manager-report-research/chapter03Materials.ts",
+    "sha256": "ae935496f75718571802bebe65b70a4fe9bf46dec374bd7970ec3f25ac7f455e"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-manager-report-research/chapter04Materials.ts",
+    "sha256": "47d2e4927b08f0e4c912b711a03c74f56559f5192473b97a990acf630938d54f"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-manager-report-research/chapter05Materials.ts",
+    "sha256": "ea7326ab1fca3a954411ae39e1cc2257c6a2e6325b9aa8ab5f5da81fb836c1d9"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-manager-report-research/chapter06Materials.ts",
+    "sha256": "37f24075fd56f91916b2145d1985febec86402add44b444e84b37f92b9a1257e"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-manager-report-research/chapter07Materials.ts",
+    "sha256": "85c89003b4920368c4bb732b57b9cd4b165abd2a038b9a0311fdb0349df0caba"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-manager-report-research/chapter08Materials.ts",
+    "sha256": "4d97b473ecad800714fe87bb0992f7ba24f0a19187b6115ec751ec53fed5f14f"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-manager-report-research/chapter09Materials.ts",
+    "sha256": "46606be256b2b92c715456b89857a8022d734e152063f6fba97386937aad24c9"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-manager-report-research/contractInventory.ts",
+    "sha256": "4098ef1f70476c8f3b463dd3774f034c3625e307f0e7db27e8aa7ecd1429b123"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-manager-report-research/jobContextResearch.ts",
+    "sha256": "4028d753f231c348de991ed0b7f6b213d021cec6c7cc60ea6d17b94c56ca6e52"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-manager-report-research/sourceRegistry.ts",
+    "sha256": "f9bc85e24b906e81d56281d59f24a945ccb1996720043d633ff44d7935a9caa2"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-manager-report-research/workTraitSourceAudit.ts",
+    "sha256": "1e5881543a67fe42939d5f885feb995c49bb9e5ab08335a3e8374c63c3d8bdc2"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-marriage-research/canonicalRelationResearch.ts",
+    "sha256": "2c7d12749e1bcdc684a7923367dd7d464ef5fac30b7314dd19f742b6877b7cce"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-marriage-research/sourceRegistry.ts",
+    "sha256": "29b2fe063bccc2af8ac8cd1364af38c38fa0a44e3ec4285f7eebd60398695688"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-parent-child-research/canonicalRelationResearch.ts",
+    "sha256": "baf28d1ab739c7f35e4d6dacaedacab95b4dffb9bddf2d409996cf6b885b0985"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-parent-child-research/childMbtiSourceAudit.ts",
+    "sha256": "f631c670a7d0cee2ff79c3d717dfe05b40094eead6e164ba13c424de267791eb"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-parent-child-research/parentMbtiSourceAudit.ts",
+    "sha256": "e32b174dc3769de0edc5f5f3274645debaf4e58452c70985b0f88bc7764108ff"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibility-parent-child-research/sourceRegistry.ts",
+    "sha256": "83ac6e03e955a6bbd23457e598b11b2ff2280cb81f0ba6a7a9cce394262fbfbc"
+  },
+  {
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeApplicationsAbsence.ts",
+    "sha256": "49dbaf020c8c656fc6b52a85302b438e695d6d8e999ef59e83e403965b2e2d9d"
+  },
+  {
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeApplicationsElement.ts",
+    "sha256": "7c899a329b25f3ff6bb1b5b8303c7077da9c5a23e37362f64d3d03d052e0aad0"
+  },
+  {
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeApplicationsFlow.ts",
+    "sha256": "113568b43da71ae88a59c2b3d98ef8b9f4caf63a667072a7b5adba90a62b6814"
+  },
+  {
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeApplicationsStrength.ts",
+    "sha256": "8eb593b8d39076ee6f3d3ed964cdef6553c754a14c5af5c7ee4f5e8c1d4480a7"
+  },
+  {
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeApplicationsTension.ts",
+    "sha256": "b0f0504e844dd069f859bdd0db4e790377baa7aa4eca9c796cf4d678568df7f4"
+  },
+  {
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeApplicationsWeight.ts",
+    "sha256": "b43b3e1b12753d8f32ca51946a535a3bd6c9c65bfce03933db8d265d8333fcd3"
+  },
+  {
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeStructureAbsence.ts",
+    "sha256": "ddc45519fb30b7b1a7f1af4be540489dc2cee77c216e2f0fee25823b4c2f0f65"
+  },
+  {
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeStructureBoundaries.ts",
+    "sha256": "a508868ae6105bcb5273b6f102b8945690521a49cff4f7b53ebd613819f0b485"
+  },
+  {
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeStructureElement.ts",
+    "sha256": "a8dcc0a9e528e710e696a3b0747ae84aeccd422777f2bc46e46715776af4bddf"
+  },
+  {
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeStructureFlow.ts",
+    "sha256": "eb37214f9d61fb3da6c4ea836c856ffacad18521ae32645fdc4e0404b42e8fc4"
+  },
+  {
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeStructurePrinciple.ts",
+    "sha256": "9e8b763c0d42d8850cfbb93dba61b59f4688a76a2935fe19ed556a3e5a696d71"
+  },
+  {
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeStructureStrength.ts",
+    "sha256": "58e9857dd90713c3c947250478c48cdeb9e33be05920c934a963adba607b2e50"
+  },
+  {
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeStructureTension.ts",
+    "sha256": "490ce202255ea32abb66ea9b2c59b0f641ec6b1281b04cba28c4ae980b2df3e1"
+  },
+  {
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeStructureWeight.ts",
+    "sha256": "de6f1fa459bb457beae9e67dd4b59de1a0da44fe564774ab48a5565bb593f33b"
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionBranches.ts",
+    "sha256": "a3c97003cea41d8081091bf03b00d0c178bff241ad4e3cd93cb3707a47f33971"
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionDayPillars.ts",
+    "sha256": "44efde3a6c436dc38da219542d33077e2723eb889d40c60f4bd133fc6531bbb9"
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionElements.ts",
+    "sha256": "86da71fee96cf6966e98f093f18be04a8e6de7f0d9079ff671374c87cf15498c"
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionMarkers.ts",
+    "sha256": "4f57e13aba693734c167ae5ac636518074f214d1773a25bbd34c2a9d937246f9"
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionPositions.ts",
+    "sha256": "a673557faa8f0bc011fd8df6cb282caae345009a4ff8ed3103cd95ea0a54c4e6"
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionStages.ts",
+    "sha256": "fab42369771eb4ea4085d855a562a016eecf0ee1d6b1fcc5f3548c2bb273403f"
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionStems.ts",
+    "sha256": "1d8bc9bf661df9ef8a9a4cccc1335a69273ee57e3c1f31f69c23ddb15ed2a586"
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionTenGods.ts",
+    "sha256": "ecbebebcf579d89410a742fa1feb19e138e95fc9ff60e4a4f7762e2eb503f35a"
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionYinYang.ts",
+    "sha256": "ae5446efa9d7dce0a2c958b3d24a17e604579ff61ca874160175101d1791cdce"
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepApplications.ts",
+    "sha256": "37d7956c2ce8f92dba6c28b3000b2ed919a6dfcb086dcdf951135e9b66aacbac"
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepDayPillars.ts",
+    "sha256": "6ce7804fa213cc48f0945ed5747808e6444d3c261395a9205ef344a29602b14b"
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepRequirements.ts",
+    "sha256": "5f62182a0dadcb8209ba1771d474638687bfc81a1bcf18fe2d9d5ca971e0f8bb"
+  },
+  {
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/complementFusionResearch.ts",
+    "sha256": "3196e648432ea2a207564bcba11d90693b0bae14a515e9c7a7ef9ec1bb971f9b"
+  },
+  {
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/facetFusionStudies.ts",
+    "sha256": "2efe85cd91085e5b84cd96237470976532be7448fe5a72ef8afa8f681ae25255"
+  },
+  {
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/fusionApplicabilityResearch.ts",
+    "sha256": "23f77c52ee814a4782609f4542eeec3908eddb5bc8a2e05b9e496db94ea85446"
+  },
+  {
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/fusionGroupResearch.ts",
+    "sha256": "1c1740d3d894ac3650003741f73ab7f641e58141dfb7c90d7b600279b99b80e7"
+  },
+  {
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/fusionRelationContracts.ts",
+    "sha256": "00abaa81e5e7d6f119b4a5e55ad8e2f53d0c5adeb93614a2f5c625203511d2fe"
+  },
+  {
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/fusionResearchSources.ts",
+    "sha256": "dcee3b283d4118dbcfc8deb9168c657c45edadf7978fabc6f2a154b7a27ea006"
+  },
+  {
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/fusionScopeResearch.ts",
+    "sha256": "413cb5804e8612d915cdea6a1e8268d177be1fc4222a0d1072dcaaa73fe25a54"
+  },
+  {
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
+    "sha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+  },
+  {
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
+    "sha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+  },
+  {
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/rejectedFusionResearch.ts",
+    "sha256": "f27b8e9d6fe9ec5502a08a9a8604326057f7a850a770b3aef85d2945dc668ef4"
+  },
+  {
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/tensionSplitResearch.ts",
+    "sha256": "28e2e0a9126d9ec757c6d7cb139a3f50a4c5dafa81dab69bbb04324a33b18e93"
+  },
+  {
+    "file": "src/lib/report-knowledge/love-product-research/chapterResearch.ts",
+    "sha256": "04bc51c0e5b4941eb70a39dceb2975d4db1170e39b2d168633e174502f60b6ee"
+  },
+  {
+    "file": "src/lib/report-knowledge/love-product-research/paragraphResearch.ts",
+    "sha256": "e073c7f1aa975b23aa588f6f588f556ff719c21e74da1c99abdbd3d8dbd6372d"
+  },
+  {
+    "file": "src/lib/report-knowledge/major-fortune-product-research/cycleResearch.ts",
+    "sha256": "2839504fd15bbce0b70df06d68f8018ce1e2c42452c668f52045ea67ddba1d20"
+  },
+  {
+    "file": "src/lib/report-knowledge/major-fortune-product-research/domainResearch.ts",
+    "sha256": "86c067ed26dc60bc08ec29fa4474c36bca39cb30bec530fa5de72c0bebcee1f9"
+  },
+  {
+    "file": "src/lib/report-knowledge/major-fortune-product-research/interactionResearch.ts",
+    "sha256": "ab6f771c10bf8085b934881ad7fc2177122c43ac21b98101444577079f26cfc0"
+  },
+  {
+    "file": "src/lib/report-knowledge/major-fortune-product-research/tenGodResearch.ts",
+    "sha256": "5f62dea761af7d28847862e7d045c449f8f6df0fb864b0923f273aa2a71bcba8"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchENFJ.ts",
+    "sha256": "317f3f6e40a7fd7186add27cd7944c10deae049337790a65383be77d4ca968f3"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchENFP.ts",
+    "sha256": "1864edaa6bb2e1a30be5dae44e089ca194aaebe580a463eb50ae990942c5e63f"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchENTJ.ts",
+    "sha256": "ea8ad192ef1e00d9b7f1eb5793b762a158c0dfb82edd5eb6fa859872bf1754db"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchENTP.ts",
+    "sha256": "cd4070c59dd5bb2a0378cb1df605051cf30db9561e4b5c878c7538cf0c48c65a"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchESFJ.ts",
+    "sha256": "81ebb6ecbd20d1dc37b234e2b65d43269ecdacb1a93211bcf6493bf5137c6347"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchESFP.ts",
+    "sha256": "b65d96fe93905dc9ca24c74f3c2b4eaaaa9e0993d07e8f111d4c50bb1ea00d39"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchESTJ.ts",
+    "sha256": "d5ee85c7de5d0cacf05a18c70209b27a2d6adc3ef0f8592240f028b448d52311"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchESTP.ts",
+    "sha256": "587914006833286c342f1412ad304c5dda3002109cd30e2c5a9f0dd672f5be4d"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchINFJ.ts",
+    "sha256": "bcbc47f8b1453afee904e86d3ee6ee405095a3bdff28720cda4c14691ee467a5"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchINFP.ts",
+    "sha256": "d4be98891ff8e7e1d4135969285ce63e81beed62079c6a440a526a2f7b56a6cb"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchINTJ.ts",
+    "sha256": "b68f41ff785c371221f1785923b2341647d67fdb7185fd49a464fe3a8bc0148f"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchINTP.ts",
+    "sha256": "42abb2dd8d531e19df423f77bb8f3e22b65bbbed499826dc5fb229b99bfccf11"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchISFJ.ts",
+    "sha256": "95177985ca7e32c65d4f140a4cf25eb75924ed2aa68e5cfb66cd60f7178e0e9c"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchISFP.ts",
+    "sha256": "b974d047d8ea9121e12db7343ac697542cd0b32730c2b57dc5a671ca6ff5b527"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchISTJ.ts",
+    "sha256": "163b8162802ff8741b119ab9a485656728b03959597500477b91174b39a7dfde"
+  },
+  {
+    "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchISTP.ts",
+    "sha256": "3f91598c16ae2235a7157299e55a8b8e8b4273602f4a89edb82370a711c0af26"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationApplicationsBanhap.ts",
+    "sha256": "be1a0749950443d766c8d34b2bf22690fae214f4fa54f1f02f73e982219fece4"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationApplicationsChung.ts",
+    "sha256": "baea9880073a7a8749a8a65108119fed88e1dda4890ed98d474b4137c22a7b5d"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationApplicationsHae.ts",
+    "sha256": "5e45d9a72faf9b2a87cb77bf5b53027eb22f88b4e5405ed0196f55b4532717ce"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationApplicationsHyeong.ts",
+    "sha256": "8570e2c75d31d65233684b8de9b72ceda3bd8018e3dfb65c34d517abe2fbf644"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationApplicationsPa.ts",
+    "sha256": "802536f5a8ae3899b73cc6b183254dd0c85c58e98bd425f49ca5824079df0c04"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationApplicationsSamhap.ts",
+    "sha256": "6ad4f87353149605f98767f95af88c3ba923a5f82c27c24cc71b45abd5b57f57"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationApplicationsStemHap.ts",
+    "sha256": "96dca0ea9fdb08de214aaf5423d95d5148c34e20ef03481f4b10aa3ef8cf3682"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationApplicationsWonjin.ts",
+    "sha256": "2d5eb3cdff6045b56043371daecf994be36a5947b2406f712fb7c2c604dfb154"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationApplicationsYukhap.ts",
+    "sha256": "9b37bf089c71ad154b3f0386749f7d06ff0267b4114adc582bc0f80c11612cb1"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationBoundaries.ts",
+    "sha256": "ac3693362dc69a51ae2abe8a099ca07c5e67ad9e9e522d08753c8e3273ca091c"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsChung.ts",
+    "sha256": "37d4801960b9824789f51685207eafc46ce7556ecba4484ef1a96c5b3b90bcb9"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsHae.ts",
+    "sha256": "b5fc64fd7a22f65da05b09c24f0f0272ec7ccbb671509841be5cded8502ee007"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsHyeong.ts",
+    "sha256": "43ac1bd7acc4ceca9bec3ee782d2a1d0207b51ef49888361726f1b3e899f5893"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsPa.ts",
+    "sha256": "1c5f38f0e506135f24f9a500c38549de76de41c8dbe7efced528c1366aaf16ca"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsSamhap.ts",
+    "sha256": "cc2d5414a81289d94d306ed798f23d2591fa6ac42cf245a825bdbe07135c371d"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsStemHap.ts",
+    "sha256": "178acdb2218ae8c1e3edf34aab1739f63e23ff836e0b132e90dab56b88cb66e8"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsWonjin.ts",
+    "sha256": "0b98f07aaa68388ea33a2358f7ef581904723fc99aaa15287d72ab25e93bcf08"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsYukhap.ts",
+    "sha256": "0c7326fa0c8ab8976b9b59c9522bd276c13ee4d8c2e29a66af8ab041ebacd8d0"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationProfilePa.ts",
+    "sha256": "ad302ddba6e67c86a40947d1a59cf1f9c6b24dbfe3c7a0cc9ed0de2aec2dd536"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/relationProfileWonjin.ts",
+    "sha256": "e6066cbd4b669ba6147891532b758c1bdd5ba35086d054edc72bcee5a54a70bc"
+  },
+  {
+    "file": "src/lib/report-knowledge/relation-research/sajuFoundationRelationSources.ts",
+    "sha256": "544a5d3a2a33877ad2b6c5458b0cf47507484a7261bfd8260cefb7628a5141df"
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuComputedFactsMapper.ts",
+    "sha256": "bf3d5236b58e4deefb6b37f4999467fcfcac199ff7ea9f4d925b4bd80b3e10e0"
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuComputedFactsTypes.ts",
+    "sha256": "d779aca4552d40e397a344b168ea59c8d90c3f0d8df93421915ff02d62551c04"
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuDayPillarKnowledge.ts",
+    "sha256": "53a247b6eb9611dd118d112e9aed1abb8f5808ba54d20e56682aa6f6ac980fbe"
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuFeatureTaxonomy.ts",
+    "sha256": "6ab3949dcd373b6dc99ec8b84caa62b85565614d850cbf10c74d335ba4b686e8"
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "sha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuKnowledgeBase.ts",
+    "sha256": "bfdc165ef1d5e9740b11abd5dbe182c2b53dd0f41091d25e0bfc1e6afd168a9f"
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuPillarFeaturePlacement.ts",
+    "sha256": "bca0b2a4bf864c546812d543ca6f2c4f1624ca76e35e1fdc3ef0821f6f515b5f"
+  },
+  {
+    "file": "src/lib/report-knowledge/semantic-axis-research/applicability.ts",
+    "sha256": "43d0f4c1bb14630b35e7469f878d0d50762ad35e7cade3b9ecb821e559171adf"
+  },
+  {
+    "file": "src/lib/report-knowledge/semantic-axis-research/axisProfiles.ts",
+    "sha256": "6e48813e2323f63efe6c6bb678bcca7bde18059338c3b26a5267510860cd1003"
+  },
+  {
+    "file": "src/lib/report-knowledge/semantic-axis-research/legacyTags.ts",
+    "sha256": "39f482949829a68c3d5dfc6393aefb12b8e01e265fb00059629938c975899ce8"
+  },
+  {
+    "file": "src/lib/report-knowledge/semantic-axis-research/semanticFacets.ts",
+    "sha256": "4e92583c647eb44170e88b258cfcc0c84997ca8c1386d8d39a3e26231fe44322"
+  },
+  {
+    "file": "src/lib/report-knowledge/temporal-interaction-research/temporalConcepts.ts",
+    "sha256": "b487118d60d45864b00b9bc51d8e872a906950157ecfc693033d9208b4a3e639"
+  },
+  {
+    "file": "src/lib/report-knowledge/temporal-interaction-research/temporalDomains.ts",
+    "sha256": "9a213186b04ad555b45d229774af1366cb96c20aa274e4c425cdb37edf0df803"
+  },
+  {
+    "file": "src/lib/report-knowledge/temporal-interaction-research/temporalElementCombinations.ts",
+    "sha256": "47765611716f21021be3c07ce6c64e577b5ad5ec59808c4070af05f16ccbb487"
+  },
+  {
+    "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+    "sha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+  },
+  {
+    "file": "src/lib/report-knowledge/temporal-interaction-research/temporalOverlaps.ts",
+    "sha256": "72f87ba6b56dcff4f5d0af7bec79a86aa21e4c89ad244ccfb14bea95a414ac58"
+  },
+  {
+    "file": "src/lib/report-knowledge/temporal-interaction-research/temporalPeriodApplications.ts",
+    "sha256": "b542f46e81fba74ce2254fe8541bd5e13d2ddfcc3cbc00198c675845f935a5d0"
+  },
+  {
+    "file": "src/lib/report-knowledge/temporal-interaction-research/temporalPeriodDepth.ts",
+    "sha256": "3fb1683d34d2e7058c142f8a3d14fb8aa17ad5f082ed0301f198c50aad5f4482"
+  },
+  {
+    "file": "src/lib/report-knowledge/temporal-interaction-research/temporalRelations.ts",
+    "sha256": "df37fd38a2f2be5f640d0472cb87377a3175b844b4b13a7c1cf2ce48373b8d9d"
+  },
+  {
+    "file": "src/lib/report-knowledge/temporal-interaction-research/temporalScopes.ts",
+    "sha256": "410a080b88aa4a16cb54417a4203fcdbc2aaca34dcf1bca62e2d19b6a1b56e00"
+  },
+  {
+    "file": "src/lib/saju/constants.ts",
+    "sha256": "709f977a2dd80f397f1bfb249d115896f1b97acfd4880b07253f1474badccfaa"
+  },
+  {
+    "file": "src/lib/saju/structureAnalysis.ts",
+    "sha256": "8cfae80e2c0b0425d1ea815fdec3102aef268b1cf47cc8edb7f87dceddf958d1"
+  },
+  {
+    "file": "src/lib/saju/tenGods.ts",
+    "sha256": "e453f787f1b1f1e15af875196c7630321c283a8a75dd5d4b8a60783672376960"
+  },
+  {
+    "file": "src/lib/saju/types.ts",
+    "sha256": "d87ba142d78c8ae9dd2d58648cb28a205977aaa2f3cb142a9e6c11263a85986c"
+  }
+]

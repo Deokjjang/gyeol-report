@@ -1,0 +1,210 @@
+
+> gyeol-report@0.1.0 test
+> vitest run tests/unit/report-knowledge/sajuFoundationKnowledge.test.ts tests/unit/report-knowledge/sajuFoundationCompletion.test.ts tests/unit/report-knowledge/sajuFoundationDeepKnowledge.test.ts tests/unit/report-knowledge/sajuCompositeStructureResearch.test.ts tests/unit/report-knowledge/sajuRelationResearch.test.ts tests/unit/report-knowledge/sajuTemporalInteractionResearch.test.ts tests/unit/report-knowledge/mbtiFoundationResearch.test.ts tests/unit/report-knowledge/mbtiPairResearch.test.ts tests/unit/report-knowledge/mbtiTypeKnowledgeBase.test.ts tests/unit/report-knowledge/mbtiKnowledgeBase.test.ts tests/unit/report-knowledge/mbtiProductRouting.test.ts tests/unit/report-knowledge/mbtiCompatibilityCandidateEngine.test.ts tests/unit/report-knowledge/mbti/sourceRuntimeAdapter.test.ts tests/unit/report-knowledge/semanticAxisResearch.test.ts tests/unit/interpretation-v4/semanticFoundation.test.ts tests/unit/interpretation-v4/foundationNatal.test.ts tests/unit/interpretation-v4/foundationTenGodSynthesis.test.ts tests/unit/interpretation-v4/foundationSupplement.test.ts tests/unit/interpretation-v4/foundationSupplementRegistry.test.ts tests/unit/interpretation-v4/foundationIntegratedProfile.test.ts tests/unit/interpretation-v4/mbtiSemanticProfile.test.ts tests/unit/interpretation-v4/fusionCore.test.ts tests/unit/interpretation-v4/fusionSemanticProfile.test.ts tests/unit/interpretation-v4/foundationAdapter.test.ts tests/unit/report-generation/customerDayunGeneration.test.ts
+
+
+ RUN  v4.1.5 /private/tmp/gyeol-semantic-axis-knowledge-expansion-01
+
+ ❯ tests/unit/interpretation-v4/foundationAdapter.test.ts (20 tests | 1 failed) 278ms
+     × only foundation modules reference the foundation; no writer/UI/calculation import 181ms
+ ❯ tests/unit/report-knowledge/sajuFoundationDeepKnowledge.test.ts (131 tests | 1 failed) 413ms
+     × has no runtime import, dynamic import, barrel export or raw lookup connection 128ms
+ ❯ tests/unit/report-knowledge/sajuTemporalInteractionResearch.test.ts (186 tests | 1 failed) 311ms
+     × preserves every pre-existing source byte and has no runtime import or executable registry 238ms
+ ❯ tests/unit/report-generation/customerDayunGeneration.test.ts (19 tests | 2 failed) 2259ms
+     × rejects major_fortune bypass before order writes and allows stable input 10ms
+     × rejects annual_fortune bypass before order writes and allows stable input 1ms
+ ❯ tests/unit/report-knowledge/mbtiPairResearch.test.ts (41 tests | 1 failed) 5920ms
+     × keeps every new registry file static, type-only and absent from runtime consumers 84ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/interpretation-v4/foundationAdapter.test.ts > Phase13D-1A stays off all six product paths > only foundation modules reference the foundation; no writer/UI/calculation import
+AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/interpretation-v4/foundationAdapter.test.ts:116:44
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  tests/unit/report-knowledge/mbtiPairResearch.test.ts > offline MBTI directed pair research and preservation > keeps every new registry file static, type-only and absent from runtime consumers
+AssertionError: /private/tmp/gyeol-semantic-axis-knowledge-expansion-01/src/lib/report-knowledge/semantic-axis-research/semanticResearchSources.ts: expected '/** Source catalog for offline semant…' not to match /mbti-pair-research|MBTI_PAIR_RESEARCH/
+
+- Expected:
+/mbti-pair-research|MBTI_PAIR_RESEARCH/
+
++ Received:
+"/** Source catalog for offline semantic research. A local source is not empirical validation. */
+export const SEMANTIC_RESEARCH_POLICY = {
+  version: \"semantic-axis-research-01\",
+  connectedToRuntime: false,
+  approvedForCustomer: false,
+  existingScoreContribution: false,
+  runtimeEvidenceIds: [],
+  empiricalClaim: \"none\",
+  modernApplications: \"authored_conditional_candidates_not_observed_customer_history\",
+  facetEvidencePolicy: \"one_fact_many_meanings_does_not_increase_independent_evidence\",
+  correspondencePolicy: \"related_is_not_equivalent\",
+  sourceReviewDate: \"2026-10-13\",
+} as const;
+export const SEMANTIC_RESEARCH_SOURCES = [
+  { id: \"repo:semanticCore\", file: \"src/lib/interpretation-v4/semanticCore.ts\", status: \"repository_checked\", supports: \"Existing axes, signed directions, contexts, tags and Evidence types\" },
+  { id: \"repo:types\", file: \"src/lib/interpretation-v4/types.ts\", status: \"repository_checked\", supports: \"22 legacy tags, 10 domains, legacy Fusion and fortune vocabulary\" },
+  { id: \"repo:foundationRanking\", file: \"src/lib/interpretation-v4/foundationRanking.ts\", status: \"repository_checked\", supports: \"Theme membership, signed ledger, lexical ties, overlap grouping\" },
+  { id: \"repo:foundationTenGods\", file: \"src/lib/interpretation-v4/foundationTenGods.ts\", status: \"repository_checked\", supports: \"Existing god-to-axis signatures; not independent validation of personality\" },
+  { id: \"repo:foundationSynthesis\", file: \"src/lib/interpretation-v4/foundationSynthesis.ts\", status: \"repository_checked\", supports: \"Existing conditional combinations, not new calculations\" },
+  { id: \"repo:materialRegistry\", file: \"src/lib/interpretation-v4/materialRegistry.ts\", status: \"repository_checked\", supports: \"Actual Material/tag/domain links and existing authored definitions\" },
+  { id: \"repo:fusionRules\", file: \"src/lib/interpretation-v4/fusionRules.ts\", status: \"repository_checked\", supports: \"Existing legacy semantic connections and exact trait references\" },
+  { id: \"repo:fusionMeanings\", file: \"src/lib/interpretation-v4/fusionMeanings.ts\", status: \"repository_checked\", supports: \"Existing meanings for 36 axes; editorial definitions, not psychology measurements\" },
+  { id: \"repo:fusionContext\", file: \"src/lib/interpretation-v4/fusionContext.ts\", status: \"repository_checked\", supports: \"General/domain compatibility and exact-scope selection\" },
+  { id: \"repo:mbtiSemanticAnnotations\", file: \"src/lib/interpretation-v4/mbtiSemanticAnnotations.ts\", status: \"repository_checked\", supports: \"Explicit annotation manifest, local confidence, reference-only exclusions\" },
+  { id: \"repo:contentSynthesis\", file: \"src/lib/interpretation-v4/contentSynthesis.ts\", status: \"repository_checked\", supports: \"Current paragraph evidence allocation and semantic compression boundary\" },
+  { id: \"repo:deepMarkers\", file: \"src/lib/report-knowledge/foundation-deep/sajuFoundationDeepMarkers.ts\", status: \"repository_checked\", supports: \"Inherited traditional review and modern-precision caveat; historical texts not newly rechecked\" },
+  { id: \"repo:temporalResearch\", file: \"src/lib/report-knowledge/temporal-interaction-research/temporalConcepts.ts\", status: \"repository_checked\", supports: \"Natal/period scope distinctions; not new Evidence\" },
+  { id: \"repo:mbtiPairResearch\", file: \"src/lib/report-knowledge/mbti-pair-research/mbtiPairINTJ.ts\", status: \"repository_checked\", supports: \"Actual pair metadata and category vocabulary; no empirical pairing validity\" },
+  { id: \"primary:skos\", url: \"https://www.w3.org/TR/skos-reference/\", status: \"primary_reference_checked\", supports: \"Related/broader/close/exact relations are distinct; used as conceptual guidance, no RDF implementation\" },
+  { id: \"primary:prov\", url: \"https://www.w3.org/TR/prov-o/\", status: \"primary_reference_checked\", supports: \"Separate source entity, derivation and activity; provenance does not prove truth\" },
+  { id: \"primary:mbti-relationships\", url: \"https://www.myersbriggs.org/type-in-my-life/personality-type-and-relationships/home.htm\", status: \"primary_reference_checked\", supports: \"No best or more successful type combination; a practical boundary, not empirical proof of new materials\" },
+  { id: \"authored:semantic-decomposition\", status: \"authored_not_empirical\", supports: \"New conditional editorial concept distinctions, fiction and research questions\" },
+  { id: \"authored:scope-questions\", status: \"authored_not_empirical\", supports: \"Different product/role questions; no specialized product database or interpretation approval\" },
+  { id: \"authored:safety-review\", status: \"authored_not_empirical\", supports: \"Rejected invalid inference examples; not approved claims\" },
+] as const;
+"
+
+ ❯ tests/unit/report-knowledge/mbtiPairResearch.test.ts:205:63
+    203|     for (const file of walk("src").filter(f => /\.[cm]?[jt]sx?$/.test(…
+    204|       const code = readFileSync(file, "utf8");
+    205|       if (!file.startsWith(dir + "/")) expect(code, file).not.toMatch(…
+       |                                                               ^
+    206|       else {
+    207|         expect(code, file).not.toMatch(/\b(?:fetch|require|function)\s…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  tests/unit/report-knowledge/sajuFoundationDeepKnowledge.test.ts > offline foundation deep knowledge research > has no runtime import, dynamic import, barrel export or raw lookup connection
+AssertionError: /private/tmp/gyeol-semantic-axis-knowledge-expansion-01/src/lib/report-knowledge/semantic-axis-research/semanticResearchSources.ts: expected '/** Source catalog for offline semant…' not to match /foundation-deep|DEEP_(APPLICATIONS|DA…/
+
+- Expected:
+/foundation-deep|DEEP_(APPLICATIONS|DAY_PILLARS|TEN_GODS|MARKERS|HIDDEN_STEMS|SOURCES)/
+
++ Received:
+"/** Source catalog for offline semantic research. A local source is not empirical validation. */
+export const SEMANTIC_RESEARCH_POLICY = {
+  version: \"semantic-axis-research-01\",
+  connectedToRuntime: false,
+  approvedForCustomer: false,
+  existingScoreContribution: false,
+  runtimeEvidenceIds: [],
+  empiricalClaim: \"none\",
+  modernApplications: \"authored_conditional_candidates_not_observed_customer_history\",
+  facetEvidencePolicy: \"one_fact_many_meanings_does_not_increase_independent_evidence\",
+  correspondencePolicy: \"related_is_not_equivalent\",
+  sourceReviewDate: \"2026-10-13\",
+} as const;
+export const SEMANTIC_RESEARCH_SOURCES = [
+  { id: \"repo:semanticCore\", file: \"src/lib/interpretation-v4/semanticCore.ts\", status: \"repository_checked\", supports: \"Existing axes, signed directions, contexts, tags and Evidence types\" },
+  { id: \"repo:types\", file: \"src/lib/interpretation-v4/types.ts\", status: \"repository_checked\", supports: \"22 legacy tags, 10 domains, legacy Fusion and fortune vocabulary\" },
+  { id: \"repo:foundationRanking\", file: \"src/lib/interpretation-v4/foundationRanking.ts\", status: \"repository_checked\", supports: \"Theme membership, signed ledger, lexical ties, overlap grouping\" },
+  { id: \"repo:foundationTenGods\", file: \"src/lib/interpretation-v4/foundationTenGods.ts\", status: \"repository_checked\", supports: \"Existing god-to-axis signatures; not independent validation of personality\" },
+  { id: \"repo:foundationSynthesis\", file: \"src/lib/interpretation-v4/foundationSynthesis.ts\", status: \"repository_checked\", supports: \"Existing conditional combinations, not new calculations\" },
+  { id: \"repo:materialRegistry\", file: \"src/lib/interpretation-v4/materialRegistry.ts\", status: \"repository_checked\", supports: \"Actual Material/tag/domain links and existing authored definitions\" },
+  { id: \"repo:fusionRules\", file: \"src/lib/interpretation-v4/fusionRules.ts\", status: \"repository_checked\", supports: \"Existing legacy semantic connections and exact trait references\" },
+  { id: \"repo:fusionMeanings\", file: \"src/lib/interpretation-v4/fusionMeanings.ts\", status: \"repository_checked\", supports: \"Existing meanings for 36 axes; editorial definitions, not psychology measurements\" },
+  { id: \"repo:fusionContext\", file: \"src/lib/interpretation-v4/fusionContext.ts\", status: \"repository_checked\", supports: \"General/domain compatibility and exact-scope selection\" },
+  { id: \"repo:mbtiSemanticAnnotations\", file: \"src/lib/interpretation-v4/mbtiSemanticAnnotations.ts\", status: \"repository_checked\", supports: \"Explicit annotation manifest, local confidence, reference-only exclusions\" },
+  { id: \"repo:contentSynthesis\", file: \"src/lib/interpretation-v4/contentSynthesis.ts\", status: \"repository_checked\", supports: \"Current paragraph evidence allocation and semantic compression boundary\" },
+  { id: \"repo:deepMarkers\", file: \"src/lib/report-knowledge/foundation-deep/sajuFoundationDeepMarkers.ts\", status: \"repository_checked\", supports: \"Inherited traditional review and modern-precision caveat; historical texts not newly rechecked\" },
+  { id: \"repo:temporalResearch\", file: \"src/lib/report-knowledge/temporal-interaction-research/temporalConcepts.ts\", status: \"repository_checked\", supports: \"Natal/period scope distinctions; not new Evidence\" },
+  { id: \"repo:mbtiPairResearch\", file: \"src/lib/report-knowledge/mbti-pair-research/mbtiPairINTJ.ts\", status: \"repository_checked\", supports: \"Actual pair metadata and category vocabulary; no empirical pairing validity\" },
+  { id: \"primary:skos\", url: \"https://www.w3.org/TR/skos-reference/\", status: \"primary_reference_checked\", supports: \"Related/broader/close/exact relations are distinct; used as conceptual guidance, no RDF implementation\" },
+  { id: \"primary:prov\", url: \"https://www.w3.org/TR/prov-o/\", status: \"primary_reference_checked\", supports: \"Separate source entity, derivation and activity; provenance does not prove truth\" },
+  { id: \"primary:mbti-relationships\", url: \"https://www.myersbriggs.org/type-in-my-life/personality-type-and-relationships/home.htm\", status: \"primary_reference_checked\", supports: \"No best or more successful type combination; a practical boundary, not empirical proof of new materials\" },
+  { id: \"authored:semantic-decomposition\", status: \"authored_not_empirical\", supports: \"New conditional editorial concept distinctions, fiction and research questions\" },
+  { id: \"authored:scope-questions\", status: \"authored_not_empirical\", supports: \"Different product/role questions; no specialized product database or interpretation approval\" },
+  { id: \"authored:safety-review\", status: \"authored_not_empirical\", supports: \"Rejected invalid inference examples; not approved claims\" },
+] as const;
+"
+
+ ❯ tests/unit/report-knowledge/sajuFoundationDeepKnowledge.test.ts:167:144
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  tests/unit/report-knowledge/sajuTemporalInteractionResearch.test.ts > independent temporal research data and source preservation > preserves every pre-existing source byte and has no runtime import or executable registry
+AssertionError: /private/tmp/gyeol-semantic-axis-knowledge-expansion-01/src/lib/report-knowledge/semantic-axis-research/semanticResearchSources.ts: expected '/** Source catalog for offline semant…' not to match /temporal-interaction-research|TEMPORA…/
+
+- Expected:
+/temporal-interaction-research|TEMPORAL_(?:CONCEPTS|SCOPES|GOD|ELEMENT|RELATIONS|PERIOD_APPLICATIONS|DOMAINS)/
+
++ Received:
+"/** Source catalog for offline semantic research. A local source is not empirical validation. */
+export const SEMANTIC_RESEARCH_POLICY = {
+  version: \"semantic-axis-research-01\",
+  connectedToRuntime: false,
+  approvedForCustomer: false,
+  existingScoreContribution: false,
+  runtimeEvidenceIds: [],
+  empiricalClaim: \"none\",
+  modernApplications: \"authored_conditional_candidates_not_observed_customer_history\",
+  facetEvidencePolicy: \"one_fact_many_meanings_does_not_increase_independent_evidence\",
+  correspondencePolicy: \"related_is_not_equivalent\",
+  sourceReviewDate: \"2026-10-13\",
+} as const;
+export const SEMANTIC_RESEARCH_SOURCES = [
+  { id: \"repo:semanticCore\", file: \"src/lib/interpretation-v4/semanticCore.ts\", status: \"repository_checked\", supports: \"Existing axes, signed directions, contexts, tags and Evidence types\" },
+  { id: \"repo:types\", file: \"src/lib/interpretation-v4/types.ts\", status: \"repository_checked\", supports: \"22 legacy tags, 10 domains, legacy Fusion and fortune vocabulary\" },
+  { id: \"repo:foundationRanking\", file: \"src/lib/interpretation-v4/foundationRanking.ts\", status: \"repository_checked\", supports: \"Theme membership, signed ledger, lexical ties, overlap grouping\" },
+  { id: \"repo:foundationTenGods\", file: \"src/lib/interpretation-v4/foundationTenGods.ts\", status: \"repository_checked\", supports: \"Existing god-to-axis signatures; not independent validation of personality\" },
+  { id: \"repo:foundationSynthesis\", file: \"src/lib/interpretation-v4/foundationSynthesis.ts\", status: \"repository_checked\", supports: \"Existing conditional combinations, not new calculations\" },
+  { id: \"repo:materialRegistry\", file: \"src/lib/interpretation-v4/materialRegistry.ts\", status: \"repository_checked\", supports: \"Actual Material/tag/domain links and existing authored definitions\" },
+  { id: \"repo:fusionRules\", file: \"src/lib/interpretation-v4/fusionRules.ts\", status: \"repository_checked\", supports: \"Existing legacy semantic connections and exact trait references\" },
+  { id: \"repo:fusionMeanings\", file: \"src/lib/interpretation-v4/fusionMeanings.ts\", status: \"repository_checked\", supports: \"Existing meanings for 36 axes; editorial definitions, not psychology measurements\" },
+  { id: \"repo:fusionContext\", file: \"src/lib/interpretation-v4/fusionContext.ts\", status: \"repository_checked\", supports: \"General/domain compatibility and exact-scope selection\" },
+  { id: \"repo:mbtiSemanticAnnotations\", file: \"src/lib/interpretation-v4/mbtiSemanticAnnotations.ts\", status: \"repository_checked\", supports: \"Explicit annotation manifest, local confidence, reference-only exclusions\" },
+  { id: \"repo:contentSynthesis\", file: \"src/lib/interpretation-v4/contentSynthesis.ts\", status: \"repository_checked\", supports: \"Current paragraph evidence allocation and semantic compression boundary\" },
+  { id: \"repo:deepMarkers\", file: \"src/lib/report-knowledge/foundation-deep/sajuFoundationDeepMarkers.ts\", status: \"repository_checked\", supports: \"Inherited traditional review and modern-precision caveat; historical texts not newly rechecked\" },
+  { id: \"repo:temporalResearch\", file: \"src/lib/report-knowledge/temporal-interaction-research/temporalConcepts.ts\", status: \"repository_checked\", supports: \"Natal/period scope distinctions; not new Evidence\" },
+  { id: \"repo:mbtiPairResearch\", file: \"src/lib/report-knowledge/mbti-pair-research/mbtiPairINTJ.ts\", status: \"repository_checked\", supports: \"Actual pair metadata and category vocabulary; no empirical pairing validity\" },
+  { id: \"primary:skos\", url: \"https://www.w3.org/TR/skos-reference/\", status: \"primary_reference_checked\", supports: \"Related/broader/close/exact relations are distinct; used as conceptual guidance, no RDF implementation\" },
+  { id: \"primary:prov\", url: \"https://www.w3.org/TR/prov-o/\", status: \"primary_reference_checked\", supports: \"Separate source entity, derivation and activity; provenance does not prove truth\" },
+  { id: \"primary:mbti-relationships\", url: \"https://www.myersbriggs.org/type-in-my-life/personality-type-and-relationships/home.htm\", status: \"primary_reference_checked\", supports: \"No best or more successful type combination; a practical boundary, not empirical proof of new materials\" },
+  { id: \"authored:semantic-decomposition\", status: \"authored_not_empirical\", supports: \"New conditional editorial concept distinctions, fiction and research questions\" },
+  { id: \"authored:scope-questions\", status: \"authored_not_empirical\", supports: \"Different product/role questions; no specialized product database or interpretation approval\" },
+  { id: \"authored:safety-review\", status: \"authored_not_empirical\", supports: \"Rejected invalid inference examples; not approved claims\" },
+] as const;
+"
+
+ ❯ tests/unit/report-knowledge/sajuTemporalInteractionResearch.test.ts:131:71
+    129|     for (const file of walk("src")) {
+    130|       const text = readFileSync(file,"utf8");
+    131|       if (!file.startsWith(researchDir + "/")) expect(text, file).not.…
+       |                                                                       ^
+    132|       else {
+    133|         expect(text, file).not.toMatch(/import(?! type)[^;]*from|expor…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects major_fortune bypass before order writes and allows stable input
+ FAIL  tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects annual_fortune bypass before order writes and allows stable input
+SyntaxError: Unexpected end of JSON input
+ ❯ tests/unit/report-generation/customerDayunGeneration.test.ts:50:55
+     48|       }));
+     49|       const valid = Object.keys(changes).length === 0;
+     50|       expect(r.status, JSON.stringify(await r.clone().json())).toBe(va…
+       |                                                       ^
+     51|       expect(storage.create).toHaveBeenCalledTimes(valid ? 1 : 0);
+     52|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+
+ Test Files  5 failed | 20 passed (25)
+      Tests  6 failed | 1958 passed (1964)
+   Start at  08:05:31
+   Duration  15.18s (transform 43.56s, setup 654ms, import 51.56s, tests 33.05s, environment 2ms)

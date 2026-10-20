@@ -1,0 +1,2381 @@
+{
+  "meaningDenominator": 30,
+  "binderDenominator": 30,
+  "originalFailureDigest": "ded2e49077c76017af7171afa389a9467fca58e772dfe36bd884900f32e3630a",
+  "beforeFail": 30,
+  "afterFail": 30,
+  "rows": [
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:상관",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "a233a37a24ddb920e1624659c6671ff02b90f3ae7c0d8e24c935c4afd23f9322",
+      "afterSourceGateHash": "a233a37a24ddb920e1624659c6671ff02b90f3ae7c0d8e24c935c4afd23f9322",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "a233a37a24ddb920e1624659c6671ff02b90f3ae7c0d8e24c935c4afd23f9322"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "2bb57ae8c885a0a5a8dc1cc9c19dda6a47d5b53f4b6613d1c4b77609140eac2d"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "126ee348562a69c30918af2acf30e56807570001f6b474f08310b4abf33296aa"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "8c8c4dec8591aa7185e103a45960181bb5b0f97ceea8d422a7d6df74b66f95a9"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "2405d442adafaf9aef3b85e634fecfb5cbdcabf2c93e66268c6350dce87bab2e"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "c920539f90446d31cefbc52e7012c9b8346607b8eb682301d4ace4b8bf85ac92"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "0bed69aec4e41ea033fb3fd1e35580dc387af176fcd9839aa5a132ecd182bbb1"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "77e645b920eadb9c14d99e6af2683d9341afdd0cf8ec09b7466ec53d95fd08c9"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "bdec1b9837eb0a890206278af819077b5fc9caef93e50604a36768f3c2e0d3d2"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "47c35a418cf259f76245165dc2da76f266caf3fb84093e6aeab0b44d83cda9c8"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "29b31942184e2dccaa12ce0fc90b1a9148a5352b1ddc57825204b8941f5d4622"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "22db9d3496f452e73d130903ebca0202efda36c11ac789674a930598bdb64391"
+        }
+      ],
+      "reviewPacketHashes": [
+        "0d8c38a70277e4b3f037bb09653d2e46c99af9e00848c3900f913d4238e80120",
+        "82352fc8e4f7c40f10a32ac41e11165417b0ca1f827c04830be8452a8e34c28b",
+        "2feb2d03df2c4fde317e5c66e474cbc5151a4638cc20958cc99f3a42376de856"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:정재",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "a63d49d13346d8ce8e3f29dc7c19e9d27c5c679d08af29e1b7001cf92ef7c96f",
+      "afterSourceGateHash": "a63d49d13346d8ce8e3f29dc7c19e9d27c5c679d08af29e1b7001cf92ef7c96f",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "a63d49d13346d8ce8e3f29dc7c19e9d27c5c679d08af29e1b7001cf92ef7c96f"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "991e3cf87a75ffa1b102028aeac64e548534a26fb868cc5015086edae44bef2e"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "5f0b4eb660df69e64d43d21c81f42e113882dc95fefb70ed14d82f9d2cf4a3dd"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "859b7655a2282e33517461ac17b9659e8a89dd78f2d4369bca5a66ca02fe7aed"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "5141bc8458cc494cde952f7e75d7cc54eae3a0eb091fe22c6150628c02e5bdc3"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "d0e96b7cf24a0fc6231998a1886c86c40fd4d7380fde7105f8fd898c65cf8c4a"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "639e26a2695cfdf1a46824302b46f87d37995b44e836f34630fa4f44842b0bbe"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "c88f305ccd30026c64a6d04adc8adaa4c3e5154720c853d665b159d01d387420"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "79af0744ac6a14f9261761a858ad3d4420af97aca62bdf46cfcb48c4bcfea35a"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "886b2a00872c8255aa6a84bd552391a5b65f1a70e20128088ce1cfadb94e0ee7"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "27f74b716423b1b64d219134eca74d1bcca304da943289b0dc03bb409fdba848"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "be2b31363f8a0b8385cea90ce120c771093d2bb59e6fe15cbce2c5ba5c37a534"
+        }
+      ],
+      "reviewPacketHashes": [
+        "125dab5f0a72583f9d43f409da701abc4e461d4844d0921938991e1debfd1d42",
+        "a762e2d1ae73c7df969b87b7f77a5562accff157ca666ab60c18866385129c6d",
+        "e44ec7184a0637ed58fb66a67d22009454e16af907a429355d473950c7b9362d"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:식신",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "991f6a887e1e06211617f58513c7a34a314f5a3e5bf1481d93e65be5abdfb99c",
+      "afterSourceGateHash": "991f6a887e1e06211617f58513c7a34a314f5a3e5bf1481d93e65be5abdfb99c",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "991f6a887e1e06211617f58513c7a34a314f5a3e5bf1481d93e65be5abdfb99c"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "8198dbcca14b33e8048c0afc4f9ebd90b412e7275d1b1c521950ab55cbb74e34"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "34d196f69669d3a759406915142aa99c9e589c6a30650008ece6abe92c77a3ae"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "d01555354501044af70236966a467c4a701115eb11892cd1d6387fcdae16a4dd"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "0c76b4c7ac36bd9f2256899a329a7ce47e1b8ce0c66906cf6dc4e330c6c5c917"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "4c80fab1ce24042b316f2fd020db94cde606f3295dd58aa883f1d48490264de6"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "2b5ff0232d683bc56892c11299b46f017ec6c499aa06b5968061fd0f4b0ea6dd"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "b749c6ded6710ce8c9678cb572b6c754f95bc1b993c138247af1a35aaa1650a8"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "056697a35add5269a16e01a788684b49a6a2c1b10a2bbae1b5c63a5e2427e7ef"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "84d5610526a1a5ded4f83e73379419f65f9a2e381663cda4f13800401a1e23e4"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "2e648955f2227710b2b3d600b0b815a354a5d0507366b36db99aeb2c874aad16"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "f50f26e76418efa6b9d35d96fb704395102fc3e94f16b48179146f31261f8c98"
+        }
+      ],
+      "reviewPacketHashes": [
+        "ac5ee18c1ccd7c14529b8a583ea9bd8f0ee57a27ebaf42ad29abb301c2b132d6",
+        "235399b3e7341d50a786d9d924337b7616194487c0ac6455bcfa5922c53ad0f0",
+        "fbdf7b2431b96c5aaa3a2a70f318994f487a0af9d8167a7e11f5e7af9e555e1c"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:정관",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "539019b016dc1a71d25589885f5991530b1c26575acfd18ad6d042f1064ae1ff",
+      "afterSourceGateHash": "539019b016dc1a71d25589885f5991530b1c26575acfd18ad6d042f1064ae1ff",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "539019b016dc1a71d25589885f5991530b1c26575acfd18ad6d042f1064ae1ff"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "08a92727785474bbff29f5201a287f70bce0de0179fd01a04234f819bbf64ae9"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "8091ce3a8c6e8e6d369c58ba0240a9dda12b27f13c1c321fc7d90a773d939345"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "715d510158c5ddba5519ad6eb402e1d3b1c420981aec577a332e91b0011a4de8"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "c97b63d30e40535f291a5bc448e687b38400d8fd4e6bfbdcdf3e1871ccf7ad55"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "90529fa6809669caf6326a5b010057ea2ddc6dbd5d94a0bdc5e8fab60c0a23e9"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "a502d4b7bb8c4b3448a28f93038639369f01efc62ba42564e87f0d3aa7a963b0"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "ac993c3281f2a0bff0185445246b39adfe43929522c5b5fa5e0dd2aa325d3feb"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "0a50d5094f4e6faac8e86c92e3e96efa3d8206d1835bb1ba11f17c00afd3c588"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "5d5eb9ae75021699756b9fac802e249b7c3003d4733ae9f36424e92df59745e0"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "8e2e31ccecc99a65c0c8c5b9eddedaedbefff2b4f76a2fc4a178213800d3a6bd"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "cfc505df4d51123114f358733e180b3f9f45193b4f41cd214e1100fa72a91138"
+        }
+      ],
+      "reviewPacketHashes": [
+        "d58a6ff50f4aa43d98f31f4a8e9faacca98c20fde9f7a7b714551c3ea80c6d7c",
+        "15f939b8c2b6b2ed644a960be32da55a185e31f0da780c3fdb9a3db98100dcc0",
+        "915a8e4755f76e90f6b17191fe0b2056de970d36dc9fb83d2d1aebc6a1ca086d"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:겁재",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "6103ebc8a24773ebb5a0c3869f8c77bb00f9f907705f00de8138fe334df90d46",
+      "afterSourceGateHash": "6103ebc8a24773ebb5a0c3869f8c77bb00f9f907705f00de8138fe334df90d46",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "6103ebc8a24773ebb5a0c3869f8c77bb00f9f907705f00de8138fe334df90d46"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "49c988bff43f14d813d852c7397bf7b5f13f15e16179ab27015c536ba188e020"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "76051c30b9fcfea0cc266295891f7a5e79e87a9fd2dfe569b5236a91a5c853d0"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "bc6ecda714000c14a2d77d31025778f7fb828c4f5e9d02aae5a7d292d8713aef"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "fbbc74bf2b4f5be7ba4b0145e0a179577114e517296b4cd8078e5b3d7ad0883e"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "e89b2d0e807dd7de77207674cf6b9101d5c8a48608dee275aeff8b214b666213"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "3774f2285a88b057fc2dc39e433ea286bad3957506ade35106570f96ccec2ed4"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "76bd124fb7d1df7995938d93329f2843cf370e3efeddef286f0d0850a2f4f36c"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "d702cf441db21293fd007f441e5cff5cae921650d0dc5362965235e7fb8e8f6c"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "f0a21c8a0d9c78570e36d91ced6c46743af0af145cb83cda4efb60a4852cea46"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "1dd6a13ed66a4111884a3e3c1db44ba344694944a48198a5f9a684c7fad6e403"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "19e2f2ab180ed582b2b82d33c9f3186d243724d3270dc4f5a140787f85a90f71"
+        }
+      ],
+      "reviewPacketHashes": [
+        "0b04f278f98aed387a2fe26461277e95fdd31f3d58439c02bc770c90840f718f",
+        "ccb1e372b2a76812d3e9ad23b060e0780e4c3f935350856d79446c34a4bdb84c",
+        "1e0557224738fcaa5fe6d2d147109205b338ade0f131aa31454a1a0009af9c49"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:편관",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "8469fb291c5797d7919ac27e90443710d069c6ef0a82cba08dddb43c7003a6de",
+      "afterSourceGateHash": "8469fb291c5797d7919ac27e90443710d069c6ef0a82cba08dddb43c7003a6de",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "8469fb291c5797d7919ac27e90443710d069c6ef0a82cba08dddb43c7003a6de"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "b6eb9c4c2d82278e0056ba5e4b138f6278db74ea79cff3e533e4a2717557e89f"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "8ed373cf3f767763c964d1cf34af030cefe493ef58dbc4ae901a875bf968f214"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "7c7178033e3a0df11cf965739775e5940a446437101c1c2e65185338856b0501"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "ca7d7106d7c518fe51472101b9fd09abd9aca132b10271a13230fe1e303963cc"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "abc2a49788f3955faf5050b8e9dddf2fdc17ebcd391bec8d4e6abc2d79eb4fff"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "5afdf8cf8b0500bd6d5fbde04c180cd9e0e8d04f30c3ad466d17db5669a11f70"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "ec77ad61688ca72e295f9264c2e1dc81b74d160db7dbdcc2ff692f3f11d817e0"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "203f0d536d637e0c8c31839b43d82b1a0f6b09767a0424d905b85949dfc51de1"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "6d777183a50f8b0980ea48f97b3801cd10f11c7db43e9a207c086c593ad46ce6"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "8083c1a9a2d3c968f2a459fa97054b86d9f7b683724e3fcfd484358e878eb9e3"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "f016fd2b1070b41f9d9125a4b97361fe05dc303e5221da9484c42a69ecfe1944"
+        }
+      ],
+      "reviewPacketHashes": [
+        "731dc0b975428f7e256f2a1265da7998c3758a2087d224112410a035dde3fc36",
+        "01c210e2ff5a923c660660dfeefb717378f76845986b62b88576d3d6a35bdddc",
+        "b318003a6f9421583caaeb3316ccf6c950211bac24cfc9cffc4ac695efb953e4"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:비견",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "7ab96d9ad610a240e84e96d0c0bdf75cf2cc37133003a5a09f3f2d4570e9c406",
+      "afterSourceGateHash": "7ab96d9ad610a240e84e96d0c0bdf75cf2cc37133003a5a09f3f2d4570e9c406",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "7ab96d9ad610a240e84e96d0c0bdf75cf2cc37133003a5a09f3f2d4570e9c406"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "e68902e2ce9897da1b7d857f461628c9e3c06e196c3baeb4b3d211d48f6c4f84"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "a2d11025535725a380efa0ec08368b09195319d45f3f836e0337170e6969dacd"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "78a33ad99ee37707321c826d7876c4dbe8e402dbb33d0fb7de9b139094903bdd"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "23a6faecdc5de2875e644237a9c2fb7ec9df921720c4b01da471b268717e403a"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "d165e323b2f144146c0026792486a908430317d9ad4e702147fb018d80bb27b0"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "e249d92f7d3b2bb1916c2b119c5374fc6486cbcd5b24e5f22bd16a7bb1bf1077"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "2cfbf6e24933f0ac72268d90f15019cc420a0c224ac8678ec5abb5327b3a705f"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "f64e97d760e2fb62dd2300e333813254b3f88cc7bbda264e2743dd2e46f2de25"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "7bb0b2e69f39a9d9b9c291746290bbc113f3239901cf6045c48d4afe8af2e8c9"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "49dd7164ac1319043963a9b3a80d2fb2d45ece96fecf797a659704ef2648927b"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "d78101962ece261788b62fe82c8918be8b1a1b4481a3238f09338afcbd6607c2"
+        }
+      ],
+      "reviewPacketHashes": [
+        "001943594cb6c3deab85d08a17cd9d686b40870dcf9bcf77b13e664979a74af9",
+        "d082896dc759ea06fe4d4b3f82a27683b814223e40435e39f0d33b8c8c2a650e",
+        "a48a1a002366302a04e75e08b1ebd0274ae4f338d335014e716bf71ab23bde27"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:편재",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "ce280b84de2534abe1e922a19df11a2f16e041be93491c379cab00585eaf2fd7",
+      "afterSourceGateHash": "ce280b84de2534abe1e922a19df11a2f16e041be93491c379cab00585eaf2fd7",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "ce280b84de2534abe1e922a19df11a2f16e041be93491c379cab00585eaf2fd7"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "2ef5832015b3fc673ac90c484dd5e2660207e76746b0790ec796c6c8a1248f6f"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "0ad846f5b0396dfaa538df50a2441206a5811c9cddf79939ca0839411237872b"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "6fff2bcfe243271a130a2a3dd3801be9a919c39663f47338e1dfa818869bbe39"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "7620de372b08c265e41dbc14933afdc7cf0f89fe2d44178f5a2a4852b317cc30"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "8e928809990430956557423151cf44803dba4f510b95dc95d09ec315cbb9ad1e"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "f65e2daf3380977b9af59e34dcb727d2b5bfd049045f6b1bbbe65e6d89c59d2e"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "cf7877652023fceac3312fbecc20fefb2c549b994604ece78ab4e7c2c72fe724"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "ed6c1c046fb2ce3d7c74e2b84106ca01d62fe952710be3facf2028d9d09f3bad"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "179e304649c251babcd635c20e0c1f07eaeee500921e8361ab4f65d2c99bd5cd"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "83c2b81da681ee865741c156c17dcad142a95fe8b562977ddcee384b53de9ea5"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "a63a02c4ef770f94091b35a6188f741041db6520df0b94d612d789c1284c7c4b"
+        }
+      ],
+      "reviewPacketHashes": [
+        "580cbe76013eac2ec2d9539de7cf64485c428f2b91517d88455ea90c60e82439",
+        "69f495df6ecf4c89b5575217c2d9d9d98d38fd80232e62ba0f7f39822db04d10",
+        "16dd9ed370cddf3462288620c34ff88c1e2d2a436104469f738aeffbbe5f1de1"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:편인",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "6d2056898fa7b8b146e72bd730156c92afdc8e4e34f62c00e74a39ed712dea0a",
+      "afterSourceGateHash": "6d2056898fa7b8b146e72bd730156c92afdc8e4e34f62c00e74a39ed712dea0a",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "6d2056898fa7b8b146e72bd730156c92afdc8e4e34f62c00e74a39ed712dea0a"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "fa9cb1a1b83f476d487bd8a4e44fcd905029f55afa46af9dd9baa33ebd63ef15"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "cb5627bf3e56e39c4036060e635046f54bfa6cb5f325e6a083a9e261896cd255"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "PASS",
+          "originalGateHash": "fa8a010be28df0b6f288f240d9f8001883ccf49cd2c6658abc6599a337eedabe"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "PASS",
+          "originalGateHash": "69d13810f56e87480bc26a7982a4c70f05964dab25811d5df80d2bee430d6cf0"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "81fc9a43f2ec38c3b13546e14d9a7d82ee7f28f6882e238eb967c08eb342dfec"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "e95fa539fd76fae1a6a9f50edbfd36dae37da7e0d65fc3997ec37bf9de74117d"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "PASS",
+          "originalGateHash": "670888fec1d86e3e325c9ff89c939e3bfb79dd08f06da60d86f87a723fda8056"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "7fd3ca741c5d4a480fb824318d2e4860918f10b0a677c01b462becfa06aa3478"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "dd1f760cee40f87980fa5e3f66973c3f1ab206694479cde376211353445b1714"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "0fec744b7194c238689abfa3259e176e684f79e92cfa49569b95fd04e71fc681"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "45c52e979b05972f42cf6062b61ad34156c63fd1f5da6ea35748f3d222638b36"
+        }
+      ],
+      "reviewPacketHashes": [
+        "4a6b2af0dff3727788f61fcb2f45ff91566c1901e19f7789191168cbc3513469",
+        "378c72fcdc4810327412fac5b6c3aac639fda90342c4e7e96f47f4d381fd2174",
+        "66fed58abb525f118517cfe6aee46998e6a08fbe67cb6e188df6f20711605370"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:정인",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "ef7960fa503c8bd17e7861a5062b752edd19bcda0e62b7a74dced645d4060401",
+      "afterSourceGateHash": "ef7960fa503c8bd17e7861a5062b752edd19bcda0e62b7a74dced645d4060401",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "ef7960fa503c8bd17e7861a5062b752edd19bcda0e62b7a74dced645d4060401"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "452157a353a098f319d97cfc0766219003e6d45326badc8093ff98ebd9aedd19"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "f50a90df3f956535760fce4c85e9654b0f0417a3788e859ac984f745ae23317e"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "dc6ad31d17750ffabd974744f453ba998224fdbd4013989ad85bd6ae7dbe2911"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "890a46a5013c19233e62b6b4e1ba130f8918ea586ef3eba1cc9fec8644fe74d3"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "d0e32c2b64400d2d3e92c9cf9b1edfd391d45ac0ade53fd221ea83a73a2635e7"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "6b4f248fcc56e15a8d88fe5724c03d0479ccf3b0d525a424f97e735b09a2ad78"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "131e3542c4586abe296d9a3dbc3978b1a61c7ffbb0431d2ba0f8bfb195068db2"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "bc45784ba4abcd32b66d1f9d1b3ee2ca9760fe757df8cd43f3357699a3d59d01"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "2def057d1b3d2caaff24a3424779e3b61556db9a6d5c29b42f2290c82c0bf7db"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "b00adc1ea4197307410b7fd2c35234455f75dc08b495f2a56cfd9b9bd5d43a4a"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "38f648423df524203b6f53942350d103ce053a2abb0c4974ad67b32ae2bb0f4b"
+        }
+      ],
+      "reviewPacketHashes": [
+        "4221c6a23e0f91f56834d81d75a8db7cf428075b3609ae364df5f57b84cb4a36",
+        "41bd3cc71eafa02ae849f2934ec4c932f1bd58803176ea3a53f56db9a250f1a7",
+        "712d0c47b27024b85d094fd0d3f8217969824c3bb06ee984f14f1e22d1358a28"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:상관",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "a233a37a24ddb920e1624659c6671ff02b90f3ae7c0d8e24c935c4afd23f9322",
+      "afterSourceGateHash": "a233a37a24ddb920e1624659c6671ff02b90f3ae7c0d8e24c935c4afd23f9322",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "a233a37a24ddb920e1624659c6671ff02b90f3ae7c0d8e24c935c4afd23f9322"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "2bb57ae8c885a0a5a8dc1cc9c19dda6a47d5b53f4b6613d1c4b77609140eac2d"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "126ee348562a69c30918af2acf30e56807570001f6b474f08310b4abf33296aa"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "8c8c4dec8591aa7185e103a45960181bb5b0f97ceea8d422a7d6df74b66f95a9"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "2405d442adafaf9aef3b85e634fecfb5cbdcabf2c93e66268c6350dce87bab2e"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "c920539f90446d31cefbc52e7012c9b8346607b8eb682301d4ace4b8bf85ac92"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "0bed69aec4e41ea033fb3fd1e35580dc387af176fcd9839aa5a132ecd182bbb1"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "77e645b920eadb9c14d99e6af2683d9341afdd0cf8ec09b7466ec53d95fd08c9"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "bdec1b9837eb0a890206278af819077b5fc9caef93e50604a36768f3c2e0d3d2"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "47c35a418cf259f76245165dc2da76f266caf3fb84093e6aeab0b44d83cda9c8"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "29b31942184e2dccaa12ce0fc90b1a9148a5352b1ddc57825204b8941f5d4622"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "22db9d3496f452e73d130903ebca0202efda36c11ac789674a930598bdb64391"
+        }
+      ],
+      "reviewPacketHashes": [
+        "0d8c38a70277e4b3f037bb09653d2e46c99af9e00848c3900f913d4238e80120",
+        "82352fc8e4f7c40f10a32ac41e11165417b0ca1f827c04830be8452a8e34c28b",
+        "2feb2d03df2c4fde317e5c66e474cbc5151a4638cc20958cc99f3a42376de856"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:정재",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "a63d49d13346d8ce8e3f29dc7c19e9d27c5c679d08af29e1b7001cf92ef7c96f",
+      "afterSourceGateHash": "a63d49d13346d8ce8e3f29dc7c19e9d27c5c679d08af29e1b7001cf92ef7c96f",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "a63d49d13346d8ce8e3f29dc7c19e9d27c5c679d08af29e1b7001cf92ef7c96f"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "991e3cf87a75ffa1b102028aeac64e548534a26fb868cc5015086edae44bef2e"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "5f0b4eb660df69e64d43d21c81f42e113882dc95fefb70ed14d82f9d2cf4a3dd"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "859b7655a2282e33517461ac17b9659e8a89dd78f2d4369bca5a66ca02fe7aed"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "5141bc8458cc494cde952f7e75d7cc54eae3a0eb091fe22c6150628c02e5bdc3"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "d0e96b7cf24a0fc6231998a1886c86c40fd4d7380fde7105f8fd898c65cf8c4a"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "639e26a2695cfdf1a46824302b46f87d37995b44e836f34630fa4f44842b0bbe"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "c88f305ccd30026c64a6d04adc8adaa4c3e5154720c853d665b159d01d387420"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "79af0744ac6a14f9261761a858ad3d4420af97aca62bdf46cfcb48c4bcfea35a"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "886b2a00872c8255aa6a84bd552391a5b65f1a70e20128088ce1cfadb94e0ee7"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "27f74b716423b1b64d219134eca74d1bcca304da943289b0dc03bb409fdba848"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "be2b31363f8a0b8385cea90ce120c771093d2bb59e6fe15cbce2c5ba5c37a534"
+        }
+      ],
+      "reviewPacketHashes": [
+        "125dab5f0a72583f9d43f409da701abc4e461d4844d0921938991e1debfd1d42",
+        "a762e2d1ae73c7df969b87b7f77a5562accff157ca666ab60c18866385129c6d",
+        "e44ec7184a0637ed58fb66a67d22009454e16af907a429355d473950c7b9362d"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:식신",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "991f6a887e1e06211617f58513c7a34a314f5a3e5bf1481d93e65be5abdfb99c",
+      "afterSourceGateHash": "991f6a887e1e06211617f58513c7a34a314f5a3e5bf1481d93e65be5abdfb99c",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "991f6a887e1e06211617f58513c7a34a314f5a3e5bf1481d93e65be5abdfb99c"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "8198dbcca14b33e8048c0afc4f9ebd90b412e7275d1b1c521950ab55cbb74e34"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "34d196f69669d3a759406915142aa99c9e589c6a30650008ece6abe92c77a3ae"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "d01555354501044af70236966a467c4a701115eb11892cd1d6387fcdae16a4dd"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "0c76b4c7ac36bd9f2256899a329a7ce47e1b8ce0c66906cf6dc4e330c6c5c917"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "4c80fab1ce24042b316f2fd020db94cde606f3295dd58aa883f1d48490264de6"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "2b5ff0232d683bc56892c11299b46f017ec6c499aa06b5968061fd0f4b0ea6dd"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "b749c6ded6710ce8c9678cb572b6c754f95bc1b993c138247af1a35aaa1650a8"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "056697a35add5269a16e01a788684b49a6a2c1b10a2bbae1b5c63a5e2427e7ef"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "84d5610526a1a5ded4f83e73379419f65f9a2e381663cda4f13800401a1e23e4"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "2e648955f2227710b2b3d600b0b815a354a5d0507366b36db99aeb2c874aad16"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "f50f26e76418efa6b9d35d96fb704395102fc3e94f16b48179146f31261f8c98"
+        }
+      ],
+      "reviewPacketHashes": [
+        "ac5ee18c1ccd7c14529b8a583ea9bd8f0ee57a27ebaf42ad29abb301c2b132d6",
+        "235399b3e7341d50a786d9d924337b7616194487c0ac6455bcfa5922c53ad0f0",
+        "fbdf7b2431b96c5aaa3a2a70f318994f487a0af9d8167a7e11f5e7af9e555e1c"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:정관",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "539019b016dc1a71d25589885f5991530b1c26575acfd18ad6d042f1064ae1ff",
+      "afterSourceGateHash": "539019b016dc1a71d25589885f5991530b1c26575acfd18ad6d042f1064ae1ff",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "539019b016dc1a71d25589885f5991530b1c26575acfd18ad6d042f1064ae1ff"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "08a92727785474bbff29f5201a287f70bce0de0179fd01a04234f819bbf64ae9"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "8091ce3a8c6e8e6d369c58ba0240a9dda12b27f13c1c321fc7d90a773d939345"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "715d510158c5ddba5519ad6eb402e1d3b1c420981aec577a332e91b0011a4de8"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "c97b63d30e40535f291a5bc448e687b38400d8fd4e6bfbdcdf3e1871ccf7ad55"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "90529fa6809669caf6326a5b010057ea2ddc6dbd5d94a0bdc5e8fab60c0a23e9"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "a502d4b7bb8c4b3448a28f93038639369f01efc62ba42564e87f0d3aa7a963b0"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "ac993c3281f2a0bff0185445246b39adfe43929522c5b5fa5e0dd2aa325d3feb"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "0a50d5094f4e6faac8e86c92e3e96efa3d8206d1835bb1ba11f17c00afd3c588"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "5d5eb9ae75021699756b9fac802e249b7c3003d4733ae9f36424e92df59745e0"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "8e2e31ccecc99a65c0c8c5b9eddedaedbefff2b4f76a2fc4a178213800d3a6bd"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "cfc505df4d51123114f358733e180b3f9f45193b4f41cd214e1100fa72a91138"
+        }
+      ],
+      "reviewPacketHashes": [
+        "d58a6ff50f4aa43d98f31f4a8e9faacca98c20fde9f7a7b714551c3ea80c6d7c",
+        "15f939b8c2b6b2ed644a960be32da55a185e31f0da780c3fdb9a3db98100dcc0",
+        "915a8e4755f76e90f6b17191fe0b2056de970d36dc9fb83d2d1aebc6a1ca086d"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:겁재",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "6103ebc8a24773ebb5a0c3869f8c77bb00f9f907705f00de8138fe334df90d46",
+      "afterSourceGateHash": "6103ebc8a24773ebb5a0c3869f8c77bb00f9f907705f00de8138fe334df90d46",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "6103ebc8a24773ebb5a0c3869f8c77bb00f9f907705f00de8138fe334df90d46"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "49c988bff43f14d813d852c7397bf7b5f13f15e16179ab27015c536ba188e020"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "76051c30b9fcfea0cc266295891f7a5e79e87a9fd2dfe569b5236a91a5c853d0"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "bc6ecda714000c14a2d77d31025778f7fb828c4f5e9d02aae5a7d292d8713aef"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "fbbc74bf2b4f5be7ba4b0145e0a179577114e517296b4cd8078e5b3d7ad0883e"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "e89b2d0e807dd7de77207674cf6b9101d5c8a48608dee275aeff8b214b666213"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "3774f2285a88b057fc2dc39e433ea286bad3957506ade35106570f96ccec2ed4"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "76bd124fb7d1df7995938d93329f2843cf370e3efeddef286f0d0850a2f4f36c"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "d702cf441db21293fd007f441e5cff5cae921650d0dc5362965235e7fb8e8f6c"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "f0a21c8a0d9c78570e36d91ced6c46743af0af145cb83cda4efb60a4852cea46"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "1dd6a13ed66a4111884a3e3c1db44ba344694944a48198a5f9a684c7fad6e403"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "19e2f2ab180ed582b2b82d33c9f3186d243724d3270dc4f5a140787f85a90f71"
+        }
+      ],
+      "reviewPacketHashes": [
+        "0b04f278f98aed387a2fe26461277e95fdd31f3d58439c02bc770c90840f718f",
+        "ccb1e372b2a76812d3e9ad23b060e0780e4c3f935350856d79446c34a4bdb84c",
+        "1e0557224738fcaa5fe6d2d147109205b338ade0f131aa31454a1a0009af9c49"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:편관",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "8469fb291c5797d7919ac27e90443710d069c6ef0a82cba08dddb43c7003a6de",
+      "afterSourceGateHash": "8469fb291c5797d7919ac27e90443710d069c6ef0a82cba08dddb43c7003a6de",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "8469fb291c5797d7919ac27e90443710d069c6ef0a82cba08dddb43c7003a6de"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "b6eb9c4c2d82278e0056ba5e4b138f6278db74ea79cff3e533e4a2717557e89f"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "8ed373cf3f767763c964d1cf34af030cefe493ef58dbc4ae901a875bf968f214"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "7c7178033e3a0df11cf965739775e5940a446437101c1c2e65185338856b0501"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "ca7d7106d7c518fe51472101b9fd09abd9aca132b10271a13230fe1e303963cc"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "abc2a49788f3955faf5050b8e9dddf2fdc17ebcd391bec8d4e6abc2d79eb4fff"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "5afdf8cf8b0500bd6d5fbde04c180cd9e0e8d04f30c3ad466d17db5669a11f70"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "ec77ad61688ca72e295f9264c2e1dc81b74d160db7dbdcc2ff692f3f11d817e0"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "203f0d536d637e0c8c31839b43d82b1a0f6b09767a0424d905b85949dfc51de1"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "6d777183a50f8b0980ea48f97b3801cd10f11c7db43e9a207c086c593ad46ce6"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "8083c1a9a2d3c968f2a459fa97054b86d9f7b683724e3fcfd484358e878eb9e3"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "f016fd2b1070b41f9d9125a4b97361fe05dc303e5221da9484c42a69ecfe1944"
+        }
+      ],
+      "reviewPacketHashes": [
+        "731dc0b975428f7e256f2a1265da7998c3758a2087d224112410a035dde3fc36",
+        "01c210e2ff5a923c660660dfeefb717378f76845986b62b88576d3d6a35bdddc",
+        "b318003a6f9421583caaeb3316ccf6c950211bac24cfc9cffc4ac695efb953e4"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:비견",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "7ab96d9ad610a240e84e96d0c0bdf75cf2cc37133003a5a09f3f2d4570e9c406",
+      "afterSourceGateHash": "7ab96d9ad610a240e84e96d0c0bdf75cf2cc37133003a5a09f3f2d4570e9c406",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "7ab96d9ad610a240e84e96d0c0bdf75cf2cc37133003a5a09f3f2d4570e9c406"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "e68902e2ce9897da1b7d857f461628c9e3c06e196c3baeb4b3d211d48f6c4f84"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "a2d11025535725a380efa0ec08368b09195319d45f3f836e0337170e6969dacd"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "78a33ad99ee37707321c826d7876c4dbe8e402dbb33d0fb7de9b139094903bdd"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "23a6faecdc5de2875e644237a9c2fb7ec9df921720c4b01da471b268717e403a"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "d165e323b2f144146c0026792486a908430317d9ad4e702147fb018d80bb27b0"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "e249d92f7d3b2bb1916c2b119c5374fc6486cbcd5b24e5f22bd16a7bb1bf1077"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "2cfbf6e24933f0ac72268d90f15019cc420a0c224ac8678ec5abb5327b3a705f"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "f64e97d760e2fb62dd2300e333813254b3f88cc7bbda264e2743dd2e46f2de25"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "7bb0b2e69f39a9d9b9c291746290bbc113f3239901cf6045c48d4afe8af2e8c9"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "49dd7164ac1319043963a9b3a80d2fb2d45ece96fecf797a659704ef2648927b"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "d78101962ece261788b62fe82c8918be8b1a1b4481a3238f09338afcbd6607c2"
+        }
+      ],
+      "reviewPacketHashes": [
+        "001943594cb6c3deab85d08a17cd9d686b40870dcf9bcf77b13e664979a74af9",
+        "d082896dc759ea06fe4d4b3f82a27683b814223e40435e39f0d33b8c8c2a650e",
+        "a48a1a002366302a04e75e08b1ebd0274ae4f338d335014e716bf71ab23bde27"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:편재",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "ce280b84de2534abe1e922a19df11a2f16e041be93491c379cab00585eaf2fd7",
+      "afterSourceGateHash": "ce280b84de2534abe1e922a19df11a2f16e041be93491c379cab00585eaf2fd7",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "ce280b84de2534abe1e922a19df11a2f16e041be93491c379cab00585eaf2fd7"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "2ef5832015b3fc673ac90c484dd5e2660207e76746b0790ec796c6c8a1248f6f"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "0ad846f5b0396dfaa538df50a2441206a5811c9cddf79939ca0839411237872b"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "6fff2bcfe243271a130a2a3dd3801be9a919c39663f47338e1dfa818869bbe39"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "7620de372b08c265e41dbc14933afdc7cf0f89fe2d44178f5a2a4852b317cc30"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "8e928809990430956557423151cf44803dba4f510b95dc95d09ec315cbb9ad1e"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "f65e2daf3380977b9af59e34dcb727d2b5bfd049045f6b1bbbe65e6d89c59d2e"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "cf7877652023fceac3312fbecc20fefb2c549b994604ece78ab4e7c2c72fe724"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "ed6c1c046fb2ce3d7c74e2b84106ca01d62fe952710be3facf2028d9d09f3bad"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "179e304649c251babcd635c20e0c1f07eaeee500921e8361ab4f65d2c99bd5cd"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "83c2b81da681ee865741c156c17dcad142a95fe8b562977ddcee384b53de9ea5"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "a63a02c4ef770f94091b35a6188f741041db6520df0b94d612d789c1284c7c4b"
+        }
+      ],
+      "reviewPacketHashes": [
+        "580cbe76013eac2ec2d9539de7cf64485c428f2b91517d88455ea90c60e82439",
+        "69f495df6ecf4c89b5575217c2d9d9d98d38fd80232e62ba0f7f39822db04d10",
+        "16dd9ed370cddf3462288620c34ff88c1e2d2a436104469f738aeffbbe5f1de1"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:편인",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "c953372c9df5e7f04eff91293a732de64637ebf1c52d2ade2af49f1d104edb71",
+      "afterSourceGateHash": "c953372c9df5e7f04eff91293a732de64637ebf1c52d2ade2af49f1d104edb71",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "c953372c9df5e7f04eff91293a732de64637ebf1c52d2ade2af49f1d104edb71"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "493e91e98dc97e09791b35658bfa703b6699153ea4efd7beade272ad324f6b09"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "dddcc097cf1471099f9ceca4a293f629a8b9a0146d4c16244cd90eaf5cc9d68d"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "PASS",
+          "originalGateHash": "70b42a84426f9dcbcd70589ca9b84341083d2bf02eef15b2d8f95a0516e3deb3"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "PASS",
+          "originalGateHash": "143538e9b42e6a09c1d8ce6badc2758ad4b91ca860082718fb9126b5919e6a07"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "765b18245d38d1a71f4bc924845309dcdcce78c323fff47499671b4526d1de40"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "d9cd2849b9ff39e22e8ca9b0eecb5b82b04f0c41245b11ec058234b9a0760e68"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "e86cbf9d0ef13079ca591fefca1a54412af78812af1aaf9931ff9f00dfc51470"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "c33d10ef3b8462ebd7b0ec116f2b0c359b748e789264526d2b466ff92ff2d281"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "7d58a92175646b86b09ae07c165f619c2f8552e2b42a24bffbb8afaedd9f02f1"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "099f8e47c1ae43f7c3619cd659cebf3c2da9be1c1e9bef1f85e9a656bab76f73"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "5b8bfe554a935f498c6c95da9cbd608be9ddd9c6d8f97e0fa6aca70c1bf5b559"
+        }
+      ],
+      "reviewPacketHashes": [
+        "4a6b2af0dff3727788f61fcb2f45ff91566c1901e19f7789191168cbc3513469",
+        "378c72fcdc4810327412fac5b6c3aac639fda90342c4e7e96f47f4d381fd2174",
+        "66fed58abb525f118517cfe6aee46998e6a08fbe67cb6e188df6f20711605370"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:정인",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "ef7960fa503c8bd17e7861a5062b752edd19bcda0e62b7a74dced645d4060401",
+      "afterSourceGateHash": "ef7960fa503c8bd17e7861a5062b752edd19bcda0e62b7a74dced645d4060401",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "ef7960fa503c8bd17e7861a5062b752edd19bcda0e62b7a74dced645d4060401"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "452157a353a098f319d97cfc0766219003e6d45326badc8093ff98ebd9aedd19"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "f50a90df3f956535760fce4c85e9654b0f0417a3788e859ac984f745ae23317e"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "dc6ad31d17750ffabd974744f453ba998224fdbd4013989ad85bd6ae7dbe2911"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "890a46a5013c19233e62b6b4e1ba130f8918ea586ef3eba1cc9fec8644fe74d3"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "d0e32c2b64400d2d3e92c9cf9b1edfd391d45ac0ade53fd221ea83a73a2635e7"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "6b4f248fcc56e15a8d88fe5724c03d0479ccf3b0d525a424f97e735b09a2ad78"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "131e3542c4586abe296d9a3dbc3978b1a61c7ffbb0431d2ba0f8bfb195068db2"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "bc45784ba4abcd32b66d1f9d1b3ee2ca9760fe757df8cd43f3357699a3d59d01"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "2def057d1b3d2caaff24a3424779e3b61556db9a6d5c29b42f2290c82c0bf7db"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "b00adc1ea4197307410b7fd2c35234455f75dc08b495f2a56cfd9b9bd5d43a4a"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "38f648423df524203b6f53942350d103ce053a2abb0c4974ad67b32ae2bb0f4b"
+        }
+      ],
+      "reviewPacketHashes": [
+        "4221c6a23e0f91f56834d81d75a8db7cf428075b3609ae364df5f57b84cb4a36",
+        "41bd3cc71eafa02ae849f2934ec4c932f1bd58803176ea3a53f56db9a250f1a7",
+        "712d0c47b27024b85d094fd0d3f8217969824c3bb06ee984f14f1e22d1358a28"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:상관",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "a233a37a24ddb920e1624659c6671ff02b90f3ae7c0d8e24c935c4afd23f9322",
+      "afterSourceGateHash": "a233a37a24ddb920e1624659c6671ff02b90f3ae7c0d8e24c935c4afd23f9322",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "a233a37a24ddb920e1624659c6671ff02b90f3ae7c0d8e24c935c4afd23f9322"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "2bb57ae8c885a0a5a8dc1cc9c19dda6a47d5b53f4b6613d1c4b77609140eac2d"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "126ee348562a69c30918af2acf30e56807570001f6b474f08310b4abf33296aa"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "350a972f04ac99042d56ae325a60c87f92d97dc6c1d053938943cd759b71a6b3"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "2405d442adafaf9aef3b85e634fecfb5cbdcabf2c93e66268c6350dce87bab2e"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "c920539f90446d31cefbc52e7012c9b8346607b8eb682301d4ace4b8bf85ac92"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "0bed69aec4e41ea033fb3fd1e35580dc387af176fcd9839aa5a132ecd182bbb1"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "77e645b920eadb9c14d99e6af2683d9341afdd0cf8ec09b7466ec53d95fd08c9"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "bdec1b9837eb0a890206278af819077b5fc9caef93e50604a36768f3c2e0d3d2"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "47c35a418cf259f76245165dc2da76f266caf3fb84093e6aeab0b44d83cda9c8"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "29b31942184e2dccaa12ce0fc90b1a9148a5352b1ddc57825204b8941f5d4622"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "22db9d3496f452e73d130903ebca0202efda36c11ac789674a930598bdb64391"
+        }
+      ],
+      "reviewPacketHashes": [
+        "0d8c38a70277e4b3f037bb09653d2e46c99af9e00848c3900f913d4238e80120",
+        "82352fc8e4f7c40f10a32ac41e11165417b0ca1f827c04830be8452a8e34c28b",
+        "2feb2d03df2c4fde317e5c66e474cbc5151a4638cc20958cc99f3a42376de856"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:정재",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "a63d49d13346d8ce8e3f29dc7c19e9d27c5c679d08af29e1b7001cf92ef7c96f",
+      "afterSourceGateHash": "a63d49d13346d8ce8e3f29dc7c19e9d27c5c679d08af29e1b7001cf92ef7c96f",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "a63d49d13346d8ce8e3f29dc7c19e9d27c5c679d08af29e1b7001cf92ef7c96f"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "991e3cf87a75ffa1b102028aeac64e548534a26fb868cc5015086edae44bef2e"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "5f0b4eb660df69e64d43d21c81f42e113882dc95fefb70ed14d82f9d2cf4a3dd"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "859b7655a2282e33517461ac17b9659e8a89dd78f2d4369bca5a66ca02fe7aed"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "5141bc8458cc494cde952f7e75d7cc54eae3a0eb091fe22c6150628c02e5bdc3"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "d0e96b7cf24a0fc6231998a1886c86c40fd4d7380fde7105f8fd898c65cf8c4a"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "639e26a2695cfdf1a46824302b46f87d37995b44e836f34630fa4f44842b0bbe"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "c88f305ccd30026c64a6d04adc8adaa4c3e5154720c853d665b159d01d387420"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "79af0744ac6a14f9261761a858ad3d4420af97aca62bdf46cfcb48c4bcfea35a"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "886b2a00872c8255aa6a84bd552391a5b65f1a70e20128088ce1cfadb94e0ee7"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "27f74b716423b1b64d219134eca74d1bcca304da943289b0dc03bb409fdba848"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "be2b31363f8a0b8385cea90ce120c771093d2bb59e6fe15cbce2c5ba5c37a534"
+        }
+      ],
+      "reviewPacketHashes": [
+        "125dab5f0a72583f9d43f409da701abc4e461d4844d0921938991e1debfd1d42",
+        "a762e2d1ae73c7df969b87b7f77a5562accff157ca666ab60c18866385129c6d",
+        "e44ec7184a0637ed58fb66a67d22009454e16af907a429355d473950c7b9362d"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:식신",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "991f6a887e1e06211617f58513c7a34a314f5a3e5bf1481d93e65be5abdfb99c",
+      "afterSourceGateHash": "991f6a887e1e06211617f58513c7a34a314f5a3e5bf1481d93e65be5abdfb99c",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "991f6a887e1e06211617f58513c7a34a314f5a3e5bf1481d93e65be5abdfb99c"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "8198dbcca14b33e8048c0afc4f9ebd90b412e7275d1b1c521950ab55cbb74e34"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "34d196f69669d3a759406915142aa99c9e589c6a30650008ece6abe92c77a3ae"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "d01555354501044af70236966a467c4a701115eb11892cd1d6387fcdae16a4dd"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "0c76b4c7ac36bd9f2256899a329a7ce47e1b8ce0c66906cf6dc4e330c6c5c917"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "4c80fab1ce24042b316f2fd020db94cde606f3295dd58aa883f1d48490264de6"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "2b5ff0232d683bc56892c11299b46f017ec6c499aa06b5968061fd0f4b0ea6dd"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "b749c6ded6710ce8c9678cb572b6c754f95bc1b993c138247af1a35aaa1650a8"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "056697a35add5269a16e01a788684b49a6a2c1b10a2bbae1b5c63a5e2427e7ef"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "84d5610526a1a5ded4f83e73379419f65f9a2e381663cda4f13800401a1e23e4"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "2e648955f2227710b2b3d600b0b815a354a5d0507366b36db99aeb2c874aad16"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "f50f26e76418efa6b9d35d96fb704395102fc3e94f16b48179146f31261f8c98"
+        }
+      ],
+      "reviewPacketHashes": [
+        "ac5ee18c1ccd7c14529b8a583ea9bd8f0ee57a27ebaf42ad29abb301c2b132d6",
+        "235399b3e7341d50a786d9d924337b7616194487c0ac6455bcfa5922c53ad0f0",
+        "fbdf7b2431b96c5aaa3a2a70f318994f487a0af9d8167a7e11f5e7af9e555e1c"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:정관",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "539019b016dc1a71d25589885f5991530b1c26575acfd18ad6d042f1064ae1ff",
+      "afterSourceGateHash": "539019b016dc1a71d25589885f5991530b1c26575acfd18ad6d042f1064ae1ff",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "539019b016dc1a71d25589885f5991530b1c26575acfd18ad6d042f1064ae1ff"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "08a92727785474bbff29f5201a287f70bce0de0179fd01a04234f819bbf64ae9"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "8091ce3a8c6e8e6d369c58ba0240a9dda12b27f13c1c321fc7d90a773d939345"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "8523b36b6c7fd24fce00c86005f855b72564cb4097157aa2972b44a0b3370b2b"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "c97b63d30e40535f291a5bc448e687b38400d8fd4e6bfbdcdf3e1871ccf7ad55"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "90529fa6809669caf6326a5b010057ea2ddc6dbd5d94a0bdc5e8fab60c0a23e9"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "a502d4b7bb8c4b3448a28f93038639369f01efc62ba42564e87f0d3aa7a963b0"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "ac993c3281f2a0bff0185445246b39adfe43929522c5b5fa5e0dd2aa325d3feb"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "0a50d5094f4e6faac8e86c92e3e96efa3d8206d1835bb1ba11f17c00afd3c588"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "5d5eb9ae75021699756b9fac802e249b7c3003d4733ae9f36424e92df59745e0"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "8e2e31ccecc99a65c0c8c5b9eddedaedbefff2b4f76a2fc4a178213800d3a6bd"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "cfc505df4d51123114f358733e180b3f9f45193b4f41cd214e1100fa72a91138"
+        }
+      ],
+      "reviewPacketHashes": [
+        "d58a6ff50f4aa43d98f31f4a8e9faacca98c20fde9f7a7b714551c3ea80c6d7c",
+        "15f939b8c2b6b2ed644a960be32da55a185e31f0da780c3fdb9a3db98100dcc0",
+        "915a8e4755f76e90f6b17191fe0b2056de970d36dc9fb83d2d1aebc6a1ca086d"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:겁재",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "6103ebc8a24773ebb5a0c3869f8c77bb00f9f907705f00de8138fe334df90d46",
+      "afterSourceGateHash": "6103ebc8a24773ebb5a0c3869f8c77bb00f9f907705f00de8138fe334df90d46",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "6103ebc8a24773ebb5a0c3869f8c77bb00f9f907705f00de8138fe334df90d46"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "49c988bff43f14d813d852c7397bf7b5f13f15e16179ab27015c536ba188e020"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "76051c30b9fcfea0cc266295891f7a5e79e87a9fd2dfe569b5236a91a5c853d0"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "bc6ecda714000c14a2d77d31025778f7fb828c4f5e9d02aae5a7d292d8713aef"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "fbbc74bf2b4f5be7ba4b0145e0a179577114e517296b4cd8078e5b3d7ad0883e"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "e89b2d0e807dd7de77207674cf6b9101d5c8a48608dee275aeff8b214b666213"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "3774f2285a88b057fc2dc39e433ea286bad3957506ade35106570f96ccec2ed4"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "76bd124fb7d1df7995938d93329f2843cf370e3efeddef286f0d0850a2f4f36c"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "d702cf441db21293fd007f441e5cff5cae921650d0dc5362965235e7fb8e8f6c"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "f0a21c8a0d9c78570e36d91ced6c46743af0af145cb83cda4efb60a4852cea46"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "1dd6a13ed66a4111884a3e3c1db44ba344694944a48198a5f9a684c7fad6e403"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "19e2f2ab180ed582b2b82d33c9f3186d243724d3270dc4f5a140787f85a90f71"
+        }
+      ],
+      "reviewPacketHashes": [
+        "0b04f278f98aed387a2fe26461277e95fdd31f3d58439c02bc770c90840f718f",
+        "ccb1e372b2a76812d3e9ad23b060e0780e4c3f935350856d79446c34a4bdb84c",
+        "1e0557224738fcaa5fe6d2d147109205b338ade0f131aa31454a1a0009af9c49"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:편관",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "8469fb291c5797d7919ac27e90443710d069c6ef0a82cba08dddb43c7003a6de",
+      "afterSourceGateHash": "8469fb291c5797d7919ac27e90443710d069c6ef0a82cba08dddb43c7003a6de",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "8469fb291c5797d7919ac27e90443710d069c6ef0a82cba08dddb43c7003a6de"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "b6eb9c4c2d82278e0056ba5e4b138f6278db74ea79cff3e533e4a2717557e89f"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "8ed373cf3f767763c964d1cf34af030cefe493ef58dbc4ae901a875bf968f214"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "7c7178033e3a0df11cf965739775e5940a446437101c1c2e65185338856b0501"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "ca7d7106d7c518fe51472101b9fd09abd9aca132b10271a13230fe1e303963cc"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "abc2a49788f3955faf5050b8e9dddf2fdc17ebcd391bec8d4e6abc2d79eb4fff"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "5afdf8cf8b0500bd6d5fbde04c180cd9e0e8d04f30c3ad466d17db5669a11f70"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "ec77ad61688ca72e295f9264c2e1dc81b74d160db7dbdcc2ff692f3f11d817e0"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "203f0d536d637e0c8c31839b43d82b1a0f6b09767a0424d905b85949dfc51de1"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "6d777183a50f8b0980ea48f97b3801cd10f11c7db43e9a207c086c593ad46ce6"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "8083c1a9a2d3c968f2a459fa97054b86d9f7b683724e3fcfd484358e878eb9e3"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "f016fd2b1070b41f9d9125a4b97361fe05dc303e5221da9484c42a69ecfe1944"
+        }
+      ],
+      "reviewPacketHashes": [
+        "731dc0b975428f7e256f2a1265da7998c3758a2087d224112410a035dde3fc36",
+        "01c210e2ff5a923c660660dfeefb717378f76845986b62b88576d3d6a35bdddc",
+        "b318003a6f9421583caaeb3316ccf6c950211bac24cfc9cffc4ac695efb953e4"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:비견",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "7ab96d9ad610a240e84e96d0c0bdf75cf2cc37133003a5a09f3f2d4570e9c406",
+      "afterSourceGateHash": "7ab96d9ad610a240e84e96d0c0bdf75cf2cc37133003a5a09f3f2d4570e9c406",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "7ab96d9ad610a240e84e96d0c0bdf75cf2cc37133003a5a09f3f2d4570e9c406"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "e68902e2ce9897da1b7d857f461628c9e3c06e196c3baeb4b3d211d48f6c4f84"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "a2d11025535725a380efa0ec08368b09195319d45f3f836e0337170e6969dacd"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "78a33ad99ee37707321c826d7876c4dbe8e402dbb33d0fb7de9b139094903bdd"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "23a6faecdc5de2875e644237a9c2fb7ec9df921720c4b01da471b268717e403a"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "d165e323b2f144146c0026792486a908430317d9ad4e702147fb018d80bb27b0"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "e249d92f7d3b2bb1916c2b119c5374fc6486cbcd5b24e5f22bd16a7bb1bf1077"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "2cfbf6e24933f0ac72268d90f15019cc420a0c224ac8678ec5abb5327b3a705f"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "f64e97d760e2fb62dd2300e333813254b3f88cc7bbda264e2743dd2e46f2de25"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "7bb0b2e69f39a9d9b9c291746290bbc113f3239901cf6045c48d4afe8af2e8c9"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "49dd7164ac1319043963a9b3a80d2fb2d45ece96fecf797a659704ef2648927b"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "d78101962ece261788b62fe82c8918be8b1a1b4481a3238f09338afcbd6607c2"
+        }
+      ],
+      "reviewPacketHashes": [
+        "001943594cb6c3deab85d08a17cd9d686b40870dcf9bcf77b13e664979a74af9",
+        "d082896dc759ea06fe4d4b3f82a27683b814223e40435e39f0d33b8c8c2a650e",
+        "a48a1a002366302a04e75e08b1ebd0274ae4f338d335014e716bf71ab23bde27"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:편재",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "bcf1e56412d9def5f7dad51cba19c82d93144ce79f4e917a992e3b1782bff3ad",
+      "afterSourceGateHash": "bcf1e56412d9def5f7dad51cba19c82d93144ce79f4e917a992e3b1782bff3ad",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "bcf1e56412d9def5f7dad51cba19c82d93144ce79f4e917a992e3b1782bff3ad"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "90ed0d55beb09b95756acb1c0db576b02b6a9e33adbe6146ecb44f9758e68010"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "112a58072b1811a8a98e071570f0311d875ae9988c1ad058ca4c1200520bb911"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "PASS",
+          "originalGateHash": "4a0e208f2c76ba7785e0f8c485322c97b4e666495d44ee9a55b4d1f734e655e8"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "PASS",
+          "originalGateHash": "7442245e3ef8fe2f21f8363ba1ac5fc2ab7ed88b811bcc3bd3a820aa26b063b5"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "4cba5ec17fde9cb16afbe20837fe8033dbce10f4d31fe51e6b6380fa9b24e46a"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "f9169b4ac6a412e767f4e937e2ef9e60e16ac1955d5c59383566daa5a7560176"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "PASS",
+          "originalGateHash": "eb2f835fa905a8df29d1a3f2649a01f435fc515bbe5d845ac52ff447764ed69c"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "ae986e92ff67e0f6291cdc898c7203fde265fd87e565282afc322bafc59dc926"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "9d849888f3544f9ae22ef210211fd8d4b6ea8fd4593ce7f984ad80d01bc8195c"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "11ecfad2dac7c67cd5e28b133e890ba86e1d74557bea213a2be114b07f8aa37b"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "cca6301385da9f68b427dd9fb035ab5dc250c7da0a0e972359ef6190e8049dba"
+        }
+      ],
+      "reviewPacketHashes": [
+        "580cbe76013eac2ec2d9539de7cf64485c428f2b91517d88455ea90c60e82439",
+        "69f495df6ecf4c89b5575217c2d9d9d98d38fd80232e62ba0f7f39822db04d10",
+        "16dd9ed370cddf3462288620c34ff88c1e2d2a436104469f738aeffbbe5f1de1"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:편인",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "ef25589aefd16b7bd040c686d37a599a4111eed6151feabd261d695bffb85e99",
+      "afterSourceGateHash": "ef25589aefd16b7bd040c686d37a599a4111eed6151feabd261d695bffb85e99",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "ef25589aefd16b7bd040c686d37a599a4111eed6151feabd261d695bffb85e99"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "8e36203be133fd967bdaddc5372af3c240eba16e338f139a315d4da253c66d67"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "b72d7fa99183c69160a887315f0c38894c00686b2bdd778cb62b94836a2929a4"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "e45d27e97f6029e52f903082125c81d30b7cd470565212525d1680a6b596ed29"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "5d20e94f4ee47ea4c67891acd73a8e2ced2f4146dda38ac17907e5589f46a301"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "65389395e9a30ad993157f3b97bd00f0ee3c42890c41b2e2c6c770b6289a8ffe"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "6da33e3c3e0ed7e12002445f44c32ac9d8a028ffa2ed1893c6efdaf14262cf76"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "fcca7c948adc95fa5eed02bc9214f947f4cb69d3ca9054bf739e5cf34f852475"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "b8efa5c042b9c6832d7885cf3750052b83a75c4fc0544ede62ec66bad1eff468"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "712b49b98a4b39a29ed8bb8025fa09311cf1169bdc750a695954d0e3168e94c9"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "c535ef5a7915c1bec634909422c9106caf87e7e9bcac1d872034b548083be2ba"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "bfb43440d263acdf896ee83ea86d1f721ed47f09c024b6cda9fb9247468824b1"
+        }
+      ],
+      "reviewPacketHashes": [
+        "4a6b2af0dff3727788f61fcb2f45ff91566c1901e19f7789191168cbc3513469",
+        "378c72fcdc4810327412fac5b6c3aac639fda90342c4e7e96f47f4d381fd2174",
+        "66fed58abb525f118517cfe6aee46998e6a08fbe67cb6e188df6f20711605370"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:정인",
+      "beforeState": "FAIL",
+      "afterState": "FAIL",
+      "originalSourceGateHash": "ef7960fa503c8bd17e7861a5062b752edd19bcda0e62b7a74dced645d4060401",
+      "afterSourceGateHash": "ef7960fa503c8bd17e7861a5062b752edd19bcda0e62b7a74dced645d4060401",
+      "allTwelveGatesUnchanged": true,
+      "allTwelveGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "originalGateHash": "ef7960fa503c8bd17e7861a5062b752edd19bcda0e62b7a74dced645d4060401"
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "452157a353a098f319d97cfc0766219003e6d45326badc8093ff98ebd9aedd19"
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "originalGateHash": "f50a90df3f956535760fce4c85e9654b0f0417a3788e859ac984f745ae23317e"
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "FAIL",
+          "originalGateHash": "dc6ad31d17750ffabd974744f453ba998224fdbd4013989ad85bd6ae7dbe2911"
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "originalGateHash": "890a46a5013c19233e62b6b4e1ba130f8918ea586ef3eba1cc9fec8644fe74d3"
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "originalGateHash": "d0e32c2b64400d2d3e92c9cf9b1edfd391d45ac0ade53fd221ea83a73a2635e7"
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "originalGateHash": "6b4f248fcc56e15a8d88fe5724c03d0479ccf3b0d525a424f97e735b09a2ad78"
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "originalGateHash": "131e3542c4586abe296d9a3dbc3978b1a61c7ffbb0431d2ba0f8bfb195068db2"
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "PASS",
+          "originalGateHash": "bc45784ba4abcd32b66d1f9d1b3ee2ca9760fe757df8cd43f3357699a3d59d01"
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "2def057d1b3d2caaff24a3424779e3b61556db9a6d5c29b42f2290c82c0bf7db"
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "originalGateHash": "b00adc1ea4197307410b7fd2c35234455f75dc08b495f2a56cfd9b9bd5d43a4a"
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "originalGateHash": "38f648423df524203b6f53942350d103ce053a2abb0c4974ad67b32ae2bb0f4b"
+        }
+      ],
+      "reviewPacketHashes": [
+        "4221c6a23e0f91f56834d81d75a8db7cf428075b3609ae364df5f57b84cb4a36",
+        "41bd3cc71eafa02ae849f2934ec4c932f1bd58803176ea3a53f56db9a250f1a7",
+        "712d0c47b27024b85d094fd0d3f8217969824c3bb06ee984f14f1e22d1358a28"
+      ],
+      "newReadProofsLinked": true,
+      "exactModernMeaningStillUnverified": true,
+      "customerApproved": false
+    }
+  ],
+  "exactPriorSourceGatesAndIdMultiplicityMatch": true,
+  "fullExecutedReceipt": "/Users/Deokmin/Documents/gyeol-validation/v4-conditional-temporal-meaning-source-review-01/actual-review-verified/source-integrity-comparison.json"
+}

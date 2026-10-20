@@ -1,0 +1,41 @@
+{
+  "technicalSourceReferencesReadyForReview": 525,
+  "readinessIsCustomerPermission": false,
+  "buckets": {
+    "REVIEW_READY_TECHNICALLY_VERIFIED": {
+      "sourceReferences": 525,
+      "nextAction": "Read exact original source, conditions, counterexamples and meaning; approval still pending"
+    },
+    "REVIEW_REQUIRES_ORIGINAL_SOURCE": {
+      "originalRecordMissing": 48,
+      "originalFactLocatorMissing": 78,
+      "ambiguous": 48,
+      "unsupportedGrammar": 462,
+      "documentaryOnlyOriginal": 623,
+      "nextAction": "Supply original edition/locator or explicit unique grammar; snapshots are not personal facts"
+    },
+    "REVIEW_REQUIRES_DOMAIN_POLICY": {
+      "originalDecisions": 2966,
+      "explicitProhibitions": 1040,
+      "nextAction": "Preserve current prohibition; a separate authorized operator policy decision is required"
+    },
+    "REVIEW_REQUIRES_PRODUCER": {
+      "futureRequirementReferences": 1418,
+      "nextAction": "Separate actual producer absence, unexposed address, unsupported scope and unspecified selector using full matrices"
+    },
+    "REVIEW_REQUIRES_ACTUAL_CONTEXT": {
+      "scope": "all relevant original gate/context rows retained",
+      "nextAction": "Obtain only needed actual input; do not infer marriage, authority, contract, assets, child state or consent"
+    },
+    "REVIEW_REQUIRES_MEANING": {
+      "newModelProposals": 12,
+      "operatorApproved": 0,
+      "nextAction": "Review exact meaning, related-but-different uses and counterexamples"
+    },
+    "REVIEW_REQUIRES_CUSTOMER_APPROVAL": {
+      "allOriginalCandidateFixtureEvaluations": 5073,
+      "approved": 0,
+      "nextAction": "Authentic separately authorized approval only; this task issues none"
+    }
+  }
+}

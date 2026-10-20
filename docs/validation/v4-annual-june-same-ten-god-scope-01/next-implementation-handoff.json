@@ -1,0 +1,63 @@
+{
+  "status": "PARTIAL_ROLE_SOURCE_DECISION_REQUIRED",
+  "implemented": [
+    "Actual role-scoped Jan-May search",
+    "Exact previous/current witnesses and non-adjacent comparison scope",
+    "Original June relation validation with existing unknown-hour and conditional-Dayun blockers",
+    "One-window current-fact Native Binder diagnostics",
+    "All original candidate/receipt hashes preserved"
+  ],
+  "verifiedMonthsBefore": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "verifiedMonthsAfter": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "remainingMonths": [
+    6,
+    11
+  ],
+  "juneCandidates": 0,
+  "currentFactBindings": 5,
+  "annualCandidatesBefore": 42,
+  "annualCandidatesAfter": 42,
+  "majorCandidates": 2,
+  "unmatchedUnits": 396,
+  "newFactRoots": 0,
+  "newCalculatedGraphFacts": 0,
+  "newIndependentMeanings": 0,
+  "customerClaims": 0,
+  "customerApprovals": 0,
+  "customerReaderBridges": 0,
+  "plannerAssignments": 0,
+  "requiredSourceDecision": "A separately reviewed original-source contract must define which God role or justified role-neutral comparison June requires. Do not fill the ten monthly study requiredRole values automatically.",
+  "nextImplementationTask": "Not started; requires a separate user instruction. Source/role review precedes original June candidate issuance.",
+  "remainingBlockers": [
+    "June ROLE_SOURCE_DECISION_REQUIRED; original research does not select MONTH_STEM/MONTH_BRANCH_MAIN or authorize a role-neutral meaning",
+    "Verified monthly contracts remain 10/12; June and November not completed",
+    "30 original Source Integrity FAIL unchanged",
+    "10 original monthly ten-god roles remain AMBIGUOUS",
+    "Meaning/Product/Customer approval pending; no customer Claim/Reader/Planner authorization",
+    "Two exact-Base stale protected-hash test failures; historical October 5000ms timing sensitivity not declared fixed",
+    "Historical ignored/unrecorded temporary-worktree loss remains UNVERIFIED; separate from persistent workspace integrity"
+  ],
+  "automaticFollowupStarted": false
+}

@@ -1,0 +1,7280 @@
+[
+  {
+    "from": "fixture-major-F:node:1",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:2",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:2",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:2",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:2",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:2",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:2",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:2",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:3",
+    "to": "fixture-major-F:node:36",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:3",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:4",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:5",
+    "to": "fixture-major-F:node:5#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:5",
+    "to": "fixture-major-F:node:235",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:5",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:6",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:6",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:6",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:6",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:6",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:6",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:6",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:7",
+    "to": "fixture-major-F:node:7#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:7",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:7",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:7",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:7",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:7",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:7",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:7",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:8",
+    "to": "fixture-major-F:node:105",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:8",
+    "to": "fixture-major-F:node:146",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:8",
+    "to": "fixture-major-F:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:8",
+    "to": "fixture-major-F:node:172",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:8",
+    "to": "fixture-major-F:node:197",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:8",
+    "to": "fixture-major-F:node:285",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:8",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:9",
+    "to": "fixture-major-F:node:129",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:9",
+    "to": "fixture-major-F:node:134",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:9",
+    "to": "fixture-major-F:node:165",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:9",
+    "to": "fixture-major-F:node:202",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:9",
+    "to": "fixture-major-F:node:275",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:9",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:10",
+    "to": "fixture-major-F:node:71",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:10",
+    "to": "fixture-major-F:node:101",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:10",
+    "to": "fixture-major-F:node:243",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:10",
+    "to": "fixture-major-F:node:287",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:10",
+    "to": "fixture-major-F:node:317",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:10",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:11",
+    "to": "fixture-major-F:node:86",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:11",
+    "to": "fixture-major-F:node:95",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:11",
+    "to": "fixture-major-F:node:119",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:11",
+    "to": "fixture-major-F:node:208",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:11",
+    "to": "fixture-major-F:node:267",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:11",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:12",
+    "to": "fixture-major-F:node:78",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:12",
+    "to": "fixture-major-F:node:103",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:12",
+    "to": "fixture-major-F:node:162",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:12",
+    "to": "fixture-major-F:node:167",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:12",
+    "to": "fixture-major-F:node:211",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:12",
+    "to": "fixture-major-F:node:214",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:12",
+    "to": "fixture-major-F:node:292",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:12",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:13",
+    "to": "fixture-major-F:node:35",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:13",
+    "to": "fixture-major-F:node:41",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:13",
+    "to": "fixture-major-F:node:125",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:13",
+    "to": "fixture-major-F:node:158",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:13",
+    "to": "fixture-major-F:node:249",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:13",
+    "to": "fixture-major-F:node:282",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:13",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:14",
+    "to": "fixture-major-F:node:116",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:14",
+    "to": "fixture-major-F:node:140",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:14",
+    "to": "fixture-major-F:node:226",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:14",
+    "to": "fixture-major-F:node:247",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:14",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:15",
+    "to": "fixture-major-F:node:15#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:15",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:16",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:16",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:16",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:16",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:16",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:16",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:16",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:17",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:18",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:19",
+    "to": "fixture-major-F:node:69",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:19",
+    "to": "fixture-major-F:node:222",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:19",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:20",
+    "to": "fixture-major-F:node:20#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:20",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:21",
+    "to": "fixture-major-F:node:21#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:21",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:21",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:21",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:21",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:21",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:21",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:21",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:22",
+    "to": "fixture-major-F:node:5",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:22",
+    "to": "fixture-major-F:node:6",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:22",
+    "to": "fixture-major-F:node:51",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:22",
+    "to": "fixture-major-F:node:102",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:22",
+    "to": "fixture-major-F:node:177",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:22",
+    "to": "fixture-major-F:node:235",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:22",
+    "to": "fixture-major-F:node:289",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:22",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:23",
+    "to": "fixture-major-F:node:156",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:23",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:24",
+    "to": "fixture-major-F:node:15",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:24",
+    "to": "fixture-major-F:node:28",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:24",
+    "to": "fixture-major-F:node:118",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:24",
+    "to": "fixture-major-F:node:176",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:24",
+    "to": "fixture-major-F:node:195",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:24",
+    "to": "fixture-major-F:node:302",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:24",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:25",
+    "to": "fixture-major-F:node:25#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:25",
+    "to": "fixture-major-F:node:223",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:25",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:26",
+    "to": "fixture-major-F:node:71",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:26",
+    "to": "fixture-major-F:node:101",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:26",
+    "to": "fixture-major-F:node:243",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:26",
+    "to": "fixture-major-F:node:287",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:26",
+    "to": "fixture-major-F:node:317",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:26",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:27",
+    "to": "fixture-major-F:node:5",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:27",
+    "to": "fixture-major-F:node:6",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:27",
+    "to": "fixture-major-F:node:51",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:27",
+    "to": "fixture-major-F:node:102",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:27",
+    "to": "fixture-major-F:node:177",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:27",
+    "to": "fixture-major-F:node:235",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:27",
+    "to": "fixture-major-F:node:289",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:27",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:28",
+    "to": "fixture-major-F:node:15",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:28",
+    "to": "fixture-major-F:node:28#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:28",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:29",
+    "to": "fixture-major-F:node:29#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:29",
+    "to": "fixture-major-F:node:121",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:29",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:30",
+    "to": "fixture-major-F:node:30#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:30",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:30",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:30",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:30",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:30",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:30",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:30",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:31",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:32",
+    "to": "fixture-major-F:node:32#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:32",
+    "to": "fixture-major-F:node:121",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:32",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:33",
+    "to": "fixture-major-F:node:42",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:33",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:34",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:34",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:34",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:34",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:34",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:34",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:34",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:35",
+    "to": "fixture-major-F:node:35#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:35",
+    "to": "fixture-major-F:node:158",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:35",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:36",
+    "to": "fixture-major-F:node:36#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:36",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:36",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:36",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:36",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:36",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:36",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:36",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:37",
+    "to": "fixture-major-F:node:37#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:37",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:38",
+    "to": "fixture-major-F:node:105",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:38",
+    "to": "fixture-major-F:node:146",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:38",
+    "to": "fixture-major-F:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:38",
+    "to": "fixture-major-F:node:172",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:38",
+    "to": "fixture-major-F:node:197",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:38",
+    "to": "fixture-major-F:node:285",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:38",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:39",
+    "to": "fixture-major-F:node:39#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:39",
+    "to": "fixture-major-F:node:173",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:39",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:40",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:40",
+    "to": "fixture-major-F:node:301",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:40",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:41",
+    "to": "fixture-major-F:node:41#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:41",
+    "to": "fixture-major-F:node:158",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:41",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:42",
+    "to": "fixture-major-F:node:42#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:42",
+    "to": "fixture-major-F:node:42#/participants/1",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:42",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:42",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:42",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:43",
+    "to": "fixture-major-F:node:66",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:43",
+    "to": "fixture-major-F:node:170",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:43",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:44",
+    "to": "fixture-major-F:node:44#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:44",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:44",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:44",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:45",
+    "to": "fixture-major-F:node:45#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:45",
+    "to": "fixture-major-F:node:173",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:45",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:46",
+    "to": "fixture-major-F:node:40",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:46",
+    "to": "fixture-major-F:node:256",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:46",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:47",
+    "to": "fixture-major-F:node:33",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:47",
+    "to": "fixture-major-F:node:69",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:47",
+    "to": "fixture-major-F:node:87",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:47",
+    "to": "fixture-major-F:node:138",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:47",
+    "to": "fixture-major-F:node:157",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:47",
+    "to": "fixture-major-F:node:198",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:47",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:48",
+    "to": "fixture-major-F:node:37",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:48",
+    "to": "fixture-major-F:node:129",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:48",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:49",
+    "to": "fixture-major-F:node:40",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:49",
+    "to": "fixture-major-F:node:145",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:49",
+    "to": "fixture-major-F:node:166",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:49",
+    "to": "fixture-major-F:node:169",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:49",
+    "to": "fixture-major-F:node:256",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:49",
+    "to": "fixture-major-F:node:304",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:49",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:50",
+    "to": "fixture-major-F:node:35",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:50",
+    "to": "fixture-major-F:node:41",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:50",
+    "to": "fixture-major-F:node:125",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:50",
+    "to": "fixture-major-F:node:158",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:50",
+    "to": "fixture-major-F:node:249",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:50",
+    "to": "fixture-major-F:node:282",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:50",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:51",
+    "to": "fixture-major-F:node:51#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:51",
+    "to": "fixture-major-F:node:235",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:51",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:52",
+    "to": "fixture-major-F:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:52",
+    "to": "fixture-major-F:node:75",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:52",
+    "to": "fixture-major-F:node:107",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:52",
+    "to": "fixture-major-F:node:152",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:52",
+    "to": "fixture-major-F:node:281",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:52",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:53",
+    "to": "fixture-major-F:node:6",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:53",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:54",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:54",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:55",
+    "to": "fixture-major-F:node:55#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:55",
+    "to": "fixture-major-F:node:121",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:55",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:56",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:56",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:57",
+    "to": "fixture-major-F:node:25",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:57",
+    "to": "fixture-major-F:node:110",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:57",
+    "to": "fixture-major-F:node:124",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:57",
+    "to": "fixture-major-F:node:223",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:57",
+    "to": "fixture-major-F:node:232",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:57",
+    "to": "fixture-major-F:node:279",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:57",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:58",
+    "to": "fixture-major-F:node:105",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:58",
+    "to": "fixture-major-F:node:146",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:58",
+    "to": "fixture-major-F:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:58",
+    "to": "fixture-major-F:node:172",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:58",
+    "to": "fixture-major-F:node:197",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:58",
+    "to": "fixture-major-F:node:285",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:58",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:59",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:59",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:59",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:60",
+    "to": "fixture-major-F:node:113",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:60",
+    "to": "fixture-major-F:node:138",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:60",
+    "to": "fixture-major-F:node:198",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:60",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:61",
+    "to": "fixture-major-F:node:79",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:61",
+    "to": "fixture-major-F:node:151",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:61",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:62",
+    "to": "fixture-major-F:node:62#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:62",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:62",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:62",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:63",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:64",
+    "to": "fixture-major-F:node:66",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:64",
+    "to": "fixture-major-F:node:292",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:64",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:65",
+    "to": "fixture-major-F:node:56",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:65",
+    "to": "fixture-major-F:node:248",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:65",
+    "to": "fixture-major-F:node:294",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:65",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:66",
+    "to": "fixture-major-F:node:66#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:66",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:67",
+    "to": "fixture-major-F:node:66",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:67",
+    "to": "fixture-major-F:node:197",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:67",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:68",
+    "to": "fixture-major-F:node:36",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:68",
+    "to": "fixture-major-F:node:86",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:68",
+    "to": "fixture-major-F:node:95",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:68",
+    "to": "fixture-major-F:node:119",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:68",
+    "to": "fixture-major-F:node:208",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:68",
+    "to": "fixture-major-F:node:267",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:68",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:69",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:69",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:70",
+    "to": "fixture-major-F:node:56",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:70",
+    "to": "fixture-major-F:node:157",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:70",
+    "to": "fixture-major-F:node:161",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:70",
+    "to": "fixture-major-F:node:266",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:70",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:71",
+    "to": "fixture-major-F:node:71#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:71",
+    "to": "fixture-major-F:node:243",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:71",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:72",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:72",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:72",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:72",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:72",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:72",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:72",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:73",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:74",
+    "to": "fixture-major-F:node:74#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:74",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:75",
+    "to": "fixture-major-F:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:75",
+    "to": "fixture-major-F:node:75#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:75",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:76",
+    "to": "fixture-major-F:node:76#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:76",
+    "to": "fixture-major-F:node:173",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:76",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:77",
+    "to": "fixture-major-F:node:294",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:77",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:78",
+    "to": "fixture-major-F:node:78#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:78",
+    "to": "fixture-major-F:node:292",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:78",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:79",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:79",
+    "to": "fixture-major-F:node:199",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:79",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:80",
+    "to": "fixture-major-F:node:66",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:80",
+    "to": "fixture-major-F:node:235",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:80",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:81",
+    "to": "fixture-major-F:node:151",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:81",
+    "to": "fixture-major-F:node:304",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:81",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:82",
+    "to": "fixture-major-F:node:87",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:82",
+    "to": "fixture-major-F:node:138",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:82",
+    "to": "fixture-major-F:node:198",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:82",
+    "to": "fixture-major-F:node:237",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:82",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:83",
+    "to": "fixture-major-F:node:113",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:83",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:84",
+    "to": "fixture-major-F:node:84#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:84",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:85",
+    "to": "fixture-major-F:node:39",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:85",
+    "to": "fixture-major-F:node:45",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:85",
+    "to": "fixture-major-F:node:76",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:85",
+    "to": "fixture-major-F:node:173",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:85",
+    "to": "fixture-major-F:node:300",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:85",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:86",
+    "to": "fixture-major-F:node:86#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:86",
+    "to": "fixture-major-F:node:267",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:86",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:87",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:87",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:88",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:89",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:90",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:91",
+    "to": "fixture-major-F:node:69",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:91",
+    "to": "fixture-major-F:node:210",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:91",
+    "to": "fixture-major-F:node:237",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:91",
+    "to": "fixture-major-F:node:273",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:91",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:92",
+    "to": "fixture-major-F:node:257",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:92",
+    "to": "fixture-major-F:node:273",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:92",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:93",
+    "to": "fixture-major-F:node:71",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:93",
+    "to": "fixture-major-F:node:101",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:93",
+    "to": "fixture-major-F:node:243",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:93",
+    "to": "fixture-major-F:node:287",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:93",
+    "to": "fixture-major-F:node:317",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:93",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:94",
+    "to": "fixture-major-F:node:234",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:94",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:95",
+    "to": "fixture-major-F:node:95#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:95",
+    "to": "fixture-major-F:node:267",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:95",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:96",
+    "to": "fixture-major-F:node:112",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:96",
+    "to": "fixture-major-F:node:117",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:96",
+    "to": "fixture-major-F:node:170",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:96",
+    "to": "fixture-major-F:node:215",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:96",
+    "to": "fixture-major-F:node:284",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:96",
+    "to": "fixture-major-F:node:293",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:96",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:97",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:98",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:99",
+    "to": "fixture-major-F:node:254",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:99",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:100",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:100",
+    "to": "fixture-major-F:node:100#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:100",
+    "to": "fixture-major-F:node:100#/participants/1",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:100",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:100",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:101",
+    "to": "fixture-major-F:node:101#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:101",
+    "to": "fixture-major-F:node:243",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:101",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:102",
+    "to": "fixture-major-F:node:102#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:102",
+    "to": "fixture-major-F:node:235",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:102",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:103",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:103",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:103",
+    "to": "fixture-major-F:node:103#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:103",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:103",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:103",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:103",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:103",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:104",
+    "to": "fixture-major-F:node:79",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:104",
+    "to": "fixture-major-F:node:166",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:104",
+    "to": "fixture-major-F:node:248",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:104",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:105",
+    "to": "fixture-major-F:node:105#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:105",
+    "to": "fixture-major-F:node:197",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:105",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:106",
+    "to": "fixture-major-F:node:66",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:106",
+    "to": "fixture-major-F:node:223",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:106",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:107",
+    "to": "fixture-major-F:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:107",
+    "to": "fixture-major-F:node:107#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:107",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:108",
+    "to": "fixture-major-F:node:29",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:108",
+    "to": "fixture-major-F:node:32",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:108",
+    "to": "fixture-major-F:node:55",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:108",
+    "to": "fixture-major-F:node:121",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:108",
+    "to": "fixture-major-F:node:219",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:108",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:109",
+    "to": "fixture-major-F:node:109#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:109",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:110",
+    "to": "fixture-major-F:node:110#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:110",
+    "to": "fixture-major-F:node:223",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:110",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:111",
+    "to": "fixture-major-F:node:105",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:111",
+    "to": "fixture-major-F:node:146",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:111",
+    "to": "fixture-major-F:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:111",
+    "to": "fixture-major-F:node:172",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:111",
+    "to": "fixture-major-F:node:197",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:111",
+    "to": "fixture-major-F:node:285",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:111",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:112",
+    "to": "fixture-major-F:node:112#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:112",
+    "to": "fixture-major-F:node:170",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:112",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:113",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:113",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:114",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:114",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:114",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:114",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:114",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:114",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:114",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:115",
+    "to": "fixture-major-F:node:145",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:115",
+    "to": "fixture-major-F:node:169",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:115",
+    "to": "fixture-major-F:node:304",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:115",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:116",
+    "to": "fixture-major-F:node:116#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:116",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:117",
+    "to": "fixture-major-F:node:117#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:117",
+    "to": "fixture-major-F:node:170",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:117",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:118",
+    "to": "fixture-major-F:node:15",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:118",
+    "to": "fixture-major-F:node:118#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:118",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:119",
+    "to": "fixture-major-F:node:119#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:119",
+    "to": "fixture-major-F:node:267",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:119",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:120",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:121",
+    "to": "fixture-major-F:node:121#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:121",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:122",
+    "to": "fixture-major-F:node:35",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:122",
+    "to": "fixture-major-F:node:41",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:122",
+    "to": "fixture-major-F:node:125",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:122",
+    "to": "fixture-major-F:node:158",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:122",
+    "to": "fixture-major-F:node:249",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:122",
+    "to": "fixture-major-F:node:282",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:122",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:123",
+    "to": "fixture-major-F:node:71",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:123",
+    "to": "fixture-major-F:node:101",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:123",
+    "to": "fixture-major-F:node:243",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:123",
+    "to": "fixture-major-F:node:287",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:123",
+    "to": "fixture-major-F:node:317",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:123",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:124",
+    "to": "fixture-major-F:node:124#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:124",
+    "to": "fixture-major-F:node:223",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:124",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:125",
+    "to": "fixture-major-F:node:125#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:125",
+    "to": "fixture-major-F:node:158",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:125",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:126",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:127",
+    "to": "fixture-major-F:node:105",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:127",
+    "to": "fixture-major-F:node:146",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:127",
+    "to": "fixture-major-F:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:127",
+    "to": "fixture-major-F:node:172",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:127",
+    "to": "fixture-major-F:node:197",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:127",
+    "to": "fixture-major-F:node:285",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:127",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:128",
+    "to": "fixture-major-F:node:116",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:128",
+    "to": "fixture-major-F:node:140",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:128",
+    "to": "fixture-major-F:node:226",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:128",
+    "to": "fixture-major-F:node:247",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:128",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:129",
+    "to": "fixture-major-F:node:129#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:129",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:130",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:130",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:130",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:130",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:130",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:130",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:130",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:131",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:132",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:133",
+    "to": "fixture-major-F:node:151",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:133",
+    "to": "fixture-major-F:node:161",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:133",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:134",
+    "to": "fixture-major-F:node:129",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:134",
+    "to": "fixture-major-F:node:134#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:134",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:135",
+    "to": "fixture-major-F:node:71",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:135",
+    "to": "fixture-major-F:node:101",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:135",
+    "to": "fixture-major-F:node:243",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:135",
+    "to": "fixture-major-F:node:287",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:135",
+    "to": "fixture-major-F:node:317",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:135",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:136",
+    "to": "fixture-major-F:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:136",
+    "to": "fixture-major-F:node:75",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:136",
+    "to": "fixture-major-F:node:107",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:136",
+    "to": "fixture-major-F:node:152",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:136",
+    "to": "fixture-major-F:node:281",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:136",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:137",
+    "to": "fixture-major-F:node:37",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:137",
+    "to": "fixture-major-F:node:116",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:137",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:138",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:138",
+    "to": "fixture-major-F:node:189",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:138",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:139",
+    "to": "fixture-major-F:node:113",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:139",
+    "to": "fixture-major-F:node:304",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:139",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:140",
+    "to": "fixture-major-F:node:116",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:140",
+    "to": "fixture-major-F:node:140#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:140",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:141",
+    "to": "fixture-major-F:node:69",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:141",
+    "to": "fixture-major-F:node:87",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:141",
+    "to": "fixture-major-F:node:237",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:141",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:142",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:143",
+    "to": "fixture-major-F:node:79",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:143",
+    "to": "fixture-major-F:node:113",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:143",
+    "to": "fixture-major-F:node:145",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:143",
+    "to": "fixture-major-F:node:166",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:143",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:144",
+    "to": "fixture-major-F:node:15",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:144",
+    "to": "fixture-major-F:node:66",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:144",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:145",
+    "to": "fixture-major-F:node:217",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:145",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:145",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:146",
+    "to": "fixture-major-F:node:146#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:146",
+    "to": "fixture-major-F:node:197",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:146",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:147",
+    "to": "fixture-major-F:node:147#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:147",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:148",
+    "to": "fixture-major-F:node:5",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:148",
+    "to": "fixture-major-F:node:6",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:148",
+    "to": "fixture-major-F:node:51",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:148",
+    "to": "fixture-major-F:node:102",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:148",
+    "to": "fixture-major-F:node:177",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:148",
+    "to": "fixture-major-F:node:235",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:148",
+    "to": "fixture-major-F:node:289",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:148",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:149",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:150",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:150",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:151",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:151",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:152",
+    "to": "fixture-major-F:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:152",
+    "to": "fixture-major-F:node:152#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:152",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:153",
+    "to": "fixture-major-F:node:5",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:153",
+    "to": "fixture-major-F:node:51",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:153",
+    "to": "fixture-major-F:node:102",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:153",
+    "to": "fixture-major-F:node:177",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:153",
+    "to": "fixture-major-F:node:235",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:153",
+    "to": "fixture-major-F:node:289",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:153",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:154",
+    "to": "fixture-major-F:node:154#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:154",
+    "to": "fixture-major-F:node:197",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:154",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:155",
+    "to": "fixture-major-F:node:56",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:155",
+    "to": "fixture-major-F:node:210",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:155",
+    "to": "fixture-major-F:node:273",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:155",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:156",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:156",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:156",
+    "to": "fixture-major-F:node:156#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:156",
+    "to": "fixture-major-F:node:156#/participants/1",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:156",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:157",
+    "to": "fixture-major-F:node:159",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:157",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:158",
+    "to": "fixture-major-F:node:158#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:158",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:159",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:159",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:160",
+    "to": "fixture-major-F:node:112",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:160",
+    "to": "fixture-major-F:node:117",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:160",
+    "to": "fixture-major-F:node:170",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:160",
+    "to": "fixture-major-F:node:215",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:160",
+    "to": "fixture-major-F:node:255",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:160",
+    "to": "fixture-major-F:node:284",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:160",
+    "to": "fixture-major-F:node:293",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:160",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:161",
+    "to": "fixture-major-F:node:103",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:161",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:162",
+    "to": "fixture-major-F:node:162#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:162",
+    "to": "fixture-major-F:node:292",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:162",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:163",
+    "to": "fixture-major-F:node:25",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:163",
+    "to": "fixture-major-F:node:110",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:163",
+    "to": "fixture-major-F:node:124",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:163",
+    "to": "fixture-major-F:node:223",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:163",
+    "to": "fixture-major-F:node:232",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:163",
+    "to": "fixture-major-F:node:279",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:163",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:164",
+    "to": "fixture-major-F:node:234",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:164",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:165",
+    "to": "fixture-major-F:node:129",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:165",
+    "to": "fixture-major-F:node:165#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:165",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:166",
+    "to": "fixture-major-F:node:254",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:166",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:167",
+    "to": "fixture-major-F:node:167#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:167",
+    "to": "fixture-major-F:node:292",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:167",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:168",
+    "to": "fixture-major-F:node:66",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:168",
+    "to": "fixture-major-F:node:121",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:168",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:169",
+    "to": "fixture-major-F:node:54",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:169",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:170",
+    "to": "fixture-major-F:node:170#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:170",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:171",
+    "to": "fixture-major-F:node:79",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:171",
+    "to": "fixture-major-F:node:113",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:171",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:172",
+    "to": "fixture-major-F:node:172#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:172",
+    "to": "fixture-major-F:node:197",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:172",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:173",
+    "to": "fixture-major-F:node:173#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:173",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:174",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:175",
+    "to": "fixture-major-F:node:25",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:175",
+    "to": "fixture-major-F:node:110",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:175",
+    "to": "fixture-major-F:node:124",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:175",
+    "to": "fixture-major-F:node:223",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:175",
+    "to": "fixture-major-F:node:232",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:175",
+    "to": "fixture-major-F:node:279",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:175",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:176",
+    "to": "fixture-major-F:node:15",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:176",
+    "to": "fixture-major-F:node:176#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:176",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:177",
+    "to": "fixture-major-F:node:177#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:177",
+    "to": "fixture-major-F:node:235",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:177",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:178",
+    "to": "fixture-major-F:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:178",
+    "to": "fixture-major-F:node:75",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:178",
+    "to": "fixture-major-F:node:107",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:178",
+    "to": "fixture-major-F:node:152",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:178",
+    "to": "fixture-major-F:node:281",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:178",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:179",
+    "to": "fixture-major-F:node:69",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:179",
+    "to": "fixture-major-F:node:210",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:179",
+    "to": "fixture-major-F:node:237",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:179",
+    "to": "fixture-major-F:node:257",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:179",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:180",
+    "to": "fixture-major-F:node:71",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:180",
+    "to": "fixture-major-F:node:101",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:180",
+    "to": "fixture-major-F:node:243",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:180",
+    "to": "fixture-major-F:node:287",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:180",
+    "to": "fixture-major-F:node:317",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:180",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:181",
+    "to": "fixture-major-F:node:15",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:181",
+    "to": "fixture-major-F:node:28",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:181",
+    "to": "fixture-major-F:node:118",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:181",
+    "to": "fixture-major-F:node:176",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:181",
+    "to": "fixture-major-F:node:195",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:181",
+    "to": "fixture-major-F:node:302",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:181",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:182",
+    "to": "fixture-major-F:node:86",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:182",
+    "to": "fixture-major-F:node:95",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:182",
+    "to": "fixture-major-F:node:119",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:182",
+    "to": "fixture-major-F:node:208",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:182",
+    "to": "fixture-major-F:node:267",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:182",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:183",
+    "to": "fixture-major-F:node:129",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:183",
+    "to": "fixture-major-F:node:134",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:183",
+    "to": "fixture-major-F:node:165",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:183",
+    "to": "fixture-major-F:node:202",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:183",
+    "to": "fixture-major-F:node:275",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:183",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:184",
+    "to": "fixture-major-F:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:184",
+    "to": "fixture-major-F:node:75",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:184",
+    "to": "fixture-major-F:node:107",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:184",
+    "to": "fixture-major-F:node:152",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:184",
+    "to": "fixture-major-F:node:255",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:184",
+    "to": "fixture-major-F:node:281",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:184",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:185",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:185",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:185",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:185",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:185",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:185",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:185",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:186",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:187",
+    "to": "fixture-major-F:node:129",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:187",
+    "to": "fixture-major-F:node:134",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:187",
+    "to": "fixture-major-F:node:165",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:187",
+    "to": "fixture-major-F:node:202",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:187",
+    "to": "fixture-major-F:node:275",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:187",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:188",
+    "to": "fixture-major-F:node:30",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:188",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:189",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:189",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:189",
+    "to": "fixture-major-F:node:189#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:189",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:190",
+    "to": "fixture-major-F:node:248",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:190",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:191",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:192",
+    "to": "fixture-major-F:node:112",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:192",
+    "to": "fixture-major-F:node:117",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:192",
+    "to": "fixture-major-F:node:170",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:192",
+    "to": "fixture-major-F:node:215",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:192",
+    "to": "fixture-major-F:node:284",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:192",
+    "to": "fixture-major-F:node:293",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:192",
+    "to": "fixture-major-F:node:310",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:192",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:193",
+    "to": "fixture-major-F:node:78",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:193",
+    "to": "fixture-major-F:node:103",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:193",
+    "to": "fixture-major-F:node:162",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:193",
+    "to": "fixture-major-F:node:167",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:193",
+    "to": "fixture-major-F:node:211",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:193",
+    "to": "fixture-major-F:node:214",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:193",
+    "to": "fixture-major-F:node:292",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:193",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:194",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:195",
+    "to": "fixture-major-F:node:15",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:195",
+    "to": "fixture-major-F:node:195#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:195",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:196",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:197",
+    "to": "fixture-major-F:node:197#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:197",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:198",
+    "to": "fixture-major-F:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:198",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:198",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:199",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:199",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:199",
+    "to": "fixture-major-F:node:199#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:199",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:200",
+    "to": "fixture-major-F:node:78",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:200",
+    "to": "fixture-major-F:node:162",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:200",
+    "to": "fixture-major-F:node:167",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:200",
+    "to": "fixture-major-F:node:211",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:200",
+    "to": "fixture-major-F:node:292",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:200",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:201",
+    "to": "fixture-major-F:node:25",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:201",
+    "to": "fixture-major-F:node:110",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:201",
+    "to": "fixture-major-F:node:124",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:201",
+    "to": "fixture-major-F:node:223",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:201",
+    "to": "fixture-major-F:node:232",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:201",
+    "to": "fixture-major-F:node:279",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:201",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:202",
+    "to": "fixture-major-F:node:129",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:202",
+    "to": "fixture-major-F:node:202#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:202",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:203",
+    "to": "fixture-major-F:node:105",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:203",
+    "to": "fixture-major-F:node:146",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:203",
+    "to": "fixture-major-F:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:203",
+    "to": "fixture-major-F:node:172",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:203",
+    "to": "fixture-major-F:node:197",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:203",
+    "to": "fixture-major-F:node:285",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:203",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:204",
+    "to": "fixture-major-F:node:129",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:204",
+    "to": "fixture-major-F:node:134",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:204",
+    "to": "fixture-major-F:node:165",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:204",
+    "to": "fixture-major-F:node:202",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:204",
+    "to": "fixture-major-F:node:275",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:204",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:205",
+    "to": "fixture-major-F:node:15",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:205",
+    "to": "fixture-major-F:node:28",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:205",
+    "to": "fixture-major-F:node:118",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:205",
+    "to": "fixture-major-F:node:176",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:205",
+    "to": "fixture-major-F:node:195",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:205",
+    "to": "fixture-major-F:node:302",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:205",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:206",
+    "to": "fixture-major-F:node:39",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:206",
+    "to": "fixture-major-F:node:45",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:206",
+    "to": "fixture-major-F:node:76",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:206",
+    "to": "fixture-major-F:node:173",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:206",
+    "to": "fixture-major-F:node:300",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:206",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:207",
+    "to": "fixture-major-F:node:5",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:207",
+    "to": "fixture-major-F:node:51",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:207",
+    "to": "fixture-major-F:node:102",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:207",
+    "to": "fixture-major-F:node:177",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:207",
+    "to": "fixture-major-F:node:235",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:207",
+    "to": "fixture-major-F:node:289",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:207",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:208",
+    "to": "fixture-major-F:node:208#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:208",
+    "to": "fixture-major-F:node:267",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:208",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:209",
+    "to": "fixture-major-F:node:145",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:209",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:210",
+    "to": "fixture-major-F:node:150",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:210",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:211",
+    "to": "fixture-major-F:node:211#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:211",
+    "to": "fixture-major-F:node:292",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:211",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:212",
+    "to": "fixture-major-F:node:78",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:212",
+    "to": "fixture-major-F:node:103",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:212",
+    "to": "fixture-major-F:node:162",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:212",
+    "to": "fixture-major-F:node:167",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:212",
+    "to": "fixture-major-F:node:211",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:212",
+    "to": "fixture-major-F:node:214",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:212",
+    "to": "fixture-major-F:node:292",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:212",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:213",
+    "to": "fixture-major-F:node:6",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:213",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:214",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:214",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:214",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:214",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:214",
+    "to": "fixture-major-F:node:214#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:214",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:214",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:214",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:215",
+    "to": "fixture-major-F:node:170",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:215",
+    "to": "fixture-major-F:node:215#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:215",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:216",
+    "to": "fixture-major-F:node:188",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:216",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:217",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:217",
+    "to": "fixture-major-F:node:217#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:217",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:217",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:218",
+    "to": "fixture-major-F:node:66",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:218",
+    "to": "fixture-major-F:node:267",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:218",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:219",
+    "to": "fixture-major-F:node:121",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:219",
+    "to": "fixture-major-F:node:219#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:219",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:220",
+    "to": "fixture-major-F:node:25",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:220",
+    "to": "fixture-major-F:node:110",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:220",
+    "to": "fixture-major-F:node:124",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:220",
+    "to": "fixture-major-F:node:223",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:220",
+    "to": "fixture-major-F:node:232",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:220",
+    "to": "fixture-major-F:node:279",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:220",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:221",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:222",
+    "to": "fixture-major-F:node:21",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:222",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:223",
+    "to": "fixture-major-F:node:223#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:223",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:224",
+    "to": "fixture-major-F:node:36",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:224",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:225",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:226",
+    "to": "fixture-major-F:node:116",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:226",
+    "to": "fixture-major-F:node:226#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:226",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:227",
+    "to": "fixture-major-F:node:66",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:227",
+    "to": "fixture-major-F:node:158",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:227",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:228",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:229",
+    "to": "fixture-major-F:node:185",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:229",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:230",
+    "to": "fixture-major-F:node:230#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:230",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:231",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:232",
+    "to": "fixture-major-F:node:223",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:232",
+    "to": "fixture-major-F:node:232#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:232",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:233",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:234",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:234",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:234",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:234",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:234",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:234",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:234",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:235",
+    "to": "fixture-major-F:node:235#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:235",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:236",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:237",
+    "to": "fixture-major-F:node:6",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:237",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:238",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:239",
+    "to": "fixture-major-F:node:86",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:239",
+    "to": "fixture-major-F:node:95",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:239",
+    "to": "fixture-major-F:node:119",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:239",
+    "to": "fixture-major-F:node:208",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:239",
+    "to": "fixture-major-F:node:267",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:239",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:240",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:240",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:240",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:241",
+    "to": "fixture-major-F:node:112",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:241",
+    "to": "fixture-major-F:node:117",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:241",
+    "to": "fixture-major-F:node:170",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:241",
+    "to": "fixture-major-F:node:215",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:241",
+    "to": "fixture-major-F:node:255",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:241",
+    "to": "fixture-major-F:node:284",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:241",
+    "to": "fixture-major-F:node:293",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:241",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:242",
+    "to": "fixture-major-F:node:29",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:242",
+    "to": "fixture-major-F:node:32",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:242",
+    "to": "fixture-major-F:node:55",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:242",
+    "to": "fixture-major-F:node:121",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:242",
+    "to": "fixture-major-F:node:219",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:242",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:243",
+    "to": "fixture-major-F:node:243#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:243",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:244",
+    "to": "fixture-major-F:node:100",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:244",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:245",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:246",
+    "to": "fixture-major-F:node:66",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:246",
+    "to": "fixture-major-F:node:173",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:246",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:247",
+    "to": "fixture-major-F:node:116",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:247",
+    "to": "fixture-major-F:node:247#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:247",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:248",
+    "to": "fixture-major-F:node:255",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:248",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:249",
+    "to": "fixture-major-F:node:158",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:249",
+    "to": "fixture-major-F:node:249#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:249",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:250",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:251",
+    "to": "fixture-major-F:node:29",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:251",
+    "to": "fixture-major-F:node:32",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:251",
+    "to": "fixture-major-F:node:55",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:251",
+    "to": "fixture-major-F:node:121",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:251",
+    "to": "fixture-major-F:node:219",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:251",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:252",
+    "to": "fixture-major-F:node:15",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:252",
+    "to": "fixture-major-F:node:28",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:252",
+    "to": "fixture-major-F:node:118",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:252",
+    "to": "fixture-major-F:node:176",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:252",
+    "to": "fixture-major-F:node:195",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:252",
+    "to": "fixture-major-F:node:302",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:252",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:253",
+    "to": "fixture-major-F:node:35",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:253",
+    "to": "fixture-major-F:node:41",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:253",
+    "to": "fixture-major-F:node:125",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:253",
+    "to": "fixture-major-F:node:158",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:253",
+    "to": "fixture-major-F:node:249",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:253",
+    "to": "fixture-major-F:node:282",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:253",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:254",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:254",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:254",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:254",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:254",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:254",
+    "to": "fixture-major-F:node:254#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:254",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:254",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:255",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:255",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:255",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:255",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:255",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:255",
+    "to": "fixture-major-F:node:255#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:255",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:255",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:256",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:256",
+    "to": "fixture-major-F:node:288",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:256",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:257",
+    "to": "fixture-major-F:node:62",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:257",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:257",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:258",
+    "to": "fixture-major-F:node:87",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:258",
+    "to": "fixture-major-F:node:151",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:258",
+    "to": "fixture-major-F:node:294",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:258",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:259",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:259",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:259",
+    "to": "fixture-major-F:node:259#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:259",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:260",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:261",
+    "to": "fixture-major-F:node:29",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:261",
+    "to": "fixture-major-F:node:32",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:261",
+    "to": "fixture-major-F:node:55",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:261",
+    "to": "fixture-major-F:node:121",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:261",
+    "to": "fixture-major-F:node:219",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:261",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:262",
+    "to": "fixture-major-F:node:39",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:262",
+    "to": "fixture-major-F:node:45",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:262",
+    "to": "fixture-major-F:node:76",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:262",
+    "to": "fixture-major-F:node:173",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:262",
+    "to": "fixture-major-F:node:300",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:262",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:263",
+    "to": "fixture-major-F:node:71",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:263",
+    "to": "fixture-major-F:node:101",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:263",
+    "to": "fixture-major-F:node:243",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:263",
+    "to": "fixture-major-F:node:287",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:263",
+    "to": "fixture-major-F:node:317",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:263",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:264",
+    "to": "fixture-major-F:node:39",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:264",
+    "to": "fixture-major-F:node:45",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:264",
+    "to": "fixture-major-F:node:76",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:264",
+    "to": "fixture-major-F:node:173",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:264",
+    "to": "fixture-major-F:node:300",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:264",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:265",
+    "to": "fixture-major-F:node:103",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:265",
+    "to": "fixture-major-F:node:214",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:265",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:266",
+    "to": "fixture-major-F:node:214",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:266",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:267",
+    "to": "fixture-major-F:node:267#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:267",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:268",
+    "to": "fixture-major-F:node:15",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:268",
+    "to": "fixture-major-F:node:28",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:268",
+    "to": "fixture-major-F:node:118",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:268",
+    "to": "fixture-major-F:node:176",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:268",
+    "to": "fixture-major-F:node:195",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:268",
+    "to": "fixture-major-F:node:302",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:268",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:269",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:270",
+    "to": "fixture-major-F:node:35",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:270",
+    "to": "fixture-major-F:node:41",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:270",
+    "to": "fixture-major-F:node:125",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:270",
+    "to": "fixture-major-F:node:158",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:270",
+    "to": "fixture-major-F:node:249",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:270",
+    "to": "fixture-major-F:node:282",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:270",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:271",
+    "to": "fixture-major-F:node:116",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:271",
+    "to": "fixture-major-F:node:140",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:271",
+    "to": "fixture-major-F:node:226",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:271",
+    "to": "fixture-major-F:node:247",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:271",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:272",
+    "to": "fixture-major-F:node:29",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:272",
+    "to": "fixture-major-F:node:32",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:272",
+    "to": "fixture-major-F:node:55",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:272",
+    "to": "fixture-major-F:node:121",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:272",
+    "to": "fixture-major-F:node:219",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:272",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:273",
+    "to": "fixture-major-F:node:7",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:273",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:274",
+    "to": "fixture-major-F:node:40",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:274",
+    "to": "fixture-major-F:node:151",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:274",
+    "to": "fixture-major-F:node:256",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:274",
+    "to": "fixture-major-F:node:257",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:274",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:275",
+    "to": "fixture-major-F:node:129",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:275",
+    "to": "fixture-major-F:node:275#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:275",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:276",
+    "to": "fixture-major-F:node:244",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:276",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:277",
+    "to": "fixture-major-F:node:86",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:277",
+    "to": "fixture-major-F:node:95",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:277",
+    "to": "fixture-major-F:node:119",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:277",
+    "to": "fixture-major-F:node:208",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:277",
+    "to": "fixture-major-F:node:267",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:277",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:278",
+    "to": "fixture-major-F:node:33",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:278",
+    "to": "fixture-major-F:node:87",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:278",
+    "to": "fixture-major-F:node:151",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:278",
+    "to": "fixture-major-F:node:244",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:278",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:279",
+    "to": "fixture-major-F:node:223",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:279",
+    "to": "fixture-major-F:node:279#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:279",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:280",
+    "to": "fixture-major-F:node:129",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:280",
+    "to": "fixture-major-F:node:134",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:280",
+    "to": "fixture-major-F:node:165",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:280",
+    "to": "fixture-major-F:node:202",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:280",
+    "to": "fixture-major-F:node:275",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:280",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:281",
+    "to": "fixture-major-F:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:281",
+    "to": "fixture-major-F:node:281#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:281",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:282",
+    "to": "fixture-major-F:node:158",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:282",
+    "to": "fixture-major-F:node:282#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:282",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:283",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:284",
+    "to": "fixture-major-F:node:170",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:284",
+    "to": "fixture-major-F:node:284#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:284",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:285",
+    "to": "fixture-major-F:node:197",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:285",
+    "to": "fixture-major-F:node:285#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:285",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:286",
+    "to": "fixture-major-F:node:56",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:286",
+    "to": "fixture-major-F:node:138",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:286",
+    "to": "fixture-major-F:node:157",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:286",
+    "to": "fixture-major-F:node:161",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:286",
+    "to": "fixture-major-F:node:198",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:286",
+    "to": "fixture-major-F:node:257",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:286",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:287",
+    "to": "fixture-major-F:node:243",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:287",
+    "to": "fixture-major-F:node:287#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:287",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:288",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:288",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:288",
+    "to": "fixture-major-F:node:288#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:288",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:289",
+    "to": "fixture-major-F:node:235",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:289",
+    "to": "fixture-major-F:node:289#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:289",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:290",
+    "to": "fixture-major-F:node:87",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:290",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:291",
+    "to": "fixture-major-F:node:103",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:291",
+    "to": "fixture-major-F:node:214",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:291",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:292",
+    "to": "fixture-major-F:node:292#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:292",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:293",
+    "to": "fixture-major-F:node:170",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:293",
+    "to": "fixture-major-F:node:293#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:293",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:294",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:294",
+    "to": "fixture-major-F:node:259",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:294",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:295",
+    "to": "fixture-major-F:node:78",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:295",
+    "to": "fixture-major-F:node:162",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:295",
+    "to": "fixture-major-F:node:167",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:295",
+    "to": "fixture-major-F:node:211",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:295",
+    "to": "fixture-major-F:node:292",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:295",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:296",
+    "to": "fixture-major-F:node:138",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:296",
+    "to": "fixture-major-F:node:198",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:296",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:297",
+    "to": "fixture-major-F:node:113",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:297",
+    "to": "fixture-major-F:node:151",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:297",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:298",
+    "to": "fixture-major-F:node:112",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:298",
+    "to": "fixture-major-F:node:117",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:298",
+    "to": "fixture-major-F:node:170",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:298",
+    "to": "fixture-major-F:node:215",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:298",
+    "to": "fixture-major-F:node:255",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:298",
+    "to": "fixture-major-F:node:284",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:298",
+    "to": "fixture-major-F:node:293",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:298",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:299",
+    "to": "fixture-major-F:node:299#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:299",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:300",
+    "to": "fixture-major-F:node:173",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:300",
+    "to": "fixture-major-F:node:300#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:300",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:301",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:301",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:301",
+    "to": "fixture-major-F:node:301#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:301",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:302",
+    "to": "fixture-major-F:node:15",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:302",
+    "to": "fixture-major-F:node:302#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:302",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:303",
+    "to": "fixture-major-F:node:37",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:303",
+    "to": "fixture-major-F:node:243",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:303",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:304",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:304",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:305",
+    "to": "fixture-major-F:node:39",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:305",
+    "to": "fixture-major-F:node:45",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:305",
+    "to": "fixture-major-F:node:76",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:305",
+    "to": "fixture-major-F:node:173",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:305",
+    "to": "fixture-major-F:node:300",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:305",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:306",
+    "to": "fixture-major-F:node:74",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:306",
+    "to": "fixture-major-F:node:84",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:306",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:306",
+    "to": "fixture-major-F:node:147",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:306",
+    "to": "fixture-major-F:node:230",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:306",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:306",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:307",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:308",
+    "to": "fixture-major-F:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:308",
+    "to": "fixture-major-F:node:75",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:308",
+    "to": "fixture-major-F:node:107",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:308",
+    "to": "fixture-major-F:node:152",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:308",
+    "to": "fixture-major-F:node:281",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:308",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:309",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:310",
+    "to": "fixture-major-F:node:66",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:310",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:311",
+    "to": "fixture-major-F:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:311",
+    "to": "fixture-major-F:node:37",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:311",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:312",
+    "to": "fixture-major-F:node:109",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:312",
+    "to": "fixture-major-F:node:299",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:312",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:313",
+    "to": "fixture-major-F:node:5",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:313",
+    "to": "fixture-major-F:node:6",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:313",
+    "to": "fixture-major-F:node:51",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:313",
+    "to": "fixture-major-F:node:102",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:313",
+    "to": "fixture-major-F:node:177",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:313",
+    "to": "fixture-major-F:node:235",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:313",
+    "to": "fixture-major-F:node:289",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:313",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:314",
+    "to": "fixture-major-F:node:36",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:314",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:315",
+    "to": "fixture-major-F:node:40",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:315",
+    "to": "fixture-major-F:node:256",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:315",
+    "to": "fixture-major-F:node:273",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:315",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:316",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:317",
+    "to": "fixture-major-F:node:243",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:317",
+    "to": "fixture-major-F:node:317#/temporal",
+    "kind": "HAS_EFFECTIVE_PERIOD",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:317",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:318",
+    "to": "fixture-major-F:node:36",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:318",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:319",
+    "to": "fixture-major-F:node:112",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:319",
+    "to": "fixture-major-F:node:117",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:319",
+    "to": "fixture-major-F:node:170",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:319",
+    "to": "fixture-major-F:node:215",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:319",
+    "to": "fixture-major-F:node:255",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:319",
+    "to": "fixture-major-F:node:284",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:319",
+    "to": "fixture-major-F:node:293",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-major-F:node:319",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-major-F:node:320",
+    "to": "fixture-person-10",
+    "kind": "HAS_OWNER",
+    "required": false
+  }
+]

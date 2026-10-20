@@ -1,0 +1,20 @@
+{
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/artifacts.ts": "950429690b5bf649fde32458790f234ec7370d557ee90fab4b8f437b2bf60a15",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/candidateIndex.ts": "e4d0e2c8ee0c2fb1c1b77f70df83edfb39f1ae5e8739c03fe868139dbc4c157c",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/conflictGraph.ts": "71f6417d7e98c64255169c0397d19801526b3fd4607b91593c033277bd8e68e0",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/developmentalContext.ts": "02d58cec5b0ae348ca0d91443f725402d1cb57c677288c3f53c0fb660e46d0a0",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/engine.ts": "da7040149a3f29f52688dd8de5b6ccaf4595c9f7195a80e8c0b1b3e40e27f110",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/meaningIdentity.ts": "fc742d3ecf9797c425a024613c5f8431f8a3c293c3dcde12b6ec8360e34358be",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/observations.ts": "ce3f6138899b1f2c94fc430815e8efdb3e60a743dbac7a0f130d506dc34e8f26",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/parentChildPolicy.ts": "3b69b072796cbd54a20e69ae4e5d7679bd29fab26195a0ae7327c9d31ff4bad4",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/requirementAdapter.ts": "855d5f00f6faacfeff4cf4b78397ca00e0e6f72b3d84777534a2f68584e5027e",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/researchCatalog.ts": "c93e6cb294516e8679520f0d9c92056dad9e58bf8b4735b6b414a7a715f550fa",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/roleValidator.ts": "cdc6ee45836d0bbeb49de1b0bbb106739ae59229a7bba2ee9ee8bf17a8dc24a5",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/selection.ts": "8515af8c89ac307fbd5e01a974e7aa5ddc09fa7d786114b7cc416e2f1d3cf611",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/sourceOwnership.ts": "e26fa751f4ed73080976f09f0f8522b8832ddcef17a78dd047b61629eca8438e",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/synthetic.ts": "0c21e0240ac28f0e04f7aea4010479ef8b3a6a190693cb2454ccf6d560b9d1f4",
+  "tools/compatibility-parent-child-specialist-engine/verify.mjs": "0296ca4a78a138059a07d021137e1dce3d8727b90b39bab3028f592d17054669",
+  "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+  "docs/validation/v4-compatibility-parent-child-specialist-engine-01/original-file-hashes.json": "356d3d445ad69d11d645ea2e5fd8bfdd611284cf11220e62668d53c1b86b4cbf",
+  "docs/validation/v4-compatibility-parent-child-specialist-engine-01/pair-baseline-digests.json": "8c2d4bc1a8d6c9698589fe3ee901cedb9c61e3ded3388390c98a058a6ed12858"
+}

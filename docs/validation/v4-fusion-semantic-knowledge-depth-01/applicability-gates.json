@@ -1,0 +1,116 @@
+{
+  "productGates": {
+    "comprehensive": {
+      "requires": [
+        "실제 개인 입력·다른 특성·반례",
+        "일반 인물상으로 확장할 근거 별도"
+      ],
+      "forbidden": [
+        "분야 제한 trait를 전 영역 고정 성격으로 확대"
+      ]
+    },
+    "career": {
+      "requires": [
+        "실제 직무·과제·학습·자원·권한"
+      ],
+      "forbidden": [
+        "직업 적합·소득·합격 보장"
+      ]
+    },
+    "love": {
+      "requires": [
+        "실제 교제·친밀·동의",
+        "양육은 발달 단계·보호 역할"
+      ],
+      "forbidden": [
+        "상대 호감·결혼·자녀 존재 추정"
+      ]
+    },
+    "compatibility": {
+      "requires": [
+        "A/B 각자 source와 실제 관계 유형",
+        "양방향·권력·동의"
+      ],
+      "forbidden": [
+        "A Fusion으로 B의 감정·의도 확정"
+      ]
+    },
+    "major_fortune": {
+      "requires": [
+        "기존 장기 계산·정확한 기간·전환",
+        "원국 행동 참고와 기간 변화의 출처 분리"
+      ],
+      "forbidden": [
+        "같은 원국 후보를 14년의 독립 사실로 반복"
+      ]
+    },
+    "annual_fortune": {
+      "requires": [
+        "선택 연도·월운·절입·교운 구간",
+        "실제 월별 다른 근거"
+      ],
+      "forbidden": [
+        "MBTI로 운세 시기·사건 생성"
+      ]
+    }
+  },
+  "relationGates": {
+    "love": {
+      "requires": [
+        "실제 교제·상호 동의·친밀 단계"
+      ],
+      "forbidden": [
+        "호감·접촉 동의를 표현 신호로 대신함"
+      ]
+    },
+    "marriage": {
+      "requires": [
+        "실제 공동생활·공동 예산·역할"
+      ],
+      "forbidden": [
+        "성별·유형으로 생계·가사 배정"
+      ]
+    },
+    "parentChild": {
+      "requires": [
+        "보호자/자녀 구분·발달 단계·안전·선택권"
+      ],
+      "forbidden": [
+        "성인 유형으로 자녀 존재·유형 역추론"
+      ]
+    },
+    "coworker": {
+      "requires": [
+        "실제 과제·기한·공유 책임"
+      ],
+      "forbidden": [
+        "업무 협력을 사적 친밀감으로 확대"
+      ]
+    },
+    "managerReport": {
+      "requires": [
+        "공식 지휘·평가권·거절 불이익"
+      ],
+      "forbidden": [
+        "강압·권력 문제를 성향 차이로 면책"
+      ]
+    },
+    "businessPartner": {
+      "requires": [
+        "실제 계약·출자·의결권·손실·전문성"
+      ],
+      "forbidden": [
+        "수익·법적 책임·지분 판단 대체"
+      ]
+    },
+    "friendship": {
+      "requires": [
+        "자발적 만남·공개·연락·요청 동의"
+      ],
+      "forbidden": [
+        "만남 빈도로 우정 가치 판단"
+      ]
+    }
+  },
+  "inheritancePolicy": "Question refs preserve each existing axis/product/role-specific question; combinedFocus is intersection, not 2132 newly authored specialist interpretations."
+}

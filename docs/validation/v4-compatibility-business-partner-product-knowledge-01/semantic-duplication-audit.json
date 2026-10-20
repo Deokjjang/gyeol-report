@@ -1,0 +1,1161 @@
+{
+  "priorCandidates": 580,
+  "newCandidates": 96,
+  "exactNormalizedMeaningDuplicates": 0,
+  "exactNormalizedSceneDuplicates": 0,
+  "metric": "Korean character trigram Dice; diagnostic only, no semantic PASS threshold",
+  "rows": [
+    {
+      "materialId": "bppr:material:CH01.P1:idea-demand-interface",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "clr:material:CH05.P1:ab-output-enjoyment",
+        "meaningSimilarity": 0.15384615384615385,
+        "sceneSimilarity": 0
+      },
+      "actualNewInformation": "CH04 실행 연결 전 대표 시장 질문만 소개",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH01.P1:opportunity-capacity-interface",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH07.P2:priority-change-harm",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.10810810810810811
+      },
+      "actualNewInformation": "시장 수요와 다른 참여·가용 자원 접점",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH01.P2:harmony-not-revenue",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH01.P3:same-type-different-role",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.1951219512195122
+      },
+      "actualNewInformation": "CH07 충돌 전에 연결 상징의 경제 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH01.P2:half-harmony-not-governance",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "meaningSimilarity": 0.46153846153846156,
+        "sceneSimilarity": 0.04878048780487805
+      },
+      "actualNewInformation": "수익 경계와 다른 지분·결정권 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH01.P3:analysis-and-use",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH01.P3:model-and-procedure",
+        "meaningSimilarity": 0.15384615384615385,
+        "sceneSimilarity": 0.10256410256410256
+      },
+      "actualNewInformation": "개인 특징보다 두 정보 형식 대비",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH01.P3:same-type-different-stakes",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "meaningSimilarity": 0.25,
+        "sceneSimilarity": 0.043478260869565216
+      },
+      "actualNewInformation": "다른 유형 대비와 다른 공유 전제의 경제 차이",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH01.P4:trust-verification-boundary",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "meaningSimilarity": 0.2857142857142857,
+        "sceneSimilarity": 0.05714285714285714
+      },
+      "actualNewInformation": "대표 관계를 유지할 정보·동의 기준",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH01.P4:stop-before-risk-lock",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH03.P1:report-procedure-understanding",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.2
+      },
+      "actualNewInformation": "계약 기록과 다른 지속·중단의 기본 질문",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH02.P1:a-opportunity-model",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P2:manager-recognize-evidence",
+        "meaningSimilarity": 0.32432432432432434,
+        "sceneSimilarity": 0.04878048780487805
+      },
+      "actualNewInformation": "A의 탐색 출발점",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH02.P1:a-resource-as-goal",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH02.P3:manager-correct-own-error",
+        "meaningSimilarity": 0.35294117647058826,
+        "sceneSimilarity": 0.045454545454545456
+      },
+      "actualNewInformation": "탐색과 다른 자원 배치의 출발점",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH02.P2:a-record-before-commit",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH03.P2:report-definition-before-work",
+        "meaningSimilarity": 0.35,
+        "sceneSimilarity": 0.05714285714285714
+      },
+      "actualNewInformation": "A에게 필요한 협의 정보의 형태",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH02.P2:a-meaning-and-finance",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH02.P1:manager-model-goal",
+        "meaningSimilarity": 0.3076923076923077,
+        "sceneSimilarity": 0.046511627906976744
+      },
+      "actualNewInformation": "문서 선호와 다른 명분·지속 조건",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH02.P3:a-small-working-test",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH03.P1:report-procedure-understanding",
+        "meaningSimilarity": 0.34285714285714286,
+        "sceneSimilarity": 0.05405405405405406
+      },
+      "actualNewInformation": "A의 강점 중 검증을 위한 실행",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH02.P3:a-correct-assumptions",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH02.P3:manager-correct-own-error",
+        "meaningSimilarity": 0.45714285714285713,
+        "sceneSimilarity": 0.041666666666666664
+      },
+      "actualNewInformation": "시험 실행과 다른 가정 수정의 강점",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH02.P4:a-theory-without-demand",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P2:manager-resource-removal",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.17142857142857143
+      },
+      "actualNewInformation": "A의 분석 과용 비용",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH02.P4:a-support-becomes-funding",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.09523809523809523
+      },
+      "actualNewInformation": "분석 과용과 다른 지원·자본 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH03.P1:b-operational-conditions",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH03.P1:report-procedure-understanding",
+        "meaningSimilarity": 0.5641025641025641,
+        "sceneSimilarity": 0.045454545454545456
+      },
+      "actualNewInformation": "B의 이해 형식",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH03.P1:b-method-and-data",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH02.P3:manager-correct-own-error",
+        "meaningSimilarity": 0.3125,
+        "sceneSimilarity": 0.044444444444444446
+      },
+      "actualNewInformation": "절차 확인과 다른 관찰 자료의 단위",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH03.P2:b-terms-before-money",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH03.P2:report-definition-before-work",
+        "meaningSimilarity": 0.5,
+        "sceneSimilarity": 0.05555555555555555
+      },
+      "actualNewInformation": "B가 필요한 경제 정보의 종류",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH03.P2:b-value-before-price",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P2:manager-recognize-evidence",
+        "meaningSimilarity": 0.3684210526315789,
+        "sceneSimilarity": 0.05405405405405406
+      },
+      "actualNewInformation": "정산 기준과 다른 제공 범위·가격 질문",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH03.P3:b-customer-observation",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH06.P1:report-to-manager-customer-observation",
+        "meaningSimilarity": 0.6857142857142857,
+        "sceneSimilarity": 0.05555555555555555
+      },
+      "actualNewInformation": "B의 강점 중 가까운 반응 정보",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH03.P3:b-cost-gap-review",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH03.P3:report-detect-procedure-gap",
+        "meaningSimilarity": 0.3181818181818182,
+        "sceneSimilarity": 0.06060606060606061
+      },
+      "actualNewInformation": "고객 반응과 다른 지급 시점 정보",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH03.P4:b-review-without-close",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH06.P2:report-propose-bounded-method",
+        "meaningSimilarity": 0.358974358974359,
+        "sceneSimilarity": 0.06060606060606061
+      },
+      "actualNewInformation": "B의 검토 과용 비용",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH03.P4:b-relationship-cost-blindness",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.11764705882352941
+      },
+      "actualNewInformation": "검토 지연과 다른 관계·조건 혼동",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH04.P1:shared-proof-before-investment",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH09.P1:recall-goal-execution",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.22857142857142856
+      },
+      "actualNewInformation": "공통 성향의 시장 검증 접점",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH04.P1:shared-scope-repeatability",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH06.P2:ba-resource-warning",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.17647058823529413
+      },
+      "actualNewInformation": "시장 증거와 다른 제공 약속의 접점",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH04.P2:exploration-delivery-interface",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH03.P2:b-next-step-needed",
+        "meaningSimilarity": 0.15384615384615385,
+        "sceneSimilarity": 0
+      },
+      "actualNewInformation": "서로 다른 정보의 제안 인터페이스",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH04.P2:trial-and-contract-boundary",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH08.P1:delegate-decision",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.14285714285714285
+      },
+      "actualNewInformation": "보완을 전문 자격 대신 경계 정보로 한정",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH04.P3:customer-signal-product-adjustment",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH08.P2:a-request-full-impact",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.13793103448275862
+      },
+      "actualNewInformation": "공동 장면에서 서로 다른 작업의 연결",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH04.P3:crisis-information-two-views",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH09.P1:recall-testable-dissent",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.20689655172413793
+      },
+      "actualNewInformation": "좋은 협업의 위기 정보 구조",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH04.P4:repeatable-operation-value",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.24242424242424243
+      },
+      "actualNewInformation": "좋은 가치의 반복 운영 조건",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH04.P4:contribution-recognition-without-shares",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P2:manager-recognize-evidence",
+        "meaningSimilarity": 0.1111111111111111,
+        "sceneSimilarity": 0.05128205128205128
+      },
+      "actualNewInformation": "공동 가치와 경제 합의의 분리",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH05.P1:a-alternative-b-standard",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "meaningSimilarity": 0.23255813953488372,
+        "sceneSimilarity": 0.42105263157894735
+      },
+      "actualNewInformation": "A 제안을 B가 받는 조건",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH05.P1:a-resource-b-obligation",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "clr:material:CH05.P4:ab-offer-not-reservation",
+        "meaningSimilarity": 0.32,
+        "sceneSimilarity": 0
+      },
+      "actualNewInformation": "A의 제안이 B에게 만드는 경제 조건",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH05.P2:a-prototype-b-service-cost",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH09.P2:recall-personal-fusion",
+        "meaningSimilarity": 0.358974358974359,
+        "sceneSimilarity": 0.06896551724137931
+      },
+      "actualNewInformation": "A의 산출이 B에게 주는 확인 자료",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH05.P2:a-meaning-b-allocation",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH06.P2:report-propose-bounded-method",
+        "meaningSimilarity": 0.42105263157894735,
+        "sceneSimilarity": 0.06896551724137931
+      },
+      "actualNewInformation": "A의 인정이 B의 확인에 주는 정보",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH05.P3:a-client-promise-b-cost",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH06.P2:ba-resource-warning",
+        "meaningSimilarity": 0.14814814814814814,
+        "sceneSimilarity": 0.32558139534883723
+      },
+      "actualNewInformation": "A의 외부 약속과 B의 실행 부담",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH05.P3:a-expand-b-cash-timing",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "clr:material:CH05.P2:ab-clear-invite",
+        "meaningSimilarity": 0.37037037037037035,
+        "sceneSimilarity": 0
+      },
+      "actualNewInformation": "A의 자원 방향과 B의 유동성 질문",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH05.P4:a-change-small-safe-trial",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "meaningSimilarity": 0.3076923076923077,
+        "sceneSimilarity": 0.04878048780487805
+      },
+      "actualNewInformation": "A의 변화 제안이 B와 확인할 절차",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH05.P4:a-risk-disclosure-before-consent",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "clr:material:CH08.P2:a-change-delivery",
+        "meaningSimilarity": 0.2909090909090909,
+        "sceneSimilarity": 0
+      },
+      "actualNewInformation": "A가 B의 수락을 확인하는 방향",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH06.P1:b-operation-a-support-question",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH02.P1:manager-model-goal",
+        "meaningSimilarity": 0.3404255319148936,
+        "sceneSimilarity": 0.2553191489361702
+      },
+      "actualNewInformation": "B가 A에게 주는 실행 정보",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH06.P1:b-boundary-a-resource-choice",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH05.P2:ab-continuous-record",
+        "meaningSimilarity": 0.17857142857142858,
+        "sceneSimilarity": 0.3783783783783784
+      },
+      "actualNewInformation": "A의 자원 제안과 다른 B의 용량 신호",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH06.P2:b-customer-issue-a-hypothesis",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH06.P2:report-propose-bounded-method",
+        "meaningSimilarity": 0.358974358974359,
+        "sceneSimilarity": 0.06666666666666667
+      },
+      "actualNewInformation": "B의 관찰이 A에게 주는 가설 자료",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH06.P2:b-cost-log-a-commitment",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH06.P2:report-propose-bounded-method",
+        "meaningSimilarity": 0.3684210526315789,
+        "sceneSimilarity": 0.06896551724137931
+      },
+      "actualNewInformation": "B가 A의 약속에 주는 현금 정보",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH06.P3:b-contract-risk-a-delay",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "meaningSimilarity": 0.35555555555555557,
+        "sceneSimilarity": 0.3
+      },
+      "actualNewInformation": "B의 검토가 A에게 주는 결정 시간 부담",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH06.P3:b-maintenance-a-direction",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "meaningSimilarity": 0.3181818181818182,
+        "sceneSimilarity": 0.2857142857142857
+      },
+      "actualNewInformation": "B의 운영 신호를 A의 방향 질문으로 연결",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH06.P4:b-small-trial-before-expansion",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+        "meaningSimilarity": 0.3404255319148936,
+        "sceneSimilarity": 0.06896551724137931
+      },
+      "actualNewInformation": "B가 A에게 제안하는 확인 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH06.P4:b-hold-with-decision-question",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH06.P4:report-feedback-clarification",
+        "meaningSimilarity": 0.38095238095238093,
+        "sceneSimilarity": 0.05714285714285714
+      },
+      "actualNewInformation": "A의 동의 확인과 다른 B의 보류 정보",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P1:direction-disagreement",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.2692307692307692
+      },
+      "actualNewInformation": "방향 불일치는 목표·수요·제공 방식 중 무엇의 차이인가의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P1:unreviewed-spending",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.35555555555555557
+      },
+      "actualNewInformation": "미검토 지출과 자원 확보 제안은 다른 상태의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P1:external-contract-without-consent",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "clr:material:CH01.P2:detected-harmony-context",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.15384615384615385
+      },
+      "actualNewInformation": "외부 계약과 내부 동의가 일치하지 않는 문제의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P1:expected-return-actual-cost",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P4:manager-feedback-recheck",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.12121212121212122
+      },
+      "actualNewInformation": "예상 수익과 실제 반복 비용의 기준 차이의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P1:capital-expectation-difference",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+        "meaningSimilarity": 0.08695652173913043,
+        "sceneSimilarity": 0.05555555555555555
+      },
+      "actualNewInformation": "투입 방식과 기대 권리의 차이의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P2:credit-imbalance",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH04.P1:shared-care-no-invisible-task",
+        "meaningSimilarity": 0.13636363636363635,
+        "sceneSimilarity": 0
+      },
+      "actualNewInformation": "눈에 띄는 성과와 보이지 않는 기여의 인정 차이의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P2:unclear-work-responsibility",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH01.P3:spoken-versus-private",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.09302325581395349
+      },
+      "actualNewInformation": "작업을 말했지만 완료 책임이 없는 상태의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P2:unclear-loss-allocation",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.15384615384615385
+      },
+      "actualNewInformation": "잘될 때의 배분과 손실 때의 부담은 다른 합의의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P2:missing-cash-information",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH08.P4:agree-multiple-voice-channels",
+        "meaningSimilarity": 0.0625,
+        "sceneSimilarity": 0.05714285714285714
+      },
+      "actualNewInformation": "입금·지급 정보를 한쪽만 아는 상태의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P2:contract-change",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH07.P3:information-silo",
+        "meaningSimilarity": 0.17777777777777778,
+        "sceneSimilarity": 0
+      },
+      "actualNewInformation": "조건 변경이 상대의 비용에 반영되지 않는 문제의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P3:customer-promise-execution",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH06.P2:report-capacity-information",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.16216216216216217
+      },
+      "actualNewInformation": "고객에게 한 약속과 실제 수행 조건의 차이의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P3:ip-output-use",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P4:manager-feedback-recheck",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.1111111111111111
+      },
+      "actualNewInformation": "같이 만든 결과의 소유·사용·공개 범위 차이의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P3:information-not-shared",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH08.P4:agree-report-purpose",
+        "meaningSimilarity": 0.42857142857142855,
+        "sceneSimilarity": 0.05
+      },
+      "actualNewInformation": "사업 판단에 필요한 정보의 공유 공백의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P3:deadlock",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH07.P3:overload-allocation",
+        "meaningSimilarity": 0.08333333333333333,
+        "sceneSimilarity": 0.05555555555555555
+      },
+      "actualNewInformation": "동의가 안 되는 결정의 처리 규칙 부재의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P3:trust-verification",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.15384615384615385
+      },
+      "actualNewInformation": "신뢰 확인과 조건 검토를 배신으로 읽는 문제의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P4:expansion-speed",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "clr:material:CH09.P3:recall-response-agreement",
+        "meaningSimilarity": 0.13043478260869565,
+        "sceneSimilarity": 0
+      },
+      "actualNewInformation": "기회 속도와 자금·운영 준비 속도의 차이의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P4:ops-burden-imbalance",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH07.P2:priority-change-harm",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.10256410256410256
+      },
+      "actualNewInformation": "초기 기여 이후 운영 부담이 한쪽에 누적의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P4:unilateral-decision",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH06.P2:report-capacity-information",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.10810810810810811
+      },
+      "actualNewInformation": "빠른 결정과 단독 확정 권한의 혼동의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P4:no-stop-conditions",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.11764705882352941
+      },
+      "actualNewInformation": "계속할 이유만 있고 중단 기준이 없는 상태의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH07.P4:hide-problem-for-relationship",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "meaningSimilarity": 0.17391304347826086,
+        "sceneSimilarity": 0
+      },
+      "actualNewInformation": "관계를 지키려 사업 문제를 말하지 못하는 상태의 정보·비용·동의 경계",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P1:repair-direction-disagreement",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.2692307692307692
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P1:repair-unreviewed-spending",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.35555555555555557
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P1:repair-external-contract-without-consent",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "clr:material:CH01.P2:detected-harmony-context",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.15384615384615385
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P1:repair-expected-return-actual-cost",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P4:manager-feedback-recheck",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.12121212121212122
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P1:repair-capital-expectation-difference",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH08.P1:repair-review-level",
+        "meaningSimilarity": 0.08888888888888889,
+        "sceneSimilarity": 0
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P2:repair-credit-imbalance",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH03.P3:report-detect-procedure-gap",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.11764705882352941
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P2:repair-unclear-work-responsibility",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH01.P3:spoken-versus-private",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.09302325581395349
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P2:repair-unclear-loss-allocation",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.15384615384615385
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P2:repair-missing-cash-information",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cmpr:material:CH06.P4:ba-name-pending-answer",
+        "meaningSimilarity": 0.06349206349206349,
+        "sceneSimilarity": 0
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P2:repair-contract-change",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH07.P3:information-silo",
+        "meaningSimilarity": 0.14285714285714285,
+        "sceneSimilarity": 0
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P3:repair-customer-promise-execution",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH06.P2:report-capacity-information",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.16216216216216217
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P3:repair-ip-output-use",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P4:manager-feedback-recheck",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.1111111111111111
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P3:repair-information-not-shared",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH08.P4:agree-report-purpose",
+        "meaningSimilarity": 0.3076923076923077,
+        "sceneSimilarity": 0.05
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P3:repair-deadlock",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH06.P1:ba-overlap-not-rivalry",
+        "meaningSimilarity": 0.07017543859649122,
+        "sceneSimilarity": 0
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P3:repair-trust-verification",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.15384615384615385
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P4:repair-expansion-speed",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH03.P3:report-detect-procedure-gap",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.10810810810810811
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P4:repair-ops-burden-imbalance",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH07.P2:priority-change-harm",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.10256410256410256
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P4:repair-unilateral-decision",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH06.P2:report-capacity-information",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.10810810810810811
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P4:repair-no-stop-conditions",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.11764705882352941
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH08.P4:repair-hide-problem-for-relationship",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "meaningSimilarity": 0.14035087719298245,
+        "sceneSimilarity": 0
+      },
+      "actualNewInformation": "CH07의 문제 설명과 다른 사실·권한·수정·재검토 순서",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH09.P1:recall-market-and-scope",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH09.P1:recall-goal-execution",
+        "meaningSimilarity": 0.26666666666666666,
+        "sceneSimilarity": 0.11428571428571428
+      },
+      "actualNewInformation": "핵심 접점의 실제 표시 기반 지속",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH09.P1:recall-customer-and-risk",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH09.P3:recall-delegation-principle",
+        "meaningSimilarity": 0.25,
+        "sceneSimilarity": 0.0625
+      },
+      "actualNewInformation": "공동 장면의 표시 기반 가치",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH09.P2:recall-directional-contribution",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH09.P3:recall-delegation-principle",
+        "meaningSimilarity": 0.23076923076923078,
+        "sceneSimilarity": 0.058823529411764705
+      },
+      "actualNewInformation": "CH04 공동 가치와 다른 방향별 활용",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH09.P2:recall-contribution-without-value-price",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "cwpr:material:CH09.P4:recall-credit-next-task",
+        "meaningSimilarity": 0.15384615384615385,
+        "sceneSimilarity": 0.0625
+      },
+      "actualNewInformation": "긍정 의미를 경제 권리로 승격하지 않는 회수",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH09.P3:recall-consent-principle",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH09.P3:recall-safe-voice",
+        "meaningSimilarity": 0.07407407407407407,
+        "sceneSimilarity": 0.07142857142857142
+      },
+      "actualNewInformation": "CH08 조정 이후의 표시 기반 원칙",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH09.P3:recall-scope-and-stop-principle",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH07.P4:missing-change-history",
+        "meaningSimilarity": 0,
+        "sceneSimilarity": 0.1111111111111111
+      },
+      "actualNewInformation": "마찰 조정 후의 수행·중단 조건",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH09.P4:recall-business-value-with-boundary",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH09.P4:recall-contribution-learning",
+        "meaningSimilarity": 0.06451612903225806,
+        "sceneSimilarity": 0.20512820512820512
+      },
+      "actualNewInformation": "긍정 종결을 수익·지속 약속과 분리",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    },
+    {
+      "materialId": "bppr:material:CH09.P4:recall-hold-and-safe-exit",
+      "exactNormalizedMeaningDuplicate": false,
+      "exactNormalizedSceneDuplicate": false,
+      "closestPrior": {
+        "priorId": "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "meaningSimilarity": 0.12903225806451613,
+        "sceneSimilarity": 0.046511627906976744
+      },
+      "actualNewInformation": "종결에서 남기는 선택·안전의 가치",
+      "humanReview": "작성된 전체96후보·역할 기여384개와 사업 전문 카드 검토. 공동 검토/기록/범위 질문의 공통어는 허용하되 출자·지급·외부 계약·권한·종료의 질문을 구별. 수치 유사도는 의미 독립성의 증명이 아님."
+    }
+  ]
+}

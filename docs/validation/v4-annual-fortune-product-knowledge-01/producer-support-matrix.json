@@ -1,0 +1,134 @@
+[
+  {
+    "scope": "natal_saeun",
+    "producer": "annualFortuneEvidence.natalAnnualRelations + annualEvidence.annualStemRelations",
+    "supported": [
+      "selectedYear branch relations to natal positions",
+      "year-level stem combination projection"
+    ],
+    "notSupported": [
+      "automatic before-Ipchun annualGanji transplant",
+      "stem transformation",
+      "empirical event predictions"
+    ],
+    "time": "nominal selectedYear; segment use requires matching effective annual target"
+  },
+  {
+    "scope": "natal_wolun",
+    "producer": "annualMonthJie.segmentFacts + annualMonthRelationFacts + annualMonthExtendedEvidence",
+    "supported": [
+      "육합",
+      "삼합_with_actual_3_branches",
+      "반합",
+      "충",
+      "형_pairs",
+      "파",
+      "해",
+      "existing missing/heavy element labels",
+      "canonical allowed transit target features",
+      "extended 원진"
+    ],
+    "notSupported": [
+      "unknown hour",
+      "natal-only rules as transit",
+      "banghap",
+      "ambiguous mangsin",
+      "unsupported mungok/bokseong/cheoneui transit"
+    ],
+    "time": "exact segment [start,end); accepted vs held transit distinguished"
+  },
+  {
+    "scope": "dayun_saeun",
+    "producer": "annualEvidence.crossPeriods",
+    "supported": [
+      "binary branch pair relations",
+      "dayMaster-based annualGod/cycle.god",
+      "cycle-stem-based flowGod with separate reference"
+    ],
+    "notSupported": [
+      "two-actor 삼합",
+      "stem combination/transformation verdict",
+      "candidate cycle simultaneously confirmed"
+    ],
+    "time": "crossPeriod/segment effective annual and active/conditional cycle"
+  },
+  {
+    "scope": "dayun_wolun",
+    "producer": "annualMonthJie.segmentFacts month_dayun_branch",
+    "supported": [
+      "육합",
+      "반합",
+      "충",
+      "형_pairs",
+      "파",
+      "해",
+      "conditional relations per uncertain candidate"
+    ],
+    "notSupported": [
+      "two-actor 삼합",
+      "period stem hap",
+      "uncertain candidates as confirmed"
+    ],
+    "time": "each segment interval and cycle condition; current prose bind uses confirmed active only"
+  },
+  {
+    "scope": "saeun_wolun",
+    "producer": "annualMonthJie.segmentFacts month_annual_branch",
+    "supported": [
+      "육합",
+      "반합",
+      "충",
+      "형_pairs",
+      "파",
+      "해"
+    ],
+    "notSupported": [
+      "two-actor 삼합",
+      "selectedYear annualGanji substitution before Ipchun",
+      "period stem hap"
+    ],
+    "time": "effectiveAnnualPillar exact segment"
+  },
+  {
+    "scope": "natal_dayun_saeun",
+    "producer": null,
+    "supported": [
+      "side-by-side verified pair comparisons only"
+    ],
+    "notSupported": [
+      "dedicated composite formation",
+      "strength",
+      "resolution/cancellation",
+      "event verdict"
+    ],
+    "time": "pair conditions and valid interval intersection; no new composite Evidence"
+  },
+  {
+    "scope": "natal_saeun_wolun",
+    "producer": null,
+    "supported": [
+      "side-by-side verified pair comparisons only"
+    ],
+    "notSupported": [
+      "dedicated composite formation",
+      "strength",
+      "resolution/cancellation",
+      "event verdict"
+    ],
+    "time": "pair conditions and valid interval intersection; no new composite Evidence"
+  },
+  {
+    "scope": "natal_dayun_saeun_wolun",
+    "producer": null,
+    "supported": [
+      "side-by-side verified pair comparisons only"
+    ],
+    "notSupported": [
+      "dedicated composite formation",
+      "strength",
+      "resolution/cancellation",
+      "event verdict"
+    ],
+    "time": "pair conditions and valid interval intersection; no new composite Evidence"
+  }
+]

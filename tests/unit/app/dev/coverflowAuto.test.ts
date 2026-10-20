@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { AUTO_IDLE, AUTO_INTERVAL, createCoverflowAuto } from "../../../../src/app/dev/book-preview/coverflowAuto";
 afterEach(() => vi.useRealTimers());
 describe("coverflow one-shot automatic rotation", () => {
+  it("uses exact production and preview intervals", () => { expect(AUTO_INTERVAL).toBe(4500); expect(AUTO_IDLE).toBe(8500); });
   it("advances only after interval, never opens a book", () => {
     vi.useFakeTimers(); const advance = vi.fn(), auto = createCoverflowAuto(advance);
     auto.setActive(true); vi.advanceTimersByTime(AUTO_INTERVAL - 1); expect(advance).not.toHaveBeenCalled();
@@ -10,7 +11,7 @@ describe("coverflow one-shot automatic rotation", () => {
   });
   it.each(["arrow", "swipe", "keyboard", "side-book"])("%s pauses, then resumes after last interaction", () => {
     vi.useFakeTimers(); const advance = vi.fn(), auto = createCoverflowAuto(advance);
-    auto.setActive(true); vi.advanceTimersByTime(6000); auto.interact();
+    auto.setActive(true); vi.advanceTimersByTime(4000); auto.interact();
     vi.advanceTimersByTime(AUTO_IDLE - 1); expect(advance).not.toHaveBeenCalled();
     auto.interact(); vi.advanceTimersByTime(AUTO_IDLE - 1); expect(advance).not.toHaveBeenCalled();
     vi.advanceTimersByTime(1); expect(advance).toHaveBeenCalledTimes(1);

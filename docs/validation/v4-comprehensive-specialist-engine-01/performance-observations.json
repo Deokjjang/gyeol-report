@@ -1,0 +1,76 @@
+{
+  "unit": "offline wall milliseconds and RSS bytes; not customer runtime latency",
+  "runs": [
+    {
+      "elapsedMs": 156353.49208300002,
+      "rssStartBytes": 526008320,
+      "rssEndBytes": 3556081664,
+      "maxRssBytes": 4083040256,
+      "timings": [
+        {
+          "fixtureId": "fixture-comprehensive-A",
+          "foundationMs": 269.40191699999923,
+          "specialistMs": 291.18316600000253,
+          "rssBytes": 2326167552
+        },
+        {
+          "fixtureId": "fixture-comprehensive-F",
+          "foundationMs": 41.04695899999933,
+          "specialistMs": 59.33779200000208,
+          "rssBytes": 2312273920
+        },
+        {
+          "fixtureId": "fixture-same-natal-different-mbti",
+          "foundationMs": 313.92462499999965,
+          "specialistMs": 338.4386249999952,
+          "rssBytes": 3726213120
+        },
+        {
+          "fixtureId": "fixture-same-mbti-different-natal",
+          "foundationMs": 281.7846669999999,
+          "specialistMs": 308.09179200000654,
+          "rssBytes": 3288498176
+        }
+      ],
+      "originalFoundationGeneratedFilesMatched": 64,
+      "network": "disabled"
+    },
+    {
+      "elapsedMs": 156636.12383300002,
+      "rssStartBytes": 533594112,
+      "rssEndBytes": 3365552128,
+      "maxRssBytes": 3712417792,
+      "timings": [
+        {
+          "fixtureId": "fixture-comprehensive-A",
+          "foundationMs": 274.8836249999986,
+          "specialistMs": 297.5900839999995,
+          "rssBytes": 2313945088
+        },
+        {
+          "fixtureId": "fixture-comprehensive-F",
+          "foundationMs": 42.48033299999952,
+          "specialistMs": 58.56670799999847,
+          "rssBytes": 2298855424
+        },
+        {
+          "fixtureId": "fixture-same-natal-different-mbti",
+          "foundationMs": 316.16987500000687,
+          "specialistMs": 336.38000000000466,
+          "rssBytes": 3446571008
+        },
+        {
+          "fixtureId": "fixture-same-mbti-different-natal",
+          "foundationMs": 273.9229159999959,
+          "specialistMs": 299.1647910000029,
+          "rssBytes": 3678339072
+        }
+      ],
+      "originalFoundationGeneratedFilesMatched": 64,
+      "network": "disabled"
+    }
+  ],
+  "questionMaterialLookupIndexed": true,
+  "catalogAndSpecialistIndexPreparedOnce": true,
+  "repeatedAllMaterialQuestionCrossProduct": false
+}

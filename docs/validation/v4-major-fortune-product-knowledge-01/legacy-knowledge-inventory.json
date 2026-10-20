@@ -1,0 +1,22 @@
+[
+  {
+    "export": "FIVE_ELEMENTS",
+    "kind": "array",
+    "count": 5
+  },
+  {
+    "export": "TEN_GODS",
+    "kind": "array",
+    "count": 10
+  },
+  {
+    "export": "SAJU_KNOWLEDGE_BASE",
+    "kind": "array",
+    "count": 77
+  },
+  {
+    "export": "SAJU_KNOWLEDGE_BY_ID",
+    "kind": "object",
+    "count": 0
+  }
+]

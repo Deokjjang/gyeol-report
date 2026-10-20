@@ -1,0 +1,141 @@
+[
+  {
+    "id": "02-career",
+    "payload": {
+      "productKey": "career_money_study",
+      "productSlug": "career-money-study",
+      "person": {
+        "name": "박도윤",
+        "birthDate": "1988-11-06",
+        "birthTime": "16:45",
+        "gender": "MALE",
+        "mbtiType": "ISTJ",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "employee",
+        "detailJob": "개발자",
+        "relationshipStatus": "",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4"
+      }
+    },
+    "sha256": "b5852617f9116b349a18c6e0ae7e9b5f5fa09417e081254f3d8670e006da5764"
+  },
+  {
+    "id": "03-love",
+    "payload": {
+      "productKey": "love_marriage_child",
+      "productSlug": "love-marriage-child",
+      "person": {
+        "name": "최서아",
+        "birthDate": "1996-05-24",
+        "birthTime": "22:10",
+        "gender": "FEMALE",
+        "mbtiType": "INFP",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "",
+        "detailJob": "",
+        "relationshipStatus": "single",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4"
+      }
+    },
+    "sha256": "dcce55906db9d3a907bc666e2924863292604fcb8ce86e41ab1c57a8aad85720"
+  },
+  {
+    "id": "04-compatibility",
+    "payload": {
+      "productKey": "saju_mbti_compatibility",
+      "productSlug": "compatibility",
+      "relationshipType": "love",
+      "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+      "personA": {
+        "name": "이준혁",
+        "birthDate": "1991-08-12",
+        "birthTime": "07:30",
+        "gender": "MALE",
+        "mbtiType": "ESTP",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "personB": {
+        "name": "정유진",
+        "birthDate": "1994-01-19",
+        "birthTime": "13:40",
+        "gender": "FEMALE",
+        "mbtiType": "ISFJ",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      }
+    },
+    "sha256": "cef9d7d499d9b977a049a76d1fd286143e833bb1a7c38ebfeb37e965874e2fcc"
+  },
+  {
+    "id": "05-major-fortune",
+    "payload": {
+      "productKey": "major_fortune",
+      "productSlug": "major-fortune",
+      "person": {
+        "name": "윤시우",
+        "birthDate": "1983-09-02",
+        "birthTime": "05:10",
+        "gender": "MALE",
+        "mbtiType": "ENTJ",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "employee",
+        "detailJob": "기획자",
+        "relationshipStatus": "",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4"
+      }
+    },
+    "sha256": "0ed98a4907b21386a30c03b85c4b93d902b9b87df0bb19aa8c2c095019a29737"
+  },
+  {
+    "id": "06-annual-fortune",
+    "payload": {
+      "productKey": "annual_fortune",
+      "productSlug": "annual-fortune",
+      "person": {
+        "name": "한예린",
+        "birthDate": "2000-12-14",
+        "birthTime": "11:50",
+        "gender": "FEMALE",
+        "mbtiType": "INTJ",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "student",
+        "detailJob": "",
+        "relationshipStatus": "",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4",
+        "selectedYear": "2026"
+      }
+    },
+    "sha256": "3a437388ceffd7fd7fa1cf048efb7afe87515b04a1c9e33dfc24c33ad828eda5"
+  }
+]

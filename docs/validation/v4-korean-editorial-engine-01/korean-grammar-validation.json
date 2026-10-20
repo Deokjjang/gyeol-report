@@ -1,0 +1,662 @@
+{
+  "studies": [
+    {
+      "id": "ker:grammar:subject",
+      "hash": "c34ff999c219b2461562c1dbdd15bebec3f8a09187c496e619dbbf2a4e219de1",
+      "topic": "subject",
+      "originalRule": "받침이 확인된 명사구에는 이, 받침 없는 명사구에는 가를 검토한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:topic",
+      "hash": "6e64d1ae3695f6f39b68d7037b4490373209e1bf13b4934b695ee8dd858045d8",
+      "topic": "topic",
+      "originalRule": "받침이 있으면 은, 없으면 는을 검토한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:object",
+      "hash": "4aed28afc83c522eb96218cf605aed40a71174b507b49fc68fb7306938af5a7f",
+      "topic": "object",
+      "originalRule": "목적어 역할인 명사구의 끝소리에 맞춰 을/를을 고른다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:with",
+      "hash": "bddf63c73539114e2a9b82294e98cbe60ec57c7fb6658829238bb22666313945",
+      "topic": "with",
+      "originalRule": "받침 있는 명사에는 과, 없는 명사에는 와를 검토한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:to-rieul",
+      "hash": "d85494c1b8a116ff890e4a3676880449b7ab81e67cf354ce0a7a0710bc05e24e",
+      "topic": "to-rieul",
+      "originalRule": "으로/로는 받침이 없거나 ㄹ이면 로, 그 밖의 받침이면 으로를 검토한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:name",
+      "hash": "396c9d018c82979b75fdaf04f3515f6ef69bbb1d7fa00a4cb25936ab4dfff157",
+      "topic": "name",
+      "originalRule": "인물명은 하나의 literal 슬롯으로 보존한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:honorific-nim",
+      "hash": "01bb6a76a6cee4bf5d24905b2ba9a93d88222180e468c186d75a0c718f9ea35a",
+      "topic": "honorific-nim",
+      "originalRule": "님을 호칭으로 붙이면 뒤 조사는 님의 읽기를 기준으로 한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:foreign",
+      "hash": "55395e159ec15766287f5ee5669f23371c1e7093d48a22bee40010e35486c5b7",
+      "topic": "foreign",
+      "originalRule": "영문·약어의 발음이 확인되지 않으면 받침을 추정하지 않는다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:mbti",
+      "hash": "54e788b0af2d37b87f759e7a77dc556745e79a76db4a2c2b09682442ecf295a8",
+      "topic": "mbti",
+      "originalRule": "MBTI/유형 문자열은 변경 불가 label이다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:hanja",
+      "hash": "02ffe6b69a37fca9543dba0ed2b9e890f1fe24839d13c46ee4ed386f9d42e0c8",
+      "topic": "hanja",
+      "originalRule": "한자 용어는 확인된 읽기·뜻과 표기를 분리한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:number",
+      "hash": "916ee996360c4e60b492761b9bafc3dc8d987d3de8c80156f037499a54734cde",
+      "topic": "number",
+      "originalRule": "숫자의 조사에는 수 읽기·단위·번호 여부가 필요하다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:unit",
+      "hash": "bc2316d1baf6ccd76ea0467d8df3c76ef91ff0546525ba7e728b830cc0cb4c94",
+      "topic": "unit",
+      "originalRule": "숫자 뒤 단위가 있으면 단위 명사구의 읽기와 수량 뜻을 보존한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:quotes",
+      "hash": "9f3a35e1782451619e2386409c9fd574212a3e3f53889d09bff16b309513e573",
+      "topic": "quotes",
+      "originalRule": "인용부호를 발음의 받침으로 보지 않는다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:parentheses",
+      "hash": "d35416369c9c0db49aef2f6ec85712f3b58ff4cc0addd16a465ac3fddaae5a63",
+      "topic": "parentheses",
+      "originalRule": "괄호 설명과 실제 읽을 명사구의 head를 구분한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:agreement",
+      "hash": "6c7d0d61a359d06550cdbcf3e9a03fcf34ab877d2470b5a4c3bdcb1b5c6d0797",
+      "topic": "agreement",
+      "originalRule": "명사구가 어떤 행동·상태의 주체인지 보존한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:direction",
+      "hash": "afb17d059611cf18ecdb5a0e0749d4b7aa6254bb67e76ca5e01287a4406aeaa6",
+      "topic": "direction",
+      "originalRule": "A→B의 행동 주체와 수신자는 B→A에서 다시 정의한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:tense",
+      "hash": "878a61b3ec59cc113a8863b4a99a3a011ca54275ca080448abf003236d32c81b",
+      "topic": "tense",
+      "originalRule": "과거·현재·미래의 실제 시각과 경험의 확인 상태를 나눈다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:condition",
+      "hash": "460c32bc49dd11a4f8a220bda4bbc36f46f7e042646b24e176c5f7218ba24d84",
+      "topic": "condition",
+      "originalRule": "조건절의 자격이 결과절까지 유지되어야 한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:negation",
+      "hash": "afef25785eb8d5df66b3f293e56f5ed1a8bfe103894844fd3ba29de4bef46e97",
+      "topic": "negation",
+      "originalRule": "아니다·않다·못하다의 부정 대상과 범위를 보존한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:respect",
+      "hash": "881e01f218ce635e565bb7d25ed9a2508fd725a3cbf72bb28c655af4cb1da988",
+      "topic": "respect",
+      "originalRule": "높임의 대상과 행동 주체를 분리한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:copula",
+      "hash": "e98060bd424fe9c5b486356479a72716869424b9377b5a361c344c6c49931f50",
+      "topic": "copula",
+      "originalRule": "이에요/예요와 위치 조사 에+요는 문맥이 다르다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:endings",
+      "hash": "05cafddabb0ed39cb3d6b6eb184d3a781c546b8e6b6d56f4f218a9f5cd0a8c3b",
+      "topic": "endings",
+      "originalRule": "종결 어미의 화법 변화는 시제·부정·확정성을 바꾸지 않는다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:connecting",
+      "hash": "d9adffddb5126c7b1706b9ae6ca1d06e5bb45d0b5004ec14d1747f1964e8445b",
+      "topic": "connecting",
+      "originalRule": "그래서·하지만·한편은 다른 논리 관계를 표시한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:irregular",
+      "hash": "6f5df524dbbcb74e3f0143f17e9695587ecc3cea9fd38455203d6553330f94ba",
+      "topic": "irregular",
+      "originalRule": "불규칙 활용은 어간 글자 치환이 아니라 검토된 어휘별 자료가 필요하다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:modifier",
+      "hash": "15e4a5a222e9dd966fb19db981cdac48617394df4a929a68acf42102be0021d7",
+      "topic": "modifier",
+      "originalRule": "명사구에 든 수식과 문장 틀의 수식을 구분한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:punctuation",
+      "hash": "5b6ba78f32ac1ad44ff6e775c2133bef7fbea0777d75b65da28e54445d5c61e6",
+      "topic": "punctuation",
+      "originalRule": "문장 부호와 수·URL·버전의 기호를 구분한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:unknown",
+      "hash": "65128c3cbdb74fbd0ee4b1cc2300e5423c9f7dd5775c9c92234b7c41f2bc0a7c",
+      "topic": "unknown",
+      "originalRule": "미상 입력은 문법적으로 그럴듯한 구체 정보로 채우지 않는다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    },
+    {
+      "id": "ker:grammar:time-boundary",
+      "hash": "bdaab3b906a6332d37e6082d288fd523baeb22a375a1ef59ba9a689359310acc",
+      "topic": "time-boundary",
+      "originalRule": "절입·교운 설명은 [start,end)와 확정/범위를 보존한다",
+      "linguisticCompleteness": "bounded_examples_not_complete_grammar"
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "ker:grammar-fixture:지우:subject",
+      "originalRecordHash": "9b211998c5ce56226637ce82aa1cf45af061660a46d554070917868670f96418",
+      "expected": "지우가",
+      "actual": "지우가",
+      "prohibited": "지우이",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:지우:topic",
+      "originalRecordHash": "f04baa6f29eee4610d4a77f383151b5af13ce17fc6e2c1b51dfd4ab4bf436d01",
+      "expected": "지우는",
+      "actual": "지우는",
+      "prohibited": "지우은",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:지우:object",
+      "originalRecordHash": "1a195e7224a833037c0a4df0916e50d1292bf90d266462587a986850a37bc184",
+      "expected": "지우를",
+      "actual": "지우를",
+      "prohibited": "지우을",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:지우:with",
+      "originalRecordHash": "8bfdc55baadb7a036f8b3b3fc3770347bd07d93316ddc22b2b9387b7f8bd3815",
+      "expected": "지우와",
+      "actual": "지우와",
+      "prohibited": "지우과",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:지우:to",
+      "originalRecordHash": "f405777323fad40ef3c9aa60e668030e4893b6c45431efc1b674750618463dee",
+      "expected": "지우로",
+      "actual": "지우로",
+      "prohibited": "지우으로",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:준호:subject",
+      "originalRecordHash": "cd4428a6a89289132b65153763217ba1c3abca0c3514c33e125397ca9c8ef9b3",
+      "expected": "준호가",
+      "actual": "준호가",
+      "prohibited": "준호이",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:준호:topic",
+      "originalRecordHash": "31b4287e506ecd63daf3f76f901ce664f7de6694fbac663139ab51778c5e2ce3",
+      "expected": "준호는",
+      "actual": "준호는",
+      "prohibited": "준호은",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:준호:object",
+      "originalRecordHash": "1aa0d959354fa81186d02ca239ac729417ad5e396a56a81ce1700f8d6d38cbb3",
+      "expected": "준호를",
+      "actual": "준호를",
+      "prohibited": "준호을",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:준호:with",
+      "originalRecordHash": "371d6a09053628882c12660b46c3ccc3b7e624c2aff0a859ef33896c3c03ee41",
+      "expected": "준호와",
+      "actual": "준호와",
+      "prohibited": "준호과",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:준호:to",
+      "originalRecordHash": "7dbe11d7b55c1fbb9f1ad7257be952e3e7cf3ff3304d9dc6b477aeeb996b2394",
+      "expected": "준호로",
+      "actual": "준호로",
+      "prohibited": "준호으로",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:예린:subject",
+      "originalRecordHash": "2faf7a0b0017354053579d4933d69a34fcb1d4c542d6de87c9a8e61673492c5c",
+      "expected": "예린이",
+      "actual": "예린이",
+      "prohibited": "예린가",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:예린:topic",
+      "originalRecordHash": "56bbedf0df31720d5abc9b911b1420c82241aa4662370527ae38478118371ca1",
+      "expected": "예린은",
+      "actual": "예린은",
+      "prohibited": "예린는",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:예린:object",
+      "originalRecordHash": "1c7c099081ac1c1db6b29741c15f4b8b203962339309a27f9ed09a6267cd5584",
+      "expected": "예린을",
+      "actual": "예린을",
+      "prohibited": "예린를",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:예린:with",
+      "originalRecordHash": "b293777909ed1e1f47a75bd61cd19c534268814bd7fcf256811864fd3ec7dafd",
+      "expected": "예린과",
+      "actual": "예린과",
+      "prohibited": "예린와",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:예린:to",
+      "originalRecordHash": "2d4c22f39decfdb08b7c78e841cfdcae5d7ae22e56e518c8af3171f88e0f9473",
+      "expected": "예린으로",
+      "actual": "예린으로",
+      "prohibited": "예린로",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:길:subject",
+      "originalRecordHash": "e33af6db2d48776f37cdce55275e8e073b064c264d97177ebd846f47bd18cdf5",
+      "expected": "길이",
+      "actual": "길이",
+      "prohibited": "길가",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:길:topic",
+      "originalRecordHash": "d15621161b1515ff359d928e7252b74d976d157a4e70c27613a66598e1c3e1be",
+      "expected": "길은",
+      "actual": "길은",
+      "prohibited": "길는",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:길:object",
+      "originalRecordHash": "a2378a3db706e6492e8010978f8d1dc659b0f512993797401babc3910e4d9fea",
+      "expected": "길을",
+      "actual": "길을",
+      "prohibited": "길를",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:길:with",
+      "originalRecordHash": "9c8661c04ca06277a6b06d1bcdb4f2e97de8933b1759a8f5ca46983781dbaddc",
+      "expected": "길과",
+      "actual": "길과",
+      "prohibited": "길와",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:길:to",
+      "originalRecordHash": "5afb18bec74a0cc97243783ee1f77161cd861ce0bbaabf74d3444b162089067f",
+      "expected": "길로",
+      "actual": "길로",
+      "prohibited": "길으로",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:제안:subject",
+      "originalRecordHash": "8bf764c166896576aba62bab813ca892acdb2757d534b2567670b19c4f6971cf",
+      "expected": "제안이",
+      "actual": "제안이",
+      "prohibited": "제안가",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:제안:topic",
+      "originalRecordHash": "e832110f303f466450195eb086341c6203e0fbc3db970a3b4b9396a940a97c8e",
+      "expected": "제안은",
+      "actual": "제안은",
+      "prohibited": "제안는",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:제안:object",
+      "originalRecordHash": "144f68c59aad2787723972f84bcc485e235d4a3e031dfe3535ca5844b84db48e",
+      "expected": "제안을",
+      "actual": "제안을",
+      "prohibited": "제안를",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:제안:with",
+      "originalRecordHash": "992f7ed5450376bead52a561ddaf38b4c22ceb4fbd8aeb120afdae8e6a32d446",
+      "expected": "제안과",
+      "actual": "제안과",
+      "prohibited": "제안와",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:제안:to",
+      "originalRecordHash": "a523b4f17b6520402be061a5a7d90fa893c72d04ebb9607a996690bb8b071cd4",
+      "expected": "제안으로",
+      "actual": "제안으로",
+      "prohibited": "제안로",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:목소리:subject",
+      "originalRecordHash": "9e6f824006422c3cd5636d57b501752e41e558bc19ddb4a23e6f492f7e84000f",
+      "expected": "목소리가",
+      "actual": "목소리가",
+      "prohibited": "목소리이",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:목소리:topic",
+      "originalRecordHash": "46d011548c6921f596e9b4a0a3d3adf95405ef6d5b5c146dd6da6587f04fcfba",
+      "expected": "목소리는",
+      "actual": "목소리는",
+      "prohibited": "목소리은",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:목소리:object",
+      "originalRecordHash": "a534310ec1d92c7c7f9b37ee1ed0ff2ede400e38061e85b7c367a01b2caf59cf",
+      "expected": "목소리를",
+      "actual": "목소리를",
+      "prohibited": "목소리을",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:목소리:with",
+      "originalRecordHash": "5cfc961cc8db47b8180f97e2a1a6eb516071274790d91caa38b25649419917f4",
+      "expected": "목소리와",
+      "actual": "목소리와",
+      "prohibited": "목소리과",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:목소리:to",
+      "originalRecordHash": "b0dc204094d4b8f82d9d8374e1f4509fcd9ef8a8c3615faf4ecc1089c5b25271",
+      "expected": "목소리로",
+      "actual": "목소리로",
+      "prohibited": "목소리으로",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:quoted-object",
+      "originalRecordHash": "25138337dba3b788db68e242bb3b6552b30fbaf6b045d6df694cc8b8b18bc0e1",
+      "expected": "‘대화’를",
+      "actual": "‘대화’를",
+      "prohibited": "‘대화’을",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:quoted-subject",
+      "originalRecordHash": "7a24f5c47b208efac48fa1c7a5e6f58a3bd53ca122016d05cd2ae222f29ba4d6",
+      "expected": "‘제안’이",
+      "actual": "‘제안’이",
+      "prohibited": "‘제안’가",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:quoted-rieul",
+      "originalRecordHash": "8eadadfa510fc18356a85d71b1953c47f4331c4eaf97cf0d30c8f50a12c812b4",
+      "expected": "‘길’로",
+      "actual": "‘길’로",
+      "prohibited": "‘길’으로",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:old-rieul",
+      "originalRecordHash": "f58f1d27388bfbefa6b0e5b9df14a81df55cf7c54d27d0caba83c2a03f7b0648",
+      "expected": "길로",
+      "actual": "길로",
+      "prohibited": "길으로",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:foreign",
+      "originalRecordHash": "10420d247acf20c3018a62687f6bb70fbc89f31ff7399d7591d835869329617e",
+      "expected": "Alex님이",
+      "actual": "Alex님이",
+      "prohibited": "Alex가(발음 확인 없이 확정)",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:symbols",
+      "originalRecordHash": "3d4dac85afea488915d4cd6634a629c81270dac8fd86768c6c9b7f429ae3e139",
+      "expected": "A $& {{B}}님의 관점",
+      "actual": "A $& {{B}}님의 관점",
+      "prohibited": "A/B를 이름 전체에서 재치환",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:mbti",
+      "originalRecordHash": "e5b5b53769c20e46b722997de0132557a82db77a7b1d74d9a7241c2132b32b3f",
+      "expected": "INTJ 유형에서는",
+      "actual": "INTJ 유형에서는",
+      "prohibited": "INTJ은",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:hanja",
+      "originalRecordHash": "199c939e5c79dbd18f7171278f9dcfc82dd0d435ddad5831e71f87fe669ee4e5",
+      "expected": "일간 표기 ‘庚’:",
+      "actual": "일간 표기 ‘庚’:",
+      "prohibited": "庚가",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:digit",
+      "originalRecordHash": "921f28241cefe7bcd458f66948e6c2b2dd364f19ced1b96ea1e5874c6a97b16b",
+      "expected": "수량: 3",
+      "actual": "수량: 3",
+      "prohibited": "항상 3이",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:unit",
+      "originalRecordHash": "e3b12440cd011ee66b696fa7d6e3e85fe102aef44896e55146b5e3ceaf6d405b",
+      "expected": "3개를",
+      "actual": "3개를",
+      "prohibited": "3개을",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:parenthesis",
+      "originalRecordHash": "e7601f310f4ed8a5825c222f54ed668ede29a0280b0ffaad990e90abd2000689",
+      "expected": "검토 기준(예시):",
+      "actual": "검토 기준(예시):",
+      "prohibited": "마지막 글자로 기계적으로 조사 확정",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:decimal",
+      "originalRecordHash": "321fa3b9b9e75e1e35786e7c52250cfb5cf9c9029bd4d89e43e0aa608d1c7eef",
+      "expected": "버전 3.14에서 확인합니다.",
+      "actual": "버전 3.14에서 확인합니다.",
+      "prohibited": "버전 3. 14에서 확인합니다.",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:past",
+      "originalRecordHash": "9ae70b88f39c17becd3084c0849ae03691643b466cd3a46ace45689a54c52e1d",
+      "expected": "그해 그런 일이 있었다면",
+      "actual": "그해 그런 일이 있었다면",
+      "prohibited": "그해 이미 큰돈을 벌었습니다.",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:negative",
+      "originalRecordHash": "20e355d1dd1cdc7f168d23cc5f04cf650e70835a2002c4665f131ce181f59e33",
+      "expected": "연락이 적다고 관심이 없다는 뜻은 아닙니다.",
+      "actual": "연락이 적다고 관심이 없다는 뜻은 아닙니다.",
+      "prohibited": "연락이 적으니 관심이 없습니다.",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:honorific",
+      "originalRecordHash": "f74962298badfe6911c7a12ff064ef79bf4da838082aa94ae68969f6000ac786",
+      "expected": "예린님이 고른 기준",
+      "actual": "예린님이 고른 기준",
+      "prohibited": "예린님의 기준이 말씀하십니다.",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    },
+    {
+      "id": "ker:grammar-fixture:copula-collision",
+      "originalRecordHash": "349a1455c50984f97e2039e8b29cb49ee55f7b0107ee452509a85ecf1712b759",
+      "expected": "이 자료는 정보예요.",
+      "actual": "이 자료는 정보예요.",
+      "prohibited": "이 자료는 정보여요.",
+      "passed": true,
+      "scope": "BOUNDED_TYPED_GRAMMAR_FIXTURE_NOT_CUSTOMER_CLAIM",
+      "originalHelperChanged": false
+    }
+  ]
+}

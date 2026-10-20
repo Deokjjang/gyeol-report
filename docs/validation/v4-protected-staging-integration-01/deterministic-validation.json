@@ -1,0 +1,23 @@
+{
+  "baseSha": "1b89d8d90fdad2b0a82b783e2d948c9cc5de878f",
+  "existingCustomerRuntimeChanged": false,
+  "customerAuthorized": false,
+  "humanQualityApproved": false,
+  "clockFixed": true,
+  "original17_102DigestMatch": true,
+  "original17RawByteMatch": true,
+  "precommit39Cases": {
+    "safe": 32,
+    "withheld": 7
+  },
+  "finalIndependentGeneration": "Run after final report commit; exact artifact/source receipt external",
+  "compareFields": [
+    "inputHash",
+    "evidenceHash",
+    "bookHash",
+    "calculation preservation",
+    "withheld exact IDs and errors"
+  ],
+  "metadataSourceCommitChangesIntentionally": true,
+  "postCommitReceipt": "/Users/Deokmin/Documents/gyeol-validation/v4-protected-staging-integration-01/final-receipt.json"
+}

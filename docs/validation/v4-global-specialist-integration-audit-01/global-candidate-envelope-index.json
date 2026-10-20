@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-candidate-envelope-index.json.gz",
+  "payloadHash": "b53c6f358f29492ddd2a43498aed27f3804cfbfbada07278e474e067df6ff7c0",
+  "logicalJsonHash": "a317dc3c88680c5b7f892632b7b1645c5ee151979f79adbe2645e41ab739ec64",
+  "uncompressedBytes": 22267626
+}

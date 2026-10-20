@@ -1,0 +1,23 @@
+{
+  "task": "V4-KOREAN-TERM-SOURCE-REVISION-01",
+  "status": "NOT_STARTED",
+  "technicalSourceBasisReady": true,
+  "purpose": "If separately authorized, consume the exact historical renderer revision proof through the existing Source/term contracts; do not change original research hashes",
+  "remainingRawSourceHashMismatches": 3,
+  "existingExplainTermWithheld": "REQUIRED_SOURCE_NOT_VERIFIED",
+  "formationSupportForHapChung": "Still requires exact actual formations; not approved by technical source lineage",
+  "noMeaningOrCustomerUseApproval": true,
+  "sourceRestorationRequired": false,
+  "unchangedBroaderAuditGaps": [
+    "Required Source ancestry/temporal tenGod declarations",
+    "typed actual meaning/conditions and source-domain review",
+    "actual Specialist claims, Reader bridge and Korean Book realization",
+    "operator and customer approvals"
+  ],
+  "forbiddenAutomaticNextWork": [
+    "DB expansion",
+    "engine/Planner/Writer changes",
+    "customer activation",
+    "master/Production/DB/payment/Auth/Worker changes"
+  ]
+}

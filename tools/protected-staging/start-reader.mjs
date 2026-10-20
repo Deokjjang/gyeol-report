@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { execFileSync, spawn } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+if (process.env.VERCEL || process.env.NODE_ENV === 'production') throw Error('LOCAL_READER_ONLY');
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
+const keyFile=path.join(os.homedir(),'Documents/gyeol-validation/v4-protected-staging-integration-01/keys/review-public.pem');
+const env={...process.env,GYEOL_STAGING_REVIEW_PUBLIC_KEY:fs.readFileSync(keyFile,'utf8'),GYEOL_STAGING_SOURCE_COMMIT:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),NEXT_TELEMETRY_DISABLED:'1'};
+for(const k of Object.keys(env))if(/SUPABASE|TOSS|OPENAI|DATABASE_URL/.test(k))delete env[k];
+const child=spawn('pnpm',['exec','next','dev','tools/protected-staging/reader','--webpack','--hostname','127.0.0.1','--port','4318'],{cwd:root,env,stdio:'inherit'});
+for(const signal of ['SIGINT','SIGTERM'])process.on(signal,()=>child.kill(signal));
+child.on('exit',code=>process.exit(code??1));

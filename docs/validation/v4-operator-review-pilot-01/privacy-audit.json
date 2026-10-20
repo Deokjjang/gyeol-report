@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "filesScanned": 34,
+  "fixturePrivateTerms": 37,
+  "actualUserInputsExported": false,
+  "rawSyntheticDraftsCommitted": false,
+  "originalPersonHashesInPresentation": false,
+  "externalNetworkDependencies": 0,
+  "automatedTestsAreNotHumanReview": true,
+  "sourceOriginalsUnchanged": true
+}

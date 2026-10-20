@@ -1,0 +1,611 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-compatibility-business-partner-product-knowledge-01
+
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx (36 tests | 11 failed) 88707ms
+     ✓ 'comprehensive': every original paragraph and final line in original order 41ms
+     × 'career': every original paragraph and final line in original order 4ms
+     × 'love': every original paragraph and final line in original order 1ms
+     × 'compatibility': every original paragraph and final line in original order 0ms
+     ✓ 'major': every original paragraph and final line in original order 53ms
+     ✓ 'annual': every original paragraph and final line in original order 35ms
+     ✓ 'full-unknown': every original paragraph and final line in original order 19ms
+     ✓ 'full-approximate': every original paragraph and final line in original order 24ms
+     × 'pair-02-marriage': every original paragraph and final line in original order 1ms
+     × 'pair-03-parent': every original paragraph and final line in original order 0ms
+     × 'pair-04-coworker': every original paragraph and final line in original order 0ms
+     × 'pair-05-manager': every original paragraph and final line in original order 0ms
+     × 'pair-06-business': every original paragraph and final line in original order 0ms
+     × 'pair-07-friend': every original paragraph and final line in original order 0ms
+     × 'pair-08-love': every original paragraph and final line in original order 0ms
+     ✓ 'comprehensive': complete canonical tables, MBTI and untruncated inventory 3ms
+     ✓ 'career': complete canonical tables, MBTI and untruncated inventory 2ms
+     ✓ 'love': complete canonical tables, MBTI and untruncated inventory 3ms
+     ✓ 'compatibility': complete canonical tables, MBTI and untruncated inventory 7ms
+     ✓ 'major': complete canonical tables, MBTI and untruncated inventory 3ms
+     ✓ 'annual': complete canonical tables, MBTI and untruncated inventory 2ms
+     ✓ 'full-unknown': complete canonical tables, MBTI and untruncated inventory 2ms
+     ✓ 'full-approximate': complete canonical tables, MBTI and untruncated inventory 2ms
+     ✓ 'pair-02-marriage': complete canonical tables, MBTI and untruncated inventory 4ms
+     ✓ 'pair-03-parent': complete canonical tables, MBTI and untruncated inventory 4ms
+     ✓ 'pair-04-coworker': complete canonical tables, MBTI and untruncated inventory 4ms
+     ✓ 'pair-05-manager': complete canonical tables, MBTI and untruncated inventory 4ms
+     ✓ 'pair-06-business': complete canonical tables, MBTI and untruncated inventory 4ms
+     ✓ 'pair-07-friend': complete canonical tables, MBTI and untruncated inventory 5ms
+     ✓ 'pair-08-love': complete canonical tables, MBTI and untruncated inventory 3ms
+     × 14 years, 10 future years, all ages, transitions and clickable full narratives 3ms
+     ✓ 12 months and exact canonical Jie ordering remain in the source, never raw timestamps in prose 1ms
+     ✓ seven categories preserve roles and directions, with the explicit deterministic index only 2ms
+     ✓ unknown hour/type never invented; approximate slot uses canonical Korean label 0ms
+     ✓ server cache only accepts finite approved fixtures and projection fails closed on tampering  11043ms
+     ✓ exports reviewer page inventory when explicitly requested 0ms
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts (42 tests | 5 failed) 99452ms
+     ✓ 'A' actual manuscript and saved Book  4896ms
+     ✓ 'B' actual manuscript and saved Book  2801ms
+     ✓ 'C' actual manuscript and saved Book  2100ms
+     ✓ 'D' actual manuscript and saved Book  4639ms
+     ✓ 'E' actual manuscript and saved Book  3281ms
+     ✓ 'F' actual manuscript and saved Book  2569ms
+     ✓ 'G' actual manuscript and saved Book  2091ms
+     ✓ 'H' actual manuscript and saved Book 77ms
+     ✓ records cross-reader common copy 1ms
+     ✓ ENTJ retains its actual study source in the new edition  3979ms
+     ✓ ISTJ retains its actual study source in the new edition  1404ms
+     ✓ INFJ retains its actual study source in the new edition  2733ms
+     ✓ INTP retains its actual study source in the new edition  2305ms
+     ✓ ENFP retains its actual study source in the new edition  2479ms
+     ✓ ESTP retains its actual study source in the new edition  2471ms
+     ✓ ENTP retains its actual study source in the new edition  3357ms
+     ✓ INTJ retains its actual study source in the new edition  3585ms
+     ✓ INFP retains its actual study source in the new edition  1735ms
+     ✓ ENFJ retains its actual study source in the new edition  2269ms
+     ✓ ISFJ retains its actual study source in the new edition  1872ms
+     ✓ ESFJ retains its actual study source in the new edition  2296ms
+     ✓ ESTJ retains its actual study source in the new edition  2131ms
+     ✓ ISFP retains its actual study source in the new edition  3600ms
+     ✓ ISTP retains its actual study source in the new edition  2591ms
+     ✓ ESFP retains its actual study source in the new edition  2809ms
+     ✓ exact input status employee has its own current/next contract 0ms
+     ✓ exact input status student has its own current/next contract 0ms
+     ✓ exact input status job_seeker has its own current/next contract 0ms
+     ✓ exact input status freelancer has its own current/next contract 0ms
+     ✓ exact input status self_employed has its own current/next contract 0ms
+     ✓ exact input status business_owner has its own current/next contract 0ms
+     ✓ exact input status homemaker has its own current/next contract 0ms
+     ✓ exact input status unemployed has its own current/next contract 0ms
+     ✓ exact input status other has its own current/next contract 0ms
+     ✓ exact input status  has its own current/next contract 0ms
+     ✓ unknown roots, reversed signs and fabricated recommendations are rejected without a paid gate  10671ms
+     × 'comprehensive' previous saved edition remains identical 10932ms
+     ✓ 'career' previous saved edition remains identical 15ms
+     × 'love' previous saved edition remains identical 3027ms
+     × 'compatibility' previous saved edition remains identical 5248ms
+     × 'major' previous saved edition remains identical 2633ms
+     × 'annual' previous saved edition remains identical 2848ms
+ ✓ tests/unit/app/dev/bookReading13b.test.tsx (16 tests) 22600ms
+ ❯ tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts (22 tests | 1 failed) 43596ms
+     ✓ 10 sections and 25 ordered stages, no prose/Book connection 3ms
+     ✓ deterministic and JSON-safe with all six profiles unchanged  1190ms
+     ✓ ownership and terminology are one-owner; provenance never inflated 4ms
+     ✓ C1 contains core only, C5 fortune, C6 shadow, no generic operating rules 0ms
+     ✓ C2 actual source only, C3 has a preserved third interpretation, explicit max7 0ms
+     ✓ C8 source context and concrete terms, C10 recalls core, nine transition intents 0ms
+     ✓ forged guidance and upstream diagnostics fail closed without mutating  783ms
+     ✓ post-plan validator catches reference, ownership, section, split and C10 tampering 74ms
+     ✓ MBTI unknown and genuinely sparse input are valid compact plans 170ms
+     ✓ '01-seojin' actual chart -> isolated plan  5618ms
+     ✓ '02-seoyun' actual chart -> isolated plan  3482ms
+     ✓ '03-jia' actual chart -> isolated plan  2901ms
+     ✓ '04-daeun' actual chart -> isolated plan  5805ms
+     ✓ '05-sua' actual chart -> isolated plan  3488ms
+     ✓ '06-yerin' actual chart -> isolated plan  2533ms
+     ✓ '07-nayeong' actual chart -> isolated plan  3662ms
+     ✓ '08-yujin' actual chart -> isolated plan  4555ms
+     ✓ '09-harin' actual chart -> isolated plan  3016ms
+     ✓ '10-minjae' actual chart -> isolated plan  2143ms
+     ✓ '11-doyun' actual chart -> isolated plan  3914ms
+     ✓ '12-junseo' actual chart -> isolated plan 134ms
+     × scheduler is not consumed by prior layers, six products, UI, calculations or providers 117ms
+ ❯ tests/unit/report-generation/customerDayunGeneration.test.ts (19 tests | 2 failed) 1665ms
+     × rejects major_fortune bypass before order writes and allows stable input 7ms
+     × rejects annual_fortune bypass before order writes and allows stable input 1ms
+     ✓ uses the same customer basis with the major_fortune writer enabled 91ms
+     ✓ uses the same customer basis with the annual_fortune writer enabled 117ms
+     ✓ rejects the old shared personal fixture: '1980-03-09' 'FEMALE' 34ms
+     ✓ rejects the old shared personal fixture: '2001-06-22' 'MALE' 31ms
+     ✓ selects historical annual context and retains December transition in current annual fallback 208ms
+     ✓ passes stable approximate/unknown through deterministic generation and keeps uncertain dates  762ms
+     ✓ uses Seoul runtime year, preserves transition and sends full customer basis to writer 23ms
+     ✓ rejects cross-customer data, timeline edits, lost transition and calculation version changes 68ms
+     ✓ blocks direct payload bypass for major_fortune 80ms
+     ✓ blocks direct payload bypass for annual_fortune 80ms
+     ✓ rejects handler bypass even when callers fake normalized input 1ms
+     ✓ validates input through a calculation-only safe response 78ms
+     ✓ keeps gender optional and generates saju_mbti_full 41ms
+     ✓ keeps gender optional and generates career_money_study 15ms
+     ✓ keeps gender optional and generates love_marriage_child 4ms
+     ✓ keeps gender optional and generates saju_mbti_compatibility 21ms
+     ✓ removes personal fixture imports and fixed production evaluation year 1ms
+ ❯ tests/unit/interpretation-v4/comprehensiveAllocation.test.ts (44 tests | 2 failed) 352ms
+     ✓ strong materials are reserved before broad C4 allocation; C1 details deferred 6ms
+     ✓ C2 accepts two genuinely different reinforces but not two deep-reading echoes 1ms
+     ✓ C3 preserves resolved split + third source and uses complement fallback without inventing tension 1ms
+     ✓ C4 separates strength families and never makes bare amplifier a hero 17ms
+     ✓ C5 S08 composite precedes subordinate money/honor without laundering weak fortune 1ms
+     ✓ C5 can place money/honor/people but collapses duplicate helper/charm family 1ms
+     ✓ C5 no fortune remains positive potential with fortune wording forbidden 0ms
+     ✓ C6 distinct 2–4 shadows, never a stubbornness list 1ms
+     ✓ F05/F06 cannot both be emitted as unconditional primary statements 1ms
+     ✓ hard contradictory facts never survive as two primaries 0ms
+     ✓ C7 allocates social/close/risk slots without partner archetypes 0ms
+     ✓ P01 is C5 primary and C7 result-only support, never a new definition 0ms
+     ✓ C8 has work, money and current-context slots protected from general strengths 0ms
+     × C9 element composite beats a five-element dictionary and balanced yin yang is not a story 3ms
+     ✓ money reservation wins over a higher-scoring work variant of the same theme 0ms
+     × recovery-axis Fusion can serve C9 even when its original application is work 1ms
+     ✓ support does not bypass an opposite fact-bomb conflict 1ms
+     ✓ different shadow themes sharing the same source problem cannot double a fact bomb 1ms
+     ✓ core theme may recur once, but each later section still needs a new theme 8ms
+     ✓ C10 only recalls introduced strategies, no new root or unsupported theme 1ms
+     ✓ C10 five different rule slots, merged guidance wins over overlapping originals 1ms
+     ✓ theme budgets and novelty shrink echoes instead of inventing new subject matter 0ms
+     ✓ exact proof ownership, core allowance, first term definition only 0ms
+     ✓ global explicit fusion max7, type caps and hidden presentation 0ms
+     ✓ C1 contract always exists even for sparse sources 0ms
+     ✓ C2 contract always exists even for sparse sources 0ms
+     ✓ C3 contract always exists even for sparse sources 0ms
+     ✓ C4 contract always exists even for sparse sources 0ms
+     ✓ C5 contract always exists even for sparse sources 0ms
+     ✓ C6 contract always exists even for sparse sources 0ms
+     ✓ C7 contract always exists even for sparse sources 0ms
+     ✓ C8 contract always exists even for sparse sources 0ms
+     ✓ C9 contract always exists even for sparse sources 0ms
+     ✓ C10 contract always exists even for sparse sources 0ms
+     ✓ weighted score is editorial, with exact repetition/evidence penalties 0ms
+     ✓ LOW_GUIDANCE suppressed without changing source 0ms
+     ✓ UNSUPPORTED_SPECIFICITY suppressed without changing source 0ms
+     ✓ UNRESOLVED_CONTRADICTION suppressed without changing source 0ms
+     ✓ FORBIDDEN_FORTUNE_PROMOTION suppressed without changing source 0ms
+     ✓ AMPLIFIER_ONLY suppressed without changing source 0ms
+     ✓ PRIOR_ONLY_FUSION suppressed without changing source 0ms
+     ✓ UNSAFE_GUIDANCE suppressed without changing source 0ms
+     ✓ actual source annotations are resolved to node IDs, never annotation IDs as new proof 173ms
+     ✓ same person/different job only changes fit/advice, not traits or claim meanings 130ms
+ ❯ tests/unit/interpretation-v4/foundationAdapter.test.ts (20 tests | 1 failed) 333ms
+     ✓ '01-seojin': real chart, canonical labels/counts/weights preserved without mutation 12ms
+     ✓ '02-seoyun': real chart, canonical labels/counts/weights preserved without mutation 3ms
+     ✓ '03-jia': real chart, canonical labels/counts/weights preserved without mutation 5ms
+     ✓ '04-daeun': real chart, canonical labels/counts/weights preserved without mutation 3ms
+     ✓ '05-sua': real chart, canonical labels/counts/weights preserved without mutation 2ms
+     ✓ '06-yerin': real chart, canonical labels/counts/weights preserved without mutation 2ms
+     ✓ '07-nayeong': real chart, canonical labels/counts/weights preserved without mutation 1ms
+     ✓ '08-yujin': real chart, canonical labels/counts/weights preserved without mutation 2ms
+     ✓ '09-harin': real chart, canonical labels/counts/weights preserved without mutation 1ms
+     ✓ '10-minjae': real chart, canonical labels/counts/weights preserved without mutation 2ms
+     ✓ '11-doyun': real chart, canonical labels/counts/weights preserved without mutation 2ms
+     ✓ '12-junseo': real chart, canonical labels/counts/weights preserved without mutation 2ms
+     ✓ maps every current label, absent=balanced; never invents very-strong 12ms
+     ✓ stable approximate time uses confirmed chart unchanged, no invented exact time 2ms
+     ✓ unknown hour is explicitly unavailable, never normalized from six to eight 2ms
+     ✓ unstable hour or inconsistent counts cannot produce a foundation profile 0ms
+     ✓ ambiguous canonical element labels fail rather than silently prioritizing one 0ms
+     ✓ adapter never substitutes numeric thresholds for canonical labels 0ms
+     ✓ invalid canonical weighted scores fail at the adapter boundary 0ms
+     × only foundation modules reference the foundation; no writer/UI/calculation import 279ms
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts (5 tests | 5 failed) 21237ms
+   × 'comprehensive' customer/evidence/Book stays frozen 8517ms
+   × 'love' customer/evidence/Book stays frozen 2113ms
+   × 'compatibility' customer/evidence/Book stays frozen 5045ms
+   × 'major' customer/evidence/Book stays frozen 2669ms
+   × 'annual' customer/evidence/Book stays frozen 2892ms
+ ✓ tests/unit/report-knowledge/compatibilityCoworkerGenerationPreservation.test.ts (38 tests) 204952ms
+   ✓ actual offline 'A': '양쪽 MBTI 있음' preserves source ownership and generation  5068ms
+   ✓ actual offline 'B': 'A만 MBTI' preserves source ownership and generation  2409ms
+   ✓ actual offline 'C': 'B만 MBTI' preserves source ownership and generation  2761ms
+   ✓ actual offline 'E': 'A 출생시간 미상' preserves source ownership and generation  3969ms
+   ✓ actual offline 'F': 'B 출생시간 미상' preserves source ownership and generation  4353ms
+   ✓ actual offline 'G': '양쪽 시간 확정' preserves source ownership and generation  4927ms
+   ✓ actual offline 'H': '같은 유형' preserves source ownership and generation  4864ms
+   ✓ actual offline 'I': '다른 유형' preserves source ownership and generation  4962ms
+   ✓ actual offline 'J': '실제 합' preserves source ownership and generation  4914ms
+   ✓ actual offline 'K': '실제 충' preserves source ownership and generation  4928ms
+   ✓ actual offline 'L': '교차 지지 미검출' preserves source ownership and generation  3176ms
+   ✓ actual offline 'M': '미지원 정의만 존재' preserves source ownership and generation  3028ms
+   ✓ actual offline 'N': '방향 십성이 다름' preserves source ownership and generation  4932ms
+   ✓ actual offline 'O': '방향 십성이 같음' preserves source ownership and generation  4809ms
+   ✓ actual offline 'P': '전체 인물 순서 교환' preserves source ownership and generation  9803ms
+   ✓ actual offline 'Q': '이름만 교환' preserves source ownership and generation  9822ms
+   ✓ actual offline 'R': 'deterministic replay' preserves source ownership and generation  9764ms
+   ✓ actual offline 'S': 'coworker 범위' preserves source ownership and generation  4861ms
+   ✓ actual offline 'T': 'managerReport 비교' preserves source ownership and generation  4866ms
+   ✓ actual offline 'U': 'businessPartner 비교' preserves source ownership and generation  4903ms
+   ✓ actual offline 'V': 'friendship 비교' preserves source ownership and generation  4923ms
+   ✓ actual offline 'W': 'WORK 원천과 projection 차이' preserves source ownership and generation  4901ms
+   ✓ actual offline 'X': '실제 업무 정보 없음' preserves source ownership and generation  4894ms
+   ✓ actual offline 'Y': '계획 실행 검토 가상 작업' preserves source ownership and generation  4928ms
+   ✓ actual offline 'Z': '마감 변경 가상 상황' preserves source ownership and generation  4883ms
+   ✓ actual offline 'AA': '인수인계 누락 가상 상황' preserves source ownership and generation  4885ms
+   ✓ actual offline 'AB': '피드백 오해 가상 상황' preserves source ownership and generation  4910ms
+   ✓ actual offline 'AC': '다른 강점의 실제 signed 비교' preserves source ownership and generation  4907ms
+   ✓ actual offline 'AD': '같은 입력의 강점 비교' preserves source ownership and generation  4561ms
+   ✓ actual offline 'AE': '실제 권한 미확인' preserves source ownership and generation  4892ms
+   ✓ actual offline 'AF': '업무 적용 domain 미승인 보류' preserves source ownership and generation  4952ms
+   ✓ actual offline 'AG': '기존 fallback 관찰' preserves source ownership and generation  2986ms
+   ✓ actual offline 'AH': '다른 6카테고리 격리' preserves source ownership and generation  30489ms
+   ✓ actual offline 'AI': '기존 Book 원고 보존' preserves source ownership and generation  4954ms
+   ✓ audits actual coworker profile, projection, eligible candidates and reader-selected MBTI nodes separately  9579ms
+ ✓ tests/unit/interpretation-v4/compatibilityRelease.test.ts (38 tests) 254827ms
+     ✓ '01-love' actual manuscript, index and stored reader  5126ms
+     ✓ '02-marriage' actual manuscript, index and stored reader  4013ms
+     ✓ '03-parent' actual manuscript, index and stored reader  4645ms
+     ✓ '04-coworker' actual manuscript, index and stored reader  6618ms
+     ✓ '05-manager' actual manuscript, index and stored reader  4881ms
+     ✓ '06-business' actual manuscript, index and stored reader  5634ms
+     ✓ '07-friend' actual manuscript, index and stored reader  4442ms
+     ✓ '08-love' actual manuscript, index and stored reader  4075ms
+     ✓ same people, distinct love editorial setting with canonical roles  9900ms
+     ✓ same people, distinct marriage editorial setting with canonical roles  9921ms
+     ✓ same people, distinct parentChild editorial setting with canonical roles  9779ms
+     ✓ same people, distinct coworker editorial setting with canonical roles  9891ms
+     ✓ same people, distinct managerReport editorial setting with canonical roles  9753ms
+     ✓ same people, distinct businessPartner editorial setting with canonical roles  9791ms
+     ✓ same people, distinct friendship editorial setting with canonical roles  9742ms
+     ✓ A-mbti preserves sources and safe publication  11468ms
+     ✓ B-mbti preserves sources and safe publication  9065ms
+     ✓ A-natal preserves sources and safe publication  10009ms
+     ✓ B-natal preserves sources and safe publication  9693ms
+     ✓ swapped preserves sources and safe publication  9740ms
+     ✓ identical preserves sources and safe publication  9414ms
+     ✓ A-unknown preserves sources and safe publication  7565ms
+     ✓ B-unknown preserves sources and safe publication  7490ms
+     ✓ both-unknown preserves sources and safe publication  5593ms
+     ✓ approximate preserves sources and safe publication  10102ms
+     ✓ foreign names containing A/B stay literal in actual generated headings  4896ms
+     ✓ 'comprehensive' text, evidence and Book stay at their frozen integrated edition  8350ms
+     ✓ 'career' text, evidence and Book stay at their frozen integrated edition  1427ms
+     ✓ 'love' text, evidence and Book stay at their frozen integrated edition  2057ms
+     ✓ 'major' text, evidence and Book stay at their frozen integrated edition  2593ms
+     ✓ 'annual' text, evidence and Book stay at their frozen integrated edition  2807ms
+     ✓ parentChild swapped people keep fixed A/B responsibilities  9729ms
+     ✓ managerReport swapped people keep fixed A/B responsibilities  9871ms
+     ✓ unsafe draft returns to the previous edition without a paid publication error  4951ms
+     ✓ density diagnostics do not block an otherwise supported edition  4935ms
+     ✓ rejects forged roots, swapped direction, false relation and wrong personal sources  4823ms
+ ✓ tests/unit/report-knowledge/compatibilityManagerReportGenerationPreservation.test.ts (42 tests) 191992ms
+   ✓ actual offline 'A': '양쪽 MBTI' preserves source ownership and generation  5033ms
+   ✓ actual offline 'B': 'A만 MBTI' preserves source ownership and generation  2383ms
+   ✓ actual offline 'C': 'B만 MBTI' preserves source ownership and generation  2717ms
+   ✓ actual offline 'E': 'A 시각 미상' preserves source ownership and generation  3959ms
+   ✓ actual offline 'F': 'B 시각 미상' preserves source ownership and generation  4354ms
+   ✓ actual offline 'G': '양쪽 시각 확정' preserves source ownership and generation  4924ms
+   ✓ actual offline 'H': '동일 유형' preserves source ownership and generation  4886ms
+   ✓ actual offline 'I': '다른 유형' preserves source ownership and generation  4942ms
+   ✓ actual offline 'J': '실제 합' preserves source ownership and generation  4939ms
+   ✓ actual offline 'K': '실제 충' preserves source ownership and generation  4898ms
+   ✓ actual offline 'L': '교차 지지 미검출' preserves source ownership and generation  3031ms
+   ✓ actual offline 'M': '미지원 정의 참고' preserves source ownership and generation  3008ms
+   ✓ actual offline 'N': '다른 방향 십성' preserves source ownership and generation  4947ms
+   ✓ actual offline 'O': '같은 방향 십성' preserves source ownership and generation  4797ms
+   ✓ actual offline 'P': '정확한 고정 역할 버전' preserves source ownership and generation  4890ms
+   ✓ actual offline 'S': '전체 A/B 순서 교환' preserves source ownership and generation  9810ms
+   ✓ actual offline 'T': '이름만 교환' preserves source ownership and generation  9884ms
+   ✓ actual offline 'U': 'A상사 B부하·팀원' preserves source ownership and generation  4909ms
+   ✓ actual offline 'V': '직급 미확인' preserves source ownership and generation  5675ms
+   ✓ actual offline 'W': '실제 평가권 미확인' preserves source ownership and generation  5620ms
+   ✓ actual offline 'X': '모호한 목표 가상' preserves source ownership and generation  5661ms
+   ✓ actual offline 'Y': '재량 범위 불명 가상' preserves source ownership and generation  5167ms
+   ✓ actual offline 'Z': '팀원 새 방법 제안 가상' preserves source ownership and generation  4896ms
+   ✓ actual offline 'AA': '상사 목표 변경 가상' preserves source ownership and generation  4930ms
+   ✓ actual offline 'AB': '보고 시점 가상' preserves source ownership and generation  4893ms
+   ✓ actual offline 'AC': '문제 조기 공유 가상' preserves source ownership and generation  4921ms
+   ✓ actual offline 'AD': '피드백 인격화 가상' preserves source ownership and generation  4919ms
+   ✓ actual offline 'AE': '좋은 위임 가상' preserves source ownership and generation  4936ms
+   ✓ actual offline 'AF': '과도한 통제 가상' preserves source ownership and generation  4865ms
+   ✓ actual offline 'AG': '기여 인정 가상' preserves source ownership and generation  4903ms
+   ✓ actual offline 'AH': 'coworker 비교' preserves source ownership and generation  4921ms
+   ✓ actual offline 'AI': '사업 파트너 비교' preserves source ownership and generation  4864ms
+   ✓ actual offline 'AJ': 'CHILDREN ancestry 추적' preserves source ownership and generation  4872ms
+   ✓ actual offline 'AK': '모든 ancestor 경계 추적' preserves source ownership and generation  4903ms
+   ✓ actual offline 'AL': '기존 fallback 관찰' preserves source ownership and generation  3024ms
+   ✓ actual offline 'AN': '동일 입력 재실행' preserves source ownership and generation  9797ms
+   ✓ audits actual managerReport profile, projection, eligible candidates and reader-selected MBTI nodes separately  9708ms
+ ✓ tests/unit/interpretation-v4/sixProductIntegration.test.ts (64 tests) 180379ms
+   ✓ 'comprehensive'/'A' preserves source evidence, structure and saved reader  5616ms
+   ✓ 'comprehensive'/'B' preserves source evidence, structure and saved reader  3948ms
+   ✓ 'comprehensive'/'C' preserves source evidence, structure and saved reader  5416ms
+   ✓ 'comprehensive'/'D' preserves source evidence, structure and saved reader  3831ms
+   ✓ 'comprehensive'/'E' preserves source evidence, structure and saved reader  364ms
+   ✓ 'comprehensive'/'cross-6' preserves source evidence, structure and saved reader  8315ms
+   ✓ 'comprehensive'/'legacy-clock' preserves source evidence, structure and saved reader  7851ms
+   ✓ 'career'/'A' preserves source evidence, structure and saved reader  1653ms
+   ✓ 'career'/'B' preserves source evidence, structure and saved reader  2513ms
+   ✓ 'career'/'C' preserves source evidence, structure and saved reader  3953ms
+   ✓ 'career'/'D' preserves source evidence, structure and saved reader  1030ms
+   ✓ 'career'/'cross-6' preserves source evidence, structure and saved reader  1914ms
+   ✓ 'career'/'cross-7' preserves source evidence, structure and saved reader  1728ms
+   ✓ 'career'/'legacy-clock' preserves source evidence, structure and saved reader  1713ms
+   ✓ 'love'/'A' preserves source evidence, structure and saved reader  2362ms
+   ✓ 'love'/'B' preserves source evidence, structure and saved reader  2935ms
+   ✓ 'love'/'C' preserves source evidence, structure and saved reader  4544ms
+   ✓ 'love'/'D' preserves source evidence, structure and saved reader  1737ms
+   ✓ 'love'/'cross-6' preserves source evidence, structure and saved reader  2229ms
+   ✓ 'love'/'legacy-clock' preserves source evidence, structure and saved reader  2092ms
+   ✓ 'compatibility'/'A' preserves source evidence, structure and saved reader  4329ms
+   ✓ 'compatibility'/'B' preserves source evidence, structure and saved reader  4302ms
+   ✓ 'compatibility'/'C' preserves source evidence, structure and saved reader  4254ms
+   ✓ 'compatibility'/'D' preserves source evidence, structure and saved reader  3392ms
+   ✓ 'compatibility'/'marriage' preserves source evidence, structure and saved reader  4260ms
+   ✓ 'compatibility'/'parentChild' preserves source evidence, structure and saved reader  4290ms
+   ✓ 'compatibility'/'coworker' preserves source evidence, structure and saved reader  4258ms
+   ✓ 'compatibility'/'managerReport' preserves source evidence, structure and saved reader  4249ms
+   ✓ 'compatibility'/'businessPartner' preserves source evidence, structure and saved reader  4265ms
+   ✓ 'compatibility'/'friendship' preserves source evidence, structure and saved reader  4308ms
+   ✓ 'compatibility'/'cross-12' preserves source evidence, structure and saved reader  4255ms
+   ✓ 'compatibility'/'cross-13' preserves source evidence, structure and saved reader  4978ms
+   ✓ 'major'/'A' preserves source evidence, structure and saved reader  2847ms
+   ✓ 'major'/'B' preserves source evidence, structure and saved reader  4060ms
+   ✓ 'major'/'C' preserves source evidence, structure and saved reader  2561ms
+   ✓ 'major'/'D' preserves source evidence, structure and saved reader  3049ms
+   ✓ 'major'/'F' preserves source evidence, structure and saved reader  635ms
+   ✓ 'major'/'S' preserves source evidence, structure and saved reader  4483ms
+   ✓ 'major'/'cross-10' preserves source evidence, structure and saved reader  2655ms
+   ✓ 'annual'/'A' preserves source evidence, structure and saved reader  2867ms
+   ✓ 'annual'/'B' preserves source evidence, structure and saved reader  4079ms
+   ✓ 'annual'/'C' preserves source evidence, structure and saved reader  2605ms
+   ✓ 'annual'/'D' preserves source evidence, structure and saved reader  2983ms
+   ✓ 'annual'/'F' preserves source evidence, structure and saved reader  531ms
+   ✓ 'annual'/'H' preserves source evidence, structure and saved reader  3856ms
+   ✓ 'annual'/'H2025' preserves source evidence, structure and saved reader  3822ms
+   ✓ 'annual'/'H2027' preserves source evidence, structure and saved reader  3820ms
+   ✓ 'annual'/'C2028' preserves source evidence, structure and saved reader  2602ms
+   ✓ 'annual'/'H-employee' preserves source evidence, structure and saved reader  3820ms
+   ✓ 'annual'/'H-freelancer' preserves source evidence, structure and saved reader  3828ms
+   ✓ 'annual'/'H-business_owner' preserves source evidence, structure and saved reader  3839ms
+   ✓ 'annual'/'cross-13' preserves source evidence, structure and saved reader  2839ms
+ ✓ tests/unit/report-knowledge/loveProductResearch.test.ts (398 tests) 165800ms
+   ✓ surveys actual natal and relationship Fusion evidence without inventing predicates  28296ms
+   ✓ case 'A' executes the unchanged actual paid offline generator and checks its stated predicate  3997ms
+   ✓ case 'C' executes the unchanged actual paid offline generator and checks its stated predicate  3945ms
+   ✓ case 'D' executes the unchanged actual paid offline generator and checks its stated predicate  3948ms
+   ✓ case 'E' executes the unchanged actual paid offline generator and checks its stated predicate  3919ms
+   ✓ case 'F' executes the unchanged actual paid offline generator and checks its stated predicate  3949ms
+   ✓ case 'G' executes the unchanged actual paid offline generator and checks its stated predicate  4212ms
+   ✓ case 'H' executes the unchanged actual paid offline generator and checks its stated predicate  9211ms
+   ✓ case 'I' executes the unchanged actual paid offline generator and checks its stated predicate  6332ms
+   ✓ case 'J' executes the unchanged actual paid offline generator and checks its stated predicate  7781ms
+   ✓ case 'K' executes the unchanged actual paid offline generator and checks its stated predicate  4040ms
+   ✓ case 'L' executes the unchanged actual paid offline generator and checks its stated predicate  7769ms
+   ✓ case 'M' executes the unchanged actual paid offline generator and checks its stated predicate  7801ms
+   ✓ case 'O' executes the unchanged actual paid offline generator and checks its stated predicate  7766ms
+   ✓ case 'Q' executes the unchanged actual paid offline generator and checks its stated predicate  7836ms
+   ✓ case 'R' executes the unchanged actual paid offline generator and checks its stated predicate  3997ms
+   ✓ case 'S' executes the unchanged actual paid offline generator and checks its stated predicate  23846ms
+   ✓ case 'T' executes the unchanged actual paid offline generator and checks its stated predicate  6484ms
+   ✓ case 'U' executes the unchanged actual paid offline generator and checks its stated predicate  4059ms
+   ✓ case 'V' executes the unchanged actual paid offline generator and checks its stated predicate  9603ms
+   ✓ case 'W' executes the unchanged actual paid offline generator and checks its stated predicate  5664ms
+ ✓ tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts (34 tests) 172373ms
+   ✓ actual offline 'A': '부모·자녀 MBTI 기지' preserves source ownership and generation  4615ms
+   ✓ actual offline 'B': '부모만 MBTI' preserves source ownership and generation  2031ms
+   ✓ actual offline 'C': '자녀만 MBTI' preserves source ownership and generation  2616ms
+   ✓ actual offline 'E': '부모 시간 미상' preserves source ownership and generation  4091ms
+   ✓ actual offline 'F': '자녀 시간 미상' preserves source ownership and generation  3702ms
+   ✓ actual offline 'G': '양쪽 시간 확정' preserves source ownership and generation  5119ms
+   ✓ actual offline 'H': '같은 유형' preserves source ownership and generation  5109ms
+   ✓ actual offline 'I': '다른 유형' preserves source ownership and generation  5062ms
+   ✓ actual offline 'J': '실제 합 기준 fixture' preserves source ownership and generation  5010ms
+   ✓ actual offline 'K': '실제 충 기준 fixture' preserves source ownership and generation  4948ms
+   ✓ actual offline 'L': '실제 교차 지지 관계 미검출' preserves source ownership and generation  3029ms
+   ✓ actual offline 'M': '미지원 원진 정의만 참조; 검출 없음' preserves source ownership and generation  3021ms
+   ✓ actual offline 'N': '양방향 십성 다른 실제 fixture' preserves source ownership and generation  4951ms
+   ✓ actual offline 'O': '양방향 같은 십성 fixture' preserves source ownership and generation  4830ms
+   ✓ actual offline 'P': '고정 역할 버전' preserves source ownership and generation  4448ms
+   ✓ actual offline 'S': '전체 인물 교환은 부모 역할 선언도 바꿈; 동일 가족으로 승인 금지' preserves source ownership and generation  8907ms
+   ✓ actual offline 'T': '이름만 변경' preserves source ownership and generation  8922ms
+   ✓ actual offline 'U': '미성년 자녀 가상 활동' preserves source ownership and generation  4441ms
+   ✓ actual offline 'V': '성인 자녀 가상 독립 맥락' preserves source ownership and generation  4597ms
+   ✓ actual offline 'W': '발달 상태 불확실' preserves source ownership and generation  4450ms
+   ✓ actual offline 'X': '부모 기대와 관심이 다르다면' preserves source ownership and generation  4478ms
+   ✓ actual offline 'Y': '보호와 선택이 충돌한다면' preserves source ownership and generation  4518ms
+   ✓ actual offline 'Z': '도움을 요청한다면' preserves source ownership and generation  4464ms
+   ✓ actual offline 'AA': '부모 감정 조절이 필요하다면' preserves source ownership and generation  4426ms
+   ✓ actual offline 'AB': '갈등 뒤 부모가 수정한다면' preserves source ownership and generation  4459ms
+   ✓ actual offline 'AC': '자녀 질문으로 새 정보를 얻는다면' preserves source ownership and generation  4804ms
+   ✓ actual offline 'AD': '비연애 도메인 격리' preserves source ownership and generation  5987ms
+   ✓ actual offline 'AE': '다른6카테고리 격리' preserves source ownership and generation  35608ms
+   ✓ actual offline 'AF': '동일 입력 재현' preserves source ownership and generation  9548ms
+ ✓ tests/unit/report-knowledge/compatibilityLoveResearch.test.ts (557 tests) 148846ms
+   ✓ actual offline 'A': '두 사람 MBTI 기지' preserves source ownership and generation  6792ms
+   ✓ actual offline 'B': 'A만 MBTI 기지' preserves source ownership and generation  3206ms
+   ✓ actual offline 'C': 'B만 MBTI 기지' preserves source ownership and generation  3652ms
+   ✓ actual offline 'E': 'A 출생시간 미상' preserves source ownership and generation  4468ms
+   ✓ actual offline 'F': 'B 출생시간 미상' preserves source ownership and generation  6182ms
+   ✓ actual offline 'G': '양쪽 시간 확정' preserves source ownership and generation  5922ms
+   ✓ actual offline 'H': '같은 INTP 유형' preserves source ownership and generation  5098ms
+   ✓ actual offline 'I': '서로 다른 INTP/ESFJ' preserves source ownership and generation  4935ms
+   ✓ actual offline 'J': '수신자 십성 AB 정관·BA 정재' preserves source ownership and generation  4969ms
+   ✓ actual offline 'K': '양쪽 비견: 차이를 창작하지 않음' preserves source ownership and generation  4899ms
+   ✓ actual offline 'L': '실제 합 존재' preserves source ownership and generation  4945ms
+   ✓ actual offline 'M': '실제 충 존재' preserves source ownership and generation  4941ms
+   ✓ actual offline 'N': '합과 충 공존' preserves source ownership and generation  4958ms
+   ✓ actual offline 'O': 'cross-branch 관계 없음; 방향 십성은 존재' preserves source ownership and generation  3045ms
+   ✓ actual offline 'P': '독립 개인 자료와 여러 실제 합 존재; 긍정 결과 보장 아님' preserves source ownership and generation  4969ms
+   ✓ actual offline 'S': '子未 원진은 연구에만, 실제 harm은 존재' preserves source ownership and generation  6565ms
+   ✓ actual offline 'T': '子未 해≠원진: producer/연구 지원 범위 불일치 보류' preserves source ownership and generation  6511ms
+   ✓ actual offline 'U': '이름만 교환: person identity는 변경, 계산은 유지' preserves source ownership and generation  9871ms
+   ✓ actual offline 'V': '전체 A/B 입력 순서 교환' preserves source ownership and generation  9882ms
+   ✓ actual offline 'W': '동일 입력·고정 시각 재실행' preserves source ownership and generation  9886ms
+   ✓ actual offline 'X': '다른 6관계는 감사·격리만' preserves source ownership and generation  29809ms
+   ✓ resolves all 2991 inherited research records without changing their original review states  1481ms
+ ✓ tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts (30 tests) 141056ms
+   ✓ actual offline 'A': '양쪽 유형 기지' preserves source ownership and generation  5067ms
+   ✓ actual offline 'B': 'A만 유형 기지' preserves source ownership and generation  2431ms
+   ✓ actual offline 'C': 'B만 유형 기지' preserves source ownership and generation  2751ms
+   ✓ actual offline 'E': 'A 시간 미상' preserves source ownership and generation  3985ms
+   ✓ actual offline 'F': 'B 시간 미상' preserves source ownership and generation  4397ms
+   ✓ actual offline 'G': '양쪽 시간 확정' preserves source ownership and generation  4946ms
+   ✓ actual offline 'H': '같은 유형' preserves source ownership and generation  4901ms
+   ✓ actual offline 'I': '다른 유형' preserves source ownership and generation  4950ms
+   ✓ actual offline 'J': '실제 합' preserves source ownership and generation  4967ms
+   ✓ actual offline 'K': '실제 충' preserves source ownership and generation  4930ms
+   ✓ actual offline 'L': '합·충 공존' preserves source ownership and generation  4947ms
+   ✓ actual offline 'M': '교차 지지 관계 부재; 일간 방향은 남음' preserves source ownership and generation  3062ms
+   ✓ actual offline 'N': '미지원 원진 연구만 참조한 가상 조건; 검출·참여자 추정 금지' preserves source ownership and generation  3029ms
+   ✓ actual offline 'O': '수신자 기준 십성 다른 경우' preserves source ownership and generation  4922ms
+   ✓ actual offline 'P': '양방향 비견의 수렴' preserves source ownership and generation  4844ms
+   ✓ actual offline 'Q': '전체 A/B 순서 교환' preserves source ownership and generation  9888ms
+   ✓ actual offline 'R': '이름만 교환' preserves source ownership and generation  9901ms
+   ✓ actual offline 'S': '원국 유지·A MBTI만 변경' preserves source ownership and generation  10455ms
+   ✓ actual offline 'T': '동일 인물 love→marriage' preserves source ownership and generation  9859ms
+   ✓ actual offline 'U': 'marriage 선택; 실제 혼인·동거 입력 없음' preserves source ownership and generation  4910ms
+   ✓ actual offline 'V': '공동 지출을 검토한다는 가상 상황' preserves source ownership and generation  4932ms
+   ✓ actual offline 'W': '가사 단계를 나눈다는 가상 상황' preserves source ownership and generation  4923ms
+   ✓ actual offline 'X': '친족 행사 참석을 논의한다는 가상 상황' preserves source ownership and generation  4953ms
+   ✓ actual offline 'Y': '근무·소득이 달라진다는 가상 상황' preserves source ownership and generation  5682ms
+   ✓ actual offline 'Z': '생활 갈등이 반복된다면이라는 가상 상황' preserves source ownership and generation  5646ms
+   ✓ actual offline 'AA': '실제 개인 원천과 합이 풍부한 경우; 공동생활 강점은 조건부' preserves source ownership and generation  5468ms
+ ✓ tests/unit/interpretation-v4/loveRelease.test.ts (39 tests) 135542ms
+     ✓ 'A' actual manuscript and frozen Book  4096ms
+     ✓ 'B' actual manuscript and frozen Book  2551ms
+     ✓ 'C' actual manuscript and frozen Book  1785ms
+     ✓ 'D' actual manuscript and frozen Book  4214ms
+     ✓ 'E' actual manuscript and frozen Book  4402ms
+     ✓ 'F' actual manuscript and frozen Book  2892ms
+     ✓ 'G' actual manuscript and frozen Book  1660ms
+     ✓ INTJ uses real relationship and own-parenting data  4225ms
+     ✓ INTP uses real relationship and own-parenting data  2577ms
+     ✓ ENTJ uses real relationship and own-parenting data  4074ms
+     ✓ ENTP uses real relationship and own-parenting data  3015ms
+     ✓ INFJ uses real relationship and own-parenting data  2691ms
+     ✓ INFP uses real relationship and own-parenting data  1746ms
+     ✓ ENFJ uses real relationship and own-parenting data  2292ms
+     ✓ ENFP uses real relationship and own-parenting data  2192ms
+     ✓ ISTJ uses real relationship and own-parenting data  1410ms
+     ✓ ISFJ uses real relationship and own-parenting data  1871ms
+     ✓ ESTJ uses real relationship and own-parenting data  2108ms
+     ✓ ESFJ uses real relationship and own-parenting data  2297ms
+     ✓ ISTP uses real relationship and own-parenting data  1847ms
+     ✓ ISFP uses real relationship and own-parenting data  2735ms
+     ✓ ESTP uses real relationship and own-parenting data  2080ms
+     ✓ ESFP uses real relationship and own-parenting data  1924ms
+     ✓ status  changes application, not the frozen personal profile  7848ms
+     ✓ status single changes application, not the frozen personal profile  7814ms
+     ✓ status some changes application, not the frozen personal profile  7925ms
+     ✓ status dating changes application, not the frozen personal profile  7840ms
+     ✓ status marriage_preparing changes application, not the frozen personal profile  7867ms
+     ✓ status married changes application, not the frozen personal profile  7842ms
+     ✓ 'comprehensive' remains identical at the release boundary  8359ms
+     ✓ 'career' remains identical at the release boundary  1435ms
+     ✓ 'love' remains identical at the release boundary  2090ms
+     ✓ 'major' remains identical at the release boundary  2627ms
+     ✓ 'annual' remains identical at the release boundary  2790ms
+     ✓ rejects invented roots, child inference and reversed axes without changing the paid gate  10298ms
+ ✓ tests/unit/interpretation-v4/comprehensiveRelease.test.ts (24 tests | 1 skipped) 114603ms
+     ✓ '01-seojin' actual complete manuscript  8485ms
+     ✓ '02-seoyun' actual complete manuscript  4945ms
+     ✓ 'C-same-chart-INFP' actual complete manuscript  4019ms
+     ✓ 'D-same-MBTI-other-chart' actual complete manuscript  8487ms
+     ✓ 'E-unknown-MBTI' actual complete manuscript  584ms
+     ✓ 'F-unknown-hour' actual complete manuscript  7644ms
+     ✓ 'G-student' actual complete manuscript  7949ms
+     ✓ 'H-married' actual complete manuscript  7772ms
+     ✓ unknown roots and reversed signed axes remain safety errors  5613ms
+     ✓ 'S097' closing recalls introduced proof after primary allocation  3102ms
+     ✓ 'S098' closing recalls introduced proof after primary allocation  3019ms
+     ✓ 'S102' closing recalls introduced proof after primary allocation  1971ms
+     ✓ 'S111' closing recalls introduced proof after primary allocation  3680ms
+     ✓ 'S002' retains safe publication and completes sparse normal questions  3128ms
+     ✓ 'S005' retains safe publication and completes sparse normal questions  3018ms
+     ✓ 'S017' retains safe publication and completes sparse normal questions  5830ms
+     ✓ 'S019' retains safe publication and completes sparse normal questions  11689ms
+     ✓ 'S038' retains safe publication and completes sparse normal questions  2819ms
+     ✓ 'S062' retains safe publication and completes sparse normal questions  6236ms
+     ✓ 'S088' retains safe publication and completes sparse normal questions  7576ms
+     ✓ 'S089' retains safe publication and completes sparse normal questions  6831ms
+ ✓ tests/unit/app/bookPublicFlow.test.tsx (31 tests) 79850ms
+     ✓ 'comprehensive' complete flow, catalog/payload parity, full book  10119ms
+     ✓ 'career' complete flow, catalog/payload parity, full book  1516ms
+     ✓ 'love' complete flow, catalog/payload parity, full book  2148ms
+     ✓ 'compatibility' complete flow, catalog/payload parity, full book  5804ms
+     ✓ 'major' complete flow, catalog/payload parity, full book  2784ms
+     ✓ 'annual' complete flow, catalog/payload parity, full book  2912ms
+     ✓ 'comprehensive' unknown/approx/roles pass through same adapters  8336ms
+     ✓ 'full-unknown' unknown/approx/roles pass through same adapters  319ms
+     ✓ 'full-approximate' unknown/approx/roles pass through same adapters  11571ms
+     ✓ 'pair-02-marriage' unknown/approx/roles pass through same adapters  3975ms
+     ✓ 'pair-03-parent' unknown/approx/roles pass through same adapters  4588ms
+     ✓ 'pair-04-coworker' unknown/approx/roles pass through same adapters  6617ms
+     ✓ 'pair-05-manager' unknown/approx/roles pass through same adapters  4948ms
+     ✓ 'pair-06-business' unknown/approx/roles pass through same adapters  5659ms
+     ✓ 'pair-07-friend' unknown/approx/roles pass through same adapters  4448ms
+     ✓ 'pair-08-love' unknown/approx/roles pass through same adapters  4051ms
+ ✓ tests/unit/interpretation-v4/compatibilityQuality.test.tsx (18 tests) 108675ms
+     ✓ 'A' paid generator, evidence and entire Book  17433ms
+     ✓ 'B' paid generator, evidence and entire Book  9427ms
+     ✓ 'C' paid generator, evidence and entire Book  8361ms
+     ✓ 'D' paid generator, evidence and entire Book  6575ms
+     ✓ 'marriage' paid generator, evidence and entire Book  8206ms
+     ✓ 'parentChild' paid generator, evidence and entire Book  8252ms
+     ✓ 'coworker' paid generator, evidence and entire Book  8213ms
+     ✓ 'managerReport' paid generator, evidence and entire Book  8253ms
+     ✓ 'businessPartner' paid generator, evidence and entire Book  8136ms
+     ✓ 'friendship' paid generator, evidence and entire Book  8189ms
+     ✓ '01-comprehensive' actual full manuscript, evidence and Book unchanged  5387ms
+     ✓ '02-career' actual full manuscript, evidence and Book unchanged  1569ms
+     ✓ '03-love' actual full manuscript, evidence and Book unchanged  2000ms
+     ✓ '05-major-fortune' actual full manuscript, evidence and Book unchanged  4473ms
+     ✓ '06-annual-fortune' actual full manuscript, evidence and Book unchanged  3728ms
+ ✓ tests/unit/sharing/bookSharing.test.tsx (16 tests) 25082ms
+     ✓ 6 OG images + long names/year/compatibility, no remote assets  380ms
+ ✓ tests/unit/report-knowledge/mbtiPairResearch.test.ts (41 tests) 4567ms
+ ✓ tests/unit/report-knowledge/mbtiFoundationResearch.test.ts (54 tests) 2267ms
+ ✓ tests/unit/interpretation-v4/compatibilitySafety.test.ts (41 tests) 1822ms
+     ✓ MBTI pair source fields retain both viewpoints; scores exist only in the explicit 13B index  738ms
+ ✓ tests/unit/report-knowledge/careerProductResearch.test.ts (467 tests) 56752ms
+   ✓ case 'A' runs the unchanged offline paid generator and records actual edition diagnostics  2031ms
+   ✓ case 'B' runs the unchanged offline paid generator and records actual edition diagnostics  1590ms
+   ✓ case 'C' runs the unchanged offline paid generator and records actual edition diagnostics  2499ms
+   ✓ case 'D' runs the unchanged offline paid generator and records actual edition diagnostics  2928ms
+   ✓ case 'E' runs the unchanged offline paid generator and records actual edition diagnostics  2399ms
+   ✓ case 'F' runs the unchanged offline paid generator and records actual edition diagnostics  4289ms
+   ✓ case 'G' runs the unchanged offline paid generator and records actual edition diagnostics  2366ms
+   ✓ case 'H' runs the unchanged offline paid generator and records actual edition diagnostics  1984ms
+   ✓ case 'I' runs the unchanged offline paid generator and records actual edition diagnostics  1568ms
+   ✓ case 'J' runs the unchanged offline paid generator and records actual edition diagnostics  2064ms
+   ✓ case 'K' runs the unchanged offline paid generator and records actual edition diagnostics  2836ms
+   ✓ case 'L' runs the unchanged offline paid generator and records actual edition diagnostics  1768ms
+   ✓ case 'M' runs the unchanged offline paid generator and records actual edition diagnostics  3879ms
+   ✓ case 'N' runs the unchanged offline paid generator and records actual edition diagnostics  1933ms
+   ✓ case 'P' runs the unchanged offline paid generator and records actual edition diagnostics  990ms
+   ✓ case 'Q' runs the unchanged offline paid generator and records actual edition diagnostics  8769ms
+   ✓ case 'R' runs the unchanged offline paid generator and records actual edition diagnostics  3907ms
+   ✓ case 'S' runs the unchanged offline paid generator and records actual edition diagnostics  5835ms
+   ✓ case 'T' runs the unchanged offline paid generator and records actual edition diagnostics  2492ms
+ ✓ tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts (1123 tests) 1512ms
+ ✓ tests/unit/report-generation/compatibilityDirectionality.test.tsx (41 tests) 1016ms
+ ✓ tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts (1175 tests) 1505ms
+ ✓ tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts (744 tests) 1038ms
+ ✓ tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts (626 tests) 917ms
+ ✓ tests/unit/report-knowledge/comprehensiveProductResearch.test.ts (603 tests) 485ms
+ ✓ tests/unit/app/reports/completedReadingExperience.test.tsx (11 tests) 579ms
+ ✓ tests/unit/report-knowledge/semanticAxisResearch.test.ts (55 tests) 342ms
+ ✓ tests/unit/report-knowledge/fusionKnowledgeResearch.test.ts (201 tests) 431ms
+ ✓ tests/unit/report-knowledge/sajuFoundationDeepKnowledge.test.ts (131 tests) 325ms
+ ✓ tests/unit/report-knowledge/sajuFoundationCompletion.test.ts (69 tests) 325ms
+ ✓ tests/unit/report-knowledge/sajuRelationResearch.test.ts (152 tests) 296ms
+ ✓ tests/unit/report-knowledge/sajuCompositeStructureResearch.test.ts (217 tests) 282ms
+ ✓ tests/unit/report-knowledge/sajuTemporalInteractionResearch.test.ts (186 tests) 229ms
+ ✓ tests/unit/report-knowledge/sajuFoundationKnowledge.test.ts (12 tests) 191ms
+ ✓ tests/unit/interpretation-v4/compatibilityDiscovery.test.ts (1 test) 83ms
+ ✓ tests/unit/interpretation-v4/compatibilityNarrative.test.ts (9 tests) 89ms
+ ✓ tests/unit/report-knowledge/compatibilityEvidenceBuilder.test.ts (11 tests) 33ms
+ ✓ tests/unit/report-knowledge/compatibilityScoreEngine.test.ts (3 tests) 18ms
+ ✓ tests/unit/report-knowledge/mbti/sourceRuntimeAdapter.test.ts (10 tests) 17ms
+ ✓ tests/unit/interpretation-v4/compatibilityTitleSafety.test.ts (15 tests) 4ms
+ ✓ tests/unit/report-knowledge/compatibilityRelationRules.test.ts (5 tests) 4ms
+
+ Test Files  7 failed | 40 passed (47)
+      Tests  27 failed | 7508 passed | 1 skipped (7536)
+   Start at  05:33:26
+   Duration  1154.46s (transform 11.51s, setup 295ms, import 25.54s, tests 2277.05s, environment 3ms)
+
+JSON report written to /tmp/gyeol-compatibility-business-partner-knowledge-validation/after-related.json

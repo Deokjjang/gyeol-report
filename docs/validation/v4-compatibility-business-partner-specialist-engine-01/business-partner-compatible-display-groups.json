@@ -1,0 +1,614 @@
+[
+  {
+    "id": "bppr:material:CH08.P3:repair-ip-output-use",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P3:ip-output-use"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P3:ip-output-use",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH09.P1:recall-market-and-scope",
+    "precedingMeaningRefs": [
+      "bppr:material:CH04.P1:shared-proof-before-investment",
+      "bppr:material:CH04.P1:shared-scope-repeatability"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH04.P1:shared-proof-before-investment",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH04.P1:shared-scope-repeatability",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH09.P2:recall-contribution-without-value-price",
+    "precedingMeaningRefs": [
+      "bppr:material:CH04.P4:contribution-recognition-without-shares",
+      "bppr:material:CH05.P2:a-meaning-b-allocation"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH04.P4:contribution-recognition-without-shares",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH05.P2:a-meaning-b-allocation",
+        "expectedMode": "AB",
+        "direction": "A_TO_B",
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P1:repair-unreviewed-spending",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P1:unreviewed-spending"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P1:unreviewed-spending",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P2:repair-missing-cash-information",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P2:missing-cash-information"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P2:missing-cash-information",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH09.P1:recall-customer-and-risk",
+    "precedingMeaningRefs": [
+      "bppr:material:CH04.P3:customer-signal-product-adjustment",
+      "bppr:material:CH04.P3:crisis-information-two-views"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH04.P3:customer-signal-product-adjustment",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH04.P3:crisis-information-two-views",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH09.P3:recall-scope-and-stop-principle",
+    "precedingMeaningRefs": [
+      "bppr:material:CH08.P3:repair-customer-promise-execution",
+      "bppr:material:CH08.P4:repair-no-stop-conditions"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH08.P3:repair-customer-promise-execution",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH08.P4:repair-no-stop-conditions",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P3:repair-customer-promise-execution",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P3:customer-promise-execution"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P3:customer-promise-execution",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH09.P2:recall-directional-contribution",
+    "precedingMeaningRefs": [
+      "bppr:material:CH05.P2:a-prototype-b-service-cost",
+      "bppr:material:CH06.P2:b-customer-issue-a-hypothesis"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH05.P2:a-prototype-b-service-cost",
+        "expectedMode": "AB",
+        "direction": "A_TO_B",
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH06.P2:b-customer-issue-a-hypothesis",
+        "expectedMode": "BA",
+        "direction": "B_TO_A",
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P4:repair-ops-burden-imbalance",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P4:ops-burden-imbalance"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P4:ops-burden-imbalance",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH09.P4:recall-hold-and-safe-exit",
+    "precedingMeaningRefs": [
+      "bppr:material:CH06.P4:b-hold-with-decision-question",
+      "bppr:material:CH08.P4:repair-hide-problem-for-relationship"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH06.P4:b-hold-with-decision-question",
+        "expectedMode": "BA",
+        "direction": "B_TO_A",
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH08.P4:repair-hide-problem-for-relationship",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH09.P3:recall-consent-principle",
+    "precedingMeaningRefs": [
+      "bppr:material:CH08.P1:repair-unreviewed-spending",
+      "bppr:material:CH08.P4:repair-unilateral-decision"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH08.P1:repair-unreviewed-spending",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH08.P4:repair-unilateral-decision",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P1:repair-direction-disagreement",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P1:direction-disagreement"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P1:direction-disagreement",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P2:repair-credit-imbalance",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P2:credit-imbalance"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P2:credit-imbalance",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P2:repair-contract-change",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P2:contract-change"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P2:contract-change",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH09.P4:recall-business-value-with-boundary",
+    "precedingMeaningRefs": [
+      "bppr:material:CH04.P4:repeatable-operation-value",
+      "bppr:material:CH08.P2:repair-credit-imbalance"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH04.P4:repeatable-operation-value",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH08.P2:repair-credit-imbalance",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P2:repair-unclear-work-responsibility",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P2:unclear-work-responsibility"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P2:unclear-work-responsibility",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P4:repair-hide-problem-for-relationship",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P4:hide-problem-for-relationship"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P4:hide-problem-for-relationship",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P4:repair-expansion-speed",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P4:expansion-speed"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P4:expansion-speed",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P2:repair-unclear-loss-allocation",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P2:unclear-loss-allocation"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P2:unclear-loss-allocation",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P4:repair-no-stop-conditions",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P4:no-stop-conditions"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P4:no-stop-conditions",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P1:repair-capital-expectation-difference",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P1:capital-expectation-difference"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P1:capital-expectation-difference",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P1:repair-expected-return-actual-cost",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P1:expected-return-actual-cost"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P1:expected-return-actual-cost",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P3:repair-deadlock",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P3:deadlock"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P3:deadlock",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P1:repair-external-contract-without-consent",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P1:external-contract-without-consent"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P1:external-contract-without-consent",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P3:repair-information-not-shared",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P3:information-not-shared"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P3:information-not-shared",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P3:repair-trust-verification",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P3:trust-verification"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P3:trust-verification",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "bppr:material:CH08.P4:repair-unilateral-decision",
+    "precedingMeaningRefs": [
+      "bppr:material:CH07.P4:unilateral-decision"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH07.P4:unilateral-decision",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "groupPolicy": "compatible_actually_displayed_group_only",
+    "customerDisplayLedgerIssued": false
+  }
+]

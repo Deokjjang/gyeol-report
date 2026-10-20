@@ -1,0 +1,17 @@
+{
+  "fields": [
+    "customerProposal",
+    "priceExplanation",
+    "draftDelivery",
+    "partnerInformation",
+    "partnerConsent",
+    "contractExecution",
+    "representation",
+    "externalObligation",
+    "contractChange",
+    "collectionApproval"
+  ],
+  "proposalIsContract": false,
+  "contractIsAgency": false,
+  "actualAuthority": "UNKNOWN"
+}

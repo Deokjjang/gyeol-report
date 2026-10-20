@@ -1,0 +1,26 @@
+{
+  "existingWorktrees": 57,
+  "allCapturedTrackedAndNonignoredUntrackedFileBytesPreserved": true,
+  "allExistingHeadsBranchesStatusesPreserved": true,
+  "mainShortStatusRowsBefore": 3,
+  "mainShortStatusRowsAfter": 3,
+  "mainUncommittedFilesBefore": 11,
+  "mainUncommittedFilesAfter": 11,
+  "mainStatusSha256": "c772400e3c7a92efbf6d3af8c55d882cf692685a273b9ca4a657199da17a2900",
+  "preexistingMissingGitMarkers": [
+    "/private/tmp/gyeol-annual-fortune-reader-quality-polish-01",
+    "/private/tmp/gyeol-career-editorial-quality-fix-01",
+    "/private/tmp/gyeol-compatibility-editorial-quality-fix-01",
+    "/private/tmp/gyeol-comprehensive-editorial-quality-fix-01",
+    "/private/tmp/gyeol-love-editorial-quality-fix-01",
+    "/private/tmp/gyeol-major-fortune-reader-quality-polish-01",
+    "/private/tmp/gyeol-six-product-common-editorial-polish-01",
+    "/private/tmp/gyeol-six-product-integration-01"
+  ],
+  "missingMarkersAtStart": 8,
+  "missingMarkersRepairedOrRemoved": 0,
+  "newWorktree": "/private/tmp/gyeol-comprehensive-reader-value-probe-01",
+  "beforeAndAfterSnapshotSha256": "4a77926a6fe4208cfd75acd0a242d052c1f5a58897d847ed95d6b9731f109bf4",
+  "snapshotContentExternalForPrivacy": true,
+  "destructiveGitCommands": 0
+}

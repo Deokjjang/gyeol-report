@@ -1,0 +1,283 @@
+[
+  {
+    "type": "INTJ",
+    "pointer": "/relationshipHints",
+    "sha256": "2e1703e962c6c8b44892c3c3aee3baa4a461fc5222e07f2978c39fce6b6b93f9",
+    "comfortableTypes": [
+      "ISTJ",
+      "INTP",
+      "INTJ",
+      "ENTJ"
+    ],
+    "challengingTypes": [
+      "ISFP",
+      "ISFJ",
+      "ESFP",
+      "ESFJ"
+    ]
+  },
+  {
+    "type": "INTP",
+    "pointer": "/relationshipHints",
+    "sha256": "c964d0772040a9383c784e52fd708731ee85affc9fac9ea69a5e8a095dd4dd0a",
+    "comfortableTypes": [
+      "ISFJ",
+      "ESFJ",
+      "ENTP",
+      "INTP"
+    ],
+    "challengingTypes": [
+      "ESFP",
+      "ENTJ",
+      "ISFP",
+      "INTJ"
+    ]
+  },
+  {
+    "type": "ENTJ",
+    "pointer": "/relationshipHints",
+    "sha256": "d42a1e75b587a03cb26bf0b3ba7f9268ced091682c39aa13fd6e72e744babb18",
+    "comfortableTypes": [
+      "ISFP",
+      "ESFP",
+      "INTJ"
+    ],
+    "challengingTypes": [
+      "ISFJ",
+      "INTP",
+      "ESFJ",
+      "ENTP",
+      "ESTJ"
+    ]
+  },
+  {
+    "type": "ENTP",
+    "pointer": "/relationshipHints",
+    "sha256": "0466df5cbc57a8eca29bc351098a8453e424cde71dad62689b53ce54205ed122",
+    "comfortableTypes": [
+      "ISFJ",
+      "ESFJ",
+      "INTP",
+      "INFJ"
+    ],
+    "challengingTypes": [
+      "ISFP",
+      "INTJ",
+      "ENTJ",
+      "ISTJ"
+    ]
+  },
+  {
+    "type": "INFJ",
+    "pointer": "/relationshipHints",
+    "sha256": "2c5b25e240c536a85b5cb428d70ea8ccd2f6beec96a6048e812144b5d38d6bb2",
+    "comfortableTypes": [
+      "ENFP",
+      "ENTP",
+      "INTP",
+      "ENFJ",
+      "ISFJ",
+      "ESTP",
+      "ISTP"
+    ],
+    "challengingTypes": [
+      "ESTJ",
+      "INFP",
+      "ESFP",
+      "ISTJ",
+      "ESFJ",
+      "ENTJ"
+    ]
+  },
+  {
+    "type": "INFP",
+    "pointer": "/relationshipHints",
+    "sha256": "1dba43ee7669bdda48934d54b305d3dc8d76b6de06715b8e7772c52d44c38594",
+    "comfortableTypes": [
+      "INFP",
+      "ENFP",
+      "ISTJ",
+      "ESTJ",
+      "ISFP",
+      "ISFJ",
+      "INTJ",
+      "ENTJ"
+    ],
+    "challengingTypes": [
+      "ENFJ",
+      "INFJ",
+      "ESTP",
+      "ISTP",
+      "ENTP",
+      "ESFP"
+    ]
+  },
+  {
+    "type": "ENFJ",
+    "pointer": "/relationshipHints",
+    "sha256": "45ebabf1cd6dad2ddb626ba96abf888826a43af87fea5e59881fac0a62157bea",
+    "comfortableTypes": [
+      "ISTP",
+      "ESTP",
+      "INFJ",
+      "INTJ",
+      "ENTJ",
+      "ISFP"
+    ],
+    "challengingTypes": [
+      "ISTJ",
+      "INFP",
+      "ISFJ",
+      "ENFP",
+      "ESTJ",
+      "ESFJ"
+    ]
+  },
+  {
+    "type": "ENFP",
+    "pointer": "/relationshipHints",
+    "sha256": "031c5aaf244be2f1aa66996ab6e88c72365a67130418939f62445b20500c11ae",
+    "comfortableTypes": [
+      "ESTJ",
+      "ISTJ",
+      "INFP",
+      "INFJ",
+      "ESFJ"
+    ],
+    "challengingTypes": [
+      "ISTP",
+      "ISFP"
+    ]
+  },
+  {
+    "type": "ISTJ",
+    "pointer": "/relationshipHints",
+    "sha256": "6898ef70e2557b9a8e31c8b835a70224cea3b5ed98cbb3a7685ec20766e8e2ea",
+    "comfortableTypes": [
+      "ISFJ",
+      "ESTJ",
+      "ISTJ",
+      "INTJ"
+    ],
+    "challengingTypes": [
+      "ENFJ",
+      "ENTP",
+      "ENFP",
+      "INFP"
+    ]
+  },
+  {
+    "type": "ISFJ",
+    "pointer": "/relationshipHints",
+    "sha256": "f9b166445b49339b2871d38e9bb43de11b354ab4f2e08382997a5bfbda928155",
+    "comfortableTypes": [
+      "ESFJ",
+      "ENTP",
+      "INTP",
+      "ISFJ"
+    ],
+    "challengingTypes": [
+      "ENTJ",
+      "ISFP",
+      "INTJ",
+      "ESTP",
+      "ENFP"
+    ]
+  },
+  {
+    "type": "ESTJ",
+    "pointer": "/relationshipHints",
+    "sha256": "69ab5035cfe491e6f6265358365ecd91086d6cb83e328f8a73c0a080ebd4806f",
+    "comfortableTypes": [
+      "ENFP",
+      "ISTJ",
+      "INFP"
+    ],
+    "challengingTypes": [
+      "INFJ",
+      "INFP",
+      "ISFP",
+      "INTP",
+      "ENFP"
+    ]
+  },
+  {
+    "type": "ESFJ",
+    "pointer": "/relationshipHints",
+    "sha256": "74c455af8746ff699e4dcbffa5dedc61368f23ddaf594bf5a0206043143592f8",
+    "comfortableTypes": [
+      "ISFJ",
+      "INTP",
+      "ENTP",
+      "ESFJ"
+    ],
+    "challengingTypes": [
+      "INTJ",
+      "ISFP",
+      "ESFP",
+      "ENTJ"
+    ]
+  },
+  {
+    "type": "ISTP",
+    "pointer": "/relationshipHints",
+    "sha256": "02909866cd43cae4acaa713aebf0a8a71fbc0c2734f78817537f91559e48f57c",
+    "comfortableTypes": [
+      "ENFJ",
+      "ESTP",
+      "INFJ"
+    ],
+    "challengingTypes": [
+      "ENFP"
+    ]
+  },
+  {
+    "type": "ISFP",
+    "pointer": "/relationshipHints",
+    "sha256": "be2edb981479098d24b8b05ffc38e0c9ca2a87757e9234f63488d780b75515c0",
+    "comfortableTypes": [
+      "ENTJ",
+      "ESFP",
+      "INTJ",
+      "ISFP",
+      "INFP",
+      "ENFJ"
+    ],
+    "challengingTypes": [
+      "ENTP",
+      "ESFJ",
+      "ISFJ",
+      "ESTP",
+      "ENFP"
+    ]
+  },
+  {
+    "type": "ESTP",
+    "pointer": "/relationshipHints",
+    "sha256": "a8d0953500f813a72e74980e4d7ec98559c75fed8ba1216e6f29c164096233b8",
+    "comfortableTypes": [
+      "ENFJ",
+      "ISTP",
+      "INFJ"
+    ],
+    "challengingTypes": [
+      "INFP"
+    ]
+  },
+  {
+    "type": "ESFP",
+    "pointer": "/relationshipHints",
+    "sha256": "3d7378d9b1cdedbadd1cac0ee233150ede4f56faaf343d90baba3b6cbba72b99",
+    "comfortableTypes": [
+      "INTJ",
+      "ENTJ",
+      "ENFJ",
+      "ESTP",
+      "ISFP"
+    ],
+    "challengingTypes": [
+      "ESFJ",
+      "INTP"
+    ]
+  }
+]

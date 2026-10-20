@@ -1,0 +1,306 @@
+[
+  {
+    "case": "A",
+    "fixtureId": "fixture-comprehensive-A",
+    "assertion": "일반 단일 입력",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "B",
+    "fixtureId": "fixture-comprehensive-A",
+    "assertion": "정확한 출생시간",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "C",
+    "fixtureId": "fixture-comprehensive-F",
+    "assertion": "미상 시주 생성 금지",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "D",
+    "fixtureId": "fixture-comprehensive-A",
+    "assertion": "명시 MBTI 원천",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "E",
+    "fixtureId": "fixture-comprehensive-F",
+    "assertion": "미상 MBTI 원천 미생성",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "F",
+    "fixtureId": "fixture-same-mbti-different-natal",
+    "assertion": "같은 유형·다른 원국/owner",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "G",
+    "fixtureId": "fixture-same-natal-different-mbti",
+    "assertion": "같은 원국·다른 유형",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "H",
+    "fixtureId": "fixture-compatibility-A",
+    "assertion": "두 owner 독립성",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "I",
+    "fixtureId": "fixture-compatibility-slot-swap",
+    "assertion": "실제 A/B swap",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "J",
+    "fixtureId": "fixture-compatibility-A",
+    "assertion": "수신자 일간·양방향 십성",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "K",
+    "fixtureId": "fixture-compatibility-A",
+    "assertion": "기존 canonical Pair 검출",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "L",
+    "fixtureId": "fixture-compatibility-A",
+    "assertion": "미지원 교차 5종 보류",
+    "verificationMode": "ACTUAL_PRODUCER_DECLARATION",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "M",
+    "fixtureId": "fixture-compatibility-no-detected-pair",
+    "assertion": "실제 전체 V4 발행 생성 성공·지원 교차 관계 0·방향 관계 2·나쁜 궁합으로 승격 금지",
+    "verificationMode": "ACTUAL_FULL_V4_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "N",
+    "fixtureId": "fixture-compatibility-parentChild",
+    "assertion": "실제 부모·자녀 역할/발달 UNKNOWN",
+    "verificationMode": "ACTUAL_PRODUCER_AND_UNKNOWN_INPUT",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "O",
+    "fixtureId": "fixture-compatibility-managerReport",
+    "assertion": "실제 직책·권한 UNKNOWN",
+    "verificationMode": "ACTUAL_PRODUCER_AND_UNKNOWN_INPUT",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "P",
+    "fixtureId": "fixture-compatibility-businessPartner",
+    "assertion": "계약·지분·매출·부채 UNKNOWN",
+    "verificationMode": "ACTUAL_PRODUCER_AND_UNKNOWN_INPUT",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "Q",
+    "fixtureId": "fixture-compatibility-friendship",
+    "assertion": "실제 친구 이력 UNKNOWN",
+    "verificationMode": "ACTUAL_PRODUCER_AND_UNKNOWN_INPUT",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "R",
+    "fixtureId": "fixture-compatibility-friendship",
+    "assertion": "실제 CHILDREN 전체 ancestry 차단",
+    "verificationMode": "ACTUAL_PRODUCER_POLICY",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "S",
+    "fixtureId": "fixture-compatibility-businessPartner",
+    "assertion": "기존 사업 domain 차단",
+    "verificationMode": "ACTUAL_PRODUCER_POLICY",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "T",
+    "fixtureId": null,
+    "assertion": "실제 annotation 하나를 제거한 명시적 negative 입력",
+    "verificationMode": "SYNTHETIC_NEGATIVE",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "U",
+    "fixtureId": null,
+    "assertion": "실제 출력 부모를 foreign owner로 연결한 negative 입력",
+    "verificationMode": "SYNTHETIC_NEGATIVE",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "V",
+    "fixtureId": "fixture-comprehensive-A",
+    "assertion": "root 재사용·ID 충돌 탐지",
+    "verificationMode": "ACTUAL_PRODUCER_AND_NEGATIVE",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "W",
+    "fixtureId": "fixture-major-A",
+    "assertion": "실제 10년 cycle 관찰",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "X",
+    "fixtureId": "fixture-major-A",
+    "assertion": "14개 편집 연도와 cycle 분리",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "Y",
+    "fixtureId": "fixture-annual-transition-C2028",
+    "assertion": "2028-04-23 21:42 KST 전/정각/후",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "Z",
+    "fixtureId": "fixture-annual-ranged-transition",
+    "assertion": "교운 범위·조건부 후보 유지",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "AA",
+    "fixtureId": "fixture-annual-A",
+    "assertion": "입춘 전/정각/후 실효 연주",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "AB",
+    "fixtureId": "fixture-annual-transition-C2028",
+    "assertion": "월운 전체 가변 segment",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "AC",
+    "fixtureId": "fixture-annual-A",
+    "assertion": "relationFacts 및 extension ID 전수 인수",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "AD",
+    "fixtureId": "fixture-annual-before-first-dayun",
+    "assertion": "첫 cycle 이전 활성 없음",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "AE",
+    "fixtureId": null,
+    "assertion": "순수 교집합 및 실제 Graph 부모 불일치 negative",
+    "verificationMode": "SYNTHETIC_NEGATIVE",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "AF",
+    "fixtureId": "fixture-annual-A",
+    "assertion": "독립 3/4층 복합 미지원",
+    "verificationMode": "ACTUAL_PRODUCER_SUPPORT_LIMIT",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "AG",
+    "fixtureId": "fixture-comprehensive-A",
+    "assertion": "기술 확인 target receipt·file/pointer/hash 연결",
+    "verificationMode": "ACTUAL_SOURCE_VERIFICATION",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "AH",
+    "fixtureId": null,
+    "assertion": "선행 held 3202개 보존·미확인 편집/source 참조 보류; 연구 선언에서 계산 사실 생성 안 함",
+    "verificationMode": "INHERITED_HOLD_AND_ACTUAL_WITHHOLD",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "AI",
+    "fixtureId": null,
+    "assertion": "두 신선한 CLI byte 비교",
+    "verificationMode": "DETERMINISTIC_REBUILD",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "AJ",
+    "fixtureId": "fixture-same-natal-career",
+    "assertion": "상품 wrapper 간 실제 원국 root 재사용",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "AK",
+    "fixtureId": "fixture-annual-A",
+    "assertion": "명시적 평가시각의 past/current/future",
+    "verificationMode": "ACTUAL_PRODUCER",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  },
+  {
+    "case": "AL",
+    "fixtureId": null,
+    "assertion": "17권 실제 생성·저장본 재열람·102 digest 보존",
+    "verificationMode": "EXISTING_BOOK_FIXTURES",
+    "state": "VERIFIED_CHECK_OR_VERIFIED_WITHHOLD",
+    "customerApproved": false
+  }
+]

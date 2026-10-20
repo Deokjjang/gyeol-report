@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-temporal-scope-audit.json.gz",
+  "payloadHash": "31363cc82464bdc1f69a7dd3c2a74b6c51046d7f0abe816ef1299a5087df7dcf",
+  "logicalJsonHash": "a78a451c12b2313775b9124bab1fb8d74dd1eeff4233f1242fd15b1429538b44",
+  "uncompressedBytes": 21542012
+}

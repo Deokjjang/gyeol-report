@@ -21,7 +21,7 @@ describe("Toss payment success page source", () => {
       "결제 정보가 부족합니다.",
       "결제 금액이 올바르지 않습니다.",
       "ReportStatusView",
-      "requiredPaymentAmount = 1290",
+      "isDirectReportPaymentAmount(Number(input.amount))",
     ];
     const blockedMarkers = [
       "개발 검증용 임시 화면",

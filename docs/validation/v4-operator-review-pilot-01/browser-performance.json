@@ -1,0 +1,223 @@
+{
+  "environment": {
+    "name": "Google Chrome",
+    "version": "155.0.8059.84",
+    "headless": true,
+    "platform": "darwin",
+    "arch": "arm64",
+    "access": "file://"
+  },
+  "measurements": {
+    "htmlLoadAndFirstCard": [
+      104.41937500000006
+    ],
+    "initialScriptExecution": [
+      {
+        "name": "ScriptDuration",
+        "value": 0.014765
+      },
+      {
+        "name": "TaskDuration",
+        "value": 0.097843
+      }
+    ],
+    "navigation": {
+      "name": "file:///tmp/gyeol-operator-review-pilot-01-run-one/review-workbench.html",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 101.20000004768372,
+      "navigationId": 1183,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "",
+      "workerStart": 0,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 0.40000009536743164,
+      "domainLookupStart": 0.40000009536743164,
+      "domainLookupEnd": 0.40000009536743164,
+      "connectStart": 0.40000009536743164,
+      "secureConnectionStart": 0,
+      "connectEnd": 0.40000009536743164,
+      "requestStart": 0.40000009536743164,
+      "responseStart": 0.40000009536743164,
+      "firstInterimResponseStart": 0,
+      "finalResponseHeadersStart": 0,
+      "responseEnd": 38.5,
+      "transferSize": 6380663,
+      "encodedBodySize": 6380363,
+      "decodedBodySize": 6380363,
+      "responseStatus": 200,
+      "serverTiming": [],
+      "unloadEventStart": 0,
+      "unloadEventEnd": 0,
+      "domInteractive": 100.70000004768372,
+      "domContentLoadedEventStart": 100.70000004768372,
+      "domContentLoadedEventEnd": 100.70000004768372,
+      "domComplete": 100.80000007152557,
+      "loadEventStart": 101.20000004768372,
+      "loadEventEnd": 101.20000004768372,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "low"
+      }
+    },
+    "cardSearchAndSwitch": [
+      46.87687500000004,
+      32.675040999999965,
+      33.400457999999844,
+      32.334499999999935,
+      30.967290999999932,
+      32.73841600000014,
+      29.62683300000026,
+      33.46570800000018,
+      30.651374999999916,
+      32.55916699999989,
+      32.16520799999989,
+      31.67266699999982,
+      31.960499999999683,
+      31.28795799999989,
+      30.914874999999483,
+      31.719458000000486,
+      32.7519999999995,
+      32.20570800000041,
+      32.76008300000012,
+      32.040124999999534,
+      32.49116700000013,
+      33.64562500000011,
+      32.11987500000032,
+      31.46716699999979,
+      31.80529200000001,
+      31.76549999999952,
+      32.37366700000075,
+      33.319665999999415,
+      30.07854099999895,
+      32.28691699999945,
+      32.35133300000052,
+      32.34483300000102,
+      31.79029199999968,
+      32.52537499999926,
+      32.430875000000015,
+      32.98341699999946,
+      34.1568329999991
+    ],
+    "filter": [
+      4.184417000000394,
+      4.095792000000074,
+      3.795208999999886,
+      4.084875000000466,
+      4.207374999999956,
+      3.879666000000725,
+      3.8734999999996944,
+      4.1588749999991705,
+      4.001042000001689,
+      3.911375000001499,
+      3.938000000000102,
+      3.7179999999989377,
+      3.934000000001106,
+      3.287500000000364,
+      3.933000000000902,
+      3.251250000001164,
+      3.3590000000003783,
+      3.92174999999952,
+      4.253458999999566,
+      3.8927499999990687,
+      3.6408750000009604,
+      4.042916999998852,
+      3.4935000000004948,
+      4.869916999999987,
+      3.8334590000013122,
+      4.108416000000943,
+      5.465707999999722,
+      4.126791000000594,
+      4.016833000001498,
+      5.480875000001106,
+      3.9857910000009724,
+      4.012415999999575,
+      3.993791999999303,
+      4.407042000000729,
+      4.2531660000004194,
+      4.588416000000507,
+      5.578083000000333,
+      4.498874999999316,
+      4.366833000000042,
+      4.811374999999316,
+      3.8537079999987327,
+      3.5150830000002316,
+      3.864583999999013,
+      3.5240840000005846,
+      4.2158330000002024,
+      4.142166999999972,
+      4.709042000000409,
+      5.310208999999304
+    ],
+    "exactSearch": [
+      5.1218339999995806,
+      4.810583000000406,
+      3.924750000000131,
+      4.4997090000015305
+    ],
+    "jsonExport": [
+      36.42387500000041
+    ],
+    "jsonImport": [
+      5.628832999998849
+    ],
+    "longSourceExpand": [
+      66.13637499999459,
+      65.32962499999849,
+      66.04762499999924,
+      67.47683400000096,
+      64.07800000000861,
+      67.15212499999325,
+      66.27950000000419
+    ],
+    "heap": {
+      "method": "CDP Performance.JSHeapUsedSize sampled after measured actions",
+      "samples": 99,
+      "peakObservedBytes": 38738512,
+      "wholeBrowserRSS": {
+        "method": "CDP process IDs, ps RSS summed; sampled after actions, not a continuous absolute peak",
+        "samples": 99,
+        "peakObservedBytes": 1367392256
+      }
+    },
+    "scriptExecution": {
+      "method": "CDP ScriptDuration cumulative",
+      "metrics": [
+        {
+          "name": "ScriptDuration",
+          "value": 0.760617
+        },
+        {
+          "name": "TaskDuration",
+          "value": 7.545679
+        },
+        {
+          "name": "JSHeapUsedSize",
+          "value": 24318148
+        },
+        {
+          "name": "JSHeapTotalSize",
+          "value": 88162304
+        }
+      ]
+    }
+  },
+  "units": "operation and Navigation Timing milliseconds; CDP duration metrics seconds; memory bytes",
+  "thresholdInvented": false,
+  "allUnitSearchCost": "Exhaustive QA workload, not one normal search",
+  "absolutePeakNotClaimed": true
+}

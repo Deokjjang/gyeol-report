@@ -1,0 +1,351 @@
+[
+  {
+    "file": "src/lib/interpretation-v4/mbtiSemanticProfile.ts",
+    "symbol": "buildMbtiSemanticProfile",
+    "version": "mbti-semantic-13d-2a-v1",
+    "system": "mbti",
+    "sourceSha256": "b95f7c05b61f27f42f9a2e5ecccf2811610095afaf08737fb269f6b2dbbca96f",
+    "outputType": "MbtiProfileResult",
+    "idContracts": [
+      "ORIGINAL_ID",
+      "PRODUCER_OBSERVATION_ONLY"
+    ],
+    "nodeKinds": [
+      "MBTI_INPUT_TYPE",
+      "MBTI_SOURCE_NODE",
+      "SEMANTIC_DERIVATION",
+      "SOURCE_DECLARATION"
+    ],
+    "observedNodes": 91130
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+    "symbol": "buildMyeongliMbtiFusion",
+    "version": "myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1",
+    "system": "semantic-fusion",
+    "sourceSha256": "180e4343baba50532c878d89772eeec8d95fd008cfba46469479cb8ce58bfd17",
+    "outputType": "FusionResult",
+    "idContracts": [
+      "ORIGINAL_ID"
+    ],
+    "nodeKinds": [
+      "FUSION_DERIVATION"
+    ],
+    "observedNodes": 9698
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationIntegratedProfile.ts",
+    "symbol": "buildIntegratedMyeongliProfile",
+    "version": "myeongli-semantic-profile-13d-1d-v1",
+    "system": "semantic",
+    "sourceSha256": "b6640f2021a9919159611bd5a52552d26cbffbe64c35e845d74b60cbe1ebcc30",
+    "outputType": "IntegratedProfileResult",
+    "idContracts": [
+      "ORIGINAL_ID",
+      "PRODUCER_OBSERVATION_ONLY"
+    ],
+    "nodeKinds": [
+      "SEMANTIC_DERIVATION"
+    ],
+    "observedNodes": 2736
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationSupplement.ts",
+    "symbol": "adaptSupplementTable",
+    "version": "semantic-supplement-13d-1c-v1",
+    "system": "myeongli",
+    "sourceSha256": "dc42aed9cb9c63079285501f8dc3906ad4835455aaf7f8e921454c36e1c389a4",
+    "outputType": "FoundationSupplementInput",
+    "idContracts": [
+      "ORIGINAL_ID"
+    ],
+    "nodeKinds": [
+      "CALCULATED_NATAL_FACT"
+    ],
+    "observedNodes": 138
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "symbol": "V4Composition.narrative.proof",
+    "version": "comprehensive-editorial-quality-fix-01-v1",
+    "system": "editorial-observation",
+    "sourceSha256": "793ef8b1dce3b693e01a6a243a7dfcca793af467b7ac232b1219523029a2feee",
+    "outputType": "NarrativeProof observation; no writer invoked",
+    "idContracts": [
+      "ORIGINAL_ID"
+    ],
+    "nodeKinds": [
+      "EDITORIAL_PROOF_OBSERVATION"
+    ],
+    "observedNodes": 208
+  },
+  {
+    "file": "src/lib/report-generation/reportInputAdapter.ts",
+    "symbol": "normalizeReportInputPayload",
+    "version": "source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+    "system": "normalized-input",
+    "sourceSha256": "1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+    "outputType": "ReportInputAdapterResult<ReportGenerationInput>",
+    "idContracts": [
+      "PRODUCER_OBSERVATION_ONLY"
+    ],
+    "nodeKinds": [
+      "CONTEXT_INPUT"
+    ],
+    "observedNodes": 17
+  },
+  {
+    "file": "src/lib/saju/calculateSaju.ts",
+    "symbol": "calculateSaju",
+    "version": "saju-calendar-kst-v2",
+    "system": "myeongli",
+    "sourceSha256": "512dabfdb1d9bea14dd739fb3ead53565a88c953e7f498b4c37cbd4b85650cbd",
+    "outputType": "SajuCalcResult",
+    "idContracts": [
+      "PRODUCER_OBSERVATION_ONLY"
+    ],
+    "nodeKinds": [
+      "CALCULATED_NATAL_FACT"
+    ],
+    "observedNodes": 313
+  },
+  {
+    "file": "src/lib/report-knowledge/natalTableEvidence.ts",
+    "symbol": "buildCanonicalNatalTable",
+    "version": "canonical-natal-table-v1/saju-calendar-kst-v2",
+    "system": "myeongli",
+    "sourceSha256": "a6834512afeffd709fae3c935e4d47246aa117ded5124034ba929218d2bb51e3",
+    "outputType": "CanonicalNatalTableEvidence | null",
+    "idContracts": [
+      "ORIGINAL_ID",
+      "PRODUCER_OBSERVATION_ONLY"
+    ],
+    "nodeKinds": [
+      "CALCULATED_NATAL_FACT"
+    ],
+    "observedNodes": 986
+  },
+  {
+    "file": "src/lib/interpretation-v4/strength.ts",
+    "symbol": "collectStructureAtoms",
+    "version": "v4-structure-evidence-1",
+    "system": "myeongli",
+    "sourceSha256": "fc299d2191e02ae3befa90193a26569ed93f9ede7de70307563a04ca732f9f3d",
+    "outputType": "readonly StructureAtom[]",
+    "idContracts": [
+      "ORIGINAL_ID"
+    ],
+    "nodeKinds": [
+      "CALCULATED_NATAL_FACT"
+    ],
+    "observedNodes": 446
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "symbol": "V4RuntimeEvidence",
+    "version": "v4-runtime-evidence-1",
+    "system": "requirement",
+    "sourceSha256": "793ef8b1dce3b693e01a6a243a7dfcca793af467b7ac232b1219523029a2feee",
+    "outputType": "Requirement/schema observation; not a calculation producer",
+    "idContracts": [
+      "PRODUCER_OBSERVATION_ONLY"
+    ],
+    "nodeKinds": [
+      "UNKNOWN_REQUIREMENT",
+      "UNSUPPORTED_REQUIREMENT"
+    ],
+    "observedNodes": 152
+  },
+  {
+    "file": "src/lib/interpretation-v4/materialPacket.ts",
+    "symbol": "buildMyeongliMaterialPacket",
+    "version": "v4-material-packet-1",
+    "system": "legacy-fusion",
+    "sourceSha256": "f6a1b3c7c263c4fea973565a98afa3690866254f071924c94bd8daf326db46db",
+    "outputType": "v4-material-packet-1",
+    "idContracts": [
+      "PRODUCER_OBSERVATION_ONLY"
+    ],
+    "nodeKinds": [
+      "FUSION_DERIVATION"
+    ],
+    "observedNodes": 19
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "symbol": "V4Composition.narrative.proof",
+    "version": "career-editorial-quality-fix-01-v1",
+    "system": "editorial-observation",
+    "sourceSha256": "793ef8b1dce3b693e01a6a243a7dfcca793af467b7ac232b1219523029a2feee",
+    "outputType": "NarrativeProof observation; no writer invoked",
+    "idContracts": [
+      "ORIGINAL_ID"
+    ],
+    "nodeKinds": [
+      "EDITORIAL_PROOF_OBSERVATION"
+    ],
+    "observedNodes": 108
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "symbol": "V4Composition.narrative.proof",
+    "version": "love-editorial-quality-fix-01-v1",
+    "system": "editorial-observation",
+    "sourceSha256": "793ef8b1dce3b693e01a6a243a7dfcca793af467b7ac232b1219523029a2feee",
+    "outputType": "NarrativeProof observation; no writer invoked",
+    "idContracts": [
+      "ORIGINAL_ID"
+    ],
+    "nodeKinds": [
+      "EDITORIAL_PROOF_OBSERVATION"
+    ],
+    "observedNodes": 72
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "symbol": "V4Composition.narrative.proof",
+    "version": "compatibility-editorial-quality-01-v1",
+    "system": "editorial-observation",
+    "sourceSha256": "793ef8b1dce3b693e01a6a243a7dfcca793af467b7ac232b1219523029a2feee",
+    "outputType": "NarrativeProof observation; no writer invoked",
+    "idContracts": [
+      "ORIGINAL_ID"
+    ],
+    "nodeKinds": [
+      "EDITORIAL_PROOF_OBSERVATION"
+    ],
+    "observedNodes": 360
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibilityDirectionEvidence.ts",
+    "symbol": "buildCompatibilityDirectionEvidence",
+    "version": "source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84",
+    "system": "direction",
+    "sourceSha256": "c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84",
+    "outputType": "CompatibilityDirectionEvidence",
+    "idContracts": [
+      "ORIGINAL_ID"
+    ],
+    "nodeKinds": [
+      "DIRECTIONAL_RELATION_FACT"
+    ],
+    "observedNodes": 20
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityEvidence.ts",
+    "symbol": "compatibilityNarrativeEvidence",
+    "version": "canonical-rule-stable-person-order-v1",
+    "system": "pair",
+    "sourceSha256": "18cb6fa460fa0b88181253b59600438b0b745d265748a0c18bb983cf58f910c2",
+    "outputType": "PairEvidence | failure",
+    "idContracts": [
+      "ORIGINAL_ID",
+      "PRODUCER_OBSERVATION_ONLY"
+    ],
+    "nodeKinds": [
+      "CANONICAL_PAIR_FACT",
+      "CONTEXT_INPUT",
+      "SOURCE_DECLARATION"
+    ],
+    "observedNodes": 52
+  },
+  {
+    "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+    "symbol": "buildMajorFortuneDecadeReading",
+    "version": "major-decade-v2",
+    "system": "major",
+    "sourceSha256": "a64f62449cc09b079996ae70a1d8397dda8e111558dc18fb61e19e0261e596f4",
+    "outputType": "MajorDecadeReading",
+    "idContracts": [
+      "ORIGINAL_ID",
+      "PRODUCER_OBSERVATION_ONLY"
+    ],
+    "nodeKinds": [
+      "CALCULATED_PERIOD_FACT",
+      "EDITORIAL_PROOF_OBSERVATION",
+      "TEMPORAL_BOUNDARY"
+    ],
+    "observedNodes": 291
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "symbol": "V4Composition.narrative.proof",
+    "version": "major-product-13d-7c-v1",
+    "system": "editorial-observation",
+    "sourceSha256": "793ef8b1dce3b693e01a6a243a7dfcca793af467b7ac232b1219523029a2feee",
+    "outputType": "NarrativeProof observation; no writer invoked",
+    "idContracts": [
+      "ORIGINAL_ID"
+    ],
+    "nodeKinds": [
+      "EDITORIAL_PROOF_OBSERVATION"
+    ],
+    "observedNodes": 348
+  },
+  {
+    "file": "src/lib/saju/customerDayun.ts",
+    "symbol": "calculateCustomerDayun",
+    "version": "dayun-kst-sect2-v1",
+    "system": "dayun",
+    "sourceSha256": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123",
+    "outputType": "CustomerDayun | Failure",
+    "idContracts": [
+      "PRODUCER_OBSERVATION_ONLY"
+    ],
+    "nodeKinds": [
+      "CALCULATED_PERIOD_FACT"
+    ],
+    "observedNodes": 66
+  },
+  {
+    "file": "src/lib/report-knowledge/annualMonthJie.ts",
+    "symbol": "buildAnnualMonthCalendar",
+    "version": "annual-month-jie-kst-v2",
+    "system": "annual-month",
+    "sourceSha256": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+    "outputType": "readonly AnnualCalendarMonth[]",
+    "idContracts": [
+      "ORIGINAL_ID",
+      "PRODUCER_OBSERVATION_ONLY"
+    ],
+    "nodeKinds": [
+      "CALCULATED_PERIOD_FACT",
+      "CONTEXT_INPUT",
+      "TEMPORAL_BOUNDARY",
+      "UNKNOWN_REQUIREMENT"
+    ],
+    "observedNodes": 1273
+  },
+  {
+    "file": "src/lib/report-knowledge/annualMonthExtendedEvidence.ts",
+    "symbol": "extendAnnualMonthEvidence",
+    "version": "annual-month-evidence-v1",
+    "system": "annual-month-extension",
+    "sourceSha256": "2294adaac0464612f2d9b5b433520a06f0c844c2d39b9ec581ed5fee02fe5872",
+    "outputType": "AnnualMonthExtendedEvidence",
+    "idContracts": [
+      "ORIGINAL_ID",
+      "PRODUCER_OBSERVATION_ONLY"
+    ],
+    "nodeKinds": [
+      "CALCULATED_PERIOD_FACT",
+      "UNSUPPORTED_REQUIREMENT"
+    ],
+    "observedNodes": 463
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "symbol": "V4Composition.narrative.proof",
+    "version": "annual-product-13d-7c-v1",
+    "system": "editorial-observation",
+    "sourceSha256": "793ef8b1dce3b693e01a6a243a7dfcca793af467b7ac232b1219523029a2feee",
+    "outputType": "NarrativeProof observation; no writer invoked",
+    "idContracts": [
+      "ORIGINAL_ID"
+    ],
+    "nodeKinds": [
+      "EDITORIAL_PROOF_OBSERVATION"
+    ],
+    "observedNodes": 437
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-hard-gate-audit.json.gz",
+  "payloadHash": "2f4dbdeb8b664d47f7d982e3bc76fd79f169559bc55f21a178a464a74853c8f3",
+  "logicalJsonHash": "3866624d24896b94fe5e6bc3a862a03b6c2b9baff500289c27185fa5a80aedc0",
+  "uncompressedBytes": 37874499
+}

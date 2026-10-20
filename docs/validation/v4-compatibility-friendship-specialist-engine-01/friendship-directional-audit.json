@@ -1,0 +1,903 @@
+{
+  "original": [
+    {
+      "id": "frpr:direction:CH05.P2",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "direction": "A_TO_B",
+      "subject": "A",
+      "recipient": "B",
+      "tenGodViewer": "B.dayMaster",
+      "tenGodTarget": "A.dayMaster",
+      "question": "A의 해결 아이디어는 언제 B에게 도움이 될까?",
+      "positive": "B가 문제를 보는 선택지를 넓히면서도 자신의 결정을 유지할 수 있다.",
+      "risk": "A가 해법에 동의하지 않는 B를 비합리적이라고 평가한다.",
+      "recipientResponse": "지금 필요한 반응과 원하지 않는 개입을 알린다.",
+      "noForcedDifference": true,
+      "evidenceCondition": "방향별 기존 ID·실제 수신자 일간·subject/recipient refs·개인 source·현재 요청을 모두 확인. 같은 십성일 때 인위적 차이 생성 금지.",
+      "materialAddress": "CH05.P2",
+      "actualEffect": "UNKNOWN"
+    },
+    {
+      "id": "frpr:direction:CH05.P1",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "direction": "A_TO_B",
+      "subject": "A",
+      "recipient": "B",
+      "tenGodViewer": "B.dayMaster",
+      "tenGodTarget": "A.dayMaster",
+      "question": "A의 새로운 제안은 B에게 어떤 자극으로 받아들여질까?",
+      "positive": "B가 원하던 경험을 작은 선택지로 접할 수 있다.",
+      "risk": "A가 B의 참여를 확정해 놓고 뒤늦게 알린다.",
+      "recipientResponse": "원하는 자극의 크기와 참여 범위를 답한다.",
+      "noForcedDifference": true,
+      "evidenceCondition": "방향별 기존 ID·실제 수신자 일간·subject/recipient refs·개인 source·현재 요청을 모두 확인. 같은 십성일 때 인위적 차이 생성 금지.",
+      "materialAddress": "CH05.P1",
+      "actualEffect": "UNKNOWN"
+    },
+    {
+      "id": "frpr:direction:CH06.P3",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "direction": "B_TO_A",
+      "subject": "B",
+      "recipient": "A",
+      "tenGodViewer": "A.dayMaster",
+      "tenGodTarget": "B.dayMaster",
+      "question": "B의 조언이나 비교는 언제 A에게 부담이 될까?",
+      "positive": "각자가 원하는 성장 목표를 말하고 필요한 지원만 고를 수 있다.",
+      "risk": "B가 다른 친구의 성취와 A를 비교하며 동기를 준다고 여긴다.",
+      "recipientResponse": "축하할 일과 불편한 비교를 나누어 말한다.",
+      "noForcedDifference": true,
+      "evidenceCondition": "방향별 기존 ID·실제 수신자 일간·subject/recipient refs·개인 source·현재 요청을 모두 확인. 같은 십성일 때 인위적 차이 생성 금지.",
+      "materialAddress": "CH06.P3",
+      "actualEffect": "UNKNOWN"
+    },
+    {
+      "id": "frpr:direction:CH05.P4",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "direction": "A_TO_B",
+      "subject": "A",
+      "recipient": "B",
+      "tenGodViewer": "B.dayMaster",
+      "tenGodTarget": "A.dayMaster",
+      "question": "A가 B의 다른 친구 관계를 존중하는 방법은 무엇일까?",
+      "positive": "둘만의 약속을 구체적으로 조율하면서 B의 별도 관계를 존중할 수 있다.",
+      "risk": "A가 친밀함을 증명하라며 B의 모임·연락·편들기를 요구한다.",
+      "recipientResponse": "다른 관계를 설명할 의무와 둘의 기존 약속을 지킬 책임을 구분한다.",
+      "noForcedDifference": true,
+      "evidenceCondition": "방향별 기존 ID·실제 수신자 일간·subject/recipient refs·개인 source·현재 요청을 모두 확인. 같은 십성일 때 인위적 차이 생성 금지.",
+      "materialAddress": "CH05.P4",
+      "actualEffect": "UNKNOWN"
+    },
+    {
+      "id": "frpr:direction:CH05.P3",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "direction": "A_TO_B",
+      "subject": "A",
+      "recipient": "B",
+      "tenGodViewer": "B.dayMaster",
+      "tenGodTarget": "A.dayMaster",
+      "question": "A의 호의가 B에게 갚아야 할 빚처럼 느껴질 때는 언제일까?",
+      "positive": "작은 호의를 거절하거나 규모를 줄일 수 있다면 부담을 조절할 수 있다.",
+      "risk": "A가 먼저 크게 베푼 뒤 B에게 같은 비용이나 시간을 요구한다.",
+      "recipientResponse": "수락 가능한 규모와 부담되는 조건을 구분한다.",
+      "noForcedDifference": true,
+      "evidenceCondition": "방향별 기존 ID·실제 수신자 일간·subject/recipient refs·개인 source·현재 요청을 모두 확인. 같은 십성일 때 인위적 차이 생성 금지.",
+      "materialAddress": "CH05.P3",
+      "actualEffect": "UNKNOWN"
+    },
+    {
+      "id": "frpr:direction:CH06.P4",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "direction": "B_TO_A",
+      "subject": "B",
+      "recipient": "A",
+      "tenGodViewer": "A.dayMaster",
+      "tenGodTarget": "B.dayMaster",
+      "question": "B가 자신의 한계를 알리는 것이 A에게 어떤 도움이 될까?",
+      "positive": "A가 다른 도움을 찾거나 요청의 범위를 조절할 정보를 얻는다.",
+      "risk": "B가 불가능한 부탁을 받아들인 뒤 잠적하거나 원망한다.",
+      "recipientResponse": "B의 불가능한 몫을 관계 평가와 분리하고 다른 방안을 찾는다.",
+      "noForcedDifference": true,
+      "evidenceCondition": "방향별 기존 ID·실제 수신자 일간·subject/recipient refs·개인 source·현재 요청을 모두 확인. 같은 십성일 때 인위적 차이 생성 금지.",
+      "materialAddress": "CH06.P4",
+      "actualEffect": "UNKNOWN"
+    },
+    {
+      "id": "frpr:direction:CH06.P2",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "direction": "B_TO_A",
+      "subject": "B",
+      "recipient": "A",
+      "tenGodViewer": "A.dayMaster",
+      "tenGodTarget": "B.dayMaster",
+      "question": "B의 세심한 관심은 A에게 어떤 지지가 될 수 있을까?",
+      "positive": "A가 변한 선택을 설명할 수 있고 B가 새로운 모습을 알아갈 수 있다.",
+      "risk": "B가 예전 모습과 비교하며 A가 변했다고 비난한다.",
+      "recipientResponse": "현재의 선택과 공유하고 싶은 범위를 말한다.",
+      "noForcedDifference": true,
+      "evidenceCondition": "방향별 기존 ID·실제 수신자 일간·subject/recipient refs·개인 source·현재 요청을 모두 확인. 같은 십성일 때 인위적 차이 생성 금지.",
+      "materialAddress": "CH06.P2",
+      "actualEffect": "UNKNOWN"
+    },
+    {
+      "id": "frpr:direction:CH06.P1",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "direction": "B_TO_A",
+      "subject": "B",
+      "recipient": "A",
+      "tenGodViewer": "A.dayMaster",
+      "tenGodTarget": "B.dayMaster",
+      "question": "B의 차분한 반응은 A에게 어떤 의미로 전달될까?",
+      "positive": "B가 정리한 대답이 A에게 기다릴 수 있는 기준을 줄 수 있다.",
+      "risk": "B가 혼자 괜찮다고 여기는 간격을 A에게 설명 없이 적용한다.",
+      "recipientResponse": "응답이 필요한 시점과 급한 이유를 명시한다.",
+      "noForcedDifference": true,
+      "evidenceCondition": "방향별 기존 ID·실제 수신자 일간·subject/recipient refs·개인 source·현재 요청을 모두 확인. 같은 십성일 때 인위적 차이 생성 금지.",
+      "materialAddress": "CH06.P1",
+      "actualEffect": "UNKNOWN"
+    }
+  ],
+  "gods": [
+    {
+      "id": "frpr:ten-god:편관",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "god": "편관",
+      "originalEffect": "안주하던 기준에 긴장을 주고 더 잘하고 싶게 만듭니다",
+      "originalLocator": {
+        "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+        "exportName": "godEffects",
+        "pointer": "/편관",
+        "recordSha256": "5b3b5e62d93ecd6ab665a78c55496b3612cb19e71d703dfbab957b88469a2c26",
+        "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+      },
+      "friendshipQuestion": "도전의 자극이 평가나 통제로 받아들여지는지 확인할 수 있는가?",
+      "counterexample": "관성은 실제 상하 권한·모임의 우열·복종의 증명이 아니다.",
+      "receivedByB": {
+        "viewer": "B.dayMaster",
+        "target": "A.dayMaster"
+      },
+      "receivedByA": {
+        "viewer": "A.dayMaster",
+        "target": "B.dayMaster"
+      },
+      "definitionIsObservedEffect": false,
+      "noForcedDifference": true
+    },
+    {
+      "id": "frpr:ten-god:겁재",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "god": "겁재",
+      "originalEffect": "가만있기보다 같이 도전하고 싶은 마음을 건드립니다",
+      "originalLocator": {
+        "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+        "exportName": "godEffects",
+        "pointer": "/겁재",
+        "recordSha256": "79fba1a049cb5936bc3f7529dcdded563e1e87397387868fc371e0a2f9c132dd",
+        "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+      },
+      "friendshipQuestion": "같이 도전하자는 자극과 경쟁·비교 압박을 구분할 수 있는가?",
+      "counterexample": "겁재 정의가 질투·사기·자원 침해 사실을 뜻하지 않는다.",
+      "receivedByB": {
+        "viewer": "B.dayMaster",
+        "target": "A.dayMaster"
+      },
+      "receivedByA": {
+        "viewer": "A.dayMaster",
+        "target": "B.dayMaster"
+      },
+      "definitionIsObservedEffect": false,
+      "noForcedDifference": true
+    },
+    {
+      "id": "frpr:ten-god:편인",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "god": "편인",
+      "originalEffect": "당연하게 알던 것에도 다시 이유를 묻게 합니다",
+      "originalLocator": {
+        "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+        "exportName": "godEffects",
+        "pointer": "/편인",
+        "recordSha256": "848cd0dcc2b33767cc27d1e2c75ea03b36ea6d4124fd4fa25aad13f92b7f9ab8",
+        "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+      },
+      "friendshipQuestion": "새 관점이나 질문을 원할 때와 조용히 듣길 원할 때를 구분할 수 있는가?",
+      "counterexample": "특별한 이해·비밀 공유·정서 진단의 근거가 아니다.",
+      "receivedByB": {
+        "viewer": "B.dayMaster",
+        "target": "A.dayMaster"
+      },
+      "receivedByA": {
+        "viewer": "A.dayMaster",
+        "target": "B.dayMaster"
+      },
+      "definitionIsObservedEffect": false,
+      "noForcedDifference": true
+    },
+    {
+      "id": "frpr:ten-god:편재",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "god": "편재",
+      "originalEffect": "새로운 경험과 실제로 얻을 결과를 함께 생각하게 합니다",
+      "originalLocator": {
+        "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+        "exportName": "godEffects",
+        "pointer": "/편재",
+        "recordSha256": "bda38134065cef3d95a68dd191f1993aa66866fc94adaf4d10b49cd8d372259e",
+        "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+      },
+      "friendshipQuestion": "새 경험의 제안에서 시간·돈의 부담을 각자 고를 수 있는가?",
+      "counterexample": "재물·성공·인맥의 이익을 보장하거나 실제 거래를 가정하지 않는다.",
+      "receivedByB": {
+        "viewer": "B.dayMaster",
+        "target": "A.dayMaster"
+      },
+      "receivedByA": {
+        "viewer": "A.dayMaster",
+        "target": "B.dayMaster"
+      },
+      "definitionIsObservedEffect": false,
+      "noForcedDifference": true
+    },
+    {
+      "id": "frpr:ten-god:정관",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "god": "정관",
+      "originalEffect": "약속과 책임을 한 번 더 의식하게 합니다",
+      "originalLocator": {
+        "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+        "exportName": "godEffects",
+        "pointer": "/정관",
+        "recordSha256": "9c91140734c1292c052ae200fbac95aade456cf1a7e91a880ff4de18bc1fa6cb",
+        "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+      },
+      "friendshipQuestion": "안정적인 기준이 친구의 다른 선택을 막지 않을 수 있는가?",
+      "counterexample": "관계 규칙이나 약속이 실제로 합의됐다고 가정하지 않는다.",
+      "receivedByB": {
+        "viewer": "B.dayMaster",
+        "target": "A.dayMaster"
+      },
+      "receivedByA": {
+        "viewer": "A.dayMaster",
+        "target": "B.dayMaster"
+      },
+      "definitionIsObservedEffect": false,
+      "noForcedDifference": true
+    },
+    {
+      "id": "frpr:ten-god:상관",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "god": "상관",
+      "originalEffect": "그동안 삼켰던 의견과 다른 방법을 꺼내게 합니다",
+      "originalLocator": {
+        "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+        "exportName": "godEffects",
+        "pointer": "/상관",
+        "recordSha256": "003f2f1a8bfc413952281ab036fc36a75a28b6d6cbb95e33eaa4d7239c769805",
+        "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+      },
+      "friendshipQuestion": "다른 의견을 말하는 자극이 상대를 교정하는 요구로 바뀌지 않는가?",
+      "counterexample": "비판·갈등의 실제 존재나 과거 경험을 부여하지 않는다.",
+      "receivedByB": {
+        "viewer": "B.dayMaster",
+        "target": "A.dayMaster"
+      },
+      "receivedByA": {
+        "viewer": "A.dayMaster",
+        "target": "B.dayMaster"
+      },
+      "definitionIsObservedEffect": false,
+      "noForcedDifference": true
+    },
+    {
+      "id": "frpr:ten-god:식신",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "god": "식신",
+      "originalEffect": "긴장을 풀고 직접 해보는 즐거움을 끌어냅니다",
+      "originalLocator": {
+        "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+        "exportName": "godEffects",
+        "pointer": "/식신",
+        "recordSha256": "4dc301fb18b3f52787d05a1c27695be238867f99ddddeae968ba46599031a498",
+        "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+      },
+      "friendshipQuestion": "직접 즐기는 활동의 강도를 상대도 고를 수 있는가?",
+      "counterexample": "즐거움의 전통 의미가 특정 활동의 실제 선호를 증명하지 않는다.",
+      "receivedByB": {
+        "viewer": "B.dayMaster",
+        "target": "A.dayMaster"
+      },
+      "receivedByA": {
+        "viewer": "A.dayMaster",
+        "target": "B.dayMaster"
+      },
+      "definitionIsObservedEffect": false,
+      "noForcedDifference": true
+    },
+    {
+      "id": "frpr:ten-god:정인",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "god": "정인",
+      "originalEffect": "모르는 것을 물어보고 도움을 받아도 된다는 여유를 줍니다",
+      "originalLocator": {
+        "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+        "exportName": "godEffects",
+        "pointer": "/정인",
+        "recordSha256": "2e86c2ac432487730dbd95193a5fae90fbc20ae6c487e3881f492c3df112d709",
+        "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+      },
+      "friendshipQuestion": "지지를 받으면서도 친구 한 명에게 모든 판단을 맡기지 않을 수 있는가?",
+      "counterexample": "보호·돌봄이 실제로 제공됐거나 친구가 부모 역할이라고 단정하지 않는다.",
+      "receivedByB": {
+        "viewer": "B.dayMaster",
+        "target": "A.dayMaster"
+      },
+      "receivedByA": {
+        "viewer": "A.dayMaster",
+        "target": "B.dayMaster"
+      },
+      "definitionIsObservedEffect": false,
+      "noForcedDifference": true
+    },
+    {
+      "id": "frpr:ten-god:비견",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "god": "비견",
+      "originalEffect": "자기 의견을 더 또렷하게 꺼내게 합니다",
+      "originalLocator": {
+        "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+        "exportName": "godEffects",
+        "pointer": "/비견",
+        "recordSha256": "0d4f1f0f467bcd4ac3a889dd3491bf8f1a5dfa20998c5e5c60f0d4dedf7232d3",
+        "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+      },
+      "friendshipQuestion": "서로의 의견을 내되 같은 취향이나 같은 참여를 요구하지 않을 수 있는가?",
+      "counterexample": "동등한 지지의 상징만으로 실제 친구 관계의 수평성을 입증하지 않는다.",
+      "receivedByB": {
+        "viewer": "B.dayMaster",
+        "target": "A.dayMaster"
+      },
+      "receivedByA": {
+        "viewer": "A.dayMaster",
+        "target": "B.dayMaster"
+      },
+      "definitionIsObservedEffect": false,
+      "noForcedDifference": true
+    },
+    {
+      "id": "frpr:ten-god:정재",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "god": "정재",
+      "originalEffect": "시간과 돈을 어디에 쓰는지 더 구체적으로 보게 합니다",
+      "originalLocator": {
+        "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+        "exportName": "godEffects",
+        "pointer": "/정재",
+        "recordSha256": "6b7b8e234881cc97523be9f69ab1e7b06fdc250fcd9ac7dfdae794ba2143b9de",
+        "fileSha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631"
+      },
+      "friendshipQuestion": "꾸준한 약속을 원하는 조건과 만남의 유연성을 함께 확인할 수 있는가?",
+      "counterexample": "규칙성·의무·지속 기간을 상대에게 자동 부여하지 않는다.",
+      "receivedByB": {
+        "viewer": "B.dayMaster",
+        "target": "A.dayMaster"
+      },
+      "receivedByA": {
+        "viewer": "A.dayMaster",
+        "target": "B.dayMaster"
+      },
+      "definitionIsObservedEffect": false,
+      "noForcedDifference": true
+    }
+  ],
+  "actual": [
+    {
+      "id": "frpr:material:CH05.P1:ab-invitation-received",
+      "direction": "A_TO_B",
+      "evidence": [
+        {
+          "id": "aeg:node:1a891188da6f2d1db0bf777e872a6845c5fe4077b3123909e434c520af0a3394",
+          "producer": {
+            "file": "src/lib/report-knowledge/compatibilityDirectionEvidence.ts",
+            "symbol": "buildCompatibilityDirectionEvidence",
+            "version": "source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84",
+            "system": "direction"
+          },
+          "originalEvidenceId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+          "owner": {
+            "slot": "personA",
+            "fixtureOwnerId": "fixture-person-7",
+            "originalPersonId": "29a2534854378270a988c1f8"
+          },
+          "direction": {
+            "subject": "fixture-person-7",
+            "recipient": "fixture-person-8",
+            "relationId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+            "recipientDayMaster": "乙",
+            "subjectDayMaster": "甲"
+          },
+          "receivedTenGod": {
+            "viewerDayStem": "乙",
+            "targetDayStem": "甲",
+            "tenGod": "劫財",
+            "tenGodKo": "겁재",
+            "relationLabel": "을목이 갑목를 보면 겁재"
+          },
+          "source": [],
+          "ancestry": {
+            "parentIds": [
+              "aeg:node:1a942ee164d305ee403c21de3934ba5c6b652c52ca62f5042065d41ac03e5657",
+              "aeg:node:94985594a1d7b66c0ca39cba3621ccc5d99325a10b737180d9a16ff0e70a83db"
+            ],
+            "rootIds": [
+              "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+              "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+              "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+            ],
+            "missingIds": [],
+            "complete": true,
+            "cycle": false,
+            "domains": []
+          },
+          "errors": [],
+          "actualRecipientReaction": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "frpr:material:CH05.P2:ab-options-not-orders",
+      "direction": "A_TO_B",
+      "evidence": [
+        {
+          "id": "aeg:node:1a891188da6f2d1db0bf777e872a6845c5fe4077b3123909e434c520af0a3394",
+          "producer": {
+            "file": "src/lib/report-knowledge/compatibilityDirectionEvidence.ts",
+            "symbol": "buildCompatibilityDirectionEvidence",
+            "version": "source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84",
+            "system": "direction"
+          },
+          "originalEvidenceId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+          "owner": {
+            "slot": "personA",
+            "fixtureOwnerId": "fixture-person-7",
+            "originalPersonId": "29a2534854378270a988c1f8"
+          },
+          "direction": {
+            "subject": "fixture-person-7",
+            "recipient": "fixture-person-8",
+            "relationId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+            "recipientDayMaster": "乙",
+            "subjectDayMaster": "甲"
+          },
+          "receivedTenGod": {
+            "viewerDayStem": "乙",
+            "targetDayStem": "甲",
+            "tenGod": "劫財",
+            "tenGodKo": "겁재",
+            "relationLabel": "을목이 갑목를 보면 겁재"
+          },
+          "source": [],
+          "ancestry": {
+            "parentIds": [
+              "aeg:node:1a942ee164d305ee403c21de3934ba5c6b652c52ca62f5042065d41ac03e5657",
+              "aeg:node:94985594a1d7b66c0ca39cba3621ccc5d99325a10b737180d9a16ff0e70a83db"
+            ],
+            "rootIds": [
+              "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+              "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+              "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+            ],
+            "missingIds": [],
+            "complete": true,
+            "cycle": false,
+            "domains": []
+          },
+          "errors": [],
+          "actualRecipientReaction": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "frpr:material:CH05.P3:ab-favour-debt",
+      "direction": "A_TO_B",
+      "evidence": [
+        {
+          "id": "aeg:node:1a891188da6f2d1db0bf777e872a6845c5fe4077b3123909e434c520af0a3394",
+          "producer": {
+            "file": "src/lib/report-knowledge/compatibilityDirectionEvidence.ts",
+            "symbol": "buildCompatibilityDirectionEvidence",
+            "version": "source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84",
+            "system": "direction"
+          },
+          "originalEvidenceId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+          "owner": {
+            "slot": "personA",
+            "fixtureOwnerId": "fixture-person-7",
+            "originalPersonId": "29a2534854378270a988c1f8"
+          },
+          "direction": {
+            "subject": "fixture-person-7",
+            "recipient": "fixture-person-8",
+            "relationId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+            "recipientDayMaster": "乙",
+            "subjectDayMaster": "甲"
+          },
+          "receivedTenGod": {
+            "viewerDayStem": "乙",
+            "targetDayStem": "甲",
+            "tenGod": "劫財",
+            "tenGodKo": "겁재",
+            "relationLabel": "을목이 갑목를 보면 겁재"
+          },
+          "source": [],
+          "ancestry": {
+            "parentIds": [
+              "aeg:node:1a942ee164d305ee403c21de3934ba5c6b652c52ca62f5042065d41ac03e5657",
+              "aeg:node:94985594a1d7b66c0ca39cba3621ccc5d99325a10b737180d9a16ff0e70a83db"
+            ],
+            "rootIds": [
+              "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+              "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+              "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+            ],
+            "missingIds": [],
+            "complete": true,
+            "cycle": false,
+            "domains": []
+          },
+          "errors": [],
+          "actualRecipientReaction": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "frpr:material:CH05.P4:ab-other-friends",
+      "direction": "A_TO_B",
+      "evidence": [
+        {
+          "id": "aeg:node:1a891188da6f2d1db0bf777e872a6845c5fe4077b3123909e434c520af0a3394",
+          "producer": {
+            "file": "src/lib/report-knowledge/compatibilityDirectionEvidence.ts",
+            "symbol": "buildCompatibilityDirectionEvidence",
+            "version": "source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84",
+            "system": "direction"
+          },
+          "originalEvidenceId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+          "owner": {
+            "slot": "personA",
+            "fixtureOwnerId": "fixture-person-7",
+            "originalPersonId": "29a2534854378270a988c1f8"
+          },
+          "direction": {
+            "subject": "fixture-person-7",
+            "recipient": "fixture-person-8",
+            "relationId": "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97",
+            "recipientDayMaster": "乙",
+            "subjectDayMaster": "甲"
+          },
+          "receivedTenGod": {
+            "viewerDayStem": "乙",
+            "targetDayStem": "甲",
+            "tenGod": "劫財",
+            "tenGodKo": "겁재",
+            "relationLabel": "을목이 갑목를 보면 겁재"
+          },
+          "source": [],
+          "ancestry": {
+            "parentIds": [
+              "aeg:node:1a942ee164d305ee403c21de3934ba5c6b652c52ca62f5042065d41ac03e5657",
+              "aeg:node:94985594a1d7b66c0ca39cba3621ccc5d99325a10b737180d9a16ff0e70a83db"
+            ],
+            "rootIds": [
+              "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+              "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+              "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+            ],
+            "missingIds": [],
+            "complete": true,
+            "cycle": false,
+            "domains": []
+          },
+          "errors": [],
+          "actualRecipientReaction": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "frpr:material:CH06.P1:ba-response-meaning",
+      "direction": "B_TO_A",
+      "evidence": [
+        {
+          "id": "aeg:node:09d530fb1805fa51e63c76186a33ac59461efaa52b0aedd94135d89efead574e",
+          "producer": {
+            "file": "src/lib/report-knowledge/compatibilityDirectionEvidence.ts",
+            "symbol": "buildCompatibilityDirectionEvidence",
+            "version": "source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84",
+            "system": "direction"
+          },
+          "originalEvidenceId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "owner": {
+            "slot": "personB",
+            "fixtureOwnerId": "fixture-person-8",
+            "originalPersonId": "b425792e04d53877ee951f97"
+          },
+          "direction": {
+            "subject": "fixture-person-8",
+            "recipient": "fixture-person-7",
+            "relationId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+            "recipientDayMaster": "甲",
+            "subjectDayMaster": "乙"
+          },
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "乙",
+            "tenGod": "劫財",
+            "tenGodKo": "겁재",
+            "relationLabel": "갑목이 을목를 보면 겁재"
+          },
+          "source": [],
+          "ancestry": {
+            "parentIds": [
+              "aeg:node:1a942ee164d305ee403c21de3934ba5c6b652c52ca62f5042065d41ac03e5657",
+              "aeg:node:94985594a1d7b66c0ca39cba3621ccc5d99325a10b737180d9a16ff0e70a83db"
+            ],
+            "rootIds": [
+              "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+              "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+              "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+            ],
+            "missingIds": [],
+            "complete": true,
+            "cycle": false,
+            "domains": []
+          },
+          "errors": [],
+          "actualRecipientReaction": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "frpr:material:CH06.P2:ba-recognition-not-rating",
+      "direction": "B_TO_A",
+      "evidence": [
+        {
+          "id": "aeg:node:09d530fb1805fa51e63c76186a33ac59461efaa52b0aedd94135d89efead574e",
+          "producer": {
+            "file": "src/lib/report-knowledge/compatibilityDirectionEvidence.ts",
+            "symbol": "buildCompatibilityDirectionEvidence",
+            "version": "source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84",
+            "system": "direction"
+          },
+          "originalEvidenceId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "owner": {
+            "slot": "personB",
+            "fixtureOwnerId": "fixture-person-8",
+            "originalPersonId": "b425792e04d53877ee951f97"
+          },
+          "direction": {
+            "subject": "fixture-person-8",
+            "recipient": "fixture-person-7",
+            "relationId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+            "recipientDayMaster": "甲",
+            "subjectDayMaster": "乙"
+          },
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "乙",
+            "tenGod": "劫財",
+            "tenGodKo": "겁재",
+            "relationLabel": "갑목이 을목를 보면 겁재"
+          },
+          "source": [],
+          "ancestry": {
+            "parentIds": [
+              "aeg:node:1a942ee164d305ee403c21de3934ba5c6b652c52ca62f5042065d41ac03e5657",
+              "aeg:node:94985594a1d7b66c0ca39cba3621ccc5d99325a10b737180d9a16ff0e70a83db"
+            ],
+            "rootIds": [
+              "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+              "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+              "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+            ],
+            "missingIds": [],
+            "complete": true,
+            "cycle": false,
+            "domains": []
+          },
+          "errors": [],
+          "actualRecipientReaction": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "frpr:material:CH06.P3:ba-comparison-pressure",
+      "direction": "B_TO_A",
+      "evidence": [
+        {
+          "id": "aeg:node:09d530fb1805fa51e63c76186a33ac59461efaa52b0aedd94135d89efead574e",
+          "producer": {
+            "file": "src/lib/report-knowledge/compatibilityDirectionEvidence.ts",
+            "symbol": "buildCompatibilityDirectionEvidence",
+            "version": "source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84",
+            "system": "direction"
+          },
+          "originalEvidenceId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "owner": {
+            "slot": "personB",
+            "fixtureOwnerId": "fixture-person-8",
+            "originalPersonId": "b425792e04d53877ee951f97"
+          },
+          "direction": {
+            "subject": "fixture-person-8",
+            "recipient": "fixture-person-7",
+            "relationId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+            "recipientDayMaster": "甲",
+            "subjectDayMaster": "乙"
+          },
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "乙",
+            "tenGod": "劫財",
+            "tenGodKo": "겁재",
+            "relationLabel": "갑목이 을목를 보면 겁재"
+          },
+          "source": [],
+          "ancestry": {
+            "parentIds": [
+              "aeg:node:1a942ee164d305ee403c21de3934ba5c6b652c52ca62f5042065d41ac03e5657",
+              "aeg:node:94985594a1d7b66c0ca39cba3621ccc5d99325a10b737180d9a16ff0e70a83db"
+            ],
+            "rootIds": [
+              "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+              "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+              "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+            ],
+            "missingIds": [],
+            "complete": true,
+            "cycle": false,
+            "domains": []
+          },
+          "errors": [],
+          "actualRecipientReaction": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "frpr:material:CH06.P4:ba-availability-boundary",
+      "direction": "B_TO_A",
+      "evidence": [
+        {
+          "id": "aeg:node:09d530fb1805fa51e63c76186a33ac59461efaa52b0aedd94135d89efead574e",
+          "producer": {
+            "file": "src/lib/report-knowledge/compatibilityDirectionEvidence.ts",
+            "symbol": "buildCompatibilityDirectionEvidence",
+            "version": "source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84",
+            "system": "direction"
+          },
+          "originalEvidenceId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "owner": {
+            "slot": "personB",
+            "fixtureOwnerId": "fixture-person-8",
+            "originalPersonId": "b425792e04d53877ee951f97"
+          },
+          "direction": {
+            "subject": "fixture-person-8",
+            "recipient": "fixture-person-7",
+            "relationId": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+            "recipientDayMaster": "甲",
+            "subjectDayMaster": "乙"
+          },
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "乙",
+            "tenGod": "劫財",
+            "tenGodKo": "겁재",
+            "relationLabel": "갑목이 을목를 보면 겁재"
+          },
+          "source": [],
+          "ancestry": {
+            "parentIds": [
+              "aeg:node:1a942ee164d305ee403c21de3934ba5c6b652c52ca62f5042065d41ac03e5657",
+              "aeg:node:94985594a1d7b66c0ca39cba3621ccc5d99325a10b737180d9a16ff0e70a83db"
+            ],
+            "rootIds": [
+              "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+              "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+              "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+            ],
+            "missingIds": [],
+            "complete": true,
+            "cycle": false,
+            "domains": []
+          },
+          "errors": [],
+          "actualRecipientReaction": "UNKNOWN"
+        }
+      ]
+    }
+  ],
+  "swaps": {
+    "whole": {
+      "aIsNewB": true,
+      "bIsNewA": true,
+      "abIsNewBa": true,
+      "baIsNewAb": true
+    },
+    "nameOnly": {
+      "aUnchanged": true,
+      "bUnchanged": true,
+      "receivedTenGodUnchanged": true
+    }
+  }
+}

@@ -1,0 +1,484 @@
+{
+  "marriedIsOnlyEnteredStatus": true,
+  "cohabitationMoneyInformationAccessHouseholdRolesUnknown": true,
+  "actual": [
+    {
+      "fixtureId": "fixture-love-A",
+      "context": {
+        "relationshipStatus": "single",
+        "contextId": null,
+        "partnerFacts": [],
+        "marriageFacts": [],
+        "childFacts": [],
+        "safety": "UNKNOWN",
+        "voluntaryConsent": null,
+        "riskKinds": []
+      },
+      "materials": [
+        {
+          "id": "lkr:material:CH07.P4:home-optout-legitimate",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "미입력 유형을 추정하지 않음. 회수는 실제 선행 원천 확인.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "결혼·출산을 의무나 성공 기준으로 만들지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P2:home-care-rotation",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "실제 배우자나 가족의 무능함을 단정하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P2:home-kin-information",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "친족 관계나 성별에 역할을 자동 배정하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P1:home-conditional-rule",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "실제 본인 원국의 Evidence·위치·성립/반대 조건과 원래 전거/검토 상태 확인. 관계·기간 사실을 원국 애정 성향으로 옮기지 않음.",
+            "mbti": "미입력 유형을 추정하지 않음. 회수는 실제 선행 원천 확인.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "원국 성별 전통 비유를 실제 배우자의 성격으로 쓰지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P4:home-spending-threshold",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "법적 재산 권리나 실제 부양 의무를 임의로 규정하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P1:home-self-choice",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "비혼을 결함으로 보거나 현재 동거를 추정하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P1:home-planned-not-fixed",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "배우자의 직업·능력·자산·미래 성과를 만들지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P4:home-revision-meeting",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "미래 사건이나 가족의 여력을 추정하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P3:home-correction-fatigue",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "통제를 효율 성향의 장점으로 정상화하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P4:home-rest-fairness",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "돌봄 대상이나 질병을 실제 사실로 생성하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P2:home-minimum-system",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "자동화가 갈등을 해결하거나 노동을 없앤다고 보장하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P3:home-peace-not-consent",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "실제 동거·이혼·갈등 이력을 생성하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P3:home-novelty-cost",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "성별이나 MBTI로 가사 능력을 고정하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P3:home-money-power",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "재정 법률 조언이나 실제 자산의 답을 만들지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P1:home-warm-rhythm",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "기혼이 아닌 입력에 현재 배우자를 쓰지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P2:home-change-buffer",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "소득·건강·직업 변화의 실제 사건을 예측하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        }
+      ]
+    },
+    {
+      "fixtureId": "fixture-love-F",
+      "context": {
+        "relationshipStatus": "single",
+        "contextId": null,
+        "partnerFacts": [],
+        "marriageFacts": [],
+        "childFacts": [],
+        "safety": "UNKNOWN",
+        "voluntaryConsent": null,
+        "riskKinds": []
+      },
+      "materials": [
+        {
+          "id": "lkr:material:CH07.P4:home-optout-legitimate",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "미입력 유형을 추정하지 않음. 회수는 실제 선행 원천 확인.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "결혼·출산을 의무나 성공 기준으로 만들지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P2:home-care-rotation",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "실제 배우자나 가족의 무능함을 단정하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P2:home-kin-information",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "친족 관계나 성별에 역할을 자동 배정하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P1:home-conditional-rule",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "실제 본인 원국의 Evidence·위치·성립/반대 조건과 원래 전거/검토 상태 확인. 관계·기간 사실을 원국 애정 성향으로 옮기지 않음.",
+            "mbti": "미입력 유형을 추정하지 않음. 회수는 실제 선행 원천 확인.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "원국 성별 전통 비유를 실제 배우자의 성격으로 쓰지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P4:home-spending-threshold",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "법적 재산 권리나 실제 부양 의무를 임의로 규정하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P1:home-self-choice",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "비혼을 결함으로 보거나 현재 동거를 추정하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P1:home-planned-not-fixed",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "배우자의 직업·능력·자산·미래 성과를 만들지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P4:home-revision-meeting",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "미래 사건이나 가족의 여력을 추정하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P3:home-correction-fatigue",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "통제를 효율 성향의 장점으로 정상화하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P4:home-rest-fairness",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "돌봄 대상이나 질병을 실제 사실로 생성하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P2:home-minimum-system",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "자동화가 갈등을 해결하거나 노동을 없앤다고 보장하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P3:home-peace-not-consent",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "실제 동거·이혼·갈등 이력을 생성하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P3:home-novelty-cost",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "성별이나 MBTI로 가사 능력을 고정하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P3:home-money-power",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "재정 법률 조언이나 실제 자산의 답을 만들지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P1:home-warm-rhythm",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "기혼이 아닌 입력에 현재 배우자를 쓰지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        },
+        {
+          "id": "lkr:material:CH07.P2:home-change-buffer",
+          "conditions": {
+            "sourceOwner": "same_person_only",
+            "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+            "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+            "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+            "input": "소득·건강·직업 변화의 실제 사건을 예측하지 않는다.",
+            "partnerFactsRequiredForCoupleClaims": true,
+            "childFactsRequiredForChildClaims": true,
+            "positiveSymbolNeedsActualProducer": false
+          },
+          "verifiedActualHouseholdFacts": 0
+        }
+      ]
+    }
+  ]
+}

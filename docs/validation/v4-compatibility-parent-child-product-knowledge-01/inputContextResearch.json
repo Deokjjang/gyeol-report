@@ -1,0 +1,1717 @@
+[
+  {
+    "id": "pcpr:case:A",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "A",
+    "description": "부모·자녀 MBTI 기지",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "both_mbti",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:B",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "B",
+    "description": "부모만 MBTI",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "a_only",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:C",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "C",
+    "description": "자녀만 MBTI",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "b_only",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:D",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "D",
+    "description": "양쪽 MBTI 미상",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "neither_mbti",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:E",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "E",
+    "description": "부모 시간 미상",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "a_unknown_hour",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:F",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "F",
+    "description": "자녀 시간 미상",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "b_unknown_hour",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:G",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "G",
+    "description": "양쪽 시간 확정",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "both_known_hour",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:H",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "H",
+    "description": "같은 유형",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "INTP",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "same_mbti",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:I",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "I",
+    "description": "다른 유형",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "different_mbti",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:J",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "J",
+    "description": "실제 합 기준 fixture",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "harmony",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:K",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "K",
+    "description": "실제 충 기준 fixture",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "clash",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:L",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "L",
+    "description": "실제 교차 지지 관계 미검출",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상고요A",
+          "birthDate": "1996-12-08",
+          "birthTime": "",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상고요B",
+          "birthDate": "1996-12-08",
+          "birthTime": "",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "no_cross_branch",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:M",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "M",
+    "description": "미지원 원진 정의만 참조; 검출 없음",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상고요A",
+          "birthDate": "1996-12-08",
+          "birthTime": "",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상고요B",
+          "birthDate": "1996-12-08",
+          "birthTime": "",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "unsupported_reference_only",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:N",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "N",
+    "description": "양방향 십성 다른 실제 fixture",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "현우",
+          "birthDate": "1992-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "소연",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "different_ten_god",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:O",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "O",
+    "description": "양방향 같은 십성 fixture",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "도윤",
+          "birthDate": "1985-06-30",
+          "birthTime": "06:00",
+          "mbtiType": "INFJ",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "하린",
+          "birthDate": "2001-01-27",
+          "birthTime": "18:20",
+          "mbtiType": "ESTP",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "same_ten_god",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:P",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "P",
+    "description": "고정 역할 버전",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "fixed_role",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:Q",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "Q",
+    "description": "역할 버전 없는 legacy 입력",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "missing_role",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": false
+  },
+  {
+    "id": "pcpr:case:R",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "R",
+    "description": "잘못된 역할 버전",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-unknown-role-v0",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "invalid_role",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": false
+  },
+  {
+    "id": "pcpr:case:S",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "S",
+    "description": "전체 인물 교환은 부모 역할 선언도 바꿈; 동일 가족으로 승인 금지",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "whole_swap_role_change",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": false
+  },
+  {
+    "id": "pcpr:case:T",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "T",
+    "description": "이름만 변경",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상자녀도현",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상부모은주",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "name_swap",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:U",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "U",
+    "description": "미성년 자녀 가상 활동",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "hypothetical_minor",
+    "hypotheticalContext": {
+      "context": "TEEN",
+      "condition": "미성년 상황을 가정해 활동을 검토한다면",
+      "developmentNotAssessed": true
+    },
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:V",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "V",
+    "description": "성인 자녀 가상 독립 맥락",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "1995-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "hypothetical_adult",
+    "hypotheticalContext": {
+      "context": "ADULT",
+      "condition": "성인 자녀의 생활 결정을 지원한다면",
+      "developmentNotAssessed": true
+    },
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:W",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "W",
+    "description": "발달 상태 불확실",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "unknown_development",
+    "hypotheticalContext": {
+      "context": "UNKNOWN",
+      "condition": "실제 발달·필요한 지원을 확인하지 못했다면",
+      "developmentNotAssessed": true
+    },
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:X",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "X",
+    "description": "부모 기대와 관심이 다르다면",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "expectation_scene",
+    "hypotheticalContext": {
+      "context": "TEEN",
+      "condition": "기대와 관심이 다르다면",
+      "developmentNotAssessed": true
+    },
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:Y",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "Y",
+    "description": "보호와 선택이 충돌한다면",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "protection_scene",
+    "hypotheticalContext": {
+      "context": "TEEN",
+      "condition": "안전 범위와 선택을 다시 정한다면",
+      "developmentNotAssessed": true
+    },
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:Z",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "Z",
+    "description": "도움을 요청한다면",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "help_scene",
+    "hypotheticalContext": {
+      "context": "TEEN",
+      "condition": "도움을 요청할 통로를 검토한다면",
+      "developmentNotAssessed": true
+    },
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:AA",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "AA",
+    "description": "부모 감정 조절이 필요하다면",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "regulation_scene",
+    "hypotheticalContext": {
+      "context": "TEEN",
+      "condition": "부모가 자신의 반응을 조절해야 한다면",
+      "developmentNotAssessed": true
+    },
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:AB",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "AB",
+    "description": "갈등 뒤 부모가 수정한다면",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "repair_scene",
+    "hypotheticalContext": {
+      "context": "TEEN",
+      "condition": "부모가 잘못한 행동을 먼저 수정해야 한다면",
+      "developmentNotAssessed": true
+    },
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:AC",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "AC",
+    "description": "자녀 질문으로 새 정보를 얻는다면",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "child_perspective_scene",
+    "hypotheticalContext": {
+      "context": "TEEN",
+      "condition": "자녀의 질문으로 부모가 놓친 정보를 확인한다면",
+      "developmentNotAssessed": true
+    },
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:AD",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "AD",
+    "description": "비연애 도메인 격리",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "non_romantic",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:AE",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "AE",
+    "description": "다른6카테고리 격리",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "love",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "marriage",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "coworker",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "managerReport",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "businessPartner",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "friendship",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "other_categories",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  },
+  {
+    "id": "pcpr:case:AF",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "parentChild",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "letter": "AF",
+    "description": "동일 입력 재현",
+    "variants": [
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      },
+      {
+        "productKey": "saju_mbti_compatibility",
+        "productSlug": "compatibility",
+        "compatibilityRoleVersion": "compatibility-fixed-ab-v1",
+        "relationshipType": "parentChild",
+        "personA": {
+          "name": "검수가상부모은주",
+          "birthDate": "1969-12-14",
+          "birthTime": "22:30",
+          "mbtiType": "INTP",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "personB": {
+          "name": "검수가상자녀도현",
+          "birthDate": "2009-04-08",
+          "birthTime": "09:15",
+          "mbtiType": "ESFJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        }
+      }
+    ],
+    "requiredPredicate": "replay",
+    "hypotheticalContext": null,
+    "contextIsNotPayload": true,
+    "actualParentageVerified": false,
+    "isFictional": true,
+    "notCustomerHistory": true,
+    "researchBindingAllowed": true
+  }
+]

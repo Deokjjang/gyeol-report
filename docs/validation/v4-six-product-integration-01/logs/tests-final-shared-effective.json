@@ -1,0 +1,1432 @@
+{
+  "numTotalTestSuites": 11,
+  "numPassedTestSuites": 7,
+  "numFailedTestSuites": 4,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 124,
+  "numPassedTests": 120,
+  "numFailedTests": 4,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "snapshot": {
+    "added": 0,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0,
+    "didUpdate": false
+  },
+  "startTime": 1791815319850,
+  "success": false,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "uncertain Annual fails before order, local redeem or production queue; exact correction can retry",
+          "status": "failed",
+          "title": "uncertain Annual fails before order, local redeem or production queue; exact correction can retry",
+          "duration": 62.903999999999996,
+          "failureMessages": [
+            "AssertionError: expected 403 to be 400 // Object.is equality\n    at /private/tmp/gyeol-six-product-integration-01/tests/unit/api/bookAnnualPreflight.test.ts:31:24\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20"
+          ],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "Book uses canonical message before receipt and shares one calculation-only Dayun precheck",
+          "status": "passed",
+          "title": "Book uses canonical message before receipt and shares one calculation-only Dayun precheck",
+          "duration": 0.6290000000000191,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1791815345278,
+      "endTime": 1791815345341.629,
+      "status": "failed",
+      "message": "",
+      "name": "/private/tmp/gyeol-six-product-integration-01/tests/unit/api/bookAnnualPreflight.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "server-authority OFF route boundary"
+          ],
+          "fullName": "server-authority OFF route boundary actual constant has no external inputs or environment activation",
+          "status": "passed",
+          "title": "actual constant has no external inputs or environment activation",
+          "duration": 2.519957999999974,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server-authority OFF route boundary"
+          ],
+          "fullName": "server-authority OFF route boundary ?v4=1 cannot change the default home/input",
+          "status": "passed",
+          "title": "?v4=1 cannot change the default home/input",
+          "duration": 10.431459000000018,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server-authority OFF route boundary"
+          ],
+          "fullName": "server-authority OFF route boundary ?book=1 cannot change the default home/input",
+          "status": "passed",
+          "title": "?book=1 cannot change the default home/input",
+          "duration": 4.69820900000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server-authority OFF route boundary"
+          ],
+          "fullName": "server-authority OFF route boundary cookie: book=1 cannot change the default home/input",
+          "status": "passed",
+          "title": "cookie: book=1 cannot change the default home/input",
+          "duration": 4.497083000000089,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server-authority OFF route boundary"
+          ],
+          "fullName": "server-authority OFF route boundary localStorage: v4 cannot change the default home/input",
+          "status": "passed",
+          "title": "localStorage: v4 cannot change the default home/input",
+          "duration": 3.4505000000000337,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server-authority OFF route boundary"
+          ],
+          "fullName": "server-authority OFF route boundary payload: version=v4 cannot change the default home/input",
+          "status": "passed",
+          "title": "payload: version=v4 cannot change the default home/input",
+          "duration": 2.848457999999937,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server-authority OFF route boundary"
+          ],
+          "fullName": "server-authority OFF route boundary reportVersion=v4 cannot change the default home/input",
+          "status": "passed",
+          "title": "reportVersion=v4 cannot change the default home/input",
+          "duration": 2.7402079999999387,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server-authority OFF route boundary"
+          ],
+          "fullName": "server-authority OFF route boundary only internal injection selects the Book server components",
+          "status": "passed",
+          "title": "only internal injection selects the Book server components",
+          "duration": 0.2130419999999731,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server-authority OFF route boundary"
+          ],
+          "fullName": "server-authority OFF route boundary dev entry and mock API fail closed in production",
+          "status": "passed",
+          "title": "dev entry and mock API fail closed in production",
+          "duration": 2.934500000000071,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server-authority OFF route boundary"
+          ],
+          "fullName": "server-authority OFF route boundary dev API refuses off-host / cross-origin calls",
+          "status": "passed",
+          "title": "dev API refuses off-host / cross-origin calls",
+          "duration": 0.6885829999999942,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'comprehensive' complete flow, catalog/payload parity, full book",
+          "status": "passed",
+          "title": "'comprehensive' complete flow, catalog/payload parity, full book",
+          "duration": 8545.600333,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'career' complete flow, catalog/payload parity, full book",
+          "status": "passed",
+          "title": "'career' complete flow, catalog/payload parity, full book",
+          "duration": 1506.023083,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'love' complete flow, catalog/payload parity, full book",
+          "status": "passed",
+          "title": "'love' complete flow, catalog/payload parity, full book",
+          "duration": 2127.7671249999985,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'compatibility' complete flow, catalog/payload parity, full book",
+          "status": "passed",
+          "title": "'compatibility' complete flow, catalog/payload parity, full book",
+          "duration": 5052.255249999998,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'major' complete flow, catalog/payload parity, full book",
+          "status": "passed",
+          "title": "'major' complete flow, catalog/payload parity, full book",
+          "duration": 2759.126250000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'annual' complete flow, catalog/payload parity, full book",
+          "status": "passed",
+          "title": "'annual' complete flow, catalog/payload parity, full book",
+          "duration": 2899.3719579999997,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'comprehensive' unknown/approx/roles pass through same adapters",
+          "status": "passed",
+          "title": "'comprehensive' unknown/approx/roles pass through same adapters",
+          "duration": 8265.5305,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'full-unknown' unknown/approx/roles pass through same adapters",
+          "status": "passed",
+          "title": "'full-unknown' unknown/approx/roles pass through same adapters",
+          "duration": 322.1532079999997,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'full-approximate' unknown/approx/roles pass through same adapters",
+          "status": "passed",
+          "title": "'full-approximate' unknown/approx/roles pass through same adapters",
+          "duration": 11566.829249999995,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'pair-02-marriage' unknown/approx/roles pass through same adapters",
+          "status": "passed",
+          "title": "'pair-02-marriage' unknown/approx/roles pass through same adapters",
+          "duration": 3985.0886249999967,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'pair-03-parent' unknown/approx/roles pass through same adapters",
+          "status": "passed",
+          "title": "'pair-03-parent' unknown/approx/roles pass through same adapters",
+          "duration": 4573.643624999997,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'pair-04-coworker' unknown/approx/roles pass through same adapters",
+          "status": "passed",
+          "title": "'pair-04-coworker' unknown/approx/roles pass through same adapters",
+          "duration": 6614.436541000003,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'pair-05-manager' unknown/approx/roles pass through same adapters",
+          "status": "passed",
+          "title": "'pair-05-manager' unknown/approx/roles pass through same adapters",
+          "duration": 4919.237416000004,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'pair-06-business' unknown/approx/roles pass through same adapters",
+          "status": "passed",
+          "title": "'pair-06-business' unknown/approx/roles pass through same adapters",
+          "duration": 5657.363542000006,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'pair-07-friend' unknown/approx/roles pass through same adapters",
+          "status": "passed",
+          "title": "'pair-07-friend' unknown/approx/roles pass through same adapters",
+          "duration": 4409.527915999992,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "actual input → existing checkout builder → local publish/read → actual report route"
+          ],
+          "fullName": "actual input → existing checkout builder → local publish/read → actual report route 'pair-08-love' unknown/approx/roles pass through same adapters",
+          "status": "passed",
+          "title": "'pair-08-love' unknown/approx/roles pass through same adapters",
+          "duration": 4039.193874999997,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "presentation contracts"
+          ],
+          "fullName": "presentation contracts restores only input fields, never versions/prices/consents/gate; exact/approx/unknown",
+          "status": "passed",
+          "title": "restores only input fields, never versions/prices/consents/gate; exact/approx/unknown",
+          "duration": 0.5349999999889405,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "presentation contracts"
+          ],
+          "fullName": "presentation contracts guest required consent, no fake member bypass, compact collapsed details",
+          "status": "passed",
+          "title": "guest required consent, no fake member bypass, compact collapsed details",
+          "duration": 3.4673340000008466,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "presentation contracts"
+          ],
+          "fullName": "presentation contracts stored version is authoritative and V3/invalid snapshots cannot be regenerated",
+          "status": "passed",
+          "title": "stored version is authoritative and V3/invalid snapshots cannot be regenerated",
+          "duration": 0.21550000000570435,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "presentation contracts"
+          ],
+          "fullName": "presentation contracts share model uses registry, existing URL/token and no SDK",
+          "status": "passed",
+          "title": "share model uses registry, existing URL/token and no SDK",
+          "duration": 0.35149999998975545,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "presentation contracts"
+          ],
+          "fullName": "presentation contracts footer contact values preserved, primary support is Kakao, business collapsed",
+          "status": "passed",
+          "title": "footer contact values preserved, primary support is Kakao, business collapsed",
+          "duration": 5.297166999996989,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1791815425513,
+      "endTime": 1791815502803.297,
+      "status": "passed",
+      "message": "",
+      "name": "/private/tmp/gyeol-six-product-integration-01/tests/unit/app/bookPublicFlow.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "'H' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "status": "passed",
+          "title": "'H' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "duration": 14.200707999996666,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "'A' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "status": "passed",
+          "title": "'A' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "duration": 9.132375000001048,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "'B' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "status": "passed",
+          "title": "'B' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "duration": 9.572874999998021,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "'C' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "status": "passed",
+          "title": "'C' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "duration": 9.337916999997105,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "'D' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "status": "passed",
+          "title": "'D' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "duration": 9.83125000000291,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "'E' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "status": "passed",
+          "title": "'E' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "duration": 8.077540999998746,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "'F' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "status": "passed",
+          "title": "'F' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "duration": 8.133249999998952,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "'H-employee' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "status": "passed",
+          "title": "'H-employee' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "duration": 8.438041000001249,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "'H-freelancer' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "status": "passed",
+          "title": "'H-freelancer' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "duration": 10.040208000005805,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "'H-business_owner' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "status": "passed",
+          "title": "'H-business_owner' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "duration": 8.458042000005662,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "'H2025' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "status": "passed",
+          "title": "'H2025' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "duration": 8.431207999994513,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "'H2027' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "status": "passed",
+          "title": "'H2027' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "duration": 8.680167000005895,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "'C2028' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "status": "passed",
+          "title": "'C2028' keeps baseline calculation, every relation ID, MBTI and Fusion",
+          "duration": 11.0747080000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "H2/H4/H5 use different decisions for different real contacts, including the secondary tension",
+          "status": "passed",
+          "title": "H2/H4/H5 use different decisions for different real contacts, including the secondary tension",
+          "duration": 0.27070800000365125,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "H10 connects both exact natal actors to output and scheduling, never guarantees harmony or failure",
+          "status": "passed",
+          "title": "H10 connects both exact natal actors to output and scheduling, never guarantees harmony or failure",
+          "duration": 0.26837499999965075,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "H12 keeps external opportunity, time/cost, learning and the actual clash in one domain",
+          "status": "passed",
+          "title": "H12 keeps external opportunity, time/cost, learning and the actual clash in one domain",
+          "duration": 0.1556669999990845,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "input context changes scenes/actions without changing a single calculated monthly fact",
+          "status": "passed",
+          "title": "input context changes scenes/actions without changing a single calculated monthly fact",
+          "duration": 1.8818339999997988,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "missing facts do not generate any relationship, or any constraints borrowed from another month",
+          "status": "passed",
+          "title": "missing facts do not generate any relationship, or any constraints borrowed from another month",
+          "duration": 0.15558299999975134,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "H unknown hour preserves absence and does not invent evidence",
+          "status": "passed",
+          "title": "H unknown hour preserves absence and does not invent evidence",
+          "duration": 3626.287875000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "H unknown mbti preserves absence and does not invent evidence",
+          "status": "passed",
+          "title": "H unknown mbti preserves absence and does not invent evidence",
+          "duration": 98.40312499999709,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "H unknown both preserves absence and does not invent evidence",
+          "status": "passed",
+          "title": "H unknown both preserves absence and does not invent evidence",
+          "duration": 491.6025000000009,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "2025 is retrospective; 2027 is explicitly offline and still rejected operationally",
+          "status": "passed",
+          "title": "2025 is retrospective; 2027 is explicitly offline and still rejected operationally",
+          "duration": 0.368916999999783,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "the reader's year ranges meet at the exact Lichun instant without claiming an overlapping day",
+          "status": "passed",
+          "title": "the reader's year ranges meet at the exact Lichun instant without claiming an overlapping day",
+          "duration": 0.13850000000093132,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "H deterministic generation and lossless Book store/owner/shared reopen",
+          "status": "passed",
+          "title": "H deterministic generation and lossless Book store/owner/shared reopen",
+          "duration": 3880.862583000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "A deterministic generation and lossless Book store/owner/shared reopen",
+          "status": "passed",
+          "title": "A deterministic generation and lossless Book store/owner/shared reopen",
+          "duration": 2918.5918750000055,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "B deterministic generation and lossless Book store/owner/shared reopen",
+          "status": "passed",
+          "title": "B deterministic generation and lossless Book store/owner/shared reopen",
+          "duration": 4135.156750000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "C deterministic generation and lossless Book store/owner/shared reopen",
+          "status": "passed",
+          "title": "C deterministic generation and lossless Book store/owner/shared reopen",
+          "duration": 2592.7888329999987,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "D deterministic generation and lossless Book store/owner/shared reopen",
+          "status": "passed",
+          "title": "D deterministic generation and lossless Book store/owner/shared reopen",
+          "duration": 2894.841542000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "E deterministic generation and lossless Book store/owner/shared reopen",
+          "status": "passed",
+          "title": "E deterministic generation and lossless Book store/owner/shared reopen",
+          "duration": 186.42716700000165,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "F deterministic generation and lossless Book store/owner/shared reopen",
+          "status": "passed",
+          "title": "F deterministic generation and lossless Book store/owner/shared reopen",
+          "duration": 518.8087920000035,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "protected 'comprehensive' exact base narrative, evidence and Book hashes",
+          "status": "passed",
+          "title": "protected 'comprehensive' exact base narrative, evidence and Book hashes",
+          "duration": 8358.275958999999,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "protected 'career' exact base narrative, evidence and Book hashes",
+          "status": "passed",
+          "title": "protected 'career' exact base narrative, evidence and Book hashes",
+          "duration": 1440.406999999992,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "protected 'love' exact base narrative, evidence and Book hashes",
+          "status": "passed",
+          "title": "protected 'love' exact base narrative, evidence and Book hashes",
+          "duration": 2076.5749170000054,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "protected 'compatibility' exact base narrative, evidence and Book hashes",
+          "status": "passed",
+          "title": "protected 'compatibility' exact base narrative, evidence and Book hashes",
+          "duration": 4942.106874999998,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "protected 'major' exact base narrative, evidence and Book hashes",
+          "status": "passed",
+          "title": "protected 'major' exact base narrative, evidence and Book hashes",
+          "duration": 2610.098125000004,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1791815383676,
+      "endTime": 1791815424576.0981,
+      "status": "passed",
+      "message": "",
+      "name": "/private/tmp/gyeol-six-product-integration-01/tests/unit/interpretation-v4/annualReaderQuality.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "Major fixture 0 actual entry, canonical parity, 14/14, reopen/share",
+          "status": "passed",
+          "title": "Major fixture 0 actual entry, canonical parity, 14/14, reopen/share",
+          "duration": 5863.106583,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "Major fixture 1 actual entry, canonical parity, 14/14, reopen/share",
+          "status": "passed",
+          "title": "Major fixture 1 actual entry, canonical parity, 14/14, reopen/share",
+          "duration": 8144.092916,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "Major fixture 4 actual entry, canonical parity, 14/14, reopen/share",
+          "status": "passed",
+          "title": "Major fixture 4 actual entry, canonical parity, 14/14, reopen/share",
+          "duration": 287.43345899999986,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "Annual fixture 0 actual entry, selected year/Jie parity, 12/12, reopen/share",
+          "status": "passed",
+          "title": "Annual fixture 0 actual entry, selected year/Jie parity, 12/12, reopen/share",
+          "duration": 5718.053792000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "Annual fixture 2 actual entry, selected year/Jie parity, 12/12, reopen/share",
+          "status": "passed",
+          "title": "Annual fixture 2 actual entry, selected year/Jie parity, 12/12, reopen/share",
+          "duration": 5149.761291999999,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "Annual fixture 4 actual entry, selected year/Jie parity, 12/12, reopen/share",
+          "status": "passed",
+          "title": "Annual fixture 4 actual entry, selected year/Jie parity, 12/12, reopen/share",
+          "duration": 327.1869170000027,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "time relevance never promotes natal fortune, invents time support or changes the frozen profile",
+          "status": "passed",
+          "title": "time relevance never promotes natal fortune, invents time support or changes the frozen profile",
+          "duration": 4184.929040999999,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "time precision unknown stays canonical without invented hour",
+          "status": "passed",
+          "title": "time precision unknown stays canonical without invented hour",
+          "duration": 657.3987499999967,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "time precision approximate stays canonical without invented hour",
+          "status": "passed",
+          "title": "time precision approximate stays canonical without invented hour",
+          "duration": 216.49787500000093,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1791815570581,
+      "endTime": 1791815601130.4978,
+      "status": "passed",
+      "message": "",
+      "name": "/private/tmp/gyeol-six-product-integration-01/tests/unit/interpretation-v4/timeProduct.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Phase13B stable chapter navigation and complete presentation"
+          ],
+          "fullName": "Phase13B stable chapter navigation and complete presentation 'comprehensive': front and end navigation share real targets and numbers",
+          "status": "passed",
+          "title": "'comprehensive': front and end navigation share real targets and numbers",
+          "duration": 8.939291000002413,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Phase13B stable chapter navigation and complete presentation"
+          ],
+          "fullName": "Phase13B stable chapter navigation and complete presentation 'career': front and end navigation share real targets and numbers",
+          "status": "failed",
+          "title": "'career': front and end navigation share real targets and numbers",
+          "duration": 4.910208000001148,
+          "failureMessages": [
+            "AssertionError: expected [ { title: '이 책의 주인공', …(2) }, …(12) ] to deeply equal [ …(9) ]\n    at /private/tmp/gyeol-six-product-integration-01/tests/unit/app/dev/bookReading13b.test.tsx:29:41\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)"
+          ],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Phase13B stable chapter navigation and complete presentation"
+          ],
+          "fullName": "Phase13B stable chapter navigation and complete presentation 'love': front and end navigation share real targets and numbers",
+          "status": "failed",
+          "title": "'love': front and end navigation share real targets and numbers",
+          "duration": 2.18974999999773,
+          "failureMessages": [
+            "AssertionError: expected [ { title: '이 책의 주인공', …(2) }, …(48) ] to deeply equal [ { title: '사랑할 때의 나', …(2) }, …(8) ]\n    at /private/tmp/gyeol-six-product-integration-01/tests/unit/app/dev/bookReading13b.test.tsx:29:41\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)"
+          ],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Phase13B stable chapter navigation and complete presentation"
+          ],
+          "fullName": "Phase13B stable chapter navigation and complete presentation 'compatibility': front and end navigation share real targets and numbers",
+          "status": "failed",
+          "title": "'compatibility': front and end navigation share real targets and numbers",
+          "duration": 1.3302500000027067,
+          "failureMessages": [
+            "AssertionError: expected [ { title: '우리라는 사이', …(2) }, …(52) ] to deeply equal [ Array(9) ]\n    at /private/tmp/gyeol-six-product-integration-01/tests/unit/app/dev/bookReading13b.test.tsx:29:41\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/Deokmin/Dev/projects/gyeol-report/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)"
+          ],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Phase13B stable chapter navigation and complete presentation"
+          ],
+          "fullName": "Phase13B stable chapter navigation and complete presentation 'major': front and end navigation share real targets and numbers",
+          "status": "passed",
+          "title": "'major': front and end navigation share real targets and numbers",
+          "duration": 5.1556669999990845,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Phase13B stable chapter navigation and complete presentation"
+          ],
+          "fullName": "Phase13B stable chapter navigation and complete presentation 'annual': front and end navigation share real targets and numbers",
+          "status": "passed",
+          "title": "'annual': front and end navigation share real targets and numbers",
+          "duration": 3.3430000000007567,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Phase13B stable chapter navigation and complete presentation"
+          ],
+          "fullName": "Phase13B stable chapter navigation and complete presentation short chapters join without losing text, original heading, anchor or note numbering",
+          "status": "passed",
+          "title": "short chapters join without losing text, original heading, anchor or note numbering",
+          "duration": 0.3165840000001481,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Phase13B stable chapter navigation and complete presentation"
+          ],
+          "fullName": "Phase13B stable chapter navigation and complete presentation old scoreless / no-ID Book data remains renderable",
+          "status": "passed",
+          "title": "old scoreless / no-ID Book data remains renderable",
+          "duration": 0.459792000001471,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Text selection owns text; only deliberate empty-margin movement turns"
+          ],
+          "fullName": "Text selection owns text; only deliberate empty-margin movement turns move 100/240 at 250; selected=false → 1",
+          "status": "passed",
+          "title": "move 100/240 at 250; selected=false → 1",
+          "duration": 0.1289169999981823,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Text selection owns text; only deliberate empty-margin movement turns"
+          ],
+          "fullName": "Text selection owns text; only deliberate empty-margin movement turns move 360/245 at 250; selected=false → -1",
+          "status": "passed",
+          "title": "move 360/245 at 250; selected=false → -1",
+          "duration": 0.09987499999988358,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Text selection owns text; only deliberate empty-margin movement turns"
+          ],
+          "fullName": "Text selection owns text; only deliberate empty-margin movement turns move 120/350 at 250; selected=false → 0",
+          "status": "passed",
+          "title": "move 120/350 at 250; selected=false → 0",
+          "duration": 0.05345899999883841,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Text selection owns text; only deliberate empty-margin movement turns"
+          ],
+          "fullName": "Text selection owns text; only deliberate empty-margin movement turns move 250/500 at 250; selected=false → 0",
+          "status": "passed",
+          "title": "move 250/500 at 250; selected=false → 0",
+          "duration": 0.04566700000214041,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Text selection owns text; only deliberate empty-margin movement turns"
+          ],
+          "fullName": "Text selection owns text; only deliberate empty-margin movement turns move 100/240 at 700; selected=false → 0",
+          "status": "passed",
+          "title": "move 100/240 at 700; selected=false → 0",
+          "duration": 0.03762500000084401,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Text selection owns text; only deliberate empty-margin movement turns"
+          ],
+          "fullName": "Text selection owns text; only deliberate empty-margin movement turns move 100/240 at 250; selected=true → 0",
+          "status": "passed",
+          "title": "move 100/240 at 250; selected=true → 0",
+          "duration": 0.03358400000070105,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Text selection owns text; only deliberate empty-margin movement turns"
+          ],
+          "fullName": "Text selection owns text; only deliberate empty-margin movement turns move 215/240 at 250; selected=false → 0",
+          "status": "passed",
+          "title": "move 215/240 at 250; selected=false → 0",
+          "duration": 0.03299999999944703,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Text selection owns text; only deliberate empty-margin movement turns"
+          ],
+          "fullName": "Text selection owns text; only deliberate empty-margin movement turns paragraphs, controls and existing selections never begin swipe",
+          "status": "passed",
+          "title": "paragraphs, controls and existing selections never begin swipe",
+          "duration": 0.13145799999983865,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1791815344667,
+      "endTime": 1791815344694.1313,
+      "status": "failed",
+      "message": "",
+      "name": "/private/tmp/gyeol-six-product-integration-01/tests/unit/app/dev/bookReading13b.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "A-F 0 preserves all calculated evidence and actual MBTI/Fusion integration",
+          "status": "passed",
+          "title": "A-F 0 preserves all calculated evidence and actual MBTI/Fusion integration",
+          "duration": 10.177416999998968,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "A-F 1 preserves all calculated evidence and actual MBTI/Fusion integration",
+          "status": "passed",
+          "title": "A-F 1 preserves all calculated evidence and actual MBTI/Fusion integration",
+          "duration": 7.399666999999681,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "A-F 2 preserves all calculated evidence and actual MBTI/Fusion integration",
+          "status": "passed",
+          "title": "A-F 2 preserves all calculated evidence and actual MBTI/Fusion integration",
+          "duration": 7.22899999999936,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "A-F 3 preserves all calculated evidence and actual MBTI/Fusion integration",
+          "status": "passed",
+          "title": "A-F 3 preserves all calculated evidence and actual MBTI/Fusion integration",
+          "duration": 6.150666999999885,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "A-F 4 preserves all calculated evidence and actual MBTI/Fusion integration",
+          "status": "passed",
+          "title": "A-F 4 preserves all calculated evidence and actual MBTI/Fusion integration",
+          "duration": 6.16004200000134,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "A-F 5 preserves all calculated evidence and actual MBTI/Fusion integration",
+          "status": "passed",
+          "title": "A-F 5 preserves all calculated evidence and actual MBTI/Fusion integration",
+          "duration": 6.763209000000643,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "C separates natal 편관 from 壬申 편재 and 丙午 편인 without dropping its source",
+          "status": "passed",
+          "title": "C separates natal 편관 from 壬申 편재 and 丙午 편인 without dropping its source",
+          "duration": 0.6555840000000899,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "same 겁재 has different facts, applications and cautions for A3/B7/C1",
+          "status": "passed",
+          "title": "same 겁재 has different facts, applications and cautions for A3/B7/C1",
+          "duration": 0.3267919999998412,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "no fact, bad participants, missing IDs and conditional Dayun cannot create a relationship",
+          "status": "passed",
+          "title": "no fact, bad participants, missing IDs and conditional Dayun cannot create a relationship",
+          "duration": 0.3631249999998545,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "uncertain transition range is never described as one exact transition",
+          "status": "passed",
+          "title": "uncertain transition range is never described as one exact transition",
+          "duration": 0.2420829999991838,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "unknown hour and MBTI remain absent rather than guessed",
+          "status": "passed",
+          "title": "unknown hour and MBTI remain absent rather than guessed",
+          "duration": 1.9052920000012818,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "learning month does not abruptly insert an unrelated intimacy gift",
+          "status": "passed",
+          "title": "learning month does not abruptly insert an unrelated intimacy gift",
+          "duration": 0.1492500000003929,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "2024 辰戌 충 keeps the real actors and gives a scheduling criterion, not fake opposing themes",
+          "status": "passed",
+          "title": "2024 辰戌 충 keeps the real actors and gives a scheduling criterion, not fake opposing themes",
+          "duration": 2755.283792,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "present and explicit offline future titles; actual 2027 purchase policy still rejects",
+          "status": "passed",
+          "title": "present and explicit offline future titles; actual 2027 purchase policy still rejects",
+          "duration": 2768.851125000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "Lichun exact boundary -1000 ms retains real year/month and relation intervals",
+          "status": "passed",
+          "title": "Lichun exact boundary -1000 ms retains real year/month and relation intervals",
+          "duration": 2761.048458000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "Lichun exact boundary 0 ms retains real year/month and relation intervals",
+          "status": "passed",
+          "title": "Lichun exact boundary 0 ms retains real year/month and relation intervals",
+          "duration": 2741.529290999999,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "Lichun exact boundary 1000 ms retains real year/month and relation intervals",
+          "status": "passed",
+          "title": "Lichun exact boundary 1000 ms retains real year/month and relation intervals",
+          "duration": 2787.372958,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "2028 Dayun boundary -1000 ms never extends the old cycle beyond its interval",
+          "status": "passed",
+          "title": "2028 Dayun boundary -1000 ms never extends the old cycle beyond its interval",
+          "duration": 2496.536415999999,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "2028 Dayun boundary 0 ms never extends the old cycle beyond its interval",
+          "status": "passed",
+          "title": "2028 Dayun boundary 0 ms never extends the old cycle beyond its interval",
+          "duration": 2477.620791000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "2028 Dayun boundary 1000 ms never extends the old cycle beyond its interval",
+          "status": "passed",
+          "title": "2028 Dayun boundary 1000 ms never extends the old cycle beyond its interval",
+          "duration": 2492.8648749999993,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "A-F 0 deterministic publication and immutable JSON Book owner/shared projection",
+          "status": "passed",
+          "title": "A-F 0 deterministic publication and immutable JSON Book owner/shared projection",
+          "duration": 2814.5970420000012,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "A-F 1 deterministic publication and immutable JSON Book owner/shared projection",
+          "status": "passed",
+          "title": "A-F 1 deterministic publication and immutable JSON Book owner/shared projection",
+          "duration": 4063.0755410000056,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "A-F 2 deterministic publication and immutable JSON Book owner/shared projection",
+          "status": "passed",
+          "title": "A-F 2 deterministic publication and immutable JSON Book owner/shared projection",
+          "duration": 2563.317458000005,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "A-F 3 deterministic publication and immutable JSON Book owner/shared projection",
+          "status": "passed",
+          "title": "A-F 3 deterministic publication and immutable JSON Book owner/shared projection",
+          "duration": 2896.326291999998,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "A-F 4 deterministic publication and immutable JSON Book owner/shared projection",
+          "status": "passed",
+          "title": "A-F 4 deterministic publication and immutable JSON Book owner/shared projection",
+          "duration": 181.7600409999941,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "A-F 5 deterministic publication and immutable JSON Book owner/shared projection",
+          "status": "passed",
+          "title": "A-F 5 deterministic publication and immutable JSON Book owner/shared projection",
+          "duration": 515.8607090000005,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "protected product 'comprehensive' matches the exact base text/evidence/Book",
+          "status": "passed",
+          "title": "protected product 'comprehensive' matches the exact base text/evidence/Book",
+          "duration": 8355.971207999995,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "protected product 'career' matches the exact base text/evidence/Book",
+          "status": "passed",
+          "title": "protected product 'career' matches the exact base text/evidence/Book",
+          "duration": 1427.1530830000047,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "protected product 'love' matches the exact base text/evidence/Book",
+          "status": "passed",
+          "title": "protected product 'love' matches the exact base text/evidence/Book",
+          "duration": 2083.918082999997,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "protected product 'compatibility' matches the exact base text/evidence/Book",
+          "status": "passed",
+          "title": "protected product 'compatibility' matches the exact base text/evidence/Book",
+          "duration": 4868.210750000006,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "protected product 'major' matches the exact base text/evidence/Book",
+          "status": "passed",
+          "title": "protected product 'major' matches the exact base text/evidence/Book",
+          "duration": 2607.397041999997,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1791815693118,
+      "endTime": 1791815746827.397,
+      "status": "passed",
+      "message": "",
+      "name": "/private/tmp/gyeol-six-product-integration-01/tests/unit/interpretation-v4/annualEditorialQuality.test.ts"
+    }
+  ],
+  "integrationProvenance": {
+    "initialRun": "tests-final-shared.json",
+    "replacedFileRun": "shared-quality-final.json",
+    "reason": "Rebase only five cross-product source hashes; rerun entire affected annualEditorialQuality file (31 PASS)"
+  }
+}

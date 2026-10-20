@@ -1,0 +1,290 @@
+/** Static offline coworker research. No runtime registration or customer approval. */
+import type { MaterialView } from "./researchTypes";
+export const CW_DIRECTIONAL_BTO_ARESEARCH: readonly MaterialView[] = [
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P1:ba-independent-second-view",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P1:ba-independent-second-view",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P1:ba-overlap-not-rivalry",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P1:ba-overlap-not-rivalry",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P1:ba-shown-not-promised",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P1:ba-shown-not-promised",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P1:ba-change-the-premise",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P1:ba-change-the-premise",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P1:ba-new-connection-with-limits",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P1:ba-new-connection-with-limits",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P2:ba-closure-list",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P2:ba-closure-list",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P2:ba-rule-explanation",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P2:ba-rule-explanation",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P2:ba-resource-warning",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P2:ba-resource-warning",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P2:ba-other-model",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P2:ba-other-model",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P2:ba-question-channel",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P2:ba-question-channel",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P3:ba-detail-cost",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P3:ba-detail-cost",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P3:ba-silence-delays-handoff",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P3:ba-late-change-after-start",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P3:ba-late-change-after-start",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P3:ba-observe-is-judge",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P3:ba-observe-is-judge",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P3:ba-social-participation-duty",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P3:ba-social-participation-duty",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P4:ba-prioritize-review",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P4:ba-prioritize-review",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P4:ba-confirm-receipt",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P4:ba-confirm-receipt",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P4:ba-ask-one-assumption",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P4:ba-ask-one-assumption",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P4:ba-report-blocker-not-person",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P4:ba-report-blocker-not-person",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH06.P4:ba-decline-addition",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P4:ba-decline-addition",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH08.P3:b-receive-not-accept",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH08.P3:b-receive-not-accept",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH08.P3:b-name-pending-review",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH08.P3:b-name-pending-review",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH08.P3:b-state-integration-limit",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH08.P3:b-state-integration-limit",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH08.P3:b-make-blocker-visible",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH08.P3:b-make-blocker-visible",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH08.P3:b-ask-intent-without-excusing",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH08.P3:b-ask-intent-without-excusing",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:directionalBToAResearch:material:CH08.P3:b-limit-invisible-help",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH08.P3:b-limit-invisible-help",
+    "notAdditionalIndependentFact": true
+  }
+];

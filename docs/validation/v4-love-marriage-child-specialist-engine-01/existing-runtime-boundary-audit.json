@@ -1,0 +1,461 @@
+{
+  "files": [
+    {
+      "file": "src/lib/interpretation-v4/loveProductAdapter.ts",
+      "sha256": "4fb3dd05678729378602384aa304327f280122926b5b6303f25742ab5b682315",
+      "exports": [
+        "LOVE_PRODUCT_VERSION",
+        "buildV4LoveProduct",
+        "LoveProduct"
+      ],
+      "imports": [
+        "node:crypto",
+        "./loveComposer",
+        "./relationshipProductView",
+        "./relationshipProductNarrative",
+        "./editorialGuard",
+        "./narrativeTypes",
+        "./loveReleaseRenderer",
+        "./loveReleaseValidator",
+        "./loveReleaseContracts"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveComposer.ts",
+      "sha256": "20d71d2e166da2a9858199c507960433ffd728b6238faad8b449798cd5f42a57",
+      "exports": [
+        "composeLoveNarrative"
+      ],
+      "imports": [
+        "../report-generation/reportInputTypes",
+        "../report-knowledge/mbti/sourceRuntimeAdapter",
+        "./materialPacket",
+        "./copyRealizer",
+        "./editorialGuard",
+        "./loveVoices",
+        "./loveContext",
+        "./loveFortune",
+        "./loveBalance",
+        "./loveFusionScenes",
+        "./loveFallback",
+        "./loveNatalScenes",
+        "./contentSynthesis",
+        "./narrativeTypes",
+        "./loveNarrativeTypes"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveReleaseContracts.ts",
+      "sha256": "ea860d14a254f063ad1b3925a7e2f64cc6f87af5afcd48b4c69902fb04ae0f54",
+      "exports": [
+        "LOVE_RELEASE_VERSION",
+        "LOVE_READER_CHAPTERS",
+        "LoveReleaseSentence",
+        "LoveReleaseDraft"
+      ],
+      "imports": [
+        "./types",
+        "../report-generation/reportInputTypes"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveReleaseRenderer.ts",
+      "sha256": "d4f40b5d69a1f1dfaf8fd911b52559a466ba27b7877e34ad801328b98a18e1ee",
+      "exports": [
+        "loveSentences",
+        "renderLoveRelease"
+      ],
+      "imports": [
+        "./loveReleaseContracts",
+        "./loveReleaseMaterials",
+        "./loveReleaseContext",
+        "./loveReleaseSources",
+        "./relationshipProductView",
+        "./narrativeTypes",
+        "./loveNarrativeTypes",
+        "./copyRealizer",
+        "../report-knowledge/mbti/sourceRuntimeAdapter",
+        "./narrativeHumanSurface",
+        "./narrativeHumanOutcome",
+        "./loveReleaseParenting",
+        "./loveReleaseApplications"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveReleaseValidator.ts",
+      "sha256": "9585069af3af4456ca23e2e41428055806c81083ac9e892f3c0cf1069de5353d",
+      "exports": [
+        "validateLoveRelease",
+        "compareLoveReaders"
+      ],
+      "imports": [
+        "./loveReleaseContracts",
+        "./relationshipProductView",
+        "./narrativeTypes"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveReleaseSources.ts",
+      "sha256": "155ca2b1980317c40cd2b3348efcb2dd53ab3a065ab258c84497b919dab668d4",
+      "exports": [
+        "loveReleaseSources",
+        "LoveReleaseSource",
+        "loveSourceName"
+      ],
+      "imports": [
+        "./relationshipProductView",
+        "./semanticCore",
+        "./foundationRanking",
+        "./foundationTenGods",
+        "./loveReleaseMaterials"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveReleaseMaterials.ts",
+      "sha256": "02031ba8afae5765f32f3bf99b15e74bdfdc2ecf109723e4f3b38b052eea78c8",
+      "exports": [
+        "LOVE_RELEASE_MATERIALS"
+      ],
+      "imports": [
+        "./semanticCore"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveReleaseApplications.ts",
+      "sha256": "994d357e1460678987f61b7647a06d085a9a06c0fd8c069a99de5702912d5aef",
+      "exports": [
+        "LOVE_RELATIONSHIP_SCENES",
+        "LOVE_QUESTION_DETAILS"
+      ],
+      "imports": []
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveReleaseContext.ts",
+      "sha256": "07c72c4df615e804f6b7ab27a148b324e1cf7afe43d25c57c83fcec149217161",
+      "exports": [
+        "LOVE_RELEASE_CONTEXT"
+      ],
+      "imports": [
+        "../report-generation/reportInputTypes"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveReleaseParenting.ts",
+      "sha256": "d745ca4b6bd814308c7fafc946a9635f036fc501efc34003f35b84d583755bd7",
+      "exports": [
+        "LOVE_PARENTING_RISK_TRAITS",
+        "LOVE_PARENTING_STRENGTHS",
+        "LOVE_PARENTING_RISK"
+      ],
+      "imports": []
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveContext.ts",
+      "sha256": "213b660bc05bf33ef20cb2616f2b2e82a48b620bd1c9049aa5251affb37bb44e",
+      "exports": [
+        "loveContext"
+      ],
+      "imports": [
+        "../report-generation/reportInputTypes",
+        "./copyRealizer"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveVoices.ts",
+      "sha256": "d6c79c51bc1d3474de8a85e5a0b486c6b34683840e6de019b6cf4d1cdf402e9a",
+      "exports": [
+        "LOVE_VOICES",
+        "selectLoveVoice"
+      ],
+      "imports": [
+        "../report-knowledge/mbti/sourceRuntimeAdapter",
+        "./copyRealizer",
+        "./narrativeTypes"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveFortune.ts",
+      "sha256": "2bbb4e18013e2f565298404fb178948890a468f6cd271627716563b61d2f5fed",
+      "exports": [
+        "loveFortune"
+      ],
+      "imports": [
+        "./copyRealizer",
+        "./narrativeTypes",
+        "./editorialGuard"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveBalance.ts",
+      "sha256": "6c72d46cc8e28f18e4924206fd9e13d6f38df9cbbcdd846f059545792f9e3651",
+      "exports": [
+        "loveBalance"
+      ],
+      "imports": [
+        "./copyRealizer",
+        "./narrativeTypes"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveFusionScenes.ts",
+      "sha256": "f670aa44f40d09d7aa4c6d7e199d1d0a85fff2fc6d312c827bf34508f1ea0e85",
+      "exports": [
+        "loveFusionTurn"
+      ],
+      "imports": [
+        "./copyRealizer",
+        "./narrativeTypes"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveFallback.ts",
+      "sha256": "941629afbcef7a36e13aa3d03ecc9da15bfd248aeaf6c2663571287b826fa11c",
+      "exports": [
+        "natalLove"
+      ],
+      "imports": [
+        "./copyRealizer",
+        "./loveNatalScenes",
+        "./narrativeTypes",
+        "./materialDepthTypes"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveNatalScenes.ts",
+      "sha256": "332c4f5b5cfa83349c5371826a08a6eae8ab67e0aad223c09289aae42b250195",
+      "exports": [
+        "natalLoveScene",
+        "loveNatalScenes"
+      ],
+      "imports": [
+        "./copyRealizer",
+        "./narrativeTypes"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/relationshipProductView.ts",
+      "sha256": "5890c8ec936036dc78a7870aa1a8f5ed660a46df8c04f37fdffd0594e435d2d2",
+      "exports": [
+        "RELATIONSHIP_DOMAINS",
+        "RELATIONSHIP_AXES",
+        "RelationshipProfiles",
+        "RelationshipPlacement",
+        "buildRelationshipProfiles",
+        "projectRelationshipView",
+        "RelationshipView",
+        "selectLoveProductSources"
+      ],
+      "imports": [
+        "./foundationIntegratedProfile",
+        "./mbtiSemanticProfile",
+        "./fusionSemanticProfile",
+        "./claimProfile",
+        "./personalResonanceProfile",
+        "./guidanceProfile",
+        "./comprehensiveCandidateAdapter",
+        "./fusionProfileAdapter",
+        "./comprehensivePlanCore",
+        "./narrativeTypes",
+        "./semanticCore",
+        "./mbtiSemanticCore"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/relationshipProductNarrative.ts",
+      "sha256": "53be4a83a37c4497d262ee99e37d18906d33500547eb793f7d35a88f345cb30c",
+      "exports": [
+        "relationshipProof",
+        "createRelationshipRenderer"
+      ],
+      "imports": [
+        "./narrativeBlockRenderer",
+        "./narrativeMemory",
+        "./narrativeSceneCore",
+        "./narrativeSceneRegistry",
+        "./comprehensiveNarrativeAdapter",
+        "./narrativeHumanSurface",
+        "./narrativeMbtiReason",
+        "./narrativePositiveReward",
+        "./narrativeHumanOutcome",
+        "./relationshipProductView",
+        "./comprehensivePlanCore",
+        "./narrativeCore",
+        "./semanticCore",
+        "./narrativeTypes"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/foundationIntegratedProfile.ts",
+      "sha256": "b6640f2021a9919159611bd5a52552d26cbffbe64c35e845d74b60cbe1ebcc30",
+      "exports": [
+        "INTEGRATED_FOUNDATION_VERSION",
+        "IntegratedFoundationInput",
+        "MyeongliSemanticProfile",
+        "IntegratedProfileResult",
+        "integrateMyeongliFoundation",
+        "buildIntegratedMyeongliProfile"
+      ],
+      "imports": [
+        "../saju/types",
+        "./semanticCore",
+        "./foundationProfile",
+        "./foundationTenGods",
+        "./foundationNatalProfile",
+        "./foundationSupplement",
+        "./foundationRanking",
+        "./foundationTension",
+        "./foundationDiagnostics"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/mbtiSemanticProfile.ts",
+      "sha256": "b95f7c05b61f27f42f9a2e5ecccf2811610095afaf08737fb269f6b2dbbca96f",
+      "exports": [
+        "MbtiAxisSupport",
+        "MbtiAxisLedger",
+        "MbtiSemanticProfile",
+        "aggregateMbtiContributions",
+        "MbtiProfileResult",
+        "projectMbtiSemanticProfile",
+        "buildMbtiSemanticProfile"
+      ],
+      "imports": [
+        "./semanticCore",
+        "./mbtiDimensionPriors",
+        "./mbtiSourceAdapter",
+        "./mbtiSemanticAnnotations",
+        "./mbtiSemanticDiagnostics",
+        "./mbtiSemanticCore"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+      "sha256": "180e4343baba50532c878d89772eeec8d95fd008cfba46469479cb8ce58bfd17",
+      "exports": [
+        "buildMyeongliMbtiFusion"
+      ],
+      "imports": [
+        "./semanticCore",
+        "./foundationIntegratedProfile",
+        "./mbtiSemanticProfile",
+        "./fusionCore",
+        "./fusionContext",
+        "./fusionProfileAdapter",
+        "./fusionMeanings",
+        "./fusionTension",
+        "./fusionComplementRegistry",
+        "./fusionRanking",
+        "./fusionDiagnostics"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/claimProfile.ts",
+      "sha256": "3f405565d9db8d082489ae36cda987c7e81dd8cfba926a383f3f4c0e47c52241",
+      "exports": [
+        "buildClaimProfile"
+      ],
+      "imports": [
+        "./foundationIntegratedProfile",
+        "./mbtiSemanticProfile",
+        "./fusionCore",
+        "./fusionDiagnostics",
+        "./claimCore",
+        "./claimRegistry",
+        "./claimEvidence",
+        "./claimEvaluator",
+        "./claimDiagnostics"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/personalResonanceProfile.ts",
+      "sha256": "b5a854e34c657e5fe045335cde20abc6b838005a463b123c7fcaceed1b71ea9d",
+      "exports": [
+        "buildPersonalResonanceProfile"
+      ],
+      "imports": [
+        "./foundationIntegratedProfile",
+        "./mbtiSemanticProfile",
+        "./fusionCore",
+        "./fusionDiagnostics",
+        "./claimCore",
+        "./claimDiagnostics",
+        "./claimEvidence",
+        "./personalResonanceCore",
+        "./personalResonanceRegistry",
+        "./personalResonanceEvaluator",
+        "./personalResonanceRanking",
+        "./personalResonanceDiagnostics",
+        "./traitArc",
+        "./coreGyeol"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/guidanceProfile.ts",
+      "sha256": "c0d91205f3726824abb0e7be2a6b7b6d18b486e3b9a119e4d56e68f91355031e",
+      "exports": [
+        "buildContextualGuidanceProfile"
+      ],
+      "imports": [
+        "./guidanceCore",
+        "./guidanceContext",
+        "./guidanceProblems",
+        "./guidanceEvidence",
+        "./claimEvidence",
+        "./guidanceEvaluator",
+        "./guidanceConflictResolver",
+        "./guidanceRanking",
+        "./guidanceDiagnostics"
+      ]
+    },
+    {
+      "file": "src/lib/report-knowledge/mbti/sourceRuntimeAdapter.ts",
+      "sha256": "6672b6f6dd22b310414b3e8694ee3fed7a75d2350c37365dd056d346d43f8dad",
+      "exports": [
+        "MBTI_SOURCE_TYPES",
+        "MbtiSourceType",
+        "MBTI_REPORT_USE_CASE_KEYS",
+        "MbtiReportUseCaseKey",
+        "MBTI_TRAIT_AREAS",
+        "MbtiTraitArea",
+        "MBTI_PRODUCT_TRAIT_AREAS",
+        "getMbtiProductTraits",
+        "getMbtiFortuneBasis",
+        "MbtiSourceTraitItem",
+        "MbtiRelationshipPair",
+        "MbtiMyeongliBridgeHint",
+        "MbtiSourceProfile",
+        "getMbtiSourceProfile",
+        "getMbtiTraitArea",
+        "getMbtiReportUseCase",
+        "getMbtiRelationshipPair",
+        "getMbtiMyeongliBridgeHints"
+      ],
+      "imports": [
+        "node:fs",
+        "node:path",
+        "../mbtiKnowledgeTypes"
+      ]
+    }
+  ],
+  "callPath": {
+    "A": "runtimeShadow -> buildV4LoveProduct -> composeLoveNarrative and buildRelationshipProfiles",
+    "B": "existing individual calculation -> Myeongli -> MBTI source -> Fusion -> Claim -> Resonance -> Contextual Guidance",
+    "C": "projectRelationshipView retains existing relationship domains and axes",
+    "D": "selectLoveProductSources: L1/L3/L4/L5/L6/L7/L8/L9; L2 no direct take",
+    "E": "attraction/partner use retained legacy and Release sources; withoutPair strips direct Pair references",
+    "F": "loveContext/ReleaseContext use entered relationshipStatus without changing individual core",
+    "G": "CH08 own PARENTS exception, not CHILD/CHILDREN source transfer",
+    "H": "Release Renderer CH01-09 separately defined from L questions",
+    "I": "Validator hardErrors, required sections and reviewNarrative determine existing Release/fallback",
+    "J": "Quality Issues are not new payment errors",
+    "K": "Reader-L/Canonical-Atom/Research-Release facet bridges UNVERIFIED",
+    "L": "No Writer, existing generator or runtime modification"
+  },
+  "releaseReuse": {
+    "nonRecallEligibility": "usedFacet < 6",
+    "recallGlobalFacetException": true,
+    "sameChapterFacetGuardAlsoForRecall": true,
+    "rootUse": "sorting, no hard cap",
+    "LSelectorTheme": "duplicateGroupId ?? semanticOverlapGroup ?? semanticTheme; unique per selector run"
+  }
+}

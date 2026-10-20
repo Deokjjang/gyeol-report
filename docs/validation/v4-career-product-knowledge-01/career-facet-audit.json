@@ -1,0 +1,575 @@
+[
+  {
+    "id": "ckr:facet-audit:precision",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "precision",
+    "actualLabel": "빠진 조건을 찾아내는 정확성",
+    "existingAxes": [
+      [
+        "PRECISION",
+        1
+      ]
+    ],
+    "meaning": "조건과 결과의 불일치 발견",
+    "jobRefs": [
+      "ckr:job:accounting",
+      "ckr:job:finance",
+      "ckr:job:software"
+    ],
+    "prerequisites": "원자료·대조 기준·수정 통로",
+    "overuse": "중요 오류와 표현 흠을 같은 무게로 처리",
+    "actualOutput": "오류 유형·수정 흔적·재확인 범위",
+    "difference": "depth는 원인 설명, precision은 어긋남의 검출",
+    "crossChapterUse": "CH01 착수 조건, CH02 검토 기능, CH06 예방의 투입, CH08 반복 검토의 성장 비용",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "354ce9bfeffe80b04ebabcc4ef665884a677da3bde3a55b31bd9539a8dc7548c"
+  },
+  {
+    "id": "ckr:facet-audit:depth",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "depth",
+    "actualLabel": "문제의 속을 파고드는 분석력",
+    "existingAxes": [
+      [
+        "DEPTH",
+        1
+      ],
+      [
+        "PATTERN_SENSE",
+        1
+      ]
+    ],
+    "meaning": "원인 가설과 설명 범위",
+    "jobRefs": [
+      "ckr:job:research",
+      "ckr:job:translation",
+      "ckr:job:software"
+    ],
+    "prerequisites": "반례 자료·사용할 결정·조사 종료 기준",
+    "overuse": "의사결정과 무관한 조사까지 확대",
+    "actualOutput": "가설별 자료·반례·한계",
+    "difference": "precision은 기준 대조, depth는 설명 모델",
+    "crossChapterUse": "CH02 능력, CH03 조사 대상, CH07 개념 이해, CH08 결과 미전달의 위험",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "507b911577df005ab85b5c01a094fb74aab6ab5cfedd6039caa3afd5488a31a2"
+  },
+  {
+    "id": "ckr:facet-audit:creation",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "creation",
+    "actualLabel": "없는 답을 새로 만드는 탐색력",
+    "existingAxes": [
+      [
+        "CREATION",
+        1
+      ],
+      [
+        "CURIOSITY",
+        1
+      ]
+    ],
+    "meaning": "비교할 새 결과의 형태",
+    "jobRefs": [
+      "ckr:job:brand_design",
+      "ckr:job:photography",
+      "ckr:job:video",
+      "ckr:job:writing"
+    ],
+    "prerequisites": "목적·독자·매체·피드백",
+    "overuse": "발상을 계속 더해 선택과 완성을 미룸",
+    "actualOutput": "대안별 차이·선택 이유·완료 결과",
+    "difference": "expression은 전달, creation은 아직 없는 안 제작",
+    "crossChapterUse": "CH01 초안 질문, CH03 직무, CH05 목적 적합, CH06 사용 가치",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "24ed57bc6f137d6da0a83614b454bff2084a8437ad714661c8d904187446e0a4"
+  },
+  {
+    "id": "ckr:facet-audit:expression",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "expression",
+    "actualLabel": "생각을 알아듣게 만드는 표현력",
+    "existingAxes": [
+      [
+        "EXPRESSION",
+        1
+      ],
+      [
+        "CHARISMA",
+        1
+      ]
+    ],
+    "meaning": "내용을 상대가 사용할 언어로 전달",
+    "jobRefs": [
+      "ckr:job:teaching",
+      "ckr:job:translation",
+      "ckr:job:writing",
+      "ckr:job:sales"
+    ],
+    "prerequisites": "대상 질문·정확한 내용·이해 확인",
+    "overuse": "좋은 인상과 실제 이해를 동일시",
+    "actualOutput": "설명·질문·혼자 수행의 차이",
+    "difference": "care는 필요한 지원 조절, expression은 이해 전달",
+    "crossChapterUse": "CH02 설명 기능, CH04 합의 언어, CH06 혼선 감소, CH08 기여 가시성",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "c536ddc18ba6d94911095e53b0ff5e0aa3f9e01c0923a3f543ce07aa25223e5e"
+  },
+  {
+    "id": "ckr:facet-audit:care",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "care",
+    "actualLabel": "사람의 필요를 실제 도움으로 잇는 감각",
+    "existingAxes": [
+      [
+        "CARE",
+        1
+      ],
+      [
+        "SOCIAL_ATTUNEMENT",
+        1
+      ]
+    ],
+    "meaning": "상대가 막힌 단계에 필요한 도움 연결",
+    "jobRefs": [
+      "ckr:job:care",
+      "ckr:job:teaching",
+      "ckr:job:counsel_support",
+      "ckr:job:customer_support"
+    ],
+    "prerequisites": "실제 필요·권한·지원 종료·인계",
+    "overuse": "상대 몫을 모두 대신해 준비 시간을 잃음",
+    "actualOutput": "관찰·지원 범위·다음 행동",
+    "difference": "인성의 도움받음 상징은 care 제공 능력과 동일하지 않음",
+    "crossChapterUse": "CH03 대상과 자격, CH04 지원 경계, CH06 숨은 투입, CH08 장기 준비 부족",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "cace3c9a7b117241da49194ceafe8e7622d08fbc020b746bfb0d2ef9433e40bb"
+  },
+  {
+    "id": "ckr:facet-audit:leadership",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "leadership",
+    "actualLabel": "책임과 결정을 이어 주는 추진력",
+    "existingAxes": [
+      [
+        "LEADERSHIP",
+        1
+      ],
+      [
+        "DUTY",
+        1
+      ]
+    ],
+    "meaning": "결정 공백과 역할을 연결",
+    "jobRefs": [
+      "ckr:job:small_business",
+      "ckr:job:project_planning",
+      "ckr:job:sales"
+    ],
+    "prerequisites": "실제 권한·담당·질문 통로",
+    "overuse": "맡긴 일을 다시 가져오거나 방법까지 통제",
+    "actualOutput": "결정 기준·담당·권한·대기",
+    "difference": "drive는 본인 실행, leadership은 타인 실행 조건",
+    "crossChapterUse": "CH02 조정 능력, CH04 책임 권한, CH05 위임 성장, CH08 영향 범위",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "6fc9116607da00043c90502ecbc4425d0287ed2d99b558d964307060096afbff"
+  },
+  {
+    "id": "ckr:facet-audit:resource",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "resource",
+    "actualLabel": "쓸모와 비용을 함께 보는 현실감각",
+    "existingAxes": [
+      [
+        "RESOURCE_SENSE",
+        1
+      ],
+      [
+        "PRACTICALITY",
+        1
+      ]
+    ],
+    "meaning": "투입과 남길 결과의 비교",
+    "jobRefs": [
+      "ckr:job:finance",
+      "ckr:job:cafe",
+      "ckr:job:small_business"
+    ],
+    "prerequisites": "실제 자원 자료·제공 결과·기간",
+    "overuse": "당장 보이는 절약만 남겨 장기 가치를 제외",
+    "actualOutput": "비용 종류·시점·포기할 활동",
+    "difference": "opportunity는 새 수요, resource는 선택한 투입의 배분",
+    "crossChapterUse": "CH01 착수 규모, CH06 비용 구조, CH09 실제 도입 항목 회수",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "bb2484314324d604e24a6cd4da9844d8098cbbdda796b487a7ee7c4ec344f3b2"
+  },
+  {
+    "id": "ckr:facet-audit:opportunity",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "opportunity",
+    "actualLabel": "바깥의 변화를 기회로 읽는 감각",
+    "existingAxes": [
+      [
+        "OPPORTUNITY_SENSE",
+        1
+      ],
+      [
+        "EXPANSION",
+        1
+      ]
+    ],
+    "meaning": "새 요청의 필요와 제공 조건 탐색",
+    "jobRefs": [
+      "ckr:job:sales",
+      "ckr:job:marketing",
+      "ckr:job:retail"
+    ],
+    "prerequisites": "실제 수요·승인 조건·제공 가능성",
+    "overuse": "관심을 매출로 보고 병렬 준비 확대",
+    "actualOutput": "요청·질의·제안·보류 이유",
+    "difference": "resource와 다른 수요 발굴 기능",
+    "crossChapterUse": "CH02 두 번째 기능, CH03 market, CH06 기회 비용, CH08 실제 사용 조건",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "ce64efd76eb57b9a54bcea4316dbc1fa117bb8316dff13d21bc7d23e1d7c8294"
+  },
+  {
+    "id": "ckr:facet-audit:persistence",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "persistence",
+    "actualLabel": "결과가 쌓일 때까지 이어 가는 지속력",
+    "existingAxes": [
+      [
+        "PERSISTENCE",
+        1
+      ]
+    ],
+    "meaning": "변동 속에서도 반복할 품질 유지",
+    "jobRefs": [
+      "ckr:job:logistics",
+      "ckr:job:administration",
+      "ckr:job:cafe"
+    ],
+    "prerequisites": "유지 기준·예외·주기별 검토",
+    "overuse": "오래 한 방법을 검증 없이 계속 유지",
+    "actualOutput": "반복 품질·조건 변화·수정 기록",
+    "difference": "stability는 지킬 기반, persistence는 이어 수행",
+    "crossChapterUse": "CH01 인계 마무리, CH02 일관성, CH06 반복 제공, CH08 개선과 유지",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "14d12d1f106d948072a70cc6eadfd1cae87b461b1b11953c4052f86be68d72a7"
+  },
+  {
+    "id": "ckr:facet-audit:learning",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "learning",
+    "actualLabel": "경험을 다음 실력으로 바꾸는 학습력",
+    "existingAxes": [
+      [
+        "LEARNING",
+        1
+      ]
+    ],
+    "meaning": "새 지식을 과제의 수행으로 옮김",
+    "jobRefs": [
+      "ckr:job:software",
+      "ckr:job:teaching",
+      "ckr:job:brand_design"
+    ],
+    "prerequisites": "안전한 연습·피드백·전이 확인",
+    "overuse": "수집·수료를 혼자 수행으로 오인",
+    "actualOutput": "새 조건 과제·도움받은 부분·오류 이유",
+    "difference": "depth의 이해와 learning의 능력 범위 확대 구별",
+    "crossChapterUse": "CH02 재능 발전, CH05 현재 빈틈, CH07 독립 학습 영역, CH09 실행 순서",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "0d646e8acfe93a66fb0fd1b2945e3d1e97d5f529833ea9e38b0384d9dc5a5d5c"
+  },
+  {
+    "id": "ckr:facet-audit:autonomy",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "autonomy",
+    "actualLabel": "자기 판단으로 방법을 찾는 독립성",
+    "existingAxes": [
+      [
+        "AUTONOMY",
+        1
+      ]
+    ],
+    "meaning": "책임 범위 안의 방법 판단",
+    "jobRefs": [
+      "ckr:job:software",
+      "ckr:job:research",
+      "ckr:job:photography"
+    ],
+    "prerequisites": "결과·연결 조건·외부 확인 범위",
+    "overuse": "공유를 생략하고 단독으로 결정",
+    "actualOutput": "선택 이유·연결 규격·확인 지점",
+    "difference": "boundary는 요청 범위, autonomy는 방법의 재량",
+    "crossChapterUse": "CH01 자율 조건, CH04 전문 기여 경계, CH05 역할 확대, CH08 연결 부족",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "c6fc01d6b1e5053a3cec4be02bfbc55d2981d74568e1e0ac1e4a3eb63af17de2"
+  },
+  {
+    "id": "ckr:facet-audit:boundary",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "boundary",
+    "actualLabel": "맡은 범위를 분명히 하는 집중력",
+    "existingAxes": [
+      [
+        "BOUNDARY",
+        1
+      ],
+      [
+        "RELATION_STYLE",
+        -1
+      ]
+    ],
+    "meaning": "맡을 범위와 추가 요청의 구별",
+    "jobRefs": [
+      "ckr:job:photography",
+      "ckr:job:translation",
+      "ckr:job:counsel_support"
+    ],
+    "prerequisites": "원래 목적·추가 요구·대안 통로",
+    "overuse": "필요한 협조까지 모두 닫음",
+    "actualOutput": "포함·제외·추가 질의·인계",
+    "difference": "autonomy와 달리 무엇을 맡을지의 경계",
+    "crossChapterUse": "CH04 거절 뒤 대안, CH06 추가 투입, CH08 전문 확장 통로",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "899a0280ffb512f93512913c0c7faa35ec1e42d6d2359dda698ab8f6c0a43478"
+  },
+  {
+    "id": "ckr:facet-audit:structure",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "structure",
+    "actualLabel": "기준과 순서를 세우는 정리력",
+    "existingAxes": [
+      [
+        "STRUCTURE_STYLE",
+        1
+      ]
+    ],
+    "meaning": "순서·완료·예외의 공통 기준",
+    "jobRefs": [
+      "ckr:job:administration",
+      "ckr:job:small_business",
+      "ckr:job:finance"
+    ],
+    "prerequisites": "실제 흐름·변경 이유·예외 질의",
+    "overuse": "정리된 계획을 상황보다 우선",
+    "actualOutput": "단계·선행 조건·완료·변경",
+    "difference": "precision과 달리 작업 흐름의 연결",
+    "crossChapterUse": "CH01 단계 행동, CH04 역할·문화, CH05 반복 운영, CH07 단계 학습",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "93b977380c373c5edcf30705db1782da6516bdb122095dc975f155b7b23a574c"
+  },
+  {
+    "id": "ckr:facet-audit:flexibility",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "flexibility",
+    "actualLabel": "달라진 조건에 맞춰 움직이는 유연성",
+    "existingAxes": [
+      [
+        "STRUCTURE_STYLE",
+        -1
+      ],
+      [
+        "ADAPTABILITY",
+        1
+      ],
+      [
+        "CHANGE_ORIENTATION",
+        1
+      ]
+    ],
+    "meaning": "바뀐 조건에서 지킬 목적과 다른 방법",
+    "jobRefs": [
+      "ckr:job:sales",
+      "ckr:job:logistics",
+      "ckr:job:video"
+    ],
+    "prerequisites": "변경 내용·영향·승인·공유",
+    "overuse": "작은 예외를 기록 없이 누적",
+    "actualOutput": "변경 이유·유지할 약속·새 투입",
+    "difference": "opportunity는 변화를 찾음, flexibility는 변화에 대응",
+    "crossChapterUse": "CH01 대응 정보, CH04 변경 공유, CH06 추가 범위, CH09 조건 회수",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "894c01e40ed953d860c63301bba15a71ff8ed3a82d9951d15ddb683b98d6abd8"
+  },
+  {
+    "id": "ckr:facet-audit:drive",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "drive",
+    "actualLabel": "생각을 실제 행동으로 옮기는 실행력",
+    "existingAxes": [
+      [
+        "INITIATIVE",
+        1
+      ],
+      [
+        "GOAL_DRIVE",
+        1
+      ],
+      [
+        "ACTION_TEMPO",
+        1
+      ]
+    ],
+    "meaning": "논의를 실제 수행과 완료로 잇기",
+    "jobRefs": [
+      "ckr:job:software",
+      "ckr:job:project_planning",
+      "ckr:job:logistics"
+    ],
+    "prerequisites": "목표·권한·검증·중단 조건",
+    "overuse": "속도를 위해 확인과 원인 기록 생략",
+    "actualOutput": "완료 결과·실패 조건·다음 수정",
+    "difference": "leadership은 역할 조정, drive는 실행의 전진",
+    "crossChapterUse": "CH01 실행 시작, CH04 속도 비용, CH08 반복 수습, CH09 검증 지점",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "11d036bb8dffdfe7adecdc192fbfec6a2ea3813df9829b91a51e7c09cb7a3c02"
+  },
+  {
+    "id": "ckr:facet-audit:meaning",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "meaning",
+    "actualLabel": "일의 이유와 방향을 연결하는 판단력",
+    "existingAxes": [
+      [
+        "MEANING",
+        1
+      ],
+      [
+        "STRATEGY",
+        1
+      ]
+    ],
+    "meaning": "목적과 가까운 선택을 연결",
+    "jobRefs": [
+      "ckr:job:project_planning",
+      "ckr:job:writing",
+      "ckr:job:counsel_support"
+    ],
+    "prerequisites": "실제 목적·실행 과제·기초 작업의 역할",
+    "overuse": "보람이 약한 기초 작업을 작게 봄",
+    "actualOutput": "목적·선택 근거·이번 실행",
+    "difference": "기회 감각과 달리 어떤 결과를 남길지의 이유",
+    "crossChapterUse": "CH01 목적 조건, CH03 목적 평가, CH05 미입력 질문, CH09 통합 원칙",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "0fc279fea6e6c9f5c87fb6297d66448a3ab373a444c6fda4553d04388a4d4048"
+  },
+  {
+    "id": "ckr:facet-audit:stability",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "facet": "stability",
+    "actualLabel": "변동 속에서도 지킬 기반을 보는 안정감각",
+    "existingAxes": [
+      [
+        "STABILITY",
+        1
+      ],
+      [
+        "CHANGE_ORIENTATION",
+        -1
+      ],
+      [
+        "RISK_STYLE",
+        -1
+      ]
+    ],
+    "meaning": "변동에서 지킬 기반과 부담의 범위",
+    "jobRefs": [
+      "ckr:job:finance",
+      "ckr:job:cafe",
+      "ckr:job:retail"
+    ],
+    "prerequisites": "확보·예상 자원 구분·작은 시험",
+    "overuse": "익숙함을 언제나 안전한 답으로 여김",
+    "actualOutput": "유지 약속·중단 조건·변경 영향",
+    "difference": "persistence의 수행과 달리 기반 선택",
+    "crossChapterUse": "CH01 환경, CH06 회수 시점·생활 자원, CH09 비교 조건",
+    "existingValuePreserved": true,
+    "existingMaterialHash": "dab95d3f711b4ae8f766ad427946aeae16d2ea387ffabbc2c74a78c49aa4da2f"
+  }
+]

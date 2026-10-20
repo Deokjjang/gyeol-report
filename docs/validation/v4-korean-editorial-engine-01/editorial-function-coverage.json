@@ -1,0 +1,1187 @@
+[
+  {
+    "engine": "comprehensive",
+    "function": "risk",
+    "unit": "synthetic:kee:definition:0:primary",
+    "actualText": "판단할 기준이 정해지지 않았다면, 반복해서 늘린 검토는 결정 시점을 늦출 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "summary",
+    "unit": "synthetic:kee:definition:0:primary",
+    "actualText": "판단할 기준이 정해지지 않았다면, 반복해서 늘린 검토가 결정 시점을 늦출 수 있다는 뜻입니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "closing",
+    "unit": "synthetic:kee:definition:0:primary",
+    "actualText": "판단할 기준이 정해지지 않았다면, 반복해서 늘린 검토가 결정 시점을 늦출 수 있다는 점을 확인 질문으로 남길 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "action",
+    "unit": "synthetic:kee:definition:0:action",
+    "actualText": "판단할 기준이 정해지지 않았다면, 검토를 마칠 기준과 결론을 낼 시점을 물어볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "opening",
+    "unit": "synthetic:kee:definition:0:function:opening",
+    "actualText": "결정을 앞두고 확인 순서를 정한다면, 결정 전에 먼저 정할 기준을 어떻게 확인해 볼까요?",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "explanation",
+    "unit": "synthetic:kee:definition:0:function:explanation",
+    "actualText": "검토와 결정의 역할을 나누어 본다면, 확인이 필요한 항목과 결정에 필요한 이유를 구분해 볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "concretization",
+    "unit": "synthetic:kee:definition:0:function:concretization",
+    "actualText": "제출할 자료를 점검하는 상황이라면, 비교할 두 항목과 제출 시점을 확인해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:0:function:positive",
+    "actualText": "점검할 기준과 마감이 분명한 상황이라면, 결정에 활용할 검토 자료를 남길 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "twist",
+    "unit": "synthetic:kee:definition:0:function:twist",
+    "actualText": "무엇을 확인할지 먼저 정했다면, 검토를 끝내고 결정할 수 있는 기준을 확인해 볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "comparison",
+    "unit": "synthetic:kee:definition:0:function:comparison",
+    "actualText": "혼자 살펴볼 때와 함께 결정할 때를 비교한다면, 개인이 확인할 근거와 함께 합의할 기준을 구분해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "scene",
+    "unit": "synthetic:kee:definition:0:function:scene",
+    "actualText": "가령 서로 다른 약속 중 하나를 골라야 한다면, 서로 겹친 시간과 먼저 지킬 약속을 비교해 볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "action",
+    "unit": "synthetic:kee:definition:0:function:action",
+    "actualText": "판단할 기준이 정해지지 않았다면, 판단할 항목과 결론을 낼 시점을 확인해 볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "transition",
+    "unit": "synthetic:kee:definition:0:function:transition",
+    "actualText": "그 기준의 적용을 다른 질문에서 살펴본다면, 이미 확인한 정보와 다음에 확인할 질문을 구분해 볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "risk",
+    "unit": "synthetic:kee:definition:0:blunt",
+    "actualText": "판단할 기준이 정해지지 않았다면, 늘어난 검토는 결정을 늦출 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "blunt",
+    "unit": "synthetic:kee:definition:0:blunt",
+    "actualText": "판단할 기준이 정해지지 않았다면, 늘어난 검토는 결정을 늦출 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "43ef916f71cd4039a516d07a9617025c735455c15a74ee4af533012cdaea368c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:two",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "twist",
+    "unit": "synthetic:kee:definition:1:primary",
+    "actualText": "확인할 항목과 종료 기준을 정했다면, 결정에 쓸 비교 자료를 남길 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "5bef8cbca24de700496cd8cf713b3bec9e038ef85372fe04eb72fe753b9b2868",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:three",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "action",
+    "unit": "synthetic:kee:definition:1:action",
+    "actualText": "확인할 항목과 종료 기준을 정했다면, 검토를 마칠 기준과 결론을 낼 시점을 물어볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "5bef8cbca24de700496cd8cf713b3bec9e038ef85372fe04eb72fe753b9b2868",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:three",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:2:primary",
+    "actualText": "점검할 범위가 분명하다면, 놓치기 쉬운 항목을 확인해 볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "a9b2fca4af541283bd023d5ede3356322095dd4f5a47d5ae12b9e4ba6e189a6a",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:four",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "action",
+    "unit": "synthetic:kee:definition:2:action",
+    "actualText": "점검할 범위가 분명하다면, 검토를 마칠 기준과 결론을 낼 시점을 물어볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "a9b2fca4af541283bd023d5ede3356322095dd4f5a47d5ae12b9e4ba6e189a6a",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:four",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:3:primary",
+    "actualText": "서로 다른 설명을 비교하는 상황이라면, 판단에 쓸 이유를 비교해 볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "fc7312b2224d566b2b25a7fc2e84b4a8ea281d4b907d12ad0ef954069f4387a9",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:one-alt",
+    "newFacts": 0
+  },
+  {
+    "engine": "comprehensive",
+    "function": "action",
+    "unit": "synthetic:kee:definition:3:action",
+    "actualText": "서로 다른 설명을 비교하는 상황이라면, 검토를 마칠 기준과 결론을 낼 시점을 물어볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "fc7312b2224d566b2b25a7fc2e84b4a8ea281d4b907d12ad0ef954069f4387a9",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:cse:claim:one-alt",
+    "newFacts": 0
+  },
+  {
+    "engine": "career",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:4:primary",
+    "actualText": "새 의뢰를 수락할지 검토하는 상황이라면, 결과물의 범위와 수정 횟수를 확인해 볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "b9fc55b44847adee2eb0c0e1b36a265eb7253ffd175fdc62eded0fcdbbce21df",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:career:claim:c",
+    "newFacts": 0
+  },
+  {
+    "engine": "career",
+    "function": "action",
+    "unit": "synthetic:kee:definition:4:action",
+    "actualText": "새 의뢰를 수락할지 검토하는 상황이라면, 수정 요청을 어디까지 받을지 정할 기준을 물어볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "b9fc55b44847adee2eb0c0e1b36a265eb7253ffd175fdc62eded0fcdbbce21df",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:career:claim:c",
+    "newFacts": 0
+  },
+  {
+    "engine": "career",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:5:primary",
+    "actualText": "학습 자료를 고르는 상황이라면, 직접 해 볼 과제와 필요한 시간을 비교해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "019240ae66c4ca1430e3309c1012189c1626cd8e9248f4bf430cbf0b5a0cfb6f",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:career:claim:d",
+    "newFacts": 0
+  },
+  {
+    "engine": "career",
+    "function": "action",
+    "unit": "synthetic:kee:definition:5:action",
+    "actualText": "학습 자료를 고르는 상황이라면, 수정 요청을 어디까지 받을지 정할 기준을 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "019240ae66c4ca1430e3309c1012189c1626cd8e9248f4bf430cbf0b5a0cfb6f",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:career:claim:d",
+    "newFacts": 0
+  },
+  {
+    "engine": "love",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:6:primary",
+    "actualText": "누군가에게 도움을 건네는 상황이라면, 상대가 원하는 도움의 종류를 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "889d60e169e4d484c8c232df49e5f6fe5b1870d5bc022b4c26e33e26ef8bb931",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:love:claim:c",
+    "newFacts": 0
+  },
+  {
+    "engine": "love",
+    "function": "action",
+    "unit": "synthetic:kee:definition:6:action",
+    "actualText": "누군가에게 도움을 건네는 상황이라면, 도움이 필요한지 직접 묻고 멈출 조건을 물어볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "889d60e169e4d484c8c232df49e5f6fe5b1870d5bc022b4c26e33e26ef8bb931",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:love:claim:c",
+    "newFacts": 0
+  },
+  {
+    "engine": "love",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:7:primary",
+    "actualText": "내가 편한 친밀감의 방식을 살펴본다면, 내가 원하는 거리와 상대에게 확인할 동의를 구분해 볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "6e4c27209bfbf84bbe6f60346f4e9e6caccb758ef39b91d5882cf29ebd92456e",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:love:claim:d",
+    "newFacts": 0
+  },
+  {
+    "engine": "love",
+    "function": "action",
+    "unit": "synthetic:kee:definition:7:action",
+    "actualText": "내가 편한 친밀감의 방식을 살펴본다면, 도움이 필요한지 직접 묻고 멈출 조건을 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "6e4c27209bfbf84bbe6f60346f4e9e6caccb758ef39b91d5882cf29ebd92456e",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:love:claim:d",
+    "newFacts": 0
+  },
+  {
+    "engine": "major-fortune",
+    "function": "comparison",
+    "unit": "synthetic:kee:definition:8:primary",
+    "actualText": "전환 이후의 장기 조건을 살펴보는 상황이라면, 2028년 4월 23일 21시 42분 이후와 그 이전의 적용 구간을 구분해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "f5a5440243e35730435f87c6831745b29ca085f570d7f3e525de2e0846493363",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:major:claim:shared-transition",
+    "newFacts": 0
+  },
+  {
+    "engine": "major-fortune",
+    "function": "action",
+    "unit": "synthetic:kee:definition:8:action",
+    "actualText": "전환 이후의 장기 조건을 살펴보는 상황이라면, 전환 이전의 근거를 이후에 적용하고 있지 않은지를 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "f5a5440243e35730435f87c6831745b29ca085f570d7f3e525de2e0846493363",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:major:claim:shared-transition",
+    "newFacts": 0
+  },
+  {
+    "engine": "major-fortune",
+    "function": "explanation",
+    "unit": "synthetic:kee:definition:9:primary",
+    "actualText": "장기 배경을 설명하는 구간을 읽는다면, 2018년 4월 23일 21시 42분부터 2028년 4월 23일 21시 42분 전까지의 범위를 확인해 볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "87ba2203f3de0b8d55017f6b77a5de7786150a912b0c188d21f182c2d11399ec",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:major:claim:cycle-1",
+    "newFacts": 0
+  },
+  {
+    "engine": "major-fortune",
+    "function": "opening",
+    "unit": "synthetic:kee:definition:9:primary",
+    "actualText": "장기 배경을 설명하는 구간을 읽는다면, 2018년 4월 23일 21시 42분부터 2028년 4월 23일 21시 42분 전까지의 범위를 어떻게 확인해 볼까요?",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "87ba2203f3de0b8d55017f6b77a5de7786150a912b0c188d21f182c2d11399ec",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:major:claim:cycle-1",
+    "newFacts": 0
+  },
+  {
+    "engine": "major-fortune",
+    "function": "concretization",
+    "unit": "synthetic:kee:definition:9:primary",
+    "actualText": "장기 배경을 설명하는 구간을 읽는다면, 2018년 4월 23일 21시 42분부터 2028년 4월 23일 21시 42분 전까지의 범위를 확인해 볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "87ba2203f3de0b8d55017f6b77a5de7786150a912b0c188d21f182c2d11399ec",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:major:claim:cycle-1",
+    "newFacts": 0
+  },
+  {
+    "engine": "major-fortune",
+    "function": "action",
+    "unit": "synthetic:kee:definition:9:action",
+    "actualText": "장기 배경을 설명하는 구간을 읽는다면, 전환 이전의 근거를 이후에 적용하고 있지 않은지를 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "87ba2203f3de0b8d55017f6b77a5de7786150a912b0c188d21f182c2d11399ec",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:major:claim:cycle-1",
+    "newFacts": 0
+  },
+  {
+    "engine": "annual-fortune",
+    "function": "explanation",
+    "unit": "synthetic:kee:definition:10:primary",
+    "actualText": "2월의 해석 근거를 검토한다면, 원국 천간의 근거와 월간의 근거를 구분해 볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "72fc071a90a1f217ba0197b74d66e774412945b77cdefcb98844415c98793713",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:annual:claim:2",
+    "newFacts": 0
+  },
+  {
+    "engine": "annual-fortune",
+    "function": "opening",
+    "unit": "synthetic:kee:definition:10:primary",
+    "actualText": "2월의 해석 근거를 검토한다면, 원국 천간의 근거와 월간의 근거를 어떻게 확인해 볼까요?",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "72fc071a90a1f217ba0197b74d66e774412945b77cdefcb98844415c98793713",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:annual:claim:2",
+    "newFacts": 0
+  },
+  {
+    "engine": "annual-fortune",
+    "function": "concretization",
+    "unit": "synthetic:kee:definition:10:primary",
+    "actualText": "2월의 해석 근거를 검토한다면, 원국 천간의 근거와 월간의 근거를 구분해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "72fc071a90a1f217ba0197b74d66e774412945b77cdefcb98844415c98793713",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:annual:claim:2",
+    "newFacts": 0
+  },
+  {
+    "engine": "annual-fortune",
+    "function": "action",
+    "unit": "synthetic:kee:definition:10:action",
+    "actualText": "2월의 해석 근거를 검토한다면, 대표 구간 밖에도 같은 설명을 적용할 근거가 있는지를 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "72fc071a90a1f217ba0197b74d66e774412945b77cdefcb98844415c98793713",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:annual:claim:2",
+    "newFacts": 0
+  },
+  {
+    "engine": "annual-fortune",
+    "function": "comparison",
+    "unit": "synthetic:kee:definition:11:primary",
+    "actualText": "4월 안의 실제 구간을 비교한다면, 각 구간의 시작과 끝, 월간에 해당하는 근거를 확인해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "7c68decd501946d88a105aea6c8c603728f4a7ea842be94c19ea8b6e72baa4ef",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:annual:claim:4",
+    "newFacts": 0
+  },
+  {
+    "engine": "annual-fortune",
+    "function": "action",
+    "unit": "synthetic:kee:definition:11:action",
+    "actualText": "4월 안의 실제 구간을 비교한다면, 대표 구간 밖에도 같은 설명을 적용할 근거가 있는지를 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "7c68decd501946d88a105aea6c8c603728f4a7ea842be94c19ea8b6e72baa4ef",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:annual:claim:4",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-love",
+    "function": "action",
+    "unit": "synthetic:kee:definition:12:primary",
+    "actualText": "A가 B에게 연락을 제안하는 상황이라면, 원하는 연락 방식과 거절할 선택을 물어볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "ae4f797ee5c3378d6c0ce101c1bea418b9f8775476e98d63adf9abb5f2a8e9ec",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:love:claim:CH05.P1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-love",
+    "function": "scene",
+    "unit": "synthetic:kee:definition:12:primary",
+    "actualText": "A가 B에게 연락을 제안하는 상황이라면, 원하는 연락 방식과 거절할 선택을 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "ae4f797ee5c3378d6c0ce101c1bea418b9f8775476e98d63adf9abb5f2a8e9ec",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:love:claim:CH05.P1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-love",
+    "function": "action",
+    "unit": "synthetic:kee:definition:12:action",
+    "actualText": "A가 B에게 연락을 제안하는 상황이라면, 원치 않는 연락을 거절할 수 있는지를 물어볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "ae4f797ee5c3378d6c0ce101c1bea418b9f8775476e98d63adf9abb5f2a8e9ec",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:love:claim:CH05.P1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-love",
+    "function": "action",
+    "unit": "synthetic:kee:definition:13:primary",
+    "actualText": "B가 A에게 답할 방식을 정하는 상황이라면, 말할 수 있는 범위와 기다릴 수 있는 시간을 확인해 볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "36ab1a602b095633845c41d5a8298ed5d592762205932c87130cd364aac60cea",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:love:claim:CH06.P1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-love",
+    "function": "scene",
+    "unit": "synthetic:kee:definition:13:primary",
+    "actualText": "B가 A에게 답할 방식을 정하는 상황이라면, 말할 수 있는 범위와 기다릴 수 있는 시간을 확인해 볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "36ab1a602b095633845c41d5a8298ed5d592762205932c87130cd364aac60cea",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:love:claim:CH06.P1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-love",
+    "function": "action",
+    "unit": "synthetic:kee:definition:13:action",
+    "actualText": "B가 A에게 답할 방식을 정하는 상황이라면, 원치 않는 연락을 거절할 수 있는지를 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "36ab1a602b095633845c41d5a8298ed5d592762205932c87130cd364aac60cea",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:love:claim:CH06.P1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-marriage",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:14:primary",
+    "actualText": "함께 집안일을 정하는 상황이라면, 결정과 실행, 다음 주기의 확인을 누가 맡을지를 구분해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "daced07dc7354ae442777320d1aeb4a60382402f29c7fac44257baeacda0b87f",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:marriage:claim:CH05.P1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-marriage",
+    "function": "action",
+    "unit": "synthetic:kee:definition:14:action",
+    "actualText": "함께 집안일을 정하는 상황이라면, 바뀐 생활 조건에 다시 동의했는지를 물어볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "daced07dc7354ae442777320d1aeb4a60382402f29c7fac44257baeacda0b87f",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:marriage:claim:CH05.P1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-marriage",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:15:primary",
+    "actualText": "생활 방식을 바꾸자고 제안하는 상황이라면, 기존 약속과 새로 동의할 범위를 비교해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "e505781dddb27871e2e35ad8b4c5763273662c06bad2eed2598668cb47b205e3",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:marriage:claim:CH06.P1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-marriage",
+    "function": "action",
+    "unit": "synthetic:kee:definition:15:action",
+    "actualText": "생활 방식을 바꾸자고 제안하는 상황이라면, 바뀐 생활 조건에 다시 동의했는지를 물어볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "e505781dddb27871e2e35ad8b4c5763273662c06bad2eed2598668cb47b205e3",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:marriage:claim:CH06.P1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-parent-child",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:16:primary",
+    "actualText": "부모 A가 자녀 B에게 설명하는 상황이라면, 부모가 맡아야 할 보호 책임과 자녀가 선택할 범위를 구분해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "1c083dea30f28d9fc2c31cb90e1a60594d46f200299dac4dddb7af1d4252170a",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:parent-child:meaning:CH05.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-parent-child",
+    "function": "action",
+    "unit": "synthetic:kee:definition:16:action",
+    "actualText": "부모 A가 자녀 B에게 설명하는 상황이라면, 자녀가 설명을 거절해도 보호 책임이 유지되는지를 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "1c083dea30f28d9fc2c31cb90e1a60594d46f200299dac4dddb7af1d4252170a",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:parent-child:meaning:CH05.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-parent-child",
+    "function": "fusion",
+    "unit": "synthetic:kee:definition:16:fusion",
+    "actualText": "부모 A가 자녀 B에게 설명하는 상황이라면, 같은 사람의 명리 근거와 MBTI 선호가 각각 설명하는 범위를 구분해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "1c083dea30f28d9fc2c31cb90e1a60594d46f200299dac4dddb7af1d4252170a",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:parent-child:meaning:CH05.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-parent-child",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:17:primary",
+    "actualText": "자녀 B가 부모 A에게 의견을 전하는 상황이라면, 자녀가 말할 선택과 부모가 맡을 조정 책임을 남길 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "0d4074a4c15f46bb24fc38ff0840b58ae0e726ec5ec64fc7bde508d8dda1e7fc",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:parent-child:meaning:CH06.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-parent-child",
+    "function": "action",
+    "unit": "synthetic:kee:definition:17:action",
+    "actualText": "자녀 B가 부모 A에게 의견을 전하는 상황이라면, 자녀가 설명을 거절해도 보호 책임이 유지되는지를 물어볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "0d4074a4c15f46bb24fc38ff0840b58ae0e726ec5ec64fc7bde508d8dda1e7fc",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:parent-child:meaning:CH06.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-coworker",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:18:primary",
+    "actualText": "업무 결과물을 넘기는 상황이라면, 전달했다는 사실과 상대가 수락했다는 확인을 구분해 볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "d3552ceaf6ec813b9f7187392e88dfdba89ce77ca57169cd4a5350f429b314fe",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:coworker:meaning:CH05.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-coworker",
+    "function": "action",
+    "unit": "synthetic:kee:definition:18:action",
+    "actualText": "업무 결과물을 넘기는 상황이라면, 인계 뒤 누가 수락을 확인할지를 물어볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "d3552ceaf6ec813b9f7187392e88dfdba89ce77ca57169cd4a5350f429b314fe",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:coworker:meaning:CH05.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-coworker",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:19:primary",
+    "actualText": "현장 정보를 함께 검토하는 상황이라면, 수정 의견과 실제 승인 권한을 구분해 볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "c7268a39905ea19b795e3c5c6347aa090e39dc7848d18c5539be8744f7c15325",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:coworker:meaning:CH06.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-coworker",
+    "function": "action",
+    "unit": "synthetic:kee:definition:19:action",
+    "actualText": "현장 정보를 함께 검토하는 상황이라면, 인계 뒤 누가 수락을 확인할지를 물어볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "c7268a39905ea19b795e3c5c6347aa090e39dc7848d18c5539be8744f7c15325",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:coworker:meaning:CH06.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-manager-report",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:20:primary",
+    "actualText": "상사 A가 팀원 B에게 업무를 맡기는 상황이라면, 위임한 업무와 별도로 확인해야 할 결정권을 구분해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "3891ef5dfb4877daa9548e3952208fcda17064795b8e23350220ab29956ce88e",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:manager-report:meaning:CH05.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-manager-report",
+    "function": "action",
+    "unit": "synthetic:kee:definition:20:action",
+    "actualText": "상사 A가 팀원 B에게 업무를 맡기는 상황이라면, 팀원에게 실행 자원과 거절할 경로가 있는지를 물어볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "3891ef5dfb4877daa9548e3952208fcda17064795b8e23350220ab29956ce88e",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:manager-report:meaning:CH05.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-manager-report",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:21:primary",
+    "actualText": "팀원 B가 상사 A에게 진행 상황을 보고한다면, 팀원의 실행 범위와 상사가 조정할 자원을 확인해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "536e37ad126cc2ac99840d40f012f4cde54989e4f0365066333f55b964ebb46a",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:manager-report:meaning:CH06.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-manager-report",
+    "function": "action",
+    "unit": "synthetic:kee:definition:21:action",
+    "actualText": "팀원 B가 상사 A에게 진행 상황을 보고한다면, 팀원에게 실행 자원과 거절할 경로가 있는지를 물어볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "536e37ad126cc2ac99840d40f012f4cde54989e4f0365066333f55b964ebb46a",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:manager-report:meaning:CH06.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-business-partner",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:22:primary",
+    "actualText": "두 사람이 새 제안을 검토하는 상황이라면, 매출과 실제 입금, 비용을 뺀 이익을 구분해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "978d9f6ba1885a12da6994278967306b419c4a777009663e047d119e7ee77266",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:business-partner:meaning:CH05.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-business-partner",
+    "function": "action",
+    "unit": "synthetic:kee:definition:22:action",
+    "actualText": "두 사람이 새 제안을 검토하는 상황이라면, 실제 권한과 비용 부담에 별도의 합의가 있는지를 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "978d9f6ba1885a12da6994278967306b419c4a777009663e047d119e7ee77266",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:business-partner:meaning:CH05.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-business-partner",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:23:primary",
+    "actualText": "운영 범위를 바꾸자고 제안하는 상황이라면, 의견을 낼 범위와 별도로 합의할 결정권을 구분해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "aec0f4028705dfe156dc54b34bdbabf0b68b8ca5c3f2341e11d5ddbf0a791634",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:business-partner:meaning:CH06.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-business-partner",
+    "function": "action",
+    "unit": "synthetic:kee:definition:23:action",
+    "actualText": "운영 범위를 바꾸자고 제안하는 상황이라면, 실제 권한과 비용 부담에 별도의 합의가 있는지를 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "aec0f4028705dfe156dc54b34bdbabf0b68b8ca5c3f2341e11d5ddbf0a791634",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:business-partner:meaning:CH06.P1:claim",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:24:primary",
+    "actualText": "다시 만날 시간을 제안하는 상황이라면, 함께할 시간과 각자가 거절할 선택을 남길 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "2106e9e64c9f802b92ead36b9b4dc8c9ffb79eeab1335fd83f2748738e293db4",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:friendship:claim:CH01.P1.S1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "function": "action",
+    "unit": "synthetic:kee:definition:24:action",
+    "actualText": "다시 만날 시간을 제안하는 상황이라면, 서로 다시 만나지 않을 선택도 존중할 수 있는지를 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "2106e9e64c9f802b92ead36b9b4dc8c9ffb79eeab1335fd83f2748738e293db4",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:friendship:claim:CH01.P1.S1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "function": "risk",
+    "unit": "synthetic:kee:definition:25:primary",
+    "actualText": "서로 다른 모임에 참여하는 상황이라면, 친밀함과 각자의 다른 만남을 구분해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "ab2c6f639c42080a01b5336c9ad39256fe0da0a4031aa01cf45660b86630fd15",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:friendship:claim:CH01.P1.S2",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "function": "blunt",
+    "unit": "synthetic:kee:definition:25:primary",
+    "actualText": "서로 다른 모임에 참여하는 상황이라면, 친밀함과 각자의 다른 만남을 구분해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "ab2c6f639c42080a01b5336c9ad39256fe0da0a4031aa01cf45660b86630fd15",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:friendship:claim:CH01.P1.S2",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "function": "action",
+    "unit": "synthetic:kee:definition:25:action",
+    "actualText": "서로 다른 모임에 참여하는 상황이라면, 서로 다시 만나지 않을 선택도 존중할 수 있는지를 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "ab2c6f639c42080a01b5336c9ad39256fe0da0a4031aa01cf45660b86630fd15",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:friendship:claim:CH01.P1.S2",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "function": "explanation",
+    "unit": "synthetic:kee:definition:26:primary",
+    "actualText": "서로 연락할 방식을 정하는 상황이라면, 연락할 여유와 답을 재촉하지 않을 범위를 확인해 볼 수 있어요.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "31b5304965608e735ba6095db7c524779b8f6f4b117a427230940be794b30c3c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:friendship:claim:CH04.P1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "function": "opening",
+    "unit": "synthetic:kee:definition:26:primary",
+    "actualText": "서로 연락할 방식을 정하는 상황이라면, 연락할 여유와 답을 재촉하지 않을 범위를 어떻게 확인해 볼까요?",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "31b5304965608e735ba6095db7c524779b8f6f4b117a427230940be794b30c3c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:friendship:claim:CH04.P1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "function": "concretization",
+    "unit": "synthetic:kee:definition:26:primary",
+    "actualText": "서로 연락할 방식을 정하는 상황이라면, 연락할 여유와 답을 재촉하지 않을 범위를 확인해 볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "31b5304965608e735ba6095db7c524779b8f6f4b117a427230940be794b30c3c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:friendship:claim:CH04.P1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "function": "action",
+    "unit": "synthetic:kee:definition:26:action",
+    "actualText": "다시 만날 시간을 제안하는 상황이라면, 서로 다시 만나지 않을 선택도 존중할 수 있는지를 물어볼 수 있습니다.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "31b5304965608e735ba6095db7c524779b8f6f4b117a427230940be794b30c3c",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:friendship:claim:CH04.P1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "function": "positive",
+    "unit": "synthetic:kee:definition:27:primary",
+    "actualText": "약속 제안에서 거절할 선택이 제한되는 상황이라면, 함께할 시간과 각자가 거절할 선택을 남길 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "52f4b3c96af309fca64be98b2b10513f0caf4f9b51992a587f189a219f519e92",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:friendship:claim:CH07.P1.S1",
+    "newFacts": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "function": "action",
+    "unit": "synthetic:kee:definition:27:action",
+    "actualText": "다시 만날 시간을 제안하는 상황이라면, 서로 다시 만나지 않을 선택도 존중할 수 있는지를 물어볼 수 있죠.",
+    "source": {
+      "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+      "fileHash": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d",
+      "definitionHash": "52f4b3c96af309fca64be98b2b10513f0caf4f9b51992a587f189a219f519e92",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "researchExpressionCopied": false
+    },
+    "originalClaim": "synthetic:friendship:claim:CH07.P1.S1",
+    "newFacts": 0
+  }
+]

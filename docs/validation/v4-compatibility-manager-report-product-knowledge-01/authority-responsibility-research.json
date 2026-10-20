@@ -1,0 +1,1823 @@
+[
+  {
+    "id": "mrpr:material:CH01.P2:harmony-not-approval",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "address": "CH01.P2",
+    "mode": "JOINT",
+    "readerQuestion": "실제 명리 관계와 승인권을 어떻게 구분하는가?",
+    "coreMeaning": "실제 합의 정의와 실제 승인권의 분리",
+    "roleContributions": [
+      {
+        "address": "CH01.P2.S1",
+        "originalRole": "실제 명리 관계",
+        "knowledge": "양쪽 기둥 refs에서 子丑 육합이 실제 검출된 경우에만 명리 관계를 소개",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH01.P2.S2",
+        "originalRole": "쉬운 의미",
+        "knowledge": "전통적 연결 상징은 상대의 결정을 자동 승인한다는 뜻이 아니다",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH01.P2.S3",
+        "originalRole": "상호 영향",
+        "knowledge": "조건부로 접점을 찾는 질문에 참고하되 지시·실행 권한은 조직 사실로 확인",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH01.P2.S4",
+        "originalRole": "강점과 주의 조건",
+        "knowledge": "좋은 접점도 기준·권한·자원이 확인될 때 업무에서 활용 가능",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "84d1ddc4aa078aa8fa5f",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d23874cc920e78330b98",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:BOUNDARY:refusal",
+        "axis": "BOUNDARY",
+        "definition": "받지 않을 요청을 명시",
+        "condition": "거절의 안전과 실제 의무 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "approval",
+    "workFunctions": [
+      "canonical",
+      "authority"
+    ],
+    "outputType": "relation_question",
+    "positive": "관계를 강점 질문으로 열어둘 수 있음",
+    "risk": "합을 지시 복종·검토 생략 근거로 쓸 위험",
+    "factBomb": "명리의 합은 결재 서명이 아니다",
+    "twist": "합이 있어도 서로 다른 검토 역할을 유지할 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 의견이 잘 맞지만 최종 승인자는 별도인 변경안",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "결정자와 검토 범위를 실제 규정으로 확인",
+      "personB": "동의한 내용과 승인 필요한 항목 구분"
+    },
+    "counterexample": "실제 관계 ID가 없으면 이 후보 보류",
+    "distinctFromOtherParagraphs": "CH07 충돌 해석과 달리 연결 상징의 권한 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "mrpr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "mrpr:material:CH01.P2:harmony-not-approval",
+          "sourceKeys": [
+            "84d1ddc4aa078aa8fa5f",
+            "d23874cc920e78330b98"
+          ],
+          "typePredicates": [],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [],
+      "direction": null,
+      "canonicalClaim": "actual_supported_relation_or_withhold",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_manager_role",
+        "actual_team_member_role",
+        "verified_reporting_relationship",
+        "verified_evaluation_authority",
+        "safe_voice_channel",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "verified_responsibility",
+        "verified_decision_authority"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 의견이 잘 맞지만 최종 승인자는 별도인 변경안",
+      "aChange": "결정자와 검토 범위를 실제 규정으로 확인",
+      "bChange": "동의한 내용과 승인 필요한 항목 구분",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "relation_question",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "상사",
+      "personB": "부하·팀원"
+    },
+    "authorityContext": {
+      "kind": "approval",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "의견 일치와 최종 승인은 같은 절차인가요?"
+    },
+    "managerResponsibleAction": "결정자와 검토 범위를 실제 규정으로 확인",
+    "teamMemberAvailableAction": "동의한 내용과 승인 필요한 항목 구분",
+    "safeVoiceCondition": "직접 이견·질문이 안전한지 먼저 확인. 상사는 기준·지원·비보복의 조건을 확인하며 팀원에게 감정 관리·화해 의무를 부과하지 않음. 위험·강압은 적절한 별도 지원·조직 절차를 확인."
+  },
+  {
+    "id": "mrpr:material:CH01.P3:same-type-different-role",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "address": "CH01.P3",
+    "mode": "JOINT",
+    "readerQuestion": "각자의 정보 선호는 어떤 다른 질문을 만드는가?",
+    "coreMeaning": "같은 유형이라도 기준 설명 책임은 같지 않음",
+    "roleContributions": [
+      {
+        "address": "CH01.P3.S1",
+        "originalRole": "A의 실제 MBTI",
+        "knowledge": "A 실제 ISTJ의 규칙·약속 원천을 확인",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH01.P3.S2",
+        "originalRole": "B의 실제 MBTI",
+        "knowledge": "B 실제 ISTJ의 책임·권한 명료성 원천을 확인",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH01.P3.S3",
+        "originalRole": "공통점과 차이",
+        "knowledge": "기준을 중시하는 공통 선호와 기준을 정할 실제 권한은 별개",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH01.P3.S4",
+        "originalRole": "상호작용",
+        "knowledge": "상사는 기준의 출처를 설명하고 팀원은 충돌하는 요구를 확인하는 장면",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "871f1880dae3d3831abc",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "01b252c15ec6d3cc4064",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "38fa9db618761c3db5b0",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:role-fulfilment",
+        "axis": "DUTY",
+        "definition": "합의한 담당을 이행",
+        "condition": "담당·권한·기한이 확인될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "plan",
+    "workFunctions": [
+      "mbti",
+      "responsibility"
+    ],
+    "outputType": "rule_version",
+    "positive": "공통 기준을 확인 질문으로 활용 가능",
+    "risk": "같은 유형이니 설명 없이 통할 것이라는 생략",
+    "factBomb": "같은 유형도 서로의 결재 권한을 읽을 수 없다",
+    "twist": "선호가 같을수록 숨은 전제를 따로 확인할 필요가 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 두 사람이 같은 규칙을 말하지만 버전이 다른 경우",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "현재 유효한 기준과 변경자를 확인",
+      "personB": "참조한 규칙 버전을 명시"
+    },
+    "counterexample": "유형이 다르면 동일 유형 후보 적용 불가",
+    "distinctFromOtherParagraphs": "다른 유형의 원리·절차 대비와 다른 공유 전제 점검",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "mrpr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "mrpr:material:CH01.P3:same-type-different-role",
+          "sourceKeys": [
+            "871f1880dae3d3831abc",
+            "01b252c15ec6d3cc4064",
+            "38fa9db618761c3db5b0"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ISTJ",
+              "sourceKey": "871f1880dae3d3831abc"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "01b252c15ec6d3cc4064"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "871f1880dae3d3831abc",
+          "domain": "WORK"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "01b252c15ec6d3cc4064",
+          "domain": "WORK"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_manager_role",
+        "actual_team_member_role",
+        "verified_reporting_relationship",
+        "verified_evaluation_authority",
+        "safe_voice_channel",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "verified_responsibility",
+        "verified_decision_authority"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 두 사람이 같은 규칙을 말하지만 버전이 다른 경우",
+      "aChange": "현재 유효한 기준과 변경자를 확인",
+      "bChange": "참조한 규칙 버전을 명시",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "rule_version",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "상사",
+      "personB": "부하·팀원"
+    },
+    "authorityContext": {
+      "kind": "goal_setting",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "어느 버전의 기준을 따라야 하나요?"
+    },
+    "managerResponsibleAction": "현재 유효한 기준과 변경자를 확인",
+    "teamMemberAvailableAction": "참조한 규칙 버전을 명시",
+    "safeVoiceCondition": "직접 이견·질문이 안전한지 먼저 확인. 상사는 기준·지원·비보복의 조건을 확인하며 팀원에게 감정 관리·화해 의무를 부과하지 않음. 위험·강압은 적절한 별도 지원·조직 절차를 확인."
+  },
+  {
+    "id": "mrpr:material:CH01.P4:management-facts-before-compatibility",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "address": "CH01.P4",
+    "mode": "JOINT",
+    "readerQuestion": "권한·기준·자원에서 무엇을 먼저 확인하는가?",
+    "coreMeaning": "성향보다 먼저 확인할 업무 조건",
+    "roleContributions": [
+      {
+        "address": "CH01.P4.S1",
+        "originalRole": "좋은 점",
+        "knowledge": "서로 다른 정보를 제공할 여지는 긍정적 가능성",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH01.P4.S2",
+        "originalRole": "조심할 차이",
+        "knowledge": "침묵·질문·속도의 차이를 능력·충성도로 평가하지 않음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH01.P4.S3",
+        "originalRole": "관계별 조건",
+        "knowledge": "V4 역할은 A상사 B부하·팀원이지만 실제 평가·징계·보수 권한은 미확인",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH01.P4.S4",
+        "originalRole": "앞으로의 질문",
+        "knowledge": "목적·기준·자원·안전한 질문 통로를 먼저 확인해야 함",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d23874cc920e78330b98",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ae0c112b425afed611ff",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d6112a6cb9c4d49a4d17",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:role-fulfilment",
+        "axis": "DUTY",
+        "definition": "합의한 담당을 이행",
+        "condition": "담당·권한·기한이 확인될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "goal",
+    "workFunctions": [
+      "safety",
+      "authority"
+    ],
+    "outputType": "context_gate",
+    "positive": "개인 성향과 조직 조건을 나눠 이해 가능",
+    "risk": "궁합으로 불공정 지시를 설명해 버릴 위험",
+    "factBomb": "기준이 공개되지 않았는데 팀원에게 눈치를 요구할 수는 없다",
+    "twist": "좋은 궁합보다 명확한 절차가 먼저 도움이 될 때가 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 업무 지시자는 있지만 평가 담당자는 따로 있는 조직",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "확인된 권한만 설명하고 지원 절차 안내",
+      "personB": "필요한 기준·담당자 확인 요청"
+    },
+    "counterexample": "직접 이견이 위험하면 안전한 별도 통로 우선",
+    "distinctFromOtherParagraphs": "개인 정보 방식과 다른 전체 적용 한계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "mrpr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "mrpr:material:CH01.P4:management-facts-before-compatibility",
+          "sourceKeys": [
+            "d23874cc920e78330b98",
+            "ae0c112b425afed611ff",
+            "d6112a6cb9c4d49a4d17"
+          ],
+          "typePredicates": [],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_manager_role",
+        "actual_team_member_role",
+        "verified_reporting_relationship",
+        "verified_evaluation_authority",
+        "safe_voice_channel",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "verified_responsibility",
+        "verified_decision_authority"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 업무 지시자는 있지만 평가 담당자는 따로 있는 조직",
+      "aChange": "확인된 권한만 설명하고 지원 절차 안내",
+      "bChange": "필요한 기준·담당자 확인 요청",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "context_gate",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "상사",
+      "personB": "부하·팀원"
+    },
+    "authorityContext": {
+      "kind": "UNKNOWN",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "누가 기준·평가·지원 결정을 담당하나요?"
+    },
+    "managerResponsibleAction": "확인된 권한만 설명하고 지원 절차 안내",
+    "teamMemberAvailableAction": "필요한 기준·담당자 확인 요청",
+    "safeVoiceCondition": "직접 이견·질문이 안전한지 먼저 확인. 상사는 기준·지원·비보복의 조건을 확인하며 팀원에게 감정 관리·화해 의무를 부과하지 않음. 위험·강압은 적절한 별도 지원·조직 절차를 확인."
+  },
+  {
+    "id": "mrpr:material:CH02.P3:manager-correct-own-error",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "address": "CH02.P3",
+    "mode": "SELF_A",
+    "readerQuestion": "A의 자기 수정·지원이 도움이 될 조건은 무엇인가?",
+    "coreMeaning": "관리자가 자기 지시 오류를 고칠 여지",
+    "roleContributions": [
+      {
+        "address": "CH02.P3.S1",
+        "originalRole": "특징적 강점",
+        "knowledge": "잘못을 알면 바로잡으려는 A의 강점 후보",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH02.P3.S2",
+        "originalRole": "실제 근거",
+        "knowledge": "실제 A 개인 원천에 해당 수정 선호가 있을 때만 사용",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH02.P3.S3",
+        "originalRole": "B에게 좋은 상황",
+        "knowledge": "B가 과거 지시를 따른 결과라면 A는 변경 이유와 영향 범위를 먼저 설명",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH02.P3.S4",
+        "originalRole": "유지 조건",
+        "knowledge": "수정 기록과 우선순위 조정이 있어야 팀원 재작업 부담을 줄일 수 있음",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "76d4c68e32d1662f8abf",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "17a595663fd8055c13b7",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:role-fulfilment",
+        "axis": "DUTY",
+        "definition": "합의한 담당을 이행",
+        "condition": "담당·권한·기한이 확인될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "revision",
+    "workFunctions": [
+      "responsibility",
+      "change"
+    ],
+    "outputType": "instruction_correction",
+    "positive": "오류를 숨기지 않는 관리 가능성",
+    "risk": "팀원 수정만 요구하고 지시 오류는 생략",
+    "factBomb": "상사의 정정이 팀원의 실수 기록으로 남아서는 안 된다",
+    "twist": "자기 오류를 인정하는 행동이 기준의 신뢰를 지킬 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: A가 잘못 준 기준을 정정하고 재작업 시간을 다시 잡음",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "변경 출처·일정·담당 영향을 명시",
+      "personB": "이미 수행한 작업과 추가 소요 알림"
+    },
+    "counterexample": "실제 오류가 있었다고 단정하지 않음",
+    "distinctFromOtherParagraphs": "A의 장점 중 자기 수정 책임",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "mrpr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "mrpr:material:CH02.P3:manager-correct-own-error",
+          "sourceKeys": [
+            "76d4c68e32d1662f8abf",
+            "17a595663fd8055c13b7"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ISTJ",
+              "sourceKey": "76d4c68e32d1662f8abf"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "76d4c68e32d1662f8abf",
+          "domain": "WORK"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_manager_role",
+        "actual_team_member_role",
+        "verified_reporting_relationship",
+        "verified_evaluation_authority",
+        "safe_voice_channel",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "verified_responsibility",
+        "verified_decision_authority"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: A가 잘못 준 기준을 정정하고 재작업 시간을 다시 잡음",
+      "aChange": "변경 출처·일정·담당 영향을 명시",
+      "bChange": "이미 수행한 작업과 추가 소요 알림",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "instruction_correction",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "상사",
+      "personB": "부하·팀원"
+    },
+    "authorityContext": {
+      "kind": "priority_change",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "변경 전 지시와 추가 작업 시간도 기록할까요?"
+    },
+    "managerResponsibleAction": "변경 출처·일정·담당 영향을 명시",
+    "teamMemberAvailableAction": "이미 수행한 작업과 추가 소요 알림",
+    "safeVoiceCondition": "직접 이견·질문이 안전한지 먼저 확인. 상사는 기준·지원·비보복의 조건을 확인하며 팀원에게 감정 관리·화해 의무를 부과하지 않음. 위험·강압은 적절한 별도 지원·조직 절차를 확인."
+  },
+  {
+    "id": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "address": "CH04.P1",
+    "mode": "JOINT",
+    "readerQuestion": "공통 선호에서도 상사와 팀원의 다른 책임은 무엇인가?",
+    "coreMeaning": "끝까지 하려는 공통 선호와 다른 책임",
+    "roleContributions": [
+      {
+        "address": "CH04.P1.S1",
+        "originalRole": "검증된 공통점 또는 다른 기여",
+        "knowledge": "A의 기준 유지와 B의 완결 선호가 실제 각자 확인된 조건",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH04.P1.S2",
+        "originalRole": "각자 근거",
+        "knowledge": "동일한 성실성 근거 두 개가 아니라 서로 다른 원천·역할을 구별",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH04.P1.S3",
+        "originalRole": "함께하는 행동",
+        "knowledge": "A는 완료 기준·검토 자원을 B는 남은 수행 상태를 공유",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH04.P1.S4",
+        "originalRole": "강점의 조건",
+        "knowledge": "기준과 시간 조정이 있어야 끝내려는 마음이 과부하로 변하지 않음",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "871f1880dae3d3831abc",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "e5bb3aac2a342fa953aa",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d23874cc920e78330b98",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:role-fulfilment",
+        "axis": "DUTY",
+        "definition": "합의한 담당을 이행",
+        "condition": "담당·권한·기한이 확인될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "delivery",
+    "workFunctions": [
+      "completion",
+      "responsibility"
+    ],
+    "outputType": "completion_check",
+    "positive": "마무리 공백을 찾을 가능성",
+    "risk": "둘 다 완벽을 요구하면 종료가 늦어질 수 있음",
+    "factBomb": "끝내고 싶다는 공통점만으로 완료 기준이 정해지지는 않는다",
+    "twist": "같은 끈기도 한쪽은 범위를 줄이는 데 쓸 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: A가 필수 조건을 좁히고 B가 남은 항목을 마무리",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "필수·추가 품질과 일정 구분",
+      "personB": "남은 수행과 검토 필요 알림"
+    },
+    "counterexample": "실제 수행 능력·실적 보장은 아님",
+    "distinctFromOtherParagraphs": "공통 선호의 역할 분리",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "mrpr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+          "sourceKeys": [
+            "871f1880dae3d3831abc",
+            "e5bb3aac2a342fa953aa",
+            "d23874cc920e78330b98"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ISTJ",
+              "sourceKey": "871f1880dae3d3831abc"
+            },
+            {
+              "owner": "B",
+              "type": "ESFJ",
+              "sourceKey": "e5bb3aac2a342fa953aa"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "871f1880dae3d3831abc",
+          "domain": "WORK"
+        },
+        {
+          "owner": "B",
+          "type": "ESFJ",
+          "sourceKey": "e5bb3aac2a342fa953aa",
+          "domain": "WORK"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_manager_role",
+        "actual_team_member_role",
+        "verified_reporting_relationship",
+        "verified_evaluation_authority",
+        "safe_voice_channel",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "verified_responsibility",
+        "verified_decision_authority"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: A가 필수 조건을 좁히고 B가 남은 항목을 마무리",
+      "aChange": "필수·추가 품질과 일정 구분",
+      "bChange": "남은 수행과 검토 필요 알림",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "completion_check",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "상사",
+      "personB": "부하·팀원"
+    },
+    "authorityContext": {
+      "kind": "review_standard",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "어느 항목까지 끝내면 이번 제출은 완료인가요?"
+    },
+    "managerResponsibleAction": "필수·추가 품질과 일정 구분",
+    "teamMemberAvailableAction": "남은 수행과 검토 필요 알림",
+    "safeVoiceCondition": "직접 이견·질문이 안전한지 먼저 확인. 상사는 기준·지원·비보복의 조건을 확인하며 팀원에게 감정 관리·화해 의무를 부과하지 않음. 위험·강압은 적절한 별도 지원·조직 절차를 확인."
+  },
+  {
+    "id": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "address": "CH04.P4",
+    "mode": "JOINT",
+    "readerQuestion": "조기 공유·학습에서도 상사가 남길 책임은 무엇인가?",
+    "coreMeaning": "수정에서 배우되 관리 책임을 남기기",
+    "roleContributions": [
+      {
+        "address": "CH04.P4.S1",
+        "originalRole": "가치 있는 특징",
+        "knowledge": "개선할 행동과 지원 조건을 함께 남기는 관계의 좋은 힘",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH04.P4.S2",
+        "originalRole": "좋은 관계의 조건",
+        "knowledge": "관찰된 작업과 실제 제공된 지원을 돌아보는 조건부 절차",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH04.P4.S3",
+        "originalRole": "과사용 위험",
+        "knowledge": "학습이라는 말로 기준 미공개·과부하를 팀원 태도 문제로 축소할 위험",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH04.P4.S4",
+        "originalRole": "활용 방향",
+        "knowledge": "A는 기준·자원을 B는 실행·확인 상태를 맡는 다음 선택",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "80abdb3362bb5a5279c3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "1fa4cae7d38bb8fe8883",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c9a09e727fe2ed6dcdbd",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:LEARNING:acquisition",
+        "axis": "LEARNING",
+        "definition": "새 내용을 이해하고 익힘",
+        "condition": "연습·피드백 기회가 있을 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "revision",
+    "workFunctions": [
+      "growth",
+      "responsibility"
+    ],
+    "outputType": "supported_learning",
+    "positive": "학습 과제를 좁힐 여지",
+    "risk": "모든 실패를 팀원 성장 기회로 포장",
+    "factBomb": "성장을 위해서라는 말이 부족한 지원을 정당화하지는 않는다",
+    "twist": "좋은 회고의 결과는 팀원 과제뿐 아니라 상사 행동의 변화일 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 재작업 뒤 지시문과 검토 시간을 함께 개선",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "자기 지시·지원 조건도 수정 대상에 포함",
+      "personB": "확인한 실행상의 개선점을 제안"
+    },
+    "counterexample": "위험·부당행위는 일반 회고만으로 해결 단정 불가",
+    "distinctFromOtherParagraphs": "조기 공유와 다른 학습·관리 책임",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "mrpr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+          "sourceKeys": [
+            "80abdb3362bb5a5279c3",
+            "1fa4cae7d38bb8fe8883",
+            "c9a09e727fe2ed6dcdbd"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENFJ",
+              "sourceKey": "80abdb3362bb5a5279c3"
+            },
+            {
+              "owner": "B",
+              "type": "ISFP",
+              "sourceKey": "1fa4cae7d38bb8fe8883"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ENFJ",
+          "sourceKey": "80abdb3362bb5a5279c3",
+          "domain": "WORK"
+        },
+        {
+          "owner": "B",
+          "type": "ISFP",
+          "sourceKey": "1fa4cae7d38bb8fe8883",
+          "domain": "WORK"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_manager_role",
+        "actual_team_member_role",
+        "verified_reporting_relationship",
+        "verified_evaluation_authority",
+        "safe_voice_channel",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "verified_responsibility",
+        "verified_decision_authority"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 재작업 뒤 지시문과 검토 시간을 함께 개선",
+      "aChange": "자기 지시·지원 조건도 수정 대상에 포함",
+      "bChange": "확인한 실행상의 개선점을 제안",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "supported_learning",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "상사",
+      "personB": "부하·팀원"
+    },
+    "authorityContext": {
+      "kind": "resource_support",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "다음에는 제 행동과 지원 조건 중 무엇을 함께 바꾸나요?"
+    },
+    "managerResponsibleAction": "자기 지시·지원 조건도 수정 대상에 포함",
+    "teamMemberAvailableAction": "확인한 실행상의 개선점을 제안",
+    "safeVoiceCondition": "직접 이견·질문이 안전한지 먼저 확인. 상사는 기준·지원·비보복의 조건을 확인하며 팀원에게 감정 관리·화해 의무를 부과하지 않음. 위험·강압은 적절한 별도 지원·조직 절차를 확인."
+  },
+  {
+    "id": "mrpr:material:CH07.P1:responsibility-without-delegation",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "address": "CH07.P1",
+    "mode": "JOINT",
+    "readerQuestion": "목표·방법·권한·재량·보고 비용은 무엇이 다른가?",
+    "coreMeaning": "수행 책임과 결정권의 불균형",
+    "roleContributions": [
+      {
+        "address": "CH07.P1.S1",
+        "originalRole": "불일치 또는 확인할 조건",
+        "knowledge": "담당이라고 부르지만 관련 결정을 모두 막아두면 조정이 필요",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S2",
+        "originalRole": "각자의 성향",
+        "knowledge": "성향 정보만으로 실제 책임·결재권을 생성하지 않음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S3",
+        "originalRole": "다른 이해",
+        "knowledge": "A는 맡겼다고 B는 승인 대기만 늘었다고 받을 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S4",
+        "originalRole": "답답함의 이유",
+        "knowledge": "A가 실제 권한을 확인해 맡길 결정과 남길 결정을 정리",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "17a595663fd8055c13b7",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d23874cc920e78330b98",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:role-fulfilment",
+        "axis": "DUTY",
+        "definition": "합의한 담당을 이행",
+        "condition": "담당·권한·기한이 확인될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "plan",
+    "workFunctions": [
+      "responsibility_without_delegation",
+      "authority"
+    ],
+    "outputType": "delegation_gap",
+    "positive": "책임·지원 경계를 드러낼 여지",
+    "risk": "권한 공백을 B의 소극성으로 평가",
+    "factBomb": "결정을 막아놓고 결과 책임만 주면 위임이 아니다",
+    "twist": "책임을 명확히 하려면 상사가 남길 책임도 적어야 한다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 담당자는 B지만 수정마다 별도 승인 필요",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "실제 결정 범위·응답 책임·지원 확인",
+      "personB": "승인 대기·영향·필요 시점 보고"
+    },
+    "counterexample": "실제 권한 미확인이므로 법적 책임 판정 불가",
+    "distinctFromOtherParagraphs": "방법 취향이 아닌 결정권 공백",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "mrpr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "mrpr:material:CH07.P1:responsibility-without-delegation",
+          "sourceKeys": [
+            "17a595663fd8055c13b7",
+            "d23874cc920e78330b98"
+          ],
+          "typePredicates": [],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_manager_role",
+        "actual_team_member_role",
+        "verified_reporting_relationship",
+        "verified_evaluation_authority",
+        "safe_voice_channel",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "verified_responsibility",
+        "verified_decision_authority"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 담당자는 B지만 수정마다 별도 승인 필요",
+      "aChange": "실제 결정 범위·응답 책임·지원 확인",
+      "bChange": "승인 대기·영향·필요 시점 보고",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "delegation_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "상사",
+      "personB": "부하·팀원"
+    },
+    "authorityContext": {
+      "kind": "delegation",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "어느 결정은 제가 하고 어느 결정은 승인받나요?"
+    },
+    "managerResponsibleAction": "실제 결정 범위·응답 책임·지원 확인",
+    "teamMemberAvailableAction": "승인 대기·영향·필요 시점 보고",
+    "safeVoiceCondition": "직접 이견·질문이 안전한지 먼저 확인. 상사는 기준·지원·비보복의 조건을 확인하며 팀원에게 감정 관리·화해 의무를 부과하지 않음. 위험·강압은 적절한 별도 지원·조직 절차를 확인."
+  },
+  {
+    "id": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "address": "CH07.P4",
+    "mode": "JOINT",
+    "readerQuestion": "늦은 위험 정보·의견 배제·책임 전가·변경 이력·정보 사용은 어떤 다른 문제인가?",
+    "coreMeaning": "관리 판단을 팀원의 책임으로 넘기는 조건",
+    "roleContributions": [
+      {
+        "address": "CH07.P4.S1",
+        "originalRole": "주의 상황",
+        "knowledge": "결정 요청 뒤 답 없이 알아서 해결하라고 할 때 권한 확인",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S2",
+        "originalRole": "A의 기대",
+        "knowledge": "A는 B가 일을 끝내길 기대할 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S3",
+        "originalRole": "B의 기대",
+        "knowledge": "B는 권한 밖 변경에 대한 판단·지원을 기대할 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S4",
+        "originalRole": "다르게 전달되는 뜻",
+        "knowledge": "주도성이라는 말이 승인·배분 책임 이전으로 전달될 위험",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d23874cc920e78330b98",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "17a595663fd8055c13b7",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:role-fulfilment",
+        "axis": "DUTY",
+        "definition": "합의한 담당을 이행",
+        "condition": "담당·권한·기한이 확인될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "approval",
+    "workFunctions": [
+      "manager_responsibility_transfer",
+      "authority"
+    ],
+    "outputType": "decision_transfer_gap",
+    "positive": "실제 결정 범위를 정리할 여지",
+    "risk": "관리 책임 전가를 성장 기회로 미화",
+    "factBomb": "팀원이 문제를 발견했다고 최종 결정 책임까지 떠안을 이유는 없다",
+    "twist": "도움 요청을 받는 것이 상사의 역할을 줄이지는 않는다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 예산·범위 결정이 필요한 막힘을 B에게 되돌림",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "실제 권한 안에서 결정·상위 확인·지원 수행",
+      "personB": "확인 필요한 결정과 영향 정리"
+    },
+    "counterexample": "직급·법적 책임은 따로 확인",
+    "distinctFromOtherParagraphs": "자원 결핍과 다른 결정 책임 전가",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "mrpr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+          "sourceKeys": [
+            "d23874cc920e78330b98",
+            "17a595663fd8055c13b7"
+          ],
+          "typePredicates": [],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_manager_role",
+        "actual_team_member_role",
+        "verified_reporting_relationship",
+        "verified_evaluation_authority",
+        "safe_voice_channel",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "verified_responsibility",
+        "verified_decision_authority"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 예산·범위 결정이 필요한 막힘을 B에게 되돌림",
+      "aChange": "실제 권한 안에서 결정·상위 확인·지원 수행",
+      "bChange": "확인 필요한 결정과 영향 정리",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "decision_transfer_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "상사",
+      "personB": "부하·팀원"
+    },
+    "authorityContext": {
+      "kind": "decision_rights",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "이 중 상사가 결정하거나 상위 확인할 항목은 무엇인가요?"
+    },
+    "managerResponsibleAction": "실제 권한 안에서 결정·상위 확인·지원 수행",
+    "teamMemberAvailableAction": "확인 필요한 결정과 영향 정리",
+    "safeVoiceCondition": "직접 이견·질문이 안전한지 먼저 확인. 상사는 기준·지원·비보복의 조건을 확인하며 팀원에게 감정 관리·화해 의무를 부과하지 않음. 위험·강압은 적절한 별도 지원·조직 절차를 확인."
+  },
+  {
+    "id": "mrpr:material:CH08.P1:delegate-decision",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "address": "CH08.P1",
+    "mode": "JOINT",
+    "readerQuestion": "실제로 소개된 공백을 어떤 사실·필요·결정 질문으로 바꾸는가?",
+    "coreMeaning": "앞서 표시된 권한 공백을 결정 목록으로 확인",
+    "roleContributions": [
+      {
+        "address": "CH08.P1.S1",
+        "originalRole": "앞선 갈등 질문",
+        "knowledge": "앞서 표시된 권한 공백을 결정 목록으로 확인",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH08.P1.S2",
+        "originalRole": "실제 원인",
+        "knowledge": "막힌 결정·필요 자원·현재 승인자를 사실로 정리",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH08.P1.S3",
+        "originalRole": "각자 필요",
+        "knowledge": "A는 실제 위임 범위를 B는 승인 대기 영향을 알아야 함",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH08.P1.S4",
+        "originalRole": "조정 기준",
+        "knowledge": "B가 결정할 항목과 A가 남길 결정·응답 시점을 구분",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "17a595663fd8055c13b7",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d23874cc920e78330b98",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:role-fulfilment",
+        "axis": "DUTY",
+        "definition": "합의한 담당을 이행",
+        "condition": "담당·권한·기한이 확인될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "plan",
+    "workFunctions": [
+      "responsibility_without_delegation",
+      "authority"
+    ],
+    "outputType": "delegation_gap",
+    "positive": "대기와 수행 책임을 구별 가능",
+    "risk": "위임 문서로 실제 법적 권한을 만들어냄",
+    "factBomb": "위임은 상사의 남은 책임도 적어야 끝난다",
+    "twist": "모든 결정을 넘기기보다 승인 응답을 빠르게 하는 선택도 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 승인 대기 작업의 결정 목록을 작성",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "실제 권한·지원·응답 책임 확인",
+      "personB": "대기 영향·필요 시각 제시"
+    },
+    "counterexample": "권한 밖 결정을 확약하지 않음",
+    "distinctFromOtherParagraphs": "선호 방법이 아닌 승인 대기 복구",
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P1:responsibility-without-delegation"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "requirements": {
+      "policyRef": "mrpr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "mrpr:material:CH07.P1:responsibility-without-delegation",
+          "sourceKeys": [
+            "17a595663fd8055c13b7",
+            "d23874cc920e78330b98"
+          ],
+          "typePredicates": [],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "compatible_actually_displayed_group_only",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_manager_role",
+        "actual_team_member_role",
+        "verified_reporting_relationship",
+        "verified_evaluation_authority",
+        "safe_voice_channel",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "verified_responsibility",
+        "verified_decision_authority"
+      ],
+      "introducedRequired": true
+    },
+    "repair": {
+      "firstFactCheck": "가상: 승인 대기 작업의 결정 목록을 작성",
+      "aChange": "실제 권한·지원·응답 책임 확인",
+      "bChange": "대기 영향·필요 시각 제시",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "delegation_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "상사",
+      "personB": "부하·팀원"
+    },
+    "authorityContext": {
+      "kind": "delegation",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "결정 범위와 승인 응답 시점을 정할까요?"
+    },
+    "managerResponsibleAction": "실제 권한·지원·응답 책임 확인",
+    "teamMemberAvailableAction": "대기 영향·필요 시각 제시",
+    "safeVoiceCondition": "직접 이견·질문이 안전한지 먼저 확인. 상사는 기준·지원·비보복의 조건을 확인하며 팀원에게 감정 관리·화해 의무를 부과하지 않음. 위험·강압은 적절한 별도 지원·조직 절차를 확인."
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-retained-manager-decision",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "address": "CH08.P4",
+    "mode": "JOINT",
+    "readerQuestion": "둘은 보고·의견·결정·변경·정보 경계를 어떻게 확인하는가?",
+    "coreMeaning": "둘은 수행과 최종 결정의 경계를 유지하는 목표를 정함",
+    "roleContributions": [
+      {
+        "address": "CH08.P4.S1",
+        "originalRole": "공동 목표",
+        "knowledge": "둘은 수행과 최종 결정의 경계를 유지하는 목표를 정함",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH08.P4.S2",
+        "originalRole": "A의 역할",
+        "knowledge": "A는 실제 권한의 결정·상위 확인·자원 지원을 맡음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH08.P4.S3",
+        "originalRole": "B의 역할",
+        "knowledge": "B는 실행 상태·선택지·결정 필요 시점을 알림",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH08.P4.S4",
+        "originalRole": "관계별 원칙",
+        "knowledge": "주도성이라는 말로 권한 밖 결정을 떠넘기지 않는 원칙",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d23874cc920e78330b98",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "17a595663fd8055c13b7",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:role-fulfilment",
+        "axis": "DUTY",
+        "definition": "합의한 담당을 이행",
+        "condition": "담당·권한·기한이 확인될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "approval",
+    "workFunctions": [
+      "manager_responsibility_transfer",
+      "authority"
+    ],
+    "outputType": "decision_transfer_gap",
+    "positive": "결정 책임을 예측 가능하게 할 여지",
+    "risk": "책임 목록이 실제 위임 권한을 대신함",
+    "factBomb": "정보를 보고한 사람과 최종 결정한 사람은 구분돼야 한다",
+    "twist": "팀원 제안이 많아져도 관리 책임은 남길 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 선택지 보고 뒤 승인·미결 상태를 남김",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "결정 결과·보류 이유·다음 응답 시점 명시",
+      "personB": "실행 가능 범위·결정 요청 구분"
+    },
+    "counterexample": "법적 책임 판정·조직 권한 날조 금지",
+    "distinctFromOtherParagraphs": "공동 절차 속 관리 결정 보존",
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P4:manager-responsibility-transfer"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "requirements": {
+      "policyRef": "mrpr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+          "sourceKeys": [
+            "d23874cc920e78330b98",
+            "17a595663fd8055c13b7"
+          ],
+          "typePredicates": [],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "compatible_actually_displayed_group_only",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_manager_role",
+        "actual_team_member_role",
+        "verified_reporting_relationship",
+        "verified_evaluation_authority",
+        "safe_voice_channel",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "verified_responsibility",
+        "verified_decision_authority"
+      ],
+      "introducedRequired": true
+    },
+    "repair": {
+      "firstFactCheck": "가상: 선택지 보고 뒤 승인·미결 상태를 남김",
+      "aChange": "결정 결과·보류 이유·다음 응답 시점 명시",
+      "bChange": "실행 가능 범위·결정 요청 구분",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "decision_transfer_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "상사",
+      "personB": "부하·팀원"
+    },
+    "authorityContext": {
+      "kind": "decision_rights",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "수행·제안·승인·지원 담당을 구분할까요?"
+    },
+    "managerResponsibleAction": "결정 결과·보류 이유·다음 응답 시점 명시",
+    "teamMemberAvailableAction": "실행 가능 범위·결정 요청 구분",
+    "safeVoiceCondition": "직접 이견·질문이 안전한지 먼저 확인. 상사는 기준·지원·비보복의 조건을 확인하며 팀원에게 감정 관리·화해 의무를 부과하지 않음. 위험·강압은 적절한 별도 지원·조직 절차를 확인."
+  },
+  {
+    "id": "mrpr:material:CH09.P4:recall-decision-responsibility",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "address": "CH09.P4",
+    "mode": "RECALL",
+    "readerQuestion": "정보·결정·기여·수정·지원의 다른 책임을 어떻게 남기는가?",
+    "coreMeaning": "표시된 정보와 결정의 다른 역할로 마무리",
+    "roleContributions": [
+      {
+        "address": "CH09.P4.S1",
+        "originalRole": "특징적인 상호작용",
+        "knowledge": "B가 상태·선택지를 알리고 A가 실제 권한 안의 결정을 확인하는 상호작용",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P4.S2",
+        "originalRole": "함께 만드는 가치",
+        "knowledge": "정보와 판단이 이어질 가능성이지 과거 성공 사실이 아님",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P4.S3",
+        "originalRole": "기억할 기준",
+        "knowledge": "함께 기억할 기준은 수행·제안·승인·지원의 구분",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P4.S4",
+        "originalRole": "관계별 결론",
+        "knowledge": "관리 역할 선언과 실제 권한을 확인하는 관계의 결론",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d23874cc920e78330b98",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "17a595663fd8055c13b7",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:role-fulfilment",
+        "axis": "DUTY",
+        "definition": "합의한 담당을 이행",
+        "condition": "담당·권한·기한이 확인될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "approval",
+    "workFunctions": [
+      "recall",
+      "authority"
+    ],
+    "outputType": "introduced_responsibility",
+    "positive": "기준을 다음 선택으로 남길 여지",
+    "risk": "마지막 메시지에서 평등 책임으로 환원",
+    "factBomb": "협력한다는 이유로 관리 책임까지 반씩 나눌 수는 없다",
+    "twist": "서로 다른 책임을 인정하는 것이 함께 일할 조건일 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 다음 결정에서도 수행과 승인 담당을 확인",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "결정 결과·미결·지원 책임 설명",
+      "personB": "실행 상태·결정 필요 전달"
+    },
+    "counterexample": "실제 표시·동일 인물·과제 범위 없으면 보류",
+    "distinctFromOtherParagraphs": "추상 신뢰 대신 역할별 책임 회수",
+    "precedingMeaningRefs": [
+      "mrpr:material:CH08.P4:agree-retained-manager-decision"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "requirements": {
+      "policyRef": "mrpr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+          "sourceKeys": [
+            "d23874cc920e78330b98",
+            "17a595663fd8055c13b7"
+          ],
+          "typePredicates": [],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "compatible_actually_displayed_group_only",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_manager_role",
+        "actual_team_member_role",
+        "verified_reporting_relationship",
+        "verified_evaluation_authority",
+        "safe_voice_channel",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "verified_responsibility",
+        "verified_decision_authority"
+      ],
+      "introducedRequired": true
+    },
+    "repair": {
+      "firstFactCheck": "가상: 다음 결정에서도 수행과 승인 담당을 확인",
+      "aChange": "결정 결과·미결·지원 책임 설명",
+      "bChange": "실행 상태·결정 필요 전달",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "introduced_responsibility",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "상사",
+      "personB": "부하·팀원"
+    },
+    "authorityContext": {
+      "kind": "decision_rights",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "함께 일하기 위해 각자 남길 책임은 무엇인가요?"
+    },
+    "managerResponsibleAction": "결정 결과·미결·지원 책임 설명",
+    "teamMemberAvailableAction": "실행 상태·결정 필요 전달",
+    "safeVoiceCondition": "직접 이견·질문이 안전한지 먼저 확인. 상사는 기준·지원·비보복의 조건을 확인하며 팀원에게 감정 관리·화해 의무를 부과하지 않음. 위험·강압은 적절한 별도 지원·조직 절차를 확인."
+  }
+]

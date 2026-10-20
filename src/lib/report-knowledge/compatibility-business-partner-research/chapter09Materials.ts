@@ -1,0 +1,2176 @@
+/** Static offline businessPartner research. No runtime registration or customer approval. */
+import type { BusinessPartnerMaterial } from "./researchTypes";
+export const BP_CH09_MATERIALS: readonly BusinessPartnerMaterial[] = [
+  {
+    "id": "bppr:material:CH09.P1:recall-market-and-scope",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "address": "CH09.P1",
+    "mode": "RECALL",
+    "readerQuestion": "표시된 접점·공동 정보만 어떻게 지속하는가?",
+    "coreMeaning": "실제로 표시된 고객·제공 접점을 지속할 조건",
+    "roleContributions": [
+      {
+        "address": "CH09.P1.S1",
+        "originalRole": "긍정적 특징",
+        "knowledge": "선행에서 실제 소개한 검증 질문이나 제공 조건만 회수",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P1.S2",
+        "originalRole": "실제 명리·MBTI",
+        "knowledge": "같은 두 사람·owner·root·과제·표시 이력을 확인",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P1.S3",
+        "originalRole": "함께하는 장점",
+        "knowledge": "후보를 모두 합쳐 공통 강점이라고 주장하지 않음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P1.S4",
+        "originalRole": "지속 조건",
+        "knowledge": "다음 같은 제공에서 가정과 실제 차이를 확인",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "0ba71def5f7dd66a4424",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "c7fee219fcf7a5b642fd",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d8e6b5b9bc1c9e1094f2",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "81c172dd5bbbb1920ae6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "60699f5629066c047ea1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5b95f1a5a0504d2d0869",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:PRACTICALITY:use-test",
+        "axis": "PRACTICALITY",
+        "definition": "실제 사용 환경에서 작동 여부를 확인",
+        "condition": "사용 목적과 사용자가 확인될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "continuation",
+    "workFunctions": [
+      "positive",
+      "recall"
+    ],
+    "outputType": "introduced_scope",
+    "positive": "도입된 접점을 반복 가능한 질문으로 남길 여지",
+    "risk": "미표시 후보를 실제 긍정 근거로 회수",
+    "factBomb": "자료에 있다는 사실이 이 책에서 소개했다는 뜻은 아니다",
+    "twist": "다음 결정은 새 강점보다 이미 확인한 질문에서 시작할 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 실제 소개한 제공 조건을 다음 작업에 적용",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "도입된 가정·범위 확인",
+      "personB": "도입된 실제 조건·검토 질문 확인"
+    },
+    "counterexample": "표시 이력·호환 source group 없으면 보류",
+    "distinctFromOtherParagraphs": "핵심 접점의 실제 표시 기반 지속",
+    "precedingMeaningRefs": [
+      "bppr:material:CH04.P1:shared-proof-before-investment",
+      "bppr:material:CH04.P1:shared-scope-repeatability"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH04.P1:shared-proof-before-investment",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH04.P1:shared-scope-repeatability",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH04.P1:shared-proof-before-investment",
+          "sourceKeys": [
+            "0ba71def5f7dd66a4424",
+            "c7fee219fcf7a5b642fd",
+            "d8e6b5b9bc1c9e1094f2"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "INTP",
+              "sourceKey": "0ba71def5f7dd66a4424"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "c7fee219fcf7a5b642fd"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        },
+        {
+          "groupId": "bppr:material:CH04.P1:shared-scope-repeatability",
+          "sourceKeys": [
+            "81c172dd5bbbb1920ae6",
+            "60699f5629066c047ea1",
+            "5b95f1a5a0504d2d0869"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ISTJ",
+              "sourceKey": "81c172dd5bbbb1920ae6"
+            },
+            {
+              "owner": "B",
+              "type": "ESFJ",
+              "sourceKey": "60699f5629066c047ea1"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "compatible_actually_displayed_group_only",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "INTP",
+          "sourceKey": "0ba71def5f7dd66a4424",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "c7fee219fcf7a5b642fd",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "81c172dd5bbbb1920ae6",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ESFJ",
+          "sourceKey": "60699f5629066c047ea1",
+          "domain": "WORK"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": true
+    },
+    "repair": {
+      "firstFactCheck": "가상: 실제 소개한 제공 조건을 다음 작업에 적용",
+      "aChange": "도입된 가정·범위 확인",
+      "bChange": "도입된 실제 조건·검토 질문 확인",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "introduced_scope",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "동일 기간·제공 범위·비용 기준 확인",
+    "additionalBusinessInfo": [
+      "introduced_ledger",
+      "actual_task"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "continuation_review",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "실제로 소개한 질문 중 다음에도 쓸 것은 무엇인가요?"
+    },
+    "personAAction": "도입된 가정·범위 확인",
+    "personBAction": "도입된 실제 조건·검토 질문 확인",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH09.P1:recall-customer-and-risk",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "address": "CH09.P1",
+    "mode": "RECALL",
+    "readerQuestion": "표시된 접점·공동 정보만 어떻게 지속하는가?",
+    "coreMeaning": "실제로 소개한 다른 정보의 공동 가치",
+    "roleContributions": [
+      {
+        "address": "CH09.P1.S1",
+        "originalRole": "긍정적 특징",
+        "knowledge": "표시된 관찰·가설 또는 위기 자료의 기여만 회수",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P1.S2",
+        "originalRole": "실제 명리·MBTI",
+        "knowledge": "각자의 실제 원천과 같은 상황의 정보임을 확인",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P1.S3",
+        "originalRole": "함께하는 장점",
+        "knowledge": "고객 정보와 위기 정보를 하나의 능력 점수로 합치지 않음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P1.S4",
+        "originalRole": "지속 조건",
+        "knowledge": "다음 같은 판단에서 필요한 정보의 차이를 유지",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "e08ef500cdb091985a2e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "0ba71def5f7dd66a4424",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d8e6b5b9bc1c9e1094f2",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "c7fee219fcf7a5b642fd",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "c0fbe9a4b01f0f51c46b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "f64a1b254b8c7a0ebd5e",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:ADAPTABILITY:method-revision",
+        "axis": "ADAPTABILITY",
+        "definition": "목적 안에서 방법을 바꿈",
+        "condition": "방법의 재량이 실제 있을 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "customer_review",
+    "workFunctions": [
+      "positive",
+      "information"
+    ],
+    "outputType": "introduced_information",
+    "positive": "다른 기여를 연결할 질문을 남길 여지",
+    "risk": "기여 차이를 영업·운영 고정 역할로 바꿈",
+    "factBomb": "같이 잘할 수 있는 질문이 모든 역할을 이미 정해주지는 않는다",
+    "twist": "서로 다른 정보를 보는 것이 같은 결론을 강요하지 않을 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 표시된 정보 구조로 다음 확인을 준비",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "표시된 가정·자료 제시",
+      "personB": "표시된 관찰·미확인 제시"
+    },
+    "counterexample": "실제 표시·owner·과제 일치 없으면 보류",
+    "distinctFromOtherParagraphs": "공동 장면의 표시 기반 가치",
+    "precedingMeaningRefs": [
+      "bppr:material:CH04.P3:customer-signal-product-adjustment",
+      "bppr:material:CH04.P3:crisis-information-two-views"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH04.P3:customer-signal-product-adjustment",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH04.P3:crisis-information-two-views",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH04.P3:customer-signal-product-adjustment",
+          "sourceKeys": [
+            "e08ef500cdb091985a2e",
+            "0ba71def5f7dd66a4424",
+            "d8e6b5b9bc1c9e1094f2"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ESFJ",
+              "sourceKey": "e08ef500cdb091985a2e"
+            },
+            {
+              "owner": "B",
+              "type": "INTP",
+              "sourceKey": "0ba71def5f7dd66a4424"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        },
+        {
+          "groupId": "bppr:material:CH04.P3:crisis-information-two-views",
+          "sourceKeys": [
+            "c7fee219fcf7a5b642fd",
+            "c0fbe9a4b01f0f51c46b",
+            "f64a1b254b8c7a0ebd5e"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ISTJ",
+              "sourceKey": "c7fee219fcf7a5b642fd"
+            },
+            {
+              "owner": "B",
+              "type": "ISTP",
+              "sourceKey": "c0fbe9a4b01f0f51c46b"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "compatible_actually_displayed_group_only",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ESFJ",
+          "sourceKey": "e08ef500cdb091985a2e",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "B",
+          "type": "INTP",
+          "sourceKey": "0ba71def5f7dd66a4424",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "c7fee219fcf7a5b642fd",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "B",
+          "type": "ISTP",
+          "sourceKey": "c0fbe9a4b01f0f51c46b",
+          "domain": "THINKING"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": true
+    },
+    "repair": {
+      "firstFactCheck": "가상: 표시된 정보 구조로 다음 확인을 준비",
+      "aChange": "표시된 가정·자료 제시",
+      "bChange": "표시된 관찰·미확인 제시",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "introduced_information",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "새 관찰·검토에 필요한 시간 확인",
+    "additionalBusinessInfo": [
+      "introduced_ledger",
+      "information_need"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "decision_information",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "이미 본 기여 중 지금 필요한 정보는 무엇인가요?"
+    },
+    "personAAction": "표시된 가정·자료 제시",
+    "personBAction": "표시된 관찰·미확인 제시",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH09.P2:recall-directional-contribution",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "address": "CH09.P2",
+    "mode": "RECALL",
+    "readerQuestion": "표시된 방향별 기여·가치를 어떻게 활용하는가?",
+    "coreMeaning": "실제로 소개한 방향별 도움을 구분해 활용",
+    "roleContributions": [
+      {
+        "address": "CH09.P2.S1",
+        "originalRole": "검증된 좋은 기운",
+        "knowledge": "표시된 A→B 또는 B→A의 좋은 조건만 참고",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P2.S2",
+        "originalRole": "근거와 의미",
+        "knowledge": "실제 수신 십성·각자 원천·owner·방향을 유지",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P2.S3",
+        "originalRole": "관계의 가능성",
+        "knowledge": "역방향을 자동 같은 도움으로 바꾸지 않음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P2.S4",
+        "originalRole": "현실적 활용",
+        "knowledge": "도입된 자료가 필요한 작은 시험에 활용",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "c0fbe9a4b01f0f51c46b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "60699f5629066c047ea1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "DIRECTION_AB",
+        "sourceKey": "90e77590d3ea07930ba1",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5b95f1a5a0504d2d0869",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "e08ef500cdb091985a2e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "0ba71def5f7dd66a4424",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "DIRECTION_BA",
+        "sourceKey": "90e77590d3ea07930ba1",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d8e6b5b9bc1c9e1094f2",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:CREATION:prototype",
+        "axis": "CREATION",
+        "definition": "아이디어를 시험 가능한 형태로 만듦",
+        "condition": "미완성 상태와 시험 목적을 알릴 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "trial",
+    "workFunctions": [
+      "positive",
+      "direction"
+    ],
+    "outputType": "introduced_direction",
+    "positive": "한쪽 기여를 상대가 활용할 조건을 남길 여지",
+    "risk": "다른 유형 후보를 동시에 실제 사실로 회수",
+    "factBomb": "좋은 방향 해석도 실제 조건이 다르면 그대로 사용할 수 없다",
+    "twist": "도움을 받는 쪽의 질문이 바뀌면 필요한 기여도 바뀔 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 표시된 방향의 시험·관찰 조건을 재사용",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "실제 표시된 A의 행동 확인",
+      "personB": "실제 표시된 B의 필요 확인"
+    },
+    "counterexample": "실제 양방향 근거·표시·호환 group 없으면 보류",
+    "distinctFromOtherParagraphs": "CH04 공동 가치와 다른 방향별 활용",
+    "precedingMeaningRefs": [
+      "bppr:material:CH05.P2:a-prototype-b-service-cost",
+      "bppr:material:CH06.P2:b-customer-issue-a-hypothesis"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH05.P2:a-prototype-b-service-cost",
+        "expectedMode": "AB",
+        "direction": "A_TO_B",
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH06.P2:b-customer-issue-a-hypothesis",
+        "expectedMode": "BA",
+        "direction": "B_TO_A",
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH05.P2:a-prototype-b-service-cost",
+          "sourceKeys": [
+            "c0fbe9a4b01f0f51c46b",
+            "60699f5629066c047ea1",
+            "90e77590d3ea07930ba1",
+            "5b95f1a5a0504d2d0869"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ISTP",
+              "sourceKey": "c0fbe9a4b01f0f51c46b"
+            },
+            {
+              "owner": "B",
+              "type": "ESFJ",
+              "sourceKey": "60699f5629066c047ea1"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        },
+        {
+          "groupId": "bppr:material:CH06.P2:b-customer-issue-a-hypothesis",
+          "sourceKeys": [
+            "e08ef500cdb091985a2e",
+            "0ba71def5f7dd66a4424",
+            "90e77590d3ea07930ba1",
+            "d8e6b5b9bc1c9e1094f2"
+          ],
+          "typePredicates": [
+            {
+              "owner": "B",
+              "type": "ESFJ",
+              "sourceKey": "e08ef500cdb091985a2e"
+            },
+            {
+              "owner": "A",
+              "type": "INTP",
+              "sourceKey": "0ba71def5f7dd66a4424"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "compatible_actually_displayed_group_only",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ISTP",
+          "sourceKey": "c0fbe9a4b01f0f51c46b",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "B",
+          "type": "ESFJ",
+          "sourceKey": "60699f5629066c047ea1",
+          "domain": "WORK"
+        },
+        {
+          "owner": "B",
+          "type": "ESFJ",
+          "sourceKey": "e08ef500cdb091985a2e",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "A",
+          "type": "INTP",
+          "sourceKey": "0ba71def5f7dd66a4424",
+          "domain": "THINKING"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": true
+    },
+    "repair": {
+      "firstFactCheck": "가상: 표시된 방향의 시험·관찰 조건을 재사용",
+      "aChange": "실제 표시된 A의 행동 확인",
+      "bChange": "실제 표시된 B의 필요 확인",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "introduced_direction",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "시험·지원 비용과 역할 미확인",
+    "additionalBusinessInfo": [
+      "introduced_ledger",
+      "direction",
+      "task"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "trial_review",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "누가 누구에게 어떤 조건의 도움을 주었나요?"
+    },
+    "personAAction": "실제 표시된 A의 행동 확인",
+    "personBAction": "실제 표시된 B의 필요 확인",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH09.P2:recall-contribution-without-value-price",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "address": "CH09.P2",
+    "mode": "RECALL",
+    "readerQuestion": "표시된 방향별 기여·가치를 어떻게 활용하는가?",
+    "coreMeaning": "소개한 기여의 의미를 배분 판정 없이 활용",
+    "roleContributions": [
+      {
+        "address": "CH09.P2.S1",
+        "originalRole": "검증된 좋은 기운",
+        "knowledge": "실제로 소개한 인정·기여·경제 합의의 구분을 회수",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P2.S2",
+        "originalRole": "근거와 의미",
+        "knowledge": "원천 정의와 실제 기여 기록을 혼동하지 않음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P2.S3",
+        "originalRole": "관계의 가능성",
+        "knowledge": "두 사람이 확인한 의미가 아직 지분·대가 합의는 아님",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P2.S4",
+        "originalRole": "현실적 활용",
+        "knowledge": "인정과 정산 의제를 다음에도 따로 확인",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "fd240bf6e5740f4fe5d6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "b64fa2920704301bf622",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "42cd2d081510f52bb34d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "DIRECTION_AB",
+        "sourceKey": "fe11b875c7ad3a9c8318",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "51ae3a3317baa66901c0",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:role-fulfilment",
+        "axis": "DUTY",
+        "definition": "합의한 담당을 이행",
+        "condition": "담당·권한·기한이 확인될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "settlement",
+    "workFunctions": [
+      "recognition",
+      "positive"
+    ],
+    "outputType": "introduced_contribution",
+    "positive": "기여를 누락하지 않는 질문을 남길 여지",
+    "risk": "긍정 해석으로 미정 보상 논의를 끝냄",
+    "factBomb": "좋은 기여라는 설명만으로 정산 질문이 끝나지는 않는다",
+    "twist": "인정과 배분을 분리하면 기여를 더 정확히 말할 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 표시된 기여 질문으로 실제 기록을 검토",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "표시된 기여·조건 확인",
+      "personB": "표시된 인정·대가 질문 확인"
+    },
+    "counterexample": "미표시·실제 기여 미확인 시 보류",
+    "distinctFromOtherParagraphs": "긍정 의미를 경제 권리로 승격하지 않는 회수",
+    "precedingMeaningRefs": [
+      "bppr:material:CH04.P4:contribution-recognition-without-shares",
+      "bppr:material:CH05.P2:a-meaning-b-allocation"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH04.P4:contribution-recognition-without-shares",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH05.P2:a-meaning-b-allocation",
+        "expectedMode": "AB",
+        "direction": "A_TO_B",
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH04.P4:contribution-recognition-without-shares",
+          "sourceKeys": [
+            "fd240bf6e5740f4fe5d6",
+            "b64fa2920704301bf622",
+            "42cd2d081510f52bb34d"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENFJ",
+              "sourceKey": "fd240bf6e5740f4fe5d6"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "b64fa2920704301bf622"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        },
+        {
+          "groupId": "bppr:material:CH05.P2:a-meaning-b-allocation",
+          "sourceKeys": [
+            "fd240bf6e5740f4fe5d6",
+            "b64fa2920704301bf622",
+            "fe11b875c7ad3a9c8318",
+            "51ae3a3317baa66901c0"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENFJ",
+              "sourceKey": "fd240bf6e5740f4fe5d6"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "b64fa2920704301bf622"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "compatible_actually_displayed_group_only",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ENFJ",
+          "sourceKey": "fd240bf6e5740f4fe5d6",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "b64fa2920704301bf622",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": true
+    },
+    "repair": {
+      "firstFactCheck": "가상: 표시된 기여 질문으로 실제 기록을 검토",
+      "aChange": "표시된 기여·조건 확인",
+      "bChange": "표시된 인정·대가 질문 확인",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "introduced_contribution",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "보수·비용·손익·지분 가치 별도",
+    "additionalBusinessInfo": [
+      "introduced_ledger",
+      "contribution_record"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "compensation_review",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "무엇을 인정했고 무엇을 아직 합의하지 않았나요?"
+    },
+    "personAAction": "표시된 기여·조건 확인",
+    "personBAction": "표시된 인정·대가 질문 확인",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH09.P3:recall-consent-principle",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "address": "CH09.P3",
+    "mode": "RECALL",
+    "readerQuestion": "표시된 동의·범위·중단 원칙을 어떻게 유지하는가?",
+    "coreMeaning": "실제 표시한 동의·결정 원칙을 유지",
+    "roleContributions": [
+      {
+        "address": "CH09.P3.S1",
+        "originalRole": "조율 원칙",
+        "knowledge": "도입된 지출 또는 단독 결정의 확인 절차만 회수",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P3.S2",
+        "originalRole": "개인별 이유",
+        "knowledge": "각자에게 필요한 자료·권한·동의의 근거를 유지",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P3.S3",
+        "originalRole": "실천 행동",
+        "knowledge": "가상: 같은 결정 종류에서 확정 전 동의를 다시 확인",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P3.S4",
+        "originalRole": "지속 조건",
+        "knowledge": "권한·조건이 바뀌면 원칙을 기계 적용하지 않고 재검토",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "66a9cd49cd16d86ca992",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "b64fa2920704301bf622",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "f64a1b254b8c7a0ebd5e",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "81c172dd5bbbb1920ae6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d4af2f38a725dac45d6e",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:BOUNDARY:refusal",
+        "axis": "BOUNDARY",
+        "definition": "받지 않을 요청을 명시",
+        "condition": "거절의 안전과 실제 의무 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "resources",
+    "workFunctions": [
+      "principle",
+      "consent"
+    ],
+    "outputType": "introduced_consent",
+    "positive": "빠른 결정과 합의의 경계를 남길 여지",
+    "risk": "선행 표시 없이 원칙을 새 처방으로 만듦",
+    "factBomb": "둘 다 기억하는 원칙인지 확인하는 것부터 합의다",
+    "twist": "원칙이 있으면 매번 사람의 진심을 판정하지 않아도 될 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 실제 표시된 지출 확인 절차를 반복",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "표시된 제안·확정 경계 유지",
+      "personB": "표시된 동의·보류 정보 확인"
+    },
+    "counterexample": "선행 actuallyDisplayed·같은 과제·호환 source group 필수",
+    "distinctFromOtherParagraphs": "CH08 조정 이후의 표시 기반 원칙",
+    "precedingMeaningRefs": [
+      "bppr:material:CH08.P1:repair-unreviewed-spending",
+      "bppr:material:CH08.P4:repair-unilateral-decision"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH08.P1:repair-unreviewed-spending",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH08.P4:repair-unilateral-decision",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P1:unreviewed-spending",
+          "sourceKeys": [
+            "66a9cd49cd16d86ca992",
+            "b64fa2920704301bf622",
+            "f64a1b254b8c7a0ebd5e"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENTJ",
+              "sourceKey": "66a9cd49cd16d86ca992"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "b64fa2920704301bf622"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        },
+        {
+          "groupId": "bppr:material:CH07.P4:unilateral-decision",
+          "sourceKeys": [
+            "66a9cd49cd16d86ca992",
+            "81c172dd5bbbb1920ae6",
+            "d4af2f38a725dac45d6e"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENTJ",
+              "sourceKey": "66a9cd49cd16d86ca992"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "81c172dd5bbbb1920ae6"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "compatible_actually_displayed_group_only",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ENTJ",
+          "sourceKey": "66a9cd49cd16d86ca992",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "b64fa2920704301bf622",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "81c172dd5bbbb1920ae6",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": true
+    },
+    "repair": {
+      "firstFactCheck": "가상: 실제 표시된 지출 확인 절차를 반복",
+      "aChange": "표시된 제안·확정 경계 유지",
+      "bChange": "표시된 동의·보류 정보 확인",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "introduced_consent",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "새 지급 의무·변경 비용 별도 확인",
+    "additionalBusinessInfo": [
+      "introduced_ledger",
+      "authority",
+      "consent"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "spending_review",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "실제로 소개한 결정 기준을 이번에도 확인했나요?"
+    },
+    "personAAction": "표시된 제안·확정 경계 유지",
+    "personBAction": "표시된 동의·보류 정보 확인",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH09.P3:recall-scope-and-stop-principle",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "address": "CH09.P3",
+    "mode": "RECALL",
+    "readerQuestion": "표시된 동의·범위·중단 원칙을 어떻게 유지하는가?",
+    "coreMeaning": "실제 표시한 범위·중단 원칙을 반복",
+    "roleContributions": [
+      {
+        "address": "CH09.P3.S1",
+        "originalRole": "조율 원칙",
+        "knowledge": "도입된 수행 경계 또는 중단 질문만 활용",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P3.S2",
+        "originalRole": "개인별 이유",
+        "knowledge": "각자의 부담·남은 의무·추가 비용 근거를 유지",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P3.S3",
+        "originalRole": "실천 행동",
+        "knowledge": "가상: 새 요청에 기존 제공·추가 투입을 나눠 확인",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P3.S4",
+        "originalRole": "지속 조건",
+        "knowledge": "새 계약·법적 의무가 있으면 별도 검토 필요",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "e08ef500cdb091985a2e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "f30fa018d453a0318547",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5b95f1a5a0504d2d0869",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "1f7d00a7995b32bad2b3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "b64fa2920704301bf622",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "7ecd3182d36691c2b6b5",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:PERSISTENCE:repeat-practice",
+        "axis": "PERSISTENCE",
+        "definition": "정한 연습을 반복",
+        "condition": "피드백을 받을 수 있는 과제",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "continuation",
+    "workFunctions": [
+      "principle",
+      "scope"
+    ],
+    "outputType": "introduced_scope_stop",
+    "positive": "친분과 사업의 경계를 지킬 질문",
+    "risk": "표시된 중단 질문을 일방 탈퇴 권리로 전용",
+    "factBomb": "중단을 논의하는 것과 남은 의무가 없다는 것은 다르다",
+    "twist": "끝을 확인할 수 있어야 계속할 조건도 보일 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 표시된 중단·범위 질문으로 다음 요청 검토",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "표시된 약속·추가 투입 확인",
+      "personB": "표시된 부담·보류 조건 확인"
+    },
+    "counterexample": "표시 이력·owner·과제·root 없으면 회수 보류",
+    "distinctFromOtherParagraphs": "마찰 조정 후의 수행·중단 조건",
+    "precedingMeaningRefs": [
+      "bppr:material:CH08.P3:repair-customer-promise-execution",
+      "bppr:material:CH08.P4:repair-no-stop-conditions"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH08.P3:repair-customer-promise-execution",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH08.P4:repair-no-stop-conditions",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P3:customer-promise-execution",
+          "sourceKeys": [
+            "e08ef500cdb091985a2e",
+            "f30fa018d453a0318547",
+            "5b95f1a5a0504d2d0869"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ESFJ",
+              "sourceKey": "e08ef500cdb091985a2e"
+            },
+            {
+              "owner": "B",
+              "type": "ISFP",
+              "sourceKey": "f30fa018d453a0318547"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        },
+        {
+          "groupId": "bppr:material:CH07.P4:no-stop-conditions",
+          "sourceKeys": [
+            "1f7d00a7995b32bad2b3",
+            "b64fa2920704301bf622",
+            "7ecd3182d36691c2b6b5"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "INTP",
+              "sourceKey": "1f7d00a7995b32bad2b3"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "b64fa2920704301bf622"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "compatible_actually_displayed_group_only",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ESFJ",
+          "sourceKey": "e08ef500cdb091985a2e",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "B",
+          "type": "ISFP",
+          "sourceKey": "f30fa018d453a0318547",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "A",
+          "type": "INTP",
+          "sourceKey": "1f7d00a7995b32bad2b3",
+          "domain": "INVESTMENT"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "b64fa2920704301bf622",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": true
+    },
+    "repair": {
+      "firstFactCheck": "가상: 표시된 중단·범위 질문으로 다음 요청 검토",
+      "aChange": "표시된 약속·추가 투입 확인",
+      "bChange": "표시된 부담·보류 조건 확인",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "introduced_scope_stop",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "매몰·추가·남은 계약 의무 구분",
+    "additionalBusinessInfo": [
+      "introduced_ledger",
+      "obligations",
+      "stop_terms"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "stop_review",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "이미 소개한 범위·중단 조건에 지금도 맞나요?"
+    },
+    "personAAction": "표시된 약속·추가 투입 확인",
+    "personBAction": "표시된 부담·보류 조건 확인",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH09.P4:recall-business-value-with-boundary",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "address": "CH09.P4",
+    "mode": "RECALL",
+    "readerQuestion": "표시된 가치·안전·선택을 어떻게 기억하는가?",
+    "coreMeaning": "표시된 운영·기여 가치를 경계와 함께 마무리",
+    "roleContributions": [
+      {
+        "address": "CH09.P4.S1",
+        "originalRole": "특징적인 상호작용",
+        "knowledge": "실제로 소개한 반복 운영 또는 기여 조정만 요약",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P4.S2",
+        "originalRole": "함께 만드는 가치",
+        "knowledge": "관계의 가치는 수익·동업 지속·법률 권리 보장이 아님",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P4.S3",
+        "originalRole": "기억할 기준",
+        "knowledge": "기억할 질문은 기여·약속·대가의 미확정을 남기는 것",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P4.S4",
+        "originalRole": "관계별 결론",
+        "knowledge": "같은 조건에서 활용하되 다른 상황이면 다시 확인",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "81c172dd5bbbb1920ae6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "f30fa018d453a0318547",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "f64a1b254b8c7a0ebd5e",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "fd240bf6e5740f4fe5d6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "b64fa2920704301bf622",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "51ae3a3317baa66901c0",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:MEANING:value-articulation",
+        "axis": "MEANING",
+        "definition": "자기에게 중요한 이유를 말함",
+        "condition": "본인이 밝힌 가치가 있을 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "continuation",
+    "workFunctions": [
+      "conclusion",
+      "value"
+    ],
+    "outputType": "introduced_value",
+    "positive": "긍정과 경계를 함께 남길 여지",
+    "risk": "좋은 궁합이므로 무조건 계속하라고 결론",
+    "factBomb": "사업을 같이할 가능성과 지금의 조건에 동의하는 것은 다른 일이다",
+    "twist": "그만둘 조건도 존중하는 관계가 될 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 표시된 운영·기여 질문을 다음 검토에 남김",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "표시된 가치·조건 기억",
+      "personB": "표시된 부담·미정 기억"
+    },
+    "counterexample": "실제 표시·호환 조건 없으면 긍정 결론 보류",
+    "distinctFromOtherParagraphs": "긍정 종결을 수익·지속 약속과 분리",
+    "precedingMeaningRefs": [
+      "bppr:material:CH04.P4:repeatable-operation-value",
+      "bppr:material:CH08.P2:repair-credit-imbalance"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH04.P4:repeatable-operation-value",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH08.P2:repair-credit-imbalance",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH04.P4:repeatable-operation-value",
+          "sourceKeys": [
+            "81c172dd5bbbb1920ae6",
+            "f30fa018d453a0318547",
+            "f64a1b254b8c7a0ebd5e"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ISTJ",
+              "sourceKey": "81c172dd5bbbb1920ae6"
+            },
+            {
+              "owner": "B",
+              "type": "ISFP",
+              "sourceKey": "f30fa018d453a0318547"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        },
+        {
+          "groupId": "bppr:material:CH07.P2:credit-imbalance",
+          "sourceKeys": [
+            "fd240bf6e5740f4fe5d6",
+            "b64fa2920704301bf622",
+            "51ae3a3317baa66901c0"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENFJ",
+              "sourceKey": "fd240bf6e5740f4fe5d6"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "b64fa2920704301bf622"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "compatible_actually_displayed_group_only",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "81c172dd5bbbb1920ae6",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ISFP",
+          "sourceKey": "f30fa018d453a0318547",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "A",
+          "type": "ENFJ",
+          "sourceKey": "fd240bf6e5740f4fe5d6",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "b64fa2920704301bf622",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": true
+    },
+    "repair": {
+      "firstFactCheck": "가상: 표시된 운영·기여 질문을 다음 검토에 남김",
+      "aChange": "표시된 가치·조건 기억",
+      "bChange": "표시된 부담·미정 기억",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "introduced_value",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "지속 비용·분배·추가 의무 미확인",
+    "additionalBusinessInfo": [
+      "introduced_ledger",
+      "open_conditions"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "continuation_review",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "기억할 가치와 아직 확인할 조건은 각각 무엇인가요?"
+    },
+    "personAAction": "표시된 가치·조건 기억",
+    "personBAction": "표시된 부담·미정 기억",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH09.P4:recall-hold-and-safe-exit",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "address": "CH09.P4",
+    "mode": "RECALL",
+    "readerQuestion": "표시된 가치·안전·선택을 어떻게 기억하는가?",
+    "coreMeaning": "표시된 보류·문제 공유의 안전한 경계를 마무리",
+    "roleContributions": [
+      {
+        "address": "CH09.P4.S1",
+        "originalRole": "특징적인 상호작용",
+        "knowledge": "도입된 보류 질문 또는 문제 공유 조건만 회수",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P4.S2",
+        "originalRole": "함께 만드는 가치",
+        "knowledge": "A/B 수신 방향·owner·실제 표시 근거를 유지",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P4.S3",
+        "originalRole": "기억할 기준",
+        "knowledge": "기억할 가치는 거절·미확인·별도 절차를 허용하는 것",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH09.P4.S4",
+        "originalRole": "관계별 결론",
+        "knowledge": "사기·강요·착취 의심은 일반 궁합 조정 대신 안전·전문 지원",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "B",
+        "sourceKey": "446d4547c9d18193acaa",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "81c172dd5bbbb1920ae6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "DIRECTION_BA",
+        "sourceKey": "fe11b875c7ad3a9c8318",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d4af2f38a725dac45d6e",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "fd240bf6e5740f4fe5d6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "756426b20e7a45cb7d82",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "464de610689b7074363e",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:BOUNDARY:refusal",
+        "axis": "BOUNDARY",
+        "definition": "받지 않을 요청을 명시",
+        "condition": "거절의 안전과 실제 의무 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "exit",
+    "workFunctions": [
+      "conclusion",
+      "safety"
+    ],
+    "outputType": "introduced_safe_boundary",
+    "positive": "동업 유지 강요 없이 관계의 선택을 남길 여지",
+    "risk": "화해·지속을 긍정 결과로 강요",
+    "factBomb": "좋은 관계를 원해도 모든 사업 조건을 받아들일 필요는 없다",
+    "twist": "보류나 종료가 서로를 인격적으로 평가하는 결론은 아닐 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 표시된 안전 조건을 다음 논의 전에 확인",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "표시된 결정·동의 경계 유지",
+      "personB": "표시된 보류·지원 경로 확인"
+    },
+    "counterexample": "실제 표시·안전·동의가 없으면 조정 강요 금지",
+    "distinctFromOtherParagraphs": "종결에서 남기는 선택·안전의 가치",
+    "precedingMeaningRefs": [
+      "bppr:material:CH06.P4:b-hold-with-decision-question",
+      "bppr:material:CH08.P4:repair-hide-problem-for-relationship"
+    ],
+    "introducedMeaningRequirements": [
+      {
+        "materialId": "bppr:material:CH06.P4:b-hold-with-decision-question",
+        "expectedMode": "BA",
+        "direction": "B_TO_A",
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      },
+      {
+        "materialId": "bppr:material:CH08.P4:repair-hide-problem-for-relationship",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH06.P4:b-hold-with-decision-question",
+          "sourceKeys": [
+            "446d4547c9d18193acaa",
+            "81c172dd5bbbb1920ae6",
+            "fe11b875c7ad3a9c8318",
+            "d4af2f38a725dac45d6e"
+          ],
+          "typePredicates": [
+            {
+              "owner": "B",
+              "type": "INTP",
+              "sourceKey": "446d4547c9d18193acaa"
+            },
+            {
+              "owner": "A",
+              "type": "ISTJ",
+              "sourceKey": "81c172dd5bbbb1920ae6"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        },
+        {
+          "groupId": "bppr:material:CH07.P4:hide-problem-for-relationship",
+          "sourceKeys": [
+            "fd240bf6e5740f4fe5d6",
+            "756426b20e7a45cb7d82",
+            "464de610689b7074363e"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENFJ",
+              "sourceKey": "fd240bf6e5740f4fe5d6"
+            },
+            {
+              "owner": "B",
+              "type": "ESFJ",
+              "sourceKey": "756426b20e7a45cb7d82"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "compatible_actually_displayed_group_only",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "B",
+          "type": "INTP",
+          "sourceKey": "446d4547c9d18193acaa",
+          "domain": "INVESTMENT"
+        },
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "81c172dd5bbbb1920ae6",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "A",
+          "type": "ENFJ",
+          "sourceKey": "fd240bf6e5740f4fe5d6",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ESFJ",
+          "sourceKey": "756426b20e7a45cb7d82",
+          "domain": "INVESTMENT"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": true
+    },
+    "repair": {
+      "firstFactCheck": "가상: 표시된 안전 조건을 다음 논의 전에 확인",
+      "aChange": "표시된 결정·동의 경계 유지",
+      "bChange": "표시된 보류·지원 경로 확인",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "introduced_safe_boundary",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "잔여 의무·계약·채권·채무 전문 검토 필요",
+    "additionalBusinessInfo": [
+      "introduced_ledger",
+      "safety",
+      "exit_terms"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "partner_exit",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "확인·보류·종료 중 어떤 선택이 안전하게 가능한가요?"
+    },
+    "personAAction": "표시된 결정·동의 경계 유지",
+    "personBAction": "표시된 보류·지원 경로 확인",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  }
+];

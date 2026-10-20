@@ -1,0 +1,10 @@
+{
+  "compiler": "compilePlannerHandoff",
+  "compiledCandidateCount": 5073,
+  "compiledObjects": "PER_CASE_SHARDS",
+  "customerEligible": 0,
+  "customerSelectionReady": false,
+  "sourceReviewPending": 3202,
+  "domainReviewPending": 2966,
+  "actualAllocation": 0
+}

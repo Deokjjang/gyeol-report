@@ -1,0 +1,326 @@
+[
+  {
+    "fixtureId": "fixture-comprehensive-A",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "64f5157f51a39a48acf07c6c5e90130a325bf20f0fe3223c8a2e67ad1160d6e8",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-comprehensive-F",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "2b42c5a077141ca2530481aab08f7219e921e410f4f92d9bf1b087af446e877c",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-career-A",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "9c9ec455774a06a57015c4ec01e2c6d906ac73baef1bbc0c7239a8c7b22dbea2",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-career-F",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "e4b98e1658177ce0dfc43bafb7d5d408e78c127b617fd23b55127b33f1e80ecd",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-love-A",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "e2484c6b1f79eb34917b159a83f8d22062aaf237a5df1c4ad3b93678fc51789c",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-love-F",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "5d7225b24c3326031eb0aa511d25e1b03db2aa2139edf6fc92bcf5de7abb35fb",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-compatibility-A",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "0545929090eef6cea4fdb88125448086e7980f455627a11c805b8e09559d8de0",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-compatibility-marriage",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "f074698719090a622f384332d0c765d00a771018061c15e72c5be497149f0322",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-compatibility-parentChild",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "7ca576581d16bea81d0e84d134c5cc1db0d8103a0ff206487c319a49d7a66754",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-compatibility-coworker",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "1ed744331a6eff1e2a2cf90acf642de7ff327660078bfe2ac3fbb92fbc203758",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-compatibility-managerReport",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "bf68b61fa762066c65696ab6ffb0c34567df4c4e8c2f5da6beff9e7794c355bf",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-compatibility-businessPartner",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "d863b0e9efb304787d2e4a37c849ab10cf9538192986f0750f3024cfa092cc42",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-compatibility-friendship",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "7bb9dea689a9ca9cbb3c0925441df0e5b58a81f9a787d22722a25b68b1a2fa15",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-major-A",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "5d9b49c84e761be7eec824d755ef188029100b9e181c3503371133583e43b8bc",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-major-F",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "d7ed83ab49f93c05b4c2297eea8c7937cad54b8de57850b9cd1d7ff0f692056e",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-annual-A",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "c7d7a8d466bb13183f98bf60112e96144e95ec51ffab3b184d0392b5c1a16bcd",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-annual-F",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "673c317bf3e03e8fb65fb42001b2d684c1e136109cca0b3e430bd87b7053d662",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-major-transition-C",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "1eabf6f99ec53634b90e46ae427a74e2f06e6b48af3e8d8ec1cd5024224be61b",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-annual-transition-C2028",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "cdca13c4572f11d964d5005305ed099d1b4900792d3fa1023da95ea19eb77bca",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-compatibility-unknown-both",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "77dc44753eaebd2a8ace1f3dbd7bc8181bc0259a8f20e0d9de22ab6fdaa461ac",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-compatibility-slot-swap",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "261d44d1d867efce0c1d77a701f582ec2afba1ccdd3cba5a463cbaf6dd1d8243",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-same-natal-different-mbti",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "08c2ec5741437d7c672b275d84d299074ca7ea21677c4c74528b17c3edbe6c67",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-same-mbti-different-natal",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "40042c4ca12b44d697da70007fffb6455426334ef83d64ad8573272df7d9481c",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-same-natal-career",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "4c3b58d152b7efd25123e0081ee72600b140c9de6b997ce06b4720254d370f38",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-annual-ranged-transition",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "2315b7b6b34f06f88b60dfe6e0dffe19ea8bf3310af654a83fc085d91ce8f22c",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-annual-before-first-dayun",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "f02d29f74b7db0a99f43745aca6dae0ab44db9a00e79bf3393e368fab81ed6a0",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  },
+  {
+    "fixtureId": "fixture-compatibility-no-detected-pair",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "status": "PARTIAL"
+    },
+    "fingerprintOfRedactedGraph": "a3f18a948378c6e9d365e5fcd88123e9cb0f26d813d4e6c675967b00f064efdd",
+    "customerApproval": 0,
+    "runtimeConnection": 0,
+    "specialistClaimsEmitted": 0
+  }
+]

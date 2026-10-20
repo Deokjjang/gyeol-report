@@ -96,9 +96,18 @@ describe("Major canonical calculation, isolation and evidence", () => {
         expect(b.proof.features.join(" ")).not.toMatch(/mangsin|mungok|bokseong|cheoneuiseong/);
       }
       for (const b of r.years.flatMap(y => y.blocks).filter(b => b.proof.features.length)) {
-        expect(b.id).toMatch(/-why$/);
-        expect(b.text).toContain("원래 가진");
-        expect(b.proof.sourceRefs.some(ref => ref.startsWith("content-period:"))).toBe(true);
+        if (b.id.endsWith("-why")) {
+          expect(b.text).toContain("원래 가진");
+          expect(b.proof.sourceRefs.some(ref => ref.startsWith("content-period:"))).toBe(true);
+        } else {
+          expect(b.id).toMatch(/-(scene|gift|friction)$/);
+          expect(b.text).toMatch(/원국|타고난 .+ 성향/);
+          for (const f of b.proof.features) {
+            const root = r.materials.selected.find(m => m.feature === f)!;
+            expect(root.evidence.every(d => d.usable && d.strength === "strong")).toBe(true);
+            expect(b.proof.sourceRefs).toEqual(expect.arrayContaining([...root.sourceRefs]));
+          }
+        }
       }
       expect(narrativeText(r.narrative)).not.toMatch(/career_shift|previous_to_current|metal|water|\d+점|연결으로|겁재은|결과이|정재은|undefined|NaN/);
     }
@@ -139,7 +148,13 @@ describe("Major canonical calculation, isolation and evidence", () => {
   it("job-seeking examples are not borrowed from student classrooms or an assumed employer", async () => {
     const p = { ...fixtures[3].payload, userContext: { ...fixtures[3].payload.userContext, jobStatus: "job_seeker", detailJob: "IT 서비스 기획 직무 준비" } };
     const r = await must(p), text = r.years.flatMap(y => y.blocks).map(b => b.text).join(" ");
-    expect(text).toMatch(/면접|지원서|공고/); expect(text).not.toMatch(/교재|수업 뒤|공동 과제|당신의 상사/);
+    expect(text).toMatch(/면접|지원서|공고/); expect(text).not.toMatch(/수업 뒤|공동 과제|당신의 상사/);
+    // Self-directed learning is not a claim that the reader attends school.
+    for (const b of r.years.flatMap(y => y.blocks).filter(b => b.text.includes("교재"))) {
+      expect(b.text).toContain("원국의 편인");
+      expect(b.text).toContain("궁금해진 주제는 교재 범위를 넘어 스스로 자료를 찾아요.");
+      expect(b.proof.seedIds).toContain("ten_god_pian_yin:study");
+    }
     expect(r.years).toHaveLength(14);
     expect(r.editorial.filter(i => i.severity !== "Minor")).toEqual([]);
   });

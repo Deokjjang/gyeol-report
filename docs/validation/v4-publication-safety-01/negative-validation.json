@@ -1,0 +1,146 @@
+[
+  {
+    "name": "CHILDREN domain transfer",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "missing full ancestry",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "wrong person",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "A/B direction",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "fixed role reversal",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "adult autonomy deprivation",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "guardian inference",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "unknown to confirmed",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "invented relation",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "source hash forgery",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "question mapping",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "undisplayed Recall",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "unsupported meaning",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "title-only bridge",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "failed prose as Legacy",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "version masquerade",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "digest forgery",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "wrong product evidence",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "synthetic customer approval",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "stored book regeneration",
+    "blocked": true,
+    "errors": [
+      "AUTHENTIC_UNCHANGED_PUBLICATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "cloned private receipt",
+    "blocked": true
+  }
+]

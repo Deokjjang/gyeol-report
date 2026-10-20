@@ -1,0 +1,1777 @@
+{
+  "category": "friendship",
+  "source": "Actual fixed-time baseline generation; existing code unchanged",
+  "observations": [
+    {
+      "case": "A0",
+      "slot": "personA",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH07.P1.S1",
+          "text": "만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S2",
+          "text": "현우님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S3",
+          "text": "소연님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S4",
+          "text": "자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "E0",
+      "slot": "personA",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH07.P1.S1",
+          "text": "만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S2",
+          "text": "현우님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S3",
+          "text": "소연님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S4",
+          "text": "자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "F0",
+      "slot": "personA",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH07.P1.S1",
+          "text": "만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S2",
+          "text": "현우님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S3",
+          "text": "소연님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S4",
+          "text": "자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "G0",
+      "slot": "personA",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH07.P1.S1",
+          "text": "만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S2",
+          "text": "현우님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S3",
+          "text": "소연님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S4",
+          "text": "자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "H0",
+      "slot": "personA",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH04.P1.S1",
+          "text": "두 사람에게 함께 기대해볼 장점은 상대의 하루를 전부 확인하지 않는 여유입니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S2",
+          "text": "한 번은 친구의 취미를 배우고 다음에는 자기 취향을 소개할 때, 서로 무엇을 기대하는지 설명하는 시간이 줄어들 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S3",
+          "text": "공통점의 좋은 쓰임은 늘 같은 답을 내는 데보다, 상대가 중요하게 보는 질문을 빠뜨리지 않는 데 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S4",
+          "text": "둘이 모두 익숙하게 넘기는 부분이 있다면 다른 의견도 한 번 들어보는 편이, 닮은 장점이 같은 실수로 굳는 것을 막아줍니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "H0",
+      "slot": "personB",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH04.P1.S1",
+          "text": "두 사람에게 함께 기대해볼 장점은 상대의 하루를 전부 확인하지 않는 여유입니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S2",
+          "text": "한 번은 친구의 취미를 배우고 다음에는 자기 취향을 소개할 때, 서로 무엇을 기대하는지 설명하는 시간이 줄어들 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S3",
+          "text": "공통점의 좋은 쓰임은 늘 같은 답을 내는 데보다, 상대가 중요하게 보는 질문을 빠뜨리지 않는 데 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S4",
+          "text": "둘이 모두 익숙하게 넘기는 부분이 있다면 다른 의견도 한 번 들어보는 편이, 닮은 장점이 같은 실수로 굳는 것을 막아줍니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "I0",
+      "slot": "personA",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH07.P1.S1",
+          "text": "만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S2",
+          "text": "현우님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S3",
+          "text": "소연님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S4",
+          "text": "자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "J0",
+      "slot": "personA",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH07.P1.S1",
+          "text": "만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S2",
+          "text": "현우님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S3",
+          "text": "소연님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S4",
+          "text": "자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "K0",
+      "slot": "personA",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH07.P1.S1",
+          "text": "만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S2",
+          "text": "현우님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S3",
+          "text": "소연님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S4",
+          "text": "자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "L0",
+      "slot": "personA",
+      "edition": "compatibility-product-13d-7b-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH04.P1.S1",
+          "text": "두 사람에게 함께 기대해볼 장점은 상대의 하루를 전부 확인하지 않는 여유입니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S2",
+          "text": "한 번은 친구의 취미를 배우고 다음에는 자기 취향을 소개할 때, 서로 무엇을 기대하는지 설명하는 시간이 줄어들 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S3",
+          "text": "공통점의 좋은 쓰임은 늘 같은 답을 내는 데보다, 상대가 중요하게 보는 질문을 빠뜨리지 않는 데 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S4",
+          "text": "둘이 모두 익숙하게 넘기는 부분이 있다면 다른 의견도 한 번 들어보는 편이, 닮은 장점이 같은 실수로 굳는 것을 막아줍니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "L0",
+      "slot": "personB",
+      "edition": "compatibility-product-13d-7b-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH04.P1.S1",
+          "text": "두 사람에게 함께 기대해볼 장점은 상대의 하루를 전부 확인하지 않는 여유입니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S2",
+          "text": "한 번은 친구의 취미를 배우고 다음에는 자기 취향을 소개할 때, 서로 무엇을 기대하는지 설명하는 시간이 줄어들 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S3",
+          "text": "공통점의 좋은 쓰임은 늘 같은 답을 내는 데보다, 상대가 중요하게 보는 질문을 빠뜨리지 않는 데 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S4",
+          "text": "둘이 모두 익숙하게 넘기는 부분이 있다면 다른 의견도 한 번 들어보는 편이, 닮은 장점이 같은 실수로 굳는 것을 막아줍니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "M0",
+      "slot": "personA",
+      "edition": "compatibility-product-13d-7b-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH04.P1.S1",
+          "text": "두 사람에게 함께 기대해볼 장점은 상대의 하루를 전부 확인하지 않는 여유입니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S2",
+          "text": "한 번은 친구의 취미를 배우고 다음에는 자기 취향을 소개할 때, 서로 무엇을 기대하는지 설명하는 시간이 줄어들 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S3",
+          "text": "공통점의 좋은 쓰임은 늘 같은 답을 내는 데보다, 상대가 중요하게 보는 질문을 빠뜨리지 않는 데 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S4",
+          "text": "둘이 모두 익숙하게 넘기는 부분이 있다면 다른 의견도 한 번 들어보는 편이, 닮은 장점이 같은 실수로 굳는 것을 막아줍니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "M0",
+      "slot": "personB",
+      "edition": "compatibility-product-13d-7b-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH04.P1.S1",
+          "text": "두 사람에게 함께 기대해볼 장점은 상대의 하루를 전부 확인하지 않는 여유입니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S2",
+          "text": "한 번은 친구의 취미를 배우고 다음에는 자기 취향을 소개할 때, 서로 무엇을 기대하는지 설명하는 시간이 줄어들 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S3",
+          "text": "공통점의 좋은 쓰임은 늘 같은 답을 내는 데보다, 상대가 중요하게 보는 질문을 빠뜨리지 않는 데 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH04.P1.S4",
+          "text": "둘이 모두 익숙하게 넘기는 부분이 있다면 다른 의견도 한 번 들어보는 편이, 닮은 장점이 같은 실수로 굳는 것을 막아줍니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "N0",
+      "slot": "personA",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH07.P1.S1",
+          "text": "만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S2",
+          "text": "현우님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S3",
+          "text": "소연님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S4",
+          "text": "자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "P0",
+      "slot": "personA",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH07.P1.S1",
+          "text": "만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S2",
+          "text": "현우님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S3",
+          "text": "소연님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S4",
+          "text": "자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "P1",
+      "slot": "personB",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH07.P1.S1",
+          "text": "만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+          "nodes": [
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personA:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personA:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S2",
+          "text": "소연님 쪽에서는 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+          "nodes": [
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personA:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personA:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S3",
+          "text": "현우님에게는 다른 방향도 있습니다: 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+          "nodes": [
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personA:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personA:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S4",
+          "text": "자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.",
+          "nodes": [
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo",
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personA:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personA:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo",
+            "personB:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personB:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personB:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "Q0",
+      "slot": "personA",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH07.P1.S1",
+          "text": "만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S2",
+          "text": "현우님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S3",
+          "text": "소연님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S4",
+          "text": "자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "Q1",
+      "slot": "personA",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH07.P1.S1",
+          "text": "만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S2",
+          "text": "소연님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S3",
+          "text": "현우님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S4",
+          "text": "자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R0",
+      "slot": "personA",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "blockedReaderNodes": [
+        {
+          "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "domain": "CHILDREN"
+        }
+      ],
+      "sentences": [
+        {
+          "address": "CH07.P1.S1",
+          "text": "만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S2",
+          "text": "현우님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S3",
+          "text": "소연님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        },
+        {
+          "address": "CH07.P1.S4",
+          "text": "자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.",
+          "nodes": [
+            "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ],
+          "refs": [
+            "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+          ]
+        }
+      ]
+    }
+  ],
+  "rawChildProseCopyClaim": false,
+  "causalIndexContributionMeasured": false,
+  "fixedInThisTask": false,
+  "handoff": "Validate every ancestor owner/domain/context before new binding, not any permitted ID alone"
+}

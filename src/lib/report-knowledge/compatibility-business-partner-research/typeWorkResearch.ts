@@ -1,0 +1,388 @@
+/** Static offline businessPartner research. No runtime registration or customer approval. */
+import type { TypeWorkLens } from "./researchTypes";
+export const BP_TYPE_WORK_LENSES: readonly TypeWorkLens[] = [
+  {
+    "id": "bppr:type-work:ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "ISTJ",
+    "sourceRefs": [
+      "bppr:work-trait:ISTJ:money:cost_and_contract_mind",
+      "bppr:work-trait:ISTJ:workplace:instant_error_correction",
+      "bppr:work-trait:ISTJ:thinkingStyle:efficient_error_detection"
+    ],
+    "questions": {
+      "information": "수주·정산에서 어떤 기록·기준이 필요한가?",
+      "feedback": "가정과 실제 비용이 다르면 어떤 자료로 고치는가?",
+      "decision": "약속·대금·변경 중 어떤 확인 뒤 결정하는가?",
+      "independent": "기록 선호를 실제 회계 책임·지분으로 바꾸지 않았는가?",
+      "conflict": "상대의 구두 약속과 확정 조건은 무엇이 다른가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "ISTP",
+    "sourceRefs": [
+      "bppr:work-trait:ISTP:thinkingStyle:causal_principle_focus",
+      "bppr:work-trait:ISTP:workplace:action_over_meeting",
+      "bppr:work-trait:ISTP:money:tool_hobby_budget_limit"
+    ],
+    "questions": {
+      "information": "시험에서 실제 작동·비용 중 무엇을 관찰했는가?",
+      "feedback": "시연 뒤 반복 지원·유지의 질문은 무엇인가?",
+      "decision": "시험 결과의 어느 범위만 제공 조건에 쓰는가?",
+      "independent": "장비 관심을 실제 기술 자격·구매 여력으로 바꾸지 않았는가?",
+      "conflict": "빨리 시험할 일과 사전 동의가 필요한 일은 무엇인가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "ESTJ",
+    "sourceRefs": [
+      "bppr:work-trait:ESTJ:money:economic_stability_drive",
+      "bppr:work-trait:ESTJ:workplace:clear_expectations",
+      "bppr:work-trait:ESTJ:thinkingStyle:te_fact_execution"
+    ],
+    "questions": {
+      "information": "실행 목표와 비용 자료를 어떤 기준으로 보는가?",
+      "feedback": "예상·실제 차이는 누구와 어떤 자료로 검토하는가?",
+      "decision": "추진과 실제 지출·계약 권한을 나눴는가?",
+      "independent": "절차 선호를 관리권·동업 대표권으로 승격하지 않았는가?",
+      "conflict": "완료 압박과 상대의 미동의 조건을 어떻게 구분하는가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "ESTP",
+    "sourceRefs": [
+      "bppr:work-trait:ESTP:money:high_income_action_drive",
+      "bppr:work-trait:ESTP:workplace:crisis_solver",
+      "bppr:work-trait:ESTP:thinkingStyle:se_now_data"
+    ],
+    "questions": {
+      "information": "기회 반응에서 실제 수요와 관심은 무엇이 다른가?",
+      "feedback": "작은 시험 결과와 미검증 범위를 어떻게 공유하는가?",
+      "decision": "빠른 기회와 추가 투입 동의를 어떻게 나누는가?",
+      "independent": "활동 선호를 영업 실적·투자 능력으로 확정하지 않았는가?",
+      "conflict": "즉석 약속이 상대에게 남기는 수행 비용은 무엇인가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "ISFJ",
+    "sourceRefs": [
+      "bppr:work-trait:ISFJ:money:frugal_stable_money",
+      "bppr:work-trait:ISFJ:workplace:guideline_micro_manager",
+      "bppr:work-trait:ISFJ:thinkingStyle:sensory_memory_judgment"
+    ],
+    "questions": {
+      "information": "기존 약속·고객 지원 중 유지할 조건은 무엇인가?",
+      "feedback": "드러나지 않은 반복 지원을 어떻게 확인하는가?",
+      "decision": "추가 요청에 동의하기 전에 무엇을 보는가?",
+      "independent": "지원 선호를 무급 노동·운영 담당 의무로 바꾸지 않았는가?",
+      "conflict": "거절하지 않은 호응과 실제 수락을 구분했는가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "ISFP",
+    "sourceRefs": [
+      "bppr:work-trait:ISFP:money:steady_income_boundary",
+      "bppr:work-trait:ISFP:workplace:conflict_silent_exit",
+      "bppr:work-trait:ISFP:thinkingStyle:fi_value_alignment"
+    ],
+    "questions": {
+      "information": "제공 범위·추가 수정·대가를 각각 확인했는가?",
+      "feedback": "작업물 변경에서 필요한 정보와 시간을 어떻게 알리는가?",
+      "decision": "새 요청을 받을 조건·보류 조건은 무엇인가?",
+      "independent": "유형만으로 실제 창작 능력·권리 소유를 주장하지 않았는가?",
+      "conflict": "친분을 위해 무상 추가를 수락한 것으로 추측하지 않았는가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "ESFJ",
+    "sourceRefs": [
+      "bppr:work-trait:ESFJ:thinkingStyle:quick_social_judgment",
+      "bppr:work-trait:ESFJ:workplace:policy_alignment_need",
+      "bppr:work-trait:ESFJ:investment:relationship_info_filter"
+    ],
+    "questions": {
+      "information": "고객 호응·실제 구매·지원 부담을 구분하는가?",
+      "feedback": "반복 문의와 제품 가정을 어떻게 연결하는가?",
+      "decision": "호감·신뢰와 계약 조건 동의를 나눴는가?",
+      "independent": "고객 응답 선호를 영업·회계 능력으로 확정하지 않았는가?",
+      "conflict": "좋은 관계를 위해 미확인 비용을 넘기고 있지 않은가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "ESFP",
+    "sourceRefs": [
+      "bppr:work-trait:ESFP:money:experience_spending",
+      "bppr:work-trait:ESFP:workplace:anti_bureaucracy_work",
+      "bppr:work-trait:ESFP:thinkingStyle:experience_based_learning"
+    ],
+    "questions": {
+      "information": "직접 반응에서 표본·구매·미확인을 구분했는가?",
+      "feedback": "고객이 좋아한 것과 반복 제공 조건은 어떻게 다른가?",
+      "decision": "흥미로운 제안과 실제 참여·지출 약속을 나눴는가?",
+      "independent": "표현 선호를 매출·홍보 성과로 확정하지 않았는가?",
+      "conflict": "즉각 호응이 상대에게 계약 수락으로 전달되지는 않는가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "INTJ",
+    "sourceRefs": [
+      "bppr:work-trait:INTJ:money:expertise_income_path",
+      "bppr:work-trait:INTJ:workplace:anti_politics_work_style",
+      "bppr:work-trait:INTJ:thinkingStyle:system_first_thinking"
+    ],
+    "questions": {
+      "information": "장기 가정에서 실제 고객·비용 자료가 비어 있는 곳은 어디인가?",
+      "feedback": "계획의 반증 자료를 어떤 조건으로 반영하는가?",
+      "decision": "전체 전략과 이번 한정 시험의 결정을 나눴는가?",
+      "independent": "계획 선호를 사업 성공률·전략가 자격으로 바꾸지 않았는가?",
+      "conflict": "계획을 설명한 것과 상대가 실행 조건에 동의한 것은 다른가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "INTP",
+    "sourceRefs": [
+      "bppr:work-trait:INTP:thinkingStyle:ne_possibility_storm",
+      "bppr:work-trait:INTP:thinkingStyle:why_question_loop",
+      "bppr:work-trait:INTP:investment:theory_detachment_guard"
+    ],
+    "questions": {
+      "information": "사업 가설의 논리와 실제 수요를 구분하는가?",
+      "feedback": "예외·반례가 제공 조건을 무엇으로 바꾸는가?",
+      "decision": "검토를 닫고 시험으로 옮길 조건은 무엇인가?",
+      "independent": "분석 선호를 기술 자격·투자 수익으로 판정하지 않았는가?",
+      "conflict": "대안이 늘 때 상대의 검토·운영 비용도 드러나는가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "ENTJ",
+    "sourceRefs": [
+      "bppr:work-trait:ENTJ:money:capitalist_resource_logic",
+      "bppr:work-trait:ENTJ:workplace:direct_feedback_leader",
+      "bppr:work-trait:ENTJ:thinkingStyle:te_ni_strategy"
+    ],
+    "questions": {
+      "information": "목표 자원과 실제 가용 현금·시간을 나눴는가?",
+      "feedback": "확대 가정과 지급·회수 시점 차이를 어떻게 확인하는가?",
+      "decision": "추진하는 결정과 계약상 권한을 구분하는가?",
+      "independent": "목표 지향을 대표권·고수익·자본 여력으로 바꾸지 않았는가?",
+      "conflict": "빠른 확정이 상대의 미동의 의무를 만들지는 않는가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "ENTP",
+    "sourceRefs": [
+      "bppr:work-trait:ENTP:money:opportunity_money_sense",
+      "bppr:work-trait:ENTP:workplace:autonomy_required",
+      "bppr:work-trait:ENTP:thinkingStyle:possibility_scanning"
+    ],
+    "questions": {
+      "information": "새 사업안의 다른 가정·고객 문제는 무엇인가?",
+      "feedback": "피벗이 기존 고객 약속·비용을 어떻게 바꾸는가?",
+      "decision": "대안 탐색과 실제 변경 동의를 구분하는가?",
+      "independent": "아이디어 선호를 모든 지분·IP 소유로 승격하지 않았는가?",
+      "conflict": "새 제안이 이전 실행 비용을 지우지는 않는가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "INFJ",
+    "sourceRefs": [
+      "bppr:work-trait:INFJ:money:meaning_first_income_risk",
+      "bppr:work-trait:INFJ:workplace:horizontal_structure_fit",
+      "bppr:work-trait:INFJ:thinkingStyle:ni_pattern_prediction"
+    ],
+    "questions": {
+      "information": "사업 명분과 고객·운영 자료를 나눠 확인하는가?",
+      "feedback": "가치가 맞아도 부담이 다른 조건은 무엇인가?",
+      "decision": "가치 동의와 경제적 위험 수락을 구분하는가?",
+      "independent": "의미 지향을 신뢰·도덕성·실제 성공의 증거로 쓰지 않았는가?",
+      "conflict": "관계를 지키려 미확인 조건을 감추는 것으로 추측하지 않았는가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "INFP",
+    "sourceRefs": [
+      "bppr:work-trait:INFP:money:low_material_drive",
+      "bppr:work-trait:INFP:workplace:autonomy_required",
+      "bppr:work-trait:INFP:thinkingStyle:fi_inner_alignment"
+    ],
+    "questions": {
+      "information": "좋은 일의 가치와 유료 제공·지속 조건은 무엇이 다른가?",
+      "feedback": "변경이 실제 작업 범위·권리에 미치는 영향은 무엇인가?",
+      "decision": "의미 있는 참여와 무제한 기여를 나눴는가?",
+      "independent": "가치 선호를 경제 능력 부족·무급 동의로 판정하지 않았는가?",
+      "conflict": "미동의 조건을 말할 수 있는 안전한 통로가 있는가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "ENFJ",
+    "sourceRefs": [
+      "bppr:work-trait:ENFJ:money:cause_based_money",
+      "bppr:work-trait:ENFJ:money:support_limit_rule",
+      "bppr:work-trait:ENFJ:investment:relationship_info_boundary"
+    ],
+    "questions": {
+      "information": "기여의 의미와 출자·대여·보수의 조건은 무엇이 다른가?",
+      "feedback": "지원받는 상대가 실제 동의한 범위를 확인하는가?",
+      "decision": "신뢰하는 제안자의 진심과 계약 위험을 나눴는가?",
+      "independent": "응원·도움을 지분·추가 출자 의무로 바꾸지 않았는가?",
+      "conflict": "좋은 목적을 이유로 비용·정산 질문을 막지는 않는가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  },
+  {
+    "id": "bppr:type-work:ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "type": "ENFP",
+    "sourceRefs": [
+      "bppr:work-trait:ENFP:money:experience_spending",
+      "bppr:work-trait:ENFP:workplace:novelty_required_work",
+      "bppr:work-trait:ENFP:thinkingStyle:ne_connection_thinking"
+    ],
+    "questions": {
+      "information": "기회·관심·구매·반복 제공 중 무엇이 확인됐는가?",
+      "feedback": "새 방향에서 기존 약속·유지 작업은 무엇이 남는가?",
+      "decision": "흥미와 실제 시간·자금 참여를 구분하는가?",
+      "independent": "활기·관심을 영업 성과·풍부한 자원으로 확정하지 않았는가?",
+      "conflict": "새 기회 때문에 이전 투입·실행 조건을 건너뛰지는 않는가?"
+    },
+    "questionStatus": "conditional_editorial_application_not_type_fact",
+    "actualWorkContextRequired": true
+  }
+];

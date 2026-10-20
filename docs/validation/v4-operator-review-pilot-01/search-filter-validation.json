@@ -1,0 +1,518 @@
+{
+  "status": "PASS",
+  "filters": [
+    {
+      "id": "engine",
+      "value": "annual-fortune",
+      "expected": 109,
+      "status": "PASS"
+    },
+    {
+      "id": "engine",
+      "value": "career",
+      "expected": 268,
+      "status": "PASS"
+    },
+    {
+      "id": "engine",
+      "value": "compatibility-business-partner",
+      "expected": 317,
+      "status": "PASS"
+    },
+    {
+      "id": "engine",
+      "value": "compatibility-coworker",
+      "expected": 335,
+      "status": "PASS"
+    },
+    {
+      "id": "engine",
+      "value": "compatibility-friendship",
+      "expected": 173,
+      "status": "PASS"
+    },
+    {
+      "id": "engine",
+      "value": "compatibility-love",
+      "expected": 190,
+      "status": "PASS"
+    },
+    {
+      "id": "engine",
+      "value": "compatibility-manager-report",
+      "expected": 275,
+      "status": "PASS"
+    },
+    {
+      "id": "engine",
+      "value": "compatibility-marriage",
+      "expected": 222,
+      "status": "PASS"
+    },
+    {
+      "id": "engine",
+      "value": "compatibility-parent-child",
+      "expected": 235,
+      "status": "PASS"
+    },
+    {
+      "id": "engine",
+      "value": "comprehensive",
+      "expected": 200,
+      "status": "PASS"
+    },
+    {
+      "id": "engine",
+      "value": "love",
+      "expected": 172,
+      "status": "PASS"
+    },
+    {
+      "id": "engine",
+      "value": "major-fortune",
+      "expected": 89,
+      "status": "PASS"
+    },
+    {
+      "id": "product",
+      "value": "UNSPECIFIED",
+      "expected": 2277,
+      "status": "PASS"
+    },
+    {
+      "id": "product",
+      "value": "annual_fortune",
+      "expected": 109,
+      "status": "PASS"
+    },
+    {
+      "id": "product",
+      "value": "career_money_study",
+      "expected": 268,
+      "status": "PASS"
+    },
+    {
+      "id": "product",
+      "value": "love_marriage_child",
+      "expected": 172,
+      "status": "PASS"
+    },
+    {
+      "id": "product",
+      "value": "major_fortune",
+      "expected": 89,
+      "status": "PASS"
+    },
+    {
+      "id": "product",
+      "value": "saju_mbti_compatibility",
+      "expected": 3850,
+      "status": "PASS"
+    },
+    {
+      "id": "product",
+      "value": "saju_mbti_full",
+      "expected": 200,
+      "status": "PASS"
+    },
+    {
+      "id": "relationship",
+      "value": "NONE",
+      "expected": 3115,
+      "status": "PASS"
+    },
+    {
+      "id": "relationship",
+      "value": "businessPartner",
+      "expected": 1096,
+      "status": "PASS"
+    },
+    {
+      "id": "relationship",
+      "value": "coworker",
+      "expected": 938,
+      "status": "PASS"
+    },
+    {
+      "id": "relationship",
+      "value": "friendship",
+      "expected": 173,
+      "status": "PASS"
+    },
+    {
+      "id": "relationship",
+      "value": "love",
+      "expected": 190,
+      "status": "PASS"
+    },
+    {
+      "id": "relationship",
+      "value": "managerReport",
+      "expected": 878,
+      "status": "PASS"
+    },
+    {
+      "id": "relationship",
+      "value": "marriage",
+      "expected": 222,
+      "status": "PASS"
+    },
+    {
+      "id": "relationship",
+      "value": "parentChild",
+      "expected": 353,
+      "status": "PASS"
+    },
+    {
+      "id": "source",
+      "value": "AMBIGUOUS_REMAINS",
+      "expected": 46,
+      "status": "PASS"
+    },
+    {
+      "id": "source",
+      "value": "DOCUMENTARY_ONLY",
+      "expected": 269,
+      "status": "PASS"
+    },
+    {
+      "id": "source",
+      "value": "FROZEN_SOURCE_GATE_ONLY",
+      "expected": 6317,
+      "status": "PASS"
+    },
+    {
+      "id": "source",
+      "value": "PROVEN_TECHNICAL_RESOLUTION",
+      "expected": 4,
+      "status": "PASS"
+    },
+    {
+      "id": "source",
+      "value": "REQUIRES_NATIVE_PRODUCER",
+      "expected": 259,
+      "status": "PASS"
+    },
+    {
+      "id": "source",
+      "value": "REQUIRES_ORIGINAL_SOURCE",
+      "expected": 77,
+      "status": "PASS"
+    },
+    {
+      "id": "domain",
+      "value": "CONDITIONAL_CROSSWALK_REVIEWED",
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "id": "domain",
+      "value": "EXPLICITLY_PROHIBITED",
+      "expected": 1040,
+      "status": "PASS"
+    },
+    {
+      "id": "domain",
+      "value": "NO_QUEUE_DECISION",
+      "expected": 3999,
+      "status": "PASS"
+    },
+    {
+      "id": "domain",
+      "value": "POLICY_REVIEW_REQUIRED",
+      "expected": 1094,
+      "status": "PASS"
+    },
+    {
+      "id": "domain",
+      "value": "REVIEWED_MEANING_NOT_CUSTOMER_APPROVED",
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "id": "domain",
+      "value": "SEMANTIC_REVIEW_REQUIRED",
+      "expected": 499,
+      "status": "PASS"
+    },
+    {
+      "id": "domain",
+      "value": "SOURCE_INCOMPLETE",
+      "expected": 331,
+      "status": "PASS"
+    },
+    {
+      "id": "structural",
+      "value": "NO",
+      "expected": 6900,
+      "status": "PASS"
+    },
+    {
+      "id": "structural",
+      "value": "YES",
+      "expected": 65,
+      "status": "PASS"
+    },
+    {
+      "id": "witness",
+      "value": "NO",
+      "expected": 6480,
+      "status": "PASS"
+    },
+    {
+      "id": "witness",
+      "value": "YES",
+      "expected": 485,
+      "status": "PASS"
+    },
+    {
+      "id": "review",
+      "value": "DRAFT_SELECTED",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "review",
+      "value": "READ",
+      "expected": 37,
+      "status": "PASS"
+    },
+    {
+      "id": "review",
+      "value": "UNREAD",
+      "expected": 6928,
+      "status": "PASS"
+    },
+    {
+      "id": "review",
+      "value": "UNSELECTED",
+      "expected": 6965,
+      "status": "PASS"
+    }
+  ],
+  "all6965ExactSearches": {
+    "name": "All 6965 exact Unit searches resolve through actual input handler",
+    "status": "PASS",
+    "detail": {
+      "count": 6965,
+      "missing": [],
+      "milliseconds": 11715.5
+    }
+  },
+  "read": 37,
+  "unread": 6928,
+  "maxDisplayedRows": 200,
+  "indexIDsChanged": 0,
+  "keyboardTypingAndClickReceipts": [
+    {
+      "name": "Actual file HTML, permitted script, dashboard and first card",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "36 originals, 37 cards, 12 engines, 7 relationships",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "200 row limit clearly displayed",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All 37 scoped cards render original/proposal/source/evidence/domain/gates/next actions",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Every filter option and reset",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "First wave shortcut / READ",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Unread units have no decision controls",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Units beyond first 200 remain reachable by exact ID",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All 6965 exact Unit searches resolve through actual input handler",
+      "status": "PASS",
+      "detail": {
+        "count": 6965,
+        "missing": [],
+        "milliseconds": 11715.5
+      }
+    },
+    {
+      "name": "Korean meaning search",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Incomplete reviewed fields block export",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Unsaved status for decision/checks/notes",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Selected filter includes draft",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Selected filter updates immediately",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Card switching retains notes/checkboxes/decision",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Real JSON download / parse / no approval",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Export state and download reminder",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Reload requires explicit import; no silent persistent store",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Real file import restores checks/decision/notes",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All 16 negative imports are atomic and blocked",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Tab moves to engine filter",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Shift Tab returns to search",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Enter activates reset",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Space toggles checkbox",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Select keyboard changes decision",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Textarea keyboard input / focus preserved",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Details keyboard expansion / focus visible",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Live status and labels",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Automated WCAG audit",
+      "status": "PASS",
+      "detail": {
+        "violations": [],
+        "passes": 22,
+        "incomplete": [],
+        "screenReaderSession": "UNVERIFIED"
+      }
+    },
+    {
+      "name": "CSP enforced for external script/network/image/font and untrusted inline",
+      "status": "PASS",
+      "detail": [
+        {
+          "directive": "script-src-elem",
+          "blockedURI": "https://example.invalid/pilot.js"
+        },
+        {
+          "directive": "script-src-elem",
+          "blockedURI": "inline"
+        },
+        {
+          "directive": "connect-src",
+          "blockedURI": "https://example.invalid/pilot"
+        },
+        {
+          "directive": "font-src",
+          "blockedURI": "https://example.invalid/pilot.woff2"
+        },
+        {
+          "directive": "img-src",
+          "blockedURI": "https://example.invalid/pilot.png"
+        }
+      ]
+    },
+    {
+      "name": "Hostile source text renders literally without unsafe HTML",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Unsaved beforeunload warning / cancel retains draft",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Confirmed reload discards memory; import instructions remain",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All layouts, long IDs/Korean source text and bottom controls",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Actual authority, claims and allocations stay zero",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "No unexpected browser runtime errors",
+      "status": "PASS",
+      "detail": null
+    }
+  ]
+}

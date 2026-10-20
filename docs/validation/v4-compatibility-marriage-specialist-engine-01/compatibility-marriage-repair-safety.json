@@ -1,0 +1,939 @@
+{
+  "policy": {
+    "relationshipStatus": "UNKNOWN_UNLESS_ACTUALLY_ENTERED",
+    "marriedProjectionIsInput": false,
+    "fixedAB": true,
+    "inferGenderRoles": false,
+    "missingPair": "NO_RELATION_DETECTED_IS_NOT_BAD_COMPATIBILITY",
+    "pairReference": "REFERENCE_ONLY_NOT_INDIVIDUAL_SCORING_OR_OBSERVED_BEHAVIOR",
+    "signedAxes": "KEEP_OWNER_AND_SIGN; SAME_OR_OPPOSITE_IS_NOT_OUTCOME",
+    "facets": "APPLICATION_CONDITION_NOT_NEW_ROOT",
+    "friction": "POSSIBLE_CONDITION_NOT_ACTUAL_HOUSEHOLD_HISTORY",
+    "repair": "PREVENTION_DISTINCT_FROM_RECOVERY; VERIFIED_PRECEDING_CONDITION_REQUIRED_FOR_RECOVERY",
+    "repairSteps": [
+      "FACT_CHECK",
+      "COMPLETION_STANDARD",
+      "AUTHORITY",
+      "PERSON_A_ADJUSTMENT",
+      "PERSON_B_ADJUSTMENT",
+      "HANDOVER",
+      "EXCEPTION",
+      "REVIEW_TIME",
+      "CONSENT",
+      "SAFETY_BOUNDARY"
+    ],
+    "positive": "CONDITIONS_COUNTEREXAMPLES_CONSENT_AND_OVERUSE_REQUIRED",
+    "recall": "ACTUAL_SAME_OWNER_TYPE_ROOT_DIRECTION_MEANING_CLAIM_CONTEXT_DISPLAY_REQUIRED",
+    "rootBudget": null,
+    "newActualRoots": 0,
+    "customerDisplayLedgerIssued": false
+  },
+  "signals": [
+    "VIOLENCE",
+    "THREAT",
+    "COERCION",
+    "STALKING",
+    "SURVEILLANCE",
+    "ECONOMIC_CONTROL",
+    "NO_CONTACT_CONSENT",
+    "SEXUAL_BOUNDARY",
+    "PRIVACY_VIOLATION",
+    "RETALIATION",
+    "FAMILY_CONTROL"
+  ],
+  "actualCustomerIncidents": "NOT_ENTERED_NOT_DIAGNOSED",
+  "actualRepair": [
+    {
+      "id": "cmpr:material:CH08.P4:agreement-common-space-private-time",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH04.P1:shared-autonomy-clear-common-duty"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_DIRECTION_ID_REQUIRED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P4:agreement-shared-private-money",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH08.P1:joint-money-choice-without-permission"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P2:a-release-care-debt",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH05.P3:ab-care-as-debt"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "WRONG_OWNER",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH06.P3:ba-kinship-commitment"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P1:joint-money-choice-without-permission",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH07.P3:budget-permission-loop"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P3:b-handover-before-change",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH06.P3:ba-change-without-handover"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P2:a-leave-family-choice-open",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH05.P3:ab-holiday-finality"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P3:b-answer-pending-plan",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH06.P3:ba-unanswered-plan"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P4:agreement-review-after-life-change",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH07.P4:old-fairness-after-change",
+          "cmpr:material:CH08.P1:joint-revise-completion-standard"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P4:agreement-two-family-boundaries",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH07.P1:family-request-vs-common-consent"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P2:a-stop-remaking-method",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH05.P3:ab-standard-remakes"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P1:joint-visible-full-process",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH07.P3:care-manager-loop"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "WRONG_OWNER",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P2:a-return-budget-authority",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH05.P3:ab-unilateral-budget"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P1:joint-revise-completion-standard",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH07.P3:criteria-revision-loop"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P3:b-own-unseen-preparation",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH06.P3:ba-visible-only-finish"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "cmpr:material:CH08.P1:joint-pending-decision-return",
+      "repair": {
+        "required": true,
+        "state": "PREVENTION_OR_VERIFIED_PRECEDING_HOUSEHOLD_CONDITION_REQUIRED",
+        "precedingMeaningRefs": [
+          "cmpr:material:CH07.P3:decision-silence-loop"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "ALL_ENTERED_TYPE_PREDICATES_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    }
+  ],
+  "syntheticUnsafe": [
+    {
+      "id": "synthetic:marriage:negative:unsafe-repair",
+      "question": {
+        "id": "synthetic:marriage:question:CH01.P1",
+        "address": "CH01.P1",
+        "chapter": 1,
+        "paragraph": 1,
+        "role": null,
+        "priority": false,
+        "requiredDirection": null,
+        "requiredOwner": "PAIR",
+        "repair": false,
+        "recall": false
+      },
+      "meaning": {
+        "id": "synthetic:marriage:meaning:CH01.P1",
+        "claim": "synthetic:marriage:claim:CH01.P1",
+        "owner": "PAIR",
+        "direction": null,
+        "context": "marriage",
+        "application": "completion-standard:CH01.P1",
+        "condition": "synthetic:marriage:condition:CH01.P1",
+        "function": "NEW_APPLICATION",
+        "reviewed": true,
+        "factIds": [
+          "natalA",
+          "natalB",
+          "mbtiA",
+          "mbtiB"
+        ],
+        "fit": 10,
+        "requiresFriction": false,
+        "frictionOf": null,
+        "event": false,
+        "forcedContact": false,
+        "forcedRepair": true,
+        "safety": [
+          "COERCION"
+        ],
+        "types": [
+          "INTP",
+          "ESFJ"
+        ],
+        "household": {
+          "kind": "HOUSEHOLD_QUESTION",
+          "requiredFacts": [],
+          "assignedBy": "people_consent_not_gender_or_type",
+          "processRoles": [
+            "notice",
+            "prepare",
+            "decide",
+            "execute",
+            "monitor",
+            "handle_exception",
+            "remember_next_cycle"
+          ],
+          "completeResponsibility": true,
+          "actualRecovery": false,
+          "preventionOnly": false,
+          "precedingCondition": null,
+          "safety": [],
+          "forcedRepair": false,
+          "forcedContact": false,
+          "financialPrescription": false,
+          "actualTransitionDate": null
+        },
+        "informationFunction": "POSITIVE",
+        "introductionAddress": null,
+        "precedingConditionMeaning": null
+      },
+      "receipt": {
+        "receiptId": "kb:receipt:4bbc0d17c33d2c606f3778eac76888f8ed327228ef3e3b982b4e8913d41ceaee",
+        "candidateCatalogKey": "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15",
+        "originalResearchId": "synthetic:marriage:negative:unsafe-repair",
+        "knowledgeKind": "PRODUCT_SPECIALIST",
+        "fixtureId": "synthetic:marriage:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "marriage",
+        "requirementRef": "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15",
+        "requiredSources": [
+          "synthetic:marriage:negative:unsafe-repair:fact:natalA",
+          "synthetic:marriage:negative:unsafe-repair:fact:natalB",
+          "synthetic:marriage:negative:unsafe-repair:fact:mbtiA",
+          "synthetic:marriage:negative:unsafe-repair:fact:mbtiB"
+        ],
+        "selectedActualEvidence": [
+          "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+          "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+          "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+          "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363"
+        ],
+        "temporalWitnesses": [],
+        "matches": [
+          {
+            "requirementId": "synthetic:marriage:negative:unsafe-repair:fact:natalA",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+                "producerEvidenceId": "synthetic:marriage:fact:natalA",
+                "ownerId": "synthetic:marriage:owner:A",
+                "rootIds": [
+                  "synthetic:marriage:root:natal:A"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/compatibility-marriage-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticPair",
+                  "version": "synthetic-marriage-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          },
+          {
+            "requirementId": "synthetic:marriage:negative:unsafe-repair:fact:natalB",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363",
+                "producerEvidenceId": "synthetic:marriage:fact:natalB",
+                "ownerId": "synthetic:marriage:owner:B",
+                "rootIds": [
+                  "synthetic:marriage:root:natal:B"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/compatibility-marriage-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticPair",
+                  "version": "synthetic-marriage-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          },
+          {
+            "requirementId": "synthetic:marriage:negative:unsafe-repair:fact:mbtiA",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+                "producerEvidenceId": "synthetic:marriage:fact:mbtiA",
+                "ownerId": "synthetic:marriage:owner:A",
+                "rootIds": [
+                  "synthetic:marriage:root:mbti:A"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/compatibility-marriage-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticPair",
+                  "version": "synthetic-marriage-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          },
+          {
+            "requirementId": "synthetic:marriage:negative:unsafe-repair:fact:mbtiB",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+                "producerEvidenceId": "synthetic:marriage:fact:mbtiB",
+                "ownerId": "synthetic:marriage:owner:B",
+                "rootIds": [
+                  "synthetic:marriage:root:mbti:B"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/compatibility-marriage-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticPair",
+                  "version": "synthetic-marriage-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          }
+        ],
+        "sourceGroupEvaluation": [],
+        "ownerEvaluation": "PASS",
+        "directionEvaluation": "NOT_APPLICABLE",
+        "participantEvaluation": "PASS",
+        "temporalEvaluation": "NOT_APPLICABLE",
+        "ancestryEvaluation": "PASS",
+        "semanticDecisionReferences": [],
+        "domainPolicyReferences": [],
+        "producerSupport": "PASS",
+        "actualInputConditions": [],
+        "counterexamples": {
+          "originalRef": "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15",
+          "state": "PASS"
+        },
+        "allTwelveGateResults": [
+          {
+            "gate": "SOURCE_INTEGRITY",
+            "state": "PASS",
+            "requirementFields": [
+              "originalRecordHash",
+              "sourceVerificationVersion"
+            ],
+            "actualEvidence": [
+              "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+              "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+              "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+              "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363"
+            ],
+            "originalReferences": [
+              "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "INTERPRETATION_REVIEW",
+            "state": "PASS",
+            "requirementFields": [
+              "originalReviewState"
+            ],
+            "actualEvidence": [
+              "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+              "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+              "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+              "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363"
+            ],
+            "originalReferences": [
+              "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCER_SUPPORT",
+            "state": "PASS",
+            "requirementFields": [
+              "producerRequirements"
+            ],
+            "actualEvidence": [
+              "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+              "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+              "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+              "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363"
+            ],
+            "originalReferences": [
+              "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_CALCULATED_FACT",
+            "state": "PASS",
+            "requirementFields": [
+              "sourceRequirements",
+              "sourceGroups"
+            ],
+            "actualEvidence": [
+              "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+              "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+              "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+              "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363"
+            ],
+            "originalReferences": [
+              "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_OWNER",
+            "state": "PASS",
+            "requirementFields": [
+              "requiredOwner"
+            ],
+            "actualEvidence": [
+              "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+              "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+              "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+              "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363"
+            ],
+            "originalReferences": [
+              "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_DIRECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredDirection"
+            ],
+            "actualEvidence": [
+              "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+              "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+              "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+              "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363"
+            ],
+            "originalReferences": [
+              "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "state": "PASS",
+            "requirementFields": [
+              "allActualAndResearchRequiredAncestors"
+            ],
+            "actualEvidence": [
+              "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+              "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+              "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+              "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363"
+            ],
+            "originalReferences": [
+              "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "TIME_INTERSECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredTemporalScope",
+              "requiredWindow"
+            ],
+            "actualEvidence": [
+              "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+              "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+              "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+              "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363"
+            ],
+            "originalReferences": [
+              "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_USER_STATE",
+            "state": "PASS",
+            "requirementFields": [],
+            "actualEvidence": [
+              "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+              "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+              "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+              "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363"
+            ],
+            "originalReferences": [
+              "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+            "state": "PASS",
+            "requirementFields": [
+              "counterexamples",
+              "prohibitions",
+              "introducedLedger"
+            ],
+            "actualEvidence": [
+              "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+              "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+              "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+              "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363"
+            ],
+            "originalReferences": [
+              "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCT_SPECIALISM",
+            "state": "PASS",
+            "requirementFields": [
+              "product",
+              "relationship",
+              "readerQuestion",
+              "coreMeaning"
+            ],
+            "actualEvidence": [
+              "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+              "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+              "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+              "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363"
+            ],
+            "originalReferences": [
+              "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "CUSTOMER_APPROVAL",
+            "state": "PASS",
+            "requirementFields": [
+              "operatorApproval",
+              "customerApproval",
+              "originalRecordHash",
+              "approvalScope"
+            ],
+            "actualEvidence": [
+              "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+              "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+              "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+              "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363"
+            ],
+            "originalReferences": [
+              "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15"
+            ],
+            "reasons": [],
+            "nextAction": null
+          }
+        ],
+        "stages": [
+          "DISCOVERED",
+          "SOURCE_TRACEABLE",
+          "FACTS_MATCHED",
+          "CONDITIONS_MATCHED"
+        ],
+        "finalDisposition": "CUSTOMER_ELIGIBLE",
+        "blockingReasons": [],
+        "followupRequirements": [],
+        "customerApproved": true,
+        "operatorApproved": true,
+        "approvalRequirement": {
+          "catalogKey": "kc:v1:aeb49a9bcaef4e34a995dd571221b07295d35618790dc50b546710a93a4d1e15",
+          "originalRecordHash": "41d48d2c1243cd2fcccf80db7b77f87894c4dfb0c305a23c6522306df0449d3c",
+          "sourceVersion": "b676adb6f10db984c3875c107ea740baa88bab444a2eddae51dc636e18270d08",
+          "meaningIdentity": "synthetic:marriage:meaning:CH01.P1",
+          "claimIdentity": "synthetic:marriage:claim:CH01.P1",
+          "product": "saju_mbti_compatibility",
+          "relationship": "marriage",
+          "contexts": [],
+          "evidenceIds": [
+            "aeg:node:3e51a406ceb49098dadc17f91e3a5f8842dfb54f689a97ab927120d27e723ac6",
+            "aeg:node:5b92985a1bc8f79ea22f88698f47d5b438e4e1afccb71eb276e40d7d01eed08f",
+            "aeg:node:5cbddedfca6590d1465468396a739a6eee680fd6e98986054fc9edbb5d1d0a20",
+            "aeg:node:f25f0da4bf9ac7cbc28a6a3fee7db821ce26c376a8dcb4ebcef929e4c7baf363"
+          ],
+          "prohibitedInference": {},
+          "evaluatedAt": "2026-10-12T12:00:00+09:00",
+          "canonicalFactRoots": [
+            "synthetic:marriage:root:mbti:A",
+            "synthetic:marriage:root:mbti:B",
+            "synthetic:marriage:root:natal:A",
+            "synthetic:marriage:root:natal:B"
+          ],
+          "graphVersion": "actual-evidence-graph-v1",
+          "sourceVerificationVersion": "source-verification-v1",
+          "semanticVerificationVersion": "semantic-domain-v1",
+          "temporalWitnesses": []
+        },
+        "canonicalFactRoots": [
+          "synthetic:marriage:root:mbti:A",
+          "synthetic:marriage:root:mbti:B",
+          "synthetic:marriage:root:natal:A",
+          "synthetic:marriage:root:natal:B"
+        ],
+        "meaningIdentity": "synthetic:marriage:meaning:CH01.P1",
+        "claimIdentity": "synthetic:marriage:claim:CH01.P1",
+        "reuse": {
+          "relation": "INSUFFICIENT_VERIFICATION",
+          "independentFactsAdded": 0
+        },
+        "binderVersion": "knowledge-binder-v1",
+        "graphVersion": "actual-evidence-graph-v1",
+        "catalogVersion": "unified-catalog-v1",
+        "sourceVerificationVersion": "source-verification-v1",
+        "semanticVerificationVersion": "semantic-domain-v1"
+      },
+      "informationRoots": [
+        "synthetic:marriage:root:natal:A"
+      ],
+      "supportingAncestryRoots": [
+        "synthetic:marriage:root:mbti:A",
+        "synthetic:marriage:root:mbti:B",
+        "synthetic:marriage:root:natal:A",
+        "synthetic:marriage:root:natal:B"
+      ],
+      "owners": [
+        "synthetic:marriage:owner:A",
+        "synthetic:marriage:owner:B"
+      ],
+      "eligible": false,
+      "reasons": [
+        "UNSAFE_MARRIAGE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import type {
-  CompatibilityRelationshipType,
+  CompatibilityRelationshipCategoryInput,
   CompatibilityScoreBreakdown,
   CompatibilityScoreResult,
 } from "./compatibilityTypes";
@@ -14,7 +14,7 @@ export type ScoreCompatibilityInput = {
   readonly sajuBridge: CompatibilitySajuBridgeResult;
   readonly deepSajuBridge?: CompatibilityDeepSajuBridgeResult;
   readonly mbtiBridge: CompatibilityMbtiBridgeResult;
-  readonly relationshipType: CompatibilityRelationshipType;
+  readonly relationshipType: CompatibilityRelationshipCategoryInput;
   readonly birthTimeConfidence: {
     readonly personA: "known" | "unknown";
     readonly personB: "known" | "unknown";

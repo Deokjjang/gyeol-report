@@ -1,0 +1,15 @@
+{
+  "researchFamilies": 20,
+  "researchRecords": 18610,
+  "foundationSourceRecords": 4799,
+  "interpretationCandidates": 4270,
+  "nonCandidateRecords": 14340,
+  "originalSourceReferences": 6490,
+  "technicalRecovery": 3288,
+  "unresolved": 3202,
+  "domainQueue": 2966,
+  "actualGraphCases": 27,
+  "partialGraphs": 27,
+  "registryRecordsAreNotFacts": true,
+  "sourceRecoveryIsNotContentOrCustomerApproval": true
+}

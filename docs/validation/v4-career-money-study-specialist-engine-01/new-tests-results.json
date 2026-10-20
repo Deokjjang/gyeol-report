@@ -1,0 +1,324 @@
+{
+  "passed": 78,
+  "failed": 0,
+  "pending": 0,
+  "files": [
+    {
+      "file": "unit/report-knowledge/careerSpecialistEngine.test.ts",
+      "tests": [
+        {
+          "name": "A preserves original nine Reader chapters without K-number mapping",
+          "status": "passed"
+        },
+        {
+          "name": "B preserves all 36 paragraph questions",
+          "status": "passed"
+        },
+        {
+          "name": "C preserves all 144 original sentence roles",
+          "status": "passed"
+        },
+        {
+          "name": "D indexes exactly 180 unique original questions",
+          "status": "passed"
+        },
+        {
+          "name": "E acquires 192 original specialist Materials and 268 applicable candidates",
+          "status": "passed"
+        },
+        {
+          "name": "F preserves 171 conditional, 20 recall and one held material",
+          "status": "passed"
+        },
+        {
+          "name": "G exact original CatalogKey/locator/record hashes remain intact",
+          "status": "passed"
+        },
+        {
+          "name": "H SourceKey resolves through its real registry and original hashes",
+          "status": "passed"
+        },
+        {
+          "name": "I native TenGod uses explicit original target and exact actual participants",
+          "status": "passed"
+        },
+        {
+          "name": "J preserves actual signed semantic axis values",
+          "status": "passed"
+        },
+        {
+          "name": "K partial Facet meaning is not promoted by its label",
+          "status": "passed"
+        },
+        {
+          "name": "L MBTI SCORING and REFERENCE are not interchangeable",
+          "status": "passed"
+        },
+        {
+          "name": "M actual JobStatus \"\" remains an input scope, not skill or income",
+          "status": "passed"
+        },
+        {
+          "name": "M actual JobStatus \"student\" remains an input scope, not skill or income",
+          "status": "passed"
+        },
+        {
+          "name": "M actual JobStatus \"job_seeker\" remains an input scope, not skill or income",
+          "status": "passed"
+        },
+        {
+          "name": "M actual JobStatus \"employee\" remains an input scope, not skill or income",
+          "status": "passed"
+        },
+        {
+          "name": "M actual JobStatus \"freelancer\" remains an input scope, not skill or income",
+          "status": "passed"
+        },
+        {
+          "name": "M actual JobStatus \"self_employed\" remains an input scope, not skill or income",
+          "status": "passed"
+        },
+        {
+          "name": "M actual JobStatus \"business_owner\" remains an input scope, not skill or income",
+          "status": "passed"
+        },
+        {
+          "name": "M actual JobStatus \"homemaker\" remains an input scope, not skill or income",
+          "status": "passed"
+        },
+        {
+          "name": "M actual JobStatus \"unemployed\" remains an input scope, not skill or income",
+          "status": "passed"
+        },
+        {
+          "name": "M actual JobStatus \"other\" remains an input scope, not skill or income",
+          "status": "passed"
+        },
+        {
+          "name": "M a restricted status conflicts and all-ten-values means scope only",
+          "status": "passed"
+        },
+        {
+          "name": "N detail input presence is separate from professional skill",
+          "status": "passed"
+        },
+        {
+          "name": "O supported work functions come from unchanged actual producers",
+          "status": "passed"
+        },
+        {
+          "name": "P photographic research does not make unsupported parser input 프리랜서 사진가 supported",
+          "status": "passed"
+        },
+        {
+          "name": "P photographic research does not make unsupported parser input 상품·인물 사진가 supported",
+          "status": "passed"
+        },
+        {
+          "name": "Q translation distinguishes V3 unknown from V4 override",
+          "status": "passed"
+        },
+        {
+          "name": "Q shop/care/rest branches preserve their original status-sensitive behavior",
+          "status": "passed"
+        },
+        {
+          "name": "R original eight routes and actual recommendation IDs/order/reasons/proof are unchanged",
+          "status": "passed"
+        },
+        {
+          "name": "S missing recommendation/proof cannot be supplied by job research",
+          "status": "passed"
+        },
+        {
+          "name": "T missing avoid proof does not imply inability or a failed career",
+          "status": "passed"
+        },
+        {
+          "name": "U actual income, assets and investment returns are unknown",
+          "status": "passed"
+        },
+        {
+          "name": "V traditional wealth symbols are not actual money or a classified cash-flow metric",
+          "status": "passed"
+        },
+        {
+          "name": "W learning preference is not actual independent performance",
+          "status": "passed"
+        },
+        {
+          "name": "X academic degree, qualification and legal authority are never inferred",
+          "status": "passed"
+        },
+        {
+          "name": "Y CH02 cannot approve a second talent from synonyms or facets",
+          "status": "passed"
+        },
+        {
+          "name": "Z CH05 retains input status and missing tasks/authority/experience",
+          "status": "passed"
+        },
+        {
+          "name": "AA CH06 preserves original economic conditions for separate review",
+          "status": "passed"
+        },
+        {
+          "name": "AB CH07 preserves learning/skill verification instead of awarding qualifications",
+          "status": "passed"
+        },
+        {
+          "name": "AC held Munchang and CH08 success conditions cannot become guarantees",
+          "status": "passed"
+        },
+        {
+          "name": "AD CH09 twenty recall materials require actual introduced display",
+          "status": "passed"
+        },
+        {
+          "name": "AE wrong owner fails original gates before synthetic selection",
+          "status": "passed"
+        },
+        {
+          "name": "AF actual Fusion observation needs both same-owner root systems",
+          "status": "passed"
+        },
+        {
+          "name": "AG unsupported original Fusion rule is withheld rather than assigned an ID",
+          "status": "passed"
+        },
+        {
+          "name": "AH same root references are grouped without minting independent facts",
+          "status": "passed"
+        },
+        {
+          "name": "AI actual different questions/applications still require meaning review",
+          "status": "passed"
+        },
+        {
+          "name": "AJ context/job status conflicts remain hard selection constraints",
+          "status": "passed"
+        },
+        {
+          "name": "AK same reviewed claim in different words is not independent information",
+          "status": "passed"
+        },
+        {
+          "name": "AL career uses facet cap four, chapter uniqueness and root sorting without invented hard cap",
+          "status": "passed"
+        },
+        {
+          "name": "AM all original twelve Hard Gates execute on real and synthetic candidates",
+          "status": "passed"
+        },
+        {
+          "name": "AN original groups, source requirements and every natural condition remain mandatory",
+          "status": "passed"
+        },
+        {
+          "name": "AO real research cannot receive synthetic approval or customer ranking",
+          "status": "passed"
+        },
+        {
+          "name": "AP synthetic approval is scoped/authentic and a forged session cannot select",
+          "status": "passed"
+        },
+        {
+          "name": "AQ global constraint selection reserves an alternative for the later important question",
+          "status": "passed"
+        },
+        {
+          "name": "AR repeated inputs use deterministic selection/tie-break and diagnostics",
+          "status": "passed"
+        },
+        {
+          "name": "AS actual recommendation/calculation/narrative source is unchanged",
+          "status": "passed"
+        },
+        {
+          "name": "AT all original 4304 source/research/generated/Book contract files are byte-identical",
+          "status": "passed"
+        },
+        {
+          "name": "AU emitted artifacts are deterministic and exclude private fixture input/node identities",
+          "status": "passed"
+        },
+        {
+          "name": "AV runtime imports and Vercel trace config remain unchanged",
+          "status": "passed"
+        },
+        {
+          "name": "unknown MBTI preserves valid independent natal observations",
+          "status": "passed"
+        },
+        {
+          "name": "unknown birth time never synthesizes an hour pillar",
+          "status": "passed"
+        },
+        {
+          "name": "CH09 synthetic display checks MBTI/job/function/detail/question compatibility",
+          "status": "passed"
+        },
+        {
+          "name": "all AND sources required, but two requirements do not create two roots",
+          "status": "passed"
+        },
+        {
+          "name": "domain prohibition cannot be offset by approved meaning or direct fit",
+          "status": "passed"
+        },
+        {
+          "name": "economic/learning proof and recommendation requirements are executed before selection",
+          "status": "passed"
+        },
+        {
+          "name": "reviewed conditional split may coexist; an unresolved same-context tension may not",
+          "status": "passed"
+        },
+        {
+          "name": "fit preference differs from first eligible without modifying gates",
+          "status": "passed"
+        },
+        {
+          "name": "existing A-T and all job/status parser probes do not add Binder cases",
+          "status": "passed"
+        },
+        {
+          "name": "unresolved original MBTI job trait hints remain unresolved",
+          "status": "passed"
+        },
+        {
+          "name": "same exact unreviewed root set is SAME_FACT, not approved independence",
+          "status": "passed"
+        },
+        {
+          "name": "qualified MBTI SourceKey retains its alias and exact original trait identity",
+          "status": "passed"
+        },
+        {
+          "name": "JobStatus source is an exact enum reference, never a calculated fact",
+          "status": "passed"
+        },
+        {
+          "name": "qualified references cannot bypass exact original type/area/file/record hashes",
+          "status": "passed"
+        },
+        {
+          "name": "same natal and MBTI with a different actual job status preserves core calculation/profiles",
+          "status": "passed"
+        },
+        {
+          "name": "same MBTI with a different actual natal input keeps MBTI and changes actual calculation",
+          "status": "passed"
+        },
+        {
+          "name": "search exhaustion emits a limit diagnostic without claiming optimality",
+          "status": "passed"
+        },
+        {
+          "name": "a changed function flag cannot replace the verified synthetic Graph context",
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+}

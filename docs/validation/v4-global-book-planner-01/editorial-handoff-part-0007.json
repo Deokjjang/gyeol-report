@@ -1,0 +1,86 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "OBJECT",
+  "keys": [
+    "version",
+    "mode",
+    "product",
+    "relationship",
+    "readerContract",
+    "paragraphs",
+    "unfilled",
+    "customerAssignable",
+    "customerClaims",
+    "customerBookAllocations",
+    "actualDisplayLedgerIssued"
+  ],
+  "logicalJsonHash": "0e14b03866bce7cc2213b43ba868fba1c89aa2817830da36d93c20213051ffca",
+  "parts": [
+    {
+      "file": "editorial-handoff-part-0008.json",
+      "sha256": "6dd1978d45a2dec53e0de32f944981c6450a584cf7e2aca2e9cbcf6ee22d0356",
+      "kind": "FIELD",
+      "key": "version"
+    },
+    {
+      "file": "editorial-handoff-part-0009.json",
+      "sha256": "32e25dac5795a5fade8dc9bbdb0060d04cbd4c25053af7bb5427ab3233147b73",
+      "kind": "FIELD",
+      "key": "mode"
+    },
+    {
+      "file": "editorial-handoff-part-0010.json",
+      "sha256": "0ee372a859780eefe9be421979424a70eec1d07071c2d5d8d642d0fb656f5374",
+      "kind": "FIELD",
+      "key": "product"
+    },
+    {
+      "file": "editorial-handoff-part-0011.json",
+      "sha256": "10f34494961dd7cde7918fedf8d2e02318f9140f232fb203df9c88cfd19ae4ad",
+      "kind": "FIELD",
+      "key": "relationship"
+    },
+    {
+      "file": "editorial-handoff-part-0012.json",
+      "sha256": "2cc5ba3379609cfecdd46570caa913191e0f1a2f73b8bffeb953200a807a0aca",
+      "kind": "FIELD",
+      "key": "readerContract"
+    },
+    {
+      "file": "editorial-handoff-part-0013.json",
+      "sha256": "1e7dc84e4e0b0261ecda7bd2a87c960e752acf435659f654737cbeb8f49cffea",
+      "kind": "FIELD",
+      "key": "paragraphs"
+    },
+    {
+      "file": "editorial-handoff-part-0019.json",
+      "sha256": "47063e4c519023292485f28b5e42d6e7d585943162ffe0a691033c8547a4c7dd",
+      "kind": "FIELD",
+      "key": "unfilled"
+    },
+    {
+      "file": "editorial-handoff-part-0020.json",
+      "sha256": "2ed27c1421e6928dbe13dbfdb5c59e1045b30341fe7ebe05700006bc5ac572c0",
+      "kind": "FIELD",
+      "key": "customerAssignable"
+    },
+    {
+      "file": "editorial-handoff-part-0021.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "customerClaims"
+    },
+    {
+      "file": "editorial-handoff-part-0022.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "customerBookAllocations"
+    },
+    {
+      "file": "editorial-handoff-part-0023.json",
+      "sha256": "2ed27c1421e6928dbe13dbfdb5c59e1045b30341fe7ebe05700006bc5ac572c0",
+      "kind": "FIELD",
+      "key": "actualDisplayLedgerIssued"
+    }
+  ]
+}

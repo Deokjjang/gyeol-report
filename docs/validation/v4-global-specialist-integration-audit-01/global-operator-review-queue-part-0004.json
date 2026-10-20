@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-operator-review-queue-part-0004.json.gz",
+  "payloadHash": "888ccb20ed5f53b3e90f26f0fd39ed9a5fd8fe48a3337c574567da8512c7d472",
+  "logicalJsonHash": "de6637a918834062bd7959353016463eafc5c5d0efe60cfc62f49ffffb4346e5",
+  "uncompressedBytes": 12203340
+}

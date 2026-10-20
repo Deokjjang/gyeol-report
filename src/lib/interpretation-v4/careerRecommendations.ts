@@ -28,7 +28,7 @@ export const CAREER_ROUTES: readonly Route[] = [
   { id: "experience", tags: ["sociability", "first-attraction", "practical-learning"], roles: ["고객 경험 기획", "행사 운영", "제품 체험 설계"], task: "사람이 직접 만나고 사용하며 보이는 반응을 더 좋은 경험으로 바꾸는 일", environment: "현장에서 관찰한 것을 다음 시도에 반영하는 곳", avoid: "실제 반응은 듣지 않고 겉으로 보기 좋은 보고만 요구하는 곳", functions: ["customer_service", "design"] },
 ];
 
-export function careerRecommendations(state: NarrativeState, voice: ReturnType<typeof selectCareerVoice>, context: ReturnType<typeof careerWorkNarrative>) {
+export function careerRecommendations(state: NarrativeState, voice: ReturnType<typeof selectCareerVoice>, context: ReturnType<typeof careerWorkNarrative>, explorationLabels = false) {
   const profile = getMbtiSourceProfile(state.input.mbti);
   const traitIds = new Set(Object.values(profile?.traits ?? {}).flatMap(area => area?.map(t => t.id).filter(Boolean) ?? []));
   const jobs: JobHint[] = records(profile?.recommendedJobs).flatMap(h => typeof h.job === "string" && ["direct", "inferred"].includes(String(h.sourceCoverage)) && strings(h.matchingTraits).some(t => traitIds.has(t))
@@ -52,7 +52,7 @@ export function careerRecommendations(state: NarrativeState, voice: ReturnType<t
     const bridge = examples.length ? ` ${profile!.type}의 직업 자료에서도 ${examples.map(j => j.job).join("·")}처럼 이 힘을 쓰는 예를 찾을 수 있습니다.` : "";
     return {
       id: route.id, roleExamples: authored?.[2] ?? route.roles,
-      reason: `${index + 1}순위 · ${route.roles.join("·")} — ${authored?.[0] ?? `${route.task}에서 힘을 쓸 수 있습니다.`} ${basis}${bridge}`,
+      reason: `${explorationLabels ? "탐색 후보" : `${index + 1}순위`} · ${route.roles.join("·")} — ${authored?.[0] ?? `${route.task}에서 힘을 쓸 수 있습니다.`} ${basis}${bridge}`,
       environment: authored?.[1] ?? `${route.environment}이라면 내 방식이 실제로 도움이 되는지 작은 경험으로 확인하기 좋습니다.`,
       basis: "supported-tendency", proof: { ...routeProof, features: [...new Set([...routeProof.features, ...voice.proof.features])], fusionIds: [...new Set([...routeProof.fusionIds, ...voice.proof.fusionIds])] },
     };

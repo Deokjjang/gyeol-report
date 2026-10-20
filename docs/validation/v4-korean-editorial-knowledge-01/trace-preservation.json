@@ -1,0 +1,14 @@
+{
+  "appNftCount": 88,
+  "rawKnowledgeOrValidationFiles": 0,
+  "target": {
+    "file": ".next/server/app/dev/account/api/[action]/route.js.nft.json",
+    "files": 430,
+    "pathBytes": 31731151
+  },
+  "maxPathBytes": 54618281,
+  "traceFixHash": "931e1eba5d0bd46190d8a4e7eba1a45b376fd49819e8304416ded45aa7eab6c3",
+  "isRemoteCompressedFunctionSize": false,
+  "nextConfigUnchanged": true,
+  "largeFunctionsWorkaround": false
+}

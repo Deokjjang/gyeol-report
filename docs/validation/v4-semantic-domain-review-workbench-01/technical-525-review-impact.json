@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "technical-525-review-impact.json.gz",
+  "payloadHash": "8ef2eee0b0104d040dd21c4bfbb79858ede660aa31a17053b969f13dad56409d",
+  "logicalJsonHash": "9e7a78f43c897ebfa7b4a2c697a697a479b8ede589276d6bf54d8abe911abaaf",
+  "uncompressedBytes": 1528114
+}

@@ -1,0 +1,113 @@
+{
+  "baselineFailures": [
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'comprehensive' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'love' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'compatibility' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'major' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'annual' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'comprehensive' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'love' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'compatibility' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'major' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'annual' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+    "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > recovery-axis Fusion can serve C9 even when its original application is work",
+    "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts > actual 12-person review cohort and isolation > scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+    "tests/unit/interpretation-v4/foundationAdapter.test.ts > Phase13D-1A stays off all six product paths > only foundation modules reference the foundation; no writer/UI/calculation import",
+    "tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects major_fortune bypass before order writes and allows stable input",
+    "tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects annual_fortune bypass before order writes and allows stable input"
+  ],
+  "rawRelatedFailures": [
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'comprehensive' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'love' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'compatibility' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'major' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'annual' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'comprehensive' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'love' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'compatibility' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'major' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'annual' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+    "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > recovery-axis Fusion can serve C9 even when its original application is work",
+    "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts > actual 12-person review cohort and isolation > scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+    "tests/unit/interpretation-v4/foundationAdapter.test.ts > Phase13D-1A stays off all six product paths > only foundation modules reference the foundation; no writer/UI/calculation import",
+    "tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects major_fortune bypass before order writes and allows stable input",
+    "tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects annual_fortune bypass before order writes and allows stable input",
+    "tests/unit/report-knowledge/mbtiPairResearch.test.ts > offline MBTI directed pair research and preservation > keeps every new registry file static, type-only and absent from runtime consumers"
+  ],
+  "baselineFailureNamesUnchanged": true,
+  "newFailureFixed": "tests/unit/report-knowledge/mbtiPairResearch.test.ts > offline MBTI directed pair research and preservation > keeps every new registry file static, type-only and absent from runtime consumers",
+  "newFailureCause": "New static registry export name contained MBTI_PAIR_RESEARCH and matched the old isolation scanner; no runtime import existed. Renamed only the new symbol to LOVE_PAIR_MBTI_SOURCE_REVIEWS.",
+  "rerunBefore": {
+    "passed": 41,
+    "failed": 0
+  },
+  "rerunAfter": {
+    "passed": 41,
+    "failed": 0
+  },
+  "rawRelated": {
+    "files": 32,
+    "passed": 2975,
+    "failed": 17,
+    "conditionalNotRun": 1
+  },
+  "finalRelatedDeduplicated": {
+    "files": 32,
+    "passed": 2976,
+    "failed": 16,
+    "conditionalNotRun": 1
+  },
+  "newResearch": {
+    "passed": 557,
+    "failed": 0,
+    "latestStaticSubsetPassed": 532,
+    "actualGeneratorCasesAlreadyPassed": 25
+  },
+  "sixProductIntegration": {
+    "beforePassed": 64,
+    "afterPassed": 64,
+    "uniqueTests": 64
+  },
+  "finalUnique": {
+    "files": 34,
+    "passed": 3597,
+    "existingFailed": 16,
+    "conditionalNotRun": 1
+  },
+  "newRegressions": 0,
+  "typescriptDiagnostics": {
+    "before": 0,
+    "after": 0
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "build": {
+    "ok": true,
+    "staticPages": "47/47",
+    "nftWarnings": 0
+  },
+  "note": "25 filtered tests in the static-only rerun were already executed and passed in the full 557 test run. They are not the conditional legacy snapshot case.",
+  "sourceGuardFailureDetailsUnchanged": true,
+  "baselineFailureDetailsUnchanged": {
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'comprehensive' customer/evidence/Book stays frozen": true,
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'love' customer/evidence/Book stays frozen": true,
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'compatibility' customer/evidence/Book stays frozen": true,
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'major' customer/evidence/Book stays frozen": true,
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'annual' customer/evidence/Book stays frozen": true,
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'comprehensive' previous saved edition remains identical": true,
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'love' previous saved edition remains identical": true,
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'compatibility' previous saved edition remains identical": true,
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'major' previous saved edition remains identical": true,
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'annual' previous saved edition remains identical": true,
+    "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > C9 element composite beats a five-element dictionary and balanced yin yang is not a story": true,
+    "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > recovery-axis Fusion can serve C9 even when its original application is work": true,
+    "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts > actual 12-person review cohort and isolation > scheduler is not consumed by prior layers, six products, UI, calculations or providers": true,
+    "tests/unit/interpretation-v4/foundationAdapter.test.ts > Phase13D-1A stays off all six product paths > only foundation modules reference the foundation; no writer/UI/calculation import": true,
+    "tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects major_fortune bypass before order writes and allows stable input": true,
+    "tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects annual_fortune bypass before order writes and allows stable input": true
+  }
+}

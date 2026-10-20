@@ -1,0 +1,3208 @@
+{
+  "base": "3117327c80e8a35e9a476646114ffc3ae42f93ed",
+  "connectedToRuntime": false,
+  "approvedForCustomer": false,
+  "counts": {
+    "temporalConcepts": 5,
+    "temporalBoundaries": 17,
+    "temporalUnverified": 11,
+    "sajuFoundationTemporalSources": 9,
+    "temporalDomains": 48,
+    "temporalPeriodDepth": 18,
+    "temporalGodCombinations": 100,
+    "temporalGodRoles": 10,
+    "temporalPeriodApplications": 78,
+    "temporalScopes": 6,
+    "temporalTradition": 3,
+    "temporalOverlaps": 12,
+    "temporalRelations": 54,
+    "temporalElementCombinations": 25,
+    "temporalRejected": 14
+  },
+  "totalResearchRecords": 401,
+  "classes": {
+    "B": 22,
+    "G": 20,
+    "E": 4,
+    "D": 126,
+    "C": 212,
+    "A": 3,
+    "F": 14
+  },
+  "scopes": [
+    "natal_dayun",
+    "natal_saeun",
+    "natal_wolun",
+    "dayun_saeun",
+    "dayun_wolun",
+    "saeun_wolun"
+  ],
+  "finiteCoverage": {
+    "godComparisonCells": 100,
+    "godGroups": 25,
+    "directedElements": 25,
+    "relationScopeCells": 54,
+    "previousCombinationRefs": 64,
+    "domains": 8,
+    "yearApplications": 42,
+    "monthApplications": 36
+  },
+  "support": {
+    "unsupported": 13,
+    "partial": 1,
+    "supported": 40
+  },
+  "status": "OFFLINE_RESEARCH_COMPLETE_WITH_EXPLICIT_E_G_GAPS",
+  "sourceVerifiedExternal": 3,
+  "notCountsOfFacts": [
+    "100 십성칸은 조합 검토 공간",
+    "54 관계칸은 정의9종의 기간 확장",
+    "78 사례는 실제 데이터에 근거한 D 질문",
+    "C/D의 장면·비유는 전통 명리 사실 수가 아니다"
+  ],
+  "entries": [
+    {
+      "id": "tr:concept:natal",
+      "state": "B",
+      "sourceRefs": [
+        "repo-calendar",
+        "repo-periods"
+      ]
+    },
+    {
+      "id": "tr:concept:dayun",
+      "state": "B",
+      "sourceRefs": [
+        "repo-calendar",
+        "repo-periods"
+      ]
+    },
+    {
+      "id": "tr:concept:saeun",
+      "state": "B",
+      "sourceRefs": [
+        "repo-calendar",
+        "repo-periods"
+      ]
+    },
+    {
+      "id": "tr:concept:wolun",
+      "state": "B",
+      "sourceRefs": [
+        "repo-calendar",
+        "repo-periods"
+      ]
+    },
+    {
+      "id": "tr:concept:boundary",
+      "state": "B",
+      "sourceRefs": [
+        "repo-calendar",
+        "repo-periods"
+      ]
+    },
+    {
+      "id": "tr:boundary:exact-transition",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:ranged-transition",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:stable-not-exact",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:unknown-refusal",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:before-first",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:nominal-year",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:half-open",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:jie-not-midqi",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:civil-month",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:lichun",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:month-main-stem",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:conditional-relations",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:legacy-mixed",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:major-row-granularity",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:annual-stem-time",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:duplicate-owner",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:boundary:time-position",
+      "state": "B",
+      "sourceRefs": [
+        "repo-periods",
+        "repo-calendar"
+      ]
+    },
+    {
+      "id": "tr:held:five-year-halves",
+      "state": "G",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:held:transition-lead-lag",
+      "state": "E",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:held:strength",
+      "state": "G",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:held:full-hyeong",
+      "state": "G",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:held:stem-hap-periods",
+      "state": "G",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:held:wonjin-periods",
+      "state": "G",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:held:haphwa",
+      "state": "G",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:held:domain-effects",
+      "state": "E",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:held:month-wolun-lineage",
+      "state": "E",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:held:legacy-impact",
+      "state": "E",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:held:element-magnitude",
+      "state": "G",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_dayun:personality",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_dayun:career",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_dayun:money",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_dayun:study",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_dayun:love",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_dayun:marriage",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_dayun:family",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_dayun:relationships",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_saeun:personality",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_saeun:career",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_saeun:money",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_saeun:study",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_saeun:love",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_saeun:marriage",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_saeun:family",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_saeun:relationships",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_wolun:personality",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_wolun:career",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_wolun:money",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_wolun:study",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_wolun:love",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_wolun:marriage",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_wolun:family",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:natal_wolun:relationships",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_saeun:personality",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_saeun:career",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_saeun:money",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_saeun:study",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_saeun:love",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_saeun:marriage",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_saeun:family",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_saeun:relationships",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_wolun:personality",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_wolun:career",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_wolun:money",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_wolun:study",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_wolun:love",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_wolun:marriage",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_wolun:family",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:dayun_wolun:relationships",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:saeun_wolun:personality",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:saeun_wolun:career",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:saeun_wolun:money",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:saeun_wolun:study",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:saeun_wolun:love",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:saeun_wolun:marriage",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:saeun_wolun:family",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:domain:saeun_wolun:relationships",
+      "state": "D",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:dayun-stem",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:dayun-branch",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:dayun-strength",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:dayun-next",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:dayun-phase",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:dayun-first",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:saeun-stem-branch",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:saeun-flow-reference",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:saeun-year-boundary",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:saeun-native-position",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:saeun-no-relation",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:saeun-rank",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:wolun-container",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:wolun-main-hidden",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:wolun-focus",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:wolun-annual",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:wolun-dayun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:depth:wolun-extended",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:비견:비견",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:비견:겁재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:비견:식신",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:비견:상관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:비견:편재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:비견:정재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:비견:편관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:비견:정관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:비견:편인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:비견:정인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:겁재:비견",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:겁재:겁재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:겁재:식신",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:겁재:상관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:겁재:편재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:겁재:정재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:겁재:편관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:겁재:정관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:겁재:편인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:겁재:정인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:식신:비견",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:식신:겁재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:식신:식신",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:식신:상관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:식신:편재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:식신:정재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:식신:편관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:식신:정관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:식신:편인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:식신:정인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:상관:비견",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:상관:겁재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:상관:식신",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:상관:상관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:상관:편재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:상관:정재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:상관:편관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:상관:정관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:상관:편인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:상관:정인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편재:비견",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편재:겁재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편재:식신",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편재:상관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편재:편재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편재:정재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편재:편관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편재:정관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편재:편인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편재:정인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정재:비견",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정재:겁재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정재:식신",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정재:상관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정재:편재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정재:정재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정재:편관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정재:정관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정재:편인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정재:정인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편관:비견",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편관:겁재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편관:식신",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편관:상관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편관:편재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편관:정재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편관:편관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편관:정관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편관:편인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편관:정인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정관:비견",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정관:겁재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정관:식신",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정관:상관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정관:편재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정관:정재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정관:편관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정관:정관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정관:편인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정관:정인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편인:비견",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편인:겁재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편인:식신",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편인:상관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편인:편재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편인:정재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편인:편관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편인:정관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편인:편인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:편인:정인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정인:비견",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정인:겁재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정인:식신",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정인:상관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정인:편재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정인:정재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정인:편관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정인:정관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정인:편인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god-pair:정인:정인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god:비견",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god:겁재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god:식신",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god:상관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god:편재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god:정재",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god:편관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god:정관",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god:편인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:god:정인",
+      "state": "C",
+      "sourceRefs": [
+        "repo-gods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:A:2023",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:A:2024",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:A:2025",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:A:2026",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:A:2027",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:A:2028",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:A:2029",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:A:2030",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:A:2031",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:A:2032",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:A:2033",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:A:2034",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:A:2035",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:A:2036",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:B:2023",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:B:2024",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:B:2025",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:B:2026",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:B:2027",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:B:2028",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:B:2029",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:B:2030",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:B:2031",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:B:2032",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:B:2033",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:B:2034",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:B:2035",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:B:2036",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:C:2023",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:C:2024",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:C:2025",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:C:2026",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:C:2027",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:C:2028",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:C:2029",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:C:2030",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:C:2031",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:C:2032",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:C:2033",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:C:2034",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:C:2035",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:year:C:2036",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:A:1",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:A:2",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:A:3",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:A:4",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:A:5",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:A:6",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:A:7",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:A:8",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:A:9",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:A:10",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:A:11",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:A:12",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:B:1",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:B:2",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:B:3",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:B:4",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:B:5",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:B:6",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:B:7",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:B:8",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:B:9",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:B:10",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:B:11",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:B:12",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:C:1",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:C:2",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:C:3",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:C:4",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:C:5",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:C:6",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:C:7",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:C:8",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:C:9",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:C:10",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:C:11",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:month:C:12",
+      "state": "D",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:scope:natal_dayun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:scope:natal_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:scope:natal_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:scope:dayun_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:scope:dayun_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:scope:saeun_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:tradition:root-before-period",
+      "state": "A",
+      "sourceRefs": [
+        "sm-dayun"
+      ]
+    },
+    {
+      "id": "tr:tradition:context-before-label",
+      "state": "A",
+      "sourceRefs": [
+        "ziping-yun"
+      ]
+    },
+    {
+      "id": "tr:tradition:different-time-roles",
+      "state": "A",
+      "sourceRefs": [
+        "ditian-suiyun"
+      ]
+    },
+    {
+      "id": "tr:overlap:same-god",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:overlap:different-god",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:overlap:annual-clash",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:overlap:major-harmony",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:overlap:period-mixed",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:overlap:jie-inside",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:overlap:dayun-inside",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:overlap:close-boundaries",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:overlap:multi-owners",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:overlap:uncertain-part",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:overlap:none",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:overlap:time-perspective",
+      "state": "C",
+      "sourceRefs": [
+        "repo-periods",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:stem_hap:natal_dayun",
+      "state": "G",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:stem_hap:natal_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:stem_hap:natal_wolun",
+      "state": "G",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:stem_hap:dayun_saeun",
+      "state": "G",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:stem_hap:dayun_wolun",
+      "state": "G",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:stem_hap:saeun_wolun",
+      "state": "G",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:yukhap:natal_dayun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:yukhap:natal_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:yukhap:natal_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:yukhap:dayun_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:yukhap:dayun_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:yukhap:saeun_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:chung:natal_dayun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:chung:natal_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:chung:natal_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:chung:dayun_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:chung:dayun_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:chung:saeun_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:samhap:natal_dayun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:samhap:natal_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:samhap:natal_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:samhap:dayun_saeun",
+      "state": "G",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:samhap:dayun_wolun",
+      "state": "G",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:samhap:saeun_wolun",
+      "state": "G",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:hyeong:natal_dayun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:hyeong:natal_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:hyeong:natal_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:hyeong:dayun_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:hyeong:dayun_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:hyeong:saeun_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:hae:natal_dayun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:hae:natal_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:hae:natal_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:hae:dayun_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:hae:dayun_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:hae:saeun_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:banhap:natal_dayun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:banhap:natal_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:banhap:natal_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:banhap:dayun_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:banhap:dayun_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:banhap:saeun_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:pa:natal_dayun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:pa:natal_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:pa:natal_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:pa:dayun_saeun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:pa:dayun_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:pa:saeun_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:wonjin:natal_dayun",
+      "state": "G",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:wonjin:natal_saeun",
+      "state": "G",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:wonjin:natal_wolun",
+      "state": "C",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:wonjin:dayun_saeun",
+      "state": "G",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:wonjin:dayun_wolun",
+      "state": "G",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:relation:wonjin:saeun_wolun",
+      "state": "G",
+      "sourceRefs": [
+        "repo-relations",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:WOOD:WOOD",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:WOOD:FIRE",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:WOOD:EARTH",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:WOOD:METAL",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:WOOD:WATER",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:FIRE:WOOD",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:FIRE:FIRE",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:FIRE:EARTH",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:FIRE:METAL",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:FIRE:WATER",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:EARTH:WOOD",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:EARTH:FIRE",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:EARTH:EARTH",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:EARTH:METAL",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:EARTH:WATER",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:METAL:WOOD",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:METAL:FIRE",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:METAL:EARTH",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:METAL:METAL",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:METAL:WATER",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:WATER:WOOD",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:WATER:FIRE",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:WATER:EARTH",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:WATER:METAL",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:element:WATER:WATER",
+      "state": "C",
+      "sourceRefs": [
+        "repo-elements",
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:rejected:clash-doom",
+      "state": "F",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:rejected:harmony-money",
+      "state": "F",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:rejected:same-double",
+      "state": "F",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:rejected:invent-experience",
+      "state": "F",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:rejected:midpoint",
+      "state": "F",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:rejected:jan1",
+      "state": "F",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:rejected:whole-month",
+      "state": "F",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:rejected:fake-third",
+      "state": "F",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:rejected:double-wonjin",
+      "state": "F",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:rejected:owner-swap",
+      "state": "F",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:rejected:flow-swap",
+      "state": "F",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:rejected:sick",
+      "state": "F",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:rejected:change-natal",
+      "state": "F",
+      "sourceRefs": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "tr:rejected:high-luck",
+      "state": "F",
+      "sourceRefs": [
+        "editorial"
+      ]
+    }
+  ]
+}

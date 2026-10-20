@@ -1,0 +1,52 @@
+{
+  "status": "NOT_STARTED",
+  "nextImplementationTask": "Exact conditional-temporal meaning source and scoped meaning/product/counterexample review contract",
+  "sourceContractsAvailable": [
+    "TemporalTenGodSourceResolver.temporalContract",
+    "TemporalTenGodSourceResolver.resolve",
+    "verifyTemporalTenGodCalculation",
+    "bindTemporalTenGodSource"
+  ],
+  "remainingSourceFailures": 30,
+  "requiredBeforeFutureCustomerUse": [
+    "Supply exact conditional-application source ancestry; do not treat traditionalRef summaries as IDs.",
+    "Review original natalRequired/elementRequired/extraEvidence conditions for exact owner, direction and period.",
+    "Retain all 12 gates, ancestry domains, source groups, product/counterexample review and authentic customer approval.",
+    "Do not widen unknown major annual endpoints or conditional transition ranges."
+  ],
+  "separateExistingTechnicalDebt": [
+    "preserves all 4509 existing tracked files including Writer, Books and research",
+    "X preserves every original research/runtime/Book source byte"
+  ],
+  "customerApprovals": 0,
+  "customerReaderBridges": 0,
+  "globalPlannerChanged": false,
+  "koreanWriterChanged": false,
+  "formationProducerStarted": false,
+  "nextTaskStarted": false,
+  "workspacePolicy": {
+    "ACTIVE_PERSISTENT_WORKSPACE_INTEGRITY": "PASS_WITH_RECORDED_IGNORED_COVERAGE_LIMIT",
+    "existingRegisteredWorktrees": 67,
+    "currentRegisteredWorktrees": 68,
+    "existingStatesAndSelectedFileHashesUnchanged": true,
+    "originalDirtyFilesPreserved": 11,
+    "existingPersistentLocationsIncludingOriginal": 6,
+    "newPersistentWorktree": "/Users/Deokmin/Developer/gyeol-worktrees/v4-temporal-ten-god-source-contract-01",
+    "commonDirectoryRealpath": "/Users/Deokmin/Dev/projects/gyeol-report/.git",
+    "forensicEvidenceFilesPreserved": 915,
+    "LEGACY_TEMP_WORKTREE_RISK": {
+      "inspectedPaths": 61,
+      "twoIncidentDistinctAffectedPaths": 33,
+      "historicalSecondLossTrackedOccurrences": 56372,
+      "historicalSecondLossBuildArtifactOccurrences": 270,
+      "additionalChangesSinceTaskBaseline": [],
+      "importantUncommittedLoss": "NONE_OBSERVED_IN_RECORDED_SCOPE",
+      "historicalIgnoredContent": "UNVERIFIED",
+      "rootCause": "ROOT_CAUSE_UNDETERMINED"
+    },
+    "intentionalGitMetadataChanges": "new branch/worktree registration/index/HEAD/ref/reflog; later scoped commits/objects/upstream/remote ref; not zero metadata changes",
+    "existingGitByteChangesPrecommit": [],
+    "existingSourceCodeAndOriginalReceiptsEdited": false,
+    "newFunctionalSourceFiles": 2
+  }
+}

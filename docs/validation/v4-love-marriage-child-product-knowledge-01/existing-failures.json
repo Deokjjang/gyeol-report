@@ -1,0 +1,33 @@
+{
+  "baseSha": "7cf74a29fd84b1ed9f4979b467ad820f83781ec1",
+  "exactBaselineFailures": [
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'comprehensive' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'love' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'compatibility' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'major' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'annual' customer/evidence/Book stays frozen",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'comprehensive' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'love' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'compatibility' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'major' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'annual' previous saved edition remains identical",
+    "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+    "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > recovery-axis Fusion can serve C9 even when its original application is work",
+    "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts > actual 12-person review cohort and isolation > scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+    "tests/unit/interpretation-v4/foundationAdapter.test.ts > Phase13D-1A stays off all six product paths > only foundation modules reference the foundation; no writer/UI/calculation import",
+    "tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects major_fortune bypass before order writes and allows stable input",
+    "tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects annual_fortune bypass before order writes and allows stable input"
+  ],
+  "count": 16,
+  "modifiedOrSkipped": false,
+  "additionalCombinedFailure": "loveQuality.test.ts case C 5000ms timeout during parallel verification",
+  "isolatedBase": {
+    "pass": 16,
+    "fail": 0
+  },
+  "isolatedAfter": {
+    "pass": 16,
+    "fail": 0
+  },
+  "classification": "parallel_resource_timeout_not_new_source_regression"
+}

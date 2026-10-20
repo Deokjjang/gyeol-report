@@ -1,0 +1,154 @@
+{
+  "version": "annual-fortune-product-knowledge-01",
+  "baseSha": "efe32658f8c0b0defa07601e64b49d6329665634",
+  "productKey": "annual_fortune",
+  "productSlug": "annual-fortune",
+  "normalizedKind": "annualFortune",
+  "counts": {
+    "sources": 23,
+    "annualCore": 13,
+    "annualTenGod": 10,
+    "monthlyTenGod": 10,
+    "monthlyElements": 5,
+    "months": 12,
+    "timeBoundaries": 10,
+    "scopes": 8,
+    "relationPractices": 7,
+    "domains": 8,
+    "comparisons": 9,
+    "annualMonthlyConnections": 3,
+    "bindingStages": 12,
+    "rejected": 14,
+    "temporalReferences": 410,
+    "majorReferences": 863,
+    "axes": 36,
+    "facets": 109,
+    "fusionReferences": 164,
+    "mbtiTypes": 16,
+    "observedMonthlyViews": 36,
+    "observedApplicationStudies": 14
+  },
+  "inheritedRegistryRecords": 16426,
+  "inheritedFamilies": 18,
+  "referenceCrosswalksAreNotNewMeanings": true,
+  "monthlyQuestionsAreNotTwelveNewCalculationFacts": true,
+  "newCalculatedEvidence": 0,
+  "newRuntimeImports": 0,
+  "newScores": 0,
+  "newWeights": 0,
+  "connectedToRuntime": false,
+  "approvedForCustomer": false,
+  "bindingImplemented": false,
+  "sourceStatus": "repository checked; three historical transcriptions read; modern conditional research not empirical",
+  "remainingGaps": [
+    "dedicated three/four-layer formation and strength verdict unsupported",
+    "year-level annualStemRelations cannot be transplanted before Ipchun",
+    "natal-only/ambiguous transit rules remain held",
+    "unselected valid segments are not all realized in current prose",
+    "full source collation and empirical validation not performed",
+    "binding/selection/allocation/prose integration intentionally not implemented"
+  ],
+  "observedBooks": 11,
+  "observedRejectedCases": 1,
+  "observedMonthCount": 132,
+  "observedCaseSummaries": [
+    {
+      "caseId": "A",
+      "selectedYear": 2026,
+      "totalSegments": 24,
+      "branchSparseFocusMonths": []
+    },
+    {
+      "caseId": "B",
+      "selectedYear": 2026,
+      "totalSegments": 24,
+      "branchSparseFocusMonths": [
+        8
+      ]
+    },
+    {
+      "caseId": "C",
+      "selectedYear": 2026,
+      "totalSegments": 24,
+      "branchSparseFocusMonths": []
+    },
+    {
+      "caseId": "D",
+      "selectedYear": 2026,
+      "totalSegments": 24,
+      "branchSparseFocusMonths": []
+    },
+    {
+      "caseId": "E",
+      "selectedYear": 2026,
+      "totalSegments": 24,
+      "branchSparseFocusMonths": []
+    },
+    {
+      "caseId": "F",
+      "selectedYear": 2026,
+      "totalSegments": 24,
+      "branchSparseFocusMonths": []
+    },
+    {
+      "caseId": "PAST",
+      "selectedYear": 2024,
+      "totalSegments": 24,
+      "branchSparseFocusMonths": []
+    },
+    {
+      "caseId": "FUTURE_OFFLINE",
+      "selectedYear": 2028,
+      "totalSegments": 25,
+      "branchSparseFocusMonths": []
+    },
+    {
+      "caseId": "EXACT_DAYUN",
+      "selectedYear": 2026,
+      "totalSegments": 25,
+      "branchSparseFocusMonths": [
+        5
+      ]
+    },
+    {
+      "caseId": "RANGE_DAYUN",
+      "selectedYear": 2027,
+      "totalSegments": 26,
+      "branchSparseFocusMonths": []
+    },
+    {
+      "caseId": "H_STUDENT",
+      "selectedYear": 2026,
+      "totalSegments": 24,
+      "branchSparseFocusMonths": [
+        11
+      ]
+    }
+  ],
+  "newRegistryRecords": 1792,
+  "authoredConditionalStudies": 109,
+  "referenceViews": 1634,
+  "metadataDesignAndRejectedRecords": 49,
+  "informationDiversityRows": 132,
+  "referenceViewsNotIndependentNewKnowledge": true,
+  "newCalculatedFacts": 0,
+  "newCustomerApprovedClaims": 0,
+  "temporalApplicability": {
+    "review actual annual/monthly scope and exact time intersection; no automatic composite": 372,
+    "withhold_rejected": 14,
+    "withhold_unsupported": 20,
+    "withhold_unverified": 4
+  },
+  "validation": {
+    "newTestPasses": 3591,
+    "newFailures": 0,
+    "knownFailures": 39,
+    "additionalBaselineFailures": 6,
+    "existingFailures": 45,
+    "typescript": 0,
+    "lint": "PASS",
+    "build": "PASS",
+    "diffCheck": "PASS",
+    "previewImplementation": "READY exact SHA 97f257475eb10979329d69040abbdc19d35b8712"
+  }
+}

@@ -1,0 +1,2296 @@
+{
+  "types": 16,
+  "strengthRows": 32,
+  "riskRows": 16,
+  "sourceIdentityIsNotActualChildFact": true,
+  "rows": [
+    {
+      "mbtiType": "INTJ",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "teach_how_to_think",
+          "field": "plainKo",
+          "sourceKey": "825fd4e9a742a121464b",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/INTJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "teach_how_to_think",
+            "recordSha256": "7a2ac8f68f5c4ec00e92e7ea96198596d17698ff5b4918ca4f4b39c0a4dc314a",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "fieldHash": "96e3ad90cf483e1647fea0a3f11b3eba5844d5e89258629627cd5a32c611390c",
+          "sourceNode": {
+            "id": "mbti:INTJ:traits:parenting:teach_how_to_think:plainKo",
+            "mbtiType": "INTJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:teach_how_to_think:plainKo",
+            "value": "INTJ 부모는 아이에게 무엇을 생각하라고 강요하기보다 어떻게 생각해야 하는지를 가르치려 한다. 비판적 사고와 문제 해결 능력을 중요한 자산으로 본다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "부모 역할을 선택한다면, 답을 알려주는 것보다 스스로 생각할 방법을 함께 찾는 데 마음을 쓸 수 있습니다.",
+            "바로 정답을 고쳐주기보다 어떤 방법을 써봤는지 듣고 다음에 확인할 질문 하나를 남기면, 독립적인 판단을 연습할 자리가 생깁니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "independence_with_responsibility",
+          "field": "positiveUse",
+          "sourceKey": "1e8d35a08d19b366bdd8",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/INTJ.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "independence_with_responsibility",
+            "recordSha256": "23d64080cf001c4668b45eeb6c07ed320a3083e2dbbeae82a13581689f4adc84",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "fieldHash": "8afb142bde95a6dbfc76c39667764216c6b2f2c89d65cd2bf5e7741531cc0337",
+          "sourceNode": {
+            "id": "mbti:INTJ:traits:parenting:independence_with_responsibility:positiveUse",
+            "mbtiType": "INTJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:independence_with_responsibility:positiveUse",
+            "value": "자립심, 자기관리, 장기 목표 설정을 키운다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "자립을 중요하게 여기는 태도는 해야 할 일을 작게 나누고 스스로 마무리하도록 돕는 데 쓰기 좋습니다.",
+            "처음부터 전부 맡기기보다 해낼 수 있는 범위를 정하고 끝난 뒤 함께 돌아보면, 자유를 주는 일과 책임을 배우는 일이 이어집니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "teach_how_to_think",
+          "field": "risk",
+          "sourceKey": "825fd4e9a742a121464b",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/INTJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "teach_how_to_think",
+            "recordSha256": "7a2ac8f68f5c4ec00e92e7ea96198596d17698ff5b4918ca4f4b39c0a4dc314a",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "fieldHash": "835f907483147e3c05979536ee2f5b45b5e6b93bcd3812a7e813d404226301e9",
+          "sourceNode": {
+            "id": "mbti:INTJ:traits:parenting:teach_how_to_think:risk",
+            "mbtiType": "INTJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:teach_how_to_think:risk",
+            "value": "어린 아이에게도 지나치게 어른스러운 사고 수준을 기대할 수 있다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "스스로 생각하게 돕는 마음이 강해질수록, 아이가 아직 설명할 수 없는 감정까지 논리로 정리해야 한다고 기대할 수 있습니다.",
+            "실수한 이유를 묻는 자리에서 답을 못한다는 사실을 노력 부족으로 보면, 생각하는 방법을 가르치려던 대화가 평가처럼 느껴질 수 있습니다.",
+            "먼저 속상했던 마음을 받아주고 생각할 질문은 하나씩 나누면, 독립적인 판단을 돕는 힘에 아이가 따라올 시간이 생깁니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "INTP",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "open_patient_parent",
+          "field": "plainKo",
+          "sourceKey": "96124cd17e5740ab238f",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/INTP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "open_patient_parent",
+            "recordSha256": "de18c5915be64f1d9b48976ae5fb00843278653b2b6215fe1ea505901b53710e",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "fieldHash": "3e2afd6fc7c70d879ad460e27e3006f5e96d68265f2efd22115e28194c89a5fd",
+          "sourceNode": {
+            "id": "mbti:INTP:traits:parenting:open_patient_parent:plainKo",
+            "mbtiType": "INTP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:open_patient_parent:plainKo",
+            "value": "INTP 부모는 아이를 있는 그대로 받아들이는 인내심 있는 부모가 될 수 있다. 아이의 질문에 성실히 답하고 생각과 마음을 넓히도록 돕는다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "양육을 선택한다면, 낯선 질문을 막기보다 스스로 탐색하도록 기다려주는 어른이 되고 싶을 수 있습니다.",
+            "당장 쓸모를 설명하지 못하는 관심도 안전한 범위에서 해보게 두면, 어른의 답을 맞히는 일과 직접 알아가는 일이 구분됩니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "answering_child_questions",
+          "field": "positiveUse",
+          "sourceKey": "43161eed254c850e342b",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/INTP.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "answering_child_questions",
+            "recordSha256": "eea208b46302133eb6f69e9ddf59fbe92a2c13fc19b466c375b4c557bd2e3c8e",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "fieldHash": "b5073d98e9826685c1607bb6868778a7f2a54e9509af721f976539a5763db760",
+          "sourceNode": {
+            "id": "mbti:INTP:traits:parenting:answering_child_questions:positiveUse",
+            "mbtiType": "INTP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:answering_child_questions:positiveUse",
+            "value": "학습 호기심과 논리적 사고를 자극한다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "궁금한 것을 같이 살펴보는 태도는 모르는 일을 부끄러워하지 않고 물어볼 분위기를 만드는 장점이 됩니다.",
+            "모르는 답은 함께 찾아보고 알아낸 것을 다시 설명해보게 하면, 질문이 끝없는 설명을 듣는 시간으로만 남지 않습니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "open_patient_parent",
+          "field": "risk",
+          "sourceKey": "96124cd17e5740ab238f",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/INTP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "open_patient_parent",
+            "recordSha256": "de18c5915be64f1d9b48976ae5fb00843278653b2b6215fe1ea505901b53710e",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "fieldHash": "710cff078bc86888f911cc9d38b6475121bf6760361714b098cd0530de0bd42d",
+          "sourceNode": {
+            "id": "mbti:INTP:traits:parenting:open_patient_parent:risk",
+            "mbtiType": "INTP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:open_patient_parent:risk",
+            "value": "일상 루틴과 생활 규칙을 세밀하게 관리하는 데는 소홀할 수 있다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "질문과 탐색을 자유롭게 두려는 마음이 크면, 반복되는 생활의 약속은 덜 중요한 일로 뒤로 갈 수 있습니다.",
+            "그날의 관심만 따라 하루가 달라지면 쉬는 때와 해야 할 일을 아이가 예측하기 어려워, 자유롭게 시도할 기반도 흔들릴 수 있습니다.",
+            "꼭 반복할 생활의 순서는 간단히 남기고 그 안의 탐색은 열어두면, 호기심과 예측 가능한 돌봄을 함께 마련하기 좋습니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "ENTJ",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "serious_responsible_parent",
+          "field": "plainKo",
+          "sourceKey": "41f807794a6c25d13e93",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ENTJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "serious_responsible_parent",
+            "recordSha256": "5a6586ae3f0af76c131020c9d76d8bd1939dfa46b0eb25c8ba6c8ab4c3042044",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "fieldHash": "01f6452796358b1f86ec95e2c65c3d0f46d9cb38523b4c2e832c98421b7cc13b",
+          "sourceNode": {
+            "id": "mbti:ENTJ:traits:parenting:serious_responsible_parent:plainKo",
+            "mbtiType": "ENTJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:serious_responsible_parent:plainKo",
+            "value": "부모 역할을 도전으로 받아들이고 진지하고 책임감 있게 수행한다. 자녀와 가정을 통제하며 일관적이고 합리적인 훈육을 통해 순종을 이끌어내려 한다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "부모 역할을 맡는다면, 필요한 준비와 생활의 기준을 진지하게 세우는 쪽에 힘을 쓸 수 있습니다.",
+            "규칙을 알려줄 때 지켜야 할 이유와 어른도 지킬 몫을 함께 말하면, 분명한 기준이 일방적인 명령으로만 남지 않습니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "child_success_projection",
+          "field": "positiveUse",
+          "sourceKey": "46eb373ed8de497e1ba3",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ENTJ.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "child_success_projection",
+            "recordSha256": "a6723c12f1459badd486df675e9d47dfcbb66582711f720f36530285756c47cc",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "fieldHash": "dbaed86c6d80cc2359f66cf1d4ff1f5048246c0684240eb25f8ad11f1bc51b4c",
+          "sourceNode": {
+            "id": "mbti:ENTJ:traits:parenting:child_success_projection:positiveUse",
+            "mbtiType": "ENTJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:child_success_projection:positiveUse",
+            "value": "자녀의 잠재력을 높게 보고 도전과 자기계발을 적극적으로 지원한다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "성장 가능성을 높게 보고 도전할 기회를 마련하는 태도는 양육에서 활용할 수 있는 강점입니다.",
+            "결과를 대신 정하기보다 해보고 싶은 목표를 먼저 듣고 필요한 연습을 함께 고르면, 높은 기대가 아이 자신의 도전을 돕는 방향으로 쓰입니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "serious_responsible_parent",
+          "field": "risk",
+          "sourceKey": "41f807794a6c25d13e93",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ENTJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "serious_responsible_parent",
+            "recordSha256": "5a6586ae3f0af76c131020c9d76d8bd1939dfa46b0eb25c8ba6c8ab4c3042044",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "fieldHash": "260c8bd84d6f9954ae790031f052afeeef1110a1eb83aa16d20c1b8c0d9e82bd",
+          "sourceNode": {
+            "id": "mbti:ENTJ:traits:parenting:serious_responsible_parent:risk",
+            "mbtiType": "ENTJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:serious_responsible_parent:risk",
+            "value": "아이의 감정과 발달 속도를 기준 미달로만 해석한다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "책임 있게 키우려는 의지가 강할수록, 아이가 아직 해내기 어려운 일을 기준에 못 미친 결과로 먼저 볼 수 있습니다.",
+            "마음이 힘들어 멈춘 순간에도 노력이나 능력부터 따지면, 아이는 도움을 청하는 일이 다시 시험받는 일처럼 느껴질 수 있습니다.",
+            "지금 가능한 단계와 감정을 먼저 듣고 다음 도전을 함께 고르면, 높은 기대를 포기하지 않고도 아이의 성장 속도에 맞출 수 있습니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "ENTP",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "free_range_parenting",
+          "field": "plainKo",
+          "sourceKey": "1ff3e720872ec12c58db",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ENTP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "free_range_parenting",
+            "recordSha256": "1cdcbb33a8ff4573dbf1ea3ebe2c8b7a0f3d0b9b1b9a00626e648a01707507b6",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "fieldHash": "5201ba5207fb786b60f373a8bc55e6e191ee0972b801b6d48e9814c5a515e311",
+          "sourceNode": {
+            "id": "mbti:ENTP:traits:parenting:free_range_parenting:plainKo",
+            "mbtiType": "ENTP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:free_range_parenting:plainKo",
+            "value": "ENTP 부모는 자녀를 과하게 보호하거나 통제하기보다 스스로 경험하고 판단하게 두는 편이다. 아이가 세상을 넓게 보고 질문하도록 자유를 준다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "양육을 선택한다면, 직접 해보고 배울 기회를 열어주려는 태도가 나타날 수 있습니다.",
+            "위험을 미리 막을 부분과 직접 시도할 부분을 나누면, 모든 시행착오를 대신 없애지 않고도 탐색을 도울 수 있습니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "intellectual_parent",
+          "field": "positiveUse",
+          "sourceKey": "9e14ddceb99de8f8c245",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ENTP.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "intellectual_parent",
+            "recordSha256": "215767da3c83401d59252c25f97afec5b4fa69aee4afd24398b2c24ce7ad5997",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "fieldHash": "e9fd6bc3a1b77791889abf84d1137425da12dd1599b46fd2fe3f92b34aee9982",
+          "sourceNode": {
+            "id": "mbti:ENTP:traits:parenting:intellectual_parent:positiveUse",
+            "mbtiType": "ENTP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:intellectual_parent:positiveUse",
+            "value": "자녀의 사고력, 말하기, 탐구심을 키우는 데 좋다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "서로 다른 답을 이야기하는 즐거움은 질문하고 자기 생각을 말할 자리를 만드는 데 쓰기 좋습니다.",
+            "어른이 논쟁에서 이기는 것보다 왜 그런 답을 골랐는지 듣는 데 시간을 쓰면, 대화가 사고를 연습하는 자리가 됩니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "free_range_parenting",
+          "field": "risk",
+          "sourceKey": "1ff3e720872ec12c58db",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ENTP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "free_range_parenting",
+            "recordSha256": "1cdcbb33a8ff4573dbf1ea3ebe2c8b7a0f3d0b9b1b9a00626e648a01707507b6",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "fieldHash": "ee9acee0b0a4668e68e8ede7c66a97e745edca1a1193e4ea27a25e282e16d44b",
+          "sourceNode": {
+            "id": "mbti:ENTP:traits:parenting:free_range_parenting:risk",
+            "mbtiType": "ENTP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:free_range_parenting:risk",
+            "value": "구조가 부족하면 아이가 안정적인 규칙과 반복 훈련을 놓칠 수 있다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "직접 해보며 배울 기회를 주고 싶을수록, 일정하게 반복해야 할 규칙은 답답한 제한처럼 느껴질 수 있습니다.",
+            "새로운 놀이와 질문은 많은데 정리와 쉬는 순서가 매번 달라지면, 아이가 자유를 쓰는 데 필요한 자기관리의 기반이 약해질 수 있습니다.",
+            "안전과 생활의 기본 약속은 반복하고 방법은 고르게 두면, 경험을 넓히는 힘이 일관된 돌봄 안에서 살아나기 좋습니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "INFJ",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "free_thinking_home",
+          "field": "plainKo",
+          "sourceKey": "89f7385eacb614219d5c",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/INFJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "free_thinking_home",
+            "recordSha256": "61881e1f59fc615449cf7b9559ae0c343d983a010a8f922dcce9926ad677efb4",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "fieldHash": "55c2df65fa724aea32d5b45866674d07d7764fa528065ccdc8d9c0f546ae03e0",
+          "sourceNode": {
+            "id": "mbti:INFJ:traits:parenting:free_thinking_home:plainKo",
+            "mbtiType": "INFJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:free_thinking_home:plainKo",
+            "value": "INFJ 부모는 집안 분위기를 자유롭게 만들고 아이가 의견과 생각을 펼칠 수 있도록 환경을 조성한다. 책과 대화, 다양한 주제가 자연스럽게 있는 집을 만들기 쉽다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "부모 역할을 선택한다면, 정해진 답을 따르기보다 스스로 궁금해하고 의견을 갖도록 돕고 싶을 수 있습니다.",
+            "다른 생각에도 이유를 물으며 들어주면, 어른과 의견이 달라도 이야기할 수 있는 기반이 생깁니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "values_and_manners_parent",
+          "field": "positiveUse",
+          "sourceKey": "d617367bfe748e497cb9",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/INFJ.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "values_and_manners_parent",
+            "recordSha256": "c275e3e3e37868e1bb3c1ecda03ce96f2e21b26182a5d242109404180aac5c26",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "fieldHash": "59365524ec9950bbf7061e94899db98d478a447be8c8ac9bd9d90794d856b48f",
+          "sourceNode": {
+            "id": "mbti:INFJ:traits:parenting:values_and_manners_parent:positiveUse",
+            "mbtiType": "INFJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:values_and_manners_parent:positiveUse",
+            "value": "아이에게 예의, 가치 판단, 자기 성찰을 가르친다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "행동의 의미와 다른 사람에게 미치는 영향을 함께 살피는 태도는 예의와 가치 판단을 가르치는 데 쓰기 좋습니다.",
+            "왜 그렇게 해야 하는지 작은 생활 장면으로 설명하면, 좋은 사람이어야 한다는 큰 요구보다 실제로 해볼 행동이 남습니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "free_thinking_home",
+          "field": "risk",
+          "sourceKey": "89f7385eacb614219d5c",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/INFJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "free_thinking_home",
+            "recordSha256": "61881e1f59fc615449cf7b9559ae0c343d983a010a8f922dcce9926ad677efb4",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "fieldHash": "6a87919dc2aa5a32bcd20578217d1e3d7730dbac8e642b914c3be4582affbf38",
+          "sourceNode": {
+            "id": "mbti:INFJ:traits:parenting:free_thinking_home:risk",
+            "mbtiType": "INFJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:free_thinking_home:risk",
+            "value": "아이가 감당하기 어려운 수준의 가치관과 통찰을 너무 빨리 주입할 수 있다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "생각을 넓혀주고 싶은 마음이 커지면, 아이가 자기 경험으로 받아들이기 전에 어른의 큰 의미를 먼저 설명할 수 있습니다.",
+            "단순한 질문에 긴 가치관의 답이 돌아오면, 아이는 자기 궁금증보다 부모가 원하는 생각을 알아맞히는 데 힘을 쓸 수 있습니다.",
+            "아이의 질문에 지금 필요한 만큼 답하고 직접 떠올린 이유를 들어보면, 통찰을 전하는 일과 아이의 생각이 자라는 일을 나누기 좋습니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "INFP",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "autonomy_parent",
+          "field": "plainKo",
+          "sourceKey": "10d4177606458102491b",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/INFP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "autonomy_parent",
+            "recordSha256": "a65ddd52d6d456055f3c4295e83288d06957129fe8c5d65307521ca586732fb0",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "fieldHash": "f3212cf84616273c3a88abb6f42c03ce921b91bfb565a478a5cea83093588423",
+          "sourceNode": {
+            "id": "mbti:INFP:traits:parenting:autonomy_parent:plainKo",
+            "mbtiType": "INFP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:autonomy_parent:plainKo",
+            "value": "INFP 부모는 원리·원칙적이고 엄격한 부모보다 자녀의 자율성을 지향한다. 아이가 자기 의견과 자아를 형성하고 흥미 있는 일을 찾을 권리를 주고 싶어 한다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "양육을 선택한다면, 남과 똑같이 해내는 것보다 자기 취향과 의견을 가질 권리를 지켜주고 싶을 수 있습니다.",
+            "옷이나 놀이처럼 골라도 되는 일을 두 가지 정도로 열어두면, 존중한다는 마음이 직접 선택해보는 경험으로 옮겨갑니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "moral_parent",
+          "field": "positiveUse",
+          "sourceKey": "8340bca1aae1ff5a8c69",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/INFP.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "moral_parent",
+            "recordSha256": "4fbc70750d4ef8b61d61afef6585b4c4aee919fc4d20795b2e0fb8a794675959",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "fieldHash": "9eaf77f122b9bfbf6895ee888e2f7949df48262792d7c9c5827895767c8f7b20",
+          "sourceNode": {
+            "id": "mbti:INFP:traits:parenting:moral_parent:positiveUse",
+            "mbtiType": "INFP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:moral_parent:positiveUse",
+            "value": "아이에게 공감, 배려, 책임, 약자에 대한 감수성을 심어준다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "공감과 정직을 중요하게 여기는 마음은 양육에서 다른 사람의 처지를 생각해볼 기회를 만드는 강점이 됩니다.",
+            "누군가에게 피해를 준 상황이라면 나쁜 아이라고 규정하기보다 어떤 행동이 누구를 힘들게 했고 무엇을 되돌릴지 함께 짚는 편이 좋습니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "autonomy_parent",
+          "field": "risk",
+          "sourceKey": "10d4177606458102491b",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/INFP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "autonomy_parent",
+            "recordSha256": "a65ddd52d6d456055f3c4295e83288d06957129fe8c5d65307521ca586732fb0",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "fieldHash": "6045aba6ea30200453a6660a680596657184f55f3eb9792beaabd244d8f4decc",
+          "sourceNode": {
+            "id": "mbti:INFP:traits:parenting:autonomy_parent:risk",
+            "mbtiType": "INFP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:autonomy_parent:risk",
+            "value": "일상 규칙과 생활 틀을 세우는 데 어려움을 겪을 수 있다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "개성을 지켜주려는 마음이 크면, 싫어하는 일을 반복하게 하는 규칙을 사랑과 반대되는 것으로 느끼기 쉽습니다.",
+            "해야 할 일이 날마다 협상의 대상이 되면 아이도 무엇을 지켜야 하는지 알기 어려워, 자율적인 선택이 가능한 범위가 흐려질 수 있습니다.",
+            "선택할 수 있는 부분과 함께 지킬 기본 약속을 나누면, 자기표현을 존중하면서도 일상의 책임을 배울 자리를 남길 수 있습니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "ENFJ",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "free_but_guiding_parent",
+          "field": "plainKo",
+          "sourceKey": "f35dd297210677e9198d",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ENFJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "free_but_guiding_parent",
+            "recordSha256": "666711bd854c3435018452e50916eac3b93c19d1dfbee264731380e79377759b",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "fieldHash": "affef32b33b524ea665f8407889df9f7e45076e6d9c2bf048313e7e3d9de1bbd",
+          "sourceNode": {
+            "id": "mbti:ENFJ:traits:parenting:free_but_guiding_parent:plainKo",
+            "mbtiType": "ENFJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:free_but_guiding_parent:plainKo",
+            "value": "ENFJ 부모는 집안 분위기를 자유롭게 만들고 자녀가 의견을 펼치도록 돕는다. 동시에 예의와 사람을 대하는 태도는 반드시 가르쳐야 한다고 본다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "부모 역할을 맡는다면, 자기 생각을 표현하도록 격려하면서 사람들과 지낼 기준도 알려주고 싶을 수 있습니다.",
+            "모임에 참여할 방법을 함께 고르되 낯선 취향까지 틀렸다고 고치지 않으면, 자기표현과 배려를 함께 연습할 수 있습니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "emotional_anchor_parent",
+          "field": "positiveUse",
+          "sourceKey": "cb9ee7415c4e3089e7f9",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ENFJ.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "emotional_anchor_parent",
+            "recordSha256": "843672eaa659db97651c14c919387fc3c45aca0f296be526fa29f0e802da1af3",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "fieldHash": "17acf9df97a8cd487a09c23316b4df9a60e9d1db5a1a668692b16e930c5849c6",
+          "sourceNode": {
+            "id": "mbti:ENFJ:traits:parenting:emotional_anchor_parent:positiveUse",
+            "mbtiType": "ENFJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:emotional_anchor_parent:positiveUse",
+            "value": "자녀가 고민을 말하고 감정을 표현하는 환경을 만든다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "고민을 말할 때 곁에서 반응해주는 태도는 감정을 숨기지 않아도 되는 분위기를 만드는 데 쓰기 좋습니다.",
+            "조언부터 길게 주기보다 지금은 들어주길 원하는지 물으면, 도움을 청할 때마다 해결 과제를 받아야 한다는 부담을 덜 수 있습니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "free_but_guiding_parent",
+          "field": "risk",
+          "sourceKey": "f35dd297210677e9198d",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ENFJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "free_but_guiding_parent",
+            "recordSha256": "666711bd854c3435018452e50916eac3b93c19d1dfbee264731380e79377759b",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "fieldHash": "78e7c08ffc51481a646b9d6a4e527e86f6ae92f80da8b234cb13b7ab5673e120",
+          "sourceNode": {
+            "id": "mbti:ENFJ:traits:parenting:free_but_guiding_parent:risk",
+            "mbtiType": "ENFJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:free_but_guiding_parent:risk",
+            "value": "좋은 사람으로 키우려는 마음이 강해지면 아이의 독특함을 교정하려 들 수 있다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "다른 사람을 잘 대하는 아이로 키우려는 마음이 강하면, 낯선 취향이나 조용한 반응까지 고쳐야 할 문제로 볼 수 있습니다.",
+            "인사나 참여를 가르치는 자리에서도 아이가 불편한 이유를 듣지 않으면, 좋은 태도를 배우는 일이 자기 모습을 숨기는 연습이 될 수 있습니다.",
+            "남에게 해를 주는 행동과 단지 다른 취향을 구분해 들으면, 예의를 알려주는 힘이 아이의 독특함도 지켜줄 수 있습니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "ENFP",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "understanding_parent",
+          "field": "plainKo",
+          "sourceKey": "ea9519a12540624c4823",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ENFP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "understanding_parent",
+            "recordSha256": "7f3f82485314ac22c0b3ad9fa7cb5ac83b5def4ec94e78548dadefdd854972d7",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "fieldHash": "dcb2a9eab9a69921970ab093187ffbb8c7cbc955c0cfabb64a8c53bad3915efe",
+          "sourceNode": {
+            "id": "mbti:ENFP:traits:parenting:understanding_parent:plainKo",
+            "mbtiType": "ENFP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:understanding_parent:plainKo",
+            "value": "ENFP 부모는 평소 자녀를 이해하려고 하고, 아이의 언어와 표정에 민감하다. 아이가 느끼는 즐거움과 행복을 중요한 양육 기준으로 삼는다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "양육을 선택한다면, 말과 표정에서 기분을 살피며 자기 생각을 편하게 꺼내도록 돕는 데 관심을 둘 수 있습니다.",
+            "즐거웠던 일뿐 아니라 하기 싫었던 일도 들을 자리를 남기면, 밝은 반응만 보여야 사랑받는다는 부담을 줄이기 좋습니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "affectionate_support_parent",
+          "field": "positiveUse",
+          "sourceKey": "caa9d371cf4fbf58585d",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ENFP.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "affectionate_support_parent",
+            "recordSha256": "612e523625d11d7bb0db34baaa4e23c93d680c27f9c5a7df2bc58f4f1e8c2c5f",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "fieldHash": "ff5bf28f37d872364e0307cb72c3cee279edcdbbf765322d0489d7803a788215",
+          "sourceNode": {
+            "id": "mbti:ENFP:traits:parenting:affectionate_support_parent:positiveUse",
+            "mbtiType": "ENFP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:affectionate_support_parent:positiveUse",
+            "value": "자녀의 자신감, 정서 안정, 자기표현을 돕는다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "애정을 알아듣게 표현하고 시도를 응원하는 태도는 양육에서 활용할 수 있는 힘입니다.",
+            "잘된 결과만 크게 반기기보다 용기 내어 시작한 부분도 구체적으로 알아주면, 다시 해보고 싶을 이유를 남길 수 있습니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "understanding_parent",
+          "field": "risk",
+          "sourceKey": "ea9519a12540624c4823",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ENFP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "understanding_parent",
+            "recordSha256": "7f3f82485314ac22c0b3ad9fa7cb5ac83b5def4ec94e78548dadefdd854972d7",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "fieldHash": "b492c0ed9643c874f294b6b89b3910a44c35bcb813af7756bd6e300859f4824c",
+          "sourceNode": {
+            "id": "mbti:ENFP:traits:parenting:understanding_parent:risk",
+            "mbtiType": "ENFP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:understanding_parent:risk",
+            "value": "학업과 규칙의 중요성을 지나치게 낮게 보면 장기 습관 형성이 약해진다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "즐겁고 편하게 자라길 바라는 마음이 크면, 당장 지루해하는 반복을 중단시키는 쪽으로 도움을 줄 수 있습니다.",
+            "하기 싫다는 표정만으로 기본 약속이 매번 바뀌면, 흥미가 없는 날에도 이어갈 작은 습관을 아이가 배울 기회가 줄어들 수 있습니다.",
+            "감정은 받아주되 끝낼 작은 분량과 쉬는 때를 같이 정하면, 이해해주는 태도가 책임을 배우는 일과도 함께 갈 수 있습니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "ISTJ",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "diligent_responsible_parent",
+          "field": "plainKo",
+          "sourceKey": "63aa4d746575e86c7743",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ISTJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "diligent_responsible_parent",
+            "recordSha256": "76a18fecdcb889f6e5fabbc60000b7094aa7f6ad88134c0b1cee465d072f2186",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "fieldHash": "54104d304b51de8071ece2b8209db283bf00f1ecdb2733df4442be397bd05fb2",
+          "sourceNode": {
+            "id": "mbti:ISTJ:traits:parenting:diligent_responsible_parent:plainKo",
+            "mbtiType": "ISTJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:diligent_responsible_parent:plainKo",
+            "value": "부모가 되면 근면, 성실, 노력, 책임을 자녀에게 강하게 요구한다. 자녀도 안정적이고 확실한 미래를 만들기를 바란다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "부모 역할을 선택한다면, 필요한 준비를 꾸준히 하고 예측 가능한 생활을 마련하는 데 힘을 쓸 수 있습니다.",
+            "매일 해야 할 순서를 간단히 보이게 두면, 어른이 그때마다 재촉하지 않아도 무엇부터 할지 알아갈 기반이 됩니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "practical_success_parenting",
+          "field": "positiveUse",
+          "sourceKey": "d34d165d4966692ca6cb",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ISTJ.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "practical_success_parenting",
+            "recordSha256": "d6bb019d1160d32132fc5f2dfffc625f72da5ed40d19465185daaa561de7f126",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "fieldHash": "2c972851159dfc5381b8e9b3d94c920a1c4756d7ff27f65c1e4113ca6611cc50",
+          "sourceNode": {
+            "id": "mbti:ISTJ:traits:parenting:practical_success_parenting:positiveUse",
+            "mbtiType": "ISTJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:practical_success_parenting:positiveUse",
+            "value": "현실적인 진로 설계와 장기 준비를 도와준다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "현실적으로 필요한 준비를 차근히 돕는 태도는 먼 목표를 작은 연습으로 나누는 장점이 됩니다.",
+            "진로의 답을 먼저 정하기보다 관심 있는 일을 해볼 준비와 비용을 함께 살피면, 책임감이 선택의 범위를 넓히는 데 쓰입니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "diligent_responsible_parent",
+          "field": "risk",
+          "sourceKey": "63aa4d746575e86c7743",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ISTJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "diligent_responsible_parent",
+            "recordSha256": "76a18fecdcb889f6e5fabbc60000b7094aa7f6ad88134c0b1cee465d072f2186",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "fieldHash": "4b28090061251b9a59697f0852696d0ac541a0f8ce10555b12869e8e3bab2f78",
+          "sourceNode": {
+            "id": "mbti:ISTJ:traits:parenting:diligent_responsible_parent:risk",
+            "mbtiType": "ISTJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:diligent_responsible_parent:risk",
+            "value": "아이의 재능, 놀이, 친구 관계보다 입시와 취업만 강조하면 정서적 거리감이 생긴다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "안정적인 미래를 마련해주고 싶은 마음이 크면, 당장 평가할 수 있는 공부와 준비가 다른 경험보다 앞설 수 있습니다.",
+            "잘 놀았던 이야기나 친구 관계를 성적과 진로에 도움이 되는지로만 듣는다면, 아이의 하루 중 많은 부분이 중요하지 않은 이야기로 밀릴 수 있습니다.",
+            "해야 할 준비와 별개로 아이가 즐긴 일도 진지하게 들어주면, 책임감 있는 돌봄이 마음을 나눌 자리까지 지킬 수 있습니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "ISFJ",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "structured_home_parent",
+          "field": "plainKo",
+          "sourceKey": "f9709a2aaf92c814cb26",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ISFJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "structured_home_parent",
+            "recordSha256": "f08a47b00493ddeb285c15b56a323222609b741a86e2db581f17385d9ad62aee",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "fieldHash": "74dccb5574c1795a457b1f6edf39f3a26ddb93705d2ed598ebb3e4e7f8b828e2",
+          "sourceNode": {
+            "id": "mbti:ISFJ:traits:parenting:structured_home_parent:plainKo",
+            "mbtiType": "ISFJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:structured_home_parent:plainKo",
+            "value": "부모가 되면 아이에게 안정적인 루틴과 예측 가능한 환경을 만들어주려 한다. 가족 행사와 생활 규칙을 잘 관리해 아이가 안정감을 느끼게 한다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "양육을 선택한다면, 생활의 순서와 돌봄을 일정하게 이어가며 안심할 기반을 만들고 싶을 수 있습니다.",
+            "쉬는 때와 해야 할 일을 짧게 알려두면, 어른의 기분에 따라 달라지는 지시보다 예측하기 쉬운 기준이 남습니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "protective_overinvolvement",
+          "field": "positiveUse",
+          "sourceKey": "3888aa2e5b9fb179e218",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ISFJ.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "protective_overinvolvement",
+            "recordSha256": "dc0c1e013a05e5c0e40733001cce34939a4b20d9d1103fb5b2a86ebd5964dbfe",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "fieldHash": "27cd578e6ad13ef3a78bec33e7237b6615a03c87c406531c28440560cf583b26",
+          "sourceNode": {
+            "id": "mbti:ISFJ:traits:parenting:protective_overinvolvement:positiveUse",
+            "mbtiType": "ISFJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:protective_overinvolvement:positiveUse",
+            "value": "위험을 미리 줄이고 아이의 생활 기반을 안정시킨다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "위험을 미리 살피고 생활에 필요한 것을 준비하는 태도는 양육에서 활용할 수 있는 강점입니다.",
+            "대신 결정할 위험한 일과 곁에서 지켜볼 작은 시도를 나누면, 보호하는 능력이 스스로 해볼 기회도 지켜줄 수 있습니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "structured_home_parent",
+          "field": "risk",
+          "sourceKey": "f9709a2aaf92c814cb26",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ISFJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "structured_home_parent",
+            "recordSha256": "f08a47b00493ddeb285c15b56a323222609b741a86e2db581f17385d9ad62aee",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "fieldHash": "a8917d5c8046943c49552ab0db0e3994e015825f162dfab1620bd4b8e19b5b03",
+          "sourceNode": {
+            "id": "mbti:ISFJ:traits:parenting:structured_home_parent:risk",
+            "mbtiType": "ISFJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:structured_home_parent:risk",
+            "value": "아이의 즉흥성이나 개성을 불안하게 느껴 지나치게 조정할 수 있다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "예측 가능한 생활을 만들어주려는 마음이 강할수록, 계획에 없던 관심이나 다른 방법을 불안정한 신호로 볼 수 있습니다.",
+            "스스로 해보겠다는 말을 평소 순서를 흐트러뜨리는 행동으로 먼저 받으면, 아이에게는 안전한 일상도 자기 선택이 어려운 틀로 느껴질 수 있습니다.",
+            "안전을 지킬 범위는 남기되 작은 순서와 취향은 골라보게 하면, 안정감 안에서 아이의 개성을 알아갈 여유가 생깁니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "ESTJ",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "traditional_parenting",
+          "field": "plainKo",
+          "sourceKey": "f5fb513fa5e97583225b",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ESTJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "traditional_parenting",
+            "recordSha256": "35a59020e3618b6618785b36990a9a1fe79d46f57b09e764e1532c7abcaaf7d4",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "fieldHash": "ce63bfe41e2e9dec6a48e9b70e8e72c9925ea6f8b8027c35b11500cb0e9178b3",
+          "sourceNode": {
+            "id": "mbti:ESTJ:traits:parenting:traditional_parenting:plainKo",
+            "mbtiType": "ESTJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:traditional_parenting:plainKo",
+            "value": "ESTJ 부모는 자녀에게 전통적인 규칙과 책임을 가르치려 한다. 명절, 의식, 문화적 행사 같은 전통을 통해 가족 관계를 형성하는 면도 강하다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "부모 역할을 맡는다면, 예절과 책임을 생활 속에서 분명히 알려주려는 태도가 나타날 수 있습니다.",
+            "함께 쓴 것을 정리하는 일처럼 책임을 행동으로 설명하면, 말을 잘 듣는지만 평가하지 않고 공동생활의 이유를 가르칠 수 있습니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "clear_rules_parent",
+          "field": "positiveUse",
+          "sourceKey": "d2987b5b1ad27d7ff7dc",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ESTJ.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "clear_rules_parent",
+            "recordSha256": "0fd85f2e003f987d3f0f47a0d036981e2a9ebfb4ffb9a6f8d091c46899616fb8",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "fieldHash": "b7081a367e328d82a8db8eaf3d2eebb77033c4ea417c913418628789c34acd15",
+          "sourceNode": {
+            "id": "mbti:ESTJ:traits:parenting:clear_rules_parent:positiveUse",
+            "mbtiType": "ESTJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:clear_rules_parent:positiveUse",
+            "value": "자녀가 예측 가능한 규칙 안에서 안정감을 느끼도록 돕는다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "지킬 규칙을 명확하게 전하는 힘은 무엇을 기대하는지 알아보기 쉬운 환경을 만드는 장점입니다.",
+            "규칙을 바꿀 때에도 이유를 미리 알리고 어른에게 적용할 약속을 남기면, 기준의 분명함이 공정함과 이어집니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "traditional_parenting",
+          "field": "risk",
+          "sourceKey": "f5fb513fa5e97583225b",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ESTJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "traditional_parenting",
+            "recordSha256": "35a59020e3618b6618785b36990a9a1fe79d46f57b09e764e1532c7abcaaf7d4",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "fieldHash": "b5462ce71c94beb62ae4f11320220ad7fe133c43ad2851d5e534434d630cc3c2",
+          "sourceNode": {
+            "id": "mbti:ESTJ:traits:parenting:traditional_parenting:risk",
+            "mbtiType": "ESTJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:traditional_parenting:risk",
+            "value": "세대 감각과 자녀의 개성을 낡은 기준으로 누르려 할 수 있다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "책임과 예절을 알려주려는 마음이 강하면, 오래 지켜온 방법이라는 이유로 지금도 같은 기준을 요구할 수 있습니다.",
+            "달라진 환경에서 다른 방식을 시도하는 일을 버릇없음으로만 보면, 생활을 가르치려던 말이 아이의 설명을 막는 권위로 남을 수 있습니다.",
+            "지켜야 할 책임과 시대에 따라 달라질 방법을 나누어 이야기하면, 분명한 기준을 유지하면서도 새로운 사정을 들을 수 있습니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "ESFJ",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "protective_parenting",
+          "field": "plainKo",
+          "sourceKey": "59af620140e08fabfd3e",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ESFJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "protective_parenting",
+            "recordSha256": "f4e45f288abfdba67cffe04425089fa89c2c39b5e4d2d2c4fbf1d75a2d3575f7",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "fieldHash": "8f946706be96cfaa01574364a3d41a057e63cd620b4025d37e017e6375112380",
+          "sourceNode": {
+            "id": "mbti:ESFJ:traits:parenting:protective_parenting:plainKo",
+            "mbtiType": "ESFJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:protective_parenting:plainKo",
+            "value": "부모가 되면 자녀의 안전과 안정에 깊이 몰두한다. 학교, 친구, 생활 습관, 진로까지 챙기며 아이가 흔들리지 않도록 보호하려 한다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "양육을 선택한다면, 꾸준한 돌봄과 함께하는 일정을 통해 가족 안에서 편히 기대도록 돕고 싶을 수 있습니다.",
+            "공동으로 할 일과 각자 고를 일을 구분하면, 소속감을 주는 생활 안에서도 자기 취향을 가질 자리가 남습니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "authority_obedience_pressure",
+          "field": "positiveUse",
+          "sourceKey": "175e245779bd56301359",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ESFJ.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "authority_obedience_pressure",
+            "recordSha256": "40eb2e3e7cd8aa05d91320e90da21ce77f353068660901459636ebea529dda29",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "fieldHash": "d0ee1662643a405a9708cadbda93066bc6c1483b4df511b1215d6626ee895e10",
+          "sourceNode": {
+            "id": "mbti:ESFJ:traits:parenting:authority_obedience_pressure:positiveUse",
+            "mbtiType": "ESFJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:authority_obedience_pressure:positiveUse",
+            "value": "기본 예절, 사회 규칙, 공동생활 책임을 분명히 가르친다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "예절과 공동의 책임을 알려주려는 마음은 함께 지내는 사람을 배려하는 행동을 가르치는 데 쓰기 좋습니다.",
+            "인사를 하지 않은 이유를 듣고 가능한 표현을 함께 고르면, 무조건 따르라는 요구보다 실제로 해볼 방법이 생깁니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "protective_parenting",
+          "field": "risk",
+          "sourceKey": "59af620140e08fabfd3e",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ESFJ.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "protective_parenting",
+            "recordSha256": "f4e45f288abfdba67cffe04425089fa89c2c39b5e4d2d2c4fbf1d75a2d3575f7",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "fieldHash": "295173ccbf1eeff5f25a19b82ebb9d76d7762a5dd5be4aae348015a78bd56f19",
+          "sourceNode": {
+            "id": "mbti:ESFJ:traits:parenting:protective_parenting:risk",
+            "mbtiType": "ESFJ",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:protective_parenting:risk",
+            "value": "보호가 통제로 변하면 자녀의 독립성과 선택권을 약하게 만든다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "안전하게 지켜주려는 마음이 크면, 미리 알아보고 정해주는 일이 아이가 직접 고를 기회를 앞설 수 있습니다.",
+            "친구나 활동의 작은 선택까지 걱정 때문에 대신하면, 보호받고 있어도 자기 판단을 믿어볼 경험은 줄어들 수 있습니다.",
+            "실제 위험과 부모가 낯설게 느낀 부분을 나누고 안전한 선택부터 맡겨보면, 돌봄과 자립을 함께 지키기 좋습니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "ISTP",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "open_non_controlling_parent",
+          "field": "plainKo",
+          "sourceKey": "63356dc69674fed27d17",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ISTP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "open_non_controlling_parent",
+            "recordSha256": "d50bc653976cb3ffdfdb1da30979d209e4ad8642f909fe0c1c3a43a17b58de7c",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "fieldHash": "aee753c75dabb9ed55187aadc98d9ab14935e603cabc3ad5bde8f69a31216de1",
+          "sourceNode": {
+            "id": "mbti:ISTP:traits:parenting:open_non_controlling_parent:plainKo",
+            "mbtiType": "ISTP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:open_non_controlling_parent:plainKo",
+            "value": "부모가 되면 아이를 과하게 통제하기보다 스스로 탐험하게 두려는 쪽이다. 아이가 자기 행동에 책임지는 것을 중요하게 본다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "부모 역할을 선택한다면, 사소한 일까지 통제하기보다 직접 경험하고 판단할 자리를 주고 싶을 수 있습니다.",
+            "안전하게 해볼 수 있는 범위와 도움을 청할 방법을 남기면, 간섭을 줄이는 일이 혼자 감당하라는 뜻으로 전해지지 않습니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "privacy_respecting_parent",
+          "field": "positiveUse",
+          "sourceKey": "5d03c8ad1c25fc371767",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ISTP.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "privacy_respecting_parent",
+            "recordSha256": "79177137d218c02d0ef93abd0bd143d2d1244f8ec61d59632c1400e1acd484fe",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "fieldHash": "466cc7eda3fc953d6331f4332ca409a5db322acd817baa775c53cbec2fdf7bef",
+          "sourceNode": {
+            "id": "mbti:ISTP:traits:parenting:privacy_respecting_parent:positiveUse",
+            "mbtiType": "ISTP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:privacy_respecting_parent:positiveUse",
+            "value": "자녀가 독립성과 자기 취향을 키우는 데 도움이 된다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "개인의 취향과 사생활을 존중하는 태도는 스스로 고를 몫을 마련하는 데 쓰기 좋습니다.",
+            "모든 이야기를 보고하게 하기보다 필요한 도움을 요청할 때 진지하게 응답하면, 독립성과 어른을 찾을 신뢰를 함께 지킬 수 있습니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "open_non_controlling_parent",
+          "field": "risk",
+          "sourceKey": "63356dc69674fed27d17",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ISTP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "open_non_controlling_parent",
+            "recordSha256": "d50bc653976cb3ffdfdb1da30979d209e4ad8642f909fe0c1c3a43a17b58de7c",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "fieldHash": "045baa15ac717bba6dc2947e1dc60302cbe94954c014d5b35c2e041a3935a104",
+          "sourceNode": {
+            "id": "mbti:ISTP:traits:parenting:open_non_controlling_parent:risk",
+            "mbtiType": "ISTP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:open_non_controlling_parent:risk",
+            "value": "아이의 감정적 불안이나 섬세한 요구를 늦게 알아차릴 수 있다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "직접 경험하게 두려는 태도가 강하면, 눈에 보이는 문제는 없어도 필요한 감정적 도움을 늦게 알아차릴 수 있습니다.",
+            "아이가 혼자 할 수 있다는 이유로 물어보는 시간을 줄이면, 해결할 방법보다 마음을 기대고 싶었던 순간이 지나갈 수 있습니다.",
+            "간섭하지 않는 것과 안부를 묻지 않는 것을 나누면, 자기 선택을 존중하면서도 필요할 때 찾을 수 있는 어른으로 곁에 있기 좋습니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "ISFP",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "free_respecting_parent",
+          "field": "plainKo",
+          "sourceKey": "966217efb16b624b6ba4",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ISFP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "free_respecting_parent",
+            "recordSha256": "57de886d1b9fc0a76308e8486cc34512d5e67f380a2b8eb69ec86e634e19deb9",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "fieldHash": "b1134bf9f7183fa82f99506d256fe8904be9bef4d911c6b7652f5a64a7c376ed",
+          "sourceNode": {
+            "id": "mbti:ISFP:traits:parenting:free_respecting_parent:plainKo",
+            "mbtiType": "ISFP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:free_respecting_parent:plainKo",
+            "value": "부모가 되면 아이를 있는 그대로 존중하고 개방적인 양육을 하려 한다. 아이가 직접 경험하며 느끼고 배우는 방식을 선호한다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "양육을 선택한다면, 남과 다른 취향도 있는 그대로 받아주며 직접 느껴볼 기회를 주고 싶을 수 있습니다.",
+            "재미있었던 감각이나 고른 이유를 물으면, 어른의 취향을 따르는 일과 자기 관심을 알아가는 일이 구분됩니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "friend_like_parent",
+          "field": "positiveUse",
+          "sourceKey": "ed69b25578fd3caf28c9",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ISFP.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "friend_like_parent",
+            "recordSha256": "2efe0693680cab479cc0de55c7192d32e6e45500ffc02dcee4831ff35faa198e",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "fieldHash": "e1c3f4250ed61833a6fd5324e03de13d897f3a6cad9b2d7d6b4d4195bf8b8b83",
+          "sourceNode": {
+            "id": "mbti:ISFP:traits:parenting:friend_like_parent:positiveUse",
+            "mbtiType": "ISFP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:friend_like_parent:positiveUse",
+            "value": "아이와 정서적으로 가깝고 편안한 관계를 만든다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "편안하게 함께하며 정서적인 거리를 좁히는 태도는 어려운 일도 이야기할 분위기를 만드는 장점입니다.",
+            "같이 즐기는 시간과 어른이 한계를 알려야 할 순간을 나누면, 가까운 관계를 유지하면서 필요한 책임도 가르칠 수 있습니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "free_respecting_parent",
+          "field": "risk",
+          "sourceKey": "966217efb16b624b6ba4",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ISFP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "free_respecting_parent",
+            "recordSha256": "57de886d1b9fc0a76308e8486cc34512d5e67f380a2b8eb69ec86e634e19deb9",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "fieldHash": "e27de9a67e4d27399b055d3468ec15f0d080aea3bbd0969cce2ac82254859490",
+          "sourceNode": {
+            "id": "mbti:ISFP:traits:parenting:free_respecting_parent:risk",
+            "mbtiType": "ISFP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:free_respecting_parent:risk",
+            "value": "필요한 기준까지 느슨해지면 아이가 한계를 배우기 어렵다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "있는 그대로 받아주고 싶은 마음이 크면, 싫어할 말을 해야 하는 순간까지 부드럽게 넘기려 할 수 있습니다.",
+            "잘못된 행동을 멈춰야 할 때도 분위기부터 지키면, 아이는 어떤 한계가 실제로 유지되는지 알아보기 어려워질 수 있습니다.",
+            "감정은 허락하되 멈춰야 할 행동은 짧게 알려주면, 편안한 관계를 해치지 않고도 필요한 기준을 전할 수 있습니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "ESTP",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "free_parenting",
+          "field": "plainKo",
+          "sourceKey": "d3c9927f687f4f03b5fe",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ESTP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "free_parenting",
+            "recordSha256": "8d507aa490a7b71702efd8015efedcfad9e1a54b1f88d9be9e4f3ad3daa81e28",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "fieldHash": "1c8efdd608fe2eea289a6beadc7ee8e7c0020890cd1f0c05af94666e57de0082",
+          "sourceNode": {
+            "id": "mbti:ESTP:traits:parenting:free_parenting:plainKo",
+            "mbtiType": "ESTP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:free_parenting:plainKo",
+            "value": "ESTP 부모는 자녀를 과하게 통제하기보다 개방적이고 자유롭게 키우는 편이다. 자녀가 직접 경험하고 인생을 즐기며 살도록 장려한다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "부모 역할을 맡는다면, 직접 움직이고 해보면서 생활을 배우도록 돕는 데 관심을 둘 수 있습니다.",
+            "작은 심부름처럼 선택과 결과가 이어지는 일을 안전하게 맡기면, 자유를 주는 일이 생활의 자신감을 연습하는 자리가 됩니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "adventure_parent",
+          "field": "positiveUse",
+          "sourceKey": "15008cf38f6d07145c5e",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ESTP.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "adventure_parent",
+            "recordSha256": "4394cb48040649dfcf8e2247c0c50374a747511b9d485e702b65c38f3be815d8",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "fieldHash": "8451c482592090ac9bcf2072639240ceee0eed6d8449a24dc54ece569cab18e4",
+          "sourceNode": {
+            "id": "mbti:ESTP:traits:parenting:adventure_parent:positiveUse",
+            "mbtiType": "ESTP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:adventure_parent:positiveUse",
+            "value": "여행, 스포츠, 체험 활동을 통해 자녀의 자신감과 적응력을 키운다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "새로운 활동에 함께 참여하는 힘은 익숙한 곳 밖에서 시도할 기회를 마련하는 장점이 됩니다.",
+            "활동의 수준과 멈출 때를 함께 정하면, 어른이 즐긴 경험을 강요하지 않고 해볼 용기를 도울 수 있습니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "free_parenting",
+          "field": "risk",
+          "sourceKey": "d3c9927f687f4f03b5fe",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ESTP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "free_parenting",
+            "recordSha256": "8d507aa490a7b71702efd8015efedcfad9e1a54b1f88d9be9e4f3ad3daa81e28",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "fieldHash": "94253ad151ed739bd803195a8859759ce38f3cc7fdd000278c2c97c73035d235",
+          "sourceNode": {
+            "id": "mbti:ESTP:traits:parenting:free_parenting:risk",
+            "mbtiType": "ESTP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:free_parenting:risk",
+            "value": "규칙과 장기 습관 형성이 부족하면 자녀가 생활 구조를 놓칠 수 있다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "직접 경험하며 배우게 두는 힘이 클수록, 재미가 적어도 반복해야 할 생활의 일은 뒤로 갈 수 있습니다.",
+            "그날의 활동에 따라 기본 약속이 자주 바뀌면, 아이에게 많은 기회가 있어도 스스로 하루를 이어갈 습관이 남기 어려울 수 있습니다.",
+            "작은 반복을 끝낸 뒤 새 경험을 고르게 하면, 활동을 지원하는 장점이 자기관리의 기반과 함께 자라기 좋습니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    },
+    {
+      "mbtiType": "ESFP",
+      "strengthRows": 2,
+      "riskRows": 1,
+      "sources": [
+        {
+          "role": "STRENGTH",
+          "traitId": "open_parenting",
+          "field": "plainKo",
+          "sourceKey": "521df13816e5f763badb",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ESFP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "open_parenting",
+            "recordSha256": "9c56581269d9cf16517f1ce34b62485058c0b3024a78e41d8307afcad1d8e688",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/plainKo",
+          "fileHash": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "fieldHash": "9bbea911326cc3c866dc37e71ed4ce6d5881cf00b77bfbf58622d949af7b9922",
+          "sourceNode": {
+            "id": "mbti:ESFP:traits:parenting:open_parenting:plainKo",
+            "mbtiType": "ESFP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "stablePath": "traits:parenting:open_parenting:plainKo",
+            "value": "부모가 되면 통제를 많이 하지 않고 개방적인 양육을 하는 편이다. 아이가 즐거움을 경험하고 사회적으로 활발하게 자라도록 돕는다.",
+            "classification": "SCORING_SEMANTIC",
+            "reason": "REVIEWED_PRIMARY_STATEMENT",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": true,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "양육을 선택한다면, 즐겁고 열린 경험을 나누며 사람들과 편하게 어울릴 기회를 주고 싶을 수 있습니다.",
+            "즐거움의 크기보다 스스로 참여할 방법을 고르게 하면, 밝게 반응하지 않는 날도 자기 모습으로 함께할 자리가 남습니다."
+          ]
+        },
+        {
+          "role": "STRENGTH",
+          "traitId": "travel_parenting",
+          "field": "positiveUse",
+          "sourceKey": "1efb6b1d8473aa2560f6",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ESFP.json",
+            "pointer": "/traits/parenting/1",
+            "originalId": "travel_parenting",
+            "recordSha256": "fc7321ad97f99612022ae91476ae6982c00b995291b8cb862452f025797c06ab",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/1/positiveUse",
+          "fileHash": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "fieldHash": "5b84aac4c287392e70217742ee87115f9bb702dedadf13c2d759dd9cbd9e0d62",
+          "sourceNode": {
+            "id": "mbti:ESFP:traits:parenting:travel_parenting:positiveUse",
+            "mbtiType": "ESFP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/1/positiveUse",
+            "stablePath": "traits:parenting:travel_parenting:positiveUse",
+            "value": "아이의 사회성, 감각, 적응력, 추억을 풍성하게 만든다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "DOWNSTREAM_APPLICATION",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "함께 새로운 장소와 활동을 경험하는 태도는 관심의 폭을 넓힐 기회를 마련하는 데 쓰기 좋습니다.",
+            "일정을 다 채우기보다 기억에 남은 것과 다시 해보고 싶은 것을 물으면, 많은 경험을 주는 일과 자기 관심을 찾는 일이 이어집니다."
+          ]
+        },
+        {
+          "role": "RISK",
+          "traitId": "open_parenting",
+          "field": "risk",
+          "sourceKey": "521df13816e5f763badb",
+          "originalLocator": {
+            "file": "docs/product/mbti/source/ESFP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "open_parenting",
+            "recordSha256": "9c56581269d9cf16517f1ce34b62485058c0b3024a78e41d8307afcad1d8e688",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "fieldPointer": "/traits/parenting/0/risk",
+          "fileHash": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "fieldHash": "eb95cd805842e919497bc1643f302a2d073e3797e1d50b103f44c0e52f3e4563",
+          "sourceNode": {
+            "id": "mbti:ESFP:traits:parenting:open_parenting:risk",
+            "mbtiType": "ESFP",
+            "sourceDomain": "PARENTS",
+            "sourcePath": "/traits/parenting/0/risk",
+            "stablePath": "traits:parenting:open_parenting:risk",
+            "value": "규칙과 책임 훈련이 부족하면 아이의 생활 구조가 약해진다.",
+            "classification": "REFERENCE_ONLY",
+            "reason": "CONDITIONAL_SHADOW_REFERENCE",
+            "sourceCoverage": "direct"
+          },
+          "sourceDomain": "PARENTS",
+          "ownership": "adult_own_parenting_only",
+          "verified": true,
+          "semanticScoringEligible": false,
+          "applicationReviewRequired": true,
+          "customerApproved": false,
+          "requiredActualChildFacts": [
+            "existence",
+            "age",
+            "development",
+            "safety"
+          ],
+          "originalApplication": [
+            "즐겁고 자유로운 경험을 주고 싶은 마음이 크면, 하고 싶지 않은 일도 책임져야 하는 순간을 미룰 수 있습니다.",
+            "반가운 반응이 나오는 활동만 남기면, 지루해도 끝낼 일과 다른 사람에게 지킬 약속을 배울 시간이 줄어들 수 있습니다.",
+            "놀이의 선택은 열어두되 끝낸 뒤 맡을 일도 함께 정하면, 밝은 돌봄과 책임을 가르치는 일이 서로 반대가 되지 않습니다."
+          ]
+        }
+      ],
+      "originalRowsPreserved": true,
+      "allSourcesVerified": true,
+      "childFactsProvided": false,
+      "childDomainTransferAllowed": false,
+      "missingAgePolicy": "연령·발달·안전은 별도 실제 정보. 미입력 시 특정 연령의 능력·성과 요구 보류.",
+      "customerApproved": false
+    }
+  ]
+}

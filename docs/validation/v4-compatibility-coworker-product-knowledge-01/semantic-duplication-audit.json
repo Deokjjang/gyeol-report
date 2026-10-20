@@ -1,0 +1,248 @@
+{
+  "materials": 172,
+  "uniqueCore": 172,
+  "uniqueScenes": 172,
+  "uniqueFactBomb": 172,
+  "uniqueTwist": 172,
+  "priorMaterialsCompared": 312,
+  "normalizedIdenticalPriorPairs": [],
+  "legitimateReuse": [
+    {
+      "id": "cwpr:reuse:0",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapters": [
+        "CH01",
+        "CH04"
+      ],
+      "sharedMeaning": "핵심 접점과 실제 공동 기여",
+      "differentInformation": [
+        "협업 착수 전에 두 사람이 어떤 다른 정보를 필요로 할 수 있는가?",
+        "비슷한 선호를 검토·목적·실행·지원의 서로 다른 작업에 어떻게 쓰는가?"
+      ],
+      "reuseCondition": "같은 person ID·owner·task·실제 root·방향의 호환 의미만 회수. 선행 actuallyDisplayed 필수. 뷰·역할·회수는 독립 사실 아님.",
+      "duplicateRisk": "같은 조언의 이름·직업·관계명 교체 또는 질문 없이 모든 갈등을 대화로 환원",
+      "independentFactsAdded": 0
+    },
+    {
+      "id": "cwpr:reuse:1",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapters": [
+        "CH02",
+        "CH03"
+      ],
+      "sharedMeaning": "A/B 독립 업무 방식",
+      "differentInformation": [
+        "A는 기록·시연·모델·목적 중 무엇부터 이해할 수 있는가?",
+        "B는 현재 관찰·가치·사례·정리를 어떤 다른 정보로 가져오는가?"
+      ],
+      "reuseCondition": "같은 person ID·owner·task·실제 root·방향의 호환 의미만 회수. 선행 actuallyDisplayed 필수. 뷰·역할·회수는 독립 사실 아님.",
+      "duplicateRisk": "같은 조언의 이름·직업·관계명 교체 또는 질문 없이 모든 갈등을 대화로 환원",
+      "independentFactsAdded": 0
+    },
+    {
+      "id": "cwpr:reuse:2",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapters": [
+        "CH04",
+        "CH09"
+      ],
+      "sharedMeaning": "긍정 발견과 실제 도입 회수",
+      "differentInformation": [
+        "비슷한 선호를 검토·목적·실행·지원의 서로 다른 작업에 어떻게 쓰는가?",
+        "실제로 도입된 공통 기준·지원·이견·학습만 어떻게 지속하는가?"
+      ],
+      "reuseCondition": "같은 person ID·owner·task·실제 root·방향의 호환 의미만 회수. 선행 actuallyDisplayed 필수. 뷰·역할·회수는 독립 사실 아님.",
+      "duplicateRisk": "같은 조언의 이름·직업·관계명 교체 또는 질문 없이 모든 갈등을 대화로 환원",
+      "independentFactsAdded": 0
+    },
+    {
+      "id": "cwpr:reuse:3",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapters": [
+        "CH05",
+        "CH06"
+      ],
+      "sharedMeaning": "실제 수신자·원천·업무 질문의 역방향",
+      "differentInformation": [
+        "B 수신 기준 십성과 A의 제안이 어떤 다른 업무 질문을 만드는가?",
+        "A 수신 기준 십성과 B의 검토·중복·표현·절차·연결은 어떤 질문인가?"
+      ],
+      "reuseCondition": "같은 person ID·owner·task·실제 root·방향의 호환 의미만 회수. 선행 actuallyDisplayed 필수. 뷰·역할·회수는 독립 사실 아님.",
+      "duplicateRisk": "같은 조언의 이름·직업·관계명 교체 또는 질문 없이 모든 갈등을 대화로 환원",
+      "independentFactsAdded": 0
+    },
+    {
+      "id": "cwpr:reuse:4",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapters": [
+        "CH05",
+        "CH07"
+      ],
+      "sharedMeaning": "A의 기여와 B에게 남을 비용",
+      "differentInformation": [
+        "B 수신 기준 십성과 A의 제안이 어떤 다른 업무 질문을 만드는가?",
+        "분담·책임·완료·검토·의존 마감·우선순위에서 어떤 다른 공백이 있는가?"
+      ],
+      "reuseCondition": "같은 person ID·owner·task·실제 root·방향의 호환 의미만 회수. 선행 actuallyDisplayed 필수. 뷰·역할·회수는 독립 사실 아님.",
+      "duplicateRisk": "같은 조언의 이름·직업·관계명 교체 또는 질문 없이 모든 갈등을 대화로 환원",
+      "independentFactsAdded": 0
+    },
+    {
+      "id": "cwpr:reuse:5",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapters": [
+        "CH06",
+        "CH07"
+      ],
+      "sharedMeaning": "B의 다른 기여와 A의 수신 부담",
+      "differentInformation": [
+        "A 수신 기준 십성과 B의 검토·중복·표현·절차·연결은 어떤 질문인가?",
+        "분담·책임·완료·검토·의존 마감·우선순위에서 어떤 다른 공백이 있는가?"
+      ],
+      "reuseCondition": "같은 person ID·owner·task·실제 root·방향의 호환 의미만 회수. 선행 actuallyDisplayed 필수. 뷰·역할·회수는 독립 사실 아님.",
+      "duplicateRisk": "같은 조언의 이름·직업·관계명 교체 또는 질문 없이 모든 갈등을 대화로 환원",
+      "independentFactsAdded": 0
+    },
+    {
+      "id": "cwpr:reuse:6",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapters": [
+        "CH07",
+        "CH08"
+      ],
+      "sharedMeaning": "구체 업무 공백과 조정 절차",
+      "differentInformation": [
+        "분담·책임·완료·검토·의존 마감·우선순위에서 어떤 다른 공백이 있는가?",
+        "앞서 소개한 공백을 어떤 사실·필요·권한의 확인 절차로 바꾸는가?"
+      ],
+      "reuseCondition": "같은 person ID·owner·task·실제 root·방향의 호환 의미만 회수. 선행 actuallyDisplayed 필수. 뷰·역할·회수는 독립 사실 아님.",
+      "duplicateRisk": "같은 조언의 이름·직업·관계명 교체 또는 질문 없이 모든 갈등을 대화로 환원",
+      "independentFactsAdded": 0
+    },
+    {
+      "id": "cwpr:reuse:7",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapters": [
+        "CH08",
+        "CH09"
+      ],
+      "sharedMeaning": "확인 행동과 반복할 원칙",
+      "differentInformation": [
+        "앞서 소개한 공백을 어떤 사실·필요·권한의 확인 절차로 바꾸는가?",
+        "실제로 도입된 공통 기준·지원·이견·학습만 어떻게 지속하는가?"
+      ],
+      "reuseCondition": "같은 person ID·owner·task·실제 root·방향의 호환 의미만 회수. 선행 actuallyDisplayed 필수. 뷰·역할·회수는 독립 사실 아님.",
+      "duplicateRisk": "같은 조언의 이름·직업·관계명 교체 또는 질문 없이 모든 갈등을 대화로 환원",
+      "independentFactsAdded": 0
+    }
+  ],
+  "chapterComparisons": [
+    {
+      "left": "CH01",
+      "right": "CH04",
+      "judgment": "착수·원천·범위를 소개하는 핵심 지도와 구체적 공동 산출물의 작동 조건을 구별했다.",
+      "leftId": "cwpr:material:CH01.P1:standard-and-experiment",
+      "rightId": "cwpr:material:CH04.P2:idea-to-test",
+      "status": "editorial_reviewed_conditional_not_customer_approved"
+    },
+    {
+      "left": "CH02",
+      "right": "CH03",
+      "judgment": "A는 전례·시연·모델·목적에서 시작하고 B는 현재 관찰·가치·사례·정리로 독립 질문을 제시한다. 같은 의미는 차이를 만들지 않고 owner를 보존했다.",
+      "leftId": "cwpr:material:CH02.P1:a-verified-record",
+      "rightId": "cwpr:material:CH03.P1:b-current-observation",
+      "status": "editorial_reviewed_conditional_not_customer_approved"
+    },
+    {
+      "left": "CH04",
+      "right": "CH09",
+      "judgment": "좋은 가능성의 최초 도입과 실제 표시된 기여의 회수는 다르다. CH09에는 새 type/root를 도입하지 않는다.",
+      "leftId": "cwpr:material:CH04.P2:autonomy-and-continuity",
+      "rightId": "cwpr:material:CH09.P2:recall-handoff-interface",
+      "status": "editorial_reviewed_conditional_not_customer_approved"
+    },
+    {
+      "left": "CH05",
+      "right": "CH06",
+      "judgment": "발신·수신자를 실제로 뒤집고 두 방향 모두10십성 조건을 요구한다. AB의 초안 자극과 BA의 독립 검토는 업무 질문이 다르며 같은 십성 자체에는 가짜 차이를 만들지 않는다.",
+      "leftId": "cwpr:material:CH05.P1:ab-peer-draft",
+      "rightId": "cwpr:material:CH06.P1:ba-independent-second-view",
+      "status": "editorial_reviewed_conditional_not_customer_approved"
+    },
+    {
+      "left": "CH05",
+      "right": "CH07",
+      "judgment": "방향별 A의 검토 비용과 공동 검토 깊이 공백은 초점이 다르다. 한쪽 비용을 전부 상대 성격의 탓으로 쓰지 않는다.",
+      "leftId": "cwpr:material:CH05.P3:ab-review-scope-creep",
+      "rightId": "cwpr:material:CH07.P1:review-depth-gap",
+      "status": "editorial_reviewed_conditional_not_customer_approved"
+    },
+    {
+      "left": "CH06",
+      "right": "CH07",
+      "judgment": "B의 재개 제안이 A에게 도착하는 비용과 양쪽 우선순위의 권한 공백은 다른 조건이다.",
+      "leftId": "cwpr:material:CH06.P3:ba-late-change-after-start",
+      "rightId": "cwpr:material:CH07.P1:priority-conflict",
+      "status": "editorial_reviewed_conditional_not_customer_approved"
+    },
+    {
+      "left": "CH07",
+      "right": "CH08",
+      "judgment": "인계 누락의 원인과 상태·수락·담당 복귀의 실제 조정 절차를 구별했다. CH08 전 후보는 선행 의미 주소를 가진다.",
+      "leftId": "cwpr:material:CH07.P3:handoff-omission",
+      "rightId": "cwpr:material:CH08.P2:a-handoff-status",
+      "status": "editorial_reviewed_conditional_not_customer_approved"
+    },
+    {
+      "left": "CH08",
+      "right": "CH09",
+      "judgment": "A가 인계 상태를 적는 구체 행동과 다음 인계에 재사용할 발신·수신 원칙을 구별했다. 실제 표시 이력이 없으면 회수하지 않는다.",
+      "leftId": "cwpr:material:CH08.P2:a-handoff-status",
+      "rightId": "cwpr:material:CH09.P3:recall-handoff-responsibility",
+      "status": "editorial_reviewed_conditional_not_customer_approved"
+    }
+  ],
+  "stringUniquenessIsNotQualityProof": true,
+  "noAllPopulationQualityPass": true,
+  "reviewMethod": "36개 질문,172개 역할 기여·긍정/위험/팩폭/반전·업무 단계·결과·행동·반례를 직접 작성·대조. 동일 의미의 층위 재사용은 새 fact로 세지 않음."
+}

@@ -1,0 +1,6732 @@
+{
+  "legacyKnowledge": {
+    "file": "src/lib/report-knowledge/fusionKnowledgeBase.ts",
+    "exportName": "FUSION_KNOWLEDGE_BASE",
+    "records": [
+      {
+        "id": "fusion_wealth_strong_entj_achievement",
+        "index": 0,
+        "recordSha256": "85ae7532fd3ab17d7499286b8330b2e907a4c8b2fd88a8fab3baeeda31527de4",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_pian_cai:strong",
+              "ten_god_zheng_cai:strong",
+              "pattern_jaeda_sinyak"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_pian_cai",
+          "ten_god_zheng_cai",
+          "pattern_jaeda_sinyak"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_gapsin_entj_leadership_control",
+        "index": 1,
+        "recordSha256": "067c04a3e67fb199cc0309e0f10bfe72d11a071bc05275b4c89b76bb42fddafe",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "day_pillar_gapsin"
+            ],
+            [
+              "day_master_gabmok"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "day_pillar_gapsin",
+          "day_master_gabmok"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_qi_sha_entj_responsibility",
+        "index": 2,
+        "recordSha256": "ff2b822237ca67cca22cfea94602ec210c985d097b55a7108959a71c5b47d937",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_qi_sha"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_qi_sha"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_zheng_guan_entj_authority",
+        "index": 3,
+        "recordSha256": "e3ad6c9ea0c3ae84b41c87c1ae456ae5732a1eb8574f454f667080e59824bfda",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_guan"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_zheng_guan"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_hyeonchim_entj_direct_speech",
+        "index": 4,
+        "recordSha256": "f0a048275de9310b20c57cea12836e3d31638e01b7c88bbd3514f8831d5a67fb",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_hyeonchim"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_hyeonchim"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_water_no_resource_entj_dryness",
+        "index": 5,
+        "recordSha256": "3387926a8d52da3ed9d868901c6395e9f689701178cfb9de589198080b0a120d",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "compensation",
+        "required": {
+          "allOf": [
+            [
+              "element_water_missing"
+            ],
+            [
+              "pattern_no_resource"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_water_missing",
+          "pattern_no_resource"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_water_missing_entj_emotional_dryness",
+        "index": 6,
+        "recordSha256": "2924bdf77fbfb2115f50eb94893bc7b2d8207b24aa439f3a2e9853a2f93c9a3f",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "element_water_missing"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_water_missing"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_fire_no_output_entj_expression_contrast",
+        "index": 7,
+        "recordSha256": "b8d4fd998f18a5a9d83e116eebfb14dbdd047788b5401cdacb75b4c291aa05e1",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "element_fire_missing",
+              "pattern_no_output"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_fire_missing",
+          "pattern_no_output"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_no_output_entj_self_promotion",
+        "index": 8,
+        "recordSha256": "fe353e96b53b7683f07187a7ed041b1c31a9926cc98b8084426ca494a305d5f5",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "pattern_no_output"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "pattern_no_output"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_jaeda_sinyak_entj_workaholic",
+        "index": 9,
+        "recordSha256": "ceb534492a46a2df80b3930391e6618a1c931be8277c356c0546d8afc1243df9",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "pattern_jaeda_sinyak"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "pattern_jaeda_sinyak"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_earth_excess_entj_reality",
+        "index": 10,
+        "recordSha256": "3e07d1660d92f927414a97831cbfa4d931bfeaad2ce951fbac4ae6c2df5f3efd",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "element_earth_excess"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_earth_excess"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_metal_strong_entj_judgment",
+        "index": 11,
+        "recordSha256": "21b8167580c107eda99ffdd3fb23e92eeecc5a8498fb54895e55eb1d9660c832",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "element_metal_strong"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_metal_strong"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_gabmok_gapsin_entj_command",
+        "index": 12,
+        "recordSha256": "bdcca14c1e5d97f2288ea4db2f65b02acf8356d094767be2367ed32acbc28e14",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "day_pillar_gapsin"
+            ],
+            [
+              "day_master_gabmok"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "day_master_gabmok",
+          "day_pillar_gapsin"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_gwan_entj_leadership_work",
+        "index": 13,
+        "recordSha256": "c1aa30632088b468f5a1fe6f51fc3820c12967ccae2504ca1f27705631ae7b54",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_qi_sha",
+              "ten_god_zheng_guan"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_qi_sha",
+          "ten_god_zheng_guan"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_hyeonchim_entj_strategy_work",
+        "index": 14,
+        "recordSha256": "05a2e87fdc0aa83885c989b50eab9a1d73af5b232e9db1f58079c70e51f4d426",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_hyeonchim"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_hyeonchim"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_water_missing_entj_burnout_work",
+        "index": 15,
+        "recordSha256": "68dc32dd159a6dc91a33347b111f39a0b3cf730035a1c8704f69cfc46550f108",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "compensation",
+        "required": {
+          "allOf": [
+            [
+              "element_water_missing"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_water_missing"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_wealth_entj_money_design",
+        "index": 16,
+        "recordSha256": "77c44a55f5ae2be3f44b30e4ff7cac515431ab9f977436953afbda7a1b901e5f",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_pian_cai"
+            ],
+            [
+              "ten_god_zheng_cai"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_pian_cai",
+          "ten_god_zheng_cai"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_jaeda_entj_money_risk",
+        "index": 17,
+        "recordSha256": "6b319c428c55f52cecc97f2da0e802557eba88ca1da9773b8fcdeb58836ddec1",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "pattern_jaeda_sinyak"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "pattern_jaeda_sinyak"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_jaego_entj_asset",
+        "index": 18,
+        "recordSha256": "811aa986fbd9856c79c0cbe82c460064c25c0970a6190212aa7fcf130bc565d7",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "gwiin_jaego",
+              "nobleman_jaego"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "gwiin_jaego",
+          "nobleman_jaego"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_hongyeom_entj_charisma",
+        "index": 19,
+        "recordSha256": "0656aee238520259771e1aaab4cd76306bcf5028de5e89960154cffe587f39b8",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_hongyeom"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_hongyeom"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_dohwa_entj_public_love",
+        "index": 20,
+        "recordSha256": "6518b4162de8005c6402dfb0c596bce23fbbd8930ba1d1d7005db1c1d06dc7f4",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_dohwa"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_dohwa"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_fire_missing_entj_love_expression",
+        "index": 21,
+        "recordSha256": "3ef8ae985a5c18034d593dbde1a6f37476afe74caa367045ddb4eada8cb1e74b",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "element_fire_missing"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_fire_missing"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_wealth_entj_love_realism",
+        "index": 22,
+        "recordSha256": "7d95c50e3b3e0fab3cb440cc4631e640bce676fd9cebff55a38d08a06a235a32",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_pian_cai:strong",
+              "ten_god_zheng_cai:strong"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_pian_cai",
+          "ten_god_zheng_cai"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_no_resource_entj_listening",
+        "index": 23,
+        "recordSha256": "867287cbb68e10314736a0cd676fc422c5f8fd3fd7833f24efb670fc59655e9b",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "compensation",
+        "required": {
+          "allOf": [
+            [
+              "pattern_no_resource"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "pattern_no_resource"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_gwan_entj_high_standard",
+        "index": 24,
+        "recordSha256": "bf38464bfe94951f03fd277bf01fe7de0c0329ae1cb4ba93ebc2b538f25e825a",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_qi_sha:strong",
+              "ten_god_zheng_guan:strong"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_qi_sha",
+          "ten_god_zheng_guan"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_bijie_entj_competition",
+        "index": 25,
+        "recordSha256": "7a388132d926847bedf88031b58571c2b3c0b7249e7cfd2a2ead0d43e3e14a92",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_bijian",
+              "ten_god_jie_cai"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_bijian",
+          "ten_god_jie_cai"
+        ],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_wood_nt_strategy",
+        "index": 26,
+        "recordSha256": "0e5c25b1264f3a9205d26ef17ae6011291cd5735255c9274f1d21998b5569b8e",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "element_wood",
+              "day_master_gabmok"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_wood",
+          "day_master_gabmok"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "INTP",
+          "ENTJ",
+          "ENTP"
+        ]
+      },
+      {
+        "id": "fusion_wood_missing_j_rigidity",
+        "index": 27,
+        "recordSha256": "846f2fb2cc2da13eb2ae56d1e253d96b660a6fc04e28d645a05e92cf35867fc3",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "element_wood_missing"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_wood_missing"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "ENTJ",
+          "INFJ",
+          "ENFJ",
+          "ISTJ",
+          "ESTJ",
+          "ISFJ",
+          "ESFJ"
+        ]
+      },
+      {
+        "id": "fusion_fire_e_expression",
+        "index": 28,
+        "recordSha256": "fe203ab8d8e40ad8ef1e3c82e8b8e563117584c0fae1fca58d13b288cd545da0",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "element_fire"
+            ],
+            [
+              "ten_god_shi_shen",
+              "ten_god_shang_guan"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_fire",
+          "ten_god_shi_shen",
+          "ten_god_shang_guan"
+        ],
+        "mbtiTypes": [
+          "ENTJ",
+          "ENTP",
+          "ENFJ",
+          "ENFP",
+          "ESTJ",
+          "ESFJ",
+          "ESTP",
+          "ESFP"
+        ]
+      },
+      {
+        "id": "fusion_fire_missing_e_expression_contrast",
+        "index": 29,
+        "recordSha256": "8f3ceb69ae9d00643c6eeba893969f41aa8c0bb3e992cab292b71388f801047d",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "element_fire_missing"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_fire_missing"
+        ],
+        "mbtiTypes": [
+          "ENTJ",
+          "ENTP",
+          "ENFJ",
+          "ENFP",
+          "ESTJ",
+          "ESFJ",
+          "ESTP",
+          "ESFP"
+        ]
+      },
+      {
+        "id": "fusion_earth_tj_asset",
+        "index": 30,
+        "recordSha256": "b78b92251c906b9e1176905daf9557ebf86ae6a13633df233bac2dc6bb4427d0",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "element_earth",
+              "element_earth_excess"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_earth",
+          "element_earth_excess"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "ENTJ",
+          "ISTJ",
+          "ESTJ"
+        ]
+      },
+      {
+        "id": "fusion_earth_excess_j_overload",
+        "index": 31,
+        "recordSha256": "817eec82ee18d1f2b9e074bdf21164d1d7ecccfc6e3882bef6f87e9c00fdacf6",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "element_earth_excess"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_earth_excess"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "ENTJ",
+          "INFJ",
+          "ENFJ",
+          "ISTJ",
+          "ESTJ",
+          "ISFJ",
+          "ESFJ"
+        ]
+      },
+      {
+        "id": "fusion_metal_t_precision",
+        "index": 32,
+        "recordSha256": "7335b7444f428148ce7199918c0583134a05dee2d845265f0a89d5c72a343df3",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "element_metal",
+              "element_metal_strong"
+            ],
+            [
+              "sinsal_hyeonchim"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_metal",
+          "element_metal_strong",
+          "sinsal_hyeonchim"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "INTP",
+          "ENTJ",
+          "ENTP",
+          "ISTJ",
+          "ISTP",
+          "ESTJ",
+          "ESTP"
+        ]
+      },
+      {
+        "id": "fusion_metal_excess_t_coldness",
+        "index": 33,
+        "recordSha256": "7c8b3125c1ea034dcaf044825658b42e2b8e3f586d7c610b855e463024fe83e2",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "element_metal_strong"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_metal_strong"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "INTP",
+          "ENTJ",
+          "ENTP",
+          "ISTJ",
+          "ISTP",
+          "ESTJ",
+          "ESTP"
+        ]
+      },
+      {
+        "id": "fusion_water_nf_inner_flow",
+        "index": 34,
+        "recordSha256": "74a0271e3f9e530e60985f2ecfc20d0c80ddec897248ff17403bf6a8b466265c",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "element_water"
+            ],
+            [
+              "ten_god_zheng_yin",
+              "ten_god_pian_yin"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_water",
+          "ten_god_zheng_yin",
+          "ten_god_pian_yin"
+        ],
+        "mbtiTypes": [
+          "INFJ",
+          "INFP",
+          "ENFJ",
+          "ENFP"
+        ]
+      },
+      {
+        "id": "fusion_water_missing_t_empathy_gap",
+        "index": 35,
+        "recordSha256": "8b780b4063a60c90e6d3001930a3436f88cc82dd406f2df6d97d902cdba02e8a",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "compensation",
+        "required": {
+          "allOf": [
+            [
+              "element_water_missing"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_water_missing",
+          "pattern_no_resource"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "INTP",
+          "ENTJ",
+          "ENTP",
+          "ISTJ",
+          "ISTP",
+          "ESTJ",
+          "ESTP"
+        ]
+      },
+      {
+        "id": "fusion_pian_cai_e_business",
+        "index": 36,
+        "recordSha256": "8150504ff253383452eae096efcb290676e84575e4a71a17ba0e5de7d3599085",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_pian_cai"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_pian_cai"
+        ],
+        "mbtiTypes": [
+          "ENTJ",
+          "ENTP",
+          "ESTP",
+          "ENFP"
+        ]
+      },
+      {
+        "id": "fusion_zheng_cai_sj_asset",
+        "index": 37,
+        "recordSha256": "c0735f162cf91f821da10d2ae4fef58b34348c37de23414851a41a7ae99c1fe0",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_cai"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_zheng_cai"
+        ],
+        "mbtiTypes": [
+          "ISTJ",
+          "ISFJ",
+          "ESTJ",
+          "ESFJ"
+        ]
+      },
+      {
+        "id": "fusion_qi_sha_tj_pressure_leadership",
+        "index": 38,
+        "recordSha256": "6afda8af62cf848a60a59ea22d2b08923a81fe1ff898ed18c79b18dcf530bc2f",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_qi_sha"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_qi_sha"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "ENTJ",
+          "ESTJ"
+        ]
+      },
+      {
+        "id": "fusion_zheng_guan_j_system",
+        "index": 39,
+        "recordSha256": "d05a733836a4328e6da8fd64cd9543adfa27b7e9eed9d145aeaa07cf360f5266",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_guan"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_zheng_guan"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "ENTJ",
+          "INFJ",
+          "ENFJ",
+          "ISTJ",
+          "ESTJ",
+          "ISFJ",
+          "ESFJ"
+        ]
+      },
+      {
+        "id": "fusion_shi_shen_fp_soft_expression",
+        "index": 40,
+        "recordSha256": "570d815cfd66b39372b7c8f1824400999ca19a15585780457887e4faf9ff0072",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_shi_shen"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_shi_shen"
+        ],
+        "mbtiTypes": [
+          "INFP",
+          "ENFP",
+          "ISFP",
+          "ESFP",
+          "ISFJ",
+          "ESFJ"
+        ]
+      },
+      {
+        "id": "fusion_shang_guan_np_critique",
+        "index": 41,
+        "recordSha256": "b024d4ee13dc281b5c040a4c48bce662f54b0deb126199434a7b6f490704d19a",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_shang_guan"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_shang_guan"
+        ],
+        "mbtiTypes": [
+          "INTP",
+          "ENTP",
+          "INFP",
+          "ENFP",
+          "ISTP",
+          "ESTP"
+        ]
+      },
+      {
+        "id": "fusion_zheng_yin_nf_recovery",
+        "index": 42,
+        "recordSha256": "a593c2df8fafd8b571e6bc6dba10c8427021dcc6dc6baa18a1b9b713b777aa0a",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "compensation",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_yin"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_zheng_yin"
+        ],
+        "mbtiTypes": [
+          "INFJ",
+          "INFP",
+          "ENFJ",
+          "ENFP"
+        ]
+      },
+      {
+        "id": "fusion_pian_yin_n_immersion",
+        "index": 43,
+        "recordSha256": "0250460f170573402aeadbb8170d4d3beefe4a1501fbf48dcf1687dbc985b662",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_pian_yin"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_pian_yin"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "INTP",
+          "INFJ",
+          "INFP",
+          "ENTP",
+          "ENFP"
+        ]
+      },
+      {
+        "id": "fusion_bijian_ej_self_assertion",
+        "index": 44,
+        "recordSha256": "238c09a362aa00f0f5ecaa8bbdc32d4c2bb5505a4f13ceb80f5d15e54d5d6348",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_bijian"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_bijian"
+        ],
+        "mbtiTypes": [
+          "ENTJ",
+          "ENFJ",
+          "ESTJ",
+          "ESFJ"
+        ]
+      },
+      {
+        "id": "fusion_jie_cai_ep_competition_risk",
+        "index": 45,
+        "recordSha256": "29458af8fb3578763886e98e33f2a946c195824ceff156cdb15c1f71135830cc",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "compensation",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_jie_cai"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_jie_cai"
+        ],
+        "mbtiTypes": [
+          "ENTJ",
+          "ENTP",
+          "ESTP",
+          "ENFP",
+          "ESFP"
+        ]
+      },
+      {
+        "id": "fusion_hyeonchim_t_precision",
+        "index": 46,
+        "recordSha256": "67e4ca1b59b6616808c4cf031c3e0c72383f7958378f6260efa4ceeef769ccdd",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_hyeonchim"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_hyeonchim"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "INTP",
+          "ENTJ",
+          "ENTP",
+          "ISTJ",
+          "ISTP",
+          "ESTJ",
+          "ESTP"
+        ]
+      },
+      {
+        "id": "fusion_hongyeom_ef_charm",
+        "index": 47,
+        "recordSha256": "3495a1f751c4cf6424af3abf8fcf3c26e0e74602808f7b93090cc01ff8aaa7a9",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_hongyeom"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_hongyeom"
+        ],
+        "mbtiTypes": [
+          "ENFJ",
+          "ENFP",
+          "ESFJ",
+          "ESFP",
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "fusion_dohwa_e_public",
+        "index": 48,
+        "recordSha256": "a32c0eda399523141ce98ac7fbee22d6aff03add8b10e30765114bfcceed143f",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_dohwa"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_dohwa"
+        ],
+        "mbtiTypes": [
+          "ENTJ",
+          "ENTP",
+          "ENFJ",
+          "ENFP",
+          "ESTJ",
+          "ESFJ",
+          "ESTP",
+          "ESFP"
+        ]
+      },
+      {
+        "id": "fusion_hwagae_inf_art_depth",
+        "index": 49,
+        "recordSha256": "05884ec0b7e90c0bdeb745aa1ba9259b275f74fb8db4dbb22c5cb27530954ca8",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_hwagae"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_hwagae"
+        ],
+        "mbtiTypes": [
+          "INFJ",
+          "INFP",
+          "INTJ",
+          "INTP",
+          "ISFP"
+        ]
+      },
+      {
+        "id": "fusion_yeokma_pen_change",
+        "index": 50,
+        "recordSha256": "4f9295d1b2b5afb97bcef864a8129ec34ec307a44a8a826ed607f16893817c28",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_yeokma"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_yeokma"
+        ],
+        "mbtiTypes": [
+          "ENTP",
+          "ENFP",
+          "ESTP",
+          "ESFP",
+          "INTP",
+          "INFP",
+          "ISTP",
+          "ISFP"
+        ]
+      },
+      {
+        "id": "fusion_gwimun_nfi_sensitivity",
+        "index": 51,
+        "recordSha256": "7ddeace15fc551aa1cf129bb82f8771c809add39ecd976278accda933fe68e97",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_gwimun"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_gwimun"
+        ],
+        "mbtiTypes": [
+          "INFJ",
+          "INFP",
+          "INTJ",
+          "INTP",
+          "ENFP"
+        ]
+      },
+      {
+        "id": "fusion_wonjin_relationship_distance",
+        "index": 52,
+        "recordSha256": "535f88026a5b95e377a2a83dd2b9aecee27a2ac3f7af5fb314c7b4d71bafec37",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "compensation",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_wonjin"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_wonjin"
+        ],
+        "mbtiTypes": []
+      },
+      {
+        "id": "fusion_munchang_nt_nf_writing",
+        "index": 53,
+        "recordSha256": "a2b0446443a5f8521c725aadc11efa36e7394c675bd6925f54ab9b8519a00270",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "nobleman_munchang"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "nobleman_munchang"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "INTP",
+          "ENTJ",
+          "ENTP",
+          "INFJ",
+          "INFP",
+          "ENFJ",
+          "ENFP"
+        ]
+      },
+      {
+        "id": "fusion_cheoneul_fj_support",
+        "index": 54,
+        "recordSha256": "abdcc76a9ec99a438f5eda7d2f556f257f2820cadee0a549239a127651416c2f",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "compensation",
+        "required": {
+          "allOf": [
+            [
+              "nobleman_cheoneul"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "nobleman_cheoneul"
+        ],
+        "mbtiTypes": [
+          "INFJ",
+          "ENFJ",
+          "ISFJ",
+          "ESFJ",
+          "ISTJ",
+          "ESTJ"
+        ]
+      },
+      {
+        "id": "fusion_jaego_tj_sj_storage",
+        "index": 55,
+        "recordSha256": "e3291ca32334e78566f22d278066d0de2162737b3a99db2ea4499d7791f42b78",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "gwiin_jaego",
+              "nobleman_jaego"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "gwiin_jaego",
+          "nobleman_jaego"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "ENTJ",
+          "ISTJ",
+          "ESTJ",
+          "ISFJ",
+          "ESFJ"
+        ]
+      },
+      {
+        "id": "fusion_f_metal_officer_coldness",
+        "index": 56,
+        "recordSha256": "3df0f15deb6e7fc4a98e885fd55c9bbdcd8f45112fbd83246a68f51e99c3c187",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "element_metal_strong",
+              "ten_god_zheng_guan:strong",
+              "ten_god_qi_sha:strong"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_metal_strong",
+          "ten_god_zheng_guan",
+          "ten_god_qi_sha"
+        ],
+        "mbtiTypes": [
+          "INFJ",
+          "INFP",
+          "ENFJ",
+          "ENFP",
+          "ISFJ",
+          "ISFP",
+          "ESFJ",
+          "ESFP"
+        ]
+      },
+      {
+        "id": "fusion_t_water_emotional_depth",
+        "index": 57,
+        "recordSha256": "e64a4e1b1f7a930c86fe7ee8b3641b3ba65e2c64ce147e197132c9d18f4bc639",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "element_water:excess"
+            ],
+            [
+              "ten_god_zheng_yin:strong",
+              "ten_god_pian_yin:strong"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_water",
+          "ten_god_zheng_yin",
+          "ten_god_pian_yin"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "INTP",
+          "ENTJ",
+          "ENTP",
+          "ISTJ",
+          "ISTP",
+          "ESTJ",
+          "ESTP"
+        ]
+      },
+      {
+        "id": "fusion_p_zheng_guan_responsibility",
+        "index": 58,
+        "recordSha256": "62fcf48d462ee0ff5cc506f400ad8cb5411b9849cb1640042b14c8de694f6a7a",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_guan:strong"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_zheng_guan"
+        ],
+        "mbtiTypes": [
+          "INTP",
+          "ENTP",
+          "INFP",
+          "ENFP",
+          "ISTP",
+          "ESTP",
+          "ISFP",
+          "ESFP"
+        ]
+      },
+      {
+        "id": "fusion_j_yeokma_change",
+        "index": 59,
+        "recordSha256": "0f31716c63490d43641f77e17ddd3ee232ab1da6457f9a0959b772cc97c2e504",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_yeokma"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_yeokma"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "ENTJ",
+          "INFJ",
+          "ENFJ",
+          "ISTJ",
+          "ESTJ",
+          "ISFJ",
+          "ESFJ"
+        ]
+      },
+      {
+        "id": "fusion_i_dohwa_hongyeom_presence",
+        "index": 60,
+        "recordSha256": "52931a8ec6e115618d216db4d18aa7f4f90cef4a216e858e9ae23aedfa0577f3",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_dohwa",
+              "sinsal_hongyeom"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_dohwa",
+          "sinsal_hongyeom"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "INTP",
+          "INFJ",
+          "INFP",
+          "ISTJ",
+          "ISFJ",
+          "ISTP",
+          "ISFP"
+        ]
+      },
+      {
+        "id": "fusion_s_resource_munchang_planning",
+        "index": 61,
+        "recordSha256": "3f2a2698c88af21926b77672230a439803291ef778545c74f7213facab79940d",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_yin:strong"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "ten_god_zheng_yin",
+          "nobleman_munchang"
+        ],
+        "mbtiTypes": [
+          "ISTJ",
+          "ISFJ",
+          "ESTJ",
+          "ESFJ",
+          "ISTP",
+          "ISFP",
+          "ESTP",
+          "ESFP"
+        ]
+      },
+      {
+        "id": "fusion_n_earth_excess_reality_weight",
+        "index": 62,
+        "recordSha256": "889d0edee4ebb65720e9d7485b9ffedf309c89748174ac4b792d49e5e12349c5",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "element_earth_excess"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "element_earth_excess"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "INTP",
+          "ENTJ",
+          "ENTP",
+          "INFJ",
+          "INFP",
+          "ENFJ",
+          "ENFP"
+        ]
+      },
+      {
+        "id": "fusion_gwansal_honjob_relationship_pressure",
+        "index": 63,
+        "recordSha256": "a6a6e6dc241c24464a61353828fc10e74d248986bf798c5fe62eedf58c916ab0",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "compensation",
+        "required": {
+          "allOf": [
+            [
+              "pattern_gwansal_honjob"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "pattern_gwansal_honjob"
+        ],
+        "mbtiTypes": []
+      },
+      {
+        "id": "fusion_siksang_saengjae_expression_money",
+        "index": 64,
+        "recordSha256": "2521073ec3c06e601d9ea2a84c4ae6ad70fb0431676bf691f8d9dff9a5a74dd5",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "pattern_siksang_saengjae"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "pattern_siksang_saengjae"
+        ],
+        "mbtiTypes": []
+      },
+      {
+        "id": "fusion_jaesaenggwan_role_reputation",
+        "index": 65,
+        "recordSha256": "cbb26864b4aaeddbb0f627e155dd8fd0be219aed1241f89ac9012ce16c0b7f3f",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "pattern_jaesaenggwan"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "pattern_jaesaenggwan"
+        ],
+        "mbtiTypes": []
+      },
+      {
+        "id": "fusion_salin_growth_pressure",
+        "index": 66,
+        "recordSha256": "50dac4e908dabab71ffeba8752c48018fd3be248e4f6cdd5fb42c9ef4094c176",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "compensation",
+        "required": {
+          "allOf": [
+            [
+              "pattern_salin_sangsaeng"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "pattern_salin_sangsaeng"
+        ],
+        "mbtiTypes": []
+      },
+      {
+        "id": "fusion_singang_independence",
+        "index": 67,
+        "recordSha256": "337461a0af84f945fb204bf2323597997afadcc88438436cbdefced012fb301e",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "pattern_singang"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "pattern_singang"
+        ],
+        "mbtiTypes": []
+      },
+      {
+        "id": "fusion_sinyak_support_need",
+        "index": 68,
+        "recordSha256": "bb84c95052fc29e65efa4e26628d8b1a09a49e57d37e8980d4929d382a9ca0c0",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "compensation",
+        "required": {
+          "allOf": [
+            [
+              "pattern_sinyak"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "pattern_sinyak"
+        ],
+        "mbtiTypes": []
+      },
+      {
+        "id": "fusion_toda_maegeum_standard_pressure",
+        "index": 69,
+        "recordSha256": "d296c26411dc0fdde07823ec31f0d75d7ca796b8d9f0202a2d86b67b14d338e1",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "pattern_toda_maegeum"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "pattern_toda_maegeum"
+        ],
+        "mbtiTypes": []
+      },
+      {
+        "id": "fusion_geumda_mokjeol_correction",
+        "index": 70,
+        "recordSha256": "16293f0ea3600e74a1ec9ac75e06253e098968f8e3876210db86fa0fdf46cc17",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "contrast",
+        "required": {
+          "allOf": [
+            [
+              "pattern_geumda_mokjeol"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "pattern_geumda_mokjeol"
+        ],
+        "mbtiTypes": []
+      },
+      {
+        "id": "fusion_mokda_hwasik_output",
+        "index": 71,
+        "recordSha256": "ddd0ab25f92643bb5e36a9f901b82ccfd390b306d31f91878fcfdebeee26a81b",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "pattern_mokda_hwasik"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "pattern_mokda_hwasik"
+        ],
+        "mbtiTypes": []
+      },
+      {
+        "id": "fusion_suda_mokbu_overthinking",
+        "index": 72,
+        "recordSha256": "062ebcec9d94bf367510cc571770f8167d0f20bb83b3403522d09a816f5739a5",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "compensation",
+        "required": {
+          "allOf": [
+            [
+              "pattern_suda_mokbu"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "pattern_suda_mokbu"
+        ],
+        "mbtiTypes": []
+      },
+      {
+        "id": "fusion_goegang_tj_force",
+        "index": 73,
+        "recordSha256": "e995f4f101c88b71022c0fe0bb54375354bd6277a9838fd5330474b2b1b1b2bd",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_goegang"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_goegang"
+        ],
+        "mbtiTypes": [
+          "ENTJ",
+          "ESTJ",
+          "INTJ"
+        ]
+      },
+      {
+        "id": "fusion_yangin_competition",
+        "index": 74,
+        "recordSha256": "1d874f36200bc8cb3ab900834b5a2777cb924d0dbc5860844d051a06975d4b9f",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "compensation",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_yangin"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_yangin"
+        ],
+        "mbtiTypes": []
+      },
+      {
+        "id": "fusion_cheonmun_n_insight",
+        "index": 75,
+        "recordSha256": "33112822c4e4a2c669e0979c8cc425cbd0c9766cbc717f1d6a3d0702cbfacc9e",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_cheonmun"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_cheonmun"
+        ],
+        "mbtiTypes": [
+          "INTJ",
+          "INTP",
+          "INFJ",
+          "INFP",
+          "ENTP",
+          "ENFP"
+        ]
+      },
+      {
+        "id": "fusion_jangseong_leadership",
+        "index": 76,
+        "recordSha256": "bb5bbab1b111120b03484b51fa6a4d745009ac12056fcabde9e28d6a90de597a",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "reinforcement",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_jangseong"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_jangseong"
+        ],
+        "mbtiTypes": []
+      },
+      {
+        "id": "fusion_banan_status_support",
+        "index": 77,
+        "recordSha256": "ad12abe8fd060a6f403f06a2e0f81e863f8a0be45d2dae8a2d568d6950e3a92c",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": "topic_specialization",
+        "required": {
+          "allOf": [
+            [
+              "sinsal_banan"
+            ]
+          ]
+        },
+        "sajuEntryIds": [
+          "sinsal_banan"
+        ],
+        "mbtiTypes": []
+      }
+    ]
+  },
+  "resonance": {
+    "file": "src/lib/interpretation-v4/personalResonanceRegistry.ts",
+    "exportName": "PERSONAL_RESONANCE_REGISTRY",
+    "records": [
+      {
+        "id": "PR001",
+        "index": 0,
+        "recordSha256": "90d8709921b48bd5579e3055799c8c9c516cfd95d68cff0299b929f6e35ef4f6",
+        "semanticTheme": "THINK_THEN_MOVE",
+        "primaryAxes": [
+          "DEPTH",
+          "ACTION_TEMPO"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "DEPTH",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "ACTION_TEMPO",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "fusion",
+              "split": "BEFORE_AFTER_DECISION"
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR002",
+        "index": 1,
+        "recordSha256": "99cfdd13b63707ffd177aa5219aec34b3bff9597e72ab5ed69d0d55382792b64",
+        "semanticTheme": "SOFT_SPEECH_FIRM_BELIEF",
+        "primaryAxes": [
+          "AUTONOMY",
+          "BOUNDARY",
+          "COMMUNICATION_STYLE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "AUTONOMY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "BOUNDARY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "COMMUNICATION_STYLE",
+                  "band": "MAIN",
+                  "direction": -1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR003",
+        "index": 2,
+        "recordSha256": "605950835d33b2792decdd7ee0214325610e9d99ad60e314d53452ca1fb647bf",
+        "semanticTheme": "PRECISE_FIRST",
+        "primaryAxes": [
+          "PRECISION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "existing",
+          "condition": {
+            "kind": "axis",
+            "requirement": {
+              "axis": "PRECISION",
+              "band": "STRONG",
+              "direction": 1
+            }
+          }
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR004",
+        "index": 3,
+        "recordSha256": "2f8e2edc655a3dddf22f41a26b04e62dfe9a23a8f48ad009e512943818060d88",
+        "semanticTheme": "WHY_UNTIL_CONVINCED",
+        "primaryAxes": [
+          "DEPTH",
+          "CURIOSITY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DEPTH",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CURIOSITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR005",
+        "index": 4,
+        "recordSha256": "c1d3feaf7f025762846e4620a321c458c1f3b32f0bbccd6dc32cd6941da9a8c2",
+        "semanticTheme": "MANY_OPTIONS_SLOW_CHOICE",
+        "primaryAxes": [
+          "PATTERN_SENSE",
+          "CURIOSITY",
+          "DECISION_STYLE",
+          "ACTION_TEMPO"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "PATTERN_SENSE",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "CURIOSITY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "DECISION_STYLE",
+                      "band": "MAIN",
+                      "direction": -1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "ACTION_TEMPO",
+                      "band": "MAIN",
+                      "direction": -1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR006",
+        "index": 5,
+        "recordSha256": "3ff7cb48c3fd4e08c954fb5e58ea3c3d99570d1830a02ffc55cde96b21a6f482",
+        "semanticTheme": "BIG_PICTURE_SMALL_ERROR",
+        "primaryAxes": [
+          "STRATEGY",
+          "PRECISION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "STRATEGY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "PRECISION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR007",
+        "index": 6,
+        "recordSha256": "9351e2958d378d2f9078bd11562a3395a347a6d21e3a1d3aeeb0850171fdbf53",
+        "semanticTheme": "THINK_AND_RECHECK",
+        "primaryAxes": [
+          "DEPTH",
+          "PRECISION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DEPTH",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "PRECISION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR008",
+        "index": 7,
+        "recordSha256": "1a33ce0577ab73dff17662a702f04a888657d13311c2c0081700d8aa432bf456",
+        "semanticTheme": "CLEAR_HEAD_UNDER_PRESSURE",
+        "primaryAxes": [
+          "STRATEGY",
+          "DECISION_STYLE",
+          "DUTY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "STRATEGY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DECISION_STYLE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DUTY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "risk",
+              "risk": "PRESSURE"
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR009",
+        "index": 8,
+        "recordSha256": "90527c23e6d2ea3b618eae0b8544b6bc81370b64dd54c6b7326ca3e51c4ad40d",
+        "semanticTheme": "IDEA_FLEX_EXECUTE_STRUCTURED",
+        "primaryAxes": [
+          "STRUCTURE_STYLE",
+          "ADAPTABILITY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "fusion",
+              "ruleId": "C090"
+            },
+            {
+              "kind": "fusion",
+              "split": "IDEA_EXECUTION"
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR010",
+        "index": 9,
+        "recordSha256": "3f70b67775f5a2b5a4f01aab799c6a91b69cc01d263e3084eb0dd4cbf84e6080",
+        "semanticTheme": "FAST_BUT_NOT_RECKLESS",
+        "primaryAxes": [
+          "ACTION_TEMPO",
+          "STRATEGY",
+          "PRECISION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "ACTION_TEMPO",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "STRATEGY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "PRECISION",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR011",
+        "index": 10,
+        "recordSha256": "ac4fdf50ab0cad648fee9fec6052e6e57947cdfd0ced958959c640bbac70e540",
+        "semanticTheme": "LEARN_IN_OWN_WAY",
+        "primaryAxes": [
+          "LEARNING",
+          "AUTONOMY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "LEARNING",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "AUTONOMY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR012",
+        "index": 11,
+        "recordSha256": "6dbd71ef65162c5098070a24a74a314b893af97c8a41c20304c08dc6b09ef48a",
+        "semanticTheme": "QUESTION_TO_OUTPUT",
+        "primaryAxes": [
+          "CURIOSITY",
+          "CREATION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CURIOSITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CREATION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR013",
+        "index": 12,
+        "recordSha256": "08cc8a6479f1e4f88f47a15de34f24995191a467eba0b84155f1a24afb9c90fd",
+        "semanticTheme": "FAST_START_STRONG_FINISH",
+        "primaryAxes": [
+          "INITIATIVE",
+          "PERSISTENCE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "INITIATIVE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "PERSISTENCE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR014",
+        "index": 13,
+        "recordSha256": "3803197f450ffa423addff227bd7f934b43695f567250d04a4ee594b5ff0ec05",
+        "semanticTheme": "FAST_START_WEAK_FINISH",
+        "primaryAxes": [
+          "INITIATIVE",
+          "PERSISTENCE"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "INITIATIVE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "limited",
+                  "axis": "PERSISTENCE"
+                },
+                {
+                  "kind": "risk",
+                  "risk": "FINISH_DROP"
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR015",
+        "index": 14,
+        "recordSha256": "3c1e4b243d7549e207d02cbaaf500f289a4cbedd50c256b6bcce1f6794e62ad1",
+        "semanticTheme": "SLOW_START_LONG_RUN",
+        "primaryAxes": [
+          "ACTION_TEMPO",
+          "PERSISTENCE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "ACTION_TEMPO",
+                  "band": "MAIN",
+                  "direction": -1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "PERSISTENCE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR016",
+        "index": 15,
+        "recordSha256": "05640eb658bf0ae16aa659074775187d64a25ced08f18d121673b9a0c5a2768d",
+        "semanticTheme": "START_AND_ADJUST",
+        "primaryAxes": [
+          "INITIATIVE",
+          "ADAPTABILITY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "INITIATIVE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "ADAPTABILITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR017",
+        "index": 16,
+        "recordSha256": "3008fe51cdc875194858ebd951dc32e76e28c099316cfa56feae6f1b8403f323",
+        "semanticTheme": "GOAL_FIXED_METHOD_FLEXIBLE",
+        "primaryAxes": [
+          "GOAL_DRIVE",
+          "ADAPTABILITY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "GOAL_DRIVE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "ADAPTABILITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR018",
+        "index": 17,
+        "recordSha256": "39e25f043c9ca9ae791f276e105e309b8a557c0b4fe119e1290b3327bd139f28",
+        "semanticTheme": "GROWTH_AND_STABILITY",
+        "primaryAxes": [
+          "EXPANSION",
+          "STABILITY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "EXPANSION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "STABILITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR019",
+        "index": 18,
+        "recordSha256": "0f91ce6b8720d3de5a938f73da59bd5dfcaa8a05ba060b2ba09e5ee0ea3a4860",
+        "semanticTheme": "NEW_WORK_STABLE_LIFE",
+        "primaryAxes": [
+          "CHANGE_ORIENTATION",
+          "STABILITY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CHANGE_ORIENTATION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "STABILITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR020",
+        "index": 19,
+        "recordSha256": "4e4109463407b90f8bb969dee5000d1180e3241d95b133a5772fcdae7d5e2bcb",
+        "semanticTheme": "TOO_MANY_STARTS",
+        "primaryAxes": [
+          "INITIATIVE",
+          "EXPANSION"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "INITIATIVE",
+                  "band": "STRONG",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "EXPANSION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "claim",
+                  "id": "F08_OPPORTUNITY_SCATTER",
+                  "minLevel": 2
+                },
+                {
+                  "kind": "claim",
+                  "id": "M10_TOO_MANY_MONEY_OPPORTUNITIES",
+                  "minLevel": 2
+                },
+                {
+                  "kind": "risk",
+                  "risk": "FINISH_DROP"
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR021",
+        "index": 20,
+        "recordSha256": "643c163e5ed180c4d52bf3ac41123e9bf0e59e9692c0a136d3f2bcad37a0378f",
+        "semanticTheme": "RESULT_REQUIRED",
+        "primaryAxes": [
+          "GOAL_DRIVE",
+          "PRACTICALITY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "GOAL_DRIVE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "PRACTICALITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR022",
+        "index": 21,
+        "recordSha256": "e7a41966754038441cfa2e34dc2b8ee7b113c1000ba3e702b5a693b26b282b0e",
+        "semanticTheme": "BUILD_AND_SHOW",
+        "primaryAxes": [
+          "CREATION",
+          "EXPRESSION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CREATION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "EXPRESSION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR023",
+        "index": 22,
+        "recordSha256": "fdbfa9a0d3d02dcb84977b62d74c7fa30778115bc0a1641b49dd945790a522cc",
+        "semanticTheme": "GROW_AND_CORRECT",
+        "primaryAxes": [
+          "EXPANSION",
+          "PRECISION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "EXPANSION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "PRECISION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR024",
+        "index": 23,
+        "recordSha256": "7a8a26b30063535c6f6c52df2479ae0d538e0240321b7a7795f9adbbea5e9d14",
+        "semanticTheme": "CHANGE_WITH_BASE",
+        "primaryAxes": [
+          "CHANGE_ORIENTATION",
+          "STABILITY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CHANGE_ORIENTATION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "STABILITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR025",
+        "index": 24,
+        "recordSha256": "4ce4d79a9b3d2263b5d0ad40a6a0d59b07cda1244096c0f67f31de72334675ef",
+        "semanticTheme": "PRESSURE_LEADERSHIP",
+        "primaryAxes": [
+          "LEADERSHIP",
+          "DUTY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "LEADERSHIP",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DUTY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "risk",
+              "risk": "PRESSURE"
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR026",
+        "index": 25,
+        "recordSha256": "518d1c57375452c0e7a947ee87204bc3a5edf289dae5fa5a1b861a603ae7f5d5",
+        "semanticTheme": "DO_IT_MYSELF",
+        "primaryAxes": [
+          "AUTONOMY",
+          "DUTY",
+          "GOAL_DRIVE"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "AUTONOMY",
+                  "band": "STRONG",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "DUTY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "GOAL_DRIVE",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR027",
+        "index": 26,
+        "recordSha256": "88e6548e0a3ffac166cc3932e86b1613fc8d1af0cb3b636f3b8fc0339e367693",
+        "semanticTheme": "RESULT_BEFORE_PRAISE",
+        "primaryAxes": [
+          "PRACTICALITY",
+          "GOAL_DRIVE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "PRACTICALITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "GOAL_DRIVE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR028",
+        "index": 27,
+        "recordSha256": "dc484a62521ec2e34b97d42e2505a6268185294da62c150ac288da0bd2eb36c5",
+        "semanticTheme": "NEXT_GOAL_FAST",
+        "primaryAxes": [
+          "GOAL_DRIVE",
+          "EXPANSION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "GOAL_DRIVE",
+                  "band": "STRONG",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "EXPANSION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR029",
+        "index": 28,
+        "recordSha256": "70b08dca9c0b5c41851735d47a5ef60d9c7814616c18c03aa6c463bef3f59ee1",
+        "semanticTheme": "RECOGNITION_MATTERS",
+        "primaryAxes": [
+          "STATUS_DRIVE",
+          "GOAL_DRIVE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "STATUS_DRIVE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "GOAL_DRIVE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR030",
+        "index": 29,
+        "recordSha256": "0a48a585f36cca4d47da7c243c91206bc268a6233689f5d2947e820a2843730b",
+        "semanticTheme": "HIGH_POSITION_DESIRE",
+        "primaryAxes": [
+          "STATUS_DRIVE",
+          "LEADERSHIP"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "claim",
+              "id": "S03_HIGH_POSITION",
+              "minLevel": 2
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "claim",
+                  "id": "S07_STATUS_DESIRE",
+                  "minLevel": 2
+                },
+                {
+                  "kind": "any",
+                  "conditions": [
+                    {
+                      "kind": "claim",
+                      "id": "S01_LEADERSHIP",
+                      "minLevel": 2
+                    },
+                    {
+                      "kind": "claim",
+                      "id": "S02_RESPONSIBLE_LEADER",
+                      "minLevel": 2
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR031",
+        "index": 30,
+        "recordSha256": "4e81ade66b64ff8e3e081d8dd7ea978528590a05b72bdb2b89f19053acf41531",
+        "semanticTheme": "EXPERT_THEN_RECOGNITION",
+        "primaryAxes": [
+          "LEARNING",
+          "DEPTH",
+          "STATUS_DRIVE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "claim",
+              "id": "SU04_EXPERTISE",
+              "minLevel": 2
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "STATUS_DRIVE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR032",
+        "index": 31,
+        "recordSha256": "d5aa068d2e2a1c51494ef3cb59378c13445326e965dd2dfc1d03ea8bdd4edaf1",
+        "semanticTheme": "COMPETITION_AS_FUEL",
+        "primaryAxes": [
+          "COMPETITION",
+          "GOAL_DRIVE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "COMPETITION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "GOAL_DRIVE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR033",
+        "index": 32,
+        "recordSha256": "6754c6098258ff9def3df9bc77fe35029a5a24cd426cfba5781cc870a2ad9fca",
+        "semanticTheme": "RULE_WITH_REASON",
+        "primaryAxes": [
+          "AUTONOMY",
+          "CURIOSITY",
+          "DUTY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "existing",
+          "condition": {
+            "kind": "synthesis",
+            "theme": "BETTER_RULE_NOT_BLIND_RULE"
+          }
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR034",
+        "index": 33,
+        "recordSha256": "fb45eb9fb175448c5f271dd3508db126ca62e7ecd5956ed54764a3b0ff717b76",
+        "semanticTheme": "OWN_METHOD_RESULT",
+        "primaryAxes": [
+          "AUTONOMY",
+          "CREATION",
+          "PRACTICALITY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "AUTONOMY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "CREATION",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "PRACTICALITY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR035",
+        "index": 34,
+        "recordSha256": "38b33baf7d563e37c31b0f118f46d13ccf87b03f5ddc5b0aaf8fdc172d0d5455",
+        "semanticTheme": "RELIABLE_ACCURACY",
+        "primaryAxes": [
+          "DUTY",
+          "PRECISION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DUTY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "PRECISION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR036",
+        "index": 35,
+        "recordSha256": "6e45cb0fa6cf2dda6b96d87acd4042ea016bbc1ca921db6029f61cde5f545df5",
+        "semanticTheme": "BIG_SCALE_MOTIVATION",
+        "primaryAxes": [
+          "EXPANSION",
+          "OPPORTUNITY_SENSE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "claim",
+              "id": "SU03_BIGGER_STAGE",
+              "minLevel": 2
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "EXPANSION",
+                      "band": "STRONG",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "OPPORTUNITY_SENSE",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR037",
+        "index": 36,
+        "recordSha256": "2354e747af4da4176ad2e7fdd8d563a9d510fe369c2d6fd22d9f407389965a0f",
+        "semanticTheme": "MONEY_AND_MEANING",
+        "primaryAxes": [
+          "RESOURCE_SENSE",
+          "MEANING"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "claim",
+              "id": "M07_MONEY_AND_MEANING",
+              "minLevel": 2
+            },
+            {
+              "kind": "fusion",
+              "ruleId": "C040"
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR038",
+        "index": 37,
+        "recordSha256": "fc02e653a581b865c46a5f8c649e3e97e9ad2bc9a04ed83b8b51d2d5c3ae2044",
+        "semanticTheme": "MONEY_AND_TIME",
+        "primaryAxes": [
+          "RESOURCE_SENSE",
+          "AUTONOMY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RESOURCE_SENSE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "AUTONOMY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR039",
+        "index": 38,
+        "recordSha256": "80ae8e2d7145463b0da66b2f978c780f19c8fedbea1b11444cc3b1eb8d0d2543",
+        "semanticTheme": "SAVE_AND_KEEP",
+        "primaryAxes": [
+          "RESOURCE_SENSE",
+          "STABILITY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "claim",
+          "id": "M02_ACCUMULATION",
+          "minLevel": 2
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR040",
+        "index": 39,
+        "recordSha256": "454bf01fec6405a5da4413b926f44b33ec08e8c25b86bc2464e158890a4ad73f",
+        "semanticTheme": "MONEY_OPPORTUNITY",
+        "primaryAxes": [
+          "RESOURCE_SENSE",
+          "OPPORTUNITY_SENSE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "claim",
+          "id": "M03_MONEY_OPPORTUNITY",
+          "minLevel": 2
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR041",
+        "index": 40,
+        "recordSha256": "d758d6b59f85bd48bfd08e2d7b41863dcf8b91a70e23fd9c626765698ed54d49",
+        "semanticTheme": "CAREFUL_MONEY",
+        "primaryAxes": [
+          "RESOURCE_SENSE",
+          "RISK_STYLE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RESOURCE_SENSE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RISK_STYLE",
+                  "band": "MAIN",
+                  "direction": -1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR042",
+        "index": 41,
+        "recordSha256": "5e30d14394a1c100c3d21d4b6993de1bb199c455089339081b9135a1a9d2425a",
+        "semanticTheme": "MONEY_GOAL",
+        "primaryAxes": [
+          "RESOURCE_SENSE",
+          "GOAL_DRIVE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "claim",
+          "id": "M06_BIG_MONEY_DESIRE",
+          "minLevel": 2
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR043",
+        "index": 42,
+        "recordSha256": "aa25957c0c964293f387278170fe0c52b481b30fcf5ab72b3154870bef7b1efa",
+        "semanticTheme": "MONEY_AND_RECOGNITION",
+        "primaryAxes": [
+          "RESOURCE_SENSE",
+          "STATUS_DRIVE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RESOURCE_SENSE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "STATUS_DRIVE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR044",
+        "index": 43,
+        "recordSha256": "a25a563d9566d07bc8f8504202a5848ba0a374c16e9c8252b6223c1ee12e3a08",
+        "semanticTheme": "STABLE_MONEY_NEW_OPPORTUNITY",
+        "primaryAxes": [
+          "STABILITY",
+          "RESOURCE_SENSE",
+          "OPPORTUNITY_SENSE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "claim",
+              "id": "M05_STABLE_INCOME",
+              "minLevel": 2
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "claim",
+                  "id": "M03_MONEY_OPPORTUNITY",
+                  "minLevel": 2
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "OPPORTUNITY_SENSE",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR045",
+        "index": 44,
+        "recordSha256": "886b0bf23cdf02feab6a41ac44935cf64840370dc73e39f8f10bc5f9957298ce",
+        "semanticTheme": "MEANING_OVER_MONEY_RISK",
+        "primaryAxes": [
+          "MEANING",
+          "RESOURCE_SENSE"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "MEANING",
+                  "band": "STRONG",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "limited",
+                  "axis": "RESOURCE_SENSE"
+                },
+                {
+                  "kind": "risk",
+                  "risk": "MEANING_OVER_MONEY"
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR046",
+        "index": 45,
+        "recordSha256": "a6121ab41da72c9b9ece0b16ab56423f10eb4d0b059fad0db24a8eb331d41f19",
+        "semanticTheme": "MONEY_OVER_MEANING_RISK",
+        "primaryAxes": [
+          "RESOURCE_SENSE",
+          "MEANING"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RESOURCE_SENSE",
+                  "band": "STRONG",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "limited",
+              "axis": "MEANING"
+            },
+            {
+              "kind": "risk",
+              "risk": "MONEY_OVER_MEANING"
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR047",
+        "index": 46,
+        "recordSha256": "c3c786b942e380b7d8c70b94027a9ad44ec9454ecf3d8a63d9f26ce57f8d7853",
+        "semanticTheme": "OPPORTUNITY_BUT_CALCULATED",
+        "primaryAxes": [
+          "OPPORTUNITY_SENSE",
+          "PRACTICALITY",
+          "RISK_STYLE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "OPPORTUNITY_SENSE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "PRACTICALITY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "RISK_STYLE",
+                      "band": "MAIN",
+                      "direction": -1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR048",
+        "index": 47,
+        "recordSha256": "85078a74825513df1ca2f5491e043b1d4c8489046ed5ba5e7ecc457317f5eddb",
+        "semanticTheme": "WEALTH_AND_HONOR_DESIRE",
+        "primaryAxes": [
+          "RESOURCE_SENSE",
+          "STATUS_DRIVE",
+          "GOAL_DRIVE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "claim",
+              "id": "S08_MONEY_AND_HONOR",
+              "minLevel": 3
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "claim",
+                  "id": "M06_BIG_MONEY_DESIRE",
+                  "minLevel": 2
+                },
+                {
+                  "kind": "claim",
+                  "id": "S07_STATUS_DESIRE",
+                  "minLevel": 2
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR049",
+        "index": 48,
+        "recordSha256": "d3c70358f86a9407a62357880b2a349b38bbcabbd67ea8081c20673210c40ef4",
+        "semanticTheme": "NOTICE_AND_CARE",
+        "primaryAxes": [
+          "SOCIAL_ATTUNEMENT",
+          "CARE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "SOCIAL_ATTUNEMENT",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CARE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR050",
+        "index": 49,
+        "recordSha256": "c17e9ea9233fe18c8ad5de242ed822118218ba3810ba51018b6e1a9de8e4f8d3",
+        "semanticTheme": "NOTICE_BUT_DECIDE_MYSELF",
+        "primaryAxes": [
+          "SOCIAL_ATTUNEMENT",
+          "AUTONOMY",
+          "BOUNDARY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "SOCIAL_ATTUNEMENT",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "AUTONOMY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "BOUNDARY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR051",
+        "index": 50,
+        "recordSha256": "a10a96725f4a9c7c446c109b16f9f7ebf1dc2d99396a8ac0beb1a353a54f9f7b",
+        "semanticTheme": "DIRECT_BUT_NOT_MEAN",
+        "primaryAxes": [
+          "COMMUNICATION_STYLE",
+          "CARE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "COMMUNICATION_STYLE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CARE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR052",
+        "index": 51,
+        "recordSha256": "a9b7aa99d5a0af9cf2c4ea0a61a3b36d2a8c2a4ef26907358f3d1920f12c9003",
+        "semanticTheme": "SOFT_BUT_FIRM",
+        "primaryAxes": [
+          "COMMUNICATION_STYLE",
+          "AUTONOMY",
+          "BOUNDARY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "COMMUNICATION_STYLE",
+                  "band": "MAIN",
+                  "direction": -1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "AUTONOMY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "BOUNDARY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR053",
+        "index": 52,
+        "recordSha256": "4895d6c294059232eee01b4f82f466cc7fc251d3bc73f54b2fde945772700a07",
+        "semanticTheme": "SEE_ERROR_STAY_GENTLE",
+        "primaryAxes": [
+          "PRECISION",
+          "CARE",
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "PRECISION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "CARE",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "SOCIAL_ATTUNEMENT",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR054",
+        "index": 53,
+        "recordSha256": "657d5d2801380f5083b8bae1661d30b25123584cf206787e0af75c213ec6076d",
+        "semanticTheme": "DIRECT_PRECISION",
+        "primaryAxes": [
+          "PRECISION",
+          "COMMUNICATION_STYLE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "claim",
+              "id": "F02_SHARP_SPEECH",
+              "minLevel": 2
+            },
+            {
+              "kind": "fusion",
+              "ruleId": "C060"
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR055",
+        "index": 54,
+        "recordSha256": "1e154261522ee11d0aa99ec82717e97819d05846c42bb7a3057e722d10cba2ae",
+        "semanticTheme": "PEOPLE_AND_BOUNDARY",
+        "primaryAxes": [
+          "CARE",
+          "BOUNDARY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CARE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "BOUNDARY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR056",
+        "index": 55,
+        "recordSha256": "669a1f5fd75583e57e2f17925810b4fd0b767b6033157b448491cfe5dfcac25f",
+        "semanticTheme": "PEOPLE_PLEASE_THEN_TIRED",
+        "primaryAxes": [
+          "CARE",
+          "SOCIAL_ATTUNEMENT",
+          "BOUNDARY"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CARE",
+                  "band": "STRONG",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "SOCIAL_ATTUNEMENT",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "limited",
+                  "axis": "BOUNDARY"
+                },
+                {
+                  "kind": "claim",
+                  "id": "F07_OVERCARE",
+                  "minLevel": 3
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR057",
+        "index": 56,
+        "recordSha256": "66a8c86edd520d6180014615bbd979259e7459b5722a2009753ab6360389bd4a",
+        "semanticTheme": "LISTEN_BUT_FINAL_DECISION",
+        "primaryAxes": [
+          "RELATION_STYLE",
+          "AUTONOMY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RELATION_STYLE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "AUTONOMY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR058",
+        "index": 57,
+        "recordSha256": "d8ed242ffda37bbde5b0cfff78a37b996128afb8ef58fced3ac7b7c9720dd63c",
+        "semanticTheme": "GROUP_ENERGY_PRIVATE_RECOVERY",
+        "primaryAxes": [
+          "ENERGY_DIRECTION",
+          "SOCIAL_ATTUNEMENT",
+          "RECOVERY_NEED"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "ENERGY_DIRECTION",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "SOCIAL_ATTUNEMENT",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RECOVERY_NEED",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR059",
+        "index": 58,
+        "recordSha256": "d78fe0f3a7cc77dbc2c5c602b1a5102f896b274f44a8ddd5b5f63b2c5902ddf6",
+        "semanticTheme": "READ_ROOM_AND_LEAD",
+        "primaryAxes": [
+          "LEADERSHIP",
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "LEADERSHIP",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "SOCIAL_ATTUNEMENT",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR060",
+        "index": 59,
+        "recordSha256": "e75c45799db00b989cd28cffc9aa11c68f499e35b99ee335e7aec2da6e8382f0",
+        "semanticTheme": "EXPLAIN_TOO_MUCH",
+        "primaryAxes": [
+          "EXPRESSION",
+          "PRECISION",
+          "LEARNING"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "EXPRESSION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "PRECISION",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "LEARNING",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "risk",
+              "risk": "OVER_EXPLAIN"
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR061",
+        "index": 60,
+        "recordSha256": "8d14464ba5a97b9eb9c79775f3d47edcc010d1811b58371cc6825e76ea82feb5",
+        "semanticTheme": "CARE_BUT_NEED_SPACE",
+        "primaryAxes": [
+          "CARE",
+          "AUTONOMY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CARE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "AUTONOMY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR062",
+        "index": 61,
+        "recordSha256": "78a90f7e776e2fa53548db28a10761c8c583eaaf4d29e208c0ed2fcf9a210b87",
+        "semanticTheme": "SMALL_SIGNALS_IN_LOVE",
+        "primaryAxes": [
+          "PRECISION",
+          "SOCIAL_ATTUNEMENT",
+          "CARE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "PRECISION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "SOCIAL_ATTUNEMENT",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "CARE",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR063",
+        "index": 62,
+        "recordSha256": "d1042ba81f5f016ff4f35c3c145e770f5b385632cd3c51c1f37ab741d1c81dcd",
+        "semanticTheme": "THINK_DEEPLY_ABOUT_CLOSE_PEOPLE",
+        "primaryAxes": [
+          "DEPTH",
+          "CARE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DEPTH",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CARE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR064",
+        "index": 63,
+        "recordSha256": "8de33d1e0f3121642ed59f6382a6f8ceaeec7cec872ecd36584d46d0a09f1b6b",
+        "semanticTheme": "STEADY_AFFECTION",
+        "primaryAxes": [
+          "STABILITY",
+          "CARE",
+          "EXPRESSION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "STABILITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "CARE",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "EXPRESSION",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR065",
+        "index": 64,
+        "recordSha256": "919df91038dd429dadf6f2e8b8335ab89a093f60a1b582bb70feb3ac8f02083a",
+        "semanticTheme": "LOVE_MEANING",
+        "primaryAxes": [
+          "MEANING",
+          "CARE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "MEANING",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CARE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR066",
+        "index": 65,
+        "recordSha256": "6cae9978ca10335f0e7c49441f46c8fc32e1da9415744a9f3b67eb5209bf3c27",
+        "semanticTheme": "CLOSE_BUT_BOUNDARY",
+        "primaryAxes": [
+          "RELATION_STYLE",
+          "BOUNDARY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RELATION_STYLE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "BOUNDARY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR067",
+        "index": 66,
+        "recordSha256": "52972b87194c9f0db28a204625a3f8c02f38a2d96d5561174dec25c40bda9db3",
+        "semanticTheme": "UNSPOKEN_EXPECTATION",
+        "primaryAxes": [
+          "SOCIAL_ATTUNEMENT",
+          "COMMUNICATION_STYLE"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "SOCIAL_ATTUNEMENT",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "COMMUNICATION_STYLE",
+                  "band": "MAIN",
+                  "direction": -1
+                }
+              }
+            },
+            {
+              "kind": "risk",
+              "risk": "UNSPOKEN_EXPECTATION"
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR068",
+        "index": 67,
+        "recordSha256": "dc555156a4bd4f8827156b7e5f3fdba5a318e995d1eff1a2b1144ce3ffdb2be7",
+        "semanticTheme": "LOVE_OVERREADING",
+        "primaryAxes": [
+          "SOCIAL_ATTUNEMENT",
+          "DEPTH",
+          "PRECISION"
+        ],
+        "kind": "neutral",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "SOCIAL_ATTUNEMENT",
+                  "band": "STRONG",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "DEPTH",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "PRECISION",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR069",
+        "index": 68,
+        "recordSha256": "df2c92039f4dd2fec34b116efb805fb7580b6effdc58c8ec61d6f02b27918647",
+        "semanticTheme": "AFFECTION_DIRECT",
+        "primaryAxes": [
+          "CARE",
+          "EXPRESSION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CARE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "EXPRESSION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR070",
+        "index": 69,
+        "recordSha256": "4b5b36da772039e7ecd4748ff6a46d31b6dadef8fd65e4f1b519028c9f5ad173",
+        "semanticTheme": "AFFECTION_PRIVATE",
+        "primaryAxes": [
+          "CARE",
+          "ENERGY_DIRECTION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CARE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "ENERGY_DIRECTION",
+                  "band": "MAIN",
+                  "direction": -1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR071",
+        "index": 70,
+        "recordSha256": "0f7e37a209cce0b559541c5e14a7bfa86113ff55033f6ebcfb94715b1ffaa0d8",
+        "semanticTheme": "RELATION_STABLE_BUT_NEW",
+        "primaryAxes": [
+          "STABILITY",
+          "CHANGE_ORIENTATION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "STABILITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CHANGE_ORIENTATION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR072",
+        "index": 71,
+        "recordSha256": "89a1f7ddf70594b0d38683b7cf1a889a6e79e19268e63d27799a4e68bd84f2f3",
+        "semanticTheme": "CARE_WITH_SELF_STANDARD",
+        "primaryAxes": [
+          "CARE",
+          "AUTONOMY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CARE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "AUTONOMY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR073",
+        "index": 72,
+        "recordSha256": "06a0034a30414851e7c856836b0fc10851fc7da65b4dfb3fb20baa6fb5cad70d",
+        "semanticTheme": "PUBLIC_STRONG_PRIVATE_DRAIN",
+        "primaryAxes": [
+          "DUTY",
+          "SOCIAL_ATTUNEMENT",
+          "RECOVERY_NEED"
+        ],
+        "kind": "neutral",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "DUTY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "SOCIAL_ATTUNEMENT",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RECOVERY_NEED",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR074",
+        "index": 73,
+        "recordSha256": "ba4df3163bff0994b5df9dcdc8f5b91bedf6ece772c746adea143ec6d8650e55",
+        "semanticTheme": "MIND_STILL_WORKING",
+        "primaryAxes": [
+          "GOAL_DRIVE",
+          "DUTY",
+          "DEPTH"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "any",
+          "conditions": [
+            {
+              "kind": "claim",
+              "id": "F04_OVERWORK",
+              "minLevel": 2
+            },
+            {
+              "kind": "all",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "GOAL_DRIVE",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "DUTY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "DEPTH",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR075",
+        "index": 74,
+        "recordSha256": "423d2ddc3dcdbd67f1f4cb44a866068d18b00daa633c2ce0a8524dee7f158718",
+        "semanticTheme": "NEED_QUIET_TO_RECOVER",
+        "primaryAxes": [
+          "RECOVERY_NEED",
+          "DEPTH"
+        ],
+        "kind": "neutral",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RECOVERY_NEED",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DEPTH",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR076",
+        "index": 75,
+        "recordSha256": "d14b3ed3e61b4e6ed6e674751cfec01c61d085216392d6931954b7d3bd6a2ea1",
+        "semanticTheme": "PEOPLE_DRAIN",
+        "primaryAxes": [
+          "SOCIAL_ATTUNEMENT",
+          "RECOVERY_NEED"
+        ],
+        "kind": "neutral",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "SOCIAL_ATTUNEMENT",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RECOVERY_NEED",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR077",
+        "index": 76,
+        "recordSha256": "a20e753fb3215437d4e0f2e5ddef7a86d4f787d8ac4370f08088dab1dc7ce28d",
+        "semanticTheme": "PRESSURE_FOCUS",
+        "primaryAxes": [
+          "STRATEGY",
+          "PRECISION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "risk",
+              "risk": "PRESSURE"
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "STRATEGY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "PRECISION",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR078",
+        "index": 77,
+        "recordSha256": "15f77e175c317a1816fb2f4cc97c41a9df3cd94c48e8d640366ff42e68d00041",
+        "semanticTheme": "PRESSURE_OVERCONTROL",
+        "primaryAxes": [
+          "DUTY",
+          "BOUNDARY",
+          "LEADERSHIP"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DUTY",
+                  "band": "STRONG",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "BOUNDARY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "LEADERSHIP",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "risk",
+              "risk": "OVERCONTROL"
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR079",
+        "index": 78,
+        "recordSha256": "a0cb47b709e295691e4359ad175fbf109a8f08c9578cd4c0d036e6df5f38bbdf",
+        "semanticTheme": "THINKING_PREVENTS_REST",
+        "primaryAxes": [
+          "DEPTH",
+          "RECOVERY_NEED"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DEPTH",
+                  "band": "STRONG",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RECOVERY_NEED",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR080",
+        "index": 79,
+        "recordSha256": "f305f168347d70fbb46abb3c4c296e38aa5a352d358fcaaa400cce10668bb2a5",
+        "semanticTheme": "SOLITUDE_TOO_LONG",
+        "primaryAxes": [
+          "ENERGY_DIRECTION",
+          "DEPTH"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "ENERGY_DIRECTION",
+                  "band": "MAIN",
+                  "direction": -1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DEPTH",
+                  "band": "STRONG",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "risk",
+              "risk": "RUMINATION"
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR081",
+        "index": 80,
+        "recordSha256": "b439669b39a938d5c087ebfe60c9de3a5283c795d7af62b27351a55422be1220",
+        "semanticTheme": "OUTWARD_THEN_INWARD",
+        "primaryAxes": [
+          "ENERGY_DIRECTION",
+          "DEPTH",
+          "RECOVERY_NEED"
+        ],
+        "kind": "neutral",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "ENERGY_DIRECTION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DEPTH",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RECOVERY_NEED",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR082",
+        "index": 81,
+        "recordSha256": "ec0802f8dff28833e55e0e76c8960373e397c7f6b1d82c8f683d78b2fe0cabdc",
+        "semanticTheme": "REST_GUILT",
+        "primaryAxes": [
+          "GOAL_DRIVE",
+          "DUTY"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "GOAL_DRIVE",
+                  "band": "STRONG",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DUTY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "risk",
+              "risk": "REST_GUILT"
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR083",
+        "index": 82,
+        "recordSha256": "51c67b93d79aa36fc90394399936f6309e9fe2c24ccf4a8c801185cd9251976e",
+        "semanticTheme": "OVERPACKED_SCHEDULE",
+        "primaryAxes": [
+          "INITIATIVE",
+          "DUTY",
+          "ENERGY_DIRECTION",
+          "EXPANSION"
+        ],
+        "kind": "shadow",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "INITIATIVE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DUTY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "ENERGY_DIRECTION",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "EXPANSION",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "risk",
+              "risk": "OVERLOAD"
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR084",
+        "index": 83,
+        "recordSha256": "bb49936a76a0778be98c0581c5ad6af769a17b28ab5854ca7efc7467cda389e6",
+        "semanticTheme": "RECOVER_IN_STABLE_ENVIRONMENT",
+        "primaryAxes": [
+          "STABILITY",
+          "RECOVERY_NEED"
+        ],
+        "kind": "neutral",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "STABILITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RECOVERY_NEED",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR085",
+        "index": 84,
+        "recordSha256": "b7aa6575d6ce208443f3d52370cf55b137d8ffd27fd12a2da184c88063ce949c",
+        "semanticTheme": "FIRM_BUT_ADAPTIVE",
+        "primaryAxes": [
+          "AUTONOMY",
+          "ADAPTABILITY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "AUTONOMY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "ADAPTABILITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR086",
+        "index": 85,
+        "recordSha256": "ae309e8fd290773282627812afcb014ca286dd8d4e64e1426704ef4b5ad3b930",
+        "semanticTheme": "INDEPENDENT_BUT_CONNECTED",
+        "primaryAxes": [
+          "AUTONOMY",
+          "RELATION_STYLE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "AUTONOMY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RELATION_STYLE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR087",
+        "index": 86,
+        "recordSha256": "5df957f4485192e98f1f209c3f02426952560e36248bb238583be1e2520c954a",
+        "semanticTheme": "QUIET_BUT_LEADS",
+        "primaryAxes": [
+          "ENERGY_DIRECTION",
+          "LEADERSHIP"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "ENERGY_DIRECTION",
+                  "band": "MAIN",
+                  "direction": -1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "LEADERSHIP",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR088",
+        "index": 87,
+        "recordSha256": "9cd01f34ef0a2ac5426aa29a72a104064bcedafe5e1fc7535bc1337466b70b1a",
+        "semanticTheme": "VISIBLE_BUT_PRIVATE",
+        "primaryAxes": [
+          "CHARISMA",
+          "EXPRESSION",
+          "RECOVERY_NEED"
+        ],
+        "kind": "neutral",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "CHARISMA",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "EXPRESSION",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "RECOVERY_NEED",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR089",
+        "index": 88,
+        "recordSha256": "9d66040f1b3129008ce6517610d8c3213185721b866ff541d39fc65c7319feae",
+        "semanticTheme": "KIND_BUT_NOT_EASY_TO_SWAY",
+        "primaryAxes": [
+          "CARE",
+          "SOCIAL_ATTUNEMENT",
+          "BOUNDARY",
+          "AUTONOMY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "CARE",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "SOCIAL_ATTUNEMENT",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "BOUNDARY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "AUTONOMY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR090",
+        "index": 89,
+        "recordSha256": "11e7d18b4665e4eb1f1c0e4bb1a490163d39e705a55e1a4757111f4cd024628a",
+        "semanticTheme": "STABLE_BUT_BORED",
+        "primaryAxes": [
+          "STABILITY",
+          "CHANGE_ORIENTATION"
+        ],
+        "kind": "neutral",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "STABILITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CHANGE_ORIENTATION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR091",
+        "index": 90,
+        "recordSha256": "f399c3f6c42a18614c24a524590e871f78e8193321b911e227f1515dac1ee155",
+        "semanticTheme": "CONFIDENT_BUT_SELF_CRITICAL",
+        "primaryAxes": [
+          "AUTONOMY",
+          "GOAL_DRIVE",
+          "PRECISION"
+        ],
+        "kind": "neutral",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "any",
+              "conditions": [
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "AUTONOMY",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                },
+                {
+                  "kind": "existing",
+                  "condition": {
+                    "kind": "axis",
+                    "requirement": {
+                      "axis": "GOAL_DRIVE",
+                      "band": "MAIN",
+                      "direction": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "PRECISION",
+                  "band": "STRONG",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR092",
+        "index": 91,
+        "recordSha256": "5df0deb7cd9d5f17973ca57f4cf2070b23c50da207c820533a55997dc2b50d30",
+        "semanticTheme": "CARE_AND_DIRECTNESS",
+        "primaryAxes": [
+          "CARE",
+          "COMMUNICATION_STYLE"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "CARE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "COMMUNICATION_STYLE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR093",
+        "index": 92,
+        "recordSha256": "6a77017803b13b0f524f29b29556a238fe023fdf118297290e81e9f178ca22c8",
+        "semanticTheme": "MEANING_AND_REALITY",
+        "primaryAxes": [
+          "MEANING",
+          "PRACTICALITY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "MEANING",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "PRACTICALITY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR094",
+        "index": 93,
+        "recordSha256": "6de62fb8bda3fbe95ebf9dadfd0c6bd7a6c8a691a6c7f7fb79518917e3d5e73a",
+        "semanticTheme": "RECOGNITION_AND_AUTONOMY",
+        "primaryAxes": [
+          "STATUS_DRIVE",
+          "AUTONOMY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "STATUS_DRIVE",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "AUTONOMY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR095",
+        "index": 94,
+        "recordSha256": "3db318b23f81eb0916937d1e5652c97ba1ba19011802df8ebf2d5e6c6fbc7092",
+        "semanticTheme": "GROWTH_AND_SELF_CRITIQUE",
+        "primaryAxes": [
+          "EXPANSION",
+          "PRECISION"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "EXPANSION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "PRECISION",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      },
+      {
+        "id": "PR096",
+        "index": 95,
+        "recordSha256": "59465248c041eefc39991dfac4bfd9ae0fb83318cbfb12e71105895c5d86873b",
+        "semanticTheme": "RESPONSIBILITY_AND_SELF_DIRECTION",
+        "primaryAxes": [
+          "DUTY",
+          "AUTONOMY"
+        ],
+        "kind": "positive",
+        "required": {
+          "kind": "all",
+          "conditions": [
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "DUTY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            },
+            {
+              "kind": "existing",
+              "condition": {
+                "kind": "axis",
+                "requirement": {
+                  "axis": "AUTONOMY",
+                  "band": "MAIN",
+                  "direction": 1
+                }
+              }
+            }
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": []
+      }
+    ]
+  },
+  "bridgeScenes": {
+    "file": "src/lib/report-knowledge/bridge/interactionSceneRules.ts",
+    "exportName": "BRIDGE_SCENE_RULES",
+    "records": [
+      {
+        "id": "intj-model-check",
+        "index": 0,
+        "recordSha256": "e8a45d06124cb327832bd941a630038f2217a0cacd0b2e02ef6bba3911ebdbd0",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_pian_yin"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "INTJ"
+        ]
+      },
+      {
+        "id": "intj-affection-contrast",
+        "index": 1,
+        "recordSha256": "267e3689b65f571982133442a3cbc3a7e5f0728bd6ce6ec56dd921d8801d9ec4",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "sinsal_hongyeom"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "INTJ"
+        ]
+      },
+      {
+        "id": "intp-return-to-output",
+        "index": 2,
+        "recordSha256": "c78a96e9c9c65bc0854644564a077a4459fc7cdc93d0c14381c20d53e3fe51d0",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_shi_shen"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "INTP"
+        ]
+      },
+      {
+        "id": "entj-work-home-switch",
+        "index": 3,
+        "recordSha256": "93a5856490f6fe1ec576a58fcd9801ce260e77c80c1d31e6a242625f59483f3d",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_guan"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "entj-water-pause",
+        "index": 4,
+        "recordSha256": "72fb6585e3c767e805195839951967f6e14f3d0c497c1e5cffb2c25f002c4e9d",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "element_water_missing"
+            ]
+          ],
+          "noneOf": [
+            "element_water",
+            "element_water:excess"
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ENTJ"
+        ]
+      },
+      {
+        "id": "entp-boundary-experiment",
+        "index": 5,
+        "recordSha256": "4b0201d89027f97f66dae34c15cebb2afbf718b100a539854e03847636b1a6d4",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_guan"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ENTP"
+        ]
+      },
+      {
+        "id": "entp-cash-close",
+        "index": 6,
+        "recordSha256": "94f1abe3d3319e0bfdf13718a42d9405f2ee17700069fb5e67e9fae7cf82c1ca",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_cai"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ENTP"
+        ]
+      },
+      {
+        "id": "infj-verify-impression",
+        "index": 7,
+        "recordSha256": "1882e7b2667048267d8636d3019bc55fd7745ea0ff3a4c9d00c829e19faf5a60",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_pian_yin"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "INFJ"
+        ]
+      },
+      {
+        "id": "infj-meaning-budget",
+        "index": 8,
+        "recordSha256": "044136521b986769b7b3abcbf78f4700fd4b85d0513e0f610fa94d6550b47658",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_cai"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "INFJ"
+        ]
+      },
+      {
+        "id": "infp-expression-value",
+        "index": 9,
+        "recordSha256": "860de63e33c91d45d17419d3cde95fe7f6d017dcdbe1e6c187f1435f51b9d042",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_shi_shen"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "INFP"
+        ]
+      },
+      {
+        "id": "infp-self-family-switch",
+        "index": 10,
+        "recordSha256": "45c8ff86535fac9148af29777f111ed6f8138504b40c80412a8cc4a68e26b61a",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_bijian"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "INFP"
+        ]
+      },
+      {
+        "id": "enfj-care-boundary",
+        "index": 11,
+        "recordSha256": "1cc2d7523a38a35ebc88c2caf6078acb248a6a820e676e09bc0ced2509028e31",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_yin"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ENFJ"
+        ]
+      },
+      {
+        "id": "enfj-generosity-cap",
+        "index": 12,
+        "recordSha256": "8687c0b610c5716cf3c789a6455356e69b8dee2cbd786fadeb95f81a6833a9dc",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_pian_cai"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ENFJ"
+        ]
+      },
+      {
+        "id": "enfp-idea-branches",
+        "index": 13,
+        "recordSha256": "ea237102f37aa87297fd0be7a942eddb9d2e09c8a431d6e42679f0be10a526fa",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_pian_yin"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ENFP"
+        ]
+      },
+      {
+        "id": "enfp-experience-budget",
+        "index": 14,
+        "recordSha256": "d2e5baf271c17104f5cb3af9841c058af10a16155d046d6e9abf6bfedf98f518",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_cai"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ENFP"
+        ]
+      },
+      {
+        "id": "istj-change-record",
+        "index": 15,
+        "recordSha256": "973c3f18a2f59541ebd3f7c3dd9598612fdef77fbf93be8a6a326d65b309cdcc",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "sinsal_yeokma"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ISTJ"
+        ]
+      },
+      {
+        "id": "istj-trust-action",
+        "index": 16,
+        "recordSha256": "546009ad9eb8131f7b11dd4a0755d246867dc861df12c3cce97ef67ea371baea",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_guan"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ISTJ"
+        ]
+      },
+      {
+        "id": "isfj-help-limit",
+        "index": 17,
+        "recordSha256": "1a8666ae77ac74d396faf22185c40cfe0372377139f3e3d138066f578317f47c",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_qi_sha"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ISFJ"
+        ]
+      },
+      {
+        "id": "isfj-memory-support",
+        "index": 18,
+        "recordSha256": "f6e540c65d9a20f4a206627c44e6fb241e865fc5b94d2197636f84c5676116d0",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_yin"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ISFJ"
+        ]
+      },
+      {
+        "id": "estj-correction-temperature",
+        "index": 19,
+        "recordSha256": "068e35bb6c3d701be4c1bdef658d5f6e55c2f88e16afa91d40ddf482d487f6e0",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "sinsal_hyeonchim"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ESTJ"
+        ]
+      },
+      {
+        "id": "estj-household-space",
+        "index": 20,
+        "recordSha256": "6cedf29c57d675b72a0a808a25720372cf651d7dac28dda3990db9654451c1f2",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "element_earth:excess"
+            ]
+          ],
+          "noneOf": [
+            "element_earth_missing"
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ESTJ"
+        ]
+      },
+      {
+        "id": "esfj-care-check",
+        "index": 21,
+        "recordSha256": "ba8554373ee425efdb05157d29ff85304fc23eb41b9978e3370c711d1aa095cb",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "nobleman_cheoneul"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ESFJ"
+        ]
+      },
+      {
+        "id": "esfj-exam-understanding",
+        "index": 22,
+        "recordSha256": "9cece007c4f9c6fe91a75de6e37f8a01aeb22b6fe9ed304e2e0e2f6d22b64946",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "nobleman_munchang"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ESFJ"
+        ]
+      },
+      {
+        "id": "istp-tool-proof",
+        "index": 23,
+        "recordSha256": "61452eb46d71ccf9479cfe3bb2450976205ba58efd4a92ee883ed3f07761c4e8",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_shi_shen"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ISTP"
+        ]
+      },
+      {
+        "id": "istp-space-request",
+        "index": 24,
+        "recordSha256": "c4fe98738a7e9ef379c1ac3818f8c668bb38cfc7179ac0a6b4afe38b9227e209",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_bijian"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ISTP"
+        ]
+      },
+      {
+        "id": "isfp-price-voice",
+        "index": 25,
+        "recordSha256": "bb0490f32b4be61a580cfb312a45dfac454c40d1760b00fb00854a6d9be2653b",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_cai"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ISFP"
+        ]
+      },
+      {
+        "id": "isfp-warmth-opening",
+        "index": 26,
+        "recordSha256": "c8813268f641cb4747db59d93ae60af26a01055e92f18a5cc65f7c83c46654be",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "sinsal_hongyeom"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ISFP"
+        ]
+      },
+      {
+        "id": "estp-field-notice",
+        "index": 27,
+        "recordSha256": "18016361aa754236f343babe5f8caaa9f15c1323967864d40f7f83895447a3f8",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "sinsal_hyeonchim"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ESTP"
+        ]
+      },
+      {
+        "id": "estp-review-before-move",
+        "index": 28,
+        "recordSha256": "47460622b37dcd3f3e64fd82fa0afc4807495165524245ada49615ee37267327",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_yin"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ESTP"
+        ]
+      },
+      {
+        "id": "esfp-response-energy",
+        "index": 29,
+        "recordSha256": "d831e847a293350534d8f99d6e674ac66a56d31dccd9fbfb6a47b120f3aeb6cb",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "sinsal_dohwa"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ESFP"
+        ]
+      },
+      {
+        "id": "esfp-routine-play",
+        "index": 30,
+        "recordSha256": "8404ae77e0eac5df93aea0ae1e99de7785c67f7dc602e41240b107997db3f02d",
+        "semanticTheme": null,
+        "primaryAxes": [],
+        "kind": null,
+        "required": {
+          "allOf": [
+            [
+              "ten_god_zheng_cai"
+            ]
+          ]
+        },
+        "sajuEntryIds": [],
+        "mbtiTypes": [
+          "ESFP"
+        ]
+      }
+    ]
+  }
+}

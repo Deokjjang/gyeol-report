@@ -27,7 +27,7 @@ function createJsonResponse(body: unknown, status = 200): Response {
 }
 
 function createSuccessFetch(body?: Record<string, unknown>) {
-  return vi.fn(async () =>
+  return vi.fn<typeof fetch>(async () =>
     createJsonResponse(
       body ?? {
         orderId: request.orderId,
@@ -138,7 +138,7 @@ describe("Toss confirm client", () => {
     expect(result.ok).toBe(true);
     expect(fetchImpl).toHaveBeenCalledTimes(1);
     expect(fetchCall?.[0]).toBe(TOSS_CONFIRM_API_URL);
-    expect(fetchCall?.[1].method).toBe("POST");
+    expect(fetchCall?.[1]?.method).toBe("POST");
     expect(readHeader(fetchCall?.[1] ?? {}, "authorization")).toBe(
       `Basic ${Buffer.from(`${secretKey}:`, "utf8").toString("base64")}`,
     );

@@ -1,0 +1,112 @@
+{
+  "TASK": "V4-COMPREHENSIVE-READER-VALUE-PROBE-01",
+  "BASE_SHA": "b88cf5dd6f7dda903a568955c4f736408b856c86",
+  "BRANCH": "v4/comprehensive-reader-value-probe-01",
+  "COMMIT_SHA": "RESOLVE_FROM_COMMITTED_BRANCH_HEAD; recorded after commit in final response and external release-receipt.json",
+  "REMOTE_SHA_MATCH": "POST_COMMIT_CHECK_REQUIRED",
+  "EXPERIMENT_STATUS": "RESEARCH_ONLY_EDITORIAL_PROTOTYPE",
+  "PRODUCT_KEY": "saju_mbti_full",
+  "FIXTURES_USED": [
+    "fixture-comprehensive-A (검토 가 / ENFJ / exact time)",
+    "fixture-comprehensive-F (검토 나 / unknown MBTI and time)"
+  ],
+  "BASELINE_PUBLISHED_EDITIONS": [
+    "comprehensive-editorial-quality-fix-01-v1",
+    "comprehensive-editorial-quality-fix-01-v1"
+  ],
+  "BASELINE_PARAGRAPHS": 8,
+  "EXPERIMENTAL_PARAGRAPHS": 8,
+  "COMPARABLE_PARAGRAPH_PAIRS": {
+    "topicComparisons": 8,
+    "exactReplacements": 0,
+    "evidenceSupported": 3,
+    "editorialOnly": 5
+  },
+  "RESEARCH_MATERIALS_CONSIDERED": {
+    "indexed": 179,
+    "modelDeepReadForProse": 7,
+    "applicableCatalogCandidates": 200
+  },
+  "RESEARCH_MATERIALS_USED_FOR_EXPERIMENT": 7,
+  "ACTUAL_EVIDENCE_WITNESSES": {
+    "inherited4fixtureOccurrences": 557,
+    "probe2fixtureOccurrences": 180,
+    "selectedDistinctWitnessAddresses": 8,
+    "nodesIncludingRoots": 15
+  },
+  "STRUCTURAL_CANDIDATES": {
+    "inherited4fixtureOccurrences": 23,
+    "probe2fixtureOccurrences": 9,
+    "customerEligible": 0
+  },
+  "READER_BRIDGE_STATUS": "READER_SCHEDULER_BRIDGE_UNVERIFIED",
+  "VERIFIED_FACT_CLAUSES": 4,
+  "VERIFIED_INPUT_CLAUSES": 1,
+  "RESEARCH_CONDITIONAL_CLAUSES": 27,
+  "UNVERIFIED_CLAUSES_BLOCKED": {
+    "authoredEorFEmitted": 0,
+    "negativeProbesPassed": 21,
+    "unverifiedHypothesisProbeRejected": 1,
+    "prohibitedAssertionProbeRejected": 1,
+    "inventedPastAndFutureProbesRejected": 2
+  },
+  "UNSUPPORTED_PERSONAL_ASSERTIONS": 0,
+  "INDEPENDENT_INFORMATION_DELTA": {
+    "newIndependentCalculatedOrPersonalFacts": 0,
+    "conditionalEditorialInformation": "Partial, not independently validated"
+  },
+  "SEMANTIC_REPETITION_DELTA": "UNPROVEN; consent/scope advice repeats and some topics already exist in A",
+  "GROUNDING_VIOLATIONS": {
+    "authored32SentencesObserved": 0,
+    "generalSemanticTruthClassifierClaimed": false
+  },
+  "KOREAN_READABILITY": "MIXED; readable conditional examples, but technical terms and caveat burden increase in some pairs",
+  "PERSONALIZATION_DELTA": "Narrow fact-location/condition specificity; no independent-person cohort or verified life-history gain",
+  "QUALITY_IMPROVEMENTS": [
+    "calculation position made explicit",
+    "conditions/counterexamples",
+    "observing errors versus authority to change",
+    "shared goal versus good atmosphere"
+  ],
+  "QUALITY_REGRESSIONS": [
+    "some A MBTI/Fusion explanation lost",
+    "some questions changed rather than answered better",
+    "technical and caveat-heavy prose",
+    "scope/consent advice repeated"
+  ],
+  "MODEL_EVALUATION_LIMITATIONS": "Same model authored B and assessed A/B; no blind independent reader study, satisfaction measure or meaning approval",
+  "RESEARCH_VALUE_CONCLUSION": "PARTIAL_EDITORIAL_POTENTIAL_NOT_PROVEN_GLOBAL_QUALITY_GAIN",
+  "REMAINING_APPROVAL_BLOCKERS": [
+    "READER_BRIDGE_MISSING",
+    "ACTUAL_CONTEXT_MISSING",
+    "MEANING_UNVERIFIED",
+    "SOURCE_POLICY_BLOCKED",
+    "REPETITION_NOT_REDUCED",
+    "EVIDENCE_INSUFFICIENT",
+    "EDITORIAL_RENDERING_WEAK"
+  ],
+  "RECOMMENDED_NEXT_TASK": "Explicit comprehensive question/source/root bridge verification and independent blinded reading; do not start automatically",
+  "CUSTOMER_APPROVED": 0,
+  "CUSTOMER_ELIGIBLE": 0,
+  "CUSTOMER_SELECTIONS": 0,
+  "CLAIMS_EMITTED": 0,
+  "BOOK_ALLOCATIONS": 0,
+  "CALCULATION_PRESERVATION": "PASS; all original code bytes and fresh before/after calculated profiles unchanged",
+  "NARRATIVE_PRESERVATION": "PASS; original published A and existing before/after narratives unchanged",
+  "BOOK_PRESERVATION": "PASS; 17 Books/102 digests and Friendship 20 cases/140 digests identical",
+  "EXISTING_TEST_FAILURES": {
+    "knownSuite": "5837 PASS / 46 identical FAIL",
+    "businessPartnerSeparate": "382 PASS / 1 identical FAIL at fresh base and current; historical Pilot 383 PASS"
+  },
+  "NEW_TEST_FAILURES": 0,
+  "TYPESCRIPT": "0 diagnostics / 0 new",
+  "LINT": "PASS",
+  "BUILD": "PASS / 0 warnings observed",
+  "DIFF_CHECK": "PASS",
+  "NFT": "90 paths and dependency sets unchanged / experiment entries 0",
+  "DETERMINISM": "PASS; 2 independent CLI runs / 23 physical core files identical",
+  "PRIVACY": "PASS: all new public artifacts/tool/test bytes scanned; raw fixture names, birth dates and original person hashes absent",
+  "VERCEL_PREVIEW": "POST_COMMIT_EXACT_SHA_READY_CHECK_REQUIRED; no customer integration",
+  "COMPARISON_HTML_PATH": "docs/validation/v4-comprehensive-reader-value-probe-01/reader-value-comparison.html",
+  "VALIDATION_REPORT_PATH": "docs/validation/v4-comprehensive-reader-value-probe-01/README.md"
+}

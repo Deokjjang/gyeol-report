@@ -1,0 +1,67 @@
+{
+  "unit": "offline wall milliseconds and RSS bytes; not customer runtime latency",
+  "runs": [
+    {
+      "elapsedMs": 167502.48754200002,
+      "rssStartBytes": 720125952,
+      "rssEndBytes": 3460775936,
+      "maxRssBytes": 3844227072,
+      "timings": [
+        {
+          "fixtureId": "fixture-career-A",
+          "foundationMs": 316.802125000002,
+          "specialistMs": 330.17662500000006,
+          "rssBytes": 2670051328
+        },
+        {
+          "fixtureId": "fixture-career-F",
+          "foundationMs": 60.6675839999989,
+          "specialistMs": 60.668666999998095,
+          "rssBytes": 2666348544
+        },
+        {
+          "fixtureId": "fixture-same-natal-career",
+          "foundationMs": 283.8151660000003,
+          "specialistMs": 293.7129580000037,
+          "rssBytes": 3578544128
+        }
+      ],
+      "originalFoundationGeneratedFilesMatched": 64,
+      "originalComprehensiveGeneratedFilesMatched": 29,
+      "network": "disabled"
+    },
+    {
+      "elapsedMs": 167182.360292,
+      "rssStartBytes": 718176256,
+      "rssEndBytes": 3410722816,
+      "maxRssBytes": 3782623232,
+      "timings": [
+        {
+          "fixtureId": "fixture-career-A",
+          "foundationMs": 314.200582999998,
+          "specialistMs": 325.3433750000004,
+          "rssBytes": 2537177088
+        },
+        {
+          "fixtureId": "fixture-career-F",
+          "foundationMs": 55.07341599999927,
+          "specialistMs": 62.65766699999949,
+          "rssBytes": 2533457920
+        },
+        {
+          "fixtureId": "fixture-same-natal-career",
+          "foundationMs": 285.6443750000035,
+          "specialistMs": 293.17008400001214,
+          "rssBytes": 3390881792
+        }
+      ],
+      "originalFoundationGeneratedFilesMatched": 64,
+      "originalComprehensiveGeneratedFilesMatched": 29,
+      "network": "disabled"
+    }
+  ],
+  "catalogAndSpecialistIndexPreparedOnce": true,
+  "actualGraphsReusedWithoutRecalculation": true,
+  "questionMaterialMatchingIndexed": true,
+  "classifierOnlyProbesNotAddedToBinderCohort": true
+}

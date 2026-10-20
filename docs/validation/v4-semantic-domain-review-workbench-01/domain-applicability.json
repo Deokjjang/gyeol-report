@@ -1,0 +1,1461 @@
+[
+  {
+    "reviewUnitId": "review-unit-v1:04ff78e189998bf73cbdbe78eb8cc745bfdd1180b12c62ed71ccecf063434eb1",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:14f117b796f0276b39f4a7f16bb95db9f7cd0bcb097ec661f1fe24c47bcfa895",
+    "originalDecisions": [
+      {
+        "decisionKey": "sdv:decision:cd0ecbc50c7610c8cf65ff322c610e5a0d410a99a34dafe8246d4b5f6ebfc22c",
+        "catalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+        "originalId": "mfpr:god:편재",
+        "researchFamily": "major-fortune-product-research",
+        "originalRecordHash": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+        "sourceVerificationReferenceKeys": [
+          "sv:ref:cb997d611e1a0f3edd9534ece0fbe205a38f7a3a0d4e5ebad6dc831753cf1c1b"
+        ],
+        "originalMeaning": {
+          "core": "외부 자원·접점과 선택 범위",
+          "positive": "많은 제안 중 감당 가능한 거래를 고름",
+          "risk": "유입 가능성을 회수 완료로 착각"
+        },
+        "targetMeaning": "UNKNOWN",
+        "sourceDomain": {
+          "work": "제안 범위·맡을 양·기존 의무 비교",
+          "money": "비용·회수 시점·중단 가능성",
+          "learning": "낯선 분야를 탐색하되 투입 상한 유지",
+          "relationship": "새 연결과 기존 관계 시간 배분"
+        },
+        "targetDomain": "UNKNOWN",
+        "targetProduct": [
+          "major_fortune"
+        ],
+        "targetRelationship": "UNKNOWN",
+        "context": "UNKNOWN",
+        "semanticAxis": "UNKNOWN",
+        "semanticFacet": "UNKNOWN",
+        "semanticRelation": "INSUFFICIENT_VERIFICATION",
+        "declaredRelationNotApproved": "INSUFFICIENT_VERIFICATION",
+        "requiredEvidence": [
+          {
+            "gate": "ACTUAL_SOURCE_AND_PRODUCER",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ACTUAL_OWNER_AND_DIRECTION",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ORIGINAL_CONDITIONS_AND_COUNTEREXAMPLES",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ACTUAL_TIME_SCOPE_AND_COMPATIBLE_GROUP",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "HUMAN_OPERATOR_AND_CUSTOMER_APPROVAL",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          }
+        ],
+        "requiredUserState": "UNKNOWN",
+        "counterexamples": "UNKNOWN",
+        "prohibitedInference": {},
+        "originalPolicyRefs": [],
+        "ancestryRefs": [
+          "kc:v1:17e517f5ddff781fe6e62a4bdee37d0c65b9d82c95d64eb84ec0e5c7a71d6fca",
+          "kc:v1:310cca31e1ab44ec8b7d4733ac5af11ef6065ff597b91c0f0afc21914388afd1",
+          "kc:v1:3c12d9facda8e5d557c4673936f351faede6787f3ecebccda24fc0760b0d83aa",
+          "kc:v1:3d13f31bc0644d615757714ce6cfdc77b7c1bdefb058afe53f22d33bd7147daf",
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+          "kc:v1:9850b3ca7724e48a50d219a184d94faa558eadf694ae2e2bbe40573676db2490"
+        ],
+        "originalSourceReviewState": {
+          "sourceExistence": "PRESENT",
+          "hashIntegrity": "MATCH",
+          "researchReview": {
+            "verification": "conditional_editorial"
+          },
+          "traditionalSourceVerification": {
+            "definitionReview": null,
+            "traditionalEntryReviews": []
+          },
+          "mbtiSourceCoverage": null,
+          "meaningReview": {},
+          "calculationApplicability": "REQUIRES_ACTUAL_EVIDENCE",
+          "productApplicability": "DECLARED_CONDITIONS_ONLY",
+          "customerApproved": false
+        },
+        "domain": {
+          "state": "UNKNOWN",
+          "originalDomain": {
+            "work": "제안 범위·맡을 양·기존 의무 비교",
+            "money": "비용·회수 시점·중단 가능성",
+            "learning": "낯선 분야를 탐색하되 투입 상한 유지",
+            "relationship": "새 연결과 기존 관계 시간 배분"
+          },
+          "targetDomain": "UNKNOWN",
+          "automaticEquivalence": false
+        },
+        "products": [
+          {
+            "product": "major_fortune",
+            "state": "REVIEW_REQUIRED",
+            "policyIds": [
+              "mfpr:domain:long_term_choice"
+            ],
+            "actualInputVerified": false
+          }
+        ],
+        "relationships": [
+          {
+            "relationship": "UNKNOWN",
+            "state": "REVIEW_REQUIRED",
+            "policyIds": [],
+            "actualRolesVerified": false
+          }
+        ],
+        "reviewMethod": "DETERMINISTIC_STRUCTURAL_CHECK",
+        "reviewActorType": "MECHANICAL",
+        "reviewState": "UNREVIEWED",
+        "decisionState": "SOURCE_INCOMPLETE",
+        "blockingReasons": [
+          {
+            "code": "SOURCE_INCOMPLETE",
+            "catalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+            "sourceKeys": [],
+            "detail": [
+              "sv:ref:cb997d611e1a0f3edd9534ece0fbe205a38f7a3a0d4e5ebad6dc831753cf1c1b"
+            ],
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          },
+          {
+            "code": "SEMANTIC_REVIEW_REQUIRED",
+            "catalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+            "sourceKeys": [],
+            "detail": "No direct reading review for this exact source hash and proposed use.",
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          },
+          {
+            "code": "PRODUCT_POLICY_REVIEW_REQUIRED",
+            "catalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+            "sourceKeys": [],
+            "detail": [
+              "major_fortune"
+            ],
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          }
+        ],
+        "receiptKey": "sdv:receipt:f8f510b1c91cb566971f02e03f4f5e9466147bfd451b6b4e3cb5964ebfd619d4",
+        "customerApproved": false,
+        "actualCalculatedEvidence": "NOT_SUPPLIED",
+        "runtimeConnected": false
+      }
+    ],
+    "requiredAncestry": [
+      {
+        "root": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+        "requiredSourceKeys": [
+          "kc:v1:17e517f5ddff781fe6e62a4bdee37d0c65b9d82c95d64eb84ec0e5c7a71d6fca",
+          "kc:v1:310cca31e1ab44ec8b7d4733ac5af11ef6065ff597b91c0f0afc21914388afd1",
+          "kc:v1:3c12d9facda8e5d557c4673936f351faede6787f3ecebccda24fc0760b0d83aa",
+          "kc:v1:3d13f31bc0644d615757714ce6cfdc77b7c1bdefb058afe53f22d33bd7147daf",
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+          "kc:v1:9850b3ca7724e48a50d219a184d94faa558eadf694ae2e2bbe40573676db2490"
+        ],
+        "contextualSourceKeys": [],
+        "cycleEdges": [],
+        "conditionalGroupOwners": [],
+        "sourceReferenceKeys": [
+          "sv:ref:cb997d611e1a0f3edd9534ece0fbe205a38f7a3a0d4e5ebad6dc831753cf1c1b"
+        ],
+        "incompleteReferenceKeys": [
+          "sv:ref:cb997d611e1a0f3edd9534ece0fbe205a38f7a3a0d4e5ebad6dc831753cf1c1b"
+        ],
+        "prohibitions": [],
+        "documentaryAndFutureAreNotCalculatedAncestors": true
+      }
+    ],
+    "inheritedDecisions": [
+      {
+        "decisionKey": "sdv:decision:cd0ecbc50c7610c8cf65ff322c610e5a0d410a99a34dafe8246d4b5f6ebfc22c",
+        "catalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+        "originalId": "mfpr:god:편재",
+        "researchFamily": "major-fortune-product-research",
+        "originalRecordHash": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+        "sourceVerificationReferenceKeys": [
+          "sv:ref:cb997d611e1a0f3edd9534ece0fbe205a38f7a3a0d4e5ebad6dc831753cf1c1b"
+        ],
+        "originalMeaning": {
+          "core": "외부 자원·접점과 선택 범위",
+          "positive": "많은 제안 중 감당 가능한 거래를 고름",
+          "risk": "유입 가능성을 회수 완료로 착각"
+        },
+        "targetMeaning": "UNKNOWN",
+        "sourceDomain": {
+          "work": "제안 범위·맡을 양·기존 의무 비교",
+          "money": "비용·회수 시점·중단 가능성",
+          "learning": "낯선 분야를 탐색하되 투입 상한 유지",
+          "relationship": "새 연결과 기존 관계 시간 배분"
+        },
+        "targetDomain": "UNKNOWN",
+        "targetProduct": [
+          "major_fortune"
+        ],
+        "targetRelationship": "UNKNOWN",
+        "context": "UNKNOWN",
+        "semanticAxis": "UNKNOWN",
+        "semanticFacet": "UNKNOWN",
+        "semanticRelation": "INSUFFICIENT_VERIFICATION",
+        "declaredRelationNotApproved": "INSUFFICIENT_VERIFICATION",
+        "requiredEvidence": [
+          {
+            "gate": "ACTUAL_SOURCE_AND_PRODUCER",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ACTUAL_OWNER_AND_DIRECTION",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ORIGINAL_CONDITIONS_AND_COUNTEREXAMPLES",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ACTUAL_TIME_SCOPE_AND_COMPATIBLE_GROUP",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "HUMAN_OPERATOR_AND_CUSTOMER_APPROVAL",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          }
+        ],
+        "requiredUserState": "UNKNOWN",
+        "counterexamples": "UNKNOWN",
+        "prohibitedInference": {},
+        "originalPolicyRefs": [],
+        "ancestryRefs": [
+          "kc:v1:17e517f5ddff781fe6e62a4bdee37d0c65b9d82c95d64eb84ec0e5c7a71d6fca",
+          "kc:v1:310cca31e1ab44ec8b7d4733ac5af11ef6065ff597b91c0f0afc21914388afd1",
+          "kc:v1:3c12d9facda8e5d557c4673936f351faede6787f3ecebccda24fc0760b0d83aa",
+          "kc:v1:3d13f31bc0644d615757714ce6cfdc77b7c1bdefb058afe53f22d33bd7147daf",
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+          "kc:v1:9850b3ca7724e48a50d219a184d94faa558eadf694ae2e2bbe40573676db2490"
+        ],
+        "originalSourceReviewState": {
+          "sourceExistence": "PRESENT",
+          "hashIntegrity": "MATCH",
+          "researchReview": {
+            "verification": "conditional_editorial"
+          },
+          "traditionalSourceVerification": {
+            "definitionReview": null,
+            "traditionalEntryReviews": []
+          },
+          "mbtiSourceCoverage": null,
+          "meaningReview": {},
+          "calculationApplicability": "REQUIRES_ACTUAL_EVIDENCE",
+          "productApplicability": "DECLARED_CONDITIONS_ONLY",
+          "customerApproved": false
+        },
+        "domain": {
+          "state": "UNKNOWN",
+          "originalDomain": {
+            "work": "제안 범위·맡을 양·기존 의무 비교",
+            "money": "비용·회수 시점·중단 가능성",
+            "learning": "낯선 분야를 탐색하되 투입 상한 유지",
+            "relationship": "새 연결과 기존 관계 시간 배분"
+          },
+          "targetDomain": "UNKNOWN",
+          "automaticEquivalence": false
+        },
+        "products": [
+          {
+            "product": "major_fortune",
+            "state": "REVIEW_REQUIRED",
+            "policyIds": [
+              "mfpr:domain:long_term_choice"
+            ],
+            "actualInputVerified": false
+          }
+        ],
+        "relationships": [
+          {
+            "relationship": "UNKNOWN",
+            "state": "REVIEW_REQUIRED",
+            "policyIds": [],
+            "actualRolesVerified": false
+          }
+        ],
+        "reviewMethod": "DETERMINISTIC_STRUCTURAL_CHECK",
+        "reviewActorType": "MECHANICAL",
+        "reviewState": "UNREVIEWED",
+        "decisionState": "SOURCE_INCOMPLETE",
+        "blockingReasons": [
+          {
+            "code": "SOURCE_INCOMPLETE",
+            "catalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+            "sourceKeys": [],
+            "detail": [
+              "sv:ref:cb997d611e1a0f3edd9534ece0fbe205a38f7a3a0d4e5ebad6dc831753cf1c1b"
+            ],
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          },
+          {
+            "code": "SEMANTIC_REVIEW_REQUIRED",
+            "catalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+            "sourceKeys": [],
+            "detail": "No direct reading review for this exact source hash and proposed use.",
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          },
+          {
+            "code": "PRODUCT_POLICY_REVIEW_REQUIRED",
+            "catalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+            "sourceKeys": [],
+            "detail": [
+              "major_fortune"
+            ],
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          }
+        ],
+        "receiptKey": "sdv:receipt:f8f510b1c91cb566971f02e03f4f5e9466147bfd451b6b4e3cb5964ebfd619d4",
+        "customerApproved": false,
+        "actualCalculatedEvidence": "NOT_SUPPLIED",
+        "runtimeConnected": false
+      }
+    ],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:16113b812644bbaccbedaba0d56728a43edd2f262d9ce397b35a6222eabc8944",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:26bc543d779c926a91bdd35019d6437aa65a7f674be5a7988a97eb3b01599cb6",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:27ffd5b0576085ca6e0bace7a984e8afe0ef404872cf7ec92b7947091ad90ecc",
+    "originalDecisions": [
+      {
+        "decisionKey": "sdv:decision:6725ad50c27088cfe5613989cadb9a4f2769660760322f6e7a12a7b6a087d8a9",
+        "catalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+        "originalId": "mfpr:god:편인",
+        "researchFamily": "major-fortune-product-research",
+        "originalRecordHash": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+        "sourceVerificationReferenceKeys": [
+          "sv:ref:1b6a268b627dd5ad8b2b3859035a8b046c6802a801f56e668cb15e5fa1346af2"
+        ],
+        "originalMeaning": {
+          "core": "선택적 탐색과 다른 관점",
+          "positive": "조사를 끝낼 질문과 작은 적용을 연결",
+          "risk": "더 이해할 때까지 결정을 무기한 유예"
+        },
+        "targetMeaning": "UNKNOWN",
+        "sourceDomain": {
+          "work": "낯선 방법의 적용 대상과 검증 종료",
+          "money": "정보 탐색과 자금 투입 결정 분리",
+          "learning": "가설을 좁혀 이해와 시험을 반복",
+          "relationship": "상대 의도 해석과 실제 들은 말 분리"
+        },
+        "targetDomain": "UNKNOWN",
+        "targetProduct": [
+          "major_fortune"
+        ],
+        "targetRelationship": "UNKNOWN",
+        "context": "UNKNOWN",
+        "semanticAxis": "UNKNOWN",
+        "semanticFacet": "UNKNOWN",
+        "semanticRelation": "INSUFFICIENT_VERIFICATION",
+        "declaredRelationNotApproved": "INSUFFICIENT_VERIFICATION",
+        "requiredEvidence": [
+          {
+            "gate": "ACTUAL_SOURCE_AND_PRODUCER",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ACTUAL_OWNER_AND_DIRECTION",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ORIGINAL_CONDITIONS_AND_COUNTEREXAMPLES",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ACTUAL_TIME_SCOPE_AND_COMPATIBLE_GROUP",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "HUMAN_OPERATOR_AND_CUSTOMER_APPROVAL",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          }
+        ],
+        "requiredUserState": "UNKNOWN",
+        "counterexamples": "UNKNOWN",
+        "prohibitedInference": {},
+        "originalPolicyRefs": [],
+        "ancestryRefs": [
+          "kc:v1:17e517f5ddff781fe6e62a4bdee37d0c65b9d82c95d64eb84ec0e5c7a71d6fca",
+          "kc:v1:3c12d9facda8e5d557c4673936f351faede6787f3ecebccda24fc0760b0d83aa",
+          "kc:v1:3d13f31bc0644d615757714ce6cfdc77b7c1bdefb058afe53f22d33bd7147daf",
+          "kc:v1:73c33fe751a4abd085090038cb55a728d140418a6617a88091bbbca17390ecf4",
+          "kc:v1:9850b3ca7724e48a50d219a184d94faa558eadf694ae2e2bbe40573676db2490",
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "originalSourceReviewState": {
+          "sourceExistence": "PRESENT",
+          "hashIntegrity": "MATCH",
+          "researchReview": {
+            "verification": "conditional_editorial"
+          },
+          "traditionalSourceVerification": {
+            "definitionReview": null,
+            "traditionalEntryReviews": []
+          },
+          "mbtiSourceCoverage": null,
+          "meaningReview": {},
+          "calculationApplicability": "REQUIRES_ACTUAL_EVIDENCE",
+          "productApplicability": "DECLARED_CONDITIONS_ONLY",
+          "customerApproved": false
+        },
+        "domain": {
+          "state": "UNKNOWN",
+          "originalDomain": {
+            "work": "낯선 방법의 적용 대상과 검증 종료",
+            "money": "정보 탐색과 자금 투입 결정 분리",
+            "learning": "가설을 좁혀 이해와 시험을 반복",
+            "relationship": "상대 의도 해석과 실제 들은 말 분리"
+          },
+          "targetDomain": "UNKNOWN",
+          "automaticEquivalence": false
+        },
+        "products": [
+          {
+            "product": "major_fortune",
+            "state": "REVIEW_REQUIRED",
+            "policyIds": [
+              "mfpr:domain:long_term_choice"
+            ],
+            "actualInputVerified": false
+          }
+        ],
+        "relationships": [
+          {
+            "relationship": "UNKNOWN",
+            "state": "REVIEW_REQUIRED",
+            "policyIds": [],
+            "actualRolesVerified": false
+          }
+        ],
+        "reviewMethod": "DETERMINISTIC_STRUCTURAL_CHECK",
+        "reviewActorType": "MECHANICAL",
+        "reviewState": "UNREVIEWED",
+        "decisionState": "SOURCE_INCOMPLETE",
+        "blockingReasons": [
+          {
+            "code": "SOURCE_INCOMPLETE",
+            "catalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+            "sourceKeys": [],
+            "detail": [
+              "sv:ref:1b6a268b627dd5ad8b2b3859035a8b046c6802a801f56e668cb15e5fa1346af2"
+            ],
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          },
+          {
+            "code": "SEMANTIC_REVIEW_REQUIRED",
+            "catalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+            "sourceKeys": [],
+            "detail": "No direct reading review for this exact source hash and proposed use.",
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          },
+          {
+            "code": "PRODUCT_POLICY_REVIEW_REQUIRED",
+            "catalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+            "sourceKeys": [],
+            "detail": [
+              "major_fortune"
+            ],
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          }
+        ],
+        "receiptKey": "sdv:receipt:860f92f3f7d39992389a72e80e9da4a72321d879e5e1832b82426f40b2f15274",
+        "customerApproved": false,
+        "actualCalculatedEvidence": "NOT_SUPPLIED",
+        "runtimeConnected": false
+      }
+    ],
+    "requiredAncestry": [
+      {
+        "root": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+        "requiredSourceKeys": [
+          "kc:v1:17e517f5ddff781fe6e62a4bdee37d0c65b9d82c95d64eb84ec0e5c7a71d6fca",
+          "kc:v1:3c12d9facda8e5d557c4673936f351faede6787f3ecebccda24fc0760b0d83aa",
+          "kc:v1:3d13f31bc0644d615757714ce6cfdc77b7c1bdefb058afe53f22d33bd7147daf",
+          "kc:v1:73c33fe751a4abd085090038cb55a728d140418a6617a88091bbbca17390ecf4",
+          "kc:v1:9850b3ca7724e48a50d219a184d94faa558eadf694ae2e2bbe40573676db2490",
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "contextualSourceKeys": [],
+        "cycleEdges": [],
+        "conditionalGroupOwners": [],
+        "sourceReferenceKeys": [
+          "sv:ref:1b6a268b627dd5ad8b2b3859035a8b046c6802a801f56e668cb15e5fa1346af2"
+        ],
+        "incompleteReferenceKeys": [
+          "sv:ref:1b6a268b627dd5ad8b2b3859035a8b046c6802a801f56e668cb15e5fa1346af2"
+        ],
+        "prohibitions": [],
+        "documentaryAndFutureAreNotCalculatedAncestors": true
+      }
+    ],
+    "inheritedDecisions": [
+      {
+        "decisionKey": "sdv:decision:6725ad50c27088cfe5613989cadb9a4f2769660760322f6e7a12a7b6a087d8a9",
+        "catalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+        "originalId": "mfpr:god:편인",
+        "researchFamily": "major-fortune-product-research",
+        "originalRecordHash": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+        "sourceVerificationReferenceKeys": [
+          "sv:ref:1b6a268b627dd5ad8b2b3859035a8b046c6802a801f56e668cb15e5fa1346af2"
+        ],
+        "originalMeaning": {
+          "core": "선택적 탐색과 다른 관점",
+          "positive": "조사를 끝낼 질문과 작은 적용을 연결",
+          "risk": "더 이해할 때까지 결정을 무기한 유예"
+        },
+        "targetMeaning": "UNKNOWN",
+        "sourceDomain": {
+          "work": "낯선 방법의 적용 대상과 검증 종료",
+          "money": "정보 탐색과 자금 투입 결정 분리",
+          "learning": "가설을 좁혀 이해와 시험을 반복",
+          "relationship": "상대 의도 해석과 실제 들은 말 분리"
+        },
+        "targetDomain": "UNKNOWN",
+        "targetProduct": [
+          "major_fortune"
+        ],
+        "targetRelationship": "UNKNOWN",
+        "context": "UNKNOWN",
+        "semanticAxis": "UNKNOWN",
+        "semanticFacet": "UNKNOWN",
+        "semanticRelation": "INSUFFICIENT_VERIFICATION",
+        "declaredRelationNotApproved": "INSUFFICIENT_VERIFICATION",
+        "requiredEvidence": [
+          {
+            "gate": "ACTUAL_SOURCE_AND_PRODUCER",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ACTUAL_OWNER_AND_DIRECTION",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ORIGINAL_CONDITIONS_AND_COUNTEREXAMPLES",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ACTUAL_TIME_SCOPE_AND_COMPATIBLE_GROUP",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "HUMAN_OPERATOR_AND_CUSTOMER_APPROVAL",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          }
+        ],
+        "requiredUserState": "UNKNOWN",
+        "counterexamples": "UNKNOWN",
+        "prohibitedInference": {},
+        "originalPolicyRefs": [],
+        "ancestryRefs": [
+          "kc:v1:17e517f5ddff781fe6e62a4bdee37d0c65b9d82c95d64eb84ec0e5c7a71d6fca",
+          "kc:v1:3c12d9facda8e5d557c4673936f351faede6787f3ecebccda24fc0760b0d83aa",
+          "kc:v1:3d13f31bc0644d615757714ce6cfdc77b7c1bdefb058afe53f22d33bd7147daf",
+          "kc:v1:73c33fe751a4abd085090038cb55a728d140418a6617a88091bbbca17390ecf4",
+          "kc:v1:9850b3ca7724e48a50d219a184d94faa558eadf694ae2e2bbe40573676db2490",
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "originalSourceReviewState": {
+          "sourceExistence": "PRESENT",
+          "hashIntegrity": "MATCH",
+          "researchReview": {
+            "verification": "conditional_editorial"
+          },
+          "traditionalSourceVerification": {
+            "definitionReview": null,
+            "traditionalEntryReviews": []
+          },
+          "mbtiSourceCoverage": null,
+          "meaningReview": {},
+          "calculationApplicability": "REQUIRES_ACTUAL_EVIDENCE",
+          "productApplicability": "DECLARED_CONDITIONS_ONLY",
+          "customerApproved": false
+        },
+        "domain": {
+          "state": "UNKNOWN",
+          "originalDomain": {
+            "work": "낯선 방법의 적용 대상과 검증 종료",
+            "money": "정보 탐색과 자금 투입 결정 분리",
+            "learning": "가설을 좁혀 이해와 시험을 반복",
+            "relationship": "상대 의도 해석과 실제 들은 말 분리"
+          },
+          "targetDomain": "UNKNOWN",
+          "automaticEquivalence": false
+        },
+        "products": [
+          {
+            "product": "major_fortune",
+            "state": "REVIEW_REQUIRED",
+            "policyIds": [
+              "mfpr:domain:long_term_choice"
+            ],
+            "actualInputVerified": false
+          }
+        ],
+        "relationships": [
+          {
+            "relationship": "UNKNOWN",
+            "state": "REVIEW_REQUIRED",
+            "policyIds": [],
+            "actualRolesVerified": false
+          }
+        ],
+        "reviewMethod": "DETERMINISTIC_STRUCTURAL_CHECK",
+        "reviewActorType": "MECHANICAL",
+        "reviewState": "UNREVIEWED",
+        "decisionState": "SOURCE_INCOMPLETE",
+        "blockingReasons": [
+          {
+            "code": "SOURCE_INCOMPLETE",
+            "catalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+            "sourceKeys": [],
+            "detail": [
+              "sv:ref:1b6a268b627dd5ad8b2b3859035a8b046c6802a801f56e668cb15e5fa1346af2"
+            ],
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          },
+          {
+            "code": "SEMANTIC_REVIEW_REQUIRED",
+            "catalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+            "sourceKeys": [],
+            "detail": "No direct reading review for this exact source hash and proposed use.",
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          },
+          {
+            "code": "PRODUCT_POLICY_REVIEW_REQUIRED",
+            "catalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+            "sourceKeys": [],
+            "detail": [
+              "major_fortune"
+            ],
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          }
+        ],
+        "receiptKey": "sdv:receipt:860f92f3f7d39992389a72e80e9da4a72321d879e5e1832b82426f40b2f15274",
+        "customerApproved": false,
+        "actualCalculatedEvidence": "NOT_SUPPLIED",
+        "runtimeConnected": false
+      }
+    ],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:3a09a215d6292844220e662009d0ed0cd27f298c369a333dc580bc22747f2400",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:431a7dd96215f14384db9d0223c9ec6159bd81af7c399a9cb71015f2932456dc",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:449dc748b29d61562990b1d3bf3363854b75903a2e8a54a7f5e53053722a59c4",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:459a3a3dbc231af64f19c184387dca52bfed0be7daf90a7439b37e670e6942a4",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:546099cb92d114feb3abed80b1d90e979e39913e139c39d6191d43370e677a1f",
+    "originalDecisions": [],
+    "requiredAncestry": [
+      {
+        "root": "kc:v1:47e9b22b46608162f41e74c13051f3e233a4950dd012a11c7b2b0d0a104ac386",
+        "requiredSourceKeys": [
+          "kc:v1:47e9b22b46608162f41e74c13051f3e233a4950dd012a11c7b2b0d0a104ac386"
+        ],
+        "contextualSourceKeys": [],
+        "cycleEdges": [],
+        "conditionalGroupOwners": [],
+        "sourceReferenceKeys": [],
+        "incompleteReferenceKeys": [],
+        "prohibitions": [],
+        "documentaryAndFutureAreNotCalculatedAncestors": true
+      }
+    ],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5993b08182efc78df3dd9bd976e7ab85c58444220e40e9f08422ce213e646785",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5ac48e6169d0fa0914c14e3748447872e45d17307c9c6802adf52a6db12afcfa",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:6fb89263ce5aa9a307d3c4a07f239f5bf1b4f5ba9580513ce355373983f20625",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:7e49413ef271e70f0cc3ab43744f20160f0e5445317ea4973c799eff33450e20",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:85c43ec8805b90d79e0c3c10e168f1b4a82c1ef7bd80f8052abb810a16b1172c",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:919a3b43cc1c6e772d3b28080628cdac715284178b547d744f180f4465d50856",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:9349b850cda441b851a1d67911aef1048039ec21b5d3bf765dab4a833d0047d1",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:a3a3921b97ea4748bc3cbf8ea59d8d7919b7b009690bf4892c135b445be2e878",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:a7a734c1d533c29e541b60a61bd6d9ce07c642004364b4cf4ad502ffeefe6fe3",
+    "originalDecisions": [
+      {
+        "decisionKey": "sdv:decision:68019dfea038a3e8a8d75c73bedac729379b37f90aaa501690f2afd21334fb03",
+        "catalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+        "originalId": "mfpr:god:편관",
+        "researchFamily": "major-fortune-product-research",
+        "originalRecordHash": "f2950e5c9c0b01f173ba811bdb29a27df97a078ea57db6dfa44f66a73a71f26d",
+        "sourceVerificationReferenceKeys": [
+          "sv:ref:077286e77877fea635d2ddf52650de80d3070899d1e2648bd438c4e779e97bbd"
+        ],
+        "originalMeaning": {
+          "core": "긴급 요구와 책임의 한계",
+          "positive": "결정권·지원·거절 기준을 책임과 맞춤",
+          "risk": "견디는 능력으로 회복 필요를 가림"
+        },
+        "targetMeaning": "UNKNOWN",
+        "sourceDomain": {
+          "work": "급한 업무의 우선순위·승인선·지원",
+          "money": "급히 정할 비용의 손실 한도와 유예 가능성",
+          "learning": "어려운 과제의 도움 요청 기준",
+          "relationship": "주도권 행사 전 상대 선택권 확인"
+        },
+        "targetDomain": "UNKNOWN",
+        "targetProduct": [
+          "major_fortune"
+        ],
+        "targetRelationship": "UNKNOWN",
+        "context": "UNKNOWN",
+        "semanticAxis": "UNKNOWN",
+        "semanticFacet": "UNKNOWN",
+        "semanticRelation": "INSUFFICIENT_VERIFICATION",
+        "declaredRelationNotApproved": "INSUFFICIENT_VERIFICATION",
+        "requiredEvidence": [
+          {
+            "gate": "ACTUAL_SOURCE_AND_PRODUCER",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ACTUAL_OWNER_AND_DIRECTION",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ORIGINAL_CONDITIONS_AND_COUNTEREXAMPLES",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ACTUAL_TIME_SCOPE_AND_COMPATIBLE_GROUP",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "HUMAN_OPERATOR_AND_CUSTOMER_APPROVAL",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          }
+        ],
+        "requiredUserState": "UNKNOWN",
+        "counterexamples": "UNKNOWN",
+        "prohibitedInference": {},
+        "originalPolicyRefs": [],
+        "ancestryRefs": [
+          "kc:v1:17e517f5ddff781fe6e62a4bdee37d0c65b9d82c95d64eb84ec0e5c7a71d6fca",
+          "kc:v1:3c12d9facda8e5d557c4673936f351faede6787f3ecebccda24fc0760b0d83aa",
+          "kc:v1:3d13f31bc0644d615757714ce6cfdc77b7c1bdefb058afe53f22d33bd7147daf",
+          "kc:v1:5ad19f8ef1ad91f07f9cb295b626287ad31aba8fba59b4dfe66552c3b2015531",
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+          "kc:v1:9850b3ca7724e48a50d219a184d94faa558eadf694ae2e2bbe40573676db2490"
+        ],
+        "originalSourceReviewState": {
+          "sourceExistence": "PRESENT",
+          "hashIntegrity": "MATCH",
+          "researchReview": {
+            "verification": "conditional_editorial"
+          },
+          "traditionalSourceVerification": {
+            "definitionReview": null,
+            "traditionalEntryReviews": []
+          },
+          "mbtiSourceCoverage": null,
+          "meaningReview": {},
+          "calculationApplicability": "REQUIRES_ACTUAL_EVIDENCE",
+          "productApplicability": "DECLARED_CONDITIONS_ONLY",
+          "customerApproved": false
+        },
+        "domain": {
+          "state": "UNKNOWN",
+          "originalDomain": {
+            "work": "급한 업무의 우선순위·승인선·지원",
+            "money": "급히 정할 비용의 손실 한도와 유예 가능성",
+            "learning": "어려운 과제의 도움 요청 기준",
+            "relationship": "주도권 행사 전 상대 선택권 확인"
+          },
+          "targetDomain": "UNKNOWN",
+          "automaticEquivalence": false
+        },
+        "products": [
+          {
+            "product": "major_fortune",
+            "state": "REVIEW_REQUIRED",
+            "policyIds": [
+              "mfpr:domain:long_term_choice"
+            ],
+            "actualInputVerified": false
+          }
+        ],
+        "relationships": [
+          {
+            "relationship": "UNKNOWN",
+            "state": "REVIEW_REQUIRED",
+            "policyIds": [],
+            "actualRolesVerified": false
+          }
+        ],
+        "reviewMethod": "DETERMINISTIC_STRUCTURAL_CHECK",
+        "reviewActorType": "MECHANICAL",
+        "reviewState": "UNREVIEWED",
+        "decisionState": "SOURCE_INCOMPLETE",
+        "blockingReasons": [
+          {
+            "code": "SOURCE_INCOMPLETE",
+            "catalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+            "sourceKeys": [],
+            "detail": [
+              "sv:ref:077286e77877fea635d2ddf52650de80d3070899d1e2648bd438c4e779e97bbd"
+            ],
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          },
+          {
+            "code": "SEMANTIC_REVIEW_REQUIRED",
+            "catalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+            "sourceKeys": [],
+            "detail": "No direct reading review for this exact source hash and proposed use.",
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          },
+          {
+            "code": "PRODUCT_POLICY_REVIEW_REQUIRED",
+            "catalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+            "sourceKeys": [],
+            "detail": [
+              "major_fortune"
+            ],
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          }
+        ],
+        "receiptKey": "sdv:receipt:7db2f79b1fba15307ce809860855c671470f7018dd5c70bc2fbe80a8f32c0a85",
+        "customerApproved": false,
+        "actualCalculatedEvidence": "NOT_SUPPLIED",
+        "runtimeConnected": false
+      }
+    ],
+    "requiredAncestry": [
+      {
+        "root": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+        "requiredSourceKeys": [
+          "kc:v1:17e517f5ddff781fe6e62a4bdee37d0c65b9d82c95d64eb84ec0e5c7a71d6fca",
+          "kc:v1:3c12d9facda8e5d557c4673936f351faede6787f3ecebccda24fc0760b0d83aa",
+          "kc:v1:3d13f31bc0644d615757714ce6cfdc77b7c1bdefb058afe53f22d33bd7147daf",
+          "kc:v1:5ad19f8ef1ad91f07f9cb295b626287ad31aba8fba59b4dfe66552c3b2015531",
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+          "kc:v1:9850b3ca7724e48a50d219a184d94faa558eadf694ae2e2bbe40573676db2490"
+        ],
+        "contextualSourceKeys": [],
+        "cycleEdges": [],
+        "conditionalGroupOwners": [],
+        "sourceReferenceKeys": [
+          "sv:ref:077286e77877fea635d2ddf52650de80d3070899d1e2648bd438c4e779e97bbd"
+        ],
+        "incompleteReferenceKeys": [
+          "sv:ref:077286e77877fea635d2ddf52650de80d3070899d1e2648bd438c4e779e97bbd"
+        ],
+        "prohibitions": [],
+        "documentaryAndFutureAreNotCalculatedAncestors": true
+      }
+    ],
+    "inheritedDecisions": [
+      {
+        "decisionKey": "sdv:decision:68019dfea038a3e8a8d75c73bedac729379b37f90aaa501690f2afd21334fb03",
+        "catalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+        "originalId": "mfpr:god:편관",
+        "researchFamily": "major-fortune-product-research",
+        "originalRecordHash": "f2950e5c9c0b01f173ba811bdb29a27df97a078ea57db6dfa44f66a73a71f26d",
+        "sourceVerificationReferenceKeys": [
+          "sv:ref:077286e77877fea635d2ddf52650de80d3070899d1e2648bd438c4e779e97bbd"
+        ],
+        "originalMeaning": {
+          "core": "긴급 요구와 책임의 한계",
+          "positive": "결정권·지원·거절 기준을 책임과 맞춤",
+          "risk": "견디는 능력으로 회복 필요를 가림"
+        },
+        "targetMeaning": "UNKNOWN",
+        "sourceDomain": {
+          "work": "급한 업무의 우선순위·승인선·지원",
+          "money": "급히 정할 비용의 손실 한도와 유예 가능성",
+          "learning": "어려운 과제의 도움 요청 기준",
+          "relationship": "주도권 행사 전 상대 선택권 확인"
+        },
+        "targetDomain": "UNKNOWN",
+        "targetProduct": [
+          "major_fortune"
+        ],
+        "targetRelationship": "UNKNOWN",
+        "context": "UNKNOWN",
+        "semanticAxis": "UNKNOWN",
+        "semanticFacet": "UNKNOWN",
+        "semanticRelation": "INSUFFICIENT_VERIFICATION",
+        "declaredRelationNotApproved": "INSUFFICIENT_VERIFICATION",
+        "requiredEvidence": [
+          {
+            "gate": "ACTUAL_SOURCE_AND_PRODUCER",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ACTUAL_OWNER_AND_DIRECTION",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ORIGINAL_CONDITIONS_AND_COUNTEREXAMPLES",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "ACTUAL_TIME_SCOPE_AND_COMPATIBLE_GROUP",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          },
+          {
+            "gate": "HUMAN_OPERATOR_AND_CUSTOMER_APPROVAL",
+            "originalDeclaration": "UNKNOWN",
+            "suppliedBy": "FUTURE_EVIDENCE_GRAPH_OR_OPERATOR",
+            "fulfilled": false
+          }
+        ],
+        "requiredUserState": "UNKNOWN",
+        "counterexamples": "UNKNOWN",
+        "prohibitedInference": {},
+        "originalPolicyRefs": [],
+        "ancestryRefs": [
+          "kc:v1:17e517f5ddff781fe6e62a4bdee37d0c65b9d82c95d64eb84ec0e5c7a71d6fca",
+          "kc:v1:3c12d9facda8e5d557c4673936f351faede6787f3ecebccda24fc0760b0d83aa",
+          "kc:v1:3d13f31bc0644d615757714ce6cfdc77b7c1bdefb058afe53f22d33bd7147daf",
+          "kc:v1:5ad19f8ef1ad91f07f9cb295b626287ad31aba8fba59b4dfe66552c3b2015531",
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+          "kc:v1:9850b3ca7724e48a50d219a184d94faa558eadf694ae2e2bbe40573676db2490"
+        ],
+        "originalSourceReviewState": {
+          "sourceExistence": "PRESENT",
+          "hashIntegrity": "MATCH",
+          "researchReview": {
+            "verification": "conditional_editorial"
+          },
+          "traditionalSourceVerification": {
+            "definitionReview": null,
+            "traditionalEntryReviews": []
+          },
+          "mbtiSourceCoverage": null,
+          "meaningReview": {},
+          "calculationApplicability": "REQUIRES_ACTUAL_EVIDENCE",
+          "productApplicability": "DECLARED_CONDITIONS_ONLY",
+          "customerApproved": false
+        },
+        "domain": {
+          "state": "UNKNOWN",
+          "originalDomain": {
+            "work": "급한 업무의 우선순위·승인선·지원",
+            "money": "급히 정할 비용의 손실 한도와 유예 가능성",
+            "learning": "어려운 과제의 도움 요청 기준",
+            "relationship": "주도권 행사 전 상대 선택권 확인"
+          },
+          "targetDomain": "UNKNOWN",
+          "automaticEquivalence": false
+        },
+        "products": [
+          {
+            "product": "major_fortune",
+            "state": "REVIEW_REQUIRED",
+            "policyIds": [
+              "mfpr:domain:long_term_choice"
+            ],
+            "actualInputVerified": false
+          }
+        ],
+        "relationships": [
+          {
+            "relationship": "UNKNOWN",
+            "state": "REVIEW_REQUIRED",
+            "policyIds": [],
+            "actualRolesVerified": false
+          }
+        ],
+        "reviewMethod": "DETERMINISTIC_STRUCTURAL_CHECK",
+        "reviewActorType": "MECHANICAL",
+        "reviewState": "UNREVIEWED",
+        "decisionState": "SOURCE_INCOMPLETE",
+        "blockingReasons": [
+          {
+            "code": "SOURCE_INCOMPLETE",
+            "catalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+            "sourceKeys": [],
+            "detail": [
+              "sv:ref:077286e77877fea635d2ddf52650de80d3070899d1e2648bd438c4e779e97bbd"
+            ],
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          },
+          {
+            "code": "SEMANTIC_REVIEW_REQUIRED",
+            "catalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+            "sourceKeys": [],
+            "detail": "No direct reading review for this exact source hash and proposed use.",
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          },
+          {
+            "code": "PRODUCT_POLICY_REVIEW_REQUIRED",
+            "catalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+            "sourceKeys": [],
+            "detail": [
+              "major_fortune"
+            ],
+            "nextAction": "Keep this scoped use withheld; verify the exact original condition and obtain the missing review or actual Evidence in a separate stage."
+          }
+        ],
+        "receiptKey": "sdv:receipt:7db2f79b1fba15307ce809860855c671470f7018dd5c70bc2fbe80a8f32c0a85",
+        "customerApproved": false,
+        "actualCalculatedEvidence": "NOT_SUPPLIED",
+        "runtimeConnected": false
+      }
+    ],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:aee379e4082b818dfb42ec7906d9204c9bf4b425c19745459c88e0cfe32355a9",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:afb46395b309ac2a5b1927d84353d5b4d4502bdc7f53896d3d6c75011b691702",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:ba09ae15fbce32dd35c706607bd987416b3d2664c2606aa88846766740f6338e",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:bbad7836b4a303f2d9dfc68f1d69142edfe0c96336d9e6e68e8f7fa20439bed6",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:bd476818775f92259e906e1c23d5c41863f55d716e34d119ab6df087ff40fc5e",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:c3dd46879f874810f1034bb06230e4a7559448eab2f26ca20fa8f49a698d611e",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:c689f40eeb08bd8c45d83c9a4d6320579e2d550d252d8078eb139979082f9ec8",
+    "originalDecisions": [],
+    "requiredAncestry": [
+      {
+        "root": "kc:v1:0565b44bc9f8f0d76def20e0b94c11c93da638f66e46dd2c6729bc4024c82148",
+        "requiredSourceKeys": [
+          "kc:v1:0565b44bc9f8f0d76def20e0b94c11c93da638f66e46dd2c6729bc4024c82148"
+        ],
+        "contextualSourceKeys": [],
+        "cycleEdges": [],
+        "conditionalGroupOwners": [],
+        "sourceReferenceKeys": [],
+        "incompleteReferenceKeys": [],
+        "prohibitions": [],
+        "documentaryAndFutureAreNotCalculatedAncestors": true
+      }
+    ],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:d8e73cd04aa3771a6c77552940ac9b45eac3102fced4bed5485bf414cce96dc5",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e052b32db11df0eaf51eec4bdb294b8db34009c9bc6b6927374419f28ee1bed2",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e48e51851f8ee6ad275f5b31cb17400a31bbf895c7a713f7bfe8b46238def6c8",
+    "originalDecisions": [],
+    "requiredAncestry": [
+      {
+        "root": "kc:v1:c3f88dafdcbe897c16393cc4098f610e217c0dbf0fcbe133bf9894b58eda4e26",
+        "requiredSourceKeys": [
+          "kc:v1:c3f88dafdcbe897c16393cc4098f610e217c0dbf0fcbe133bf9894b58eda4e26"
+        ],
+        "contextualSourceKeys": [],
+        "cycleEdges": [],
+        "conditionalGroupOwners": [],
+        "sourceReferenceKeys": [],
+        "incompleteReferenceKeys": [],
+        "prohibitions": [],
+        "documentaryAndFutureAreNotCalculatedAncestors": true
+      }
+    ],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:f414eea3d7da6f6f5f1a4949bba88ec732d97f0cef676c918805206a75932afa",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:ff5bf0f98d07ec27f4fda6b18c6529cb37f35f84a5da251e4da592277581d47f",
+    "originalDecisions": [],
+    "requiredAncestry": [],
+    "inheritedDecisions": [],
+    "explicitProhibition": false,
+    "sourceProofGrantsDomainPermission": false,
+    "customerUse": "WITHHELD",
+    "policiesRemainUnchanged": true
+  }
+]

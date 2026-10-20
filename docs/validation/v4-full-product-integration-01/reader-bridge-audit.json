@@ -1,0 +1,1175 @@
+{
+  "verifiedCustomerBridges": 0,
+  "nativePlacementIsNotCustomerBridge": true,
+  "originalReaderContracts": [
+    {
+      "productKey": "saju_mbti_full",
+      "relationship": null,
+      "chapters": 13,
+      "paragraphs": 52,
+      "roles": 208,
+      "periodSlots": null,
+      "originalReaderVersion": "comprehensive-editorial-quality-fix-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/comprehensiveReleaseContracts.ts",
+      "originalReaderHash": "e8d105999376cb61b6da101fe236ba60e7af47708dfdcf81f894622ef1d956d3",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "career_money_study",
+      "relationship": null,
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "career-editorial-quality-fix-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+      "originalReaderHash": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "love_marriage_child",
+      "relationship": null,
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "love-editorial-quality-fix-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/loveReleaseContracts.ts",
+      "originalReaderHash": "ea860d14a254f063ad1b3925a7e2f64cc6f87af5afcd48b4c69902fb04ae0f54",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "major_fortune",
+      "relationship": null,
+      "chapters": null,
+      "paragraphs": null,
+      "roles": null,
+      "periodSlots": 14,
+      "originalReaderVersion": null,
+      "originalReaderFile": "src/lib/report-knowledge/major-fortune-product-research/yearMatrix.ts",
+      "originalReaderHash": "5d68d20479b0bcf7311cff51774eda184cfa63276ebac26782e0e76d57dce17f",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "annual_fortune",
+      "relationship": null,
+      "chapters": null,
+      "paragraphs": null,
+      "roles": null,
+      "periodSlots": 12,
+      "originalReaderVersion": null,
+      "originalReaderFile": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+      "originalReaderHash": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "relationship": "love",
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "relationship": "marriage",
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "relationship": "parentChild",
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "relationship": "coworker",
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "relationship": "managerReport",
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "relationship": "businessPartner",
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "relationship": "friendship",
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    }
+  ],
+  "generated": [
+    {
+      "engine": "comprehensive",
+      "displayFixture": false,
+      "bridges": [
+        {
+          "questionId": "synthetic:cse:q:1",
+          "originalQuestionHash": "d57a525fda42de39b0713258be9b4fe813842dcf36f7a0e0b30ec48a4ee477c1",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": null,
+            "sentenceRole": null,
+            "originalAddress": "synthetic:cse:q:1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "1d3c0eb1ed526e680d31d863779c12c592f5b36d78c4784f07d7c08d04fde0f0",
+          "product": "saju_mbti_full",
+          "relationship": null,
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "ORIGINAL_PARAGRAPH_ADDRESS_MISSING",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "WITHHELD",
+          "assignmentHash": "716b122908945882f5e7e9d1f0ba9ecaf185597e81d99ea382b7cb36d7fc2e98",
+          "paragraphId": "kee:paragraph:f93ec009dc9109dcca3caeade681c02557b5ac8a0be93aa8abd89610ab464e7f",
+          "sentenceIds": [
+            "kee:sentence:517fca6beefaf3846940f89b342f71383caef9386a5fc3f951a6c13f2b12f12d",
+            "kee:sentence:031e2458900508fb56141f906ea02a3d547d3c37dca5869403c3e4b80c99c8c9"
+          ]
+        },
+        {
+          "questionId": "synthetic:cse:q:2",
+          "originalQuestionHash": "dd6d54666250740a05c4767593b59d1bc8ee7d1a3da19807321dbc209102a082",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": null,
+            "sentenceRole": null,
+            "originalAddress": "synthetic:cse:q:2",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "1d3c0eb1ed526e680d31d863779c12c592f5b36d78c4784f07d7c08d04fde0f0",
+          "product": "saju_mbti_full",
+          "relationship": null,
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "ORIGINAL_PARAGRAPH_ADDRESS_MISSING",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "WITHHELD",
+          "assignmentHash": "6eeaa07c1ce103b946bea7cfaf7926e739e47223a137d242aa7544b039f00572",
+          "paragraphId": "kee:paragraph:89d7297fc62948112ac17d5a5b1145913427c2db322382b99ab6b7c3ec2c607f",
+          "sentenceIds": [
+            "kee:sentence:0037e0b4ba0992a0e69603ca1a78814fa757b0d56aa86858ccd21cc5a15b66c8"
+          ]
+        },
+        {
+          "questionId": "synthetic:cse:q:3",
+          "originalQuestionHash": "248915ff48efc4ad956c050c8040feb37be2af183859d51485b84cb19cdfe2cb",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": null,
+            "sentenceRole": null,
+            "originalAddress": "synthetic:cse:q:3",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "1d3c0eb1ed526e680d31d863779c12c592f5b36d78c4784f07d7c08d04fde0f0",
+          "product": "saju_mbti_full",
+          "relationship": null,
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "ORIGINAL_PARAGRAPH_ADDRESS_MISSING",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "WITHHELD",
+          "assignmentHash": "a57f12e0dc87463141521f01635ddd4b331347bd30b07bbec8225ba275682653",
+          "paragraphId": "kee:paragraph:2f72fbbbd53f2a0a13e280252eb328be3a489f079c834dc2fc998babca71a659",
+          "sentenceIds": [
+            "kee:sentence:0a1ab81b3f8c8ef6a92d4c96107a3764efc42cc0f7d6d7701350f9d60a69d435"
+          ]
+        },
+        {
+          "questionId": "synthetic:cse:q:4",
+          "originalQuestionHash": "2f4264acf7c0d3e8433a292fcba6d0ec5678e52cbbaf5278a12b5d8a5ecc4e36",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": null,
+            "sentenceRole": null,
+            "originalAddress": "synthetic:cse:q:4",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "1d3c0eb1ed526e680d31d863779c12c592f5b36d78c4784f07d7c08d04fde0f0",
+          "product": "saju_mbti_full",
+          "relationship": null,
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "ORIGINAL_PARAGRAPH_ADDRESS_MISSING",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "WITHHELD",
+          "assignmentHash": "d58cf2010375a6a8dcdeac11594950b05cb80772a09e49d0c9a1c719e574c3bf",
+          "paragraphId": "kee:paragraph:84ee95eea61dfe76f3d70bb026aa12017532f219456f1073984d642ad7c6d85e",
+          "sentenceIds": [
+            "kee:sentence:9653dd664cd952bbb9d8f10c25563f442bb77b4d34d304574bea4e0743f92e67"
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "career",
+      "displayFixture": false,
+      "bridges": [
+        {
+          "questionId": "synthetic:career:q:2",
+          "originalQuestionHash": "fe762ed3b1033d0aba543756e86c61991581dd8627d28b4b4b323545c92f032a",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": null,
+            "sentenceRole": null,
+            "originalAddress": "synthetic:career:q:2",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "54ac07454b3c3d7290d6b2ff65db9dcf539df99b1c0d299c56cfe05ab7af6d06",
+          "product": "career_money_study",
+          "relationship": null,
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "ORIGINAL_PARAGRAPH_ADDRESS_MISSING",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "WITHHELD",
+          "assignmentHash": "28d959d7b4a8f398186fdfed56d7c8f893562c311f054673cd31921c6f68dfe1",
+          "paragraphId": "kee:paragraph:c2e48bbe1b3c635c38a7e3f4289b10503342cf2a4edcadc2fc0f6bed65583864",
+          "sentenceIds": [
+            "kee:sentence:ca026ccfc1e466fc27375fe153ecf60eb970931a51431743900b5c330c4d5b65",
+            "kee:sentence:5291a37cf8a581b34bbaa823f8a2d5a5de03df869cf39cb55153877b8aace68a"
+          ]
+        },
+        {
+          "questionId": "synthetic:career:q:3",
+          "originalQuestionHash": "a50d6f5f0e8d3da5ff11954a78701931fcf8d851c651f7844ef6ef69cf714d6b",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": null,
+            "sentenceRole": null,
+            "originalAddress": "synthetic:career:q:3",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "54ac07454b3c3d7290d6b2ff65db9dcf539df99b1c0d299c56cfe05ab7af6d06",
+          "product": "career_money_study",
+          "relationship": null,
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "ORIGINAL_PARAGRAPH_ADDRESS_MISSING",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "WITHHELD",
+          "assignmentHash": "ec37915729837bb0f2f6f8769fe7f548be5071d004be27ba6ed7cd2d0ea924c5",
+          "paragraphId": "kee:paragraph:0da05dd67024a302f95418f240843f54a26db4d515f4c15bfc1a872d30aff335",
+          "sentenceIds": [
+            "kee:sentence:798ca01cb9639950c61d928fcfb5f1eb1714e9555dcf4dac8a443153030a0d8e"
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "love",
+      "displayFixture": false,
+      "bridges": [
+        {
+          "questionId": "synthetic:love:q:02",
+          "originalQuestionHash": "41c7445dc553f3f89dd82e16e8ad91c7e9d1d00943121bf919200b45d2b156ce",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH02.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "7988479a4ef0b7efd2dae74a60725572afc9befcc20e8b35c55d7a4d965fa36f",
+          "product": "love_marriage_child",
+          "relationship": null,
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "96784dbd9489db3bde89317d1f56be7797d396b267d5afe7fa5a3b57e0b9278a",
+          "paragraphId": "kee:paragraph:07ffcdf657d4476620b1862057e16f8f168c0384288f4711f021bc24d1219ef8",
+          "sentenceIds": [
+            "kee:sentence:c1ee9d6629983d187a967feaa82b8e1a8d6bac2e07c7b641588410de849dcde5",
+            "kee:sentence:d6192c5bbd775361c130f40f1efa40706c83cf32cb5e421de6507d52808b1b32"
+          ]
+        },
+        {
+          "questionId": "synthetic:love:q:03",
+          "originalQuestionHash": "541c00daa3e242e0b4492fd278f483037e512fca198a7b1736a69097560bc7b1",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH03.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "7988479a4ef0b7efd2dae74a60725572afc9befcc20e8b35c55d7a4d965fa36f",
+          "product": "love_marriage_child",
+          "relationship": null,
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "39ae95edba07403a9c1f8b4f95e17f8e9ab456bf7dd092af0466dfed7016c50e",
+          "paragraphId": "kee:paragraph:0a2f4b757889575d33ba6f48230754150881c187131d976f3edc777ec931b9c6",
+          "sentenceIds": [
+            "kee:sentence:88ed421a094af5e9fa84a4917be3bf5bd555b106c3e419c31822d88dc44dcb4d"
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "displayFixture": false,
+      "bridges": [
+        {
+          "questionId": "synthetic:major:q:2028:transition",
+          "originalQuestionHash": "b1ce4ead352e178973d02524288626177c9eea0c3c54f073b591f6af2cd5bcf8",
+          "address": {
+            "chapterId": null,
+            "periodId": "2028",
+            "paragraphId": null,
+            "sentenceRole": "transition",
+            "originalAddress": "synthetic:major:q:2028:transition",
+            "level": "PERIOD_ROLE"
+          },
+          "readerContractHash": "a53dbd63b891a663586f76908756ba69a458656fd100d3fe01d9efe4696abc6c",
+          "product": "major_fortune",
+          "relationship": null,
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "1d12f169f04891503e16c8072a028447fba5c0982c3ffec5c355355cd55da666",
+          "paragraphId": "kee:paragraph:72d384e9c3063a9d8150bf51b90450eaff665a87435680072334f64e4118a426",
+          "sentenceIds": [
+            "kee:sentence:5d6796a69d2993abc1340b4b0e45ea6181760a3e995e0bde7718c31a6d32f49d",
+            "kee:sentence:4556968ca72f519238b7593104e17c8c878b36abf150d25e686ecedbf7d0f7c4"
+          ]
+        },
+        {
+          "questionId": "synthetic:major:q:2023:background",
+          "originalQuestionHash": "0064cfb32d324106ef0d7d976f46713a8dbee5787a66461c34b1bbffd9243208",
+          "address": {
+            "chapterId": null,
+            "periodId": "2023",
+            "paragraphId": null,
+            "sentenceRole": "background",
+            "originalAddress": "synthetic:major:q:2023:background",
+            "level": "PERIOD_ROLE"
+          },
+          "readerContractHash": "a53dbd63b891a663586f76908756ba69a458656fd100d3fe01d9efe4696abc6c",
+          "product": "major_fortune",
+          "relationship": null,
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "2e6808a996563bdcf497515c6abedc5d39f9bd4c4728bb28f761ffcea6233f6c",
+          "paragraphId": "kee:paragraph:229535e1bbb43517c1a6f968dc280eb8b3649815180421c1de85c1531bfb78f9",
+          "sentenceIds": [
+            "kee:sentence:7c0272c6920314e8ffa707363a4410aba6a5ecf8c1a4ef68a6369f63267ed8a1",
+            "kee:sentence:74ed26521724322a111ea11bdce1c4bf4adf0b69d721e6ab8e0f573bf9c66663"
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "displayFixture": false,
+      "bridges": [
+        {
+          "questionId": "synthetic:annual:q:2",
+          "originalQuestionHash": "68eda791393df5b96405efcdee7f4a1fdf083f7fa429413a966ebe5d10afb1b0",
+          "address": {
+            "chapterId": null,
+            "periodId": "month-2",
+            "paragraphId": null,
+            "sentenceRole": null,
+            "originalAddress": "synthetic:annual:q:2",
+            "level": "PERIOD"
+          },
+          "readerContractHash": "1e5160ca365306a56c4fad4d1b2010ee023985dc3490a29b5052862afc2f1c06",
+          "product": "annual_fortune",
+          "relationship": null,
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "4d25bedcd2b28ff911ec9b985ab34ff93079158346b698a751327b06ebb96a4e",
+          "paragraphId": "kee:paragraph:7b5046c8fb8df5901fc8a801ae9308d383e5ad27d4126eaade2b2ca3ed700efb",
+          "sentenceIds": [
+            "kee:sentence:7ad437042477e52fd1e4f4c0e3cca63e10de0d12d04e7e08a96dd035e498d041",
+            "kee:sentence:af3bc25d36eb3bd9b965c57668f25071d42fd1d98075259a939abd1a76f97247"
+          ]
+        },
+        {
+          "questionId": "synthetic:annual:q:4",
+          "originalQuestionHash": "b580612af5c4b9e50e6e1bf1521a6dbc60ed7830c731cf1bc2505c5adf59f8b8",
+          "address": {
+            "chapterId": null,
+            "periodId": "month-4",
+            "paragraphId": null,
+            "sentenceRole": null,
+            "originalAddress": "synthetic:annual:q:4",
+            "level": "PERIOD"
+          },
+          "readerContractHash": "1e5160ca365306a56c4fad4d1b2010ee023985dc3490a29b5052862afc2f1c06",
+          "product": "annual_fortune",
+          "relationship": null,
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "685f40667082caf9c0a304fce475b6d79a133efc92a65a421cb7b30ce5cd9ec1",
+          "paragraphId": "kee:paragraph:0c735b968abf3c6f96de6410ddff1cff73405f72b6a4dbd097d7cbd343460c41",
+          "sentenceIds": [
+            "kee:sentence:be99367745a915c5b8ef3b9bbb0d7b545fc7f2172e2b6a70028465329bf16c3e",
+            "kee:sentence:dfb0c140f36f4c2345711497ee0968d6dfb9be868ad7462169a450a78c444055"
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "displayFixture": false,
+      "bridges": [
+        {
+          "questionId": "synthetic:love:question:CH05.P1",
+          "originalQuestionHash": "599c9c0aff27a138a7d91c99560b3cacf441605a27b34b079191f6656547781a",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "cab579cb0c5b2e58b52fe3922532b77016c9779da863954ce7e23cc868d9a725",
+          "product": "saju_mbti_compatibility",
+          "relationship": "love",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "64999d3cde6b4d1a99ab58062a0c33ea90ec91968d5effe5c1a5f9b4c9aec4a2",
+          "paragraphId": "kee:paragraph:2f2358bc4eb5df4d3947ddffe154e1b3c3b8e20f07829cab46882e2afdf51573",
+          "sentenceIds": [
+            "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+            "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+          ]
+        },
+        {
+          "questionId": "synthetic:love:question:CH06.P1",
+          "originalQuestionHash": "71b4d153c4b94429ce33483a3758ab7de39e7b37af717b81b6a62c76d2afaa73",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "cab579cb0c5b2e58b52fe3922532b77016c9779da863954ce7e23cc868d9a725",
+          "product": "saju_mbti_compatibility",
+          "relationship": "love",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "43f9684dbfd3224db7eeb63a641176a769855509b6b4a86ee152fa828b1fc422",
+          "paragraphId": "kee:paragraph:c5e4a67c7977ecc6d5d64342cfc095515f9a4ed4625faa78531092bbd3391d96",
+          "sentenceIds": [
+            "kee:sentence:3d73f13500b3e217108d11f5d4ae6080e84d3e02fdff3062d3691107bc31bcee",
+            "kee:sentence:a44583164ef6a5c83db083f17346767f657142ec83c1c31b35e3584f313e0383"
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "displayFixture": false,
+      "bridges": [
+        {
+          "questionId": "synthetic:marriage:question:CH05.P1",
+          "originalQuestionHash": "ccc0141e97ebe9f1b1204f87a7bdba8b4ea67708fe1b47f7c220d161bb8875ae",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "dd3417454850e32460d074e9452817ff3641894ff9d53fa223b878558fc5a4c4",
+          "product": "saju_mbti_compatibility",
+          "relationship": "marriage",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "cbab9a0dfd7ed82819ab06eb47f762908dff81dec370886a00ac21a491e78c2f",
+          "paragraphId": "kee:paragraph:b1a1f39d121b0f4e093635e765fa969732092dbbd02c193d25a1c17e8077b6bc",
+          "sentenceIds": [
+            "kee:sentence:6927e99606eb61b1fa81cc95962359033e4ed429669a02c4cf0c3d2c840347c9",
+            "kee:sentence:63c09d84ba44ee0b75e234d9ec619e57ba1d69e936e3e988ad9110d82daa0e56"
+          ]
+        },
+        {
+          "questionId": "synthetic:marriage:question:CH06.P1",
+          "originalQuestionHash": "640769e376f303cf69f46d0a0abcf7483c84cd31d749bfcd6936995ace8903f7",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "dd3417454850e32460d074e9452817ff3641894ff9d53fa223b878558fc5a4c4",
+          "product": "saju_mbti_compatibility",
+          "relationship": "marriage",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "b9d10e1922294ef03d65b355745a7d631455f2512ecdce67dcc25d4bd769df89",
+          "paragraphId": "kee:paragraph:28c309a04fb7cf1adba40fbb89555356814c7193b5e925047a0fd3a7c9f29c62",
+          "sentenceIds": [
+            "kee:sentence:85b6ef1eb3790a81534d73cce5d253f943fa9de804c72d53dd38a543a909f372",
+            "kee:sentence:f8f2ba609577973c0f69ce64cfe202e8aa95e15db0cb4101674ba4070a5cabe1"
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "displayFixture": false,
+      "bridges": [
+        {
+          "questionId": "synthetic:parent-child:question:CH05.P1",
+          "originalQuestionHash": "feba809e272f5667618da310c743e11996b5dd7c10421801f9adaa2e6b6ff205",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "7fe9101fed72d12eecbae3c8b1e24c4f367fb009eaa6b4b924bdefe44f9b2ea1",
+          "product": "saju_mbti_compatibility",
+          "relationship": "parentChild",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "4dd3d50561b26cb31acca79a6d9e6987df5337ae788b35d3e43d4fa629a9c227",
+          "paragraphId": "kee:paragraph:fcfef525571e457ca1b22249c9d39fc90a8e8849d66907388cd5de732bcd0ecb",
+          "sentenceIds": [
+            "kee:sentence:2d0d87e298c5e12a2673dcd8b916d3d9d41f515d9164d4822b64b0a727dbbd24",
+            "kee:sentence:f576f5ef59fabaf22022cfdb638b23beb0f3beafd767caae0c18b5d53d1e4e56"
+          ]
+        },
+        {
+          "questionId": "synthetic:parent-child:question:CH06.P1",
+          "originalQuestionHash": "199477771568e59bb0ef2da07c132735edb173645836f7d63c3176767fc5aee6",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "7fe9101fed72d12eecbae3c8b1e24c4f367fb009eaa6b4b924bdefe44f9b2ea1",
+          "product": "saju_mbti_compatibility",
+          "relationship": "parentChild",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "0b25d860ac7456b9046b207bde717d1555376071638893570066e31a8c446cae",
+          "paragraphId": "kee:paragraph:b3ef2e1b2cac273ed0e9ff2e162ef2a5ea29cd0dd128927d4608faf25194060e",
+          "sentenceIds": [
+            "kee:sentence:1d1a09a475a39eec6032c7a9087c43da0e7e22fc2709ba99d252f2b02b7e4d32",
+            "kee:sentence:b56617a1ec8891a1fe2e79ab979b4a4048854516b7ef60f286c99454181a4f66"
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "displayFixture": false,
+      "bridges": [
+        {
+          "questionId": "synthetic:coworker:question:CH05.P1",
+          "originalQuestionHash": "4af5ef1b2a91891d56e308bde1747cea92552d8a253645031181b80d66798c1d",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "ce61eb0a3b68c20c296527ea102eebb21e3b8acfd57ada605a6d162dfad423dc",
+          "product": "saju_mbti_compatibility",
+          "relationship": "coworker",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "392db5b35ae7b3843072c974f72c51d53e25edf6dedf4a1dfe226be24c314875",
+          "paragraphId": "kee:paragraph:9d86d62e84f45c9bcfaf14458bee07ded9ef486089ddb224c2c5a341d420903d",
+          "sentenceIds": [
+            "kee:sentence:d12a71fd5bb4c9545dc9faccc30c5e782ee74fc125cca07043f981179c474b88",
+            "kee:sentence:00a10640400f114260ae7e4c90880fb3334cbb318d69a78c48a0f7147dfc85a6"
+          ]
+        },
+        {
+          "questionId": "synthetic:coworker:question:CH06.P1",
+          "originalQuestionHash": "46d82b02a87ebadb61b21dc72697ef1921099a731fa95f0562b0d263287b668e",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "ce61eb0a3b68c20c296527ea102eebb21e3b8acfd57ada605a6d162dfad423dc",
+          "product": "saju_mbti_compatibility",
+          "relationship": "coworker",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "2cd7b35dd2b6e0a2ca70ee097b07089c25f595b21aa549d1cc47b4cbdbd677bb",
+          "paragraphId": "kee:paragraph:188739cb750f42caae02c9ff5406923976bf9a7cae911acc82b1ab4f7a449b65",
+          "sentenceIds": [
+            "kee:sentence:d18af0b49ca003aeb4c54925d05ebb44dfe70b99494f38003c35360304e2e691",
+            "kee:sentence:6c334ae4b0e5141b5aff71ae717d441d9b8c30c2c02df5fc2679dc194467de50"
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "displayFixture": false,
+      "bridges": [
+        {
+          "questionId": "synthetic:manager-report:question:CH05.P1",
+          "originalQuestionHash": "10b164243cd6b0fd1f8c968c57e47212fafd9e631a7a9710b2ddc46cc47df71c",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "399aeb9810a09335dfc7b19346c6d399639b03f0a16405eb6abe2b85a8214409",
+          "product": "saju_mbti_compatibility",
+          "relationship": "managerReport",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "649779c25a81ac8c3045be9e372fa8a613acdca373be182f403d742525c3a44a",
+          "paragraphId": "kee:paragraph:45288ce67822e1a4e2d76efd5e86f2278cc1c3044b52209728545a2c99b7ff3b",
+          "sentenceIds": [
+            "kee:sentence:8b7a94232f4ac732d86faab1908adb56b19adfc8cd539e89dd9e59ae885100f0",
+            "kee:sentence:c4d9bee85f1e9d252924bdb2237d6a435b75c3365f4a89fe35d52c30c88108d9"
+          ]
+        },
+        {
+          "questionId": "synthetic:manager-report:question:CH06.P1",
+          "originalQuestionHash": "57a0101c83c76ebdf1489fe917e4be104030e4907d2ba99b7672c24cdde6060b",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "399aeb9810a09335dfc7b19346c6d399639b03f0a16405eb6abe2b85a8214409",
+          "product": "saju_mbti_compatibility",
+          "relationship": "managerReport",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "a3df0815e9bbec3566c74c55dc0abacb53e6288829c29083feed7f8f1f7e8190",
+          "paragraphId": "kee:paragraph:dec3e74f3c77935930641de1d733acbb2424e972a976b535f6dca65b746ea9ce",
+          "sentenceIds": [
+            "kee:sentence:9caa0ed7f889665008b7ab252ebb9139a15cd66223d752097b3c791ed24b70e6",
+            "kee:sentence:fdfae0f8cc835737526837735a2d3567bce8ac2a970f38bf379cdcd5c3e44614"
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "displayFixture": false,
+      "bridges": [
+        {
+          "questionId": "synthetic:business-partner:question:CH05.P1",
+          "originalQuestionHash": "7e56b5904eb97111c6f49d28fdcfa0055f6d59a46042c7f23ab2d4a8a2fbe921",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "5acde70a5d0cb3c6d047c88f7d32eec016adc7971bd1c2a85a6ddce4da2c20d5",
+          "product": "saju_mbti_compatibility",
+          "relationship": "businessPartner",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "9657c9349da4b539bde4a8e77f4a7ed3f0f5beb3548d029e60d8fe7502b9792e",
+          "paragraphId": "kee:paragraph:658a6baa56bde8613c709c6dcf5a38c432676d34fc69fc8a100918c38c33c430",
+          "sentenceIds": [
+            "kee:sentence:2dc6d55e43bb4b1e6d88d7f9ad6970de83781e9c63354b520b9871502576a1d3",
+            "kee:sentence:e5f3be4ad4e256fa748f9f4c1d389b3e4f825629a74cb728744b75666e3ead32"
+          ]
+        },
+        {
+          "questionId": "synthetic:business-partner:question:CH06.P1",
+          "originalQuestionHash": "b9e77ce0bb754e12fb03f7626a3d56946590b12298f9af7eb97e6a1ec8e5b33f",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "5acde70a5d0cb3c6d047c88f7d32eec016adc7971bd1c2a85a6ddce4da2c20d5",
+          "product": "saju_mbti_compatibility",
+          "relationship": "businessPartner",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "056037ebdff8db2b88b74ed9dbd702f7d556ae777d251ac183e229b917514836",
+          "paragraphId": "kee:paragraph:f212bf7c2ea84dacfddbb74b3a85f2b4a4dc0a34abd45def651162cb85bf3d3c",
+          "sentenceIds": [
+            "kee:sentence:b87e9e56ffc0de320dc49672962cbc6ea1a08ea2d45bb222703b73c73dad9494",
+            "kee:sentence:4771402cb49307da573f73a6d3ba659dbe18fcb80d0c8f16f9a50bea4540fe77"
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "displayFixture": false,
+      "bridges": [
+        {
+          "questionId": "synthetic:friendship:q:CH01.P1.S1",
+          "originalQuestionHash": "109e809d9d17c0af4971067282893e2bb6b56a69aa1f0657274a7925257b03c7",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH01.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "readerContractHash": "3f04155d79882aad32693b9696d514ac3bdb0100f9b3cb4dc9432a7cf83aa706",
+          "product": "saju_mbti_compatibility",
+          "relationship": "friendship",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "585e517357a8eca3bef5b81f138712fbba1becb19431e3dba670e9ebf9204027",
+          "paragraphId": "kee:paragraph:70b62a64b74f988ac94404d490bbbbf46b06e775df6538b95f3f3179f2210263",
+          "sentenceIds": [
+            "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+            "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+          ]
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH01.P1.S2",
+          "originalQuestionHash": "ecd4d7f6e9bd59c2fb593cc9ef7e20e39c5f663cff9e037ffe340d69851d7e40",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S2",
+            "originalAddress": "CH01.P1.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "readerContractHash": "3f04155d79882aad32693b9696d514ac3bdb0100f9b3cb4dc9432a7cf83aa706",
+          "product": "saju_mbti_compatibility",
+          "relationship": "friendship",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "c429dd3290a3a8da6f5774e35ed61ca210f1d70cd992e2489a90006028c02ddf",
+          "paragraphId": "kee:paragraph:11b25f05e338766141598fb216947f93d43d523ddbadf228e11af92881bfd552",
+          "sentenceIds": [
+            "kee:sentence:867d58352e0fd5916e93afa46227d137ee023cbc35320f19d3f048ce095c93df"
+          ]
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH04.P1",
+          "originalQuestionHash": "c44daaa0a1c8cc741f25dd648830bbcf6288742b30aae83d36d233c0946b7ead",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH04.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "3f04155d79882aad32693b9696d514ac3bdb0100f9b3cb4dc9432a7cf83aa706",
+          "product": "saju_mbti_compatibility",
+          "relationship": "friendship",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "8c532ccd29c97fbba11fcad586375f5c46a76917c8569eaaf3d1b7899e987397",
+          "paragraphId": "kee:paragraph:cd49876a494e71085d863b50abdabe5e4b98cca861507bf2aaa86ef6b109be3b",
+          "sentenceIds": [
+            "kee:sentence:3fd737da9d75afd208b0bbc66aedc33caecf093eee51911c86244d3591f5b41f"
+          ]
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH07.P1.S1",
+          "originalQuestionHash": "85446624842e3501014efe1aebff739de56a5ea2dfa12f96f438db4310373e78",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH07.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "readerContractHash": "3f04155d79882aad32693b9696d514ac3bdb0100f9b3cb4dc9432a7cf83aa706",
+          "product": "saju_mbti_compatibility",
+          "relationship": "friendship",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "e22832629bd03ade0055d60c7678bc99b36100bde21219a2e02ec15363e2c1d8",
+          "paragraphId": "kee:paragraph:d0b93f3ce99544048547b31e1f469893d33fdff0448a8771eda1915b0f2921a2",
+          "sentenceIds": [
+            "kee:sentence:4b491129990705575d77014c12ba15ec807b5bb2d228b6fafd1512d82e62c0c2"
+          ]
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "displayFixture": true,
+      "bridges": [
+        {
+          "questionId": "synthetic:friendship:q:CH01.P1.S1",
+          "originalQuestionHash": "109e809d9d17c0af4971067282893e2bb6b56a69aa1f0657274a7925257b03c7",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH01.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "readerContractHash": "3f04155d79882aad32693b9696d514ac3bdb0100f9b3cb4dc9432a7cf83aa706",
+          "product": "saju_mbti_compatibility",
+          "relationship": "friendship",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "585e517357a8eca3bef5b81f138712fbba1becb19431e3dba670e9ebf9204027",
+          "paragraphId": "kee:paragraph:70b62a64b74f988ac94404d490bbbbf46b06e775df6538b95f3f3179f2210263",
+          "sentenceIds": [
+            "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+            "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+          ]
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH01.P1.S2",
+          "originalQuestionHash": "ecd4d7f6e9bd59c2fb593cc9ef7e20e39c5f663cff9e037ffe340d69851d7e40",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S2",
+            "originalAddress": "CH01.P1.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "readerContractHash": "3f04155d79882aad32693b9696d514ac3bdb0100f9b3cb4dc9432a7cf83aa706",
+          "product": "saju_mbti_compatibility",
+          "relationship": "friendship",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "c429dd3290a3a8da6f5774e35ed61ca210f1d70cd992e2489a90006028c02ddf",
+          "paragraphId": "kee:paragraph:11b25f05e338766141598fb216947f93d43d523ddbadf228e11af92881bfd552",
+          "sentenceIds": [
+            "kee:sentence:867d58352e0fd5916e93afa46227d137ee023cbc35320f19d3f048ce095c93df"
+          ]
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH04.P1",
+          "originalQuestionHash": "c44daaa0a1c8cc741f25dd648830bbcf6288742b30aae83d36d233c0946b7ead",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH04.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "3f04155d79882aad32693b9696d514ac3bdb0100f9b3cb4dc9432a7cf83aa706",
+          "product": "saju_mbti_compatibility",
+          "relationship": "friendship",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "8c532ccd29c97fbba11fcad586375f5c46a76917c8569eaaf3d1b7899e987397",
+          "paragraphId": "kee:paragraph:cd49876a494e71085d863b50abdabe5e4b98cca861507bf2aaa86ef6b109be3b",
+          "sentenceIds": [
+            "kee:sentence:3fd737da9d75afd208b0bbc66aedc33caecf093eee51911c86244d3591f5b41f"
+          ]
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH07.P1.S1",
+          "originalQuestionHash": "85446624842e3501014efe1aebff739de56a5ea2dfa12f96f438db4310373e78",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH07.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "readerContractHash": "3f04155d79882aad32693b9696d514ac3bdb0100f9b3cb4dc9432a7cf83aa706",
+          "product": "saju_mbti_compatibility",
+          "relationship": "friendship",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "e22832629bd03ade0055d60c7678bc99b36100bde21219a2e02ec15363e2c1d8",
+          "paragraphId": "kee:paragraph:d0b93f3ce99544048547b31e1f469893d33fdff0448a8771eda1915b0f2921a2",
+          "sentenceIds": [
+            "kee:sentence:4b491129990705575d77014c12ba15ec807b5bb2d228b6fafd1512d82e62c0c2"
+          ]
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH08.P1.S1",
+          "originalQuestionHash": "11fb5dd2bd129944860fbd9f2327ab384f01eb4cd365b4b423847ff9895d4bd9",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH08.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "readerContractHash": "3f04155d79882aad32693b9696d514ac3bdb0100f9b3cb4dc9432a7cf83aa706",
+          "product": "saju_mbti_compatibility",
+          "relationship": "friendship",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "45cd2cbedb4052168b383acee2b912fc398b7a06f394e05878d4379ac4106c5c",
+          "paragraphId": "kee:paragraph:2c637947d791afaadcbc1d36263e228b5a3973ea3f5d2e7af711233007ec6694",
+          "sentenceIds": [
+            "kee:sentence:83043b8710427925a11b86760df41e4670c37dc600fd9723d47e3873a47c7f5b"
+          ]
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH09.P1",
+          "originalQuestionHash": "efebe5588c8a845616d612623c09df698d977195fae985a46c79c7056ad52556",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH09.P1",
+            "level": "PARAGRAPH"
+          },
+          "readerContractHash": "3f04155d79882aad32693b9696d514ac3bdb0100f9b3cb4dc9432a7cf83aa706",
+          "product": "saju_mbti_compatibility",
+          "relationship": "friendship",
+          "state": "WITHHELD_ORIGINAL_QUESTION_PRESERVED",
+          "reasons": [
+            "NATIVE_SYNTHETIC_ID_IS_NOT_ORIGINAL_CUSTOMER_READER_ID",
+            "SCHEDULER_BRIDGE_NOT_PROVEN"
+          ],
+          "customerBridgeVerified": false,
+          "nativeSyntheticPlacement": "VERIFIED_NATIVE_SYNTHETIC_ADDRESS",
+          "assignmentHash": "e47e9615c1e048837d4f6d9b5bc15695aa17ae6c52cae7f33c334f5dfa1388ed",
+          "paragraphId": "kee:paragraph:dc964b1d06f5be807068c9996e7d1e1da99ee248aca454cdd4a8af0667f26863",
+          "sentenceIds": [
+            "kee:sentence:641b6881b963fd9bf7907cef08a98e33c2e1aaafe24b5b7ad672b5b4e1f2b868"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "newTests": {
+    "passed": 272,
+    "failed": 0,
+    "pending": 0,
+    "failures": []
+  },
+  "existingContracts": [
+    {
+      "file": "globalBookPlanner.test.ts",
+      "passed": 125,
+      "failed": 0
+    },
+    {
+      "file": "officialApprovalContract.test.ts",
+      "passed": 146,
+      "failed": 0
+    }
+  ],
+  "knownRegressions": "5837 PASS / 46 identical baseline FAIL",
+  "businessPartner": "382 PASS / 1 identical baseline FAIL",
+  "newRegressions": 0,
+  "typescript": {
+    "before": 0,
+    "after": 0,
+    "new": 0
+  },
+  "lint": "PASS / 0 warnings",
+  "build": "PASS",
+  "buildNode": "24.22.0",
+  "next": "16.2.4",
+  "buildWarnings": 0,
+  "offlineAuditTestedHeapMiB": 8192,
+  "minimalHeapNotClaimed": true,
+  "fullSuiteClaimed": false,
+  "diffCheck": "PASS",
+  "logHashes": {
+    "complete-tests.json": "5d6b6f19bbc6879edb2522f16ef2c2c6014ad6fa5370e1ec47d5624501215221",
+    "new-and-contract-tests.json": "e8b2d74d577f3012e7d0ddb41956a3ec7c3e148f745803108333c068de62cb61",
+    "base-known.json": "8a4985000b331b41a51e4ca320798c0491ce57005c987dd76dcf83b2f60db6be",
+    "current-known.json": "dbf2dbff0ee26cc9e03966160b2d34572cb6fb0133a928e1a39194b59a38618d",
+    "base-bp-default.json": "8644c7cdfdc2833c88b5c46533096eeee7b13d05e1a8e1f3b21a32a8afce821e",
+    "current-bp-default.json": "193014a4bb25e7bc5f079f6e77b0521471107cabf812568ae00d64ec4324f096",
+    "typescript-base.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typescript-complete.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lint-final-verified.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build-complete.log": "6fc49315379fbd24d6db43e3c377ea71c9ccc5e8c610a26a3d48921f086d61d6",
+    "build-published-source.log": "e10b78d1cdf5268ef01e521b04eeb9e96bed8a30d5ba61b821550cc089cc04f6"
+  },
+  "lastProductionBuildIncludesFinalFixtureAndDocumentation": true
+}

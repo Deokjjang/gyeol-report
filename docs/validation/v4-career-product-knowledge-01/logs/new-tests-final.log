@@ -1,0 +1,11 @@
+> gyeol-report@0.1.0 test
+> vitest run tests/unit/report-knowledge/careerProductResearch.test.ts
+
+
+ RUN  v4.1.5 /private/tmp/gyeol-career-product-knowledge-01
+
+
+ Test Files  1 passed (1)
+      Tests  467 passed (467)
+   Start at  21:36:38
+   Duration  58.68s (transform 1.98s, setup 19ms, import 2.22s, tests 56.27s, environment 0ms)

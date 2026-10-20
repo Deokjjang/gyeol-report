@@ -1,0 +1,27 @@
+{
+  "generatorSourceAndFixtureFiles": {
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/annualIdentity.ts": "4ff12d10dffb5e0bcd6442849161d2ec9abee8a82dd27737501e47298ebba228",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/boundaryValidator.ts": "ecca715f9d7b8ed4f1e3eabf49aab58b8c972f36d1c4b6b30e46ebce69041440",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/artifacts.ts": "aa5759e9e04e5721706fb2926931b75ffb51a56b659551b783e56ca52754ad4a",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/candidateIndex.ts": "3bfb70373e9e549f3bbc30347f2d18b9fb147207a862e35211b17c7b81a88c2f",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/syntheticValidation.ts": "939ecb0a4035d895481ecb6aea51fd2af5c002e5e6591f92d2c8d531971a026d",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/engine.ts": "1e958f5d819c9bd99a0bf518706feabf81a8d09896713835f68e9f0a7f4bc5a4",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/fullSegmentLedger.ts": "c8c5cbc4132b544aa19371fd570a63380901917d9d26da56d226eccef037bbfa",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/selectionEngine.ts": "ca4309bb58d072ddfbd0440d19a99084ed796cfcd192a6b53e540268ed1ccf85",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/types.ts": "ad68d6abd152799e1bd15fc4b0ceefa5c1a8c1f77c00c866440312cd6574be3e",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/monthComparator.ts": "fd6b6a9179be3853075c5f971bcf83e12e224a08ada3a17e092ebaccebffed83",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/observations.ts": "2ea18631cf6e8e3f58fd6a1b68ab5e2474dec6e127816e3c8526bde2274b45aa",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/conflictGraph.ts": "b232363431a2a9dbf0346a48b5c0e4560f9d429dc7b27aafad3422b7097ad06b",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/monthQuestionRegistry.ts": "d1bb6d8cd24c2090165eb91b6f2e7769804736a9f4d6e8401f00c536daa70d4d",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/relationMatcher.ts": "546cb3f97227273be1705ae330d516a4e516caf7fd065a72630bf29ad33f74b4",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/transitEvidence.ts": "7f5c75615723b1d402ab7bbfc695fa48fb09a91b8fb0c547fbf7de4fa8af44c9",
+    "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/monthlyTenGodMatcher.ts": "0f621a1513731eaef50857950b5d80b8e212cfb04cc18f8638e657a125b625c7",
+    "tools/annual-fortune-specialist-engine/verify.mjs": "5be400ba105f2da8ac85104618a823867fc802c03b4db1fb6d21d1b6a449f826",
+    "tests/fixtures/annual-fortune-specialist-engine-01/synthetic-knowledge.json": "8a244029276543937a1d09e5fac4b7b2bc54237db552a9f5c45834212dfdf75d"
+  },
+  "generatorInputsUnchangedAcrossFinalRuns": true,
+  "testFilesIndependentlyVerifiedAfterward": {
+    "tests/unit/report-knowledge/annualFortuneSpecialistEngine.test.ts": "d3e5f4ed164628f774ae947ed35c4a9490ef2a462b210f30875ea5c4c3941024"
+  },
+  "testOnlyRefinement": "The existing nominal stem-relation test also asserts nonempty real pre-Ipchun withheld observations, avoiding a vacuous empty-fixture check. Tests are not generator inputs."
+}

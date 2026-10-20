@@ -1,0 +1,7068 @@
+{
+  "required": [
+    "latestVersion",
+    "currentState",
+    "incompleteItems",
+    "uncertainty",
+    "nextAction",
+    "requiredAccess",
+    "recipientUnderstanding",
+    "recipientAcceptance",
+    "responsibilityTransfer"
+  ],
+  "actualChecks": [
+    {
+      "id": "cwpr:material:CH01.P3:pace-and-done",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P2:missing-relation-withhold",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P1:a-logical-model",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P3:ab-review-scope-creep",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P4:ab-fix-one-item",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P2:a-method-discretion",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P4:capacity-before-expansion",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P4:a-public-critique-cost",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P2:ba-resource-warning",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P1:recall-learning-procedure",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P4:result-and-respect",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P4:ba-report-blocker-not-person",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P1:ab-peer-draft",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P3:b-clear-completion",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P3:recall-review-priority",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P1:repair-unowned-integration",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P4:disagreement-becomes-competence",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P1:division-gap",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P4:joint-credit-check",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P3:unknown-type-no-substitution",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P2:a-feedback-dignity",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P1:a-first-practical-trial",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P2:a-handoff-status",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P2:harmony-is-classification",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P3:revision-without-stop",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P1:ba-overlap-not-rivalry",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P4:joint-boundary-for-risk",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P3:ab-decision-too-soon",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P2:a-request-full-impact",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P3:ab-changing-priority",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P1:ab-alternative-window",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P2:three-part-formation",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P3:recall-safe-support",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P4:reliable-minimum",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P3:b-state-integration-limit",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P4:learning-after-work",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P4:ba-decline-addition",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P2:idea-to-test",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P1:shared-space-different-questions",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P4:phase-before-person",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P1:completion-mismatch",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P4:dissent-as-testable-choice",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P1:repair-dependency-time",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P4:b-directive-without-authority",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P1:question-before-start",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P1:repair-priority-escalation",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P3:b-name-pending-review",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P2:structure-and-detail",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P3:feedback-as-person-score",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P3:b-make-blocker-visible",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P2:ab-background-not-answer",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P2:ba-question-channel",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P4:joint-common-not-conflict",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P2:recall-bounded-support-fusion",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P1:recall-different-checks",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P1:b-private-synthesis",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P3:b-practical-assistance",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P4:a-fast-fix-without-notice",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P3:help-with-explicit-return",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P3:parallel-review-rejoin",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P4:recall-work-not-rank",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P3:routine-exception-window",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P1:b-procedure-memory",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P1:ba-change-the-premise",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P4:ab-pass-uncertainty",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P4:duplicate-edit",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P2:a-clear-criteria",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P4:a-rescue-without-consent",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P1:deadline-dependency",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P3:draft-before-polish",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P2:no-relation-current-issue",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P4:ab-propose-reversible-test",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P3:a-system-review",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P1:repair-review-level",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P4:b-relational-overload",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P1:ba-shown-not-promised",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P1:a-shared-purpose",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P2:a-separate-observation",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P3:ba-observe-is-judge",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P3:handoff-omission",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P1:standard-and-experiment",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P1:ab-corrective-question",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P4:sustainable-help",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P3:ba-detail-cost",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P1:ab-produced-example",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P3:b-ask-intent-without-excusing",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P3:b-receive-not-accept",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P2:clash-and-current-work",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P1:b-value-filter",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P2:same-source-no-false-conflict",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P3:ab-help-replaces-work",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P3:b-contradiction-question",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P1:repair-support-exit",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P4:joint-relation-gate",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P2:ab-continuous-record",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P1:shared-action-no-double-work",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P2:autonomy-and-continuity",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P3:additional-work-hidden",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P2:half-harmony-not-agreement",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P1:ab-resource-boundary",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P4:ab-request-with-acceptance",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P1:priority-conflict",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P3:ab-ideas-become-obligation",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P4:recall-difference-with-output",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P2:b-bounded-autonomy",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P3:ba-late-change-after-start",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P4:b-praise-without-scope",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P2:a-focus-window",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P1:output-not-rank",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P4:ab-capacity-query",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P2:a-change-with-record",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P1:b-current-observation",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P2:ba-other-model",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P1:focus-and-contact",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P2:recall-idea-test",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P4:joint-change-review",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P2:unsupported-punishment",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P2:direct-and-receivable",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P1:recall-scope-of-help",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P1:recall-testable-dissent",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P1:ba-new-connection-with-limits",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P4:b-hidden-disagreement",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P4:coercion-not-style",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P1:repair-done-state",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P1:review-depth-gap",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P2:b-meaning-and-contact",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P3:a-new-links",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P3:recall-actual-done",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P1:shared-care-no-invisible-task",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P3:recognize-integration-labor",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P3:b-limit-invisible-help",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P4:ba-prioritize-review",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P2:ba-rule-explanation",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P2:ab-criterion-not-command",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P3:recall-handoff-responsibility",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P1:responsibility-border",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P4:recall-credit-next-task",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P4:a-sprint-dependency",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P2:harm-not-hostility",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P2:b-next-step-needed",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P4:joint-meeting-decision-log",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P2:clash-not-failure",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P1:shared-records-different-checks",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P3:ba-social-participation-duty",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P2:a-do-not-claim-authority",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P3:spoken-versus-private",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P2:recall-capacity-choice",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P3:a-participation-signal",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P4:recall-change-without-history",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P2:ab-supported-learning",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P2:b-time-to-answer",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P4:ba-confirm-receipt",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P4:fatigue-without-rebalance",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P3:shared-precision-not-proof",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P2:recall-handoff-interface",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P2:future-and-current-constraint",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P1:shared-values-usable-output",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P4:ba-ask-one-assumption",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P3:information-silo",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P2:ba-closure-list",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P3:request-without-input",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P2:ab-constraint-check",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P4:support-not-transfer",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P3:b-social-translation",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P3:a-reroute-proposal",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P4:meeting-closure-gap",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P4:credit-erasure",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P2:a-limit-revision",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P4:repeat-or-project",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P1:ba-independent-second-view",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P1:a-verified-record",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientUnderstanding",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibilityTransfer",
+          "state": "UNKNOWN"
+        }
+      ]
+    }
+  ],
+  "transmissionIsAcceptance": false
+}

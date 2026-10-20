@@ -1,0 +1,24 @@
+{
+  "revision": "OFFLINE_PUBLICATION_SAFETY_01",
+  "baseSha": "c315a04e31b316a88e1f0bc28169484379187a13",
+  "customerRuntimeActivated": false,
+  "originalResearchHashesRewritten": false,
+  "deltas": {
+    "src/lib/interpretation-v4/compatibilityProductAdapter.ts": {
+      "before": "bfc8e0844c7eb5bf0711c463745fda00b1cae460ffb19e95e82697d4fd4c7456",
+      "after": "a02bfc2e1cfab018a8b1fa8ab43e679aec6a18628363f56b5b3197264b272d36"
+    },
+    "src/lib/interpretation-v4/compatibilityReleaseRenderer.ts": {
+      "before": "48b54e1d5c6112f8f678b406c731afd1b0ffd90679aa0039443f343c9cb37999",
+      "after": "1ef6ab02d9a7cedc08aea244158ad806dae1ce0caedca1250054d5a9129cdf63"
+    },
+    "src/lib/report-generation/productPreviewSnapshot.ts": {
+      "before": "339ef6fdad096da95457bb9694b7727dd22604c88a8de0dea5433b32b2319274",
+      "after": "4bb50d7dfda76f4e4b739971c938ca69ab9f0f66384782734ed69fb92e66b8d2"
+    },
+    "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts": {
+      "before": "48dda91ad01c621b6e9f742ccc332092b207b7d79af265eca5deea98954e4a86",
+      "after": "aa1b778b20661a932a9175f2a370b33ce20444a4a1403672a4d482df5a547c6a"
+    }
+  }
+}

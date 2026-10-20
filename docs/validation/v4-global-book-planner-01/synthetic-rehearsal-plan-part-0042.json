@@ -1,0 +1,23 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "OBJECT",
+  "keys": [
+    "engine",
+    "plan"
+  ],
+  "logicalJsonHash": "a7e365f52afa76ce4fae7ce43484920b5690bd6fb2fc251790be9de519d7e324",
+  "parts": [
+    {
+      "file": "synthetic-rehearsal-plan-part-0043.json",
+      "sha256": "d07d2518b785bfcdc6789a8bbbd3188a2f08c4e81b170ba81d986911e24b0250",
+      "kind": "FIELD",
+      "key": "engine"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0044.json",
+      "sha256": "2bd934ff47b45fe5d01f800e054c1b378ea76c8192fe2fde35d3b365607e8306",
+      "kind": "FIELD",
+      "key": "plan"
+    }
+  ]
+}

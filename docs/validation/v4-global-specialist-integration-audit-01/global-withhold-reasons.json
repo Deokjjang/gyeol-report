@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-withhold-reasons.json.gz",
+  "payloadHash": "c829223f77e0ccbd9b2b2d78732fb80d1792d0cd37ca5ace368b219f349a3776",
+  "logicalJsonHash": "2788b630fb3e7510d066ee3158e70a67c34f949a3e552421cbae2ad4d0375d49",
+  "uncompressedBytes": 27368919
+}

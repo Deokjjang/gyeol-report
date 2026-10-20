@@ -1,0 +1,108 @@
+RUN  v4.1.5 /private/tmp/gyeol-compatibility-coworker-knowledge-validation/base
+
+ ❯ tests/unit/app/dev/bookReading13b.test.tsx (16 tests | 16 skipped) 28538ms
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx (36 tests | 11 failed) 98506ms
+     × 'career': every original paragraph and final line in original order 4ms
+     × 'love': every original paragraph and final line in original order 1ms
+     × 'compatibility': every original paragraph and final line in original order 0ms
+     × 'pair-02-marriage': every original paragraph and final line in original order 0ms
+     × 'pair-03-parent': every original paragraph and final line in original order 0ms
+     × 'pair-04-coworker': every original paragraph and final line in original order 0ms
+     × 'pair-05-manager': every original paragraph and final line in original order 0ms
+     × 'pair-06-business': every original paragraph and final line in original order 0ms
+     × 'pair-07-friend': every original paragraph and final line in original order 0ms
+     × 'pair-08-love': every original paragraph and final line in original order 0ms
+     × 14 years, 10 future years, all ages, transitions and clickable full narratives 3ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/app/dev/bookReading13b.test.tsx [ tests/unit/app/dev/bookReading13b.test.tsx ]
+Error: Hook timed out in 10000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ tests/unit/app/dev/bookReading13b.test.tsx:13:1
+     11| import type { BookData, BookPage } from "../../../../src/app/dev/book-…
+     12| const books = new Map<string, BookData>();
+     13| beforeAll(async () => {
+       | ^
+     14|   for (const f of RUNTIME_FIXTURES) {
+     15|     const r = await generateV4ShadowReport(f.payload, SHADOW_CLOCK); e…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯
+
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 11 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'career': every original paragraph and final line in original order
+AssertionError: only actual closing-rule titles may supplement chapter headings: expected [ '도울 범위를 먼저 정하세요', '중요한 오류부터 보세요' ] to include '나는 어떻게 일하는 사람인가'
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:46:100
+     44|     for (const heading of headings) {
+     45|       if (heading === expectedHeadings[nextHeading]) nextHeading++;
+     46|       else expect(ruleHeadings, "only actual closing-rule titles may s…
+       |                                                                                                    ^
+     47|     }
+     48|     expect(nextHeading).toBe(expectedHeadings.length);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯
+
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'love': every original paragraph and final line in original order
+AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '사랑할 때의 나'
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:46:100
+     44|     for (const heading of headings) {
+     45|       if (heading === expectedHeadings[nextHeading]) nextHeading++;
+     46|       else expect(ruleHeadings, "only actual closing-rule titles may s…
+       |                                                                                                    ^
+     47|     }
+     48|     expect(nextHeading).toBe(expectedHeadings.length);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/12]⎯
+
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'compatibility': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-02-marriage': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-03-parent': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-04-coworker': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-05-manager': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-06-business': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-07-friend': every original paragraph and final line in original order
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-08-love': every original paragraph and final line in original order
+AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:46:100
+     44|     for (const heading of headings) {
+     45|       if (heading === expectedHeadings[nextHeading]) nextHeading++;
+     46|       else expect(ruleHeadings, "only actual closing-rule titles may s…
+       |                                                                                                    ^
+     47|     }
+     48|     expect(nextHeading).toBe(expectedHeadings.length);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/12]⎯
+
+ FAIL  tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 14 years, 10 future years, all ages, transitions and clickable full narratives
+AssertionError: expected [ 2031, 48, '丁卯 → 丙寅', '辛亥', …(1) ] to deeply equal [ 2031, 48, '丙寅', '辛亥', …(1) ]
+
+- Expected
++ Received
+
+  [
+    2031,
+    48,
+-   "丙寅",
++   "丁卯 → 丙寅",
+    "辛亥",
+    "배워둔 것이 나 대신 문을 열어줍니다 — 큰 배경도 바뀝니다",
+  ]
+
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:115:59
+    113|     page.years.forEach((y, i) => {
+    114|       const original = e.composition.product === "major_fortune" ? e.c…
+    115|       expect([y.year, y.age, y.cycle, y.annual, y.title]).toEqual([ori…
+       |                                                           ^
+    116|       expect(data.pages[y.page].kind).toBe("narrative");
+    117|     });
+ ❯ tests/unit/app/dev/bookRuntime.test.tsx:113:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/12]⎯
+
+
+ Test Files  2 failed | 3 passed (5)
+      Tests  11 failed | 83 passed | 16 skipped (110)
+   Start at  03:49:07
+   Duration  133.90s (transform 4.24s, setup 64ms, import 6.65s, tests 258.48s, environment 0ms)

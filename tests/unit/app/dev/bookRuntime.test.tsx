@@ -1,3 +1,4 @@
+import { readableBookText } from "../../../../src/lib/book/readerCopy";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
@@ -11,6 +12,7 @@ import { projectV4Composition, projectV4Tables, v4Digest, type V4RuntimeEvidence
 import { MATERIAL_BY_FEATURE, canonicalV4Feature } from "../../../../src/lib/interpretation-v4/materialRegistry";
 import { depthFeature } from "../../../../src/lib/interpretation-v4/materialDepth";
 import { SHADOW_CLOCK } from "../../interpretation-v4/runtimeFixtures";
+import { majorYearPeriod } from "../../../../src/lib/interpretation-v4/majorPeriodCopy";
 const samples = new Map<string, { evidence: V4RuntimeEvidence; data: BookData }>();
 const noop = () => {};
 beforeAll(async () => {
@@ -35,17 +37,52 @@ describe("actual V4 packet → book pages; no new calculation or prose", () => {
     const view = projectV4Composition(evidence.composition);
     const chapters = data.pages.filter(p => p.kind === "narrative");
     const ruleHeadings = evidence.composition.product === "saju_mbti_full" && "integration" in evidence.composition.result
-      ? evidence.composition.result.integration.represented.flatMap(u => u.headings).filter(Boolean)
+      ? evidence.composition.result.integration.readerEdition.chapters.flatMap(c => c.paragraphs.map(p => p.purpose))
       : evidence.composition.product === "career_money_study" && "integration" in evidence.composition.result
         ? evidence.composition.result.integration.ruleHeadings : [];
-    const headings = chapters.flatMap(p => [p.title, ...p.paragraphs.flatMap(b => b.heading ? [b.heading] : [])]);
-    const expectedHeadings = [view.headline, ...view.sections.map(s => s.title)];
-    let nextHeading = 0;
-    for (const heading of headings) {
-      if (heading === expectedHeadings[nextHeading]) nextHeading++;
-      else expect(ruleHeadings, "only actual closing-rule titles may supplement chapter headings").toContain(heading);
+    const result = evidence.composition.result;
+    const integration = "integration" in result ? result.integration : null;
+    const edition = integration && "readerEdition" in integration && integration.publishedEdition === integration.readerEdition.version
+      ? integration.readerEdition : null;
+    if (edition) {
+      // Saved Reader metadata is a separate contract from the Writer headline.
+      // Match complete paragraphs and their addresses, not today's title strings.
+      const units = edition.chapters.filter(c => c.paragraphs.length);
+      expect(chapters).toHaveLength(units.length);
+      for (const unit of units) {
+        const target = unit.key === "core" ? "core" : `chapter-${unit.key}`;
+        const page = chapters.find(p => p.id === target);
+        expect(page, target).toBeDefined();
+        const originalTitle = unit.key === "core" ? view.headline : result.narrative.sections.find(s => s.id === unit.key)?.title;
+        expect(page!.title).toBe(evidence.composition.product === "saju_mbti_full" ? originalTitle : unit.title);
+        expect(page!.paragraphs.map(p => [p.heading, p.text])).toEqual(unit.paragraphs.map(p => [p.purpose, p.text]));
+      }
+      const contents = data.pages.find(p => p.kind === "contents" && p.id === "contents");
+      expect(contents?.kind === "contents" && contents.entries.map(e => [e.title, e.targetId]))
+        .toEqual(units.map(c => [c.title, c.key === "core" ? "core" : `chapter-${c.key}`]));
+    } else {
+      const headings = chapters.flatMap(p => [p.title, ...p.paragraphs.flatMap(b => b.heading ? [b.heading] : [])]);
+      const expectedHeadings = [view.headline, ...view.sections.map(s => s.title)];
+      let nextHeading = 0;
+      for (const heading of headings) {
+        if (heading === expectedHeadings[nextHeading]) nextHeading++;
+        else expect(ruleHeadings, "only actual closing-rule titles may supplement chapter headings").toContain(heading);
+      }
+      expect(nextHeading).toBe(expectedHeadings.length);
     }
-    expect(nextHeading).toBe(expectedHeadings.length);
+    const owners = new Map<string, number>();
+    data.pages.forEach((p, index) => {
+      for (const anchor of new Set([p.id!, ...(p.anchors ?? [])])) {
+        expect(owners.has(anchor), `duplicate anchor: ${anchor}`).toBe(false);
+        owners.set(anchor, index);
+      }
+      if (p.kind === "narrative") for (const paragraph of p.paragraphs) {
+        if (paragraph.anchorId) expect(p.anchors).toContain(paragraph.anchorId);
+      }
+    });
+    for (const p of data.pages) if (p.kind === "contents") for (const entry of p.entries) {
+      expect(owners.get(entry.targetId), entry.targetId).toBe(entry.page);
+    }
     expect(chapters.flatMap(p => p.paragraphs.map(p => p.text))).toEqual([...view.opening, ...view.sections.flatMap(s => s.paragraphs)]);
     expect(data.pages[0].kind).toBe("cover");
     expect(data.pages.at(-1)).toMatchObject({ kind: "back", title: "이 책 공유하기", finalLine: view.finalLine });
@@ -57,7 +94,7 @@ describe("actual V4 packet → book pages; no new calculation or prose", () => {
       expect(html.replace(/<[^>]*>/g, "")).not.toMatch(/\b(?:metal|water|career_shift)\b/);
       if (page.kind === "narrative") {
         for (const p of page.paragraphs) {
-          expect(html).toContain(renderToStaticMarkup(<span>{p.text}</span>).slice(6, -7));
+          expect(html).toContain(renderToStaticMarkup(<span>{readableBookText(p.text, data.people.map(person => person.name))}</span>).slice(6, -7));
           expect(p.notes.every(n => n >= 1 && n <= page.notes.length)).toBe(true);
         }
         if (page.notes.length) expect(html).toContain('aria-label="이 장의 각주"');
@@ -106,13 +143,16 @@ describe("actual V4 packet → book pages; no new calculation or prose", () => {
   it("14 years, 10 future years, all ages, transitions and clickable full narratives", () => {
     const { evidence: e, data } = samples.get("major")!;
     if (e.composition.product !== "major_fortune") return;
+    const result = e.composition.result;
     const page = data.pages.find(p => p.kind === "timeline")!;
     expect(page.years).toHaveLength(14);
     expect(page.years.filter(y => y.time === "앞으로")).toHaveLength(10);
     expect(page.transitions.length).toBeGreaterThan(0);
     page.years.forEach((y, i) => {
-      const original = e.composition.product === "major_fortune" ? e.composition.result.years[i] : null;
-      expect([y.year, y.age, y.cycle, y.annual, y.title]).toEqual([original!.year, original!.age, original!.cycle.ganji, original!.annual.ganji, original!.title]);
+      const original = result.years[i];
+      const period = original!.blocks.some(b => b.proof.sourceRefs.includes("v4:major-reader-periods-01"))
+        ? majorYearPeriod(result.evidence, original!) : null;
+      expect([y.year, y.age, y.cycle, y.annual, y.title]).toEqual([original!.year, original!.age, period?.cycle ?? original!.cycle.ganji, original!.annual.ganji, original!.title]);
       expect(data.pages[y.page].kind).toBe("narrative");
     });
     page.transitions.forEach(t => expect(data.pages[t.page].kind).toBe("narrative"));

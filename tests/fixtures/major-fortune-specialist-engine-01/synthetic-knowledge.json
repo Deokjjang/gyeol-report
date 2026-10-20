@@ -1,0 +1,6146 @@
+{
+  "syntheticOnly": true,
+  "questions": [
+    {
+      "id": "synthetic:major:q:2023:background",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 1,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:annual",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:novelty",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:positive",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:risk",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:natal",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:previous",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:next",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:transition",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:domain",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:unsupported",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:new-information",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:background",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 1,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:annual",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:novelty",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:positive",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:risk",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:natal",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:previous",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:next",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:transition",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:domain",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:unsupported",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:new-information",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:background",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 1,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:annual",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:novelty",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:positive",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:risk",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:natal",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:previous",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:next",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:transition",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:domain",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:unsupported",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:new-information",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:background",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 1,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:annual",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:novelty",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:positive",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:risk",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:natal",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:previous",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:next",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:transition",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:domain",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:unsupported",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:new-information",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:background",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 1,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:annual",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:novelty",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:positive",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:risk",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:natal",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:previous",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:next",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:transition",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:domain",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:unsupported",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:new-information",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 1,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:background",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:annual",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:novelty",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:positive",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:risk",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:natal",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:previous",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:next",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:transition",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:domain",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:unsupported",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:new-information",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:background",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:annual",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:novelty",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:positive",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:risk",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:natal",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:previous",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:next",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:transition",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:domain",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:unsupported",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:new-information",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:background",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:annual",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:novelty",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:positive",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:risk",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:natal",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:previous",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:next",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:transition",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:domain",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:unsupported",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:new-information",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:background",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:annual",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:novelty",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:positive",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:risk",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:natal",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:previous",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:next",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:transition",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:domain",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:unsupported",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:new-information",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:background",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:annual",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:novelty",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:positive",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:risk",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:natal",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:previous",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:next",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:transition",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:domain",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:unsupported",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:new-information",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:background",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:annual",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:novelty",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:positive",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:risk",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:natal",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:previous",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:next",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:transition",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:domain",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:unsupported",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:new-information",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:background",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:annual",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:novelty",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:positive",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:risk",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:natal",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:previous",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:next",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:transition",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:domain",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:unsupported",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:new-information",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:background",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:annual",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:novelty",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:positive",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:risk",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:natal",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:previous",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:next",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:transition",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:domain",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:unsupported",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:new-information",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:background",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:annual",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:novelty",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:positive",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:risk",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:natal",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:previous",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:next",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:transition",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:domain",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:unsupported",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:new-information",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2036-10-12T12:00:00+09:00"
+    }
+  ],
+  "facts": [
+    {
+      "id": "a2023",
+      "root": "annual:2023",
+      "scope": "annual",
+      "cycle": 1,
+      "year": 2023,
+      "start": "2023-01-01T00:00:00+09:00",
+      "end": "2024-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "a2024",
+      "root": "annual:2024",
+      "scope": "annual",
+      "cycle": 1,
+      "year": 2024,
+      "start": "2024-01-01T00:00:00+09:00",
+      "end": "2025-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "a2025",
+      "root": "annual:2025",
+      "scope": "annual",
+      "cycle": 1,
+      "year": 2025,
+      "start": "2025-01-01T00:00:00+09:00",
+      "end": "2026-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "a2026",
+      "root": "annual:2026",
+      "scope": "annual",
+      "cycle": 1,
+      "year": 2026,
+      "start": "2026-01-01T00:00:00+09:00",
+      "end": "2027-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "a2027",
+      "root": "annual:2027",
+      "scope": "annual",
+      "cycle": 1,
+      "year": 2027,
+      "start": "2027-01-01T00:00:00+09:00",
+      "end": "2028-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "a2028",
+      "root": "annual:2028",
+      "scope": "annual",
+      "cycle": 2,
+      "year": 2028,
+      "start": "2028-01-01T00:00:00+09:00",
+      "end": "2029-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": [
+        2027,
+        2028
+      ]
+    },
+    {
+      "id": "a2029",
+      "root": "annual:2029",
+      "scope": "annual",
+      "cycle": 2,
+      "year": 2029,
+      "start": "2029-01-01T00:00:00+09:00",
+      "end": "2030-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "a2030",
+      "root": "annual:2030",
+      "scope": "annual",
+      "cycle": 2,
+      "year": 2030,
+      "start": "2030-01-01T00:00:00+09:00",
+      "end": "2031-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "a2031",
+      "root": "annual:2031",
+      "scope": "annual",
+      "cycle": 2,
+      "year": 2031,
+      "start": "2031-01-01T00:00:00+09:00",
+      "end": "2032-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "a2032",
+      "root": "annual:2032",
+      "scope": "annual",
+      "cycle": 2,
+      "year": 2032,
+      "start": "2032-01-01T00:00:00+09:00",
+      "end": "2033-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "a2033",
+      "root": "annual:2033",
+      "scope": "annual",
+      "cycle": 2,
+      "year": 2033,
+      "start": "2033-01-01T00:00:00+09:00",
+      "end": "2034-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "a2034",
+      "root": "annual:2034",
+      "scope": "annual",
+      "cycle": 2,
+      "year": 2034,
+      "start": "2034-01-01T00:00:00+09:00",
+      "end": "2035-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "a2035",
+      "root": "annual:2035",
+      "scope": "annual",
+      "cycle": 2,
+      "year": 2035,
+      "start": "2035-01-01T00:00:00+09:00",
+      "end": "2036-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "a2036",
+      "root": "annual:2036",
+      "scope": "annual",
+      "cycle": 2,
+      "year": 2036,
+      "start": "2036-01-01T00:00:00+09:00",
+      "end": "2037-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "c1",
+      "root": "cycle:1",
+      "scope": "dayun",
+      "cycle": 1,
+      "year": null,
+      "start": "2018-04-23T21:42:00+09:00",
+      "end": "2028-04-23T21:42:00+09:00",
+      "participants": [
+        "dayun:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "c2",
+      "root": "cycle:2",
+      "scope": "dayun",
+      "cycle": 2,
+      "year": null,
+      "start": "2028-04-23T21:42:00+09:00",
+      "end": "2038-04-23T21:42:00+09:00",
+      "participants": [
+        "dayun:branch"
+      ],
+      "comparedYears": []
+    },
+    {
+      "id": "range-c2",
+      "root": "cycle:range-2",
+      "scope": "dayun",
+      "cycle": 2,
+      "year": null,
+      "start": "2023-06-14T02:00:00+09:00",
+      "end": "2033-06-14T02:00:00+09:00",
+      "participants": [
+        "dayun:branch"
+      ],
+      "comparedYears": [],
+      "scenario": "range"
+    },
+    {
+      "id": "range-c3",
+      "root": "cycle:range-3",
+      "scope": "dayun",
+      "cycle": 3,
+      "year": null,
+      "start": "2033-10-15T23:59:59+09:00",
+      "end": "2043-06-14T02:00:00+09:00",
+      "startRange": {
+        "earliest": "2033-06-14T02:00:00+09:00",
+        "latest": "2033-10-15T23:59:59+09:00"
+      },
+      "participants": [
+        "dayun:branch"
+      ],
+      "comparedYears": [],
+      "scenario": "range"
+    },
+    {
+      "id": "range-a2033",
+      "root": "annual:range-2033",
+      "scope": "annual",
+      "cycle": 3,
+      "year": 2033,
+      "start": "2033-01-01T00:00:00+09:00",
+      "end": "2034-01-01T00:00:00+09:00",
+      "participants": [
+        "annual:branch"
+      ],
+      "comparedYears": [],
+      "scenario": "range"
+    }
+  ],
+  "materials": [
+    {
+      "id": "synthetic:major:01-first-crowded",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:01-first-crowded",
+        "meaningId": "synthetic:major:meaning:shared-transition",
+        "claimId": "synthetic:major:claim:shared-transition",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:01-first-crowded",
+        "condition": "synthetic-condition:01-first-crowded",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2023,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:02-alternative",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:02-alternative",
+        "meaningId": "synthetic:major:meaning:annual-2023",
+        "claimId": "synthetic:major:claim:annual-2023",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:02-alternative",
+        "condition": "synthetic-condition:02-alternative",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2023,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": false,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:annual-2024",
+      "questionId": "synthetic:major:q:2024:annual",
+      "fact": "a2024",
+      "meaning": {
+        "reviewId": "synthetic:major:review:annual-2024",
+        "meaningId": "synthetic:major:meaning:annual-2024",
+        "claimId": "synthetic:major:claim:annual-2024",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:annual-2024",
+        "condition": "synthetic-condition:annual-2024",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2024,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2024-01-01T00:00:00+09:00",
+          "endExclusive": "2025-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:annual-2025",
+      "questionId": "synthetic:major:q:2025:annual",
+      "fact": "a2025",
+      "meaning": {
+        "reviewId": "synthetic:major:review:annual-2025",
+        "meaningId": "synthetic:major:meaning:annual-2025",
+        "claimId": "synthetic:major:claim:annual-2025",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:annual-2025",
+        "condition": "synthetic-condition:annual-2025",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2025,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2025-01-01T00:00:00+09:00",
+          "endExclusive": "2026-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:annual-2026",
+      "questionId": "synthetic:major:q:2026:annual",
+      "fact": "a2026",
+      "meaning": {
+        "reviewId": "synthetic:major:review:annual-2026",
+        "meaningId": "synthetic:major:meaning:annual-2026",
+        "claimId": "synthetic:major:claim:annual-2026",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:annual-2026",
+        "condition": "synthetic-condition:annual-2026",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2026,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2026-01-01T00:00:00+09:00",
+          "endExclusive": "2027-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:annual-2027",
+      "questionId": "synthetic:major:q:2027:annual",
+      "fact": "a2027",
+      "meaning": {
+        "reviewId": "synthetic:major:review:annual-2027",
+        "meaningId": "synthetic:major:meaning:annual-2027",
+        "claimId": "synthetic:major:claim:annual-2027",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:annual-2027",
+        "condition": "synthetic-condition:annual-2027",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2027,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2027-01-01T00:00:00+09:00",
+          "endExclusive": "2028-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:transition-comparison",
+      "questionId": "synthetic:major:q:2028:transition",
+      "fact": "a2028",
+      "meaning": {
+        "reviewId": "synthetic:major:review:transition-comparison",
+        "meaningId": "synthetic:major:meaning:shared-transition",
+        "claimId": "synthetic:major:claim:shared-transition",
+        "function": "VERIFIED_COMPARISON",
+        "application": "synthetic-application:transition-comparison",
+        "condition": "synthetic-condition:transition-comparison",
+        "questionKey": "transition",
+        "cycle": 2,
+        "year": 2028,
+        "observedYears": [
+          2027,
+          2028
+        ],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": "after",
+        "transition": {
+          "earliest": "2028-04-23T21:42:00+09:00",
+          "latest": "2028-04-23T21:42:00+09:00"
+        },
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2028-01-01T00:00:00+09:00",
+          "endExclusive": "2029-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": true
+      }
+    },
+    {
+      "id": "synthetic:major:annual-2029",
+      "questionId": "synthetic:major:q:2029:annual",
+      "fact": "a2029",
+      "meaning": {
+        "reviewId": "synthetic:major:review:annual-2029",
+        "meaningId": "synthetic:major:meaning:annual-2029",
+        "claimId": "synthetic:major:claim:annual-2029",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:annual-2029",
+        "condition": "synthetic-condition:annual-2029",
+        "questionKey": "annual",
+        "cycle": 2,
+        "year": 2029,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2029-01-01T00:00:00+09:00",
+          "endExclusive": "2030-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:annual-2030",
+      "questionId": "synthetic:major:q:2030:annual",
+      "fact": "a2030",
+      "meaning": {
+        "reviewId": "synthetic:major:review:annual-2030",
+        "meaningId": "synthetic:major:meaning:annual-2030",
+        "claimId": "synthetic:major:claim:annual-2030",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:annual-2030",
+        "condition": "synthetic-condition:annual-2030",
+        "questionKey": "annual",
+        "cycle": 2,
+        "year": 2030,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2030-01-01T00:00:00+09:00",
+          "endExclusive": "2031-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:annual-2031",
+      "questionId": "synthetic:major:q:2031:annual",
+      "fact": "a2031",
+      "meaning": {
+        "reviewId": "synthetic:major:review:annual-2031",
+        "meaningId": "synthetic:major:meaning:annual-2031",
+        "claimId": "synthetic:major:claim:annual-2031",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:annual-2031",
+        "condition": "synthetic-condition:annual-2031",
+        "questionKey": "annual",
+        "cycle": 2,
+        "year": 2031,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2031-01-01T00:00:00+09:00",
+          "endExclusive": "2032-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:annual-2032",
+      "questionId": "synthetic:major:q:2032:annual",
+      "fact": "a2032",
+      "meaning": {
+        "reviewId": "synthetic:major:review:annual-2032",
+        "meaningId": "synthetic:major:meaning:annual-2032",
+        "claimId": "synthetic:major:claim:annual-2032",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:annual-2032",
+        "condition": "synthetic-condition:annual-2032",
+        "questionKey": "annual",
+        "cycle": 2,
+        "year": 2032,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2032-01-01T00:00:00+09:00",
+          "endExclusive": "2033-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:annual-2033",
+      "questionId": "synthetic:major:q:2033:annual",
+      "fact": "a2033",
+      "meaning": {
+        "reviewId": "synthetic:major:review:annual-2033",
+        "meaningId": "synthetic:major:meaning:annual-2033",
+        "claimId": "synthetic:major:claim:annual-2033",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:annual-2033",
+        "condition": "synthetic-condition:annual-2033",
+        "questionKey": "annual",
+        "cycle": 2,
+        "year": 2033,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2033-01-01T00:00:00+09:00",
+          "endExclusive": "2034-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:annual-2034",
+      "questionId": "synthetic:major:q:2034:annual",
+      "fact": "a2034",
+      "meaning": {
+        "reviewId": "synthetic:major:review:annual-2034",
+        "meaningId": "synthetic:major:meaning:annual-2034",
+        "claimId": "synthetic:major:claim:annual-2034",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:annual-2034",
+        "condition": "synthetic-condition:annual-2034",
+        "questionKey": "annual",
+        "cycle": 2,
+        "year": 2034,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2034-01-01T00:00:00+09:00",
+          "endExclusive": "2035-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:annual-2035",
+      "questionId": "synthetic:major:q:2035:annual",
+      "fact": "a2035",
+      "meaning": {
+        "reviewId": "synthetic:major:review:annual-2035",
+        "meaningId": "synthetic:major:meaning:annual-2035",
+        "claimId": "synthetic:major:claim:annual-2035",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:annual-2035",
+        "condition": "synthetic-condition:annual-2035",
+        "questionKey": "annual",
+        "cycle": 2,
+        "year": 2035,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2035-01-01T00:00:00+09:00",
+          "endExclusive": "2036-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:annual-2036",
+      "questionId": "synthetic:major:q:2036:annual",
+      "fact": "a2036",
+      "meaning": {
+        "reviewId": "synthetic:major:review:annual-2036",
+        "meaningId": "synthetic:major:meaning:annual-2036",
+        "claimId": "synthetic:major:claim:annual-2036",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:annual-2036",
+        "condition": "synthetic-condition:annual-2036",
+        "questionKey": "annual",
+        "cycle": 2,
+        "year": 2036,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2036-01-01T00:00:00+09:00",
+          "endExclusive": "2037-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:background-first",
+      "questionId": "synthetic:major:q:2023:background",
+      "fact": "c1",
+      "meaning": {
+        "reviewId": "synthetic:major:review:background-first",
+        "meaningId": "synthetic:major:meaning:cycle-1",
+        "claimId": "synthetic:major:claim:cycle-1",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:background-first",
+        "condition": "synthetic-condition:background-first",
+        "questionKey": "background",
+        "cycle": 1,
+        "year": null,
+        "observedYears": [],
+        "scope": "dayun",
+        "participants": [
+          "dayun:branch"
+        ],
+        "requiredParticipants": [
+          "dayun:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "dayun",
+          "start": "2018-04-23T21:42:00+09:00",
+          "endExclusive": "2028-04-23T21:42:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": true
+      }
+    },
+    {
+      "id": "synthetic:major:background-continuity",
+      "questionId": "synthetic:major:q:2024:background",
+      "fact": "c1",
+      "meaning": {
+        "reviewId": "synthetic:major:review:background-continuity",
+        "meaningId": "synthetic:major:meaning:cycle-1",
+        "claimId": "synthetic:major:claim:cycle-1",
+        "function": "CONTINUITY",
+        "application": "synthetic-application:background-continuity",
+        "condition": "synthetic-condition:background-continuity",
+        "questionKey": "background",
+        "cycle": 1,
+        "year": null,
+        "observedYears": [],
+        "scope": "dayun",
+        "participants": [
+          "dayun:branch"
+        ],
+        "requiredParticipants": [
+          "dayun:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "dayun",
+          "start": "2018-04-23T21:42:00+09:00",
+          "endExclusive": "2028-04-23T21:42:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": true
+      }
+    },
+    {
+      "id": "synthetic:major:application",
+      "questionId": "synthetic:major:q:2025:domain",
+      "fact": "a2025",
+      "meaning": {
+        "reviewId": "synthetic:major:review:application",
+        "meaningId": "synthetic:major:meaning:new-application",
+        "claimId": "synthetic:major:claim:new-application",
+        "function": "VERIFIED_NEW_APPLICATION",
+        "application": "synthetic-application:application",
+        "condition": "synthetic-condition:application",
+        "questionKey": "domain",
+        "cycle": 1,
+        "year": 2025,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2025-01-01T00:00:00+09:00",
+          "endExclusive": "2026-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": true
+      }
+    },
+    {
+      "id": "synthetic:major:recall",
+      "questionId": "synthetic:major:q:2026:background",
+      "fact": "c1",
+      "meaning": {
+        "reviewId": "synthetic:major:review:recall",
+        "meaningId": "synthetic:major:meaning:cycle-1",
+        "claimId": "synthetic:major:claim:cycle-1",
+        "function": "RECALL",
+        "application": "synthetic-application:recall",
+        "condition": "synthetic-condition:recall",
+        "questionKey": "background",
+        "cycle": 1,
+        "year": null,
+        "observedYears": [],
+        "scope": "dayun",
+        "participants": [
+          "dayun:branch"
+        ],
+        "requiredParticipants": [
+          "dayun:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "dayun",
+          "start": "2018-04-23T21:42:00+09:00",
+          "endExclusive": "2028-04-23T21:42:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": "synthetic:major:background-first",
+        "requiresCycle": true
+      }
+    },
+    {
+      "id": "synthetic:major:negative-wrong-year",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-wrong-year",
+        "meaningId": "synthetic:major:meaning:negative-wrong-year",
+        "claimId": "synthetic:major:claim:negative-wrong-year",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:negative-wrong-year",
+        "condition": "synthetic-condition:negative-wrong-year",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2024,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:negative-wrong-cycle",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-wrong-cycle",
+        "meaningId": "synthetic:major:meaning:negative-wrong-cycle",
+        "claimId": "synthetic:major:claim:negative-wrong-cycle",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:negative-wrong-cycle",
+        "condition": "synthetic-condition:negative-wrong-cycle",
+        "questionKey": "annual",
+        "cycle": 2,
+        "year": 2023,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:negative-wrong-scope",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-wrong-scope",
+        "meaningId": "synthetic:major:meaning:negative-wrong-scope",
+        "claimId": "synthetic:major:claim:negative-wrong-scope",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:negative-wrong-scope",
+        "condition": "synthetic-condition:negative-wrong-scope",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2023,
+        "observedYears": [],
+        "scope": "natal_dayun",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:negative-missing-participant",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-missing-participant",
+        "meaningId": "synthetic:major:meaning:negative-missing-participant",
+        "claimId": "synthetic:major:claim:negative-missing-participant",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:negative-missing-participant",
+        "condition": "synthetic-condition:negative-missing-participant",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2023,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "natal:hour"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:negative-composite",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-composite",
+        "meaningId": "synthetic:major:meaning:negative-composite",
+        "claimId": "synthetic:major:claim:negative-composite",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:negative-composite",
+        "condition": "synthetic-condition:negative-composite",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2023,
+        "observedYears": [],
+        "scope": "natal_dayun_saeun",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:negative-missing-comparison",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-missing-comparison",
+        "meaningId": "synthetic:major:meaning:negative-missing-comparison",
+        "claimId": "synthetic:major:claim:negative-missing-comparison",
+        "function": "VERIFIED_COMPARISON",
+        "application": "synthetic-application:negative-missing-comparison",
+        "condition": "synthetic-condition:negative-missing-comparison",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2023,
+        "observedYears": [
+          2023
+        ],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:negative-unverified-life-state",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-unverified-life-state",
+        "meaningId": "synthetic:major:meaning:negative-unverified-life-state",
+        "claimId": "synthetic:major:claim:negative-unverified-life-state",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:negative-unverified-life-state",
+        "condition": "synthetic-condition:negative-unverified-life-state",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2023,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [
+          "income"
+        ],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:negative-future-event",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-future-event",
+        "meaningId": "synthetic:major:meaning:negative-future-event",
+        "claimId": "synthetic:major:claim:negative-future-event",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:negative-future-event",
+        "condition": "synthetic-condition:negative-future-event",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2023,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": "future-income-guarantee",
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:negative-phase-event",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-phase-event",
+        "meaningId": "synthetic:major:meaning:negative-phase-event",
+        "claimId": "synthetic:major:claim:negative-phase-event",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:negative-phase-event",
+        "condition": "synthetic-condition:negative-phase-event",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2023,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": "late-means-decline",
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:negative-source-definition",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-source-definition",
+        "meaningId": "synthetic:major:meaning:negative-source-definition",
+        "claimId": "synthetic:major:claim:negative-source-definition",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:negative-source-definition",
+        "condition": "synthetic-condition:negative-source-definition",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2023,
+        "observedYears": [],
+        "scope": "DEFINITION",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:negative-pre-transition",
+      "questionId": "synthetic:major:q:2028:previous",
+      "fact": "a2028",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-pre-transition",
+        "meaningId": "synthetic:major:meaning:pre-conflict",
+        "claimId": "synthetic:major:claim:pre-conflict",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:negative-pre-transition",
+        "condition": "synthetic-condition:negative-pre-transition",
+        "questionKey": "previous",
+        "cycle": 2,
+        "year": 2028,
+        "observedYears": [
+          2027,
+          2028
+        ],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": "before",
+        "transition": {
+          "earliest": "2028-04-23T21:42:00+09:00",
+          "latest": "2028-04-23T21:42:00+09:00"
+        },
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2028-01-01T00:00:00+09:00",
+          "endExclusive": "2029-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": true
+      }
+    },
+    {
+      "id": "synthetic:major:negative-range",
+      "questionId": "synthetic:major:q:2033:transition",
+      "fact": "range-a2033",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-range",
+        "meaningId": "synthetic:major:meaning:range",
+        "claimId": "synthetic:major:claim:range",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:negative-range",
+        "condition": "synthetic-condition:negative-range",
+        "questionKey": "transition",
+        "cycle": 3,
+        "year": 2033,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": "after",
+        "transition": {
+          "earliest": "2033-06-14T02:00:00+09:00",
+          "latest": "2033-10-15T23:59:59+09:00"
+        },
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2033-01-01T00:00:00+09:00",
+          "endExclusive": "2034-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": true
+      }
+    },
+    {
+      "id": "synthetic:major:negative-past-experience",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-past-experience",
+        "meaningId": "synthetic:major:meaning:negative-past-experience",
+        "claimId": "synthetic:major:claim:negative-past-experience",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:negative-future-event",
+        "condition": "synthetic-condition:negative-future-event",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2023,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": "past-experience",
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:negative-future-marriage",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-future-marriage",
+        "meaningId": "synthetic:major:meaning:negative-future-marriage",
+        "claimId": "synthetic:major:claim:negative-future-marriage",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:negative-future-event",
+        "condition": "synthetic-condition:negative-future-event",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2023,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": "future-marriage",
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:negative-future-health",
+      "questionId": "synthetic:major:q:2023:annual",
+      "fact": "a2023",
+      "meaning": {
+        "reviewId": "synthetic:major:review:negative-future-health",
+        "meaningId": "synthetic:major:meaning:negative-future-health",
+        "claimId": "synthetic:major:claim:negative-future-health",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:negative-future-event",
+        "condition": "synthetic-condition:negative-future-event",
+        "questionKey": "annual",
+        "cycle": 1,
+        "year": 2023,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2023-01-01T00:00:00+09:00",
+          "endExclusive": "2024-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": "future-health",
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    },
+    {
+      "id": "synthetic:major:range-after",
+      "questionId": "synthetic:major:q:2033:positive",
+      "fact": "range-a2033",
+      "meaning": {
+        "reviewId": "synthetic:major:review:range-after",
+        "meaningId": "synthetic:major:meaning:range-after",
+        "claimId": "synthetic:major:claim:range-after",
+        "function": "VERIFIED_NEW_APPLICATION",
+        "application": "synthetic-application:range-after",
+        "condition": "synthetic-condition:range-after",
+        "questionKey": "positive",
+        "cycle": 3,
+        "year": 2033,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": "after",
+        "transition": {
+          "earliest": "2033-06-14T02:00:00+09:00",
+          "latest": "2033-10-15T23:59:59+09:00"
+        },
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2033-01-01T00:00:00+09:00",
+          "endExclusive": "2034-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": true
+      }
+    },
+    {
+      "id": "synthetic:major:range-independent-annual",
+      "questionId": "synthetic:major:q:2033:new-information",
+      "fact": "range-a2033",
+      "meaning": {
+        "reviewId": "synthetic:major:review:range-independent-annual",
+        "meaningId": "synthetic:major:meaning:range-independent-annual",
+        "claimId": "synthetic:major:claim:range-independent-annual",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-application:range-independent-annual",
+        "condition": "synthetic-condition:range-independent-annual",
+        "questionKey": "new-information",
+        "cycle": 3,
+        "year": 2033,
+        "observedYears": [],
+        "scope": "annual",
+        "participants": [
+          "annual:branch"
+        ],
+        "requiredParticipants": [
+          "annual:branch"
+        ],
+        "direct": true,
+        "beforeAfter": null,
+        "transition": null,
+        "temporalWindow": {
+          "scope": "annual",
+          "start": "2033-01-01T00:00:00+09:00",
+          "endExclusive": "2034-01-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "syntheticOnly": true
+          },
+          "compatibleCombination": true
+        },
+        "factsRequired": [],
+        "prohibitedEvent": null,
+        "recallOf": null,
+        "requiresCycle": false
+      }
+    }
+  ],
+  "displays": [
+    {
+      "id": "synthetic:major:background-first",
+      "meaningId": "synthetic:major:meaning:cycle-1",
+      "claimId": "synthetic:major:claim:cycle-1",
+      "roots": [
+        "synthetic:major:root:cycle:1"
+      ],
+      "owner": "synthetic:major:owner",
+      "actuallyDisplayed": true
+    }
+  ],
+  "rangeQuestions": [
+    {
+      "id": "synthetic:major:q:2023:background",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:annual",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:novelty",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:positive",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:risk",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:natal",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:previous",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:next",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:transition",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:domain",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:unsupported",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2023:new-information",
+      "year": 2023,
+      "offset": -3,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2023-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:background",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:annual",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:novelty",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:positive",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:risk",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:natal",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:previous",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:next",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:transition",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:domain",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:unsupported",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2024:new-information",
+      "year": 2024,
+      "offset": -2,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2024-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:background",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:annual",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:novelty",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:positive",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:risk",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:natal",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:previous",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:next",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:transition",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:domain",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:unsupported",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2025:new-information",
+      "year": 2025,
+      "offset": -1,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2025-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:background",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:annual",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:novelty",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:positive",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:risk",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:natal",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:previous",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:next",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:transition",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:domain",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:unsupported",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2026:new-information",
+      "year": 2026,
+      "offset": 0,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2026-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:background",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:annual",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:novelty",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:positive",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:risk",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:natal",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:previous",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:next",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:transition",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:domain",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:unsupported",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2027:new-information",
+      "year": 2027,
+      "offset": 1,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2027-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:background",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:annual",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:novelty",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:positive",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:risk",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:natal",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:previous",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:next",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:transition",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:domain",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:unsupported",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2028:new-information",
+      "year": 2028,
+      "offset": 2,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2028-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:background",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:annual",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:novelty",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:positive",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:risk",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:natal",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:previous",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:next",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:transition",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:domain",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:unsupported",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2029:new-information",
+      "year": 2029,
+      "offset": 3,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2029-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:background",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:annual",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:novelty",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:positive",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:risk",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:natal",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:previous",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:next",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:transition",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:domain",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:unsupported",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2030:new-information",
+      "year": 2030,
+      "offset": 4,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2030-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:background",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:annual",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:novelty",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:positive",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:risk",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:natal",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:previous",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:next",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:transition",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:domain",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:unsupported",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2031:new-information",
+      "year": 2031,
+      "offset": 5,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2031-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:background",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:annual",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:novelty",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:positive",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:risk",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:natal",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:previous",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:next",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:transition",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:domain",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:unsupported",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2032:new-information",
+      "year": 2032,
+      "offset": 6,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 2,
+      "instant": "2032-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:background",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 3,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:annual",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:novelty",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:positive",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2033-10-16T00:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:risk",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:natal",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:previous",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:next",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:transition",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2033-08-01T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:domain",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:unsupported",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2033-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2033:new-information",
+      "year": 2033,
+      "offset": 7,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2033-08-01T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:background",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 3,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:annual",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:novelty",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:positive",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:risk",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:natal",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:previous",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:next",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:transition",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:domain",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:unsupported",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2034:new-information",
+      "year": 2034,
+      "offset": 8,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2034-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:background",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 3,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:annual",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:novelty",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:positive",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:risk",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:natal",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:previous",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:next",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:transition",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:domain",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:unsupported",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2035:new-information",
+      "year": 2035,
+      "offset": 9,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2035-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:background",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "background",
+      "requiredMeanings": [
+        "background"
+      ],
+      "priority": "ORDINARY",
+      "scope": "dayun",
+      "cycle": 3,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:annual",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "annual",
+      "requiredMeanings": [
+        "annual"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:novelty",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "novelty",
+      "requiredMeanings": [
+        "novelty"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:positive",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "positive",
+      "requiredMeanings": [
+        "positive"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:risk",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "risk",
+      "requiredMeanings": [
+        "risk"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:natal",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "natal",
+      "requiredMeanings": [
+        "natal"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:previous",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "previous",
+      "requiredMeanings": [
+        "previous"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:next",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "next",
+      "requiredMeanings": [
+        "next"
+      ],
+      "priority": "COMPARISON",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:transition",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "transition",
+      "requiredMeanings": [
+        "transition"
+      ],
+      "priority": "TRANSITION",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:domain",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "domain",
+      "requiredMeanings": [
+        "domain"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:unsupported",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "unsupported",
+      "requiredMeanings": [
+        "unsupported"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2036-10-12T12:00:00+09:00"
+    },
+    {
+      "id": "synthetic:major:q:2036:new-information",
+      "year": 2036,
+      "offset": 10,
+      "questionKey": "new-information",
+      "requiredMeanings": [
+        "new-information"
+      ],
+      "priority": "ORDINARY",
+      "scope": "annual",
+      "cycle": 3,
+      "instant": "2036-10-12T12:00:00+09:00"
+    }
+  ]
+}

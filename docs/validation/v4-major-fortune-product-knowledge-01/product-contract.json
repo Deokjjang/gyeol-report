@@ -1,0 +1,58 @@
+{
+  "researchProductKey": "major_fortune",
+  "actualInput": {
+    "productKey": "major_fortune",
+    "productSlug": "major-fortune",
+    "normalizedKind": "majorFortune"
+  },
+  "customerHorizon": {
+    "from": "baseYear-3",
+    "through": "baseYear+10",
+    "inclusiveYearCount": 14,
+    "baseYear": "Asia/Seoul evaluation calendar year",
+    "notFixedTo2026": true,
+    "notSingle14YearDayun": true
+  },
+  "dayun": {
+    "library": "lunar-javascript 1.7.7",
+    "yunSect": 2,
+    "actualCycleCount": 12,
+    "calendarCycleSpan": "startYear through startYear+9 inclusive",
+    "exactBoundaries": "first start +10*i calendar years; producer leap handling preserved",
+    "precision": [
+      "exact",
+      "approximate",
+      "unknown"
+    ],
+    "stableInputRequired": true,
+    "calculationUnchanged": true
+  },
+  "cycleSelection": {
+    "calendar": "getMajorFortuneCycleForYear / selectedCycle for year row",
+    "instant": "selectCustomerDayun.activeCycleAtEvaluation",
+    "notInterchangeable": true
+  },
+  "annualRows": {
+    "producer": "getAnnualGanjiInfo(year) / getTenGodForStemPair(dayMaster, annualStem)",
+    "basis": "existing calendar-year summary",
+    "preciseIpchunIntervalNotInferred": true
+  },
+  "transition": {
+    "exact": "before T / from T",
+    "range": "before earliest / uncertain [earliest,latest) / from latest, exactly as existing selector",
+    "preFirst": "no fake index0; actual pre-first target year unavailable",
+    "currentUncertain": "CURRENT_DAYUN_BOUNDARY_UNCERTAIN",
+    "afterRowDoesNotCoverBefore": true
+  },
+  "book": {
+    "originalSnapshotsImmutable": true,
+    "sourceVersion": "v4-runtime-evidence-1 / common-editorial-01",
+    "oldPurchasesRemainV3": true,
+    "noSchemaOrStorageChange": true
+  },
+  "noTransition14": {
+    "status": "UNREACHABLE for fully covered stable10-year cycles",
+    "reason": "14 consecutive calendar year rows span more than one 10-year cycle",
+    "notGeneratedOrFaked": true
+  }
+}

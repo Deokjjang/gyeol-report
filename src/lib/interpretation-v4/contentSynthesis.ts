@@ -2,7 +2,7 @@ import { buildContentEvidencePool, createContentSelection, planChapter, material
 import { chapterMbtiReadings } from "./contentMbti";
 import { relationshipMbtiReading } from "./contentRelationshipMbti";
 import { auditContent } from "./contentQuality";
-import { whyMaterial } from "./contentWhy";
+import { whyMaterial, shortDefinition } from "./contentWhy";
 import { rhythmReading, elementCharacter } from "./productRhythm";
 import { plannedAssertion } from "./assertionCopy";
 import { paragraph, proof, particle } from "./copyRealizer";
@@ -118,17 +118,17 @@ export function composeEvidenceChapters<T extends Readable>(input: NarrativeInpu
     const lensDomain = product === "love" ? (plan.id === "home" ? "marriage" : "love")
       : product === "career" && ["relationships", "marriage", "love"].includes(plan.domain) ? "work" : plan.domain;
     const readingRoots = [...plan.roots, ...pool.materials.filter(m => !plan.roots.includes(m))];
-    const readings = comprehensive ? comprehensiveReadings(comprehensive, lensDomain, readingRoots, traits) : chapterMbtiReadings(input.mbti, readingRoots, lensDomain, traits);
+    const readings = comprehensive ? comprehensiveReadings(comprehensive, lensDomain, readingRoots, traits) :
+      [...chapterMbtiReadings(input.mbti, plan.roots, lensDomain, traits), ...chapterMbtiReadings(input.mbti, readingRoots, lensDomain, traits)]
+        .filter((r, index, all) => all.findIndex(p => p.id === r.id) === index);
     if (readings[0]) {
       const reading = readings[0]; traits.add(reading.id);
-      const label = materialLabel(reading.root);
-      const type = reading.id.split(":")[0];
       const relationKey = `${reading.root.feature}:${["career", "workplace"].includes(reading.area) ? "work" : reading.area}:${reading.kind}`;
-      const bridge = bridges.has(relationKey) || (comprehensive && reading.kind === "tension") ? "" : reading.kind === "tension" ? `실속을 챙기는 ${label}의 방향과는 다른 마음도 있는 거죠.`
-        : reading.area === "study" ? `배움에서 드러나는 ${label}의 힘과 맞닿는 부분이에요.`
-        : reading.area === "money" ? `돈을 대하는 이 모습에는 ${label}의 현실적인 결도 함께 있어요.`
-        : ["career", "workplace"].includes(reading.area) ? `사주의 ${label}도 일에서 같은 장점을 비춥니다.`
-        : `${label}의 장점이 ${type}의 행동에서 더 알아보기 쉽게 드러나는 셈이죠.`;
+      // Explain the actual natal root instead of asserting that every MBTI
+      // behavior points in the same direction. The reviewed combined reading
+      // supplies the supported commonality or tension and its living scene.
+      const bridge = bridges.has(relationKey) || definitions.has(reading.root.feature) ? "" : shortDefinition(reading.root);
+      if (bridge) definitions.add(reading.root.feature);
       bridges.add(relationKey);
       return [paragraph(`${plan.id}-synthesis-${reading.id}`, `${reading.behavior} ${bridge} ${reading.combined}`,
         proof([reading.root], [], [], [reading.provenance, `content-synthesis:${reading.kind}:${reading.coverage}`, CONTENT_REVISION]), "positive", `synthesis:${reading.area}:${reading.id}`)];

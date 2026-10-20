@@ -1,0 +1,44 @@
+[
+  {
+    "file": "docs/validation/v4-compatibility-parent-child-product-knowledge-01/README.md",
+    "sha256": "61121010de39ced29d22108c14c4443d494b73feb40f81b3e192ed35ff6d31f0",
+    "bytes": 13235,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-parent-child-product-knowledge-01/coverage-manifest.json",
+    "sha256": "84c63886ac88d5017217290ef703f6852bf94ce2f726b850c1af8bc933e61b94",
+    "bytes": 3446,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-parent-child-product-knowledge-01/binding-handoff.md",
+    "sha256": "65133063db18b1d5e89861e36807e942e02d8b453aea1d96e8a8b91ab60e992a",
+    "bytes": 3882,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-parent-child-product-knowledge-01/runtime-path-audit.md",
+    "sha256": "d9ca6e8b34064f059a30652df904dc82c5c4964970ceb9777d94683f879b55c0",
+    "bytes": 4935,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-parent-child-product-knowledge-01/materials-review.md",
+    "sha256": "4f2e110005dfd9d60a78de67b27c3f2fbdec91796d98fd3e3a153f890a4e3fb9",
+    "bytes": 223350,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  },
+  {
+    "file": "docs/validation/v4-compatibility-parent-child-product-knowledge-01/semantic-duplication-audit.json",
+    "sha256": "ecd6265ab370836907a9159b7284db63e8c4f174c9013d2d1e9408f1a476bff4",
+    "bytes": 7931,
+    "status": "existing_material_read_and_preserved",
+    "usedFor": "contract/source/binding/gaps comparison; not new coworker facts"
+  }
+]

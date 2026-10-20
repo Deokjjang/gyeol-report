@@ -1,0 +1,792 @@
+{
+  "count": 90,
+  "failed": 0,
+  "cases": [
+    {
+      "name": "01 missing signature",
+      "rejected": true,
+      "reasons": [
+        "UNSIGNED_OR_UNSUPPORTED_ALGORITHM"
+      ]
+    },
+    {
+      "name": "02 invalid signature",
+      "rejected": true,
+      "reasons": [
+        "INVALID_CRYPTOGRAPHIC_SIGNATURE",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "03 signature by different registered key",
+      "rejected": true,
+      "reasons": [
+        "INVALID_CRYPTOGRAPHIC_SIGNATURE",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "04 unregistered public key",
+      "rejected": true,
+      "reasons": [
+        "INVALID_CRYPTOGRAPHIC_SIGNATURE",
+        "UNREGISTERED_REVIEWER_OR_KEY"
+      ]
+    },
+    {
+      "name": "05 revoked signing key",
+      "rejected": true,
+      "reasons": [
+        "REVIEWER_AUTHORITY_SNAPSHOT_CHANGED_REAPPROVAL_REQUIRED",
+        "SIGNING_KEY_REVOKED"
+      ]
+    },
+    {
+      "name": "06 expired reviewer authority",
+      "rejected": true,
+      "reasons": [
+        "REVIEWER_AUTHORITY_EXPIRED_OR_NOT_YET_VALID",
+        "REVIEWER_AUTHORITY_SNAPSHOT_CHANGED_REAPPROVAL_REQUIRED"
+      ]
+    },
+    {
+      "name": "07 wrong reviewer role",
+      "rejected": true,
+      "reasons": [
+        "REVIEWER_AUTHORITY_SNAPSHOT_CHANGED_REAPPROVAL_REQUIRED",
+        "REVIEWER_DECISION_ROLE_DENIED"
+      ]
+    },
+    {
+      "name": "08 product scope",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:productScope",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "09 relationship scope",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:relationshipScope",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "10 source hash",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:originalRecordHash",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "11 source version",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:sourceVersion",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "12 graph version",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:graphVersion",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "13 evidence ID",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:evidenceScope",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "14 canonical root",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:canonicalFactRootScope",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "15 meaning identity",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:meaningIdentity",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "16 claim identity",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:claimIdentity",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "17 counterexample",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:requiredCounterexamples",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "18 prohibited inference removal",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:prohibitedInferences",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "19 direction",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:directionScope",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "20 temporal expansion",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:temporalScope",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "21 context expansion",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:contextScope",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "22 actual owner swap",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:ownerScope",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "23 different fixture replay",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:evidenceScope",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "24 review packet hash",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:reviewPacketHash",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "31 another source group",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:evidenceScope",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "source proof hash",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:sourceProofHash",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "source verification version",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:sourceVerificationVersion",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "semantic verification version",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:semanticVerificationVersion",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "policy version",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:policyVersion",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "full ancestry omission",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:evidenceScope",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "producer version",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:evidenceScope",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "original material identity",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:originalResearchId",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "review unit",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:originalReviewUnitId",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "catalog key",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:catalogKey",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "approved meaning change",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:approvedMeaningScope",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "domain expansion",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:domainScope",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "actual user requirements omission",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:actualContextRequirements",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "original policy reference omission",
+      "rejected": true,
+      "reasons": [
+        "EXACT_SCOPE_MISMATCH:originalPolicyReferences",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "25 review draft disguised as approval",
+      "rejected": true,
+      "reasons": [
+        "OFFICIAL_ENVELOPE_REQUIRED_NOT_REVIEW_DRAFT"
+      ]
+    },
+    {
+      "name": "26 further review decision promoted",
+      "rejected": true,
+      "reasons": [
+        "EXPLICIT_MEANING_DECISION_REQUIRED",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "27 use before validity begins",
+      "rejected": true,
+      "reasons": [
+        "APPROVAL_NOT_YET_VALID",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "28 expired approval",
+      "rejected": true,
+      "reasons": [
+        "APPROVAL_EXPIRED",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "36 synthetic key promoted to real trust",
+      "rejected": true,
+      "reasons": [
+        "REAL_APPROVAL_ACTIVATION_NOT_ENABLED",
+        "SYNTHETIC_KEY_CANNOT_BECOME_REAL_TRUST"
+      ]
+    },
+    {
+      "name": "missing applicability decision",
+      "rejected": true,
+      "reasons": [
+        "NON_CANONICAL_ENVELOPE"
+      ]
+    },
+    {
+      "name": "missing operator authorization",
+      "rejected": true,
+      "reasons": [
+        "NON_CANONICAL_ENVELOPE"
+      ]
+    },
+    {
+      "name": "missing separate customer authorization",
+      "rejected": true,
+      "reasons": [
+        "DECISIONS_MUST_BE_SEPARATE",
+        "DECISION_KIND_OR_ORDER_MISMATCH"
+      ]
+    },
+    {
+      "name": "unreviewed required fields",
+      "rejected": true,
+      "reasons": [
+        "MEANING_REVIEW_FIELDS_OR_CONDITIONS_MISMATCH",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "algorithm downgrade",
+      "rejected": true,
+      "reasons": [
+        "UNSIGNED_OR_UNSUPPORTED_ALGORITHM"
+      ]
+    },
+    {
+      "name": "approval contract downgrade",
+      "rejected": true,
+      "reasons": [
+        "OFFICIAL_ENVELOPE_REQUIRED_NOT_REVIEW_DRAFT"
+      ]
+    },
+    {
+      "name": "unknown unsigned envelope field",
+      "rejected": true,
+      "reasons": [
+        "OFFICIAL_ENVELOPE_REQUIRED_NOT_REVIEW_DRAFT"
+      ]
+    },
+    {
+      "name": "reversed validity",
+      "rejected": true,
+      "reasons": [
+        "INVALID_APPROVAL_WINDOW",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "invalid date normalization",
+      "rejected": true,
+      "reasons": [
+        "INVALID_APPROVAL_DATE",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "future issuance",
+      "rejected": true,
+      "reasons": [
+        "APPROVAL_NOT_YET_VALID",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "name": "revocation registry unavailable",
+      "rejected": true,
+      "reasons": [
+        "REVOCATION_REGISTRY_UNAVAILABLE"
+      ]
+    },
+    {
+      "name": "stale revocation registry",
+      "rejected": true,
+      "reasons": [
+        "REVOCATION_LEDGER_STALE_OR_INVALID"
+      ]
+    },
+    {
+      "name": "revocation registry rollback",
+      "rejected": true,
+      "reasons": [
+        "REVOCATION_LEDGER_PIN_OR_REVISION_MISMATCH"
+      ]
+    },
+    {
+      "name": "unverified trust registry",
+      "rejected": true,
+      "reasons": [
+        "TRUSTED_REGISTRY_PIN_MISMATCH"
+      ]
+    },
+    {
+      "name": "current product authority removed",
+      "rejected": true,
+      "reasons": [
+        "REVIEWER_AUTHORITY_SNAPSHOT_CHANGED_REAPPROVAL_REQUIRED",
+        "REVIEWER_PRODUCT_DENIED"
+      ]
+    },
+    {
+      "name": "current domain authority removed",
+      "rejected": true,
+      "reasons": [
+        "REVIEWER_AUTHORITY_SNAPSHOT_CHANGED_REAPPROVAL_REQUIRED",
+        "REVIEWER_DOMAIN_DENIED"
+      ]
+    },
+    {
+      "name": "current source authority removed",
+      "rejected": true,
+      "reasons": [
+        "REVIEWER_AUTHORITY_SNAPSHOT_CHANGED_REAPPROVAL_REQUIRED",
+        "REVIEWER_SOURCE_FAMILY_DENIED"
+      ]
+    },
+    {
+      "name": "public key fingerprint changed",
+      "rejected": true,
+      "reasons": [
+        "REVIEWER_AUTHORITY_SNAPSHOT_CHANGED_REAPPROVAL_REQUIRED"
+      ]
+    },
+    {
+      "name": "duplicate registry key",
+      "rejected": true,
+      "reasons": [
+        "INVALID_OR_DUPLICATE_AUTHORITY"
+      ]
+    },
+    {
+      "name": "key ID replay",
+      "rejected": true,
+      "reasons": [
+        "INVALID_CRYPTOGRAPHIC_SIGNATURE",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED",
+        "UNREGISTERED_REVIEWER_OR_KEY"
+      ]
+    },
+    {
+      "name": "authority reference replay",
+      "rejected": true,
+      "reasons": [
+        "INVALID_CRYPTOGRAPHIC_SIGNATURE",
+        "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+        "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+        "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED",
+        "UNREGISTERED_REVIEWER_OR_KEY"
+      ]
+    },
+    {
+      "name": "invalid verification date",
+      "rejected": true,
+      "reasons": [
+        "INVALID_APPROVAL_DATE",
+        "REVIEWER_AUTHORITY_EXPIRED_OR_NOT_YET_VALID",
+        "REVOCATION_LEDGER_STALE_OR_INVALID"
+      ]
+    },
+    {
+      "name": "verification before evaluatedAt",
+      "rejected": true,
+      "reasons": [
+        "REVOCATION_LEDGER_STALE_OR_INVALID",
+        "VERIFICATION_PRECEDES_EVALUATION"
+      ]
+    },
+    {
+      "name": "39 direct gate result manipulation",
+      "rejected": true,
+      "reasons": [
+        "AUTHENTIC_UNCHANGED_REVIEW_CONTEXT_REQUIRED"
+      ]
+    },
+    {
+      "name": "actual research context forged",
+      "rejected": true,
+      "reasons": [
+        "AUTHENTIC_UNCHANGED_REVIEW_CONTEXT_REQUIRED",
+        "REAL_APPROVAL_ACTIVATION_NOT_ENABLED"
+      ]
+    },
+    {
+      "name": "32 explicit domain prohibition",
+      "rejected": true,
+      "reasons": [
+        "REMAINING_HARD_GATE:ALL_ANCESTOR_DOMAINS:FAIL"
+      ]
+    },
+    {
+      "name": "33 unsupported producer",
+      "rejected": true,
+      "reasons": [
+        "REMAINING_HARD_GATE:PRODUCER_SUPPORT:FAIL"
+      ]
+    },
+    {
+      "name": "34 actual user state unknown",
+      "rejected": true,
+      "reasons": [
+        "REMAINING_HARD_GATE:ACTUAL_USER_STATE:UNKNOWN"
+      ]
+    },
+    {
+      "name": "35 incomplete full ancestry",
+      "rejected": true,
+      "reasons": [
+        "REMAINING_HARD_GATE:ACTUAL_CALCULATED_FACT:FAIL",
+        "REMAINING_HARD_GATE:ACTUAL_OWNER:UNKNOWN",
+        "REMAINING_HARD_GATE:ALL_ANCESTOR_DOMAINS:UNKNOWN",
+        "REMAINING_HARD_GATE:SOURCE_INTEGRITY:FAIL"
+      ]
+    },
+    {
+      "name": "missing actual fact",
+      "rejected": true,
+      "reasons": [
+        "REMAINING_HARD_GATE:ACTUAL_CALCULATED_FACT:FAIL",
+        "REMAINING_HARD_GATE:ACTUAL_OWNER:UNKNOWN",
+        "REMAINING_HARD_GATE:ALL_ANCESTOR_DOMAINS:UNKNOWN"
+      ]
+    },
+    {
+      "name": "wrong actual owner",
+      "rejected": true,
+      "reasons": [
+        "REMAINING_HARD_GATE:ACTUAL_CALCULATED_FACT:FAIL",
+        "REMAINING_HARD_GATE:ACTUAL_OWNER:FAIL",
+        "REMAINING_HARD_GATE:ALL_ANCESTOR_DOMAINS:UNKNOWN"
+      ]
+    },
+    {
+      "name": "wrong actual direction",
+      "rejected": true,
+      "reasons": [
+        "REMAINING_HARD_GATE:ACTUAL_DIRECTION:UNKNOWN"
+      ]
+    },
+    {
+      "name": "missing AND group source",
+      "rejected": true,
+      "reasons": [
+        "REMAINING_HARD_GATE:ACTUAL_CALCULATED_FACT:FAIL",
+        "REMAINING_HARD_GATE:ACTUAL_OWNER:UNKNOWN",
+        "REMAINING_HARD_GATE:ALL_ANCESTOR_DOMAINS:UNKNOWN"
+      ]
+    },
+    {
+      "name": "unreviewed original meaning",
+      "rejected": true,
+      "reasons": [
+        "REMAINING_HARD_GATE:INTERPRETATION_REVIEW:REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "name": "counterexample review still pending",
+      "rejected": true,
+      "reasons": [
+        "REMAINING_HARD_GATE:COUNTEREXAMPLES_AND_PROHIBITIONS:REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "name": "wrong product specialism",
+      "rejected": true,
+      "reasons": [
+        "REMAINING_HARD_GATE:PRODUCT_SPECIALISM:FAIL"
+      ]
+    },
+    {
+      "name": "signed approval cannot turn natal into annual evidence",
+      "rejected": true,
+      "reasons": [
+        "REMAINING_HARD_GATE:TIME_INTERSECTION:FAIL"
+      ]
+    },
+    {
+      "name": "native source integrity still failed",
+      "rejected": true,
+      "reasons": [
+        "REMAINING_HARD_GATE:SOURCE_INTEGRITY:FAIL"
+      ]
+    },
+    {
+      "name": "source declaration is not a personal fact",
+      "rejected": true,
+      "reasons": [
+        "REMAINING_HARD_GATE:ACTUAL_CALCULATED_FACT:FAIL",
+        "REMAINING_HARD_GATE:ACTUAL_OWNER:UNKNOWN",
+        "REMAINING_HARD_GATE:ALL_ANCESTOR_DOMAINS:UNKNOWN"
+      ]
+    },
+    {
+      "name": "29 approval revoked",
+      "rejected": true,
+      "reasons": [
+        "APPROVAL_REVOKED"
+      ]
+    },
+    {
+      "name": "30 superseded approval",
+      "rejected": true,
+      "reasons": [
+        "APPROVAL_SUPERSEDED"
+      ]
+    },
+    {
+      "name": "key rotation old signature reused",
+      "rejected": true,
+      "reasons": [
+        "SIGNING_KEY_SUPERSEDED_BY_ROTATION"
+      ]
+    },
+    {
+      "name": "tampered revocation signature",
+      "rejected": true,
+      "reasons": [
+        "INVALID_LEDGER_SIGNATURE"
+      ]
+    },
+    {
+      "name": "ledger event replay",
+      "rejected": true,
+      "reasons": [
+        "INVALID_OR_REPLAYED_LEDGER_RECORD"
+      ]
+    },
+    {
+      "name": "38 forced provider authenticity true",
+      "rejected": true,
+      "reasons": [
+        "AUTHENTIC_OFFICIAL_SYNTHETIC_PROVIDER_REQUIRED"
+      ]
+    },
+    {
+      "name": "37 NODE_ENV bypass",
+      "rejected": true,
+      "reasons": [
+        "NO_ENVIRONMENT_BASED_APPROVAL"
+      ]
+    },
+    {
+      "name": "40 actual planner assignment forged with zero approvals",
+      "rejected": true,
+      "reasons": [
+        "CURRENT_ACTUAL_RESEARCH_ASSIGNMENTS_MUST_BE_ZERO",
+        "CUSTOMER_OR_DISPLAY_AUTHORITY_ISSUED",
+        "ORIGINAL_READER_COVERAGE_MISSING",
+        "READER_PLAN_ADDRESS_OR_PRIMARY_CHANGED",
+        "UNVERIFIED_PLAN_ASSIGNMENT"
+      ]
+    }
+  ]
+}

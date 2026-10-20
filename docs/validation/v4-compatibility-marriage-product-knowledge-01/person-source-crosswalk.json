@@ -1,0 +1,5473 @@
+[
+  {
+    "materialId": "cmpr:material:CH01.P1:predictability-and-revision",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "5b05125a1c9e81d25d44",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "0f0d27792b96a8ad87ad"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH01.P1:decision-and-influence",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "bb5cae1a58466e6ff51a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "04bdba29a1fd1c319537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "a1a68eaef14705c10a5a",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "bb5cae1a58466e6ff51a"
+      },
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "04bdba29a1fd1c319537"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH01.P2:harmony-and-household-terms",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "e79993a436c219093ea5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "84d1ddc4aa078aa8fa5f",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "f3c3648ae7632ade1bdb"
+      },
+      {
+        "owner": "B",
+        "type": "ENTP",
+        "sourceKey": "e79993a436c219093ea5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH01.P2:clash-and-two-standards",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ab15fd60b429d7c073a5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "b42d6c513c37bfd7f4ee",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "21a2cc4649da9423a26d",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "ab15fd60b429d7c073a5"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "b42d6c513c37bfd7f4ee"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH01.P3:marriage-pattern-not-love-label",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "048c520649d4c0b898cb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "005c28927dc7664b56c9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "ee40bc5fe87bf352f4b2",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "PAIR_BA",
+        "sourceKey": "2126ddb8abe0645647b0",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "048c520649d4c0b898cb"
+      },
+      {
+        "owner": "B",
+        "type": "ESFP",
+        "sourceKey": "005c28927dc7664b56c9"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH01.P3:same-type-separate-workload",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "4438f18bddb2caa9cb2c",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "eb40d39f2065a867ad79",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "4438f18bddb2caa9cb2c"
+      },
+      {
+        "owner": "B",
+        "type": "ISFJ",
+        "sourceKey": "f3c3648ae7632ade1bdb"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH01.P4:category-is-not-marital-fact",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "793ccb7ecbcc8f1751b7",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "30b373f5892dd5de9b47",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "cbdcf487f0263d4eb781",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENFJ",
+        "sourceKey": "793ccb7ecbcc8f1751b7"
+      },
+      {
+        "owner": "B",
+        "type": "ISTP",
+        "sourceKey": "30b373f5892dd5de9b47"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH01.P4:shared-strength-not-shared-score",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "4b07fe3f9004cfc8a777",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "16a8411e967484ac9826",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "d8ee6a6775c1d5a71420",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "fa83818c7308d0737c2f",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENFJ",
+        "sourceKey": "4b07fe3f9004cfc8a777"
+      },
+      {
+        "owner": "B",
+        "type": "INTP",
+        "sourceKey": "d8ee6a6775c1d5a71420"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH02.P1:a-operating-standards",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ab15fd60b429d7c073a5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "ce1defc1af72408fec4a",
+        "sourceUse": "actual_natal_condition_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "ca7a14f7190d5daca6c5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "ab15fd60b429d7c073a5"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "ca7a14f7190d5daca6c5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH02.P1:a-quiet-system-support",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "d8ee6a6775c1d5a71420",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "90e77590d3ea07930ba1",
+        "sourceUse": "actual_natal_condition_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "657f0a60c702c59fd825",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "INTP",
+        "sourceKey": "d8ee6a6775c1d5a71420"
+      },
+      {
+        "owner": "B",
+        "type": "ESFJ",
+        "sourceKey": "657f0a60c702c59fd825"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH02.P2:a-rest-is-a-resource",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3ec17287e2091c585ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "4b07fe3f9004cfc8a777",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTP",
+        "sourceKey": "3ec17287e2091c585ba3"
+      },
+      {
+        "owner": "B",
+        "type": "ENFJ",
+        "sourceKey": "4b07fe3f9004cfc8a777"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH02.P2:a-meaning-needs-operations",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "76e292b7c203da2c2773",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "1a999512214f329e5c2f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "INFJ",
+        "sourceKey": "76e292b7c203da2c2773"
+      },
+      {
+        "owner": "B",
+        "type": "ESTP",
+        "sourceKey": "1a999512214f329e5c2f"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH02.P3:a-complete-task-ownership",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "73f1ae9fb0a7c110106b",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "b12fea8ea813649979b7",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      },
+      {
+        "owner": "B",
+        "type": "ENTP",
+        "sourceKey": "b12fea8ea813649979b7"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH02.P3:a-notice-with-permission",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "4b07fe3f9004cfc8a777",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "16a8411e967484ac9826",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "65948269d71f3a38b299",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENFJ",
+        "sourceKey": "4b07fe3f9004cfc8a777"
+      },
+      {
+        "owner": "B",
+        "type": "INTJ",
+        "sourceKey": "65948269d71f3a38b299"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH02.P4:a-management-becomes-permission",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "784d30632e34635a9483",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "cbdcf487f0263d4eb781",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "8670a7cd306dd817250d"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "784d30632e34635a9483"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH02.P4:a-corrects-unagreed-standard",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "1b7aeda1752892b8905a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "b42d6c513c37bfd7f4ee",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "1b7aeda1752892b8905a"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "b42d6c513c37bfd7f4ee"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH03.P1:b-adaptable-day-plan",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ede67b716c40fbe4b6c4",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "bbc18a4e615032647a49",
+        "sourceUse": "actual_natal_condition_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "0f0d27792b96a8ad87ad"
+      },
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "ede67b716c40fbe4b6c4"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH03.P1:b-visible-practical-support",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "76e292b7c203da2c2773",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "aee3349d23ea4285cd4f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "90e77590d3ea07930ba1",
+        "sourceUse": "actual_natal_condition_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ISTP",
+        "sourceKey": "aee3349d23ea4285cd4f"
+      },
+      {
+        "owner": "A",
+        "type": "INFJ",
+        "sourceKey": "76e292b7c203da2c2773"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH03.P2:b-sensory-common-space",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ab15fd60b429d7c073a5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "b42d6c513c37bfd7f4ee",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "b42d6c513c37bfd7f4ee"
+      },
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "ab15fd60b429d7c073a5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH03.P2:b-acknowledgement-not-assignment",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "40735f88ad4496657858",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0c283e400d1572c869f6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ESFJ",
+        "sourceKey": "0c283e400d1572c869f6"
+      },
+      {
+        "owner": "A",
+        "type": "INTP",
+        "sourceKey": "40735f88ad4496657858"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH03.P3:b-family-boundary-contribution",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "65948269d71f3a38b299",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "24baf614208a551324d1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "48f610dc9f5d9e5b4404",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ENFJ",
+        "sourceKey": "24baf614208a551324d1"
+      },
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "65948269d71f3a38b299"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH03.P3:b-useful-simplification",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "d8ee6a6775c1d5a71420",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "fa83818c7308d0737c2f",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "INTP",
+        "sourceKey": "d8ee6a6775c1d5a71420"
+      },
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "f3c3648ae7632ade1bdb"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH03.P4:b-avoids-budget-answer",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "be9cb942010f0a199f50",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "be9cb942010f0a199f50"
+      },
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "8670a7cd306dd817250d"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH03.P4:b-expands-social-cost",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3ec17287e2091c585ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "eca31a528cf641ff4613",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ESFJ",
+        "sourceKey": "eca31a528cf641ff4613"
+      },
+      {
+        "owner": "A",
+        "type": "ISTP",
+        "sourceKey": "3ec17287e2091c585ba3"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH04.P1:shared-budget-clarity",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "ded637f612adcf59fb9e",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      },
+      {
+        "owner": "B",
+        "type": "ESTJ",
+        "sourceKey": "8670a7cd306dd817250d"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH04.P1:shared-care-not-default-manager",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "4b07fe3f9004cfc8a777",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "f3c3648ae7632ade1bdb"
+      },
+      {
+        "owner": "B",
+        "type": "ENFJ",
+        "sourceKey": "4b07fe3f9004cfc8a777"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH04.P1:shared-autonomy-clear-common-duty",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "65948269d71f3a38b299",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "3ec17287e2091c585ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "89937d49f294229349a1",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "65948269d71f3a38b299"
+      },
+      {
+        "owner": "B",
+        "type": "ISTP",
+        "sourceKey": "3ec17287e2091c585ba3"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH04.P2:novelty-with-maintenance-owner",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "0f0ff8ddade0c147030c",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "ede67b716c40fbe4b6c4",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "68c947ef938994a1820b",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENTP",
+        "sourceKey": "0f0ff8ddade0c147030c"
+      },
+      {
+        "owner": "B",
+        "type": "ISTJ",
+        "sourceKey": "ede67b716c40fbe4b6c4"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH04.P2:directness-with-checkable-dissent",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "330a2038a4ac4d374d63",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "f540c2b9bd61b95e125b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "1dedd598164db82d6c12",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "330a2038a4ac4d374d63"
+      },
+      {
+        "owner": "B",
+        "type": "INFJ",
+        "sourceKey": "f540c2b9bd61b95e125b"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH04.P2:values-meet-operating-detail",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "f0b80324251c43d5445c",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "048c520649d4c0b898cb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "62346120b3910d5c9a8d",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "INFP",
+        "sourceKey": "f0b80324251c43d5445c"
+      },
+      {
+        "owner": "B",
+        "type": "INTJ",
+        "sourceKey": "048c520649d4c0b898cb"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH04.P3:notice-prepare-execute-monitor",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "4b07fe3f9004cfc8a777",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "aee3349d23ea4285cd4f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENFJ",
+        "sourceKey": "4b07fe3f9004cfc8a777"
+      },
+      {
+        "owner": "B",
+        "type": "ISTP",
+        "sourceKey": "aee3349d23ea4285cd4f"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH04.P3:unexpected-cost-joint-review",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "005c28927dc7664b56c9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      },
+      {
+        "owner": "B",
+        "type": "ESFP",
+        "sourceKey": "005c28927dc7664b56c9"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH04.P3:two-rest-windows",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "11b961b29814398740e5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "ddc9ce0a084b0b51c3bf",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "INFJ",
+        "sourceKey": "11b961b29814398740e5"
+      },
+      {
+        "owner": "B",
+        "type": "ESTP",
+        "sourceKey": "ddc9ce0a084b0b51c3bf"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH04.P4:harmony-cannot-assign-spouse",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "657f0a60c702c59fd825",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "d8ee6a6775c1d5a71420",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "69aac2d24f114cdd40fb",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESFJ",
+        "sourceKey": "657f0a60c702c59fd825"
+      },
+      {
+        "owner": "B",
+        "type": "INTP",
+        "sourceKey": "d8ee6a6775c1d5a71420"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH04.P4:competence-with-rotation",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "73f1ae9fb0a7c110106b",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "c72ad7e4dbeab2b8b75f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "743668481abf74260870",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "c72ad7e4dbeab2b8b75f"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH04.P4:family-choice-not-family-duty",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "24baf614208a551324d1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "d4a61263d8611202dcef",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENFJ",
+        "sourceKey": "24baf614208a551324d1"
+      },
+      {
+        "owner": "B",
+        "type": "ISFJ",
+        "sourceKey": "d4a61263d8611202dcef"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P1:ab-rule-with-revision",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ab15fd60b429d7c073a5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "ca7a14f7190d5daca6c5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [
+      {
+        "owner": "DIRECTION_AB",
+        "sourceKey": "ce1defc1af72408fec4a",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "ab15fd60b429d7c073a5"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "ca7a14f7190d5daca6c5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P1:ab-resource-explanation",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "b64fa2920704301bf622",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "005c28927dc7664b56c9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [
+      {
+        "owner": "DIRECTION_AB",
+        "sourceKey": "e2ed5b09b1f8185708cd",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "b64fa2920704301bf622"
+      },
+      {
+        "owner": "B",
+        "type": "ESFP",
+        "sourceKey": "005c28927dc7664b56c9"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P1:ab-opportunity-with-maintenance",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "7c9abcce396427f7c18f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "76e292b7c203da2c2773",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [
+      {
+        "owner": "DIRECTION_AB",
+        "sourceKey": "bbc18a4e615032647a49",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTP",
+        "sourceKey": "7c9abcce396427f7c18f"
+      },
+      {
+        "owner": "B",
+        "type": "INFJ",
+        "sourceKey": "76e292b7c203da2c2773"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P1:ab-standards-without-performance-review",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "422820469afcb4fa68c4",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "04bdba29a1fd1c319537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [
+      {
+        "owner": "DIRECTION_AB",
+        "sourceKey": "f8f90022e047bfe61557",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "422820469afcb4fa68c4"
+      },
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "04bdba29a1fd1c319537"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P2:ab-advance-plan-information",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "048c520649d4c0b898cb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "048c520649d4c0b898cb"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "0f0d27792b96a8ad87ad"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P2:ab-care-with-whole-task",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "73f1ae9fb0a7c110106b",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "d8ee6a6775c1d5a71420",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "f3c3648ae7632ade1bdb"
+      },
+      {
+        "owner": "B",
+        "type": "INTP",
+        "sourceKey": "d8ee6a6775c1d5a71420"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P2:ab-expense-purpose-dialogue",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "005c28927dc7664b56c9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      },
+      {
+        "owner": "B",
+        "type": "ESFP",
+        "sourceKey": "005c28927dc7664b56c9"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P2:ab-support-before-family-contact",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "24baf614208a551324d1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "48f610dc9f5d9e5b4404",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "30b373f5892dd5de9b47",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENFJ",
+        "sourceKey": "24baf614208a551324d1"
+      },
+      {
+        "owner": "B",
+        "type": "ISTP",
+        "sourceKey": "30b373f5892dd5de9b47"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P3:ab-unilateral-budget",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "ca7a14f7190d5daca6c5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "8670a7cd306dd817250d"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "ca7a14f7190d5daca6c5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P3:ab-holiday-finality",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "bb5cae1a58466e6ff51a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "04bdba29a1fd1c319537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "bb5cae1a58466e6ff51a"
+      },
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "04bdba29a1fd1c319537"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P3:ab-care-as-debt",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "e79993a436c219093ea5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "f3c3648ae7632ade1bdb"
+      },
+      {
+        "owner": "B",
+        "type": "ENTP",
+        "sourceKey": "e79993a436c219093ea5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P3:ab-standard-remakes",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "1b7aeda1752892b8905a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "c72ad7e4dbeab2b8b75f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "1b7aeda1752892b8905a"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "c72ad7e4dbeab2b8b75f"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P4:ab-return-choice-before-commitment",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "bb5cae1a58466e6ff51a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "04bdba29a1fd1c319537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "bb5cae1a58466e6ff51a"
+      },
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "04bdba29a1fd1c319537"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P4:ab-own-one-whole-process",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "e79993a436c219093ea5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "f3c3648ae7632ade1bdb"
+      },
+      {
+        "owner": "B",
+        "type": "ENTP",
+        "sourceKey": "e79993a436c219093ea5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P4:ab-joint-cost-private-discretion",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "ca7a14f7190d5daca6c5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "8670a7cd306dd817250d"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "ca7a14f7190d5daca6c5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH05.P4:ab-check-impact-before-correction",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "1b7aeda1752892b8905a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "c72ad7e4dbeab2b8b75f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "1b7aeda1752892b8905a"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "c72ad7e4dbeab2b8b75f"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P1:ba-receivable-help",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "65948269d71f3a38b299",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "4b07fe3f9004cfc8a777",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [
+      {
+        "owner": "DIRECTION_BA",
+        "sourceKey": "fe11b875c7ad3a9c8318",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ENFJ",
+        "sourceKey": "4b07fe3f9004cfc8a777"
+      },
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "65948269d71f3a38b299"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P1:ba-question-hidden-upkeep",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "d8ee6a6775c1d5a71420",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [
+      {
+        "owner": "DIRECTION_BA",
+        "sourceKey": "78ca1a3776c53c2d0b48",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "INTP",
+        "sourceKey": "d8ee6a6775c1d5a71420"
+      },
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "f3c3648ae7632ade1bdb"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P1:ba-enjoyment-with-maintenance",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "e880c2158a048d04ef23",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [
+      {
+        "owner": "DIRECTION_BA",
+        "sourceKey": "90e77590d3ea07930ba1",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ESFP",
+        "sourceKey": "e880c2158a048d04ef23"
+      },
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P1:ba-peer-voice-not-identical-needs",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ab15fd60b429d7c073a5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "ca7a14f7190d5daca6c5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [
+      {
+        "owner": "DIRECTION_BA",
+        "sourceKey": "3f130780549c6cb7a467",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "ca7a14f7190d5daca6c5"
+      },
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "ab15fd60b429d7c073a5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P2:ba-update-family-information",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "65948269d71f3a38b299",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "24baf614208a551324d1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "48f610dc9f5d9e5b4404",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ENFJ",
+        "sourceKey": "24baf614208a551324d1"
+      },
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "65948269d71f3a38b299"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P2:ba-prepare-changed-work-window",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ede67b716c40fbe4b6c4",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "0f0d27792b96a8ad87ad"
+      },
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "ede67b716c40fbe4b6c4"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P2:ba-quiet-maintenance-report",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "76e292b7c203da2c2773",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "aee3349d23ea4285cd4f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ISTP",
+        "sourceKey": "aee3349d23ea4285cd4f"
+      },
+      {
+        "owner": "A",
+        "type": "INFJ",
+        "sourceKey": "76e292b7c203da2c2773"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P2:ba-new-routine-small-test",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "4438f18bddb2caa9cb2c",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0ff8ddade0c147030c",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "743668481abf74260870",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ENTP",
+        "sourceKey": "0f0ff8ddade0c147030c"
+      },
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "4438f18bddb2caa9cb2c"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P3:ba-visible-only-finish",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "76e292b7c203da2c2773",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "aee3349d23ea4285cd4f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ISTP",
+        "sourceKey": "aee3349d23ea4285cd4f"
+      },
+      {
+        "owner": "A",
+        "type": "INFJ",
+        "sourceKey": "76e292b7c203da2c2773"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P3:ba-kinship-commitment",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "65948269d71f3a38b299",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "eca31a528cf641ff4613",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ESFJ",
+        "sourceKey": "eca31a528cf641ff4613"
+      },
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "65948269d71f3a38b299"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P3:ba-change-without-handover",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ede67b716c40fbe4b6c4",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "0f0d27792b96a8ad87ad"
+      },
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "ede67b716c40fbe4b6c4"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P3:ba-unanswered-plan",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "bb5cae1a58466e6ff51a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "be9cb942010f0a199f50",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "be9cb942010f0a199f50"
+      },
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "bb5cae1a58466e6ff51a"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P4:ba-state-completion-boundary",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "76e292b7c203da2c2773",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "aee3349d23ea4285cd4f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ISTP",
+        "sourceKey": "aee3349d23ea4285cd4f"
+      },
+      {
+        "owner": "A",
+        "type": "INFJ",
+        "sourceKey": "76e292b7c203da2c2773"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P4:ba-confirm-before-external-promise",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "65948269d71f3a38b299",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "eca31a528cf641ff4613",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ESFJ",
+        "sourceKey": "eca31a528cf641ff4613"
+      },
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "65948269d71f3a38b299"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P4:ba-handover-before-new-schedule",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ede67b716c40fbe4b6c4",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "0f0d27792b96a8ad87ad"
+      },
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "ede67b716c40fbe4b6c4"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH06.P4:ba-name-pending-answer",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "bb5cae1a58466e6ff51a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "be9cb942010f0a199f50",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "be9cb942010f0a199f50"
+      },
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "bb5cae1a58466e6ff51a"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P1:money-purpose-difference",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "005c28927dc7664b56c9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      },
+      {
+        "owner": "B",
+        "type": "ESFP",
+        "sourceKey": "005c28927dc7664b56c9"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P1:cleanliness-and-comfort-criteria",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ab15fd60b429d7c073a5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "b42d6c513c37bfd7f4ee",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "ab15fd60b429d7c073a5"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "b42d6c513c37bfd7f4ee"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P1:rest-order-and-waiting",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "11b961b29814398740e5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "ddc9ce0a084b0b51c3bf",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "INFJ",
+        "sourceKey": "11b961b29814398740e5"
+      },
+      {
+        "owner": "B",
+        "type": "ESTP",
+        "sourceKey": "ddc9ce0a084b0b51c3bf"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P1:family-request-vs-common-consent",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "24baf614208a551324d1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "d4a61263d8611202dcef",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENFJ",
+        "sourceKey": "24baf614208a551324d1"
+      },
+      {
+        "owner": "B",
+        "type": "ISFJ",
+        "sourceKey": "d4a61263d8611202dcef"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P2:detected-clash-shared-timing",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ede67b716c40fbe4b6c4",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "941361dcf854c0c9f213",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "ede67b716c40fbe4b6c4"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "0f0d27792b96a8ad87ad"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P2:clash-not-decision-cause",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "bb5cae1a58466e6ff51a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "04bdba29a1fd1c319537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "21a2cc4649da9423a26d",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "bb5cae1a58466e6ff51a"
+      },
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "04bdba29a1fd1c319537"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P2:harm-unsupported-wonjin",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "ca7a14f7190d5daca6c5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "e23b027944c5f0d3197a",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "SHARED",
+        "sourceKey": "88af77cc76890045d0ca",
+        "sourceUse": "unsupported_comparison_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "8670a7cd306dd817250d"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "ca7a14f7190d5daca6c5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P2:no-pair-relation-no-hidden-defect",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "d8ee6a6775c1d5a71420",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "bedf4254e50989e1a90e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "INTP",
+        "sourceKey": "d8ee6a6775c1d5a71420"
+      },
+      {
+        "owner": "B",
+        "type": "INTP",
+        "sourceKey": "bedf4254e50989e1a90e"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P3:criteria-revision-loop",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "1b7aeda1752892b8905a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "1b7aeda1752892b8905a"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "0f0d27792b96a8ad87ad"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P3:budget-permission-loop",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "ca7a14f7190d5daca6c5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "8670a7cd306dd817250d"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "ca7a14f7190d5daca6c5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P3:care-manager-loop",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "e79993a436c219093ea5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "f3c3648ae7632ade1bdb"
+      },
+      {
+        "owner": "B",
+        "type": "ENTP",
+        "sourceKey": "e79993a436c219093ea5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P3:decision-silence-loop",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "bb5cae1a58466e6ff51a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "be9cb942010f0a199f50",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "bb5cae1a58466e6ff51a"
+      },
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "be9cb942010f0a199f50"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P4:scores-of-past-work",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "330a2038a4ac4d374d63",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "cd4db85b9a6b894d203d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "330a2038a4ac4d374d63"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "cd4db85b9a6b894d203d"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P4:family-image-becomes-cost",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "24baf614208a551324d1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "d4a61263d8611202dcef",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENFJ",
+        "sourceKey": "24baf614208a551324d1"
+      },
+      {
+        "owner": "B",
+        "type": "ISFJ",
+        "sourceKey": "d4a61263d8611202dcef"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P4:old-fairness-after-change",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ede67b716c40fbe4b6c4",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "ede67b716c40fbe4b6c4"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "0f0d27792b96a8ad87ad"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH07.P4:coercion-is-outside-style",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "be9cb942010f0a199f50",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "cbdcf487f0263d4eb781",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "8670a7cd306dd817250d"
+      },
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "be9cb942010f0a199f50"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P1:joint-revise-completion-standard",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "1b7aeda1752892b8905a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "0f0d27792b96a8ad87ad"
+      },
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "1b7aeda1752892b8905a"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P1:joint-money-choice-without-permission",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ab15fd60b429d7c073a5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "b42d6c513c37bfd7f4ee",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "ca7a14f7190d5daca6c5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "ab15fd60b429d7c073a5"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "b42d6c513c37bfd7f4ee"
+      },
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "8670a7cd306dd817250d"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "ca7a14f7190d5daca6c5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P1:joint-visible-full-process",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "cb3b6a470f6c19c51cb3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "e79993a436c219093ea5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "cb3b6a470f6c19c51cb3"
+      },
+      {
+        "owner": "B",
+        "type": "ENTP",
+        "sourceKey": "e79993a436c219093ea5"
+      },
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "f3c3648ae7632ade1bdb"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P1:joint-pending-decision-return",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "d153ad3866c0e6be677b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "bb5cae1a58466e6ff51a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "be9cb942010f0a199f50",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "d153ad3866c0e6be677b"
+      },
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "be9cb942010f0a199f50"
+      },
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "bb5cae1a58466e6ff51a"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P2:a-return-budget-authority",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ab15fd60b429d7c073a5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "b42d6c513c37bfd7f4ee",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "ca7a14f7190d5daca6c5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "ab15fd60b429d7c073a5"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "b42d6c513c37bfd7f4ee"
+      },
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "8670a7cd306dd817250d"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "ca7a14f7190d5daca6c5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P2:a-leave-family-choice-open",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "d153ad3866c0e6be677b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "bb5cae1a58466e6ff51a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "be9cb942010f0a199f50",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "04bdba29a1fd1c319537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "d153ad3866c0e6be677b"
+      },
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "be9cb942010f0a199f50"
+      },
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "bb5cae1a58466e6ff51a"
+      },
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "04bdba29a1fd1c319537"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P2:a-release-care-debt",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "cb3b6a470f6c19c51cb3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "e79993a436c219093ea5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "cb3b6a470f6c19c51cb3"
+      },
+      {
+        "owner": "B",
+        "type": "ENTP",
+        "sourceKey": "e79993a436c219093ea5"
+      },
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "f3c3648ae7632ade1bdb"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P2:a-stop-remaking-method",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "1b7aeda1752892b8905a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "c72ad7e4dbeab2b8b75f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "0f0d27792b96a8ad87ad"
+      },
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "1b7aeda1752892b8905a"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "c72ad7e4dbeab2b8b75f"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P3:b-own-unseen-preparation",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "11b961b29814398740e5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "76e292b7c203da2c2773",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "3ec17287e2091c585ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "aee3349d23ea4285cd4f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "INFJ",
+        "sourceKey": "11b961b29814398740e5"
+      },
+      {
+        "owner": "B",
+        "type": "ISTP",
+        "sourceKey": "3ec17287e2091c585ba3"
+      },
+      {
+        "owner": "B",
+        "type": "ISTP",
+        "sourceKey": "aee3349d23ea4285cd4f"
+      },
+      {
+        "owner": "A",
+        "type": "INFJ",
+        "sourceKey": "76e292b7c203da2c2773"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "048c520649d4c0b898cb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "65948269d71f3a38b299",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "8656e8de7c812f74bbfc",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "eca31a528cf641ff4613",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "048c520649d4c0b898cb"
+      },
+      {
+        "owner": "B",
+        "type": "ESFJ",
+        "sourceKey": "8656e8de7c812f74bbfc"
+      },
+      {
+        "owner": "B",
+        "type": "ESFJ",
+        "sourceKey": "eca31a528cf641ff4613"
+      },
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "65948269d71f3a38b299"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P3:b-handover-before-change",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "ede67b716c40fbe4b6c4",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "0f0d27792b96a8ad87ad"
+      },
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "ede67b716c40fbe4b6c4"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P3:b-answer-pending-plan",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "d153ad3866c0e6be677b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "bb5cae1a58466e6ff51a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "be9cb942010f0a199f50",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "d153ad3866c0e6be677b"
+      },
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "be9cb942010f0a199f50"
+      },
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "bb5cae1a58466e6ff51a"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P4:agreement-shared-private-money",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ab15fd60b429d7c073a5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "b42d6c513c37bfd7f4ee",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "ca7a14f7190d5daca6c5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "ab15fd60b429d7c073a5"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "b42d6c513c37bfd7f4ee"
+      },
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "8670a7cd306dd817250d"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "ca7a14f7190d5daca6c5"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P4:agreement-review-after-life-change",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "ede67b716c40fbe4b6c4",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "1b7aeda1752892b8905a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "0f0d27792b96a8ad87ad"
+      },
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "ede67b716c40fbe4b6c4"
+      },
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "1b7aeda1752892b8905a"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P4:agreement-common-space-private-time",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "048c520649d4c0b898cb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "65948269d71f3a38b299",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "3ec17287e2091c585ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "89937d49f294229349a1",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "048c520649d4c0b898cb"
+      },
+      {
+        "owner": "B",
+        "type": "ISTP",
+        "sourceKey": "3ec17287e2091c585ba3"
+      },
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "65948269d71f3a38b299"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH08.P4:agreement-two-family-boundaries",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "4b07fe3f9004cfc8a777",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "24baf614208a551324d1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "23f1f8d8786e6f2f0de2",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "d4a61263d8611202dcef",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENFJ",
+        "sourceKey": "4b07fe3f9004cfc8a777"
+      },
+      {
+        "owner": "B",
+        "type": "ISFJ",
+        "sourceKey": "23f1f8d8786e6f2f0de2"
+      },
+      {
+        "owner": "A",
+        "type": "ENFJ",
+        "sourceKey": "24baf614208a551324d1"
+      },
+      {
+        "owner": "B",
+        "type": "ISFJ",
+        "sourceKey": "d4a61263d8611202dcef"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH09.P1:recall-shared-budget-clarity",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "ded637f612adcf59fb9e",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      },
+      {
+        "owner": "B",
+        "type": "ESTJ",
+        "sourceKey": "8670a7cd306dd817250d"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH09.P1:recall-care-without-default-manager",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "4b07fe3f9004cfc8a777",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "f3c3648ae7632ade1bdb"
+      },
+      {
+        "owner": "B",
+        "type": "ENFJ",
+        "sourceKey": "4b07fe3f9004cfc8a777"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH09.P1:recall-autonomy-with-common-duty",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "65948269d71f3a38b299",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "3ec17287e2091c585ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "89937d49f294229349a1",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "65948269d71f3a38b299"
+      },
+      {
+        "owner": "B",
+        "type": "ISTP",
+        "sourceKey": "3ec17287e2091c585ba3"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH09.P2:recall-harmony-conditional-support",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "657f0a60c702c59fd825",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "d8ee6a6775c1d5a71420",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "69aac2d24f114cdd40fb",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "mbtiPair": [],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESFJ",
+        "sourceKey": "657f0a60c702c59fd825"
+      },
+      {
+        "owner": "B",
+        "type": "INTP",
+        "sourceKey": "d8ee6a6775c1d5a71420"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH09.P2:recall-competence-with-rotation",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "73f1ae9fb0a7c110106b",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "c72ad7e4dbeab2b8b75f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "743668481abf74260870",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "c72ad7e4dbeab2b8b75f"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH09.P2:recall-family-choice-boundaries",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "24baf614208a551324d1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "d4a61263d8611202dcef",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENFJ",
+        "sourceKey": "24baf614208a551324d1"
+      },
+      {
+        "owner": "B",
+        "type": "ISFJ",
+        "sourceKey": "d4a61263d8611202dcef"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH09.P3:recall-money-repair-path",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "ab15fd60b429d7c073a5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "ca7a14f7190d5daca6c5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "b42d6c513c37bfd7f4ee",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "8670a7cd306dd817250d"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "ca7a14f7190d5daca6c5"
+      },
+      {
+        "owner": "A",
+        "type": "ESTJ",
+        "sourceKey": "ab15fd60b429d7c073a5"
+      },
+      {
+        "owner": "B",
+        "type": "ISFP",
+        "sourceKey": "b42d6c513c37bfd7f4ee"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH09.P3:recall-care-repair-path",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "cb3b6a470f6c19c51cb3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "e79993a436c219093ea5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "f3c3648ae7632ade1bdb"
+      },
+      {
+        "owner": "B",
+        "type": "ENTP",
+        "sourceKey": "e79993a436c219093ea5"
+      },
+      {
+        "owner": "A",
+        "type": "ISFJ",
+        "sourceKey": "cb3b6a470f6c19c51cb3"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH09.P3:recall-transition-repair-path",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "ede67b716c40fbe4b6c4",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "1b7aeda1752892b8905a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "ede67b716c40fbe4b6c4"
+      },
+      {
+        "owner": "B",
+        "type": "ENFP",
+        "sourceKey": "0f0d27792b96a8ad87ad"
+      },
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "3e5a71d4f1d3543288c0"
+      },
+      {
+        "owner": "A",
+        "type": "ISTJ",
+        "sourceKey": "1b7aeda1752892b8905a"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH09.P4:recall-decision-with-two-voices",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "bb5cae1a58466e6ff51a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "d153ad3866c0e6be677b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "04bdba29a1fd1c319537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "be9cb942010f0a199f50",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "a1a68eaef14705c10a5a",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "bb5cae1a58466e6ff51a"
+      },
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "04bdba29a1fd1c319537"
+      },
+      {
+        "owner": "A",
+        "type": "ENTJ",
+        "sourceKey": "d153ad3866c0e6be677b"
+      },
+      {
+        "owner": "B",
+        "type": "INFP",
+        "sourceKey": "be9cb942010f0a199f50"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH09.P4:recall-space-and-common-work",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "65948269d71f3a38b299",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "048c520649d4c0b898cb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "3ec17287e2091c585ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "89937d49f294229349a1",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "contextGuidance": [],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "65948269d71f3a38b299"
+      },
+      {
+        "owner": "B",
+        "type": "ISTP",
+        "sourceKey": "3ec17287e2091c585ba3"
+      },
+      {
+        "owner": "A",
+        "type": "INTJ",
+        "sourceKey": "048c520649d4c0b898cb"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  },
+  {
+    "materialId": "cmpr:material:CH09.P4:recall-family-with-common-choice",
+    "personA": [
+      {
+        "owner": "A",
+        "sourceKey": "24baf614208a551324d1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "4b07fe3f9004cfc8a777",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "personB": [
+      {
+        "owner": "B",
+        "sourceKey": "d4a61263d8611202dcef",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "23f1f8d8786e6f2f0de2",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directions": [],
+    "canonicalPair": [],
+    "mbtiPair": [],
+    "contextGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "enteredTypePredicates": [
+      {
+        "owner": "A",
+        "type": "ENFJ",
+        "sourceKey": "24baf614208a551324d1"
+      },
+      {
+        "owner": "B",
+        "type": "ISFJ",
+        "sourceKey": "d4a61263d8611202dcef"
+      },
+      {
+        "owner": "A",
+        "type": "ENFJ",
+        "sourceKey": "4b07fe3f9004cfc8a777"
+      },
+      {
+        "owner": "B",
+        "type": "ISFJ",
+        "sourceKey": "23f1f8d8786e6f2f0de2"
+      }
+    ],
+    "requiresSamePersonFusionRoots": true,
+    "requiresActualCanonicalParticipantIds": true,
+    "requiresRecipientDirection": true,
+    "notNewFact": true
+  }
+]

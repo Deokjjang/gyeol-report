@@ -1,0 +1,14 @@
+{
+  "schemaReady": true,
+  "technicalProofsAdded": 525,
+  "customerAssignableBefore": 0,
+  "customerAssignableAfter": 0,
+  "meaningProposed": 12,
+  "meaningApproved": 0,
+  "operatorApproved": 0,
+  "customerApproved": 0,
+  "claims": 0,
+  "allocations": 0,
+  "remainingGates": "SOURCE/PRODUCER/SELECTOR/ANCESTRY/DOMAIN/MEANING/ACTUAL_CONTEXT/DISPLAY/APPROVAL remain scoped; see worklists",
+  "plannerImplemented": false
+}

@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-planner-readiness.json.gz",
+  "payloadHash": "088ae783c93b3cb3fde40713e618322535206bdb6e2bb5fe79ba7edf3cb20869",
+  "logicalJsonHash": "f5c9dbe8d168f69f375ead139d52c6e28d18a43194aa85ebada7c3e54159e8cb",
+  "uncompressedBytes": 5330550
+}

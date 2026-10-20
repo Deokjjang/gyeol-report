@@ -1,0 +1,108 @@
+{
+  "status": "EXISTING_UNCHANGED",
+  "cases": [
+    {
+      "letter": "L",
+      "variant": 0,
+      "publishedEdition": "compatibility-product-13d-7b-v1",
+      "bodyLength": 10130,
+      "readerEditorial": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "hardErrors": [],
+      "shortages": [],
+      "hashes": {
+        "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+        "fullEvidence": "063c0d6d5700df52e5910a997b2869b3ddda8698c85923e9cbc7b0384aa285f7",
+        "narrative": "422e1c6ded47e3b2e029cd9fa36047bb87f3dbe930351b63da0caaaf90e6ac77",
+        "integration": "75af01278c5ec14b0bbb1cadca519dc48fe0e26ef1158bfd973c38ec44a6441f",
+        "personA": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+        "personB": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+        "book": "30a507cef8c0abbd2598b921378432f56ea76df014df905b6482d440af58d2b2"
+      }
+    },
+    {
+      "letter": "M",
+      "variant": 0,
+      "publishedEdition": "compatibility-product-13d-7b-v1",
+      "bodyLength": 10130,
+      "readerEditorial": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "hardErrors": [],
+      "shortages": [],
+      "hashes": {
+        "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+        "fullEvidence": "063c0d6d5700df52e5910a997b2869b3ddda8698c85923e9cbc7b0384aa285f7",
+        "narrative": "422e1c6ded47e3b2e029cd9fa36047bb87f3dbe930351b63da0caaaf90e6ac77",
+        "integration": "75af01278c5ec14b0bbb1cadca519dc48fe0e26ef1158bfd973c38ec44a6441f",
+        "personA": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+        "personB": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+        "book": "30a507cef8c0abbd2598b921378432f56ea76df014df905b6482d440af58d2b2"
+      }
+    },
+    {
+      "letter": "AL",
+      "variant": 0,
+      "publishedEdition": "compatibility-product-13d-7b-v1",
+      "bodyLength": 10130,
+      "readerEditorial": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "hardErrors": [],
+      "shortages": [],
+      "hashes": {
+        "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+        "fullEvidence": "063c0d6d5700df52e5910a997b2869b3ddda8698c85923e9cbc7b0384aa285f7",
+        "narrative": "422e1c6ded47e3b2e029cd9fa36047bb87f3dbe930351b63da0caaaf90e6ac77",
+        "integration": "75af01278c5ec14b0bbb1cadca519dc48fe0e26ef1158bfd973c38ec44a6441f",
+        "personA": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+        "personB": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+        "book": "30a507cef8c0abbd2598b921378432f56ea76df014df905b6482d440af58d2b2"
+      }
+    }
+  ],
+  "action": "원고·gate·fallback 변경 없음;별도 품질 작업으로 인수"
+}

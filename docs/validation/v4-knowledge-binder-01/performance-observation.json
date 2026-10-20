@@ -1,0 +1,294 @@
+{
+  "metric": "Offline whole-catalog prepare + 27 unchanged Graph generations + Binder + privacy artifacts; not customer request latency",
+  "runs": [
+    {
+      "run": "cli-release.log",
+      "elapsedMs": 118911.9275,
+      "binderTotalMs": 8103.25166800001,
+      "originalGraphFilesMatched": 105,
+      "network": "disabled",
+      "timings": [
+        {
+          "fixtureId": "fixture-comprehensive-A",
+          "binderMs": 263.8053749999999,
+          "candidateOccurrences": 200
+        },
+        {
+          "fixtureId": "fixture-comprehensive-F",
+          "binderMs": 23.71833399999923,
+          "candidateOccurrences": 200
+        },
+        {
+          "fixtureId": "fixture-career-A",
+          "binderMs": 272.3624999999993,
+          "candidateOccurrences": 268
+        },
+        {
+          "fixtureId": "fixture-career-F",
+          "binderMs": 33.967625000001135,
+          "candidateOccurrences": 268
+        },
+        {
+          "fixtureId": "fixture-love-A",
+          "binderMs": 267.48541699999987,
+          "candidateOccurrences": 170
+        },
+        {
+          "fixtureId": "fixture-love-F",
+          "binderMs": 17.29108300000007,
+          "candidateOccurrences": 170
+        },
+        {
+          "fixtureId": "fixture-compatibility-A",
+          "binderMs": 549.3652920000022,
+          "candidateOccurrences": 190
+        },
+        {
+          "fixtureId": "fixture-compatibility-marriage",
+          "binderMs": 572.5870419999992,
+          "candidateOccurrences": 222
+        },
+        {
+          "fixtureId": "fixture-compatibility-parentChild",
+          "binderMs": 556.6855409999989,
+          "candidateOccurrences": 235
+        },
+        {
+          "fixtureId": "fixture-compatibility-coworker",
+          "binderMs": 579.1270000000004,
+          "candidateOccurrences": 335
+        },
+        {
+          "fixtureId": "fixture-compatibility-managerReport",
+          "binderMs": 564.6565829999963,
+          "candidateOccurrences": 275
+        },
+        {
+          "fixtureId": "fixture-compatibility-businessPartner",
+          "binderMs": 588.3725830000039,
+          "candidateOccurrences": 317
+        },
+        {
+          "fixtureId": "fixture-compatibility-friendship",
+          "binderMs": 523.8085419999989,
+          "candidateOccurrences": 173
+        },
+        {
+          "fixtureId": "fixture-major-A",
+          "binderMs": 327.51870800000324,
+          "candidateOccurrences": 89
+        },
+        {
+          "fixtureId": "fixture-major-F",
+          "binderMs": 34.96891599999799,
+          "candidateOccurrences": 89
+        },
+        {
+          "fixtureId": "fixture-annual-A",
+          "binderMs": 333.7128340000054,
+          "candidateOccurrences": 109
+        },
+        {
+          "fixtureId": "fixture-annual-F",
+          "binderMs": 53.93291699999827,
+          "candidateOccurrences": 109
+        },
+        {
+          "fixtureId": "fixture-major-transition-C",
+          "binderMs": 254.52304200000071,
+          "candidateOccurrences": 89
+        },
+        {
+          "fixtureId": "fixture-annual-transition-C2028",
+          "binderMs": 285.70212499999616,
+          "candidateOccurrences": 109
+        },
+        {
+          "fixtureId": "fixture-compatibility-unknown-both",
+          "binderMs": 33.002166999998735,
+          "candidateOccurrences": 190
+        },
+        {
+          "fixtureId": "fixture-compatibility-slot-swap",
+          "binderMs": 537.9585839999927,
+          "candidateOccurrences": 190
+        },
+        {
+          "fixtureId": "fixture-same-natal-different-mbti",
+          "binderMs": 291.4114169999957,
+          "candidateOccurrences": 200
+        },
+        {
+          "fixtureId": "fixture-same-mbti-different-natal",
+          "binderMs": 248.57495799999742,
+          "candidateOccurrences": 200
+        },
+        {
+          "fixtureId": "fixture-same-natal-career",
+          "binderMs": 256.66812500001106,
+          "candidateOccurrences": 268
+        },
+        {
+          "fixtureId": "fixture-annual-ranged-transition",
+          "binderMs": 297.44174999999814,
+          "candidateOccurrences": 109
+        },
+        {
+          "fixtureId": "fixture-annual-before-first-dayun",
+          "binderMs": 308.3672080000106,
+          "candidateOccurrences": 109
+        },
+        {
+          "fixtureId": "fixture-compatibility-no-detected-pair",
+          "binderMs": 26.236000000004424,
+          "candidateOccurrences": 190
+        }
+      ]
+    },
+    {
+      "run": "cli-release-rebuild.log",
+      "elapsedMs": 208954.461166,
+      "binderTotalMs": 8376.495960999993,
+      "originalGraphFilesMatched": 105,
+      "network": "disabled",
+      "timings": [
+        {
+          "fixtureId": "fixture-comprehensive-A",
+          "binderMs": 258.5024169999997,
+          "candidateOccurrences": 200
+        },
+        {
+          "fixtureId": "fixture-comprehensive-F",
+          "binderMs": 23.617165999999997,
+          "candidateOccurrences": 200
+        },
+        {
+          "fixtureId": "fixture-career-A",
+          "binderMs": 267.2196670000012,
+          "candidateOccurrences": 268
+        },
+        {
+          "fixtureId": "fixture-career-F",
+          "binderMs": 33.649750000000495,
+          "candidateOccurrences": 268
+        },
+        {
+          "fixtureId": "fixture-love-A",
+          "binderMs": 308.9822089999943,
+          "candidateOccurrences": 170
+        },
+        {
+          "fixtureId": "fixture-love-F",
+          "binderMs": 19.123334000003524,
+          "candidateOccurrences": 170
+        },
+        {
+          "fixtureId": "fixture-compatibility-A",
+          "binderMs": 583.5319589999999,
+          "candidateOccurrences": 190
+        },
+        {
+          "fixtureId": "fixture-compatibility-marriage",
+          "binderMs": 651.4452080000046,
+          "candidateOccurrences": 222
+        },
+        {
+          "fixtureId": "fixture-compatibility-parentChild",
+          "binderMs": 594.7638330000045,
+          "candidateOccurrences": 235
+        },
+        {
+          "fixtureId": "fixture-compatibility-coworker",
+          "binderMs": 593.0688749999972,
+          "candidateOccurrences": 335
+        },
+        {
+          "fixtureId": "fixture-compatibility-managerReport",
+          "binderMs": 564.5259589999914,
+          "candidateOccurrences": 275
+        },
+        {
+          "fixtureId": "fixture-compatibility-businessPartner",
+          "binderMs": 587.8214999999909,
+          "candidateOccurrences": 317
+        },
+        {
+          "fixtureId": "fixture-compatibility-friendship",
+          "binderMs": 518.5687500000058,
+          "candidateOccurrences": 173
+        },
+        {
+          "fixtureId": "fixture-major-A",
+          "binderMs": 321.1271659999911,
+          "candidateOccurrences": 89
+        },
+        {
+          "fixtureId": "fixture-major-F",
+          "binderMs": 35.296457999997074,
+          "candidateOccurrences": 89
+        },
+        {
+          "fixtureId": "fixture-annual-A",
+          "binderMs": 336.5077919999894,
+          "candidateOccurrences": 109
+        },
+        {
+          "fixtureId": "fixture-annual-F",
+          "binderMs": 51.10270899999887,
+          "candidateOccurrences": 109
+        },
+        {
+          "fixtureId": "fixture-major-transition-C",
+          "binderMs": 255.47245800000383,
+          "candidateOccurrences": 89
+        },
+        {
+          "fixtureId": "fixture-annual-transition-C2028",
+          "binderMs": 354.248333000025,
+          "candidateOccurrences": 109
+        },
+        {
+          "fixtureId": "fixture-compatibility-unknown-both",
+          "binderMs": 33.49304199998733,
+          "candidateOccurrences": 190
+        },
+        {
+          "fixtureId": "fixture-compatibility-slot-swap",
+          "binderMs": 554.0925419999985,
+          "candidateOccurrences": 190
+        },
+        {
+          "fixtureId": "fixture-same-natal-different-mbti",
+          "binderMs": 284.23841700001503,
+          "candidateOccurrences": 200
+        },
+        {
+          "fixtureId": "fixture-same-mbti-different-natal",
+          "binderMs": 248.9935000000114,
+          "candidateOccurrences": 200
+        },
+        {
+          "fixtureId": "fixture-same-natal-career",
+          "binderMs": 256.4802919999929,
+          "candidateOccurrences": 268
+        },
+        {
+          "fixtureId": "fixture-annual-ranged-transition",
+          "binderMs": 297.66737499999,
+          "candidateOccurrences": 109
+        },
+        {
+          "fixtureId": "fixture-annual-before-first-dayun",
+          "binderMs": 316.1221249999944,
+          "candidateOccurrences": 109
+        },
+        {
+          "fixtureId": "fixture-compatibility-no-detected-pair",
+          "binderMs": 26.833125000004657,
+          "candidateOccurrences": 190
+        }
+      ]
+    }
+  ],
+  "customerPerformanceOptimization": false
+}

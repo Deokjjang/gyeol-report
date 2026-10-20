@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "logicalJsonFilesIncludingParts": 55,
+  "fixturePrivateTerms": 37,
+  "htmlPrivateInputScan": true,
+  "sourceTextEscaped": true,
+  "originalPersonHashesRemovedFromPresentation": true,
+  "rawOriginalFilesUnchanged": true,
+  "externalNetworkDependencies": 0,
+  "nativeBrowserVisualCheck": "UNVERIFIED"
+}

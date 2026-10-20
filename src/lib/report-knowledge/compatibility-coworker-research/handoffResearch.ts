@@ -1,0 +1,114 @@
+/** Static offline coworker research. No runtime registration or customer approval. */
+import type { MaterialView } from "./researchTypes";
+export const CW_HANDOFF_RESEARCH: readonly MaterialView[] = [
+  {
+    "id": "cwpr:view:handoffResearch:material:CH04.P2:autonomy-and-continuity",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH04.P2:autonomy-and-continuity",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:handoffResearch:material:CH05.P2:ab-continuous-record",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH05.P2:ab-continuous-record",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:handoffResearch:material:CH05.P4:ab-request-with-acceptance",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH05.P4:ab-request-with-acceptance",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:handoffResearch:material:CH05.P4:ab-pass-uncertainty",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH05.P4:ab-pass-uncertainty",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:handoffResearch:material:CH06.P3:ba-silence-delays-handoff",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:handoffResearch:material:CH06.P4:ba-confirm-receipt",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH06.P4:ba-confirm-receipt",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:handoffResearch:material:CH07.P3:handoff-omission",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH07.P3:handoff-omission",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:handoffResearch:material:CH08.P2:a-handoff-status",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH08.P2:a-handoff-status",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:handoffResearch:material:CH09.P2:recall-handoff-interface",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH09.P2:recall-handoff-interface",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "cwpr:view:handoffResearch:material:CH09.P3:recall-handoff-responsibility",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "coworker",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "cwpr:material:CH09.P3:recall-handoff-responsibility",
+    "notAdditionalIndependentFact": true
+  }
+];

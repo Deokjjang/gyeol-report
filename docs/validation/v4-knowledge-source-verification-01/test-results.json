@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "beforePassed": 7796,
+    "beforeFailed": 46,
+    "afterPassed": 7796,
+    "afterFailed": 46,
+    "newFailures": 0
+  },
+  "sourceVerification": {
+    "passed": 37,
+    "failed": 0
+  },
+  "existingCatalog": {
+    "passed": 12,
+    "failed": 0
+  },
+  "existingKoreanAndActualBook": {
+    "passed": 669,
+    "failed": 0
+  },
+  "frozenSixProduct": {
+    "passed": 64,
+    "failed": 0,
+    "includedInExistingGroup": true
+  },
+  "combinedRelated": {
+    "passed": 8514,
+    "failed": 46
+  },
+  "typescript": {
+    "before": 0,
+    "after": 0,
+    "new": 0
+  },
+  "lint": "PASS",
+  "build": "PASS",
+  "diffCheck": "PASS",
+  "allProjectTestsClaimed": false,
+  "buildEnvironmentObservation": "Sandbox build idle at compile for about 6 minutes and interrupted with SIGINT; identical pnpm build outside sandbox succeeded without source/config/env changes."
+}

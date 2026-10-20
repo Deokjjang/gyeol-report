@@ -1,0 +1,87 @@
+[
+  {
+    "family": "career-product-research",
+    "records": 839,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "compatibility-business-partner-research",
+    "records": 1917,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "compatibility-coworker-research",
+    "records": 1948,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "compatibility-friendship-research",
+    "records": 2138,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "compatibility-love-research",
+    "records": 851,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "compatibility-manager-report-research",
+    "records": 1741,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "compatibility-marriage-research",
+    "records": 1133,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "compatibility-parent-child-research",
+    "records": 1209,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "composite-structure-research",
+    "records": 301,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "comprehensive-product-research",
+    "records": 512,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "fusion-knowledge-research",
+    "records": 374,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "love-product-research",
+    "records": 764,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "mbti-foundation-research",
+    "records": 531,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "mbti-pair-research",
+    "records": 279,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "relation-research",
+    "records": 246,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "semantic-axis-research",
+    "records": 370,
+    "actualMajorUse": "offline_registry_not_automatically_runtime_used"
+  },
+  {
+    "family": "temporal-interaction-research",
+    "records": 410,
+    "actualMajorUse": "producer_derived_facts_are_separate_from_offline_research"
+  }
+]

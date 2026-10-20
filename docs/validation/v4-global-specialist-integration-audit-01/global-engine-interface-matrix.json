@@ -1,0 +1,98 @@
+[
+  {
+    "engineId": "comprehensive",
+    "actualInvoker": "ComprehensiveSpecialistEngine.diagnose",
+    "adapter": "comprehensive-native-result-v1",
+    "actualInvocations": 4,
+    "originalReceiptField": "allProductReceipts",
+    "preparedFoundationShared": true
+  },
+  {
+    "engineId": "career",
+    "actualInvoker": "CareerSpecialistEngine.diagnose",
+    "adapter": "career-native-result-v1",
+    "actualInvocations": 3,
+    "originalReceiptField": "allProductReceipts",
+    "preparedFoundationShared": true
+  },
+  {
+    "engineId": "love",
+    "actualInvoker": "LoveSpecialistEngine.diagnose",
+    "adapter": "love-native-result-v1",
+    "actualInvocations": 2,
+    "originalReceiptField": "allProductReceipts",
+    "preparedFoundationShared": true
+  },
+  {
+    "engineId": "major-fortune",
+    "actualInvoker": "MajorFortuneSpecialistEngine.diagnose",
+    "adapter": "major-fortune-native-result-v1",
+    "actualInvocations": 3,
+    "originalReceiptField": "receipts",
+    "preparedFoundationShared": true
+  },
+  {
+    "engineId": "annual-fortune",
+    "actualInvoker": "AnnualFortuneSpecialistEngine.diagnose",
+    "adapter": "annual-fortune-native-result-v1",
+    "actualInvocations": 5,
+    "originalReceiptField": "receipts",
+    "preparedFoundationShared": true
+  },
+  {
+    "engineId": "compatibility-love",
+    "actualInvoker": "CompatibilityLoveSpecialistEngine.diagnose",
+    "adapter": "compatibility-love-native-result-v1",
+    "actualInvocations": 4,
+    "originalReceiptField": "receipts",
+    "preparedFoundationShared": true
+  },
+  {
+    "engineId": "compatibility-marriage",
+    "actualInvoker": "CompatibilityMarriageSpecialistEngine.diagnose",
+    "adapter": "compatibility-marriage-native-result-v1",
+    "actualInvocations": 1,
+    "originalReceiptField": "receipts",
+    "preparedFoundationShared": true
+  },
+  {
+    "engineId": "compatibility-parent-child",
+    "actualInvoker": "CompatibilityParentChildSpecialistEngine.diagnose",
+    "adapter": "compatibility-parent-child-native-result-v1",
+    "actualInvocations": 1,
+    "originalReceiptField": "receipts",
+    "preparedFoundationShared": true
+  },
+  {
+    "engineId": "compatibility-coworker",
+    "actualInvoker": "CompatibilityCoworkerSpecialistEngine.diagnose",
+    "adapter": "compatibility-coworker-native-result-v1",
+    "actualInvocations": 1,
+    "originalReceiptField": "receipts",
+    "preparedFoundationShared": true
+  },
+  {
+    "engineId": "compatibility-manager-report",
+    "actualInvoker": "CompatibilityManagerReportSpecialistEngine.diagnose",
+    "adapter": "compatibility-manager-report-native-result-v1",
+    "actualInvocations": 1,
+    "originalReceiptField": "receipts",
+    "preparedFoundationShared": true
+  },
+  {
+    "engineId": "compatibility-business-partner",
+    "actualInvoker": "CompatibilityBusinessPartnerSpecialistEngine.diagnose",
+    "adapter": "compatibility-business-partner-native-result-v1",
+    "actualInvocations": 1,
+    "originalReceiptField": "receipts",
+    "preparedFoundationShared": true
+  },
+  {
+    "engineId": "compatibility-friendship",
+    "actualInvoker": "CompatibilityFriendshipSpecialistEngine.diagnose",
+    "adapter": "compatibility-friendship-native-result-v1",
+    "actualInvocations": 1,
+    "originalReceiptField": "receipts",
+    "preparedFoundationShared": true
+  }
+]

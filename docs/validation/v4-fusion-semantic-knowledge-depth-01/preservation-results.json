@@ -1,0 +1,236 @@
+{
+  "baseSha": "071acdc456ddba3b8467667d53f4ff809c9b39dd",
+  "originalCheckout": {
+    "head": "c048218cc5961e0f53a1deab2603511e17559fc3",
+    "branch": "v4/annual-editorial-quality-fix-01",
+    "status": " M .gitignore\n M AGENTS.md\n?? supabase/.temp/\n"
+  },
+  "originalDirtyFileCount": 11,
+  "originalDirtyFiles": [
+    " M .gitignore",
+    " M AGENTS.md",
+    "?? supabase/.temp/cli-latest",
+    "?? supabase/.temp/gotrue-version",
+    "?? supabase/.temp/linked-project.json",
+    "?? supabase/.temp/pooler-url",
+    "?? supabase/.temp/postgres-version",
+    "?? supabase/.temp/project-ref",
+    "?? supabase/.temp/rest-version",
+    "?? supabase/.temp/storage-migration",
+    "?? supabase/.temp/storage-version"
+  ],
+  "preexistingWorktreeCount": 20,
+  "newWorktreeCount": 1,
+  "totalWorktrees": 21,
+  "allExistingWorktreesUnchanged": true,
+  "comparison": "branch, HEAD, git status and SHA256 of tracked/nonignored files in every pre-existing worktree",
+  "worktrees": [
+    {
+      "path": "/Users/Deokmin/Dev/projects/gyeol-report",
+      "branch": "v4/annual-editorial-quality-fix-01",
+      "head": "c048218cc5961e0f53a1deab2603511e17559fc3",
+      "status": " M .gitignore\n M AGENTS.md\n?? supabase/.temp/\n",
+      "fileCount": 1857,
+      "fileManifestSha256": "ee91c3ee70eeaa38c9ef425e24c21d5052adeb3c181c692f45441c96a5672276",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-annual-fortune-reader-quality-polish-01",
+      "branch": "v4/annual-fortune-reader-quality-polish-01",
+      "head": "f1994d13eb1ac40b913ec1419a1e0c24e7c89407",
+      "status": "",
+      "fileCount": 1856,
+      "fileManifestSha256": "ba0eff5da4e945d93a0e56346c1b649aca06a429061d2b3b1f35ca3f935799cc",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-career-editorial-quality-fix-01",
+      "branch": "v4/career-editorial-quality-fix-01",
+      "head": "80409f8a96c5a2b4bf93792ea6f5d1c97bbc1fa4",
+      "status": "",
+      "fileCount": 1888,
+      "fileManifestSha256": "8fd28bbb45c27b7e5dccff05739768ac021ea39c27fd14713a7cedd2a480abe2",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-compatibility-editorial-quality-fix-01",
+      "branch": "v4/compatibility-editorial-quality-fix-01",
+      "head": "21da9173461f3530c5e945e4d306303e7660986b",
+      "status": "",
+      "fileCount": 1870,
+      "fileManifestSha256": "06da32ba2b7692bde7f2f7734a3f33bf08d99bdba2cd20a9790fb1c36fd87c0c",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-comprehensive-editorial-quality-fix-01",
+      "branch": "v4/comprehensive-editorial-quality-fix-01",
+      "head": "1edcf3fb9f22e42b144706bd4b25ea2fb5c89462",
+      "status": "",
+      "fileCount": 1870,
+      "fileManifestSha256": "b01bed37979165caebd92bac895af816e7b8f26aad24a2ae43aade319e302460",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-foundation-saju-deep-knowledge-03",
+      "branch": "v4/foundation-saju-deep-knowledge-03",
+      "head": "7ff6aba0c9e0abd74284a388369b20ff6229be38",
+      "status": "",
+      "fileCount": 2153,
+      "fileManifestSha256": "08f5d517543d77c3f9d7637beddfb5b92e224d057afe29c0947b7052fe2172dd",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-foundation-saju-knowledge-completion-02",
+      "branch": "v4/foundation-saju-knowledge-completion-02",
+      "head": "771e4393bb445743359cbcb651d95ed02f2f7a4b",
+      "status": "",
+      "fileCount": 2132,
+      "fileManifestSha256": "fbca70674171f0a945158d803ff9ca6a1a8d0fe50710089e6c0fe267347ab2d2",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-foundation-saju-knowledge-expansion-01",
+      "branch": "v4/foundation-saju-knowledge-expansion-01",
+      "head": "5e96d1c3663b92ff85f2d8c08b9a682058aef922",
+      "status": "",
+      "fileCount": 2110,
+      "fileManifestSha256": "d40a80f8cc242216ecbb74b7516d9d5184e2722b72b604a48844821886f226fb",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-love-editorial-quality-fix-01",
+      "branch": "v4/love-editorial-quality-fix-01",
+      "head": "544f14c36ba5de557b1d746879f1a69a5f57817f",
+      "status": "",
+      "fileCount": 1889,
+      "fileManifestSha256": "4aa16b8ed587397661de7af54942cef61e21e5e443479dd502c3ec27bc8620c0",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-major-fortune-reader-quality-polish-01",
+      "branch": "v4/major-fortune-reader-quality-polish-01",
+      "head": "9460df97d929735d2d835216952948a202ad8af3",
+      "status": "",
+      "fileCount": 1851,
+      "fileManifestSha256": "9c181adc90437227696a69231546c6f9b0e52409cb2173385576921cca6b0425",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-mbti-16type-knowledge-depth-01",
+      "branch": "v4/mbti-16type-knowledge-depth-01",
+      "head": "818b71112922bd06f4ac5d7b566324dcf33cf4c6",
+      "status": "",
+      "fileCount": 2321,
+      "fileManifestSha256": "502f2fe9bdf579416ddd85117048117f4ad32f2d9ca28b508cb7960587a3f314",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-mbti-pair-relation-knowledge-01",
+      "branch": "v4/mbti-pair-relation-knowledge-01",
+      "head": "afb8c3aa798ae3da0ede7ee7ae68b6adb04718bd",
+      "status": "",
+      "fileCount": 2374,
+      "fileManifestSha256": "7caf70b9af81fa2ff0803fb19e163cc37f263b3cab7551c51c6361c3192883d9",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-release-technical-stabilization-01",
+      "branch": "v4/release-technical-stabilization-01",
+      "head": "be4054671d166b3a11127c5bf013b77eab5cd919",
+      "status": "",
+      "fileCount": 2094,
+      "fileManifestSha256": "99af63a1722ae067115e21a5162f3c1051baf386e70d8e1a81517778a3f71b4b",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-saju-composite-structure-knowledge-01",
+      "branch": "v4/saju-composite-structure-knowledge-01",
+      "head": "95d59c50600a504b40bc9a031c96dee7ba0a1694",
+      "status": "",
+      "fileCount": 2185,
+      "fileManifestSha256": "7dc014cf57f52cb0389f0f093930be581ae82ec4a6d4bf79e2dab07d27fd780e",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-saju-relation-knowledge-01",
+      "branch": "v4/saju-relation-knowledge-01",
+      "head": "3117327c80e8a35e9a476646114ffc3ae42f93ed",
+      "status": "",
+      "fileCount": 2241,
+      "fileManifestSha256": "9331cbc467c4f101eaf958188795e13e6c68af97015add4255d28ee688e0c1cb",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-saju-temporal-interaction-knowledge-01",
+      "branch": "v4/saju-temporal-interaction-knowledge-01",
+      "head": "022ef437f34c04d36671120b19b5f5c3e494d5f6",
+      "status": "",
+      "fileCount": 2275,
+      "fileManifestSha256": "e26d16ac684edbc6a0ce82a691a2362a6cb9981aaf85c7fe9828dc64a81e2c6d",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-semantic-axis-knowledge-expansion-01",
+      "branch": "v4/semantic-axis-knowledge-expansion-01",
+      "head": "071acdc456ddba3b8467667d53f4ff809c9b39dd",
+      "status": "",
+      "fileCount": 2433,
+      "fileManifestSha256": "7eec6b42644083e60b16e8d8ad91faa07778d8bb6c7947b6415fa52d132950a6",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-six-product-common-editorial-polish-01",
+      "branch": "v4/six-product-common-editorial-polish-01",
+      "head": "964e6b9a1b248c67e695f112615873f232d9320e",
+      "status": "",
+      "fileCount": 2073,
+      "fileManifestSha256": "0aaf36b93e225c6c68ad3ffdd04f4d424090221e7b3b9c11503b19d61bf465c3",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/private/tmp/gyeol-six-product-integration-01",
+      "branch": "v4/six-product-integration-01",
+      "head": "a46eff86e305f5a58721bdd83a2249686e54be4c",
+      "status": "",
+      "fileCount": 2034,
+      "fileManifestSha256": "1ebcbe8b28ede39a23b67442c365d4a7ac251511292525caa4f38c0d1bb5e500",
+      "beforeAfterEqual": true
+    },
+    {
+      "path": "/Users/Deokmin/Documents/Codex/2026-09-29/referenced-chatgpt-conversation-this-is-an/work/gyeol-share-brand",
+      "branch": "feat/share-brand-system",
+      "head": "4e25b8775c3947e4a3d661f0e23c87950d15c8d4",
+      "status": "",
+      "fileCount": 1079,
+      "fileManifestSha256": "917bd96a1400442afd6bfd7260af201b9902345a686cf161b9558fcd9cf5364a",
+      "beforeAfterEqual": true
+    }
+  ],
+  "existingSourceMbtiResearchTestsFilesUnchanged": 2133,
+  "sixProductIntegration": {
+    "testsPassed": 64,
+    "successfulGenerationDigests": 62,
+    "expectedRejectionsPreserved": 2,
+    "digestKinds": [
+      "draft",
+      "fullEvidence",
+      "calculation",
+      "narrative",
+      "integration",
+      "Book",
+      "snapshot",
+      "pageStructure",
+      "editorialInvariants"
+    ],
+    "storedReader": "owner and shared reader contracts passed",
+    "previousBooksReplayedWithoutRegeneration": 6
+  },
+  "productionDbAccessed": false,
+  "productionWrites": false,
+  "paymentsPerformed": false,
+  "deployments": false,
+  "originalBranchesOrHeadsChanged": false,
+  "masterChanged": false,
+  "trackedChangeScope": "new Fusion research files, one new unit test, this new report directory only",
+  "limitations": "Local source/digest/reader verification; no actual customer DB access or new end-to-end Production transactions."
+}

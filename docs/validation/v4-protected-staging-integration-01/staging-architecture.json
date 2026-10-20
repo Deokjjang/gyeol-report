@@ -1,0 +1,22 @@
+{
+  "baseSha": "1b89d8d90fdad2b0a82b783e2d948c9cc5de878f",
+  "existingCustomerRuntimeChanged": false,
+  "customerAuthorized": false,
+  "humanQualityApproved": false,
+  "architecture": "LOCAL_VERIFIED_GENERATION + INDEPENDENT_PROTECTED_READER",
+  "customerApplicationModified": false,
+  "localGeneration": "tools/protected-staging/local.mjs",
+  "generationEntry": "prepareOfflinePublication",
+  "readerApplication": "tools/protected-staging/reader",
+  "sourceTreeUnchanged": true,
+  "offlineGuardsUnchanged": true,
+  "vercelMarkerMasked": false,
+  "newDatabase": false,
+  "transport": "Ed25519 over exact serialized artifact bytes",
+  "privateKey": "External local owner-only mode600; never uploaded or committed",
+  "publicKey": "New independent-project server configuration only",
+  "defaultVercelPolicy": "DENY_ALL; approvedProjectId=null,protectionVerified=false",
+  "sourceCommitPin": "Exact current local / VERCEL_GIT_COMMIT_SHA; never client selected",
+  "deployment": "PROTECTED_DEPLOYMENT_BLOCKED",
+  "postCommitReceipt": "/Users/Deokmin/Documents/gyeol-validation/v4-protected-staging-integration-01/final-receipt.json"
+}

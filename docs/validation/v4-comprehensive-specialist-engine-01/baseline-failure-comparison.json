@@ -1,0 +1,290 @@
+{
+  "scope": "Every test in the original 16 failing files; not the entire repository suite",
+  "before": {
+    "pass": 5837,
+    "fail": 46
+  },
+  "after": {
+    "pass": 5837,
+    "fail": 46
+  },
+  "sameFullNormalizedSignatures": true,
+  "failures": [
+    {
+      "file": "unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'career': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [ '도울 범위를 먼저 정하세요', '중요한 오류부터 보세요' ] to include '나는 어떻게 일하는 사람인가'",
+      "signatureSha256": "aa634aff58a6a10fc7113311e1bfed15a6f902d08c6e5cc2f39130f41d171673"
+    },
+    {
+      "file": "unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'compatibility': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "signatureSha256": "1871ef4f4f74e38f7bb32a55f2093579765ff00487517f8969a0dbbddbfb896b"
+    },
+    {
+      "file": "unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'love': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '사랑할 때의 나'",
+      "signatureSha256": "87b74b1b055fef8f2274252e0ae213058d153f6794e2500142758d35ca31e8ee"
+    },
+    {
+      "file": "unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-02-marriage': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "signatureSha256": "1871ef4f4f74e38f7bb32a55f2093579765ff00487517f8969a0dbbddbfb896b"
+    },
+    {
+      "file": "unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-03-parent': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "signatureSha256": "1871ef4f4f74e38f7bb32a55f2093579765ff00487517f8969a0dbbddbfb896b"
+    },
+    {
+      "file": "unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-04-coworker': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "signatureSha256": "1871ef4f4f74e38f7bb32a55f2093579765ff00487517f8969a0dbbddbfb896b"
+    },
+    {
+      "file": "unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-05-manager': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "signatureSha256": "1871ef4f4f74e38f7bb32a55f2093579765ff00487517f8969a0dbbddbfb896b"
+    },
+    {
+      "file": "unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-06-business': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "signatureSha256": "1871ef4f4f74e38f7bb32a55f2093579765ff00487517f8969a0dbbddbfb896b"
+    },
+    {
+      "file": "unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-07-friend': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "signatureSha256": "1871ef4f4f74e38f7bb32a55f2093579765ff00487517f8969a0dbbddbfb896b"
+    },
+    {
+      "file": "unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-08-love': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "signatureSha256": "1871ef4f4f74e38f7bb32a55f2093579765ff00487517f8969a0dbbddbfb896b"
+    },
+    {
+      "file": "unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 14 years, 10 future years, all ages, transitions and clickable full narratives",
+      "firstError": "AssertionError: expected [ 2031, 48, '丁卯 → 丙寅', '辛亥', …(1) ] to deeply equal [ 2031, 48, '丙寅', '辛亥', …(1) ]",
+      "signatureSha256": "188ef4563a27c4b3ba785b6a753810d6a6c6a99d82e287f3ab8e96f9de5cc2a6"
+    },
+    {
+      "file": "unit/interpretation-v4/annualSafety.test.ts",
+      "name": "Annual V4 canonical evidence, clock and regression boundaries '01-business': V4 Major byte hash unchanged",
+      "firstError": "AssertionError: expected '553c4343c0c489c67135d9dd22e99219459da…' to be '43f0424d001cbb0302c68aaa13a95d787424f…' // Object.is equality",
+      "signatureSha256": "0ceae4b1eed79114ba6c58a09f75a5d92d25c55ae388565648823c8612ed37c1"
+    },
+    {
+      "file": "unit/interpretation-v4/annualSafety.test.ts",
+      "name": "Annual V4 canonical evidence, clock and regression boundaries '02-employee': V4 Major byte hash unchanged",
+      "firstError": "AssertionError: expected 'adee56e9086fb365539ea94f4384bcf512df5…' to be '7eab24fabce46a06374e6a57ed03aae9d89ff…' // Object.is equality",
+      "signatureSha256": "51945c508a99898296267192a6c8a552a1a4091b51343f49fe8d4ef4392257db"
+    },
+    {
+      "file": "unit/interpretation-v4/annualSafety.test.ts",
+      "name": "Annual V4 canonical evidence, clock and regression boundaries '03-freelance': V4 Major byte hash unchanged",
+      "firstError": "AssertionError: expected 'cbdb4ac3099261861261b21f9f8977a8e5ab9…' to be '1f5a756eceef3330443801e17bca1b64b3892…' // Object.is equality",
+      "signatureSha256": "6c2bf63a8e5ccb0bf8352e896b021ea8b9d42564d170814ad1503131e2508e63"
+    },
+    {
+      "file": "unit/interpretation-v4/annualSafety.test.ts",
+      "name": "Annual V4 canonical evidence, clock and regression boundaries '04-student': V4 Major byte hash unchanged",
+      "firstError": "AssertionError: expected 'a99915db8529d76c15b8d95840b19619c276f…' to be '96e047ab34e267a7de2883731e8a616642c66…' // Object.is equality",
+      "signatureSha256": "95403380b72c953cd100bbee15f2c65cb9c8844d9528438cc7afbe060bbef7b1"
+    },
+    {
+      "file": "unit/interpretation-v4/annualSafety.test.ts",
+      "name": "Annual V4 canonical evidence, clock and regression boundaries '05-unknown': V4 Major byte hash unchanged",
+      "firstError": "AssertionError: expected 'a31d851b048081b187000e4f7705e739ed78b…' to be '9aeff414e7d16f9dd76802894cd6960622ab2…' // Object.is equality",
+      "signatureSha256": "32fc1a9e327bb82c2541a5915961990e58b96a4dc22cf22d265fc2b566a4a2d7"
+    },
+    {
+      "file": "unit/interpretation-v4/annualSafety.test.ts",
+      "name": "Annual V4 canonical evidence, clock and regression boundaries '06-transition': V4 Major byte hash unchanged",
+      "firstError": "AssertionError: expected 'f72ee51d8b302f035393cad14a8fc9d06dd16…' to be 'f6f68cb00f06ffd029a479934a71d8ee3e3c9…' // Object.is equality",
+      "signatureSha256": "f3f8f3dc2bd587e21e3ab024b5f15884d273faaaa95ddd5a4341d0a6709347a1"
+    },
+    {
+      "file": "unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'annual' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "signatureSha256": "b3ec06e8871daad50232243a04d770aa9c6d8c20d4ac3457e9bbd3878dccd647"
+    },
+    {
+      "file": "unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'compatibility' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "signatureSha256": "d83a0b8d1a2e8950010b7b5a884e1777dfbb957b69ab32044ffaa74d1556c7fd"
+    },
+    {
+      "file": "unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'comprehensive' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "signatureSha256": "1ec86f9900f6f02926f9546a5521a633bb6ef366c28aacda5e6d22319d36972b"
+    },
+    {
+      "file": "unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'love' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "signatureSha256": "d83a0b8d1a2e8950010b7b5a884e1777dfbb957b69ab32044ffaa74d1556c7fd"
+    },
+    {
+      "file": "unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'major' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "signatureSha256": "b3ec06e8871daad50232243a04d770aa9c6d8c20d4ac3457e9bbd3878dccd647"
+    },
+    {
+      "file": "unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'annual' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "signatureSha256": "5f989094af29ebc5488136f91f610528482899312fe6b3060221c17239317128"
+    },
+    {
+      "file": "unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'compatibility' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "signatureSha256": "ed6b5536439aac6604a1546eb07c14b2d85096fce3e217829c86f239ae0aad17"
+    },
+    {
+      "file": "unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'comprehensive' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "signatureSha256": "ed6b5536439aac6604a1546eb07c14b2d85096fce3e217829c86f239ae0aad17"
+    },
+    {
+      "file": "unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'love' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "signatureSha256": "ed6b5536439aac6604a1546eb07c14b2d85096fce3e217829c86f239ae0aad17"
+    },
+    {
+      "file": "unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'major' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "signatureSha256": "5f989094af29ebc5488136f91f610528482899312fe6b3060221c17239317128"
+    },
+    {
+      "file": "unit/interpretation-v4/comprehensiveAllocation.test.ts",
+      "name": "section-specific allocations, reservations, fallback and budgets C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+      "firstError": "AssertionError: expected [] to include 'composite'",
+      "signatureSha256": "5f461b31b10558e1a888bf282fa20076fb316d21a8bf4d998fb2fc5dd41d81ea"
+    },
+    {
+      "file": "unit/interpretation-v4/comprehensiveAllocation.test.ts",
+      "name": "section-specific allocations, reservations, fallback and budgets recovery-axis Fusion can serve C9 even when its original application is work",
+      "firstError": "AssertionError: expected false to be true // Object.is equality",
+      "signatureSha256": "8b939e6efb4ef7196ebe8cfb6d02b101f0c55693f38a6c32ba8e43de8f283921"
+    },
+    {
+      "file": "unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+      "name": "actual 12-person review cohort and isolation scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+      "firstError": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/…/comprehensivePlanCore[\"']",
+      "signatureSha256": "d4e853bd2bc3d7835e21402c8398d5674bc7b96fa4a93dd69a9abb74d58014b4"
+    },
+    {
+      "file": "unit/interpretation-v4/foundationAdapter.test.ts",
+      "name": "Phase13D-1A stays off all six product paths only foundation modules reference the foundation; no writer/UI/calculation import",
+      "firstError": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality",
+      "signatureSha256": "b975814b0390ad5bd74c7ac6ac0541f27e4f90af7ff15bbf21c29089d35451f8"
+    },
+    {
+      "file": "unit/interpretation-v4/koreanNarrativeCore.test.ts",
+      "name": "narrative output is not accepted merely because it has source IDs no runtime/customer imports, dependencies, clocks, randomness, external services",
+      "firstError": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/narrat…/narrativeMemory[\"']",
+      "signatureSha256": "3afbc118895bdaea4f27a4ba637f6696080548513c432b8d430a53c0bfe31cf5"
+    },
+    {
+      "file": "unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '01-business': base calculations, all 14 year stories, transitions and selection remain identical",
+      "firstError": "AssertionError: expected '8083bc24276c5586ec058942b27600524131f…' to be 'ffc532f6be8bfa197ebe48d8657b4700a464f…' // Object.is equality",
+      "signatureSha256": "1013abb2b26273b15642f9832cabb46e269f5306aee776c7d40ffd02c5289d71"
+    },
+    {
+      "file": "unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '02-employee': base calculations, all 14 year stories, transitions and selection remain identical",
+      "firstError": "AssertionError: expected '19ca502fb92b5dcbdba2f0ba6be3e6c5ba49f…' to be '975d59e600a7c35176969efc26824700f9deb…' // Object.is equality",
+      "signatureSha256": "5bdcd4c9ae5046101deeef1dc45a637b2fa67f3586df903ae90d56f8a98e7868"
+    },
+    {
+      "file": "unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '03-freelance': base calculations, all 14 year stories, transitions and selection remain identical",
+      "firstError": "AssertionError: expected 'ba50e8da08e85a81df99f25584e6556399e10…' to be '519a1615a8470eb16f005db27e172e6133b1c…' // Object.is equality",
+      "signatureSha256": "1a98a0605c4ebb37021b35ea192d243c59260be474488810f14402253332c82d"
+    },
+    {
+      "file": "unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '04-time-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+      "firstError": "AssertionError: expected 'fab24c2772ad32df2d1310295b69a07769182…' to be '8be0cb81bd2f9c0166f81205ac10146a14406…' // Object.is equality",
+      "signatureSha256": "85e77dfd57d71941bb1000a01e7f0e84e9a067e676c845e1cdfadfd47357920b"
+    },
+    {
+      "file": "unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '05-mbti-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+      "firstError": "AssertionError: expected '24d6674e675d5e2567fe9c9dad6404f536c91…' to be 'e4db60ead95ac3c569338da41e7bdac344852…' // Object.is equality",
+      "signatureSha256": "1b639c68e8c9adf33d44877c73b1a49e8cff70d295b63c5e44422c94e3ecf220"
+    },
+    {
+      "file": "unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '06-both-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+      "firstError": "AssertionError: expected 'cc574e5b36614f4868bda18a73b34d0b00f2e…' to be '602e1a50b541da267119847a367181a970eb9…' // Object.is equality",
+      "signatureSha256": "c8fe9be1bcbdec507a9642aed660c22275e4d0a73da739abbb919f0eb50fde81"
+    },
+    {
+      "file": "unit/report-generation/customerDayunGeneration.test.ts",
+      "name": "customer Dayun production boundaries rejects annual_fortune bypass before order writes and allows stable input",
+      "firstError": "SyntaxError: Unexpected end of JSON input",
+      "signatureSha256": "dd7f509076aafc5eded67f2e58b5c0e27a5a6f9e02a4521bd01c63b8187a0d0b"
+    },
+    {
+      "file": "unit/report-generation/customerDayunGeneration.test.ts",
+      "name": "customer Dayun production boundaries rejects major_fortune bypass before order writes and allows stable input",
+      "firstError": "SyntaxError: Unexpected end of JSON input",
+      "signatureSha256": "dd7f509076aafc5eded67f2e58b5c0e27a5a6f9e02a4521bd01c63b8187a0d0b"
+    },
+    {
+      "file": "unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts",
+      "name": "preserves all 3073 pre-existing source/test/knowledge/report files byte for byte",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "signatureSha256": "b505b27cdaa98c51ed00ce69b2d9900e18eaf892eaca0d256867fe3738eb384e"
+    },
+    {
+      "file": "unit/report-knowledge/compatibilityCoworkerResearch.test.ts",
+      "name": "preserves all 2755 pre-existing tracked source/test/knowledge/report files byte for byte",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "signatureSha256": "4104b3d12941fd613887543173b5edfe058c89ffa8c13a8fb23b1bcca51937e9"
+    },
+    {
+      "file": "unit/report-knowledge/compatibilityLoveResearch.test.ts",
+      "name": "preserves all 2435 existing tracked source, research, Book and fixture hashes",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "signatureSha256": "fca2d80b15d633bde12e2cb22cb4a6440291a8f5f05ca760bd59b9975df7bfd9"
+    },
+    {
+      "file": "unit/report-knowledge/compatibilityManagerReportResearch.test.ts",
+      "name": "preserves all 2904 pre-existing tracked source/test/knowledge/report files byte for byte",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "signatureSha256": "f9ca96d178451bd806572361477820dca2750733f33ddc56e1d9ace94230641c"
+    },
+    {
+      "file": "unit/report-knowledge/compatibilityMarriageResearch.test.ts",
+      "name": "preserves 2531 original tracked source, research, UI, Book, contract and fixture files",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "signatureSha256": "f9ce41677d4c830dfc3910a74a9d678c1d8362d580e64d49aaa2bf8315c29c9c"
+    },
+    {
+      "file": "unit/report-knowledge/compatibilityParentChildResearch.test.ts",
+      "name": "preserves 2639 original tracked source/research/Book/UI/test hashes",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "signatureSha256": "04661e132f7a82494d644da0ef4211313627f89804634a1afd292b77cfbcc212"
+    }
+  ]
+}

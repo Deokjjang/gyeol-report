@@ -1,0 +1,1660 @@
+{
+  "reproduced": [
+    {
+      "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+      "name": "Annual V4 canonical evidence, clock and regression boundaries '01-business': V4 Major byte hash unchanged",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Earlier Phase13C1/13B manuscript hashes were used for later reviewed Major editions.",
+      "before": {
+        "status": "failed",
+        "durationMs": 71.59187500000002,
+        "actualMessage": "AssertionError: expected '553c4343c0c489c67135d9dd22e99219459da…' to be '43f0424d001cbb0302c68aaa13a95d787424f…' // Object.is equality",
+        "failureSignature": "3f5e51e03720122500c78b5b64b42878420813049f4984b180da0fc14cf6311b",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 46.53158400000001,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/majorComposer.ts",
+          "line": 20
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+      "name": "Annual V4 canonical evidence, clock and regression boundaries '02-employee': V4 Major byte hash unchanged",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Earlier Phase13C1/13B manuscript hashes were used for later reviewed Major editions.",
+      "before": {
+        "status": "failed",
+        "durationMs": 34.55124999999998,
+        "actualMessage": "AssertionError: expected 'adee56e9086fb365539ea94f4384bcf512df5…' to be '7eab24fabce46a06374e6a57ed03aae9d89ff…' // Object.is equality",
+        "failureSignature": "925b1b969b912fb5d78d73cba4a5f9a4407e05e1af991912a57fbe6a578f64c0",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 23.599541999999985,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/majorComposer.ts",
+          "line": 20
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+      "name": "Annual V4 canonical evidence, clock and regression boundaries '03-freelance': V4 Major byte hash unchanged",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Earlier Phase13C1/13B manuscript hashes were used for later reviewed Major editions.",
+      "before": {
+        "status": "failed",
+        "durationMs": 28.227332999999987,
+        "actualMessage": "AssertionError: expected 'cbdb4ac3099261861261b21f9f8977a8e5ab9…' to be '1f5a756eceef3330443801e17bca1b64b3892…' // Object.is equality",
+        "failureSignature": "a8b292285072922dc4fc61bff86e8a5f8989a00f221709a259f8671990620f7c",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 19.30116700000002,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/majorComposer.ts",
+          "line": 20
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+      "name": "Annual V4 canonical evidence, clock and regression boundaries '04-student': V4 Major byte hash unchanged",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Earlier Phase13C1/13B manuscript hashes were used for later reviewed Major editions.",
+      "before": {
+        "status": "failed",
+        "durationMs": 25.701750000000004,
+        "actualMessage": "AssertionError: expected 'a99915db8529d76c15b8d95840b19619c276f…' to be '96e047ab34e267a7de2883731e8a616642c66…' // Object.is equality",
+        "failureSignature": "65ce83cf33fe04f6b3b086ffab179d1b5b9f7bb3f088fa4ebb4668e7405b5841",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 17.938083000000006,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/majorComposer.ts",
+          "line": 20
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+      "name": "Annual V4 canonical evidence, clock and regression boundaries '05-unknown': V4 Major byte hash unchanged",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Earlier Phase13C1/13B manuscript hashes were used for later reviewed Major editions.",
+      "before": {
+        "status": "failed",
+        "durationMs": 23.550207999999998,
+        "actualMessage": "AssertionError: expected 'a31d851b048081b187000e4f7705e739ed78b…' to be '9aeff414e7d16f9dd76802894cd6960622ab2…' // Object.is equality",
+        "failureSignature": "e7e09ed4ab8688bcfed4acbd90846ca83ac5d2012a8aee534e4f71157fd45e5c",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 16.519207999999963,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/majorComposer.ts",
+          "line": 20
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+      "name": "Annual V4 canonical evidence, clock and regression boundaries '06-transition': V4 Major byte hash unchanged",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Earlier Phase13C1/13B manuscript hashes were used for later reviewed Major editions.",
+      "before": {
+        "status": "failed",
+        "durationMs": 29.237000000000023,
+        "actualMessage": "AssertionError: expected 'f72ee51d8b302f035393cad14a8fc9d06dd16…' to be 'f6f68cb00f06ffd029a479934a71d8ee3e3c9…' // Object.is equality",
+        "failureSignature": "7fe3f1dc292fc95658a3e477618469b2e8390af32ea594ce308c81b19b700b5e",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 19.172708999999998,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/majorComposer.ts",
+          "line": 20
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'comprehensive' customer/evidence/Book stays frozen",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Current-source legacy composer/current Reader projections were compared with earlier editorial source locks.",
+      "before": {
+        "status": "failed",
+        "durationMs": 5447.916749999999,
+        "actualMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "failureSignature": "e238d2a72efedf094b8fd4143b5e7cbcc7b3c50f6e212fbfba94899f17cb18f8",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 5506.824542,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/runtimeShadow.ts",
+          "line": 33
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'love' customer/evidence/Book stays frozen",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Current-source legacy composer/current Reader projections were compared with earlier editorial source locks.",
+      "before": {
+        "status": "failed",
+        "durationMs": 1356.2752919999994,
+        "actualMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "failureSignature": "e238d2a72efedf094b8fd4143b5e7cbcc7b3c50f6e212fbfba94899f17cb18f8",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 1382.9671659999995,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/runtimeShadow.ts",
+          "line": 33
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'compatibility' customer/evidence/Book stays frozen",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Current-source legacy composer/current Reader projections were compared with earlier editorial source locks.",
+      "before": {
+        "status": "failed",
+        "durationMs": 3222.0850839999994,
+        "actualMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "failureSignature": "e238d2a72efedf094b8fd4143b5e7cbcc7b3c50f6e212fbfba94899f17cb18f8",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 3286.7292500000012,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/runtimeShadow.ts",
+          "line": 33
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'major' customer/evidence/Book stays frozen",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Current-source legacy composer/current Reader projections were compared with earlier editorial source locks.",
+      "before": {
+        "status": "failed",
+        "durationMs": 1735.9988749999993,
+        "actualMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "failureSignature": "d66de860e5900f2bb99a6b2c7516429b3761027a6b3486540e790c1f90d9d873",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 1781.3324159999993,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/runtimeShadow.ts",
+          "line": 33
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'annual' customer/evidence/Book stays frozen",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Current-source legacy composer/current Reader projections were compared with earlier editorial source locks.",
+      "before": {
+        "status": "failed",
+        "durationMs": 1859.3615420000006,
+        "actualMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "failureSignature": "d66de860e5900f2bb99a6b2c7516429b3761027a6b3486540e790c1f90d9d873",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 1899.1286249999994,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/runtimeShadow.ts",
+          "line": 33
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'comprehensive' previous saved edition remains identical",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Current fresh generation was treated as an older saved edition; actual old snapshots are now also reopened.",
+      "before": {
+        "status": "failed",
+        "durationMs": 5424.699667000001,
+        "actualMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "failureSignature": "ce724c3f156d4c767d014b4938f759244dcbccd618345a605ee877b6f18ae0ed",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 5634.310582999999,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/book/careerBookAdapter.ts",
+          "line": 4
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'love' previous saved edition remains identical",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Current fresh generation was treated as an older saved edition; actual old snapshots are now also reopened.",
+      "before": {
+        "status": "failed",
+        "durationMs": 1334.5303749999948,
+        "actualMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "failureSignature": "ce724c3f156d4c767d014b4938f759244dcbccd618345a605ee877b6f18ae0ed",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 1366.6514580000003,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/book/careerBookAdapter.ts",
+          "line": 4
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'compatibility' previous saved edition remains identical",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Current fresh generation was treated as an older saved edition; actual old snapshots are now also reopened.",
+      "before": {
+        "status": "failed",
+        "durationMs": 3202.724957999999,
+        "actualMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "failureSignature": "ce724c3f156d4c767d014b4938f759244dcbccd618345a605ee877b6f18ae0ed",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 3279.213416999999,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/book/careerBookAdapter.ts",
+          "line": 4
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'major' previous saved edition remains identical",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Current fresh generation was treated as an older saved edition; actual old snapshots are now also reopened.",
+      "before": {
+        "status": "failed",
+        "durationMs": 1728.0994160000046,
+        "actualMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "failureSignature": "481c8ca75940f8920e12aa736615e00319f055101b84e1894cf80ed09249977e",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 1740.7050830000007,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/book/careerBookAdapter.ts",
+          "line": 4
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'annual' previous saved edition remains identical",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Current fresh generation was treated as an older saved edition; actual old snapshots are now also reopened.",
+      "before": {
+        "status": "failed",
+        "durationMs": 1826.4113339999967,
+        "actualMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+        "failureSignature": "481c8ca75940f8920e12aa736615e00319f055101b84e1894cf80ed09249977e",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 1867.8359169999967,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/book/careerBookAdapter.ts",
+          "line": 4
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+      "name": "section-specific allocations, reservations, fallback and budgets C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Synthetic candidates supplied recovery metadata without recovery meaning in sourceText, which the existing guard requires.",
+      "before": {
+        "status": "failed",
+        "durationMs": 2.9417080000000055,
+        "actualMessage": "AssertionError: expected [] to include 'composite'",
+        "failureSignature": "afeaa95b5c8b6ebda63d203f2f0f5232eb8d40d0c14ca0ba2701901e85b2bcf4",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 4.185832999999988,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/narrativeRecovery.ts",
+          "line": 4
+        },
+        {
+          "file": "src/lib/interpretation-v4/comprehensiveSectionContracts.ts",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+      "name": "section-specific allocations, reservations, fallback and budgets recovery-axis Fusion can serve C9 even when its original application is work",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Synthetic candidates supplied recovery metadata without recovery meaning in sourceText, which the existing guard requires.",
+      "before": {
+        "status": "failed",
+        "durationMs": 1.2417910000000063,
+        "actualMessage": "AssertionError: expected false to be true // Object.is equality",
+        "failureSignature": "d225597c8ef480012e944baae3ae8ec256255c98f78b67fc9cde6d8ddcd03ba3",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 0.14233300000000781,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/narrativeRecovery.ts",
+          "line": 4
+        },
+        {
+          "file": "src/lib/interpretation-v4/comprehensiveSectionContracts.ts",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+      "name": "actual 12-person review cohort and isolation scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "String matching counted explicit type-only imports and did not version approved execution edges.",
+      "before": {
+        "status": "failed",
+        "durationMs": 117.36804100000154,
+        "actualMessage": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/…/comprehensivePlanCore[\"']",
+        "failureSignature": "20db21f633136d8331762f3acc918d4aa4c682641b011dea21ab82ac2700a0ea",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 1965.8370829999985,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 10
+        },
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+      "name": "Phase13D-1A stays off all six product paths only foundation modules reference the foundation; no writer/UI/calculation import",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Outdated consumer allowlist counted type-only imports in approved product Reader modules.",
+      "before": {
+        "status": "failed",
+        "durationMs": 250.385916,
+        "actualMessage": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality",
+        "failureSignature": "a1f55e53ec4972c8d12de438eb758726640b0af04fdfba1fd51411cc64010cfb",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 1983.5342920000003,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 10
+        },
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/koreanNarrativeCore.test.ts",
+      "name": "narrative output is not accepted merely because it has source IDs no runtime/customer imports, dependencies, clocks, randomness, external services",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "String matching counted explicit type-only narrative memory imports.",
+      "before": {
+        "status": "failed",
+        "durationMs": 123.78174999999999,
+        "actualMessage": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/narrat…/narrativeMemory[\"']",
+        "failureSignature": "dcc29b8dd844367aba468fa619cde05af519bae0d6ea4e2ab144fcd2afb68bb4",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 2005.383209,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 10
+        },
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '01-business': base calculations, all 14 year stories, transitions and selection remain identical",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "A pre-interaction/pre-personalization aggregate included prose, years and integration alongside calculations.",
+      "before": {
+        "status": "failed",
+        "durationMs": 6.591207999999824,
+        "actualMessage": "AssertionError: expected '8083bc24276c5586ec058942b27600524131f…' to be 'ffc532f6be8bfa197ebe48d8657b4700a464f…' // Object.is equality",
+        "failureSignature": "709cd59f0e39661657b876e407aca89f625f5ac83969315f6b2014c5f2053a09",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 6.690708000000086,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/majorEvidenceReading.ts",
+          "line": 13
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '02-employee': base calculations, all 14 year stories, transitions and selection remain identical",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "A pre-interaction/pre-personalization aggregate included prose, years and integration alongside calculations.",
+      "before": {
+        "status": "failed",
+        "durationMs": 3.430957999999009,
+        "actualMessage": "AssertionError: expected '19ca502fb92b5dcbdba2f0ba6be3e6c5ba49f…' to be '975d59e600a7c35176969efc26824700f9deb…' // Object.is equality",
+        "failureSignature": "d0abcf385fa7a56104172b65cddb482684e109c07f1b2f8dd58bf61038fb3da5",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 4.984375,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/majorEvidenceReading.ts",
+          "line": 13
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '03-freelance': base calculations, all 14 year stories, transitions and selection remain identical",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "A pre-interaction/pre-personalization aggregate included prose, years and integration alongside calculations.",
+      "before": {
+        "status": "failed",
+        "durationMs": 3.3169159999997646,
+        "actualMessage": "AssertionError: expected 'ba50e8da08e85a81df99f25584e6556399e10…' to be '519a1615a8470eb16f005db27e172e6133b1c…' // Object.is equality",
+        "failureSignature": "cf359c11f61882542208cc5bf3d3023b3a317ed082dc8658e10b836f8bb8014f",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 4.572125000000597,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/majorEvidenceReading.ts",
+          "line": 13
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '04-time-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "A pre-interaction/pre-personalization aggregate included prose, years and integration alongside calculations.",
+      "before": {
+        "status": "failed",
+        "durationMs": 2.7041250000002037,
+        "actualMessage": "AssertionError: expected 'fab24c2772ad32df2d1310295b69a07769182…' to be '8be0cb81bd2f9c0166f81205ac10146a14406…' // Object.is equality",
+        "failureSignature": "7950d4b9611e44327bc1e9b9a32e089aa5df0d43862ce57c4384f0c4ecb32269",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 3.944499999999607,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/majorEvidenceReading.ts",
+          "line": 13
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '05-mbti-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "A pre-interaction/pre-personalization aggregate included prose, years and integration alongside calculations.",
+      "before": {
+        "status": "failed",
+        "durationMs": 2.986333000000741,
+        "actualMessage": "AssertionError: expected '24d6674e675d5e2567fe9c9dad6404f536c91…' to be 'e4db60ead95ac3c569338da41e7bdac344852…' // Object.is equality",
+        "failureSignature": "166c4d1fbab77b271894f6fa2eb9c57846b5ebe4d7549819b117c88d94980c32",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 4.041584000000512,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/majorEvidenceReading.ts",
+          "line": 13
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+      "name": "Major natal and cycle evidence separation '06-both-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "A pre-interaction/pre-personalization aggregate included prose, years and integration alongside calculations.",
+      "before": {
+        "status": "failed",
+        "durationMs": 2.688084000001254,
+        "actualMessage": "AssertionError: expected 'cc574e5b36614f4868bda18a73b34d0b00f2e…' to be '602e1a50b541da267119847a367181a970eb9…' // Object.is equality",
+        "failureSignature": "3893cbfbb1d997cdcf74a5ec7cfd587ebaa09e13152118e91184c0e2ae3c6312",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 3.6391250000015134,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/lib/interpretation-v4/majorEvidenceReading.ts",
+          "line": 13
+        },
+        {
+          "file": "tests/helpers/versionedEditorialLocks.ts",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "name": "customer Dayun production boundaries rejects major_fortune bypass before order writes and allows stable input",
+      "printedNameOccurrence": 1,
+      "classification": "TEST_ISOLATION_DEFECT",
+      "reason": "Non-public/missing Origin produced an empty403 before JSON parsing; current owner binding ports were also absent.",
+      "before": {
+        "status": "failed",
+        "durationMs": 7.475709000000052,
+        "actualMessage": "SyntaxError: Unexpected end of JSON input",
+        "failureSignature": "73d7b8e081074549f450f4cffde86ab5e5fa8f1ffe3d70b333c758d8e46cfd3d",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 67.94825,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/app/api/payment-checkout/prepare/route.ts",
+          "line": 318
+        },
+        {
+          "file": "src/lib/library/server.ts",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "name": "customer Dayun production boundaries rejects annual_fortune bypass before order writes and allows stable input",
+      "printedNameOccurrence": 1,
+      "classification": "TEST_ISOLATION_DEFECT",
+      "reason": "Non-public/missing Origin produced an empty403 before JSON parsing; current owner binding ports were also absent.",
+      "before": {
+        "status": "failed",
+        "durationMs": 0.7771669999999631,
+        "actualMessage": "SyntaxError: Unexpected end of JSON input",
+        "failureSignature": "73d7b8e081074549f450f4cffde86ab5e5fa8f1ffe3d70b333c758d8e46cfd3d",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 42.91587500000003,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/app/api/payment-checkout/prepare/route.ts",
+          "line": 318
+        },
+        {
+          "file": "src/lib/library/server.ts",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts",
+      "name": "preserves all 3073 pre-existing source/test/knowledge/report files byte for byte",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Immutable research file receipts predate exact Publication Safety and Vercel tracing fixes; preserve receipts and verify revision chains.",
+      "before": {
+        "status": "failed",
+        "durationMs": 190.50462500000003,
+        "actualMessage": "AssertionError: src/lib/interpretation-v4/compatibilityProductAdapter.ts: expected 'a02bfc2e1cfab018a8b1fa8ab43e679aec6a1…' to be 'bfc8e0844c7eb5bf0711c463745fda00b1cae…' // Object.is equality",
+        "failureSignature": "de618ec9d83da2c64006d21721bba57b8d656c066723c1dbe1427e9d7e17e6cf",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 162.16791599999988,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/helpers/versionedProtection.ts",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts",
+      "name": "preserves all 2755 pre-existing tracked source/test/knowledge/report files byte for byte",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Immutable research file receipts predate exact Publication Safety and Vercel tracing fixes; preserve receipts and verify revision chains.",
+      "before": {
+        "status": "failed",
+        "durationMs": 118.20045900000014,
+        "actualMessage": "AssertionError: src/lib/interpretation-v4/compatibilityProductAdapter.ts: expected 'a02bfc2e1cfab018a8b1fa8ab43e679aec6a1…' to be 'bfc8e0844c7eb5bf0711c463745fda00b1cae…' // Object.is equality",
+        "failureSignature": "d82847af51034c04a3c57a98420ec9ec39f8cbaf5b33a88a133d392b7bbae4d6",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 140.611042,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/helpers/versionedProtection.ts",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityLoveResearch.test.ts",
+      "name": "preserves all 2435 existing tracked source, research, Book and fixture hashes",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Immutable research file receipts predate exact Publication Safety and Vercel tracing fixes; preserve receipts and verify revision chains.",
+      "before": {
+        "status": "failed",
+        "durationMs": 99.74716699999999,
+        "actualMessage": "AssertionError: src/lib/interpretation-v4/compatibilityProductAdapter.ts: expected 'a02bfc2e1cfab018a8b1fa8ab43e679aec6a1…' to be 'bfc8e0844c7eb5bf0711c463745fda00b1cae…' // Object.is equality",
+        "failureSignature": "0939fe3d4124a7c785bec613efb3b7cf6b5b323678b1a5bc3a0cc9602e1b7493",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 125.05658299999982,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/helpers/versionedProtection.ts",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts",
+      "name": "preserves all 2904 pre-existing tracked source/test/knowledge/report files byte for byte",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Immutable research file receipts predate exact Publication Safety and Vercel tracing fixes; preserve receipts and verify revision chains.",
+      "before": {
+        "status": "failed",
+        "durationMs": 218.1472920000001,
+        "actualMessage": "AssertionError: src/lib/interpretation-v4/compatibilityProductAdapter.ts: expected 'a02bfc2e1cfab018a8b1fa8ab43e679aec6a1…' to be 'bfc8e0844c7eb5bf0711c463745fda00b1cae…' // Object.is equality",
+        "failureSignature": "9f6930bb4d670ed3a06aaf77ff3b327f5e523def481fbe0944c76ec173ed19d0",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 145.27962500000012,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/helpers/versionedProtection.ts",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts",
+      "name": "preserves 2531 original tracked source, research, UI, Book, contract and fixture files",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Immutable research file receipts predate exact Publication Safety and Vercel tracing fixes; preserve receipts and verify revision chains.",
+      "before": {
+        "status": "failed",
+        "durationMs": 113.75712500000003,
+        "actualMessage": "AssertionError: src/lib/interpretation-v4/compatibilityProductAdapter.ts: expected 'a02bfc2e1cfab018a8b1fa8ab43e679aec6a1…' to be 'bfc8e0844c7eb5bf0711c463745fda00b1cae…' // Object.is equality",
+        "failureSignature": "4b30590d132427bf6aeb0fd3e21abdb26763768737387731a7f0332a5235e1de",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 136.30095799999998,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/helpers/versionedProtection.ts",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts",
+      "name": "preserves 2639 original tracked source/research/Book/UI/test hashes",
+      "printedNameOccurrence": 1,
+      "classification": "HISTORICAL_VERSION_MISMATCH",
+      "reason": "Immutable research file receipts predate exact Publication Safety and Vercel tracing fixes; preserve receipts and verify revision chains.",
+      "before": {
+        "status": "failed",
+        "durationMs": 119.920208,
+        "actualMessage": "AssertionError: src/lib/interpretation-v4/compatibilityProductAdapter.ts: expected 'a02bfc2e1cfab018a8b1fa8ab43e679aec6a1…' to be 'bfc8e0844c7eb5bf0711c463745fda00b1cae…' // Object.is equality",
+        "failureSignature": "e59b968edaec341a3a4a295096fa44cad9910e2e4dba400f8685e61044e07392",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 144.101792,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/helpers/versionedProtection.ts",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'career': every original paragraph and final line in original order",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Saved Reader titles/purposes and transition display were compared with older Writer titles/single-cycle display.",
+      "before": {
+        "status": "failed",
+        "durationMs": 1.9647079999995185,
+        "actualMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [ '도울 범위를 먼저 정하세요', '중요한 오류부터 보세요' ] to include '나는 어떻게 일하는 사람인가'",
+        "failureSignature": "9826006b5770aab90094bc71a794ae2ff79f4454a7d1085d7903120a23a38bfc",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 9.598291000002064,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/app/dev/book-preview/bookProjection.ts",
+          "line": 88
+        },
+        {
+          "file": "src/lib/interpretation-v4/majorPeriodCopy.ts",
+          "line": 4
+        },
+        {
+          "file": "src/lib/book/compatibilityBookAdapter.ts",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'love': every original paragraph and final line in original order",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Saved Reader titles/purposes and transition display were compared with older Writer titles/single-cycle display.",
+      "before": {
+        "status": "failed",
+        "durationMs": 0.27741599999717437,
+        "actualMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '사랑할 때의 나'",
+        "failureSignature": "38802bdb892d1c8a599d04e1d6a34bb31f790f65256a2777ed686ef5323776a8",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 9.600040999997873,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/app/dev/book-preview/bookProjection.ts",
+          "line": 88
+        },
+        {
+          "file": "src/lib/interpretation-v4/majorPeriodCopy.ts",
+          "line": 4
+        },
+        {
+          "file": "src/lib/book/compatibilityBookAdapter.ts",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'compatibility': every original paragraph and final line in original order",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Saved Reader titles/purposes and transition display were compared with older Writer titles/single-cycle display.",
+      "before": {
+        "status": "failed",
+        "durationMs": 0.18266700000094716,
+        "actualMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "failureSignature": "e744a1ef9ea5334d90fdddefe9662e9ef37bf2abf5539f1d536ac06430941fc0",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 13.093458000003011,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/app/dev/book-preview/bookProjection.ts",
+          "line": 88
+        },
+        {
+          "file": "src/lib/interpretation-v4/majorPeriodCopy.ts",
+          "line": 4
+        },
+        {
+          "file": "src/lib/book/compatibilityBookAdapter.ts",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-02-marriage': every original paragraph and final line in original order",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Saved Reader titles/purposes and transition display were compared with older Writer titles/single-cycle display.",
+      "before": {
+        "status": "failed",
+        "durationMs": 0.2812080000003334,
+        "actualMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "failureSignature": "e744a1ef9ea5334d90fdddefe9662e9ef37bf2abf5539f1d536ac06430941fc0",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 5.091874999998254,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/app/dev/book-preview/bookProjection.ts",
+          "line": 88
+        },
+        {
+          "file": "src/lib/interpretation-v4/majorPeriodCopy.ts",
+          "line": 4
+        },
+        {
+          "file": "src/lib/book/compatibilityBookAdapter.ts",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-03-parent': every original paragraph and final line in original order",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Saved Reader titles/purposes and transition display were compared with older Writer titles/single-cycle display.",
+      "before": {
+        "status": "failed",
+        "durationMs": 0.18312500000320142,
+        "actualMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "failureSignature": "e744a1ef9ea5334d90fdddefe9662e9ef37bf2abf5539f1d536ac06430941fc0",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 3.977334000002884,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/app/dev/book-preview/bookProjection.ts",
+          "line": 88
+        },
+        {
+          "file": "src/lib/interpretation-v4/majorPeriodCopy.ts",
+          "line": 4
+        },
+        {
+          "file": "src/lib/book/compatibilityBookAdapter.ts",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-04-coworker': every original paragraph and final line in original order",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Saved Reader titles/purposes and transition display were compared with older Writer titles/single-cycle display.",
+      "before": {
+        "status": "failed",
+        "durationMs": 0.1297500000000582,
+        "actualMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "failureSignature": "e744a1ef9ea5334d90fdddefe9662e9ef37bf2abf5539f1d536ac06430941fc0",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 4.672791999997571,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/app/dev/book-preview/bookProjection.ts",
+          "line": 88
+        },
+        {
+          "file": "src/lib/interpretation-v4/majorPeriodCopy.ts",
+          "line": 4
+        },
+        {
+          "file": "src/lib/book/compatibilityBookAdapter.ts",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-05-manager': every original paragraph and final line in original order",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Saved Reader titles/purposes and transition display were compared with older Writer titles/single-cycle display.",
+      "before": {
+        "status": "failed",
+        "durationMs": 0.11208299999998417,
+        "actualMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "failureSignature": "e744a1ef9ea5334d90fdddefe9662e9ef37bf2abf5539f1d536ac06430941fc0",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 3.8147080000053393,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/app/dev/book-preview/bookProjection.ts",
+          "line": 88
+        },
+        {
+          "file": "src/lib/interpretation-v4/majorPeriodCopy.ts",
+          "line": 4
+        },
+        {
+          "file": "src/lib/book/compatibilityBookAdapter.ts",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-06-business': every original paragraph and final line in original order",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Saved Reader titles/purposes and transition display were compared with older Writer titles/single-cycle display.",
+      "before": {
+        "status": "failed",
+        "durationMs": 0.09437500000058208,
+        "actualMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "failureSignature": "e744a1ef9ea5334d90fdddefe9662e9ef37bf2abf5539f1d536ac06430941fc0",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 3.647917000002053,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/app/dev/book-preview/bookProjection.ts",
+          "line": 88
+        },
+        {
+          "file": "src/lib/interpretation-v4/majorPeriodCopy.ts",
+          "line": 4
+        },
+        {
+          "file": "src/lib/book/compatibilityBookAdapter.ts",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-07-friend': every original paragraph and final line in original order",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Saved Reader titles/purposes and transition display were compared with older Writer titles/single-cycle display.",
+      "before": {
+        "status": "failed",
+        "durationMs": 0.1301660000026459,
+        "actualMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "failureSignature": "e744a1ef9ea5334d90fdddefe9662e9ef37bf2abf5539f1d536ac06430941fc0",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 3.444167000001471,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/app/dev/book-preview/bookProjection.ts",
+          "line": 88
+        },
+        {
+          "file": "src/lib/interpretation-v4/majorPeriodCopy.ts",
+          "line": 4
+        },
+        {
+          "file": "src/lib/book/compatibilityBookAdapter.ts",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-08-love': every original paragraph and final line in original order",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Saved Reader titles/purposes and transition display were compared with older Writer titles/single-cycle display.",
+      "before": {
+        "status": "failed",
+        "durationMs": 0.1041250000052969,
+        "actualMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+        "failureSignature": "e744a1ef9ea5334d90fdddefe9662e9ef37bf2abf5539f1d536ac06430941fc0",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 3.3519579999992857,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/app/dev/book-preview/bookProjection.ts",
+          "line": 88
+        },
+        {
+          "file": "src/lib/interpretation-v4/majorPeriodCopy.ts",
+          "line": 4
+        },
+        {
+          "file": "src/lib/book/compatibilityBookAdapter.ts",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 14 years, 10 future years, all ages, transitions and clickable full narratives",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Saved Reader titles/purposes and transition display were compared with older Writer titles/single-cycle display.",
+      "before": {
+        "status": "failed",
+        "durationMs": 1.2463340000031167,
+        "actualMessage": "AssertionError: expected [ 2031, 48, '丁卯 → 丙寅', '辛亥', …(1) ] to deeply equal [ 2031, 48, '丙寅', '辛亥', …(1) ]",
+        "failureSignature": "1e15cadc35a0c797cc0600b48050b58bdf964ac4afb82076ba3eecf7ac2f6957",
+        "fullErrorEvidence": "before-baseline/related.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 0.2817919999943115,
+        "evidence": "after-verified/related.json"
+      },
+      "relatedCode": [
+        {
+          "file": "src/app/dev/book-preview/bookProjection.ts",
+          "line": 88
+        },
+        {
+          "file": "src/lib/interpretation-v4/majorPeriodCopy.ts",
+          "line": 4
+        },
+        {
+          "file": "src/lib/book/compatibilityBookAdapter.ts",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "name": "roles, precision and customer/default boundaries '01-love': fixed roles and distinct direction survive JSON",
+      "printedNameOccurrence": 1,
+      "classification": "PERFORMANCE_TIMEOUT",
+      "reason": "One5000ms test generated both the reference and swapped full Book; no SQL occurs in these eight pair bodies.",
+      "before": {
+        "status": "failed",
+        "durationMs": 6581.682000000001,
+        "actualMessage": "Error: STACK_TRACE_ERROR",
+        "failureSignature": "1418e8089a0d4cbf4e35533c9ab0ffc6f6704ae66ceb69e99e5212412dabfce0",
+        "fullErrorEvidence": "before-baseline/runtime.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 3199.9858340000064,
+        "evidence": "after-verified/runtime.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+          "line": 196
+        },
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "name": "roles, precision and customer/default boundaries '02-marriage': fixed roles and distinct direction survive JSON",
+      "printedNameOccurrence": 1,
+      "classification": "PERFORMANCE_TIMEOUT",
+      "reason": "One5000ms test generated both the reference and swapped full Book; no SQL occurs in these eight pair bodies.",
+      "before": {
+        "status": "failed",
+        "durationMs": 5191.835792000005,
+        "actualMessage": "Error: STACK_TRACE_ERROR",
+        "failureSignature": "1418e8089a0d4cbf4e35533c9ab0ffc6f6704ae66ceb69e99e5212412dabfce0",
+        "fullErrorEvidence": "before-baseline/runtime.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 2532.1925420000043,
+        "evidence": "after-verified/runtime.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+          "line": 196
+        },
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "name": "roles, precision and customer/default boundaries '03-parent': fixed roles and distinct direction survive JSON",
+      "printedNameOccurrence": 1,
+      "classification": "PERFORMANCE_TIMEOUT",
+      "reason": "One5000ms test generated both the reference and swapped full Book; no SQL occurs in these eight pair bodies.",
+      "before": {
+        "status": "failed",
+        "durationMs": 6021.017666,
+        "actualMessage": "Error: STACK_TRACE_ERROR",
+        "failureSignature": "1418e8089a0d4cbf4e35533c9ab0ffc6f6704ae66ceb69e99e5212412dabfce0",
+        "fullErrorEvidence": "before-baseline/runtime.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 2949.393250000001,
+        "evidence": "after-verified/runtime.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+          "line": 196
+        },
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "name": "roles, precision and customer/default boundaries '04-coworker': fixed roles and distinct direction survive JSON",
+      "printedNameOccurrence": 1,
+      "classification": "PERFORMANCE_TIMEOUT",
+      "reason": "One5000ms test generated both the reference and swapped full Book; no SQL occurs in these eight pair bodies.",
+      "before": {
+        "status": "failed",
+        "durationMs": 8687.239416000004,
+        "actualMessage": "Error: STACK_TRACE_ERROR",
+        "failureSignature": "1418e8089a0d4cbf4e35533c9ab0ffc6f6704ae66ceb69e99e5212412dabfce0",
+        "fullErrorEvidence": "before-baseline/runtime.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 4264.485708000007,
+        "evidence": "after-verified/runtime.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+          "line": 196
+        },
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "name": "roles, precision and customer/default boundaries '05-manager': fixed roles and distinct direction survive JSON",
+      "printedNameOccurrence": 1,
+      "classification": "PERFORMANCE_TIMEOUT",
+      "reason": "One5000ms test generated both the reference and swapped full Book; no SQL occurs in these eight pair bodies.",
+      "before": {
+        "status": "failed",
+        "durationMs": 6380.603209000008,
+        "actualMessage": "Error: STACK_TRACE_ERROR",
+        "failureSignature": "1418e8089a0d4cbf4e35533c9ab0ffc6f6704ae66ceb69e99e5212412dabfce0",
+        "fullErrorEvidence": "before-baseline/runtime.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 3119.012832999986,
+        "evidence": "after-verified/runtime.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+          "line": 196
+        },
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "name": "roles, precision and customer/default boundaries '06-business': fixed roles and distinct direction survive JSON",
+      "printedNameOccurrence": 1,
+      "classification": "PERFORMANCE_TIMEOUT",
+      "reason": "One5000ms test generated both the reference and swapped full Book; no SQL occurs in these eight pair bodies.",
+      "before": {
+        "status": "failed",
+        "durationMs": 7399.467291000008,
+        "actualMessage": "Error: STACK_TRACE_ERROR",
+        "failureSignature": "1418e8089a0d4cbf4e35533c9ab0ffc6f6704ae66ceb69e99e5212412dabfce0",
+        "fullErrorEvidence": "before-baseline/runtime.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 3666.372417000006,
+        "evidence": "after-verified/runtime.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+          "line": 196
+        },
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "name": "roles, precision and customer/default boundaries '07-friend': fixed roles and distinct direction survive JSON",
+      "printedNameOccurrence": 1,
+      "classification": "PERFORMANCE_TIMEOUT",
+      "reason": "One5000ms test generated both the reference and swapped full Book; no SQL occurs in these eight pair bodies.",
+      "before": {
+        "status": "failed",
+        "durationMs": 5784.311625000002,
+        "actualMessage": "Error: STACK_TRACE_ERROR",
+        "failureSignature": "1418e8089a0d4cbf4e35533c9ab0ffc6f6704ae66ceb69e99e5212412dabfce0",
+        "fullErrorEvidence": "before-baseline/runtime.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 2815.898583000002,
+        "evidence": "after-verified/runtime.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+          "line": 196
+        },
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "name": "roles, precision and customer/default boundaries '08-love': fixed roles and distinct direction survive JSON",
+      "printedNameOccurrence": 1,
+      "classification": "PERFORMANCE_TIMEOUT",
+      "reason": "One5000ms test generated both the reference and swapped full Book; no SQL occurs in these eight pair bodies.",
+      "before": {
+        "status": "failed",
+        "durationMs": 5249.552374999999,
+        "actualMessage": "Error: STACK_TRACE_ERROR",
+        "failureSignature": "1418e8089a0d4cbf4e35533c9ab0ffc6f6704ae66ceb69e99e5212412dabfce0",
+        "fullErrorEvidence": "before-baseline/runtime.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 2561.79574999999,
+        "evidence": "after-verified/runtime.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+          "line": 196
+        },
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "name": "roles, precision and customer/default boundaries no public route or default runtime imports shadow generation, projection or renderer",
+      "printedNameOccurrence": 1,
+      "classification": "STALE_TEST_EXPECTATION",
+      "reason": "Whole-src scanning conflated isolated offline Publication modules with reachable customer execution dependencies.",
+      "before": {
+        "status": "failed",
+        "durationMs": 44.5340409999917,
+        "actualMessage": "AssertionError: lib/interpretation-v4/publication-safety/ancestry.ts: expected 'import type { RelationshipView } from…' not to match /(?:from\\s*|import\\s*\\()[\"'][^\"']*(?:r…/",
+        "failureSignature": "58f04c7d030914fc1c05742cb1f1ac4f3fc8c65c93959e87868cedf3ad228ee8",
+        "fullErrorEvidence": "before-baseline/runtime.json"
+      },
+      "after": {
+        "status": "passed",
+        "durationMs": 2535.035707999996,
+        "evidence": "after-verified/runtime.json"
+      },
+      "relatedCode": [
+        {
+          "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+          "line": 196
+        },
+        {
+          "file": "tests/helpers/moduleDependencyGraph.ts",
+          "line": 56
+        }
+      ]
+    }
+  ],
+  "historicalNotReproduced": [
+    {
+      "file": "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistEngine.test.ts",
+      "name": "creates genuine deterministic artifacts with no input data and no errors",
+      "classification": "UNDETERMINED",
+      "historicalReportedFailure": true,
+      "reproduced": false,
+      "beforeStatus": "passed",
+      "beforeDurationMs": 3425.6981249999953,
+      "afterStatus": "passed",
+      "afterDurationMs": 3416.3215839999903,
+      "resolution": "No engine/artifact code change; do not attribute causality to Node version without a controlled comparison."
+    }
+  ],
+  "classificationCounts": {
+    "HISTORICAL_VERSION_MISMATCH": 28,
+    "PERFORMANCE_TIMEOUT": 8,
+    "STALE_TEST_EXPECTATION": 17,
+    "TEST_ISOLATION_DEFECT": 2
+  },
+  "rawEvidenceRoot": "/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01",
+  "additionalUiHook": {
+    "file": "tests/unit/app/dev/bookReading13b.test.tsx",
+    "sourceSha": "7ef25fcc0ae6f7765473433a826cb7cf96068a7b",
+    "fileSha256": "0300db25f1e78aba177a6c633a3714599afecd627201c5443c23e4de5e7d1b6a",
+    "exactBaseTestAndRuntimeUnchanged": true,
+    "actualError": "Hook timed out in 10000ms.",
+    "suiteFailed": 1,
+    "assertionsNotRun": 16,
+    "rawEvidence": "after-final/ui.json",
+    "afterUiPass": 163,
+    "afterSkipped": 0,
+    "scope": "Additional UI validation; not part of original55 failed test identities",
+    "relatedCode": [
+      {
+        "file": "tests/unit/app/dev/bookReading13b.test.tsx",
+        "line": 15
+      }
+    ],
+    "timeoutSettingsChanged": false
+  }
+}

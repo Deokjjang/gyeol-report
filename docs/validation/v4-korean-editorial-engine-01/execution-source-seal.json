@@ -1,0 +1,82 @@
+[
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/approvalIntake.ts",
+    "sha256": "c1f62a01dbb9704a4553d499608ef445821d08578879ff2be8e8a4c633ca5f8e"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/claimEnvelope.ts",
+    "sha256": "fb3b173c031d18dec889cf2da21ab71de9b8546bf3b5b5ab1e2b98bdd3ceb4bf"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/editorialInput.ts",
+    "sha256": "5de97df3f9a3c2db46ef3c4e81cbbb9f751af6d6ba09a0cf555af4d776467ce5"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/engine.ts",
+    "sha256": "285c376533fc253e0948dd01c352550830d77d864d847228920bf4271350aa3c"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/introducedMeaningLedger.ts",
+    "sha256": "3dca69172f70aa21c5b6d87be11fcdc26a14dc5fdae1ecd4d6e7a3fe1cbb5764"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/meaningPreservation.ts",
+    "sha256": "436ca834f77cfeff7c360163b0ef287cd86b5be85644215f8125403beb10aa09"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/narrativeMemoryAdapter.ts",
+    "sha256": "070e6373f30ba12c6a291dd0920de8bddbf4acbf38e8c0cc35f2af4fc13a1879"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/researchRegistry.ts",
+    "sha256": "01e48ca0fd223afe1f139e6113a7070335eee074d0d28019ad9219c6afc901bb"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/researchValidation.ts",
+    "sha256": "3e9493ee46e1033f0a9a40aba3931365c37f2d08703a8c4740419f4877a87aaa"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/semanticRepetition.ts",
+    "sha256": "0304e3f5d0c60163f957bbb0cc09d49d7cfc461c4ff00fbc5fc19f78d3b67c77"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/sentenceComposer.ts",
+    "sha256": "bff6aba90fb07753c540a52e8eedca0a1bc51a7fa52e0d73f0f88a2cc72d257f"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/sourcePin.ts",
+    "sha256": "aac9c17f810b0736dc1581e23fcf93eb172c4a2fcb81375949a0c41064548be1"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/termExplanation.ts",
+    "sha256": "97f9e4b366f2d21022de1d09f48aeca38e2e81837dc264a6244f7b802b6fd765"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/transitionComposer.ts",
+    "sha256": "0ad897b6f918376dce7787f4e63bf06ba98e16ceb9d33f05a907d8aebd4c4eee"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/typedKoreanSlots.ts",
+    "sha256": "b91fd6d619a3816cc2924f98cd2072927b2eba37250bdb378d510276406a268b"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/types.ts",
+    "sha256": "b1c9300ca82ee33a0cdd6ddd47f88b949e5fda21ce6ce0b62b5f859e85461786"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/wholeDraftAudit.ts",
+    "sha256": "9ece020ffce5192f493ec8284b33817fad7be542c83f9d62972f016e6d24b7d6"
+  },
+  {
+    "file": "tests/fixtures/korean-editorial-engine-01/synthetic-meaning-definitions.json",
+    "sha256": "3b647c517411b18e22c31fee54ec9a3cc18e6d59bfaec7c6dd4e0433cb0e579d"
+  },
+  {
+    "file": "tools/korean-editorial-engine/bootstrap.mjs",
+    "sha256": "9e1fb8ebfd592e2ce63c47beca7f19727c88013cbe52241cf0ff020f83d95ac0"
+  },
+  {
+    "file": "tools/korean-editorial-engine/verify.mjs",
+    "sha256": "c5793be70819b78f18a7e95a20db4268160931685a5b0469853123dbd2ac7612"
+  }
+]

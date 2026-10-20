@@ -1,0 +1,11 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-compatibility-business-partner-product-knowledge-01
+
+ ✓ tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts (1362 tests) 1792ms
+
+ Test Files  1 passed (1)
+      Tests  1362 passed (1362)
+   Start at  05:48:43
+   Duration  3.45s (transform 1.09s, setup 18ms, import 1.45s, tests 1.79s, environment 0ms)
+
+JSON report written to /tmp/gyeol-compatibility-business-partner-knowledge-validation/new-static.json

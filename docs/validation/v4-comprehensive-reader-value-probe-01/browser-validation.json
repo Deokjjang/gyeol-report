@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "browser": "155.0.8059.84",
+  "scheme": "file://",
+  "AExactParagraphs": 8,
+  "BExactParagraphs": 8,
+  "layouts": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "pairsChecked": 8,
+      "horizontalOverflow": 0,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "pairsChecked": 8,
+      "horizontalOverflow": 0,
+      "status": "PASS"
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "pairsChecked": 8,
+      "horizontalOverflow": 0,
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "pairsChecked": 8,
+      "horizontalOverflow": 0,
+      "status": "PASS"
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "pairsChecked": 8,
+      "horizontalOverflow": 0,
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "pairsChecked": 8,
+      "horizontalOverflow": 0,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "pairsChecked": 8,
+      "horizontalOverflow": 0,
+      "status": "PASS"
+    }
+  ],
+  "externalRequests": 0,
+  "pageErrors": [],
+  "screenshots": 14,
+  "cua": "UNAVAILABLE_NATIVE_PIPE",
+  "humanReaderApproval": false,
+  "htmlSha256": "5be22a962a5193991e8de16f55d7a8f827f0e35ae436572cffdfd0c1b8cd5ff3",
+  "screenshotsExternalDirectory": "/tmp/gyeol-comprehensive-reader-value-probe-01-validation/browser-final",
+  "actualBrowserExecuted": true,
+  "cuaFailure": "Sky Computer Use native pipe startup failed",
+  "verificationMethod": "Existing user-authorized independent Playwright alternative, actual installed Google Chrome; no customer service accessed"
+}

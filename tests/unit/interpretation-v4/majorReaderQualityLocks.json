@@ -1,0 +1,94 @@
+{
+  "major": {
+    "S": {
+      "invariant": "91441cc29464204c4883214bb03bb3884294770a66ce5d56f5cfc5d7e300cc79",
+      "evidence": "07fb430d537e7e1d6b517f984bfa35c9e36e994523b379629be552161a6d30a9",
+      "materials": "1ee63fe06524b834c3e29b10685366ca13a627ee5def818d1dcc3dd1dc9f9cd7",
+      "integration": "fd65085883444edeaa255ebece22451e287275fe949d6607cb074f1c6776afd4"
+    },
+    "A": {
+      "invariant": "f31977c9ac96247ed04a2cb2a49075242a76d707dc5d3c47c2b4728026df8893",
+      "evidence": "9fc2b536083b77743ad25774836d9fb956dc314c3e0596cd25051ae3797cc486",
+      "materials": "3f568f80cac2cbb2e05113d3f20369c61a7426cc0808b46b928bddb0c683d714",
+      "integration": "c0f3030a22089123539630686dfbbe24abb953baf4a0a73849d7c44e4eeba4ea"
+    },
+    "B": {
+      "invariant": "316e4deaf6510293027d68d3563cc0d1e275cffb9bbd57c4ef02f46360817307",
+      "evidence": "9e756dfb729a1ee39ee49f05d35014c5034f9371631eecd01a049be2cb00b01e",
+      "materials": "c64115ac21c9e8d158e9d5b028629c1b919fc72c1e4d11f7f2fece98a5c5735d",
+      "integration": "21d13f9c4f2f1890a67abf4b2f4fab1370a95efeb637e17983a18084a160fc1f"
+    },
+    "C": {
+      "invariant": "f12944e33535fda96231d2899592a1c8ca88481c8810644949d47b465193e23b",
+      "evidence": "d65afd2b28217b9e3291932202ae6a5d612faba62ed43b8c9e71a01674e9e698",
+      "materials": "3565bdb1051839462112048a105a9554756ce252924cba5634f0c1c2f06fb6dd",
+      "integration": "eab479316c5e7e61cdff18d589b78df4b397b263e38b54a684037f8492303586"
+    },
+    "D": {
+      "invariant": "7198207175ebff62f9870bde1638706090726955a80ec86d8da750b15abeb86f",
+      "evidence": "79a20f83248ea43662cbbd83e030b20c97bedafda24fc167f1047c2b68e5ae8e",
+      "materials": "6738c47062d40b54bbf4220c4cf60852c282772633f4d1303e2ecefa24c946cd",
+      "integration": "e7b782f0f1b5fb95aeb8d83033d0793c2104134e8c3993846e0afbc19b0c5ec8"
+    },
+    "E": {
+      "invariant": "57697606a4a8ec3dec8582fd952dc93fbc8f5f31b0beb52dba02b87b8cc025ab",
+      "evidence": "ecd7606d9aec0c54ada5a0988cdfc30dca56c118cb6e9a6ba9e094fa41235e5e",
+      "materials": "57afb8d0b055c32faa64b973752b51764fdf2ddf677e4033660d1373b89f6083",
+      "integration": "d1511193a9dcaac8fa193356ae32dc3f7a9abfb0449dd26c6cf44a420af3da64"
+    },
+    "F": {
+      "invariant": "a4d433d2fc4a8797268c1134c1913c6e7586daf344e48ebf75a9b98fa37b4a0b",
+      "evidence": "471f11090be9cc6b471ecb7739c3ea9b66ca2d5273422f10a53bef14eb7e2d78",
+      "materials": "e516d33072762c5ac82a97eecaf8686aaf21fffe1f4983af261d53b679e18278",
+      "integration": "0c7a9ed8de2ef6f7ffb68ec78cc3a15c940ece0f3a26e81ad3502d9983713f14"
+    },
+    "S-mbti": {
+      "invariant": "05e5fd1917adef0b3b8f2adf37420b4293cb5141db4d5dcf4ba04431fd514ee0",
+      "evidence": "d5357098bb6298b13f521094672fba8d982962cc0a1a206b9aa749e52fac8a5d",
+      "materials": "7ce73e42cdce7020b70abc05c45010eff905abdf264ab158dd78a3ca4fa0cb9d",
+      "integration": "d608083ad61ad11672128ac2e17f9f903f481935a8e548f937878a6f2e9de69a"
+    }
+  },
+  "products": [
+    {
+      "id": "comprehensive",
+      "hashes": [
+        "7abeaf415fc6e3987f97d5a23660c44de3b2b0555b17d6e7dd4962251849b6df",
+        "6ed9845f3ab3e51cd931fb6874896e145782a2bb947ea0f08285b14ac365474b",
+        "97459f69939fee39262792904e71b1d420c2f3c52a8fd8a0f154c195f4be41bc"
+      ]
+    },
+    {
+      "id": "career",
+      "hashes": [
+        "368426a0cba516edb3c2a03c8e39fdb55b43fe71518d41e1d90cdb56c8aae00c",
+        "f504f0f15192552fcb5c381a864578b1685209cf56b5745fea780de4498a1baf",
+        "e8d399f062652f3a9f8aff4d5265771efc7ee9514d7f417aeb89f6571d3ad854"
+      ]
+    },
+    {
+      "id": "love",
+      "hashes": [
+        "8009c7ebb1e39c0b170eca7a3266a2869d8cbcc0b344b405e1e76bdd996bcacd",
+        "f90888772090919866699ccd01cfaf47fae49d15512e16696e3771521e387701",
+        "13eb072c1cf38f0452ad9fab4066fc103244dc288ea1d887cda09f9c07b05aae"
+      ]
+    },
+    {
+      "id": "compatibility",
+      "hashes": [
+        "bddfc2dc4be673fc2b23b173c95c47c144be6c21be7d4d921a941d9c0e43e749",
+        "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+        "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+      ]
+    },
+    {
+      "id": "annual",
+      "hashes": [
+        "3001a277e3a7023f5fb90d2b127ec2e18c9f34d8c6c8d05c4e485291be1ed1d6",
+        "654c5764944af0a6f29bde9fb0c9dbeb437c77f1abdb87201a7cf5b47866613a",
+        "da0bc604b4ded64cbfa83349cf8054fb8fef57102e4b2e6a6bfca21f45577944"
+      ]
+    }
+  ]
+}

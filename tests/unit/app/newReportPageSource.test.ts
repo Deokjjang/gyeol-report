@@ -50,7 +50,7 @@ describe("new report page source", () => {
       "전체 리포트",
       "종합 리포트",
       "판매가",
-      "결제금액 1,290원",
+      "결제금액 ${REPORT_PRICE_LABEL_KO}",
       "열람 기간",
       "90일",
       "자동 생성 디지털 리포트",

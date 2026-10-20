@@ -1,0 +1,2072 @@
+[
+  {
+    "candidate": "synthetic:friendship:material:CH01.P1.S1",
+    "receipt": "8a23fe1d6987b0dd6befa660d0fa598a005d59f489060fbe8192d115d998cbec",
+    "evidenceIds": [
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:9f6935fb53113b0487da73ac66e45569a36d5d5f95e1f8f96c1663f3533f0185",
+      "aeg:node:b92308886ed1606d8f4f5fb163a927ba058367eced8beaf42fe7586c3678e84a"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P1.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P1.S2",
+    "receipt": "3d6cf463a3c2866714d99ed342b92a94212ffb438d3c293bbc62da1d7e5711e1",
+    "evidenceIds": [
+      "aeg:node:8523c67fea762e09f4926b544a93bf72ae7f69a773b2e32c6a31970c452e5d5e",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:df2457f3103e585be5b11cc7bb6fcb88efb5f02fc7831a4da4a5e4df5a4043e7"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P1.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P1.S3",
+    "receipt": "30cf7223cd1f9340397419b77b39ff154a8a840f04d8a93ee18e5903614702c4",
+    "evidenceIds": [
+      "aeg:node:75f170105d5e3d9f47c459bc98f7f6bddb8acff236d9b76fd110f0f56e3179de",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:8ac74478975901adf1045db9f86e9af27469afae35e43992984a681801ae0cb3",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P1.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P1.S4",
+    "receipt": "79cca7670bc9d031c65bb4598f2ce3ae673aee87bab3753b6f44499cf6807ca1",
+    "evidenceIds": [
+      "aeg:node:17f7bf96f6891344eff096350eca1240f309755a2abf8892bc5e8fa2f573eb2f",
+      "aeg:node:858b21f1211e9ee9ad755fdca111e749f3c894d482e68162d209420cd6e20115",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P1.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P2",
+    "receipt": "d9b5fe0f2c1c08cf12fa358c5af9d465df56748638f9b0eb907f0b8463e84717",
+    "evidenceIds": [
+      "aeg:node:3236621874627ab2944ac179810c5f7306456debb74f31fed5e39ec78a3b7ae9",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a313d8bc3850860b6993855aa7a3ebd88c2ea715f717d5d7ed465ad3ad11cc08",
+      "aeg:node:b2f1b17c702958180d2056a56e3040d26264bbea520c66d7d9ea685ea6df5871"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P2.S1",
+    "receipt": "e6b6b65a027742606f9066db1e7f6f3d10a6c2590b2609e81c11bcda46ec6bdf",
+    "evidenceIds": [
+      "aeg:node:3581370e95b52ea86a94437ea984b4d6e0b6424480e8894136a87886f48b3fc8",
+      "aeg:node:68abc6ac9e503fff816345fd5995d28f031fc5dd838d28441bfcb12a40f73b92",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a313d8bc3850860b6993855aa7a3ebd88c2ea715f717d5d7ed465ad3ad11cc08"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P2.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P2.S2",
+    "receipt": "7623b6f410623e3f777f7cdec0aca7a6107e6b89eca683813ffbf323856beb85",
+    "evidenceIds": [
+      "aeg:node:5ccbca16403c38d080a0f5c926b0569eae273dc40ffed08e093101da552bdcff",
+      "aeg:node:7d33dd3d0bcc2577b977ad336c5b0deb9196fc7e1ee11c5bfcdca97a50f98489",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a313d8bc3850860b6993855aa7a3ebd88c2ea715f717d5d7ed465ad3ad11cc08"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P2.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P2.S3",
+    "receipt": "13fe18aa9d8320bb42d0605ebecd0d709c80a67ef8dd92b65a41beeb6b856bcd",
+    "evidenceIds": [
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a313d8bc3850860b6993855aa7a3ebd88c2ea715f717d5d7ed465ad3ad11cc08",
+      "aeg:node:f04bfa0f0d44463f91acfd69ea71ea77a7ef392fdc7955a3998caa73501a02e9",
+      "aeg:node:fd110ffba69cc14db0a4ac49b5b32bdd4aae59e8f8c08e9eccdb5ea5b56e1c46"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P2.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P2.S4",
+    "receipt": "cbf94ddca4733afcc631295751e733a68705da1f60fa8d8e5e19616251fa33e1",
+    "evidenceIds": [
+      "aeg:node:1fe608acdd78a004da5ab91b01d7879361b32bc5784edefb36171c1eb03f7d54",
+      "aeg:node:4434871dff5784559aa2d9f7b18357dd004305b746a6cf44f71118299d308138",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a313d8bc3850860b6993855aa7a3ebd88c2ea715f717d5d7ed465ad3ad11cc08"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P2.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P3",
+    "receipt": "cbeee7794288a8c77bb847ae3abad40d758965c5b051fa8d0efc62758a4253cc",
+    "evidenceIds": [
+      "aeg:node:01600a7d7774e02a896768a9fcef39cb9eba12d8c718c395fa5dc13b75499f10",
+      "aeg:node:075a158c6119462c6ee261c0df82029ed0d614e37ea725122bd5528c6048f5f5",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P3.S1",
+    "receipt": "2fc3529bb316dc6ba19f8b8d3c6e48eda27279cbfd5ab2867916382a7fd195a5",
+    "evidenceIds": [
+      "aeg:node:59710dc34efc2c9de5d046d82ec59c52060264d76cdd7e3b7ec6453ee77487dd",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:f6ad1a51abc67d42b8b256dd824c0008cd3cf8cc7a101902411a9fbe9510801a"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P3.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P3.S2",
+    "receipt": "c5d2bbdba81a6cedba8220086f52f70f23f3b83ecd35230f371e5065029c336b",
+    "evidenceIds": [
+      "aeg:node:4265bf2169a0dca8153e7fa7255cf266c7d38c78c8331a23d2f5c5517d631fee",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:dc06b309526dd199310e22ae365d454b7676f0f0ad7c8a9f72e1eb8d6e0204ed"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P3.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P3.S3",
+    "receipt": "e68924cf0e377db46fbd479554d2d93d71af9bf93740f479b099577665702758",
+    "evidenceIds": [
+      "aeg:node:206196f00d58f47460e9a12f866301155ebe4f03ec618ae4fe653fa9b2686b1d",
+      "aeg:node:73fccd7f0004bc975836f8949c772c9b5dbcc4b0af19e2aa2e0db1896baf8e1c",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P3.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P3.S4",
+    "receipt": "722b0ea67fe12108726366a1f248aea8f7d8cf27defb8a5676f6d79fb54e4dcb",
+    "evidenceIds": [
+      "aeg:node:2085587798ed7d5bc1089e5732dc51a33eab7bcab22938533ec9045438b24c5b",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:adbca07e071e2710596ecf5d0392765e80473252dd6052a2794ccaf0116aeaad"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P3.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P4",
+    "receipt": "76febe8e2220831d3ae19435cb891e868dbd0952aee7b006fd5aa707934e2c12",
+    "evidenceIds": [
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:ca46d2ee0b2e845951988327c7aaa217cc04055e1d13941b002d714089f1f6e1",
+      "aeg:node:da4356d69f187910ac46660d85099f4bc319d712cec4c921305e446b15c68dce"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P4.S1",
+    "receipt": "94907dee12c5807e418daa625e5d698eacfa44516857fdb23076d2fcc5936899",
+    "evidenceIds": [
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:b08cb7aae4e2182e2b20da14d5407b0e1dc62880045dd8fe47944473eb0deb39",
+      "aeg:node:f824b98088f0f12e49c5b44997413ce90edd6cfbf39aed2556022a0552487bba"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P4.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P4.S2",
+    "receipt": "f771ed48bedb08b7344dec5ff5721df114a3718112f8d8d805fda13766f46722",
+    "evidenceIds": [
+      "aeg:node:42802c965f69b069718ad6fa00653f2114cf7983bf5bc90627d7af66938c7eb7",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d9255defb08292fc0b064d8c305064f56427222354b081d1b364daa49970fea5"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P4.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P4.S3",
+    "receipt": "4cf5af3eb719725aaf687618ed56eff82aaa42d186401fed834f1c20425d440b",
+    "evidenceIds": [
+      "aeg:node:03fe0a3b487bebf79720bff46fc4dc515ae58749f57d1f1bdfc51df75a702959",
+      "aeg:node:38dd123f30bc69578131f934392c6636ec8a5f498726bbf11ce0ecd1169d3a33",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P4.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P4.S4",
+    "receipt": "4ea5c78e547f5a08edee64be3e94ca9e1d2bb8bc9caf5dddfd429980d25fb83e",
+    "evidenceIds": [
+      "aeg:node:444189957b834fd14c2f7176982a40de646f0e4b776a46702fcc132b123365fd",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:cb84293fd8a7d3e9ba41352cd252d975191ca7dc78d48f00ca1ac429ff274cba"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P4.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P1",
+    "receipt": "696fdb8b25a675d948e774d92daa86b76894384ee36e173df0c6e81aeec76d4c",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:6e57956e4e51d1a1af9ca3edb75002ebc9d0b45d699eb3d1851b6c69359cab09",
+      "aeg:node:7dc2381c54290c5357eddddab796d8ef4473df8819cbdd6b51043b96ec079b18",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P1.S1",
+    "receipt": "d3799af16fef626be3808a87bcfdd7eee89cddd23a52bc99b45aeba5210def4d",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:499bad9942099a7860b311ed68fd6ed742d71bdf78c10c6d35c44ef7be2251af",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:da93f88f570a0a0fb1a8983a64d7ed9c19c667835e18d6cd81107b32c8090c2f"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P1.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P1.S2",
+    "receipt": "c5de6a7605ec3dbf73e1a0b3803aa2ae093f3751b817e23a5321493fa7ec724b",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:4c7352f0ccd33f1c9717bbcd336509a8c4621f67c26b96fe67bd8967546cbec2",
+      "aeg:node:4d9e3fb4871e171cef6a79fca231237c7daf5907c42a66249f224c859b26d43f",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P1.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P1.S3",
+    "receipt": "58a6b78722df07f8a4dd6efa00271a05397fabe4d8187c2ec3361fe26ede8874",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:4a379901afdea1e2d341002e3891b8b9ab932b464a5e5f0db9367c3b76b53827",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:acfdb67d9cab2a639b8d8b23fca307e12598149b73ae8006e5fe5c182f6b8016",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P1.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P1.S4",
+    "receipt": "ea4203b3eb782da93d2c17efd31d85a701cd4beeb8141e93fb02b912f34d0031",
+    "evidenceIds": [
+      "aeg:node:12ad005cd950bac45c2e8486f3128eaccc7d7609d48ba28d4d6662fcfe609bd1",
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:bf67c5c1999ffca945099aa12e8a7b0da97eb8a8348d24215ce9da89ccdd21af",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P1.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P2",
+    "receipt": "7612011c3209d4de79ee86de2d8d2e8f76115c0b39dd5190c6b63137ded23030",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:4788b6049c2000e5e1d785ace0e4a904b89948b495c3cb45be1a1e53f93b08b9",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:d76a70a82690fbb829fad30046d3efe47fded184ed09d202a244336ea2ec7f05"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P2.S1",
+    "receipt": "edb5fcd23de7e6a3c1cfa8cd10b9ac06db0528a370f651e1164080f6b05b91b9",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:954374329ce36e8595aa99f30135917ed3d65ba1137cd97273b7e1d04f0d6792",
+      "aeg:node:c8e085de91ca398142794fe47b48e800cac81c31421e37bada03f2bd06b2b03b",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P2.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P2.S2",
+    "receipt": "8e4fb0ca78ceeeb412f11688c314227ed801accab092c4dba11b1d40cb63c71b",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:942526d48bf5f12d5414136d0d4dc946a3b477c9c19a20ca5d20734da1609b84",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e4acba1b484d20006df4b5cfb76b09ba687ec68f16452b352866afb9d10f1fd1"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P2.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P2.S3",
+    "receipt": "4deab709b25d2a003e885b5f2286b84c30c25349b2f08da3df5a0414acc98b46",
+    "evidenceIds": [
+      "aeg:node:0611728a83c65aa358a616f393f9af512669ecbc230cc00e1a5fffe94ae2008c",
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:5f3d89878c1f637024859a586e1d64f4d81030de4d5c98d4e5e6e8c0d893c4aa",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P2.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P2.S4",
+    "receipt": "fe7bf30eb8418e6285963a00eca95bbf7b1d3440ea3d0b56671e20976f7a80a9",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:6ff7bb4729407e30ef7ee42e76fb63d320dcb3574c933005019cb58882feec1a",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:b1742a035d794bcfeb4901da4a2fe268c6277dbf572a5b3db8772dab953a2c95",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P2.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P3",
+    "receipt": "f7f1a4172349656317714086775f6c6ae8ce85b899411ce8cb72a945643744ec",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:aa259631d92cff31323e84e9a85d8523ef0fa6977784edd310d58deaaa5c9d01",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:ff6aeb14977ccdbba2751c76b29d8c458d7e360041c73aca87f923d4177223bc"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P3.S1",
+    "receipt": "ef6f8c94ee60a23b416b1d5314a61bda652dd00dde6525d00a5bb5f5dad3da6c",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:531f1c66ff3e0fce3406e6f13638acd3216fa390526b0b737b2d611601791bb9",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:9e1cc11a936ec35241b5a3ff7d320857a6cc5e90fd87b8b67c662219db15d2d5",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P3.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P3.S2",
+    "receipt": "a05ae691387279709b0fa3c967d4b008fe3eacb3c19d67e22171654b6b182140",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:8e08fefe67755586e5f058d1fd48a52aec311b3bf34d9145bb4c322ee400b869",
+      "aeg:node:b3e4f5c045b93dc1cb03785726a4ec5715969c999cc4ed17c8c48e754995fe0d",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P3.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P3.S3",
+    "receipt": "b1605d87312fb498980e4671cb23e779b7cc65352d54f837ece038eb51ea8063",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:55b4863754538655a31b87704439b901998607e28ee9972b9f37673fc4b49029",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:bc51468496699404cc70b49f21049e358c43f49040d51d83f6b7a4144fe21dde",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P3.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P3.S4",
+    "receipt": "16c4a471f2d9ab3d03ee9f62d435b383722bc706785c27d201be9ba1a6b47288",
+    "evidenceIds": [
+      "aeg:node:3b1673d59ebacbd5bb167f11554bd93df11fd1598cf37eed3f60fc5efb3cb8e2",
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e1c6b00b922969eeb6a4a6684188d7d6aec910cd57202fe9d2829b42a0564c3e"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P3.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P4",
+    "receipt": "3d592f72fb1d6da4926ea9743506ab31befd77034aec37a0a84cb02b8ea09e19",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:52de243069d2cd6d66dfcc3bf7a6f33d7386cac84add3f6a773518ce2acdfbda",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:cce1cba41783b1fa9769281c413e7601ca74a3b384f517bcfa0eca33a3ccbf4a",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P4.S1",
+    "receipt": "ee85f61df6e348b2383256aaa3c543b165b894a30133be99b8151c3a86529ec2",
+    "evidenceIds": [
+      "aeg:node:228a29da76cff98987e09365bb8651ea5150dedff1b56b27e38c89528db565e9",
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:b6780e6471768bfffcab6cf9adf4e0339f6df3fcb3dafc762df127b976c4c582",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P4.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P4.S2",
+    "receipt": "e192fb10d66dac10b087d0595bcb5d8a26504aae2139ba0176e527372f0dbddc",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:4fe68c1beb5eae3a4689ae87a86dbc952fa25e7ecfae082604320a46103e7e2b",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:d57809385dad541929554b8d520eb2ec045b8d76ba5b4a6aff60441191775a43"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P4.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P4.S3",
+    "receipt": "b3b3528a48c29b758728e1b50ad4ac9e548ad2943673043daf03385150e9698c",
+    "evidenceIds": [
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:b37193e121631bb30cbcf6021cb005df253badfed478739766f719351bd64412",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:d83ca2e4c8c8f361c0dd1843f0b0e2b5f3656f6603ccc2210c8261d22debebd7"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P4.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH02.P4.S4",
+    "receipt": "a371f5e596abe56424ecd80146ca4607f37c0e0061514e6d5ffa21c6513c3c15",
+    "evidenceIds": [
+      "aeg:node:1c113724951e76c09f47c16da2866dda75f8cd51470ae665896118aa64cc4784",
+      "aeg:node:405219a807f2e3b50eea5fe8253dccc1dd64b25c914167dca94523c14c498034",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:a3c86827dd3760e30906a636b3ae3032a8f6067036c3cfe4ce9589e104899ebf",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH02.P4.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P1",
+    "receipt": "df99d4ff5f5b0d1a9a719281e17a832cd4f754675796da8b70202b1dc2dd520c",
+    "evidenceIds": [
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:3d9fee2c7a15de64102ab420249d701c8e99c4d6b2fd25092b2af81fb439d9cc",
+      "aeg:node:4db6447a739a952638518c0499de6a95cf8c98cbebf1835f7d1989d9336b633d",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P1.S1",
+    "receipt": "09fd80d6f01d3f61c4d975e5f6aa38dc1d8d31540b8a8ce9ffd29c627a0f5976",
+    "evidenceIds": [
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:278a552e443783f166893bfbe2dba5ab9835777a0ad3416f988d8d6cdfa257a3",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8f37c6da0f34d25a649645b0e1158917d856883d843a4242b25a6df2e090949f",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P1.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P1.S2",
+    "receipt": "e09e55a27addd7031c3f8375ab17068e564f31861b3b7a5bccd53291a7a1306e",
+    "evidenceIds": [
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:2b02fc3904418873ea66ecee97c5c2ba786116eda4b7af9e33ee0332b28894af",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:fb0ca2686cb25e7c30d90647a102c595e20d5ebabe47e43bc0e3895a7fb14a15"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P1.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P1.S3",
+    "receipt": "adf7e0cf1401d995515839a681330a7f6f9dad29d09343e21caed90bd5b472e6",
+    "evidenceIds": [
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:493a5a6dc9a1500ce80702558c0e1ef8d3f113246caf00b5cb389e992511dda9",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d1a21a0a4e8392062cced4c285d1b506b79d4777c8eb6ff11e4f1e323fcdf25c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P1.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P1.S4",
+    "receipt": "3009fb503b6588838af52aeae49847bcd63c9d9569633a56aeda3069d8b3e6fb",
+    "evidenceIds": [
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:b73956ca83af2fe47ccdafade5241e4a4d6970601793247f23e8f8dada48124e",
+      "aeg:node:e30f81c485d20a63148364a4e3d2dafa59d03342fe1e26eb03761e4e8317b6bf"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P1.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P2",
+    "receipt": "3a6e0fe8b11a9d48da8afac92a9689db6cca1270305a08efc1e353a2052ef0a7",
+    "evidenceIds": [
+      "aeg:node:035d883845b0fbd10d654aeadf55238bdc17fa19698c5bd48cd25e44b1974ea8",
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:4cc2fc833cbb8280e0f517aba1424ba56c026eadcec7e7a020f3d4cf89c6331e",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P2.S1",
+    "receipt": "3ae1e065297712d6a5b75468c674aa4e38a6303c6930c041495e61cd2096dc59",
+    "evidenceIds": [
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:5a510b46abf37a078dbca18525f873f6b34f740042c57ba52dcd942f0d1513c7",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:bb7927c570b7564a85499f69990e952f325da7012957cd4bb2f30e1672dbf83f"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P2.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P2.S2",
+    "receipt": "fc26dd7a5058c72a39a04b289225c8bc47e8b1d10d52260719090e9248d1477a",
+    "evidenceIds": [
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:885e63d4bc32b441567f5132e8b45904b7195767d727f8389fac593594e8d0f7",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:996963debd6755691a4f0ac3946660c10c14ce9b49828d04a86f68cc76fbaa6d"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P2.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P2.S3",
+    "receipt": "8e543268dc60700afaf23661a13b1f4d23ad73674d51317a94ca560ebb474d49",
+    "evidenceIds": [
+      "aeg:node:11fe278eb38031a01ce2e0c156527bae174d68a5d2d3621a8bafda5f90615620",
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8f32bb804c1741085d4222c9c110ac4ea438094e1b9fdbdf077ef04216adbaa9",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P2.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P2.S4",
+    "receipt": "6ce90e543d8288c834e1bc82c44e44fd551b99f68fea3f154dc29ecb894c011f",
+    "evidenceIds": [
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:3b83864ce2e0f483f06e27d5277dd341651ef93822a80b74ae5f943b9b8a7ace",
+      "aeg:node:78cdff7025d04cda051a7809c17fcf5c9570e38b52b4fda0a96ce78039bfd148",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P2.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P3",
+    "receipt": "24a47fe829d825c76ecac32ca4574003dfed2c17e1334314c7d344d255a1b6b3",
+    "evidenceIds": [
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:f5f493d6e360e138b3ccef34f0ada4f496c6ea9acb8b5942f6c1760491f7fabd",
+      "aeg:node:fbeadfbf4b931ec2539361eea328769c3985e1ad4b2c22df445571748c1f56a4"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P3.S1",
+    "receipt": "bfe1d31095943f36d5b1fdcd2129bd0bf31695b9daa362c2a572f4233f286a1a",
+    "evidenceIds": [
+      "aeg:node:198bb9fd7231dadd7c4b933b92c0a09e9b983deeca96e3688494da8e602d4eb0",
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:536f4ab03d1218d6f4bcd80a07376c871230b794512e8a01fde917981a06a06c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P3.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P3.S2",
+    "receipt": "8feb4e67166a5f66720a7bdf02473013b06f6611527a330ea0fc36fcd0cd5d92",
+    "evidenceIds": [
+      "aeg:node:1c83928fa8d1a6028291974ade668959590294b24a8c04073bd7beea232a28fa",
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:2c57dea21c2d835f616d83ab39e2bff9e165aa4c38a32bc1fc4722f0aee12785",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P3.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P3.S3",
+    "receipt": "e5c4a0b345133bd66529140d053ebc6a3a2a9b27ec39d856b4a57adfcb417168",
+    "evidenceIds": [
+      "aeg:node:24775af68321891a5a2d767f118324f2041fbbebbabdd6701764db5660cafee2",
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:f030df4aa6ab4e3e941aa5585303042bda3bd81230e773a46a806de6b3779a05"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P3.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P3.S4",
+    "receipt": "890007273764291a67cc3ba73d7964f1611489d0a2edd1ff27637134cd510eee",
+    "evidenceIds": [
+      "aeg:node:17082780a4bea431e84bd50ff19ea411ce2bc0476a643f28e528ba10d0fd50a0",
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:97c9ddfc867e6f4a9794db094d379ecd9449ee037096fc33c3113cf3cd1dcf13",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P3.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P4",
+    "receipt": "dcd59aca66b9a7e9eac7aba5be5e0d423b79fc65b80fba4c7ea8ce7d4ad9fc32",
+    "evidenceIds": [
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:9b37ed381451a92fc859943f1a47bb971d8532dba53c4ce40a3dd38b129a3c7e",
+      "aeg:node:f9734d8590ba1156f7172fa90595f508c7dd037e9ff762b9876f818bb721a45b"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P4.S1",
+    "receipt": "0555b25491bee41f158b394cab4081adec8ead22a8becd05376cd8149f7ab25c",
+    "evidenceIds": [
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:43ff651b2797773246be8b902c3daa2e792df3ad2589003a02e58179a76f531f",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a311c1740ef19b14cb1ed818e9ea8f5cbdeace29d799c5379216e7abab0e6abb"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P4.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P4.S2",
+    "receipt": "43e9ed995e759566b3f25e0133787b57561688597911d81c96fe76134126645b",
+    "evidenceIds": [
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:e3a289c3cddf1eef0957a3b0d65f5b536edb951092dede79c6da8fe0b9195cd9",
+      "aeg:node:e65a79a10e56e4717b9f17d3304d19be6d7f0d5b8ec9de74cad60973b6dbee85"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P4.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P4.S3",
+    "receipt": "61e1e0c5ec596c4f24c8bdeab02f40751bfed61c75b88160dc1e2a2ce6a3a34c",
+    "evidenceIds": [
+      "aeg:node:1f50a3438b4fe7727d2cbb19f227a4b02a84dc56c97c1d2987a384b64bd2bdf5",
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:f03b9aacbd2959f22f3de69fb862673f7603fc48e214cd742ab32de72f64a3fc"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P4.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH03.P4.S4",
+    "receipt": "833d55bd40fb432c6233a45c1cd29c016377cae1983eb4e1c82a264758924b3e",
+    "evidenceIds": [
+      "aeg:node:1bc3325fabddfa7b89308fee2f0a17121261643722279dc3d2d0912223bb8fdb",
+      "aeg:node:27267418160a761f4b09cfcf53b2fde577d4a7db7fe2801dd2f8e7f233dd6c75",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d418f00a0781fd520f00471e9d753ca496d4eefb90b0286f75cdf9eaca427420"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH03.P4.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P1",
+    "receipt": "e886989ac5cbf07f4925f315104dc3b7d945415b37e3982409c4dc8610593182",
+    "evidenceIds": [
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:5c5b7dd65d9100d0978458ce7f8b41046dbe88d6f2153ff8a02b491a6bdfc794",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:eafe4cef243a3a4277d0823f3d8a0a2ee01d7526d9dc2c4706d97fea95182b7a"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P1.S1",
+    "receipt": "34a275f5b525466dd9ed28f2c76a66e89db3b46e1cb8458d13e994416c0d7d78",
+    "evidenceIds": [
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:731c78ee4cf751f58cd7188efc67970d06013b960c860b4c828a21f201040b84",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:df5d79e03b504bc9680db09f91caac3e90a4792e0be420f41070cc9fd5b1444f"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P1.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P1.S2",
+    "receipt": "05a23d5bb5871d41c2580b99f48f8f2316d6b9e01834c1a88dc4b0176feebea0",
+    "evidenceIds": [
+      "aeg:node:226c4742cc767eeda948b49f90365f24cf665bb4c521a1527bff58cf76dd06e1",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:7bed8ae980248f64bf3ffd2745eaf475b4363968c194dac73777e881b9e6b0ff",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P1.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P1.S3",
+    "receipt": "c7069382145a7cc67c0da4aed40786be32805c279331aef8be8ee8d77737a73c",
+    "evidenceIds": [
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:688ff1d8b256a63d98948eedd3843175cb422f399f7ea786a48b62e5da1fcbd8",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:edea0ced80703fb72c3e8be6231fb4e3b9ad9e27e14edff940fb46284a655b88"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P1.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P1.S4",
+    "receipt": "e21e68647ad229a4b9194a1d43cb297ccc2e73231beb0a56b70d2ae473232b59",
+    "evidenceIds": [
+      "aeg:node:29935a77770c94197efade1cbcb082fad668b440f6557ea3ba61a8af8ef68945",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a7e4ccc5f3961efb069e60e636e6bf0825a31341877281dcb0c1eeeb470e4134",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P1.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P2",
+    "receipt": "fad0b87cfb97177e7d4f7e4b9272bb262545afd2f9e7abbde8b511f75bdf74c9",
+    "evidenceIds": [
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:516f93e5e733d80fed70b4353e9d31afe48b6472000e304cd22a86a59b4f329c",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:c38b23d15f80bceea1c511ee4842861bc4053f8fab2c191ec5dce19a1a79097c",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P2.S1",
+    "receipt": "8a617a3ec8d06665d4e96a3ee45e0c7f0bf5e2dd08f9ec4834a12032bfa4840f",
+    "evidenceIds": [
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:c853126f6d7c4bbef85f38725ea3034dc55cfb7d2573f18c3845beda88d5a0a6",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:d19b881685986304420ef0a759d540943b9c20df8b2f99394573582a7347dfc1"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P2.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P2.S2",
+    "receipt": "fb841de661a8fc4df15bae4977fd04b66d5ca0a5c641425c990a672ac7564970",
+    "evidenceIds": [
+      "aeg:node:2394eb2c602a4e48a38646aea1533b3716e8af756977b86df2a65daa246f9149",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:ed6f64f51e388d2aa150bc8587d8f401ef40f1fd3010304fc2f08d0d89abb693"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P2.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P2.S3",
+    "receipt": "b292aaa7b1aacc60e1faba64abfb17bc5c13b70eeb76b36468889cc5580abe36",
+    "evidenceIds": [
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a32af4cd9df92c51d00207025f6914ed5705ef76655d3fb4f6dbcf2acf0422da",
+      "aeg:node:cda5213239c5bdd6d4dbcc11e341e02debb8ac4bc1aaa237097316da0a22dcc0",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P2.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P2.S4",
+    "receipt": "23fc23904d1aaaebf80743ee6237e403f1bb2b0999544ba52ae71022790a052b",
+    "evidenceIds": [
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:5911f5e528dcbd6997abaeba0b2c747d37f8e3ed31539c0523c30638d645c247",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:deba08d3341fb446ede02ba1e1979ad6219fdc652139c067d52859830c8d9c97"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P2.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P3",
+    "receipt": "bdfb98cb76831eafa0dd020cfbd44dc385357813675458176b0e90a3fca449d9",
+    "evidenceIds": [
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:c456301d61cf27e86f3ed40593668b3574d1224ad0168426e85fe7e96696aa3e",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:ebf71c48d60093c6654d2653f26bb3dffd7ac4d099cfdca9c3335950c3de0f53"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P3.S1",
+    "receipt": "03faa543ef2a94770d7d97bcfc9f761451a730d8bea255037702941933612b54",
+    "evidenceIds": [
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:b09c587cd0427ac597804bdfd9bac5eea3a0e1d00f770813355b82bdb0fb8236",
+      "aeg:node:b6eb6ae0c0c799f0079eb888b57a1d4314cc3baf213740c9399b4880a7986a4d",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P3.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P3.S2",
+    "receipt": "0d70382e8ee36dcfbbd4af0b99365c6c7df874360efaa29bc895136cf20efe2e",
+    "evidenceIds": [
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:9ae417414a5ec3d210e32c7c9770be729bca7ab2f57986f8438ce74749a55e75",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e4f8cc4761ed853987a36ec467345852966e5f873b93cb73bb1bf910c5f287e4"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P3.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P3.S3",
+    "receipt": "b9d9c62b7a85ceabdc240354cc20b4a3fc0c82d0f4575c3f13f2b4a0971cc9e7",
+    "evidenceIds": [
+      "aeg:node:2fe1f1b5cda24d7010a00c272bbcf20a3d88d581aa8f7d4c14550ddaa4a1e035",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:cfc73812a9663a8b238e6e6781fb3f95d45b5ea9306ddcaa6454e6d422177108",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P3.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P3.S4",
+    "receipt": "2a2b3c2b53ff65ef9ef7b985375dcfc134f59368fdbda5d63667d632afb11af1",
+    "evidenceIds": [
+      "aeg:node:24fc0f716d336e38b234d5bfd7bc6d75ac54b427c69da10905d4db4821147894",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:483900ac65d885b0d7a91ddfebd68d4a4a9863b80df7b11f379dd955800ea552",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P3.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P4",
+    "receipt": "c9c61fde3bbe5c80f245333ace75ef5243ee28129f57164894d3c2b6a0ec8f3d",
+    "evidenceIds": [
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:bc2d2554340fe72aa9ded81dacc6a61cbfe35f521f32fd797f6efd615af27431",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:fc0f16cd1bf22cb45394bc7e7b44fbedfc74170124d09fba5cc14a6810dae6a6"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P4.S1",
+    "receipt": "81f30d8a703ab02c02cd8a55f03b433056fe382d9332b911b5309e07bc9813f0",
+    "evidenceIds": [
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:51f04c6c68f91d831e894f3d09ca5c1d28ff5a3ffb2919083703b3cfacb2bb4f",
+      "aeg:node:6fe5e59ca4ebfe3a61aa29ff7834bb7e524f53bccc0eca503942b69d8271e26b",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P4.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P4.S2",
+    "receipt": "ae2e7e4aca0d52196d332d232d7519a459d6b753581a141d7ada82fc3bf9b06a",
+    "evidenceIds": [
+      "aeg:node:1073e190569c656b90468aff3d5aaee3d218f181da73d633fb71874636067c66",
+      "aeg:node:129ede1437d85661742fcf98dda470dfb138502bb1661e81c014d7bb3ced3f36",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P4.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P4.S3",
+    "receipt": "704cd3733ee5434137cf6291443352dcc656e192ea726b1ca989341145454460",
+    "evidenceIds": [
+      "aeg:node:182bf85c269e272c3aa1d700b1acbf1fae91751d41b599700ae8c1ddf8058f84",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a1564b951d8f876d7a92598afd1fd5df1109e6761015ea4b4c1a078918a581bf",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P4.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH04.P4.S4",
+    "receipt": "61be03784c41d9dc0382191c70da13efdfe6d15ce8131df2a01d298420a719d0",
+    "evidenceIds": [
+      "aeg:node:0d5255af98ca600cb1749e1041745c1036c859e6a2bf7837ca9809121acef3af",
+      "aeg:node:1c72448430cd536db84422fc28f147311b2416d9425b6a5ba00828406700e3c6",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH04.P4.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P1",
+    "receipt": "cfed3c1c18d033430aaa30aea86da1895a5f76e4477470e6c17ebe7c82cdaec7",
+    "evidenceIds": [
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:336be7cc2ec6053c0e6c51baeb1d9c442e1a421f6b50e69fee7101448e325e9c",
+      "aeg:node:6aab5c13c55b27941d10c0c929ea801d556d3ddc29c3fd6736ca1c9d2556a8c6",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P1.S1",
+    "receipt": "ae09bd38ed56e3f46c36f8adc12f9133796a072b162b0364296d93f2503e2d38",
+    "evidenceIds": [
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:d2ef97c6afcc6c798479c9153f6345bbd5738beac9669ae3d878c5446b618a27",
+      "aeg:node:dec4b4da714ba278b344b3722763c05c514156603e5d7aa6e02b11c7bb1ab401",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P1.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P1.S2",
+    "receipt": "a48f07276fb4db5ed08fe2d4e77125269471816d90026af85ad0543cc6a1cfcf",
+    "evidenceIds": [
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:4ca32eb0ee78bf31d5fd9cc27959d7b20e8feb7ebbf778c50f56dd2d95e128e1",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265",
+      "aeg:node:e5a43248d3b2df70e2851f761752ec183bf6a4fe5219ae8b9e22de9d862b25d0"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P1.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P1.S3",
+    "receipt": "8edcfc3f3618991d8b9002bbacb716c67a25df918c6cfc8b71829145692d9a71",
+    "evidenceIds": [
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:1bdf3e8ff4964ac1c6019a67730a1a85ac8b9d637d2c9ba00616ef4487922289",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:6de0f62d0d2ba91e7c1f3610ecdd044dd3e13e5fc9d3544230e642c1ae919b1f",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P1.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P1.S4",
+    "receipt": "9b070605c93c115dc6a9ea3f398b1c5b29bae3091187d2377370148fb113276c",
+    "evidenceIds": [
+      "aeg:node:0c4a673f1b61a8d20e51d95e93946c215004cb7f2a7b5524cd255f06f6227083",
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:d7f646078a9f160c452b0b1269415c88abcdaf3a859ae83ef4b65fe499873c1c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P1.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P2",
+    "receipt": "d53fbfea7b5d6932a822ad562c5ddc004ea7cb1f061d14013049b48df97c8d66",
+    "evidenceIds": [
+      "aeg:node:03527ec1f74df7e3b2c2eb713479089fd6d3afb6749b6418d65be6524d466c74",
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:85e261eacfa5841de6c56c035236118acc427a440df4faca8e3e1548d1502a38",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P2.S1",
+    "receipt": "d44e708423bc12743ab9fb6161723583ad69d3feab9317e509ffd339071abdb1",
+    "evidenceIds": [
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:3e2c3039fac33ea9751f80a167a7ce315b2160845a8f752f0fb703afef7e61d3",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:8c90fe8ffbe6549294001d95ceca882478ee1d3bba14e5b4f635e874e3c3613e",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P2.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P2.S2",
+    "receipt": "f7f6d86233932ed4c2b1584627b3057b677ca48a17dff7efdb43d3c6b25e143b",
+    "evidenceIds": [
+      "aeg:node:0426c87b3addd7429100c5722fb3108f3febeb11b7da0afecd657f15d6132ce5",
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:7c6deb54a24849a61dda460c3658645cf45a32568f66ccaf7e626edcde949777",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P2.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P2.S3",
+    "receipt": "811b8c340597ed12644038aa31bb2f696c3cc48cd684c8a7f9ed0bc8598bb74f",
+    "evidenceIds": [
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:1bed4d2aef1ef779034919d116ba4d5e157ab4dd186f9c6f92a97f3e5c5447c7",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265",
+      "aeg:node:e9962f1cc2cc4dcdb07602ef1a56d9e6dc6082159b34f9678955ad266a4ea69f"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P2.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P2.S4",
+    "receipt": "73b4c57e3c8c664886f527d3468db90efbfc10919f419e115d2052801d5a3d17",
+    "evidenceIds": [
+      "aeg:node:033049bf2035a3d8ae0b348a822f125b12ca88b9ae78ad8d6d6e49ee315549b2",
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265",
+      "aeg:node:ed31ca17159c58809c3205b419ebadedfee42aa8ac3989b6fbafe7391bd5749b"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P2.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P3",
+    "receipt": "d08c7446f4ea012bec20877616f5203edcd36f0ac2754e08f0abd6fcd3ff617a",
+    "evidenceIds": [
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:77b9899af6bad12a9a051a3f632bdfe4d27bbd865bd35e9cc30caf572383a4df",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:b45f976a4ef687cfd84b4e96902ca0aa7bda4e034382fd720b37ac60d4b58dfa",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P3.S1",
+    "receipt": "826ca7a860eb4fd7c90047e0026a5b1b652d376af70837ccce64e0c692815770",
+    "evidenceIds": [
+      "aeg:node:0d62131fc8856843fd3a09a63ab100cd41c1c51d6f583b212219b38f722a9c8b",
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:d9fddc209beea7ca3b19efa6e4131ba241f79a3a929c3ff95ae4bc052070e035",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P3.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P3.S2",
+    "receipt": "c2ddfe7cf604e2207dc18c642aa5565cae8e0ea61383ea02becd228a3caed217",
+    "evidenceIds": [
+      "aeg:node:04ce28ccc648d785d02c161d1f69aff2cc5be3c0cdf7a7761f79573f96e1e925",
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:4186649b41060ac354b933f7c81010aa401d6490b6a808881a7302813d12494a",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P3.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P3.S3",
+    "receipt": "56f8a7203db1ae07b74ee83bf7474e8e301de85d117e5fad6c127a8071cf7d91",
+    "evidenceIds": [
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:9ebdba210e106a31e2f6a8da22a094485fa3f5ed966a38b021b361f4efa7080f",
+      "aeg:node:cb85cd283954a15a248f6b32af5909270702b578a7010146007834075bda7a0d",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P3.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P3.S4",
+    "receipt": "89abc6b47a2293f3d4b4045f917000e99d672d8a125acd97ba5fbbb2afcdc0b2",
+    "evidenceIds": [
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:62e3361970e6cd6b870847b7f04e45263ca41cb970b77e055785f09cbdd852e4",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:c0aab28a87e7b9e8caea8c6734a63da3132c2c943175286d24a7384cff689fff",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P3.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P4",
+    "receipt": "0b9e0c21ef1f3106b36838773ba4b6ede37ffab61d8e323550794385407c0932",
+    "evidenceIds": [
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:6697a55de0b660a54f126cbd7a85817155504a44884391d2058c5da40a2ae254",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265",
+      "aeg:node:f68ed69f6b8378800016dda2f68d8553063159a657db1a2ffab4d80960c95dda"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P4.S1",
+    "receipt": "4ff6fba602460650a5fe6a2e1d9c06dbfa87b69fa239cf382db2b168daf00d7f",
+    "evidenceIds": [
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:6ee89ef09cb691a0b51965f06c105fbe0fb3054596f72d576eb1ff87710c71fe",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:984bd4747b0afdd48d0f4984933c6a0aac4e174cb880431b7c97c035cde0365d",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P4.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P4.S2",
+    "receipt": "48e8c0aeb0915261779ed213173db1966e9857dea8bc64260b6d14f25021b331",
+    "evidenceIds": [
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:5dd7a7bc129c616ff9be997f71c6824e8d632d60c0fa319a40e57b7021ce44a9",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265",
+      "aeg:node:e61bab6b3c3b575a55a3f5c1bf0acd5df9a0495a56bae7ae3207d38b874c0f6c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P4.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P4.S3",
+    "receipt": "0a87ae8d0aaa2a40b4eeb8cd6ffc6cfc29ad8baf32a4945d0b6d4610b1755248",
+    "evidenceIds": [
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a89737bd007a168de8c4e7dc59d5ad656a9d4b8b184c12014f9560298a7dcdcc",
+      "aeg:node:cb2c25c98731572b0fd9efd65d13f94806dacae6c8fbd26c6f860a4208be29bf",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P4.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH05.P4.S4",
+    "receipt": "698217d05c288fdce8dd8e6ad35946005e371425474b9870e37998c9b122a839",
+    "evidenceIds": [
+      "aeg:node:1a54b57d1f2afcc3a0c62059ab4416a743675925b37f75e1963ffbb7346e12aa",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:93fcff3b609069a920418cd25a6f4a558f952de95a2ff9dacae13da76b055e71",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e16dc12870173d1f36477ba9e1632c01af2a68392c39dce2a652ad64350ca265",
+      "aeg:node:fd656d9182b8bc1b2ce71aa9d2ca9c1a900d638a2814eabfe16044b243b98ae1"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH05.P4.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P1",
+    "receipt": "8571549bb41d3ee3dbda1c5adbe911518b293a73d389687ca9d370fa29063d98",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:6cd3bf08a3b67655113b3a6cd8a5dc1dc40758b7bc17fddf032428a9668a338b",
+      "aeg:node:736a2f7c5cfa90fab28beac6ed2d8bb046617cecde0a21c575001f91cf6076fa",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P1.S1",
+    "receipt": "8e1f078bf9ba474e790f868c1eba663d6423771ff53f630ff4098773e7df8768",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:1d2f14083b718548d831a4f3819f515e5dcf27bdb2dd0211f7edffed09866e43",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:d29641ca3e52b2eb7fa60336423b9209e44debbf71877a81e59084124a9ef3c5"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P1.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P1.S2",
+    "receipt": "64508e31f9002ec93653a77adbda24b549337b05bb81f775061b74dff46caac3",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:2e7188a30bbc798a21a4674260136b836bf98c6d03a7ffc93a263d47a989ebeb",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:70a250b5b6b54aac8c378c53d1b630369c6cc7873c94cf8dacb056dc3628021c",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P1.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P1.S3",
+    "receipt": "e386d35ab88f96a2390fcb9776917523f9349951d33392e884700d38b5e8602f",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:2605fed6f5b679b3c3e288c2353c8e51d14ab06e33d6e2ea13476c7bdee42223",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a2da65f38c6a2897b4dd861dd181c7a33e5c56ef909890f9fbaec654fa113510",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P1.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P1.S4",
+    "receipt": "531435875209706f55002234488616d8c2e75d5fab5036e442c5f5ea65ececc1",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:de7b91803e89a59c78e8a3fe11508415bd3fd875bdded3c4cbf0019d82e2fc08",
+      "aeg:node:f955094d1211b3c99940ccd6ef18bf8ebc3b8e902c9d20cc40455964ba5c93a5"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P1.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P2",
+    "receipt": "b7197421fc254fd482e02151c2b0fd20c7ea35f371801ed77f6e9d203790da34",
+    "evidenceIds": [
+      "aeg:node:03206275a05a7a16f5dab9e3e367682b50d5be2510876fe57b610527dbfcca36",
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e7f3d63144c91ce52693df19e7feb121ee67e9e14417274c51993ef1a3f061ce"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P2.S1",
+    "receipt": "74513a96a083958bc79939d5fe1ef37b2d74882b1936654230c24863c51bb914",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:5fca2d057f2dc2e9901be4509f29b5b956155aea24f4dcc29d1b06d794652ba7",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:88828a312a4032222907f29be9d3f58c2c9c10f460ce985bd5d27319854a2b39",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P2.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P2.S2",
+    "receipt": "197397b7ea40d0fdeb3d086cf130bbc77e7ce49f45f0622bc5017be516ef47c0",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:af8fdaa7d3863c50c2ea728a7374a7f5c8c0006f616757b2006b55da9d17cf1c",
+      "aeg:node:cb4e977b29c1976daf0138c7bcc8ffab79f3ce778ff0b92cf247bf5967208dea",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P2.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P2.S3",
+    "receipt": "923691fa37d7535c709bbf0457ff4d327f4ca150ceaad79595784144addc5d27",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:84d0e8b56d3507fd7642be2cedd1a5e5601b164a60786c098c86aacde6e69e03",
+      "aeg:node:864f03d858ab585fc2299e084d10ae3d604d5d86962b04280a87c529fa0d5a3d",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P2.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P2.S4",
+    "receipt": "927edefd59a91cc0b004250a27e20c9aa0867cb1a9eaa8ec734c5bdba1d4c902",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:2007d166572fb2e3059b5186e76bbb319c15c171cba7a3a9be5888bc056902b3",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:3510d689c1bbd103c00726c74e9ce6bf8315865ae8f14d59a96edb55ca02026c",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P2.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P3",
+    "receipt": "468e02ec511a3c6c7699f313ca7cbf292c0bcd9d2f0246f653cf45284484c153",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:1aee5a88123bbdf514a49290dd470734c6f3436a64d857dae113d57b57304a3e",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8471642d44bc4d2c0d11e545e6b0b0aa033ad9182fca9f5472bef8c0c59bba60",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P3.S1",
+    "receipt": "f598230b86bfc5ca59b704a977857902ce95cef088a7699595615f3642f54c45",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:09ff810e199ef231052a534d84f5a16478805c076ae176fe3f86d5b72c9a0b63",
+      "aeg:node:0e785aa9a536f53007a20e70d057dea8fa2fe2fc3886522863d5a60daabeff98",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P3.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P3.S2",
+    "receipt": "a738aad7e0ac06c0e436edc99092f3d49484c9051f7e629d92592f416b2caeb5",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:e90f941f0872b72520ecf340211fa62468991689f848176b1d94d294080470f9",
+      "aeg:node:fadbf00573a0ec22dfee12800f7cd14a71659803b8c73ca9f73827ef6ac42099"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P3.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P3.S3",
+    "receipt": "ffa625e8dcea07fdc3af5d39588435acf581e8a2c6fcfc6b811c9ae09ef479f5",
+    "evidenceIds": [
+      "aeg:node:05109ec33013fe3ff0e51f83c9303568d80750896c137e805fb293d77884e9ed",
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8307c445a9068eb994ba3b3f0e4acb9b9bf969c32fbf4b6b9601471f8d1e9dfe",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P3.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P3.S4",
+    "receipt": "05750959edb08faa21e87aad51953684e684263ef5a5367cd7c8d972e79f54c5",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:842411014a6e635ebf048f856add26d98e32b963aefa0ac5a24978bc6bc67d63",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:d4daf4d7daa389a8673214af26a817f681ce7bf50215be854bc7ec7ca8d6c92f"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P3.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P4",
+    "receipt": "57630b5bb511d99d5e4dfdce80365ed53e8e5506d84a39d471164f21fc11309a",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:535792a96c915b5e72bbdcdc624231d4101f2e88fc2fcf0b18ecb24e31319bf2",
+      "aeg:node:762b1590194581a563983879cc75e77b977560749224c18f03e691b049bf08a1",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P4.S1",
+    "receipt": "0f9ad9305f388e71bd5ffd4e77d344b5ee519a4ac6bda32f1b01da8128567d7b",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:6d419570e747d78cf12efb4689588ec3f9f9ab3dee3bea99f0ea80463c34db7b",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:9aa78d7e5a23860f48b30eb6b751cc940aa0034866595cf95d2bc94c8caf8006",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P4.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P4.S2",
+    "receipt": "091c69131c4da74d08fc80cbb2d85a944cfdd9d3eea035010cdcc2917cbdaf35",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:2c9f90141144f60dd00579751167c63113300a31a26d1ca43262d236cb4ba4f0",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:337b74cd527b57720c42d170b108314031df90d6a2de55c270294c679f31b358",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P4.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P4.S3",
+    "receipt": "79b7fdff8a193ed0888402f0bd9275f66694f71cd4ec060ed7d771fce885bc46",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:494f6bb2ca0993aab632b70fbdf77d6793a2a16c257be7ae11cd04b0b1cf5904",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:99cf8d164342e1781ddf6715222605daf40f21a03370fab61a6981e0be427035",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P4.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH06.P4.S4",
+    "receipt": "76b1ce08d5cbd6d1fcaa0af081ee34c38cdc5b9fcc7412226a789509ce1649bb",
+    "evidenceIds": [
+      "aeg:node:09a41b4b80b1ccdf2c3534396e643e3be195832c9e73faff193ae62ee241cc81",
+      "aeg:node:3078af6facbe61dca676e483b83ef4d39c04bc68dc363a6d0c9808f944f7d654",
+      "aeg:node:79bdfee4b44a36611954532ad0d9d98edb6748dbbb919ddf7afbab2d94bb8d19",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:8e9058d23df3e64fe6534d9c45567cb3b8d9ad3dcef3e791d9bd6d90f34512c1",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:d18805f8d904d536bb99192491f4e2034d3103d050722dccc721d6ba5245eb5c",
+      "aeg:node:d559deb0fe0e27542ad5f8b858438e211b8e96ce4db9f7489189101e0e03331a"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH06.P4.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P1",
+    "receipt": "2855ce9fde8657fcca7254b9c997bbb9d5a3825f17934a04196dc5f0cd3cc4eb",
+    "evidenceIds": [
+      "aeg:node:7699c414b89cf3e9888f85dfa05ce672886d6155f81a0725b8ebeb34a504d57d",
+      "aeg:node:7b039902d7483adb796372db71f3f8ed88c186565481eef49e914ff8ee157ed1",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P1.S1",
+    "receipt": "08de5bd475550e6a48c9b846e96a3ea24d5bd07de9509869f9ba0295fd95091e",
+    "evidenceIds": [
+      "aeg:node:675215a05f50db4b6fe214f4737d8724cffbc58cb57aea0d35d8e5b58f69b58f",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:cf8520437d8cc3c1d92dfbf3207a67143cbc4e23ba4cef445a026e6f611d4e1a"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P1.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P1.S2",
+    "receipt": "bd7851d1ff82b4f35cd0570f44758116bb94ecd9f633933a96a0e83b70cf3152",
+    "evidenceIds": [
+      "aeg:node:4363df2595ce767159713de6c56c3cd0e9fd4d4ec2488f4b0bea89a992557df1",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:efcb34573d7c0a043465d9cb9dc3a0d1979e80266f71a0ba6226f81048e68d48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P1.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P1.S3",
+    "receipt": "20ae8e0a953781c459c6f7ad33f3f9136d56c0bc583b1ca44535799e63d17f78",
+    "evidenceIds": [
+      "aeg:node:27e0a80c46c5e838dfc93e32425750a88864ccf013721d65547124413378f138",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:f6a8eefa89dab56d646460981d5171699ecf8aa750a93af410366c66ac48c722"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P1.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P1.S4",
+    "receipt": "58dcebf02921066382068f155f7168b3eadd0c52bcae6afb1647063c426d02e9",
+    "evidenceIds": [
+      "aeg:node:514c7d7bd57cb003934428de1ccb5788ea799f3ea23f8d5c1b9292273e571873",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a0c2157f667f692004d2b7f7b5d58d521d446cd5e1e2508a9d3504d11087f1e2"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P1.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P2",
+    "receipt": "2b2c17f5eed08d401f768308290eda08ac73dbd57ba40ef3a431938a4b0054a3",
+    "evidenceIds": [
+      "aeg:node:83ea1be2a69d5b95761afd2a636c9c82d70519d5f9b9c12edd012befe90d79ac",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a313d8bc3850860b6993855aa7a3ebd88c2ea715f717d5d7ed465ad3ad11cc08",
+      "aeg:node:f6be4bc3c17b110c693d4af463bd8aefa47a4987a757cd67f91d23df17ec15e9"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P2.S1",
+    "receipt": "9469f06f771ab56f04395f179df049365a44723ec87e98e8d749565f99ca4fc5",
+    "evidenceIds": [
+      "aeg:node:242adeccae5146ebbccdc977470400ed5dfa2214672d39957eb24ad9c533d024",
+      "aeg:node:456d1229aca9035f42cf7ce52028810e0122ec702bf21030a4ce938d0668b001",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a313d8bc3850860b6993855aa7a3ebd88c2ea715f717d5d7ed465ad3ad11cc08"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P2.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P2.S2",
+    "receipt": "0f0f6fd1960eaacc675b25fc65ee63c45b8d7aa0bed9a58dd95305a89346b921",
+    "evidenceIds": [
+      "aeg:node:1309b77873cc9d8887da0465388e79bfa0655ea00932f1f108f4ade0aa5afed4",
+      "aeg:node:7690a010e8535e591d483bf3289e44fb8f8e49d314ef634af70861cda5873175",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a313d8bc3850860b6993855aa7a3ebd88c2ea715f717d5d7ed465ad3ad11cc08"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P2.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P2.S3",
+    "receipt": "7fe639d7592b3274a173bf4d4fa600f1a0042429ca8173a1e6b298398603c3fd",
+    "evidenceIds": [
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a313d8bc3850860b6993855aa7a3ebd88c2ea715f717d5d7ed465ad3ad11cc08",
+      "aeg:node:a74622723b0a0a9fcf718b873215b9599e4d00fb12af31d24a05de151bd153a1",
+      "aeg:node:edb4a6a066c439f59949eae21ddf71092aa9d360f715d14e6aa7bed501bb1d17"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P2.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P2.S4",
+    "receipt": "5bf1e646878a30d549aa59a9c9f908591b6db4ddc55be37507d77fa3c487ade5",
+    "evidenceIds": [
+      "aeg:node:3b4e87d4687b818944017b893278b77d610df73ea1c9af4fe0b7e5aa92d6b829",
+      "aeg:node:417c6860edee71d413da29015ee6a891b090523ebaef2f133efca99e61f40bd5",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a313d8bc3850860b6993855aa7a3ebd88c2ea715f717d5d7ed465ad3ad11cc08"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P2.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P3",
+    "receipt": "11e67810f6a4c56b66d8e8e239b6cfc4f69b208f069834f6f88956daefdded55",
+    "evidenceIds": [
+      "aeg:node:5e21c716c63844a24e98937bf4b886007cf4c4148ba2b4958b56ac04ae4832fa",
+      "aeg:node:76c985ae23dd91300307a002c96495a61a3d7a531482882e46b526a9fb4e5c74",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P3.S1",
+    "receipt": "4fee84f149e9218a64877d8879fb7abcbec43527127fdec53a7a074f6f86a4da",
+    "evidenceIds": [
+      "aeg:node:7e91859169808d8fd251908c2d28eaa9ed55f899ae8abb845b2aabd6290e935b",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:b1de66ef0bdb7f3e5590c89be5f33d0e3064dae87e79f7d5e51dca7e6ab3a26f"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P3.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P3.S2",
+    "receipt": "49e9313e79baef608afc30fa632b34841dcedd40fea2b6e55a18c29bcb54f29f",
+    "evidenceIds": [
+      "aeg:node:35a15615f028f59190c261d4df8ed65d8cb023c3bdb5d7fafcad1a3ab2d6081d",
+      "aeg:node:59b9d40f9e7536344c4ae8787603de3ff5aa43e7c6d1444af64f462db6193b4f",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P3.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P3.S3",
+    "receipt": "ba1c3652a5812b1880b16ce409db6b933326490930e951a12a5be3de5f0536cc",
+    "evidenceIds": [
+      "aeg:node:17a830857d5c4443d9781555d623711049790399c647095e16901f10ffdeddcd",
+      "aeg:node:19fa1d35308124c9b7e095d33fecb0429f35e85dfebdda24a82f4e773fc6f728",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P3.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P3.S4",
+    "receipt": "5651cecf46c7d497abac843079b90a9897eac582cec5a0023506d8b6f5902db4",
+    "evidenceIds": [
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:8b914a602e13d99ab7a1982fb17eb0d93a023b85adf5f21b4b86bf51a45c6219",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:f6ef10c9e4be1d831b722d76c79227b35334abc61999fcfd422b2abe814f84bd"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P3.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P4",
+    "receipt": "b4030bcff0979587512d873d4caa352956d076ec8974ca7c391536c0e61d29f1",
+    "evidenceIds": [
+      "aeg:node:706d32e7ff68136b4a7bf42b08a63b428b9c1b1ad4d71149d33ea186990959f5",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:e1f3276369e828594c2807263ef61945dc4591308d29a5c74e05ad0a265e44b3"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P4.S1",
+    "receipt": "6e086177a54a0eec20dc7c3d3427306c38b5152e8875c4d21282be985a76bee8",
+    "evidenceIds": [
+      "aeg:node:5e96d457ad25a211c154cd0d8acd099b5ef1f1536ceaa164fa4792bf93c773e1",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a1aa141941f1ae32f9cf491d3daf9ee6335ed13ff0783e1a084dcfdb307cbe21"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P4.S1"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P4.S2",
+    "receipt": "e213424178a95f62532145b13b8de3ce1ee7976c6f342c53e8b25868f25a791f",
+    "evidenceIds": [
+      "aeg:node:2aaa70e45716a748f10aa220ec4f184e907b1b356a91a4cbabcc004d4f57f45f",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:a7efb1d78c650e3d5a79bb937f70e719e05a8b56c3a40e08b0e6144a4b1bf255"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P4.S2"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P4.S3",
+    "receipt": "da765b31f3c02d7657bb9bca6c64e4569432452dc054a2eea80ca726992752f6",
+    "evidenceIds": [
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48",
+      "aeg:node:9df8968e01a0f10802ebaf274ffa2646bd9bf3a5914a5691ede02fdb4c9d8407",
+      "aeg:node:c18ff69d05c7b4f220154aa65f94b47da45de8c037171222e7139eb73ee0aa50"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P4.S3"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH07.P4.S4",
+    "receipt": "be7640065573df9c0feef80b4d6ef6cc0d4dd90e3935a3972b5efd51017c2db3",
+    "evidenceIds": [
+      "aeg:node:07f36c3a2af559fb7bb22849ad83e3cabe38604d9b1c39a20b3d35ff73298b2a",
+      "aeg:node:3d923355a9f8899a8acf20160936d2f26b43247f56dbc9a38749a3a1bbaf89a2",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH07.P4.S4"
+    ]
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH01.P1",
+    "receipt": "17adaddc9c7997b6935981afc681a8bbc29008f2653c55f46655d48239f2a01c",
+    "evidenceIds": [
+      "aeg:node:25a1aefb8d42f2ea13d258359f7d966c7e381dea296112202e728900834b754f",
+      "aeg:node:8962ce3b2c542568d46d114bd41647f742b73e4e7a5e3a4010abc9c99addb01c",
+      "aeg:node:96ecef3c9cf820ac4161522cf18b1f2ed5ca7443616a9779eb325e410e1be394",
+      "aeg:node:97faf5c772f3a7149dc9b918d5601762838f3079c92f7778715e4bc8c4a6ab48"
+    ],
+    "roots": [
+      "synthetic:friendship:root:information:CH01.P1"
+    ]
+  }
+]

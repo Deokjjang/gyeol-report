@@ -1,0 +1,223 @@
+{
+  "status": "CHROME_BROWSER_ACCEPTANCE_PASS_SAFARI_UNVERIFIED",
+  "actualChromeChecks": 36,
+  "checks": [
+    {
+      "name": "Actual file HTML, permitted script, dashboard and first card",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "36 originals, 37 cards, 12 engines, 7 relationships",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "200 row limit clearly displayed",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All 37 scoped cards render original/proposal/source/evidence/domain/gates/next actions",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Every filter option and reset",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "First wave shortcut / READ",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Unread units have no decision controls",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Units beyond first 200 remain reachable by exact ID",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All 6965 exact Unit searches resolve through actual input handler",
+      "status": "PASS",
+      "detail": {
+        "count": 6965,
+        "missing": [],
+        "milliseconds": 11715.5
+      }
+    },
+    {
+      "name": "Korean meaning search",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Incomplete reviewed fields block export",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Unsaved status for decision/checks/notes",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Selected filter includes draft",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Selected filter updates immediately",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Card switching retains notes/checkboxes/decision",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Real JSON download / parse / no approval",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Export state and download reminder",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Reload requires explicit import; no silent persistent store",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Real file import restores checks/decision/notes",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All 16 negative imports are atomic and blocked",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Tab moves to engine filter",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Shift Tab returns to search",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Enter activates reset",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Space toggles checkbox",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Select keyboard changes decision",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Textarea keyboard input / focus preserved",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Details keyboard expansion / focus visible",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Live status and labels",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Automated WCAG audit",
+      "status": "PASS",
+      "detail": {
+        "violations": [],
+        "passes": 22,
+        "incomplete": [],
+        "screenReaderSession": "UNVERIFIED"
+      }
+    },
+    {
+      "name": "CSP enforced for external script/network/image/font and untrusted inline",
+      "status": "PASS",
+      "detail": [
+        {
+          "directive": "script-src-elem",
+          "blockedURI": "https://example.invalid/pilot.js"
+        },
+        {
+          "directive": "script-src-elem",
+          "blockedURI": "inline"
+        },
+        {
+          "directive": "connect-src",
+          "blockedURI": "https://example.invalid/pilot"
+        },
+        {
+          "directive": "font-src",
+          "blockedURI": "https://example.invalid/pilot.woff2"
+        },
+        {
+          "directive": "img-src",
+          "blockedURI": "https://example.invalid/pilot.png"
+        }
+      ]
+    },
+    {
+      "name": "Hostile source text renders literally without unsafe HTML",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Unsaved beforeunload warning / cancel retains draft",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Confirmed reload discards memory; import instructions remain",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All layouts, long IDs/Korean source text and bottom controls",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Actual authority, claims and allocations stay zero",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "No unexpected browser runtime errors",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "headlessChromeIsActualBrowser": true,
+  "manualOperatorApproval": false,
+  "screenshotsRoot": "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final",
+  "rawLog": "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/browser-raw.json",
+  "safari": "UNVERIFIED_REMOTE_AUTOMATION_DISABLED",
+  "screenReaderSession": "UNVERIFIED",
+  "absoluteContinuousPeakMemory": "UNVERIFIED_SAMPLED_OBSERVED_PEAK_REPORTED"
+}

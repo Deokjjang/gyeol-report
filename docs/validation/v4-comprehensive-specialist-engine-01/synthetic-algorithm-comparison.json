@@ -1,0 +1,248 @@
+{
+  "rootReservation": [
+    {
+      "method": "FIRST_ELIGIBLE",
+      "selected": [
+        {
+          "questionId": "synthetic:cse:q:1",
+          "candidateId": "synthetic:cse:a"
+        },
+        {
+          "questionId": "synthetic:cse:q:2",
+          "candidateId": "synthetic:cse:c"
+        },
+        {
+          "questionId": "synthetic:cse:q:3",
+          "candidateId": "synthetic:cse:d"
+        }
+      ],
+      "coveredQuestions": 3,
+      "requiredMeaningUnits": 3,
+      "distinctMeanings": 3,
+      "distinctRoots": 1,
+      "repeatedRootUses": 2,
+      "hardViolations": [],
+      "preferences": {
+        "directMaterials": 3,
+        "explicitWitnesses": 3,
+        "functionVariety": 3
+      },
+      "search": {
+        "visited": 0,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "candidateId": "synthetic:cse:b",
+          "reasons": [
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        },
+        {
+          "candidateId": "synthetic:cse:e",
+          "reasons": [
+            "ROOT_PRIMARY_BUDGET"
+          ]
+        }
+      ],
+      "actualCustomerClaimsEmitted": 0
+    },
+    {
+      "method": "QUESTION_FIT_FIRST",
+      "selected": [
+        {
+          "questionId": "synthetic:cse:q:1",
+          "candidateId": "synthetic:cse:a"
+        },
+        {
+          "questionId": "synthetic:cse:q:2",
+          "candidateId": "synthetic:cse:c"
+        },
+        {
+          "questionId": "synthetic:cse:q:3",
+          "candidateId": "synthetic:cse:d"
+        }
+      ],
+      "coveredQuestions": 3,
+      "requiredMeaningUnits": 3,
+      "distinctMeanings": 3,
+      "distinctRoots": 1,
+      "repeatedRootUses": 2,
+      "hardViolations": [],
+      "preferences": {
+        "directMaterials": 3,
+        "explicitWitnesses": 3,
+        "functionVariety": 3
+      },
+      "search": {
+        "visited": 0,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "candidateId": "synthetic:cse:b",
+          "reasons": [
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        },
+        {
+          "candidateId": "synthetic:cse:e",
+          "reasons": [
+            "ROOT_PRIMARY_BUDGET"
+          ]
+        }
+      ],
+      "actualCustomerClaimsEmitted": 0
+    },
+    {
+      "method": "CONSTRAINT_SEARCH",
+      "selected": [
+        {
+          "questionId": "synthetic:cse:q:1",
+          "candidateId": "synthetic:cse:b"
+        },
+        {
+          "questionId": "synthetic:cse:q:2",
+          "candidateId": "synthetic:cse:c"
+        },
+        {
+          "questionId": "synthetic:cse:q:3",
+          "candidateId": "synthetic:cse:d"
+        },
+        {
+          "questionId": "synthetic:cse:q:4",
+          "candidateId": "synthetic:cse:e"
+        }
+      ],
+      "coveredQuestions": 4,
+      "requiredMeaningUnits": 4,
+      "distinctMeanings": 4,
+      "distinctRoots": 2,
+      "repeatedRootUses": 2,
+      "hardViolations": [],
+      "preferences": {
+        "directMaterials": 3,
+        "explicitWitnesses": 4,
+        "functionVariety": 3
+      },
+      "search": {
+        "visited": 21,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "candidateId": "synthetic:cse:a",
+          "reasons": [
+            "QUESTION_ASSIGNED_TWICE",
+            "ROOT_PRIMARY_BUDGET"
+          ]
+        }
+      ],
+      "actualCustomerClaimsEmitted": 0
+    }
+  ],
+  "questionFit": [
+    {
+      "method": "FIRST_ELIGIBLE",
+      "selected": [
+        {
+          "questionId": "synthetic:cse:q:8",
+          "candidateId": "synthetic:cse:i"
+        }
+      ],
+      "coveredQuestions": 1,
+      "requiredMeaningUnits": 1,
+      "distinctMeanings": 1,
+      "distinctRoots": 1,
+      "repeatedRootUses": 0,
+      "hardViolations": [],
+      "preferences": {
+        "directMaterials": 0,
+        "explicitWitnesses": 1,
+        "functionVariety": 1
+      },
+      "search": {
+        "visited": 0,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "candidateId": "synthetic:cse:j",
+          "reasons": [
+            "FACET_CONTEXT_REUSE",
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        }
+      ],
+      "actualCustomerClaimsEmitted": 0
+    },
+    {
+      "method": "QUESTION_FIT_FIRST",
+      "selected": [
+        {
+          "questionId": "synthetic:cse:q:8",
+          "candidateId": "synthetic:cse:j"
+        }
+      ],
+      "coveredQuestions": 1,
+      "requiredMeaningUnits": 1,
+      "distinctMeanings": 1,
+      "distinctRoots": 1,
+      "repeatedRootUses": 0,
+      "hardViolations": [],
+      "preferences": {
+        "directMaterials": 1,
+        "explicitWitnesses": 1,
+        "functionVariety": 1
+      },
+      "search": {
+        "visited": 0,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "candidateId": "synthetic:cse:i",
+          "reasons": [
+            "FACET_CONTEXT_REUSE",
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        }
+      ],
+      "actualCustomerClaimsEmitted": 0
+    },
+    {
+      "method": "CONSTRAINT_SEARCH",
+      "selected": [
+        {
+          "questionId": "synthetic:cse:q:8",
+          "candidateId": "synthetic:cse:j"
+        }
+      ],
+      "coveredQuestions": 1,
+      "requiredMeaningUnits": 1,
+      "distinctMeanings": 1,
+      "distinctRoots": 1,
+      "repeatedRootUses": 0,
+      "hardViolations": [],
+      "preferences": {
+        "directMaterials": 1,
+        "explicitWitnesses": 1,
+        "functionVariety": 1
+      },
+      "search": {
+        "visited": 4,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "candidateId": "synthetic:cse:i",
+          "reasons": [
+            "FACET_CONTEXT_REUSE",
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        }
+      ],
+      "actualCustomerClaimsEmitted": 0
+    }
+  ]
+}

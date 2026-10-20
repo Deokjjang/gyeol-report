@@ -92,7 +92,7 @@ export async function generateV4ShadowReport(payload: unknown, clock: V4ShadowCl
     }
     // Normalize once to exactly the JSON representation persisted by the worker.
     const body = JSON.parse(JSON.stringify({ version: "v4-runtime-evidence-1", mode: "shadow", productType: input.productKey,
-      generatedAt: clock.evaluatedAt, input, composition, calculations, natalTableEvidence, mbtiTables })) as Omit<V4RuntimeEvidence, "contentDigest">;
+      generatedAt: clock.evaluatedAt, bookEditorialRevision: "common-editorial-01", input, composition, calculations, natalTableEvidence, mbtiTables })) as Omit<V4RuntimeEvidence, "contentDigest">;
     const evidencePacket: V4RuntimeEvidence = { ...body, contentDigest: v4Digest(body) };
     const draft = projectV4Composition(composition), gate = validateV4Publication(input.productKey, draft, evidencePacket);
     if (!gate.ok) return { ok: false, externalCalls: [], error: { code: "INVALID_REPORT_INPUT", message: "V4_PUBLISH_REJECTED", validationErrors: gate.errors } };

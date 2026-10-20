@@ -1,0 +1,30 @@
+import type {KnowledgeSourcePointer, CatalogKey} from "../types";
+import type {ResolutionState, SourceProof, VerificationReceipt} from "../source-verification/types";
+import type {CandidateEnvelope} from "../global-specialist-integration/types";
+import type {KnowledgeBindingReceipt} from "../knowledge-binder/types";
+export const BASE_SHA = "d288dd1ae54e5f1663ced1644d9d8132daff1a08";
+export const VERSION = "global-source-domain-resolution-v1";
+export type Assessment = "PROVEN_TECHNICAL_RESOLUTION" | "DECLARATION_VERIFIED_ONLY" | "DOCUMENTARY_ONLY" | "REQUIRES_NATIVE_PRODUCER" | "REQUIRES_ACTUAL_CONTEXT" | "REQUIRES_ORIGINAL_SOURCE" | "AMBIGUOUS_REMAINS" | "POLICY_PROHIBITED" | "SEMANTIC_REVIEW_PENDING" | "UNRESOLVED";
+export type CandidateImpact = Pick<CandidateEnvelope, "identity" | "engine" | "productScope" | "relationshipScope" | "fixtureScope" | "questionLinks" | "readerAddress" | "actualEvidenceWitnesses" | "sourceRequirements" | "sourceGroups" | "originalBinderReceipt" | "normalizedGateResults" | "ownerRequirements" | "directionRequirements" | "temporalRequirements"> & {structural: boolean; receiptId: string};
+export type SourceResolution = {
+  originalReferenceKey: string; originalCatalogKey: CatalogKey; originalResolutionState: ResolutionState;
+  newTechnicalAssessment: Assessment; resolutionMethod: string; exactSourcePointer: KnowledgeSourcePointer | null;
+  resolvedCatalogKey: CatalogKey | null; originalRecordId: string | null; expectedRecordHash: string | null;
+  actualRecordHash: string | null; fileHash: string | null; sourceVersion: string | null; hashEncoding: string | null;
+  sourceKind: string; proofs: SourceProof[]; excludedAlternatives: unknown[]; remainingUnknown: string[];
+  originalReceiptHash: string; originalTarget: VerificationReceipt["originalTarget"];
+  nativeRecheckState: ResolutionState; unsupportedClassification: string | null;
+  domainReviewRequired: true; semanticReviewRequired: true; actualEvidenceRequired: true;
+  operatorApprovalRequired: true; customerApprovalRequired: true; establishesPersonalEvidence: false;
+};
+export type ResolutionPriorityItem = {
+  originalReferenceKey: string; originalCatalogKey: CatalogKey; impactClass: "P0" | "P1" | "P2" | "P3" | "P4" | "P5";
+  technicalSolvability: "PROVEN" | "INSPECT_EXACT_ORIGINAL" | "REQUIRES_EXTERNAL_CONTRACT";
+  actualEvidencePresent: boolean; sourceRequirementKind: string; sourceGroupDependency: string[];
+  domainBlocker: string[]; meaningReviewRequirement: "OPERATOR_REVIEW_PENDING";
+  affectedEngines: string[]; affectedQuestions: string[]; affectedCandidates: string[];
+  distinctAffectedCandidates: number; candidateFixtureOccurrences: number; required: boolean;
+  exactLocatorPresent: boolean; actualProducerSupported: boolean; originalPolicyProhibited: boolean;
+  otherBlockers: string[]; proposedNextAction: string;
+};
+export type ReevaluationRow = {candidate: string; originalReceiptRef: CandidateEnvelope["originalBinderReceipt"]; originalReceiptId: string; originalReceiptHash: string; overlayReceipt: KnowledgeBindingReceipt; appliedProofs: string[]; sourceRequirementsAdded: 0; selectorProofs: unknown[]; originalConditionsPreserved: true; originalGateResults: KnowledgeBindingReceipt["allTwelveGateResults"]; delta: {sourceMatches: number; evidenceMatches: number; structural: number}};

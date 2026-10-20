@@ -1,0 +1,1542 @@
+[
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/1",
+      "recordSha256": "d88bbc800f02dacf56c4040832d0c305cfb4804a41405be5e41cd21e4bf3c9e7",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "d88bbc800f02dacf56c4040832d0c305cfb4804a41405be5e41cd21e4bf3c9e7",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/2",
+      "recordSha256": "3b2e3714fdb759ab921ffaa0140f23d584049a4a9abf6cbd9031aac28541bb7a",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "3b2e3714fdb759ab921ffaa0140f23d584049a4a9abf6cbd9031aac28541bb7a",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/3",
+      "recordSha256": "ff054f224c61dd0673f692ad3f02a550fcc9c11282d315d9f9a1138270a506c5",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "ff054f224c61dd0673f692ad3f02a550fcc9c11282d315d9f9a1138270a506c5",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/4",
+      "recordSha256": "a2b7dad88fc367ed90987e048571feb5ee6f64dc741e2af1209b78323b0c451d",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "a2b7dad88fc367ed90987e048571feb5ee6f64dc741e2af1209b78323b0c451d",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/5",
+      "recordSha256": "ce09cd5360d41ca95cd40f667c2b0f9d330b561baf91629672e0b555ccf68a4f",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "ce09cd5360d41ca95cd40f667c2b0f9d330b561baf91629672e0b555ccf68a4f",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/6",
+      "recordSha256": "c07b200c37a3802e1070721be3208bbe481d8ebe2b8be1ea1002e430c958221c",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "c07b200c37a3802e1070721be3208bbe481d8ebe2b8be1ea1002e430c958221c",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/7",
+      "recordSha256": "55fdd445ec3b0288d4666096441fe57bcaecae46b50697be1345c721b7419126",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "55fdd445ec3b0288d4666096441fe57bcaecae46b50697be1345c721b7419126",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/8",
+      "recordSha256": "af4f1d25b5766e1e25ef90ef6304a82c152208a34f1f3df930dabcf27f11a448",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "af4f1d25b5766e1e25ef90ef6304a82c152208a34f1f3df930dabcf27f11a448",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/9",
+      "recordSha256": "58ae7fc81594bc5989ae8629dba76c6d0f0e1d0974e6e09a4b52422aaf300a2c",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "58ae7fc81594bc5989ae8629dba76c6d0f0e1d0974e6e09a4b52422aaf300a2c",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/10",
+      "recordSha256": "d4014fb54fbf150bbfd7a551e4e3003fcef77f3efeeaf9f4abf61a2d93b49e13",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "d4014fb54fbf150bbfd7a551e4e3003fcef77f3efeeaf9f4abf61a2d93b49e13",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/11",
+      "recordSha256": "5e95db4614f9b97bb384849c2ea0a901406d3661e534cac718fad20b3760959f",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "5e95db4614f9b97bb384849c2ea0a901406d3661e534cac718fad20b3760959f",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/12",
+      "recordSha256": "719ac64aac1f42bfd8b21ac3d594ab4f2786a85880062ca1236e2bc239fd50b4",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "719ac64aac1f42bfd8b21ac3d594ab4f2786a85880062ca1236e2bc239fd50b4",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/13",
+      "recordSha256": "3929d028d7797fecd7c82e904a5af86dd4c7340512eaa1c304002d83ae19967f",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "3929d028d7797fecd7c82e904a5af86dd4c7340512eaa1c304002d83ae19967f",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/14",
+      "recordSha256": "3ec5ba6cd70aff70b40906c8cfd6453349fac0b307e12ebabd3fc895b247320e",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "3ec5ba6cd70aff70b40906c8cfd6453349fac0b307e12ebabd3fc895b247320e",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/15",
+      "recordSha256": "b4ccaff682798047a48fb2433b0b016816f4a21b08954af147d868947dcac7ce",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "b4ccaff682798047a48fb2433b0b016816f4a21b08954af147d868947dcac7ce",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/16",
+      "recordSha256": "012870f2ff1bdbd9b4214097a819b8a88d742b66cea7bff4b725f3e416f54e44",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "012870f2ff1bdbd9b4214097a819b8a88d742b66cea7bff4b725f3e416f54e44",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/17",
+      "recordSha256": "f7ae14db6edf56f2d2db3168ea764559568932db4fea249cb094ee8cfbf32403",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "f7ae14db6edf56f2d2db3168ea764559568932db4fea249cb094ee8cfbf32403",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/18",
+      "recordSha256": "70493507b5f6aee309d88d89b18ec5a51f4b8c7684ea5b1a0bdd2668ea096eb2",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "70493507b5f6aee309d88d89b18ec5a51f4b8c7684ea5b1a0bdd2668ea096eb2",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/19",
+      "recordSha256": "e8d144504f80f86751096ed9e0bb79323476bace118decc0ccfd2e9c778779e3",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "e8d144504f80f86751096ed9e0bb79323476bace118decc0ccfd2e9c778779e3",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/20",
+      "recordSha256": "74325c4283ec970912d909de44708069c1763a65acc097d3158a9d91448accd9",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "74325c4283ec970912d909de44708069c1763a65acc097d3158a9d91448accd9",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/21",
+      "recordSha256": "8d13313d2ca1dd376fc01ffd179bd9874d5979d882f04c8c831c9d0a2c0bc786",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "8d13313d2ca1dd376fc01ffd179bd9874d5979d882f04c8c831c9d0a2c0bc786",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/22",
+      "recordSha256": "e5d3e6b0b6dcaf8f6455c33d639d2c75daecd670a3260748b0b4d0a958d1909c",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "e5d3e6b0b6dcaf8f6455c33d639d2c75daecd670a3260748b0b4d0a958d1909c",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/23",
+      "recordSha256": "3982ebfcdd7410e15d8e08f036c09a49178574672e02577c81073972bdc8949f",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "3982ebfcdd7410e15d8e08f036c09a49178574672e02577c81073972bdc8949f",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/24",
+      "recordSha256": "247702eabc40ce80f749257d1568016d4a16ff3369f32d6367084def7716c51b",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "247702eabc40ce80f749257d1568016d4a16ff3369f32d6367084def7716c51b",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/25",
+      "recordSha256": "a03f444724581a375948240058f7997f5b01e37c4843404be81c75c20703d781",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "a03f444724581a375948240058f7997f5b01e37c4843404be81c75c20703d781",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/26",
+      "recordSha256": "d06490fe50cbc1148f0849844d1bfc65a4c6aeff2077b44ba880077d096f69ed",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "d06490fe50cbc1148f0849844d1bfc65a4c6aeff2077b44ba880077d096f69ed",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/27",
+      "recordSha256": "e77711900d9b348163f8da1f032862b3cbc26bba26fd5d361f462b39c951c3f3",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "e77711900d9b348163f8da1f032862b3cbc26bba26fd5d361f462b39c951c3f3",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/28",
+      "recordSha256": "e94ec748f85405db7e0aa5c05f8a90fe34343cce25c408d241847c18715513ea",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "e94ec748f85405db7e0aa5c05f8a90fe34343cce25c408d241847c18715513ea",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/29",
+      "recordSha256": "7c5eeb864b8e74ca73bf72418da63a40c16c0c53a1b4174aab7a1b3528bf3a75",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "7c5eeb864b8e74ca73bf72418da63a40c16c0c53a1b4174aab7a1b3528bf3a75",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/30",
+      "recordSha256": "8559eb47c3f3e8b6f55bcec1f98e5fd1777fa167373711382dbf586ce586c465",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "8559eb47c3f3e8b6f55bcec1f98e5fd1777fa167373711382dbf586ce586c465",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/31",
+      "recordSha256": "394825cea0aaf4f64a99e6dffeb149bec430186fe3441fccc521aae2d8c852f5",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "394825cea0aaf4f64a99e6dffeb149bec430186fe3441fccc521aae2d8c852f5",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/32",
+      "recordSha256": "35c3bdb87c81d1d8324af8b68bf4e7b9d7ffe566df044ff386624d58afbd1b72",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "35c3bdb87c81d1d8324af8b68bf4e7b9d7ffe566df044ff386624d58afbd1b72",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/33",
+      "recordSha256": "3192340b1ae8017e87dc3f4da76a14f7167530fd9848a483ebe845962fd5f41c",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "3192340b1ae8017e87dc3f4da76a14f7167530fd9848a483ebe845962fd5f41c",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/34",
+      "recordSha256": "4aaf486e28fb2508d8722721968875316736dbe157e8f2b6a7fd0cb5fded3bf3",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "4aaf486e28fb2508d8722721968875316736dbe157e8f2b6a7fd0cb5fded3bf3",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/35",
+      "recordSha256": "6cf5c35ea3789380522bb7b916d96d4c2da15611dbbe7e96cab9c0b1f537f92a",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "6cf5c35ea3789380522bb7b916d96d4c2da15611dbbe7e96cab9c0b1f537f92a",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/36",
+      "recordSha256": "7b66ef1561be5e006603ec35c4e9c69eaf842cf8e971350add17bee300b97020",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "7b66ef1561be5e006603ec35c4e9c69eaf842cf8e971350add17bee300b97020",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/37",
+      "recordSha256": "48e0acfcec22f302f9fc76e8922e6e8091a479413ad60afdb3351970d34ff003",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "48e0acfcec22f302f9fc76e8922e6e8091a479413ad60afdb3351970d34ff003",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/38",
+      "recordSha256": "f9dff276faf2fa43a6ec3185069c96f8773790e370bcd6d98b1f755782c84ce1",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "f9dff276faf2fa43a6ec3185069c96f8773790e370bcd6d98b1f755782c84ce1",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/39",
+      "recordSha256": "11bc4bf797165262a0e444e29583468280944a0843a08bbbd331320374c2d2d8",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "11bc4bf797165262a0e444e29583468280944a0843a08bbbd331320374c2d2d8",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/40",
+      "recordSha256": "83ecc335180cbed75736e9ad94fac378ac805175254226ca32babdf4d7df196f",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "83ecc335180cbed75736e9ad94fac378ac805175254226ca32babdf4d7df196f",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/41",
+      "recordSha256": "ed9f0625c7730affd77efb2b6ba99eb790903a0dd2fc8c83ee7456dc22ef8262",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "ed9f0625c7730affd77efb2b6ba99eb790903a0dd2fc8c83ee7456dc22ef8262",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/42",
+      "recordSha256": "871321461362e73528d22b08be6c49c5eae938636e81649bad679da5181eb93a",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "871321461362e73528d22b08be6c49c5eae938636e81649bad679da5181eb93a",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/43",
+      "recordSha256": "b2fd72970495b8ea7a6ee8e9acc18e23f64799c297c8a385394fdb811dc43885",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "b2fd72970495b8ea7a6ee8e9acc18e23f64799c297c8a385394fdb811dc43885",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/44",
+      "recordSha256": "6b5ef30cbea30b1a6ba6f44761cd853de35b1003b8c1dcab4580bbfcab828100",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "6b5ef30cbea30b1a6ba6f44761cd853de35b1003b8c1dcab4580bbfcab828100",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/45",
+      "recordSha256": "6e0a300afde476cc8a3ff37677ca72d2379c81b18c539b509362a20c3d01927f",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "6e0a300afde476cc8a3ff37677ca72d2379c81b18c539b509362a20c3d01927f",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/46",
+      "recordSha256": "8a8ea4744a96b6c363c38ac80cb4f90f93c64ee48dafc37f3fc659e84f516050",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "8a8ea4744a96b6c363c38ac80cb4f90f93c64ee48dafc37f3fc659e84f516050",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/47",
+      "recordSha256": "6cd4512ae187cfd14be085b77b47297cfe2475eb9b80486ca580cc0988b68549",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "6cd4512ae187cfd14be085b77b47297cfe2475eb9b80486ca580cc0988b68549",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/48",
+      "recordSha256": "3b007b2d02bfbc8f758713fd9023e10a8c92a3502d019d162dd32d1b0d60cbd7",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "3b007b2d02bfbc8f758713fd9023e10a8c92a3502d019d162dd32d1b0d60cbd7",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/49",
+      "recordSha256": "089a23d79ba39fc337e2a9dda7f900de01fda4df1eaa1ce0df21f415ee7a6485",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "089a23d79ba39fc337e2a9dda7f900de01fda4df1eaa1ce0df21f415ee7a6485",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/50",
+      "recordSha256": "71b70878b91b945d4538f050942433d0952fc00dbdf49eeca50007ee0584c80b",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "71b70878b91b945d4538f050942433d0952fc00dbdf49eeca50007ee0584c80b",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/51",
+      "recordSha256": "c20da3507549eb92510e65e6f90017d9ca2e3faa60027c95ee760cf9e2214028",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "c20da3507549eb92510e65e6f90017d9ca2e3faa60027c95ee760cf9e2214028",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/52",
+      "recordSha256": "dfb8759475edd1ed1ef36b259daa205b0ab155f0c8f2891ede3f72b8955fe937",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "dfb8759475edd1ed1ef36b259daa205b0ab155f0c8f2891ede3f72b8955fe937",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/53",
+      "recordSha256": "44a8bca1d02393878c7319c4fd25340e4f8c66fb8d6deb99880bb1178fb727e1",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "44a8bca1d02393878c7319c4fd25340e4f8c66fb8d6deb99880bb1178fb727e1",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/54",
+      "recordSha256": "90afbaf07a0067fe41ef9311fff0137621685c5f2f0b032434c71bc99e2a6ead",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "90afbaf07a0067fe41ef9311fff0137621685c5f2f0b032434c71bc99e2a6ead",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/55",
+      "recordSha256": "fbee6518d32de34a2dde96608bedfd2561a386da6fe9b0421f7886b044b408bd",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "fbee6518d32de34a2dde96608bedfd2561a386da6fe9b0421f7886b044b408bd",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/56",
+      "recordSha256": "99f8719232f0e6ce9f6dceec1017635c10ef116553d5f879d576b32cd60af685",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "99f8719232f0e6ce9f6dceec1017635c10ef116553d5f879d576b32cd60af685",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/57",
+      "recordSha256": "a5abf5e89b7cd1cadc9f1281fcaf03f738260f44e8d2ad7f5ba464dc91a6f683",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "a5abf5e89b7cd1cadc9f1281fcaf03f738260f44e8d2ad7f5ba464dc91a6f683",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/58",
+      "recordSha256": "a02cbe1d4706653d361142f865e49ced7f9cc9a831101b19b56ad5461f0b76b6",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "a02cbe1d4706653d361142f865e49ced7f9cc9a831101b19b56ad5461f0b76b6",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/59",
+      "recordSha256": "ce5ab4af69bfed7eafb63d60c2b9631ce51d171f42400eeb34bd4060570125d5",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "ce5ab4af69bfed7eafb63d60c2b9631ce51d171f42400eeb34bd4060570125d5",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/60",
+      "recordSha256": "4c4277dd96e2aa244aaad0b654d1605b7415fd48156ab745b719f0ddcf1f1497",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "4c4277dd96e2aa244aaad0b654d1605b7415fd48156ab745b719f0ddcf1f1497",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/61",
+      "recordSha256": "e688636bbda85b17dbba8e80ba6a2825a55a179dbf4dd7e913cbc281cd625a3f",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "e688636bbda85b17dbba8e80ba6a2825a55a179dbf4dd7e913cbc281cd625a3f",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/62",
+      "recordSha256": "bfda409ea4bd62a5cf4a959ad8920c4ffcd32dc86b52b968408cbcba0534e69b",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "bfda409ea4bd62a5cf4a959ad8920c4ffcd32dc86b52b968408cbcba0534e69b",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/63",
+      "recordSha256": "fa6633871a39ad741bd8ffe691b59827563b35b1720e06445835b221272da398",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "fa6633871a39ad741bd8ffe691b59827563b35b1720e06445835b221272da398",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/64",
+      "recordSha256": "95a98e2f20498b8af0da22c2dbb5ea11cd5019014c0402d0b046650c05c8efb2",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "95a98e2f20498b8af0da22c2dbb5ea11cd5019014c0402d0b046650c05c8efb2",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/65",
+      "recordSha256": "820a2b25562ddf94bf8e7da2f93f186dad8eb33867752535ad69a49a05b10a7a",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "820a2b25562ddf94bf8e7da2f93f186dad8eb33867752535ad69a49a05b10a7a",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/66",
+      "recordSha256": "ecc80791ba03edaedc9b5880c02b1ce2499bf90287b7422134265d488b18cf39",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "ecc80791ba03edaedc9b5880c02b1ce2499bf90287b7422134265d488b18cf39",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/67",
+      "recordSha256": "a6306c4a7dea3019f414d251e2721492b492bcb48ea74646d3b938a7a6725822",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "a6306c4a7dea3019f414d251e2721492b492bcb48ea74646d3b938a7a6725822",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/68",
+      "recordSha256": "c7e9269c16f53f6381118c405e3f71c2166079fd02202064981c66650e14407f",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "c7e9269c16f53f6381118c405e3f71c2166079fd02202064981c66650e14407f",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/69",
+      "recordSha256": "77491bcf27723e2876c6ce8637128da8c8d85d5159acf6c90dc1a78525de004f",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "77491bcf27723e2876c6ce8637128da8c8d85d5159acf6c90dc1a78525de004f",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/70",
+      "recordSha256": "42649cf43003d362f6be49c8e1ecb160d26cc4190ce2f42078a216d0c497eeee",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "42649cf43003d362f6be49c8e1ecb160d26cc4190ce2f42078a216d0c497eeee",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/71",
+      "recordSha256": "9dabe349dce9aaf06498e1267f3d12aea4afc67ad5d532c15e0001ca7722a017",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "9dabe349dce9aaf06498e1267f3d12aea4afc67ad5d532c15e0001ca7722a017",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/72",
+      "recordSha256": "8c7434ebafe628a9e3f7d8d46939d83a1fccec25408091637650f75e442cefe5",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "8c7434ebafe628a9e3f7d8d46939d83a1fccec25408091637650f75e442cefe5",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/73",
+      "recordSha256": "3548fa8b1c08e1611ee418a92ad73ed345280cb797f5e4b01d0e51d926344772",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "3548fa8b1c08e1611ee418a92ad73ed345280cb797f5e4b01d0e51d926344772",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/74",
+      "recordSha256": "6fc46b1ee3a255e62f4cd933b434bab942f8b226528dfe296a960c8f39c7bc42",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "6fc46b1ee3a255e62f4cd933b434bab942f8b226528dfe296a960c8f39c7bc42",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/75",
+      "recordSha256": "c8067a8812139d75325ed7dd4cbab799f47d859e502e6f82e6d49dac6745bc04",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "c8067a8812139d75325ed7dd4cbab799f47d859e502e6f82e6d49dac6745bc04",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/76",
+      "recordSha256": "cb1e046af653b1ea2fe5c522765bfa1307407c115da9c65d14c1ccd82e6b797b",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "cb1e046af653b1ea2fe5c522765bfa1307407c115da9c65d14c1ccd82e6b797b",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/77",
+      "recordSha256": "94be3769663159d3ac7d08f2e7d26a69374bebcc6ce30c38e2ec1aa834427621",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "94be3769663159d3ac7d08f2e7d26a69374bebcc6ce30c38e2ec1aa834427621",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/78",
+      "recordSha256": "07d4179302b8c95bd69de0bf54dd71cd76389692528ac4a72724d01be969df95",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "07d4179302b8c95bd69de0bf54dd71cd76389692528ac4a72724d01be969df95",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/79",
+      "recordSha256": "50ed44227c7b136bac3fdb0d82392b6426d5f3c62a4a0fd5884aff247e7ade28",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "50ed44227c7b136bac3fdb0d82392b6426d5f3c62a4a0fd5884aff247e7ade28",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/80",
+      "recordSha256": "5cce15ac4902c19d72153a6532d766ac5795bae5ca56eae93bf79cb4341b57f6",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "5cce15ac4902c19d72153a6532d766ac5795bae5ca56eae93bf79cb4341b57f6",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/81",
+      "recordSha256": "82dd45896c985e70a346e6e08de9e628b3d1c7e256b861395d700bc2863b323b",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "82dd45896c985e70a346e6e08de9e628b3d1c7e256b861395d700bc2863b323b",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/82",
+      "recordSha256": "22b37fb24845a2e3d356b929034cd7a40d9b98d42b6790797e7b0959be1fb833",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "22b37fb24845a2e3d356b929034cd7a40d9b98d42b6790797e7b0959be1fb833",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/83",
+      "recordSha256": "8014c83c43d6ca6755fbb7fc683f46ceae73ff825f448509a3561e01974b3803",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "8014c83c43d6ca6755fbb7fc683f46ceae73ff825f448509a3561e01974b3803",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/84",
+      "recordSha256": "69e90ba05cecf862bdf4dd3562a6a88301417572b8979cc0c76e72de7eac3d77",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "69e90ba05cecf862bdf4dd3562a6a88301417572b8979cc0c76e72de7eac3d77",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/85",
+      "recordSha256": "2d7bd1f0ded056167ef6ea434cf30eeb10ca602a434225ea4317cc741e82f68b",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "2d7bd1f0ded056167ef6ea434cf30eeb10ca602a434225ea4317cc741e82f68b",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/86",
+      "recordSha256": "52caadd2be8043d18173faf9c07fbac577726678d6e311deb7d9da9b5dfd07d8",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "52caadd2be8043d18173faf9c07fbac577726678d6e311deb7d9da9b5dfd07d8",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/87",
+      "recordSha256": "0593d9a51c0cfa84f26b570239610301abcc325097baa39a2c98e776bd158bb1",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "0593d9a51c0cfa84f26b570239610301abcc325097baa39a2c98e776bd158bb1",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/88",
+      "recordSha256": "49b4fa396a71f2b5263cd91ce090f7a4b86e13f0992d43eccc200c774d66b19a",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "49b4fa396a71f2b5263cd91ce090f7a4b86e13f0992d43eccc200c774d66b19a",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/89",
+      "recordSha256": "da7d0cc9813efc98276d884eb8c71bf54518f7dd46eb54aef92de5ef22a2a66e",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "da7d0cc9813efc98276d884eb8c71bf54518f7dd46eb54aef92de5ef22a2a66e",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/90",
+      "recordSha256": "2c0662baffacf5db059237ca920e4f8a28ecd6776b309869b23852da4f929a05",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "2c0662baffacf5db059237ca920e4f8a28ecd6776b309869b23852da4f929a05",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/91",
+      "recordSha256": "3becf749b532eadbfd4a4c23ad2843a6fe6d428968f713e793e015ee8de73059",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "3becf749b532eadbfd4a4c23ad2843a6fe6d428968f713e793e015ee8de73059",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/92",
+      "recordSha256": "99cb8ea0db5dd2efef3f3ba92dc0f47f56a14888f2ed6cfa4f922647d4a78903",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "99cb8ea0db5dd2efef3f3ba92dc0f47f56a14888f2ed6cfa4f922647d4a78903",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/93",
+      "recordSha256": "6a4d62e3f4750fd3dd2e80b5653fd5e79cb6f27fc810736604f4278fe5850df6",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "6a4d62e3f4750fd3dd2e80b5653fd5e79cb6f27fc810736604f4278fe5850df6",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/94",
+      "recordSha256": "bdf8092d2e612878aac9d1a22dda9c25942480b817b38ee5c06ca3f4b1c0361a",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "bdf8092d2e612878aac9d1a22dda9c25942480b817b38ee5c06ca3f4b1c0361a",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/95",
+      "recordSha256": "69ee74b7b1aadef5620f4482f5b39e83d4ee8fa3a1d77fff64f4f990a10460ac",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "69ee74b7b1aadef5620f4482f5b39e83d4ee8fa3a1d77fff64f4f990a10460ac",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/96",
+      "recordSha256": "c1bfff72bf3dcf0554af789d496437f5c9b39f2f879c706741f9903c41921dd2",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "c1bfff72bf3dcf0554af789d496437f5c9b39f2f879c706741f9903c41921dd2",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/97",
+      "recordSha256": "28fa58b1e102d805a7f3a47d7f31cf95508ca85fff04357f0b009024dd0949a9",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "28fa58b1e102d805a7f3a47d7f31cf95508ca85fff04357f0b009024dd0949a9",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/98",
+      "recordSha256": "8f03f32a306dc6d582ba3d96deef304ab01de024092eeb5ba704703cfc6b9a21",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "8f03f32a306dc6d582ba3d96deef304ab01de024092eeb5ba704703cfc6b9a21",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/99",
+      "recordSha256": "ab611f8b062a90719a030c5a9b51ee3c43a523f3be7264ab2a7091e8076a0928",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "ab611f8b062a90719a030c5a9b51ee3c43a523f3be7264ab2a7091e8076a0928",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/100",
+      "recordSha256": "a0a4de374c57516b1a9869d539bba4ac64037b2a6cf614788031bc7f22cdfe72",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "a0a4de374c57516b1a9869d539bba4ac64037b2a6cf614788031bc7f22cdfe72",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/101",
+      "recordSha256": "14b1bffe525be3b16871679eac4f7d2b086697755c787dc43a1cf18b65d9c96f",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "14b1bffe525be3b16871679eac4f7d2b086697755c787dc43a1cf18b65d9c96f",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/102",
+      "recordSha256": "eacdedc6546b5f7d15dc39735fe3e8b6af8dcee1a19fc46c2bb81f2ce8c0dad3",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "eacdedc6546b5f7d15dc39735fe3e8b6af8dcee1a19fc46c2bb81f2ce8c0dad3",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/103",
+      "recordSha256": "0f15af9555067dd4b7c2d05118da68f6bf691bffff0cd393aad6b1dd2081f8bb",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "0f15af9555067dd4b7c2d05118da68f6bf691bffff0cd393aad6b1dd2081f8bb",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/104",
+      "recordSha256": "6a4f8537a4dcab0c3e103992700537bc484ca3b0afa65fdfeffb7455bccc7482",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "6a4f8537a4dcab0c3e103992700537bc484ca3b0afa65fdfeffb7455bccc7482",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/105",
+      "recordSha256": "a558ceac4f207319e1ac9bfb4f7f5f0c0ec0c9fd711f9482a850ef96c4ea4e34",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "a558ceac4f207319e1ac9bfb4f7f5f0c0ec0c9fd711f9482a850ef96c4ea4e34",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/106",
+      "recordSha256": "27f4aa87ec3e35f21ec133ba68e9298f4f1ad5e546f4bc1e5f4c904b012e6800",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "27f4aa87ec3e35f21ec133ba68e9298f4f1ad5e546f4bc1e5f4c904b012e6800",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/107",
+      "recordSha256": "d6dd5202fbca254f8953017337abe614b9f203d7a09f9376eedfa972a4979f5b",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "d6dd5202fbca254f8953017337abe614b9f203d7a09f9376eedfa972a4979f5b",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/108",
+      "recordSha256": "4994bb1d3edfeb0eedce6ec076fb579fc63012875f4b44a947d7e6b647212075",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "4994bb1d3edfeb0eedce6ec076fb579fc63012875f4b44a947d7e6b647212075",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/109",
+      "recordSha256": "87abcf63ccd905c8f247eec5693ced1f588fe1c87a1570e31bb8d998a87a410b",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "87abcf63ccd905c8f247eec5693ced1f588fe1c87a1570e31bb8d998a87a410b",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/110",
+      "recordSha256": "174d41185e47d20b5ea15f23386c3f3f66b10d1b4c1903bf1ed735cb28dc31ae",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "174d41185e47d20b5ea15f23386c3f3f66b10d1b4c1903bf1ed735cb28dc31ae",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/111",
+      "recordSha256": "14290769fbca20af166b99bc6c7aceb334af9eb2303129cf4083bcb3d394f038",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "14290769fbca20af166b99bc6c7aceb334af9eb2303129cf4083bcb3d394f038",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/112",
+      "recordSha256": "33a9552402be5549f6993bd2b3151f0f4bf4073f12f30ab8d7d468c02ab4cc38",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "33a9552402be5549f6993bd2b3151f0f4bf4073f12f30ab8d7d468c02ab4cc38",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/113",
+      "recordSha256": "f48c556b5e9f03613b7beb2676e34260799fc64a5e2aa392d069e27afa5e6afc",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "f48c556b5e9f03613b7beb2676e34260799fc64a5e2aa392d069e27afa5e6afc",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/114",
+      "recordSha256": "d9062f2fb20339672157daa715cf6fff7429d9d3d4b461d31a4c9d89ced77daa",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "d9062f2fb20339672157daa715cf6fff7429d9d3d4b461d31a4c9d89ced77daa",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/115",
+      "recordSha256": "20a1429eb03e643e437940d901fbf8ff74681420082d5d60809af1ff4887cb40",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "20a1429eb03e643e437940d901fbf8ff74681420082d5d60809af1ff4887cb40",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/116",
+      "recordSha256": "bb5a09d50917067f0e4c050556829ff48098ad873aef10d71dadf90bc8207235",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "bb5a09d50917067f0e4c050556829ff48098ad873aef10d71dadf90bc8207235",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/117",
+      "recordSha256": "9ecc5dca3f0647bd09d051a26c1416d20e6880f3ee21b2465a6f4efe9b67629f",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "9ecc5dca3f0647bd09d051a26c1416d20e6880f3ee21b2465a6f4efe9b67629f",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/118",
+      "recordSha256": "5b799a56580c849b0b7b18118b143c79925fcfa5256c5d6dc6c174d7211387e9",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "5b799a56580c849b0b7b18118b143c79925fcfa5256c5d6dc6c174d7211387e9",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/119",
+      "recordSha256": "bd410767ae2f3a51098e094e92bec46d96db54be0ee35b38d5bd4e38153da385",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "bd410767ae2f3a51098e094e92bec46d96db54be0ee35b38d5bd4e38153da385",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/120",
+      "recordSha256": "34a97c2b40726a089944ee20f57126a8c0e1cfd5dde190f33b5bf00e986429c7",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "34a97c2b40726a089944ee20f57126a8c0e1cfd5dde190f33b5bf00e986429c7",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/121",
+      "recordSha256": "dab6d35b50cffda9a9e77e864537fcd41d0bcfd179d122f4a92f3235dbfa18d2",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "dab6d35b50cffda9a9e77e864537fcd41d0bcfd179d122f4a92f3235dbfa18d2",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/122",
+      "recordSha256": "54127e78eeb033d5faa6be8499c4d71e59861f187cc4b5651cb8fe4a9b884933",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "54127e78eeb033d5faa6be8499c4d71e59861f187cc4b5651cb8fe4a9b884933",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/123",
+      "recordSha256": "8171c72d7a96cc4e3c6a6ed2063c1c7f3d7a4002786c60242f05e2573079c34e",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "8171c72d7a96cc4e3c6a6ed2063c1c7f3d7a4002786c60242f05e2573079c34e",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/124",
+      "recordSha256": "766febd627c90853d7b644f0ae78e98dfc978f3e75f36436633d39f8b562a767",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "766febd627c90853d7b644f0ae78e98dfc978f3e75f36436633d39f8b562a767",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/125",
+      "recordSha256": "c6639fe9633cb120d1592354c120283f9585e2c84b38fe75d20a96eb83765bcd",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "c6639fe9633cb120d1592354c120283f9585e2c84b38fe75d20a96eb83765bcd",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/126",
+      "recordSha256": "0e0701e07da978373ff1dc7bf530c25e00f8fb66d8718cd8bc53ae1b8c9a2abe",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "0e0701e07da978373ff1dc7bf530c25e00f8fb66d8718cd8bc53ae1b8c9a2abe",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/127",
+      "recordSha256": "a5b3b005cf4e0ee535f64d15e44fef4e48713af2bc7d6067c82a92cd94c49a6e",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "a5b3b005cf4e0ee535f64d15e44fef4e48713af2bc7d6067c82a92cd94c49a6e",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/128",
+      "recordSha256": "ee39180730751a6e990f0eb9adedd22d5e1300ae17b7a46d409a16360a856992",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "ee39180730751a6e990f0eb9adedd22d5e1300ae17b7a46d409a16360a856992",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/129",
+      "recordSha256": "3b16ba7d778f1e9a8f75bd35da7685825e47e7f47fcd2886ac3ff2ff09075d09",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "3b16ba7d778f1e9a8f75bd35da7685825e47e7f47fcd2886ac3ff2ff09075d09",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/130",
+      "recordSha256": "f9545b3742202ead54c68e33af08c5188e439a7707a55d22f593fd9faeb273a0",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "f9545b3742202ead54c68e33af08c5188e439a7707a55d22f593fd9faeb273a0",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/131",
+      "recordSha256": "50e0fcc53db91df8ff24c3a53093ce1ea0d6a866e6150df0b79455a93aa6f7d5",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "50e0fcc53db91df8ff24c3a53093ce1ea0d6a866e6150df0b79455a93aa6f7d5",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/132",
+      "recordSha256": "5cb82dc6706785048f19036dc1f8c02cee7994e9a721f3848bb40cab4412eaaf",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "5cb82dc6706785048f19036dc1f8c02cee7994e9a721f3848bb40cab4412eaaf",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/133",
+      "recordSha256": "1477fd7207d0aa25e6d16bc4eec0b177e7ae12a711e253461addb1ff7a25b4e7",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "1477fd7207d0aa25e6d16bc4eec0b177e7ae12a711e253461addb1ff7a25b4e7",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/134",
+      "recordSha256": "39f8be9b536891fee75be115d0c91339281018b9c23b0351319c06d45dd20e35",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "39f8be9b536891fee75be115d0c91339281018b9c23b0351319c06d45dd20e35",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/135",
+      "recordSha256": "d84ea253aaa80c0da0aa14b17fa4a3bb646ef41536712de3ed66230aafc31ac2",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "d84ea253aaa80c0da0aa14b17fa4a3bb646ef41536712de3ed66230aafc31ac2",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/136",
+      "recordSha256": "f8f2f46677c9d9173f1c6b0632eb8621db5a26af709f8a9012c7f4d4b27cdb13",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "f8f2f46677c9d9173f1c6b0632eb8621db5a26af709f8a9012c7f4d4b27cdb13",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/137",
+      "recordSha256": "df864ae30c25312909e9222ede66d41bf688a55a73b9c93a6c1c0534b771d75b",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "df864ae30c25312909e9222ede66d41bf688a55a73b9c93a6c1c0534b771d75b",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/138",
+      "recordSha256": "a8e167a47609223397a87227f9eb4b6534867999a9069c588e4e33a4045a7ed6",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "a8e167a47609223397a87227f9eb4b6534867999a9069c588e4e33a4045a7ed6",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/139",
+      "recordSha256": "0f2973653d5630d6f50d1325f766de4ce4759895513fea2611607e9ccdde5f5b",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "0f2973653d5630d6f50d1325f766de4ce4759895513fea2611607e9ccdde5f5b",
+    "version": "synthetic-friendship-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/0",
+      "recordSha256": "2967329bf5c750f47c75c4e93a64eb623dc81b1f4088060171374d77458c4a27",
+      "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+      "sourceVersion": "synthetic-friendship-v1"
+    },
+    "hash": "2967329bf5c750f47c75c4e93a64eb623dc81b1f4088060171374d77458c4a27",
+    "version": "synthetic-friendship-v1"
+  }
+]

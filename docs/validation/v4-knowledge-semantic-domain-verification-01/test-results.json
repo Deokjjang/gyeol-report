@@ -1,0 +1,92 @@
+{
+  "existing": {
+    "beforePassed": 7796,
+    "beforeFailed": 46,
+    "afterPassed": 7796,
+    "afterFailed": 46,
+    "newFailures": 0
+  },
+  "verificationSuites": {
+    "knowledgeSemanticDomainVerification.test.ts": {
+      "passed": 43,
+      "failed": 0
+    },
+    "knowledgeSourceVerification.test.ts": {
+      "passed": 37,
+      "failed": 0
+    },
+    "knowledgeUnifiedCatalog.test.ts": {
+      "passed": 12,
+      "failed": 0
+    }
+  },
+  "existingKoreanAndActualBook": {
+    "passed": 669,
+    "failed": 0
+  },
+  "frozenSixProduct": {
+    "passed": 64,
+    "failed": 0,
+    "includedInExistingGroup": true
+  },
+  "combinedRelated": {
+    "passed": 8557,
+    "failed": 46
+  },
+  "typescript": {
+    "before": 0,
+    "after": 0,
+    "new": 0
+  },
+  "lint": "PASS",
+  "build": "PASS",
+  "diffCheck": "PASS",
+  "allProjectTestsClaimed": false,
+  "commands": {
+    "baselineAndAfter": {
+      "regression": [
+        "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "tests/unit/interpretation-v4/careerRelease.test.ts",
+        "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+        "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+        "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+        "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "tests/unit/interpretation-v4/sixProductIntegration.test.ts",
+        "tests/unit/report-generation/customerDayunGeneration.test.ts",
+        "tests/unit/app/dev/bookRuntime.test.tsx"
+      ],
+      "inherited": [
+        "tests/unit/account/localDatabaseTracing.test.ts",
+        "tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityLoveResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts",
+        "tests/unit/report-knowledge/majorFortuneProductResearch.test.ts"
+      ],
+      "annual": [
+        "tests/unit/interpretation-v4/annualEditorialQuality.test.ts",
+        "tests/unit/interpretation-v4/annualReaderQuality.test.ts",
+        "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "tests/unit/report-generation/annualMonthJie.test.tsx",
+        "tests/unit/report-generation/annualMonthlyRelationFacts.test.tsx",
+        "tests/unit/report-knowledge/annualFortuneEvidence.test.ts",
+        "tests/unit/report-knowledge/annualFortuneYearRules.test.ts"
+      ],
+      "language": [
+        "tests/unit/interpretation-v4/commonEditorial.test.ts",
+        "tests/unit/interpretation-v4/compatibilityTitleSafety.test.ts",
+        "tests/unit/interpretation-v4/koreanNarrativeCore.test.ts",
+        "tests/unit/report-knowledge/koreanCopyUtils.test.ts"
+      ]
+    },
+    "verification": "pnpm exec vitest run tests/unit/report-knowledge/knowledgeSemanticDomainVerification.test.ts tests/unit/report-knowledge/knowledgeSourceVerification.test.ts tests/unit/report-knowledge/knowledgeUnifiedCatalog.test.ts",
+    "editorial": "pnpm exec vitest run tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts tests/unit/report-knowledge/koreanEditorialPreservation.test.ts",
+    "typescript": "pnpm exec tsc --noEmit --incremental false",
+    "lint": "pnpm lint",
+    "build": "pnpm build",
+    "diff": "git diff --cached --check"
+  },
+  "buildEnvironmentObservation": "Local pnpm build completed outside filesystem sandbox, without changing repository configuration or environment variables."
+}

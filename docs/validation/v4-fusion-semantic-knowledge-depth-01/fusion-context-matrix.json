@@ -1,0 +1,145 @@
+{
+  "contexts": [
+    "identity",
+    "work",
+    "money",
+    "social",
+    "love",
+    "stress",
+    "learning",
+    "recovery"
+  ],
+  "matrix": {
+    "identity": {
+      "identity": 0.85,
+      "work": 0.9,
+      "money": 0.9,
+      "social": 0.9,
+      "love": 0.9,
+      "stress": 0.9,
+      "learning": 0.9,
+      "recovery": 0.9
+    },
+    "work": {
+      "identity": 0.9,
+      "work": 1,
+      "money": 0.7,
+      "social": 0,
+      "love": 0,
+      "stress": 0.7,
+      "learning": 0.7,
+      "recovery": 0
+    },
+    "money": {
+      "identity": 0.9,
+      "work": 0.7,
+      "money": 1,
+      "social": 0,
+      "love": 0,
+      "stress": 0,
+      "learning": 0,
+      "recovery": 0
+    },
+    "social": {
+      "identity": 0.9,
+      "work": 0,
+      "money": 0,
+      "social": 1,
+      "love": 0.7,
+      "stress": 0.7,
+      "learning": 0,
+      "recovery": 0
+    },
+    "love": {
+      "identity": 0.9,
+      "work": 0,
+      "money": 0,
+      "social": 0.7,
+      "love": 1,
+      "stress": 0,
+      "learning": 0,
+      "recovery": 0
+    },
+    "stress": {
+      "identity": 0.9,
+      "work": 0.7,
+      "money": 0,
+      "social": 0.7,
+      "love": 0,
+      "stress": 1,
+      "learning": 0,
+      "recovery": 0.7
+    },
+    "learning": {
+      "identity": 0.9,
+      "work": 0.7,
+      "money": 0,
+      "social": 0,
+      "love": 0,
+      "stress": 0,
+      "learning": 1,
+      "recovery": 0
+    },
+    "recovery": {
+      "identity": 0.9,
+      "work": 0,
+      "money": 0,
+      "social": 0,
+      "love": 0,
+      "stress": 0.7,
+      "learning": 0,
+      "recovery": 1
+    }
+  },
+  "groups": {
+    "THINKING_ANALYSIS": [
+      "identity",
+      "work",
+      "learning"
+    ],
+    "EXECUTION_STRATEGY": [
+      "identity",
+      "work"
+    ],
+    "LEADERSHIP_STATUS": [
+      "work",
+      "identity"
+    ],
+    "MONEY_REALITY": [
+      "money",
+      "work"
+    ],
+    "SOCIAL_COMMUNICATION": [
+      "social",
+      "work",
+      "identity"
+    ],
+    "CREATION_LEARNING": [
+      "learning",
+      "work",
+      "identity"
+    ],
+    "RELATIONSHIP": [
+      "love",
+      "social"
+    ],
+    "CHANGE_RECOVERY": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ]
+  },
+  "conditionSplits": [
+    "BEFORE_AFTER_DECISION",
+    "OUTER_INNER",
+    "WORK_PRIVATE",
+    "STRANGER_CLOSE",
+    "NORMAL_STRESS",
+    "IDEA_EXECUTION",
+    "START_MAINTAIN",
+    "SHORT_LONG_TERM",
+    "HEAD_HEART",
+    "DESIRE_BEHAVIOR"
+  ]
+}

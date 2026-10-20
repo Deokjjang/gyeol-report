@@ -1,0 +1,770 @@
+[
+  {
+    "id": "mrpr:material:CH01.P1:goal-method-interface",
+    "positive": "질문의 이유를 드러내면 시작 전 공백을 발견할 수 있음",
+    "risk": "목표만 설명하고 방법 질문을 이해 부족으로 평가할 위험",
+    "factBomb": "목표를 말한 횟수와 팀원이 받은 정보량은 같지 않다",
+    "twist": "절차 질문이 많아도 주도성이 없는 것은 아니다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH01.P1:support-execution-interface",
+    "positive": "지원 요청을 명확히 하면 관심과 집중이 함께 남을 수 있음",
+    "risk": "잦은 안부 확인이 실시간 설명 업무가 될 위험",
+    "factBomb": "도와주려는 마음이 작업 중단 비용을 없애주지는 않는다",
+    "twist": "조용히 일하는 팀원도 명확한 지원 창구를 필요로 할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH01.P2:harmony-not-approval",
+    "positive": "관계를 강점 질문으로 열어둘 수 있음",
+    "risk": "합을 지시 복종·검토 생략 근거로 쓸 위험",
+    "factBomb": "명리의 합은 결재 서명이 아니다",
+    "twist": "합이 있어도 서로 다른 검토 역할을 유지할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH01.P2:half-harmony-not-completion",
+    "positive": "남은 확인을 구체화할 수 있음",
+    "risk": "전통 관계를 품질·진척 수치로 환산할 위험",
+    "factBomb": "관계가 이어진다고 검토 항목이 사라지지 않는다",
+    "twist": "좋은 관계일수록 미완료를 편하게 밝힐 여지도 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH01.P3:model-and-procedure",
+    "positive": "정보 형식을 달리해 누락 질문을 발견할 수 있음",
+    "risk": "Pair 일반 참고를 업무 조합의 법칙으로 취급할 위험",
+    "factBomb": "같이 이해했다고 해도 같은 내용을 이해한 것은 아닐 수 있다",
+    "twist": "더 긴 설명보다 다른 형식의 짧은 설명이 유용할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH01.P3:same-type-different-role",
+    "positive": "공통 기준을 확인 질문으로 활용 가능",
+    "risk": "같은 유형이니 설명 없이 통할 것이라는 생략",
+    "factBomb": "같은 유형도 서로의 결재 권한을 읽을 수 없다",
+    "twist": "선호가 같을수록 숨은 전제를 따로 확인할 필요가 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH01.P4:discretion-as-condition",
+    "positive": "예측 가능한 재량을 만들 여지",
+    "risk": "모든 선택을 사후 평가만으로 통제할 위험",
+    "factBomb": "재량 없는 자율은 실패 책임만 남길 수 있다",
+    "twist": "규칙을 분명히 하면 오히려 간섭을 줄일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH01.P4:management-facts-before-compatibility",
+    "positive": "개인 성향과 조직 조건을 나눠 이해 가능",
+    "risk": "궁합으로 불공정 지시를 설명해 버릴 위험",
+    "factBomb": "기준이 공개되지 않았는데 팀원에게 눈치를 요구할 수는 없다",
+    "twist": "좋은 궁합보다 명확한 절차가 먼저 도움이 될 때가 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH02.P1:manager-model-goal",
+    "positive": "큰 목적이 개별 작업의 이유가 될 여지",
+    "risk": "중간 설명을 생략하면 지시가 추측 과제가 됨",
+    "factBomb": "상사 머릿속에서 명확한 목표도 팀원에게는 빈칸일 수 있다",
+    "twist": "이론을 짧게 하고 예시를 붙이는 것이 원칙을 약화시키지 않는다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH02.P1:manager-people-purpose",
+    "positive": "목적과 역할을 연결할 가능성",
+    "risk": "공감하는 반응만 확인하고 필요한 자원을 놓침",
+    "factBomb": "감동한 표정은 업무량 수락서가 아니다",
+    "twist": "참여가 높아져도 거절·질문 통로가 함께 필요하다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH02.P2:manager-standard-evidence",
+    "positive": "판단 근거를 공유할 가능성",
+    "risk": "과거 사례를 유일한 정답으로 고정",
+    "factBomb": "상사의 익숙함은 공개된 평가 기준을 대신하지 못한다",
+    "twist": "예외 조건을 적어두면 기준을 더 일관되게 적용할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH02.P2:manager-checkpoint-intent",
+    "positive": "결정 지연을 발견할 여지",
+    "risk": "즉답을 압박해 미확인 결론을 받음",
+    "factBomb": "답이 늦다는 이유로 태도를 평가하면 정보가 더 얇아질 수 있다",
+    "twist": "검토 시간을 허용하는 것이 결정 지연을 줄일 수도 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH02.P3:manager-correct-own-error",
+    "positive": "오류를 숨기지 않는 관리 가능성",
+    "risk": "팀원 수정만 요구하고 지시 오류는 생략",
+    "factBomb": "상사의 정정이 팀원의 실수 기록으로 남아서는 안 된다",
+    "twist": "자기 오류를 인정하는 행동이 기준의 신뢰를 지킬 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH02.P3:manager-support-limit",
+    "positive": "지원 요청을 업무 조건으로 바꿀 가능성",
+    "risk": "공감 대화만 늘고 업무량은 그대로",
+    "factBomb": "마음을 알아줘도 마감표가 바뀌지 않으면 부담은 남는다",
+    "twist": "지원은 직접 해결보다 우선순위 정리일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH02.P4:manager-overcontrol",
+    "positive": "안전선 안의 자율 실행 가능성",
+    "risk": "사소한 방법까지 사후 승인 대상으로 만듦",
+    "factBomb": "결과를 맡긴 뒤 손동작까지 고치면 위임은 끝나지 않는다",
+    "twist": "기준을 줄이는 것이 아니라 기준의 종류를 나누면 간섭을 줄일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH02.P4:manager-avoid-feedback",
+    "positive": "배려와 명확한 수정이 공존할 가능성",
+    "risk": "모호한 피드백 뒤 결과만 낮게 평가",
+    "factBomb": "팀원이 알아서 눈치채길 기다리는 것은 피드백이 아니다",
+    "twist": "구체적으로 말하는 것이 오히려 사람을 덜 다치게 할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH03.P1:report-procedure-understanding",
+    "positive": "착수 오류를 미리 발견할 가능성",
+    "risk": "세부를 모두 정해줄 때까지 시작을 못할 수 있음",
+    "factBomb": "질문이 필요한 것과 모든 결정을 상사에게 넘기는 것은 다르다",
+    "twist": "과정을 묻는 질문이 자율 실행의 출발일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH03.P1:report-independent-focus",
+    "positive": "집중 구간을 확보할 여지",
+    "risk": "보고 자체를 불필요하게 취급할 위험",
+    "factBomb": "설명 비용이 커도 결정에 필요한 정보는 사라지지 않는다",
+    "twist": "보고를 짧게 명확히 하면 작업 시간도 보호할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH03.P2:report-private-feedback-space",
+    "positive": "결과와 인격을 분리할 가능성",
+    "risk": "불편을 참다가 수정 요청 자체를 놓침",
+    "factBomb": "공개 망신을 견디는 것이 업무 역량의 증거는 아니다",
+    "twist": "조용한 공간의 구체적 지적은 침묵보다 도움이 될 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH03.P2:report-definition-before-work",
+    "positive": "깊이 있는 실행을 위한 출발 정보",
+    "risk": "정의 논쟁이 실제 필요한 결정을 미루는 위험",
+    "factBomb": "긴급하다는 말만으로 해결할 문제가 정의되지는 않는다",
+    "twist": "시작 전 짧은 정의 확인이 이후 재작업을 줄일 여지도 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH03.P3:report-detect-procedure-gap",
+    "positive": "수정 시점을 앞당길 가능성",
+    "risk": "오류 목록만 늘고 우선순위는 불명확",
+    "factBomb": "문제를 찾았다는 사실만으로 수정 권한이 생기지는 않는다",
+    "twist": "팀원의 세부 정보가 상사의 큰 결정을 바꿀 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH03.P3:report-participation-signal",
+    "positive": "관리자가 놓친 질문을 찾을 여지",
+    "risk": "항상 분위기를 살려야 하는 감정 업무",
+    "factBomb": "팀원이 사람을 잘 챙겨도 관리자의 지원 책임까지 맡은 것은 아니다",
+    "twist": "따뜻한 반응보다 빠진 정보를 전달하는 것이 더 도움이 될 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH03.P4:report-overacceptance",
+    "positive": "숨은 작업량을 보이게 할 여지",
+    "risk": "지원 부족을 팀원의 거절 기술 문제로만 돌림",
+    "factBomb": "고맙다는 말은 새 업무를 넣을 빈 시간을 만들지 않는다",
+    "twist": "한계를 알리는 보고가 맡은 일을 지키는 행동일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH03.P4:report-late-synthesis",
+    "positive": "문제와 지원 필요를 일찍 발견할 여지",
+    "risk": "미완성 정보마다 꾸중하면 더 늦은 보고를 유도",
+    "factBomb": "완성한 뒤 알리면 지원이 필요한 시점을 놓칠 수 있다",
+    "twist": "미완성 보고가 부족함의 고백보다 관리 판단의 입력일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+    "positive": "마무리 공백을 찾을 가능성",
+    "risk": "둘 다 완벽을 요구하면 종료가 늦어질 수 있음",
+    "factBomb": "끝내고 싶다는 공통점만으로 완료 기준이 정해지지는 않는다",
+    "twist": "같은 끈기도 한쪽은 범위를 줄이는 데 쓸 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH04.P1:shared-analysis-different-scope",
+    "positive": "검토 관점을 나눌 여지",
+    "risk": "분석 자체가 목표가 돼 결정이 미뤄짐",
+    "factBomb": "근거가 더 필요하다는 말에는 어떤 결정에 필요한지 붙어야 한다",
+    "twist": "분석 범위를 줄이는 것이 좋은 분석의 조건일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH04.P2:big-picture-field-interface",
+    "positive": "계획의 맹점을 발견할 여지",
+    "risk": "현장 질문을 큰 그림 이해 부족으로 판단",
+    "factBomb": "현장의 반례를 무시하면 큰 그림은 검증되지 않은 가정으로 남는다",
+    "twist": "팀원의 반례가 목표에 반대하는 뜻은 아닐 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH04.P2:idea-review-not-personal-approval",
+    "positive": "새 방법을 검토할 여지",
+    "risk": "기존 방식과 다르다는 이유만으로 반려",
+    "factBomb": "제안자를 믿는 것과 안을 검증하는 것은 다른 결정이다",
+    "twist": "검토 기준을 먼저 알면 새 아이디어도 더 구체화될 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH04.P3:delegation-with-checkpoints",
+    "positive": "위임과 점검을 함께 설계할 여지",
+    "risk": "보고를 줄인다는 이유로 지원도 끊음",
+    "factBomb": "맡겼다는 말 뒤 연락을 끊는 것은 위임의 완성이 아니다",
+    "twist": "점검 약속이 분명하면 일상 간섭을 줄일 수도 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH04.P3:feedback-credit-visible",
+    "positive": "좋은 행동을 다시 활용할 여지",
+    "risk": "칭찬으로 추가 업무를 당연하게 만듦",
+    "factBomb": "고맙다는 말이 다음 부탁의 자동 수락권은 아니다",
+    "twist": "구체적 인정은 더 많이 맡기기보다 역할을 지키는 데 쓰일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH04.P4:manager-response-to-early-risk",
+    "positive": "조기 수정 기회를 얻을 가능성",
+    "risk": "좋은 보고를 무실수 보장으로 과용",
+    "factBomb": "문제를 알린 사람에게 해결 자원 없이 책임만 더하면 다음 보고가 늦어질 수 있다",
+    "twist": "좋은 팀의 정보는 좋은 소식만으로 채워지지 않는다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+    "positive": "학습 과제를 좁힐 여지",
+    "risk": "모든 실패를 팀원 성장 기회로 포장",
+    "factBomb": "성장을 위해서라는 말이 부족한 지원을 정당화하지는 않는다",
+    "twist": "좋은 회고의 결과는 팀원 과제뿐 아니라 상사 행동의 변화일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH05.P1:manager-to-report-constraint",
+    "positive": "기준을 이해해 스스로 실행할 여지",
+    "risk": "정관을 상사의 정당한 지시권으로 환산",
+    "factBomb": "십성 이름은 지시의 정당성을 판정하지 않는다",
+    "twist": "기준을 명료하게 하면 상사에게 물을 횟수가 줄 수도 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH05.P1:manager-to-report-exploration",
+    "positive": "새 관점과 실행의 연결 가능성",
+    "risk": "상사의 생각 초안을 확정 지시로 오해",
+    "factBomb": "생각 중이라는 말이 없으면 팀원은 모든 아이디어를 새 업무로 받을 수 있다",
+    "twist": "대안을 줄이는 표시가 창의성을 실행 가능하게 만들 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH05.P2:manager-resource-removal",
+    "positive": "병목 해소를 요청할 여지",
+    "risk": "지원 약속만 있고 담당·시점 없음",
+    "factBomb": "상사가 챙긴다는 느낌과 필요한 자료에 접근하는 것은 다르다",
+    "twist": "상사가 대신 일하지 않아도 접근 경로를 열어주는 지원이 가능하다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH05.P2:manager-recognize-evidence",
+    "positive": "기여 출처를 명확히 할 가능성",
+    "risk": "칭찬 뒤 더 많은 업무를 묶어 요청",
+    "factBomb": "잘했다는 말이 업무량 확대에 대한 동의는 아니다",
+    "twist": "인정은 추가 부담보다 기여 범위의 보호가 될 수도 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH05.P3:manager-speed-pressure",
+    "positive": "자료 사전 공유로 판단을 준비할 여지",
+    "risk": "팀원에게 상사 감정을 달래게 함",
+    "factBomb": "즉답이 빨라져도 정보가 정확해진 것은 아니다",
+    "twist": "검토 시간을 정해 주는 것이 결정 속도를 돕기도 한다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH05.P3:manager-care-as-surveillance",
+    "positive": "지원 목적 점검으로 바꿀 여지",
+    "risk": "관심이라는 말로 모든 과정 공개 요구",
+    "factBomb": "보고를 받아도 돕는 결정이 없다면 관리 비용을 팀원에게 옮긴 것일 수 있다",
+    "twist": "관심을 줄이지 않고 질문을 줄이는 지원도 가능하다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH05.P4:manager-delegation-confirm",
+    "positive": "위임 이후 불필요한 간섭을 줄일 여지",
+    "risk": "실제 권한 없이 모든 결정을 맡겼다고 약속",
+    "factBomb": "선택을 맡겼다면 상사의 개인 취향과 다르다는 이유만으로 실패라 할 수 없다",
+    "twist": "예외를 명시하면 더 넓은 재량을 안전하게 줄 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH05.P4:manager-feedback-recheck",
+    "positive": "피드백을 수행 가능한 과제로 만들 가능성",
+    "risk": "수정 기준을 계속 늘려 종료를 늦춤",
+    "factBomb": "피드백을 줬다는 사실만으로 설명 책임이 끝나지는 않는다",
+    "twist": "재확인 시점을 정하면 지적을 반복할 필요가 줄 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+    "positive": "계획 변경의 필요를 발견할 여지",
+    "risk": "사실 보고를 인사 평가에 대한 도전으로 해석",
+    "factBomb": "상사 판단에 다른 정보를 주는 것은 상사 책임을 대신 지는 일이 아니다",
+    "twist": "팀원의 이견이 목표를 지키려는 행동일 수도 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH06.P1:report-to-manager-customer-observation",
+    "positive": "빠진 현장 질문을 얻을 여지",
+    "risk": "눈앞 반응을 전체 판단으로 확정",
+    "factBomb": "한 사람의 급한 반응이 모두의 요구는 아니다",
+    "twist": "공감 정보도 범위를 적으면 판단 자료로 더 쓰기 쉬울 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH06.P2:report-propose-bounded-method",
+    "positive": "선택의 근거를 넓힐 가능성",
+    "risk": "제안자가 승인·실패 책임까지 자동 부담",
+    "factBomb": "좋은 안을 냈다고 승인권까지 가진 것은 아니다",
+    "twist": "작은 시험 제안이 전면 변경보다 검토를 쉽게 할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH06.P2:report-capacity-information",
+    "positive": "숨은 작업량을 관리 정보로 바꿀 가능성",
+    "risk": "B에게 스스로 야근해 모두 끝내라고 요구",
+    "factBomb": "팀원이 시간을 공개해도 없는 여력은 생기지 않는다",
+    "twist": "한계 보고가 부탁을 거절하는 말보다 계획을 지키는 자료일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH06.P3:report-unclear-risk-timing",
+    "positive": "중간 정보로 지원 필요를 확인할 여지",
+    "risk": "보고 지연 원인을 B 성격만으로 설명",
+    "factBomb": "보고 의무가 있어도 상사의 불확실성 수용 책임은 없어지지 않는다",
+    "twist": "모른다는 범위를 일찍 알리는 것이 더 정확한 보고일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH06.P3:report-question-as-final-decision",
+    "positive": "질문의 목적을 분명히 할 여지",
+    "risk": "팀원이 질문을 포기해 결정 근거가 숨겨짐",
+    "factBomb": "설명 질문을 줄이는 것만으로 관리 결정이 좋아지는 것은 아니다",
+    "twist": "질문 범위를 정하면 권한과 이견이 함께 남을 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH06.P4:report-decision-ready-brief",
+    "positive": "보고의 쓰임을 명확히 할 여지",
+    "risk": "요약이 미확인 위험을 숨기는 방식이 됨",
+    "factBomb": "짧은 보고는 책임 회피도 자동 승인도 아니다",
+    "twist": "한 줄 더 적는 불확실성이 전체 보고를 더 정확하게 할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH06.P4:report-feedback-clarification",
+    "positive": "수정 공백을 줄일 여지",
+    "risk": "B의 말투 교정만 요구하고 공개 판단을 유지",
+    "factBomb": "팀원이 질문을 잘해도 공개 인격 판단의 책임은 상사에게 남는다",
+    "twist": "피드백을 다시 묻는 것이 거부보다 수행 의지일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P1:vague-instructions",
+    "positive": "누락 정보를 찾을 기회",
+    "risk": "모호한 지시 뒤 결과만 낮게 평가",
+    "factBomb": "눈치로 맞춘 결과는 명확한 지시의 증거가 아니다",
+    "twist": "더 독립적인 수행을 위해 시작 전 질문이 필요할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P1:goal-method-confusion",
+    "positive": "규칙의 종류를 명확히 할 여지",
+    "risk": "방식 차이를 태도 문제로 평가",
+    "factBomb": "상사와 같은 방법을 썼다는 사실은 결과 품질의 증거가 아니다",
+    "twist": "목표를 고정하면 방법을 더 자유롭게 맡길 수도 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P1:responsibility-without-delegation",
+    "positive": "책임·지원 경계를 드러낼 여지",
+    "risk": "권한 공백을 B의 소극성으로 평가",
+    "factBomb": "결정을 막아놓고 결과 책임만 주면 위임이 아니다",
+    "twist": "책임을 명확히 하려면 상사가 남길 책임도 적어야 한다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+    "positive": "예측 가능한 실행 공간 확보 가능성",
+    "risk": "재량 없는 상태를 자율적 성과로 요구",
+    "factBomb": "알아서 하라는 말은 선택할 수 있는 범위를 대신하지 않는다",
+    "twist": "제약을 공개하는 편이 모호한 자유보다 도움이 될 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P1:excess-report-frequency",
+    "positive": "필요 정보에 집중할 가능성",
+    "risk": "모든 중간 상태를 새 보고서로 요구",
+    "factBomb": "관리자의 불안을 줄이려 팀원의 작업 시간을 계속 쓸 수는 없다",
+    "twist": "보고를 줄여도 필요한 예외 정보는 더 빨리 받을 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P2:report-time-clash",
+    "positive": "정보 시점을 합의할 가능성",
+    "risk": "충을 팀원 지연의 원인으로 확정",
+    "factBomb": "충이 있다는 말로 보고 기준 미공개를 설명할 수 없다",
+    "twist": "서로 다른 시점 요구가 필요한 정보 단계를 나누게 할 수도 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P2:priority-change-harm",
+    "positive": "변경 영향의 확인 가능성",
+    "risk": "상사의 변경 책임을 B의 적응력 탓으로 돌림",
+    "factBomb": "우선순위를 바꾸고 기존 마감도 그대로 두면 비용은 사라지지 않는다",
+    "twist": "변경을 멈추기보다 변경의 비용을 보이게 할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P2:rework-with-half-harmony",
+    "positive": "수정의 출처를 드러낼 여지",
+    "risk": "좋은 관계이니 반복 수정도 참으라고 함",
+    "factBomb": "잘 맞는다는 말은 무제한 수정 요청의 근거가 아니다",
+    "twist": "좋은 접점도 수정 종료선을 정해야 활용할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+    "positive": "수정 가능한 행동을 찾을 가능성",
+    "risk": "적극성·태도만으로 결과를 평가",
+    "factBomb": "기준을 말하지 않은 평가를 팀원이 성격으로 해독할 수는 없다",
+    "twist": "궁합 관계가 없어도 업무 기준은 더 분명히 할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P2:final-authority-unsupported",
+    "positive": "권한 공백을 확인할 가능성",
+    "risk": "원진·십성으로 결재 우선순위 생성",
+    "factBomb": "누가 결정할지 모르는 문제를 두 사람의 궁합으로 정할 수는 없다",
+    "twist": "상사 역할을 선택했어도 실제 최종 승인자는 따로 있을 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P3:public-personal-judgment",
+    "positive": "산출물 중심 피드백으로 전환할 여지",
+    "risk": "B에게 말투 적응·감정 관리만 요구",
+    "factBomb": "공개 망신을 성장 자극으로 포장할 수는 없다",
+    "twist": "차분한 구체적 피드백이 더 직접적일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P3:fear-of-retaliation",
+    "positive": "질문 통로를 점검할 여지",
+    "risk": "침묵을 동의·무능·충성심 부족으로 판단",
+    "factBomb": "보복을 걱정하는 사람에게 용기 있게 말하라는 조언만으로 충분하지 않다",
+    "twist": "안전한 별도 통로가 관계 대화보다 먼저일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P3:insufficient-credit",
+    "positive": "기여 기록을 정확히 할 여지",
+    "risk": "기여 누락을 B의 자기 홍보 부족으로만 설명",
+    "factBomb": "기록을 관리하는 사람이 기여 확인도 팀원에게만 맡길 수는 없다",
+    "twist": "새 칭찬보다 기존 기록 정정이 먼저일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P3:overload-allocation",
+    "positive": "중단·연기·지원 선택을 드러낼 여지",
+    "risk": "과로를 팀원 헌신·궁합의 좋은 힘으로 칭찬",
+    "factBomb": "열심히 하라는 말은 하루를 늘리지 못한다",
+    "twist": "한 업무를 빼는 결정이 두 업무의 품질을 지킬 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P3:insufficient-resources",
+    "positive": "지원 요청을 구체화할 여지",
+    "risk": "스스로 해결하라며 권한 없는 접근 요구",
+    "factBomb": "자원을 막아둔 채 책임감을 평가하면 수행 조건을 놓친다",
+    "twist": "더 많은 독촉보다 한 번의 권한 연결이 필요할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P4:late-risk-report",
+    "positive": "중간 공유의 기준을 만들 여지",
+    "risk": "보고 지연을 B 탓으로만 고정",
+    "factBomb": "초기 문제를 혼내고 빠른 보고를 기대하면 두 요구가 충돌한다",
+    "twist": "불확실성을 표시한 초기 보고가 더 책임 있는 정보일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P4:excluded-team-voice",
+    "positive": "다른 제출 통로를 열 여지",
+    "risk": "발언 속도를 기여·능력으로 평가",
+    "factBomb": "한 번 물었다는 사실만으로 들을 기회를 충분히 준 것은 아니다",
+    "twist": "회의 뒤 짧은 문서가 더 중요한 반례를 가져올 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+    "positive": "실제 결정 범위를 정리할 여지",
+    "risk": "관리 책임 전가를 성장 기회로 미화",
+    "factBomb": "팀원이 문제를 발견했다고 최종 결정 책임까지 떠안을 이유는 없다",
+    "twist": "도움 요청을 받는 것이 상사의 역할을 줄이지는 않는다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P4:missing-change-history",
+    "positive": "변경 출처·영향을 정리할 여지",
+    "risk": "상사 기억으로 과거 수행을 평가",
+    "factBomb": "지시를 바꾸고 기록을 남기지 않으면 수정의 비용이 팀원 실수로 남을 수 있다",
+    "twist": "기록은 불신보다 같은 기준을 공유하는 장치일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+    "positive": "필요한 정보 범위를 분리할 여지",
+    "risk": "개인 감정·사생활까지 궁합 조율 자료로 요구",
+    "factBomb": "보고의 목적을 설명하지 않고 모든 노출을 협조라고 부를 수는 없다",
+    "twist": "정보를 적게 모아도 결정에 맞게 모으면 관리에 도움이 될 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P1:clarify-output",
+    "positive": "추측 작업을 줄일 여지",
+    "risk": "B에게 지시문을 대신 완성하게 함",
+    "factBomb": "상사의 설명 공백을 팀원의 이해력 문제로 정리하지 않는다",
+    "twist": "짧은 결과 예시가 긴 독촉보다 먼저일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P1:separate-method",
+    "positive": "방법 논쟁의 범위를 줄일 여지",
+    "risk": "모든 간섭을 부당행위로 단정",
+    "factBomb": "팀원의 선택을 인정하려면 상사의 선호도 기준에서 분리해야 한다",
+    "twist": "방법을 비교하기보다 결과 조건을 먼저 비교할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P1:delegate-decision",
+    "positive": "대기와 수행 책임을 구별 가능",
+    "risk": "위임 문서로 실제 법적 권한을 만들어냄",
+    "factBomb": "위임은 상사의 남은 책임도 적어야 끝난다",
+    "twist": "모든 결정을 넘기기보다 승인 응답을 빠르게 하는 선택도 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P1:make-discretion-visible",
+    "positive": "재량을 예측 가능하게 할 여지",
+    "risk": "자율이라는 이름으로 지원 중단",
+    "factBomb": "재량은 맡겼다는 말보다 선택할 수 있는 항목으로 확인한다",
+    "twist": "작은 재량을 명확히 주는 편이 큰 모호한 자유보다 낫다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P1:reduce-duplicate-report",
+    "positive": "필요 보고를 남기며 중단을 줄일 여지",
+    "risk": "보고를 줄이면서 지원도 끊음",
+    "factBomb": "받기만 하고 쓰지 않는 보고는 먼저 줄일 대상이다",
+    "twist": "보고 횟수가 줄어도 예외 정보는 더 빨리 도착할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-set-report-time",
+    "positive": "지원 판단을 앞당길 여지",
+    "risk": "미확인 보고를 최종 실적 평가로 사용",
+    "factBomb": "충 때문이라는 설명보다 언제 무엇을 받을지 정하는 책임이 먼저다",
+    "twist": "상사가 불확실성을 받는 방식이 보고 속도를 바꿀 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-record-priority",
+    "positive": "변경 비용을 드러낼 여지",
+    "risk": "변경 흔적 없이 팀원 적응만 요구",
+    "factBomb": "새 지시는 이전 지시의 시간을 자동으로 지우지 않는다",
+    "twist": "일을 하나 멈추는 결정이 새 목표를 돕기도 한다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-close-revision",
+    "positive": "반복 수정 범위를 줄일 여지",
+    "risk": "수정 종료 뒤 기준을 다시 늘림",
+    "factBomb": "좋은 관계라도 수정 종료 기준은 필요하다",
+    "twist": "최종이라는 말을 반복하기보다 남은 항목을 줄일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-explain-evaluation",
+    "positive": "구체적 개선을 검토할 여지",
+    "risk": "근거 없는 평점·승진 약속",
+    "factBomb": "평가의 근거를 묻는 일을 나쁜 태도로 돌릴 수는 없다",
+    "twist": "관계가 좋다는 말보다 기준 예시가 도움이 될 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-confirm-final-authority",
+    "positive": "승인 공백을 확인할 여지",
+    "risk": "A가 역할 선언만으로 모든 권한을 약속",
+    "factBomb": "상사 역할 선택은 실제 조직의 위임장을 대신하지 않는다",
+    "twist": "자기 권한 한계를 설명하는 것이 판단 책임을 지키는 행동일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P3:report-request-specific-feedback",
+    "positive": "수정 필요를 확인할 여지",
+    "risk": "B가 상사의 기분을 달래야 한다고 요구",
+    "factBomb": "질문을 예쁘게 해야만 존중받을 권리가 생기는 것은 아니다",
+    "twist": "이견 표현보다 안전한 지원 경로 확인이 먼저일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P3:report-safe-support-route",
+    "positive": "선택 가능한 통로를 확인할 여지",
+    "risk": "앱이 보호·익명성·법적 결과를 보장",
+    "factBomb": "지원 통로를 찾는 행동은 관계를 망치는 행동으로 취급할 수 없다",
+    "twist": "대면 대화가 모든 회복의 첫 단계는 아니다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P3:report-state-contribution",
+    "positive": "기여 정보를 명료히 할 여지",
+    "risk": "B에게 과도한 자기 홍보를 해결책으로 강요",
+    "factBomb": "기여를 말하는 능력이 기여 자체를 대신하지 않는다",
+    "twist": "칭찬 요청보다 기록의 정확성 요청이 먼저일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P3:report-state-capacity",
+    "positive": "작업량을 관리 정보로 전환 가능",
+    "risk": "B에게 혼자 완벽히 거절하라고 요구",
+    "factBomb": "업무량을 알리는 보고는 상사의 배분 책임을 빼앗는 일이 아니다",
+    "twist": "못한다는 결론보다 무엇을 바꿀지 확인할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P3:report-name-blocked-resource",
+    "positive": "막힘을 조기에 연결할 여지",
+    "risk": "권한 없는 우회로 문제를 해결하게 함",
+    "factBomb": "자원 공백 보고는 능력 부족의 자백이 아니다",
+    "twist": "상사의 지원은 답을 주기보다 담당자를 연결하는 행동일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-early-risk-response",
+    "positive": "조기 판단을 도울 여지",
+    "risk": "불확실성을 숨겨 긍정 보고만 남김",
+    "factBomb": "좋은 소식만 받는 관계는 실제 상황을 보지 못할 수 있다",
+    "twist": "문제 수를 줄이기보다 문제를 알 시점을 앞당길 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-multiple-voice-channels",
+    "positive": "다른 정보 참여를 열 여지",
+    "risk": "강제 발언으로 안전을 대신함",
+    "factBomb": "모두에게 말하라고 시키는 것과 모두의 정보를 듣는 것은 다르다",
+    "twist": "회의 시간을 늘리지 않고 사전 질문을 열 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-retained-manager-decision",
+    "positive": "결정 책임을 예측 가능하게 할 여지",
+    "risk": "책임 목록이 실제 위임 권한을 대신함",
+    "factBomb": "정보를 보고한 사람과 최종 결정한 사람은 구분돼야 한다",
+    "twist": "팀원 제안이 많아져도 관리 책임은 남길 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-change-log",
+    "positive": "재작업의 원인을 추적할 여지",
+    "risk": "기록을 사람 비난 자료로만 사용",
+    "factBomb": "기록은 팀원 실수만 모으는 장부가 아니어야 한다",
+    "twist": "상사 변경도 남겨야 기록이 더 공정해질 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-report-purpose",
+    "positive": "업무 정보의 사용을 예측할 여지",
+    "risk": "보고 조율로 실제 감시 적법성을 판정",
+    "factBomb": "모든 정보를 알아야 좋은 상사가 되는 것은 아니다",
+    "twist": "적게 모으고 실제 결정에 쓰는 정보가 더 유용할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH09.P1:recall-goal-execution",
+    "positive": "알아들은 범위를 반복 확인할 여지",
+    "risk": "후보 존재만으로 좋은 관계 이력 생성",
+    "factBomb": "앞에서 말하지 않은 강점을 마지막에 사실로 꺼낼 수는 없다",
+    "twist": "좋은 끝맺음도 실제 소개된 질문을 다시 여는 선택일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH09.P1:recall-shared-completion",
+    "positive": "마무리를 구체화할 여지",
+    "risk": "공통 성향을 성과 보장으로 확대",
+    "factBomb": "함께 끝내고 싶어도 맡은 책임은 같지 않다",
+    "twist": "공통점이 오래가려면 서로 다른 역할을 남길 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH09.P2:recall-supported-possibility",
+    "positive": "지원 창구를 활용할 여지",
+    "risk": "정인을 실제 보호·성공 경험으로 표현",
+    "factBomb": "지원의 좋은 기운은 권한 없는 약속을 대신하지 못한다",
+    "twist": "상사가 답을 직접 몰라도 연결 책임을 맡을 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH09.P2:recall-personal-fusion",
+    "positive": "정보의 설명력을 유지할 여지",
+    "risk": "개인 Fusion을 공동 궁합 점수로 합산",
+    "factBomb": "두 체계가 같은 사람을 설명해도 새 궁합 점수는 아니다",
+    "twist": "팀원의 반례가 공동 목표를 더 선명하게 할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH09.P3:recall-delegation-principle",
+    "positive": "재량·승인 대기를 구별할 여지",
+    "risk": "한 번 합의로 모든 권한 확인 완료 선언",
+    "factBomb": "위임의 범위는 과제가 바뀌면 다시 물어야 한다",
+    "twist": "좋은 원칙도 상황에 맞게 좁히는 것이 지속 조건일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH09.P3:recall-safe-voice",
+    "positive": "필요 지원을 확인할 여지",
+    "risk": "관계를 오래 지키기 위해 위험을 참게 함",
+    "factBomb": "관계의 지속이 안전보다 앞서는 의무는 아니다",
+    "twist": "안전한 거리를 두는 선택도 고려할 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH09.P4:recall-decision-responsibility",
+    "positive": "기준을 다음 선택으로 남길 여지",
+    "risk": "마지막 메시지에서 평등 책임으로 환원",
+    "factBomb": "협력한다는 이유로 관리 책임까지 반씩 나눌 수는 없다",
+    "twist": "서로 다른 책임을 인정하는 것이 함께 일할 조건일 수 있다",
+    "notIndependentEvidence": true
+  },
+  {
+    "id": "mrpr:material:CH09.P4:recall-contribution-learning",
+    "positive": "다음 검토의 원칙을 남길 여지",
+    "risk": "둘 중 표시 안 된 자료를 전부 회수",
+    "factBomb": "고맙다는 말 뒤에 바뀌어야 할 업무 조건도 남겨야 한다",
+    "twist": "좋은 마지막 문장은 더 참으라는 말보다 확인할 질문일 수 있다",
+    "notIndependentEvidence": true
+  }
+]

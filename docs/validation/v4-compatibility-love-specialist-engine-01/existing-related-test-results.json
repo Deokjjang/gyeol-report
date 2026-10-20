@@ -1,0 +1,57 @@
+{
+  "passed": 629,
+  "failed": 0,
+  "pending": 0,
+  "maxWorkers": 1,
+  "files": [
+    {
+      "file": "unit/report-knowledge/actualEvidenceGraph.test.ts",
+      "tests": 56
+    },
+    {
+      "file": "unit/report-knowledge/annualFortuneSpecialistEngine.test.ts",
+      "tests": 71
+    },
+    {
+      "file": "unit/report-knowledge/careerSpecialistEngine.test.ts",
+      "tests": 78
+    },
+    {
+      "file": "unit/report-knowledge/comprehensiveSpecialistEngine.test.ts",
+      "tests": 62
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeBinder.test.ts",
+      "tests": 74
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeSemanticDomainVerification.test.ts",
+      "tests": 43
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeSourceVerification.test.ts",
+      "tests": 37
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeUnifiedCatalog.test.ts",
+      "tests": 12
+    },
+    {
+      "file": "unit/report-knowledge/koreanEditorialPreservation.test.ts",
+      "tests": 18
+    },
+    {
+      "file": "unit/report-knowledge/loveSpecialistEngine.test.ts",
+      "tests": 56
+    },
+    {
+      "file": "unit/report-knowledge/majorFortuneSpecialistEngine.test.ts",
+      "tests": 80
+    },
+    {
+      "file": "unit/report-knowledge/productSpecialistFoundation.test.ts",
+      "tests": 42
+    }
+  ],
+  "originalFixturesAndTimeoutsUnchanged": true
+}

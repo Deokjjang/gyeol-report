@@ -1,0 +1,274 @@
+[
+  {
+    "id": "fkr:rejected:type-as-saju",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "ENTJ이므로 편관 근거가 있다",
+    "reason": "유형과 명리 계산은 다른 원천",
+    "requiredBeforeReconsidering": "기존 실제 계산 producer·성립 근거",
+    "failure": "UNSUPPORTED_PRODUCER"
+  },
+  {
+    "id": "fkr:rejected:symbol-as-behavior",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "현침이 있으므로 거짓을 알아챈다",
+    "reason": "자형 전통이 실제 현대 능력을 증명하지 않음",
+    "requiredBeforeReconsidering": "별도 현대 적용 근거·실제 행동·반례",
+    "failure": "UNVERIFIED_MODERN_APPLICATION"
+  },
+  {
+    "id": "fkr:rejected:source-as-science",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "direct/inferred 원문이면 실증된 개인 사실",
+    "reason": "수록·편집 상태와 개인 적합성·실증은 다름",
+    "requiredBeforeReconsidering": "원천·실증·개인 적용을 별도 검증",
+    "failure": "EMPIRICAL_PROMOTION"
+  },
+  {
+    "id": "fkr:rejected:facet-count",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "같은 사실을 네 facet로 나눠 네 근거",
+    "reason": "의미 분해는 원천 사실을 늘리지 않음",
+    "requiredBeforeReconsidering": "canonical fact 단위 장부",
+    "failure": "DUPLICATE_UNDERLYING_FACT"
+  },
+  {
+    "id": "fkr:rejected:pair-as-person",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "INTJ→ESTJ 설명을 INTJ 개인 점수로 사용",
+    "reason": "대상·상대·방향·역할이 사라짐",
+    "requiredBeforeReconsidering": "양측 자료·관계 유형·실제 상호작용 근거",
+    "failure": "PAIR_AS_INDIVIDUAL"
+  },
+  {
+    "id": "fkr:rejected:owner-cross",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "A 명리와 B MBTI를 A 개인 Fusion으로 결합",
+    "reason": "서로 다른 owner의 원천 혼입",
+    "requiredBeforeReconsidering": "동일 개인 소유자 검증",
+    "failure": "OWNER_MISMATCH"
+  },
+  {
+    "id": "fkr:rejected:direction-swap",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "A→B 해석을 이름만 뒤집어 B→A로 사용",
+    "reason": "역할·권력·비용·진술이 대칭이 아님",
+    "requiredBeforeReconsidering": "각 방향의 별도 근거·역할 검토",
+    "failure": "DIRECTION_SWAP"
+  },
+  {
+    "id": "fkr:rejected:period-as-natal",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "세운 충으로 타고난 불안정 성격 판단",
+    "reason": "기간과 원국 범위 혼동",
+    "requiredBeforeReconsidering": "기존 기간 계산·참여자·구간 보존",
+    "failure": "TIME_SCOPE_MISMATCH"
+  },
+  {
+    "id": "fkr:rejected:missing-producer",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "연구에 삼합이 있으니 원국 삼합 계산 완료",
+    "reason": "정의 존재와 producer 지원은 다름",
+    "requiredBeforeReconsidering": "지원되는 실제 scope의 계산 결과",
+    "failure": "UNSUPPORTED_PRODUCER"
+  },
+  {
+    "id": "fkr:rejected:outside-period",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "교운 전 근거를 연도 전체에 사용",
+    "reason": "구간 밖 적용과 참여 대운 혼동",
+    "requiredBeforeReconsidering": "전환 전후 구간·교집합·동일 참여자",
+    "failure": "OUTSIDE_INTERVAL"
+  },
+  {
+    "id": "fkr:rejected:negative-defect",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "음의 행동 속도는 실행 능력 부족",
+    "reason": "양극의 방향은 결함·능력 점수가 아님",
+    "requiredBeforeReconsidering": "상황별 행동·오류 비용·기한",
+    "failure": "NEGATIVE_AS_DEFECT"
+  },
+  {
+    "id": "fkr:rejected:absence-opposite",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "CARE 신호가 없으니 무배려",
+    "reason": "관측 부재와 실제 반대 행동은 다름",
+    "requiredBeforeReconsidering": "독립 관찰된 반대 자료·맥락",
+    "failure": "ABSENCE_AS_OPPOSITE"
+  },
+  {
+    "id": "fkr:rejected:profit-guarantee",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "wealth Fusion이면 높은 수익",
+    "reason": "기호·선호·관리 행동이 금전 결과를 증명하지 않음",
+    "requiredBeforeReconsidering": "결과 보장 문장 사용 금지",
+    "failure": "OUTCOME_GUARANTEE"
+  },
+  {
+    "id": "fkr:rejected:fiction-history",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "가상 생활 장면을 고객이 겪은 일로 서술",
+    "reason": "예시와 실제 입력 이력 혼동",
+    "requiredBeforeReconsidering": "실제 입력 이력·동의 없으면 조건형 유지",
+    "failure": "FICTION_AS_HISTORY"
+  },
+  {
+    "id": "fkr:rejected:parallel-only",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "정확하고 배려 있으므로 좋은 관계",
+    "reason": "다른 행동 나열만으로 상호 기여 조건이 없음",
+    "requiredBeforeReconsidering": "같은 과제·대상·요청·역할·반례",
+    "failure": "NO_JOINT_MECHANISM"
+  },
+  {
+    "id": "fkr:rejected:unrelated-task",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:legacy-fusion",
+      "repo:semantic-fusion"
+    ],
+    "invalidInference": "자원 감각과 표현이 있으니 월운 재물 운 승인",
+    "reason": "다른 과제·기간을 연결할 근거가 없음",
+    "requiredBeforeReconsidering": "실제 기간 근거·대상·source scope; 없으면 보류",
+    "failure": "FORCED_COMBINATION"
+  }
+]

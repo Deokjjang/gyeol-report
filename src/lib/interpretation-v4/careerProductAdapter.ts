@@ -22,8 +22,11 @@ import type { SemanticAxis } from "./semanticCore";
 import type { GuidanceStrategyId } from "./guidanceCore";
 import type { NarrativeInput, NarrativeState, NarrativeBlock, NarrativeSection, NarrativeProof } from "./narrativeTypes";
 import type { CareerNarrative } from "./careerNarrativeTypes";
+import { renderCareerRelease } from "./careerReleaseRenderer";
+import { validateCareerRelease } from "./careerReleaseValidator";
+import { CAREER_RELEASE_VERSION } from "./careerReleaseContracts";
 
-export const CAREER_PRODUCT_VERSION = "career-product-13d-7a-v1";
+export const CAREER_PRODUCT_VERSION = CAREER_RELEASE_VERSION;
 const fail = (error: string) => ({ ok: false as const, errors: [error] });
 const compact = <T>(a: (T | undefined)[]): T[] => a.filter((v): v is T => v !== undefined);
 const routeAxes: Record<string, SemanticAxis[]> = {
@@ -57,7 +60,7 @@ export function buildV4CareerProduct(input: NarrativeInput) {
   const pillar = packet.selected.find(m => m.material.category === "dayPillar"), master = packet.selected.find(m => m.material.category === "dayMaster");
   if (!pillar || !master) return fail("CAREER_NATAL_MATERIAL_MISSING");
   const state: NarrativeState = { input, packet, pillar, master, usedSeeds: new Set(), featureUses: new Map() };
-  const voice = selectCareerVoice(state), context = careerWorkNarrative(input), routes = careerRecommendations(state, voice, context), study = careerStudy(state);
+  const voice = selectCareerVoice(state), context = careerWorkNarrative(input), routes = careerRecommendations(state, voice, context, true), study = careerStudy(state);
   const contextProof: NarrativeProof = { features: [], seedIds: [], fusionIds: [], sourceRefs: context.sourceRefs };
   const block = (id: string, text: string, proof: NarrativeProof, tone: NarrativeBlock["tone"] = "positive"): NarrativeBlock => ({ id, text, proof, tone, mode: "prose" });
   const blocks = (q: CareerQuestion) => compact(selection.selected.filter(p => p.question === q).map(p => renderer.placement(p)));
@@ -141,9 +144,16 @@ export function buildV4CareerProduct(input: NarrativeInput) {
   const text = [...opening, ...sections.flatMap(s => s.blocks)].map(b => b.text).join("\n");
   if (g.value.context.lifeStatus !== "EMPLOYEE" && /승진|상사|부하 직원|현재 회사/.test(text)) return fail("CAREER_CONTEXT_UNSAFE");
   if (/사업하면 성공|무조건 승진|CEO가 됩니다|큰돈을 법니다|반드시 해야|회사생활이 맞지/.test(text)) return fail("CAREER_UNSUPPORTED_DESTINY");
-  return { ok: true as const, writerVersion: CAREER_PRODUCT_VERSION, narrative, materials: packet, editorial: [], studyBasis: study.basis,
+  const release = renderCareerRelease(input, profiles, selection.candidates, narrative, state);
+  const readerValidation = validateCareerRelease(release.draft, profiles, selection.candidates, narrative, release.retainedSources);
+  const required = ["current", "money", "roles", "study", "direction"];
+  const published = !readerValidation.hardErrors.length && release.narrative.opening.length
+    && required.every(id => release.narrative.sections.some(s => s.id === id)) ? release.narrative : narrative;
+  return { ok: true as const, writerVersion: CAREER_PRODUCT_VERSION, narrative: published, materials: packet, editorial: [], studyBasis: study.basis,
     selection: { voice: voice.id, workFunction: context.workFunction, workMode: context.workMode },
     integration: { reportStableKey, context: g.value.context, explicitMbtiUsage: renderer.explicitMbtiUsage,
+      publishedEdition: published === release.narrative ? release.draft.version : "career-product-13d-7a-v1",
+      readerEdition: release.draft, readerValidation,
       represented: renderer.rendered, suppressed: renderer.diagnostics, ruleHeadings, recommendationGrounding,
       profileDigests: { claims: createHash("sha256").update(JSON.stringify(c.value)).digest("hex"), resonance: createHash("sha256").update(JSON.stringify(r.value)).digest("hex") },
       questions: { K1: "core", K2: "strengths", K3: "fit", K4: "organization", K5: "money", K6: "organization", K7: "shadow", K8: "current", K9: "roles", K10: "direction" },

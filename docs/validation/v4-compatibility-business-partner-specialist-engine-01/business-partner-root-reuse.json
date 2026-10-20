@@ -1,0 +1,623 @@
+{
+  "cases": [
+    {
+      "index": {
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc": [
+          "kc:v1:2a601ae714116e3eaad5785a34a943996be918cadff8f9ed82532efa407944ff",
+          "kc:v1:45a16f0f49fd2fc66ab4b5e05d1cbe3b2481d4c408e1adc472daded35f9c300c",
+          "kc:v1:46f2ebcb0a2557fe2316080f26d60fbb3024895b04b1ee2fa5f178e0e6d24b02",
+          "kc:v1:4d57b403d2713783d964e23ecece0682319542728ddc5dfdf799a2b21d3bb2da",
+          "kc:v1:7722719ab9c2f17925b215e796d56bf44e3fc5f836d90c43fc86d6efa87828fb",
+          "kc:v1:97693e9594246c1de7df5c7394c97ee7213526f8debd14a31f864e12fc7e531a",
+          "kc:v1:a3d25a06806f491158f6536df0d21c0cc9fdd245b35718988cf1fe05fbaad6af",
+          "kc:v1:f18d19d9f16ca2b83d9e1b79528b0c542a9281d8ae3db4d31268cd7a86f994c5"
+        ],
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8": [
+          "kc:v1:ba315353db12b1408262ba71350337ad47898af3739708c29890aba8e8c7598d",
+          "kc:v1:e886a3b33d59396ae3d13ec21114a7740417ad969883dc046545a44c2ab815d3"
+        ],
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750": [
+          "kc:v1:0695c634c7547bd9f8e20c3cffa0b9d35b5c086061b496d46fc86004e9e007e4",
+          "kc:v1:07a88e09ace16addca655a42a9090a39580ef00d3788f382bade0997194177cb",
+          "kc:v1:6c1a9f6ed991aa189e72d1106566e0fdaeefb0977e8dc21a3afdd44bb8b726b6",
+          "kc:v1:a564d92d30f47d01faa7e5e366d63273aaa1d983e79602294a2644378912d66f",
+          "kc:v1:a9dfd2659997cb0c80cb3d043a5d2bd7af4bb55588f04a2442a5ef7594c9fe5e",
+          "kc:v1:ae134afa35596eabc4dc76a9a54d70e0fdeffcaecf21ab1feac7478e4312d721",
+          "kc:v1:c614de0ee2f82c9dfd092b3c7ad0d53c245b24054a65f2e1ec94b5dcbe2ac69c",
+          "kc:v1:d948c86d61d0442fb37cee8a9bb45b29192adb0e0d8d81a0cd90791d08e59b2c"
+        ]
+      },
+      "materials": [
+        {
+          "id": "bppr:material:CH02.P1:a-resource-as-goal",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P3:repair-ip-output-use",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH05.P1:a-alternative-b-standard",
+          "informationRoots": [
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ]
+        },
+        {
+          "id": "bppr:material:CH05.P1:a-resource-b-obligation",
+          "informationRoots": [
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ]
+        },
+        {
+          "id": "bppr:material:CH02.P3:a-small-working-test",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH03.P4:b-relationship-cost-blindness",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH09.P1:recall-market-and-scope",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH09.P2:recall-contribution-without-value-price",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH02.P2:a-record-before-commit",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH01.P4:stop-before-risk-lock",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH04.P1:shared-scope-repeatability",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P1:repair-unreviewed-spending",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P1:unreviewed-spending",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P3:information-not-shared",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH06.P2:b-customer-issue-a-hypothesis",
+          "informationRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+          ]
+        },
+        {
+          "id": "bppr:material:CH04.P4:contribution-recognition-without-shares",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH02.P4:a-theory-without-demand",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P4:hide-problem-for-relationship",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P2:repair-missing-cash-information",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH09.P1:recall-customer-and-risk",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P3:deadlock",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P2:unclear-work-responsibility",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH02.P1:a-opportunity-model",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH01.P1:idea-demand-interface",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P3:ip-output-use",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH06.P4:b-hold-with-decision-question",
+          "informationRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+          ]
+        },
+        {
+          "id": "bppr:material:CH02.P4:a-support-becomes-funding",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH06.P2:b-cost-log-a-commitment",
+          "informationRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+          ]
+        },
+        {
+          "id": "bppr:material:CH09.P3:recall-scope-and-stop-principle",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH01.P1:opportunity-capacity-interface",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P3:repair-customer-promise-execution",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH06.P1:b-boundary-a-resource-choice",
+          "informationRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+          ]
+        },
+        {
+          "id": "bppr:material:CH09.P2:recall-directional-contribution",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P4:repair-ops-burden-imbalance",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH03.P2:b-terms-before-money",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH09.P4:recall-hold-and-safe-exit",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH04.P3:crisis-information-two-views",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH09.P3:recall-consent-principle",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P1:repair-direction-disagreement",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P2:repair-credit-imbalance",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH04.P2:trial-and-contract-boundary",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P2:repair-contract-change",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH09.P4:recall-business-value-with-boundary",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P2:repair-unclear-work-responsibility",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P4:repair-hide-problem-for-relationship",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH05.P4:a-risk-disclosure-before-consent",
+          "informationRoots": [
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ]
+        },
+        {
+          "id": "bppr:material:CH07.P2:unclear-loss-allocation",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P4:no-stop-conditions",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P4:unilateral-decision",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH01.P3:same-type-different-stakes",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH06.P3:b-maintenance-a-direction",
+          "informationRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+          ]
+        },
+        {
+          "id": "bppr:material:CH08.P4:repair-expansion-speed",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH03.P4:b-review-without-close",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P2:repair-unclear-loss-allocation",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P1:direction-disagreement",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH03.P1:b-operational-conditions",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P2:contract-change",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P2:credit-imbalance",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH06.P3:b-contract-risk-a-delay",
+          "informationRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+          ]
+        },
+        {
+          "id": "bppr:material:CH01.P3:analysis-and-use",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P1:capital-expectation-difference",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH03.P1:b-method-and-data",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH04.P1:shared-proof-before-investment",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P1:expected-return-actual-cost",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH06.P4:b-small-trial-before-expansion",
+          "informationRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+          ]
+        },
+        {
+          "id": "bppr:material:CH05.P2:a-meaning-b-allocation",
+          "informationRoots": [
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ]
+        },
+        {
+          "id": "bppr:material:CH05.P3:a-client-promise-b-cost",
+          "informationRoots": [
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ]
+        },
+        {
+          "id": "bppr:material:CH07.P1:external-contract-without-consent",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH04.P4:repeatable-operation-value",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH05.P4:a-change-small-safe-trial",
+          "informationRoots": [
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ]
+        },
+        {
+          "id": "bppr:material:CH08.P4:repair-no-stop-conditions",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH02.P3:a-correct-assumptions",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P1:repair-capital-expectation-difference",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH04.P3:customer-signal-product-adjustment",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH01.P2:harmony-not-revenue",
+          "informationRoots": [
+            "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+            "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47",
+            "aeg:root:ebe353437f03020ed4932b59bc87781016f9ba8c796b9981044c54ae59f6b0fa"
+          ]
+        },
+        {
+          "id": "bppr:material:CH07.P2:missing-cash-information",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P1:repair-expected-return-actual-cost",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH01.P4:trust-verification-boundary",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH05.P3:a-expand-b-cash-timing",
+          "informationRoots": [
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ]
+        },
+        {
+          "id": "bppr:material:CH08.P3:repair-deadlock",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P1:repair-external-contract-without-consent",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P4:expansion-speed",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH03.P3:b-cost-gap-review",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P3:trust-verification",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH05.P2:a-prototype-b-service-cost",
+          "informationRoots": [
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+            "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+          ]
+        },
+        {
+          "id": "bppr:material:CH02.P2:a-meaning-and-finance",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P3:customer-promise-execution",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P3:repair-information-not-shared",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH07.P4:ops-burden-imbalance",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH03.P3:b-customer-observation",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH01.P2:half-harmony-not-governance",
+          "informationRoots": [
+            "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+            "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47",
+            "aeg:root:ebe353437f03020ed4932b59bc87781016f9ba8c796b9981044c54ae59f6b0fa"
+          ]
+        },
+        {
+          "id": "bppr:material:CH06.P1:b-operation-a-support-question",
+          "informationRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+          ],
+          "supportingAncestryRoots": [
+            "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+            "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+            "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+          ]
+        },
+        {
+          "id": "bppr:material:CH08.P3:repair-trust-verification",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH04.P2:exploration-delivery-interface",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH08.P4:repair-unilateral-decision",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        },
+        {
+          "id": "bppr:material:CH03.P2:b-value-before-price",
+          "informationRoots": [],
+          "supportingAncestryRoots": []
+        }
+      ]
+    }
+  ],
+  "newIndependentRoots": 0
+}

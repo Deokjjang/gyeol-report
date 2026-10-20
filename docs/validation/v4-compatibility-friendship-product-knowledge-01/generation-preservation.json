@@ -1,0 +1,315 @@
+{
+  "fixedNow": "2026-10-12T12:00:00+09:00",
+  "cases": 20,
+  "hashesCompared": 140,
+  "fullObservationsIdentical": true,
+  "allSevenDigestsIdentical": true,
+  "beforeObservationsSha256": "b7ae8734e97fdfa19f00efa2ffbb47f22bd3a5969c46673c83c1c09ff1892450",
+  "afterObservationsSha256": "b7ae8734e97fdfa19f00efa2ffbb47f22bd3a5969c46673c83c1c09ff1892450",
+  "pairedResults": [
+    {
+      "case": "A0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "evidence": "9ce43a0b2fcb608f195478ace906df0c52a5425e1855a7e3f2a97f086a89011e",
+        "narrative": "045827bf40b6d28cdd8da5d63b21da92874407e8179001f1aed9c8e57bbb2c7b",
+        "integration": "b537469d448bd3e20a9d6afca2efc4d44d202f1d63f8d0e60b54f3259ffd2683",
+        "book": "711ab05b1fdc7ab0647bac735f5a9d87b3dad6b8fb3a140921847ef1bad256c2",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "B0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "evidence": "63ac7a434dedf7dd25b0e81ff6c71d32469b9403b57ed56cbca9ef97dc70dad1",
+        "narrative": "a16a117fad278048f15dbe348e7c0cfb94489d1cc08ee0e2e5170d59aa0b6ce3",
+        "integration": "87d76683e909c54556b4d2158e16360dea610af1a2345db3210263d77b6f27c0",
+        "book": "c6536faa56229b955b985adcaf58b04a7a6486e2d0022db02e924aa3b9970ffc",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "127489893f60f61f4761b9d98a381e2c307adc18ff8232dcb0855e9887394531"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "C0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "evidence": "932e0469cd18bd92d757c71813de4c659e3a0fb7c32c7b273eef243353625dd6",
+        "narrative": "1a1a095f62abedcad8b6f514573b0aaed49d8820c5e515f06cd2e997bf8e65e5",
+        "integration": "8bef951cb6e9122fc11c5548491ed80f7f0796e1b8cefe099a43e0e83811a6cd",
+        "book": "364f9eb41cb10ae3fec57d675a6711a9c74902985d3da7dad6682ec934d3668d",
+        "personA": "ef0996dc8e18e9263d92f47b98f895872973f6a5acc822c0719f21b6ab0d0266",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "D0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "evidence": "c39eaa8f7a706b8af15b9e7dde2a8df63803a93697227c14867ff1a2cc7ff7d4",
+        "narrative": "28eb995e2112c0ba9769de7d111f0985a3091a1727463626b760c9ea56701300",
+        "integration": "4c677479ef8a654569b7c380c798ab4912e8e9778328d9def6618ff958db471c",
+        "book": "cb0815e7f445a8dfd3d44481f9ef62bdfd573599e394e6b1c389268e72a2cddc",
+        "personA": "ef0996dc8e18e9263d92f47b98f895872973f6a5acc822c0719f21b6ab0d0266",
+        "personB": "127489893f60f61f4761b9d98a381e2c307adc18ff8232dcb0855e9887394531"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "E0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "9846b96d06bfacbee5f0d6b2719e1d8e1a0cbad93f5c007e8a940da71a762f5f",
+        "evidence": "26e9beb62d577c8f383606d99022dc194b31fea98ae48ffa2d648b7b8980f0c0",
+        "narrative": "f8228ec38c5381d5a2c46bbd0dca1599a12c4ea1241085c144fbaa7b8d00f29b",
+        "integration": "00f2db030828c309b619ca31b0dace601aebb347ab234d83a486d66860629b9a",
+        "book": "e9e42ad087d0ef5e6697eb3795e53c50e3752407a674fa70fe87b5afc460e0ab",
+        "personA": "01782df46b3e7834a400702d09be2962133368104502d4dfa73195beba41bcc4",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "F0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "622072c9764dff2b0ff4e3239862d4330ae31f30f46cd0d6340cbfc6d3bf1845",
+        "evidence": "a9cebe520608f538abce861c9e96352fecc40de4ee31794dbb5c2d47d3c89a51",
+        "narrative": "4e266e9760bfa21942f1c18167d22c76f19edf9843576e3ee41ecc58bbe11820",
+        "integration": "91727482193aa5fd2a0e7843739d5b35950d4e0cb74faaaea182d1c7089fe796",
+        "book": "dbd8058ea453b937f8d8737312a00fbe34b4b70415fb2a7ce7f91d85e5aee382",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "85a8309d53973d26c680db1700c17329eff0558c479e254c0a933cfa30d81ac2"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "G0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "evidence": "9ce43a0b2fcb608f195478ace906df0c52a5425e1855a7e3f2a97f086a89011e",
+        "narrative": "045827bf40b6d28cdd8da5d63b21da92874407e8179001f1aed9c8e57bbb2c7b",
+        "integration": "b537469d448bd3e20a9d6afca2efc4d44d202f1d63f8d0e60b54f3259ffd2683",
+        "book": "711ab05b1fdc7ab0647bac735f5a9d87b3dad6b8fb3a140921847ef1bad256c2",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "H0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "evidence": "4ace71f97e09dff4d2ade4007a810e796ec72eccdbff0ea6c1b6b0beb1e15f7c",
+        "narrative": "5ca9b83921a6caab02ac6fb0d89d3a9fd3e7e6e11b8b205bec54f38099771648",
+        "integration": "48799357a9b31b156a135a7ffd8da0ee6a7cd141e7cd008f4c2de588e1e506e9",
+        "book": "5698eb436d6efa35b80aa14c80fd6b0bf83e1b101565e0b48b7db93626c34b42",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "23c45e1a9189871bfa8fd58e912d0da55af1af80d115cd8e23085d53ded36926"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "I0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "evidence": "9ce43a0b2fcb608f195478ace906df0c52a5425e1855a7e3f2a97f086a89011e",
+        "narrative": "045827bf40b6d28cdd8da5d63b21da92874407e8179001f1aed9c8e57bbb2c7b",
+        "integration": "b537469d448bd3e20a9d6afca2efc4d44d202f1d63f8d0e60b54f3259ffd2683",
+        "book": "711ab05b1fdc7ab0647bac735f5a9d87b3dad6b8fb3a140921847ef1bad256c2",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "J0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "evidence": "9ce43a0b2fcb608f195478ace906df0c52a5425e1855a7e3f2a97f086a89011e",
+        "narrative": "045827bf40b6d28cdd8da5d63b21da92874407e8179001f1aed9c8e57bbb2c7b",
+        "integration": "b537469d448bd3e20a9d6afca2efc4d44d202f1d63f8d0e60b54f3259ffd2683",
+        "book": "711ab05b1fdc7ab0647bac735f5a9d87b3dad6b8fb3a140921847ef1bad256c2",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "K0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "evidence": "9ce43a0b2fcb608f195478ace906df0c52a5425e1855a7e3f2a97f086a89011e",
+        "narrative": "045827bf40b6d28cdd8da5d63b21da92874407e8179001f1aed9c8e57bbb2c7b",
+        "integration": "b537469d448bd3e20a9d6afca2efc4d44d202f1d63f8d0e60b54f3259ffd2683",
+        "book": "711ab05b1fdc7ab0647bac735f5a9d87b3dad6b8fb3a140921847ef1bad256c2",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "L0",
+      "edition": "compatibility-product-13d-7b-v1",
+      "hashes": {
+        "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+        "evidence": "ac10245d5141f78959f3fa281416a948cba38ab75733f39aa23e877e43db2036",
+        "narrative": "51fb7bbc01fe8e6cf3ded6144fdebb5fc2ffb284ff8b5726ad43c29f1be1e64b",
+        "integration": "8c9edd1468c22aab58775dbaee8180e077a4920e9e05b248b097a15bd9842c36",
+        "book": "277823abbf550e309e66c6ceb01cd4fc882acf49e4d22e715bab4b3bf5b5c36e",
+        "personA": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+        "personB": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "M0",
+      "edition": "compatibility-product-13d-7b-v1",
+      "hashes": {
+        "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+        "evidence": "ac10245d5141f78959f3fa281416a948cba38ab75733f39aa23e877e43db2036",
+        "narrative": "51fb7bbc01fe8e6cf3ded6144fdebb5fc2ffb284ff8b5726ad43c29f1be1e64b",
+        "integration": "8c9edd1468c22aab58775dbaee8180e077a4920e9e05b248b097a15bd9842c36",
+        "book": "277823abbf550e309e66c6ceb01cd4fc882acf49e4d22e715bab4b3bf5b5c36e",
+        "personA": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+        "personB": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "N0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "evidence": "9ce43a0b2fcb608f195478ace906df0c52a5425e1855a7e3f2a97f086a89011e",
+        "narrative": "045827bf40b6d28cdd8da5d63b21da92874407e8179001f1aed9c8e57bbb2c7b",
+        "integration": "b537469d448bd3e20a9d6afca2efc4d44d202f1d63f8d0e60b54f3259ffd2683",
+        "book": "711ab05b1fdc7ab0647bac735f5a9d87b3dad6b8fb3a140921847ef1bad256c2",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "O0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cb81fb5048f956f3cb34034d61d96621c6ce9d3499342d081e88370a8ec4d0d7",
+        "evidence": "f64bfe8a9d1990cfc947698e2e6fcec641719dc1d493f1a1fb646f3ebdb9cbd4",
+        "narrative": "d7388b1c32960f466752e7ff63c401311f3605fde2fe4ea505e53a59ae5a7310",
+        "integration": "9601b158f82af5f202ad04e1a4a2a60946adb58009cb903beee629730514319e",
+        "book": "2b39b5c8d3c0d6bd14b167e2a0ddd84e9dc649c63d397c076fc399becddeee0f",
+        "personA": "5af4130eb30aff6ae8e7d1553c18c098c0d9a4c32f7c411162dc1bd64af4c4c8",
+        "personB": "262bf7ccbfd396d7b0a51819898564ae9cf7748da4d7b3173ac872899ad86901"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "P0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "evidence": "9ce43a0b2fcb608f195478ace906df0c52a5425e1855a7e3f2a97f086a89011e",
+        "narrative": "045827bf40b6d28cdd8da5d63b21da92874407e8179001f1aed9c8e57bbb2c7b",
+        "integration": "b537469d448bd3e20a9d6afca2efc4d44d202f1d63f8d0e60b54f3259ffd2683",
+        "book": "711ab05b1fdc7ab0647bac735f5a9d87b3dad6b8fb3a140921847ef1bad256c2",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "P1",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "21b7b87c4fba0182ba44ab0007f42d0d1019416c8dd548d46f94394ecf620eb7",
+        "evidence": "2bcb341fe78a2dc0ef3dd4ed738d14a62a95f90b8bac3a5ff8dd366c3a9baaac",
+        "narrative": "8f72f0c11d52ae0aae329479583b5a0372a68a3b1868f872498b2ae8d409f40c",
+        "integration": "14af37522b4e04a71bd5db1b1460179d183cf7faca9ec53cfcd6554d61c9d59f",
+        "book": "a6f520e11726d1c3463cbd3af4eb7d99005e44f864b47f358ff7f6d8d455e75e",
+        "personA": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "personB": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "Q0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "evidence": "9ce43a0b2fcb608f195478ace906df0c52a5425e1855a7e3f2a97f086a89011e",
+        "narrative": "045827bf40b6d28cdd8da5d63b21da92874407e8179001f1aed9c8e57bbb2c7b",
+        "integration": "b537469d448bd3e20a9d6afca2efc4d44d202f1d63f8d0e60b54f3259ffd2683",
+        "book": "711ab05b1fdc7ab0647bac735f5a9d87b3dad6b8fb3a140921847ef1bad256c2",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "Q1",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "evidence": "0d70a86c111e226c9b6c759eac520a2ad1ebb420fccb350ad36a6803331d1c21",
+        "narrative": "f8230051e8a8e2586d6e41b8d3b8f0044f7f7bac47db6a46d47ae9faea7e92a5",
+        "integration": "18e09679b6b83e2cf848257984f6ef92d08543d375b12fdf30969518edfa6303",
+        "book": "a8e9cf7eb1aa5c6fb0f165947abca720e10cf2047456ee0814f7e1ecdae2b8a1",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219"
+      },
+      "shortages": [],
+      "hardErrors": []
+    },
+    {
+      "case": "R0",
+      "edition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "evidence": "9ce43a0b2fcb608f195478ace906df0c52a5425e1855a7e3f2a97f086a89011e",
+        "narrative": "045827bf40b6d28cdd8da5d63b21da92874407e8179001f1aed9c8e57bbb2c7b",
+        "integration": "b537469d448bd3e20a9d6afca2efc4d44d202f1d63f8d0e60b54f3259ffd2683",
+        "book": "711ab05b1fdc7ab0647bac735f5a9d87b3dad6b8fb3a140921847ef1bad256c2",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219"
+      },
+      "shortages": [],
+      "hardErrors": []
+    }
+  ],
+  "sixProductFrozenRegressionTests": 64,
+  "existingSnapshotsReadOrWritten": 0,
+  "externalPaidWriterCalls": 0,
+  "relationHistoryPayloadFieldsAdded": 0
+}

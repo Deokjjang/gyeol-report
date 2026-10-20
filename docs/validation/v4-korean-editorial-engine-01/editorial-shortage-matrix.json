@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "editorial-shortage-matrix.json.gz",
+  "payloadHash": "4f76350912a8a7ab80b55cf16844c0ab90abd48ce4f28d1b3bec3041014bfdcc",
+  "logicalJsonHash": "e37bedccf72f47f94b4ca7c2f536d36682eeda97c1a2412cc3b5cd3d8af651f1",
+  "uncompressedBytes": 681143
+}

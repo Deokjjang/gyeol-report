@@ -1,0 +1,172 @@
+[
+  {
+    "id": "cmpr:reuse:0",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH01",
+      "CH04"
+    ],
+    "sharedMeaning": "공통 원천과 실제 강점",
+    "differentInformation": [
+      "CH01은 서로 다른 출발점과 판단 기준",
+      "CH04는 공동 비용·업무·휴식에서 도움이 될 조건"
+    ],
+    "reuseCondition": "같은 root를 쓰되 공동 선택권과 담당이 확인될 때만 긍정 적용",
+    "duplicateRisk": "공통 축을 자동 궁합 점수로 확대",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "cmpr:reuse:1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH02",
+      "CH05"
+    ],
+    "sharedMeaning": "A 개인과 A→B 영향",
+    "differentInformation": [
+      "CH02는 A 자신의 필요·기여·과용",
+      "CH05는 B 수신 기준에서 생길 도움·부담·A 조정"
+    ],
+    "reuseCondition": "B 실제 원천과 방향 ID가 추가로 필요",
+    "duplicateRisk": "A 개인 특성을 B의 실제 감정으로 복사",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "cmpr:reuse:2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH03",
+      "CH06"
+    ],
+    "sharedMeaning": "B 개인과 B→A 영향",
+    "differentInformation": [
+      "CH03는 B 자신의 독립적인 필요·기여",
+      "CH06은 A에게 남을 준비·대기와 B의 조정"
+    ],
+    "reuseCondition": "A 수신 기준과 개인 필요를 별도로 확인",
+    "duplicateRisk": "CH05 주어만 바꾸어 반대 방향 작성",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "cmpr:reuse:3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH05",
+      "CH06"
+    ],
+    "sharedMeaning": "양방향 수신",
+    "differentInformation": [
+      "A→B viewer B / target A",
+      "B→A viewer A / target B"
+    ],
+    "reuseCondition": "실제 방향 결과가 같으면 차이를 만들지 않음",
+    "duplicateRisk": "같은 십성인데 문장만 바꿔 독립 사실로 집계",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "cmpr:reuse:4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH05",
+      "CH07"
+    ],
+    "sharedMeaning": "개별 영향과 반복 조건",
+    "differentInformation": [
+      "CH05는 A가 B에게 남길 비용",
+      "CH07은 양쪽 반응이 반복을 키우는 순서"
+    ],
+    "reuseCondition": "개인 책임을 공동 성격 차이로 지우지 않음",
+    "duplicateRisk": "같은 부담을 설명 없이 재진술",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "cmpr:reuse:5",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH06",
+      "CH07"
+    ],
+    "sharedMeaning": "B의 영향과 공동 유지",
+    "differentInformation": [
+      "CH06은 B의 제안·생략이 A에게 남길 일",
+      "CH07은 기준·허락·관리·미응답의 악화 고리"
+    ],
+    "reuseCondition": "실제 가사·갈등 이력을 만들어내지 않음",
+    "duplicateRisk": "반응을 과거 사건으로 회고",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "cmpr:reuse:6",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH07",
+      "CH08"
+    ],
+    "sharedMeaning": "갈등 조건과 구체적인 조율",
+    "differentInformation": [
+      "CH07은 어떤 비용과 순서가 반복을 만드는가",
+      "CH08은 누가 무엇을 맡고 결정하며 언제 다시 볼 것인가"
+    ],
+    "reuseCondition": "앞서 도입된 호환 의미와 실제 선택권을 확인",
+    "duplicateRisk": "대화하라는 말로 권한·관리·안전 문제를 생략",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "cmpr:reuse:7",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH04",
+      "CH08",
+      "CH09"
+    ],
+    "sharedMeaning": "강점·합의·마지막 방향",
+    "differentInformation": [
+      "CH04는 긍정적 가능성과 조건",
+      "CH08은 완료·동의·예외·재검토 절차",
+      "CH09는 실제 도입된 같은 의미만 회수"
+    ],
+    "reuseCondition": "같은 person·type·원천·방향·조건의 introduced ledger 필요",
+    "duplicateRisk": "마지막에서 새로운 배우자 성격·미래 사건을 추가",
+    "independentFactsAdded": 0
+  }
+]

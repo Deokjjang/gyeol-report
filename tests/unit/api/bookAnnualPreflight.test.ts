@@ -24,7 +24,7 @@ it("uncertain Annual fails before order, local redeem or production queue; exact
   const failed = await check(payload);
   expect(failed.status).toBe(400);
   expect(await failed.json()).toEqual({ ok: false, message: DAYUN_UNCERTAIN_MESSAGE });
-  const order = await prepare(new Request("http://localhost/api/payment-checkout/prepare", { method: "POST", body: JSON.stringify({
+  const order = await prepare(new Request("https://gyeolreport.com/api/payment-checkout/prepare", { method: "POST", headers: { origin: "https://gyeolreport.com" }, body: JSON.stringify({
     provider: "toss", productType: payload.productKey, consent: adultCheckoutConsent(),
     inputSnapshot: { displayName: payload.person.name, birthDate: payload.person.birthDate, reportInputPayload: payload },
   }) }));

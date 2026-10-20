@@ -1,0 +1,1562 @@
+[
+  {
+    "address": "CH01.P1",
+    "chapterId": "CH01",
+    "chapterTitle": "나라는 사람의 핵심",
+    "domain": "identity",
+    "context": "identity",
+    "purpose": "나를 한마디로 설명하면",
+    "sentences": [
+      {
+        "address": "CH01.P1.S1",
+        "sentenceRole": "S1",
+        "role": "가장 특징적인 성향을 흥미롭게 소개한다."
+      },
+      {
+        "address": "CH01.P1.S2",
+        "sentenceRole": "S2",
+        "role": "그 성향을 설명할 수 있는 쉬운 비유를 제시한다."
+      },
+      {
+        "address": "CH01.P1.S3",
+        "sentenceRole": "S3",
+        "role": "실제 생활에서 나타날 수 있는 대표적인 행동을 묘사한다."
+      },
+      {
+        "address": "CH01.P1.S4",
+        "sentenceRole": "S4",
+        "role": "이 사람을 다른 사람과 구별하는 핵심 특징으로 마무리한다."
+      }
+    ]
+  },
+  {
+    "address": "CH01.P2",
+    "chapterId": "CH01",
+    "chapterTitle": "나라는 사람의 핵심",
+    "domain": "identity",
+    "context": "identity",
+    "purpose": "왜 이런 성향이 나타나는가",
+    "sentences": [
+      {
+        "address": "CH01.P2.S1",
+        "sentenceRole": "S1",
+        "role": "실제 일간과 일주의 주요 의미를 설명한다."
+      },
+      {
+        "address": "CH01.P2.S2",
+        "sentenceRole": "S2",
+        "role": "이를 뒷받침하는 중요한 명리 구조를 제시한다."
+      },
+      {
+        "address": "CH01.P2.S3",
+        "sentenceRole": "S3",
+        "role": "다른 오행·십성의 영향을 연결한다."
+      },
+      {
+        "address": "CH01.P2.S4",
+        "sentenceRole": "S4",
+        "role": "앞선 성격 설명이 어떻게 도출됐는지 종합한다."
+      }
+    ]
+  },
+  {
+    "address": "CH01.P3",
+    "chapterId": "CH01",
+    "chapterTitle": "나라는 사람의 핵심",
+    "domain": "identity",
+    "context": "identity",
+    "purpose": "MBTI가 보여주는 또 다른 모습",
+    "sentences": [
+      {
+        "address": "CH01.P3.S1",
+        "sentenceRole": "S1",
+        "role": "해당 MBTI에서 특징적인 사고·행동 성향을 소개한다."
+      },
+      {
+        "address": "CH01.P3.S2",
+        "sentenceRole": "S2",
+        "role": "명리 해석과 일치하는 부분을 설명한다."
+      },
+      {
+        "address": "CH01.P3.S3",
+        "sentenceRole": "S3",
+        "role": "서로 다르게 나타나는 부분이 있다면 제시한다."
+      },
+      {
+        "address": "CH01.P3.S4",
+        "sentenceRole": "S4",
+        "role": "두 분석을 함께 사용해 얻는 새로운 해석을 제공한다."
+      }
+    ]
+  },
+  {
+    "address": "CH01.P4",
+    "chapterId": "CH01",
+    "chapterTitle": "나라는 사람의 핵심",
+    "domain": "identity",
+    "context": "identity",
+    "purpose": "이 사람을 관통하는 특징",
+    "sentences": [
+      {
+        "address": "CH01.P4.S1",
+        "sentenceRole": "S1",
+        "role": "가장 중요한 성격적 대비를 설명한다."
+      },
+      {
+        "address": "CH01.P4.S2",
+        "sentenceRole": "S2",
+        "role": "그 특징이 장점으로 작동하는 상황을 보여준다."
+      },
+      {
+        "address": "CH01.P4.S3",
+        "sentenceRole": "S3",
+        "role": "지나치게 발휘되었을 때의 문제를 설명한다."
+      },
+      {
+        "address": "CH01.P4.S4",
+        "sentenceRole": "S4",
+        "role": "이 사람의 핵심 결을 기억에 남는 문장으로 정리한다."
+      }
+    ]
+  },
+  {
+    "address": "CH02.P1",
+    "chapterId": "CH02",
+    "chapterTitle": "타고난 기질과 오행",
+    "domain": "identity",
+    "context": "identity",
+    "purpose": "내 사주의 전체적인 기운",
+    "sentences": [
+      {
+        "address": "CH02.P1.S1",
+        "sentenceRole": "S1",
+        "role": "가장 특징적인 오행 구성을 직관적으로 소개한다."
+      },
+      {
+        "address": "CH02.P1.S2",
+        "sentenceRole": "S2",
+        "role": "상대적으로 두드러지는 기운을 설명한다."
+      },
+      {
+        "address": "CH02.P1.S3",
+        "sentenceRole": "S3",
+        "role": "다른 기운과의 상호작용을 설명한다."
+      },
+      {
+        "address": "CH02.P1.S4",
+        "sentenceRole": "S4",
+        "role": "전체적인 기질의 특징을 제시한다."
+      }
+    ]
+  },
+  {
+    "address": "CH02.P2",
+    "chapterId": "CH02",
+    "chapterTitle": "타고난 기질과 오행",
+    "domain": "identity",
+    "context": "identity",
+    "purpose": "강하게 발휘되는 능력",
+    "sentences": [
+      {
+        "address": "CH02.P2.S1",
+        "sentenceRole": "S1",
+        "role": "실제 근거가 있는 긍정적인 기운을 선택한다."
+      },
+      {
+        "address": "CH02.P2.S2",
+        "sentenceRole": "S2",
+        "role": "해당 기운의 명리적 의미를 쉽게 설명한다."
+      },
+      {
+        "address": "CH02.P2.S3",
+        "sentenceRole": "S3",
+        "role": "실제 행동이나 재능으로 나타날 수 있는 모습을 보여준다."
+      },
+      {
+        "address": "CH02.P2.S4",
+        "sentenceRole": "S4",
+        "role": "그 힘이 장점이 되는 조건을 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH02.P3",
+    "chapterId": "CH02",
+    "chapterTitle": "타고난 기질과 오행",
+    "domain": "identity",
+    "context": "identity",
+    "purpose": "균형이 필요한 부분",
+    "sentences": [
+      {
+        "address": "CH02.P3.S1",
+        "sentenceRole": "S1",
+        "role": "편중되거나 부족한 오행의 특징을 설명한다."
+      },
+      {
+        "address": "CH02.P3.S2",
+        "sentenceRole": "S2",
+        "role": "실제 구조에서 어떤 의미인지 구분한다."
+      },
+      {
+        "address": "CH02.P3.S3",
+        "sentenceRole": "S3",
+        "role": "지나치게 발휘될 수 있는 행동을 설명한다."
+      },
+      {
+        "address": "CH02.P3.S4",
+        "sentenceRole": "S4",
+        "role": "이를 완화할 수 있는 현실적인 선택을 제안한다."
+      }
+    ]
+  },
+  {
+    "address": "CH02.P4",
+    "chapterId": "CH02",
+    "chapterTitle": "타고난 기질과 오행",
+    "domain": "identity",
+    "context": "identity",
+    "purpose": "내 기운을 잘 활용하는 방법",
+    "sentences": [
+      {
+        "address": "CH02.P4.S1",
+        "sentenceRole": "S1",
+        "role": "앞선 오행 해석에서 가장 중요한 점을 선택한다."
+      },
+      {
+        "address": "CH02.P4.S2",
+        "sentenceRole": "S2",
+        "role": "일·관계·생활 중 적합한 적용 영역을 고른다."
+      },
+      {
+        "address": "CH02.P4.S3",
+        "sentenceRole": "S3",
+        "role": "해당 영역에서 가능한 행동을 제안한다."
+      },
+      {
+        "address": "CH02.P4.S4",
+        "sentenceRole": "S4",
+        "role": "타고난 구성을 강점으로 활용하는 메시지로 마무리한다."
+      }
+    ]
+  },
+  {
+    "address": "CH03.P1",
+    "chapterId": "CH03",
+    "chapterTitle": "명리와 MBTI가 만나는 곳",
+    "domain": "identity",
+    "context": "identity",
+    "purpose": "두 분석이 공통으로 말하는 것",
+    "sentences": [
+      {
+        "address": "CH03.P1.S1",
+        "sentenceRole": "S1",
+        "role": "가장 강하게 일치하는 특징을 소개한다."
+      },
+      {
+        "address": "CH03.P1.S2",
+        "sentenceRole": "S2",
+        "role": "실제 명리 근거를 제시한다."
+      },
+      {
+        "address": "CH03.P1.S3",
+        "sentenceRole": "S3",
+        "role": "해당 MBTI 근거를 제시한다."
+      },
+      {
+        "address": "CH03.P1.S4",
+        "sentenceRole": "S4",
+        "role": "공통 특징이 생활에서 어떻게 드러날 수 있는지 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH03.P2",
+    "chapterId": "CH03",
+    "chapterTitle": "명리와 MBTI가 만나는 곳",
+    "domain": "identity",
+    "context": "identity",
+    "purpose": "같은 장점이지만 이유는 다르다",
+    "sentences": [
+      {
+        "address": "CH03.P2.S1",
+        "sentenceRole": "S1",
+        "role": "명리가 설명하는 타고난 경향을 제시한다."
+      },
+      {
+        "address": "CH03.P2.S2",
+        "sentenceRole": "S2",
+        "role": "MBTI가 설명하는 행동 선호를 제시한다."
+      },
+      {
+        "address": "CH03.P2.S3",
+        "sentenceRole": "S3",
+        "role": "두 결과가 실제로 만나는 상황을 설명한다."
+      },
+      {
+        "address": "CH03.P2.S4",
+        "sentenceRole": "S4",
+        "role": "함께 분석했을 때 새롭게 알 수 있는 점을 제시한다."
+      }
+    ]
+  },
+  {
+    "address": "CH03.P3",
+    "chapterId": "CH03",
+    "chapterTitle": "명리와 MBTI가 만나는 곳",
+    "domain": "identity",
+    "context": "identity",
+    "purpose": "서로 다르게 말하는 반전",
+    "sentences": [
+      {
+        "address": "CH03.P3.S1",
+        "sentenceRole": "S1",
+        "role": "실제로 확인된 차이나 긴장을 소개한다."
+      },
+      {
+        "address": "CH03.P3.S2",
+        "sentenceRole": "S2",
+        "role": "명리 측면의 이유를 설명한다."
+      },
+      {
+        "address": "CH03.P3.S3",
+        "sentenceRole": "S3",
+        "role": "MBTI 측면의 이유를 설명한다."
+      },
+      {
+        "address": "CH03.P3.S4",
+        "sentenceRole": "S4",
+        "role": "상황에 따라 두 모습이 어떻게 달라질 수 있는지 해석한다."
+      }
+    ]
+  },
+  {
+    "address": "CH03.P4",
+    "chapterId": "CH03",
+    "chapterTitle": "명리와 MBTI가 만나는 곳",
+    "domain": "identity",
+    "context": "identity",
+    "purpose": "내가 가진 입체적인 모습",
+    "sentences": [
+      {
+        "address": "CH03.P4.S1",
+        "sentenceRole": "S1",
+        "role": "P1~P3에서 도출된 가장 중요한 결합 해석을 선택한다."
+      },
+      {
+        "address": "CH03.P4.S2",
+        "sentenceRole": "S2",
+        "role": "어떤 조건에서 한쪽 성향이 두드러지는지 설명한다."
+      },
+      {
+        "address": "CH03.P4.S3",
+        "sentenceRole": "S3",
+        "role": "이 차이가 강점으로 작동할 수 있는 상황을 보여준다."
+      },
+      {
+        "address": "CH03.P4.S4",
+        "sentenceRole": "S4",
+        "role": "단순 성격 유형만으로 알기 어려운 특징으로 마무리한다."
+      }
+    ]
+  },
+  {
+    "address": "CH04.P1",
+    "chapterId": "CH04",
+    "chapterTitle": "사람들이 보는 나와 진짜 나",
+    "domain": "identity",
+    "context": "social",
+    "purpose": "첫인상과 바깥에서의 모습",
+    "sentences": [
+      {
+        "address": "CH04.P1.S1",
+        "sentenceRole": "S1",
+        "role": "타인에게 드러날 수 있는 대표적인 특징을 설명한다."
+      },
+      {
+        "address": "CH04.P1.S2",
+        "sentenceRole": "S2",
+        "role": "그 특징의 근거를 제시한다."
+      },
+      {
+        "address": "CH04.P1.S3",
+        "sentenceRole": "S3",
+        "role": "낯선 사람과 만나는 상황을 예로 든다."
+      },
+      {
+        "address": "CH04.P1.S4",
+        "sentenceRole": "S4",
+        "role": "타인이 받기 쉬운 인상을 조건부로 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH04.P2",
+    "chapterId": "CH04",
+    "chapterTitle": "사람들이 보는 나와 진짜 나",
+    "domain": "identity",
+    "context": "social",
+    "purpose": "혼자 있을 때의 나",
+    "sentences": [
+      {
+        "address": "CH04.P2.S1",
+        "sentenceRole": "S1",
+        "role": "혼자 있을 때 두드러질 수 있는 성향을 소개한다."
+      },
+      {
+        "address": "CH04.P2.S2",
+        "sentenceRole": "S2",
+        "role": "사고·감정·회복 방식의 근거를 제시한다."
+      },
+      {
+        "address": "CH04.P2.S3",
+        "sentenceRole": "S3",
+        "role": "바깥에서의 모습과 다른 부분을 설명한다."
+      },
+      {
+        "address": "CH04.P2.S4",
+        "sentenceRole": "S4",
+        "role": "쉽게 드러나지 않는 내면의 욕구를 해석한다."
+      }
+    ]
+  },
+  {
+    "address": "CH04.P3",
+    "chapterId": "CH04",
+    "chapterTitle": "사람들이 보는 나와 진짜 나",
+    "domain": "identity",
+    "context": "social",
+    "purpose": "가까워질수록 달라지는 모습",
+    "sentences": [
+      {
+        "address": "CH04.P3.S1",
+        "sentenceRole": "S1",
+        "role": "친밀한 관계에서 달라지는 행동을 설명한다."
+      },
+      {
+        "address": "CH04.P3.S2",
+        "sentenceRole": "S2",
+        "role": "변화가 나타나는 조건을 제시한다."
+      },
+      {
+        "address": "CH04.P3.S3",
+        "sentenceRole": "S3",
+        "role": "긍정적인 변화와 어려운 변화를 구분한다."
+      },
+      {
+        "address": "CH04.P3.S4",
+        "sentenceRole": "S4",
+        "role": "처음의 인상과 다른 반전 매력을 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH04.P4",
+    "chapterId": "CH04",
+    "chapterTitle": "사람들이 보는 나와 진짜 나",
+    "domain": "identity",
+    "context": "social",
+    "purpose": "사람들이 놓치기 쉬운 나의 매력",
+    "sentences": [
+      {
+        "address": "CH04.P4.S1",
+        "sentenceRole": "S1",
+        "role": "실제 근거가 있는 긍정적 특성을 선정한다."
+      },
+      {
+        "address": "CH04.P4.S2",
+        "sentenceRole": "S2",
+        "role": "해당 특성이 처음에는 잘 보이지 않는 이유를 설명한다."
+      },
+      {
+        "address": "CH04.P4.S3",
+        "sentenceRole": "S3",
+        "role": "가까운 관계에서 가치가 되는 상황을 보여준다."
+      },
+      {
+        "address": "CH04.P4.S4",
+        "sentenceRole": "S4",
+        "role": "독자가 자신의 숨은 매력을 발견하는 문장으로 마무리한다."
+      }
+    ]
+  },
+  {
+    "address": "CH05.P1",
+    "chapterId": "CH05",
+    "chapterTitle": "타고난 장점과 재능",
+    "domain": "strengths",
+    "context": "identity",
+    "purpose": "가장 강한 장점",
+    "sentences": [
+      {
+        "address": "CH05.P1.S1",
+        "sentenceRole": "S1",
+        "role": "가장 대표적인 강점을 직설적으로 제시한다."
+      },
+      {
+        "address": "CH05.P1.S2",
+        "sentenceRole": "S2",
+        "role": "해당 강점의 주요 명리·MBTI 근거를 설명한다."
+      },
+      {
+        "address": "CH05.P1.S3",
+        "sentenceRole": "S3",
+        "role": "실제로 잘할 수 있는 행동을 보여준다."
+      },
+      {
+        "address": "CH05.P1.S4",
+        "sentenceRole": "S4",
+        "role": "그 강점이 다른 사람에게 가치가 되는 조건을 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH05.P2",
+    "chapterId": "CH05",
+    "chapterTitle": "타고난 장점과 재능",
+    "domain": "strengths",
+    "context": "identity",
+    "purpose": "두 번째 재능",
+    "sentences": [
+      {
+        "address": "CH05.P2.S1",
+        "sentenceRole": "S1",
+        "role": "첫 강점과 의미가 다른 재능을 제시한다."
+      },
+      {
+        "address": "CH05.P2.S2",
+        "sentenceRole": "S2",
+        "role": "독립적인 근거를 설명한다."
+      },
+      {
+        "address": "CH05.P2.S3",
+        "sentenceRole": "S3",
+        "role": "구체적인 생활 장면을 보여준다."
+      },
+      {
+        "address": "CH05.P2.S4",
+        "sentenceRole": "S4",
+        "role": "해당 재능을 살릴 수 있는 환경을 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH05.P3",
+    "chapterId": "CH05",
+    "chapterTitle": "타고난 장점과 재능",
+    "domain": "strengths",
+    "context": "identity",
+    "purpose": "의외로 잘할 수 있는 것",
+    "sentences": [
+      {
+        "address": "CH05.P3.S1",
+        "sentenceRole": "S1",
+        "role": "일반적인 첫인상과 다른 능력을 소개한다."
+      },
+      {
+        "address": "CH05.P3.S2",
+        "sentenceRole": "S2",
+        "role": "근거가 되는 명리·MBTI 조합을 설명한다."
+      },
+      {
+        "address": "CH05.P3.S3",
+        "sentenceRole": "S3",
+        "role": "예상 밖의 상황에서 드러나는 모습을 제시한다."
+      },
+      {
+        "address": "CH05.P3.S4",
+        "sentenceRole": "S4",
+        "role": "해당 능력이 강점으로 발전할 가능성을 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH05.P4",
+    "chapterId": "CH05",
+    "chapterTitle": "타고난 장점과 재능",
+    "domain": "strengths",
+    "context": "identity",
+    "purpose": "내 강점을 오래 유지하는 방법",
+    "sentences": [
+      {
+        "address": "CH05.P4.S1",
+        "sentenceRole": "S1",
+        "role": "세 장점 중 가장 중요한 공통 조건을 찾는다."
+      },
+      {
+        "address": "CH05.P4.S2",
+        "sentenceRole": "S2",
+        "role": "장점을 지나치게 사용할 때의 위험을 설명한다."
+      },
+      {
+        "address": "CH05.P4.S3",
+        "sentenceRole": "S3",
+        "role": "강점을 발전시키기 위한 행동을 제시한다."
+      },
+      {
+        "address": "CH05.P4.S4",
+        "sentenceRole": "S4",
+        "role": "긍정적이고 구체적인 마무리 문장을 제공한다."
+      }
+    ]
+  },
+  {
+    "address": "CH06.P1",
+    "chapterId": "CH06",
+    "chapterTitle": "조금 아픈 팩폭",
+    "domain": "weaknesses",
+    "context": "stress",
+    "purpose": "가장 특징적인 단점",
+    "sentences": [
+      {
+        "address": "CH06.P1.S1",
+        "sentenceRole": "S1",
+        "role": "명확한 근거가 있는 약점을 직설적으로 소개한다."
+      },
+      {
+        "address": "CH06.P1.S2",
+        "sentenceRole": "S2",
+        "role": "독자가 공감할 만한 행동을 조건부로 묘사한다."
+      },
+      {
+        "address": "CH06.P1.S3",
+        "sentenceRole": "S3",
+        "role": "스스로 생각하는 모습과 실제 행동의 차이를 설명한다."
+      },
+      {
+        "address": "CH06.P1.S4",
+        "sentenceRole": "S4",
+        "role": "재치 있지만 과도하게 모욕적이지 않은 팩폭으로 마무리한다."
+      }
+    ]
+  },
+  {
+    "address": "CH06.P2",
+    "chapterId": "CH06",
+    "chapterTitle": "조금 아픈 팩폭",
+    "domain": "weaknesses",
+    "context": "stress",
+    "purpose": "왜 그런 문제가 생기는가",
+    "sentences": [
+      {
+        "address": "CH06.P2.S1",
+        "sentenceRole": "S1",
+        "role": "실제 명리 근거를 제시한다."
+      },
+      {
+        "address": "CH06.P2.S2",
+        "sentenceRole": "S2",
+        "role": "해당 구조의 쉬운 의미를 설명한다."
+      },
+      {
+        "address": "CH06.P2.S3",
+        "sentenceRole": "S3",
+        "role": "MBTI가 이 특징을 강화하거나 완화하는 조건을 설명한다."
+      },
+      {
+        "address": "CH06.P2.S4",
+        "sentenceRole": "S4",
+        "role": "해당 단점이 나타나는 원인을 종합한다."
+      }
+    ]
+  },
+  {
+    "address": "CH06.P3",
+    "chapterId": "CH06",
+    "chapterTitle": "조금 아픈 팩폭",
+    "domain": "weaknesses",
+    "context": "stress",
+    "purpose": "사람들과의 관계에서 나타나는 문제",
+    "sentences": [
+      {
+        "address": "CH06.P3.S1",
+        "sentenceRole": "S1",
+        "role": "해당 단점이 나타날 수 있는 생활 상황을 제시한다."
+      },
+      {
+        "address": "CH06.P3.S2",
+        "sentenceRole": "S2",
+        "role": "본인이 의도한 행동을 설명한다."
+      },
+      {
+        "address": "CH06.P3.S3",
+        "sentenceRole": "S3",
+        "role": "상대방이 다르게 받아들일 수 있는 부분을 설명한다."
+      },
+      {
+        "address": "CH06.P3.S4",
+        "sentenceRole": "S4",
+        "role": "문제가 커지는 조건을 제시한다."
+      }
+    ]
+  },
+  {
+    "address": "CH06.P4",
+    "chapterId": "CH06",
+    "chapterTitle": "조금 아픈 팩폭",
+    "domain": "weaknesses",
+    "context": "stress",
+    "purpose": "이 약점을 잘 사용하는 방법",
+    "sentences": [
+      {
+        "address": "CH06.P4.S1",
+        "sentenceRole": "S1",
+        "role": "약점에 숨어 있는 장점이 있다면 설명한다."
+      },
+      {
+        "address": "CH06.P4.S2",
+        "sentenceRole": "S2",
+        "role": "문제를 줄일 수 있는 실제 행동을 제안한다."
+      },
+      {
+        "address": "CH06.P4.S3",
+        "sentenceRole": "S3",
+        "role": "행동이 바뀌었을 때 기대할 수 있는 차이를 보여준다."
+      },
+      {
+        "address": "CH06.P4.S4",
+        "sentenceRole": "S4",
+        "role": "긍정적인 전환 문장으로 마무리한다."
+      }
+    ]
+  },
+  {
+    "address": "CH07.P1",
+    "chapterId": "CH07",
+    "chapterTitle": "내가 가진 좋은 패",
+    "domain": "success/fortune",
+    "context": "identity",
+    "purpose": "내 사주의 좋은 기운",
+    "sentences": [
+      {
+        "address": "CH07.P1.S1",
+        "sentenceRole": "S1",
+        "role": "가장 강하게 확인되는 긍정적 특징을 소개한다."
+      },
+      {
+        "address": "CH07.P1.S2",
+        "sentenceRole": "S2",
+        "role": "해당 특징과 관련된 명리 요소를 설명한다."
+      },
+      {
+        "address": "CH07.P1.S3",
+        "sentenceRole": "S3",
+        "role": "실제 생활에서 나타날 수 있는 좋은 가능성을 설명한다."
+      },
+      {
+        "address": "CH07.P1.S4",
+        "sentenceRole": "S4",
+        "role": "독자가 기억할 만한 긍정적 메시지를 제시한다."
+      }
+    ]
+  },
+  {
+    "address": "CH07.P2",
+    "chapterId": "CH07",
+    "chapterTitle": "내가 가진 좋은 패",
+    "domain": "success/fortune",
+    "context": "identity",
+    "purpose": "나에게 도움이 될 수 있는 힘",
+    "sentences": [
+      {
+        "address": "CH07.P2.S1",
+        "sentenceRole": "S1",
+        "role": "첫 문단과 다른 긍정적 근거를 선정한다."
+      },
+      {
+        "address": "CH07.P2.S2",
+        "sentenceRole": "S2",
+        "role": "귀인·재능·관계·성공 관련 의미를 정확히 설명한다."
+      },
+      {
+        "address": "CH07.P2.S3",
+        "sentenceRole": "S3",
+        "role": "도움을 받거나 강점이 발휘되는 상황을 보여준다."
+      },
+      {
+        "address": "CH07.P2.S4",
+        "sentenceRole": "S4",
+        "role": "그 힘이 작동하는 조건을 제시한다."
+      }
+    ]
+  },
+  {
+    "address": "CH07.P3",
+    "chapterId": "CH07",
+    "chapterTitle": "내가 가진 좋은 패",
+    "domain": "success/fortune",
+    "context": "identity",
+    "purpose": "사람들이 알아볼 만한 장점",
+    "sentences": [
+      {
+        "address": "CH07.P3.S1",
+        "sentenceRole": "S1",
+        "role": "사회·일·관계에서 가치가 되는 특징을 선정한다."
+      },
+      {
+        "address": "CH07.P3.S2",
+        "sentenceRole": "S2",
+        "role": "앞선 장점과 다른 근거를 설명한다."
+      },
+      {
+        "address": "CH07.P3.S3",
+        "sentenceRole": "S3",
+        "role": "실제로 인정받을 수 있는 행동을 묘사한다."
+      },
+      {
+        "address": "CH07.P3.S4",
+        "sentenceRole": "S4",
+        "role": "그 특징을 더 잘 드러내는 방법을 제안한다."
+      }
+    ]
+  },
+  {
+    "address": "CH07.P4",
+    "chapterId": "CH07",
+    "chapterTitle": "내가 가진 좋은 패",
+    "domain": "success/fortune",
+    "context": "identity",
+    "purpose": "좋은 기운을 활용하는 방향",
+    "sentences": [
+      {
+        "address": "CH07.P4.S1",
+        "sentenceRole": "S1",
+        "role": "가장 활용 가치가 높은 특징을 선택한다."
+      },
+      {
+        "address": "CH07.P4.S2",
+        "sentenceRole": "S2",
+        "role": "해당 강점을 활용할 만한 영역을 설명한다."
+      },
+      {
+        "address": "CH07.P4.S3",
+        "sentenceRole": "S3",
+        "role": "지나치게 발휘될 때의 주의점을 간단히 제시한다."
+      },
+      {
+        "address": "CH07.P4.S4",
+        "sentenceRole": "S4",
+        "role": "긍정적인 가능성을 기억에 남도록 마무리한다."
+      }
+    ]
+  },
+  {
+    "address": "CH08.P1",
+    "chapterId": "CH08",
+    "chapterTitle": "일과 직업·학업",
+    "domain": "work",
+    "context": "work",
+    "purpose": "나는 어떻게 일하는 사람인가",
+    "sentences": [
+      {
+        "address": "CH08.P1.S1",
+        "sentenceRole": "S1",
+        "role": "대표적인 업무 성향을 소개한다."
+      },
+      {
+        "address": "CH08.P1.S2",
+        "sentenceRole": "S2",
+        "role": "실제 근거를 설명한다."
+      },
+      {
+        "address": "CH08.P1.S3",
+        "sentenceRole": "S3",
+        "role": "일할 때 나타나는 행동을 묘사한다."
+      },
+      {
+        "address": "CH08.P1.S4",
+        "sentenceRole": "S4",
+        "role": "그 방식의 강점을 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH08.P2",
+    "chapterId": "CH08",
+    "chapterTitle": "일과 직업·학업",
+    "domain": "work",
+    "context": "work",
+    "purpose": "잘 맞는 역할과 재능",
+    "sentences": [
+      {
+        "address": "CH08.P2.S1",
+        "sentenceRole": "S1",
+        "role": "적합한 업무 역할을 제시한다."
+      },
+      {
+        "address": "CH08.P2.S2",
+        "sentenceRole": "S2",
+        "role": "해당 역할에 필요한 능력과 개인적 근거를 연결한다."
+      },
+      {
+        "address": "CH08.P2.S3",
+        "sentenceRole": "S3",
+        "role": "강점이 나타날 수 있는 상황을 보여준다."
+      },
+      {
+        "address": "CH08.P2.S4",
+        "sentenceRole": "S4",
+        "role": "능력이 인정받는 조건을 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH08.P3",
+    "chapterId": "CH08",
+    "chapterTitle": "일과 직업·학업",
+    "domain": "work",
+    "context": "work",
+    "purpose": "맞지 않는 업무환경",
+    "sentences": [
+      {
+        "address": "CH08.P3.S1",
+        "sentenceRole": "S1",
+        "role": "힘들어할 수 있는 환경을 제시한다."
+      },
+      {
+        "address": "CH08.P3.S2",
+        "sentenceRole": "S2",
+        "role": "왜 해당 환경이 불편할 수 있는지 설명한다."
+      },
+      {
+        "address": "CH08.P3.S3",
+        "sentenceRole": "S3",
+        "role": "반복하기 쉬운 실수를 묘사한다."
+      },
+      {
+        "address": "CH08.P3.S4",
+        "sentenceRole": "S4",
+        "role": "더 적합한 환경의 조건을 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH08.P4",
+    "chapterId": "CH08",
+    "chapterTitle": "일과 직업·학업",
+    "domain": "work",
+    "context": "work",
+    "purpose": "일과 배움에서 성장하는 방법",
+    "sentences": [
+      {
+        "address": "CH08.P4.S1",
+        "sentenceRole": "S1",
+        "role": "현재 입력한 직업 상태를 반영한다."
+      },
+      {
+        "address": "CH08.P4.S2",
+        "sentenceRole": "S2",
+        "role": "적합한 학습·성장 방식을 설명한다."
+      },
+      {
+        "address": "CH08.P4.S3",
+        "sentenceRole": "S3",
+        "role": "실제로 시도할 수 있는 행동을 제안한다."
+      },
+      {
+        "address": "CH08.P4.S4",
+        "sentenceRole": "S4",
+        "role": "강점을 장기적으로 발전시키는 방향으로 마무리한다."
+      }
+    ]
+  },
+  {
+    "address": "CH09.P1",
+    "chapterId": "CH09",
+    "chapterTitle": "돈과 재물",
+    "domain": "money",
+    "context": "money",
+    "purpose": "나는 돈을 어떻게 대하는가",
+    "sentences": [
+      {
+        "address": "CH09.P1.S1",
+        "sentenceRole": "S1",
+        "role": "돈을 벌거나 사용할 때의 대표적인 성향을 소개한다."
+      },
+      {
+        "address": "CH09.P1.S2",
+        "sentenceRole": "S2",
+        "role": "관련 명리·MBTI 근거를 설명한다."
+      },
+      {
+        "address": "CH09.P1.S3",
+        "sentenceRole": "S3",
+        "role": "소비·저축·선택 상황에서 나타날 수 있는 행동을 보여준다."
+      },
+      {
+        "address": "CH09.P1.S4",
+        "sentenceRole": "S4",
+        "role": "이 사람의 재물 관리 특징을 정리한다."
+      }
+    ]
+  },
+  {
+    "address": "CH09.P2",
+    "chapterId": "CH09",
+    "chapterTitle": "돈과 재물",
+    "domain": "money",
+    "context": "money",
+    "purpose": "재물과 관련된 좋은 가능성",
+    "sentences": [
+      {
+        "address": "CH09.P2.S1",
+        "sentenceRole": "S1",
+        "role": "실제 확인되는 재물 관련 명리 구조를 제시한다."
+      },
+      {
+        "address": "CH09.P2.S2",
+        "sentenceRole": "S2",
+        "role": "해당 요소가 의미하는 바를 설명한다."
+      },
+      {
+        "address": "CH09.P2.S3",
+        "sentenceRole": "S3",
+        "role": "재물 관련 강점이 나타나는 조건을 설명한다."
+      },
+      {
+        "address": "CH09.P2.S4",
+        "sentenceRole": "S4",
+        "role": "긍정적인 활용 방향을 제시한다."
+      }
+    ]
+  },
+  {
+    "address": "CH09.P3",
+    "chapterId": "CH09",
+    "chapterTitle": "돈과 재물",
+    "domain": "money",
+    "context": "money",
+    "purpose": "돈과 관련된 팩폭",
+    "sentences": [
+      {
+        "address": "CH09.P3.S1",
+        "sentenceRole": "S1",
+        "role": "재물 관리에서 나타날 수 있는 약점을 제시한다."
+      },
+      {
+        "address": "CH09.P3.S2",
+        "sentenceRole": "S2",
+        "role": "해당 약점의 근거를 설명한다."
+      },
+      {
+        "address": "CH09.P3.S3",
+        "sentenceRole": "S3",
+        "role": "생활 속에서 발생할 수 있는 문제를 조건부로 묘사한다."
+      },
+      {
+        "address": "CH09.P3.S4",
+        "sentenceRole": "S4",
+        "role": "위험을 줄이는 구체적인 기준을 제시한다."
+      }
+    ]
+  },
+  {
+    "address": "CH09.P4",
+    "chapterId": "CH09",
+    "chapterTitle": "돈과 재물",
+    "domain": "money",
+    "context": "money",
+    "purpose": "나에게 맞는 돈 관리 방법",
+    "sentences": [
+      {
+        "address": "CH09.P4.S1",
+        "sentenceRole": "S1",
+        "role": "해당 사람에게 중요한 재물 관리 원칙을 제시한다."
+      },
+      {
+        "address": "CH09.P4.S2",
+        "sentenceRole": "S2",
+        "role": "실제 행동으로 적용할 수 있게 설명한다."
+      },
+      {
+        "address": "CH09.P4.S3",
+        "sentenceRole": "S3",
+        "role": "일·능력·자원 관리와 연결한다."
+      },
+      {
+        "address": "CH09.P4.S4",
+        "sentenceRole": "S4",
+        "role": "현실적인 긍정적 마무리를 제공한다."
+      }
+    ]
+  },
+  {
+    "address": "CH10.P1",
+    "chapterId": "CH10",
+    "chapterTitle": "사랑과 연애",
+    "domain": "relationships",
+    "context": "love",
+    "purpose": "사랑할 때의 나",
+    "sentences": [
+      {
+        "address": "CH10.P1.S1",
+        "sentenceRole": "S1",
+        "role": "사랑하는 방식의 핵심을 소개한다."
+      },
+      {
+        "address": "CH10.P1.S2",
+        "sentenceRole": "S2",
+        "role": "명리·MBTI 근거를 설명한다."
+      },
+      {
+        "address": "CH10.P1.S3",
+        "sentenceRole": "S3",
+        "role": "호감이 생겼을 때 나타날 수 있는 행동을 묘사한다."
+      },
+      {
+        "address": "CH10.P1.S4",
+        "sentenceRole": "S4",
+        "role": "관계에서 중요하게 여기는 것을 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH10.P2",
+    "chapterId": "CH10",
+    "chapterTitle": "사랑과 연애",
+    "domain": "relationships",
+    "context": "love",
+    "purpose": "나의 연애 매력",
+    "sentences": [
+      {
+        "address": "CH10.P2.S1",
+        "sentenceRole": "S1",
+        "role": "상대에게 매력적으로 느껴질 수 있는 특징을 선정한다."
+      },
+      {
+        "address": "CH10.P2.S2",
+        "sentenceRole": "S2",
+        "role": "그 특징의 근거를 설명한다."
+      },
+      {
+        "address": "CH10.P2.S3",
+        "sentenceRole": "S3",
+        "role": "가까워지면서 드러나는 모습을 설명한다."
+      },
+      {
+        "address": "CH10.P2.S4",
+        "sentenceRole": "S4",
+        "role": "매력이 잘 발휘되는 조건을 제시한다."
+      }
+    ]
+  },
+  {
+    "address": "CH10.P3",
+    "chapterId": "CH10",
+    "chapterTitle": "사랑과 연애",
+    "domain": "relationships",
+    "context": "love",
+    "purpose": "연애에서 나타나는 단점",
+    "sentences": [
+      {
+        "address": "CH10.P3.S1",
+        "sentenceRole": "S1",
+        "role": "관계에서 반복할 수 있는 약점을 설명한다."
+      },
+      {
+        "address": "CH10.P3.S2",
+        "sentenceRole": "S2",
+        "role": "실제 근거를 연결한다."
+      },
+      {
+        "address": "CH10.P3.S3",
+        "sentenceRole": "S3",
+        "role": "갈등이나 오해가 생길 수 있는 상황을 묘사한다."
+      },
+      {
+        "address": "CH10.P3.S4",
+        "sentenceRole": "S4",
+        "role": "상대방의 관점에서 나타날 수 있는 차이를 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH10.P4",
+    "chapterId": "CH10",
+    "chapterTitle": "사랑과 연애",
+    "domain": "relationships",
+    "context": "love",
+    "purpose": "편안한 관계를 만드는 방법",
+    "sentences": [
+      {
+        "address": "CH10.P4.S1",
+        "sentenceRole": "S1",
+        "role": "잘 맞는 관계의 조건을 설명한다."
+      },
+      {
+        "address": "CH10.P4.S2",
+        "sentenceRole": "S2",
+        "role": "본인이 주의할 행동을 제시한다."
+      },
+      {
+        "address": "CH10.P4.S3",
+        "sentenceRole": "S3",
+        "role": "관계를 개선할 실제 방법을 설명한다."
+      },
+      {
+        "address": "CH10.P4.S4",
+        "sentenceRole": "S4",
+        "role": "긍정적인 관계 가능성으로 마무리한다."
+      }
+    ]
+  },
+  {
+    "address": "CH11.P1",
+    "chapterId": "CH11",
+    "chapterTitle": "가족과 가까운 사람들",
+    "domain": "relationships",
+    "context": "social",
+    "purpose": "가족 안에서의 나",
+    "sentences": [
+      {
+        "address": "CH11.P1.S1",
+        "sentenceRole": "S1",
+        "role": "가까운 사람과 있을 때의 성향을 설명한다."
+      },
+      {
+        "address": "CH11.P1.S2",
+        "sentenceRole": "S2",
+        "role": "그 특징의 실제 근거를 제시한다."
+      },
+      {
+        "address": "CH11.P1.S3",
+        "sentenceRole": "S3",
+        "role": "책임감·독립성·돌봄 등 관련 행동을 묘사한다."
+      },
+      {
+        "address": "CH11.P1.S4",
+        "sentenceRole": "S4",
+        "role": "가까운 관계에서 중요하게 여기는 조건을 제시한다."
+      }
+    ]
+  },
+  {
+    "address": "CH11.P2",
+    "chapterId": "CH11",
+    "chapterTitle": "가족과 가까운 사람들",
+    "domain": "relationships",
+    "context": "social",
+    "purpose": "가족에게 보여주는 장점",
+    "sentences": [
+      {
+        "address": "CH11.P2.S1",
+        "sentenceRole": "S1",
+        "role": "가족관계에서 긍정적으로 작동할 수 있는 특징을 선정한다."
+      },
+      {
+        "address": "CH11.P2.S2",
+        "sentenceRole": "S2",
+        "role": "근거를 설명한다."
+      },
+      {
+        "address": "CH11.P2.S3",
+        "sentenceRole": "S3",
+        "role": "도움·배려·소통 방식으로 나타나는 모습을 보여준다."
+      },
+      {
+        "address": "CH11.P2.S4",
+        "sentenceRole": "S4",
+        "role": "그 특징이 관계에 주는 긍정적 의미를 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH11.P3",
+    "chapterId": "CH11",
+    "chapterTitle": "가족과 가까운 사람들",
+    "domain": "relationships",
+    "context": "social",
+    "purpose": "가까운 관계에서의 어려움",
+    "sentences": [
+      {
+        "address": "CH11.P3.S1",
+        "sentenceRole": "S1",
+        "role": "거리감이나 갈등이 생길 수 있는 조건을 제시한다."
+      },
+      {
+        "address": "CH11.P3.S2",
+        "sentenceRole": "S2",
+        "role": "해당 문제의 성향적 근거를 설명한다."
+      },
+      {
+        "address": "CH11.P3.S3",
+        "sentenceRole": "S3",
+        "role": "서로의 기대가 달라지는 상황을 보여준다."
+      },
+      {
+        "address": "CH11.P3.S4",
+        "sentenceRole": "S4",
+        "role": "관계에서 주의할 점을 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH11.P4",
+    "chapterId": "CH11",
+    "chapterTitle": "가족과 가까운 사람들",
+    "domain": "relationships",
+    "context": "social",
+    "purpose": "가족과 잘 지내는 방향",
+    "sentences": [
+      {
+        "address": "CH11.P4.S1",
+        "sentenceRole": "S1",
+        "role": "관계에서 필요한 선택 기준을 설명한다."
+      },
+      {
+        "address": "CH11.P4.S2",
+        "sentenceRole": "S2",
+        "role": "구체적인 소통 방법을 제시한다."
+      },
+      {
+        "address": "CH11.P4.S3",
+        "sentenceRole": "S3",
+        "role": "건강한 거리와 역할 분담의 조건을 설명한다."
+      },
+      {
+        "address": "CH11.P4.S4",
+        "sentenceRole": "S4",
+        "role": "따뜻하고 현실적인 마무리를 제공한다."
+      }
+    ]
+  },
+  {
+    "address": "CH12.P1",
+    "chapterId": "CH12",
+    "chapterTitle": "친구와 사회생활",
+    "domain": "relationships",
+    "context": "social",
+    "purpose": "친구들이 보는 나",
+    "sentences": [
+      {
+        "address": "CH12.P1.S1",
+        "sentenceRole": "S1",
+        "role": "친구 관계에서 드러날 수 있는 대표적 성향을 소개한다."
+      },
+      {
+        "address": "CH12.P1.S2",
+        "sentenceRole": "S2",
+        "role": "그 성향의 근거를 설명한다."
+      },
+      {
+        "address": "CH12.P1.S3",
+        "sentenceRole": "S3",
+        "role": "실제 대화와 행동의 특징을 묘사한다."
+      },
+      {
+        "address": "CH12.P1.S4",
+        "sentenceRole": "S4",
+        "role": "주변에 줄 수 있는 인상을 조건부로 설명한다."
+      }
+    ]
+  },
+  {
+    "address": "CH12.P2",
+    "chapterId": "CH12",
+    "chapterTitle": "친구와 사회생활",
+    "domain": "relationships",
+    "context": "social",
+    "purpose": "인간관계에서의 좋은 점",
+    "sentences": [
+      {
+        "address": "CH12.P2.S1",
+        "sentenceRole": "S1",
+        "role": "관계에서 강점으로 작동하는 특징을 선정한다."
+      },
+      {
+        "address": "CH12.P2.S2",
+        "sentenceRole": "S2",
+        "role": "관련 근거를 제시한다."
+      },
+      {
+        "address": "CH12.P2.S3",
+        "sentenceRole": "S3",
+        "role": "실제 관계에서 나타나는 장점을 설명한다."
+      },
+      {
+        "address": "CH12.P2.S4",
+        "sentenceRole": "S4",
+        "role": "좋은 관계를 만드는 조건을 제시한다."
+      }
+    ]
+  },
+  {
+    "address": "CH12.P3",
+    "chapterId": "CH12",
+    "chapterTitle": "친구와 사회생활",
+    "domain": "relationships",
+    "context": "social",
+    "purpose": "인간관계 팩폭",
+    "sentences": [
+      {
+        "address": "CH12.P3.S1",
+        "sentenceRole": "S1",
+        "role": "관계에서 반복할 수 있는 단점을 설명한다."
+      },
+      {
+        "address": "CH12.P3.S2",
+        "sentenceRole": "S2",
+        "role": "그 원인을 설명한다."
+      },
+      {
+        "address": "CH12.P3.S3",
+        "sentenceRole": "S3",
+        "role": "오해가 생길 수 있는 상황을 묘사한다."
+      },
+      {
+        "address": "CH12.P3.S4",
+        "sentenceRole": "S4",
+        "role": "그 문제를 줄이는 방법을 제시한다."
+      }
+    ]
+  },
+  {
+    "address": "CH12.P4",
+    "chapterId": "CH12",
+    "chapterTitle": "친구와 사회생활",
+    "domain": "relationships",
+    "context": "social",
+    "purpose": "가까이할 만한 관계의 조건",
+    "sentences": [
+      {
+        "address": "CH12.P4.S1",
+        "sentenceRole": "S1",
+        "role": "편안하게 느낄 수 있는 사람의 특징을 설명한다."
+      },
+      {
+        "address": "CH12.P4.S2",
+        "sentenceRole": "S2",
+        "role": "해당 조건의 근거를 제시한다."
+      },
+      {
+        "address": "CH12.P4.S3",
+        "sentenceRole": "S3",
+        "role": "상호 존중과 관계 유지에 필요한 행동을 설명한다."
+      },
+      {
+        "address": "CH12.P4.S4",
+        "sentenceRole": "S4",
+        "role": "관계의 긍정적인 가능성으로 마무리한다."
+      }
+    ]
+  },
+  {
+    "address": "CH13.P1",
+    "chapterId": "CH13",
+    "chapterTitle": "나를 가장 잘 사용하는 방법",
+    "domain": "strengths",
+    "context": "identity",
+    "purpose": "내가 기억해야 할 핵심",
+    "sentences": [
+      {
+        "address": "CH13.P1.S1",
+        "sentenceRole": "S1",
+        "role": "가장 중요한 특징을 간결하게 다시 연결한다."
+      },
+      {
+        "address": "CH13.P1.S2",
+        "sentenceRole": "S2",
+        "role": "그 특징이 가진 긍정적 힘을 제시한다."
+      },
+      {
+        "address": "CH13.P1.S3",
+        "sentenceRole": "S3",
+        "role": "지나치게 발휘될 때의 어려움을 설명한다."
+      },
+      {
+        "address": "CH13.P1.S4",
+        "sentenceRole": "S4",
+        "role": "이 사람이 기억해야 할 선택 기준을 제시한다."
+      }
+    ]
+  },
+  {
+    "address": "CH13.P2",
+    "chapterId": "CH13",
+    "chapterTitle": "나를 가장 잘 사용하는 방법",
+    "domain": "strengths",
+    "context": "identity",
+    "purpose": "생각하고 결정하는 방법",
+    "sentences": [
+      {
+        "address": "CH13.P2.S1",
+        "sentenceRole": "S1",
+        "role": "판단 과정에서 나타나는 성향을 설명한다."
+      },
+      {
+        "address": "CH13.P2.S2",
+        "sentenceRole": "S2",
+        "role": "그 성향이 유리한 조건을 설명한다."
+      },
+      {
+        "address": "CH13.P2.S3",
+        "sentenceRole": "S3",
+        "role": "잘못 작동하는 상황을 제시한다."
+      },
+      {
+        "address": "CH13.P2.S4",
+        "sentenceRole": "S4",
+        "role": "실제 판단 기준이나 행동 방법을 제안한다."
+      }
+    ]
+  },
+  {
+    "address": "CH13.P3",
+    "chapterId": "CH13",
+    "chapterTitle": "나를 가장 잘 사용하는 방법",
+    "domain": "strengths",
+    "context": "identity",
+    "purpose": "일상에서 나를 잘 사용하는 방법",
+    "sentences": [
+      {
+        "address": "CH13.P3.S1",
+        "sentenceRole": "S1",
+        "role": "일·돈·관계 중 중요한 영역을 선정한다."
+      },
+      {
+        "address": "CH13.P3.S2",
+        "sentenceRole": "S2",
+        "role": "해당 영역에서 활용할 수 있는 강점을 설명한다."
+      },
+      {
+        "address": "CH13.P3.S3",
+        "sentenceRole": "S3",
+        "role": "반복적인 실수를 줄이는 방법을 제시한다."
+      },
+      {
+        "address": "CH13.P3.S4",
+        "sentenceRole": "S4",
+        "role": "실제 생활에서 적용할 작은 행동을 제안한다."
+      }
+    ]
+  },
+  {
+    "address": "CH13.P4",
+    "chapterId": "CH13",
+    "chapterTitle": "나를 가장 잘 사용하는 방법",
+    "domain": "strengths",
+    "context": "identity",
+    "purpose": "마지막 메시지",
+    "sentences": [
+      {
+        "address": "CH13.P4.S1",
+        "sentenceRole": "S1",
+        "role": "이 사람을 상징하는 핵심 특징을 제시한다."
+      },
+      {
+        "address": "CH13.P4.S2",
+        "sentenceRole": "S2",
+        "role": "가장 중요한 장점과 긍정적 가능성을 연결한다."
+      },
+      {
+        "address": "CH13.P4.S3",
+        "sentenceRole": "S3",
+        "role": "앞으로 자신을 잘 활용하기 위한 방향을 설명한다."
+      },
+      {
+        "address": "CH13.P4.S4",
+        "sentenceRole": "S4",
+        "role": "기억에 남는 따뜻하고 힘 있는 문장으로 마무리한다."
+      }
+    ]
+  }
+]

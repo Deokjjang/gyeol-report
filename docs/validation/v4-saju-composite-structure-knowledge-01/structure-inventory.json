@@ -1,0 +1,1013 @@
+{
+  "baseSha": "7ff6aba0c9e0abd74284a388369b20ff6229be38",
+  "rows": [
+    {
+      "targetId": "foundation:structure:jaeda_sinyak",
+      "key": "jaeda_sinyak",
+      "label": "재다신약",
+      "hanja": "財多身弱",
+      "aliases": [
+        "재다신약"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [
+          "wealthHeavyWeakDaymaster"
+        ],
+        "legacyPatternCodes": [
+          "WEAK_DAYMASTER_WITH_STRONG_WEALTH"
+        ],
+        "actualBehavior": "V4 buildMyeongliStructure: rule별 연결·기반·억제 및 시주 민감도 확인 후 후보. 고전 격국·취용의 완성 판정 아님.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/structureRules.ts",
+          "src/lib/interpretation-v4/structureEvidence.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:jaeda_sinyak",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:singang",
+      "key": "singang",
+      "label": "신강",
+      "hanja": "身強",
+      "aliases": [
+        "신강"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": true,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [],
+        "actualBehavior": "analyzeV4Strength와 원생 analyzeSajuStructure의 강약 결과는 서로 다른 정책이며 같은 수치·등급으로 병합하지 않음.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/strength.ts",
+          "src/lib/saju/structureAnalysis.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:singang",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:sinyak",
+      "key": "sinyak",
+      "label": "신약",
+      "hanja": "身弱",
+      "aliases": [
+        "신약"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": true,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [],
+        "actualBehavior": "analyzeV4Strength와 원생 analyzeSajuStructure의 강약 결과는 서로 다른 정책이며 같은 수치·등급으로 병합하지 않음.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/strength.ts",
+          "src/lib/saju/structureAnalysis.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:sinyak",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:weak_output",
+      "key": "weak_output",
+      "label": "식상 과다형 신약 후보",
+      "hanja": "身弱食傷偏重候補",
+      "aliases": [
+        "식상 과다형 신약 후보"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [
+          "WEAK_DAYMASTER_WITH_STRONG_OUTPUT"
+        ],
+        "actualBehavior": "원생 analyzeSajuStructure의 제한된 점수/라벨 후보. V4 STRUCTURE_RULES에는 이 이름의 독립 판정 없음.",
+        "codeRefs": [
+          "src/lib/saju/structureAnalysis.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:weak_output",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:weak_officer",
+      "key": "weak_officer",
+      "label": "관성 압박형 신약 후보",
+      "hanja": "身弱官殺偏重候補",
+      "aliases": [
+        "관성 압박형 신약 후보"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [
+          "WEAK_DAYMASTER_WITH_STRONG_OFFICER"
+        ],
+        "actualBehavior": "원생 analyzeSajuStructure의 제한된 점수/라벨 후보. V4 STRUCTURE_RULES에는 이 이름의 독립 판정 없음.",
+        "codeRefs": [
+          "src/lib/saju/structureAnalysis.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:weak_officer",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:siksang_saengjae",
+      "key": "siksang_saengjae",
+      "label": "식상생재",
+      "hanja": "食傷生財",
+      "aliases": [
+        "식상생재"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [
+          "outputCreatesWealth"
+        ],
+        "legacyPatternCodes": [],
+        "actualBehavior": "V4 buildMyeongliStructure: rule별 연결·기반·억제 및 시주 민감도 확인 후 후보. 고전 격국·취용의 완성 판정 아님.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/structureRules.ts",
+          "src/lib/interpretation-v4/structureEvidence.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:siksang_saengjae",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:jaesaenggwan",
+      "key": "jaesaenggwan",
+      "label": "재생관",
+      "hanja": "財生官",
+      "aliases": [
+        "재생관"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [
+          "wealthCreatesOfficer"
+        ],
+        "legacyPatternCodes": [],
+        "actualBehavior": "V4 buildMyeongliStructure: rule별 연결·기반·억제 및 시주 민감도 확인 후 후보. 고전 격국·취용의 완성 판정 아님.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/structureRules.ts",
+          "src/lib/interpretation-v4/structureEvidence.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:jaesaenggwan",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:officer_resource",
+      "key": "officer_resource",
+      "label": "관인상생",
+      "hanja": "官印相生",
+      "aliases": [
+        "관인상생"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [
+          "officerResourceFlow"
+        ],
+        "legacyPatternCodes": [],
+        "actualBehavior": "V4 buildMyeongliStructure: rule별 연결·기반·억제 및 시주 민감도 확인 후 후보. 고전 격국·취용의 완성 판정 아님.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/structureRules.ts",
+          "src/lib/interpretation-v4/structureEvidence.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:officer_resource",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:salin_sangsaeng",
+      "key": "salin_sangsaeng",
+      "label": "살인상생",
+      "hanja": "殺印相生",
+      "aliases": [
+        "살인상생"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [
+          "killingResourceFlow"
+        ],
+        "legacyPatternCodes": [],
+        "actualBehavior": "V4 buildMyeongliStructure: rule별 연결·기반·억제 및 시주 민감도 확인 후 후보. 고전 격국·취용의 완성 판정 아님.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/structureRules.ts",
+          "src/lib/interpretation-v4/structureEvidence.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:salin_sangsaeng",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:sanggwan_gyeongwan",
+      "key": "sanggwan_gyeongwan",
+      "label": "상관견관",
+      "hanja": "傷官見官",
+      "aliases": [
+        "상관견관"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [
+          "hurtingOfficerMeetsOfficer"
+        ],
+        "legacyPatternCodes": [],
+        "actualBehavior": "V4 buildMyeongliStructure: rule별 연결·기반·억제 및 시주 민감도 확인 후 후보. 고전 격국·취용의 완성 판정 아님.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/structureRules.ts",
+          "src/lib/interpretation-v4/structureEvidence.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:sanggwan_gyeongwan",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:gwansal_honjob",
+      "key": "gwansal_honjob",
+      "label": "관살혼잡",
+      "hanja": "官殺混雜",
+      "aliases": [
+        "관살혼잡"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": true,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [
+          "mixedOfficers"
+        ],
+        "legacyPatternCodes": [
+          "MIXED_OFFICER_KILLING"
+        ],
+        "actualBehavior": "V4 buildMyeongliStructure: rule별 연결·기반·억제 및 시주 민감도 확인 후 후보. 고전 격국·취용의 완성 판정 아님.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/structureRules.ts",
+          "src/lib/interpretation-v4/structureEvidence.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:gwansal_honjob",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:bigeop_many",
+      "key": "bigeop_many",
+      "label": "비겁다자",
+      "hanja": "比劫偏重",
+      "aliases": [
+        "비겁다자"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [
+          "peerHeavy"
+        ],
+        "legacyPatternCodes": [
+          "PEER_HEAVY"
+        ],
+        "actualBehavior": "V4 buildMyeongliStructure: rule별 연결·기반·억제 및 시주 민감도 확인 후 후보. 고전 격국·취용의 완성 판정 아님.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/structureRules.ts",
+          "src/lib/interpretation-v4/structureEvidence.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:bigeop_many",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:resource_many",
+      "key": "resource_many",
+      "label": "인성다자",
+      "hanja": "印星偏重",
+      "aliases": [
+        "인성다자"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [
+          "resourceHeavy"
+        ],
+        "legacyPatternCodes": [
+          "RESOURCE_HEAVY"
+        ],
+        "actualBehavior": "V4 buildMyeongliStructure: rule별 연결·기반·억제 및 시주 민감도 확인 후 후보. 고전 격국·취용의 완성 판정 아님.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/structureRules.ts",
+          "src/lib/interpretation-v4/structureEvidence.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:resource_many",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:output_heavy",
+      "key": "output_heavy",
+      "label": "식상 강함",
+      "hanja": "食傷偏重",
+      "aliases": [
+        "식상 강함"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [
+          "outputHeavy"
+        ],
+        "legacyPatternCodes": [
+          "OUTPUT_HEAVY"
+        ],
+        "actualBehavior": "V4 buildMyeongliStructure: rule별 연결·기반·억제 및 시주 민감도 확인 후 후보. 고전 격국·취용의 완성 판정 아님.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/structureRules.ts",
+          "src/lib/interpretation-v4/structureEvidence.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:output_heavy",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:wealth_heavy",
+      "key": "wealth_heavy",
+      "label": "재성 강함",
+      "hanja": "財星偏重",
+      "aliases": [
+        "재성 강함"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [
+          "wealthHeavy"
+        ],
+        "legacyPatternCodes": [
+          "WEALTH_HEAVY"
+        ],
+        "actualBehavior": "V4 buildMyeongliStructure: rule별 연결·기반·억제 및 시주 민감도 확인 후 후보. 고전 격국·취용의 완성 판정 아님.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/structureRules.ts",
+          "src/lib/interpretation-v4/structureEvidence.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:wealth_heavy",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:officer_heavy",
+      "key": "officer_heavy",
+      "label": "관성 강함",
+      "hanja": "官殺偏重",
+      "aliases": [
+        "관성 강함"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [
+          "officerHeavy"
+        ],
+        "legacyPatternCodes": [
+          "OFFICER_HEAVY"
+        ],
+        "actualBehavior": "V4 buildMyeongliStructure: rule별 연결·기반·억제 및 시주 민감도 확인 후 후보. 고전 격국·취용의 완성 판정 아님.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/structureRules.ts",
+          "src/lib/interpretation-v4/structureEvidence.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:officer_heavy",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:no_resource",
+      "key": "no_resource",
+      "label": "무인성",
+      "hanja": "無印星觀測",
+      "aliases": [
+        "무인성"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [
+          "noResource"
+        ],
+        "legacyPatternCodes": [],
+        "actualBehavior": "V4 buildMyeongliStructure: rule별 연결·기반·억제 및 시주 민감도 확인 후 후보. 고전 격국·취용의 완성 판정 아님.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/structureRules.ts",
+          "src/lib/interpretation-v4/structureEvidence.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:no_resource",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:no_output",
+      "key": "no_output",
+      "label": "무식상",
+      "hanja": "無食傷觀測",
+      "aliases": [
+        "무식상"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [
+          "noOutput"
+        ],
+        "legacyPatternCodes": [],
+        "actualBehavior": "V4 buildMyeongliStructure: rule별 연결·기반·억제 및 시주 민감도 확인 후 후보. 고전 격국·취용의 완성 판정 아님.",
+        "codeRefs": [
+          "src/lib/interpretation-v4/structureRules.ts",
+          "src/lib/interpretation-v4/structureEvidence.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:no_output",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:toda_maegeum",
+      "key": "toda_maegeum",
+      "label": "토다매금",
+      "hanja": "土多埋金",
+      "aliases": [
+        "토다매금"
+      ],
+      "support": {
+        "classification": "B_FACTS_NO_V4_DETECTOR",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [],
+        "actualBehavior": "기존 facts/상수는 있으나 V4에서 이 전통 구조의 성립을 독립 판정하지 않음. V2 toSpecialPatterns는 earth>=4 && metal>0 후보를 생성하나 이는 전통 매금 확인이 아님.",
+        "codeRefs": [
+          "src/lib/report-knowledge/sajuComputedFactsMapper.ts",
+          "src/lib/report-knowledge/sajuComputedFactsTypes.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:toda_maegeum",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:geumda_mokjeol",
+      "key": "geumda_mokjeol",
+      "label": "금다목절",
+      "hanja": "金多木折",
+      "aliases": [
+        "금다목절"
+      ],
+      "support": {
+        "classification": "B_FACTS_NO_V4_DETECTOR",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [],
+        "actualBehavior": "기존 facts/상수는 있으나 V4에서 이 전통 구조의 성립을 독립 판정하지 않음. 계산 facts enum과 매핑의 존재는 producer의 존재가 아님. 전수 검색에서 해당 specialPatterns의 소스 생산 경로를 찾지 못했으며 fixture 투입은 존재.",
+        "codeRefs": [
+          "src/lib/report-knowledge/sajuComputedFactsMapper.ts",
+          "src/lib/report-knowledge/sajuComputedFactsTypes.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:geumda_mokjeol",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:mokda_hwasik",
+      "key": "mokda_hwasik",
+      "label": "목다화식",
+      "hanja": "木多火熄〔內部名稱・未校定〕",
+      "aliases": [
+        "목다화식"
+      ],
+      "support": {
+        "classification": "B_FACTS_NO_V4_DETECTOR",
+        "lineageOrDefinitionVaries": true,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [],
+        "actualBehavior": "기존 facts/상수는 있으나 V4에서 이 전통 구조의 성립을 독립 판정하지 않음. 계산 facts enum과 매핑의 존재는 producer의 존재가 아님. 전수 검색에서 해당 specialPatterns의 소스 생산 경로를 찾지 못했으며 fixture 투입은 존재.",
+        "codeRefs": [
+          "src/lib/report-knowledge/sajuComputedFactsMapper.ts",
+          "src/lib/report-knowledge/sajuComputedFactsTypes.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:mokda_hwasik",
+      "domainStatus": {
+        "personality": "E_UNVERIFIED",
+        "career": "E_UNVERIFIED",
+        "money": "E_UNVERIFIED",
+        "study": "E_UNVERIFIED",
+        "love": "E_UNVERIFIED",
+        "marriage": "E_UNVERIFIED",
+        "family": "E_UNVERIFIED",
+        "relationships": "E_UNVERIFIED"
+      }
+    },
+    {
+      "targetId": "foundation:structure:suda_mokbu",
+      "key": "suda_mokbu",
+      "label": "수다목부",
+      "hanja": "水多木浮",
+      "aliases": [
+        "수다목부"
+      ],
+      "support": {
+        "classification": "B_FACTS_NO_V4_DETECTOR",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [],
+        "actualBehavior": "기존 facts/상수는 있으나 V4에서 이 전통 구조의 성립을 독립 판정하지 않음. 계산 facts enum과 매핑의 존재는 producer의 존재가 아님. 전수 검색에서 해당 specialPatterns의 소스 생산 경로를 찾지 못했으며 fixture 투입은 존재.",
+        "codeRefs": [
+          "src/lib/report-knowledge/sajuComputedFactsMapper.ts",
+          "src/lib/report-knowledge/sajuComputedFactsTypes.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:suda_mokbu",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:fire_metal",
+      "key": "fire_metal",
+      "label": "화금 긴장 구조",
+      "hanja": "火金緊張候補〔內部名稱〕",
+      "aliases": [
+        "화금 긴장 구조"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [
+          "FIRE_METAL_TENSION"
+        ],
+        "actualBehavior": "원생 analyzeSajuStructure의 제한된 점수/라벨 후보. V4 STRUCTURE_RULES에는 이 이름의 독립 판정 없음.",
+        "codeRefs": [
+          "src/lib/saju/structureAnalysis.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:fire_metal",
+      "domainStatus": {
+        "personality": "D_MODERN_APPLICATION",
+        "career": "D_MODERN_APPLICATION",
+        "money": "D_MODERN_APPLICATION",
+        "study": "D_MODERN_APPLICATION",
+        "love": "D_MODERN_APPLICATION",
+        "marriage": "D_MODERN_APPLICATION",
+        "family": "D_MODERN_APPLICATION",
+        "relationships": "D_MODERN_APPLICATION"
+      }
+    },
+    {
+      "targetId": "foundation:structure:water_weak",
+      "key": "water_weak",
+      "label": "수 기운 보완 필요",
+      "hanja": "水弱・水缺候補〔內部名稱〕",
+      "aliases": [
+        "수 기운 보완 필요"
+      ],
+      "support": {
+        "classification": "A_DETECTED_CANDIDATE",
+        "lineageOrDefinitionVaries": false,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [
+          "WATER_WEAK_RECOVERY_NEEDED"
+        ],
+        "actualBehavior": "원생 analyzeSajuStructure의 제한된 점수/라벨 후보. V4 STRUCTURE_RULES에는 이 이름의 독립 판정 없음.",
+        "codeRefs": [
+          "src/lib/saju/structureAnalysis.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:water_weak",
+      "domainStatus": {
+        "personality": "E_UNVERIFIED",
+        "career": "E_UNVERIFIED",
+        "money": "E_UNVERIFIED",
+        "study": "E_UNVERIFIED",
+        "love": "E_UNVERIFIED",
+        "marriage": "E_UNVERIFIED",
+        "family": "E_UNVERIFIED",
+        "relationships": "E_UNVERIFIED"
+      }
+    },
+    {
+      "targetId": "foundation:structure:season_command",
+      "key": "season_command",
+      "label": "월령",
+      "hanja": "月令",
+      "aliases": [
+        "월령"
+      ],
+      "support": {
+        "classification": "B_FACTS_NO_V4_DETECTOR",
+        "lineageOrDefinitionVaries": true,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [],
+        "actualBehavior": "기존 facts/상수는 있으나 V4에서 이 전통 구조의 성립을 독립 판정하지 않음.",
+        "codeRefs": [
+          "src/lib/saju/constants.ts",
+          "src/lib/saju/types.ts",
+          "src/lib/interpretation-v4/strength.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:season_command",
+      "domainStatus": {
+        "personality": "E_UNVERIFIED",
+        "career": "E_UNVERIFIED",
+        "money": "E_UNVERIFIED",
+        "study": "E_UNVERIFIED",
+        "love": "E_UNVERIFIED",
+        "marriage": "E_UNVERIFIED",
+        "family": "E_UNVERIFIED",
+        "relationships": "E_UNVERIFIED"
+      }
+    },
+    {
+      "targetId": "foundation:structure:support_restraint",
+      "key": "support_restraint",
+      "label": "부억",
+      "hanja": "扶抑",
+      "aliases": [
+        "부억"
+      ],
+      "support": {
+        "classification": "C_KNOWLEDGE_ONLY",
+        "lineageOrDefinitionVaries": true,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [],
+        "actualBehavior": "기존 지식 정의만 있고 완전한 성립·취용 판정 미지원.",
+        "codeRefs": [
+          "src/lib/saju/constants.ts",
+          "src/lib/saju/types.ts",
+          "src/lib/interpretation-v4/strength.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:support_restraint",
+      "domainStatus": {
+        "personality": "E_UNVERIFIED",
+        "career": "E_UNVERIFIED",
+        "money": "E_UNVERIFIED",
+        "study": "E_UNVERIFIED",
+        "love": "E_UNVERIFIED",
+        "marriage": "E_UNVERIFIED",
+        "family": "E_UNVERIFIED",
+        "relationships": "E_UNVERIFIED"
+      }
+    },
+    {
+      "targetId": "foundation:structure:temperature",
+      "key": "temperature",
+      "label": "한난",
+      "hanja": "寒暖",
+      "aliases": [
+        "한난"
+      ],
+      "support": {
+        "classification": "C_KNOWLEDGE_ONLY",
+        "lineageOrDefinitionVaries": true,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [],
+        "actualBehavior": "기존 지식 정의만 있고 완전한 성립·취용 판정 미지원.",
+        "codeRefs": [
+          "src/lib/saju/constants.ts",
+          "src/lib/saju/types.ts",
+          "src/lib/interpretation-v4/strength.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:temperature",
+      "domainStatus": {
+        "personality": "E_UNVERIFIED",
+        "career": "E_UNVERIFIED",
+        "money": "E_UNVERIFIED",
+        "study": "E_UNVERIFIED",
+        "love": "E_UNVERIFIED",
+        "marriage": "E_UNVERIFIED",
+        "family": "E_UNVERIFIED",
+        "relationships": "E_UNVERIFIED"
+      }
+    },
+    {
+      "targetId": "foundation:structure:moisture",
+      "key": "moisture",
+      "label": "조습",
+      "hanja": "燥濕",
+      "aliases": [
+        "조습"
+      ],
+      "support": {
+        "classification": "C_KNOWLEDGE_ONLY",
+        "lineageOrDefinitionVaries": true,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [],
+        "actualBehavior": "기존 지식 정의만 있고 완전한 성립·취용 판정 미지원.",
+        "codeRefs": [
+          "src/lib/saju/constants.ts",
+          "src/lib/saju/types.ts",
+          "src/lib/interpretation-v4/strength.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:moisture",
+      "domainStatus": {
+        "personality": "E_UNVERIFIED",
+        "career": "E_UNVERIFIED",
+        "money": "E_UNVERIFIED",
+        "study": "E_UNVERIFIED",
+        "love": "E_UNVERIFIED",
+        "marriage": "E_UNVERIFIED",
+        "family": "E_UNVERIFIED",
+        "relationships": "E_UNVERIFIED"
+      }
+    },
+    {
+      "targetId": "foundation:structure:mediation",
+      "key": "mediation",
+      "label": "통관",
+      "hanja": "通關",
+      "aliases": [
+        "통관"
+      ],
+      "support": {
+        "classification": "C_KNOWLEDGE_ONLY",
+        "lineageOrDefinitionVaries": true,
+        "insufficientForTraditionalFormation": true,
+        "v4RuleIds": [],
+        "legacyPatternCodes": [],
+        "actualBehavior": "기존 지식 정의만 있고 완전한 성립·취용 판정 미지원.",
+        "codeRefs": [
+          "src/lib/saju/constants.ts",
+          "src/lib/saju/types.ts",
+          "src/lib/interpretation-v4/strength.ts"
+        ],
+        "runtimeEvidenceIds": []
+      },
+      "researchProfileRef": "csr:profile:mediation",
+      "domainStatus": {
+        "personality": "E_UNVERIFIED",
+        "career": "E_UNVERIFIED",
+        "money": "E_UNVERIFIED",
+        "study": "E_UNVERIFIED",
+        "love": "E_UNVERIFIED",
+        "marriage": "E_UNVERIFIED",
+        "family": "E_UNVERIFIED",
+        "relationships": "E_UNVERIFIED"
+      }
+    }
+  ]
+}

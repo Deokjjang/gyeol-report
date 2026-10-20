@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "layouts": [
+    {
+      "width": 768,
+      "height": 1024,
+      "allCards": 37,
+      "maxHorizontalOverflow": 0,
+      "sourceWrapping": true,
+      "controlsReachable": true,
+      "status": "PASS"
+    }
+  ],
+  "screenshots": [
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-768-header.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-768-filters.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-768-comparison.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-768-draft.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-768-source.png"
+  ],
+  "nativeMobileHardwareSession": "NOT_APPLICABLE"
+}

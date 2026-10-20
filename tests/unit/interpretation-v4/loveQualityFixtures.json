@@ -1,0 +1,158 @@
+[
+  {
+    "id": "A",
+    "payload": {
+      "productKey": "love_marriage_child",
+      "productSlug": "love-marriage-child",
+      "person": {
+        "name": "최서아",
+        "birthDate": "1996-05-24",
+        "birthTime": "22:10",
+        "gender": "FEMALE",
+        "mbtiType": "INFP",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "",
+        "detailJob": "",
+        "relationshipStatus": "single",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4"
+      }
+    }
+  },
+  {
+    "id": "B",
+    "payload": {
+      "productKey": "love_marriage_child",
+      "productSlug": "love-marriage-child",
+      "person": {
+        "name": "서윤",
+        "birthDate": "1994-11-18",
+        "birthTime": "07:42",
+        "gender": "FEMALE",
+        "mbtiType": "ENFP",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "",
+        "detailJob": "",
+        "relationshipStatus": "dating",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4"
+      }
+    }
+  },
+  {
+    "id": "C",
+    "payload": {
+      "productKey": "love_marriage_child",
+      "productSlug": "love-marriage-child",
+      "person": {
+        "name": "서진",
+        "birthDate": "1990-07-18",
+        "birthTime": "05:30",
+        "gender": "FEMALE",
+        "mbtiType": "ENTJ",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "",
+        "detailJob": "",
+        "relationshipStatus": "married",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4"
+      }
+    }
+  },
+  {
+    "id": "D",
+    "payload": {
+      "productKey": "love_marriage_child",
+      "productSlug": "love-marriage-child",
+      "person": {
+        "name": "최서아",
+        "birthDate": "1996-05-24",
+        "birthTime": "",
+        "gender": "FEMALE",
+        "mbtiType": "INFP",
+        "birthTimeUnknown": true,
+        "birthTimePrecision": "unknown",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "",
+        "detailJob": "",
+        "relationshipStatus": "single",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4"
+      }
+    }
+  },
+  {
+    "id": "E",
+    "payload": {
+      "productKey": "love_marriage_child",
+      "productSlug": "love-marriage-child",
+      "person": {
+        "name": "최서아",
+        "birthDate": "1996-05-24",
+        "birthTime": "22:10",
+        "gender": "FEMALE",
+        "mbtiType": "",
+        "birthTimeUnknown": false,
+        "birthTimePrecision": "exact",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "",
+        "detailJob": "",
+        "relationshipStatus": "single",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4"
+      }
+    }
+  },
+  {
+    "id": "F",
+    "payload": {
+      "productKey": "love_marriage_child",
+      "productSlug": "love-marriage-child",
+      "person": {
+        "name": "최서아",
+        "birthDate": "1996-05-24",
+        "birthTime": "",
+        "gender": "FEMALE",
+        "mbtiType": "",
+        "birthTimeUnknown": true,
+        "birthTimePrecision": "unknown",
+        "approximateBirthTimeSlot": ""
+      },
+      "userContext": {
+        "jobStatus": "",
+        "detailJob": "",
+        "relationshipStatus": "single",
+        "focusAreas": []
+      },
+      "productOptions": {
+        "contentVersion": "v4"
+      }
+    }
+  }
+]

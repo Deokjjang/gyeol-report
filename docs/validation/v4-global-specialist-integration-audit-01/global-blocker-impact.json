@@ -1,0 +1,42 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "OBJECT",
+  "keys": [
+    "sourceVerificationReferences",
+    "domainDecisions",
+    "sourceImpact",
+    "originalReasons",
+    "countsAreEvaluationOccurrencesNotCustomers"
+  ],
+  "logicalJsonHash": "a628eba10395762b1f5ae3627adaf8c18bc3fcaed3eac4b9382ae41a6fc08db3",
+  "parts": [
+    {
+      "file": "global-blocker-impact-part-0001.json",
+      "sha256": "db9cc5e7298dc55ea1baadde907c2ff4faa063b40e6fa54840d9dfcf9f4d2453",
+      "kind": "FIELD",
+      "key": "sourceVerificationReferences"
+    },
+    {
+      "file": "global-blocker-impact-part-0002.json",
+      "sha256": "584c587f663d5dc367824b7a76334237dc4348dc5d133181d195f3be24d15c32",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "global-blocker-impact-part-0003.json",
+      "sha256": "655b746014cdcd6d1159901192a7c7510ae3828a7ef66c2bc9cbd7e922f3b96e",
+      "kind": "FIELD",
+      "key": "sourceImpact"
+    },
+    {
+      "file": "global-blocker-impact-part-0004.json",
+      "sha256": "18e43aa4187ccb0946da226c8ae79bb094597aef94eeb5bd45076800c08d01d6",
+      "kind": "FIELD",
+      "key": "originalReasons"
+    },
+    {
+      "file": "global-blocker-impact-part-0005.json",
+      "sha256": "f8b975aa510b5ba255336c523e3e964633cdd23af7d0dcf31485202305026d72",
+      "kind": "CHUNK"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+/** Static offline friendship research. No runtime registration or customer approval. */
+import type { Difference } from "./researchTypes";
+export const FRIENDSHIP_CATEGORY_DIFFERENCES: readonly Difference[] = [
+  {
+    "id": "frpr:difference:love",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "otherCategory": "love",
+    "legitimateSharedConcept": "관심·공개·자율성",
+    "otherScope": "낭만적 친밀감·연애 기대",
+    "friendshipInformation": "독점 없는 다른 친구 관계·모임 참여·취향 교류·다시 선택하는 만남",
+    "forbiddenTransfer": "질투를 사랑의 증명으로, 연락을 연인의 우선권으로 전용 금지",
+    "exampleAddresses": [
+      "CH05.P4",
+      "CH07.P4"
+    ],
+    "importedOtherCategorySentences": 0
+  },
+  {
+    "id": "frpr:difference:marriage",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "otherCategory": "marriage",
+    "legitimateSharedConcept": "약속·책임·지원",
+    "otherScope": "공동생활·가구 운영의 실제 합의",
+    "friendshipInformation": "별도 삶을 유지하는 친구의 가용 시간과 선택한 도움",
+    "forbiddenTransfer": "동거·가계·배우자 책임을 friendship 선택만으로 부여 금지",
+    "exampleAddresses": [
+      "CH06.P4",
+      "CH09.P3"
+    ],
+    "importedOtherCategorySentences": 0
+  },
+  {
+    "id": "frpr:difference:parentChild",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "otherCategory": "parentChild",
+    "legitimateSharedConcept": "경계·지지·성장",
+    "otherScope": "세대·양육·보호 권한의 실제 맥락",
+    "friendshipInformation": "친구 사이에 상호 선택·거절이 가능한 지원",
+    "forbiddenTransfer": "A/B를 보호자·아동으로 고정하거나 아동 trait를 개인 친구 성향으로 사용 금지",
+    "exampleAddresses": [
+      "CH03.P2",
+      "CH05.P2"
+    ],
+    "importedOtherCategorySentences": 0
+  },
+  {
+    "id": "frpr:difference:coworker",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "otherCategory": "coworker",
+    "legitimateSharedConcept": "공동 활동·조율",
+    "otherScope": "실제 업무·일정·산출물·조직 맥락",
+    "friendshipInformation": "평가 성과 없이 즐기는 활동과 사적 모임의 자발적 참여",
+    "forbiddenTransfer": "같은 직장·공동 과업·업무 책임을 미입력 상태에서 가정 금지",
+    "exampleAddresses": [
+      "CH03.P1",
+      "CH04.P3"
+    ],
+    "importedOtherCategorySentences": 0
+  },
+  {
+    "id": "frpr:difference:managerReport",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "otherCategory": "managerReport",
+    "legitimateSharedConcept": "피드백·의견·책임",
+    "otherScope": "검증된 보고 관계·권한·안전한 발언 조건",
+    "friendshipInformation": "다른 의견을 존중하는 친구와 평가 권한을 갖지 않는 조언",
+    "forbiddenTransfer": "A/B의 리더·부하·우열·복종 고정 금지",
+    "exampleAddresses": [
+      "CH06.P3",
+      "CH08.P2"
+    ],
+    "importedOtherCategorySentences": 0
+  },
+  {
+    "id": "frpr:difference:businessPartner",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "otherCategory": "businessPartner",
+    "legitimateSharedConcept": "동의·자원·정산",
+    "otherScope": "실제 사업 기여·계약·권리·손익",
+    "friendshipInformation": "호의·공동 활동 비용·친구 소개의 동의와 부담",
+    "forbiddenTransfer": "친밀함을 동업 권한·계약·실제 돈거래·수익의 증거로 전환 금지",
+    "exampleAddresses": [
+      "CH05.P3",
+      "CH07.P3"
+    ],
+    "importedOtherCategorySentences": 0
+  }
+];

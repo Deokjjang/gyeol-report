@@ -1,0 +1,150 @@
+{
+  "month": 1,
+  "id": "afpr:month-slot:01",
+  "proof": {
+    "locator": {
+      "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+      "exportName": "ANNUAL_MONTH_MATRIX",
+      "index": 0,
+      "originalId": "afpr:month-slot:01",
+      "recordSha256": "46198ef6865a13a9214287c0567c59d015e18afcef3435162cdc640835ad4ef4",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+    },
+    "matchedCatalogKey": "kc:v1:fc6b4ed16c89105b4e96c2be1f007aa360b2612bb6fe59f39d1fc83dcd95565f",
+    "originalId": "afpr:month-slot:01",
+    "role": "ORIGINAL_RECORD",
+    "expectedHash": "46198ef6865a13a9214287c0567c59d015e18afcef3435162cdc640835ad4ef4",
+    "actualHash": "46198ef6865a13a9214287c0567c59d015e18afcef3435162cdc640835ad4ef4",
+    "hashAlgorithm": "SHA256_JSON_INSERTION",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+  },
+  "originalRequirements": [
+    "selectedYear + actual civil month bounds",
+    "every canonical segment",
+    "previous December segment if actually available"
+  ],
+  "originalRecord": {
+    "id": "afpr:month-slot:01",
+    "productKey": "annual_fortune",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "scope": "civil_month",
+    "meaning": "새 달력과 이전 실효 연주의 구분",
+    "positive": "달력이 바뀌어도 이어갈 기준을 찾는다.",
+    "risk": "1월부터 selectedYear 연주가 모두 적용됐다고 가정",
+    "twist": "이전 흐름을 유지하는 선택도 새 계획을 정확하게 할 수 있다.",
+    "action": "연간 표와 월초/소한 뒤 pillar를 다른 칸에 적는다.",
+    "scene": {
+      "text": "가상으로 새 계획표의 첫 주에 이전 약속과 새 목표를 나눈다.",
+      "hypothetical": true,
+      "isCustomerHistory": false
+    },
+    "counterexample": "새해 시작을 곧 명리 연주 변경으로 해석하지 않는다.",
+    "requires": [
+      "selectedYear + actual civil month bounds",
+      "every canonical segment",
+      "previous December segment if actually available"
+    ],
+    "disallowed": [
+      "입력받지 않은 과거 경험 단정",
+      "성공·실패·수입·질병·혼인 사건 예언",
+      "근거 없는 시주·복합 관계 생성"
+    ],
+    "sourceRefs": [
+      "afpr:source:jie",
+      "afpr:source:month-copy",
+      "afpr:source:editorial"
+    ],
+    "verification": "conditional_editorial_not_calculated_fact",
+    "month": 1,
+    "jieName": "소한",
+    "primaryMeaning": "새 달력과 이전 실효 연주의 구분",
+    "secondaryMeaning": "연초 계획과 현재 적용 중인 연주·월주를 별도 확인",
+    "duplicateMeaningGroup": "actual_fact_root_and_scope_not_month_name",
+    "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+    "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+    "notFixedToYear": true,
+    "notMonthlyFate": true,
+    "segmentCountFixed": false,
+    "informationFunctionNotCalculatedEvidence": true
+  },
+  "meaningIdentity": null,
+  "claimIdentity": null,
+  "producerCodeProof": [
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/monthComparator.ts",
+      "actualHash": "fd6b6a9179be3853075c5f971bcf83e12e224a08ada3a17e092ebaccebffed83",
+      "expectedHash": "fd6b6a9179be3853075c5f971bcf83e12e224a08ada3a17e092ebaccebffed83",
+      "sourceVersion": "fd6b6a9179be3853075c5f971bcf83e12e224a08ada3a17e092ebaccebffed83",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-generation/annualMonthlyPublication.ts",
+      "actualHash": "8b9659ef27e5b51ac959c42f10e559f013b5b6c7c1447a51172c215b66249a72",
+      "expectedHash": "8b9659ef27e5b51ac959c42f10e559f013b5b6c7c1447a51172c215b66249a72",
+      "sourceVersion": "8b9659ef27e5b51ac959c42f10e559f013b5b6c7c1447a51172c215b66249a72",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/annualFortuneEvidence.ts",
+      "actualHash": "133314070c86ad93a77aa641f9100ff1c25a0dc98176e1ddb0a61594f53a9a08",
+      "expectedHash": "133314070c86ad93a77aa641f9100ff1c25a0dc98176e1ddb0a61594f53a9a08",
+      "sourceVersion": "133314070c86ad93a77aa641f9100ff1c25a0dc98176e1ddb0a61594f53a9a08",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/interpretation-v4/annualEvidence.ts",
+      "actualHash": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+      "expectedHash": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+      "sourceVersion": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/saju/customerDayun.ts",
+      "actualHash": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123",
+      "expectedHash": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123",
+      "sourceVersion": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/saju/calendarVersion.ts",
+      "actualHash": "4afd5b85df5f5cd5e2d5b6249077b40c3bca1057aae5662e12fbb1ebd73a07a5",
+      "expectedHash": "4afd5b85df5f5cd5e2d5b6249077b40c3bca1057aae5662e12fbb1ebd73a07a5",
+      "sourceVersion": "4afd5b85df5f5cd5e2d5b6249077b40c3bca1057aae5662e12fbb1ebd73a07a5",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/annualMonthJie.ts",
+      "actualHash": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+      "expectedHash": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+      "sourceVersion": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/boundaryValidator.ts",
+      "actualHash": "ecca715f9d7b8ed4f1e3eabf49aab58b8c972f36d1c4b6b30e46ebce69041440",
+      "expectedHash": "ecca715f9d7b8ed4f1e3eabf49aab58b8c972f36d1c4b6b30e46ebce69041440",
+      "sourceVersion": "ecca715f9d7b8ed4f1e3eabf49aab58b8c972f36d1c4b6b30e46ebce69041440",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/relationMatcher.ts",
+      "actualHash": "546cb3f97227273be1705ae330d516a4e516caf7fd065a72630bf29ad33f74b4",
+      "expectedHash": "546cb3f97227273be1705ae330d516a4e516caf7fd065a72630bf29ad33f74b4",
+      "sourceVersion": "546cb3f97227273be1705ae330d516a4e516caf7fd065a72630bf29ad33f74b4",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/periods.ts",
+      "actualHash": "70413c47eb8f8819b3b7542cff932f3ac05e132dcd859b629265d1b60ae46753",
+      "expectedHash": "70413c47eb8f8819b3b7542cff932f3ac05e132dcd859b629265d1b60ae46753",
+      "sourceVersion": "70413c47eb8f8819b3b7542cff932f3ac05e132dcd859b629265d1b60ae46753",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    }
+  ],
+  "sourceVersionKind": "Original research commit and content-addressed original Producer code; no Meaning or customer approval."
+}

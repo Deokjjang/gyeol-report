@@ -1,0 +1,918 @@
+/** Static offline research only. No scoring, resolution or customer output. */
+import type { LovePairMaterial } from "./researchTypes";
+export const CH01_MATERIALS: readonly LovePairMaterial[] = [
+  {
+    "id": "clr:material:CH01.P1:response-and-thought",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "address": "CH01.P1",
+    "mode": "JOINT",
+    "readerQuestion": "두 사람을 한마디로 설명하면",
+    "coreMeaning": "반응으로 관심을 확인하는 필요와 생각할 시간을 지키는 필요의 접점을 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH01.P1.S1",
+        "originalRole": "특징적인 조합",
+        "knowledge": "반응으로 관심을 확인하는 필요와 생각할 시간을 지키는 필요의 접점을 연구한다. A의 몰입 선호는 A 원천에서 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH01.P1.S2",
+        "originalRole": "대표 성향 대비",
+        "knowledge": "B의 표현 수신 필요는 B 원천에서 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH01.P1.S3",
+        "originalRole": "함께하는 장면",
+        "knowledge": "바쁜 날 짧은 안내와 긴 대화를 나눌 수 있다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH01.P1.S4",
+        "originalRole": "관계의 상징",
+        "knowledge": "속도 차이는 애정량의 차이라는 증거가 아니다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "2f90ecfe06a11bd76f98",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_trait_condition"
+      },
+      {
+        "owner": "B",
+        "sourceKey": "99d6728eeef28d090237",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_trait_condition"
+      },
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "2fe4d73f766a08fb06e6",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "pair_reference"
+      },
+      {
+        "owner": "PAIR_BA",
+        "sourceKey": "b890602102b781593253",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "pair_reference"
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:EXPRESSION:receipt-check",
+        "axis": "EXPRESSION",
+        "definition": "표현이 어떻게 전달됐는지 확인",
+        "condition": "확인 질문을 거절할 여지도 보장",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:AUTONOMY:choice-ownership",
+        "axis": "AUTONOMY",
+        "definition": "자신에게 속한 선택을 확인",
+        "condition": "영향받는 사람과 권한 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "positive": "관심과 정리 시간을 함께 남길 여지",
+    "risk": "답할 때까지 재촉하거나 안내를 전부 생략",
+    "factBomb": "내가 편한 침묵이 상대에게도 같은 정보는 아니다.",
+    "twist": "짧은 안내가 긴 해명을 줄일 수 있다.",
+    "fictionalScene": {
+      "kind": "LOVE_SCENE",
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 A가 혼자 정리할 때 B에게 다시 이야기할 때를 전한다."
+    },
+    "senderAdjustment": "가능한 연락과 정리 시간을 각각 말한다.",
+    "recipientQuestion": "언제 어떤 신호가 있으면 기다리기 편한가?",
+    "counterexample": "두 사람 모두 즉시 대화를 원한다면 이 속도 대비를 적용하지 않는다.",
+    "distinctFromOtherParagraphs": "관계 전체의 대표 접점이며 방향별 갈등의 진단은 아님",
+    "precedingMeaningRefs": [],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+      "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+      "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+      "direction": null,
+      "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+      "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+      "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+      "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+      "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+      "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+    },
+    "disallowed": [
+      "결혼·이별·외도·실제 호감·과거 사건의 단정",
+      "공통 축·합·유형 차이를 성공 또는 갈등의 보장으로 사용",
+      "같은 root를 개인·Pair·Fusion의 독립 세 근거로 집계",
+      "계보 미검증 Pair 이름을 과학적 관계 예측으로 승격"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "clr:material:CH01.P1:steady-and-new",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "address": "CH01.P1",
+    "mode": "JOINT",
+    "readerQuestion": "두 사람을 한마디로 설명하면",
+    "coreMeaning": "약속의 반복과 새 경험의 제안이 만나는 연애의 핵심 조건을 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH01.P1.S1",
+        "originalRole": "특징적인 조합",
+        "knowledge": "약속의 반복과 새 경험의 제안이 만나는 연애의 핵심 조건을 연구한다. A의 신뢰 선호를 유형의 실제 자료로 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH01.P1.S2",
+        "originalRole": "대표 성향 대비",
+        "knowledge": "B의 열정을 새로운 제안의 가능성으로만 읽는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH01.P1.S3",
+        "originalRole": "함께하는 장면",
+        "knowledge": "새 만남을 고르면서 기존 약속의 처리도 정한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH01.P1.S4",
+        "originalRole": "관계의 상징",
+        "knowledge": "다르다는 이유로 자동 보완이라고 판정하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "5190684455c102b45097",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_trait_condition"
+      },
+      {
+        "owner": "B",
+        "sourceKey": "dfc34b2596abcc59968f",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_trait_condition"
+      },
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "5b05125a1c9e81d25d44",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "pair_reference"
+      },
+      {
+        "owner": "PAIR_BA",
+        "sourceKey": "765b734d69351a52f114",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "pair_reference"
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:STABILITY:continuity",
+        "axis": "STABILITY",
+        "definition": "유지·인수인계 체계를 갖춤",
+        "condition": "기능·담당·검토 주기 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:ADAPTABILITY:method-revision",
+        "axis": "ADAPTABILITY",
+        "definition": "목적 안에서 방법을 바꿈",
+        "condition": "방법의 재량이 실제 있을 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "positive": "기다릴 기준 안에 새 즐거움을 둘 가능성",
+    "risk": "변경 비용을 한 사람이 계속 부담",
+    "factBomb": "아이디어가 새로워도 기다린 시간은 사라지지 않는다.",
+    "twist": "유지할 약속이 있어야 새 제안도 선택이 된다.",
+    "fictionalScene": {
+      "kind": "LOVE_SCENE",
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 B의 즉흥 제안을 A의 기존 일정과 함께 살핀다."
+    },
+    "senderAdjustment": "새로 할 부분과 그대로 지킬 부분을 나눈다.",
+    "recipientQuestion": "변경되면 누가 무엇을 다시 준비하는가?",
+    "counterexample": "둘 다 같은 반복을 원한다면 변화가 필요한 관계로 만들지 않는다.",
+    "distinctFromOtherParagraphs": "도입의 접점과 CH04의 구체적 공동 기여를 구분",
+    "precedingMeaningRefs": [],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+      "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+      "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+      "direction": null,
+      "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+      "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+      "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+      "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+      "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+      "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+    },
+    "disallowed": [
+      "결혼·이별·외도·실제 호감·과거 사건의 단정",
+      "공통 축·합·유형 차이를 성공 또는 갈등의 보장으로 사용",
+      "같은 root를 개인·Pair·Fusion의 독립 세 근거로 집계",
+      "계보 미검증 Pair 이름을 과학적 관계 예측으로 승격"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "clr:material:CH01.P2:detected-harmony-context",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "address": "CH01.P2",
+    "mode": "JOINT",
+    "readerQuestion": "명리에서 보는 두 사람의 관계",
+    "coreMeaning": "실제 교차 육합과 두 사람의 개인 원국을 구별해 함께 고를 조건을 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH01.P2.S1",
+        "originalRole": "실제 명리 관계",
+        "knowledge": "실제 교차 육합과 두 사람의 개인 원국을 구별해 함께 고를 조건을 연구한다. 두 사람의 실제 子와 丑 refs가 canonical 관계에 있어야 한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH01.P2.S2",
+        "originalRole": "쉬운 의미",
+        "knowledge": "육합의 분류와 합화·결혼·동의는 서로 다른 주장이다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH01.P2.S3",
+        "originalRole": "상호 영향",
+        "knowledge": "개인 원국의 뜻은 각자 위치·조건으로 별도 검토한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH01.P2.S4",
+        "originalRole": "강점과 주의 조건",
+        "knowledge": "어떤 합의를 실제로 원하는지는 당사자에게 묻는다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "84d1ddc4aa078aa8fa5f",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "canonical_membership_condition"
+      },
+      {
+        "owner": "A",
+        "sourceKey": "3f130780549c6cb7a467",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_definition_condition"
+      },
+      {
+        "owner": "B",
+        "sourceKey": "ce1defc1af72408fec4a",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_definition_condition"
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:RELATION_STYLE:contact-range",
+        "axis": "RELATION_STYLE",
+        "definition": "연락·만남의 참여 범위를 정함",
+        "condition": "실제 관계와 생활 제약이 주어진 때",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:BOUNDARY:renegotiation",
+        "axis": "BOUNDARY",
+        "definition": "상황 변화에 맞게 선을 다시 합의",
+        "condition": "바뀐 영향과 기존 약속을 설명",
+        "notIndependentEvidence": true
+      }
+    ],
+    "positive": "연결된 조건을 살필 관점",
+    "risk": "합이라는 이름으로 다른 긴장과 거절을 지우기",
+    "factBomb": "합이 검출돼도 두 사람의 답까지 합쳐지지는 않는다.",
+    "twist": "연결을 느슨하게 두어야 각자의 선택이 남을 수 있다.",
+    "fictionalScene": {
+      "kind": "LOVE_SCENE",
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 함께할 장소를 고를 때 각자 어려운 조건을 먼저 말한다."
+    },
+    "senderAdjustment": "관계의 refs와 실제 선택 질문을 분리한다.",
+    "recipientQuestion": "이번 만남에서 바꾸고 싶은 부분은 무엇인가?",
+    "counterexample": "한 글자가 미상 시주에만 있으면 성립을 채워 넣지 않는다.",
+    "distinctFromOtherParagraphs": "canonical 교차 관계와 개인 성향의 출처 차이",
+    "precedingMeaningRefs": [],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+      "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+      "canonicalPair": "해당 종류·참여 지지·실제 양쪽 소유자·기둥 위치가 있는 기존 cross-person relation ID가 필요하다. 전통 표만으로 검출하지 않는다.",
+      "direction": null,
+      "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+      "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+      "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+      "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+      "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+      "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+    },
+    "disallowed": [
+      "결혼·이별·외도·실제 호감·과거 사건의 단정",
+      "공통 축·합·유형 차이를 성공 또는 갈등의 보장으로 사용",
+      "같은 root를 개인·Pair·Fusion의 독립 세 근거로 집계",
+      "계보 미검증 Pair 이름을 과학적 관계 예측으로 승격"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "clr:material:CH01.P2:clash-without-prophecy",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "address": "CH01.P2",
+    "mode": "JOINT",
+    "readerQuestion": "명리에서 보는 두 사람의 관계",
+    "coreMeaning": "실제 충의 참여 위치와 연애에서 선택 속도가 엇갈릴 조건을 구분한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH01.P2.S1",
+        "originalRole": "실제 명리 관계",
+        "knowledge": "실제 충의 참여 위치와 연애에서 선택 속도가 엇갈릴 조건을 구분한다. canonical refs의 寅申 충만 실제 관계 사실이다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH01.P2.S2",
+        "originalRole": "쉬운 의미",
+        "knowledge": "대향 구조가 이별이나 실패를 뜻하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH01.P2.S3",
+        "originalRole": "상호 영향",
+        "knowledge": "빠른 제안과 신중한 답은 각자의 MBTI 자료로 따로 검토한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH01.P2.S4",
+        "originalRole": "강점과 주의 조건",
+        "knowledge": "충 자체를 그 행동 차이의 원인으로 확정하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "21a2cc4649da9423a26d",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "canonical_membership_condition"
+      },
+      {
+        "owner": "A",
+        "sourceKey": "63e067b6cec4f0da1ffe",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_trait_condition"
+      },
+      {
+        "owner": "B",
+        "sourceKey": "f4b08443773729cee364",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_trait_condition"
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:ACTION_TEMPO:paced-handoff",
+        "axis": "ACTION_TEMPO",
+        "definition": "자기 착수와 타인의 준비 속도를 조정",
+        "condition": "공동 과제의 의존 단계가 있을 때",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:COMMUNICATION_STYLE:intent-check",
+        "axis": "COMMUNICATION_STYLE",
+        "definition": "표현과 이해된 뜻을 다시 확인",
+        "condition": "해석 차이를 당사자가 확인할 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "positive": "서로 필요한 조건을 드러낼 여지",
+    "risk": "충의 이름으로 실제 답을 미리 정하기",
+    "factBomb": "충이라는 단어가 두 사람의 미래를 대신 말하지는 않는다.",
+    "twist": "차이가 드러나도 조정할 선택은 남는다.",
+    "fictionalScene": {
+      "kind": "LOVE_SCENE",
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 다음 약속의 확정 전에 필요한 생각 시간을 묻는다."
+    },
+    "senderAdjustment": "검출 위치와 행동 가설을 따로 남긴다.",
+    "recipientQuestion": "지금 정할 답과 더 알아볼 답은 무엇인가?",
+    "counterexample": "실제 충이 없으면 이 명리 설명을 사용하지 않는다.",
+    "distinctFromOtherParagraphs": "관계 분류의 사실과 현대적 장면의 조건을 분리",
+    "precedingMeaningRefs": [],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+      "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+      "canonicalPair": "해당 종류·참여 지지·실제 양쪽 소유자·기둥 위치가 있는 기존 cross-person relation ID가 필요하다. 전통 표만으로 검출하지 않는다.",
+      "direction": null,
+      "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+      "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+      "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+      "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+      "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+      "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+    },
+    "disallowed": [
+      "결혼·이별·외도·실제 호감·과거 사건의 단정",
+      "공통 축·합·유형 차이를 성공 또는 갈등의 보장으로 사용",
+      "같은 root를 개인·Pair·Fusion의 독립 세 근거로 집계",
+      "계보 미검증 Pair 이름을 과학적 관계 예측으로 승격"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "clr:material:CH01.P3:two-types-two-views",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "address": "CH01.P3",
+    "mode": "JOINT",
+    "readerQuestion": "MBTI가 보여주는 우리",
+    "coreMeaning": "감정을 살피는 관심과 조용한 행동의 표현을 양쪽 자료로 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH01.P3.S1",
+        "originalRole": "A의 실제 MBTI",
+        "knowledge": "감정을 살피는 관심과 조용한 행동의 표현을 양쪽 자료로 연구한다. A의 세심한 관심은 A의 실제 trait다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH01.P3.S2",
+        "originalRole": "B의 실제 MBTI",
+        "knowledge": "B의 조용한 애정은 B의 실제 trait다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH01.P3.S3",
+        "originalRole": "공통점과 차이",
+        "knowledge": "표현의 뜻과 받고 싶은 방식을 따로 묻는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH01.P3.S4",
+        "originalRole": "상호작용",
+        "knowledge": "가상으로 A가 들은 말과 B가 했던 행동의 뜻을 각자 설명한다. Pair 이름은 실제 관계의 성과나 각자의 인격 점수가 아니다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "6e846060eca8b8a32399",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_trait_condition"
+      },
+      {
+        "owner": "B",
+        "sourceKey": "90de97440a025970e638",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_trait_condition"
+      },
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "cf5158655a04bd3117e9",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "pair_reference"
+      },
+      {
+        "owner": "PAIR_BA",
+        "sourceKey": "5c1631c8cc56ab7b4857",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "pair_reference"
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:CARE:need-check",
+        "axis": "CARE",
+        "definition": "상대가 원하는 도움을 확인",
+        "condition": "요청·거절·실제 역할 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:EXPRESSION:receipt-check",
+        "axis": "EXPRESSION",
+        "definition": "표현이 어떻게 전달됐는지 확인",
+        "condition": "확인 질문을 거절할 여지도 보장",
+        "notIndependentEvidence": true
+      }
+    ],
+    "positive": "다른 통로의 관심을 알아볼 기회",
+    "risk": "행동이나 말 중 한쪽만 진짜 사랑으로 판정",
+    "factBomb": "내게 익숙한 표현이 애정의 유일한 언어는 아니다.",
+    "twist": "받는 방식을 물으면 기존 행동도 다르게 보일 수 있다.",
+    "fictionalScene": {
+      "kind": "LOVE_SCENE",
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 A가 들은 말과 B가 했던 행동의 뜻을 각자 설명한다."
+    },
+    "senderAdjustment": "관찰한 행동과 바랐던 표현을 나눈다.",
+    "recipientQuestion": "어떤 반응이 관심을 알아듣게 하는가?",
+    "counterexample": "한쪽 유형이 미상이면 Pair와 그 사람의 유형 설명을 보류한다.",
+    "distinctFromOtherParagraphs": "개인의 선호와 두 방향 Pair 참조의 역할을 구분",
+    "precedingMeaningRefs": [],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+      "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+      "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+      "direction": null,
+      "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+      "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+      "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+      "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+      "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+      "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+    },
+    "disallowed": [
+      "결혼·이별·외도·실제 호감·과거 사건의 단정",
+      "공통 축·합·유형 차이를 성공 또는 갈등의 보장으로 사용",
+      "같은 root를 개인·Pair·Fusion의 독립 세 근거로 집계",
+      "계보 미검증 Pair 이름을 과학적 관계 예측으로 승격"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "clr:material:CH01.P3:same-type-no-same-person",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "address": "CH01.P3",
+    "mode": "JOINT",
+    "readerQuestion": "MBTI가 보여주는 우리",
+    "coreMeaning": "같은 유형이어도 실제 기준과 현재 여건은 같다고 볼 수 없음을 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH01.P3.S1",
+        "originalRole": "A의 실제 MBTI",
+        "knowledge": "같은 유형이어도 실제 기준과 현재 여건은 같다고 볼 수 없음을 연구한다. A가 중요하게 보는 기준은 A에게 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH01.P3.S2",
+        "originalRole": "B의 실제 MBTI",
+        "knowledge": "B의 공유 방향 선호도 B의 원천에서 따로 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH01.P3.S3",
+        "originalRole": "공통점과 차이",
+        "knowledge": "비슷한 말 뒤에 다른 필수 조건이 있을 수 있다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH01.P3.S4",
+        "originalRole": "상호작용",
+        "knowledge": "가상으로 둘이 원하는 만남의 목적을 각자 적어 비교한다. 같은 네 글자를 완벽한 궁합으로 읽지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "00a52eadb4c1c9dbf9d1",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_trait_condition"
+      },
+      {
+        "owner": "B",
+        "sourceKey": "829aba7d8c1c08596ec1",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_trait_condition"
+      },
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "1da26b1b725caf974077",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "pair_reference"
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:MEANING:value-articulation",
+        "axis": "MEANING",
+        "definition": "자기에게 중요한 이유를 말함",
+        "condition": "본인이 밝힌 가치가 있을 때",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:BOUNDARY:refusal",
+        "axis": "BOUNDARY",
+        "definition": "받지 않을 요청을 명시",
+        "condition": "거절의 안전과 실제 의무 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "positive": "중요한 질문을 알아듣기 쉬울 가능성",
+    "risk": "같은 유형이니 설명하지 않아도 안다고 기대",
+    "factBomb": "같은 유형은 같은 대답의 계약서가 아니다.",
+    "twist": "비슷할수록 작은 차이를 먼저 물을 수 있다.",
+    "fictionalScene": {
+      "kind": "LOVE_SCENE",
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 둘이 원하는 만남의 목적을 각자 적어 비교한다."
+    },
+    "senderAdjustment": "필수 조건과 취향을 각자 나눈다.",
+    "recipientQuestion": "같은 말로 설명했지만 다른 뜻인 부분은 무엇인가?",
+    "counterexample": "실제 기준이 다르다는 증거도 없으면 차이를 억지로 만들지 않는다.",
+    "distinctFromOtherParagraphs": "유형의 공통성과 개인의 동일성을 분리",
+    "precedingMeaningRefs": [],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+      "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+      "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+      "direction": null,
+      "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+      "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+      "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+      "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+      "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+      "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+    },
+    "disallowed": [
+      "결혼·이별·외도·실제 호감·과거 사건의 단정",
+      "공통 축·합·유형 차이를 성공 또는 갈등의 보장으로 사용",
+      "같은 root를 개인·Pair·Fusion의 독립 세 근거로 집계",
+      "계보 미검증 Pair 이름을 과학적 관계 예측으로 승격"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "clr:material:CH01.P4:agreement-not-feeling-score",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "address": "CH01.P4",
+    "mode": "JOINT",
+    "readerQuestion": "이 관계를 이해하는 가장 중요한 기준",
+    "coreMeaning": "표현의 크기보다 자유롭게 정할 수 있는 속도를 관계 이해의 기준으로 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH01.P4.S1",
+        "originalRole": "좋은 점",
+        "knowledge": "표현의 크기보다 자유롭게 정할 수 있는 속도를 관계 이해의 기준으로 연구한다. A의 표현 통로와 B의 신뢰 속도는 별도 원천이다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH01.P4.S2",
+        "originalRole": "조심할 차이",
+        "knowledge": "표현에 크게 반응하지 않아도 이유는 확인 전 모른다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH01.P4.S3",
+        "originalRole": "관계별 조건",
+        "knowledge": "대답과 다음 단계의 동의를 따로 물을 수 있다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH01.P4.S4",
+        "originalRole": "앞으로의 질문",
+        "knowledge": "관계 점수는 실제 동의의 증거가 아니다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "22219e4de369178b0387",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_trait_condition"
+      },
+      {
+        "owner": "B",
+        "sourceKey": "d048a1db929d8e81a67f",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_trait_condition"
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:EXPRESSION:receipt-check",
+        "axis": "EXPRESSION",
+        "definition": "표현이 어떻게 전달됐는지 확인",
+        "condition": "확인 질문을 거절할 여지도 보장",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:ACTION_TEMPO:paced-handoff",
+        "axis": "ACTION_TEMPO",
+        "definition": "자기 착수와 타인의 준비 속도를 조정",
+        "condition": "공동 과제의 의존 단계가 있을 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "positive": "호감과 선택을 혼동하지 않을 여지",
+    "risk": "답을 재촉하며 누가 더 좋아하는지 시험",
+    "factBomb": "큰 표현을 받았다고 같은 속도로 답할 의무는 없다.",
+    "twist": "작은 제안에도 분명한 선택이 담길 수 있다.",
+    "fictionalScene": {
+      "kind": "LOVE_SCENE",
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 다음 만남을 제안하고 장소와 시간을 바꿀 여지를 둔다."
+    },
+    "senderAdjustment": "표현한 뜻과 상대가 고른 답을 나눠 기록한다.",
+    "recipientQuestion": "지금 답하기 편한 범위는 어디까지인가?",
+    "counterexample": "상대가 거절했다면 좋은 점수로 답을 무효화하지 않는다.",
+    "distinctFromOtherParagraphs": "도입의 판단 기준이며 특정 방향의 실제 감정 설명 아님",
+    "precedingMeaningRefs": [],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+      "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+      "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+      "direction": null,
+      "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+      "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+      "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+      "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+      "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+      "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+    },
+    "disallowed": [
+      "결혼·이별·외도·실제 호감·과거 사건의 단정",
+      "공통 축·합·유형 차이를 성공 또는 갈등의 보장으로 사용",
+      "같은 root를 개인·Pair·Fusion의 독립 세 근거로 집계",
+      "계보 미검증 Pair 이름을 과학적 관계 예측으로 승격"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "clr:material:CH01.P4:two-source-limits",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "address": "CH01.P4",
+    "mode": "JOINT",
+    "readerQuestion": "이 관계를 이해하는 가장 중요한 기준",
+    "coreMeaning": "각자의 개인 Fusion과 함께 정할 연애 조건을 분리하는 기준 연구다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH01.P4.S1",
+        "originalRole": "좋은 점",
+        "knowledge": "각자의 개인 Fusion과 함께 정할 연애 조건을 분리하는 기준 연구다. A의 CARE/AUTONOMY 양측 근거를 A 안에서 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH01.P4.S2",
+        "originalRole": "조심할 차이",
+        "knowledge": "B의 STABILITY/EXPRESSION 양측 근거는 B 안에서 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH01.P4.S3",
+        "originalRole": "관계별 조건",
+        "knowledge": "두 Fusion은 공동 점수로 더하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH01.P4.S4",
+        "originalRole": "앞으로의 질문",
+        "knowledge": "서로 편한 연락과 공간은 실제 답으로 정한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "fa83818c7308d0737c2f",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_fusion_condition"
+      },
+      {
+        "owner": "B",
+        "sourceKey": "5cee60f48e9d45ace3fb",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_fusion_condition"
+      },
+      {
+        "owner": "A",
+        "sourceKey": "2f90ecfe06a11bd76f98",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_trait_condition"
+      },
+      {
+        "owner": "B",
+        "sourceKey": "5190684455c102b45097",
+        "knowledgeIsRuntimeEvidence": false,
+        "sourceUse": "individual_trait_condition"
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:AUTONOMY:choice-ownership",
+        "axis": "AUTONOMY",
+        "definition": "자신에게 속한 선택을 확인",
+        "condition": "영향받는 사람과 권한 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:STABILITY:continuity",
+        "axis": "STABILITY",
+        "definition": "유지·인수인계 체계를 갖춤",
+        "condition": "기능·담당·검토 주기 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "positive": "다른 개인 자원을 한 관계에서 조율할 가능성",
+    "risk": "두 개인 Fusion이 있으면 관계도 검증됐다고 보기",
+    "factBomb": "개인의 결합 근거 둘이 커플 성공 근거 하나가 되지는 않는다.",
+    "twist": "개인 해석의 차이가 질문을 구체화할 수 있다.",
+    "fictionalScene": {
+      "kind": "LOVE_SCENE",
+      "status": "fictional_not_customer_history",
+      "text": "가상으로 각자의 쉬는 시간과 꾸준한 안부를 함께 정한다."
+    },
+    "senderAdjustment": "개인별 source assignment와 공동 선택을 분리한다.",
+    "recipientQuestion": "유지할 연락과 각자 고를 시간은 무엇인가?",
+    "counterexample": "한 사람의 Fusion 조건이 빠지면 그 개인의 결합 설명만 보류한다.",
+    "distinctFromOtherParagraphs": "개인 Fusion과 Pair canonical evidence의 경계",
+    "precedingMeaningRefs": [],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+      "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+      "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+      "direction": null,
+      "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+      "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+      "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+      "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+      "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+      "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+    },
+    "disallowed": [
+      "결혼·이별·외도·실제 호감·과거 사건의 단정",
+      "공통 축·합·유형 차이를 성공 또는 갈등의 보장으로 사용",
+      "같은 root를 개인·Pair·Fusion의 독립 세 근거로 집계",
+      "계보 미검증 Pair 이름을 과학적 관계 예측으로 승격"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  }
+];

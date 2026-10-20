@@ -416,7 +416,7 @@ describe("comprehensive report evidence input builder", () => {
 
     expect(result.mappedSaju.warnings.length).toBeGreaterThan(0);
     expect(result.packet.globalWarnings).toEqual(
-      expect.arrayContaining(result.mappedSaju.warnings),
+      expect.arrayContaining([...result.mappedSaju.warnings]),
     );
   });
 

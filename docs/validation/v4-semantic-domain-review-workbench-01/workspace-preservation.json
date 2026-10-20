@@ -1,0 +1,11 @@
+{
+  "preExistingWorktrees": 55,
+  "allExactHeadsBranchesStatusesAndSourceHashesPreserved": true,
+  "protectedDirtyFiles": 11,
+  "originalCheckoutBranch": "v4/annual-editorial-quality-fix-01",
+  "originalCheckoutHead": "c048218cc5961e0f53a1deab2603511e17559fc3",
+  "beforeSnapshotSha256": "c1b19a2af027c6ea995ff50c56faac9eda4ab2ae972d01f79ac5b8c7dc3e0495",
+  "afterSnapshotSha256": "c1b19a2af027c6ea995ff50c56faac9eda4ab2ae972d01f79ac5b8c7dc3e0495",
+  "localMaster": "5f71a7d0ff8ac4481e09a3f90049448035eb2aed",
+  "remoteMaster": "8d93a165464b0350d28fc3b9aa79d0e482268bfe"
+}

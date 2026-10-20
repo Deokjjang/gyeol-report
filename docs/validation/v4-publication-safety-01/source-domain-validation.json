@@ -1,0 +1,21 @@
+{
+  "sourceReferences": 3202,
+  "sourceRecovered": 525,
+  "sourceStillHeld": 2677,
+  "currentSourceProofReverified": 525,
+  "errors": [],
+  "domainReview": 2966,
+  "domainStates": {
+    "EXPLICITLY_PROHIBITED": 1040,
+    "POLICY_REVIEW_REQUIRED": 1094,
+    "SOURCE_INCOMPLETE": 331,
+    "SEMANTIC_REVIEW_REQUIRED": 499,
+    "CONDITIONAL_CROSSWALK_REVIEWED": 1,
+    "REVIEWED_MEANING_NOT_CUSTOMER_APPROVED": 1
+  },
+  "majorFailures": 30,
+  "majorUniqueReferences": 10,
+  "newTechnicalResolutions": 0,
+  "newDomainApprovals": 0,
+  "customerApprovals": 0
+}

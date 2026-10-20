@@ -1,0 +1,4376 @@
+[
+  {
+    "materialId": "pcpr:material:CH01.P1:predictability-with-room-to-try",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "63aa4d746575e86c7743",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "6fa914122dba7be984fd",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH01.P1:autonomy-with-adult-responsibility",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "10d4177606458102491b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "dbac6788077f6b449dd2",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH01.P2:harmony-not-parenting-proof",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "UNKNOWN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "84d1ddc4aa078aa8fa5f",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH01.P2:clash-not-disobedience",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "21a2cc4649da9423a26d",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH01.P3:pair-is-not-development-test",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "825fd4e9a742a121464b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "71b3ec665e36ff80d62e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "4c8fec77bf18db714ce9",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "PAIR_BA",
+        "sourceKey": "7b92392c46e9ec2206cf",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH01.P3:same-type-not-same-power",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "f9709a2aaf92c814cb26",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "a98212d9a6491c70cd80",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "eb40d39f2065a867ad79",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH01.P4:fixed-role-not-age-diagnosis",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "UNKNOWN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH01.P4:adult-child-has-own-life",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "ADULT"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "58ee6bd5417794df4aec",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH02.P1:a-standards-with-explanation",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "41f807794a6c25d13e93",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5511525de4a015d143f6",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH02.P1:a-values-with-open-question",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "8340bca1aae1ff5a8c69",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH02.P1:a-effort-without-future-script",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "d34d165d4966692ca6cb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH02.P2:a-rest-needs-adult-support",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "31fe578398dda7ed2b7e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "e5ebcee2b4f04948ce2b",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH02.P2:a-alone-time-with-return",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "ff09b3cb5318045846ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH02.P2:a-anchor-without-emotional-debt",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH02.P3:a-question-partner-not-examiner",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "9e14ddceb99de8f8c245",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "e5ebcee2b4f04948ce2b",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH02.P3:a-space-with-available-help",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "5d03c8ad1c25fc371767",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH02.P3:a-experience-with-safety-plan",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "88e81f230552092ca55c",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "b1ef5ca26a18193d1227",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH02.P4:a-rule-correction-without-humiliation",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "f5fb513fa5e97583225b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5511525de4a015d143f6",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH02.P4:a-harmony-must-allow-disagreement",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "f56616fb042e916a2137",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH02.P4:a-insight-needs-verification",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "d617367bfe748e497cb9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH03.P1:b-interest-not-achievement-label",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "5895562b63068759bb90",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH03.P1:b-fairness-question-not-rebellion",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "dbac6788077f6b449dd2",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH03.P1:b-expression-without-talent-prediction",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "e082f6c2d0c63170fc6e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH03.P2:b-predictable-help-sequence",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "parentSources": [],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "cf5096af08861edcca86",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5511525de4a015d143f6",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH03.P2:b-quiet-route-to-help",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "d50e782170a5c0a71e15",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH03.P2:b-gentle-feedback-without-fragile-label",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "7ad9ba971bacdf36c537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH03.P3:b-questions-expand-parent-information",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "3b16f6d2078a7dd2a82f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH03.P3:b-peer-care-not-family-regulator",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "758f1fd0edec5f2f8304",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH03.P3:b-deep-interest-with-change-option",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "e522803dbd756411fcef",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH03.P4:b-brief-answer-still-has-choice",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "242d420d68455dae6761",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH03.P4:b-agreement-can-hide-unasked-view",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "a98212d9a6491c70cd80",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH03.P4:b-active-interest-not-risk-identity",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "15bdd9dde80da5ce278d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH04.P1:shared-curiosity-with-no-performance",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "ea9519a12540624c4823",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "67f918c8959cf547910b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH04.P1:opportunity-with-child-voice",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "34a4a6cf8a718fb338a9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "0b40f2b7112d3c882b3a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH04.P1:knowledge-support-without-perfect-child",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "7cad2339fed7bcabefd7",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "a147b57a7d16ec148fec",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH04.P2:different-expression-equal-respect",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "537c223e51462b4fd6bd",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "6cb81b925a2eedef0907",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH04.P2:structure-with-flexible-method",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "63aa4d746575e86c7743",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "6fa914122dba7be984fd",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH04.P2:quiet-and-spoken-routes",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "d50e782170a5c0a71e15",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH04.P3:young-signal-and-response",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "e5ebcee2b4f04948ce2b",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "b1ef5ca26a18193d1227",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH04.P3:effort-not-comparison",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "7cad2339fed7bcabefd7",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "a147b57a7d16ec148fec",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH04.P3:adult-resource-with-consent",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "ADULT"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "58ee6bd5417794df4aec",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH04.P4:harmony-needs-child-consent",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "UNKNOWN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "69aac2d24f114cdd40fb",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH04.P4:care-is-not-fixed-family-role",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "31fe578398dda7ed2b7e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "73f1ae9fb0a7c110106b",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "758f1fd0edec5f2f8304",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH04.P4:change-rules-with-development",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN",
+      "ADULT"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "58ee6bd5417794df4aec",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P1:ab-rule-as-explanation",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "825fd4e9a742a121464b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "71b3ec665e36ff80d62e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [
+      {
+        "owner": "DIRECTION_AB",
+        "sourceKey": "ce1defc1af72408fec4a",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P1:ab-support-without-answer-ownership",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "d50e782170a5c0a71e15",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [
+      {
+        "owner": "DIRECTION_AB",
+        "sourceKey": "fe11b875c7ad3a9c8318",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P1:ab-new-opportunity-with-safety",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "34a4a6cf8a718fb338a9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "0b40f2b7112d3c882b3a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [
+      {
+        "owner": "DIRECTION_AB",
+        "sourceKey": "bbc18a4e615032647a49",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P1:ab-pressure-is-not-protection",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "0c2824cc2f62a5c72693",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "7ad9ba971bacdf36c537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [
+      {
+        "owner": "DIRECTION_AB",
+        "sourceKey": "f8f90022e047bfe61557",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P2:ab-preview-before-change",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "f9709a2aaf92c814cb26",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "cf5096af08861edcca86",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5511525de4a015d143f6",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P2:ab-notice-without-mind-reading",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "ea9519a12540624c4823",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "272c67e0206eba757597",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P2:ab-help-one-step-then-return",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "88e81f230552092ca55c",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "b7c4f738dad8d6d8d61c",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "b1ef5ca26a18193d1227",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P2:ab-allow-wrong-first-answer",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "43161eed254c850e342b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "668bff6bf74135a0bc03",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P3:ab-expectation-becomes-result-debt",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "46eb373ed8de497e1ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "7ad9ba971bacdf36c537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P3:ab-protection-removes-small-choice",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "3888aa2e5b9fb179e218",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "71b3ec665e36ff80d62e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P3:ab-debate-overwhelms-child",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "1de5594bb3cc1a883744",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "d50e782170a5c0a71e15",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P3:ab-care-asks-for-parent-comfort",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "758f1fd0edec5f2f8304",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P4:ab-return-choice-before-commitment",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "46eb373ed8de497e1ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "7ad9ba971bacdf36c537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P4:ab-explain-protection-and-try",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "3888aa2e5b9fb179e218",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "71b3ec665e36ff80d62e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P4:ab-listen-before-answer",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "1de5594bb3cc1a883744",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "d50e782170a5c0a71e15",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH05.P4:ab-parent-support-outside-child",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "758f1fd0edec5f2f8304",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "aaac0cf1c3f696a21cc6",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P1:ba-question-not-parent-evaluation",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "825fd4e9a742a121464b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "71b3ec665e36ff80d62e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [
+      {
+        "owner": "DIRECTION_BA",
+        "sourceKey": "6047f491aa9082328a86",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P1:ba-peer-voice-not-peer-duty",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "10d4177606458102491b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "dbac6788077f6b449dd2",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [
+      {
+        "owner": "DIRECTION_BA",
+        "sourceKey": "3f130780549c6cb7a467",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P1:ba-new-interest-not-teaching-job",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "9e14ddceb99de8f8c245",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "5895562b63068759bb90",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [
+      {
+        "owner": "DIRECTION_BA",
+        "sourceKey": "78ca1a3776c53c2d0b48",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P1:ba-enjoyment-not-family-mood-task",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "537c223e51462b4fd6bd",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "6cb81b925a2eedef0907",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [
+      {
+        "owner": "DIRECTION_BA",
+        "sourceKey": "90e77590d3ea07930ba1",
+        "sourceUse": "recipient_direction_definition",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P2:ba-small-no-informs-support",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "a98212d9a6491c70cd80",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P2:ba-written-view-changes-parent-assumption",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "825fd4e9a742a121464b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "d50e782170a5c0a71e15",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P2:ba-practical-trial-informs-guidance",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "88e81f230552092ca55c",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "b7c4f738dad8d6d8d61c",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "b1ef5ca26a18193d1227",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "ADULT"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "58ee6bd5417794df4aec",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P3:ba-question-treated-as-rejection",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "825fd4e9a742a121464b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "71b3ec665e36ff80d62e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P3:ba-quiet-response-increases-parent-demand",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "f56616fb042e916a2137",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "242d420d68455dae6761",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P3:ba-interest-changes-parent-plan",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "d34d165d4966692ca6cb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "6fa914122dba7be984fd",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P3:ba-care-becomes-parent-dependence",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "758f1fd0edec5f2f8304",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P4:ba-option-to-question-safely",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "825fd4e9a742a121464b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "71b3ec665e36ff80d62e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P4:ba-brief-help-request-is-enough",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "f56616fb042e916a2137",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "242d420d68455dae6761",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P4:ba-change-can-be-reported-not-defended",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "d34d165d4966692ca6cb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "6fa914122dba7be984fd",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH06.P4:ba-care-can-stop-without-guilt",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "758f1fd0edec5f2f8304",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P1:expectation-and-interest-differ",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "d34d165d4966692ca6cb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "6fa914122dba7be984fd",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P1:privacy-and-safety-are-different",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "3888aa2e5b9fb179e218",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "242d420d68455dae6761",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P1:device-rule-needs-reason",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P1:adult-contact-is-not-permission",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "ADULT"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "58ee6bd5417794df4aec",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P2:clash-without-family-blame",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "941361dcf854c0c9f213",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P2:harm-not-wonjin-child",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "UNKNOWN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "e23b027944c5f0d3197a",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "SHARED",
+        "sourceKey": "88af77cc76890045d0ca",
+        "sourceUse": "unsupported_comparison_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P2:no-relation-is-not-missing-bond",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "UNKNOWN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P2:harmony-and-disagreement-coexist",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "84d1ddc4aa078aa8fa5f",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "SHARED",
+        "sourceKey": "21a2cc4649da9423a26d",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P3:result-debt-loop",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "46eb373ed8de497e1ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "7ad9ba971bacdf36c537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P3:protection-question-test-loop",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "3888aa2e5b9fb179e218",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "71b3ec665e36ff80d62e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P3:debate-silence-loop",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "1de5594bb3cc1a883744",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "d50e782170a5c0a71e15",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P3:child-comfort-parent-loop",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "758f1fd0edec5f2f8304",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P4:comparison-removes-own-question",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P4:digital-monitoring-is-not-trust",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P4:adult-choice-not-permanent-approval",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "ADULT"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "58ee6bd5417794df4aec",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH07.P4:coercion-not-equal-style-conflict",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "YOUNG",
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P1:repair-result-debt",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "46eb373ed8de497e1ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "7ad9ba971bacdf36c537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P1:repair-protection-test",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "3888aa2e5b9fb179e218",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "71b3ec665e36ff80d62e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P1:repair-debate-and-return",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "1de5594bb3cc1a883744",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "d50e782170a5c0a71e15",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P1:repair-parent-emotional-responsibility",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "758f1fd0edec5f2f8304",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "aaac0cf1c3f696a21cc6",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P2:a-change-expectation-before-enrollment",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "46eb373ed8de497e1ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "7ad9ba971bacdf36c537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P2:a-reduce-unnecessary-restriction",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "3888aa2e5b9fb179e218",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "71b3ec665e36ff80d62e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P2:a-receive-before-rebuttal",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "1de5594bb3cc1a883744",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "d50e782170a5c0a71e15",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P2:a-stop-comfort-demand",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "758f1fd0edec5f2f8304",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "aaac0cf1c3f696a21cc6",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P3:child-question-route-parent-receives",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "825fd4e9a742a121464b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "71b3ec665e36ff80d62e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P3:child-short-request-parent-supports",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "f56616fb042e916a2137",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "242d420d68455dae6761",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P3:child-change-parent-replans",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "d34d165d4966692ca6cb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "6fa914122dba7be984fd",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P3:child-boundary-parent-seeks-adult",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "758f1fd0edec5f2f8304",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P4:young-rule-repair-with-model",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5511525de4a015d143f6",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "b1ef5ca26a18193d1227",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P4:teen-device-rule-review",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P4:adult-consent-and-contact-review",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "ADULT"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "58ee6bd5417794df4aec",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH08.P4:safety-support-not-forced-reunion",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "YOUNG",
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH09.P1:recall-curiosity-with-choice",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "ea9519a12540624c4823",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "67f918c8959cf547910b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH09.P1:recall-opportunity-with-voice",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "34a4a6cf8a718fb338a9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "0b40f2b7112d3c882b3a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH09.P1:recall-learning-with-mistake-space",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "7cad2339fed7bcabefd7",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "a147b57a7d16ec148fec",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH09.P2:recall-harmony-needs-support",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "UNKNOWN"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [
+      {
+        "owner": "SHARED",
+        "sourceKey": "69aac2d24f114cdd40fb",
+        "sourceUse": "actual_canonical_membership_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH09.P2:recall-care-without-role-transfer",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "SCHOOL",
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "31fe578398dda7ed2b7e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "73f1ae9fb0a7c110106b",
+        "sourceUse": "both_same_person_roots_required",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "758f1fd0edec5f2f8304",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH09.P2:recall-many-routes-to-trust",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "d50e782170a5c0a71e15",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH09.P3:recall-expectation-repair",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "46eb373ed8de497e1ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "7ad9ba971bacdf36c537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH09.P3:recall-protection-repair",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "3888aa2e5b9fb179e218",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "71b3ec665e36ff80d62e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH09.P3:recall-parent-regulation-repair",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "TEEN"
+    ],
+    "parentSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb9ee7415c4e3089e7f9",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "childSources": [
+      {
+        "owner": "B",
+        "sourceKey": "758f1fd0edec5f2f8304",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "4d0792e403615a91db52",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "aaac0cf1c3f696a21cc6",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH09.P4:recall-young-support-and-small-choice",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "YOUNG"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "e5ebcee2b4f04948ce2b",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "b1ef5ca26a18193d1227",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5511525de4a015d143f6",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH09.P4:recall-adult-support-and-boundary",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "ADULT"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "58ee6bd5417794df4aec",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  },
+  {
+    "materialId": "pcpr:material:CH09.P4:recall-role-changes-with-context",
+    "roles": {
+      "personA": "부모",
+      "personB": "자녀"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "developmentalContexts": [
+      "ADULT"
+    ],
+    "parentSources": [],
+    "childSources": [],
+    "directionSources": [],
+    "canonicalSources": [],
+    "pairReferences": [],
+    "generalGuidance": [
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "ee509907f7d870f38308",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "58ee6bd5417794df4aec",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "notNewIndependentFact": true
+  }
+]

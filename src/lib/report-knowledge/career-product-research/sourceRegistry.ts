@@ -1,0 +1,2590 @@
+/** Source metadata only; original definition states do not imply customer approval. */
+import type { SourceRef } from "./researchTypes";
+export const CAREER_SOURCE_REGISTRY: readonly SourceRef[] = [
+  {
+    "id": "ckr:source:ce1defc1af72408fec4a",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "ce1defc1af72408fec4a",
+    "sourceId": "deep:ten_god:zheng_guan",
+    "sourceKind": "natal_research",
+    "auditRef": "source-catalog.json#ce1defc1af72408fec4a",
+    "recordSha256": "02292f2111aaf7b4a4934cecc4b14bbe4f7149241fe5601a054d35e32d7a3d59",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "id": "ckr:source:f666c10a6db231abcc92",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "f666c10a6db231abcc92",
+    "sourceId": "mbti:INTP:traits:thinkingStyle:why_question_loop",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#f666c10a6db231abcc92",
+    "recordSha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INTP",
+      "area": "thinkingStyle"
+    }
+  },
+  {
+    "id": "ckr:source:90e77590d3ea07930ba1",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "90e77590d3ea07930ba1",
+    "sourceId": "deep:ten_god:shi_shen",
+    "sourceKind": "natal_research",
+    "auditRef": "source-catalog.json#90e77590d3ea07930ba1",
+    "recordSha256": "46429fe865e9a25fb4e332aa37e7709375a33374caa139c3857d3ef233b41ffd",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "id": "ckr:source:cdc60c6b316ee8a858c1",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "cdc60c6b316ee8a858c1",
+    "sourceId": "mbti:ENFJ:traits:workplace:collaborative_environment",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#cdc60c6b316ee8a858c1",
+    "recordSha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ENFJ",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:e2ed5b09b1f8185708cd",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "e2ed5b09b1f8185708cd",
+    "sourceId": "deep:ten_god:zheng_cai",
+    "sourceKind": "natal_research",
+    "auditRef": "source-catalog.json#e2ed5b09b1f8185708cd",
+    "recordSha256": "c5190449e4eac664419b628d879f0413f683ed7418d0a7b136d474d3d19dd59a",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "id": "ckr:source:78ca1a3776c53c2d0b48",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "78ca1a3776c53c2d0b48",
+    "sourceId": "deep:ten_god:pian_yin",
+    "sourceKind": "natal_research",
+    "auditRef": "source-catalog.json#78ca1a3776c53c2d0b48",
+    "recordSha256": "a6d3747f2872f90db9a5075fea446471d0f665fa58ef3d4fb57af24132720b90",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "id": "ckr:source:7ff3a8b05b74a93b59af",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "7ff3a8b05b74a93b59af",
+    "sourceId": "mbti:INTJ:traits:thinkingStyle:system_first_thinking",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#7ff3a8b05b74a93b59af",
+    "recordSha256": "41d3a67731d994d294cf37f81479c67138a353fdb0c5daa9c7a89242a0ed12a9",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INTJ",
+      "area": "thinkingStyle"
+    }
+  },
+  {
+    "id": "ckr:source:bfcb541ba28cf9dd0cce",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "bfcb541ba28cf9dd0cce",
+    "sourceId": "fkr:complement:C002",
+    "sourceKind": "fusion_research",
+    "auditRef": "source-catalog.json#bfcb541ba28cf9dd0cce",
+    "recordSha256": "b3061c278a7b32733d7400a2b8b25a81403a010dd3e4b4dfc43efb1a676e15c1",
+    "sourceFileSha256": "3196e648432ea2a207564bcba11d90693b0bae14a515e9c7a7ef9ec1bb971f9b",
+    "originalState": {
+      "review": "conditional_editorial_not_empirical",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "contexts": [
+        "identity",
+        "work",
+        "learning"
+      ],
+      "originalDomains": []
+    }
+  },
+  {
+    "id": "ckr:source:6047f491aa9082328a86",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "6047f491aa9082328a86",
+    "sourceId": "deep:ten_god:shang_guan",
+    "sourceKind": "natal_research",
+    "auditRef": "source-catalog.json#6047f491aa9082328a86",
+    "recordSha256": "3e4680f1d5790eb0614c29a380cd7c8ecbf27be8c600c27180989af07a73b797",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "id": "ckr:source:cf6e4b6c104165d3fff3",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "cf6e4b6c104165d3fff3",
+    "sourceId": "mbti:ENFP:traits:career:arts_and_creative_field",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#cf6e4b6c104165d3fff3",
+    "recordSha256": "ba4318d84b0c2e732802b68038e5fd29d7830cfee344ed7b79e97d192d4f0cd1",
+    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ENFP",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:bbc18a4e615032647a49",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "bbc18a4e615032647a49",
+    "sourceId": "deep:ten_god:pian_cai",
+    "sourceKind": "natal_research",
+    "auditRef": "source-catalog.json#bbc18a4e615032647a49",
+    "recordSha256": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "id": "ckr:source:66a9cd49cd16d86ca992",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "66a9cd49cd16d86ca992",
+    "sourceId": "mbti:ENTJ:traits:money:capitalist_resource_logic",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#66a9cd49cd16d86ca992",
+    "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ENTJ",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:f7a5e64e8b2f2d997bb1",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "f7a5e64e8b2f2d997bb1",
+    "sourceId": "fkr:legacy:entj-wealth",
+    "sourceKind": "fusion_research",
+    "auditRef": "source-catalog.json#f7a5e64e8b2f2d997bb1",
+    "recordSha256": "5fb087bc99fa425485abaa21df8820fbc0f9e56b2bc63f6114a93fb0c4a500a0",
+    "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+    "originalState": {
+      "review": "conditional_editorial_not_empirical",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "contexts": [],
+      "originalDomains": [
+        "money",
+        "success/fortune"
+      ]
+    }
+  },
+  {
+    "id": "ckr:source:fe11b875c7ad3a9c8318",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "fe11b875c7ad3a9c8318",
+    "sourceId": "deep:ten_god:zheng_yin",
+    "sourceKind": "natal_research",
+    "auditRef": "source-catalog.json#fe11b875c7ad3a9c8318",
+    "recordSha256": "380e3f5f82de6c74467c4321d2e0234a21601692aeb639f6a481481d12941572",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "id": "ckr:source:5d8f68e414bf0c19b5ed",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "5d8f68e414bf0c19b5ed",
+    "sourceId": "mbti:ISFJ:traits:career:structured_care_profession",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#5d8f68e414bf0c19b5ed",
+    "recordSha256": "bf87ff4de53b38f474ff8eeabcd5bddf361aa9e9ca5bf030d774e8f50925501a",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISFJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:6293cdd44ddf08f38c74",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "6293cdd44ddf08f38c74",
+    "sourceId": "mbti:ESTP:traits:study:experiential_learning",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#6293cdd44ddf08f38c74",
+    "recordSha256": "d74635abd854a1f57c2957d408fe15960e1f805ff3206e56ea49c8efa41216ed",
+    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ESTP",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:b02ceb60ba64a77dc688",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "b02ceb60ba64a77dc688",
+    "sourceId": "fkr:legacy:estp-study",
+    "sourceKind": "fusion_research",
+    "auditRef": "source-catalog.json#b02ceb60ba64a77dc688",
+    "recordSha256": "dea405009a563ee88fe280b177b6bc7085cfdebb885d34527e3b44053b12f8b3",
+    "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+    "originalState": {
+      "review": "conditional_editorial_not_empirical",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "contexts": [],
+      "originalDomains": [
+        "study"
+      ]
+    }
+  },
+  {
+    "id": "ckr:source:cd19631fd0781dd2ef4c",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "cd19631fd0781dd2ef4c",
+    "sourceId": "mbti:ENFP:traits:workplace:follow_through_system",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#cd19631fd0781dd2ef4c",
+    "recordSha256": "160060c2a6b61a740d693e91674d1f46ab2aa96dda3e7962d866c242cd420fd1",
+    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ENFP",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:51a36ebd6ebe0593251c",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "51a36ebd6ebe0593251c",
+    "sourceId": "mbti:ISTJ:traits:workplace:time_promise_strictness",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#51a36ebd6ebe0593251c",
+    "recordSha256": "03658b00bf4ae588d7e28191aaa3a40770278f8897c62a5eebfd165012533f09",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISTJ",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:ce1c5899365d6cd736a8",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "ce1c5899365d6cd736a8",
+    "sourceId": "mbti:INTP:traits:workplace:needs_thinking_time",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#ce1c5899365d6cd736a8",
+    "recordSha256": "c0baa7582e9c48cf7f3680769b4282242a46d2952bbc8832acd1811bd3a48ced",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INTP",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:0b4c5f82e25554523be7",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "0b4c5f82e25554523be7",
+    "sourceId": "mbti:ESFP:traits:workplace:responsive_team_needed",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#0b4c5f82e25554523be7",
+    "recordSha256": "0dcecb2fb32829e32998134c9394531c35ec6111ba90f17547cc5fc880fcea54",
+    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ESFP",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:1decd822e13cf76d8f8e",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "1decd822e13cf76d8f8e",
+    "sourceId": "mbti:INTJ:traits:career:autonomy_required_role",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#1decd822e13cf76d8f8e",
+    "recordSha256": "21160c05e131d68c602615babcf34f11e32c261cfb076fa4877a3bfac274d959",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INTJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:248692af90259c9eebe4",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "248692af90259c9eebe4",
+    "sourceId": "mbti:INFJ:traits:workplace:calm_deep_work",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#248692af90259c9eebe4",
+    "recordSha256": "04dcc8e537c5d8eb7184881885c793a01aef659a36ca55124697dd6b96ea3da4",
+    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INFJ",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:c92cbae7d0a74770dee8",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "c92cbae7d0a74770dee8",
+    "sourceId": "mbti:ESTP:traits:workplace:fast_approval_lane",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#c92cbae7d0a74770dee8",
+    "recordSha256": "ea72d02009ad14675c3d2b697bfaabd443131864711c0a704c73ace424205e07",
+    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ESTP",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:0cc422b5a853b4a67ac0",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "0cc422b5a853b4a67ac0",
+    "sourceId": "mbti:INFP:traits:workplace:meaning_driven_diligence",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#0cc422b5a853b4a67ac0",
+    "recordSha256": "9de63eec6f85666cde1c4bd59c4121df6aabdb186d00bb087141d93c7e2e7223",
+    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INFP",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:25034b1d3583cb77b7ab",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "25034b1d3583cb77b7ab",
+    "sourceId": "mbti:ENFJ:traits:workplace:persuasive_presenter",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#25034b1d3583cb77b7ab",
+    "recordSha256": "d82d54b196675db626684fcd5eb5be6d6f5c41947773faa6dde25d12b034f6c3",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ENFJ",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:ce00081ce37c25f1db93",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "ce00081ce37c25f1db93",
+    "sourceId": "mbti:ENTJ:traits:workplace:delegation_pressure_control",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#ce00081ce37c25f1db93",
+    "recordSha256": "e73ef44f894fd11d5700cd35afdcd435ba17c625cf4226e2fb31c3ec95b2c219",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ENTJ",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:d1d38d962c1cc346bc86",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "d1d38d962c1cc346bc86",
+    "sourceId": "mbti:ISFJ:traits:career:practical_helper_work",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#d1d38d962c1cc346bc86",
+    "recordSha256": "33b82f6459ca4a940abf0af14f5a158de033f4130db7221a830f34b98fe3b902",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISFJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:aaccdefbe9afed4f9db6",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "aaccdefbe9afed4f9db6",
+    "sourceId": "mbti:ISTP:traits:career:hands_on_technical_fit",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#aaccdefbe9afed4f9db6",
+    "recordSha256": "d0ea1fa645cfdcb3b2843d65bcec0dc92d37ae501dc7a8da7f622a87e96d17f5",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISTP",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:53113e9ff18319b22c8a",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "53113e9ff18319b22c8a",
+    "sourceId": "mbti:ISTJ:traits:career:precision_profession_fit",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#53113e9ff18319b22c8a",
+    "recordSha256": "75b46369562b562b90b9679bc81dced930fc577293a8bd32d18e85918cf9bc49",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISTJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:67821ba0891eef23e2a5",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "67821ba0891eef23e2a5",
+    "sourceId": "mbti:INTP:traits:career:education_for_adults_fit",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#67821ba0891eef23e2a5",
+    "recordSha256": "ca5b50142d59751c70d9e68787adb45bf4c18f9a4addd5f7a2bc4fd4fc31e75b",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INTP",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:f5d39e081aa424e96817",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "f5d39e081aa424e96817",
+    "sourceId": "fkr:complement:C066",
+    "sourceKind": "fusion_research",
+    "auditRef": "source-catalog.json#f5d39e081aa424e96817",
+    "recordSha256": "4dff8e25db9ec2c472e1f2e624a62a756b2a8294d4f26c12f921306cb86da05d",
+    "sourceFileSha256": "3196e648432ea2a207564bcba11d90693b0bae14a515e9c7a7ef9ec1bb971f9b",
+    "originalState": {
+      "review": "conditional_editorial_not_empirical",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "contexts": [
+        "learning",
+        "work",
+        "identity"
+      ],
+      "originalDomains": []
+    }
+  },
+  {
+    "id": "ckr:source:d12ffea3e7e02bd3f478",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "d12ffea3e7e02bd3f478",
+    "sourceId": "mbti:ISFJ:traits:career:care_operations_income",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#d12ffea3e7e02bd3f478",
+    "recordSha256": "cb814819768adcdd908e40ee898ca2dbdb43822959269275fa2874a071bc5c97",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ISFJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:db6c7a28d75b72af5336",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "db6c7a28d75b72af5336",
+    "sourceId": "mbti:ESTP:traits:career:field_emergency_fit",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#db6c7a28d75b72af5336",
+    "recordSha256": "9a539a6c7287ca1197b080e8d8248de13dd650b96e6532db674e064cf6be3350",
+    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ESTP",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:c2b9d32b8dc32f41a677",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "c2b9d32b8dc32f41a677",
+    "sourceId": "mbti:INFJ:traits:career:vision_to_content_strategy",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#c2b9d32b8dc32f41a677",
+    "recordSha256": "07cff2e577212ffa6c5078d0605ec79310e1097b7f4963eed4bbf2021e783a8f",
+    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "INFJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:1288e7c671389c17eb7d",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "1288e7c671389c17eb7d",
+    "sourceId": "mbti:ISFP:traits:study:concrete_praise_learning",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#1288e7c671389c17eb7d",
+    "recordSha256": "d07b97834e43016a7378a78bca60d07781ce3334dcf74df998eb4184cd4b2b1c",
+    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISFP",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:4b48516cd55d06412f8a",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "4b48516cd55d06412f8a",
+    "sourceId": "mbti:ISTP:traits:study:theory_to_tool_bridge",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#4b48516cd55d06412f8a",
+    "recordSha256": "4af9a7b97ea903a16cec0560938059db88ffcf7c8c0b9b9f4214a5bfe8a99835",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ISTP",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:1d7da5209fe3284e2d3e",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "1d7da5209fe3284e2d3e",
+    "sourceId": "mbti:INTJ:traits:career:strategy_to_asset_work",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#1d7da5209fe3284e2d3e",
+    "recordSha256": "a0c74c16243ff88d7f4cff400220089812fe6cea28f204999827d07aaf9bd539",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "INTJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:e0f1223ff781ce157244",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "e0f1223ff781ce157244",
+    "sourceId": "mbti:INTP:traits:career:research_field_fit",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#e0f1223ff781ce157244",
+    "recordSha256": "35bc899e4b1cfd5fffb4f6b0722b05e1ea713fc8cae0d32e088b7b805dc8215c",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INTP",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:d3f1d896063ae672f97b",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "d3f1d896063ae672f97b",
+    "sourceId": "mbti:INFP:traits:career:creative_arts_fit",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#d3f1d896063ae672f97b",
+    "recordSha256": "05ac73a5b66796844d653ec9b26a42197c28448ea02f7cd65fe93a9403cffb8c",
+    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INFP",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:d92063c1e7fc9ba8b4dd",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "d92063c1e7fc9ba8b4dd",
+    "sourceId": "mbti:INTP:traits:career:programming_engineering_fit",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#d92063c1e7fc9ba8b4dd",
+    "recordSha256": "072e2275a09e000777abb395adf02619ee3944fa837cce16686f48aff00a18c2",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INTP",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:ba9c4a59def3be6ff655",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "ba9c4a59def3be6ff655",
+    "sourceId": "mbti:ISFP:traits:career:artistic_expression_fit",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#ba9c4a59def3be6ff655",
+    "recordSha256": "5ba5c04be3ef82e1f3dad88c3ca92d836bf1a0570a520f324ef88d49b7f025bb",
+    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISFP",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:8bf155c8bcdbb54b9142",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "8bf155c8bcdbb54b9142",
+    "sourceId": "mbti:ENFJ:traits:career:teacher_facilitator_fit",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#8bf155c8bcdbb54b9142",
+    "recordSha256": "bbec68b70ad35e7e0f016e664a3491709df63d29634c024203d15cdafb6d08b4",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ENFJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:f8f90022e047bfe61557",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "f8f90022e047bfe61557",
+    "sourceId": "deep:ten_god:qi_sha",
+    "sourceKind": "natal_research",
+    "auditRef": "source-catalog.json#f8f90022e047bfe61557",
+    "recordSha256": "2e8310a635977205afbcb0dffde9f5cbe8b140f2adf14e7b5899d4517a7defa3",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "id": "ckr:source:56954437569c5ef8f1f1",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "56954437569c5ef8f1f1",
+    "sourceId": "mbti:ENTJ:traits:career:ownership_priority",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#56954437569c5ef8f1f1",
+    "recordSha256": "1e17d7ec4a825edad887c7884174efcd956da1bdac07f9b0438d795a512bd27e",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ENTJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:f25b06eb266a5bc7f915",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "f25b06eb266a5bc7f915",
+    "sourceId": "mbti:ISTJ:traits:career:process_quality_operator",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#f25b06eb266a5bc7f915",
+    "recordSha256": "c5281f27002c3179f4753a8bb951681d822a7c587b614b6ae5c81f738bab7a76",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ISTJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:fac606c7c6c40893bc49",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "fac606c7c6c40893bc49",
+    "sourceId": "mbti:ESTP:traits:money:deal_and_sales_income",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#fac606c7c6c40893bc49",
+    "recordSha256": "66f7aa2eb0dc7d8187e2206da59355cdbb6182008d26c01619255393e0d2b7e3",
+    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ESTP",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:0447fe32a9bb113f3855",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "0447fe32a9bb113f3855",
+    "sourceId": "mbti:ESFP:traits:career:sales_service_fit",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#0447fe32a9bb113f3855",
+    "recordSha256": "d5998323ab9b63185da77f635e70377dc416e9a82d2ce08b2fc8a25544f297e6",
+    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ESFP",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:428155544a315487e6a6",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "428155544a315487e6a6",
+    "sourceId": "mbti:INFP:traits:career:media_community_fit",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#428155544a315487e6a6",
+    "recordSha256": "debd2a57a58c0087106714982c5b6368dbe25e26a715a9891f144a99d72a65fc",
+    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INFP",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:be18df3416f4583503eb",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "be18df3416f4583503eb",
+    "sourceId": "mbti:INTJ:traits:career:innovation_over_convention",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#be18df3416f4583503eb",
+    "recordSha256": "568c68310514d56d94cec7a9d6a0059a8293141fb6bf6fbdcc2562e3657380d0",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INTJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:b2d2427cbee48429f3e8",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "b2d2427cbee48429f3e8",
+    "sourceId": "mbti:ISFJ:traits:career:behind_the_scenes_worker",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#b2d2427cbee48429f3e8",
+    "recordSha256": "67f7d235d3623bb5de58b653cac9e6ddd86892b8c51f18df5c8b1d959eedb96c",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISFJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:5b8d6b11c49970419712",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "5b8d6b11c49970419712",
+    "sourceId": "mbti:ESTJ:traits:career:operations_scale_manager",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#5b8d6b11c49970419712",
+    "recordSha256": "d85ddc2dcdab38a57f580d7ee2972b39c3c15e2824f9d969763f54ca206bce58",
+    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ESTJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:9c00dd07d98a425ce1c5",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "9c00dd07d98a425ce1c5",
+    "sourceId": "mbti:ESFJ:traits:career:relationship_service_revenue",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#9c00dd07d98a425ce1c5",
+    "recordSha256": "ee77c52c20df829ecdee5655e8c6615ab9961c1799b48e4bbf6fc78548d8ee0b",
+    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ESFJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:17481957d3ad7c46239e",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "17481957d3ad7c46239e",
+    "sourceId": "mbti:ISTP:traits:career:crisis_response_work",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#17481957d3ad7c46239e",
+    "recordSha256": "ff6bed5f556c3f26a2e9974ce3fb5a64372d6e5ea21938fa9f0ace5720e22589",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISTP",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:a8c6b85971d9f1208b22",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "a8c6b85971d9f1208b22",
+    "sourceId": "mbti:ENTJ:traits:career:scale_operator",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#a8c6b85971d9f1208b22",
+    "recordSha256": "cfc584991999e6aee6e6bc824c149b74156038a94cf8332eeb596d81f2f831d3",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ENTJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:1668268fb9233e277c7b",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "1668268fb9233e277c7b",
+    "sourceId": "mbti:INFP:traits:workplace:feedback_safety_contract",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#1668268fb9233e277c7b",
+    "recordSha256": "f292d0d3dc5fd93f4e0a2a1fa001ab700b37ac91dee6428e60b229a2ae2f61a3",
+    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "INFP",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:5b778076e2f7f6a60f75",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "5b778076e2f7f6a60f75",
+    "sourceId": "mbti:ENFJ:traits:workplace:care_overload_at_work",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#5b778076e2f7f6a60f75",
+    "recordSha256": "c3cee00b0e1cda46a3c178b3cd347f019ad302f32eb0749dc7f6e0969153055d",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ENFJ",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:932f48a511820a551fae",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "932f48a511820a551fae",
+    "sourceId": "mbti:ISTP:traits:workplace:action_over_meeting",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#932f48a511820a551fae",
+    "recordSha256": "5ec356dc9fd8aa70b62dacb1efd710a96e76c96af80aa6c99f72776ae4f20a6e",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISTP",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:9adba86c70d3adba42da",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "9adba86c70d3adba42da",
+    "sourceId": "mbti:INFJ:traits:career:mission_over_income",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#9adba86c70d3adba42da",
+    "recordSha256": "c9c04304465e2cde4597aca0ba4c5a70c1e60818b7d78fbc3cafd48a441621be",
+    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INFJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:8a3b104ce2a794e55b60",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "8a3b104ce2a794e55b60",
+    "sourceId": "mbti:INFJ:traits:communication:gentle_language",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#8a3b104ce2a794e55b60",
+    "recordSha256": "77f4503516cc63b6edc064f70008384f7f90d4cff5ad321b7b4450b5b3fb74f1",
+    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INFJ",
+      "area": "communication"
+    }
+  },
+  {
+    "id": "ckr:source:9a241cbad4de6e655789",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "9a241cbad4de6e655789",
+    "sourceId": "mbti:ISFJ:traits:career:memory_observation_practitioner",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#9a241cbad4de6e655789",
+    "recordSha256": "3181712b65c0d3e74e299f7b3d404ad2bb14fcf5dabf2b5f96b81fd218f024a3",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISFJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:392a9907c29658c54cc8",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "392a9907c29658c54cc8",
+    "sourceId": "mbti:ENTJ:traits:workplace:equal_competence_team",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#392a9907c29658c54cc8",
+    "recordSha256": "1b9a082f16d65f46dba03589765673237c2222526d0c876a49ba4e5fc1894578",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ENTJ",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:c782e08817e7f4ae8cd7",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "c782e08817e7f4ae8cd7",
+    "sourceId": "mbti:INTJ:traits:workplace:authority_scope_alignment",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#c782e08817e7f4ae8cd7",
+    "recordSha256": "aa12a8ce8541783c81b1d43babc5d8ebda672e6a5c2dfa1f8691cca7c80f1305",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "INTJ",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:76d4c68e32d1662f8abf",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "76d4c68e32d1662f8abf",
+    "sourceId": "mbti:ISTJ:traits:workplace:instant_error_correction",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#76d4c68e32d1662f8abf",
+    "recordSha256": "017459da987b1d1e35fa681d79035a20764167d5d841571d97fece6451e57d96",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISTJ",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:59ee9c7408ed5dac4efe",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "59ee9c7408ed5dac4efe",
+    "sourceId": "mbti:ISFJ:traits:workplace:conflict_avoidance_at_work",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#59ee9c7408ed5dac4efe",
+    "recordSha256": "f0d99d785c86be30c60799eef1f2308deb47e6ecd56041f6bb2ff31f49de4eb5",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISFJ",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:f93bf80f81c4305dbee6",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "f93bf80f81c4305dbee6",
+    "sourceId": "mbti:ESTP:traits:workplace:flexible_negotiator",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#f93bf80f81c4305dbee6",
+    "recordSha256": "c521c829d045c2753a6b60ca37b87338bf2dde3f7b869ee05199efa6b578ce74",
+    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ESTP",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:caf2f3ef4f21ea3ad88f",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "caf2f3ef4f21ea3ad88f",
+    "sourceId": "mbti:INTJ:traits:workplace:boss_challenge_risk",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#caf2f3ef4f21ea3ad88f",
+    "recordSha256": "0f66f85ecca0cfbc68b82e75e43f6bb80a675995f13945efb1a6d1d102a470f3",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INTJ",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:01b252c15ec6d3cc4064",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "01b252c15ec6d3cc4064",
+    "sourceId": "mbti:ISTJ:traits:workplace:clear_instruction_boundary",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#01b252c15ec6d3cc4064",
+    "recordSha256": "dcb0852a7bbc8f82ebbc86a703d6fb3cdb5ccc85778ce54ce0f62c316e848055",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ISTJ",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:e2ab11baeaebb982a96e",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "e2ab11baeaebb982a96e",
+    "sourceId": "mbti:INTJ:traits:career:meritocracy_expectation",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#e2ab11baeaebb982a96e",
+    "recordSha256": "671cbab5669228f26038118ba3c6a2639c483e76419740c50487c25f16acc5cd",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INTJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:079248d9db39848db6cd",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "079248d9db39848db6cd",
+    "sourceId": "input-contract:jobStatus",
+    "sourceKind": "input_contract",
+    "auditRef": "source-catalog.json#079248d9db39848db6cd",
+    "recordSha256": "e970d881b8d73ad8d0fe3bd3bb307743921a67f872eb00f1e9429cfaed7892f2",
+    "sourceFileSha256": "0052f84a359e3390ebad37107d777f04faa0809b05a20b2276c4ad99b466a20d",
+    "originalState": {
+      "isCalculatedEvidence": false
+    }
+  },
+  {
+    "id": "ckr:source:a78eebeaa12bff33d79b",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "a78eebeaa12bff33d79b",
+    "sourceId": "mbti:ISFP:traits:study:hands_on_learning",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#a78eebeaa12bff33d79b",
+    "recordSha256": "d7db7054d9c2cb768a76ad525f9abfd8437d208b1271321187abe459b6474b6c",
+    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISFP",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:f23be8c338fde8896938",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "f23be8c338fde8896938",
+    "sourceId": "mbti:ISFP:traits:career:taste_to_service_value",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#f23be8c338fde8896938",
+    "recordSha256": "7675eac45d02cf5b66e0043643767a5a99e07057526dbccd990ab29af48c9dec",
+    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ISFP",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:81f5a3a397cd43e89959",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "81f5a3a397cd43e89959",
+    "sourceId": "mbti:INTP:traits:career:model_to_product_bridge",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#81f5a3a397cd43e89959",
+    "recordSha256": "68472788cbec737f9dde506809696f440cc3950c1b5415090a7d71abffe0214a",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "INTP",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:746762687f99d3e36684",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "746762687f99d3e36684",
+    "sourceId": "mbti:ENFJ:traits:career:people_growth_business",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#746762687f99d3e36684",
+    "recordSha256": "37675ac7b537d062b70f22a6d779123281bcf25dbe7f0bdc4663daef4a75eb7f",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ENFJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:47ce8c7dff225ae9a200",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "47ce8c7dff225ae9a200",
+    "sourceId": "mbti:ESTJ:traits:workplace:delegation_with_feedback",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#47ce8c7dff225ae9a200",
+    "recordSha256": "505c0e99063d3e3ebe5a165084f5c27ec6941fbb4e836f2f599d39faadcd3687",
+    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ESTJ",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:9742bfa47ad032c7c9f8",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "9742bfa47ad032c7c9f8",
+    "sourceId": "mbti:ISTJ:traits:money:stable_income_preference",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#9742bfa47ad032c7c9f8",
+    "recordSha256": "cb0c31fbb917ca5746cf8c34dd29c18f3ade254996f05ee64c99c9ce3503f74b",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISTJ",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:51b0bd2bbf8f57a25a91",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "51b0bd2bbf8f57a25a91",
+    "sourceId": "mbti:ENTP:traits:money:idea_to_revenue_filter",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#51b0bd2bbf8f57a25a91",
+    "recordSha256": "ec0b27603fe5a4d01d04384bf43ca93a50e45f6df471c037b6710e95b6855545",
+    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ENTP",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:58333fe1ce51da5e5389",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "58333fe1ce51da5e5389",
+    "sourceId": "mbti:INTJ:traits:money:expertise_income_path",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#58333fe1ce51da5e5389",
+    "recordSha256": "4569fdbe0d5b6a99c0549d11711247006acae08b139954dd89ac15eb9502d63d",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "INTJ",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:ede4c870287adb0ff868",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "ede4c870287adb0ff868",
+    "sourceId": "mbti:ISFJ:traits:money:service_income_fit",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#ede4c870287adb0ff868",
+    "recordSha256": "a489423ec4ea0ee4a1f1af28a995730d7b8735761b10e38e257fbc30421784e7",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ISFJ",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:58f001425acf022b0d6b",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "58f001425acf022b0d6b",
+    "sourceId": "mbti:ISTP:traits:money:technical_problem_income",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#58f001425acf022b0d6b",
+    "recordSha256": "a2b86b22d997e0d6bbf82a7ffef33a7dcaf203c1a006a65f1a659f6838aed475",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ISTP",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:dc4c6fa772a27851195b",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "dc4c6fa772a27851195b",
+    "sourceId": "mbti:ENFJ:traits:money:growth_based_income",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#dc4c6fa772a27851195b",
+    "recordSha256": "2bc04332c1dd5c09e24206e612c1b8d48f3051a26b1dee46f8384df7761bd806",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ENFJ",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:3c2b6472c0c4d3051d9f",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "3c2b6472c0c4d3051d9f",
+    "sourceId": "mbti:ESTJ:traits:money:operations_income_engine",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#3c2b6472c0c4d3051d9f",
+    "recordSha256": "d7a51b98eda0aa44ddcc20d467869aa76357441c69e6a4d9d3d760ff0a3a3cc5",
+    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ESTJ",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:5697e5371d9b4b34d523",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "5697e5371d9b4b34d523",
+    "sourceId": "mbti:ISFJ:traits:money:care_labor_underpricing",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#5697e5371d9b4b34d523",
+    "recordSha256": "ed71f81eba2119ae610e819c57b964d7b5186fe47e107072a5fbeb8010246d1d",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ISFJ",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:8c7eb0318961ed4e1cce",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "8c7eb0318961ed4e1cce",
+    "sourceId": "mbti:ISTP:traits:money:tool_hobby_budget_limit",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#8c7eb0318961ed4e1cce",
+    "recordSha256": "9bfabd9a26bb34191d2fd8b66e3d342bc5c819f198348582b906763a720cfa3d",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ISTP",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:cd6db5be5e62ed3b4f56",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "cd6db5be5e62ed3b4f56",
+    "sourceId": "mbti:ENTJ:traits:money:spending_for_speed",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#cd6db5be5e62ed3b4f56",
+    "recordSha256": "4b44ef8bad63105f5f41b4e7347a88235fe8e111e2bcec6fca8a66ecc6dd1e05",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ENTJ",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:2ca38b805cc09d2e2625",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "2ca38b805cc09d2e2625",
+    "sourceId": "mbti:ENTP:traits:money:project_cost_sprawl",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#2ca38b805cc09d2e2625",
+    "recordSha256": "63cdc79124a12f3c5a015790f9f2feaac526c94ded1a259405dd2297e2433072",
+    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ENTP",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:c3e0328ac10371fa55ab",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "c3e0328ac10371fa55ab",
+    "sourceId": "mbti:ENFJ:traits:money:support_limit_rule",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#c3e0328ac10371fa55ab",
+    "recordSha256": "f29fd57342f7940da0cc1970fee57c214399d317366d28869a332091a0fc22e4",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ENFJ",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:2f83590d0543224f2684",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "2f83590d0543224f2684",
+    "sourceId": "mbti:INTP:traits:money:irregular_income_buffer",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#2f83590d0543224f2684",
+    "recordSha256": "d530f80264012752e9baf5dd721d4f5ffad37adb069b34fdc8b1fd757a671620",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "INTP",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:b64fa2920704301bf622",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "b64fa2920704301bf622",
+    "sourceId": "mbti:ISTJ:traits:money:cost_and_contract_mind",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#b64fa2920704301bf622",
+    "recordSha256": "d8a5ed526be887f43b38387194f943c17383514807af76b4cdab88dff583c6b8",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISTJ",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:53f96587bbaa900e8b0e",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "53f96587bbaa900e8b0e",
+    "sourceId": "mbti:ENFP:traits:money:possibility_spending_spread",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#53f96587bbaa900e8b0e",
+    "recordSha256": "c0b961d8ed074bed2c0b0f406afd78c973a971efdc71fd7968399755a7d31fd2",
+    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ENFP",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:563ac17bf788fce06e6f",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "563ac17bf788fce06e6f",
+    "sourceId": "mbti:INFJ:traits:money:quiet_accumulation_money",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#563ac17bf788fce06e6f",
+    "recordSha256": "92bb4640dad90c9d1b0f6ecccf8913a9b55677c7f2cea314db368f544f26672b",
+    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "INFJ",
+      "area": "money"
+    }
+  },
+  {
+    "id": "ckr:source:042ffda8801ebeaf2c6d",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "042ffda8801ebeaf2c6d",
+    "sourceId": "mbti:INTJ:traits:study:deep_project_learning",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#042ffda8801ebeaf2c6d",
+    "recordSha256": "a962ef34a78ea2b8ba0c784c6ea77eca814662297bc7048553410e5267d7996a",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INTJ",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:130ebac8873e64f99e23",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "130ebac8873e64f99e23",
+    "sourceId": "mbti:ISTP:traits:study:hands_on_learning",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#130ebac8873e64f99e23",
+    "recordSha256": "e0447b375086c01b1bf46ec0e5539289e4495aa5e4c7929fd2aba12657060697",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISTP",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:c009e50b177f9c93ca31",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "c009e50b177f9c93ca31",
+    "sourceId": "fkr:legacy:istp-study",
+    "sourceKind": "fusion_research",
+    "auditRef": "source-catalog.json#c009e50b177f9c93ca31",
+    "recordSha256": "be22d063b285a41a288fb787c53b100953218042b5f72ae5bde154fc1b513429",
+    "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+    "originalState": {
+      "review": "conditional_editorial_not_empirical",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "contexts": [],
+      "originalDomains": [
+        "study",
+        "strengths",
+        "work"
+      ]
+    }
+  },
+  {
+    "id": "ckr:source:6aac2c369ca11d84cf6b",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "6aac2c369ca11d84cf6b",
+    "sourceId": "mbti:ENFJ:traits:study:fast_social_learning",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#6aac2c369ca11d84cf6b",
+    "recordSha256": "bc4df3c57ecca5479bb535593f9ed8b37813034f36adf801d5ca9f1a0d5750f4",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ENFJ",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:d5a3f16c5cef50521cd4",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "d5a3f16c5cef50521cd4",
+    "sourceId": "mbti:INFP:traits:study:storytelling_learning",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#d5a3f16c5cef50521cd4",
+    "recordSha256": "755a3f723c3fee625f3d87b22006a625c0565f207ecb4587e7f5b2662539e660",
+    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INFP",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:4d87fbb51867b1899de4",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "4d87fbb51867b1899de4",
+    "sourceId": "mbti:ISFJ:traits:study:dutiful_study_rhythm",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#4d87fbb51867b1899de4",
+    "recordSha256": "07729ac8cc8c59714e2f703657166b994c1c19462fcd0df01b887ffc30b981d8",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISFJ",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:0559dd6941aec884dc1a",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "0559dd6941aec884dc1a",
+    "sourceId": "mbti:INTP:traits:study:math_science_affinity",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#0559dd6941aec884dc1a",
+    "recordSha256": "2b52176f0629bcdf00b3eb4bdadf169967ed4f99f6ec5b04f6d96d0a4ec66b1c",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INTP",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:76c5466694297d1a36cf",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "76c5466694297d1a36cf",
+    "sourceId": "mbti:ISFP:traits:study:arts_literature_preference",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#76c5466694297d1a36cf",
+    "recordSha256": "9ded9785447853619b133e93f96f0037ec00efdea474b3d05e5de02a1fe78256",
+    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISFP",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:eb4b0b7bcdda51afcf86",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "eb4b0b7bcdda51afcf86",
+    "sourceId": "mbti:ISTJ:traits:study:new_type_adaptation_drill",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#eb4b0b7bcdda51afcf86",
+    "recordSha256": "d11e0266d97950f7b83d87cce12061fc0d1275c372bc6ef3f4929d0b21c69fdb",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ISTJ",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:46b1ab895711e38e6215",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "46b1ab895711e38e6215",
+    "sourceId": "mbti:ISTP:traits:study:repeat_check_system",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#46b1ab895711e38e6215",
+    "recordSha256": "f0acf37f350ba7627c15d04ba89bc4e0e9d05529dd8d205fd895592f2d6bdb8f",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ISTP",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:cca22a892a0cdcc5f2e8",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "cca22a892a0cdcc5f2e8",
+    "sourceId": "mbti:ENFP:traits:study:interest_switch_learning",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#cca22a892a0cdcc5f2e8",
+    "recordSha256": "31a0c3d2cdbe0337ed28d07ec72a476f42ba7ec2bd3f32666f5c44b3e8fea233",
+    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ENFP",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:ed5c3e422134873cef0d",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "ed5c3e422134873cef0d",
+    "sourceId": "mbti:ISFJ:traits:study:mindmap_connection_need",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#ed5c3e422134873cef0d",
+    "recordSha256": "4b70086e13539b52704d18dc9a96babc57040ad528de17028b440322ad7178de",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISFJ",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:b7cf3c6e7279367349b5",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "b7cf3c6e7279367349b5",
+    "sourceId": "mbti:INTJ:traits:study:perfectionism_start_gate",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#b7cf3c6e7279367349b5",
+    "recordSha256": "968203bbceb977f9ed5f45f1c2e137d462df641f98ff52f187f4e0b1194287f0",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "INTJ",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:331d66e109fedda15aa9",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "331d66e109fedda15aa9",
+    "sourceId": "mbti:ESTP:traits:study:error_record_short_loop",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#331d66e109fedda15aa9",
+    "recordSha256": "c0cdf4b5e294a122133295ae3fbf0b7502d6ed3b1c5e463241d24a9730b77bb8",
+    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ESTP",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:b8b1788be86a366e0070",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "b8b1788be86a366e0070",
+    "sourceId": "mbti:ENFJ:traits:study:protected_solo_study_time",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#b8b1788be86a366e0070",
+    "recordSha256": "efa2dea48c269ab7697aa28f92cd22639f0f5cefeede9dc91e5b04fd0858fde4",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ENFJ",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:b846da55e4e5cf6a302b",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "b846da55e4e5cf6a302b",
+    "sourceId": "mbti:ISTJ:traits:study:manual_learning_curve",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#b846da55e4e5cf6a302b",
+    "recordSha256": "0c48739ba667f672241a18ff6d3af3307d49ef84fc0e32470589b286ff285a67",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ISTJ",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:b211b5d3637a2f223e18",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "b211b5d3637a2f223e18",
+    "sourceId": "mbti:ESTJ:traits:study:technical_problem_solving",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#b211b5d3637a2f223e18",
+    "recordSha256": "ed1042b2e39f219e99668b1bc9150dcff240841606091de41830616dd3b06120",
+    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ESTJ",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:8404eadd074651539efa",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "8404eadd074651539efa",
+    "sourceId": "foundation:shinsal_gwiin:cheoneul",
+    "sourceKind": "natal_research",
+    "auditRef": "source-catalog.json#8404eadd074651539efa",
+    "recordSha256": "043b49a5e791c3a4e8c18e3984d9f996649a0dbb486aa1ff980837539bac8998",
+    "sourceFileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": "source_checked",
+      "traditionalReviews": [],
+      "support": {
+        "calculation": "native",
+        "calculationRefs": [
+          "SHINSAL_RULES:CHEON_EUL_GWIIN"
+        ],
+        "legacyRefs": [
+          "knowledge:nobleman_cheoneul",
+          "taxonomy:gwiin_cheoneul",
+          "shinsal:CHEON_EUL_GWIIN"
+        ]
+      },
+      "deferred": [
+        "현대 생활 적용의 경험과학 근거는 없다. 전통 상징과 조건부 편집 예시를 구분한다."
+      ]
+    }
+  },
+  {
+    "id": "ckr:source:2bc77a6b7aac71ca7b44",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "2bc77a6b7aac71ca7b44",
+    "sourceId": "foundation:shinsal_gwiin:jangseong",
+    "sourceKind": "natal_research",
+    "auditRef": "source-catalog.json#2bc77a6b7aac71ca7b44",
+    "recordSha256": "32e09231866902c37b2db529935baa2e5982deea821635fa2c8c0044217d0f3d",
+    "sourceFileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": "source_checked",
+      "traditionalReviews": [],
+      "support": {
+        "calculation": "native",
+        "calculationRefs": [
+          "SHINSAL_RULES:TWELVE_JANGSEONGSAL"
+        ],
+        "legacyRefs": [
+          "knowledge:sinsal_jangseong",
+          "taxonomy:twelve_sinsal_jangseong",
+          "shinsal:TWELVE_JANGSEONGSAL"
+        ]
+      },
+      "deferred": [
+        "현대 생활 적용의 경험과학 근거는 없다. 전통 상징과 조건부 편집 예시를 구분한다."
+      ]
+    }
+  },
+  {
+    "id": "ckr:source:a6a27c42f6bd298906a4",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "a6a27c42f6bd298906a4",
+    "sourceId": "foundation:shinsal_gwiin:taegeuk",
+    "sourceKind": "natal_research",
+    "auditRef": "source-catalog.json#a6a27c42f6bd298906a4",
+    "recordSha256": "85c4617d3c6b3b45cde4c619ae12e5250a4f17572a4236fb1e645407d155f679",
+    "sourceFileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": "source_checked",
+      "traditionalReviews": [],
+      "support": {
+        "calculation": "native",
+        "calculationRefs": [
+          "SHINSAL_RULES:TAEGEUK_GWIIN"
+        ],
+        "legacyRefs": [
+          "knowledge:nobleman_taegeuk",
+          "taxonomy:gwiin_taegeuk",
+          "shinsal:TAEGEUK_GWIIN"
+        ]
+      },
+      "deferred": [
+        "현대 생활 적용의 경험과학 근거는 없다. 전통 상징과 조건부 편집 예시를 구분한다."
+      ]
+    }
+  },
+  {
+    "id": "ckr:source:47fcf46be449c285af54",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "47fcf46be449c285af54",
+    "sourceId": "foundation:shinsal_gwiin:munchang",
+    "sourceKind": "natal_research",
+    "auditRef": "source-catalog.json#47fcf46be449c285af54",
+    "recordSha256": "a8aa6bd11349bac7c737a14db14649ca9468bcbee2a9318c1ed7bac401201691",
+    "sourceFileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": "repository_only",
+      "traditionalReviews": [
+        "source_checked"
+      ],
+      "support": {
+        "calculation": "native",
+        "calculationRefs": [
+          "SHINSAL_RULES:MUN_CHANG_GWIIN"
+        ],
+        "legacyRefs": [
+          "knowledge:nobleman_munchang",
+          "taxonomy:gwiin_munchang",
+          "shinsal:MUN_CHANG_GWIIN"
+        ]
+      },
+      "deferred": [
+        "명칭별 원본 전거·계보·적용 조건 대조를 보류한다. 내부 자료를 외부 검증 완료로 취급하지 않는다.",
+        "직업·재물·학업·연애·결혼·가족의 추가 해석은 출처 확보 전 보류한다.",
+        "문창의 전통 배치표와 현재 계산표 사이의 계보·전사 오자 대조. 계산은 변경하지 않는다."
+      ]
+    }
+  },
+  {
+    "id": "ckr:source:300c56cfaf4d8929142e",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "300c56cfaf4d8929142e",
+    "sourceId": "mbti:ENTJ:traits:workplace:direct_feedback_leader",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#300c56cfaf4d8929142e",
+    "recordSha256": "e1cfdae0aec0f7ce594fbab4f80a484dd0a2c494e36134f9be0c341cb04ba662",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ENTJ",
+      "area": "workplace"
+    }
+  },
+  {
+    "id": "ckr:source:1949199fcd8a2e08e71e",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "1949199fcd8a2e08e71e",
+    "sourceId": "mbti:ESFP:traits:career:experience_content_revenue",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#1949199fcd8a2e08e71e",
+    "recordSha256": "3d4133287fd090c31ce0c2ea4cf4a7c46d841220eb9cdb5b7dcf949475c13c5c",
+    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ESFP",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:6de6be185ee5f6ecec9b",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "6de6be185ee5f6ecec9b",
+    "sourceId": "mbti:ISTJ:traits:study:perfectionism_recovery_limit",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#6de6be185ee5f6ecec9b",
+    "recordSha256": "5fa0a324a0bbc2b9ec67f6a9f310ece01ec29e48cc7fa0fdb02432d9fb8bdf85",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "originalState": {
+      "sourceCoverage": "inferred",
+      "type": "ISTJ",
+      "area": "study"
+    }
+  },
+  {
+    "id": "ckr:source:120b3da73ae37f6baf51",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "120b3da73ae37f6baf51",
+    "sourceId": "mbti:ENTJ:traits:career:workaholic_drive",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#120b3da73ae37f6baf51",
+    "recordSha256": "ea70a10cfdd0d66d7beaae6aedd44cc4659e3e1ecba466e165bf5e4417334401",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "ENTJ",
+      "area": "career"
+    }
+  },
+  {
+    "id": "ckr:source:a4e17745da4f51f467aa",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "sourceVersion": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+    "key": "a4e17745da4f51f467aa",
+    "sourceId": "mbti:INTJ:traits:workplace:anti_politics_work_style",
+    "sourceKind": "mbti_trait",
+    "auditRef": "source-catalog.json#a4e17745da4f51f467aa",
+    "recordSha256": "c51c73b93437abd92c1ce601ccccb2c0901ccc340293c88eeb5135863c42f718",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "originalState": {
+      "sourceCoverage": "direct",
+      "type": "INTJ",
+      "area": "workplace"
+    }
+  }
+];

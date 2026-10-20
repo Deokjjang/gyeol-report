@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-semantic-conflict-candidates.json.gz",
+  "payloadHash": "9833fc042a21305643d35cef405c4825c064c93ba37ad96550dfcd2509e9708d",
+  "logicalJsonHash": "5b18371c481604a400d4b38cc086d57d16f8d9f1b0590d3765a425696eba4387",
+  "uncompressedBytes": 1435689
+}

@@ -1,0 +1,34 @@
+{
+  "typescript": {
+    "before": 0,
+    "after": 0,
+    "new": 0,
+    "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false"
+  },
+  "lint": "PASS / no warnings",
+  "build": "PASS",
+  "nodeBuild": "24.22.0",
+  "next": "16.2.4",
+  "buildWarningsObserved": 0,
+  "newTests": {
+    "passed": 125,
+    "failed": 0,
+    "pending": 0,
+    "failures": []
+  },
+  "knownRegressionTests": "5837 PASS / 46 identical FAIL",
+  "businessPartnerCombined": "382 PASS / 1 identical baseline FAIL",
+  "newRegressions": 0,
+  "diffCheck": "PASS: git diff --cached --check",
+  "fullRepositorySuiteClaimed": false,
+  "rawLogsExternal": true,
+  "logHashes": {
+    "new-tests-release-proof.json": "7a2664159e05885ac7e3eae3846602a47f70b7497d9759ecbc6ca91cff3d41e5",
+    "current-known.json": "672b0c2937e26dccb0cf87e017be2e39c5fd08a668399754331ed5859cf4e1b5",
+    "bp-base-default.json": "a556e2774c692380fb894de250b394b369033cf666a8ba8eb55a42ab1a12df99",
+    "bp-current-default.json": "36b657ed6730bc19c0deabcdf732c7c89a180eee90ef0549a05611de90dbe066",
+    "typescript-release-proof.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lint-release-proof.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build-release.log": "b06d64bdbbc21c5462bb9645ed743afa7c212d62bd6eaa5688b63e6d16ee2501"
+  }
+}

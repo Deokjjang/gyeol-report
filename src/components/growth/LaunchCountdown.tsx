@@ -45,7 +45,7 @@ export function LaunchCountdown({ local = false }: { local?: boolean }) {
       <time aria-hidden="true" dateTime={state === "SCHEDULED" ? view?.startsAt : view?.endsAt}>{launchCountdown(remaining)}</time>
       <span className={s.srOnly}>{state === "SCHEDULED" ? "10월 11일 00:00 이후 공개·운영 활성화 시 시작" : "11월 1일 00:00 종료"} KST 기준</span>
     </> : <small>책 선택과 유료 구매는 계속 이용할 수 있습니다.</small>}</div>
-    <details className={s.notice}><summary>기간·혜택 안내</summary><p>{LAUNCH_NOTICE}</p><p>자격과 남은 이벤트 예산을 서버에서 확인한 뒤 지급합니다. 카카오톡 채널 친구 추가는 필수 조건이 아닙니다.</p></details>
+    <details className={s.notice}><summary>기간·혜택 안내</summary><p>{LAUNCH_NOTICE}</p><p>가입 자격과 계정당 지급 한도를 서버에서 확인한 뒤 지급합니다. 카카오톡 채널 친구 추가는 필수 조건이 아닙니다.</p></details>
     {eligible ? <a className={s.entry} href={`${local ? "/dev" : ""}/campaign/${view.campaignSlug}`}>이벤트 참여 안내 →</a> : null}
   </section>;
 }

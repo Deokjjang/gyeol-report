@@ -1,0 +1,3982 @@
+[
+  {
+    "id": "bppr:material:CH07.P1:direction-disagreement",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "address": "CH07.P1",
+    "mode": "JOINT",
+    "readerQuestion": "방향·지출·계약·예상 손익·출자의 차이는 무엇인가?",
+    "coreMeaning": "방향 불일치는 목표·수요·제공 방식 중 무엇의 차이인가",
+    "roleContributions": [
+      {
+        "address": "CH07.P1.S1",
+        "originalRole": "불일치 또는 확인할 조건",
+        "knowledge": "A는 대안을 넓히고 B는 반복 제공 조건을 묻는 가상 조건",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S2",
+        "originalRole": "각자의 성향",
+        "knowledge": "서로의 우선 질문을 사업 반대나 무능으로 읽을 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S3",
+        "originalRole": "다른 이해",
+        "knowledge": "같은 목표라고 말해도 고객·범위·시간 가정이 다르면 결론이 어긋남",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S4",
+        "originalRole": "답답함의 이유",
+        "knowledge": "방향 불일치는 목표·수요·제공 방식 중 무엇의 차이인가 때문에 같은 제안도 다른 부담으로 받아들일 수 있음",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "0ba71def5f7dd66a4424",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "60699f5629066c047ea1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d8e6b5b9bc1c9e1094f2",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:STRATEGY:route-comparison",
+        "axis": "STRATEGY",
+        "definition": "목적에 이르는 여러 경로를 비교",
+        "condition": "목적·자원·기한이 명시된 상황",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "proposal",
+    "workFunctions": [
+      "direction-disagreement"
+    ],
+    "outputType": "direction-disagreement",
+    "positive": "가설을 좁혀 서로 다른 시험안을 비교할 여지",
+    "risk": "방향을 못 정한 채 외부 약속만 늘어남",
+    "factBomb": "같은 사업을 말하면서 서로 다른 고객을 보고 있을 수도 있다",
+    "twist": "방향 합의 전에 고객 문제의 차이를 찾을 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "A는 대안을 넓히고 B는 반복 제공 조건을 묻는 가상 조건",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "제안의 고객·목적·가정 설명",
+      "personB": "수행·지원·반복 조건 질문"
+    },
+    "counterexample": "법적·안전 문제는 대안 비교로 우회 불가",
+    "distinctFromOtherParagraphs": "방향 불일치는 목표·수요·제공 방식 중 무엇의 차이인가의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P1:direction-disagreement",
+          "sourceKeys": [
+            "0ba71def5f7dd66a4424",
+            "60699f5629066c047ea1",
+            "d8e6b5b9bc1c9e1094f2"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "INTP",
+              "sourceKey": "0ba71def5f7dd66a4424"
+            },
+            {
+              "owner": "B",
+              "type": "ESFJ",
+              "sourceKey": "60699f5629066c047ea1"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "INTP",
+          "sourceKey": "0ba71def5f7dd66a4424",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "B",
+          "type": "ESFJ",
+          "sourceKey": "60699f5629066c047ea1",
+          "domain": "WORK"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "A는 대안을 넓히고 B는 반복 제공 조건을 묻는 가상 조건",
+      "aChange": "제안의 고객·목적·가정 설명",
+      "bChange": "수행·지원·반복 조건 질문",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "direction-disagreement",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "검증 비용·기존 약속·전환 비용 미확인",
+    "additionalBusinessInfo": [
+      "customer_problem",
+      "direction_authority"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "product_direction",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "누가 제품 방향을 결정하고 누구 동의가 필요한지 확인"
+    },
+    "personAAction": "제안의 고객·목적·가정 설명",
+    "personBAction": "수행·지원·반복 조건 질문",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P1:unreviewed-spending",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "address": "CH07.P1",
+    "mode": "JOINT",
+    "readerQuestion": "방향·지출·계약·예상 손익·출자의 차이는 무엇인가?",
+    "coreMeaning": "미검토 지출과 자원 확보 제안은 다른 상태",
+    "roleContributions": [
+      {
+        "address": "CH07.P1.S1",
+        "originalRole": "불일치 또는 확인할 조건",
+        "knowledge": "가상: A가 필요한 자원이라고 생각해 지출을 서두름",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S2",
+        "originalRole": "각자의 성향",
+        "knowledge": "B는 제안이 아니라 이미 생긴 지급 의무로 받을 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S3",
+        "originalRole": "다른 이해",
+        "knowledge": "금액보다 지출 권한·시점·동의·되돌릴 범위가 빠진 것이 문제일 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S4",
+        "originalRole": "답답함의 이유",
+        "knowledge": "미검토 지출과 자원 확보 제안은 다른 상태 때문에 같은 제안도 다른 부담으로 받아들일 수 있음",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "66a9cd49cd16d86ca992",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "b64fa2920704301bf622",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "f64a1b254b8c7a0ebd5e",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:RESOURCE_SENSE:flow-account",
+        "axis": "RESOURCE_SENSE",
+        "definition": "자원 유입과 소모를 구분",
+        "condition": "실제 돈·시간 자료가 주어질 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "resources",
+    "workFunctions": [
+      "unreviewed-spending"
+    ],
+    "outputType": "unreviewed-spending",
+    "positive": "확정 전 의무를 구분할 여지",
+    "risk": "이미 쓴 비용을 이유로 동의를 강요",
+    "factBomb": "필요한 지출이라는 판단이 상대의 동의를 대신하지는 않는다",
+    "twist": "지출을 멈추는 것이 제안을 살릴 조건일 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: A가 필요한 자원이라고 생각해 지출을 서두름",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "목적·비용·미확정 상태 공개",
+      "personB": "동의·지급 의무·대안 질문"
+    },
+    "counterexample": "기존 의무·법률 책임을 임의 취소하지 않음",
+    "distinctFromOtherParagraphs": "미검토 지출과 자원 확보 제안은 다른 상태의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P1:unreviewed-spending",
+          "sourceKeys": [
+            "66a9cd49cd16d86ca992",
+            "b64fa2920704301bf622",
+            "f64a1b254b8c7a0ebd5e"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENTJ",
+              "sourceKey": "66a9cd49cd16d86ca992"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "b64fa2920704301bf622"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ENTJ",
+          "sourceKey": "66a9cd49cd16d86ca992",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "b64fa2920704301bf622",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: A가 필요한 자원이라고 생각해 지출을 서두름",
+      "aChange": "목적·비용·미확정 상태 공개",
+      "bChange": "동의·지급 의무·대안 질문",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "unreviewed-spending",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "확정 비용·취소 비용·추가 지급 구분",
+    "additionalBusinessInfo": [
+      "spending_authority",
+      "obligations",
+      "receipts"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "spending",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "실제 지출 권한·동의 기준·긴급 예외 확인"
+    },
+    "personAAction": "목적·비용·미확정 상태 공개",
+    "personBAction": "동의·지급 의무·대안 질문",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P1:external-contract-without-consent",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "address": "CH07.P1",
+    "mode": "JOINT",
+    "readerQuestion": "방향·지출·계약·예상 손익·출자의 차이는 무엇인가?",
+    "coreMeaning": "외부 계약과 내부 동의가 일치하지 않는 문제",
+    "roleContributions": [
+      {
+        "address": "CH07.P1.S1",
+        "originalRole": "불일치 또는 확인할 조건",
+        "knowledge": "가상: 고객에게 좋은 조건을 먼저 약속",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S2",
+        "originalRole": "각자의 성향",
+        "knowledge": "상대는 외부 신뢰를 깨지 않으려 미동의 조건도 떠안을 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S3",
+        "originalRole": "다른 이해",
+        "knowledge": "대외 의무와 내부 권한·수행 가능은 별도 확인 필요",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S4",
+        "originalRole": "답답함의 이유",
+        "knowledge": "외부 계약과 내부 동의가 일치하지 않는 문제 때문에 같은 제안도 다른 부담으로 받아들일 수 있음",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "e08ef500cdb091985a2e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "81c172dd5bbbb1920ae6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5b95f1a5a0504d2d0869",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:BOUNDARY:refusal",
+        "axis": "BOUNDARY",
+        "definition": "받지 않을 요청을 명시",
+        "condition": "거절의 안전과 실제 의무 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "contract",
+    "workFunctions": [
+      "external-contract-without-consent"
+    ],
+    "outputType": "external-contract-without-consent",
+    "positive": "더 큰 미동의 약속을 막을 여지",
+    "risk": "계약이 됐다는 이유로 협의 종료",
+    "factBomb": "이미 약속했다는 말은 미동의 작업의 설명이 되지 못한다",
+    "twist": "고객 약속을 지키려면 내부 빈칸을 먼저 드러내야 할 수도 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 고객에게 좋은 조건을 먼저 약속",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "약속 내용·시점·확정 주체 공개",
+      "personB": "미동의 수행·자원 조건 제시"
+    },
+    "counterexample": "법적 효력·무효·책임을 연구 DB가 판정하지 않음",
+    "distinctFromOtherParagraphs": "외부 계약과 내부 동의가 일치하지 않는 문제의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P1:external-contract-without-consent",
+          "sourceKeys": [
+            "e08ef500cdb091985a2e",
+            "81c172dd5bbbb1920ae6",
+            "5b95f1a5a0504d2d0869"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ESFJ",
+              "sourceKey": "e08ef500cdb091985a2e"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "81c172dd5bbbb1920ae6"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ESFJ",
+          "sourceKey": "e08ef500cdb091985a2e",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "81c172dd5bbbb1920ae6",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 고객에게 좋은 조건을 먼저 약속",
+      "aChange": "약속 내용·시점·확정 주체 공개",
+      "bChange": "미동의 수행·자원 조건 제시",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "external-contract-without-consent",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "계약 의무·수행 비용·변경 비용 별도",
+    "additionalBusinessInfo": [
+      "contract",
+      "agency",
+      "consent",
+      "scope"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "contract",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "대외 대리권·내부 합의·필요 전문 검토 확인"
+    },
+    "personAAction": "약속 내용·시점·확정 주체 공개",
+    "personBAction": "미동의 수행·자원 조건 제시",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P1:expected-return-actual-cost",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "address": "CH07.P1",
+    "mode": "JOINT",
+    "readerQuestion": "방향·지출·계약·예상 손익·출자의 차이는 무엇인가?",
+    "coreMeaning": "예상 수익과 실제 반복 비용의 기준 차이",
+    "roleContributions": [
+      {
+        "address": "CH07.P1.S1",
+        "originalRole": "불일치 또는 확인할 조건",
+        "knowledge": "가상: 한쪽은 판매 전망 다른 쪽은 운영 시간을 봄",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S2",
+        "originalRole": "각자의 성향",
+        "knowledge": "상대가 가능성을 몰라주거나 비용을 과장한다고 읽을 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S3",
+        "originalRole": "다른 이해",
+        "knowledge": "한 번의 제작비와 매번 드는 지원·유지 비용이 섞이면 손익 질문이 비어 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S4",
+        "originalRole": "답답함의 이유",
+        "knowledge": "예상 수익과 실제 반복 비용의 기준 차이 때문에 같은 제안도 다른 부담으로 받아들일 수 있음",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "1f7d00a7995b32bad2b3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "c0fbe9a4b01f0f51c46b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "52e29256ddea72aefa88",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:PRACTICALITY:use-test",
+        "axis": "PRACTICALITY",
+        "definition": "실제 사용 환경에서 작동 여부를 확인",
+        "condition": "사용 목적과 사용자가 확인될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "pricing",
+    "workFunctions": [
+      "expected-return-actual-cost"
+    ],
+    "outputType": "expected-return-actual-cost",
+    "positive": "동일 기간·범위의 가정을 비교할 여지",
+    "risk": "매출 전망을 이익으로 사용",
+    "factBomb": "많이 팔릴 것이라는 말에는 얼마가 남는지 아직 들어 있지 않다",
+    "twist": "낮은 매출의 안도 반복 비용이 낮으면 다른 검토 대상일 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 한쪽은 판매 전망 다른 쪽은 운영 시간을 봄",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "판매·가격 가정 공개",
+      "personB": "실제·추정·반복 비용 구분"
+    },
+    "counterexample": "수익률·적정 가격·투자 권유 금지",
+    "distinctFromOtherParagraphs": "예상 수익과 실제 반복 비용의 기준 차이의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P1:expected-return-actual-cost",
+          "sourceKeys": [
+            "1f7d00a7995b32bad2b3",
+            "c0fbe9a4b01f0f51c46b",
+            "52e29256ddea72aefa88"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "INTP",
+              "sourceKey": "1f7d00a7995b32bad2b3"
+            },
+            {
+              "owner": "B",
+              "type": "ISTP",
+              "sourceKey": "c0fbe9a4b01f0f51c46b"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "INTP",
+          "sourceKey": "1f7d00a7995b32bad2b3",
+          "domain": "INVESTMENT"
+        },
+        {
+          "owner": "B",
+          "type": "ISTP",
+          "sourceKey": "c0fbe9a4b01f0f51c46b",
+          "domain": "THINKING"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 한쪽은 판매 전망 다른 쪽은 운영 시간을 봄",
+      "aChange": "판매·가격 가정 공개",
+      "bChange": "실제·추정·반복 비용 구분",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "expected-return-actual-cost",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "고정·변동·유지·노동·회수 비용 구분",
+    "additionalBusinessInfo": [
+      "revenue_assumptions",
+      "actual_costs",
+      "period"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "price",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "가격·제공 범위 결정권과 확인 자료 정함"
+    },
+    "personAAction": "판매·가격 가정 공개",
+    "personBAction": "실제·추정·반복 비용 구분",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P1:capital-expectation-difference",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "address": "CH07.P1",
+    "mode": "JOINT",
+    "readerQuestion": "방향·지출·계약·예상 손익·출자의 차이는 무엇인가?",
+    "coreMeaning": "투입 방식과 기대 권리의 차이",
+    "roleContributions": [
+      {
+        "address": "CH07.P1.S1",
+        "originalRole": "불일치 또는 확인할 조건",
+        "knowledge": "가상: 현금과 노무를 내면서 기대한 권리가 다름",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S2",
+        "originalRole": "각자의 성향",
+        "knowledge": "상대는 도와준 것이라거나 지분 약속이라고 다르게 이해할 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S3",
+        "originalRole": "다른 이해",
+        "knowledge": "제공·출자·대여·보수·배분은 실제 합의 전 동일하지 않음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P1.S4",
+        "originalRole": "답답함의 이유",
+        "knowledge": "투입 방식과 기대 권리의 차이 때문에 같은 제안도 다른 부담으로 받아들일 수 있음",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "66a9cd49cd16d86ca992",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "f30fa018d453a0318547",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "42cd2d081510f52bb34d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:RESOURCE_SENSE:flow-account",
+        "axis": "RESOURCE_SENSE",
+        "definition": "자원 유입과 소모를 구분",
+        "condition": "실제 돈·시간 자료가 주어질 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "resources",
+    "workFunctions": [
+      "capital-expectation-difference"
+    ],
+    "outputType": "capital-expectation-difference",
+    "positive": "기여 종류를 정확히 확인할 여지",
+    "risk": "과거 도움을 근거로 새 의무 요구",
+    "factBomb": "기여했다는 사실과 어떤 권리를 합의했는지는 따로 확인해야 한다",
+    "twist": "기여를 인정하면서 권리 주장은 미확정으로 둘 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 현금과 노무를 내면서 기대한 권리가 다름",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "투입 내역·당시 합의 제시",
+      "personB": "기대 대가·추가 의무 확인"
+    },
+    "counterexample": "지분·출자액·원금 반환·손실 능력 추정 금지",
+    "distinctFromOtherParagraphs": "투입 방식과 기대 권리의 차이의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P1:capital-expectation-difference",
+          "sourceKeys": [
+            "66a9cd49cd16d86ca992",
+            "f30fa018d453a0318547",
+            "42cd2d081510f52bb34d"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENTJ",
+              "sourceKey": "66a9cd49cd16d86ca992"
+            },
+            {
+              "owner": "B",
+              "type": "ISFP",
+              "sourceKey": "f30fa018d453a0318547"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ENTJ",
+          "sourceKey": "66a9cd49cd16d86ca992",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ISFP",
+          "sourceKey": "f30fa018d453a0318547",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 현금과 노무를 내면서 기대한 권리가 다름",
+      "aChange": "투입 내역·당시 합의 제시",
+      "bChange": "기대 대가·추가 의무 확인",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "capital-expectation-difference",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "투입액·소유권·반환·손실 감당은 별개",
+    "additionalBusinessInfo": [
+      "contribution_form",
+      "equity",
+      "agreement"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "investment",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "구조·계약에 따른 권한·전문 검토 필요 확인"
+    },
+    "personAAction": "투입 내역·당시 합의 제시",
+    "personBAction": "기대 대가·추가 의무 확인",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P2:credit-imbalance",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "address": "CH07.P2",
+    "mode": "JOINT",
+    "readerQuestion": "기여·작업·손실·자금 정보·변경의 공백은 무엇인가?",
+    "coreMeaning": "눈에 띄는 성과와 보이지 않는 기여의 인정 차이",
+    "roleContributions": [
+      {
+        "address": "CH07.P2.S1",
+        "originalRole": "실제 충돌 또는 부재",
+        "knowledge": "가상: 수주가 강조되고 유지·수정 작업은 빠짐",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S2",
+        "originalRole": "쉬운 의미",
+        "knowledge": "칭찬을 못 받는 쪽은 인정 누락을 대가 누락으로 받을 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S3",
+        "originalRole": "다른 반응",
+        "knowledge": "기여 인정·노동 대가·손익 배분을 한마디 감사로 합칠 수 없음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S4",
+        "originalRole": "긍정적 여지",
+        "knowledge": "누락 기여를 확인할 여지",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "fd240bf6e5740f4fe5d6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "b64fa2920704301bf622",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "51ae3a3317baa66901c0",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:role-fulfilment",
+        "axis": "DUTY",
+        "definition": "합의한 담당을 이행",
+        "condition": "담당·권한·기한이 확인될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "settlement",
+    "workFunctions": [
+      "credit-imbalance"
+    ],
+    "outputType": "credit-imbalance",
+    "positive": "누락 기여를 확인할 여지",
+    "risk": "인지도만으로 모든 기여의 가치를 정함",
+    "factBomb": "소개한 사람만 없었어도 못 했지만 마무리한 사람도 없었으면 못 했다",
+    "twist": "다른 기여를 같은 단위로 줄이지 않고 인정할 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 수주가 강조되고 유지·수정 작업은 빠짐",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "확인 가능한 기여·부담 제시",
+      "personB": "인정·대가·배분 차이 질문"
+    },
+    "counterexample": "비율·시가·법적 보상액 자동 결정 금지",
+    "distinctFromOtherParagraphs": "눈에 띄는 성과와 보이지 않는 기여의 인정 차이의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P2:credit-imbalance",
+          "sourceKeys": [
+            "fd240bf6e5740f4fe5d6",
+            "b64fa2920704301bf622",
+            "51ae3a3317baa66901c0"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENFJ",
+              "sourceKey": "fd240bf6e5740f4fe5d6"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "b64fa2920704301bf622"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ENFJ",
+          "sourceKey": "fd240bf6e5740f4fe5d6",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "b64fa2920704301bf622",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 수주가 강조되고 유지·수정 작업은 빠짐",
+      "aChange": "확인 가능한 기여·부담 제시",
+      "bChange": "인정·대가·배분 차이 질문",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "credit-imbalance",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "보수·비용·분배·지분은 구분",
+    "additionalBusinessInfo": [
+      "contributions",
+      "recognition",
+      "distribution"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "compensation",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "대가·배분 변경에 필요한 동의·검토 확인"
+    },
+    "personAAction": "확인 가능한 기여·부담 제시",
+    "personBAction": "인정·대가·배분 차이 질문",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P2:unclear-work-responsibility",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "address": "CH07.P2",
+    "mode": "JOINT",
+    "readerQuestion": "기여·작업·손실·자금 정보·변경의 공백은 무엇인가?",
+    "coreMeaning": "작업을 말했지만 완료 책임이 없는 상태",
+    "roleContributions": [
+      {
+        "address": "CH07.P2.S1",
+        "originalRole": "실제 충돌 또는 부재",
+        "knowledge": "가상: 아이디어·수주·제작·고객 응답의 경계가 비어 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S2",
+        "originalRole": "쉬운 의미",
+        "knowledge": "상대가 당연히 마무리한다고 서로 생각할 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S3",
+        "originalRole": "다른 반응",
+        "knowledge": "누가 할지뿐 아니라 산출·검토·외부 약속을 확인해야 함",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S4",
+        "originalRole": "긍정적 여지",
+        "knowledge": "공백을 작은 작업 단위로 드러낼 여지",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "0ba71def5f7dd66a4424",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "60699f5629066c047ea1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5b95f1a5a0504d2d0869",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:BOUNDARY:refusal",
+        "axis": "BOUNDARY",
+        "definition": "받지 않을 요청을 명시",
+        "condition": "거절의 안전과 실제 의무 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "execution",
+    "workFunctions": [
+      "unclear-work-responsibility"
+    ],
+    "outputType": "unclear-work-responsibility",
+    "positive": "공백을 작은 작업 단위로 드러낼 여지",
+    "risk": "누락 후 성향·책임감 탓",
+    "factBomb": "같이 한다는 말에는 누가 끝내는지가 아직 없을 수 있다",
+    "twist": "담당을 좁히면 공동 작업의 빈칸이 더 잘 보일 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 아이디어·수주·제작·고객 응답의 경계가 비어 있음",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "제안·완료 조건 설명",
+      "personB": "수행·인계·검토 질문"
+    },
+    "counterexample": "실제 직무·역량을 유형으로 배정 금지",
+    "distinctFromOtherParagraphs": "작업을 말했지만 완료 책임이 없는 상태의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P2:unclear-work-responsibility",
+          "sourceKeys": [
+            "0ba71def5f7dd66a4424",
+            "60699f5629066c047ea1",
+            "5b95f1a5a0504d2d0869"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "INTP",
+              "sourceKey": "0ba71def5f7dd66a4424"
+            },
+            {
+              "owner": "B",
+              "type": "ESFJ",
+              "sourceKey": "60699f5629066c047ea1"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "INTP",
+          "sourceKey": "0ba71def5f7dd66a4424",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "B",
+          "type": "ESFJ",
+          "sourceKey": "60699f5629066c047ea1",
+          "domain": "WORK"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 아이디어·수주·제작·고객 응답의 경계가 비어 있음",
+      "aChange": "제안·완료 조건 설명",
+      "bChange": "수행·인계·검토 질문",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "unclear-work-responsibility",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "누락·중복·추가 인력·납기 비용 확인",
+    "additionalBusinessInfo": [
+      "task_scope",
+      "owners",
+      "acceptance"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "schedule",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "업무 배분·검토·고객 확정 권한 확인"
+    },
+    "personAAction": "제안·완료 조건 설명",
+    "personBAction": "수행·인계·검토 질문",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P2:unclear-loss-allocation",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "address": "CH07.P2",
+    "mode": "JOINT",
+    "readerQuestion": "기여·작업·손실·자금 정보·변경의 공백은 무엇인가?",
+    "coreMeaning": "잘될 때의 배분과 손실 때의 부담은 다른 합의",
+    "roleContributions": [
+      {
+        "address": "CH07.P2.S1",
+        "originalRole": "실제 충돌 또는 부재",
+        "knowledge": "가상: 이익 기대는 논의했지만 손실 부담은 미정",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S2",
+        "originalRole": "쉬운 의미",
+        "knowledge": "상대는 같은 책임 또는 출자 비례라고 다르게 추측할 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S3",
+        "originalRole": "다른 반응",
+        "knowledge": "실제 법적 구조·약정·행위에 따라 달라질 조건을 모름",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S4",
+        "originalRole": "긍정적 여지",
+        "knowledge": "추가 위험 전에 미확정을 드러낼 여지",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "81c172dd5bbbb1920ae6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "1f7d00a7995b32bad2b3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "51ae3a3317baa66901c0",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:role-fulfilment",
+        "axis": "DUTY",
+        "definition": "합의한 담당을 이행",
+        "condition": "담당·권한·기한이 확인될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "settlement",
+    "workFunctions": [
+      "unclear-loss-allocation"
+    ],
+    "outputType": "unclear-loss-allocation",
+    "positive": "추가 위험 전에 미확정을 드러낼 여지",
+    "risk": "관계를 이유로 손실 분담 강요",
+    "factBomb": "이익을 같이 기대했다고 손실 부담까지 합의한 것은 아니다",
+    "twist": "손실 질문을 일찍 하는 것이 공동 기회를 지킬 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 이익 기대는 논의했지만 손실 부담은 미정",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "기존 기대·추가 위험 공개",
+      "personB": "미정 손실·추가 의무 확인"
+    },
+    "counterexample": "과반·동일 비율·원금 반환 보장 금지",
+    "distinctFromOtherParagraphs": "잘될 때의 배분과 손실 때의 부담은 다른 합의의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P2:unclear-loss-allocation",
+          "sourceKeys": [
+            "81c172dd5bbbb1920ae6",
+            "1f7d00a7995b32bad2b3",
+            "51ae3a3317baa66901c0"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ISTJ",
+              "sourceKey": "81c172dd5bbbb1920ae6"
+            },
+            {
+              "owner": "B",
+              "type": "INTP",
+              "sourceKey": "1f7d00a7995b32bad2b3"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "81c172dd5bbbb1920ae6",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "INTP",
+          "sourceKey": "1f7d00a7995b32bad2b3",
+          "domain": "INVESTMENT"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 이익 기대는 논의했지만 손실 부담은 미정",
+      "aChange": "기존 기대·추가 위험 공개",
+      "bChange": "미정 손실·추가 의무 확인",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "unclear-loss-allocation",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "실제 손실·부담 주체·추가 의무 미확인",
+    "additionalBusinessInfo": [
+      "loss_terms",
+      "agreement",
+      "risk_consent"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "loss_limit",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "실제 구조·약정·법률 검토의 결정 범위 확인"
+    },
+    "personAAction": "기존 기대·추가 위험 공개",
+    "personBAction": "미정 손실·추가 의무 확인",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P2:missing-cash-information",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "address": "CH07.P2",
+    "mode": "JOINT",
+    "readerQuestion": "기여·작업·손실·자금 정보·변경의 공백은 무엇인가?",
+    "coreMeaning": "입금·지급 정보를 한쪽만 아는 상태",
+    "roleContributions": [
+      {
+        "address": "CH07.P2.S1",
+        "originalRole": "실제 충돌 또는 부재",
+        "knowledge": "가상: 매출은 공유되지만 청구·회수·지급일은 불명",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S2",
+        "originalRole": "쉬운 의미",
+        "knowledge": "상대는 자료 요청을 불신 또는 자금 통제로 읽을 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S3",
+        "originalRole": "다른 반응",
+        "knowledge": "실제 접근권·비밀 정보·공동 의무를 구분해야 함",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S4",
+        "originalRole": "긍정적 여지",
+        "knowledge": "지급 시점의 빈칸을 찾을 여지",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "66a9cd49cd16d86ca992",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "c7fee219fcf7a5b642fd",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "24c9a0e7e3707d4f1f00",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:PRECISION:error-detection",
+        "axis": "PRECISION",
+        "definition": "작은 오류를 기준에 비추어 발견",
+        "condition": "검증 기준이 합의된 상황",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "collection",
+    "workFunctions": [
+      "missing-cash-information"
+    ],
+    "outputType": "missing-cash-information",
+    "positive": "지급 시점의 빈칸을 찾을 여지",
+    "risk": "정보 비공개를 성향으로 정상화",
+    "factBomb": "매출 숫자를 공유했다고 돈이 언제 들어오는지 공유한 것은 아니다",
+    "twist": "필요한 범위의 자료 공개가 오해보다 결정을 줄일 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 매출은 공유되지만 청구·회수·지급일은 불명",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "알고 있는 가정·접근 범위 제시",
+      "personB": "필요 지급·회수 정보 요청"
+    },
+    "counterexample": "타인 계좌 무단 접근·실제 잔고 추정 금지",
+    "distinctFromOtherParagraphs": "입금·지급 정보를 한쪽만 아는 상태의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P2:missing-cash-information",
+          "sourceKeys": [
+            "66a9cd49cd16d86ca992",
+            "c7fee219fcf7a5b642fd",
+            "24c9a0e7e3707d4f1f00"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENTJ",
+              "sourceKey": "66a9cd49cd16d86ca992"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "c7fee219fcf7a5b642fd"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ENTJ",
+          "sourceKey": "66a9cd49cd16d86ca992",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "c7fee219fcf7a5b642fd",
+          "domain": "THINKING"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 매출은 공유되지만 청구·회수·지급일은 불명",
+      "aChange": "알고 있는 가정·접근 범위 제시",
+      "bChange": "필요 지급·회수 정보 요청",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "missing-cash-information",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "계약·매출·현금 유입·지출 시점 별도",
+    "additionalBusinessInfo": [
+      "cash_information",
+      "access_rights",
+      "obligations"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "spending",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "정보 접근권·공유 권한·기밀 경계 확인"
+    },
+    "personAAction": "알고 있는 가정·접근 범위 제시",
+    "personBAction": "필요 지급·회수 정보 요청",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P2:contract-change",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "address": "CH07.P2",
+    "mode": "JOINT",
+    "readerQuestion": "기여·작업·손실·자금 정보·변경의 공백은 무엇인가?",
+    "coreMeaning": "조건 변경이 상대의 비용에 반영되지 않는 문제",
+    "roleContributions": [
+      {
+        "address": "CH07.P2.S1",
+        "originalRole": "실제 충돌 또는 부재",
+        "knowledge": "가상: 수정·보증·납기 조건만 바뀌고 내부 합의는 그대로",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S2",
+        "originalRole": "쉬운 의미",
+        "knowledge": "상대는 이전 동의가 새 조건에도 유효하다고 다르게 볼 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S3",
+        "originalRole": "다른 반응",
+        "knowledge": "기존 범위와 변경분을 분리해야 비용·권한 질문이 생김",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P2.S4",
+        "originalRole": "긍정적 여지",
+        "knowledge": "변경의 영향 범위를 좁힐 여지",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "e08ef500cdb091985a2e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "f30fa018d453a0318547",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5b95f1a5a0504d2d0869",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:BOUNDARY:refusal",
+        "axis": "BOUNDARY",
+        "definition": "받지 않을 요청을 명시",
+        "condition": "거절의 안전과 실제 의무 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "contract",
+    "workFunctions": [
+      "contract-change"
+    ],
+    "outputType": "contract-change",
+    "positive": "변경의 영향 범위를 좁힐 여지",
+    "risk": "사소한 변경이라며 추가 의무를 숨김",
+    "factBomb": "작아 보이는 문구 변경도 상대의 작업은 크게 바꿀 수 있다",
+    "twist": "변경을 보류하면 원래 약속을 더 정확히 확인할 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 수정·보증·납기 조건만 바뀌고 내부 합의는 그대로",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "변경 요청·외부 상태 공개",
+      "personB": "작업·가격·기한 영향 제시"
+    },
+    "counterexample": "계약 효력·일방 해지 권리 판정 금지",
+    "distinctFromOtherParagraphs": "조건 변경이 상대의 비용에 반영되지 않는 문제의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P2:contract-change",
+          "sourceKeys": [
+            "e08ef500cdb091985a2e",
+            "f30fa018d453a0318547",
+            "5b95f1a5a0504d2d0869"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ESFJ",
+              "sourceKey": "e08ef500cdb091985a2e"
+            },
+            {
+              "owner": "B",
+              "type": "ISFP",
+              "sourceKey": "f30fa018d453a0318547"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ESFJ",
+          "sourceKey": "e08ef500cdb091985a2e",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "B",
+          "type": "ISFP",
+          "sourceKey": "f30fa018d453a0318547",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 수정·보증·납기 조건만 바뀌고 내부 합의는 그대로",
+      "aChange": "변경 요청·외부 상태 공개",
+      "bChange": "작업·가격·기한 영향 제시",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "contract-change",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "추가 작업·보증·지체·변경 비용 별도",
+    "additionalBusinessInfo": [
+      "change_terms",
+      "consent",
+      "customer_status"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "contract",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "계약 변경·고객 약속 권한·전문 검토 확인"
+    },
+    "personAAction": "변경 요청·외부 상태 공개",
+    "personBAction": "작업·가격·기한 영향 제시",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P3:customer-promise-execution",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "address": "CH07.P3",
+    "mode": "JOINT",
+    "readerQuestion": "고객 약속·IP·정보·교착·신뢰는 어떤 다른 문제인가?",
+    "coreMeaning": "고객에게 한 약속과 실제 수행 조건의 차이",
+    "roleContributions": [
+      {
+        "address": "CH07.P3.S1",
+        "originalRole": "반복 문제",
+        "knowledge": "가상: 추가 수정·응답·납기가 실행 용량보다 큼",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S2",
+        "originalRole": "방향별 원인",
+        "knowledge": "제안자는 친절로 수행자는 무제한 요구로 받을 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S3",
+        "originalRole": "악화 장면",
+        "knowledge": "제안 의도와 상대의 미동의 추가 노동은 별개",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S4",
+        "originalRole": "직설적 결론",
+        "knowledge": "고객에게 친절한 말이 상대에게 무료 노동이 될 수 있다",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "e08ef500cdb091985a2e",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "f30fa018d453a0318547",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5b95f1a5a0504d2d0869",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:BOUNDARY:refusal",
+        "axis": "BOUNDARY",
+        "definition": "받지 않을 요청을 명시",
+        "condition": "거절의 안전과 실제 의무 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "delivery",
+    "workFunctions": [
+      "customer-promise-execution"
+    ],
+    "outputType": "customer-promise-execution",
+    "positive": "감당할 제공 조건을 다시 확인할 여지",
+    "risk": "무리한 약속을 열정으로 정당화",
+    "factBomb": "고객에게 친절한 말이 상대에게 무료 노동이 될 수 있다",
+    "twist": "추가 약속을 줄여 기존 납품을 지킬 수도 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 추가 수정·응답·납기가 실행 용량보다 큼",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "실제 약속·고객 상태 제시",
+      "personB": "수행·추가·불가 범위 제시"
+    },
+    "counterexample": "실제 손해·고객 피해 단정 금지",
+    "distinctFromOtherParagraphs": "고객에게 한 약속과 실제 수행 조건의 차이의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P3:customer-promise-execution",
+          "sourceKeys": [
+            "e08ef500cdb091985a2e",
+            "f30fa018d453a0318547",
+            "5b95f1a5a0504d2d0869"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ESFJ",
+              "sourceKey": "e08ef500cdb091985a2e"
+            },
+            {
+              "owner": "B",
+              "type": "ISFP",
+              "sourceKey": "f30fa018d453a0318547"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ESFJ",
+          "sourceKey": "e08ef500cdb091985a2e",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "B",
+          "type": "ISFP",
+          "sourceKey": "f30fa018d453a0318547",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 추가 수정·응답·납기가 실행 용량보다 큼",
+      "aChange": "실제 약속·고객 상태 제시",
+      "bChange": "수행·추가·불가 범위 제시",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "customer-promise-execution",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "추가 노동·외주·지체 비용 확인",
+    "additionalBusinessInfo": [
+      "promise_scope",
+      "capacity",
+      "change_authority"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "customer_promise",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "고객 재협의·범위 변경 권한 확인"
+    },
+    "personAAction": "실제 약속·고객 상태 제시",
+    "personBAction": "수행·추가·불가 범위 제시",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P3:ip-output-use",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "address": "CH07.P3",
+    "mode": "JOINT",
+    "readerQuestion": "고객 약속·IP·정보·교착·신뢰는 어떤 다른 문제인가?",
+    "coreMeaning": "같이 만든 결과의 소유·사용·공개 범위 차이",
+    "roleContributions": [
+      {
+        "address": "CH07.P3.S1",
+        "originalRole": "반복 문제",
+        "knowledge": "가상: 한쪽이 작업물을 다른 제안·포트폴리오에 사용",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S2",
+        "originalRole": "방향별 원인",
+        "knowledge": "상대는 공동 기여가 무제한 사용 허락은 아니라고 볼 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S3",
+        "originalRole": "악화 장면",
+        "knowledge": "기존 자산·새 결과·제3자 자료·기밀을 나눠야 함",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S4",
+        "originalRole": "직설적 결론",
+        "knowledge": "같이 만들었다는 말만으로 모든 사용에 동의한 것은 아니다",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "0ba71def5f7dd66a4424",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "81c172dd5bbbb1920ae6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "5b95f1a5a0504d2d0869",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:BOUNDARY:refusal",
+        "axis": "BOUNDARY",
+        "definition": "받지 않을 요청을 명시",
+        "condition": "거절의 안전과 실제 의무 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "contract",
+    "workFunctions": [
+      "ip-output-use"
+    ],
+    "outputType": "ip-output-use",
+    "positive": "사용 범위를 확인할 여지",
+    "risk": "아이디어 제공만으로 모든 IP 소유 주장",
+    "factBomb": "같이 만들었다는 말만으로 모든 사용에 동의한 것은 아니다",
+    "twist": "소유와 사용을 나누면 허용할 범위를 찾을 수도 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 한쪽이 작업물을 다른 제안·포트폴리오에 사용",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "사용 목적·대상·공개 상태 설명",
+      "personB": "기존 자산·제3자·기밀 조건 질문"
+    },
+    "counterexample": "저작권·공동 소유·법적 사용권 자동 판정 금지",
+    "distinctFromOtherParagraphs": "같이 만든 결과의 소유·사용·공개 범위 차이의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P3:ip-output-use",
+          "sourceKeys": [
+            "0ba71def5f7dd66a4424",
+            "81c172dd5bbbb1920ae6",
+            "5b95f1a5a0504d2d0869"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "INTP",
+              "sourceKey": "0ba71def5f7dd66a4424"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "81c172dd5bbbb1920ae6"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "INTP",
+          "sourceKey": "0ba71def5f7dd66a4424",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "81c172dd5bbbb1920ae6",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 한쪽이 작업물을 다른 제안·포트폴리오에 사용",
+      "aChange": "사용 목적·대상·공개 상태 설명",
+      "bChange": "기존 자산·제3자·기밀 조건 질문",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "ip-output-use",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "라이선스·재작업·공개·회수 비용 미확인",
+    "additionalBusinessInfo": [
+      "ip_terms",
+      "permissions",
+      "confidentiality"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "ip_use",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "실제 권리자·허락·계약·전문 검토 확인"
+    },
+    "personAAction": "사용 목적·대상·공개 상태 설명",
+    "personBAction": "기존 자산·제3자·기밀 조건 질문",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P3:information-not-shared",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "address": "CH07.P3",
+    "mode": "JOINT",
+    "readerQuestion": "고객 약속·IP·정보·교착·신뢰는 어떤 다른 문제인가?",
+    "coreMeaning": "사업 판단에 필요한 정보의 공유 공백",
+    "roleContributions": [
+      {
+        "address": "CH07.P3.S1",
+        "originalRole": "반복 문제",
+        "knowledge": "가상: 고객 변경·작업 지연·계약 조건 중 일부만 전달",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S2",
+        "originalRole": "방향별 원인",
+        "knowledge": "상대는 통제·무관심·신뢰 부족으로 읽을 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S3",
+        "originalRole": "악화 장면",
+        "knowledge": "모든 정보 공개가 아니라 필요한 결정과 공유 권한을 특정",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S4",
+        "originalRole": "직설적 결론",
+        "knowledge": "같이 책임질 결정이라면 같은 핵심 정보를 볼 수 있는지 먼저 물어야 한다",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "81c172dd5bbbb1920ae6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "60699f5629066c047ea1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d4af2f38a725dac45d6e",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DECISION_STYLE:closure-criteria",
+        "axis": "DECISION_STYLE",
+        "definition": "어떤 정보면 결론을 닫을지 정의",
+        "condition": "결정의 영향과 정보 범위가 명시될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "execution",
+    "workFunctions": [
+      "information-not-shared"
+    ],
+    "outputType": "information-not-shared",
+    "positive": "같은 조건으로 결정할 여지",
+    "risk": "기밀을 이유로 필요한 정보까지 무조건 차단",
+    "factBomb": "같이 책임질 결정이라면 같은 핵심 정보를 볼 수 있는지 먼저 물어야 한다",
+    "twist": "공유를 늘리기보다 필요한 정보를 좁힐 수도 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 고객 변경·작업 지연·계약 조건 중 일부만 전달",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "변경·자료 상태·접근 한계 설명",
+      "personB": "결정에 필요한 항목 질문"
+    },
+    "counterexample": "무단 유출·계정 공유 권유 금지",
+    "distinctFromOtherParagraphs": "사업 판단에 필요한 정보의 공유 공백의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P3:information-not-shared",
+          "sourceKeys": [
+            "81c172dd5bbbb1920ae6",
+            "60699f5629066c047ea1",
+            "d4af2f38a725dac45d6e"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ISTJ",
+              "sourceKey": "81c172dd5bbbb1920ae6"
+            },
+            {
+              "owner": "B",
+              "type": "ESFJ",
+              "sourceKey": "60699f5629066c047ea1"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "81c172dd5bbbb1920ae6",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ESFJ",
+          "sourceKey": "60699f5629066c047ea1",
+          "domain": "WORK"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 고객 변경·작업 지연·계약 조건 중 일부만 전달",
+      "aChange": "변경·자료 상태·접근 한계 설명",
+      "bChange": "결정에 필요한 항목 질문",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "information-not-shared",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "정보 지연·재작업·고객 약속 비용 확인",
+    "additionalBusinessInfo": [
+      "decision_info",
+      "access",
+      "confidentiality"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "product_direction",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "접근·공유·고객 비밀 권한 확인"
+    },
+    "personAAction": "변경·자료 상태·접근 한계 설명",
+    "personBAction": "결정에 필요한 항목 질문",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P3:deadlock",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "address": "CH07.P3",
+    "mode": "JOINT",
+    "readerQuestion": "고객 약속·IP·정보·교착·신뢰는 어떤 다른 문제인가?",
+    "coreMeaning": "동의가 안 되는 결정의 처리 규칙 부재",
+    "roleContributions": [
+      {
+        "address": "CH07.P3.S1",
+        "originalRole": "반복 문제",
+        "knowledge": "가상: 규모·가격·지출 결론을 못 정한 채 반복 논의",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S2",
+        "originalRole": "방향별 원인",
+        "knowledge": "상대는 검토를 방해 또는 일방 진행 압박으로 받을 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S3",
+        "originalRole": "악화 장면",
+        "knowledge": "누가 최종 결정하는지와 보류·중재·중단은 별도 질문",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S4",
+        "originalRole": "직설적 결론",
+        "knowledge": "둘이 있다는 사실만으로 동률 처리 규칙이 생기지는 않는다",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "0ba71def5f7dd66a4424",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "b64fa2920704301bf622",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d4af2f38a725dac45d6e",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DECISION_STYLE:closure-criteria",
+        "axis": "DECISION_STYLE",
+        "definition": "어떤 정보면 결론을 닫을지 정의",
+        "condition": "결정의 영향과 정보 범위가 명시될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "continuation",
+    "workFunctions": [
+      "deadlock"
+    ],
+    "outputType": "deadlock",
+    "positive": "교착을 작은 결정 단위로 좁힐 여지",
+    "risk": "대칭 A/B를 자동 동일 의결권으로 취급",
+    "factBomb": "둘이 있다는 사실만으로 동률 처리 규칙이 생기지는 않는다",
+    "twist": "합의가 안 된 부분을 보류하면 합의 가능한 부분이 보일 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 규모·가격·지출 결론을 못 정한 채 반복 논의",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "결정 목적·가정·미동의 공개",
+      "personB": "필수 조건·대안·보류 이유 제시"
+    },
+    "counterexample": "캐릭터·유형으로 최종 결정권 부여 금지",
+    "distinctFromOtherParagraphs": "동의가 안 되는 결정의 처리 규칙 부재의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P3:deadlock",
+          "sourceKeys": [
+            "0ba71def5f7dd66a4424",
+            "b64fa2920704301bf622",
+            "d4af2f38a725dac45d6e"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "INTP",
+              "sourceKey": "0ba71def5f7dd66a4424"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "b64fa2920704301bf622"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "INTP",
+          "sourceKey": "0ba71def5f7dd66a4424",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "b64fa2920704301bf622",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 규모·가격·지출 결론을 못 정한 채 반복 논의",
+      "aChange": "결정 목적·가정·미동의 공개",
+      "bChange": "필수 조건·대안·보류 이유 제시",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "deadlock",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "논의 시간·기회비용·외부 의무 미확인",
+    "additionalBusinessInfo": [
+      "decision_rights",
+      "deadlock_rule",
+      "deadline"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "decision_hold",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "계약상 결정·교착·외부 검토·중단 절차 확인"
+    },
+    "personAAction": "결정 목적·가정·미동의 공개",
+    "personBAction": "필수 조건·대안·보류 이유 제시",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P3:trust-verification",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "address": "CH07.P3",
+    "mode": "JOINT",
+    "readerQuestion": "고객 약속·IP·정보·교착·신뢰는 어떤 다른 문제인가?",
+    "coreMeaning": "신뢰 확인과 조건 검토를 배신으로 읽는 문제",
+    "roleContributions": [
+      {
+        "address": "CH07.P3.S1",
+        "originalRole": "반복 문제",
+        "knowledge": "가상: 비용 자료·계약을 묻자 관계가 의심받는다고 느낌",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S2",
+        "originalRole": "방향별 원인",
+        "knowledge": "질문자는 조건을 상대는 진심을 검증받는다고 볼 수 있음",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S3",
+        "originalRole": "악화 장면",
+        "knowledge": "호감·실제 동의·정보 검증은 서로 다른 질문",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P3.S4",
+        "originalRole": "직설적 결론",
+        "knowledge": "상대를 믿어도 내가 동의할 조건은 확인할 수 있어야 한다",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "6256f57a0be573a6725a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "b64fa2920704301bf622",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "464de610689b7074363e",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:SOCIAL_ATTUNEMENT:cue-observation",
+        "axis": "SOCIAL_ATTUNEMENT",
+        "definition": "말·표정·참여의 변화를 관찰",
+        "condition": "추측과 관찰을 명확히 분리",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "contract",
+    "workFunctions": [
+      "trust-verification"
+    ],
+    "outputType": "trust-verification",
+    "positive": "거절 가능한 동의를 확인할 여지",
+    "risk": "믿으면 묻지 말라는 압박",
+    "factBomb": "상대를 믿어도 내가 동의할 조건은 확인할 수 있어야 한다",
+    "twist": "검증 절차가 사람의 진심을 판정하지 않을 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 비용 자료·계약을 묻자 관계가 의심받는다고 느낌",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "의도·조건·미확정 설명",
+      "personB": "필요 자료·보류 범위 질문"
+    },
+    "counterexample": "사기·강요·경제적 착취는 궁합 갈등으로 조율 금지",
+    "distinctFromOtherParagraphs": "신뢰 확인과 조건 검토를 배신으로 읽는 문제의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P3:trust-verification",
+          "sourceKeys": [
+            "6256f57a0be573a6725a",
+            "b64fa2920704301bf622",
+            "464de610689b7074363e"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENFJ",
+              "sourceKey": "6256f57a0be573a6725a"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "b64fa2920704301bf622"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ENFJ",
+          "sourceKey": "6256f57a0be573a6725a",
+          "domain": "INVESTMENT"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "b64fa2920704301bf622",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 비용 자료·계약을 묻자 관계가 의심받는다고 느낌",
+      "aChange": "의도·조건·미확정 설명",
+      "bChange": "필요 자료·보류 범위 질문",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "trust-verification",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "추가 투입·손실·회수 조건 미확인",
+    "additionalBusinessInfo": [
+      "consent",
+      "safe_context",
+      "verification"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "contract",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "안전한 거절·접근권·검토 통로 확인"
+    },
+    "personAAction": "의도·조건·미확정 설명",
+    "personBAction": "필요 자료·보류 범위 질문",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P4:expansion-speed",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "address": "CH07.P4",
+    "mode": "JOINT",
+    "readerQuestion": "확장·운영 부담·단독 결정·중단·친분의 경계는 무엇인가?",
+    "coreMeaning": "기회 속도와 자금·운영 준비 속도의 차이",
+    "roleContributions": [
+      {
+        "address": "CH07.P4.S1",
+        "originalRole": "주의 상황",
+        "knowledge": "가상: 수주가 늘어도 선지급 비용·지원 용량이 미확인",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S2",
+        "originalRole": "A의 기대",
+        "knowledge": "기회·시한·수요 가정 제시",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S3",
+        "originalRole": "B의 기대",
+        "knowledge": "지급·회수·운영량 질문",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S4",
+        "originalRole": "다르게 전달되는 뜻",
+        "knowledge": "상대는 제안을 성급함 또는 우유부단으로 읽을 수 있음",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "66a9cd49cd16d86ca992",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "c7fee219fcf7a5b642fd",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "24c9a0e7e3707d4f1f00",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:PRECISION:error-detection",
+        "axis": "PRECISION",
+        "definition": "작은 오류를 기준에 비추어 발견",
+        "condition": "검증 기준이 합의된 상황",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "continuation",
+    "workFunctions": [
+      "expansion-speed"
+    ],
+    "outputType": "expansion-speed",
+    "positive": "규모·순서를 조정할 여지",
+    "risk": "성장하면 비용 문제도 풀릴 것이라고 가정",
+    "factBomb": "커지는 매출이 먼저 나갈 돈을 대신 내주지는 않는다",
+    "twist": "확장을 늦추기보다 먼저 받을 일을 바꿀 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 수주가 늘어도 선지급 비용·지원 용량이 미확인",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "기회·시한·수요 가정 제시",
+      "personB": "지급·회수·운영량 질문"
+    },
+    "counterexample": "투자·대출·자산 처분 권유 금지",
+    "distinctFromOtherParagraphs": "기회 속도와 자금·운영 준비 속도의 차이의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P4:expansion-speed",
+          "sourceKeys": [
+            "66a9cd49cd16d86ca992",
+            "c7fee219fcf7a5b642fd",
+            "24c9a0e7e3707d4f1f00"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENTJ",
+              "sourceKey": "66a9cd49cd16d86ca992"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "c7fee219fcf7a5b642fd"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ENTJ",
+          "sourceKey": "66a9cd49cd16d86ca992",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "c7fee219fcf7a5b642fd",
+          "domain": "THINKING"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 수주가 늘어도 선지급 비용·지원 용량이 미확인",
+      "aChange": "기회·시한·수요 가정 제시",
+      "bChange": "지급·회수·운영량 질문",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "expansion-speed",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "확장비·운전자금·반복 지원 비용 별도",
+    "additionalBusinessInfo": [
+      "demand",
+      "working_capital",
+      "capacity"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "investment",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "확장·투자·고객 약속 권한 확인"
+    },
+    "personAAction": "기회·시한·수요 가정 제시",
+    "personBAction": "지급·회수·운영량 질문",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P4:ops-burden-imbalance",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "address": "CH07.P4",
+    "mode": "JOINT",
+    "readerQuestion": "확장·운영 부담·단독 결정·중단·친분의 경계는 무엇인가?",
+    "coreMeaning": "초기 기여 이후 운영 부담이 한쪽에 누적",
+    "roleContributions": [
+      {
+        "address": "CH07.P4.S1",
+        "originalRole": "주의 상황",
+        "knowledge": "가상: 새 기획은 공동이지만 반복 응답·유지는 한쪽",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S2",
+        "originalRole": "A의 기대",
+        "knowledge": "초기·현재 기여와 남은 약속 제시",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S3",
+        "originalRole": "B의 기대",
+        "knowledge": "반복 작업·시간·한계 공유",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S4",
+        "originalRole": "다르게 전달되는 뜻",
+        "knowledge": "상대는 맡긴 일 또는 당연한 기여로 다르게 볼 수 있음",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "0ba71def5f7dd66a4424",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "f30fa018d453a0318547",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "f64a1b254b8c7a0ebd5e",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:PERSISTENCE:repeat-practice",
+        "axis": "PERSISTENCE",
+        "definition": "정한 연습을 반복",
+        "condition": "피드백을 받을 수 있는 과제",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "execution",
+    "workFunctions": [
+      "ops-burden-imbalance"
+    ],
+    "outputType": "ops-burden-imbalance",
+    "positive": "보이지 않는 반복 작업을 확인할 여지",
+    "risk": "초기 아이디어로 장기 운영을 계속 요구",
+    "factBomb": "처음에 많이 했다는 말이 지금의 모든 유지 작업을 대신하지는 않는다",
+    "twist": "기여를 다시 보는 일이 과거 기여를 부정하지 않을 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 새 기획은 공동이지만 반복 응답·유지는 한쪽",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "초기·현재 기여와 남은 약속 제시",
+      "personB": "반복 작업·시간·한계 공유"
+    },
+    "counterexample": "무급 노동·동일 양보 강요 금지",
+    "distinctFromOtherParagraphs": "초기 기여 이후 운영 부담이 한쪽에 누적의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P4:ops-burden-imbalance",
+          "sourceKeys": [
+            "0ba71def5f7dd66a4424",
+            "f30fa018d453a0318547",
+            "f64a1b254b8c7a0ebd5e"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "INTP",
+              "sourceKey": "0ba71def5f7dd66a4424"
+            },
+            {
+              "owner": "B",
+              "type": "ISFP",
+              "sourceKey": "f30fa018d453a0318547"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "INTP",
+          "sourceKey": "0ba71def5f7dd66a4424",
+          "domain": "THINKING"
+        },
+        {
+          "owner": "B",
+          "type": "ISFP",
+          "sourceKey": "f30fa018d453a0318547",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 새 기획은 공동이지만 반복 응답·유지는 한쪽",
+      "aChange": "초기·현재 기여와 남은 약속 제시",
+      "bChange": "반복 작업·시간·한계 공유",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "ops-burden-imbalance",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "현재 노동·유지·외주·기회비용 별도",
+    "additionalBusinessInfo": [
+      "maintenance",
+      "contributions",
+      "compensation"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "schedule",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "역할·대가·제공 조건 변경 권한 확인"
+    },
+    "personAAction": "초기·현재 기여와 남은 약속 제시",
+    "personBAction": "반복 작업·시간·한계 공유",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P4:unilateral-decision",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "address": "CH07.P4",
+    "mode": "JOINT",
+    "readerQuestion": "확장·운영 부담·단독 결정·중단·친분의 경계는 무엇인가?",
+    "coreMeaning": "빠른 결정과 단독 확정 권한의 혼동",
+    "roleContributions": [
+      {
+        "address": "CH07.P4.S1",
+        "originalRole": "주의 상황",
+        "knowledge": "가상: 추진하는 쪽이 가격·일정·계약까지 확정",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S2",
+        "originalRole": "A의 기대",
+        "knowledge": "확정·제안·미정 상태 공개",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S3",
+        "originalRole": "B의 기대",
+        "knowledge": "영향·동의 필요 범위 질문",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S4",
+        "originalRole": "다르게 전달되는 뜻",
+        "knowledge": "상대는 빠른 제안이 아니라 자기 의무의 강제 변경으로 받을 수 있음",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "66a9cd49cd16d86ca992",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "81c172dd5bbbb1920ae6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d4af2f38a725dac45d6e",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DECISION_STYLE:closure-criteria",
+        "axis": "DECISION_STYLE",
+        "definition": "어떤 정보면 결론을 닫을지 정의",
+        "condition": "결정의 영향과 정보 범위가 명시될 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "proposal",
+    "workFunctions": [
+      "unilateral-decision"
+    ],
+    "outputType": "unilateral-decision",
+    "positive": "결정 종류별 필요한 확인을 드러낼 여지",
+    "risk": "의욕·유형을 리더 권한으로 승격",
+    "factBomb": "먼저 움직인 사람이 모든 결정권을 얻는 것은 아니다",
+    "twist": "결정권을 확인하면 작은 결정을 더 빨리 할 수도 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 추진하는 쪽이 가격·일정·계약까지 확정",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "확정·제안·미정 상태 공개",
+      "personB": "영향·동의 필요 범위 질문"
+    },
+    "counterexample": "A/B 슬롯·지분 추측으로 권한 부여 금지",
+    "distinctFromOtherParagraphs": "빠른 결정과 단독 확정 권한의 혼동의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P4:unilateral-decision",
+          "sourceKeys": [
+            "66a9cd49cd16d86ca992",
+            "81c172dd5bbbb1920ae6",
+            "d4af2f38a725dac45d6e"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENTJ",
+              "sourceKey": "66a9cd49cd16d86ca992"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "81c172dd5bbbb1920ae6"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ENTJ",
+          "sourceKey": "66a9cd49cd16d86ca992",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "81c172dd5bbbb1920ae6",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 추진하는 쪽이 가격·일정·계약까지 확정",
+      "aChange": "확정·제안·미정 상태 공개",
+      "bChange": "영향·동의 필요 범위 질문",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "unilateral-decision",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "확정 의무·변경·미동의 노동 비용 확인",
+    "additionalBusinessInfo": [
+      "decision_rights",
+      "consent",
+      "external_status"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "product_direction",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "가격·일정·계약별 실제 결정 규칙 확인"
+    },
+    "personAAction": "확정·제안·미정 상태 공개",
+    "personBAction": "영향·동의 필요 범위 질문",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P4:no-stop-conditions",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "address": "CH07.P4",
+    "mode": "JOINT",
+    "readerQuestion": "확장·운영 부담·단독 결정·중단·친분의 경계는 무엇인가?",
+    "coreMeaning": "계속할 이유만 있고 중단 기준이 없는 상태",
+    "roleContributions": [
+      {
+        "address": "CH07.P4.S1",
+        "originalRole": "주의 상황",
+        "knowledge": "가상: 지출·시간을 더 넣으면서 종료 질문을 피함",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S2",
+        "originalRole": "A의 기대",
+        "knowledge": "남은 가정·추가 비용 제시",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S3",
+        "originalRole": "B의 기대",
+        "knowledge": "의무·보류·종료 질문",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S4",
+        "originalRole": "다르게 전달되는 뜻",
+        "knowledge": "상대는 포기를 강요하거나 끝없이 기다리라는 요구로 받을 수 있음",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "1f7d00a7995b32bad2b3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "b64fa2920704301bf622",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "7ecd3182d36691c2b6b5",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:BOUNDARY:refusal",
+        "axis": "BOUNDARY",
+        "definition": "받지 않을 요청을 명시",
+        "condition": "거절의 안전과 실제 의무 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "exit",
+    "workFunctions": [
+      "no-stop-conditions"
+    ],
+    "outputType": "no-stop-conditions",
+    "positive": "추가 손실 전에 조건을 확인할 여지",
+    "risk": "이미 들인 비용 때문에 계속 투입",
+    "factBomb": "지금까지 쓴 돈이 앞으로 더 쓸 돈의 이유가 되지는 않는다",
+    "twist": "중단 조건이 있어야 작은 시험을 시작하기 쉬울 수도 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 지출·시간을 더 넣으면서 종료 질문을 피함",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "남은 가정·추가 비용 제시",
+      "personB": "의무·보류·종료 질문"
+    },
+    "counterexample": "원금 반환·채무 면제·즉시 탈퇴 권리 보장 금지",
+    "distinctFromOtherParagraphs": "계속할 이유만 있고 중단 기준이 없는 상태의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P4:no-stop-conditions",
+          "sourceKeys": [
+            "1f7d00a7995b32bad2b3",
+            "b64fa2920704301bf622",
+            "7ecd3182d36691c2b6b5"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "INTP",
+              "sourceKey": "1f7d00a7995b32bad2b3"
+            },
+            {
+              "owner": "B",
+              "type": "ISTJ",
+              "sourceKey": "b64fa2920704301bf622"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "INTP",
+          "sourceKey": "1f7d00a7995b32bad2b3",
+          "domain": "INVESTMENT"
+        },
+        {
+          "owner": "B",
+          "type": "ISTJ",
+          "sourceKey": "b64fa2920704301bf622",
+          "domain": "MONEY"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 지출·시간을 더 넣으면서 종료 질문을 피함",
+      "aChange": "남은 가정·추가 비용 제시",
+      "bChange": "의무·보류·종료 질문",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "no-stop-conditions",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "매몰·추가 비용·채권·채무·잔여재산 구분",
+    "additionalBusinessInfo": [
+      "stop_conditions",
+      "obligations",
+      "exit_terms"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "stop",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "중단·탈퇴·해산·청산의 절차·전문 검토 확인"
+    },
+    "personAAction": "남은 가정·추가 비용 제시",
+    "personBAction": "의무·보류·종료 질문",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  },
+  {
+    "id": "bppr:material:CH07.P4:hide-problem-for-relationship",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "address": "CH07.P4",
+    "mode": "JOINT",
+    "readerQuestion": "확장·운영 부담·단독 결정·중단·친분의 경계는 무엇인가?",
+    "coreMeaning": "관계를 지키려 사업 문제를 말하지 못하는 상태",
+    "roleContributions": [
+      {
+        "address": "CH07.P4.S1",
+        "originalRole": "주의 상황",
+        "knowledge": "가상: 지연·비용·미확정 동의를 괜찮다고 넘김",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S2",
+        "originalRole": "A의 기대",
+        "knowledge": "사실·관계·선택을 나눠 설명",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S3",
+        "originalRole": "B의 기대",
+        "knowledge": "미확인·불가·보류 범위 알림",
+        "notIndependentFact": true
+      },
+      {
+        "address": "CH07.P4.S4",
+        "originalRole": "다르게 전달되는 뜻",
+        "knowledge": "상대는 호응을 실제 여유·수락으로 이해할 수 있음",
+        "notIndependentFact": true
+      }
+    ],
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "fd240bf6e5740f4fe5d6",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "756426b20e7a45cb7d82",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "464de610689b7074363e",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:SOCIAL_ATTUNEMENT:cue-observation",
+        "axis": "SOCIAL_ATTUNEMENT",
+        "definition": "말·표정·참여의 변화를 관찰",
+        "condition": "추측과 관찰을 명확히 분리",
+        "notIndependentEvidence": true
+      }
+    ],
+    "workStage": "continuation",
+    "workFunctions": [
+      "hide-problem-for-relationship"
+    ],
+    "outputType": "hide-problem-for-relationship",
+    "positive": "실제 위험을 빨리 드러낼 여지",
+    "risk": "친분 때문에 비용·거절을 숨김",
+    "factBomb": "사이가 좋다는 이유로 사업의 빈칸이 사라지지는 않는다",
+    "twist": "보류를 말하는 것이 관계를 끝내겠다는 뜻은 아닐 수 있다",
+    "fictionalScene": {
+      "status": "hypothetical_only",
+      "text": "가상: 지연·비용·미확정 동의를 괜찮다고 넘김",
+      "isCustomerHistory": false
+    },
+    "actions": {
+      "personA": "사실·관계·선택을 나눠 설명",
+      "personB": "미확인·불가·보류 범위 알림"
+    },
+    "counterexample": "위협·강요·착취는 친분 조율보다 안전·전문 지원 우선",
+    "distinctFromOtherParagraphs": "관계를 지키려 사업 문제를 말하지 못하는 상태의 정보·비용·동의 경계",
+    "precedingMeaningRefs": [],
+    "introducedMeaningRequirements": [],
+    "requirements": {
+      "policyRef": "bppr:binding-policy:v1",
+      "sourceGroups": [
+        {
+          "groupId": "bppr:material:CH07.P4:hide-problem-for-relationship",
+          "sourceKeys": [
+            "fd240bf6e5740f4fe5d6",
+            "756426b20e7a45cb7d82",
+            "464de610689b7074363e"
+          ],
+          "typePredicates": [
+            {
+              "owner": "A",
+              "type": "ENFJ",
+              "sourceKey": "fd240bf6e5740f4fe5d6"
+            },
+            {
+              "owner": "B",
+              "type": "ESFJ",
+              "sourceKey": "756426b20e7a45cb7d82"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true
+        }
+      ],
+      "groupPolicy": "all_direct_sources",
+      "allAncestorDomainAndOwnerReviewRequired": true,
+      "typePredicates": [
+        {
+          "owner": "A",
+          "type": "ENFJ",
+          "sourceKey": "fd240bf6e5740f4fe5d6",
+          "domain": "MONEY"
+        },
+        {
+          "owner": "B",
+          "type": "ESFJ",
+          "sourceKey": "756426b20e7a45cb7d82",
+          "domain": "INVESTMENT"
+        }
+      ],
+      "direction": null,
+      "canonicalClaim": "no_new_relation_claim",
+      "jobRole": "UNKNOWN",
+      "authority": "UNKNOWN",
+      "workplace": "UNKNOWN",
+      "workHistory": "UNKNOWN",
+      "actualWorkContextRequired": true,
+      "additionalInput": [
+        "actual_business_status",
+        "actual_business_type",
+        "actual_task",
+        "current_phase",
+        "output_requirements",
+        "available_time",
+        "actual_costs",
+        "cash_timing",
+        "verified_contributions",
+        "verified_equity",
+        "verified_contract",
+        "verified_decision_rights",
+        "safe_negotiation_context"
+      ],
+      "introducedRequired": false
+    },
+    "repair": {
+      "firstFactCheck": "가상: 지연·비용·미확정 동의를 괜찮다고 넘김",
+      "aChange": "사실·관계·선택을 나눠 설명",
+      "bChange": "미확인·불가·보류 범위 알림",
+      "authority": "UNKNOWN_verify_contract_and_business_structure",
+      "scope": "hide-problem-for-relationship",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·지분율·수익·손실 회복 보장으로 측정하지 않음.",
+      "safetySupport": "사기·강요·경제적 착취·불법 의심은 일반 궁합 조율로 정상화하지 않으며 안전·전문 지원·협의 중단 조건을 확인."
+    },
+    "review": "conditional_editorial_research",
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0,
+    "economicCondition": "지연·추가 노동·위험 수락 비용 확인",
+    "additionalBusinessInfo": [
+      "safe_context",
+      "problem_facts",
+      "consent"
+    ],
+    "businessContext": {
+      "status": "UNKNOWN",
+      "equity": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "revenue": "UNKNOWN",
+      "contract": "UNKNOWN",
+      "decisionRights": "UNKNOWN"
+    },
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "declaredRoles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "authorityContext": {
+      "kind": "partner_exit",
+      "actualAuthority": "UNKNOWN",
+      "verificationRequired": true,
+      "question": "안전한 문제 제기·지원·협의 중단 조건 확인"
+    },
+    "personAAction": "사실·관계·선택을 나눠 설명",
+    "personBAction": "미확인·불가·보류 범위 알림",
+    "safeNegotiationCondition": "협의의 안전·동의·실제 권한을 먼저 확인. 사기·강요·경제적 착취·불법 의심을 성향 차이로 정상화하거나 동업 유지·같은 비율 양보를 강요하지 않음. 실제 법적 책임·계약 효력은 적절한 전문 검토가 필요."
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "family": "compatibility-business-partner-research",
+    "shard": "edges/compatibility-business-partner-research.json",
+    "count": 10287
+  },
+  {
+    "family": "mbti-pair-research",
+    "shard": "edges/mbti-pair-research.json",
+    "count": 7959
+  },
+  {
+    "family": "foundation",
+    "shard": "edges/foundation.json",
+    "count": 10731
+  },
+  {
+    "family": "compatibility-friendship-research",
+    "shard": "edges/compatibility-friendship-research.json",
+    "count": 6458
+  },
+  {
+    "family": "compatibility-manager-report-research",
+    "shard": "edges/compatibility-manager-report-research.json",
+    "count": 8964
+  },
+  {
+    "family": "compatibility-parent-child-research",
+    "shard": "edges/compatibility-parent-child-research.json",
+    "count": 5730
+  },
+  {
+    "family": "annual-fortune-product-research",
+    "shard": "edges/annual-fortune-product-research.json",
+    "count": 10445
+  },
+  {
+    "family": "major-fortune-product-research",
+    "shard": "edges/major-fortune-product-research.json",
+    "count": 7418
+  },
+  {
+    "family": "compatibility-love-research",
+    "shard": "edges/compatibility-love-research.json",
+    "count": 10293
+  },
+  {
+    "family": "compatibility-marriage-research",
+    "shard": "edges/compatibility-marriage-research.json",
+    "count": 5531
+  },
+  {
+    "family": "compatibility-coworker-research",
+    "shard": "edges/compatibility-coworker-research.json",
+    "count": 9258
+  },
+  {
+    "family": "temporal-interaction-research",
+    "shard": "edges/temporal-interaction-research.json",
+    "count": 2916
+  },
+  {
+    "family": "career-product-research",
+    "shard": "edges/career-product-research.json",
+    "count": 3205
+  },
+  {
+    "family": "mbti-foundation-research",
+    "shard": "edges/mbti-foundation-research.json",
+    "count": 5203
+  },
+  {
+    "family": "love-product-research",
+    "shard": "edges/love-product-research.json",
+    "count": 2448
+  },
+  {
+    "family": "composite-structure-research",
+    "shard": "edges/composite-structure-research.json",
+    "count": 1752
+  },
+  {
+    "family": "semantic-axis-research",
+    "shard": "edges/semantic-axis-research.json",
+    "count": 2734
+  },
+  {
+    "family": "korean-editorial-research",
+    "shard": "edges/korean-editorial-research.json",
+    "count": 1734
+  },
+  {
+    "family": "comprehensive-product-research",
+    "shard": "edges/comprehensive-product-research.json",
+    "count": 1655
+  },
+  {
+    "family": "relation-research",
+    "shard": "edges/relation-research.json",
+    "count": 2484
+  },
+  {
+    "family": "fusion-knowledge-research",
+    "shard": "edges/fusion-knowledge-research.json",
+    "count": 9409
+  }
+]

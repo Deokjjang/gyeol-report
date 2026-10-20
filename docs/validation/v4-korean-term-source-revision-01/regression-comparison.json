@@ -1,0 +1,797 @@
+{
+  "baselineSha": "0f66fb1abe45da533a97066eb6c641345e8e34bc",
+  "baselineSelectedTests": {
+    "passed": 6323,
+    "failed": 0,
+    "source": "Previous exact Base task receipt; not a new full-suite baseline run in this task"
+  },
+  "currentExistingSelectedTests": {
+    "passed": 6323,
+    "failed": 0
+  },
+  "newTests": {
+    "passed": 35,
+    "failed": 0
+  },
+  "currentSelectedTotal": {
+    "passed": 6358,
+    "failed": 0,
+    "skipped": 0
+  },
+  "wholeRepositorySuiteExecuted": false,
+  "groups": {
+    "audit": 622,
+    "existingResearchPublication": 5639,
+    "contractsWithNewTests": 97
+  },
+  "initialTestPreparationIssues": [
+    {
+      "error": "Cannot read properties of null (reading 'directionWitnesses')",
+      "scope": "new test beforeAll; no executed test success claimed",
+      "fix": "Exclude unsupported/null constructClaim results without changing their eligibility"
+    },
+    {
+      "error": "3 TypeScript diagnostics: generated evidencePacket is unknown",
+      "scope": "new test only",
+      "fix": "Use the existing validated V4RuntimeEvidence fixture contract"
+    }
+  ],
+  "typescriptFinalDiagnostics": 0,
+  "lint": "PASS",
+  "webpackProductionBuild": "PASS",
+  "nft": {
+    "traces": 88,
+    "priorTraces": 88,
+    "sameRouteKeys": true,
+    "generatedBuildFileSetChanges": 72,
+    "sourceAndDependencySetChanges": {},
+    "newResearchOrTestEntries": 0,
+    "buildObservedWarnings": 0
+  },
+  "sourceChanges": [
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/termExplanation.ts",
+      "before": "97f9e4b366f2d21022de1d09f48aeca38e2e81837dc264a6244f7b802b6fd765",
+      "after": "3530837fc024d2a91a8796e0cf53354d277b6e9691702f7e75cb4e108967ece8"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/korean-editorial-engine/termSourceRevision.ts",
+      "before": null,
+      "after": "8c9faed127256afee99a9175a26fe1c3a1d637bf4c2f4695370d37a64a3cb461"
+    }
+  ],
+  "researchDbChanges": 0,
+  "calculationChanges": 0,
+  "customerRuntimeNewImports": 0,
+  "runtimeImportGraph": {
+    "roots": 46,
+    "modules": 700,
+    "exactBaseGraphMatch": true
+  },
+  "syntheticOutput": {
+    "routes": 12,
+    "allDraftDigestsIdentical": true,
+    "assignments": 1085,
+    "sentences": 48,
+    "paragraphs": 28,
+    "customerClaims": 0
+  },
+  "bookPreservation": {
+    "books": 17,
+    "digests": 102,
+    "allEqual": true,
+    "storedReopen": true
+  },
+  "publicationSafety": {
+    "safe": 32,
+    "withheld": 7,
+    "originalBookHashesAndErrorsEqual": true
+  },
+  "privacy": {
+    "secretOrCustomerDataAdded": false,
+    "environmentFilesCopied": false
+  },
+  "worktreePreservation": {
+    "status": "PARTIAL_EXTERNAL_WORKTREE_FILE_LOSS_OBSERVED",
+    "originalWorktrees": 66,
+    "currentRegistrations": 67,
+    "changedWorktrees": 17,
+    "unchangedWorktrees": 49,
+    "originalCheckoutUnchanged": true,
+    "allExistingPersistentWorktreesUnchanged": true,
+    "forensic915Unchanged": true,
+    "cause": "UNDETERMINED",
+    "recoveryCleanupOrDeletionPerformed": false,
+    "rows": [
+      {
+        "path": "/private/tmp/gyeol-actual-evidence-graph-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "daec9f64e0d871688ea1b657621127170f9c7529",
+        "beforeFiles": 4042,
+        "afterFiles": 246,
+        "missingFiles": 4041,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "4c9747b951a5d2358fa3bbad41b08b156bfffd9b3ecbc3ce0b9f2c5175449bf4"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-actual-evidence-graph-01",
+          "HEAD": "daec9f64e0d871688ea1b657621127170f9c7529",
+          "branch": "refs/heads/v4/actual-evidence-graph-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-actual-evidence-graph-01",
+          "HEAD": "daec9f64e0d871688ea1b657621127170f9c7529",
+          "branch": "refs/heads/v4/actual-evidence-graph-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "d4be548a219ef43f45cd466878ee5f86360f17310b6da68eb27e9cf1b1ff069b",
+        "newlyVisibleInventory": {
+          "count": 245,
+          "pathsSha256": "027d508614afccb0ba4adb76b3930bc2ee8be89079b40f430b2a9de0b5682467",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-annual-fortune-product-knowledge-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "39a08dcc43c467f0dba71da820d0e879dff91ec1",
+        "beforeFiles": 3699,
+        "afterFiles": 1,
+        "missingFiles": 3699,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "44e94d027b0448f1c262cec27d49ce1336c1355807f9962df25b0350f9d8ef64"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-annual-fortune-product-knowledge-01",
+          "HEAD": "39a08dcc43c467f0dba71da820d0e879dff91ec1",
+          "branch": "refs/heads/v4/annual-fortune-product-knowledge-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-annual-fortune-product-knowledge-01",
+          "HEAD": "39a08dcc43c467f0dba71da820d0e879dff91ec1",
+          "branch": "refs/heads/v4/annual-fortune-product-knowledge-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "2bf45eca49084e06f401a7d39a116af275ea33b96acef4c302345fffd0e8c88f",
+        "newlyVisibleInventory": {
+          "count": 1,
+          "pathsSha256": "d7e28b07c8cf14528dadb2a8ce01dd1ede727be98a16395b5cc1b06dfa94f2eb",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-compatibility-business-partner-product-knowledge-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "ab67b555609876a0e5520c741716c5236b973c51",
+        "beforeFiles": 3532,
+        "afterFiles": 0,
+        "missingFiles": 3532,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "bb0ff93525809c07b818b74f596a1b5a15764b46363af6cd810fcad767869d49"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-compatibility-business-partner-product-knowledge-01",
+          "HEAD": "ab67b555609876a0e5520c741716c5236b973c51",
+          "branch": "refs/heads/v4/compatibility-business-partner-product-knowledge-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-compatibility-business-partner-product-knowledge-01",
+          "HEAD": "ab67b555609876a0e5520c741716c5236b973c51",
+          "branch": "refs/heads/v4/compatibility-business-partner-product-knowledge-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "8d21f8c670c0a0eb4def2997c1047d35ffef4af1d5edf57c1b211794d38035d4",
+        "newlyVisibleInventory": {
+          "count": 0,
+          "pathsSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-compatibility-coworker-product-knowledge-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+        "beforeFiles": 3204,
+        "afterFiles": 6,
+        "missingFiles": 3204,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "111c201e4c044e944123e615e29c3a721c014a36c5a148f293bdd2c16e7a144d"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-compatibility-coworker-product-knowledge-01",
+          "HEAD": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+          "branch": "refs/heads/v4/compatibility-coworker-product-knowledge-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-compatibility-coworker-product-knowledge-01",
+          "HEAD": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+          "branch": "refs/heads/v4/compatibility-coworker-product-knowledge-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "f288366347fa19dfd2cacfc0eda4ac9372b2a91e63648222b784dbcc219eca33",
+        "newlyVisibleInventory": {
+          "count": 6,
+          "pathsSha256": "de3fa60e99d710199bd0651e30407542e2e85ffcc80eb7e05051f3db3ae5b5a4",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-compatibility-friendship-product-knowledge-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "beforeFiles": 3603,
+        "afterFiles": 1,
+        "missingFiles": 3603,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "f3161c8339b2d04934aa3dbabb686942b692b62c66871b5d937a2de28989c861"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-compatibility-friendship-product-knowledge-01",
+          "HEAD": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "branch": "refs/heads/v4/compatibility-friendship-product-knowledge-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-compatibility-friendship-product-knowledge-01",
+          "HEAD": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "branch": "refs/heads/v4/compatibility-friendship-product-knowledge-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "4359caea24dde3c683e4613d966828c182b74046d10edcc9cb079e0a9efed4dc",
+        "newlyVisibleInventory": {
+          "count": 1,
+          "pathsSha256": "d7e28b07c8cf14528dadb2a8ce01dd1ede727be98a16395b5cc1b06dfa94f2eb",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-compatibility-love-product-knowledge-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "be3c00ed36c9bb96ab6a104c8241a5137ef27094",
+        "beforeFiles": 272,
+        "afterFiles": 0,
+        "missingFiles": 272,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-compatibility-love-product-knowledge-01",
+          "HEAD": "be3c00ed36c9bb96ab6a104c8241a5137ef27094",
+          "branch": "refs/heads/v4/compatibility-love-product-knowledge-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-compatibility-love-product-knowledge-01",
+          "HEAD": "be3c00ed36c9bb96ab6a104c8241a5137ef27094",
+          "branch": "refs/heads/v4/compatibility-love-product-knowledge-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "0c22ea36afcc8d0f277dc4ef38d4963f5542612a352838398a41356599a00bd1",
+        "newlyVisibleInventory": {
+          "count": 0,
+          "pathsSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-compatibility-manager-report-product-knowledge-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "6bcd8c733a6c7e924b2a59e98d8cdd23a6ba6eaf",
+        "beforeFiles": 3373,
+        "afterFiles": 1,
+        "missingFiles": 3373,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "0f5d407d9d41965f1b7ac696bc8b78ee2bead676a4738a157b21953d581c3496"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-compatibility-manager-report-product-knowledge-01",
+          "HEAD": "6bcd8c733a6c7e924b2a59e98d8cdd23a6ba6eaf",
+          "branch": "refs/heads/v4/compatibility-manager-report-product-knowledge-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-compatibility-manager-report-product-knowledge-01",
+          "HEAD": "6bcd8c733a6c7e924b2a59e98d8cdd23a6ba6eaf",
+          "branch": "refs/heads/v4/compatibility-manager-report-product-knowledge-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "36105efea7ff633b020f5317fcf3dba86d54923528f924cb06c6eef5acd03c5c",
+        "newlyVisibleInventory": {
+          "count": 1,
+          "pathsSha256": "11236a3a7012e802c266e11e2d54b8ce3b8abee7d008d529d214ef851daa0b5c",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-compatibility-marriage-product-knowledge-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "80304b03e9d4851d654946bd9d7ee679c70596c4",
+        "beforeFiles": 2939,
+        "afterFiles": 6,
+        "missingFiles": 2939,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "cbbed264d4bc109c7fa7d6ab956d38fb40ccf7bcce00118054b4acadfca99fd2"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-compatibility-marriage-product-knowledge-01",
+          "HEAD": "80304b03e9d4851d654946bd9d7ee679c70596c4",
+          "branch": "refs/heads/v4/compatibility-marriage-product-knowledge-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-compatibility-marriage-product-knowledge-01",
+          "HEAD": "80304b03e9d4851d654946bd9d7ee679c70596c4",
+          "branch": "refs/heads/v4/compatibility-marriage-product-knowledge-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "f1afe963485033a6a72d127190d2f6bc0ead2308399c8564509ab2e3108920df",
+        "newlyVisibleInventory": {
+          "count": 6,
+          "pathsSha256": "de3fa60e99d710199bd0651e30407542e2e85ffcc80eb7e05051f3db3ae5b5a4",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-compatibility-parent-child-product-knowledge-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "d25c058a65dad3cd121ac477e194e64ee75374f2",
+        "beforeFiles": 3055,
+        "afterFiles": 1,
+        "missingFiles": 3055,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "f361c82ea46d7dc8b19ab3993d3e7537bb4eb0e7074fa5813e8bc0d2db3b145e"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-compatibility-parent-child-product-knowledge-01",
+          "HEAD": "d25c058a65dad3cd121ac477e194e64ee75374f2",
+          "branch": "refs/heads/v4/compatibility-parent-child-product-knowledge-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-compatibility-parent-child-product-knowledge-01",
+          "HEAD": "d25c058a65dad3cd121ac477e194e64ee75374f2",
+          "branch": "refs/heads/v4/compatibility-parent-child-product-knowledge-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "884d02ae2155c0101bac65ab2ff875c61d83b8faac12b786072afa9daa8083e0",
+        "newlyVisibleInventory": {
+          "count": 1,
+          "pathsSha256": "11236a3a7012e802c266e11e2d54b8ce3b8abee7d008d529d214ef851daa0b5c",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-knowledge-binder-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "2f5baa3f0241b440a83f8b5138b5b590a38a0a06",
+        "beforeFiles": 4153,
+        "afterFiles": 258,
+        "missingFiles": 4153,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "3d320ac9eed9e751b7c86235746233a02e7428e025245f4abf163c3f160be76d"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-knowledge-binder-01",
+          "HEAD": "2f5baa3f0241b440a83f8b5138b5b590a38a0a06",
+          "branch": "refs/heads/v4/knowledge-binder-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-knowledge-binder-01",
+          "HEAD": "2f5baa3f0241b440a83f8b5138b5b590a38a0a06",
+          "branch": "refs/heads/v4/knowledge-binder-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "7f65cbfe0e9c25f917bb8be5a7c1479329495e77ea17a2203f2719d1bc0ed71a",
+        "newlyVisibleInventory": {
+          "count": 258,
+          "pathsSha256": "eabba169f6270ffa4a7d1456f431084c5477f94d97b130ab18e79a3023957723",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-knowledge-semantic-domain-verification-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "9bfe4f29d36062528b06c59fbc2e5819d288b0c1",
+        "beforeFiles": 3910,
+        "afterFiles": 10,
+        "missingFiles": 3910,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "66dbbf64ba43b9a72655667e251aece23d593c8ef7a0b9dde0dbfbfba7846818"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-knowledge-semantic-domain-verification-01",
+          "HEAD": "9bfe4f29d36062528b06c59fbc2e5819d288b0c1",
+          "branch": "refs/heads/v4/knowledge-semantic-domain-verification-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-knowledge-semantic-domain-verification-01",
+          "HEAD": "9bfe4f29d36062528b06c59fbc2e5819d288b0c1",
+          "branch": "refs/heads/v4/knowledge-semantic-domain-verification-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "1f1cbd1e79a2923df4594363211a45b4b2e8c2004e6711b6a3f9c877be9b6606",
+        "newlyVisibleInventory": {
+          "count": 10,
+          "pathsSha256": "e0e450a790b7b0ebeedc676477adef2f33dd4e7a2f04b6f97bd36cdaf95ceeaf",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-knowledge-source-verification-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "15f13b3b27f67695f2aebb16e738d40b1d3dba95",
+        "beforeFiles": 3869,
+        "afterFiles": 1,
+        "missingFiles": 3869,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "eeac15524f7c36778884f4f3071e5a2de62b2a335c9ad678493542d6a0b5087f"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-knowledge-source-verification-01",
+          "HEAD": "15f13b3b27f67695f2aebb16e738d40b1d3dba95",
+          "branch": "refs/heads/v4/knowledge-source-verification-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-knowledge-source-verification-01",
+          "HEAD": "15f13b3b27f67695f2aebb16e738d40b1d3dba95",
+          "branch": "refs/heads/v4/knowledge-source-verification-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "f3b8632eb64667fd05e5d92b2be3e5ded05c2c2e9527af814878ac57289f0963",
+        "newlyVisibleInventory": {
+          "count": 1,
+          "pathsSha256": "d7e28b07c8cf14528dadb2a8ce01dd1ede727be98a16395b5cc1b06dfa94f2eb",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-knowledge-unified-catalog-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "51420fdebd4af81b503128a64f2c5c4d5beb3714",
+        "beforeFiles": 3830,
+        "afterFiles": 2,
+        "missingFiles": 3829,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "484a595700ced51c7a260aabbf660ec456db5564224fc4365d644017056821ba"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-knowledge-unified-catalog-01",
+          "HEAD": "51420fdebd4af81b503128a64f2c5c4d5beb3714",
+          "branch": "refs/heads/v4/knowledge-unified-catalog-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-knowledge-unified-catalog-01",
+          "HEAD": "51420fdebd4af81b503128a64f2c5c4d5beb3714",
+          "branch": "refs/heads/v4/knowledge-unified-catalog-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "8fa2284f8446ea6da12c765fa1dacdabd485371e40386ef20e1c05b973457306",
+        "newlyVisibleInventory": {
+          "count": 1,
+          "pathsSha256": "d7e28b07c8cf14528dadb2a8ce01dd1ede727be98a16395b5cc1b06dfa94f2eb",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-korean-editorial-knowledge-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "6d471db103d53dd9165e4832744501a686e59edc",
+        "beforeFiles": 3750,
+        "afterFiles": 1,
+        "missingFiles": 3750,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "def2329af88573f06a81660e50f14961f27e8b3dbb5f6cc16f7c33770ca2172c"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-korean-editorial-knowledge-01",
+          "HEAD": "6d471db103d53dd9165e4832744501a686e59edc",
+          "branch": "refs/heads/v4/korean-editorial-knowledge-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-korean-editorial-knowledge-01",
+          "HEAD": "6d471db103d53dd9165e4832744501a686e59edc",
+          "branch": "refs/heads/v4/korean-editorial-knowledge-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "c192631810ec0ed98e20d942b700e30eb6a86cf626d87e10209bf42b84614956",
+        "newlyVisibleInventory": {
+          "count": 1,
+          "pathsSha256": "d7e28b07c8cf14528dadb2a8ce01dd1ede727be98a16395b5cc1b06dfa94f2eb",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-major-fortune-product-knowledge-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "efe32658f8c0b0defa07601e64b49d6329665634",
+        "beforeFiles": 3649,
+        "afterFiles": 196,
+        "missingFiles": 3649,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "f39227e457bd196640c314a0dbdc3dffac389641da43df4ec5754e2160fda3ef"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-major-fortune-product-knowledge-01",
+          "HEAD": "efe32658f8c0b0defa07601e64b49d6329665634",
+          "branch": "refs/heads/v4/major-fortune-product-knowledge-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-major-fortune-product-knowledge-01",
+          "HEAD": "efe32658f8c0b0defa07601e64b49d6329665634",
+          "branch": "refs/heads/v4/major-fortune-product-knowledge-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "b58e215e9d54b8125b9cd04ec6849dc551816cbc96bd6438ca8d1fde4117e673",
+        "newlyVisibleInventory": {
+          "count": 196,
+          "pathsSha256": "082d8abbc5ca542eec710a00d88dd21b68d6fd5d3538e5ca2cefd236f031aee6",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-product-specialist-foundation-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "e0d27b3c78380bb249ec7dd12aa20e8747bc3666",
+        "beforeFiles": 4246,
+        "afterFiles": 9163,
+        "missingFiles": 2227,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "3875993328c1d5d27b6ed844221781223a1c8336d769eea9495eaed2b16e5c3e"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-product-specialist-foundation-01",
+          "HEAD": "e0d27b3c78380bb249ec7dd12aa20e8747bc3666",
+          "branch": "refs/heads/v4/product-specialist-foundation-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-product-specialist-foundation-01",
+          "HEAD": "e0d27b3c78380bb249ec7dd12aa20e8747bc3666",
+          "branch": "refs/heads/v4/product-specialist-foundation-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "2ac77016f69a5e1f338cc3bd684e233aa9c9d5c94f8c4c9ba4e542d58d258296",
+        "newlyVisibleInventory": {
+          "count": 7144,
+          "pathsSha256": "2ebc05d7c055acfc56a76df12a9f8a88d9e3ea438607d812017b3040a27e3bec",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      },
+      {
+        "path": "/private/tmp/gyeol-vercel-function-trace-fix-01",
+        "headUnchanged": true,
+        "branchUnchanged": true,
+        "head": "1e836a5606745d5f2d1d7972afdca6cd2ae9f86a",
+        "beforeFiles": 3537,
+        "afterFiles": 1,
+        "missingFiles": 3537,
+        "changedExistingFiles": [],
+        "gitMarkerBefore": {
+          "exists": true,
+          "isFile": true,
+          "isDirectory": false,
+          "contentSha256": "dffe3fa5506bc30a7e56479c2402505f262a6844d65e6120bb7669c2ee004cd4"
+        },
+        "gitMarkerAfter": {
+          "exists": false,
+          "isFile": false,
+          "isDirectory": false,
+          "contentSha256": null
+        },
+        "registrationBefore": {
+          "worktree": "/private/tmp/gyeol-vercel-function-trace-fix-01",
+          "HEAD": "1e836a5606745d5f2d1d7972afdca6cd2ae9f86a",
+          "branch": "refs/heads/v4/vercel-function-trace-fix-01"
+        },
+        "registrationAfter": {
+          "worktree": "/private/tmp/gyeol-vercel-function-trace-fix-01",
+          "HEAD": "1e836a5606745d5f2d1d7972afdca6cd2ae9f86a",
+          "branch": "refs/heads/v4/vercel-function-trace-fix-01",
+          "prunable": "gitdir file points to non-existent location"
+        },
+        "missingPathsDigest": "8c1e85ed5b241646adb1c727ac99e4eac39af4f9e28745b744969b84b522d619",
+        "newlyVisibleInventory": {
+          "count": 1,
+          "pathsSha256": "d7e28b07c8cf14528dadb2a8ce01dd1ede727be98a16395b5cc1b06dfa94f2eb",
+          "meaning": "Newly visible in git inventory after ignore/marker loss; not proof of files newly created",
+          "fullPathsExternalEvidence": "worktree-drift-observation.json"
+        }
+      }
+    ],
+    "newlyMissingGitMarkers": 16,
+    "alreadyMissingMarkerFurtherFileLoss": 1,
+    "totalMissingObservedFiles": 56642,
+    "preexistingGitMetadataByteChanges": [],
+    "allAffectedHeadObjectsAccessible": true,
+    "negativeTestCopiesLocation": "/var/folders/8x/04nzmww51h34rphgg61dcjc00000gn/T/",
+    "evidence": "before-preservation.json and validated-preservation.json; existing metadata unchanged; no restore/remove/prune/repair/clean operation",
+    "fullBeforeAfterEvidenceExternal": "before-preservation.json and validated-preservation.json"
+  }
+}

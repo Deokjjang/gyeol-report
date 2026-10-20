@@ -1,0 +1,18 @@
+{
+  "provider": "NO_APPROVALS",
+  "draftPurpose": "REVIEW_DRAFT_NOT_APPROVAL",
+  "draftIsKnowledgeBindingApprovalRecord": false,
+  "requiredFutureChecks": [
+    "실제 승인자 인증 및 권한 범위",
+    "원본 Source version / Record hash",
+    "정확한 Product / Relationship scope",
+    "Meaning identity / Actual evidence",
+    "Source / Graph version",
+    "유효기간 / 철회",
+    "별도의 Customer approval"
+  ],
+  "automaticConversion": "FORBIDDEN",
+  "approvalRecordsIssued": 0,
+  "gatePromotions": 0,
+  "implementationStarted": false
+}

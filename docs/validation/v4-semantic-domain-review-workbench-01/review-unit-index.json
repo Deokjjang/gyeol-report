@@ -1,0 +1,43 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "ARRAY",
+  "entries": 6965,
+  "logicalJsonHash": "b7a86af968a026c1e7bd740db2741292bd03ea6752eac0d635e17cf592ea05f3",
+  "parts": [
+    {
+      "file": "review-unit-index-part-0001.json",
+      "sha256": "4f87dcf9cd19aee0065f4998b551a32cdfc4fd64324e1d9989a17b3d0ff3fcf0",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "review-unit-index-part-0002.json",
+      "sha256": "9f28896f5984ccaa3c1f848e811e07367d984b20e29c92cc409e67b1d9697f69",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "review-unit-index-part-0003.json",
+      "sha256": "63d10691f762282950d5b797e04661cdea2a513fbac489fc21fbdfaaef06cabf",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "review-unit-index-part-0004.json",
+      "sha256": "ea14f069383657f2a17957ce55fbc222a4b0034b05f8b5febe1967b58a70df33",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "review-unit-index-part-0005.json",
+      "sha256": "16a7ef71475affcd6b5d7cfc835587a302c672a1404e06414ca9e049e719161e",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "review-unit-index-part-0006.json",
+      "sha256": "a6ae975c7fca3d87749ca1d8a6add3f61d1307d8f5b44757d21fc0caceb70fb6",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "review-unit-index-part-0007.json",
+      "sha256": "95eae8f9f535176229d9df77b6fcc2946d1ffa4863ce1e1d929561ea7b77464d",
+      "kind": "CHUNK"
+    }
+  ]
+}

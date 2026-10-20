@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-owner-direction-audit.json.gz",
+  "payloadHash": "0b7029a7ffb80b92fb937116ac4a019cd40e86fcdd57ee27691363eb386859c7",
+  "logicalJsonHash": "174dfe8c038a1065f7b52cb8e2851d87d2fe892ecb61144d800472076a28eaa6",
+  "uncompressedBytes": 10162332
+}

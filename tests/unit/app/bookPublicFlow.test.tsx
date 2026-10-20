@@ -9,6 +9,8 @@ vi.mock("../../../src/lib/sharing/reportShareStore", () => ({ existingReportShar
 vi.mock("next/navigation", () => ({ usePathname: () => "/", useSearchParams: () => new URLSearchParams(), notFound: () => { throw new Error("404"); } }));
 import Home from "../../../src/app/page";
 import InputLayout from "../../../src/app/report/new/layout";
+// Mock owner acknowledgement for isolated paid fixtures; owner denial is tested separately.
+vi.mock("../../../src/lib/book/ownerAccess", () => ({ loadOwnedTicketBook: async () => ({ kind: "absent" }), canReadPurchasedBook: async () => true }));
 import ReportPage from "../../../src/app/reports/[reportId]/page";
 import LocalHome from "../../../src/app/dev/book-flow/page";
 import { POST as localApi } from "../../../src/app/dev/book-flow/api/route";
@@ -117,7 +119,8 @@ describe("actual input → existing checkout builder → local publish/read → 
     expect(await publishLocalBook(prepared.orderId)).toMatchObject({ ok: true });
     const view = storedBook(await readLocalBook(prepared.orderId))!;
     expect(view).not.toBeNull();
-    if (payload.productKey === "saju_mbti_compatibility") { const spread = view.data.pages.find(p => p.kind === "pair"); expect(spread).toBeDefined(); expect(JSON.stringify(view.data)).not.toMatch(/67점|궁합 점수|궁합 등급/); }
+    if (payload.productKey === "saju_mbti_compatibility") { const spread = view.data.pages.find(p => p.kind === "pair"); expect(spread).toBeDefined(); // Actual versioned points belong only on the dedicated index page.
+      expect(JSON.stringify(view.data.pages.filter(p => p.kind !== "score"))).not.toMatch(/\d+점|궁합 점수|궁합 등급/); }
     else if (payload.person.birthTimeUnknown) expect(view.data.people[0].table.manse.stemRow.hour).toBeNull();
   }, 30000);
 });

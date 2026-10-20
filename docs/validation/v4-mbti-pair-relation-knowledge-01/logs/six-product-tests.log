@@ -1,0 +1,11 @@
+> gyeol-report@0.1.0 test
+> vitest run tests/unit/interpretation-v4/sixProductIntegration.test.ts
+
+
+ RUN  v4.1.5 /private/tmp/gyeol-mbti-pair-relation-knowledge-01
+
+
+ Test Files  1 passed (1)
+      Tests  64 passed (64)
+   Start at  07:36:19
+   Duration  188.00s (transform 2.54s, setup 19ms, import 3.16s, tests 184.64s, environment 0ms)

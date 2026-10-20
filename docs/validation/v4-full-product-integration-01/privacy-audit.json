@@ -1,0 +1,374 @@
+{
+  "status": "PASS",
+  "filesScanned": 90,
+  "gzipLeavesDecodedAndScanned": 28,
+  "privateNameAndBirthDateTermsChecked": 37,
+  "nonNullOriginalPersonIdRejected": true,
+  "rawCustomerAccesses": 0,
+  "externalProseApiCalls": 0,
+  "originalGraphRootsAndOwnersPreserved": true,
+  "rawGenerationAndWorkspaceSnapshotsExternal": true,
+  "files": [
+    {
+      "file": "docs/validation/v4-full-product-integration-01/README.md",
+      "sha256": "454ca62cf9fd765f6d9e7dd59d0606b805a0679f5f70ec07917a3f70785c0715"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/actual-product-integration.json",
+      "sha256": "3871f4364003a74fc53d8bd76eab12daab6ebe1de08a11c8a4c3a93fc0f26d2f"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/approval-safety-audit.json",
+      "sha256": "3f7a67934e5d3905f480c0a793ddb694c5238185fa7f4319d29e2383c80d734a"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/book-contract-preservation.json",
+      "sha256": "9a03247b94fffd711f7fd161af4dcedaf9d35c4c382c047db719d41926b86a33"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/contract-call-map.json",
+      "sha256": "d322635e619961a72104d7bfe87576cd4973ef9785c1bd0e6e314bf80792ee5d"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0001.json",
+      "sha256": "9e3ffd87ab6b79c2d46a143752c33d430f04dc741df9657f565f4ea6357e8119"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0001.json.gz",
+      "sha256": "1f18fc07c0dd5458ff744d76bb412e976b611fe1fcac8a6ebbca6f4365c641ca"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0002.json",
+      "sha256": "39f3239980e0e9f16fa04d6bc9c368e63450f790002807ac624b01f8dfce996e"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0002.json.gz",
+      "sha256": "a60c2fe12b5626dd8a28de51fe89980b24dd5de8b4a7616f67f64d4ea4079c9c"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0003.json",
+      "sha256": "53565868691e42b878fe23d925fc0cfdf19d967c8c0ff0f5b49373689e1a594e"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0003.json.gz",
+      "sha256": "68a6d5560f9315654c67319dfe17b4c20f9c8d421699a2e9ae2c3d0d06692bbe"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0004.json",
+      "sha256": "547d72600c176d4142030fba17ec27ecd649b200a92168062659df272920a1d0"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0004.json.gz",
+      "sha256": "51117498d06b22e4f180bd98096da1046218f76046be8b353718b437a6a22d2a"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0005.json",
+      "sha256": "386bab097fff8a6e1ddf6a88ba1411e45eb569d290b04b4afcefa82235d928e8"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0005.json.gz",
+      "sha256": "5d5516128e94ea656c35d45167d9b878f6188b7d01fe518cbce979d97d4e3034"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0006.json",
+      "sha256": "1e41176614962de6023d3c7d145e57c854e3be9e567a01e706674879d612b74c"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0006.json.gz",
+      "sha256": "c5d786bbdfcbc1b297b155a570651b5a59124a5ab25d4d3bb8eb5937cdb9dd77"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0007.json",
+      "sha256": "bb86544f47431ea9011ec991bb40c89fb118d1936bd6d869fa4219e7fc2c1f8d"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0007.json.gz",
+      "sha256": "3738d29e50102ec69ff1ae572d9b9b9626f0d701871fbee3377228cc7683c84f"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0008.json",
+      "sha256": "d6e1b52bbb8bc4394a5409b08d2c79fc0d5b1d142c705b7d845681cb7aeb5d56"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0008.json.gz",
+      "sha256": "9a730d84d051617e8f94ac53053f2e4ec0a3f1bfc49d543db537e8965aa9cfb5"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0009.json",
+      "sha256": "980d855d006ce923ef5e330e4a6137cce6b8903db04d94bbb2d19b248630e96a"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0009.json.gz",
+      "sha256": "04865263142584ad7615f431ab1f61dfdcac1b703607f09320308885ef7cc3bb"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0010.json",
+      "sha256": "c94b92983830e5aebc3259e94816997c4a21cc2f17820e2ba702e2e0e9fd8cf1"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0010.json.gz",
+      "sha256": "05703d33711c2cd6205346439656ea064c5398868e1643323727a3f7ba25f328"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0011.json",
+      "sha256": "0fc147171a1e964dd3be55dbec843302fcf988dddab3f9be73c8d7dee48a9af0"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0011.json.gz",
+      "sha256": "8bb8f949aaf34083d88d23ecd31f92d287f5ae48494024088a4ed1788c6560ec"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0012.json",
+      "sha256": "ff9d2ba22abedebf95d3291295c04d431b1bd40e12589f1230862591d09a43be"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0012.json.gz",
+      "sha256": "046c394f6c56ab74f3599352f5048c318ed1266d7895b57e892ae26fc61be305"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0013.json",
+      "sha256": "f3a607bc00df96e262751ddaf464173a04b1ec64e1c74c26940143472e217d48"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0013.json.gz",
+      "sha256": "b3222e168e55e9bde2ba282888ad86c87bd78470a5e75a212f5076c4b1baa508"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0014.json",
+      "sha256": "9c58d5e140410ed65312b053c1fee819ac1046671aa80b5a9346ab15f9ee14d9"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0014.json.gz",
+      "sha256": "f97fee7764d33c3fd2d220519273ca82c3ce487f0524ca91272b940a4c740128"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0015.json",
+      "sha256": "767278baeb9aec8afd2e285c94c881aeb8c4573dced9929a2d4cb92f28c65b70"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0015.json.gz",
+      "sha256": "eabf0d289c1aa0a3b4f098afc2aebfa2b3495d234bb9edb90fbcb2a6f1461b3b"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0016.json",
+      "sha256": "613cf67187603735da4b9d944c903506b370d87c8f38139e255f0625245b3012"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0016.json.gz",
+      "sha256": "ea041fc73dabb4897ec4480d085da216999648ec11a51728b25304080a98d401"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0017.json",
+      "sha256": "f818e1f0632e9db57065426c4a02d7315d753b872f5d75e67ceafcc09ecc22ac"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0017.json.gz",
+      "sha256": "8d01dde6c5fc9d07a242fb83c7aa89e6bb393534a1bc7fe9ba23ad2642a2f33d"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0018.json",
+      "sha256": "e80531aed3879233936b8da71d5f74d7c781aa12b77db80995f546470a47c9f1"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0018.json.gz",
+      "sha256": "094bb48e4e4a7ee4cc0ec2acd69c5fb659f3d4038dcd8d4ea04cd3fddb151555"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0019.json",
+      "sha256": "3686bf202601e15e6f814f00346329a0163cb827f9893448447e6213a38e24dc"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0019.json.gz",
+      "sha256": "d2f9b49138f90dfdb97b25ab5664035540170e4a642d99c387d68a530fe89c49"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0020.json",
+      "sha256": "0502810d87fa71e0c530a899b2efa019420f30d9a3b30f4a960d78cea276aee4"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0020.json.gz",
+      "sha256": "45b2afbdf89499d38733e6da91080eb64afa245bb7de63b7aa998051653ce930"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0021.json",
+      "sha256": "249fe9f203dad7a66cafc407b22faf4acbb8e1f2c726da90a69272b77a41fdcf"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0021.json.gz",
+      "sha256": "195da9b56c923581890e18a59b823abd876e0c3fad227f57f7a8a2842dd855da"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0022.json",
+      "sha256": "3865c6289d08db701642131a54ab88eaa8190d67e24b21636b9873f61e0ea69b"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0022.json.gz",
+      "sha256": "c1555e701b1059ae1a363285d03cf540915addd16737a51f4d63180f7c553751"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0023.json",
+      "sha256": "159d399520fe313ee4b70bfec79e73a339830915d4fb6eb68340bac8a69d0b56"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0023.json.gz",
+      "sha256": "9191af2f37e743f918405228f591b6506bd5e4ca5bfae35f4188054b2810cba8"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0024.json",
+      "sha256": "80f73c1fee071dd191ee32ee7687dfa7749a091d0a8366cd34d640e70303228d"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0024.json.gz",
+      "sha256": "b33312af14f5821d6eaab235af0c825a4963510bb946590e63b4c8361a0e3b2f"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0025.json",
+      "sha256": "cae44be2de9bf3ec757a9b4481c8a742a448f45f1dd287461e22119e7d8d7fff"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0025.json.gz",
+      "sha256": "7c7f301297265769a1677413638b2db0f60b641bb5409a48c6b033a11f1dac3d"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0026.json",
+      "sha256": "a72f84fef4242c34c4a5a0ea0827de91ba73cf2aee1d1c1b724de94e84fcfa0c"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0026.json.gz",
+      "sha256": "95404e0ff3f761a7709b77e6d49d435556f3d97107f5b417769fe44fb11c68ff"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0027.json",
+      "sha256": "58f7049d118dc12814da7267d65e8f7affa2f6dce5022689efda7b01e451cd93"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0027.json.gz",
+      "sha256": "9bcd97a29828e93403375ad6d611260af4a9af07452e74a4daef544b7394406e"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix-part-0028.json",
+      "sha256": "1f7ebf3bfd41c26f2f21a659c1fd6f3a6a74b31b9f4f638338598174e3e5acd6"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/coverage-shortage-matrix.json",
+      "sha256": "44a80cfe5a1ba8eb2778df07e671b17809633f156c82d997821c05885071a378"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/deterministic-independent-comparison.json",
+      "sha256": "571ae6a7a2ac6132357f598aa6dc77a5b7a5fe84c2363f8f9832d62261fbd0de"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/deterministic-validation.json",
+      "sha256": "7522fa7379a7f8e9b70a5c6d7e1af1daca365c78e64f5e8d039f77a1b750f736"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/execution-source-seal.json",
+      "sha256": "0770f8bf3a990ec009420228a041c12531603086490171cdd2f9c0d8fd47e740"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/final-report-fields.json",
+      "sha256": "38208f4e525a0855f1718ae99f0f6d42be452a61c4c2e8d3796fa28ffaf918da"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/integration-manifest.json",
+      "sha256": "2e6433146063b2d28954e0adc63b1ed1b083776d19a86d0638e02db0bd964bdc"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/meaning-source-preservation.json",
+      "sha256": "cf17a2e14eaee8ca01eea461242485001dfbff44eccd036ba6da77cabb4c1a25"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/meaning-source-preservation.json.gz",
+      "sha256": "d91927e6f3ec8ff9fb34acfef969e78a8004bcfe246645da5a50377925aa3af2"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/nft-trace-preservation.json",
+      "sha256": "2e93c872ba364c6881c2419930b278b6bb79a68158d9a885c7405f2cef84adec"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/offline-book-representations.json",
+      "sha256": "7b8958c38a10aa036550743ad11f0c90be539761bb783e702c3686709d7d84b3"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/product-route-matrix.json",
+      "sha256": "b67c3427db31efaf86fb10cc9e8b3ab24371f2f2644e8664497eae7a47beb4d4"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/publication-safety-handoff.json",
+      "sha256": "831240e8b2484fb0be197360ed16fe3f270d76d8b5bd090c56cda154bc6c14d4"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/publication-safety-issue-audit.json",
+      "sha256": "617a113fdd3cb9b04e2dcb5ecfb7b1510c76d13e6f63fe2cc233c2ed77725553"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/reader-bridge-audit.json",
+      "sha256": "6fc0829a7da12c77b64283fc99306c5700040b5d64354dbab3dcac3eab9b8e91"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/regression-comparison.json",
+      "sha256": "e11904a99c94bedb1854f9416af4930b3825eb2948eed211c7083b6c843e734c"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/source-preservation.json",
+      "sha256": "27e4bbb08a1071ed61ddb4b1c623ffe6f6ffd0cc1d659e5cfe6e867b7a7b8146"
+    },
+    {
+      "file": "docs/validation/v4-full-product-integration-01/technical-validation.json",
+      "sha256": "1a7006d9d1c032f7dbf7abd611c934ab314fe21032b3bdfcb14727f3be716e0f"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/actualFixture.ts",
+      "sha256": "faaa9ad96044f7745361988e236e50ddb0964c64825ce3f0f182f80d03b07cca"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/bookAdapter.ts",
+      "sha256": "71f00a7e90ba44bc208893b6e28a0409443b5e047a539fed3d0e2f902a104f52"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/coverage.ts",
+      "sha256": "f2917fc35f52a0dada9c5690c9a495e910a7550b6e02813404918c5cb10965b8"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/engine.ts",
+      "sha256": "39c4d9f3951c1c4a10d8b742d0b588d917811f20f7e4e9abd173dd3de6e6ba5a"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/readerBridge.ts",
+      "sha256": "38062260deac89008cca75782d207a5e6bc1ca0a206e958acc17021e0a8e2f81"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/readerCatalog.ts",
+      "sha256": "55ae16a9e35063aa584844375266feebfb559341e0fe46bb9287ee5cdd14142c"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/sourcePins.ts",
+      "sha256": "f8055c5729a5c37b44ce91158883feadfaf18c032f21ebddac02e1aadaf946a4"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/storedPublication.ts",
+      "sha256": "79353dc7bd50ab74a7694b77d97242aac8f9bbb54c401e67d3c19949558f83d3"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/types.ts",
+      "sha256": "73b9343ac0bac78cb967af9d51e2baef8a8f5ff68bd37453166505c6788ae1c6"
+    },
+    {
+      "file": "tests/fixtures/full-product-integration-01/reader-source-pins.json",
+      "sha256": "015af4cdf2263f8ff6a54547221bd3a53502f89f79766363e447145c75ba793d"
+    },
+    {
+      "file": "tests/unit/report-knowledge/fullProductIntegration.test.ts",
+      "sha256": "78c1deb910c418225f0dc286103f5a04ab63c9af5e235702a5ef0decbd6f8ed0"
+    },
+    {
+      "file": "tools/full-product-integration/bootstrap.mjs",
+      "sha256": "f193bd339b3f3efb0df3caef485cc3862ef1155bab3e6b888fc6f634273270a6"
+    },
+    {
+      "file": "tools/full-product-integration/verify.mjs",
+      "sha256": "eb5851b4ab9c9726416f7deabf859c783982588a2dea1d872abfb0566c622975"
+    }
+  ],
+  "auditItselfExcluded": true
+}

@@ -1,0 +1,30 @@
+{
+  "algorithm": "SHA256 exact bytes",
+  "files": {
+    "compatibility-love-specialist-manifest.json": "c3fd619ced92af63cd1ba52943f65a43fcb0c5c4a93a89cd9958039d53207045",
+    "compatibility-love-material-index.json": "dbe34223418e52303f44c9e81c5db94f30a2f0dc163afff18aa75aba98dee9a5",
+    "compatibility-love-question-registry.json": "0a8d14b73c8858832b307fb48f83baf53f637996e047045f4ec3c14587a4a7f1",
+    "compatibility-love-question-coverage.json": "9e9c82528e54612bfd92df53a1795470a3d365b7c7c8b0870e0208d5811e314a",
+    "compatibility-love-owner-audit.json": "6bcb0cd8a26cc6e0d5d505b6b56f9801b9c0a5202e6cf43d97e5993be2ac10f1",
+    "compatibility-love-canonical-relations.json": "9b024bbd83685cab94e9eda08baaa7d9cea9841d454f9cc72782d0da1b9b081e",
+    "compatibility-love-directional-evidence.json": "710cfa2eb50e27eae3d406d3432c4efe3b25efb4a21ee2293247521ff401dc6f",
+    "compatibility-love-mbti-pair-reference.json": "fcd5a0110eb3efb6ff6adc709a54b5ee1c9a0682f38d767d540014daa8042dde",
+    "compatibility-love-fusion-audit.json": "4ef484e67fb83ffe8bc7e1fcf4415823cf1195cd792f9ac25426eef85cf91eee",
+    "compatibility-love-domain-ancestry.json": "72a485da34cbd892f9a04d123a867ddc8ff152328637b83a8b66014e4b09fb74",
+    "compatibility-love-signed-axis-facet.json": "bd917c9c47707600cf56cff2b6c22433f95793fe5d0337abdac2f35bc1928a05",
+    "compatibility-love-semantic-conflicts.json": "c97375189c553ac24cf65a0ab9d78a729bfb21afdeb04f888b0c8ea52a50652f",
+    "compatibility-love-root-reuse.json": "2ce116e03e7dce79dd3cbb11802ff8d3c09cfd0ccf613b4d9eacdeb8b24b9c34",
+    "compatibility-love-recall-requirements.json": "4fea43b7fc2d7d07a8d0f7c58117c00933f79629b66c61a8550116b1fdce44d6",
+    "compatibility-love-repair-safety.json": "e7855c48f9f9f7838bb4ecd5327c1e66c4e608a819c32d100d438dc2ecac483f",
+    "compatibility-love-before-after-binding.json": "86c7541820fae8311d96c0e81f936981a3c170cdb53609321d505d631f5e8e0c",
+    "compatibility-love-synthetic-selection.json": "83e9633cd47ff3b6dc2d4edb8455db04e9d7b9ad95fb2aaa95d3525a049c9602",
+    "compatibility-love-algorithm-comparison.json": "89dcc23bb479dee2bc39683852006b626adf5472d3547fae1e623e895c8b9302",
+    "compatibility-love-fallback-audit.json": "067ac020e6d53dd2aecc21f971073af73b8bb5336aa354c1296e6b563e0ce12d",
+    "compatibility-love-actual-books.json": "c238d41ae85dd9a5ad4c78dbb4f9255771f62ba17aa338f1d56b45e3d533da57",
+    "compatibility-love-other-category-isolation.json": "cdd09be00437f1858aa0c3a446d0dfa270fb7cdd2eea1819920abd6a6e40e851",
+    "compatibility-love-operator-worklist.json": "5ee47b006eb4ba8f6c73b82e8512143c432aa70c7ffb5339d2825b8c18147751",
+    "compatibility-love-missing-contracts.json": "743b4977d72460448710cf67606471249e8827a56c5fc8eeaee166b66f159c67",
+    "compatibility-love-privacy-audit.json": "75a8d389e3c4fac836a6dc9a9a35615f42dbfb0289b588164b7189584e367144"
+  },
+  "combinedDigest": "deb7d447c3b15c3d97ed50aba7996414530743f5e374609f3fe2b628bf086c06"
+}

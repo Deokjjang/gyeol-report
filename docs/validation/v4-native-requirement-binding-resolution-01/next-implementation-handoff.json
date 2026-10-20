@@ -1,0 +1,54 @@
+{
+  "status": "TECHNICAL_PARTIAL_RESOLUTION_NOT_CUSTOMER_APPROVAL",
+  "customerReady": false,
+  "remainingUnmatchedUnits": 404,
+  "requirements": [
+    {
+      "kind": "ROLE_SOURCE_REVIEW",
+      "originalResearchIds": [
+        "afpr:month-god:비견",
+        "afpr:month-god:정재",
+        "afpr:month-god:겁재",
+        "afpr:month-god:상관",
+        "afpr:month-god:식신",
+        "afpr:month-god:편재",
+        "afpr:month-god:정관",
+        "afpr:month-god:편인",
+        "afpr:month-god:정인",
+        "afpr:month-god:편관"
+      ],
+      "requiredDecision": "Original reviewed role declaration: MONTH_STEM / MONTH_BRANCH_MAIN / explicit pair, with exact Source hash/version; never choose from god equality."
+    },
+    {
+      "kind": "TEMPORAL_SCOPE_SOURCE_CONTRACT",
+      "units": 99,
+      "requiredDecision": "Distinguish nominal annual, effective annual segment and annual-wide interpretation. Existing monthly intervals may not be expanded."
+    },
+    {
+      "kind": "PRODUCER_ADDRESS_CONTRACT",
+      "units": 49,
+      "requiredDecision": "DAYUN_STEM original derived dayun node has no native tenGod field; use only an explicitly verified source-to-producer contract. Do not change calculations."
+    },
+    {
+      "kind": "FLOW_REFERENCE_CONTRACT",
+      "units": 49,
+      "requiredDecision": "Original FLOW_GOD reference is dayun stem; original annual/natal god meaning cannot substitute."
+    },
+    {
+      "kind": "NATAL_AND_CONTEXT_REVIEW",
+      "units": 25,
+      "requiredDecision": "7 day-master reference Units and 18 natal god Units are supporting facts, not standalone period meanings. Provide actual natal/element and life context only where required by each original source."
+    },
+    {
+      "kind": "MEANING_PRODUCT_CUSTOMER_REVIEW",
+      "candidates": 10,
+      "requiredDecision": "Original Meaning/Claim identities remain null. Preserve all gates, 30 source FAIL and 30 conditional Major meaning reviews; no invented identities or automatic approvals."
+    }
+  ],
+  "notImplemented": [
+    "No other month question clauses parsed as predicates",
+    "No annual/flow/dayun default requirements invented",
+    "No research Source, approval, specialist runtime, Planner, Writer or Book changes"
+  ],
+  "nextImplementationTask": "Obtain exact reviewed Annual role/scope/context contracts, then implement only the justified typed bindings in a separately authorized task. No automatic follow-up."
+}

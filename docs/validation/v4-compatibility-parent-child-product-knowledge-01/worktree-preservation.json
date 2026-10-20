@@ -1,0 +1,219 @@
+{
+  "otherWorktrees": 26,
+  "allBeforeAfterEqual": true,
+  "originalDirtyEntries": 11,
+  "snapshotsSha256": {
+    "before": "93b89903843df9c8200e27d63d8d4f4b4e0714d27a012e1bebca92d992ae2ebf",
+    "after": "93b89903843df9c8200e27d63d8d4f4b4e0714d27a012e1bebca92d992ae2ebf"
+  },
+  "worktrees": [
+    {
+      "path": "/Users/Deokmin/Dev/projects/gyeol-report",
+      "head": "c048218cc5961e0f53a1deab2603511e17559fc3",
+      "branch": "v4/annual-editorial-quality-fix-01",
+      "status": " M .gitignore\n M AGENTS.md\n?? supabase/.temp/\n",
+      "fileCount": 1857,
+      "filesDigest": "ee91c3ee70eeaa38c9ef425e24c21d5052adeb3c181c692f45441c96a5672276"
+    },
+    {
+      "path": "/private/tmp/gyeol-annual-fortune-reader-quality-polish-01",
+      "head": "f1994d13eb1ac40b913ec1419a1e0c24e7c89407",
+      "branch": "v4/annual-fortune-reader-quality-polish-01",
+      "status": "",
+      "fileCount": 1856,
+      "filesDigest": "ba0eff5da4e945d93a0e56346c1b649aca06a429061d2b3b1f35ca3f935799cc"
+    },
+    {
+      "path": "/private/tmp/gyeol-career-editorial-quality-fix-01",
+      "head": "80409f8a96c5a2b4bf93792ea6f5d1c97bbc1fa4",
+      "branch": "v4/career-editorial-quality-fix-01",
+      "status": "",
+      "fileCount": 1888,
+      "filesDigest": "8fd28bbb45c27b7e5dccff05739768ac021ea39c27fd14713a7cedd2a480abe2"
+    },
+    {
+      "path": "/private/tmp/gyeol-career-product-knowledge-01",
+      "head": "7cf74a29fd84b1ed9f4979b467ad820f83781ec1",
+      "branch": "v4/career-product-knowledge-01",
+      "status": "",
+      "fileCount": 2654,
+      "filesDigest": "e9cb0c00d6736d3c1c8998f3a5931a8a6563cdf21296394a70f462468cea50d9"
+    },
+    {
+      "path": "/private/tmp/gyeol-compatibility-editorial-quality-fix-01",
+      "head": "21da9173461f3530c5e945e4d306303e7660986b",
+      "branch": "v4/compatibility-editorial-quality-fix-01",
+      "status": "",
+      "fileCount": 1870,
+      "filesDigest": "06da32ba2b7692bde7f2f7734a3f33bf08d99bdba2cd20a9790fb1c36fd87c0c"
+    },
+    {
+      "path": "/private/tmp/gyeol-compatibility-love-product-knowledge-01",
+      "head": "be3c00ed36c9bb96ab6a104c8241a5137ef27094",
+      "branch": "v4/compatibility-love-product-knowledge-01",
+      "status": "",
+      "fileCount": 2831,
+      "filesDigest": "cd302d755e678c6e4fc18a9e01412d3d1b2fdb67a07b19a635de20d9c2fc4a63"
+    },
+    {
+      "path": "/private/tmp/gyeol-compatibility-marriage-product-knowledge-01",
+      "head": "80304b03e9d4851d654946bd9d7ee679c70596c4",
+      "branch": "v4/compatibility-marriage-product-knowledge-01",
+      "status": "",
+      "fileCount": 2939,
+      "filesDigest": "0ce8393c387af32b6ecb4fcd0e96451c91837922a452a6a2c8c658e6b9399978"
+    },
+    {
+      "path": "/private/tmp/gyeol-comprehensive-editorial-quality-fix-01",
+      "head": "1edcf3fb9f22e42b144706bd4b25ea2fb5c89462",
+      "branch": "v4/comprehensive-editorial-quality-fix-01",
+      "status": "",
+      "fileCount": 1870,
+      "filesDigest": "b01bed37979165caebd92bac895af816e7b8f26aad24a2ae43aade319e302460"
+    },
+    {
+      "path": "/private/tmp/gyeol-comprehensive-product-knowledge-01",
+      "head": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+      "branch": "v4/comprehensive-product-knowledge-01",
+      "status": "",
+      "fileCount": 2575,
+      "filesDigest": "920e7d0ec583333eede72644365f961c7cbfb45b21018285a9a2243a2dfa37b4"
+    },
+    {
+      "path": "/private/tmp/gyeol-foundation-saju-deep-knowledge-03",
+      "head": "7ff6aba0c9e0abd74284a388369b20ff6229be38",
+      "branch": "v4/foundation-saju-deep-knowledge-03",
+      "status": "",
+      "fileCount": 2153,
+      "filesDigest": "08f5d517543d77c3f9d7637beddfb5b92e224d057afe29c0947b7052fe2172dd"
+    },
+    {
+      "path": "/private/tmp/gyeol-foundation-saju-knowledge-completion-02",
+      "head": "771e4393bb445743359cbcb651d95ed02f2f7a4b",
+      "branch": "v4/foundation-saju-knowledge-completion-02",
+      "status": "",
+      "fileCount": 2132,
+      "filesDigest": "fbca70674171f0a945158d803ff9ca6a1a8d0fe50710089e6c0fe267347ab2d2"
+    },
+    {
+      "path": "/private/tmp/gyeol-foundation-saju-knowledge-expansion-01",
+      "head": "5e96d1c3663b92ff85f2d8c08b9a682058aef922",
+      "branch": "v4/foundation-saju-knowledge-expansion-01",
+      "status": "",
+      "fileCount": 2110,
+      "filesDigest": "d40a80f8cc242216ecbb74b7516d9d5184e2722b72b604a48844821886f226fb"
+    },
+    {
+      "path": "/private/tmp/gyeol-fusion-semantic-knowledge-depth-01",
+      "head": "6d220856fbfa9a681a74625680387f855b5e77f0",
+      "branch": "v4/fusion-semantic-knowledge-depth-01",
+      "status": "",
+      "fileCount": 2501,
+      "filesDigest": "e75dcc1521a1c238b58c63fcf5763490fa5be82a8af8f85f1b8cf529c167f580"
+    },
+    {
+      "path": "/private/tmp/gyeol-love-editorial-quality-fix-01",
+      "head": "544f14c36ba5de557b1d746879f1a69a5f57817f",
+      "branch": "v4/love-editorial-quality-fix-01",
+      "status": "",
+      "fileCount": 1889,
+      "filesDigest": "4aa16b8ed587397661de7af54942cef61e21e5e443479dd502c3ec27bc8620c0"
+    },
+    {
+      "path": "/private/tmp/gyeol-love-marriage-child-product-knowledge-01",
+      "head": "acb6f37556bd312386dec930dff80bbff94a41a4",
+      "branch": "v4/love-marriage-child-product-knowledge-01",
+      "status": "",
+      "fileCount": 2735,
+      "filesDigest": "3b63497f54d6e167733b233ee9377f2fd47ea00fa51fa46a63a567e5a1b69756"
+    },
+    {
+      "path": "/private/tmp/gyeol-major-fortune-reader-quality-polish-01",
+      "head": "9460df97d929735d2d835216952948a202ad8af3",
+      "branch": "v4/major-fortune-reader-quality-polish-01",
+      "status": "",
+      "fileCount": 1851,
+      "filesDigest": "9c181adc90437227696a69231546c6f9b0e52409cb2173385576921cca6b0425"
+    },
+    {
+      "path": "/private/tmp/gyeol-mbti-16type-knowledge-depth-01",
+      "head": "818b71112922bd06f4ac5d7b566324dcf33cf4c6",
+      "branch": "v4/mbti-16type-knowledge-depth-01",
+      "status": "",
+      "fileCount": 2321,
+      "filesDigest": "502f2fe9bdf579416ddd85117048117f4ad32f2d9ca28b508cb7960587a3f314"
+    },
+    {
+      "path": "/private/tmp/gyeol-mbti-pair-relation-knowledge-01",
+      "head": "afb8c3aa798ae3da0ede7ee7ae68b6adb04718bd",
+      "branch": "v4/mbti-pair-relation-knowledge-01",
+      "status": "",
+      "fileCount": 2374,
+      "filesDigest": "7caf70b9af81fa2ff0803fb19e163cc37f263b3cab7551c51c6361c3192883d9"
+    },
+    {
+      "path": "/private/tmp/gyeol-release-technical-stabilization-01",
+      "head": "be4054671d166b3a11127c5bf013b77eab5cd919",
+      "branch": "v4/release-technical-stabilization-01",
+      "status": "",
+      "fileCount": 2094,
+      "filesDigest": "99af63a1722ae067115e21a5162f3c1051baf386e70d8e1a81517778a3f71b4b"
+    },
+    {
+      "path": "/private/tmp/gyeol-saju-composite-structure-knowledge-01",
+      "head": "95d59c50600a504b40bc9a031c96dee7ba0a1694",
+      "branch": "v4/saju-composite-structure-knowledge-01",
+      "status": "",
+      "fileCount": 2185,
+      "filesDigest": "7dc014cf57f52cb0389f0f093930be581ae82ec4a6d4bf79e2dab07d27fd780e"
+    },
+    {
+      "path": "/private/tmp/gyeol-saju-relation-knowledge-01",
+      "head": "3117327c80e8a35e9a476646114ffc3ae42f93ed",
+      "branch": "v4/saju-relation-knowledge-01",
+      "status": "",
+      "fileCount": 2241,
+      "filesDigest": "9331cbc467c4f101eaf958188795e13e6c68af97015add4255d28ee688e0c1cb"
+    },
+    {
+      "path": "/private/tmp/gyeol-saju-temporal-interaction-knowledge-01",
+      "head": "022ef437f34c04d36671120b19b5f5c3e494d5f6",
+      "branch": "v4/saju-temporal-interaction-knowledge-01",
+      "status": "",
+      "fileCount": 2275,
+      "filesDigest": "e26d16ac684edbc6a0ce82a691a2362a6cb9981aaf85c7fe9828dc64a81e2c6d"
+    },
+    {
+      "path": "/private/tmp/gyeol-semantic-axis-knowledge-expansion-01",
+      "head": "071acdc456ddba3b8467667d53f4ff809c9b39dd",
+      "branch": "v4/semantic-axis-knowledge-expansion-01",
+      "status": "",
+      "fileCount": 2433,
+      "filesDigest": "7eec6b42644083e60b16e8d8ad91faa07778d8bb6c7947b6415fa52d132950a6"
+    },
+    {
+      "path": "/private/tmp/gyeol-six-product-common-editorial-polish-01",
+      "head": "964e6b9a1b248c67e695f112615873f232d9320e",
+      "branch": "v4/six-product-common-editorial-polish-01",
+      "status": "",
+      "fileCount": 2073,
+      "filesDigest": "0aaf36b93e225c6c68ad3ffdd04f4d424090221e7b3b9c11503b19d61bf465c3"
+    },
+    {
+      "path": "/private/tmp/gyeol-six-product-integration-01",
+      "head": "a46eff86e305f5a58721bdd83a2249686e54be4c",
+      "branch": "v4/six-product-integration-01",
+      "status": "",
+      "fileCount": 2034,
+      "filesDigest": "1ebcbe8b28ede39a23b67442c365d4a7ac251511292525caa4f38c0d1bb5e500"
+    },
+    {
+      "path": "/Users/Deokmin/Documents/Codex/2026-09-29/referenced-chatgpt-conversation-this-is-an/work/gyeol-share-brand",
+      "head": "4e25b8775c3947e4a3d661f0e23c87950d15c8d4",
+      "branch": "feat/share-brand-system",
+      "status": "",
+      "fileCount": 1079,
+      "filesDigest": "917bd96a1400442afd6bfd7260af201b9902345a686cf161b9558fcd9cf5364a"
+    }
+  ]
+}

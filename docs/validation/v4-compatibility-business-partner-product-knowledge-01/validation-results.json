@@ -1,0 +1,70 @@
+{
+  "baseSha": "6bcd8c733a6c7e924b2a59e98d8cdd23a6ba6eaf",
+  "designatedBaseline": {
+    "files": 42,
+    "passed": 7409,
+    "failed": 16,
+    "conditionalNotRun": 1
+  },
+  "bookBaseline": {
+    "files": 5,
+    "passed": 99,
+    "failed": 11
+  },
+  "deduplicatedBefore": {
+    "passed": 7508,
+    "failed": 27,
+    "pending": 0,
+    "skipped": 1
+  },
+  "deduplicatedAfter": {
+    "passed": 7508,
+    "failed": 27,
+    "pending": 0,
+    "skipped": 1
+  },
+  "afterFiles": 47,
+  "newStatic": {
+    "passed": 1362,
+    "failed": 0
+  },
+  "newActualGenerationTests": {
+    "passed": 46,
+    "failed": 0
+  },
+  "newTotalPassed": 1408,
+  "allRunsDeduplicated": {
+    "passed": 8916,
+    "failed": 27,
+    "conditionalNotRun": 1
+  },
+  "newRegressions": 0,
+  "existingTestsModified": 0,
+  "existingTestsDeleted": 0,
+  "newSkipsAdded": 0,
+  "actualVariantObservations": 46,
+  "actualSuccessfulVariants": 44,
+  "expectedRoleVersionRejections": 2,
+  "successfulDigestComparisons": 308,
+  "wholeActualObservationsBeforeAfterEqual": true,
+  "domainObservationBeforeAfterEqual": true,
+  "sixProductIntegrationTests": 64,
+  "existingFileHashesMatched": 3073,
+  "preExistingWorktreesPreserved": 29,
+  "originalDirtyFilesPreserved": 11,
+  "typescriptBefore": 0,
+  "typescriptAfter": 0,
+  "lint": "PASS",
+  "productionBuild": "PASS",
+  "staticPages": "47/47",
+  "nftWarnings": 0,
+  "newWarningTypes": [],
+  "diffCheck": "PASS",
+  "sourceLookupRuntimeRegistration": "NONE",
+  "externalPaidWriterCalls": 0,
+  "productionOrDBWrites": 0,
+  "customerSnapshotsReadOrRegenerated": 0,
+  "initialSandboxBuild": "FAIL: public Google Fonts network access; same build retried with network permission and passed",
+  "testAuthoringCorrection": "추가한 테스트에서 MBTI Fusion의 sourceNodeIds와 actualSourceEvidenceIds(annotation IDs)를 구분해 각자 profile의 원천·annotation 및 같은 사람 명리root 존재를 검사하도록 정정. 최종0진단·양쪽 root 검증 PASS. 기존 소스 수정 없음.",
+  "baselineCaptureFiltering": "최초 actual generator capture는 digest 비교 테스트1개를 준비 전 필터 제외. 기존 conditional1건과 별개. 최종 신규46테스트는 제외 없이 전부 실행."
+}

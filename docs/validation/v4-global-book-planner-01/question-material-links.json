@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "question-material-links.json.gz",
+  "payloadHash": "ea8855b795a4261bdfa91d8df2c120dd47a95ff284348d2b1d8e3832e7a2e9cc",
+  "logicalJsonHash": "ee738c822ec54849549feac88351b674b5b99474461b65b9a388ab4462588f3d",
+  "uncompressedBytes": 6918538
+}

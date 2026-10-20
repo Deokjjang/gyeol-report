@@ -1,0 +1,2749 @@
+/** Offline marriage research; no runtime binding or customer approval. */
+import type { MarriageMaterial } from "./researchTypes";
+export const MARRIAGE_CH08_MATERIALS: readonly MarriageMaterial[] = [
+  {
+    "id": "cmpr:material:CH08.P1:joint-revise-completion-standard",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "address": "CH08.P1",
+    "mode": "JOINT",
+    "readerQuestion": "앞선 반복 조건을 어떤 공동 완료·권한·미결 절차로 바꿀 수 있는가?",
+    "coreMeaning": "완료 기준을 매번 고치고 다시 하는 반복을 공동 기준과 예외 확인으로 끊는 절차를 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P1.S1",
+        "originalRole": "앞선 갈등 질문",
+        "knowledge": "앞서 도입된 기준 변경 반복을 이번 한 업무로 좁혀 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P1.S2",
+        "originalRole": "실제 원인",
+        "knowledge": "누가 발견하고 준비하며 마무리했는지 실행 전후를 나눈다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P1.S3",
+        "originalRole": "각자 필요",
+        "knowledge": "공동 완료 기준은 시작 전에 정하고 방법은 담당자에게 남긴다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P1.S4",
+        "originalRole": "조정 기준",
+        "knowledge": "기준이 달라질 사유와 다시 협의할 때를 함께 정한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "1b7aeda1752892b8905a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:PRECISION:standard-consistency",
+        "axis": "PRECISION",
+        "definition": "상황 사이 기준 적용의 일관성을 확인",
+        "condition": "같은 기준을 적용해도 되는 조건 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:ADAPTABILITY:feedback-uptake",
+        "axis": "ADAPTABILITY",
+        "definition": "받은 정보의 유효 부분을 반영",
+        "condition": "정보의 신뢰성과 권한을 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "household"
+    ],
+    "positive": "재작업을 줄이고 각자의 방법을 남길 가능성",
+    "risk": "해결 회의에서도 한 사람만 기준을 정함",
+    "factBomb": "다시 해달라는 말이 반복된다면 솜씨보다 합의 시점을 먼저 바꿔야 한다.",
+    "twist": "더 정밀한 지시보다 수정 가능한 공동 기준이 수고를 줄일 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 함께 쓰는 물건을 정리한다면 시작 전 완료 상태와 유지 담당을 적는다."
+    },
+    "senderAdjustment": "결과 기준과 개인 선호를 분리하고 이미 한 일의 시간을 확인한다.",
+    "recipientQuestion": "다음에 같은 일을 할 때 무엇이면 끝났다고 볼 수 있는가?",
+    "counterexample": "실제 기준과 분담이 없으면 누가 일을 못했다는 과거를 만들지 않는다.",
+    "distinctFromOtherParagraphs": "CH07 반복 원인을 공동 완료 절차로 전환",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH07.P3:criteria-revision-loop"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "3e5a71d4f1d3543288c0"
+        },
+        {
+          "owner": "B",
+          "type": "ENFP",
+          "sourceKey": "0f0d27792b96a8ad87ad"
+        },
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "1b7aeda1752892b8905a"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": null,
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "다음에 같은 일을 할 때 무엇이면 끝났다고 볼 수 있는가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-money-choice-without-permission",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "address": "CH08.P1",
+    "mode": "JOINT",
+    "readerQuestion": "앞선 반복 조건을 어떤 공동 완료·권한·미결 절차로 바꿀 수 있는가?",
+    "coreMeaning": "공동 비용의 확인과 개인 지출의 재량을 분리해 허락 요청의 반복을 줄이는 합의를 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P1.S1",
+        "originalRole": "앞선 갈등 질문",
+        "knowledge": "앞선 예산 허락 반복이 실제 도입됐을 때만 이어간다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P1.S2",
+        "originalRole": "실제 원인",
+        "knowledge": "공동으로 부담할 항목과 각자 관리할 영역을 먼저 정한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P1.S3",
+        "originalRole": "각자 필요",
+        "knowledge": "공동 항목은 목적·감당 범위·결정권을 양쪽이 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P1.S4",
+        "originalRole": "조정 기준",
+        "knowledge": "일방 승인 구조가 남았는지 다음 검토에서 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "ab15fd60b429d7c073a5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "b42d6c513c37bfd7f4ee",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "ca7a14f7190d5daca6c5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:RESOURCE_SENSE:allocation",
+        "axis": "RESOURCE_SENSE",
+        "definition": "중요한 목적에 자원을 배정",
+        "condition": "자원 소유자·동의 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:AUTONOMY:method-discretion",
+        "axis": "AUTONOMY",
+        "definition": "합의된 결과 안에서 방법을 고름",
+        "condition": "업무·계약의 실제 재량 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "financial"
+    ],
+    "positive": "책임 있는 공동 결정과 각자의 선택권을 함께 남길 가능성",
+    "risk": "수입 기여를 이유로 모든 소비의 승인권을 독점",
+    "factBomb": "예산표를 함께 봐도 한 사람만 거절할 수 있다면 공동 결정은 끝나지 않았다.",
+    "twist": "항목을 나누면 모든 지출을 함께 심사하지 않아도 된다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 생활비를 함께 관리한다면 공동 항목과 개인 항목의 경계를 적는다."
+    },
+    "senderAdjustment": "승인이라는 말 대신 누구의 동의가 필요한 비용인지 확인한다.",
+    "recipientQuestion": "내가 자유롭게 결정할 영역도 똑같이 남아 있는가?",
+    "counterexample": "실제 금액·자산·채무를 추정하지 않고 통제나 위협이 있으면 협상 과제로만 축소하지 않는다.",
+    "distinctFromOtherParagraphs": "비용 줄이기보다 결정권 회복 절차",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH07.P3:budget-permission-loop"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ESTJ",
+          "sourceKey": "ab15fd60b429d7c073a5"
+        },
+        {
+          "owner": "B",
+          "type": "ISFP",
+          "sourceKey": "b42d6c513c37bfd7f4ee"
+        },
+        {
+          "owner": "A",
+          "type": "ESTJ",
+          "sourceKey": "8670a7cd306dd817250d"
+        },
+        {
+          "owner": "B",
+          "type": "ISFP",
+          "sourceKey": "ca7a14f7190d5daca6c5"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": null,
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "내가 자유롭게 결정할 영역도 똑같이 남아 있는가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-visible-full-process",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "address": "CH08.P1",
+    "mode": "JOINT",
+    "readerQuestion": "앞선 반복 조건을 어떤 공동 완료·권한·미결 절차로 바꿀 수 있는가?",
+    "coreMeaning": "부탁하는 사람과 실행하는 사람으로 고정된 관리 반복을 완결된 업무 소유권으로 바꾸는 절차를 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P1.S1",
+        "originalRole": "앞선 갈등 질문",
+        "knowledge": "앞서 확인한 관리 부담을 특정 업무 하나로 좁힌다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P1.S2",
+        "originalRole": "실제 원인",
+        "knowledge": "필요 발견·준비·실행·결과 확인·예외 처리를 각각 드러낸다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P1.S3",
+        "originalRole": "각자 필요",
+        "knowledge": "업무를 맡을 사람은 필요한 정보와 선택 권한도 함께 받는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P1.S4",
+        "originalRole": "조정 기준",
+        "knowledge": "한 주기 뒤 실제 누락과 대기 시간을 보고 분담을 다시 정한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb3b6a470f6c19c51cb3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "e79993a436c219093ea5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:scope-responsibility",
+        "axis": "DUTY",
+        "definition": "책임의 경계를 구분",
+        "condition": "실제 계약과 동의 우선",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:CARE:respectful-nonintervention",
+        "axis": "CARE",
+        "definition": "돕지 않을 선택을 존중",
+        "condition": "보호 의무와 선택 지원을 구분",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "invisibleLabor",
+      "household"
+    ],
+    "positive": "부탁과 기억을 한쪽이 전담하지 않을 가능성",
+    "risk": "실행만 넘기고 준비·확인은 원래 관리자가 계속 함",
+    "factBomb": "시키면 한다는 말은 시킬 일을 찾는 수고까지 맡았다는 뜻이 아니다.",
+    "twist": "잘하는 사람이 알려주되 다음 번까지 대신 기억하지 않는 분담이 가능하다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 공동 소모품을 관리한다면 재고 확인부터 다음 구매 시점까지 한 묶음으로 본다."
+    },
+    "senderAdjustment": "부탁 횟수 대신 누가 처음부터 끝까지 맡는지 확인한다.",
+    "recipientQuestion": "정보와 결정권까지 있어야 혼자 끝낼 수 있는 일은 무엇인가?",
+    "counterexample": "실제 가사나 돌봄 이력이 없으면 기존 불균형을 사실로 단정하지 않는다.",
+    "distinctFromOtherParagraphs": "도움 요청을 완결 책임으로 바꾸는 조율",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH07.P3:care-manager-loop"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ISFJ",
+          "sourceKey": "cb3b6a470f6c19c51cb3"
+        },
+        {
+          "owner": "B",
+          "type": "ENTP",
+          "sourceKey": "e79993a436c219093ea5"
+        },
+        {
+          "owner": "A",
+          "type": "ISFJ",
+          "sourceKey": "f3c3648ae7632ade1bdb"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": null,
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "정보와 결정권까지 있어야 혼자 끝낼 수 있는 일은 무엇인가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-pending-decision-return",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "address": "CH08.P1",
+    "mode": "JOINT",
+    "readerQuestion": "앞선 반복 조건을 어떤 공동 완료·권한·미결 절차로 바꿀 수 있는가?",
+    "coreMeaning": "빠른 결론과 답을 미루는 반복을 미결 항목·확인 시점·임시 범위로 나누는 절차를 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P1.S1",
+        "originalRole": "앞선 갈등 질문",
+        "knowledge": "앞선 결론과 침묵 반복이 같은 두 사람에게 도입돼야 한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P1.S2",
+        "originalRole": "실제 원인",
+        "knowledge": "즉시 필요한 결정과 더 확인할 질문을 나눈다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P1.S3",
+        "originalRole": "각자 필요",
+        "knowledge": "동의·거절·아직 모름을 서로 다른 응답으로 인정한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P1.S4",
+        "originalRole": "조정 기준",
+        "knowledge": "다시 이야기할 시점과 그전까지 확정하지 않을 범위를 정한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "d153ad3866c0e6be677b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "be9cb942010f0a199f50",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "bb5cae1a58466e6ff51a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DECISION_STYLE:reopen-trigger",
+        "axis": "DECISION_STYLE",
+        "definition": "결정을 다시 볼 새 근거를 정함",
+        "condition": "기존 결정과 변경 권한을 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:COMMUNICATION_STYLE:intent-check",
+        "axis": "COMMUNICATION_STYLE",
+        "definition": "표현과 이해된 뜻을 다시 확인",
+        "condition": "해석 차이를 당사자가 확인할 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "decision"
+    ],
+    "positive": "속도 차이를 최종 결정권 차이로 만들지 않을 가능성",
+    "risk": "침묵을 동의로 처리하거나 미결 상태를 무기한 유지",
+    "factBomb": "답이 없다는 사실은 허락도 거절도 대신하지 않는다.",
+    "twist": "보류를 구체적으로 정하면 결정을 재촉하지 않고도 생활 준비를 이어갈 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 공동 일정을 정한다면 확인할 항목과 다시 답할 때를 함께 남긴다."
+    },
+    "senderAdjustment": "지금 정할 범위와 다음에 정할 범위를 구별한다.",
+    "recipientQuestion": "무엇을 확인하면 다음 대화에서 답할 수 있는가?",
+    "counterexample": "실제 약속이나 과거 침묵을 만들어내지 않으며 응답 강요를 정당화하지 않는다.",
+    "distinctFromOtherParagraphs": "감정 추측 대신 미결 결정을 관리하는 공동 절차",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH07.P3:decision-silence-loop"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ENTJ",
+          "sourceKey": "d153ad3866c0e6be677b"
+        },
+        {
+          "owner": "B",
+          "type": "INFP",
+          "sourceKey": "be9cb942010f0a199f50"
+        },
+        {
+          "owner": "A",
+          "type": "ENTJ",
+          "sourceKey": "bb5cae1a58466e6ff51a"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": null,
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "무엇을 확인하면 다음 대화에서 답할 수 있는가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-return-budget-authority",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "address": "CH08.P2",
+    "mode": "AB",
+    "readerQuestion": "A는 앞서 만든 부담을 어떤 행동과 권한 조정으로 줄일 수 있는가?",
+    "coreMeaning": "A가 B의 선택 전에 공동 비용을 확정하는 부담을 줄일 조정을 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P2.S1",
+        "originalRole": "A의 전략",
+        "knowledge": "A→B 부담 후보와 실제 원천을 먼저 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P2.S2",
+        "originalRole": "필요한 이유",
+        "knowledge": "A는 결정 이유와 공동 부담 범위를 공개하되 B의 동의를 대신하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P2.S3",
+        "originalRole": "실천 방법",
+        "knowledge": "B가 바꿀 수 있는 항목과 답할 시간을 실제로 남긴다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P2.S4",
+        "originalRole": "B에게 남는 변화",
+        "knowledge": "예산 검토 때 B에게도 같은 수정 권한이 있는지 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "ab15fd60b429d7c073a5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "b42d6c513c37bfd7f4ee",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "ca7a14f7190d5daca6c5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:RESOURCE_SENSE:allocation",
+        "axis": "RESOURCE_SENSE",
+        "definition": "중요한 목적에 자원을 배정",
+        "condition": "자원 소유자·동의 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:AUTONOMY:method-discretion",
+        "axis": "AUTONOMY",
+        "definition": "합의된 결과 안에서 방법을 고름",
+        "condition": "업무·계약의 실제 재량 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "financial",
+      "direction"
+    ],
+    "positive": "A의 계획이 B의 선택을 돕는 자료로 쓰일 가능성",
+    "risk": "설명만 길어지고 결정권은 A에게 남음",
+    "factBomb": "친절하게 설명한 확정안도 상대에게는 선택지가 아닐 수 있다.",
+    "twist": "완성된 안보다 바꿀 수 있는 초안이 공동 책임을 만들 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 공동 비용을 계획한다면 A는 확정 전에 B가 수정할 항목을 표시한다."
+    },
+    "senderAdjustment": "서명받을 결론 대신 함께 바꿀 제안을 건넨다.",
+    "recipientQuestion": "이 항목에서 B가 실제로 거절하거나 바꿀 수 있는 것은 무엇인가?",
+    "counterexample": "재산·수입·승인 이력은 추론하지 않고 실제 경제적 통제는 별도 안전 문제로 본다.",
+    "distinctFromOtherParagraphs": "CH05 A의 예산 선점 부담에 대응하는 A 조정",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH05.P3:ab-unilateral-budget"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ESTJ",
+          "sourceKey": "ab15fd60b429d7c073a5"
+        },
+        {
+          "owner": "B",
+          "type": "ISFP",
+          "sourceKey": "b42d6c513c37bfd7f4ee"
+        },
+        {
+          "owner": "A",
+          "type": "ESTJ",
+          "sourceKey": "8670a7cd306dd817250d"
+        },
+        {
+          "owner": "B",
+          "type": "ISFP",
+          "sourceKey": "ca7a14f7190d5daca6c5"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": {
+        "direction": "A_TO_B",
+        "subject": "A",
+        "recipient": "B",
+        "tenGodViewer": "B.dayMaster",
+        "tenGodTarget": "A.dayMaster",
+        "actualProducerRequired": true
+      },
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "이 항목에서 B가 실제로 거절하거나 바꿀 수 있는 것은 무엇인가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-leave-family-choice-open",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "address": "CH08.P2",
+    "mode": "AB",
+    "readerQuestion": "A는 앞서 만든 부담을 어떤 행동과 권한 조정으로 줄일 수 있는가?",
+    "coreMeaning": "A가 친족 일정의 결론을 먼저 내리는 부담을 줄일 확인 순서를 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P2.S1",
+        "originalRole": "A의 전략",
+        "knowledge": "A→B 외부 약속 부담이 실제 도입된 경우에만 사용한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P2.S2",
+        "originalRole": "필요한 이유",
+        "knowledge": "A는 가족에게 답하기 전에 B의 일정과 참여 의사를 묻는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P2.S3",
+        "originalRole": "실천 방법",
+        "knowledge": "불참·일부 참여·다른 날짜를 바꿀 수 있는 선택으로 남긴다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P2.S4",
+        "originalRole": "B에게 남는 변화",
+        "knowledge": "외부에 전할 범위와 누가 답할지 함께 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "d153ad3866c0e6be677b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "be9cb942010f0a199f50",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "bb5cae1a58466e6ff51a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "04bdba29a1fd1c319537",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DECISION_STYLE:reopen-trigger",
+        "axis": "DECISION_STYLE",
+        "definition": "결정을 다시 볼 새 근거를 정함",
+        "condition": "기존 결정과 변경 권한을 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:BOUNDARY:privacy",
+        "axis": "BOUNDARY",
+        "definition": "정보·시간의 사적 범위를 정함",
+        "condition": "공개 동의와 공유 의무 구분",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "family",
+      "direction"
+    ],
+    "positive": "결정 속도를 유지하면서 B의 참여 조건을 남길 가능성",
+    "risk": "이미 약속한 뒤 B에게 이해만 요구",
+    "factBomb": "가족에게 한 약속을 상대에게 전달하는 것은 함께 정한 것과 다르다.",
+    "twist": "빨리 답하는 능력은 잠깐 확인을 미루는 능력과 함께 쓸 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 친족 행사 요청을 받는다면 A는 두 사람의 답이 정해질 때까지 확답하지 않는다."
+    },
+    "senderAdjustment": "B의 선택을 대리하거나 부모 성격을 추정하지 않는다.",
+    "recipientQuestion": "외부에 답하기 전에 두 사람이 정할 조건은 무엇인가?",
+    "counterexample": "실제 가족 구성·성격·불화나 혼인 여부를 만들지 않는다.",
+    "distinctFromOtherParagraphs": "A의 외부 확정 속도를 공동 선택 절차로 조정",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH05.P3:ab-holiday-finality"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ENTJ",
+          "sourceKey": "d153ad3866c0e6be677b"
+        },
+        {
+          "owner": "B",
+          "type": "INFP",
+          "sourceKey": "be9cb942010f0a199f50"
+        },
+        {
+          "owner": "A",
+          "type": "ENTJ",
+          "sourceKey": "bb5cae1a58466e6ff51a"
+        },
+        {
+          "owner": "B",
+          "type": "INFP",
+          "sourceKey": "04bdba29a1fd1c319537"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": {
+        "direction": "A_TO_B",
+        "subject": "A",
+        "recipient": "B",
+        "tenGodViewer": "B.dayMaster",
+        "tenGodTarget": "A.dayMaster",
+        "actualProducerRequired": true
+      },
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "외부에 답하기 전에 두 사람이 정할 조건은 무엇인가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-release-care-debt",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "address": "CH08.P2",
+    "mode": "AB",
+    "readerQuestion": "A는 앞서 만든 부담을 어떤 행동과 권한 조정으로 줄일 수 있는가?",
+    "coreMeaning": "A의 먼저 하는 돌봄이 B에게 갚아야 할 빚으로 전달되는 조건을 조정한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P2.S1",
+        "originalRole": "A의 전략",
+        "knowledge": "앞서 도입된 돌봄과 보답 부담을 실제 업무와 요청으로 나눈다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P2.S2",
+        "originalRole": "필요한 이유",
+        "knowledge": "A는 부탁받은 일과 자발적으로 더한 일을 구분한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P2.S3",
+        "originalRole": "실천 방법",
+        "knowledge": "고마움 요구와 다음 책임 배분을 같은 계산으로 묶지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P2.S4",
+        "originalRole": "B에게 남는 변화",
+        "knowledge": "B가 맡을 완결 업무와 A가 내려놓을 일을 함께 정한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "cb3b6a470f6c19c51cb3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "e79993a436c219093ea5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "f3c3648ae7632ade1bdb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:CARE:respectful-nonintervention",
+        "axis": "CARE",
+        "definition": "돕지 않을 선택을 존중",
+        "condition": "보호 의무와 선택 지원을 구분",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:DUTY:scope-responsibility",
+        "axis": "DUTY",
+        "definition": "책임의 경계를 구분",
+        "condition": "실제 계약과 동의 우선",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "invisibleLabor",
+      "direction"
+    ],
+    "positive": "돌봄의 의미를 남기면서 묵시적 보답 채무를 줄일 가능성",
+    "risk": "양보한 목록을 나중 결정의 거부권으로 사용",
+    "factBomb": "말없이 더 했다는 사실이 상대의 동의를 대신하지는 않는다.",
+    "twist": "미리 부탁하는 것이 덜 다정한 행동일 필요는 없다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 공동 일을 먼저 처리했다면 A는 다음 번 맡길 범위를 말로 확인한다."
+    },
+    "senderAdjustment": "수고를 설명하되 상대의 자유를 대가로 요구하지 않는다.",
+    "recipientQuestion": "고마움과 별개로 다음부터 누가 끝까지 맡을 일은 무엇인가?",
+    "counterexample": "실제 헌신·착취 이력을 유형으로 판정하지 않는다.",
+    "distinctFromOtherParagraphs": "A의 돌봄을 숨은 계약으로 바꾸지 않는 조정",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH05.P3:ab-care-as-debt"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ISFJ",
+          "sourceKey": "cb3b6a470f6c19c51cb3"
+        },
+        {
+          "owner": "B",
+          "type": "ENTP",
+          "sourceKey": "e79993a436c219093ea5"
+        },
+        {
+          "owner": "A",
+          "type": "ISFJ",
+          "sourceKey": "f3c3648ae7632ade1bdb"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": {
+        "direction": "A_TO_B",
+        "subject": "A",
+        "recipient": "B",
+        "tenGodViewer": "B.dayMaster",
+        "tenGodTarget": "A.dayMaster",
+        "actualProducerRequired": true
+      },
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "고마움과 별개로 다음부터 누가 끝까지 맡을 일은 무엇인가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-stop-remaking-method",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "address": "CH08.P2",
+    "mode": "AB",
+    "readerQuestion": "A는 앞서 만든 부담을 어떤 행동과 권한 조정으로 줄일 수 있는가?",
+    "coreMeaning": "A의 완료 기준이 B의 방법을 계속 다시 하게 만드는 부담을 조정한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P2.S1",
+        "originalRole": "A의 전략",
+        "knowledge": "A→B 재작업 부담이 실제 도입됐는지 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P2.S2",
+        "originalRole": "필요한 이유",
+        "knowledge": "A는 공동 결과에 필요한 기준과 개인 취향을 나눈다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P2.S3",
+        "originalRole": "실천 방법",
+        "knowledge": "기준 안에서 B가 고른 순서와 도구를 다시 평가하지 않는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P2.S4",
+        "originalRole": "B에게 남는 변화",
+        "knowledge": "안전이나 실제 누락으로 바꿀 조건은 시작 전에 함께 정한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "1b7aeda1752892b8905a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "c72ad7e4dbeab2b8b75f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:PRECISION:standard-consistency",
+        "axis": "PRECISION",
+        "definition": "상황 사이 기준 적용의 일관성을 확인",
+        "condition": "같은 기준을 적용해도 되는 조건 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:ADAPTABILITY:feedback-uptake",
+        "axis": "ADAPTABILITY",
+        "definition": "받은 정보의 유효 부분을 반영",
+        "condition": "정보의 신뢰성과 권한을 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "household",
+      "direction"
+    ],
+    "positive": "A의 정확함과 B의 방법 재량이 함께 남을 가능성",
+    "risk": "기준 합의 뒤에도 방법을 바꿔달라고 반복",
+    "factBomb": "끝났다고 한 일을 다시 손보면 맡겼다는 말도 다시 확인해야 한다.",
+    "twist": "완료를 인정하는 것이 기준을 포기하는 것과 같지는 않다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 공동 정리를 맡긴다면 A는 합의한 결과가 나왔을 때 자기 방식으로 다시 하지 않는다."
+    },
+    "senderAdjustment": "원하는 결과를 미리 말하고 담당자의 방법은 남긴다.",
+    "recipientQuestion": "결과가 같다면 달라도 되는 방식은 무엇인가?",
+    "counterexample": "실제 생활 습관·능력·위생 조건을 가정하지 않는다.",
+    "distinctFromOtherParagraphs": "A의 기준을 실행 통제와 분리",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH05.P3:ab-standard-remakes"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "3e5a71d4f1d3543288c0"
+        },
+        {
+          "owner": "B",
+          "type": "ENFP",
+          "sourceKey": "0f0d27792b96a8ad87ad"
+        },
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "1b7aeda1752892b8905a"
+        },
+        {
+          "owner": "B",
+          "type": "ENFP",
+          "sourceKey": "c72ad7e4dbeab2b8b75f"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": {
+        "direction": "A_TO_B",
+        "subject": "A",
+        "recipient": "B",
+        "tenGodViewer": "B.dayMaster",
+        "tenGodTarget": "A.dayMaster",
+        "actualProducerRequired": true
+      },
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "결과가 같다면 달라도 되는 방식은 무엇인가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-own-unseen-preparation",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "address": "CH08.P3",
+    "mode": "BA",
+    "readerQuestion": "B는 앞서 만든 부담을 어떤 준비·동의·인수인계로 줄일 수 있는가?",
+    "coreMeaning": "B의 눈에 보이는 실행만으로 A의 준비 부담이 남는 조건을 조정한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P3.S1",
+        "originalRole": "B의 전략",
+        "knowledge": "B→A 보이지 않는 준비 부담이 실제 도입돼야 한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P3.S2",
+        "originalRole": "필요한 이유",
+        "knowledge": "B는 실행 전 필요한 정보와 완료 후 확인을 함께 묻는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P3.S3",
+        "originalRole": "다른 실천 방법",
+        "knowledge": "맡은 업무의 다음 발생 시점을 직접 관리할 범위를 정한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P3.S4",
+        "originalRole": "A에게 남는 변화",
+        "knowledge": "A의 휴식 중 누가 대기하는지 한 주기 뒤 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "11b961b29814398740e5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "3ec17287e2091c585ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "aee3349d23ea4285cd4f",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "76e292b7c203da2c2773",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:DUTY:scope-responsibility",
+        "axis": "DUTY",
+        "definition": "책임의 경계를 구분",
+        "condition": "실제 계약과 동의 우선",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:RECOVERY_NEED:rest-access",
+        "axis": "RECOVERY_NEED",
+        "definition": "쉬는 방식과 가능한 공간을 확보",
+        "condition": "선호·돌봄·경제 제약을 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "invisibleLabor",
+      "direction"
+    ],
+    "positive": "B의 실용적 지원이 A의 관리 시간까지 줄일 가능성",
+    "risk": "끝난 횟수만 세고 준비와 대기는 A에게 남김",
+    "factBomb": "일을 한 번 끝낸 것과 그 일을 더 이상 상대가 기억하지 않아도 되는 것은 다르다.",
+    "twist": "혼자 처리할 권한을 함께 받으면 묻는 횟수도 줄일 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 공동 소모품 구매를 맡는다면 B는 필요한 때를 확인하고 다음 점검까지 관리한다."
+    },
+    "senderAdjustment": "정해진 실행을 넘어 실제로 맡을 수 있는 준비·확인을 명시한다.",
+    "recipientQuestion": "A가 기억하지 않아도 되려면 B에게 어떤 정보와 권한이 필요한가?",
+    "counterexample": "실제 돌봄 대상이나 과거 가사 분담을 추론하지 않는다.",
+    "distinctFromOtherParagraphs": "CH06 B의 실행 중심 부담에 대응하는 B 조정",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH06.P3:ba-visible-only-finish"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "INFJ",
+          "sourceKey": "11b961b29814398740e5"
+        },
+        {
+          "owner": "B",
+          "type": "ISTP",
+          "sourceKey": "3ec17287e2091c585ba3"
+        },
+        {
+          "owner": "B",
+          "type": "ISTP",
+          "sourceKey": "aee3349d23ea4285cd4f"
+        },
+        {
+          "owner": "A",
+          "type": "INFJ",
+          "sourceKey": "76e292b7c203da2c2773"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": {
+        "direction": "B_TO_A",
+        "subject": "B",
+        "recipient": "A",
+        "tenGodViewer": "A.dayMaster",
+        "tenGodTarget": "B.dayMaster",
+        "actualProducerRequired": true
+      },
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "A가 기억하지 않아도 되려면 B에게 어떤 정보와 권한이 필요한가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "address": "CH08.P3",
+    "mode": "BA",
+    "readerQuestion": "B는 앞서 만든 부담을 어떤 준비·동의·인수인계로 줄일 수 있는가?",
+    "coreMeaning": "B가 친족에게 먼저 한 약속이 A의 부담이 되는 조건을 조정한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P3.S1",
+        "originalRole": "B의 전략",
+        "knowledge": "B→A 외부 약속 부담과 각자 원천을 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P3.S2",
+        "originalRole": "필요한 이유",
+        "knowledge": "B는 친족 요청과 두 사람의 결정 권한을 나눈다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P3.S3",
+        "originalRole": "다른 실천 방법",
+        "knowledge": "A의 시간·비용·정보를 외부에 약속하기 전에 동의를 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P3.S4",
+        "originalRole": "A에게 남는 변화",
+        "knowledge": "정한 경계는 누가 전달하고 예외는 언제 다시 정할지 합의한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "048c520649d4c0b898cb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "8656e8de7c812f74bbfc",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "eca31a528cf641ff4613",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "65948269d71f3a38b299",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:BOUNDARY:privacy",
+        "axis": "BOUNDARY",
+        "definition": "정보·시간의 사적 범위를 정함",
+        "condition": "공개 동의와 공유 의무 구분",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:COMMUNICATION_STYLE:intent-check",
+        "axis": "COMMUNICATION_STYLE",
+        "definition": "표현과 이해된 뜻을 다시 확인",
+        "condition": "해석 차이를 당사자가 확인할 때",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "family",
+      "direction"
+    ],
+    "positive": "B의 관계 유지가 A의 경계를 함께 지키는 지원이 될 가능성",
+    "risk": "좋은 인상을 이유로 상대의 일정과 정보를 대신 약속",
+    "factBomb": "내 가족과의 약속이라도 상대의 시간을 쓰면 혼자 정할 수 있는 일은 아니다.",
+    "twist": "친족에게 잠깐 확인하겠다고 답하는 것이 관계를 끊는 뜻은 아니다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 가족 요청을 받는다면 B는 A의 참여와 공개 범위를 먼저 확인한다."
+    },
+    "senderAdjustment": "요청을 그대로 옮기지 않고 공동으로 답할 범위를 남긴다.",
+    "recipientQuestion": "누구에게 어디까지 전해도 되는가?",
+    "counterexample": "실제 부모 성격·갈등·가족 구조를 단정하지 않는다.",
+    "distinctFromOtherParagraphs": "B의 친족 연결을 A의 경계와 함께 운용",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH06.P3:ba-kinship-commitment"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "INTJ",
+          "sourceKey": "048c520649d4c0b898cb"
+        },
+        {
+          "owner": "B",
+          "type": "ESFJ",
+          "sourceKey": "8656e8de7c812f74bbfc"
+        },
+        {
+          "owner": "B",
+          "type": "ESFJ",
+          "sourceKey": "eca31a528cf641ff4613"
+        },
+        {
+          "owner": "A",
+          "type": "INTJ",
+          "sourceKey": "65948269d71f3a38b299"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": {
+        "direction": "B_TO_A",
+        "subject": "B",
+        "recipient": "A",
+        "tenGodViewer": "A.dayMaster",
+        "tenGodTarget": "B.dayMaster",
+        "actualProducerRequired": true
+      },
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "누구에게 어디까지 전해도 되는가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-handover-before-change",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "address": "CH08.P3",
+    "mode": "BA",
+    "readerQuestion": "B는 앞서 만든 부담을 어떤 준비·동의·인수인계로 줄일 수 있는가?",
+    "coreMeaning": "B의 새 일정으로 A에게 유지 업무가 남는 조건을 인수인계로 조정한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P3.S1",
+        "originalRole": "B의 전략",
+        "knowledge": "B→A 변화와 뒷정리 부담이 앞서 도입돼야 한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P3.S2",
+        "originalRole": "필요한 이유",
+        "knowledge": "B는 바꿀 일과 함께 사라질 담당을 먼저 적는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P3.S3",
+        "originalRole": "다른 실천 방법",
+        "knowledge": "A가 자동으로 이어 맡는다고 가정하지 않고 줄일 일도 고른다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P3.S4",
+        "originalRole": "A에게 남는 변화",
+        "knowledge": "변경 후 남은 업무와 휴식 시간을 다시 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "ede67b716c40fbe4b6c4",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:ADAPTABILITY:feedback-uptake",
+        "axis": "ADAPTABILITY",
+        "definition": "받은 정보의 유효 부분을 반영",
+        "condition": "정보의 신뢰성과 권한을 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:DUTY:scope-responsibility",
+        "axis": "DUTY",
+        "definition": "책임의 경계를 구분",
+        "condition": "실제 계약과 동의 우선",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "transition",
+      "direction"
+    ],
+    "positive": "B의 새 시도가 공동생활의 유지 조건과 함께 시험될 가능성",
+    "risk": "새 계획의 기대만 말하고 계속될 일을 넘김",
+    "factBomb": "일정을 바꾸는 자유에 남은 일의 담당까지 포함되는지는 따로 정해야 한다.",
+    "twist": "기존 일을 줄이는 선택이 새 계획을 더 오래 유지하게 할 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 일하는 시간이 바뀐다면 B는 기존 역할을 누가 이어갈지 확정 전에 확인한다."
+    },
+    "senderAdjustment": "변경 제안과 유지 계획을 같이 가져온다.",
+    "recipientQuestion": "다음 주기부터 계속할 일과 멈출 일은 무엇인가?",
+    "counterexample": "실제 직업·소득·이직·휴직 사실을 만들어내지 않는다.",
+    "distinctFromOtherParagraphs": "B의 변화 제안을 유지 책임과 연결",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH06.P3:ba-change-without-handover"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "3e5a71d4f1d3543288c0"
+        },
+        {
+          "owner": "B",
+          "type": "ENFP",
+          "sourceKey": "0f0d27792b96a8ad87ad"
+        },
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "ede67b716c40fbe4b6c4"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": {
+        "direction": "B_TO_A",
+        "subject": "B",
+        "recipient": "A",
+        "tenGodViewer": "A.dayMaster",
+        "tenGodTarget": "B.dayMaster",
+        "actualProducerRequired": true
+      },
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "다음 주기부터 계속할 일과 멈출 일은 무엇인가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "생활 조건이 바뀐다면 다음 업무 주기에서 가능 범위를 다시 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-answer-pending-plan",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "address": "CH08.P3",
+    "mode": "BA",
+    "readerQuestion": "B는 앞서 만든 부담을 어떤 준비·동의·인수인계로 줄일 수 있는가?",
+    "coreMeaning": "B가 답을 유보할 때 A에게 계획 대기가 남는 조건을 명시적 보류로 조정한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P3.S1",
+        "originalRole": "B의 전략",
+        "knowledge": "B→A 미응답 부담 후보가 실제 도입된 경우에만 잇는다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P3.S2",
+        "originalRole": "필요한 이유",
+        "knowledge": "B는 거절·불확실·추가 확인을 구별해 전달한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P3.S3",
+        "originalRole": "다른 실천 방법",
+        "knowledge": "답할 수 있는 시점과 아직 확정하지 않을 항목을 정한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P3.S4",
+        "originalRole": "A에게 남는 변화",
+        "knowledge": "다음 확인에서 답을 바꿀 수 있는 조건도 함께 남긴다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "d153ad3866c0e6be677b",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "be9cb942010f0a199f50",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "bb5cae1a58466e6ff51a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:COMMUNICATION_STYLE:intent-check",
+        "axis": "COMMUNICATION_STYLE",
+        "definition": "표현과 이해된 뜻을 다시 확인",
+        "condition": "해석 차이를 당사자가 확인할 때",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:DECISION_STYLE:reopen-trigger",
+        "axis": "DECISION_STYLE",
+        "definition": "결정을 다시 볼 새 근거를 정함",
+        "condition": "기존 결정과 변경 권한을 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "decision",
+      "direction"
+    ],
+    "positive": "B의 가치 검토와 A의 준비 시간을 함께 보호할 가능성",
+    "risk": "마음을 알아주길 바라며 필요한 응답을 계속 생략",
+    "factBomb": "생각할 시간이 필요하다는 말에도 상대가 기다릴 범위는 들어 있어야 한다.",
+    "twist": "완전한 확신이 없어도 모르는 항목은 구체적으로 말할 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 공동 일정을 제안받았다면 B는 확인할 질문과 다시 답할 때를 알려준다."
+    },
+    "senderAdjustment": "동의하지 않은 상태를 침묵으로만 남기지 않는다.",
+    "recipientQuestion": "무엇은 지금 답할 수 있고 무엇은 더 확인해야 하는가?",
+    "counterexample": "침묵을 숨은 동의·애정 부족·과거 거절로 해석하지 않는다.",
+    "distinctFromOtherParagraphs": "B의 보류 권리를 계획 확인과 함께 유지",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH06.P3:ba-unanswered-plan"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ENTJ",
+          "sourceKey": "d153ad3866c0e6be677b"
+        },
+        {
+          "owner": "B",
+          "type": "INFP",
+          "sourceKey": "be9cb942010f0a199f50"
+        },
+        {
+          "owner": "A",
+          "type": "ENTJ",
+          "sourceKey": "bb5cae1a58466e6ff51a"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": {
+        "direction": "B_TO_A",
+        "subject": "B",
+        "recipient": "A",
+        "tenGodViewer": "A.dayMaster",
+        "tenGodTarget": "B.dayMaster",
+        "actualProducerRequired": true
+      },
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "무엇은 지금 답할 수 있고 무엇은 더 확인해야 하는가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-shared-private-money",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "address": "CH08.P4",
+    "mode": "JOINT",
+    "readerQuestion": "조건이 바뀌어도 다시 열 수 있는 합의 항목과 검토 계기는 무엇인가?",
+    "coreMeaning": "공동 항목·개인 재량·정보 공유 범위·재검토 계기를 함께 정할 합의 자료를 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P4.S1",
+        "originalRole": "공동 목표",
+        "knowledge": "실제 돈을 함께 관리할 계획이 있을 때만 조건부로 사용한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P4.S2",
+        "originalRole": "A의 역할",
+        "knowledge": "공동 항목의 목적과 담당은 양쪽이 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P4.S3",
+        "originalRole": "B의 역할",
+        "knowledge": "개인 영역의 결정권과 공개할 정보는 동의한 범위로 남긴다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P4.S4",
+        "originalRole": "관계별 원칙",
+        "knowledge": "소득이나 부담 조건이 바뀌면 항목과 권한을 다시 검토한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "ab15fd60b429d7c073a5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "b42d6c513c37bfd7f4ee",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "8670a7cd306dd817250d",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "ca7a14f7190d5daca6c5",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:RESOURCE_SENSE:allocation",
+        "axis": "RESOURCE_SENSE",
+        "definition": "중요한 목적에 자원을 배정",
+        "condition": "자원 소유자·동의 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:AUTONOMY:method-discretion",
+        "axis": "AUTONOMY",
+        "definition": "합의된 결과 안에서 방법을 고름",
+        "condition": "업무·계약의 실제 재량 확인",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "financial"
+    ],
+    "positive": "공동 책임과 경제적 자율성을 함께 남길 가능성",
+    "risk": "공동관리라는 이유로 모든 계좌·소비를 감시",
+    "factBomb": "함께 관리한다는 말은 사적인 선택을 모두 보고한다는 약속과 다르다.",
+    "twist": "공유 범위가 명확하면 숨기지 않기와 전부 공개하기 사이의 선택이 남는다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 생활비를 함께 관리한다면 공동 항목과 검토할 계기를 한 장에 적는다."
+    },
+    "senderAdjustment": "금액이나 비율을 처방하지 않고 실제 감당 범위를 확인한다.",
+    "recipientQuestion": "함께 알아야 할 정보와 각자 결정할 정보는 무엇인가?",
+    "counterexample": "채무 책임·세금·투자·재산 분할 조언으로 확장하지 않는다.",
+    "distinctFromOtherParagraphs": "한 번의 지출 합의에서 장기적인 권한·정보 경계로 확장",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH08.P1:joint-money-choice-without-permission"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ESTJ",
+          "sourceKey": "ab15fd60b429d7c073a5"
+        },
+        {
+          "owner": "B",
+          "type": "ISFP",
+          "sourceKey": "b42d6c513c37bfd7f4ee"
+        },
+        {
+          "owner": "A",
+          "type": "ESTJ",
+          "sourceKey": "8670a7cd306dd817250d"
+        },
+        {
+          "owner": "B",
+          "type": "ISFP",
+          "sourceKey": "ca7a14f7190d5daca6c5"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": null,
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "함께 알아야 할 정보와 각자 결정할 정보는 무엇인가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-review-after-life-change",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "address": "CH08.P4",
+    "mode": "JOINT",
+    "readerQuestion": "조건이 바뀌어도 다시 열 수 있는 합의 항목과 검토 계기는 무엇인가?",
+    "coreMeaning": "생활 조건이 바뀌면 업무량과 결정 권한을 다시 보는 공동 합의를 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P4.S1",
+        "originalRole": "공동 목표",
+        "knowledge": "직업·소득·건강 변화는 실제 입력 사실이 아닌 가상 검토 계기다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P4.S2",
+        "originalRole": "A의 역할",
+        "knowledge": "남은 시간과 필요한 일을 현재 조건에서 다시 본다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P4.S3",
+        "originalRole": "B의 역할",
+        "knowledge": "발견부터 예외 처리까지 업무를 줄이거나 새로 맡을 범위를 정한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P4.S4",
+        "originalRole": "관계별 원칙",
+        "knowledge": "한 주기 뒤 대기 시간과 실제 누락을 확인해 다시 수정한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "3e5a71d4f1d3543288c0",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "0f0d27792b96a8ad87ad",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "c97137956156f94d70da",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "ede67b716c40fbe4b6c4",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "1b7aeda1752892b8905a",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:ADAPTABILITY:feedback-uptake",
+        "axis": "ADAPTABILITY",
+        "definition": "받은 정보의 유효 부분을 반영",
+        "condition": "정보의 신뢰성과 권한을 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:DUTY:scope-responsibility",
+        "axis": "DUTY",
+        "definition": "책임의 경계를 구분",
+        "condition": "실제 계약과 동의 우선",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "transition",
+      "household"
+    ],
+    "positive": "처음의 공평함을 현재 조건에 맞게 고칠 가능성",
+    "risk": "처음 합의했다는 이유로 바뀐 부담을 고정",
+    "factBomb": "한때 공평했던 분담이 지금도 공평한지는 현재 시간을 봐야 알 수 있다.",
+    "twist": "역할을 바꾸는 것은 이전 합의가 틀렸다는 판결이 아닐 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 근무 시간이 달라진다면 정기 업무와 중단 없는 휴식 시간을 함께 다시 배치한다."
+    },
+    "senderAdjustment": "기존 성과를 채점하기 전에 지금 가능한 범위를 확인한다.",
+    "recipientQuestion": "줄일 일·새로 맡을 일·다시 볼 때는 언제인가?",
+    "counterexample": "실제 직업 변경·질병·소득 감소를 예언하거나 꾸며내지 않는다.",
+    "distinctFromOtherParagraphs": "변화 때 다시 여는 합의 구조이며 미래 사건 예측 아님",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH07.P4:old-fairness-after-change",
+      "cmpr:material:CH08.P1:joint-revise-completion-standard"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "3e5a71d4f1d3543288c0"
+        },
+        {
+          "owner": "B",
+          "type": "ENFP",
+          "sourceKey": "0f0d27792b96a8ad87ad"
+        },
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "ede67b716c40fbe4b6c4"
+        },
+        {
+          "owner": "A",
+          "type": "ISTJ",
+          "sourceKey": "1b7aeda1752892b8905a"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": null,
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "줄일 일·새로 맡을 일·다시 볼 때는 언제인가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "생활 조건이 바뀐다면 다음 업무 주기에서 가능 범위를 다시 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-common-space-private-time",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "address": "CH08.P4",
+    "mode": "JOINT",
+    "readerQuestion": "조건이 바뀌어도 다시 열 수 있는 합의 항목과 검토 계기는 무엇인가?",
+    "coreMeaning": "공동 공간의 결과와 개인 시간의 보호 범위를 함께 정하는 합의를 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P4.S1",
+        "originalRole": "공동 목표",
+        "knowledge": "공동 공간이나 일정을 실제로 나누게 될 때만 사용한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P4.S2",
+        "originalRole": "A의 역할",
+        "knowledge": "공동으로 지킬 조건과 각자의 취향을 나눈다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P4.S3",
+        "originalRole": "B의 역할",
+        "knowledge": "혼자 쉬는 시간 동안의 남은 업무 담당을 따로 확인한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P4.S4",
+        "originalRole": "관계별 원칙",
+        "knowledge": "방해가 불가피한 예외와 사후 조정을 함께 정한다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "048c520649d4c0b898cb",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "3ec17287e2091c585ba3",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "65948269d71f3a38b299",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "PAIR_AB",
+        "sourceKey": "89937d49f294229349a1",
+        "sourceUse": "directed_reference_only",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:AUTONOMY:method-discretion",
+        "axis": "AUTONOMY",
+        "definition": "합의된 결과 안에서 방법을 고름",
+        "condition": "업무·계약의 실제 재량 확인",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:BOUNDARY:renegotiation",
+        "axis": "BOUNDARY",
+        "definition": "상황 변화에 맞게 선을 다시 합의",
+        "condition": "바뀐 영향과 기존 약속을 설명",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "autonomy",
+      "rest"
+    ],
+    "positive": "각자 쉬는 방식과 공동 유지 책임이 함께 남을 가능성",
+    "risk": "각자 알아서 한다는 말로 필요한 일을 미확인 상태에 둠",
+    "factBomb": "혼자 있을 권리는 누가 남은 일을 할지 없는 것으로 만들지 않는다.",
+    "twist": "독립 시간을 지키기 위해 공동 기준을 더 분명히 할 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 함께 살게 된다면 개인 공간·공용 공간·중단 없는 시간의 경계를 적는다."
+    },
+    "senderAdjustment": "접촉을 강요하지 않고 필요한 공동 업무는 명시한다.",
+    "recipientQuestion": "어느 때는 방해하지 않고 어느 일은 함께 확인해야 하는가?",
+    "counterexample": "실제 동거·집 크기·생활 습관을 만들어내지 않는다.",
+    "distinctFromOtherParagraphs": "자율성 강점을 장기 운영 규칙으로 연결",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH04.P1:shared-autonomy-clear-common-duty"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "INTJ",
+          "sourceKey": "048c520649d4c0b898cb"
+        },
+        {
+          "owner": "B",
+          "type": "ISTP",
+          "sourceKey": "3ec17287e2091c585ba3"
+        },
+        {
+          "owner": "A",
+          "type": "INTJ",
+          "sourceKey": "65948269d71f3a38b299"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": null,
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "어느 때는 방해하지 않고 어느 일은 함께 확인해야 하는가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-two-family-boundaries",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "address": "CH08.P4",
+    "mode": "JOINT",
+    "readerQuestion": "조건이 바뀌어도 다시 열 수 있는 합의 항목과 검토 계기는 무엇인가?",
+    "coreMeaning": "양쪽 가족 요청에 답할 권한과 시간·비용·정보의 경계를 함께 정하는 합의를 연구한다.",
+    "roleContributions": {
+      "S1": {
+        "address": "CH08.P4.S1",
+        "originalRole": "공동 목표",
+        "knowledge": "가족 요청이 생기는 가상 장면으로만 사용한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S2": {
+        "address": "CH08.P4.S2",
+        "originalRole": "A의 역할",
+        "knowledge": "요청한 사람의 바람과 두 사람의 수용 가능 범위를 나눈다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S3": {
+        "address": "CH08.P4.S3",
+        "originalRole": "B의 역할",
+        "knowledge": "공동 일정이나 정보를 쓰는 약속은 내부 확인을 먼저 한다.",
+        "roleKind": "research_not_customer_sentence"
+      },
+      "S4": {
+        "address": "CH08.P4.S4",
+        "originalRole": "관계별 원칙",
+        "knowledge": "예외 요청과 경계 전달을 누가 맡을지 정하고 다시 살핀다.",
+        "roleKind": "research_not_customer_sentence"
+      }
+    },
+    "ownedSources": [
+      {
+        "owner": "A",
+        "sourceKey": "4b07fe3f9004cfc8a777",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "23f1f8d8786e6f2f0de2",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "A",
+        "sourceKey": "24baf614208a551324d1",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "B",
+        "sourceKey": "d4a61263d8611202dcef",
+        "sourceUse": "own_entered_type_only",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      {
+        "owner": "GUIDANCE",
+        "sourceKey": "d14789ba6fb57b594e8d",
+        "sourceUse": "context_guidance_not_person_fact",
+        "knowledgeIsRuntimeEvidence": false
+      }
+    ],
+    "semanticFacets": [
+      {
+        "id": "sar:facet:CARE:respectful-nonintervention",
+        "axis": "CARE",
+        "definition": "돕지 않을 선택을 존중",
+        "condition": "보호 의무와 선택 지원을 구분",
+        "notIndependentEvidence": true
+      },
+      {
+        "id": "sar:facet:BOUNDARY:privacy",
+        "axis": "BOUNDARY",
+        "definition": "정보·시간의 사적 범위를 정함",
+        "condition": "공개 동의와 공유 의무 구분",
+        "notIndependentEvidence": true
+      }
+    ],
+    "householdTopics": [
+      "repair",
+      "family"
+    ],
+    "positive": "가족과의 연결을 유지하면서 공동 선택을 남길 가능성",
+    "risk": "한쪽 가족의 기준을 상대의 의무로 삼음",
+    "factBomb": "좋은 관계를 원한다는 이유가 상대의 시간을 대신 약속할 권한은 아니다.",
+    "twist": "거절과 관계 단절 사이에는 범위나 날짜를 바꾸는 답도 있을 수 있다.",
+    "fictionalScene": {
+      "status": "fictional_not_customer_history",
+      "premise": "hypothetical_only_actual_marriage_unknown",
+      "text": "가상으로 양쪽 친족 행사가 겹친다면 참여 조건과 외부에 답할 내용을 먼저 나눈다."
+    },
+    "senderAdjustment": "실제 부모 성격 대신 두 사람이 선택할 범위를 묻는다.",
+    "recipientQuestion": "누구에게 무엇을 언제까지 답하고 어떤 정보는 전하지 않을 것인가?",
+    "counterexample": "가족 구성·불화·임신·자녀·결혼 여부를 추론하지 않는다.",
+    "distinctFromOtherParagraphs": "친족 경계를 공동 의사결정 절차로 정리",
+    "precedingMeaningRefs": [
+      "cmpr:material:CH07.P1:family-request-vs-common-consent"
+    ],
+    "review": "conditional_editorial_research",
+    "requirements": {
+      "personA": "A 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. 상대 자료로 대체하지 않는다.",
+      "personB": "B 본인의 실제 원국·입력 MBTI·개인 Fusion root만 사용한다. A 자료를 B에게 복사하지 않는다.",
+      "enteredTypePredicates": [
+        {
+          "owner": "A",
+          "type": "ENFJ",
+          "sourceKey": "4b07fe3f9004cfc8a777"
+        },
+        {
+          "owner": "B",
+          "type": "ISFJ",
+          "sourceKey": "23f1f8d8786e6f2f0de2"
+        },
+        {
+          "owner": "A",
+          "type": "ENFJ",
+          "sourceKey": "24baf614208a551324d1"
+        },
+        {
+          "owner": "B",
+          "type": "ISFJ",
+          "sourceKey": "d4a61263d8611202dcef"
+        }
+      ],
+      "natalDefinitions": [],
+      "relationDefinitions": [],
+      "direction": null,
+      "sourceUsesAreConjunctive": true,
+      "mbtiPair": "두 유형이 모두 입력된 경우 실제 forward와 reverse 원천의 marriagePattern·sourceCoverage를 각각 확인한다. 예측 법칙이나 개인 점수에 더하지 않는다.",
+      "fusion": "A/B 개인별 기존 rule과 같은 사람의 명리·MBTI 두 root 및 실제 source assignment를 확인한다. 기존 context·domain 밖이면 보류하고 후속 검토한다.",
+      "canonicalPair": "지원되는 실제 cross-person 관계 ID·종류·참여자·기둥·성립 조건을 확인한다. 미지원 형·파·원진·천간합 정의를 검출 결과로 바꾸지 않는다.",
+      "unknownMbti": "해당 사람의 MBTI·개인 Fusion·양방향 Pair 후보를 보류한다. 상대 유형·원국으로 생성하지 않는다.",
+      "unknownBirthTime": "시주 및 시주가 필요한 관계를 보충하지 않는다. 확인된 나머지 기둥만 사용한다.",
+      "marriageStatus": "UNKNOWN: marriage 카테고리와 내부 married 편집 값은 실제 혼인·동거 사실이 아니다.",
+      "householdFacts": "소득·재산·채무·직업·자녀·부모 성격·가사 능력·과거 갈등은 입력에 없으므로 UNKNOWN이다.",
+      "recall": "같은 person ID·원천·방향·조건으로 앞서 실제 표시된 의미만 회수한다. CH09에서 새로운 특징이나 사건을 도입하지 않는다.",
+      "safety": "위협·폭력·감시·경제적 통제는 성향 차이로 정당화하거나 양쪽의 동등한 조율 문제로 만들지 않는다. 화해·동거를 강요하지 않는다."
+    },
+    "jointDecision": {
+      "question": "누구에게 무엇을 언제까지 답하고 어떤 정보는 전하지 않을 것인가?",
+      "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+      "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "processRoles": [
+        "notice",
+        "prepare",
+        "decide",
+        "execute",
+        "monitor",
+        "handle_exception",
+        "remember_next_cycle"
+      ],
+      "assignedBy": "people_consent_not_gender_or_type"
+    },
+    "disallowed": [
+      "미입력 혼인·동거·재정·자녀·가족 성격·직업·과거 사건 단정",
+      "성별 또는 유형으로 가사·돌봄·승인권 배정",
+      "합·공통축·반대유형을 성공·갈등·상호보완 보장으로 사용",
+      "개인 root와 Fusion·Pair 참고를 독립 세 사실로 중복 집계",
+      "투자·법률·세금 자문 및 임의 금액·비율 처방"
+    ],
+    "bindingState": "unresolved_no_engine",
+    "newCalculatedFacts": 0
+  }
+];

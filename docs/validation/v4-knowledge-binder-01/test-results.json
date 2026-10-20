@@ -1,0 +1,67 @@
+{
+  "baseline": [
+    {
+      "suite": "baseline-regression",
+      "passed": 228,
+      "failed": 33
+    },
+    {
+      "suite": "baseline-inherited",
+      "passed": 7245,
+      "failed": 6
+    },
+    {
+      "suite": "baseline-annual",
+      "passed": 185,
+      "failed": 6
+    },
+    {
+      "suite": "baseline-language",
+      "passed": 138,
+      "failed": 1
+    }
+  ],
+  "after": {
+    "binder-74": {
+      "passed": 74,
+      "failed": 0,
+      "pending": 0,
+      "files": 1
+    },
+    "core-after": {
+      "passed": 148,
+      "failed": 0,
+      "pending": 0,
+      "files": 4
+    },
+    "book-after": {
+      "passed": 18,
+      "failed": 0,
+      "pending": 0,
+      "files": 1
+    },
+    "existing-failures-after": {
+      "passed": 5837,
+      "failed": 46,
+      "pending": 0,
+      "files": 16
+    },
+    "tsc-complete": {
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exitCode": 0
+    },
+    "lint-complete": {
+      "logSha256": "c8c528bf27d2551093c7c2fc84698b88fb5d1f452038cd0ec36166f0cae65b02",
+      "exitCode": 0
+    },
+    "build-final": {
+      "logSha256": "a89fa1966cabb79a3ac4600b9f8a2171bb1c2131ea72974dd809d83e345eadfd",
+      "exitCode": 0
+    }
+  },
+  "newFailures": 0,
+  "typeScriptBefore": 0,
+  "typeScriptAfter": 0,
+  "oldFailuresNotFixedDeletedOrSkipped": true,
+  "codeFrozenFiles": 4042
+}

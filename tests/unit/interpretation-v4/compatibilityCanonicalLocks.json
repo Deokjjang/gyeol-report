@@ -1,0 +1,2277 @@
+{
+  "0": {
+    "index": {
+      "version": "gyeol-compatibility-index-13b-1",
+      "total": 69,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "부족한 오행을 서로 보탬",
+              "value": 4.8,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:0.1",
+                "SajuCalcResult:elements.weighted:EARTH:4.2",
+                "SajuCalcResult:elements.weighted:FIRE:0",
+                "SajuCalcResult:elements.weighted:FIRE:3.2",
+                "SajuCalcResult:elements:EARTH",
+                "SajuCalcResult:elements:FIRE",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:material-depth:element:EARTH:low",
+                "v4:material-depth:element:FIRE:high",
+                "v4:material-depth:element:FIRE:low",
+                "v4:symbolic-lifestyle:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:low",
+                "v4:symbolic-lifestyle:FIRE:high",
+                "v4:symbolic-lifestyle:FIRE:low"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 2.4,
+              "sources": [
+                "day:BRANCH_YIN_YANG:子",
+                "day:BRANCH_YIN_YANG:巳",
+                "day:STEM_YIN_YANG:己",
+                "day:STEM_YIN_YANG:甲",
+                "hour:BRANCH_YIN_YANG:亥",
+                "hour:BRANCH_YIN_YANG:巳",
+                "hour:STEM_YIN_YANG:乙",
+                "hour:STEM_YIN_YANG:己",
+                "month:BRANCH_YIN_YANG:子",
+                "month:BRANCH_YIN_YANG:辰",
+                "month:STEM_YIN_YANG:壬",
+                "month:STEM_YIN_YANG:庚",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:亥",
+                "year:BRANCH_YIN_YANG:申",
+                "year:STEM_YIN_YANG:乙",
+                "year:STEM_YIN_YANG:壬"
+              ]
+            }
+          ],
+          "value": 22
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 9.6,
+              "sources": [
+                "half_harmony:313b38ee316c7f0e3181b95f:month:辰|51e2d73a80866288129d316d:day:子",
+                "half_harmony:313b38ee316c7f0e3181b95f:month:辰|51e2d73a80866288129d316d:year:申",
+                "six_harmony:313b38ee316c7f0e3181b95f:hour:巳|51e2d73a80866288129d316d:year:申",
+                "three_harmony:313b38ee316c7f0e3181b95f:month:辰|51e2d73a80866288129d316d:day:子|51e2d73a80866288129d316d:year:申"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -5,
+              "sources": [
+                "clash:313b38ee316c7f0e3181b95f:hour:巳|51e2d73a80866288129d316d:hour:亥",
+                "harm:313b38ee316c7f0e3181b95f:year:亥|51e2d73a80866288129d316d:year:申"
+              ]
+            },
+            {
+              "factor": "돌봄·표현·책임의 자극",
+              "value": 2.4,
+              "sources": [
+                "received-ten-god:313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:정재",
+                "received-ten-god:51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:정관"
+              ]
+            }
+          ],
+          "value": 25
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "공통 관심과 좋은 영향",
+              "value": 4,
+              "sources": [
+                "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+                "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair"
+              ]
+            },
+            {
+              "factor": "다르게 반응하는 지점",
+              "value": -4,
+              "sources": [
+                "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+                "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair"
+              ]
+            },
+            {
+              "factor": "관계 유형별 자료",
+              "value": 0,
+              "sources": [
+                "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair:lovePattern",
+                "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair:lovePattern"
+              ]
+            },
+            {
+              "factor": "반응을 원하는 마음과 생각할 시간",
+              "value": -1,
+              "sources": [
+                "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+                "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+                "fusion:esfj-help",
+                "fusion:intp-inquiry"
+              ]
+            }
+          ],
+          "value": 12
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "대화를 다시 잇는 방법",
+              "value": 2,
+              "sources": [
+                "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair:repairStrategy",
+                "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair:repairStrategy"
+              ]
+            },
+            {
+              "factor": "실제 두 반응을 나눠 조율",
+              "value": 1,
+              "sources": [
+                "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+                "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+                "fusion:esfj-help",
+                "fusion:intp-inquiry"
+              ]
+            },
+            {
+              "factor": "차이를 역할로 바꿀 여지",
+              "value": 2,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:0.1",
+                "SajuCalcResult:elements.weighted:EARTH:4.2",
+                "SajuCalcResult:elements.weighted:FIRE:0",
+                "SajuCalcResult:elements.weighted:FIRE:3.2",
+                "SajuCalcResult:elements:EARTH",
+                "SajuCalcResult:elements:FIRE",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:material-depth:element:EARTH:low",
+                "v4:material-depth:element:FIRE:high",
+                "v4:material-depth:element:FIRE:low",
+                "v4:symbolic-lifestyle:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:low",
+                "v4:symbolic-lifestyle:FIRE:high",
+                "v4:symbolic-lifestyle:FIRE:low"
+              ]
+            }
+          ],
+          "value": 10
+        }
+      ],
+      "category": "love",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리와 MBTI를 바탕으로 한 엔터테인먼트 해석입니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "directions": {
+      "aToB": {
+        "subjectPerson": "51e2d73a80866288129d316d",
+        "targetPerson": "313b38ee316c7f0e3181b95f",
+        "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+        "receivedTenGod": {
+          "viewerDayStem": "己",
+          "targetDayStem": "甲",
+          "tenGod": "正官",
+          "tenGodKo": "정관",
+          "relationLabel": "기토이 갑목를 보면 정관"
+        },
+        "element": {
+          "sourceStem": "甲",
+          "targetStem": "己",
+          "sourceElement": "wood",
+          "targetElement": "earth",
+          "relation": "controls",
+          "relationLabel": "갑목 -> 기토",
+          "summary": "갑목이 기토를 조절하는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "INTP",
+          "targetType": "ESFJ",
+          "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+          "withType": "ESFJ",
+          "label": "이중성 관계",
+          "sourceRelationName": "Duality",
+          "sourceCoverage": "direct",
+          "sharedGround": [
+            "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+            "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+            "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+          ],
+          "friction": [
+            "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+            "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+            "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+          ],
+          "positiveInfluence": [
+            "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+            "둘이 성숙할수록 상호 보완 효과가 커진다.",
+            "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+          ],
+          "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+          "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+          "repairStrategy": [
+            "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+            "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+            "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+          ],
+          "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+        }
+      },
+      "bToA": {
+        "subjectPerson": "313b38ee316c7f0e3181b95f",
+        "targetPerson": "51e2d73a80866288129d316d",
+        "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+        "receivedTenGod": {
+          "viewerDayStem": "甲",
+          "targetDayStem": "己",
+          "tenGod": "正財",
+          "tenGodKo": "정재",
+          "relationLabel": "갑목이 기토를 보면 정재"
+        },
+        "element": {
+          "sourceStem": "己",
+          "targetStem": "甲",
+          "sourceElement": "earth",
+          "targetElement": "wood",
+          "relation": "controlled_by",
+          "relationLabel": "기토 -> 갑목",
+          "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "ESFJ",
+          "targetType": "INTP",
+          "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+          "withType": "INTP",
+          "label": "이중성 관계",
+          "sourceRelationName": "Duality",
+          "sourceCoverage": "direct",
+          "sharedGround": [
+            "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+            "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+            "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+          ],
+          "friction": [
+            "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+            "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+            "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+          ],
+          "positiveInfluence": [
+            "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+            "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+            "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+          ],
+          "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+          "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+          "repairStrategy": [
+            "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+            "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+            "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+          ],
+          "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+        }
+      }
+    },
+    "invariant": [
+      "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:正財:controlled_by",
+      "313b38ee316c7f0e3181b95f:기사",
+      "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:正官:controls",
+      "51e2d73a80866288129d316d:갑자",
+      "clash:313b38ee316c7f0e3181b95f:day:巳|51e2d73a80866288129d316d:hour:亥",
+      "clash:313b38ee316c7f0e3181b95f:hour:巳|51e2d73a80866288129d316d:hour:亥",
+      "half_harmony:313b38ee316c7f0e3181b95f:month:辰|51e2d73a80866288129d316d:day:子",
+      "half_harmony:313b38ee316c7f0e3181b95f:month:辰|51e2d73a80866288129d316d:year:申",
+      "harm:313b38ee316c7f0e3181b95f:year:亥|51e2d73a80866288129d316d:year:申",
+      "six_harmony:313b38ee316c7f0e3181b95f:day:巳|51e2d73a80866288129d316d:year:申",
+      "six_harmony:313b38ee316c7f0e3181b95f:hour:巳|51e2d73a80866288129d316d:year:申",
+      "three_harmony:313b38ee316c7f0e3181b95f:month:辰|51e2d73a80866288129d316d:day:子|51e2d73a80866288129d316d:year:申"
+    ],
+    "individuals": {
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219"
+    },
+    "relations": [
+      "clash:313b38ee316c7f0e3181b95f:day:巳|51e2d73a80866288129d316d:hour:亥",
+      "half_harmony:313b38ee316c7f0e3181b95f:month:辰|51e2d73a80866288129d316d:day:子",
+      "six_harmony:313b38ee316c7f0e3181b95f:day:巳|51e2d73a80866288129d316d:year:申",
+      "three_harmony:313b38ee316c7f0e3181b95f:month:辰|51e2d73a80866288129d316d:day:子|51e2d73a80866288129d316d:year:申",
+      "clash:313b38ee316c7f0e3181b95f:hour:巳|51e2d73a80866288129d316d:hour:亥",
+      "half_harmony:313b38ee316c7f0e3181b95f:month:辰|51e2d73a80866288129d316d:year:申",
+      "harm:313b38ee316c7f0e3181b95f:year:亥|51e2d73a80866288129d316d:year:申",
+      "six_harmony:313b38ee316c7f0e3181b95f:hour:巳|51e2d73a80866288129d316d:year:申"
+    ]
+  },
+  "1": {
+    "index": {
+      "version": "gyeol-compatibility-index-13b-1",
+      "total": 55,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "같은 오행으로 치우침",
+              "value": -2,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:4.2",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:high"
+              ]
+            },
+            {
+              "factor": "일간 오행이 서로 생조",
+              "value": 3,
+              "sources": [
+                "daymaster-element:0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835",
+                "daymaster-element:32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2"
+              ]
+            }
+          ],
+          "value": 16
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 8,
+              "sources": [
+                "half_harmony:0239395c7851845e44da6cc2:day:申|32aecba69ec1180156ea2835:day:子",
+                "half_harmony:0239395c7851845e44da6cc2:hour:辰|32aecba69ec1180156ea2835:day:子",
+                "half_harmony:0239395c7851845e44da6cc2:month:亥|32aecba69ec1180156ea2835:hour:未",
+                "half_harmony:0239395c7851845e44da6cc2:month:亥|32aecba69ec1180156ea2835:month:卯",
+                "six_harmony:0239395c7851845e44da6cc2:year:戌|32aecba69ec1180156ea2835:month:卯",
+                "three_harmony:0239395c7851845e44da6cc2:day:申|0239395c7851845e44da6cc2:hour:辰|32aecba69ec1180156ea2835:day:子",
+                "three_harmony:0239395c7851845e44da6cc2:month:亥|32aecba69ec1180156ea2835:hour:未|32aecba69ec1180156ea2835:month:卯"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -7,
+              "sources": [
+                "clash:0239395c7851845e44da6cc2:year:戌|32aecba69ec1180156ea2835:year:辰",
+                "harm:0239395c7851845e44da6cc2:hour:辰|32aecba69ec1180156ea2835:month:卯"
+              ]
+            },
+            {
+              "factor": "돌봄·표현·책임의 자극",
+              "value": 1,
+              "sources": [
+                "received-ten-god:0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835:식신"
+              ]
+            }
+          ],
+          "value": 20
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "공통 관심과 좋은 영향",
+              "value": 4.4,
+              "sources": [
+                "0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835:mbti-pair",
+                "32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2:mbti-pair"
+              ]
+            },
+            {
+              "factor": "다르게 반응하는 지점",
+              "value": -5.6,
+              "sources": [
+                "0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835:mbti-pair",
+                "32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2:mbti-pair"
+              ]
+            },
+            {
+              "factor": "관계 유형별 자료",
+              "value": 0,
+              "sources": [
+                "0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835:mbti-pair:marriagePattern",
+                "32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2:mbti-pair:marriagePattern"
+              ]
+            },
+            {
+              "factor": "새 시도와 지켜온 약속",
+              "value": -1.9999999999999991,
+              "sources": [
+                "0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835:mbti-pair",
+                "32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2:mbti-pair",
+                "fusion:enfp-connection",
+                "fusion:istj-love"
+              ]
+            }
+          ],
+          "value": 10
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "대화를 다시 잇는 방법",
+              "value": 2.8,
+              "sources": [
+                "0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835:mbti-pair:repairStrategy",
+                "32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2:mbti-pair:repairStrategy"
+              ]
+            },
+            {
+              "factor": "실제 두 반응을 나눠 조율",
+              "value": 1.4,
+              "sources": [
+                "0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835:mbti-pair",
+                "32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2:mbti-pair",
+                "fusion:enfp-connection",
+                "fusion:istj-love"
+              ]
+            }
+          ],
+          "value": 9
+        }
+      ],
+      "category": "marriage",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리와 MBTI를 바탕으로 한 엔터테인먼트 해석입니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "directions": {
+      "aToB": {
+        "subjectPerson": "32aecba69ec1180156ea2835",
+        "targetPerson": "0239395c7851845e44da6cc2",
+        "relationId": "32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2",
+        "receivedTenGod": {
+          "viewerDayStem": "戊",
+          "targetDayStem": "丙",
+          "tenGod": "偏印",
+          "tenGodKo": "편인",
+          "relationLabel": "무토이 병화를 보면 편인"
+        },
+        "element": {
+          "sourceStem": "丙",
+          "targetStem": "戊",
+          "sourceElement": "fire",
+          "targetElement": "earth",
+          "relation": "generates",
+          "relationLabel": "병화 -> 무토",
+          "summary": "병화이 무토를 살리는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "ISTJ",
+          "targetType": "ENFP",
+          "evidenceId": "32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2:mbti-pair",
+          "withType": "ENFP",
+          "label": "상호 보완 관계",
+          "sourceRelationName": "Duality / TRUITY complementary",
+          "sourceCoverage": "direct",
+          "sharedGround": [
+            "둘 다 진정성 있는 관계를 원하며, 겉치레보다 실제 모습을 확인할 때 신뢰가 생긴다.",
+            "ISTJ의 실행력과 ENFP의 비전이 맞물리면 아이디어를 현실로 내리는 힘이 커진다.",
+            "말보다 행동으로 유대감을 확인하는 경험을 공유하면 관계가 단단해진다."
+          ],
+          "friction": [
+            "ISTJ는 ENFP를 변덕스럽고 비현실적으로 볼 수 있고, ENFP는 ISTJ를 고리타분하고 닫힌 사람으로 볼 수 있다.",
+            "ISTJ의 사실 중심 대화와 ENFP의 의미 중심 대화가 충돌하면 서로 다른 언어를 쓰는 느낌이 난다.",
+            "질서와 즉흥성, 혼자만의 시간과 외부 활동 욕구가 생활에서 계속 부딪힌다."
+          ],
+          "positiveInfluence": [
+            "ENFP는 ISTJ에게 새로운 시야와 정서적 표현을 열어주고, ISTJ는 ENFP에게 체계와 지속력을 준다.",
+            "서로 차이를 인정하면 안정과 혁신이 같이 움직이는 조합이 된다."
+          ],
+          "lovePattern": "끌림은 강하게 생길 수 있지만 속도와 생활 방식이 다르다. ENFP의 열정은 ISTJ에게 신선하고, ISTJ의 안정감은 ENFP에게 믿을 만한 기반이 된다.",
+          "marriagePattern": "장기 관계에서는 일정, 정리정돈, 사회활동, 감정 표현 방식이 핵심 갈등이 된다. 생활 규칙을 너무 늦게 정하면 ISTJ는 독박 어른 역할을 하고 ENFP는 통제받는다고 느낀다.",
+          "repairStrategy": [
+            "ISTJ는 비판 전에 감정 확인을 먼저 하고, ENFP는 약속과 일정 변경을 가볍게 넘기지 않는다.",
+            "공동의 생활 규칙을 최소한으로 정하고, 자유시간과 혼자 있는 시간을 따로 확보한다.",
+            "큰 비전은 ENFP가 열고, 실행 계획은 ISTJ가 닫는 식으로 역할을 나눈다."
+          ],
+          "reportLine": "ISTJ와 ENFP는 안정과 변화가 정면으로 만나는 조합이라, 생활 규칙을 잡으면 서로를 크게 키우고 못 잡으면 서로를 지치게 합니다."
+        }
+      },
+      "bToA": {
+        "subjectPerson": "0239395c7851845e44da6cc2",
+        "targetPerson": "32aecba69ec1180156ea2835",
+        "relationId": "0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835",
+        "receivedTenGod": {
+          "viewerDayStem": "丙",
+          "targetDayStem": "戊",
+          "tenGod": "食神",
+          "tenGodKo": "식신",
+          "relationLabel": "병화이 무토를 보면 식신"
+        },
+        "element": {
+          "sourceStem": "戊",
+          "targetStem": "丙",
+          "sourceElement": "earth",
+          "targetElement": "fire",
+          "relation": "generated_by",
+          "relationLabel": "무토 -> 병화",
+          "summary": "무토은 병화에게 힘을 받는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "ENFP",
+          "targetType": "ISTJ",
+          "evidenceId": "0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835:mbti-pair",
+          "withType": "ISTJ",
+          "label": "이중성 관계",
+          "sourceRelationName": "Duality",
+          "sourceCoverage": "inferred",
+          "sharedGround": [
+            "ENFP는 가능성과 사람의 마음을 넓게 보고, ISTJ는 현실의 책임과 검증된 질서를 단단히 잡는다.",
+            "서로가 잘 못하는 영역을 상대가 자연스럽게 해내는 모습을 보며 신기함과 안정감을 동시에 느낄 수 있다.",
+            "둘 다 진심과 책임을 가볍게 여기지 않기 때문에 관계가 자리 잡으면 서로에게 오래 남는 영향을 준다."
+          ],
+          "friction": [
+            "ENFP는 변화와 자발성을 원하지만, ISTJ는 예측 가능한 계획과 약속 이행을 먼저 본다.",
+            "ISTJ의 기준과 지적은 ENFP에게 숨 막히는 통제로 느껴질 수 있고, ENFP의 즉흥성은 ISTJ에게 불안정함으로 보일 수 있다.",
+            "갈등이 생기면 ENFP는 마음과 의도를 설명하고, ISTJ는 실제 행동과 결과를 확인하려 하면서 서로 답답해진다."
+          ],
+          "positiveInfluence": [
+            "ISTJ는 ENFP가 흩어지지 않도록 생활의 뼈대와 꾸준한 실행력을 제공한다.",
+            "ENFP는 ISTJ가 지나치게 익숙한 방식에만 머물지 않도록 관계와 삶의 새로운 가능성을 열어 준다.",
+            "서로를 바꾸려 하지 않으면 안정성과 생동감이 함께 살아난다."
+          ],
+          "lovePattern": "연애 초반에는 너무 다른 점이 오히려 매력으로 보인다. ENFP는 ISTJ의 성실함과 묵직한 신뢰에 끌리고, ISTJ는 ENFP의 밝은 에너지와 따뜻한 관심에 마음이 풀리지만, 시간이 지나면 약속과 자유의 기준을 자주 조율해야 한다.",
+          "marriagePattern": "결혼하면 ISTJ는 재정, 일정, 가족 의무를 안정적으로 운영하려 하고 ENFP는 집 안의 분위기와 삶의 변화 가능성을 살리고 싶어 한다. 이 조합은 생활 기반을 만들기 좋지만, 지출과 즉흥 약속, 개인 시간의 기준을 정하지 않으면 반복 갈등이 생긴다.",
+          "repairStrategy": [
+            "ENFP는 즉흥적인 변경이 필요할 때 ISTJ가 불안해하지 않도록 변경 이유와 새 약속을 함께 제시한다.",
+            "ISTJ는 ENFP의 자유로운 표현을 책임 부족으로 단정하지 말고 관계를 살리는 에너지로도 본다.",
+            "돈과 일정은 ISTJ식 기준을 세우되, ENFP가 숨 쉴 수 있는 여유 예산과 자유 시간을 따로 둔다."
+          ],
+          "reportLine": "이 관계는 정반대처럼 보여도 안정과 활력이 맞물릴 수 있는 조합이며, 서로의 방식을 고치기보다 역할로 인정할 때 오래 갑니다."
+        }
+      }
+    },
+    "invariant": [
+      "0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835:食神:generated_by",
+      "0239395c7851845e44da6cc2:무신",
+      "32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2:偏印:generates",
+      "32aecba69ec1180156ea2835:병자",
+      "clash:0239395c7851845e44da6cc2:year:戌|32aecba69ec1180156ea2835:year:辰",
+      "half_harmony:0239395c7851845e44da6cc2:day:申|32aecba69ec1180156ea2835:day:子",
+      "half_harmony:0239395c7851845e44da6cc2:hour:辰|32aecba69ec1180156ea2835:day:子",
+      "half_harmony:0239395c7851845e44da6cc2:month:亥|32aecba69ec1180156ea2835:hour:未",
+      "half_harmony:0239395c7851845e44da6cc2:month:亥|32aecba69ec1180156ea2835:month:卯",
+      "harm:0239395c7851845e44da6cc2:hour:辰|32aecba69ec1180156ea2835:month:卯",
+      "six_harmony:0239395c7851845e44da6cc2:year:戌|32aecba69ec1180156ea2835:month:卯",
+      "three_harmony:0239395c7851845e44da6cc2:day:申|0239395c7851845e44da6cc2:hour:辰|32aecba69ec1180156ea2835:day:子",
+      "three_harmony:0239395c7851845e44da6cc2:month:亥|32aecba69ec1180156ea2835:hour:未|32aecba69ec1180156ea2835:month:卯"
+    ],
+    "individuals": {
+      "personA": "6e529556e7b773dc6dbdee91c96a7d7108c16e3ef1f97a1d45b8518247535302",
+      "personB": "019e730dd47f46403e76b33dc6887d201686c1dc158f70b8f5bffc65d2ecfa3e"
+    },
+    "relations": [
+      "half_harmony:0239395c7851845e44da6cc2:day:申|32aecba69ec1180156ea2835:day:子",
+      "half_harmony:0239395c7851845e44da6cc2:hour:辰|32aecba69ec1180156ea2835:day:子",
+      "three_harmony:0239395c7851845e44da6cc2:day:申|0239395c7851845e44da6cc2:hour:辰|32aecba69ec1180156ea2835:day:子",
+      "clash:0239395c7851845e44da6cc2:year:戌|32aecba69ec1180156ea2835:year:辰",
+      "half_harmony:0239395c7851845e44da6cc2:month:亥|32aecba69ec1180156ea2835:hour:未",
+      "half_harmony:0239395c7851845e44da6cc2:month:亥|32aecba69ec1180156ea2835:month:卯",
+      "harm:0239395c7851845e44da6cc2:hour:辰|32aecba69ec1180156ea2835:month:卯",
+      "six_harmony:0239395c7851845e44da6cc2:year:戌|32aecba69ec1180156ea2835:month:卯",
+      "three_harmony:0239395c7851845e44da6cc2:month:亥|32aecba69ec1180156ea2835:hour:未|32aecba69ec1180156ea2835:month:卯"
+    ]
+  },
+  "2": {
+    "index": {
+      "version": "gyeol-compatibility-index-13b-1",
+      "total": 64,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "부족한 오행을 서로 보탬",
+              "value": 4.4,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:FIRE:0.3",
+                "SajuCalcResult:elements.weighted:FIRE:4.2",
+                "SajuCalcResult:elements.weighted:WATER:1.1",
+                "SajuCalcResult:elements.weighted:WATER:4.2",
+                "SajuCalcResult:elements:FIRE",
+                "SajuCalcResult:elements:WATER",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:FIRE:high",
+                "v4:material-depth:element:FIRE:low",
+                "v4:material-depth:element:WATER:high",
+                "v4:material-depth:element:WATER:low",
+                "v4:symbolic-lifestyle:FIRE:high",
+                "v4:symbolic-lifestyle:FIRE:low",
+                "v4:symbolic-lifestyle:WATER:high",
+                "v4:symbolic-lifestyle:WATER:low"
+              ]
+            }
+          ],
+          "value": 19
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 7.2,
+              "sources": [
+                "half_harmony:1684d09cd14c5996bb6ddc25:day:子|eecf971a8da1a10d76db7f5e:year:辰",
+                "half_harmony:1684d09cd14c5996bb6ddc25:month:酉|eecf971a8da1a10d76db7f5e:hour:巳",
+                "six_harmony:1684d09cd14c5996bb6ddc25:hour:未|eecf971a8da1a10d76db7f5e:month:午",
+                "six_harmony:1684d09cd14c5996bb6ddc25:month:酉|eecf971a8da1a10d76db7f5e:year:辰"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -3.3000000000000003,
+              "sources": [
+                "clash:1684d09cd14c5996bb6ddc25:year:子|eecf971a8da1a10d76db7f5e:month:午"
+              ]
+            },
+            {
+              "factor": "돌봄·표현·책임의 자극",
+              "value": 2.2,
+              "sources": [
+                "received-ten-god:1684d09cd14c5996bb6ddc25:to:eecf971a8da1a10d76db7f5e:정관",
+                "received-ten-god:eecf971a8da1a10d76db7f5e:to:1684d09cd14c5996bb6ddc25:정재"
+              ]
+            }
+          ],
+          "value": 24
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "공통 관심과 좋은 영향",
+              "value": 3.2,
+              "sources": [
+                "1684d09cd14c5996bb6ddc25:to:eecf971a8da1a10d76db7f5e:mbti-pair",
+                "eecf971a8da1a10d76db7f5e:to:1684d09cd14c5996bb6ddc25:mbti-pair"
+              ]
+            },
+            {
+              "factor": "다르게 반응하는 지점",
+              "value": -4.4,
+              "sources": [
+                "1684d09cd14c5996bb6ddc25:to:eecf971a8da1a10d76db7f5e:mbti-pair",
+                "eecf971a8da1a10d76db7f5e:to:1684d09cd14c5996bb6ddc25:mbti-pair"
+              ]
+            },
+            {
+              "factor": "챙기는 마음과 새로운 선택",
+              "value": -0.6000000000000001,
+              "sources": [
+                "1684d09cd14c5996bb6ddc25:to:eecf971a8da1a10d76db7f5e:mbti-pair",
+                "eecf971a8da1a10d76db7f5e:to:1684d09cd14c5996bb6ddc25:mbti-pair",
+                "fusion:entp-needle",
+                "fusion:isfj-love"
+              ]
+            }
+          ],
+          "value": 11
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "대화를 다시 잇는 방법",
+              "value": 3,
+              "sources": [
+                "1684d09cd14c5996bb6ddc25:to:eecf971a8da1a10d76db7f5e:mbti-pair:repairStrategy",
+                "eecf971a8da1a10d76db7f5e:to:1684d09cd14c5996bb6ddc25:mbti-pair:repairStrategy"
+              ]
+            },
+            {
+              "factor": "실제 두 반응을 나눠 조율",
+              "value": 0.75,
+              "sources": [
+                "1684d09cd14c5996bb6ddc25:to:eecf971a8da1a10d76db7f5e:mbti-pair",
+                "eecf971a8da1a10d76db7f5e:to:1684d09cd14c5996bb6ddc25:mbti-pair",
+                "fusion:entp-needle",
+                "fusion:isfj-love"
+              ]
+            },
+            {
+              "factor": "차이를 역할로 바꿀 여지",
+              "value": 2,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:FIRE:0.3",
+                "SajuCalcResult:elements.weighted:FIRE:4.2",
+                "SajuCalcResult:elements.weighted:WATER:1.1",
+                "SajuCalcResult:elements.weighted:WATER:4.2",
+                "SajuCalcResult:elements:FIRE",
+                "SajuCalcResult:elements:WATER",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:FIRE:high",
+                "v4:material-depth:element:FIRE:low",
+                "v4:material-depth:element:WATER:high",
+                "v4:material-depth:element:WATER:low",
+                "v4:symbolic-lifestyle:FIRE:high",
+                "v4:symbolic-lifestyle:FIRE:low",
+                "v4:symbolic-lifestyle:WATER:high",
+                "v4:symbolic-lifestyle:WATER:low"
+              ]
+            }
+          ],
+          "value": 10
+        }
+      ],
+      "category": "parentChild",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리와 MBTI를 바탕으로 한 엔터테인먼트 해석입니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "directions": {
+      "aToB": {
+        "subjectPerson": "1684d09cd14c5996bb6ddc25",
+        "targetPerson": "eecf971a8da1a10d76db7f5e",
+        "relationId": "1684d09cd14c5996bb6ddc25:to:eecf971a8da1a10d76db7f5e",
+        "receivedTenGod": {
+          "viewerDayStem": "己",
+          "targetDayStem": "甲",
+          "tenGod": "正官",
+          "tenGodKo": "정관",
+          "relationLabel": "기토이 갑목를 보면 정관"
+        },
+        "element": {
+          "sourceStem": "甲",
+          "targetStem": "己",
+          "sourceElement": "wood",
+          "targetElement": "earth",
+          "relation": "controls",
+          "relationLabel": "갑목 -> 기토",
+          "summary": "갑목이 기토를 조절하는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "ISFJ",
+          "targetType": "ENTP",
+          "evidenceId": "1684d09cd14c5996bb6ddc25:to:eecf971a8da1a10d76db7f5e:mbti-pair",
+          "withType": "ENTP",
+          "label": "이중성 관계",
+          "sourceRelationName": "Duality",
+          "sourceCoverage": "direct",
+          "sharedGround": [
+            "같은 심리 기능을 반대 순서로 사용해 서로에게 부족한 부분이 강하게 보인다.",
+            "ISFJ는 ENTP의 사교성, 아이디어, 거침없는 행동력을 흥미롭게 느낄 수 있다.",
+            "ENTP는 ISFJ의 따뜻함, 계획성, 안정적인 책임감에서 보호받는 느낌을 받을 수 있다."
+          ],
+          "friction": [
+            "관계를 이상화하면 실제 생활 차이에서 갈등을 크게 겪는다.",
+            "ISFJ는 ENTP의 즉흥성과 변화 욕구를 불안하게 느끼고, ENTP는 ISFJ의 조심스러움과 전통성을 답답하게 본다.",
+            "약속, 돈, 가족 책임을 다루는 속도가 달라서 ISFJ는 혼자 챙긴다고 느끼고 ENTP는 관계가 자신을 묶는다고 느끼기 쉽다."
+          ],
+          "positiveInfluence": [
+            "ISFJ는 ENTP에게 안정과 지속성을 제공하고, ENTP는 ISFJ에게 새로운 관점과 활력을 준다.",
+            "서로의 약점을 자연스럽게 보호해주는 보완성이 크다.",
+            "공통 목표가 있으면 생활 안정과 아이디어 확장이 동시에 살아난다."
+          ],
+          "lovePattern": "처음에는 서로에게 신기하고 매력적인 느낌이 강하다. ISFJ는 ENTP의 밝은 에너지에 열리고, ENTP는 ISFJ의 진심 어린 돌봄에 안정감을 느낀다. 다만 생활 리듬이 다르면 설렘이 곧 피로로 바뀐다.",
+          "marriagePattern": "장기 관계에서는 공통 목표가 핵심이다. 같은 방향을 바라보면 ISFJ가 기반을 만들고 ENTP가 가능성을 열지만, 목표가 다르면 한쪽은 불안하고 한쪽은 묶인다고 느낀다.",
+          "repairStrategy": [
+            "관계를 궁합 이름으로 이상화하지 말고 실제 생활 기준을 맞춘다.",
+            "ENTP는 즉흥 변화를 예고하고, ISFJ는 변화 자체를 전부 위험으로 보지 않는다.",
+            "둘이 함께 추구할 목표와 프로젝트를 분명히 정한다."
+          ],
+          "reportLine": "ISFJ와 ENTP는 안정과 가능성이 맞물리는 강한 보완 조합이지만, 같은 목표가 없으면 설렘만으로는 오래 버티기 어렵습니다."
+        }
+      },
+      "bToA": {
+        "subjectPerson": "eecf971a8da1a10d76db7f5e",
+        "targetPerson": "1684d09cd14c5996bb6ddc25",
+        "relationId": "eecf971a8da1a10d76db7f5e:to:1684d09cd14c5996bb6ddc25",
+        "receivedTenGod": {
+          "viewerDayStem": "甲",
+          "targetDayStem": "己",
+          "tenGod": "正財",
+          "tenGodKo": "정재",
+          "relationLabel": "갑목이 기토를 보면 정재"
+        },
+        "element": {
+          "sourceStem": "己",
+          "targetStem": "甲",
+          "sourceElement": "earth",
+          "targetElement": "wood",
+          "relation": "controlled_by",
+          "relationLabel": "기토 -> 갑목",
+          "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "ENTP",
+          "targetType": "ISFJ",
+          "evidenceId": "eecf971a8da1a10d76db7f5e:to:1684d09cd14c5996bb6ddc25:mbti-pair",
+          "withType": "ISFJ",
+          "label": "이중성 관계",
+          "sourceRelationName": "Duality",
+          "sourceCoverage": "direct",
+          "sharedGround": [
+            "두 유형은 같은 기능을 반대 순서로 사용해 서로가 부족한 부분을 자연스럽게 발견한다.",
+            "ISFJ의 계획성과 따뜻함은 ENTP의 빠른 아이디어와 행동력을 생활 속에 안착시킨다.",
+            "ENTP의 사교성과 거침없는 발상은 ISFJ가 익숙한 세계 밖으로 나오는 데 자극이 된다."
+          ],
+          "friction": [
+            "이론적으로 보완이 강해도 실제로는 서로를 이해하기 어려운 순간이 자주 생긴다.",
+            "ENTP의 즉흥성과 논쟁성은 ISFJ에게 불안정하게 느껴지고, ISFJ의 조심스러운 루틴은 ENTP에게 답답하게 보인다.",
+            "공통 관심사와 비슷한 삶의 방향이 없으면 보완보다 피로가 먼저 커진다."
+          ],
+          "positiveInfluence": [
+            "ENTP는 ISFJ에게 새 가능성과 용기를 주고, ISFJ는 ENTP에게 책임과 지속성을 보강한다.",
+            "서로의 약점을 보호하고 강점을 칭찬하는 패턴이 만들어지면 안정과 확장이 함께 생긴다."
+          ],
+          "lovePattern": "처음에는 ENTP의 활기와 ISFJ의 안정감이 강하게 끌린다. ENTP는 ISFJ의 섬세한 배려를 신뢰하고, ISFJ는 ENTP의 생동감에 매력을 느낀다. 다만 ENTP가 논쟁을 놀이처럼 다루고 ISFJ가 관계의 안정감을 먼저 찾으면 속도와 표현 방식에서 피로가 생긴다.",
+          "marriagePattern": "결혼에서는 ENTP가 새 기회와 변화의 방향을 열고 ISFJ가 생활 루틴과 가족의 안정감을 지킨다. 역할이 존중되면 강한 보완 관계가 되지만, ENTP가 반복 책임을 가볍게 여기거나 ISFJ가 자유를 과하게 관리하려 하면 충돌한다.",
+          "repairStrategy": [
+            "ENTP는 즉흥 변경 전에 생활 영향과 감정 부담을 먼저 설명한다.",
+            "ISFJ는 불안을 통제 대신 구체적 요청으로 말한다.",
+            "두 사람은 공동 목표와 최소 루틴을 정해 보완이 실제 생활로 이어지게 한다."
+          ],
+          "reportLine": "ENTP와 ISFJ는 서로의 반대편을 채우는 조합이지만, 매력만 믿고 구조를 만들지 않으면 이상적인 궁합도 쉽게 피로해진다."
+        }
+      }
+    },
+    "invariant": [
+      "1684d09cd14c5996bb6ddc25:to:eecf971a8da1a10d76db7f5e:正官:controls",
+      "1684d09cd14c5996bb6ddc25:갑자",
+      "clash:1684d09cd14c5996bb6ddc25:day:子|eecf971a8da1a10d76db7f5e:month:午",
+      "clash:1684d09cd14c5996bb6ddc25:year:子|eecf971a8da1a10d76db7f5e:month:午",
+      "eecf971a8da1a10d76db7f5e:to:1684d09cd14c5996bb6ddc25:正財:controlled_by",
+      "eecf971a8da1a10d76db7f5e:기유",
+      "half_harmony:1684d09cd14c5996bb6ddc25:day:子|eecf971a8da1a10d76db7f5e:year:辰",
+      "half_harmony:1684d09cd14c5996bb6ddc25:month:酉|eecf971a8da1a10d76db7f5e:hour:巳",
+      "six_harmony:1684d09cd14c5996bb6ddc25:hour:未|eecf971a8da1a10d76db7f5e:month:午",
+      "six_harmony:1684d09cd14c5996bb6ddc25:month:酉|eecf971a8da1a10d76db7f5e:year:辰"
+    ],
+    "individuals": {
+      "personA": "9f6cf0c032049a88f3aca1e2beca2924eca0f79d67de15c726536ccfaa8b7758",
+      "personB": "4a0070959c7187a05083528a16e20fa1b26117d2ae841dc3fc48bc876214176e"
+    },
+    "relations": [
+      "clash:1684d09cd14c5996bb6ddc25:day:子|eecf971a8da1a10d76db7f5e:month:午",
+      "half_harmony:1684d09cd14c5996bb6ddc25:day:子|eecf971a8da1a10d76db7f5e:year:辰",
+      "clash:1684d09cd14c5996bb6ddc25:year:子|eecf971a8da1a10d76db7f5e:month:午",
+      "half_harmony:1684d09cd14c5996bb6ddc25:month:酉|eecf971a8da1a10d76db7f5e:hour:巳",
+      "six_harmony:1684d09cd14c5996bb6ddc25:hour:未|eecf971a8da1a10d76db7f5e:month:午",
+      "six_harmony:1684d09cd14c5996bb6ddc25:month:酉|eecf971a8da1a10d76db7f5e:year:辰"
+    ]
+  },
+  "3": {
+    "index": {
+      "version": "gyeol-compatibility-index-13b-1",
+      "total": 58,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "일간 오행이 서로 생조",
+              "value": 3,
+              "sources": [
+                "daymaster-element:1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47",
+                "daymaster-element:a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038"
+              ]
+            }
+          ],
+          "value": 18
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 6.4,
+              "sources": [
+                "half_harmony:1e7e816adb0a760d063e3038:day:戌|a0a9396e146736119ec92f47:year:午",
+                "half_harmony:1e7e816adb0a760d063e3038:month:未|a0a9396e146736119ec92f47:hour:卯",
+                "six_harmony:1e7e816adb0a760d063e3038:day:戌|a0a9396e146736119ec92f47:hour:卯",
+                "six_harmony:1e7e816adb0a760d063e3038:month:未|a0a9396e146736119ec92f47:year:午"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -6,
+              "sources": [
+                "clash:1e7e816adb0a760d063e3038:year:子|a0a9396e146736119ec92f47:year:午",
+                "harm:1e7e816adb0a760d063e3038:year:子|a0a9396e146736119ec92f47:month:未"
+              ]
+            },
+            {
+              "factor": "돌봄·표현·책임의 자극",
+              "value": 1.3,
+              "sources": [
+                "received-ten-god:a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038:식신"
+              ]
+            }
+          ],
+          "value": 20
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "공통 관심과 좋은 영향",
+              "value": 3.6,
+              "sources": [
+                "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47:mbti-pair",
+                "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038:mbti-pair"
+              ]
+            },
+            {
+              "factor": "다르게 반응하는 지점",
+              "value": -4.8,
+              "sources": [
+                "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47:mbti-pair",
+                "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038:mbti-pair"
+              ]
+            },
+            {
+              "factor": "결론을 내는 속도와 검토의 깊이",
+              "value": 0.30000000000000027,
+              "sources": [
+                "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47:mbti-pair",
+                "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038:mbti-pair",
+                "fusion:entj-needle",
+                "fusion:intp-inquiry"
+              ]
+            }
+          ],
+          "value": 12
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "대화를 다시 잇는 방법",
+              "value": 2.2,
+              "sources": [
+                "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47:mbti-pair:repairStrategy",
+                "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038:mbti-pair:repairStrategy"
+              ]
+            },
+            {
+              "factor": "실제 두 반응을 나눠 조율",
+              "value": 0.55,
+              "sources": [
+                "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47:mbti-pair",
+                "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038:mbti-pair",
+                "fusion:entj-needle",
+                "fusion:intp-inquiry"
+              ]
+            }
+          ],
+          "value": 8
+        }
+      ],
+      "category": "coworker",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리와 MBTI를 바탕으로 한 엔터테인먼트 해석입니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "directions": {
+      "aToB": {
+        "subjectPerson": "a0a9396e146736119ec92f47",
+        "targetPerson": "1e7e816adb0a760d063e3038",
+        "relationId": "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038",
+        "receivedTenGod": {
+          "viewerDayStem": "壬",
+          "targetDayStem": "甲",
+          "tenGod": "食神",
+          "tenGodKo": "식신",
+          "relationLabel": "임수이 갑목를 보면 식신"
+        },
+        "element": {
+          "sourceStem": "甲",
+          "targetStem": "壬",
+          "sourceElement": "wood",
+          "targetElement": "water",
+          "relation": "generated_by",
+          "relationLabel": "갑목 -> 임수",
+          "summary": "갑목은 임수에게 힘을 받는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "ENTJ",
+          "targetType": "INTP",
+          "evidenceId": "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038:mbti-pair",
+          "withType": "INTP",
+          "label": "대척 관계",
+          "sourceRelationName": "Contrary",
+          "sourceCoverage": "direct",
+          "sharedGround": [
+            "둘 다 사고형이며 지적 주제와 논리적 설명에 반응한다.",
+            "ENTJ는 INTP의 원리 분석에서 전략의 빈틈을 발견하고, INTP는 ENTJ의 실행력에서 생각이 현실로 옮겨지는 힘을 본다.",
+            "감정 과잉보다 근거 있는 대화를 선호해, 경쟁이 통제되면 서로의 판단을 날카롭게 만드는 조합이 된다."
+          ],
+          "friction": [
+            "사회적 상황에서는 각자의 강한 면으로 경쟁하며 심리적 거리를 형성하기 어렵다.",
+            "ENTJ는 INTP의 신중함과 거리두기를 의도적 회피로 오해할 수 있다.",
+            "ENTJ의 빠른 실행 압박과 INTP의 사고 독립성이 부딪히면, 한쪽은 답답함을 느끼고 한쪽은 자기 속도를 침해받는다고 느낀다."
+          ],
+          "positiveInfluence": [
+            "INTP는 ENTJ에게 더 깊은 논리 검증과 개념적 정교함을 제공한다.",
+            "ENTJ는 INTP에게 실행과 외부 영향력의 필요를 보여 준다.",
+            "경쟁이 통제되면 지적 긴장감이 생산적 자극이 된다."
+          ],
+          "lovePattern": "연애에서는 ENTJ가 INTP의 지적 독립성에 흥미를 느끼고, INTP는 ENTJ의 강한 실행력을 신기하게 볼 수 있다. 하지만 ENTJ가 빠른 실행과 명확한 결론을 요구하면 INTP는 물러나고, INTP의 지연과 탐색은 ENTJ에게 비협조로 보인다.",
+          "marriagePattern": "결혼에서는 생활 리듬과 사회적 태도에서 차이가 크다. ENTJ는 외부 목표와 지위를 움직이고 싶어 하고, INTP는 생각의 자유와 분석 시간을 원한다. 사회적 장면에서 경쟁과 오해가 생기기 쉽다.",
+          "repairStrategy": [
+            "ENTJ는 INTP의 느린 사고를 무능으로 보지 않는다.",
+            "INTP는 결론 없는 탐색을 줄이고 실행 가능한 최소 합의를 제시한다.",
+            "사회적 역할과 개인 사고 시간을 분명히 나눈다."
+          ],
+          "reportLine": "ENTJ와 INTP는 지적으로 끌릴 수 있지만, 실행 속도와 사회적 태도의 차이가 크므로 경쟁을 줄이고 역할을 나눠야 합니다."
+        }
+      },
+      "bToA": {
+        "subjectPerson": "1e7e816adb0a760d063e3038",
+        "targetPerson": "a0a9396e146736119ec92f47",
+        "relationId": "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47",
+        "receivedTenGod": {
+          "viewerDayStem": "甲",
+          "targetDayStem": "壬",
+          "tenGod": "偏印",
+          "tenGodKo": "편인",
+          "relationLabel": "갑목이 임수를 보면 편인"
+        },
+        "element": {
+          "sourceStem": "壬",
+          "targetStem": "甲",
+          "sourceElement": "water",
+          "targetElement": "wood",
+          "relation": "generates",
+          "relationLabel": "임수 -> 갑목",
+          "summary": "임수이 갑목를 살리는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "INTP",
+          "targetType": "ENTJ",
+          "evidenceId": "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47:mbti-pair",
+          "withType": "ENTJ",
+          "label": "반대 관계",
+          "sourceRelationName": "Contrary",
+          "sourceCoverage": "direct",
+          "sharedGround": [
+            "둘이 있을 때는 특정 강점에 끌리며 잘 지낼 수 있고, 서로의 지적 능력과 문제 해결력을 빠르게 알아본다.",
+            "지적 능력과 전략적 사고에서 서로를 인정할 수 있다.",
+            "둘 다 문제를 감정만으로 덮기보다 구조와 원인을 찾아보려는 태도가 있다."
+          ],
+          "friction": [
+            "사회적 환경에서는 각자의 강점을 활용해 경쟁하기 쉽고, 주도권을 누가 쥐는지에 따라 긴장이 커진다.",
+            "ENTJ는 INTP의 거리 두기를 의도적 냉담함으로 오해할 수 있다.",
+            "ENTJ의 지휘와 속도는 INTP에게 통제와 압박으로 느껴진다."
+          ],
+          "positiveInfluence": [
+            "ENTJ는 INTP의 아이디어를 실행과 목표로 밀어붙인다.",
+            "INTP는 ENTJ의 전략에 더 깊은 원리와 반례 검토를 제공한다.",
+            "권한과 자율성을 분리하면 추진력과 분석력이 함께 살아난다."
+          ],
+          "lovePattern": "초반에는 능력과 지적 자극이 매력적이다. ENTJ는 INTP의 독립적 사고에 끌리고 INTP는 ENTJ의 실행력에 자극받지만, 추진력과 거리감이 부딪히면 관심이 압박으로 바뀐다.",
+          "marriagePattern": "결혼에서는 ENTJ가 실행과 관리의 주도권을 잡으려 하고 INTP가 자율성을 지키려 하면서 권한 갈등이 생긴다. 돈, 일정, 가족 책임은 ENTJ가 몰아붙이기 전에 INTP가 맡을 범위를 명확히 정해야 한다.",
+          "repairStrategy": [
+            "ENTJ는 INTP의 혼자 있는 시간을 의도적 회피로 보지 않는다.",
+            "INTP는 필요한 결정과 책임을 계속 미루지 않는다.",
+            "실행권과 검토권을 분리해 각자의 강점을 살린다."
+          ],
+          "reportLine": "INTP와 ENTJ는 서로의 능력에 끌리지만, 사회적 장면에서는 거리감과 지휘 욕구가 오해를 만들기 쉽습니다."
+        }
+      }
+    },
+    "invariant": [
+      "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47:偏印:generates",
+      "1e7e816adb0a760d063e3038:임술",
+      "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038:食神:generated_by",
+      "a0a9396e146736119ec92f47:갑신",
+      "clash:1e7e816adb0a760d063e3038:year:子|a0a9396e146736119ec92f47:year:午",
+      "half_harmony:1e7e816adb0a760d063e3038:day:戌|a0a9396e146736119ec92f47:year:午",
+      "half_harmony:1e7e816adb0a760d063e3038:month:未|a0a9396e146736119ec92f47:hour:卯",
+      "harm:1e7e816adb0a760d063e3038:year:子|a0a9396e146736119ec92f47:month:未",
+      "six_harmony:1e7e816adb0a760d063e3038:day:戌|a0a9396e146736119ec92f47:hour:卯",
+      "six_harmony:1e7e816adb0a760d063e3038:month:未|a0a9396e146736119ec92f47:year:午"
+    ],
+    "individuals": {
+      "personA": "9be611db2650e90a1f2570bbb81db9761d4aebebb1455bb342f816e65426a6c6",
+      "personB": "708bffd975a24e1cff850e8af9c392f10525ccddb99522213b767c88c8450ad4"
+    },
+    "relations": [
+      "half_harmony:1e7e816adb0a760d063e3038:day:戌|a0a9396e146736119ec92f47:year:午",
+      "six_harmony:1e7e816adb0a760d063e3038:day:戌|a0a9396e146736119ec92f47:hour:卯",
+      "clash:1e7e816adb0a760d063e3038:year:子|a0a9396e146736119ec92f47:year:午",
+      "half_harmony:1e7e816adb0a760d063e3038:month:未|a0a9396e146736119ec92f47:hour:卯",
+      "harm:1e7e816adb0a760d063e3038:year:子|a0a9396e146736119ec92f47:month:未",
+      "six_harmony:1e7e816adb0a760d063e3038:month:未|a0a9396e146736119ec92f47:year:午"
+    ]
+  },
+  "4": {
+    "index": {
+      "version": "gyeol-compatibility-index-13b-1",
+      "total": 45,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "부족한 오행을 서로 보탬",
+              "value": 2.2,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:METAL:1.1",
+                "SajuCalcResult:elements.weighted:METAL:3.7",
+                "SajuCalcResult:elements:METAL",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:METAL:high",
+                "v4:material-depth:element:METAL:low",
+                "v4:symbolic-lifestyle:METAL:high",
+                "v4:symbolic-lifestyle:METAL:low"
+              ]
+            }
+          ],
+          "value": 17
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 4.8999999999999995,
+              "sources": [
+                "half_harmony:a111180ea4a40c4d615e0df9:day:寅|a673b4746105d7b0d371e031:month:午",
+                "half_harmony:a111180ea4a40c4d615e0df9:year:辰|a673b4746105d7b0d371e031:day:子",
+                "six_harmony:a111180ea4a40c4d615e0df9:month:丑|a673b4746105d7b0d371e031:day:子"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -9.799999999999999,
+              "sources": [
+                "clash:a111180ea4a40c4d615e0df9:hour:酉|a673b4746105d7b0d371e031:hour:卯",
+                "harm:a111180ea4a40c4d615e0df9:month:丑|a673b4746105d7b0d371e031:month:午",
+                "harm:a111180ea4a40c4d615e0df9:year:辰|a673b4746105d7b0d371e031:hour:卯"
+              ]
+            }
+          ],
+          "value": 13
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "공통 관심과 좋은 영향",
+              "value": 3.2,
+              "sources": [
+                "a111180ea4a40c4d615e0df9:to:a673b4746105d7b0d371e031:mbti-pair",
+                "a673b4746105d7b0d371e031:to:a111180ea4a40c4d615e0df9:mbti-pair"
+              ]
+            },
+            {
+              "factor": "다르게 반응하는 지점",
+              "value": -5.6,
+              "sources": [
+                "a111180ea4a40c4d615e0df9:to:a673b4746105d7b0d371e031:mbti-pair",
+                "a673b4746105d7b0d371e031:to:a111180ea4a40c4d615e0df9:mbti-pair"
+              ]
+            },
+            {
+              "factor": "먼저 이해하기와 먼저 해보기",
+              "value": -3.3999999999999995,
+              "sources": [
+                "a111180ea4a40c4d615e0df9:to:a673b4746105d7b0d371e031:mbti-pair",
+                "a673b4746105d7b0d371e031:to:a111180ea4a40c4d615e0df9:mbti-pair",
+                "fusion:estp-needle",
+                "fusion:infj-depth"
+              ]
+            }
+          ],
+          "value": 7
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "대화를 다시 잇는 방법",
+              "value": 2.8,
+              "sources": [
+                "a111180ea4a40c4d615e0df9:to:a673b4746105d7b0d371e031:mbti-pair:repairStrategy",
+                "a673b4746105d7b0d371e031:to:a111180ea4a40c4d615e0df9:mbti-pair:repairStrategy"
+              ]
+            },
+            {
+              "factor": "실제 두 반응을 나눠 조율",
+              "value": 0.7,
+              "sources": [
+                "a111180ea4a40c4d615e0df9:to:a673b4746105d7b0d371e031:mbti-pair",
+                "a673b4746105d7b0d371e031:to:a111180ea4a40c4d615e0df9:mbti-pair",
+                "fusion:estp-needle",
+                "fusion:infj-depth"
+              ]
+            },
+            {
+              "factor": "차이를 역할로 바꿀 여지",
+              "value": 1,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:METAL:1.1",
+                "SajuCalcResult:elements.weighted:METAL:3.7",
+                "SajuCalcResult:elements:METAL",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:METAL:high",
+                "v4:material-depth:element:METAL:low",
+                "v4:symbolic-lifestyle:METAL:high",
+                "v4:symbolic-lifestyle:METAL:low"
+              ]
+            },
+            {
+              "factor": "여러 충돌을 따로 조율할 필요",
+              "value": -2,
+              "sources": [
+                "clash:a111180ea4a40c4d615e0df9:hour:酉|a673b4746105d7b0d371e031:hour:卯",
+                "harm:a111180ea4a40c4d615e0df9:month:丑|a673b4746105d7b0d371e031:month:午",
+                "harm:a111180ea4a40c4d615e0df9:year:辰|a673b4746105d7b0d371e031:hour:卯"
+              ]
+            }
+          ],
+          "value": 8
+        }
+      ],
+      "category": "managerReport",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리와 MBTI를 바탕으로 한 엔터테인먼트 해석입니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "directions": {
+      "aToB": {
+        "subjectPerson": "a673b4746105d7b0d371e031",
+        "targetPerson": "a111180ea4a40c4d615e0df9",
+        "relationId": "a673b4746105d7b0d371e031:to:a111180ea4a40c4d615e0df9",
+        "receivedTenGod": {
+          "viewerDayStem": "庚",
+          "targetDayStem": "庚",
+          "tenGod": "比肩",
+          "tenGodKo": "비견",
+          "relationLabel": "경금이 경금를 보면 비견"
+        },
+        "element": {
+          "sourceStem": "庚",
+          "targetStem": "庚",
+          "sourceElement": "metal",
+          "targetElement": "metal",
+          "relation": "same",
+          "relationLabel": "경금 -> 경금",
+          "summary": "경금와 경금가 같은 오행으로 공명하는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "INFJ",
+          "targetType": "ESTP",
+          "evidenceId": "a673b4746105d7b0d371e031:to:a111180ea4a40c4d615e0df9:mbti-pair",
+          "withType": "ESTP",
+          "label": "이중성 관계",
+          "sourceRelationName": "Duality",
+          "sourceCoverage": "direct",
+          "sharedGround": [
+            "서로의 관심사와 호감이 맞으면 INFJ의 내면적 비전과 ESTP의 현실적 행동력이 강하게 보완된다.",
+            "INFJ는 ESTP에게 깊이와 장기 방향을 보여주고, ESTP는 INFJ를 생각에서 현실 행동으로 끌어낸다.",
+            "서로를 바꾸려 하지 않으면 의미와 실행, 통찰과 현장감이 함께 살아난다."
+          ],
+          "friction": [
+            "이 관계는 매력은 강하지만 생활 속에서는 서로의 기본 속도가 크게 다르게 드러난다.",
+            "ESTP의 즉각적 행동성과 활동성은 INFJ에게 정서적 안전을 확인할 시간을 빼앗는 피로로 느껴질 수 있다.",
+            "INFJ의 깊은 의미 탐색은 ESTP에게 지나치게 복잡하게 들리고, ESTP의 빠른 전환은 INFJ에게 가벼운 태도로 보일 수 있다."
+          ],
+          "positiveInfluence": [
+            "ESTP는 INFJ를 현실과 행동으로 끌어내고, INFJ는 ESTP에게 장기적 의미와 관계의 깊이를 보여준다.",
+            "INFJ는 ESTP의 현재 대응력을 통해 생각을 실제 장면에 연결하고, ESTP는 INFJ를 통해 행동 뒤의 의미를 읽는 법을 배운다."
+          ],
+          "lovePattern": "연애에서는 서로에게 전혀 다른 세계가 매력으로 다가온다. ESTP는 INFJ에게 지금 여기의 생동감을 주고, INFJ는 ESTP에게 평소 잘 보지 않던 의미와 정서의 깊이를 열어준다. 다만 활동량과 대화 깊이가 맞지 않으면 빠르게 피로해진다.",
+          "marriagePattern": "결혼에서는 생활 속도와 자극 수준이 핵심이다. ESTP는 경험과 행동을 늘리고 싶어 하고 INFJ는 조용한 의미와 정서적 안전을 원하므로, 외부 활동과 회복 시간을 명확히 나눠야 한다.",
+          "repairStrategy": [
+            "ESTP는 INFJ의 조용한 회복 시간을 존중한다.",
+            "INFJ는 ESTP의 즉흥성을 무책임으로 단정하지 않는다.",
+            "주말과 여가를 활동일과 휴식일로 나누어 설계한다."
+          ],
+          "reportLine": "INFJ와 ESTP는 비전과 행동이 만나는 강한 보완 가능성이 있지만, 자극의 양과 생활 속도를 맞추지 못하면 서로의 세계가 부담이 됩니다."
+        }
+      },
+      "bToA": {
+        "subjectPerson": "a111180ea4a40c4d615e0df9",
+        "targetPerson": "a673b4746105d7b0d371e031",
+        "relationId": "a111180ea4a40c4d615e0df9:to:a673b4746105d7b0d371e031",
+        "receivedTenGod": {
+          "viewerDayStem": "庚",
+          "targetDayStem": "庚",
+          "tenGod": "比肩",
+          "tenGodKo": "비견",
+          "relationLabel": "경금이 경금를 보면 비견"
+        },
+        "element": {
+          "sourceStem": "庚",
+          "targetStem": "庚",
+          "sourceElement": "metal",
+          "targetElement": "metal",
+          "relation": "same",
+          "relationLabel": "경금 -> 경금",
+          "summary": "경금와 경금가 같은 오행으로 공명하는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "ESTP",
+          "targetType": "INFJ",
+          "evidenceId": "a111180ea4a40c4d615e0df9:to:a673b4746105d7b0d371e031:mbti-pair",
+          "withType": "INFJ",
+          "label": "같은 Beta 그룹의 감각과 통찰 보완",
+          "sourceRelationName": "Beta Comfort",
+          "sourceCoverage": "inferred",
+          "sharedGround": [
+            "ESTP는 현장의 흐름을 빠르게 읽고, INFJ는 사람과 관계의 숨은 흐름을 깊게 읽는다.",
+            "둘 다 상황을 관찰하는 힘이 있지만, ESTP는 눈앞의 신호에 민감하고 INFJ는 장기적 의미에 민감하다.",
+            "서로를 보완하면 행동력과 통찰이 함께 살아나는 관계가 된다."
+          ],
+          "friction": [
+            "INFJ는 관계의 의미와 정서적 맥락을 중요하게 보지만, ESTP는 현재의 행동과 직접적인 반응을 더 신뢰한다.",
+            "ESTP의 빠른 말과 행동은 INFJ에게 거칠게 느껴질 수 있고, INFJ의 깊은 해석은 ESTP에게 복잡하게 느껴질 수 있다.",
+            "갈등이 생기면 INFJ는 조용히 상처를 해석하고 ESTP는 빨리 분위기를 바꾸려 하면서 문제의 깊이를 다르게 본다."
+          ],
+          "positiveInfluence": [
+            "INFJ는 ESTP가 장기적 방향과 사람의 내면을 더 보게 돕는다.",
+            "ESTP는 INFJ가 현실 속에서 움직이고 경험하도록 끌어낸다.",
+            "서로를 바꾸려 들지 않으면 INFJ의 통찰은 ESTP의 행동에 의미를 붙이고, ESTP의 실행력은 INFJ의 생각을 실제 장면으로 밀어준다."
+          ],
+          "lovePattern": "연애에서는 서로의 낯선 매력에 끌릴 수 있다. ESTP는 INFJ의 깊이를 신기하게 보고, INFJ는 ESTP의 생동감에 끌리지만 감정 처리 속도와 대화 깊이에서 피로가 생긴다.",
+          "marriagePattern": "장기 관계에서는 ESTP가 생활의 움직임을 만들고 INFJ가 관계의 의미를 붙인다. 다만 ESTP가 깊은 대화를 회피하고 INFJ가 행동보다 해석에 머무르면 서로 멀어진다.",
+          "repairStrategy": [
+            "ESTP는 장기적 고민을 장난으로 넘기지 않는다.",
+            "INFJ는 추상적 불안을 구체적인 요청으로 표현한다.",
+            "체험과 대화를 번갈아 배치해 서로의 방식에 시간을 준다."
+          ],
+          "reportLine": "ESTP와 INFJ는 현장 감각과 깊은 통찰이 만나는 조합이며, 행동과 의미를 번갈아 존중할 때 서로를 크게 성장시킵니다."
+        }
+      }
+    },
+    "invariant": [
+      "a111180ea4a40c4d615e0df9:to:a673b4746105d7b0d371e031:比肩:same",
+      "a111180ea4a40c4d615e0df9:경인",
+      "a673b4746105d7b0d371e031:to:a111180ea4a40c4d615e0df9:比肩:same",
+      "a673b4746105d7b0d371e031:경자",
+      "clash:a111180ea4a40c4d615e0df9:hour:酉|a673b4746105d7b0d371e031:hour:卯",
+      "half_harmony:a111180ea4a40c4d615e0df9:day:寅|a673b4746105d7b0d371e031:month:午",
+      "half_harmony:a111180ea4a40c4d615e0df9:year:辰|a673b4746105d7b0d371e031:day:子",
+      "harm:a111180ea4a40c4d615e0df9:month:丑|a673b4746105d7b0d371e031:month:午",
+      "harm:a111180ea4a40c4d615e0df9:year:辰|a673b4746105d7b0d371e031:hour:卯",
+      "six_harmony:a111180ea4a40c4d615e0df9:month:丑|a673b4746105d7b0d371e031:day:子"
+    ],
+    "individuals": {
+      "personA": "5af4130eb30aff6ae8e7d1553c18c098c0d9a4c32f7c411162dc1bd64af4c4c8",
+      "personB": "262bf7ccbfd396d7b0a51819898564ae9cf7748da4d7b3173ac872899ad86901"
+    },
+    "relations": [
+      "half_harmony:a111180ea4a40c4d615e0df9:day:寅|a673b4746105d7b0d371e031:month:午",
+      "half_harmony:a111180ea4a40c4d615e0df9:year:辰|a673b4746105d7b0d371e031:day:子",
+      "six_harmony:a111180ea4a40c4d615e0df9:month:丑|a673b4746105d7b0d371e031:day:子",
+      "clash:a111180ea4a40c4d615e0df9:hour:酉|a673b4746105d7b0d371e031:hour:卯",
+      "harm:a111180ea4a40c4d615e0df9:month:丑|a673b4746105d7b0d371e031:month:午",
+      "harm:a111180ea4a40c4d615e0df9:year:辰|a673b4746105d7b0d371e031:hour:卯"
+    ]
+  },
+  "5": {
+    "index": {
+      "version": "gyeol-compatibility-index-13b-1",
+      "total": 56,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "부족한 오행을 서로 보탬",
+              "value": 5.6,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:FIRE:1",
+                "SajuCalcResult:elements.weighted:FIRE:5.5",
+                "SajuCalcResult:elements.weighted:WATER:1.1",
+                "SajuCalcResult:elements.weighted:WATER:3.2",
+                "SajuCalcResult:elements:FIRE",
+                "SajuCalcResult:elements:WATER",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:FIRE:high",
+                "v4:material-depth:element:FIRE:low",
+                "v4:material-depth:element:WATER:high",
+                "v4:material-depth:element:WATER:low",
+                "v4:symbolic-lifestyle:FIRE:high",
+                "v4:symbolic-lifestyle:FIRE:low",
+                "v4:symbolic-lifestyle:WATER:high",
+                "v4:symbolic-lifestyle:WATER:low"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 2.8,
+              "sources": [
+                "day:BRANCH_YIN_YANG:亥",
+                "day:BRANCH_YIN_YANG:辰",
+                "day:STEM_YIN_YANG:丙",
+                "day:STEM_YIN_YANG:辛",
+                "hour:BRANCH_YIN_YANG:午",
+                "hour:BRANCH_YIN_YANG:卯",
+                "hour:STEM_YIN_YANG:甲",
+                "hour:STEM_YIN_YANG:辛",
+                "month:BRANCH_YIN_YANG:卯",
+                "month:BRANCH_YIN_YANG:巳",
+                "month:STEM_YIN_YANG:丁",
+                "month:STEM_YIN_YANG:癸",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:子",
+                "year:BRANCH_YIN_YANG:寅",
+                "year:STEM_YIN_YANG:丙",
+                "year:STEM_YIN_YANG:甲"
+              ]
+            }
+          ],
+          "value": 23
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 4,
+              "sources": [
+                "half_harmony:3eeff7a022598e3687affb14:day:辰|6e1932da8c9b9e802fbd8b50:year:子",
+                "six_harmony:3eeff7a022598e3687affb14:year:寅|6e1932da8c9b9e802fbd8b50:day:亥"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -12,
+              "sources": [
+                "clash:3eeff7a022598e3687affb14:hour:午|6e1932da8c9b9e802fbd8b50:year:子",
+                "clash:3eeff7a022598e3687affb14:month:巳|6e1932da8c9b9e802fbd8b50:day:亥",
+                "harm:3eeff7a022598e3687affb14:day:辰|6e1932da8c9b9e802fbd8b50:month:卯"
+              ]
+            },
+            {
+              "factor": "돌봄·표현·책임의 자극",
+              "value": 2.8,
+              "sources": [
+                "received-ten-god:3eeff7a022598e3687affb14:to:6e1932da8c9b9e802fbd8b50:정관",
+                "received-ten-god:6e1932da8c9b9e802fbd8b50:to:3eeff7a022598e3687affb14:정재"
+              ]
+            }
+          ],
+          "value": 13
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "공통 관심과 좋은 영향",
+              "value": 4,
+              "sources": [
+                "3eeff7a022598e3687affb14:to:6e1932da8c9b9e802fbd8b50:mbti-pair",
+                "6e1932da8c9b9e802fbd8b50:to:3eeff7a022598e3687affb14:mbti-pair"
+              ]
+            },
+            {
+              "factor": "다르게 반응하는 지점",
+              "value": -6,
+              "sources": [
+                "3eeff7a022598e3687affb14:to:6e1932da8c9b9e802fbd8b50:mbti-pair",
+                "6e1932da8c9b9e802fbd8b50:to:3eeff7a022598e3687affb14:mbti-pair"
+              ]
+            },
+            {
+              "factor": "방향을 넓히는 힘과 기준을 지키는 힘",
+              "value": 0,
+              "sources": [
+                "3eeff7a022598e3687affb14:to:6e1932da8c9b9e802fbd8b50:mbti-pair",
+                "6e1932da8c9b9e802fbd8b50:to:3eeff7a022598e3687affb14:mbti-pair",
+                "fusion:entj-needle",
+                "fusion:istj-love"
+              ]
+            }
+          ],
+          "value": 11
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "대화를 다시 잇는 방법",
+              "value": 3,
+              "sources": [
+                "3eeff7a022598e3687affb14:to:6e1932da8c9b9e802fbd8b50:mbti-pair:repairStrategy",
+                "6e1932da8c9b9e802fbd8b50:to:3eeff7a022598e3687affb14:mbti-pair:repairStrategy"
+              ]
+            },
+            {
+              "factor": "실제 두 반응을 나눠 조율",
+              "value": 0.75,
+              "sources": [
+                "3eeff7a022598e3687affb14:to:6e1932da8c9b9e802fbd8b50:mbti-pair",
+                "6e1932da8c9b9e802fbd8b50:to:3eeff7a022598e3687affb14:mbti-pair",
+                "fusion:entj-needle",
+                "fusion:istj-love"
+              ]
+            },
+            {
+              "factor": "차이를 역할로 바꿀 여지",
+              "value": 2,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:FIRE:1",
+                "SajuCalcResult:elements.weighted:FIRE:5.5",
+                "SajuCalcResult:elements.weighted:WATER:1.1",
+                "SajuCalcResult:elements.weighted:WATER:3.2",
+                "SajuCalcResult:elements:FIRE",
+                "SajuCalcResult:elements:WATER",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:FIRE:high",
+                "v4:material-depth:element:FIRE:low",
+                "v4:material-depth:element:WATER:high",
+                "v4:material-depth:element:WATER:low",
+                "v4:symbolic-lifestyle:FIRE:high",
+                "v4:symbolic-lifestyle:FIRE:low",
+                "v4:symbolic-lifestyle:WATER:high",
+                "v4:symbolic-lifestyle:WATER:low"
+              ]
+            },
+            {
+              "factor": "여러 충돌을 따로 조율할 필요",
+              "value": -2,
+              "sources": [
+                "clash:3eeff7a022598e3687affb14:hour:午|6e1932da8c9b9e802fbd8b50:year:子",
+                "clash:3eeff7a022598e3687affb14:month:巳|6e1932da8c9b9e802fbd8b50:day:亥",
+                "harm:3eeff7a022598e3687affb14:day:辰|6e1932da8c9b9e802fbd8b50:month:卯"
+              ]
+            }
+          ],
+          "value": 9
+        }
+      ],
+      "category": "businessPartner",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리와 MBTI를 바탕으로 한 엔터테인먼트 해석입니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "directions": {
+      "aToB": {
+        "subjectPerson": "6e1932da8c9b9e802fbd8b50",
+        "targetPerson": "3eeff7a022598e3687affb14",
+        "relationId": "6e1932da8c9b9e802fbd8b50:to:3eeff7a022598e3687affb14",
+        "receivedTenGod": {
+          "viewerDayStem": "丙",
+          "targetDayStem": "辛",
+          "tenGod": "正財",
+          "tenGodKo": "정재",
+          "relationLabel": "병화이 신금를 보면 정재"
+        },
+        "element": {
+          "sourceStem": "辛",
+          "targetStem": "丙",
+          "sourceElement": "metal",
+          "targetElement": "fire",
+          "relation": "controlled_by",
+          "relationLabel": "신금 -> 병화",
+          "summary": "신금은 병화에게 조절을 받는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "ENTJ",
+          "targetType": "ISTJ",
+          "evidenceId": "6e1932da8c9b9e802fbd8b50:to:3eeff7a022598e3687affb14:mbti-pair",
+          "withType": "ISTJ",
+          "label": "감독 관계",
+          "sourceRelationName": "Supervision",
+          "sourceCoverage": "direct",
+          "sharedGround": [
+            "둘 다 책임, 성과, 현실적 판단을 중요하게 본다.",
+            "ISTJ는 ENTJ를 흥미롭고 유능한 사람으로 볼 수 있다.",
+            "겉으로는 보호자와 관심 대상처럼 좋은 친구 관계로 보일 수 있고, 약속과 결과를 중시한다는 점에서는 빠르게 신뢰를 쌓는다."
+          ],
+          "friction": [
+            "ENTJ는 ISTJ의 통제를 말하지 않아도 느끼며 예민해질 수 있다.",
+            "ISTJ는 ENTJ를 변화시키려 노력하지만 ENTJ는 그 의도를 자연스럽게 이해하지 못한다.",
+            "ENTJ는 인정과 칭찬을 원하지만 ISTJ는 능력을 평가절하하는 것처럼 보일 수 있다."
+          ],
+          "positiveInfluence": [
+            "ISTJ는 ENTJ에게 절차와 현실 검증을 보완한다.",
+            "ENTJ는 ISTJ에게 더 큰 목표와 변화 추진력을 보여 준다.",
+            "상호 역할이 명확하면 보호와 관심이 일정한 안정성을 만든다."
+          ],
+          "lovePattern": "연애에서는 책임감과 현실성이 맞아 신뢰가 생길 수 있지만, ISTJ의 신중한 통제와 ENTJ의 주도권 욕구가 부딪힌다. ENTJ는 인정받고 싶어 하지만 ISTJ의 표현은 짧고 평가처럼 들릴 수 있다.",
+          "marriagePattern": "결혼에서는 생활 실무와 책임은 강하지만, 누가 기준을 세우느냐가 핵심 갈등이 된다. ISTJ는 규칙과 검증을 원하고 ENTJ는 큰 방향과 지휘권을 원해 서로를 바꾸려는 시도가 반복된다.",
+          "repairStrategy": [
+            "ISTJ는 ENTJ의 주도권 욕구를 일부 공식 역할로 인정한다.",
+            "ENTJ는 ISTJ의 검증을 방해가 아니라 안정 장치로 해석한다.",
+            "칭찬과 수정 피드백을 분리해 전달한다."
+          ],
+          "reportLine": "ENTJ와 ISTJ는 책임감은 강하지만, 통제와 주도권의 방향이 달라 서로를 고치려 할수록 피로가 커집니다."
+        }
+      },
+      "bToA": {
+        "subjectPerson": "3eeff7a022598e3687affb14",
+        "targetPerson": "6e1932da8c9b9e802fbd8b50",
+        "relationId": "3eeff7a022598e3687affb14:to:6e1932da8c9b9e802fbd8b50",
+        "receivedTenGod": {
+          "viewerDayStem": "辛",
+          "targetDayStem": "丙",
+          "tenGod": "正官",
+          "tenGodKo": "정관",
+          "relationLabel": "신금이 병화를 보면 정관"
+        },
+        "element": {
+          "sourceStem": "丙",
+          "targetStem": "辛",
+          "sourceElement": "fire",
+          "targetElement": "metal",
+          "relation": "controls",
+          "relationLabel": "병화 -> 신금",
+          "summary": "병화이 신금를 조절하는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "ISTJ",
+          "targetType": "ENTJ",
+          "evidenceId": "3eeff7a022598e3687affb14:to:6e1932da8c9b9e802fbd8b50:mbti-pair",
+          "withType": "ENTJ",
+          "label": "감독 관계",
+          "sourceRelationName": "Supervision",
+          "sourceCoverage": "inferred",
+          "sharedGround": [
+            "ISTJ와 ENTJ는 둘 다 책임, 결과, 효율, 실질적 성과를 중요하게 여긴다.",
+            "두 사람 모두 말보다 실행과 능력으로 신뢰를 판단하기 때문에 공동 목표가 있으면 빠르게 움직인다.",
+            "ISTJ는 안정된 절차와 세부 완성도를, ENTJ는 큰 목표와 추진력을 제공한다."
+          ],
+          "friction": [
+            "ISTJ는 검증된 방식과 단계적 실행을 선호하지만, ENTJ는 더 빠른 결정과 큰 방향 전환을 밀어붙이려 한다.",
+            "ENTJ의 강한 압박은 ISTJ에게 무리한 지시로 느껴질 수 있고, ISTJ의 신중함은 ENTJ에게 답답한 지연으로 보일 수 있다.",
+            "갈등이 생기면 ENTJ는 속도와 성과를 요구하고 ISTJ는 근거와 절차를 요구하면서 주도권 싸움이 생기기 쉽다."
+          ],
+          "positiveInfluence": [
+            "ENTJ는 ISTJ가 익숙한 절차에만 머물지 않고 더 큰 목표를 보게 만든다.",
+            "ISTJ는 ENTJ의 추진력이 현실의 세부와 품질을 놓치지 않도록 잡아 준다.",
+            "서로의 권한을 인정하면 전략과 실행 완성도가 모두 살아난다."
+          ],
+          "lovePattern": "연애에서는 서로의 책임감과 능력에 빠르게 호감을 느낄 수 있다. 다만 ENTJ가 관계에서도 방향과 결론을 빠르게 정하려 할수록 ISTJ는 압박을 느끼고, ISTJ가 절차와 검토를 요구할수록 ENTJ는 답답함을 느낄 수 있다.",
+          "marriagePattern": "결혼하면 ENTJ는 자산, 목표, 역할 분담을 빠르게 설계하려 하고 ISTJ는 생활 규칙과 안정적인 운영을 세밀하게 다지려 한다. 이 조합은 성과와 안정성이 강하지만, 감정 표현이 적고 일 중심으로 흐르면 부부 관계가 공동 프로젝트처럼 건조해질 수 있다.",
+          "repairStrategy": [
+            "ENTJ는 ISTJ에게 결론만 요구하지 말고 근거와 절차를 검토할 시간을 준다.",
+            "ISTJ는 지나친 신중함으로 모든 변화를 막지 말고 결정 가능한 기준을 제시한다.",
+            "큰 목표는 ENTJ가 방향을 잡고 ISTJ가 실행 세부와 리스크를 점검하는 방식으로 나눈다."
+          ],
+          "reportLine": "이 관계는 성과와 책임이 강하게 맞물리지만, 속도와 절차의 주도권을 조율하지 않으면 유능한 두 사람이 서로를 압박하게 됩니다."
+        }
+      }
+    },
+    "invariant": [
+      "3eeff7a022598e3687affb14:to:6e1932da8c9b9e802fbd8b50:正官:controls",
+      "3eeff7a022598e3687affb14:병진",
+      "6e1932da8c9b9e802fbd8b50:to:3eeff7a022598e3687affb14:正財:controlled_by",
+      "6e1932da8c9b9e802fbd8b50:신해",
+      "clash:3eeff7a022598e3687affb14:hour:午|6e1932da8c9b9e802fbd8b50:year:子",
+      "clash:3eeff7a022598e3687affb14:month:巳|6e1932da8c9b9e802fbd8b50:day:亥",
+      "half_harmony:3eeff7a022598e3687affb14:day:辰|6e1932da8c9b9e802fbd8b50:year:子",
+      "harm:3eeff7a022598e3687affb14:day:辰|6e1932da8c9b9e802fbd8b50:hour:卯",
+      "harm:3eeff7a022598e3687affb14:day:辰|6e1932da8c9b9e802fbd8b50:month:卯",
+      "six_harmony:3eeff7a022598e3687affb14:year:寅|6e1932da8c9b9e802fbd8b50:day:亥"
+    ],
+    "individuals": {
+      "personA": "6eee36ef1d74740bd0d5928b6382a7d9eaac5c25278a32cbe109371dd1c07194",
+      "personB": "b8d8567abebaba199029feac33c2476e06833de3eb2080d6f87f81beda5aaadb"
+    },
+    "relations": [
+      "clash:3eeff7a022598e3687affb14:month:巳|6e1932da8c9b9e802fbd8b50:day:亥",
+      "half_harmony:3eeff7a022598e3687affb14:day:辰|6e1932da8c9b9e802fbd8b50:year:子",
+      "harm:3eeff7a022598e3687affb14:day:辰|6e1932da8c9b9e802fbd8b50:hour:卯",
+      "harm:3eeff7a022598e3687affb14:day:辰|6e1932da8c9b9e802fbd8b50:month:卯",
+      "six_harmony:3eeff7a022598e3687affb14:year:寅|6e1932da8c9b9e802fbd8b50:day:亥",
+      "clash:3eeff7a022598e3687affb14:hour:午|6e1932da8c9b9e802fbd8b50:year:子"
+    ]
+  },
+  "6": {
+    "index": {
+      "version": "gyeol-compatibility-index-13b-1",
+      "total": 66,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [],
+          "value": 15
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 8,
+              "sources": [
+                "half_harmony:e11a478a128c1d3e0f21ec7e:day:卯|f6d4d75abd9883eab9743bc8:month:亥",
+                "half_harmony:e11a478a128c1d3e0f21ec7e:month:未|f6d4d75abd9883eab9743bc8:month:亥",
+                "three_harmony:e11a478a128c1d3e0f21ec7e:day:卯|e11a478a128c1d3e0f21ec7e:month:未|f6d4d75abd9883eab9743bc8:month:亥"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -4.800000000000001,
+              "sources": [
+                "clash:e11a478a128c1d3e0f21ec7e:month:未|f6d4d75abd9883eab9743bc8:hour:丑",
+                "harm:e11a478a128c1d3e0f21ec7e:day:卯|f6d4d75abd9883eab9743bc8:day:辰"
+              ]
+            },
+            {
+              "factor": "돌봄·표현·책임의 자극",
+              "value": 1.8,
+              "sources": [
+                "received-ten-god:e11a478a128c1d3e0f21ec7e:to:f6d4d75abd9883eab9743bc8:정관",
+                "received-ten-god:f6d4d75abd9883eab9743bc8:to:e11a478a128c1d3e0f21ec7e:정재"
+              ]
+            }
+          ],
+          "value": 23
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "공통 관심과 좋은 영향",
+              "value": 6,
+              "sources": [
+                "e11a478a128c1d3e0f21ec7e:to:f6d4d75abd9883eab9743bc8:mbti-pair",
+                "f6d4d75abd9883eab9743bc8:to:e11a478a128c1d3e0f21ec7e:mbti-pair"
+              ]
+            },
+            {
+              "factor": "다르게 반응하는 지점",
+              "value": -3.2,
+              "sources": [
+                "e11a478a128c1d3e0f21ec7e:to:f6d4d75abd9883eab9743bc8:mbti-pair",
+                "f6d4d75abd9883eab9743bc8:to:e11a478a128c1d3e0f21ec7e:mbti-pair"
+              ]
+            },
+            {
+              "factor": "세심한 반응과 혼자 쉬는 틈",
+              "value": 3.7,
+              "sources": [
+                "e11a478a128c1d3e0f21ec7e:to:f6d4d75abd9883eab9743bc8:mbti-pair",
+                "f6d4d75abd9883eab9743bc8:to:e11a478a128c1d3e0f21ec7e:mbti-pair",
+                "fusion:enfp-alone",
+                "fusion:isfp-needle"
+              ]
+            }
+          ],
+          "value": 20
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "대화를 다시 잇는 방법",
+              "value": 2.4,
+              "sources": [
+                "e11a478a128c1d3e0f21ec7e:to:f6d4d75abd9883eab9743bc8:mbti-pair:repairStrategy",
+                "f6d4d75abd9883eab9743bc8:to:e11a478a128c1d3e0f21ec7e:mbti-pair:repairStrategy"
+              ]
+            },
+            {
+              "factor": "실제 두 반응을 나눠 조율",
+              "value": 0.6,
+              "sources": [
+                "e11a478a128c1d3e0f21ec7e:to:f6d4d75abd9883eab9743bc8:mbti-pair",
+                "f6d4d75abd9883eab9743bc8:to:e11a478a128c1d3e0f21ec7e:mbti-pair",
+                "fusion:enfp-alone",
+                "fusion:isfp-needle"
+              ]
+            }
+          ],
+          "value": 8
+        }
+      ],
+      "category": "friendship",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리와 MBTI를 바탕으로 한 엔터테인먼트 해석입니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "출생시간이 불확실한 사람의 오행 부족·음양 보완은 점수에 사용하지 않았습니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "directions": {
+      "aToB": {
+        "subjectPerson": "e11a478a128c1d3e0f21ec7e",
+        "targetPerson": "f6d4d75abd9883eab9743bc8",
+        "relationId": "e11a478a128c1d3e0f21ec7e:to:f6d4d75abd9883eab9743bc8",
+        "receivedTenGod": {
+          "viewerDayStem": "壬",
+          "targetDayStem": "己",
+          "tenGod": "正官",
+          "tenGodKo": "정관",
+          "relationLabel": "임수이 기토를 보면 정관"
+        },
+        "element": {
+          "sourceStem": "己",
+          "targetStem": "壬",
+          "sourceElement": "earth",
+          "targetElement": "water",
+          "relation": "controls",
+          "relationLabel": "기토 -> 임수",
+          "summary": "기토이 임수를 조절하는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "ISFP",
+          "targetType": "ENFP",
+          "evidenceId": "e11a478a128c1d3e0f21ec7e:to:f6d4d75abd9883eab9743bc8:mbti-pair",
+          "withType": "ENFP",
+          "label": "감독 관계",
+          "sourceRelationName": "Supervision",
+          "sourceCoverage": "direct",
+          "sharedGround": [
+            "둘 다 사회 기준보다 자신만의 가치관을 중시한다.",
+            "좋아하는 것을 중심으로 가치관이 형성되는 공통점이 있다.",
+            "초반에는 자유롭고 따뜻한 분위기에 끌릴 수 있다.",
+            "관계에서 억지 역할보다 자기다운 표현과 진정성을 중요하게 보는 점이 닮았다."
+          ],
+          "friction": [
+            "관심사와 가치관이 달라 싸우기 쉽다.",
+            "ENFP의 외향적 에너지와 변화 욕구가 ISFP에게 피로가 될 수 있다.",
+            "ISFP는 ENFP의 감정 흐름을 부담스럽게 느끼고 조용히 물러날 수 있다.",
+            "ENFP가 계속 대화와 반응을 요구하면 ISFP는 이해받기보다 몰아붙여진다고 느낀다."
+          ],
+          "positiveInfluence": [
+            "ENFP는 ISFP에게 더 넓은 가능성과 사람 접점을 열어줄 수 있다.",
+            "ISFP는 ENFP에게 현재의 감각과 진정성을 보여준다.",
+            "서로의 가치 차이를 인정하면 창의적 자극이 생긴다."
+          ],
+          "lovePattern": "연애 초반에는 자유로운 분위기와 감수성이 잘 맞아 보인다. 하지만 ENFP가 계속 확장하고 ISFP가 회복을 원하면 속도 차이가 커진다. ISFP는 말보다 편안한 태도에서 사랑을 확인한다.",
+          "marriagePattern": "장기 관계에서는 가치관과 관심사를 계속 확인해야 한다. 둘 다 자기 가치가 중요하기 때문에, 다름을 틀림으로 보는 순간 싸움이 잦아진다. 돈과 생활 책임은 감정 흐름에 맡기지 말고 최소 규칙으로 고정해야 한다.",
+          "repairStrategy": [
+            "ENFP는 ISFP의 회복 시간과 감각적 경계를 존중한다.",
+            "ISFP는 불편함을 침묵으로 넘기지 않는다.",
+            "관심사 차이는 경쟁이 아니라 각자 영역으로 둔다."
+          ],
+          "reportLine": "ISFP와 ENFP는 자유로운 감성은 닮았지만 관심사와 속도가 달라, 서로의 가치 차이를 인정하지 않으면 자주 부딪힙니다."
+        }
+      },
+      "bToA": {
+        "subjectPerson": "f6d4d75abd9883eab9743bc8",
+        "targetPerson": "e11a478a128c1d3e0f21ec7e",
+        "relationId": "f6d4d75abd9883eab9743bc8:to:e11a478a128c1d3e0f21ec7e",
+        "receivedTenGod": {
+          "viewerDayStem": "己",
+          "targetDayStem": "壬",
+          "tenGod": "正財",
+          "tenGodKo": "정재",
+          "relationLabel": "기토이 임수를 보면 정재"
+        },
+        "element": {
+          "sourceStem": "壬",
+          "targetStem": "己",
+          "sourceElement": "water",
+          "targetElement": "earth",
+          "relation": "controlled_by",
+          "relationLabel": "임수 -> 기토",
+          "summary": "임수은 기토에게 조절을 받는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "ENFP",
+          "targetType": "ISFP",
+          "evidenceId": "f6d4d75abd9883eab9743bc8:to:e11a478a128c1d3e0f21ec7e:mbti-pair",
+          "withType": "ISFP",
+          "label": "감독 관계",
+          "sourceRelationName": "Supervision",
+          "sourceCoverage": "inferred",
+          "sharedGround": [
+            "두 사람 모두 개인의 진심과 가치, 억지스럽지 않은 관계를 중요하게 여긴다.",
+            "ENFP는 말과 가능성으로 마음을 열고, ISFP는 조용한 행동과 감각적 배려로 진심을 보여 준다.",
+            "서로에게 강한 위계나 통제를 요구하지 않는 점은 초반의 편안함을 만든다."
+          ],
+          "friction": [
+            "ENFP는 감정과 생각을 밖으로 풀어내며 관계를 확인하지만, ISFP는 말보다 조용한 체감과 자유로운 거리를 선호한다.",
+            "ENFP의 많은 질문과 빠른 변화는 ISFP에게 압박으로 느껴질 수 있고, ISFP의 침묵과 손절 성향은 ENFP에게 갑작스러운 거절처럼 느껴질 수 있다.",
+            "둘 다 상처를 싫어하지만 표현 방식이 달라, 한쪽은 말이 많아지고 한쪽은 더 조용해지는 식으로 멀어질 수 있다."
+          ],
+          "positiveInfluence": [
+            "ISFP는 ENFP에게 현재의 감각, 단순한 진심, 조용한 실천의 힘을 알려 준다.",
+            "ENFP는 ISFP가 자기 마음을 숨기지 않고 더 넓게 표현하도록 분위기를 열어 준다.",
+            "속도를 낮추면 자유와 다정함이 함께 살아나는 관계가 된다."
+          ],
+          "lovePattern": "연애 초반에는 ENFP가 ISFP의 조용한 진정성에 끌리고, ISFP는 ENFP의 따뜻한 관심과 생기에 마음을 연다. 시간이 지나면 ENFP는 더 많은 대화와 확신을 요구하고 ISFP는 자기 공간을 지키려 하면서 밀고 당기는 온도 차이가 생긴다.",
+          "marriagePattern": "결혼하면 ENFP는 관계 안의 대화와 변화 가능성을 원하고 ISFP는 편안한 생활감과 개인 시간을 중요하게 본다. 돈과 집안일에서는 둘 다 강하게 통제하고 싶어 하지는 않지만, 정리와 결정이 늦어지면 현실 부담이 쌓인다.",
+          "repairStrategy": [
+            "ENFP는 ISFP가 바로 말하지 못하는 감정을 기다려 주고 질문을 한 번에 많이 던지지 않는다.",
+            "ISFP는 마음이 닫히기 전에 최소한의 불편함을 말해 갑작스러운 거리두기를 줄인다.",
+            "각자의 개인 시간과 함께 보내는 시간을 주 단위로 분리해 자유와 안정감을 동시에 만든다."
+          ],
+          "reportLine": "이 관계는 자유로운 다정함이 매력적이지만, 한쪽의 말과 한쪽의 침묵이 서로를 몰아붙이지 않게 속도 조절이 필요합니다."
+        }
+      }
+    },
+    "invariant": [
+      "clash:e11a478a128c1d3e0f21ec7e:month:未|f6d4d75abd9883eab9743bc8:hour:丑",
+      "e11a478a128c1d3e0f21ec7e:to:f6d4d75abd9883eab9743bc8:正官:controls",
+      "e11a478a128c1d3e0f21ec7e:기묘",
+      "f6d4d75abd9883eab9743bc8:to:e11a478a128c1d3e0f21ec7e:正財:controlled_by",
+      "f6d4d75abd9883eab9743bc8:임진",
+      "half_harmony:e11a478a128c1d3e0f21ec7e:day:卯|f6d4d75abd9883eab9743bc8:month:亥",
+      "half_harmony:e11a478a128c1d3e0f21ec7e:month:未|f6d4d75abd9883eab9743bc8:month:亥",
+      "harm:e11a478a128c1d3e0f21ec7e:day:卯|f6d4d75abd9883eab9743bc8:day:辰",
+      "three_harmony:e11a478a128c1d3e0f21ec7e:day:卯|e11a478a128c1d3e0f21ec7e:month:未|f6d4d75abd9883eab9743bc8:month:亥"
+    ],
+    "individuals": {
+      "personA": "e24b0a6a7f107617cbeb927aa6efb924d76ab4b7ff39127059c5b3b5c9fcf2a7",
+      "personB": "914d3b78faddc88bf0ef4936f0d6854fe548d894fe80ed798e50046181fb202f"
+    },
+    "relations": [
+      "harm:e11a478a128c1d3e0f21ec7e:day:卯|f6d4d75abd9883eab9743bc8:day:辰",
+      "half_harmony:e11a478a128c1d3e0f21ec7e:day:卯|f6d4d75abd9883eab9743bc8:month:亥",
+      "three_harmony:e11a478a128c1d3e0f21ec7e:day:卯|e11a478a128c1d3e0f21ec7e:month:未|f6d4d75abd9883eab9743bc8:month:亥",
+      "clash:e11a478a128c1d3e0f21ec7e:month:未|f6d4d75abd9883eab9743bc8:hour:丑",
+      "half_harmony:e11a478a128c1d3e0f21ec7e:month:未|f6d4d75abd9883eab9743bc8:month:亥"
+    ]
+  },
+  "7": {
+    "index": {
+      "version": "gyeol-compatibility-index-13b-1",
+      "total": 62,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "부족한 오행을 서로 보탬",
+              "value": 2.4,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:0.6",
+                "SajuCalcResult:elements.weighted:EARTH:3.2",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:material-depth:element:EARTH:low",
+                "v4:symbolic-lifestyle:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:low"
+              ]
+            },
+            {
+              "factor": "같은 오행으로 치우침",
+              "value": -2,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:FIRE:3.2",
+                "SajuCalcResult:elements:FIRE",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:FIRE:high",
+                "v4:symbolic-lifestyle:FIRE:high"
+              ]
+            }
+          ],
+          "value": 15
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 2.4,
+              "sources": [
+                "half_harmony:186239da154b2cb6ab7cbe69:hour:巳|8906e16cd506c376b30eb32e:hour:丑"
+              ]
+            },
+            {
+              "factor": "돌봄·표현·책임의 자극",
+              "value": 2.4,
+              "sources": [
+                "received-ten-god:186239da154b2cb6ab7cbe69:to:8906e16cd506c376b30eb32e:정재",
+                "received-ten-god:8906e16cd506c376b30eb32e:to:186239da154b2cb6ab7cbe69:정관"
+              ]
+            }
+          ],
+          "value": 23
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "공통 관심과 좋은 영향",
+              "value": 4,
+              "sources": [
+                "186239da154b2cb6ab7cbe69:to:8906e16cd506c376b30eb32e:mbti-pair",
+                "8906e16cd506c376b30eb32e:to:186239da154b2cb6ab7cbe69:mbti-pair"
+              ]
+            },
+            {
+              "factor": "다르게 반응하는 지점",
+              "value": -4,
+              "sources": [
+                "186239da154b2cb6ab7cbe69:to:8906e16cd506c376b30eb32e:mbti-pair",
+                "8906e16cd506c376b30eb32e:to:186239da154b2cb6ab7cbe69:mbti-pair"
+              ]
+            },
+            {
+              "factor": "관계 유형별 자료",
+              "value": 0,
+              "sources": [
+                "186239da154b2cb6ab7cbe69:to:8906e16cd506c376b30eb32e:mbti-pair:lovePattern",
+                "8906e16cd506c376b30eb32e:to:186239da154b2cb6ab7cbe69:mbti-pair:lovePattern"
+              ]
+            },
+            {
+              "factor": "서로에게 남겨줄 독립적인 시간",
+              "value": 2,
+              "sources": [
+                "186239da154b2cb6ab7cbe69:to:8906e16cd506c376b30eb32e:mbti-pair",
+                "8906e16cd506c376b30eb32e:to:186239da154b2cb6ab7cbe69:mbti-pair",
+                "fusion:infj-depth",
+                "fusion:istp-love"
+              ]
+            }
+          ],
+          "value": 15
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "대화를 다시 잇는 방법",
+              "value": 2,
+              "sources": [
+                "186239da154b2cb6ab7cbe69:to:8906e16cd506c376b30eb32e:mbti-pair:repairStrategy",
+                "8906e16cd506c376b30eb32e:to:186239da154b2cb6ab7cbe69:mbti-pair:repairStrategy"
+              ]
+            },
+            {
+              "factor": "실제 두 반응을 나눠 조율",
+              "value": 0.5,
+              "sources": [
+                "186239da154b2cb6ab7cbe69:to:8906e16cd506c376b30eb32e:mbti-pair",
+                "8906e16cd506c376b30eb32e:to:186239da154b2cb6ab7cbe69:mbti-pair",
+                "fusion:infj-depth",
+                "fusion:istp-love"
+              ]
+            },
+            {
+              "factor": "차이를 역할로 바꿀 여지",
+              "value": 1,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:0.6",
+                "SajuCalcResult:elements.weighted:EARTH:3.2",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:material-depth:element:EARTH:low",
+                "v4:symbolic-lifestyle:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:low"
+              ]
+            }
+          ],
+          "value": 9
+        }
+      ],
+      "category": "love",
+      "verdict": "함께 움직이며 서로의 장점을 살릴 여지가 분명합니다. 차이를 역할로 나눠 쓸 때 더 편해져요.",
+      "notice": "명리와 MBTI를 바탕으로 한 엔터테인먼트 해석입니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "directions": {
+      "aToB": {
+        "subjectPerson": "8906e16cd506c376b30eb32e",
+        "targetPerson": "186239da154b2cb6ab7cbe69",
+        "relationId": "8906e16cd506c376b30eb32e:to:186239da154b2cb6ab7cbe69",
+        "receivedTenGod": {
+          "viewerDayStem": "丁",
+          "targetDayStem": "壬",
+          "tenGod": "正官",
+          "tenGodKo": "정관",
+          "relationLabel": "정화이 임수를 보면 정관"
+        },
+        "element": {
+          "sourceStem": "壬",
+          "targetStem": "丁",
+          "sourceElement": "water",
+          "targetElement": "fire",
+          "relation": "controls",
+          "relationLabel": "임수 -> 정화",
+          "summary": "임수이 정화를 조절하는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "INFJ",
+          "targetType": "ISTP",
+          "evidenceId": "8906e16cd506c376b30eb32e:to:186239da154b2cb6ab7cbe69:mbti-pair",
+          "withType": "ISTP",
+          "label": "활동 관계",
+          "sourceRelationName": "Activity",
+          "sourceCoverage": "direct",
+          "sharedGround": [
+            "관계를 시작할 때 큰 시각적 어려움이 없고 서로를 활동적으로 자극할 수 있다.",
+            "서로가 예상보다 쉽게 가까워질 수 있으며, INFJ는 ISTP의 담백한 실전성에서 안정감을 느낀다.",
+            "ISTP는 INFJ의 조용한 통찰에서 평소 지나치기 쉬운 관계의 의미와 장기 방향을 보게 된다."
+          ],
+          "friction": [
+            "일상적 문제나 협력 관계에서는 많은 어려움을 겪을 수 있다.",
+            "ISTP의 현실적이고 담백한 방식은 INFJ에게 정서적 깊이가 부족하게 느껴질 수 있다.",
+            "INFJ의 의미 부여와 감정 민감성은 ISTP에게 복잡하게 느껴질 수 있다."
+          ],
+          "positiveInfluence": [
+            "ISTP는 INFJ에게 현실 감각과 실행의 간결함을 주고, INFJ는 ISTP에게 관계의 의미와 장기적 방향을 보여준다.",
+            "서로의 방식을 존중하면 INFJ는 생각을 현실에 붙이고, ISTP는 행동 뒤의 정서적 맥락을 읽는 힘을 얻는다."
+          ],
+          "lovePattern": "연애 초반에는 서로 다른 분위기가 신선하게 느껴진다. ISTP의 담백함은 INFJ에게 안정감을 줄 수 있지만, INFJ가 깊은 감정 확인을 원할 때 ISTP가 짧게 반응하면 외로움이 생긴다.",
+          "marriagePattern": "장기 관계에서는 생활 문제 처리 방식이 과제다. ISTP는 직접적이고 실용적으로 해결하려 하고 INFJ는 감정과 의미까지 함께 다루려 하므로 문제 해결의 범위를 맞춰야 한다.",
+          "repairStrategy": [
+            "ISTP는 짧더라도 감정 확인 문장을 의식적으로 표현한다.",
+            "INFJ는 모든 문제에 깊은 의미를 붙이기보다 실용적 해결을 먼저 허용한다.",
+            "협력 업무는 역할과 기대 결과를 명확히 나눈다."
+          ],
+          "reportLine": "INFJ와 ISTP는 쉽게 시작될 수 있지만, 깊이와 간결함의 차이를 조율하지 않으면 일상에서 반복적으로 부딪힙니다."
+        }
+      },
+      "bToA": {
+        "subjectPerson": "186239da154b2cb6ab7cbe69",
+        "targetPerson": "8906e16cd506c376b30eb32e",
+        "relationId": "186239da154b2cb6ab7cbe69:to:8906e16cd506c376b30eb32e",
+        "receivedTenGod": {
+          "viewerDayStem": "壬",
+          "targetDayStem": "丁",
+          "tenGod": "正財",
+          "tenGodKo": "정재",
+          "relationLabel": "임수이 정화를 보면 정재"
+        },
+        "element": {
+          "sourceStem": "丁",
+          "targetStem": "壬",
+          "sourceElement": "fire",
+          "targetElement": "water",
+          "relation": "controlled_by",
+          "relationLabel": "정화 -> 임수",
+          "summary": "정화은 임수에게 조절을 받는 구조입니다."
+        },
+        "mbtiPair": {
+          "sourceType": "ISTP",
+          "targetType": "INFJ",
+          "evidenceId": "186239da154b2cb6ab7cbe69:to:8906e16cd506c376b30eb32e:mbti-pair",
+          "withType": "INFJ",
+          "label": "편안한 집단 관계",
+          "sourceRelationName": "Beta comfort",
+          "sourceCoverage": "inferred",
+          "sharedGround": [
+            "INFJ는 사람과 상황의 숨은 흐름을 읽고, ISTP는 눈앞의 문제를 실제로 해결한다.",
+            "둘 다 말이 많지 않아도 자기 세계가 깊고, 쉽게 마음을 열지 않는다는 점을 이해할 수 있다.",
+            "INFJ의 통찰과 ISTP의 실전 감각이 만나면 생각과 행동의 균형이 생긴다."
+          ],
+          "friction": [
+            "INFJ는 감정의 의미와 관계의 방향을 확인하고 싶어 하지만, ISTP는 문제를 단순하게 보고 해결하려 한다.",
+            "ISTP의 짧은 반응은 INFJ에게 마음을 피하는 태도로 보일 수 있고, INFJ의 긴 해석은 ISTP에게 과한 의미 부여로 느껴질 수 있다.",
+            "갈등이 생기면 INFJ는 관계의 깊이를 묻고 ISTP는 지금 무엇을 하면 되는지 묻기 때문에 서로 다른 대답을 기다리게 된다."
+          ],
+          "positiveInfluence": [
+            "INFJ는 ISTP에게 행동 뒤에 남는 사람의 감정과 장기적 의미를 보여 준다.",
+            "ISTP는 INFJ가 생각과 감정에 갇히지 않고 실제 선택으로 내려오게 돕는다.",
+            "서로를 재촉하지 않으면 깊이와 현실성이 함께 살아난다."
+          ],
+          "lovePattern": "연애에서는 INFJ가 ISTP의 조용한 능력과 안정된 침착함에 끌리고, ISTP는 INFJ의 깊은 이해와 배려에 편안함을 느낄 수 있다. 시간이 지나면 INFJ는 더 많은 정서적 확인을 원하고 ISTP는 감정 대화가 길어질수록 피로해진다.",
+          "marriagePattern": "결혼하면 INFJ는 관계의 의미와 미래 방향을, ISTP는 생활의 효율과 자율성을 중시한다. 이 조합은 조용하고 실용적인 가정을 만들 수 있지만, 감정 대화를 미루면 한쪽은 외롭고 한쪽은 압박받는 구조가 된다.",
+          "repairStrategy": [
+            "INFJ는 ISTP에게 감정의 맥락을 설명하되 결론과 필요한 행동을 함께 말한다.",
+            "ISTP는 해결책을 주기 전에 INFJ가 느낀 감정을 한 번 인정한다.",
+            "중요한 대화는 길게 끌기보다 시간을 정해 짧고 반복적으로 나눈다."
+          ],
+          "reportLine": "이 관계는 깊이와 실전성이 만나는 조합이지만, 감정을 해석하는 사람과 문제를 해결하는 사람이 서로의 언어를 배워야 합니다."
+        }
+      }
+    },
+    "invariant": [
+      "186239da154b2cb6ab7cbe69:to:8906e16cd506c376b30eb32e:正財:controlled_by",
+      "186239da154b2cb6ab7cbe69:정묘",
+      "8906e16cd506c376b30eb32e:to:186239da154b2cb6ab7cbe69:正官:controls",
+      "8906e16cd506c376b30eb32e:임오",
+      "half_harmony:186239da154b2cb6ab7cbe69:hour:巳|8906e16cd506c376b30eb32e:hour:丑"
+    ],
+    "individuals": {
+      "personA": "b7ea6510221de60e7ca9598ac54feddf42776796e1566a8e9cdd272a035b8ac0",
+      "personB": "b43012d3e09530f7e907b79de4d7d90035848e07df2240a3d22a8d29ffacbd41"
+    },
+    "relations": [
+      "half_harmony:186239da154b2cb6ab7cbe69:hour:巳|8906e16cd506c376b30eb32e:hour:丑"
+    ]
+  }
+}

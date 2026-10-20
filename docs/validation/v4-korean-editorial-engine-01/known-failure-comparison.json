@@ -1,0 +1,572 @@
+{
+  "base": {
+    "passed": 5837,
+    "failed": 46,
+    "pending": 0,
+    "failures": [
+      {
+        "name": "'annual' customer/evidence/Book stays frozen",
+        "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "6da3aedd02f9da931dbe520d7795e7ef44fd16ac6837ca260d44a32f8597e3c9"
+      },
+      {
+        "name": "'compatibility' customer/evidence/Book stays frozen",
+        "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "a75625912296dd457bb64c0d15dcc82df4c7a05c4ac7790f2f24e0c8194b4aa0"
+      },
+      {
+        "name": "'comprehensive' customer/evidence/Book stays frozen",
+        "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerProductLocks.test.ts:50:136\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "2971d76403eb9b06d837ebb86c8962f028087627d0c5dad76191fd27c6ade50c"
+      },
+      {
+        "name": "'love' customer/evidence/Book stays frozen",
+        "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "095485504adc9aead95dcd75b7dfe70effa4c2c3d8ffd781b1870df8cb87c58e"
+      },
+      {
+        "name": "'major' customer/evidence/Book stays frozen",
+        "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "61a0b85ec5d152ee53be81917c3f55943c24b435aa1773af9dc2c73741577d2f"
+      },
+      {
+        "name": "Annual V4 canonical evidence, clock and regression boundaries '01-business': V4 Major byte hash unchanged",
+        "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "normalizedFullError": "AssertionError: expected '553c4343c0c489c67135d9dd22e99219459da…' to be '43f0424d001cbb0302c68aaa13a95d787424f…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/annualSafety.test.ts:25:84\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "92609ce0c1f8fc4149440a4ad09bfc01d73f9b795d81e2e6503d6c31bf36538c"
+      },
+      {
+        "name": "Annual V4 canonical evidence, clock and regression boundaries '02-employee': V4 Major byte hash unchanged",
+        "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "normalizedFullError": "AssertionError: expected 'adee56e9086fb365539ea94f4384bcf512df5…' to be '7eab24fabce46a06374e6a57ed03aae9d89ff…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/annualSafety.test.ts:25:84\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "b60cb3f509cbf661f95c8866078f331418c3fe7e898342635673771b8e031e33"
+      },
+      {
+        "name": "Annual V4 canonical evidence, clock and regression boundaries '03-freelance': V4 Major byte hash unchanged",
+        "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "normalizedFullError": "AssertionError: expected 'cbdb4ac3099261861261b21f9f8977a8e5ab9…' to be '1f5a756eceef3330443801e17bca1b64b3892…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/annualSafety.test.ts:25:84\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "7b7b6a4a870851a4347a3eaef9ad98722a4da965b5a758de5a518eefc3f6a958"
+      },
+      {
+        "name": "Annual V4 canonical evidence, clock and regression boundaries '04-student': V4 Major byte hash unchanged",
+        "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "normalizedFullError": "AssertionError: expected 'a99915db8529d76c15b8d95840b19619c276f…' to be '96e047ab34e267a7de2883731e8a616642c66…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/annualSafety.test.ts:25:84\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "70fd1d707a6e4d3ca5f8b42cf2a788529b0a8bb2b95e1efba116f44cc66807f2"
+      },
+      {
+        "name": "Annual V4 canonical evidence, clock and regression boundaries '05-unknown': V4 Major byte hash unchanged",
+        "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "normalizedFullError": "AssertionError: expected 'a31d851b048081b187000e4f7705e739ed78b…' to be '9aeff414e7d16f9dd76802894cd6960622ab2…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/annualSafety.test.ts:25:84\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "22f31a7bc7eee8589bb82e943987fa8cf8c9215ddf2db2ad83869c6d0f88a8c8"
+      },
+      {
+        "name": "Annual V4 canonical evidence, clock and regression boundaries '06-transition': V4 Major byte hash unchanged",
+        "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "normalizedFullError": "AssertionError: expected 'f72ee51d8b302f035393cad14a8fc9d06dd16…' to be 'f6f68cb00f06ffd029a479934a71d8ee3e3c9…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/annualSafety.test.ts:25:84\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "d37a8f16437cd54cf780cbf9704ce2290638eaab356c332bb7f909ead16dc53a"
+      },
+      {
+        "name": "Career editorial reader edition 'annual' previous saved edition remains identical",
+        "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerRelease.test.ts:122:149\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "fca526533f92a89532561eb755e8e7df8f9950dddde2ee1473dedb9869c026d2"
+      },
+      {
+        "name": "Career editorial reader edition 'compatibility' previous saved edition remains identical",
+        "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerRelease.test.ts:122:149\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "db57ff037df670e9b9eba5b1fa85ec87d9c67d5498e1f0f0af0df2a6d531ac61"
+      },
+      {
+        "name": "Career editorial reader edition 'comprehensive' previous saved edition remains identical",
+        "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerRelease.test.ts:122:149\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "2995c1da4e8fe05c54715fdf0a090962893b379831527ccfd278262b0c81c235"
+      },
+      {
+        "name": "Career editorial reader edition 'love' previous saved edition remains identical",
+        "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerRelease.test.ts:122:149\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "d60554518b246fa7fbfa24001c502d3b32ef33e66a2ae9bdadb4253ab5a830f1"
+      },
+      {
+        "name": "Career editorial reader edition 'major' previous saved edition remains identical",
+        "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerRelease.test.ts:122:149\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "6ed47639725282ba42882949f600482e61180c2319ee115717f337dea38b8591"
+      },
+      {
+        "name": "Major natal and cycle evidence separation '01-business': base calculations, all 14 year stories, transitions and selection remain identical",
+        "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "normalizedFullError": "AssertionError: expected '8083bc24276c5586ec058942b27600524131f…' to be 'ffc532f6be8bfa197ebe48d8657b4700a464f…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts:26:30\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)",
+        "signature": "cdd3b454aa3dfbaaddd956b948c6174b216e8e653cc8711b9a380592e7fcb181"
+      },
+      {
+        "name": "Major natal and cycle evidence separation '02-employee': base calculations, all 14 year stories, transitions and selection remain identical",
+        "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "normalizedFullError": "AssertionError: expected '19ca502fb92b5dcbdba2f0ba6be3e6c5ba49f…' to be '975d59e600a7c35176969efc26824700f9deb…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts:26:30\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)",
+        "signature": "bf4f00c5e2fb62907ccfda7378ca46826fcf4c14550aff5f46e57894535a7f4e"
+      },
+      {
+        "name": "Major natal and cycle evidence separation '03-freelance': base calculations, all 14 year stories, transitions and selection remain identical",
+        "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "normalizedFullError": "AssertionError: expected 'ba50e8da08e85a81df99f25584e6556399e10…' to be '519a1615a8470eb16f005db27e172e6133b1c…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts:26:30\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)",
+        "signature": "6fa06f011b936f173a6057c19169cae3b5e0c41bb332dc4d1e62a19268fa2a3b"
+      },
+      {
+        "name": "Major natal and cycle evidence separation '04-time-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+        "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "normalizedFullError": "AssertionError: expected 'fab24c2772ad32df2d1310295b69a07769182…' to be '8be0cb81bd2f9c0166f81205ac10146a14406…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts:26:30\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)",
+        "signature": "b0659b2f07972bfaaad7b2e6f3a9fe8166eb771e1fc15ccfbb9dba3d8f59bf99"
+      },
+      {
+        "name": "Major natal and cycle evidence separation '05-mbti-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+        "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "normalizedFullError": "AssertionError: expected '24d6674e675d5e2567fe9c9dad6404f536c91…' to be 'e4db60ead95ac3c569338da41e7bdac344852…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts:26:30\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)",
+        "signature": "e397d3801038d2de97ee873c2a80e2468eabc59943ce5a0068b4e26e787fa25d"
+      },
+      {
+        "name": "Major natal and cycle evidence separation '06-both-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+        "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "normalizedFullError": "AssertionError: expected 'cc574e5b36614f4868bda18a73b34d0b00f2e…' to be '602e1a50b541da267119847a367181a970eb9…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts:26:30\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)",
+        "signature": "eb6646d54fd5265ba7cf6b88b80fb41c3e597b39e5eb548f9eedb57496e6d635"
+      },
+      {
+        "name": "Phase13D-1A stays off all six product paths only foundation modules reference the foundation; no writer/UI/calculation import",
+        "file": "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/foundationAdapter.test.ts:116:44\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "249175e6fc01a3f53f7087edd07ac04d8a2653edb87b40bfe608296dab38c2d8"
+      },
+      {
+        "name": "actual 12-person review cohort and isolation scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+        "file": "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/…/comprehensivePlanCore[\"']\n    at <ROOT>/tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts:145:605\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "00c04f008c685d1b1313722bc45c46bb79d28f22421faefa7c4f5d9af25e22db"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'career': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [ '도울 범위를 먼저 정하세요', '중요한 오류부터 보세요' ] to include '나는 어떻게 일하는 사람인가'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "fd40133345fd4abbbd1a4ea383e4144a3777a88e252d2b61341695100e50ab32"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'compatibility': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "b478c4ce98482ebada909aeccc996af68399de60cbabbcb80769be6542e3f80b"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'love': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '사랑할 때의 나'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "10077e5869e485ecb0f676b26eac22ba2fb8606d60887c498cf1d26e0c25dd0d"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'pair-02-marriage': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "8d0d23cae4f7f896e80b013a1b294c4b266b88efc80d75ebc23ba45044951389"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'pair-03-parent': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "6397582bc588926de0d99ff3e778ebce0572d1c72a7e7b38a4314aa77e7df7bb"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'pair-04-coworker': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "f8c5e7ae48e9a48e143c46da7ab57f679393d203cdddb8261ab15bcc0e64c265"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'pair-05-manager': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "c14f6ab69880c53a131855c878dffb4a07def44cad10934924333a0bb101e374"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'pair-06-business': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "302e2fc35bc24837367f4a6c96d3c2f2d88e0b49dcc42670e22de2ca7ae53469"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'pair-07-friend': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "86c125243709f6675609b30a4ec9b9601c99fb4cfd00d0126232967445fbe77a"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'pair-08-love': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "cf5786c8c052afd567cb2892b95bc03b5c97df775e59ad855c55361bf0c8ea4c"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 14 years, 10 future years, all ages, transitions and clickable full narratives",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: expected [ 2031, 48, '丁卯 → 丙寅', '辛亥', …(1) ] to deeply equal [ 2031, 48, '丙寅', '辛亥', …(1) ]\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:115:59\n    at Array.forEach (<anonymous>)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:113:16\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)",
+        "signature": "45f26497f83d74fe99b408f2bd83ee84349c33d6c66a7ae486d52a434647e53a"
+      },
+      {
+        "name": "customer Dayun production boundaries rejects annual_fortune bypass before order writes and allows stable input",
+        "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+        "normalizedFullError": "SyntaxError: Unexpected end of JSON input\n    at JSON.parse (<anonymous>)\n    at parseJSONFromBytes (node:internal/deps/undici/undici:4319:19)\n    at successSteps (node:internal/deps/undici/undici:6967:27)\n    at consumeBody (node:internal/deps/undici/undici:6973:9)\n    at _Response.json (node:internal/deps/undici/undici:6912:18)\n    at <ROOT>/tests/unit/report-generation/customerDayunGeneration.test.ts:50:55\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "861192cdbec72569756fcc3d7c903ee1b7f15e23563bb7ef3a6314bbedff34c0"
+      },
+      {
+        "name": "customer Dayun production boundaries rejects major_fortune bypass before order writes and allows stable input",
+        "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+        "normalizedFullError": "SyntaxError: Unexpected end of JSON input\n    at JSON.parse (<anonymous>)\n    at parseJSONFromBytes (node:internal/deps/undici/undici:4319:19)\n    at successSteps (node:internal/deps/undici/undici:6967:27)\n    at consumeBody (node:internal/deps/undici/undici:6973:9)\n    at _Response.json (node:internal/deps/undici/undici:6912:18)\n    at <ROOT>/tests/unit/report-generation/customerDayunGeneration.test.ts:50:55\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "1f94a952e413a78126682bd29820470371dc2984d97d602ba1eb4c2503a44e00"
+      },
+      {
+        "name": "narrative output is not accepted merely because it has source IDs no runtime/customer imports, dependencies, clocks, randomness, external services",
+        "file": "tests/unit/interpretation-v4/koreanNarrativeCore.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/narrat…/narrativeMemory[\"']\n    at <ROOT>/tests/unit/interpretation-v4/koreanNarrativeCore.test.ts:270:539\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "6c927bd6784e7d6b60e2ed7c118bebc8e06b580739f44bebc79bdf24fff18ebd"
+      },
+      {
+        "name": "preserves 2531 original tracked source, research, UI, Book, contract and fixture files",
+        "file": "tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality\n    at <ROOT>/tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts:55:320\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "561707aca5ef77ba5fd03bc3689527b1e04b1a9c654d9bf86cc0825d4a4458a0"
+      },
+      {
+        "name": "preserves 2639 original tracked source/research/Book/UI/test hashes",
+        "file": "tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality\n    at <ROOT>/tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts:62:301\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "f6e17c951b4411a4160d07a393556a50d5f99b0a8f117b8ec850c69d1e1d2a7b"
+      },
+      {
+        "name": "preserves all 2435 existing tracked source, research, Book and fixture hashes",
+        "file": "tests/unit/report-knowledge/compatibilityLoveResearch.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality\n    at <ROOT>/tests/unit/report-knowledge/compatibilityLoveResearch.test.ts:54:311\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "0797ffdbd355acdaf8d4dcad907c1bb6b1b3b43c646ed86163a26120a17ad7eb"
+      },
+      {
+        "name": "preserves all 2755 pre-existing tracked source/test/knowledge/report files byte for byte",
+        "file": "tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality\n    at <ROOT>/tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts:69:296\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "11ff02239659b06722d9bf492fdb5b575f3a1881dc329621451cdfd4a3371c60"
+      },
+      {
+        "name": "preserves all 2904 pre-existing tracked source/test/knowledge/report files byte for byte",
+        "file": "tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality\n    at <ROOT>/tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts:69:296\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "5c290f5803c46cd76ebd6628e064671a5d32a78721f3add668073a61cd0b202e"
+      },
+      {
+        "name": "preserves all 3073 pre-existing source/test/knowledge/report files byte for byte",
+        "file": "tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality\n    at <ROOT>/tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts:73:288\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "01096edb00cc35aad8091bfab901ce146d99b4f38e8e3b9abb37bbe8a64588ea"
+      },
+      {
+        "name": "section-specific allocations, reservations, fallback and budgets C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+        "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+        "normalizedFullError": "AssertionError: expected [] to include 'composite'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/interpretation-v4/comprehensiveAllocation.test.ts:99:73\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20",
+        "signature": "3098a70bbc76ca776762ebf233276eb05fdba8abfd5644aed40797590ccfcb40"
+      },
+      {
+        "name": "section-specific allocations, reservations, fallback and budgets recovery-axis Fusion can serve C9 even when its original application is work",
+        "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+        "normalizedFullError": "AssertionError: expected false to be true // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/comprehensiveAllocation.test.ts:113:69\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "6007a19d9987ad2425e388ea6cfaea31b64f9264c3f6bdb4f55d3d6f6adac436"
+      }
+    ]
+  },
+  "current": {
+    "passed": 5837,
+    "failed": 46,
+    "pending": 0,
+    "failures": [
+      {
+        "name": "'annual' customer/evidence/Book stays frozen",
+        "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "6da3aedd02f9da931dbe520d7795e7ef44fd16ac6837ca260d44a32f8597e3c9"
+      },
+      {
+        "name": "'compatibility' customer/evidence/Book stays frozen",
+        "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "a75625912296dd457bb64c0d15dcc82df4c7a05c4ac7790f2f24e0c8194b4aa0"
+      },
+      {
+        "name": "'comprehensive' customer/evidence/Book stays frozen",
+        "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerProductLocks.test.ts:50:136\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "2971d76403eb9b06d837ebb86c8962f028087627d0c5dad76191fd27c6ade50c"
+      },
+      {
+        "name": "'love' customer/evidence/Book stays frozen",
+        "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "095485504adc9aead95dcd75b7dfe70effa4c2c3d8ffd781b1870df8cb87c58e"
+      },
+      {
+        "name": "'major' customer/evidence/Book stays frozen",
+        "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "61a0b85ec5d152ee53be81917c3f55943c24b435aa1773af9dc2c73741577d2f"
+      },
+      {
+        "name": "Annual V4 canonical evidence, clock and regression boundaries '01-business': V4 Major byte hash unchanged",
+        "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "normalizedFullError": "AssertionError: expected '553c4343c0c489c67135d9dd22e99219459da…' to be '43f0424d001cbb0302c68aaa13a95d787424f…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/annualSafety.test.ts:25:84\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "92609ce0c1f8fc4149440a4ad09bfc01d73f9b795d81e2e6503d6c31bf36538c"
+      },
+      {
+        "name": "Annual V4 canonical evidence, clock and regression boundaries '02-employee': V4 Major byte hash unchanged",
+        "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "normalizedFullError": "AssertionError: expected 'adee56e9086fb365539ea94f4384bcf512df5…' to be '7eab24fabce46a06374e6a57ed03aae9d89ff…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/annualSafety.test.ts:25:84\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "b60cb3f509cbf661f95c8866078f331418c3fe7e898342635673771b8e031e33"
+      },
+      {
+        "name": "Annual V4 canonical evidence, clock and regression boundaries '03-freelance': V4 Major byte hash unchanged",
+        "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "normalizedFullError": "AssertionError: expected 'cbdb4ac3099261861261b21f9f8977a8e5ab9…' to be '1f5a756eceef3330443801e17bca1b64b3892…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/annualSafety.test.ts:25:84\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "7b7b6a4a870851a4347a3eaef9ad98722a4da965b5a758de5a518eefc3f6a958"
+      },
+      {
+        "name": "Annual V4 canonical evidence, clock and regression boundaries '04-student': V4 Major byte hash unchanged",
+        "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "normalizedFullError": "AssertionError: expected 'a99915db8529d76c15b8d95840b19619c276f…' to be '96e047ab34e267a7de2883731e8a616642c66…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/annualSafety.test.ts:25:84\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "70fd1d707a6e4d3ca5f8b42cf2a788529b0a8bb2b95e1efba116f44cc66807f2"
+      },
+      {
+        "name": "Annual V4 canonical evidence, clock and regression boundaries '05-unknown': V4 Major byte hash unchanged",
+        "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "normalizedFullError": "AssertionError: expected 'a31d851b048081b187000e4f7705e739ed78b…' to be '9aeff414e7d16f9dd76802894cd6960622ab2…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/annualSafety.test.ts:25:84\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "22f31a7bc7eee8589bb82e943987fa8cf8c9215ddf2db2ad83869c6d0f88a8c8"
+      },
+      {
+        "name": "Annual V4 canonical evidence, clock and regression boundaries '06-transition': V4 Major byte hash unchanged",
+        "file": "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "normalizedFullError": "AssertionError: expected 'f72ee51d8b302f035393cad14a8fc9d06dd16…' to be 'f6f68cb00f06ffd029a479934a71d8ee3e3c9…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/annualSafety.test.ts:25:84\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "d37a8f16437cd54cf780cbf9704ce2290638eaab356c332bb7f909ead16dc53a"
+      },
+      {
+        "name": "Career editorial reader edition 'annual' previous saved edition remains identical",
+        "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerRelease.test.ts:122:149\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "fca526533f92a89532561eb755e8e7df8f9950dddde2ee1473dedb9869c026d2"
+      },
+      {
+        "name": "Career editorial reader edition 'compatibility' previous saved edition remains identical",
+        "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerRelease.test.ts:122:149\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "db57ff037df670e9b9eba5b1fa85ec87d9c67d5498e1f0f0af0df2a6d531ac61"
+      },
+      {
+        "name": "Career editorial reader edition 'comprehensive' previous saved edition remains identical",
+        "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerRelease.test.ts:122:149\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "2995c1da4e8fe05c54715fdf0a090962893b379831527ccfd278262b0c81c235"
+      },
+      {
+        "name": "Career editorial reader edition 'love' previous saved edition remains identical",
+        "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerRelease.test.ts:122:149\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "d60554518b246fa7fbfa24001c502d3b32ef33e66a2ae9bdadb4253ab5a830f1"
+      },
+      {
+        "name": "Career editorial reader edition 'major' previous saved edition remains identical",
+        "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+        "normalizedFullError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]\n    at <ROOT>/tests/unit/interpretation-v4/careerRelease.test.ts:122:149\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20",
+        "signature": "6ed47639725282ba42882949f600482e61180c2319ee115717f337dea38b8591"
+      },
+      {
+        "name": "Major natal and cycle evidence separation '01-business': base calculations, all 14 year stories, transitions and selection remain identical",
+        "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "normalizedFullError": "AssertionError: expected '8083bc24276c5586ec058942b27600524131f…' to be 'ffc532f6be8bfa197ebe48d8657b4700a464f…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts:26:30\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)",
+        "signature": "cdd3b454aa3dfbaaddd956b948c6174b216e8e653cc8711b9a380592e7fcb181"
+      },
+      {
+        "name": "Major natal and cycle evidence separation '02-employee': base calculations, all 14 year stories, transitions and selection remain identical",
+        "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "normalizedFullError": "AssertionError: expected '19ca502fb92b5dcbdba2f0ba6be3e6c5ba49f…' to be '975d59e600a7c35176969efc26824700f9deb…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts:26:30\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)",
+        "signature": "bf4f00c5e2fb62907ccfda7378ca46826fcf4c14550aff5f46e57894535a7f4e"
+      },
+      {
+        "name": "Major natal and cycle evidence separation '03-freelance': base calculations, all 14 year stories, transitions and selection remain identical",
+        "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "normalizedFullError": "AssertionError: expected 'ba50e8da08e85a81df99f25584e6556399e10…' to be '519a1615a8470eb16f005db27e172e6133b1c…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts:26:30\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)",
+        "signature": "6fa06f011b936f173a6057c19169cae3b5e0c41bb332dc4d1e62a19268fa2a3b"
+      },
+      {
+        "name": "Major natal and cycle evidence separation '04-time-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+        "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "normalizedFullError": "AssertionError: expected 'fab24c2772ad32df2d1310295b69a07769182…' to be '8be0cb81bd2f9c0166f81205ac10146a14406…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts:26:30\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)",
+        "signature": "b0659b2f07972bfaaad7b2e6f3a9fe8166eb771e1fc15ccfbb9dba3d8f59bf99"
+      },
+      {
+        "name": "Major natal and cycle evidence separation '05-mbti-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+        "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "normalizedFullError": "AssertionError: expected '24d6674e675d5e2567fe9c9dad6404f536c91…' to be 'e4db60ead95ac3c569338da41e7bdac344852…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts:26:30\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)",
+        "signature": "e397d3801038d2de97ee873c2a80e2468eabc59943ce5a0068b4e26e787fa25d"
+      },
+      {
+        "name": "Major natal and cycle evidence separation '06-both-unknown': base calculations, all 14 year stories, transitions and selection remain identical",
+        "file": "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "normalizedFullError": "AssertionError: expected 'cc574e5b36614f4868bda18a73b34d0b00f2e…' to be '602e1a50b541da267119847a367181a970eb9…' // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts:26:30\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)",
+        "signature": "eb6646d54fd5265ba7cf6b88b80fb41c3e597b39e5eb548f9eedb57496e6d635"
+      },
+      {
+        "name": "Phase13D-1A stays off all six product paths only foundation modules reference the foundation; no writer/UI/calculation import",
+        "file": "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/foundationAdapter.test.ts:116:44\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "249175e6fc01a3f53f7087edd07ac04d8a2653edb87b40bfe608296dab38c2d8"
+      },
+      {
+        "name": "actual 12-person review cohort and isolation scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+        "file": "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/…/comprehensivePlanCore[\"']\n    at <ROOT>/tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts:145:605\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "00c04f008c685d1b1313722bc45c46bb79d28f22421faefa7c4f5d9af25e22db"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'career': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [ '도울 범위를 먼저 정하세요', '중요한 오류부터 보세요' ] to include '나는 어떻게 일하는 사람인가'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "fd40133345fd4abbbd1a4ea383e4144a3777a88e252d2b61341695100e50ab32"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'compatibility': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "b478c4ce98482ebada909aeccc996af68399de60cbabbcb80769be6542e3f80b"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'love': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '사랑할 때의 나'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "10077e5869e485ecb0f676b26eac22ba2fb8606d60887c498cf1d26e0c25dd0d"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'pair-02-marriage': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "8d0d23cae4f7f896e80b013a1b294c4b266b88efc80d75ebc23ba45044951389"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'pair-03-parent': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "6397582bc588926de0d99ff3e778ebce0572d1c72a7e7b38a4314aa77e7df7bb"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'pair-04-coworker': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "f8c5e7ae48e9a48e143c46da7ab57f679393d203cdddb8261ab15bcc0e64c265"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'pair-05-manager': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "c14f6ab69880c53a131855c878dffb4a07def44cad10934924333a0bb101e374"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'pair-06-business': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "302e2fc35bc24837367f4a6c96d3c2f2d88e0b49dcc42670e22de2ca7ae53469"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'pair-07-friend': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "86c125243709f6675609b30a4ec9b9601c99fb4cfd00d0126232967445fbe77a"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 'pair-08-love': every original paragraph and final line in original order",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:46:100\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2027:60\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)",
+        "signature": "cf5786c8c052afd567cb2892b95bc03b5c97df775e59ad855c55361bf0c8ea4c"
+      },
+      {
+        "name": "actual V4 packet → book pages; no new calculation or prose 14 years, 10 future years, all ages, transitions and clickable full narratives",
+        "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+        "normalizedFullError": "AssertionError: expected [ 2031, 48, '丁卯 → 丙寅', '辛亥', …(1) ] to deeply equal [ 2031, 48, '丙寅', '辛亥', …(1) ]\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:115:59\n    at Array.forEach (<anonymous>)\n    at <ROOT>/tests/unit/app/dev/bookRuntime.test.tsx:113:16\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)",
+        "signature": "45f26497f83d74fe99b408f2bd83ee84349c33d6c66a7ae486d52a434647e53a"
+      },
+      {
+        "name": "customer Dayun production boundaries rejects annual_fortune bypass before order writes and allows stable input",
+        "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+        "normalizedFullError": "SyntaxError: Unexpected end of JSON input\n    at JSON.parse (<anonymous>)\n    at parseJSONFromBytes (node:internal/deps/undici/undici:4319:19)\n    at successSteps (node:internal/deps/undici/undici:6967:27)\n    at consumeBody (node:internal/deps/undici/undici:6973:9)\n    at _Response.json (node:internal/deps/undici/undici:6912:18)\n    at <ROOT>/tests/unit/report-generation/customerDayunGeneration.test.ts:50:55\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "861192cdbec72569756fcc3d7c903ee1b7f15e23563bb7ef3a6314bbedff34c0"
+      },
+      {
+        "name": "customer Dayun production boundaries rejects major_fortune bypass before order writes and allows stable input",
+        "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+        "normalizedFullError": "SyntaxError: Unexpected end of JSON input\n    at JSON.parse (<anonymous>)\n    at parseJSONFromBytes (node:internal/deps/undici/undici:4319:19)\n    at successSteps (node:internal/deps/undici/undici:6967:27)\n    at consumeBody (node:internal/deps/undici/undici:6973:9)\n    at _Response.json (node:internal/deps/undici/undici:6912:18)\n    at <ROOT>/tests/unit/report-generation/customerDayunGeneration.test.ts:50:55\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)",
+        "signature": "1f94a952e413a78126682bd29820470371dc2984d97d602ba1eb4c2503a44e00"
+      },
+      {
+        "name": "narrative output is not accepted merely because it has source IDs no runtime/customer imports, dependencies, clocks, randomness, external services",
+        "file": "tests/unit/interpretation-v4/koreanNarrativeCore.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/narrat…/narrativeMemory[\"']\n    at <ROOT>/tests/unit/interpretation-v4/koreanNarrativeCore.test.ts:270:539\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "6c927bd6784e7d6b60e2ed7c118bebc8e06b580739f44bebc79bdf24fff18ebd"
+      },
+      {
+        "name": "preserves 2531 original tracked source, research, UI, Book, contract and fixture files",
+        "file": "tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality\n    at <ROOT>/tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts:55:320\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "561707aca5ef77ba5fd03bc3689527b1e04b1a9c654d9bf86cc0825d4a4458a0"
+      },
+      {
+        "name": "preserves 2639 original tracked source/research/Book/UI/test hashes",
+        "file": "tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality\n    at <ROOT>/tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts:62:301\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "f6e17c951b4411a4160d07a393556a50d5f99b0a8f117b8ec850c69d1e1d2a7b"
+      },
+      {
+        "name": "preserves all 2435 existing tracked source, research, Book and fixture hashes",
+        "file": "tests/unit/report-knowledge/compatibilityLoveResearch.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality\n    at <ROOT>/tests/unit/report-knowledge/compatibilityLoveResearch.test.ts:54:311\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "0797ffdbd355acdaf8d4dcad907c1bb6b1b3b43c646ed86163a26120a17ad7eb"
+      },
+      {
+        "name": "preserves all 2755 pre-existing tracked source/test/knowledge/report files byte for byte",
+        "file": "tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality\n    at <ROOT>/tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts:69:296\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "11ff02239659b06722d9bf492fdb5b575f3a1881dc329621451cdfd4a3371c60"
+      },
+      {
+        "name": "preserves all 2904 pre-existing tracked source/test/knowledge/report files byte for byte",
+        "file": "tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality\n    at <ROOT>/tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts:69:296\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "5c290f5803c46cd76ebd6628e064671a5d32a78721f3add668073a61cd0b202e"
+      },
+      {
+        "name": "preserves all 3073 pre-existing source/test/knowledge/report files byte for byte",
+        "file": "tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts",
+        "normalizedFullError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality\n    at <ROOT>/tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts:73:288\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "01096edb00cc35aad8091bfab901ce146d99b4f38e8e3b9abb37bbe8a64588ea"
+      },
+      {
+        "name": "section-specific allocations, reservations, fallback and budgets C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+        "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+        "normalizedFullError": "AssertionError: expected [] to include 'composite'\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1319:15)\n    at Proxy.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+expect@4.1.5/node_modules/@vitest/expect/dist/index.js:1156:15)\n    at Proxy.methodWrapper (file://<ROOT>/node_modules/.pnpm/chai@6.2.2/node_modules/chai/index.js:1700:25)\n    at <ROOT>/tests/unit/interpretation-v4/comprehensiveAllocation.test.ts:99:73\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20",
+        "signature": "3098a70bbc76ca776762ebf233276eb05fdba8abfd5644aed40797590ccfcb40"
+      },
+      {
+        "name": "section-specific allocations, reservations, fallback and budgets recovery-axis Fusion can serve C9 even when its original application is work",
+        "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+        "normalizedFullError": "AssertionError: expected false to be true // Object.is equality\n    at <ROOT>/tests/unit/interpretation-v4/comprehensiveAllocation.test.ts:113:69\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64",
+        "signature": "6007a19d9987ad2425e388ea6cfaea31b64f9264c3f6bdb4f55d3d6f6adac436"
+      }
+    ]
+  },
+  "allFailureNamesAndNormalizedFullErrorsIdentical": true,
+  "normalization": "Only exact checkout-root aliases and ANSI color codes",
+  "fullRepositorySuiteClaimed": false,
+  "testDeletionSkipTimeoutEdits": 0
+}

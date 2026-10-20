@@ -1,0 +1,62 @@
+/** Static offline businessPartner research. No runtime registration or customer approval. */
+import type { BindingPolicy } from "./researchTypes";
+export const BP_BINDING_POLICY: readonly BindingPolicy[] = [
+  {
+    "id": "bppr:binding-policy:v1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "roles": {
+      "personA": "A",
+      "personB": "B"
+    },
+    "rules": [
+      "businessPartner와 compatibility-fixed-ab-v1 확인. A/B는 대칭 슬롯이며 동일 지분·의결권·대표권·손실 능력의 증명이 아님. 과거 저장본의 누락 version을 보충·재생성하지 않음.",
+      "각자의 실제 natal ID·MBTI 입력·source node·같은 개인 Fusion 두 root·person ID를 독립 확인. 상대 trait·미입력 시주로 채우지 않음.",
+      "sourceCoverage·review·locator·hash·원래 정의 보존. 연구 ID·facet·가상 장면은 기존 producer의 계산 ID가 아님.",
+      "WORK/CAREER/THINKING/MONEY/INVESTMENT는 현재 비연애 projection 미허용. 원천 존재·SCORING 분류·legacy 영역 허용만으로 businessPartner 고객 적용 승인하지 않음.",
+      "모든 ancestor의 actual owner/person ID·classification·domain·context·source path/hash·sourceCoverage·조건·rule을 검토. some(allowed)나 최상위 nodes 검사는 mixed side·comparison·claim·Fusion·recall의 전체 경계 증명이 아님.",
+      "개인 Fusion은 같은 개인의 실제 명리·MBTI 두 root·source assignment·축·방향·context 검증. 두 사람 점수로 더하거나 공통축·원천을 세 번째 독립 사실로 세지 않음.",
+      "canonical 관계는 실제 양쪽 person·kind·ID·위치·참여 기호·refs·성립 조건 필요. 원국 내부·기간 관계·미지원 정의·없는 시주로 대체 금지.",
+      "A→B는 B.dayMaster가 viewer이고 A.dayMaster가 target. B→A는 반대. 실제 방향 ID와 recipient 십성을 확인. 같은 결과는 그대로 보존.",
+      "財는 자산·매출·수익·투자 적합성, 劫財는 사기·가로채기, 官은 대표·법적 권한, 合冲은 성공·실패의 증명이 아님.",
+      "Pair generic reference는 방향별 참고. reportLine은 businessPartner 전문 pattern 아님. lovePattern/marriagePattern·관계명을 공동사업 법칙으로 전용하지 않음. direct/inferred는 원천 작성 상태로 성과 실증 아님.",
+      "실제 동업·업종·단계·목표·산출·기여·출자·지분·자산·부채·매출·손실·계약·결정권·대표권·과거 경험은 입력·검증 전 UNKNOWN. 현재 payload에 가상 사업 facts를 추가하지 않음.",
+      "각 직접 source group의 모든 필수 근거는 AND. 회수는 실제 표시된 호환 group/subset만 사용. 서로 다른 A/B 유형 후보들을 전체 AND로 묶거나 근거를 섞지 않음.",
+      "CH08은 실제 표시한 마찰과 같은 두 사람·root·owner·방향·과제의 사실·권한·조정·재검토만 회수. CH09는 actuallyDisplayed ledger와 호환 group·표시한 의미만 활용. 후보 존재는 표시 이력 아님.",
+      "손익·현금·기여·지분·권한·탈퇴·해산·청산을 구분. 개별 투자·대출·세금·법률 효력·지분율·반환금·책임을 DB가 판단하지 않음.",
+      "강요·사기·경제적 착취·불법 의심·위험한 협의는 일반 궁합 조율로 정상화하지 않음. 동일 양보·동업 유지·직접 화해를 강요하지 않고 안전·전문 지원·협의 중단 조건을 확인.",
+      "원천·관계·방향·공통축·Fusion·Pair·역할 링크·뷰·회수의 같은 fact root를 중복 집계하지 않음. 신규 엔진·domain 승인·고객 승인 없음."
+    ],
+    "withholdReasons": [
+      "UNKNOWN_ACTUAL_PARTNERSHIP",
+      "UNKNOWN_EQUITY",
+      "UNKNOWN_ASSETS",
+      "UNKNOWN_DEBT",
+      "UNKNOWN_REVENUE",
+      "UNKNOWN_CONTRACT",
+      "UNKNOWN_DECISION_RIGHTS",
+      "UNKNOWN_BUSINESS_CONTEXT",
+      "UNKNOWN_PERSON_OWNER",
+      "MISSING_ACTUAL_NATAL_ROOT",
+      "UNKNOWN_MBTI",
+      "UNKNOWN_HOUR",
+      "MISSING_SAME_PERSON_FUSION_ROOTS",
+      "DOMAIN_NOT_APPROVED",
+      "CONTEXT_NOT_VERIFIED",
+      "UNSUPPORTED_RELATION",
+      "MISSING_DIRECTION_ID",
+      "DISALLOWED_ANCESTOR_DOMAIN",
+      "LEGACY_ROLE_UNVERIFIED",
+      "NOT_ACTUALLY_DISPLAYED",
+      "INCOMPATIBLE_SOURCE_GROUP",
+      "DUPLICATE_FACT_ROOT",
+      "UNSAFE_NEGOTIATION",
+      "PROFESSIONAL_REVIEW_REQUIRED"
+    ],
+    "newEngineImplemented": false
+  }
+];

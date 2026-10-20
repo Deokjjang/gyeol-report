@@ -1,0 +1,2064 @@
+[
+  {
+    "id": "A",
+    "version": "career-editorial-release-01-v1",
+    "publishedEdition": "career-editorial-release-01-v1",
+    "bodyLength": 9733,
+    "paragraphs": 36,
+    "sentences": 145,
+    "chapters": [
+      {
+        "id": "CH01",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH02",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH03",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH04",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH05",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH06",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH07",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH08",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH09",
+        "paragraphs": 4
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    },
+    "recommendations": [
+      {
+        "id": "lead",
+        "roleExamples": [
+          "프로젝트 책임",
+          "영업 운영 리드",
+          "실행 조정"
+        ],
+        "reason": "1순위 · 프로젝트 책임·운영 조정·팀 리더 — 막힌 일을 나누고 사람을 움직이는 프로젝트 책임 역할이 좋은 후보입니다. 빠르게 고칠 곳을 보는 눈을 내 작업 하나가 아니라 함께 내는 결과에 써볼 수 있습니다. 양인살·겁재에서 볼 수 있는 장점을 여러 사람이 기다리는 결정을 내리고 역할을 이어주는 일에 쓰는 방향이에요. ENTJ의 직업 자료에서도 기업 CEO·정치인처럼 이 힘을 쓰는 예를 찾을 수 있습니다. 의견만 오가고 결정이 늦어질 때는 먼저 해야 할 일을 정해 말합니다. 여러 사람이 기다리는 상황에서 방향을 잡는 역할이 잘 맞아요.",
+        "environment": "이름만 책임자인 자리가 아니라 선택을 바꾸고 우선순위를 정할 권한이 있어야 판단력이 살아납니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "sinsal_yangin",
+            "ten_god_jie_cai",
+            "ten_god_qi_sha",
+            "sinsal_hyeonchim"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "entj-pressure",
+            "entj-needle"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:偏官",
+            "SajuCalcResult:tenGods.distribution:劫財",
+            "basis:BRANCH_ONLY",
+            "branch:卯",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:sinsal_hyeonchim",
+            "canonical-natal-table-v1:features:sinsal_yangin",
+            "careerContextV3:normalized-dimensions",
+            "docs/product/mbti/source/ENTJ.json:traits:identity:commanding_goal_builder",
+            "docs/product/mbti/source/ENTJ.json:traits:thinkingStyle:fast_decisive_filter",
+            "input:detailJob",
+            "input:jobStatus",
+            "mbti:ENTJ:recommendedJobs:건설 관리자",
+            "mbti:ENTJ:recommendedJobs:기업 CEO",
+            "mbti:ENTJ:recommendedJobs:정치인",
+            "mbti:ENTJ:recommendedJobs:코치 또는 감독",
+            "natal:sinsal_hyeonchim",
+            "natal:sinsal_yangin",
+            "position:hour",
+            "sajuFeatureTaxonomy:sinsal_hyeonchim",
+            "sajuFeatureTaxonomy:sinsal_yangin",
+            "sajuFeatureTaxonomy:ten_god_qi_sha",
+            "sajuKnowledgeBase:sinsal_hyeonchim",
+            "sajuKnowledgeBase:ten_god_jie_cai",
+            "sajuKnowledgeBase:ten_god_qi_sha",
+            "shinsal:HYEONCHIMSAL",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:hyeonchim:묘",
+            "v1:sinsal:현침살",
+            "v1:yangin:갑:묘",
+            "v4:career-route:lead",
+            "v4:career-setting:sales_operations",
+            "v4:career-voice:decisive",
+            "v4:fusion-rule:entj-needle",
+            "v4:fusion-rule:entj-pressure",
+            "v4:material-depth:sinsal_yangin",
+            "v4:material-depth:ten_god_jie_cai",
+            "v4:semantic-meaning:sinsal_hyeonchim",
+            "v4:semantic-meaning:ten_god_jie_cai",
+            "v4:semantic-meaning:ten_god_qi_sha",
+            "mbti:ENTJ:traits:identity:commanding_goal_builder:plainKo",
+            "mbti:ENTJ:traits:identity:future_change_leader:plainKo",
+            "natal:ten-god:day:MAIN:庚",
+            "natal:ten-god:year:visible:庚",
+            "supplement:marker:JANGSEONG",
+            "supplement:stage:hour:제왕"
+          ]
+        }
+      },
+      {
+        "id": "market",
+        "roleExamples": [
+          "고객 제안",
+          "사업 기획",
+          "영업 기획"
+        ],
+        "reason": "2순위 · 고객 제안·사업 기획·새 거래처 개발 — 성과가 실제 거래로 이어지는 고객 제안과 사업 기획도 살펴볼 만합니다. 상대가 망설이는 조건을 좁혀 해결할 제안을 만드는 과정에서 빠른 판단을 쓸 수 있습니다. 정재·역마살에서 볼 수 있는 장점을 사람이 필요한 것과 제공할 수 있는 것을 맞춰 거래로 잇는 일에 쓰는 방향이에요.",
+        "environment": "팔기 위해 무리한 약속을 늘리는 곳보다 제품과 제공 범위를 함께 조율할 수 있는 환경이 낫습니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "ten_god_zheng_cai",
+            "twelve_sinsal_yeokma",
+            "sinsal_hyeonchim"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "entj-wealth",
+            "entj-needle"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:正財",
+            "basis:BRANCH_GROUP_TO_BRANCH",
+            "basis:BRANCH_ONLY",
+            "basis:YEAR_BRANCH_TO_BRANCH",
+            "branch:卯",
+            "branch:申",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:sinsal_hyeonchim",
+            "canonical-natal-table-v1:features:twelve_sinsal_yeokma",
+            "careerContextV3:normalized-dimensions",
+            "docs/product/mbti/source/ENTJ.json:traits:money:high_earning_orientation",
+            "docs/product/mbti/source/ENTJ.json:traits:thinkingStyle:fast_decisive_filter",
+            "input:detailJob",
+            "input:jobStatus",
+            "natal:sinsal_hyeonchim",
+            "natal:twelve_sinsal_yeokma",
+            "position:day",
+            "position:hour",
+            "reference:YEAR_BRANCH",
+            "referenceBranch:午",
+            "sajuFeatureTaxonomy:sinsal_hyeonchim",
+            "sajuFeatureTaxonomy:ten_god_zheng_cai",
+            "sajuFeatureTaxonomy:twelve_sinsal_yeokma",
+            "sajuKnowledgeBase:sinsal_hyeonchim",
+            "sajuKnowledgeBase:ten_god_zheng_cai",
+            "shinsal:HYEONCHIMSAL",
+            "shinsal:TWELVE_YEOKMASAL",
+            "shinsal:YEOKMASAL",
+            "source:BRANCH_GROUP_TO_BRANCH",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:hyeonchim:묘",
+            "v1:sinsal:역마살",
+            "v1:sinsal:현침살",
+            "v4:career-route:market",
+            "v4:career-setting:sales_operations",
+            "v4:career-voice:decisive",
+            "v4:fusion-rule:entj-needle",
+            "v4:fusion-rule:entj-wealth",
+            "v4:material-depth:ten_god_zheng_cai",
+            "v4:material-depth:twelve_sinsal_yeokma",
+            "v4:semantic-meaning:sinsal_hyeonchim",
+            "v4:semantic-meaning:ten_god_zheng_cai",
+            "yearBranch:午"
+          ]
+        }
+      },
+      {
+        "id": "manage",
+        "roleExamples": [
+          "운영 기획",
+          "사업 관리",
+          "업무 흐름 개선"
+        ],
+        "reason": "3순위 · 운영 기획·예산 관리·장기 고객 관리 — 잘된 결과를 다음에도 내게 만드는 운영 역할은 또 다른 확장입니다. 숫자를 확인한 뒤 어떤 순서와 약속을 바꿀지 정하는 일에 개선 욕구를 쓸 수 있습니다. 정재·정인에서 볼 수 있는 장점을 한 번 잘된 일을 반복할 수 있도록 약속과 흐름을 지키는 일에 쓰는 방향이에요. ENTJ의 직업 자료에서도 회계직·건설 관리자처럼 이 힘을 쓰는 예를 찾을 수 있습니다. 처음의 재미가 줄어도 맡은 일을 곧바로 놓지는 않습니다. 어디까지 끝냈는지 확인하며 이어가는 방식으로 결과를 남기는 쪽이에요.",
+        "environment": "반복 보고의 양보다 실제로 줄어든 낭비와 더 쉬워진 결정을 인정하는 팀을 볼 만합니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "ten_god_zheng_cai",
+            "ten_god_zheng_yin",
+            "sinsal_hyeonchim"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "entj-wealth",
+            "entj-needle"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:正印",
+            "SajuCalcResult:tenGods.distribution:正財",
+            "basis:BRANCH_ONLY",
+            "branch:卯",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:sinsal_hyeonchim",
+            "careerContextV3:normalized-dimensions",
+            "docs/product/mbti/source/ENTJ.json:traits:money:high_earning_orientation",
+            "docs/product/mbti/source/ENTJ.json:traits:thinkingStyle:fast_decisive_filter",
+            "input:detailJob",
+            "input:jobStatus",
+            "mbti:ENTJ:recommendedJobs:건설 관리자",
+            "mbti:ENTJ:recommendedJobs:회계직",
+            "natal:sinsal_hyeonchim",
+            "position:hour",
+            "sajuFeatureTaxonomy:sinsal_hyeonchim",
+            "sajuFeatureTaxonomy:ten_god_zheng_cai",
+            "sajuKnowledgeBase:sinsal_hyeonchim",
+            "sajuKnowledgeBase:ten_god_zheng_cai",
+            "sajuKnowledgeBase:ten_god_zheng_yin",
+            "shinsal:HYEONCHIMSAL",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:hyeonchim:묘",
+            "v1:sinsal:현침살",
+            "v4:career-route:manage",
+            "v4:career-setting:sales_operations",
+            "v4:career-voice:decisive",
+            "v4:fusion-rule:entj-needle",
+            "v4:fusion-rule:entj-wealth",
+            "v4:material-depth:ten_god_zheng_cai",
+            "v4:material-depth:ten_god_zheng_yin",
+            "v4:semantic-meaning:sinsal_hyeonchim",
+            "v4:semantic-meaning:ten_god_zheng_cai",
+            "v4:semantic-meaning:ten_god_zheng_yin",
+            "foundation:element:EARTH:BALANCED",
+            "foundation:element:WOOD:BALANCED",
+            "mbti:ENTJ:traits:identity:commanding_goal_builder:plainKo",
+            "mbti:ENTJ:traits:identity:self_fulfilling_confidence:plainKo",
+            "mbti:ENTJ:traits:strengths:execution_after_planning:plainKo",
+            "mbti:ENTJ:traits:strengths:resilience_under_resistance:plainKo",
+            "mbti:ENTJ:traits:thinkingStyle:te_ni_strategy:plainKo",
+            "mbti:ENTJ:traits:thinkingStyle:time_attack_processing:plainKo",
+            "natal:day:stem:甲",
+            "natal:hour:stem:丁",
+            "natal:ten-god:day:MAIN:庚",
+            "natal:ten-god:year:visible:庚",
+            "supplement:stage:hour:제왕"
+          ]
+        }
+      }
+    ],
+    "studyBasis": {
+      "traitId": "high_achievement_study",
+      "type": "ENTJ",
+      "provenance": "direct",
+      "feature": "sinsal_gwimun"
+    },
+    "bookPageCount": 17,
+    "textSha256": "ca98ad5705fad3623157cd34aad817c2c9a2c9d4e771be40b1252c18e85b7d38"
+  },
+  {
+    "id": "B",
+    "version": "career-editorial-release-01-v1",
+    "publishedEdition": "career-editorial-release-01-v1",
+    "bodyLength": 9856,
+    "paragraphs": 36,
+    "sentences": 145,
+    "chapters": [
+      {
+        "id": "CH01",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH02",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH03",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH04",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH05",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH06",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH07",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH08",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH09",
+        "paragraphs": 4
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    },
+    "recommendations": [
+      {
+        "id": "create",
+        "roleExamples": [
+          "브랜드 기획·디자인",
+          "콘텐츠 방향 기획",
+          "시각 이야기 제작"
+        ],
+        "reason": "1순위 · 콘텐츠 기획·브랜드 제작·설명 자료 개발 — 브랜드나 콘텐츠의 첫 방향을 잡는 일에서 생각을 잇는 재주가 잘 쓰입니다. 받은 시안을 꾸미는 역할을 넘어, 어떤 인상으로 기억되고 싶은지 함께 묻는 기획·디자인이 좋은 후보입니다. 문창귀인·홍염살에서 볼 수 있는 장점을 아직 모양이 없는 생각을 사람이 이해하고 반응할 결과로 만드는 일에 쓰는 방향이에요. ENFP의 직업 자료에서도 콘텐츠 기획자처럼 이 힘을 쓰는 예를 찾을 수 있습니다. 설명만 길어질 때는 직접 만든 것을 놓고 이야기하고 싶어 해요. 눈에 보이는 결과를 만들면 무엇을 고칠지도 함께 확인할 수 있습니다.",
+        "environment": "내 제안을 꺼낼 수 있고 초안의 이유까지 이야기할 수 있는 고객과 팀을 만날수록 작업이 더 입체적이 됩니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "gwiin_munchang",
+            "sinsal_hongyeom",
+            "ten_god_pian_yin"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "enfp-connection"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:偏印",
+            "basis:DAY_STEM_TO_BRANCH",
+            "branch:申",
+            "branch:辰",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:gwiin_munchang",
+            "canonical-natal-table-v1:features:sinsal_hongyeom",
+            "careerContextV3:normalized-dimensions",
+            "dayStem:戊",
+            "docs/product/mbti/source/ENFP.json:traits:thinkingStyle:ne_connection_thinking",
+            "input:detailJob",
+            "input:jobStatus",
+            "mbti:ENFP:recommendedJobs:콘텐츠 기획자",
+            "natal:gwiin_munchang",
+            "natal:sinsal_hongyeom",
+            "position:day",
+            "position:hour",
+            "sajuFeatureTaxonomy:gwiin_munchang",
+            "sajuFeatureTaxonomy:sinsal_hongyeom",
+            "sajuFeatureTaxonomy:ten_god_pian_yin",
+            "sajuKnowledgeBase:ten_god_pian_yin",
+            "shinsal:HONGYEOMSAL",
+            "shinsal:MUN_CHANG_GWIIN",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:gwiin:무:신",
+            "v1:gwiin:문창귀인",
+            "v1:sinsal:홍염살",
+            "v4:career-route:create",
+            "v4:career-setting:design",
+            "v4:career-voice:creative",
+            "v4:fusion-rule:enfp-connection",
+            "v4:material-depth:gwiin_munchang",
+            "v4:material-depth:sinsal_hongyeom",
+            "v4:semantic-meaning:ten_god_pian_yin",
+            "foundation:element:WATER:BALANCED",
+            "natal:month:branch:亥",
+            "natal:ten-god:day:MAIN:庚",
+            "natal:ten-god:hour:visible:丙",
+            "supplement:marker:GWIMUN",
+            "supplement:marker:MUNCHANG",
+            "supplement:marker:TAEGEUK",
+            "supplement:marker:WOL",
+            "supplement:stage:day:병"
+          ]
+        }
+      },
+      {
+        "id": "experience",
+        "roleExamples": [
+          "전시 경험 기획",
+          "체험 행사",
+          "서비스 첫 경험 설계"
+        ],
+        "reason": "2순위 · 고객 경험 기획·행사 운영·제품 체험 설계 — 사람이 직접 보고 느끼는 경험을 만드는 쪽도 살펴볼 만합니다. 전시나 체험 행사, 서비스의 첫 사용 장면처럼 반응을 보며 인상을 다듬는 일에 표현의 힘이 쓰입니다. 식신에서 볼 수 있는 장점을 사람이 직접 만나고 사용하며 보이는 반응을 더 좋은 경험으로 바꾸는 일에 쓰는 방향이에요. ENFP의 직업 자료에서도 예술가처럼 이 힘을 쓰는 예를 찾을 수 있습니다.",
+        "environment": "예쁜 장면을 찍는 데서 끝나지 않고 실제 사람들이 어디서 웃고 머무는지 볼 수 있으면 더 재미있게 몰입합니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "ten_god_shi_shen",
+            "ten_god_pian_yin"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "enfp-connection"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:偏印",
+            "SajuCalcResult:tenGods.distribution:食神",
+            "calendar:saju-calendar-kst-v2",
+            "careerContextV3:normalized-dimensions",
+            "docs/product/mbti/source/ENFP.json:traits:thinkingStyle:ne_connection_thinking",
+            "input:detailJob",
+            "input:jobStatus",
+            "mbti:ENFP:recommendedJobs:예술가",
+            "sajuFeatureTaxonomy:ten_god_pian_yin",
+            "sajuKnowledgeBase:ten_god_pian_yin",
+            "sajuKnowledgeBase:ten_god_shi_shen",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v4:career-route:experience",
+            "v4:career-setting:design",
+            "v4:career-voice:creative",
+            "v4:fusion-rule:enfp-connection",
+            "v4:material-depth:ten_god_shi_shen",
+            "v4:semantic-meaning:ten_god_pian_yin",
+            "v4:semantic-meaning:ten_god_shi_shen"
+          ]
+        }
+      },
+      {
+        "id": "investigate",
+        "roleExamples": [
+          "브랜드 자료 조사",
+          "문화·취향 연구",
+          "콘텐츠 소재 탐색"
+        ],
+        "reason": "3순위 · 개발·연구·자료 조사·전문 분야 분석 — 혼자 오래 들여다보는 관심은 창작 앞단의 조사에도 쓸 수 있습니다. 취향과 문화의 흐름을 찾아 브랜드에 맞는 단서를 고르는 일은 만드는 손과 파고드는 눈을 함께 쓰는 길입니다. 귀문관살·편인에서 볼 수 있는 장점을 원인이 분명하지 않은 문제를 나누어 조사하고 설명하는 일에 쓰는 방향이에요. 설명을 맡으면 답만 옮기기보다 왜 그런지 확인하고 싶어 해요. 이해되지 않은 부분을 남겨두지 않는 방식이 일의 깊이로 이어집니다.",
+        "environment": "유행을 그대로 가져오라는 주문보다 왜 이 방향인지 충분히 탐색할 시간을 주는 의뢰가 더 잘 맞습니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "sinsal_gwimun",
+            "ten_god_pian_yin"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "enfp-connection"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:偏印",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:sinsal_gwimun",
+            "careerContextV3:normalized-dimensions",
+            "docs/product/mbti/source/ENFP.json:traits:thinkingStyle:ne_connection_thinking",
+            "input:detailJob",
+            "input:jobStatus",
+            "natal:sinsal_gwimun",
+            "sajuFeatureTaxonomy:sinsal_gwimun",
+            "sajuFeatureTaxonomy:ten_god_pian_yin",
+            "sajuKnowledgeBase:ten_god_pian_yin",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:gwimun:pair",
+            "v4:career-route:investigate",
+            "v4:career-setting:design",
+            "v4:career-voice:creative",
+            "v4:fusion-rule:enfp-connection",
+            "v4:material-depth:sinsal_gwimun",
+            "v4:material-depth:ten_god_pian_yin",
+            "v4:semantic-meaning:ten_god_pian_yin",
+            "foundation:element:WATER:BALANCED",
+            "natal:month:branch:亥",
+            "natal:ten-god:day:MAIN:庚",
+            "natal:ten-god:hour:visible:丙",
+            "supplement:marker:GWIMUN",
+            "supplement:marker:MUNCHANG",
+            "supplement:marker:TAEGEUK",
+            "supplement:marker:WOL",
+            "supplement:stage:day:병"
+          ]
+        }
+      }
+    ],
+    "studyBasis": {
+      "traitId": "interest_switch_learning",
+      "type": "ENFP",
+      "provenance": "direct",
+      "feature": "gwiin_munchang"
+    },
+    "bookPageCount": 17,
+    "textSha256": "de7f082ef030039effd203e1d60c7268cbcd436738149da7147c63f59a8a959e"
+  },
+  {
+    "id": "C",
+    "version": "career-editorial-release-01-v1",
+    "publishedEdition": "career-editorial-release-01-v1",
+    "bodyLength": 9734,
+    "paragraphs": 36,
+    "sentences": 145,
+    "chapters": [
+      {
+        "id": "CH01",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH02",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH03",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH04",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH05",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH06",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH07",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH08",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH09",
+        "paragraphs": 4
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    },
+    "recommendations": [
+      {
+        "id": "lead",
+        "roleExamples": [
+          "프로젝트 조정",
+          "일정 운영",
+          "작은 팀 책임"
+        ],
+        "reason": "1순위 · 프로젝트 책임·운영 조정·팀 리더 — 여러 사람이 할 일을 이어주는 조정 역할도 생각해볼 수 있습니다. 앞에 설 힘을 큰 직함으로만 상상하지 않고 작은 일정이나 프로젝트를 끝까지 연결해본 경험에서 확인하는 길입니다. 양인살·겁재에서 볼 수 있는 장점을 여러 사람이 기다리는 결정을 내리고 역할을 이어주는 일에 쓰는 방향이에요. 맡은 일이 생기면 끝냈다는 말로만 넘기지 않아요. 남은 것이 없는지 확인하고 약속한 만큼 지키려 합니다.",
+        "environment": "남을 대신해 전부 해주는 역할이 아니라 각자가 무엇을 맡을지 정할 수 있는 범위가 있어야 내 힘도 남습니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "sinsal_yangin",
+            "ten_god_jie_cai",
+            "day_master_gabmok",
+            "day_pillar_gapsin"
+          ],
+          "seedIds": [],
+          "fusionIds": [],
+          "sourceRefs": [
+            "SajuCalcResult:saju-calendar-kst-v2:day_master_gabmok",
+            "SajuCalcResult:tenGods.distribution:劫財",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:day_pillar_gapsin",
+            "canonical-natal-table-v1:features:sinsal_yangin",
+            "careerContextV3:normalized-dimensions",
+            "input:detailJob",
+            "input:jobStatus",
+            "natal:day_pillar_gapsin",
+            "natal:sinsal_yangin",
+            "sajuDayPillarKnowledge:day_pillar_gapsin:coreKeywords",
+            "sajuDayPillarKnowledge:day_pillar_gapsin:symbolicImage",
+            "sajuFeatureTaxonomy:sinsal_yangin",
+            "sajuKnowledgeBase:day_master_gabmok",
+            "sajuKnowledgeBase:ten_god_jie_cai",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:dayPillar:갑신",
+            "v1:yangin:갑:묘",
+            "v4:career-route:lead",
+            "v4:career-setting:sales_operations",
+            "v4:career-voice:natal",
+            "v4:material-depth:day_master_gabmok",
+            "v4:material-depth:day_pillar_gapsin",
+            "v4:material-depth:sinsal_yangin",
+            "v4:material-depth:ten_god_jie_cai",
+            "v4:semantic-meaning:ten_god_jie_cai",
+            "natal:day:stem:甲",
+            "natal:ten-god:day:MAIN:庚",
+            "natal:ten-god:day:SUB:壬",
+            "natal:ten-god:hour:visible:丁",
+            "natal:ten-god:month:SUB:丁",
+            "natal:ten-god:year:MAIN:丁",
+            "natal:ten-god:year:visible:庚",
+            "natal:year:stem:庚",
+            "supplement:marker:YANGIN"
+          ]
+        }
+      },
+      {
+        "id": "market",
+        "roleExamples": [
+          "고객 제안",
+          "거래처 개발",
+          "사업 기획 보조"
+        ],
+        "reason": "2순위 · 고객 제안·사업 기획·새 거래처 개발 — 사람이 필요한 것과 줄 수 있는 것을 맞추는 일에도 기회가 있습니다. 고객 제안이나 거래처 개발처럼 반응을 들으며 제안을 다듬는 역할에서 현실 감각을 시험해볼 수 있습니다. 정재·역마살에서 볼 수 있는 장점을 사람이 필요한 것과 제공할 수 있는 것을 맞춰 거래로 잇는 일에 쓰는 방향이에요.",
+        "environment": "숫자만 올리라는 요구보다 실제로 지킬 수 있는 상품과 조건을 알려주는 곳에서 경험을 쌓기 좋습니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "ten_god_zheng_cai",
+            "twelve_sinsal_yeokma",
+            "day_master_gabmok",
+            "day_pillar_gapsin"
+          ],
+          "seedIds": [],
+          "fusionIds": [],
+          "sourceRefs": [
+            "SajuCalcResult:saju-calendar-kst-v2:day_master_gabmok",
+            "SajuCalcResult:tenGods.distribution:正財",
+            "basis:BRANCH_GROUP_TO_BRANCH",
+            "basis:YEAR_BRANCH_TO_BRANCH",
+            "branch:申",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:day_pillar_gapsin",
+            "canonical-natal-table-v1:features:twelve_sinsal_yeokma",
+            "careerContextV3:normalized-dimensions",
+            "input:detailJob",
+            "input:jobStatus",
+            "natal:day_pillar_gapsin",
+            "natal:twelve_sinsal_yeokma",
+            "position:day",
+            "reference:YEAR_BRANCH",
+            "referenceBranch:午",
+            "sajuDayPillarKnowledge:day_pillar_gapsin:coreKeywords",
+            "sajuDayPillarKnowledge:day_pillar_gapsin:symbolicImage",
+            "sajuFeatureTaxonomy:twelve_sinsal_yeokma",
+            "sajuKnowledgeBase:day_master_gabmok",
+            "sajuKnowledgeBase:ten_god_zheng_cai",
+            "shinsal:TWELVE_YEOKMASAL",
+            "shinsal:YEOKMASAL",
+            "source:BRANCH_GROUP_TO_BRANCH",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:dayPillar:갑신",
+            "v1:sinsal:역마살",
+            "v4:career-route:market",
+            "v4:career-setting:sales_operations",
+            "v4:career-voice:natal",
+            "v4:material-depth:day_master_gabmok",
+            "v4:material-depth:day_pillar_gapsin",
+            "v4:material-depth:ten_god_zheng_cai",
+            "v4:material-depth:twelve_sinsal_yeokma",
+            "v4:semantic-meaning:ten_god_zheng_cai",
+            "yearBranch:午"
+          ]
+        }
+      },
+      {
+        "id": "experience",
+        "roleExamples": [
+          "고객 경험 운영",
+          "체험 안내",
+          "응대 개선"
+        ],
+        "reason": "3순위 · 고객 경험 기획·행사 운영·제품 체험 설계 — 사람이 직접 겪는 불편을 편한 경험으로 바꾸는 역할을 살펴볼 만합니다. 고객 응대나 체험 운영에서 실제 표정과 반응을 보고 바꿔본 경험은, 다시 찾아올 이유를 만드는 실력이 될 수 있습니다. 도화살·겁재에서 볼 수 있는 장점을 사람이 직접 만나고 사용하며 보이는 반응을 더 좋은 경험으로 바꾸는 일에 쓰는 방향이에요. INFP의 직업 자료에서도 사진사·여행가·비평가처럼 이 힘을 쓰는 예를 찾을 수 있습니다.",
+        "environment": "처음부터 큰 기획을 맡기보다 짧게 참여해 손에 익는 부분과 에너지가 빠지는 부분을 함께 보는 것이 좋습니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "sinsal_dohwa",
+            "ten_god_jie_cai",
+            "day_master_gabmok",
+            "day_pillar_gapsin"
+          ],
+          "seedIds": [],
+          "fusionIds": [],
+          "sourceRefs": [
+            "SajuCalcResult:saju-calendar-kst-v2:day_master_gabmok",
+            "SajuCalcResult:tenGods.distribution:劫財",
+            "basis:BRANCH_GROUP_TO_BRANCH",
+            "basis:YEAR_BRANCH_TO_BRANCH",
+            "branch:卯",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:day_pillar_gapsin",
+            "canonical-natal-table-v1:features:sinsal_dohwa",
+            "canonical-natal-table-v1:features:twelve_sinsal_nyeonsal",
+            "careerContextV3:normalized-dimensions",
+            "input:detailJob",
+            "input:jobStatus",
+            "mbti:INFP:recommendedJobs:사진사·여행가·비평가",
+            "natal:day_pillar_gapsin",
+            "natal:sinsal_dohwa",
+            "natal:twelve_sinsal_nyeonsal",
+            "position:hour",
+            "reference:YEAR_BRANCH",
+            "referenceBranch:午",
+            "sajuDayPillarKnowledge:day_pillar_gapsin:coreKeywords",
+            "sajuDayPillarKnowledge:day_pillar_gapsin:symbolicImage",
+            "sajuFeatureTaxonomy:sinsal_dohwa",
+            "sajuKnowledgeBase:day_master_gabmok",
+            "sajuKnowledgeBase:ten_god_jie_cai",
+            "shinsal:DOHWASAL",
+            "shinsal:TWELVE_NYEONSAL",
+            "source:BRANCH_GROUP_TO_BRANCH",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:dayPillar:갑신",
+            "v1:sinsal:년살",
+            "v1:sinsal:도화살",
+            "v4:career-route:experience",
+            "v4:career-setting:sales_operations",
+            "v4:career-voice:natal",
+            "v4:material-depth:day_master_gabmok",
+            "v4:material-depth:day_pillar_gapsin",
+            "v4:material-depth:sinsal_dohwa",
+            "v4:material-depth:ten_god_jie_cai",
+            "v4:semantic-meaning:ten_god_jie_cai",
+            "yearBranch:午"
+          ]
+        }
+      }
+    ],
+    "studyBasis": {
+      "traitId": "storytelling_learning",
+      "type": "INFP",
+      "provenance": "direct",
+      "feature": "sinsal_gwimun"
+    },
+    "bookPageCount": 17,
+    "textSha256": "3c4df44bca0fd22a73869d602c8455df15c748c6e1c1e3d2a659fc844514d9dd"
+  },
+  {
+    "id": "D",
+    "version": "career-editorial-release-01-v1",
+    "publishedEdition": "career-editorial-release-01-v1",
+    "bodyLength": 9771,
+    "paragraphs": 36,
+    "sentences": 145,
+    "chapters": [
+      {
+        "id": "CH01",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH02",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH03",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH04",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH05",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH06",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH07",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH08",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH09",
+        "paragraphs": 4
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    },
+    "recommendations": [
+      {
+        "id": "lead",
+        "roleExamples": [
+          "프로젝트 책임",
+          "영업 운영 리드",
+          "실행 조정"
+        ],
+        "reason": "1순위 · 프로젝트 책임·운영 조정·팀 리더 — 막힌 일을 나누고 사람을 움직이는 프로젝트 책임 역할이 좋은 후보입니다. 빠르게 고칠 곳을 보는 눈을 내 작업 하나가 아니라 함께 내는 결과에 써볼 수 있습니다. 편관·장성살에서 볼 수 있는 장점을 여러 사람이 기다리는 결정을 내리고 역할을 이어주는 일에 쓰는 방향이에요. ENTJ의 직업 자료에서도 기업 CEO·정치인처럼 이 힘을 쓰는 예를 찾을 수 있습니다. 의견만 오가고 결정이 늦어질 때는 먼저 해야 할 일을 정해 말합니다. 여러 사람이 기다리는 상황에서 방향을 잡는 역할이 잘 맞아요.",
+        "environment": "이름만 책임자인 자리가 아니라 선택을 바꾸고 우선순위를 정할 권한이 있어야 판단력이 살아납니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "ten_god_qi_sha",
+            "twelve_sinsal_jangseong",
+            "sinsal_hyeonchim"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "entj-pressure",
+            "entj-needle"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:偏官",
+            "basis:BRANCH_GROUP_TO_BRANCH",
+            "basis:BRANCH_ONLY",
+            "branch:卯",
+            "branch:子",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:sinsal_hyeonchim",
+            "canonical-natal-table-v1:features:twelve_sinsal_jangseong",
+            "canonical-natal-table-v1:features:twelve_sinsal_jangseong:day-reference",
+            "careerContextV3:normalized-dimensions",
+            "docs/product/mbti/source/ENTJ.json:traits:identity:commanding_goal_builder",
+            "docs/product/mbti/source/ENTJ.json:traits:thinkingStyle:fast_decisive_filter",
+            "input:detailJob",
+            "input:jobStatus",
+            "mbti:ENTJ:recommendedJobs:건설 관리자",
+            "mbti:ENTJ:recommendedJobs:기업 CEO",
+            "mbti:ENTJ:recommendedJobs:정치인",
+            "mbti:ENTJ:recommendedJobs:코치 또는 감독",
+            "natal:sinsal_hyeonchim",
+            "natal:twelve_sinsal_jangseong",
+            "natal:twelve_sinsal_jangseong:hour:day-reference",
+            "natal:twelve_sinsal_jangseong:month:day-reference",
+            "position:hour",
+            "position:month",
+            "position:year",
+            "reference:YEAR_BRANCH",
+            "referenceBranch:子",
+            "sajuFeatureTaxonomy:sinsal_hyeonchim",
+            "sajuFeatureTaxonomy:ten_god_qi_sha",
+            "sajuFeatureTaxonomy:twelve_sinsal_jangseong",
+            "sajuKnowledgeBase:sinsal_hyeonchim",
+            "sajuKnowledgeBase:ten_god_qi_sha",
+            "shinsal:HYEONCHIMSAL",
+            "shinsal:TWELVE_JANGSEONGSAL",
+            "source:BRANCH_GROUP_TO_BRANCH",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:hyeonchim:묘",
+            "v1:sinsal:장성살",
+            "v1:sinsal:현침살",
+            "v1:twelveSinsal:해:묘",
+            "v4:career-route:lead",
+            "v4:career-setting:sales_operations",
+            "v4:career-voice:decisive",
+            "v4:fusion-rule:entj-needle",
+            "v4:fusion-rule:entj-pressure",
+            "v4:material-depth:ten_god_qi_sha",
+            "v4:material-depth:twelve_sinsal_jangseong",
+            "v4:semantic-meaning:sinsal_hyeonchim",
+            "v4:semantic-meaning:ten_god_qi_sha",
+            "mbti:ENTJ:traits:identity:commanding_goal_builder:plainKo",
+            "mbti:ENTJ:traits:identity:future_change_leader:plainKo",
+            "natal:ten-god:month:visible:丁",
+            "supplement:marker:JANGSEONG"
+          ]
+        }
+      },
+      {
+        "id": "market",
+        "roleExamples": [
+          "고객 제안",
+          "사업 기획",
+          "영업 기획"
+        ],
+        "reason": "2순위 · 고객 제안·사업 기획·새 거래처 개발 — 성과가 실제 거래로 이어지는 고객 제안과 사업 기획도 살펴볼 만합니다. 상대가 망설이는 조건을 좁혀 해결할 제안을 만드는 과정에서 빠른 판단을 쓸 수 있습니다. 편재·정재에서 볼 수 있는 장점을 사람이 필요한 것과 제공할 수 있는 것을 맞춰 거래로 잇는 일에 쓰는 방향이에요.",
+        "environment": "팔기 위해 무리한 약속을 늘리는 곳보다 제품과 제공 범위를 함께 조율할 수 있는 환경이 낫습니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "ten_god_pian_cai",
+            "ten_god_zheng_cai",
+            "v4_structure:outputCreatesWealth",
+            "sinsal_hyeonchim"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "entj-made-value-structure",
+            "entj-wealth",
+            "entj-needle"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:偏財",
+            "SajuCalcResult:tenGods.distribution:正財",
+            "basis:BRANCH_ONLY",
+            "branch:卯",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:sinsal_hyeonchim",
+            "careerContextV3:normalized-dimensions",
+            "docs/product/mbti/source/ENTJ.json:traits:money:high_earning_orientation",
+            "docs/product/mbti/source/ENTJ.json:traits:thinkingStyle:fast_decisive_filter",
+            "getTenGod:辛:乙:偏財",
+            "getTenGod:辛:壬:傷官",
+            "getTenGod:辛:甲:正財",
+            "getTenGod:辛:癸:食神",
+            "input:detailJob",
+            "input:jobStatus",
+            "natal:sinsal_hyeonchim",
+            "pillars:day:辛亥",
+            "pillars:hour:辛卯",
+            "pillars:month:丁卯",
+            "pillars:year:甲子",
+            "position:hour",
+            "position:month",
+            "saju/analyze.ts:analyzeVisibleTenGods",
+            "saju/constants.ts:HIDDEN_STEMS:亥:壬:MAIN:0.6",
+            "saju/constants.ts:HIDDEN_STEMS:亥:甲:SUB:0.3",
+            "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+            "saju/constants.ts:HIDDEN_STEMS:子:癸:MAIN:0.6",
+            "sajuFeatureTaxonomy:sinsal_hyeonchim",
+            "sajuFeatureTaxonomy:ten_god_pian_cai",
+            "sajuKnowledgeBase:sinsal_hyeonchim",
+            "sajuKnowledgeBase:ten_god_pian_cai",
+            "sajuKnowledgeBase:ten_god_zheng_cai",
+            "shinsal:HYEONCHIMSAL",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:hyeonchim:묘",
+            "v1:sinsal:현침살",
+            "v4-structure-evidence-1",
+            "v4:career-route:market",
+            "v4:career-setting:sales_operations",
+            "v4:career-voice:decisive",
+            "v4:fusion-rule:entj-made-value-structure",
+            "v4:fusion-rule:entj-needle",
+            "v4:fusion-rule:entj-wealth",
+            "v4:material-depth:ten_god_pian_cai",
+            "v4:material-depth:ten_god_zheng_cai",
+            "v4:semantic-meaning:sinsal_hyeonchim",
+            "v4:semantic-meaning:ten_god_pian_cai",
+            "v4:semantic-meaning:ten_god_zheng_cai",
+            "v4:structure-material:outputCreatesWealth",
+            "v4:structure-rule:outputCreatesWealth"
+          ]
+        }
+      },
+      {
+        "id": "review",
+        "roleExamples": [
+          "제안 검토",
+          "품질 개선",
+          "실행안 점검"
+        ],
+        "reason": "3순위 · 품질 검토·재무 검토·서비스 점검 — 품질이나 제안을 검토하는 자리에서도 그냥 틀린 곳만 지적하는 사람으로 끝나지 않을 수 있습니다. 무엇을 바꾸면 통과할지까지 제시하는 검토는 예리함을 현실적인 해결로 만듭니다. 현침살·상관에서 볼 수 있는 장점을 겉으로는 괜찮아 보이는 결과에서 오류와 빠진 조건을 찾아내는 일에 쓰는 방향이에요. ENTJ의 직업 자료에서도 법조인처럼 이 힘을 쓰는 예를 찾을 수 있습니다. 검토할 일이 생기면 다 끝났다는 말보다 빠진 조건이 없는지 먼저 봅니다. 작은 틀림이 뒤의 결과를 바꾸는 일에서 이 눈을 쓸 수 있어요.",
+        "environment": "발견한 문제를 담당자와 함께 고칠 수 있어야 정확한 말이 관계를 깨는 말로만 남지 않습니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "sinsal_hyeonchim",
+            "ten_god_shang_guan"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "entj-needle"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:傷官",
+            "basis:BRANCH_ONLY",
+            "branch:卯",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:sinsal_hyeonchim",
+            "careerContextV3:normalized-dimensions",
+            "docs/product/mbti/source/ENTJ.json:traits:thinkingStyle:fast_decisive_filter",
+            "input:detailJob",
+            "input:jobStatus",
+            "mbti:ENTJ:recommendedJobs:법조인",
+            "natal:sinsal_hyeonchim",
+            "position:hour",
+            "position:month",
+            "sajuFeatureTaxonomy:sinsal_hyeonchim",
+            "sajuKnowledgeBase:sinsal_hyeonchim",
+            "sajuKnowledgeBase:ten_god_shang_guan",
+            "shinsal:HYEONCHIMSAL",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:hyeonchim:묘",
+            "v1:sinsal:현침살",
+            "v4:career-route:review",
+            "v4:career-setting:sales_operations",
+            "v4:career-voice:decisive",
+            "v4:fusion-rule:entj-needle",
+            "v4:material-depth:sinsal_hyeonchim",
+            "v4:material-depth:ten_god_shang_guan",
+            "v4:semantic-meaning:sinsal_hyeonchim",
+            "v4:semantic-meaning:ten_god_shang_guan",
+            "foundation:element:METAL:BALANCED",
+            "mbti:ENTJ:traits:career:entrepreneurial_income_potential:plainKo",
+            "mbti:ENTJ:traits:thinkingStyle:future_obstacle_logic:plainKo",
+            "mbti:ENTJ:traits:thinkingStyle:te_ni_strategy:plainKo",
+            "natal:day:stem:辛",
+            "natal:hour:stem:辛",
+            "natal:month:stem:丁",
+            "natal:ten-god:day:MAIN:壬",
+            "supplement:marker:HYEONCHIM"
+          ]
+        }
+      }
+    ],
+    "studyBasis": {
+      "traitId": "high_achievement_study",
+      "type": "ENTJ",
+      "provenance": "direct",
+      "feature": "gwiin_hakdang"
+    },
+    "bookPageCount": 17,
+    "textSha256": "8d6498ed75b7cf241ba23a922e874cc120222637830f19a27743d239722f2996"
+  },
+  {
+    "id": "E",
+    "version": "career-editorial-release-01-v1",
+    "publishedEdition": "career-editorial-release-01-v1",
+    "bodyLength": 9788,
+    "paragraphs": 36,
+    "sentences": 145,
+    "chapters": [
+      {
+        "id": "CH01",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH02",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH03",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH04",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH05",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH06",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH07",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH08",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH09",
+        "paragraphs": 4
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    },
+    "recommendations": [
+      {
+        "id": "lead",
+        "roleExamples": [
+          "프로젝트 조정",
+          "동아리 기획",
+          "팀 운영"
+        ],
+        "reason": "1순위 · 프로젝트 책임·운영 조정·팀 리더 — 회의는 재미있었는데 그래서 누가 무엇을 끝낼까요? 그 마지막 선택까지 이끄는 프로젝트 조정이라면 발상과 리더십을 같이 써볼 수 있습니다. 편관·정관에서 볼 수 있는 장점을 여러 사람이 기다리는 결정을 내리고 역할을 이어주는 일에 쓰는 방향이에요. ENTP의 직업 자료에서도 정치인처럼 이 힘을 쓰는 예를 찾을 수 있습니다. 맡은 일이 생기면 끝냈다는 말로만 넘기지 않아요. 남은 것이 없는지 확인하고 약속한 만큼 지키려 합니다.",
+        "environment": "서로 다른 의견을 하나의 결과로 모았을 때, 말 잘하는 사람이라는 인상이 맡겨볼 사람이라는 믿음으로 달라집니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "ten_god_qi_sha",
+            "ten_god_zheng_guan",
+            "sinsal_hyeonchim",
+            "v4_structure:hurtingOfficerMeetsOfficer"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "entp-rules",
+            "entp-needle",
+            "entp-question-authority-structure"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:偏官",
+            "SajuCalcResult:tenGods.distribution:正官",
+            "basis:BRANCH_ONLY",
+            "branch:卯",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:sinsal_hyeonchim",
+            "careerContextV3:normalized-dimensions",
+            "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:flaw_detection",
+            "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:possibility_scanning",
+            "getTenGod:壬:乙:傷官",
+            "getTenGod:壬:己:正官",
+            "input:detailJob",
+            "input:jobStatus",
+            "mbti:ENTP:recommendedJobs:정치인",
+            "natal:sinsal_hyeonchim",
+            "pillars:day:壬辰",
+            "pillars:hour:辛丑",
+            "pillars:month:乙亥",
+            "pillars:year:己卯",
+            "position:year",
+            "saju/analyze.ts:analyzeVisibleTenGods",
+            "saju/constants.ts:HIDDEN_STEMS:丑:己:MAIN:0.6",
+            "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+            "saju/constants.ts:HIDDEN_STEMS:辰:乙:SUB:0.3",
+            "sajuFeatureTaxonomy:sinsal_hyeonchim",
+            "sajuFeatureTaxonomy:ten_god_zheng_guan",
+            "sajuKnowledgeBase:sinsal_hyeonchim",
+            "sajuKnowledgeBase:ten_god_qi_sha",
+            "sajuKnowledgeBase:ten_god_zheng_guan",
+            "shinsal:HYEONCHIMSAL",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:hyeonchim:묘",
+            "v1:sinsal:현침살",
+            "v4-structure-evidence-1",
+            "v4:career-route:lead",
+            "v4:career-setting:unknown",
+            "v4:career-voice:challenger",
+            "v4:fusion-rule:entp-needle",
+            "v4:fusion-rule:entp-question-authority-structure",
+            "v4:fusion-rule:entp-rules",
+            "v4:material-depth:ten_god_qi_sha",
+            "v4:material-depth:ten_god_zheng_guan",
+            "v4:semantic-meaning:sinsal_hyeonchim",
+            "v4:semantic-meaning:ten_god_qi_sha",
+            "v4:semantic-meaning:ten_god_zheng_guan",
+            "v4:structure-material:hurtingOfficerMeetsOfficer",
+            "v4:structure-rule:hurtingOfficerMeetsOfficer",
+            "foundation:element:EARTH:STRONG",
+            "foundation:yin_yang:STRONG_YIN"
+          ]
+        }
+      },
+      {
+        "id": "review",
+        "roleExamples": [
+          "제품 점검",
+          "품질 검토",
+          "사용 조건 실험"
+        ],
+        "reason": "2순위 · 품질 검토·재무 검토·서비스 점검 — 남들이 안 누른 버튼을 굳이 눌러보는 눈도 쓸모가 있습니다. 예상과 다른 조건을 시험하는 제품 점검에서는 그 호기심이 놓친 빈틈을 찾아냅니다. 귀문관살·현침살에서 볼 수 있는 장점을 겉으로는 괜찮아 보이는 결과에서 오류와 빠진 조건을 찾아내는 일에 쓰는 방향이에요. ENTP의 직업 자료에서도 법조인처럼 이 힘을 쓰는 예를 찾을 수 있습니다. 검토할 일이 생기면 다 끝났다는 말보다 빠진 조건이 없는지 먼저 봅니다. 작은 틀림이 뒤의 결과를 바꾸는 일에서 이 눈을 쓸 수 있어요.",
+        "environment": "‘그런 걸 왜 물어?’보다 ‘그 경우는 생각 못 했네’가 돌아오는 팀이라면 질문이 환영받을 수 있습니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "sinsal_gwimun",
+            "sinsal_hyeonchim",
+            "v4_structure:hurtingOfficerMeetsOfficer"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "entp-needle",
+            "entp-question-authority-structure"
+          ],
+          "sourceRefs": [
+            "basis:BRANCH_ONLY",
+            "branch:卯",
+            "canonical-natal-table-v1:features:sinsal_gwimun",
+            "canonical-natal-table-v1:features:sinsal_hyeonchim",
+            "careerContextV3:normalized-dimensions",
+            "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:flaw_detection",
+            "getTenGod:壬:乙:傷官",
+            "getTenGod:壬:己:正官",
+            "input:detailJob",
+            "input:jobStatus",
+            "mbti:ENTP:recommendedJobs:법조인",
+            "natal:sinsal_gwimun",
+            "natal:sinsal_hyeonchim",
+            "pillars:day:壬辰",
+            "pillars:hour:辛丑",
+            "pillars:month:乙亥",
+            "pillars:year:己卯",
+            "position:year",
+            "saju/analyze.ts:analyzeVisibleTenGods",
+            "saju/constants.ts:HIDDEN_STEMS:丑:己:MAIN:0.6",
+            "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+            "saju/constants.ts:HIDDEN_STEMS:辰:乙:SUB:0.3",
+            "sajuFeatureTaxonomy:sinsal_gwimun",
+            "sajuFeatureTaxonomy:sinsal_hyeonchim",
+            "sajuKnowledgeBase:sinsal_hyeonchim",
+            "shinsal:HYEONCHIMSAL",
+            "v1:gwimun:pair",
+            "v1:hyeonchim:묘",
+            "v1:sinsal:현침살",
+            "v4-structure-evidence-1",
+            "v4:career-route:review",
+            "v4:career-setting:unknown",
+            "v4:career-voice:challenger",
+            "v4:fusion-rule:entp-needle",
+            "v4:fusion-rule:entp-question-authority-structure",
+            "v4:material-depth:sinsal_gwimun",
+            "v4:material-depth:sinsal_hyeonchim",
+            "v4:semantic-meaning:sinsal_hyeonchim",
+            "v4:structure-material:hurtingOfficerMeetsOfficer",
+            "v4:structure-rule:hurtingOfficerMeetsOfficer",
+            "foundation:element:WATER:STRONG",
+            "mbti:ENTP:traits:thinkingStyle:debate_as_processing:plainKo",
+            "mbti:ENTP:traits:thinkingStyle:flaw_detection:plainKo",
+            "mbti:ENTP:traits:thinkingStyle:logical_core_detection:plainKo",
+            "mbti:ENTP:traits:workplace:constructive_critic:plainKo",
+            "natal:day:stem:壬",
+            "natal:month:branch:亥",
+            "natal:ten-god:day:SUB:乙",
+            "natal:ten-god:month:visible:乙",
+            "natal:ten-god:year:MAIN:乙",
+            "supplement:marker:GWIMUN"
+          ]
+        }
+      },
+      {
+        "id": "create",
+        "roleExamples": [
+          "서비스 기획",
+          "제품 아이디어 실험",
+          "콘텐츠 제작"
+        ],
+        "reason": "3순위 · 콘텐츠 기획·브랜드 제작·설명 자료 개발 — 다르게 생각한 것을 보여줄 수 있는 기획과 제작이 좋은 탐색 방향입니다. 서비스 기획이나 간단한 제품 제작에서는 기존 방법의 불편을 새 제안으로 바꾸는 힘을 시험할 수 있습니다. 상관·상관견관 긴장에서 볼 수 있는 장점을 아직 모양이 없는 생각을 사람이 이해하고 반응할 결과로 만드는 일에 쓰는 방향이에요. 설명만 길어질 때는 직접 만든 것을 놓고 이야기하고 싶어 해요. 눈에 보이는 결과를 만들면 무엇을 고칠지도 함께 확인할 수 있습니다.",
+        "environment": "배우는 단계라면 같은 과제 안에서 주제나 만드는 방식을 달리해보고 반응까지 받는 경험부터 시작할 만합니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "ten_god_shang_guan",
+            "v4_structure:hurtingOfficerMeetsOfficer",
+            "sinsal_hyeonchim"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "entp-question-authority-structure",
+            "entp-needle"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:傷官",
+            "basis:BRANCH_ONLY",
+            "branch:卯",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:sinsal_hyeonchim",
+            "careerContextV3:normalized-dimensions",
+            "docs/product/mbti/source/ENTP.json:traits:thinkingStyle:flaw_detection",
+            "getTenGod:壬:乙:傷官",
+            "getTenGod:壬:己:正官",
+            "input:detailJob",
+            "input:jobStatus",
+            "natal:sinsal_hyeonchim",
+            "pillars:day:壬辰",
+            "pillars:hour:辛丑",
+            "pillars:month:乙亥",
+            "pillars:year:己卯",
+            "position:year",
+            "saju/analyze.ts:analyzeVisibleTenGods",
+            "saju/constants.ts:HIDDEN_STEMS:丑:己:MAIN:0.6",
+            "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6",
+            "saju/constants.ts:HIDDEN_STEMS:辰:乙:SUB:0.3",
+            "sajuFeatureTaxonomy:sinsal_hyeonchim",
+            "sajuKnowledgeBase:sinsal_hyeonchim",
+            "sajuKnowledgeBase:ten_god_shang_guan",
+            "shinsal:HYEONCHIMSAL",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:hyeonchim:묘",
+            "v1:sinsal:현침살",
+            "v4-structure-evidence-1",
+            "v4:career-route:create",
+            "v4:career-setting:unknown",
+            "v4:career-voice:challenger",
+            "v4:fusion-rule:entp-needle",
+            "v4:fusion-rule:entp-question-authority-structure",
+            "v4:material-depth:ten_god_shang_guan",
+            "v4:material-depth:v4_structure:hurtingOfficerMeetsOfficer",
+            "v4:semantic-meaning:sinsal_hyeonchim",
+            "v4:semantic-meaning:ten_god_shang_guan",
+            "v4:structure-material:hurtingOfficerMeetsOfficer",
+            "v4:structure-rule:hurtingOfficerMeetsOfficer",
+            "foundation:element:WATER:STRONG",
+            "foundation:yin_yang:STRONG_YIN",
+            "mbti:ENTP:traits:career:entrepreneurial_drive:plainKo",
+            "mbti:ENTP:traits:career:tech_problem_solver:plainKo",
+            "mbti:ENTP:traits:strengths:creative_problem_solving:plainKo",
+            "mbti:ENTP:traits:workplace:brainstorming_leader:plainKo",
+            "natal:month:branch:亥",
+            "supplement:marker:GWIMUN",
+            "supplement:marker:HWAGAE",
+            "supplement:marker:WOL",
+            "supplement:stage:year:사"
+          ]
+        }
+      }
+    ],
+    "studyBasis": {
+      "traitId": "interest_based_learning",
+      "type": "ENTP",
+      "provenance": "direct",
+      "feature": "sinsal_gwimun"
+    },
+    "bookPageCount": 17,
+    "textSha256": "3c7cfd532c242e5984a38ca51733bd8e0c33da369e5ee79cce435e71b62067c1"
+  },
+  {
+    "id": "F",
+    "version": "career-editorial-release-01-v1",
+    "publishedEdition": "career-editorial-release-01-v1",
+    "bodyLength": 9779,
+    "paragraphs": 36,
+    "sentences": 145,
+    "chapters": [
+      {
+        "id": "CH01",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH02",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH03",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH04",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH05",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH06",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH07",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH08",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH09",
+        "paragraphs": 4
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    },
+    "recommendations": [
+      {
+        "id": "investigate",
+        "roleExamples": [
+          "개발 연구",
+          "기술 분석",
+          "원인 조사"
+        ],
+        "reason": "1순위 · 개발·연구·자료 조사·전문 분야 분석 — 이유를 오래 붙드는 힘을 개발·연구·기술 분석에 써볼 만합니다. 특히 한 번의 답보다 다시 통할 원인을 찾아야 하는 문제에서 전문성을 만들 여지가 큽니다. 편인·화개살에서 볼 수 있는 장점을 원인이 분명하지 않은 문제를 나누어 조사하고 설명하는 일에 쓰는 방향이에요. INTP의 직업 자료에서도 과학자·연구원처럼 이 힘을 쓰는 예를 찾을 수 있습니다. 처음 보는 일을 맡았을 때 예전 답을 그대로 쓰기보다 다른 사례도 찾아봅니다. 모르는 것을 묻고 알아보는 과정까지 일의 일부로 보는 쪽이에요.",
+        "environment": "모르는 것을 바로 인정하고 다른 가설을 시험해볼 자료와 동료가 있으면 혼자 깊이 파는 시간이 고립되지 않습니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "ten_god_pian_yin",
+            "twelve_sinsal_hwagae",
+            "v4_structure:killingResourceFlow"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "intp-inquiry",
+            "intp-pressure-learning-structure"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:偏印",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:twelve_sinsal_hwagae",
+            "careerContextV3:normalized-dimensions",
+            "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+            "getTenGod:壬:庚:偏印",
+            "getTenGod:壬:戊:偏官",
+            "getTenGod:壬:辛:正印",
+            "input:detailJob",
+            "input:jobStatus",
+            "mbti:INTP:recommendedJobs:경제·데이터 분석가",
+            "mbti:INTP:recommendedJobs:과학자",
+            "mbti:INTP:recommendedJobs:연구원",
+            "natal:twelve_sinsal_hwagae",
+            "pillars:day:壬戌",
+            "pillars:hour:戊申",
+            "pillars:month:辛未",
+            "saju/analyze.ts:analyzeVisibleTenGods",
+            "saju/constants.ts:HIDDEN_STEMS:戌:戊:MAIN:0.6",
+            "saju/constants.ts:HIDDEN_STEMS:戌:辛:SUB:0.3",
+            "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6",
+            "saju/constants.ts:HIDDEN_STEMS:申:戊:MINOR:0.1",
+            "sajuFeatureTaxonomy:ten_god_pian_yin",
+            "sajuFeatureTaxonomy:twelve_sinsal_hwagae",
+            "sajuKnowledgeBase:ten_god_pian_yin",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:twelveSinsal:술:술",
+            "v4-structure-evidence-1",
+            "v4:career-route:investigate",
+            "v4:career-setting:language_mediation",
+            "v4:career-voice:inquiry",
+            "v4:fusion-rule:intp-inquiry",
+            "v4:fusion-rule:intp-pressure-learning-structure",
+            "v4:material-depth:ten_god_pian_yin",
+            "v4:material-depth:twelve_sinsal_hwagae",
+            "v4:semantic-meaning:ten_god_pian_yin",
+            "v4:structure-material:killingResourceFlow",
+            "v4:structure-rule:killingResourceFlow",
+            "foundation:element:WATER:BALANCED",
+            "mbti:INTP:traits:strengths:lie_and_trick_detection:plainKo",
+            "mbti:INTP:traits:strengths:open_criticism_processing:plainKo",
+            "mbti:INTP:traits:thinkingStyle:proof_before_agreement:plainKo",
+            "mbti:INTP:traits:workplace:scope_clarity_contract:plainKo",
+            "natal:day:stem:壬",
+            "natal:ten-god:hour:MAIN:庚",
+            "natal:ten-god:month:MINOR:乙"
+          ]
+        }
+      },
+      {
+        "id": "teach",
+        "roleExamples": [
+          "기술 문서",
+          "실습 교재 개발",
+          "전문 지식 전달"
+        ],
+        "reason": "2순위 · 교육 기획·사용 안내·동료 교육 — 내가 없어도 다음 사람이 해낼 수 있게 남기는 일은 어떨까요? 기술 문서나 실습 교재에서는 나만 알던 순서를 빠뜨리지 않는 꼼꼼함이 힘이 됩니다. 천덕귀인·학당귀인에서 볼 수 있는 장점을 알고 있는 내용을 상대가 스스로 해볼 수 있게 나누어 전하는 일에 쓰는 방향이에요.",
+        "environment": "계속 분위기를 띄우는 강의보다 직접 따라 해볼 자료를 만드는 쪽에서 차분한 전달력을 써볼 만합니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "gwiin_cheondeok",
+            "gwiin_hakdang",
+            "v4_structure:killingResourceFlow",
+            "ten_god_pian_yin"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "intp-pressure-learning-structure",
+            "intp-inquiry"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:偏印",
+            "basis:DAY_STEM_TO_BRANCH",
+            "basis:MONTH_BRANCH_TO_STEM_OR_BRANCH",
+            "branch:申",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:gwiin_cheondeok",
+            "canonical-natal-table-v1:features:gwiin_hakdang",
+            "careerContextV3:normalized-dimensions",
+            "dayStem:壬",
+            "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+            "getTenGod:壬:庚:偏印",
+            "getTenGod:壬:戊:偏官",
+            "getTenGod:壬:辛:正印",
+            "input:detailJob",
+            "input:jobStatus",
+            "monthBranch:未",
+            "natal:gwiin_cheondeok",
+            "natal:gwiin_hakdang",
+            "pillars:day:壬戌",
+            "pillars:hour:戊申",
+            "pillars:month:辛未",
+            "position:hour",
+            "position:year",
+            "saju/analyze.ts:analyzeVisibleTenGods",
+            "saju/constants.ts:HIDDEN_STEMS:戌:戊:MAIN:0.6",
+            "saju/constants.ts:HIDDEN_STEMS:戌:辛:SUB:0.3",
+            "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6",
+            "saju/constants.ts:HIDDEN_STEMS:申:戊:MINOR:0.1",
+            "sajuFeatureTaxonomy:gwiin_cheondeok",
+            "sajuFeatureTaxonomy:gwiin_hakdang",
+            "sajuFeatureTaxonomy:ten_god_pian_yin",
+            "sajuKnowledgeBase:ten_god_pian_yin",
+            "shinsal:CHEON_DEOK_GWIIN",
+            "shinsal:HAK_DANG_GWIIN",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "target:甲",
+            "v1:gwiin:천덕귀인",
+            "v1:gwiin:학당귀인",
+            "v4-structure-evidence-1",
+            "v4:career-route:teach",
+            "v4:career-setting:language_mediation",
+            "v4:career-voice:inquiry",
+            "v4:fusion-rule:intp-inquiry",
+            "v4:fusion-rule:intp-pressure-learning-structure",
+            "v4:material-depth:gwiin_cheondeok",
+            "v4:material-depth:gwiin_hakdang",
+            "v4:semantic-meaning:ten_god_pian_yin",
+            "v4:structure-material:killingResourceFlow",
+            "v4:structure-rule:killingResourceFlow"
+          ]
+        }
+      },
+      {
+        "id": "create",
+        "roleExamples": [
+          "도구 개발",
+          "시제품 제작",
+          "설명용 실험 설계"
+        ],
+        "reason": "3순위 · 콘텐츠 기획·브랜드 제작·설명 자료 개발 — 머릿속에서만 되던 것을 작은 도구로 만들어보는 재미도 있습니다. 매번 손으로 하던 일이 한 번의 실행으로 끝나면, 생각이 눈앞의 편리함으로 바뀝니다. 홍염살·식신에서 볼 수 있는 장점을 아직 모양이 없는 생각을 사람이 이해하고 반응할 결과로 만드는 일에 쓰는 방향이에요. 설명만 길어질 때는 직접 만든 것을 놓고 이야기하고 싶어 해요. 눈에 보이는 결과를 만들면 무엇을 고칠지도 함께 확인할 수 있습니다.",
+        "environment": "시제품이나 도구 개발처럼 만들고 시험할 여유가 있는 역할에서 이런 손맛을 느낄 수 있습니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "sinsal_hongyeom",
+            "ten_god_shi_shen",
+            "ten_god_pian_yin",
+            "v4_structure:killingResourceFlow"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "intp-inquiry",
+            "intp-pressure-learning-structure"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:偏印",
+            "SajuCalcResult:tenGods.distribution:食神",
+            "basis:DAY_STEM_TO_BRANCH",
+            "branch:子",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:sinsal_hongyeom",
+            "careerContextV3:normalized-dimensions",
+            "dayStem:壬",
+            "docs/product/mbti/source/INTP.json:traits:thinkingStyle:why_question_loop",
+            "getTenGod:壬:庚:偏印",
+            "getTenGod:壬:戊:偏官",
+            "getTenGod:壬:辛:正印",
+            "input:detailJob",
+            "input:jobStatus",
+            "natal:sinsal_hongyeom",
+            "pillars:day:壬戌",
+            "pillars:hour:戊申",
+            "pillars:month:辛未",
+            "position:year",
+            "saju/analyze.ts:analyzeVisibleTenGods",
+            "saju/constants.ts:HIDDEN_STEMS:戌:戊:MAIN:0.6",
+            "saju/constants.ts:HIDDEN_STEMS:戌:辛:SUB:0.3",
+            "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6",
+            "saju/constants.ts:HIDDEN_STEMS:申:戊:MINOR:0.1",
+            "sajuFeatureTaxonomy:sinsal_hongyeom",
+            "sajuFeatureTaxonomy:ten_god_pian_yin",
+            "sajuKnowledgeBase:ten_god_pian_yin",
+            "sajuKnowledgeBase:ten_god_shi_shen",
+            "shinsal:HONGYEOMSAL",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:sinsal:홍염살",
+            "v4-structure-evidence-1",
+            "v4:career-route:create",
+            "v4:career-setting:language_mediation",
+            "v4:career-voice:inquiry",
+            "v4:fusion-rule:intp-inquiry",
+            "v4:fusion-rule:intp-pressure-learning-structure",
+            "v4:material-depth:sinsal_hongyeom",
+            "v4:material-depth:ten_god_shi_shen",
+            "v4:semantic-meaning:ten_god_pian_yin",
+            "v4:semantic-meaning:ten_god_shi_shen",
+            "v4:structure-material:killingResourceFlow",
+            "v4:structure-rule:killingResourceFlow",
+            "foundation:element:WATER:BALANCED",
+            "natal:ten-god:hour:MAIN:庚",
+            "natal:ten-god:year:visible:甲",
+            "natal:year:branch:子",
+            "supplement:marker:HAKDANG",
+            "supplement:marker:TAEGEUK",
+            "supplement:marker:WOL",
+            "supplement:stage:hour:장생"
+          ]
+        }
+      }
+    ],
+    "studyBasis": {
+      "traitId": "math_science_affinity",
+      "type": "INTP",
+      "provenance": "direct",
+      "feature": "gwiin_hakdang"
+    },
+    "bookPageCount": 17,
+    "textSha256": "a9674aeea360e52addc4d9b84500114ad6aa9ced7186df4a0bacdd11b5ced481"
+  },
+  {
+    "id": "G",
+    "version": "career-editorial-release-01-v1",
+    "publishedEdition": "career-editorial-release-01-v1",
+    "bodyLength": 9872,
+    "paragraphs": 36,
+    "sentences": 146,
+    "chapters": [
+      {
+        "id": "CH01",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH02",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH03",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH04",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH05",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH06",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH07",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH08",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH09",
+        "paragraphs": 4
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": []
+    },
+    "recommendations": [
+      {
+        "id": "manage",
+        "roleExamples": [
+          "서비스 운영 개선",
+          "문의 흐름 정비",
+          "현장 조정"
+        ],
+        "reason": "1순위 · 운영 기획·예산 관리·장기 고객 관리 — 어디에서 일이 자주 막히는지 보는 감각을 운영 개선에도 쓸 수 있습니다. 주문이나 문의의 흐름을 바꾸고 불편이 줄었는지 확인하는 역할이 한 가지 후보입니다. 정재·정인에서 볼 수 있는 장점을 한 번 잘된 일을 반복할 수 있도록 약속과 흐름을 지키는 일에 쓰는 방향이에요. 새로운 제안을 볼 때도 오래 유지할 수 있는지 확인하고 싶어 해요. 한 번만 되는 방식보다 반복해 지킬 수 있는 조건을 중요하게 봅니다.",
+        "environment": "같은 순서를 빨리 반복하라는 자리보다 실제 막힘을 고칠 권한이 있는지가 먼저 보이면 좋습니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "ten_god_zheng_cai",
+            "ten_god_zheng_yin",
+            "sinsal_hyeonchim"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "estp-study",
+            "estp-needle"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:正印",
+            "SajuCalcResult:tenGods.distribution:正財",
+            "basis:BRANCH_ONLY",
+            "branch:酉",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:sinsal_hyeonchim",
+            "careerContextV3:normalized-dimensions",
+            "docs/product/mbti/source/ESTP.json:traits:study:experiential_learning",
+            "docs/product/mbti/source/ESTP.json:traits:thinkingStyle:se_now_data",
+            "input:detailJob",
+            "input:jobStatus",
+            "natal:sinsal_hyeonchim",
+            "position:hour",
+            "sajuFeatureTaxonomy:sinsal_hyeonchim",
+            "sajuFeatureTaxonomy:ten_god_zheng_yin",
+            "sajuKnowledgeBase:sinsal_hyeonchim",
+            "sajuKnowledgeBase:ten_god_zheng_cai",
+            "sajuKnowledgeBase:ten_god_zheng_yin",
+            "shinsal:HYEONCHIMSAL",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:hyeonchim:유",
+            "v1:sinsal:현침살",
+            "v4:career-route:manage",
+            "v4:career-setting:unknown",
+            "v4:career-voice:field",
+            "v4:fusion-rule:estp-needle",
+            "v4:fusion-rule:estp-study",
+            "v4:material-depth:ten_god_zheng_cai",
+            "v4:material-depth:ten_god_zheng_yin",
+            "v4:semantic-meaning:sinsal_hyeonchim",
+            "v4:semantic-meaning:ten_god_zheng_cai",
+            "v4:semantic-meaning:ten_god_zheng_yin",
+            "foundation:element:EARTH:STRONG",
+            "foundation:element:METAL:STRONG",
+            "natal:month:branch:丑",
+            "natal:month:stem:己",
+            "natal:ten-god:day:MAIN:甲",
+            "natal:ten-god:hour:visible:乙",
+            "natal:ten-god:month:MAIN:己",
+            "natal:ten-god:month:visible:己",
+            "natal:ten-god:year:SUB:乙",
+            "natal:year:branch:辰",
+            "supplement:marker:BANAN",
+            "supplement:stage:month:묘"
+          ]
+        }
+      },
+      {
+        "id": "teach",
+        "roleExamples": [
+          "제품 시연",
+          "실습 안내",
+          "체험 교육"
+        ],
+        "reason": "2순위 · 교육 기획·사용 안내·동료 교육 — 직접 해본 요령을 남이 따라 하게 보여주는 일도 가능합니다. 시연이나 실습 안내에서는 설명을 많이 하기보다 상대가 어디서 막히는지 보고 바꾸는 힘이 쓰입니다. 천덕귀인·천을귀인에서 볼 수 있는 장점을 알고 있는 내용을 상대가 스스로 해볼 수 있게 나누어 전하는 일에 쓰는 방향이에요.",
+        "environment": "한 번에 많은 내용을 외워서 전달하기보다 짧게 보여주고 같이 해볼 수 있는 교육이 더 구체적인 출발점입니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "gwiin_cheondeok",
+            "gwiin_cheoneul",
+            "ten_god_zheng_yin",
+            "sinsal_hyeonchim"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "estp-study",
+            "estp-needle"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:正印",
+            "basis:BRANCH_ONLY",
+            "basis:DAY_STEM_TO_BRANCH",
+            "basis:MONTH_BRANCH_TO_STEM_OR_BRANCH",
+            "branch:丑",
+            "branch:酉",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:gwiin_cheondeok",
+            "canonical-natal-table-v1:features:gwiin_cheoneul",
+            "canonical-natal-table-v1:features:sinsal_hyeonchim",
+            "careerContextV3:normalized-dimensions",
+            "dayStem:庚",
+            "docs/product/mbti/source/ESTP.json:traits:study:experiential_learning",
+            "docs/product/mbti/source/ESTP.json:traits:thinkingStyle:se_now_data",
+            "input:detailJob",
+            "input:jobStatus",
+            "monthBranch:丑",
+            "natal:gwiin_cheondeok",
+            "natal:gwiin_cheoneul",
+            "natal:sinsal_hyeonchim",
+            "position:day",
+            "position:hour",
+            "position:month",
+            "position:year",
+            "sajuFeatureTaxonomy:gwiin_cheondeok",
+            "sajuFeatureTaxonomy:gwiin_cheoneul",
+            "sajuFeatureTaxonomy:sinsal_hyeonchim",
+            "sajuFeatureTaxonomy:ten_god_zheng_yin",
+            "sajuKnowledgeBase:sinsal_hyeonchim",
+            "sajuKnowledgeBase:ten_god_zheng_yin",
+            "shinsal:CHEON_DEOK_GWIIN",
+            "shinsal:CHEON_EUL_GWIIN",
+            "shinsal:HYEONCHIMSAL",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "target:庚",
+            "v1:gwiin:경:축",
+            "v1:gwiin:천덕귀인",
+            "v1:gwiin:천을귀인",
+            "v1:hyeonchim:유",
+            "v1:sinsal:현침살",
+            "v4:career-route:teach",
+            "v4:career-setting:unknown",
+            "v4:career-voice:field",
+            "v4:fusion-rule:estp-needle",
+            "v4:fusion-rule:estp-study",
+            "v4:material-depth:gwiin_cheondeok",
+            "v4:material-depth:gwiin_cheoneul",
+            "v4:semantic-meaning:sinsal_hyeonchim",
+            "v4:semantic-meaning:ten_god_zheng_yin"
+          ]
+        }
+      },
+      {
+        "id": "experience",
+        "roleExamples": [
+          "서비스 경험 기획",
+          "현장 운영",
+          "사용 경험 개선"
+        ],
+        "reason": "3순위 · 고객 경험 기획·행사 운영·제품 체험 설계 — 직접 사용하는 사람의 반응을 바꾸는 일을 먼저 떠올려볼 만합니다. 서비스 경험 기획이나 현장 운영처럼 눈앞의 불편을 고치고 바로 확인하는 역할에서 감각을 써볼 수 있습니다. 도화살·겁재에서 볼 수 있는 장점을 사람이 직접 만나고 사용하며 보이는 반응을 더 좋은 경험으로 바꾸는 일에 쓰는 방향이에요. ESTP의 직업 자료에서도 인터넷 방송인·여행 가이드처럼 이 힘을 쓰는 예를 찾을 수 있습니다.",
+        "environment": "지원 과제를 고를 때도 거창한 기능 수보다 실제 사람이 덜 헤매게 된 장면을 보여줄 수 있으면 좋습니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "sinsal_dohwa",
+            "ten_god_jie_cai",
+            "sinsal_hyeonchim"
+          ],
+          "seedIds": [],
+          "fusionIds": [
+            "estp-needle"
+          ],
+          "sourceRefs": [
+            "SajuCalcResult:tenGods.distribution:劫財",
+            "basis:BRANCH_GROUP_TO_BRANCH",
+            "basis:BRANCH_ONLY",
+            "basis:YEAR_BRANCH_TO_BRANCH",
+            "branch:酉",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:sinsal_dohwa",
+            "canonical-natal-table-v1:features:sinsal_hyeonchim",
+            "canonical-natal-table-v1:features:twelve_sinsal_nyeonsal",
+            "careerContextV3:normalized-dimensions",
+            "docs/product/mbti/source/ESTP.json:traits:thinkingStyle:se_now_data",
+            "input:detailJob",
+            "input:jobStatus",
+            "mbti:ESTP:recommendedJobs:여행 가이드",
+            "mbti:ESTP:recommendedJobs:인터넷 방송인",
+            "natal:sinsal_dohwa",
+            "natal:sinsal_hyeonchim",
+            "natal:twelve_sinsal_nyeonsal",
+            "position:hour",
+            "reference:YEAR_BRANCH",
+            "referenceBranch:辰",
+            "sajuFeatureTaxonomy:sinsal_dohwa",
+            "sajuFeatureTaxonomy:sinsal_hyeonchim",
+            "sajuKnowledgeBase:sinsal_hyeonchim",
+            "sajuKnowledgeBase:ten_god_jie_cai",
+            "shinsal:DOHWASAL",
+            "shinsal:HYEONCHIMSAL",
+            "shinsal:TWELVE_NYEONSAL",
+            "source:BRANCH_GROUP_TO_BRANCH",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:hyeonchim:유",
+            "v1:sinsal:년살",
+            "v1:sinsal:도화살",
+            "v1:sinsal:현침살",
+            "v4:career-route:experience",
+            "v4:career-setting:unknown",
+            "v4:career-voice:field",
+            "v4:fusion-rule:estp-needle",
+            "v4:material-depth:sinsal_dohwa",
+            "v4:material-depth:ten_god_jie_cai",
+            "v4:semantic-meaning:sinsal_hyeonchim",
+            "v4:semantic-meaning:ten_god_jie_cai",
+            "yearBranch:辰"
+          ]
+        }
+      }
+    ],
+    "studyBasis": {
+      "traitId": "experiential_learning",
+      "type": "ESTP",
+      "provenance": "direct",
+      "feature": "sinsal_hyeonchim"
+    },
+    "bookPageCount": 17,
+    "textSha256": "1f7c6bc9e8a5b4e93c7236a8fe54cfebb63c56537daa016dc61386c1a0893b40"
+  },
+  {
+    "id": "H",
+    "version": "career-editorial-release-01-v1",
+    "publishedEdition": "career-editorial-release-01-v1",
+    "bodyLength": 8039,
+    "paragraphs": 30,
+    "sentences": 121,
+    "chapters": [
+      {
+        "id": "CH01",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH02",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH03",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH04",
+        "paragraphs": 3
+      },
+      {
+        "id": "CH05",
+        "paragraphs": 3
+      },
+      {
+        "id": "CH06",
+        "paragraphs": 4
+      },
+      {
+        "id": "CH07",
+        "paragraphs": 3
+      },
+      {
+        "id": "CH08",
+        "paragraphs": 1
+      },
+      {
+        "id": "CH09",
+        "paragraphs": 4
+      }
+    ],
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": [
+        "CH04.P3:NO_INDEPENDENT_WORK-RISK_MATERIAL",
+        "CH05.P2:NO_INDEPENDENT_CURRENT-APPLICATION_MATERIAL",
+        "CH07.P3:NO_INDEPENDENT_LEARNING-RISK_MATERIAL",
+        "CH08.P1:NO_INDEPENDENT_POSITIVE-CAPABILITY_MATERIAL",
+        "CH08.P3:NO_INDEPENDENT_SUCCESS-RISK_MATERIAL",
+        "CH08.P4:NO_INDEPENDENT_POSITIVE-ACTIVATION_MATERIAL",
+        "CH04:PARAGRAPH_SHORTAGE",
+        "CH05:PARAGRAPH_SHORTAGE",
+        "CH07:PARAGRAPH_SHORTAGE",
+        "CH08:PARAGRAPH_SHORTAGE"
+      ]
+    },
+    "recommendations": [
+      {
+        "id": "lead",
+        "roleExamples": [
+          "프로젝트 조정",
+          "일정 운영",
+          "작은 팀 책임"
+        ],
+        "reason": "1순위 · 프로젝트 책임·운영 조정·팀 리더 — 여러 사람이 할 일을 이어주는 조정 역할도 생각해볼 수 있습니다. 앞에 설 힘을 큰 직함으로만 상상하지 않고 작은 일정이나 프로젝트를 끝까지 연결해본 경험에서 확인하는 길입니다. 양인살·겁재에서 볼 수 있는 장점을 여러 사람이 기다리는 결정을 내리고 역할을 이어주는 일에 쓰는 방향이에요.",
+        "environment": "남을 대신해 전부 해주는 역할이 아니라 각자가 무엇을 맡을지 정할 수 있는 범위가 있어야 내 힘도 남습니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "sinsal_yangin",
+            "ten_god_jie_cai",
+            "day_master_jeonghwa",
+            "day_pillar_jeongmyo"
+          ],
+          "seedIds": [],
+          "fusionIds": [],
+          "sourceRefs": [
+            "SajuCalcResult:saju-calendar-kst-v2:day_master_jeonghwa",
+            "SajuCalcResult:tenGods.distribution:劫財",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:day_pillar_jeongmyo",
+            "canonical-natal-table-v1:features:sinsal_yangin",
+            "careerContextV3:normalized-dimensions",
+            "input:detailJob",
+            "input:jobStatus",
+            "natal:day_pillar_jeongmyo",
+            "natal:sinsal_yangin",
+            "sajuDayPillarKnowledge:day_pillar_jeongmyo:coreKeywords",
+            "sajuDayPillarKnowledge:day_pillar_jeongmyo:symbolicImage",
+            "sajuFeatureTaxonomy:sinsal_yangin",
+            "sajuKnowledgeBase:day_master_jeonghwa",
+            "sajuKnowledgeBase:ten_god_jie_cai",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:dayPillar:정묘",
+            "v1:yangin:정:사",
+            "v4:career-route:lead",
+            "v4:career-setting:recovery",
+            "v4:career-voice:natal",
+            "v4:material-depth:day_master_jeonghwa",
+            "v4:material-depth:day_pillar_jeongmyo",
+            "v4:material-depth:sinsal_yangin",
+            "v4:material-depth:ten_god_jie_cai",
+            "v4:semantic-meaning:ten_god_jie_cai"
+          ]
+        }
+      },
+      {
+        "id": "experience",
+        "roleExamples": [
+          "고객 경험 운영",
+          "체험 안내",
+          "응대 개선"
+        ],
+        "reason": "2순위 · 고객 경험 기획·행사 운영·제품 체험 설계 — 사람이 직접 겪는 불편을 편한 경험으로 바꾸는 역할을 살펴볼 만합니다. 고객 응대나 체험 운영에서 실제 표정과 반응을 보고 바꿔본 경험은, 다시 찾아올 이유를 만드는 실력이 될 수 있습니다. 겁재에서 볼 수 있는 장점을 사람이 직접 만나고 사용하며 보이는 반응을 더 좋은 경험으로 바꾸는 일에 쓰는 방향이에요.",
+        "environment": "처음부터 큰 기획을 맡기보다 짧게 참여해 손에 익는 부분과 에너지가 빠지는 부분을 함께 보는 것이 좋습니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "ten_god_jie_cai",
+            "day_master_jeonghwa",
+            "day_pillar_jeongmyo"
+          ],
+          "seedIds": [],
+          "fusionIds": [],
+          "sourceRefs": [
+            "SajuCalcResult:saju-calendar-kst-v2:day_master_jeonghwa",
+            "SajuCalcResult:tenGods.distribution:劫財",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:day_pillar_jeongmyo",
+            "careerContextV3:normalized-dimensions",
+            "input:detailJob",
+            "input:jobStatus",
+            "natal:day_pillar_jeongmyo",
+            "sajuDayPillarKnowledge:day_pillar_jeongmyo:coreKeywords",
+            "sajuDayPillarKnowledge:day_pillar_jeongmyo:symbolicImage",
+            "sajuKnowledgeBase:day_master_jeonghwa",
+            "sajuKnowledgeBase:ten_god_jie_cai",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:dayPillar:정묘",
+            "v4:career-route:experience",
+            "v4:career-setting:recovery",
+            "v4:career-voice:natal",
+            "v4:material-depth:day_master_jeonghwa",
+            "v4:material-depth:day_pillar_jeongmyo",
+            "v4:material-depth:ten_god_jie_cai",
+            "v4:semantic-meaning:ten_god_jie_cai"
+          ]
+        }
+      },
+      {
+        "id": "investigate",
+        "roleExamples": [
+          "자료 조사",
+          "전문 분야 분석 보조",
+          "사례 연구"
+        ],
+        "reason": "3순위 · 개발·연구·자료 조사·전문 분야 분석 — 원인을 바로 알기 어려운 일을 조사하는 방향도 후보입니다. 자료를 대조하고 왜 달랐는지 묻는 작은 조사 과제부터 해보면 오래 파고드는 관심이 실제 업무에서도 편한지 알 수 있습니다. 편인에서 볼 수 있는 장점을 원인이 분명하지 않은 문제를 나누어 조사하고 설명하는 일에 쓰는 방향이에요. 설명을 맡으면 답만 옮기기보다 왜 그런지 확인하고 싶어 해요. 이해되지 않은 부분을 남겨두지 않는 방식이 일의 깊이로 이어집니다.",
+        "environment": "새로 배우는 분야라면 바로 전문가라는 이름을 붙이기보다 확인할 자료와 물어볼 사람이 있는 출발점이 어울립니다.",
+        "basis": "supported-tendency",
+        "proof": {
+          "features": [
+            "ten_god_pian_yin",
+            "day_master_jeonghwa",
+            "day_pillar_jeongmyo"
+          ],
+          "seedIds": [],
+          "fusionIds": [],
+          "sourceRefs": [
+            "SajuCalcResult:saju-calendar-kst-v2:day_master_jeonghwa",
+            "SajuCalcResult:tenGods.distribution:偏印",
+            "calendar:saju-calendar-kst-v2",
+            "canonical-natal-table-v1:features:day_pillar_jeongmyo",
+            "careerContextV3:normalized-dimensions",
+            "input:detailJob",
+            "input:jobStatus",
+            "natal:day_pillar_jeongmyo",
+            "sajuDayPillarKnowledge:day_pillar_jeongmyo:coreKeywords",
+            "sajuDayPillarKnowledge:day_pillar_jeongmyo:symbolicImage",
+            "sajuKnowledgeBase:day_master_jeonghwa",
+            "sajuKnowledgeBase:ten_god_pian_yin",
+            "src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport",
+            "v1:dayPillar:정묘",
+            "v4:career-route:investigate",
+            "v4:career-setting:recovery",
+            "v4:career-voice:natal",
+            "v4:material-depth:day_master_jeonghwa",
+            "v4:material-depth:day_pillar_jeongmyo",
+            "v4:material-depth:ten_god_pian_yin",
+            "v4:semantic-meaning:ten_god_pian_yin",
+            "natal:day:stem:丁",
+            "natal:month:branch:巳",
+            "natal:ten-god:day:MAIN:乙",
+            "natal:ten-god:month:SUB:戊",
+            "natal:ten-god:month:visible:乙",
+            "natal:ten-god:year:MAIN:乙",
+            "natal:year:stem:丁",
+            "supplement:marker:HYEONCHIM",
+            "supplement:marker:TAEGEUK",
+            "supplement:stage:day:병",
+            "supplement:stage:year:병"
+          ]
+        }
+      }
+    ],
+    "studyBasis": null,
+    "bookPageCount": 17,
+    "textSha256": "03e7f6e8d4f094b09c76785227b2ec1adf1eeb67c1b3e3de322ca5ede948bdee"
+  }
+]

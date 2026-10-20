@@ -1,0 +1,52 @@
+{
+  "typescriptBefore": 0,
+  "typescriptAfter": 0,
+  "newDiagnostics": 0,
+  "eslint": "PASS",
+  "eslintWarnings": 0,
+  "productionBuildBefore": "PASS",
+  "productionBuildAfter": "PASS",
+  "observedBuildWarnings": 0,
+  "buildNode": "24.22.0",
+  "next": "16.2.4",
+  "newPublicationTests": 30,
+  "versionedArtifactTests": 22,
+  "newFailedTestIdentities": 0,
+  "allTestsPass": false,
+  "knownRelated": {
+    "before": [
+      5837,
+      46
+    ],
+    "after": [
+      5837,
+      46
+    ]
+  },
+  "businessPartner": {
+    "before": [
+      382,
+      1
+    ],
+    "after": [
+      382,
+      1
+    ],
+    "defaultTimeoutUnchanged": true
+  },
+  "localPGliteRuntime": {
+    "before": [
+      31,
+      9
+    ],
+    "after": [
+      31,
+      9
+    ],
+    "timeoutsUnchanged": true
+  },
+  "editorialPlannerApproval": 543,
+  "integration": 74,
+  "diffCheck": "PASS",
+  "existingResearchSourceHashManifestsChanged": 0
+}

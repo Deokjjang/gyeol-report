@@ -1,0 +1,188 @@
+{
+  "clock": "2026-10-12T12:00:00+09:00",
+  "cases": [
+    {
+      "id": "01-business",
+      "payload": {
+        "productKey": "major_fortune",
+        "productSlug": "major-fortune",
+        "person": {
+          "name": "도윤",
+          "birthDate": "1985-06-30",
+          "birthTime": "06:00",
+          "mbtiType": "INFJ",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "userContext": {
+          "jobStatus": "business_owner",
+          "detailJob": "온라인 교육사업 대표",
+          "relationshipStatus": "married",
+          "focusAreas": []
+        },
+        "productOptions": {
+          "contentVersion": "v3"
+        }
+      }
+    },
+    {
+      "id": "02-employee",
+      "payload": {
+        "productKey": "major_fortune",
+        "productSlug": "major-fortune",
+        "person": {
+          "name": "서진",
+          "birthDate": "1990-07-18",
+          "birthTime": "05:30",
+          "mbtiType": "ENTJ",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "userContext": {
+          "jobStatus": "employee",
+          "detailJob": "B2B SaaS 영업기획",
+          "relationshipStatus": "dating",
+          "focusAreas": []
+        },
+        "productOptions": {
+          "contentVersion": "v3"
+        }
+      }
+    },
+    {
+      "id": "03-freelance",
+      "payload": {
+        "productKey": "major_fortune",
+        "productSlug": "major-fortune",
+        "person": {
+          "name": "서윤",
+          "birthDate": "1994-11-18",
+          "birthTime": "07:42",
+          "mbtiType": "ENFP",
+          "gender": "FEMALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "userContext": {
+          "jobStatus": "freelancer",
+          "detailJob": "브랜드 디자이너",
+          "relationshipStatus": "single",
+          "focusAreas": []
+        },
+        "productOptions": {
+          "contentVersion": "v3"
+        }
+      }
+    },
+    {
+      "id": "04-time-unknown",
+      "payload": {
+        "productKey": "major_fortune",
+        "productSlug": "major-fortune",
+        "person": {
+          "name": "도윤",
+          "birthDate": "1985-06-30",
+          "birthTime": "",
+          "mbtiType": "INFJ",
+          "gender": "MALE",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "userContext": {
+          "jobStatus": "business_owner",
+          "detailJob": "온라인 교육사업 대표",
+          "relationshipStatus": "married",
+          "focusAreas": []
+        },
+        "productOptions": {
+          "contentVersion": "v3"
+        }
+      }
+    },
+    {
+      "id": "05-mbti-unknown",
+      "payload": {
+        "productKey": "major_fortune",
+        "productSlug": "major-fortune",
+        "person": {
+          "name": "도윤",
+          "birthDate": "1985-06-30",
+          "birthTime": "06:00",
+          "mbtiType": "",
+          "gender": "MALE",
+          "birthTimeUnknown": false,
+          "birthTimePrecision": "exact",
+          "approximateBirthTimeSlot": ""
+        },
+        "userContext": {
+          "jobStatus": "business_owner",
+          "detailJob": "온라인 교육사업 대표",
+          "relationshipStatus": "married",
+          "focusAreas": []
+        },
+        "productOptions": {
+          "contentVersion": "v3"
+        }
+      }
+    },
+    {
+      "id": "06-both-unknown",
+      "payload": {
+        "productKey": "major_fortune",
+        "productSlug": "major-fortune",
+        "person": {
+          "name": "도윤",
+          "birthDate": "1985-06-30",
+          "birthTime": "",
+          "mbtiType": "",
+          "gender": "MALE",
+          "birthTimeUnknown": true,
+          "birthTimePrecision": "unknown",
+          "approximateBirthTimeSlot": ""
+        },
+        "userContext": {
+          "jobStatus": "business_owner",
+          "detailJob": "온라인 교육사업 대표",
+          "relationshipStatus": "married",
+          "focusAreas": []
+        },
+        "productOptions": {
+          "contentVersion": "v3"
+        }
+      }
+    }
+  ],
+  "boundaryInputs": [
+    {
+      "birthDate": "2001-06-22",
+      "birthTime": "13:30",
+      "gender": "MALE",
+      "purpose": "exact boundary 2026-12-30T15:30:00+09:00 ±1second"
+    },
+    {
+      "birthDate": "1999-07-31",
+      "birthTime": "",
+      "birthTimeUnknown": true,
+      "gender": "MALE",
+      "purpose": "stable unknown-time range, earliest/latest endpoints, pre-first year"
+    },
+    {
+      "birthDate": "2001-06-22",
+      "birthTimeUnknown": true,
+      "gender": "MALE",
+      "purpose": "DAYUN_UNCERTAIN"
+    }
+  ],
+  "otherEvaluationClocks": [
+    "2027-10-12T12:00:00+09:00",
+    "2033-08-01T12:00:00+09:00"
+  ],
+  "allPeopleFictional": true,
+  "paidExternalCalls": 0
+}

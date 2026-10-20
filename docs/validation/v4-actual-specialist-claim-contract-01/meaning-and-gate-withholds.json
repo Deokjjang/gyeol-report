@@ -1,0 +1,609 @@
+{
+  "originalReviewFile": "docs/validation/v4-conditional-temporal-meaning-source-review-01/temporal-meaning-source-review.json",
+  "originalReviewSha256": "7c3fb51e95373a965e6ee4a4e236d4d57af9b65c63db544c128b4b35c92d9577",
+  "originalReviews": 30,
+  "CDProposals": 24,
+  "EDWeakProposals": 6,
+  "meaningApprovals": 0,
+  "customerApprovals": 0,
+  "pendingMeaningReviews": 30,
+  "customerBinderSourceIntegrityFailures": 30,
+  "candidateStateCounts": {
+    "SOURCE_HELD": 2,
+    "MEANING_REVIEW_REQUIRED": 2,
+    "CONTEXT_REQUIRED": 2,
+    "PRODUCT_REVIEW_REQUIRED": 2,
+    "APPROVAL_PENDING": 2
+  },
+  "sameCandidateCanHaveSeveralWithholds": true,
+  "candidateDetails": [
+    {
+      "candidateId": "actual-specialist-candidate:v1:d334d5e2240bdda1717cb935c3e70e59fc6c1441b9f416124b83737ec5f77150",
+      "originalResearchId": "mfpr:god:편인",
+      "originalMeaningIdentity": null,
+      "originalClaimIdentity": null,
+      "conditionalInterpretation": {
+        "evidenceKind": "CONDITIONAL_INTERPRETIVE_MEANING",
+        "originalText": "선택적 탐색과 다른 관점",
+        "originalMeaningIdentity": null,
+        "meaningApproved": false
+      },
+      "requiredNatal": "원국 편인·식신 실제 조건; 도식 자동 판정 금지",
+      "requiredElement": "생조 오행과 기존 분포; 지원 효과 확정 금지",
+      "temporalReview": {
+        "packetHash": "4a6b2af0dff3727788f61fcb2f45ff91566c1901e19f7789191168cbc3513469",
+        "originalResearchId": "tr:god:편인",
+        "originalMeaningField": "dayun",
+        "originalRecordHash": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+        "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "originalSourceProof": {
+          "locator": {
+            "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+            "exportName": "TEMPORAL_GOD_ROLES",
+            "index": 8,
+            "originalId": "tr:god:편인",
+            "recordSha256": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+            "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+          },
+          "matchedCatalogKey": "kc:v1:73c33fe751a4abd085090038cb55a728d140418a6617a88091bbbca17390ecf4",
+          "originalId": "tr:god:편인",
+          "role": "ORIGINAL_RECORD",
+          "expectedHash": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+          "actualHash": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+          "hashAlgorithm": "SHA256_JSON_INSERTION",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+        },
+        "inheritedSourceProof": {
+          "locator": {
+            "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+            "exportName": "TEMPORAL_GOD_ROLES",
+            "index": 8,
+            "originalId": "tr:god:편인",
+            "recordSha256": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+            "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+            "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+          },
+          "matchedCatalogKey": "kc:v1:73c33fe751a4abd085090038cb55a728d140418a6617a88091bbbca17390ecf4",
+          "originalId": "tr:god:편인",
+          "role": "ORIGINAL_RECORD",
+          "expectedHash": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+          "actualHash": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+          "hashAlgorithm": "SHA256_JSON_INSERTION",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+        },
+        "majorSourceProof": {
+          "locator": {
+            "file": "src/lib/report-knowledge/major-fortune-product-research/tenGodResearch.ts",
+            "exportName": "MAJOR_TEN_GOD_RESEARCH",
+            "index": 8,
+            "originalId": "mfpr:god:편인",
+            "recordSha256": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+            "fileSha256": "5f62dea761af7d28847862e7d045c449f8f6df0fb864b0923f273aa2a71bcba8"
+          },
+          "matchedCatalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+          "originalId": "mfpr:god:편인",
+          "role": "ORIGINAL_RECORD",
+          "expectedHash": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+          "actualHash": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+          "hashAlgorithm": "SHA256_JSON_INSERTION",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+        },
+        "originalConditionReview": {
+          "natalRequired": "원국 편인·식신 실제 조건; 도식 자동 판정 금지",
+          "elementRequired": "생조 오행과 기존 분포; 지원 효과 확정 금지",
+          "extraEvidence": "실제 자료·검증 방법",
+          "positive": "다른 관점이 막힌 문제의 가설을 넓힌다.",
+          "risk": "독특한 생각을 검증된 결론이나 고립 사건으로 만들지 않는다.",
+          "reversal": "추가 조사보다 이미 아는 것을 시험할 때일 수 있다.",
+          "forbidden": [
+            "고독·질병·임신 문제·천재성을 확정하지 않음",
+            "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음"
+          ],
+          "assessment": "natal/element 조건은 연결 근거가 있을 때 별도 확인; 계산된 시간 십성만으로 충족되지 않음. positive/risk/reversal은 관측 사실이 아닌 조건부 제안·제한이다."
+        },
+        "requiredConditions": {
+          "calculated": [
+            "같은 Owner의 실제 기준·대상 천간과 십성",
+            "원국·대운·실효 연주·월간/월지 본기 출처 구별",
+            "원래 cycle/입춘/절입/교운 경계 안의 확정 구간"
+          ],
+          "unresolvedNatal": "원국 편인·식신 실제 조건; 도식 자동 판정 금지",
+          "unresolvedElement": "생조 오행과 기존 분포; 지원 효과 확정 금지",
+          "modernActualContext": [
+            "실제 자료·검증 방법",
+            "실제 특화 자료·활용 분야·검증 방법"
+          ],
+          "formationNotProduced": [
+            "강약·격국·용신·제살·도식·합화는 십성 하나로 성립시키지 않음"
+          ]
+        },
+        "counterexamples": [
+          "다른 관점이 실제 오류를 해결하지 못하거나 익숙한 자료가 더 적합할 수 있다.",
+          "전문 자료가 없는 상황에 기존 전문 지식이 있다고 가정하지 않는다.",
+          "추가 조사보다 이미 아는 것을 시험할 때일 수 있다."
+        ],
+        "prohibitedInferences": [
+          "고독·질병·임신 문제·천재성을 확정하지 않음",
+          "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음",
+          "독특한 생각을 검증된 결론이나 고립 사건으로 만들지 않는다.",
+          "미입력 과거 사건·권한·계약·수입·지원자 생성 금지",
+          "상징과 현대 질문을 실증적 미래 사건 근거로 승격 금지"
+        ],
+        "meaningReview": "MEANING_REVIEW_REQUIRED",
+        "productApplicability": {
+          "proposedScopes": [
+            "major_fortune",
+            "annual_fortune"
+          ],
+          "state": "PRODUCT_REVIEW_REQUIRED",
+          "permissionGranted": false,
+          "limitation": "기간·상품·Domain/ancestry 정책 검토 전 보류"
+        },
+        "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+        "meaningClaim": {
+          "text": "특화 지식의 활용 경로는 장기 탐색 전략 가설이다. 편인운에 전문성이나 특별한 재능이 발생했다는 뜻은 아니다.",
+          "classification": [
+            "E",
+            "D"
+          ],
+          "layer": "PRACTICAL_REFLECTION_QUESTION",
+          "directTraditionalSupport": false,
+          "empiricallyValidated": false,
+          "state": "CONDITIONAL_MEANING_PROPOSED"
+        }
+      },
+      "originalRequiredConditions": [
+        {
+          "field": "/natalRequired",
+          "original": "원국 편인·식신 실제 조건; 도식 자동 판정 금지"
+        },
+        {
+          "field": "/elementRequired",
+          "original": "생조 오행과 기존 분포; 지원 효과 확정 금지"
+        }
+      ],
+      "sourceGroupEvaluation": [],
+      "counterexamples": "UNKNOWN",
+      "prohibitedInferences": {
+        "forbidden": [
+          "고독·질병·임신 문제·천재성을 확정하지 않음",
+          "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음"
+        ]
+      },
+      "originalBlockingReasons": [
+        {
+          "code": "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH",
+          "gate": "SOURCE_INTEGRITY",
+          "requiredFields": [
+            "originalRecordHash",
+            "sourceVerificationVersion"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "code": "SEMANTIC_REVIEW_REQUIRED",
+          "gate": "INTERPRETATION_REVIEW",
+          "requiredFields": [
+            "originalReviewState"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "code": "INCOMPLETE_REQUIRED_ANCESTRY",
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "requiredFields": [
+            "allActualAndResearchRequiredAncestors"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "code": "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "gate": "ACTUAL_USER_STATE",
+          "requiredFields": [
+            "/natalRequired",
+            "/elementRequired"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "code": "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "requiredFields": [
+            "counterexamples",
+            "prohibitions",
+            "introducedLedger"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "code": "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN",
+          "gate": "PRODUCT_SPECIALISM",
+          "requiredFields": [
+            "product",
+            "relationship",
+            "readerQuestion",
+            "coreMeaning"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "code": "CUSTOMER_APPROVAL_PENDING|OPERATOR_APPROVAL_PENDING",
+          "gate": "CUSTOMER_APPROVAL",
+          "requiredFields": [
+            "operatorApproval",
+            "customerApproval",
+            "originalRecordHash",
+            "approvalScope"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        }
+      ],
+      "additionalBlockingReasons": [
+        {
+          "state": "SOURCE_HELD",
+          "code": "ORIGINAL_SOURCE_OR_GROUP_HELD",
+          "fields": [
+            "sourceRequirements",
+            "sourceGroups"
+          ]
+        },
+        {
+          "state": "MEANING_REVIEW_REQUIRED",
+          "code": "ORIGINAL_MEANING_OR_CLAIM_NOT_APPROVED",
+          "fields": [
+            "meaningIdentity",
+            "claimIdentity",
+            "originalReviewState"
+          ]
+        },
+        {
+          "state": "CONTEXT_REQUIRED",
+          "code": "MISSING_REQUIRED_CONTEXT",
+          "fields": [
+            "/natalRequired",
+            "/elementRequired",
+            "requiredContext"
+          ]
+        },
+        {
+          "state": "PRODUCT_REVIEW_REQUIRED",
+          "code": "ORIGINAL_PRODUCT_APPLICABILITY_HELD",
+          "fields": [
+            "products",
+            "readerQuestion",
+            "coreMeaning"
+          ]
+        },
+        {
+          "state": "APPROVAL_PENDING",
+          "code": "CUSTOMER_CLAIM_NOT_AUTHORIZED",
+          "fields": [
+            "officialCustomerApproval"
+          ]
+        }
+      ]
+    },
+    {
+      "candidateId": "actual-specialist-candidate:v1:bc1f90fdc01677675f32127a0ed48b1c8d42784771bff84be2cf3d195051a2ab",
+      "originalResearchId": "mfpr:god:편재",
+      "originalMeaningIdentity": null,
+      "originalClaimIdentity": null,
+      "conditionalInterpretation": {
+        "evidenceKind": "CONDITIONAL_INTERPRETIVE_MEANING",
+        "originalText": "외부 자원·접점과 선택 범위",
+        "originalMeaningIdentity": null,
+        "meaningApproved": false
+      },
+      "requiredNatal": "원국 재성·자원 관리 조건 실제 근거",
+      "requiredElement": "일간이 제어하는 오행 관계; 부의 크기 미산출",
+      "temporalReview": {
+        "packetHash": "580cbe76013eac2ec2d9539de7cf64485c428f2b91517d88455ea90c60e82439",
+        "originalResearchId": "tr:god:편재",
+        "originalMeaningField": "dayun",
+        "originalRecordHash": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+        "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "originalSourceProof": {
+          "locator": {
+            "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+            "exportName": "TEMPORAL_GOD_ROLES",
+            "index": 4,
+            "originalId": "tr:god:편재",
+            "recordSha256": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+            "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+          },
+          "matchedCatalogKey": "kc:v1:310cca31e1ab44ec8b7d4733ac5af11ef6065ff597b91c0f0afc21914388afd1",
+          "originalId": "tr:god:편재",
+          "role": "ORIGINAL_RECORD",
+          "expectedHash": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+          "actualHash": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+          "hashAlgorithm": "SHA256_JSON_INSERTION",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+        },
+        "inheritedSourceProof": {
+          "locator": {
+            "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+            "exportName": "TEMPORAL_GOD_ROLES",
+            "index": 4,
+            "originalId": "tr:god:편재",
+            "recordSha256": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+            "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+            "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+          },
+          "matchedCatalogKey": "kc:v1:310cca31e1ab44ec8b7d4733ac5af11ef6065ff597b91c0f0afc21914388afd1",
+          "originalId": "tr:god:편재",
+          "role": "ORIGINAL_RECORD",
+          "expectedHash": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+          "actualHash": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+          "hashAlgorithm": "SHA256_JSON_INSERTION",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+        },
+        "majorSourceProof": {
+          "locator": {
+            "file": "src/lib/report-knowledge/major-fortune-product-research/tenGodResearch.ts",
+            "exportName": "MAJOR_TEN_GOD_RESEARCH",
+            "index": 4,
+            "originalId": "mfpr:god:편재",
+            "recordSha256": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+            "fileSha256": "5f62dea761af7d28847862e7d045c449f8f6df0fb864b0923f273aa2a71bcba8"
+          },
+          "matchedCatalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+          "originalId": "mfpr:god:편재",
+          "role": "ORIGINAL_RECORD",
+          "expectedHash": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+          "actualHash": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+          "hashAlgorithm": "SHA256_JSON_INSERTION",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+        },
+        "originalConditionReview": {
+          "natalRequired": "원국 재성·자원 관리 조건 실제 근거",
+          "elementRequired": "일간이 제어하는 오행 관계; 부의 크기 미산출",
+          "extraEvidence": "실제 제안·유동성·감당 여력",
+          "positive": "새 연결을 비교할 선택지가 생긴다는 관점이다.",
+          "risk": "운간 편재를 매출·투자 수익의 확정으로 쓰지 않는다.",
+          "reversal": "기회를 거절하는 편이 중요한 자원을 보존할 수 있다.",
+          "forbidden": [
+            "횡재·투자 수익·외도·사업 성공을 예언하지 않음",
+            "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음"
+          ],
+          "assessment": "natal/element 조건은 연결 근거가 있을 때 별도 확인; 계산된 시간 십성만으로 충족되지 않음. positive/risk/reversal은 관측 사실이 아닌 조건부 제안·제한이다."
+        },
+        "requiredConditions": {
+          "calculated": [
+            "같은 Owner의 실제 기준·대상 천간과 십성",
+            "원국·대운·실효 연주·월간/월지 본기 출처 구별",
+            "원래 cycle/입춘/절입/교운 경계 안의 확정 구간"
+          ],
+          "unresolvedNatal": "원국 재성·자원 관리 조건 실제 근거",
+          "unresolvedElement": "일간이 제어하는 오행 관계; 부의 크기 미산출",
+          "modernActualContext": [
+            "실제 제안·유동성·감당 여력",
+            "지속 연결·가용 자원·기존 의무"
+          ],
+          "formationNotProduced": [
+            "강약·격국·용신·제살·도식·합화는 십성 하나로 성립시키지 않음"
+          ]
+        },
+        "counterexamples": [
+          "제안이 없거나 유동성이 부족하면 선택지 확대를 사실로 말할 수 없다.",
+          "학생·휴식기에 거래나 사업이 있다고 가정하지 않는다.",
+          "기회를 거절하는 편이 중요한 자원을 보존할 수 있다."
+        ],
+        "prohibitedInferences": [
+          "횡재·투자 수익·외도·사업 성공을 예언하지 않음",
+          "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음",
+          "운간 편재를 매출·투자 수익의 확정으로 쓰지 않는다.",
+          "미입력 과거 사건·권한·계약·수입·지원자 생성 금지",
+          "상징과 현대 질문을 실증적 미래 사건 근거로 승격 금지"
+        ],
+        "meaningReview": "MEANING_REVIEW_REQUIRED",
+        "productApplicability": {
+          "proposedScopes": [
+            "major_fortune",
+            "annual_fortune"
+          ],
+          "state": "PRODUCT_REVIEW_REQUIRED",
+          "permissionGranted": false,
+          "limitation": "기간·상품·Domain/ancestry 정책 검토 전 보류"
+        },
+        "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+        "meaningClaim": {
+          "text": "다양한 연결의 관리 여력은 장기 수용 한도에 관한 제안이다. 편재운이 새로운 인맥을 만들어낸다고 보지 않는다.",
+          "classification": [
+            "C",
+            "D"
+          ],
+          "layer": "PRACTICAL_REFLECTION_QUESTION",
+          "directTraditionalSupport": false,
+          "empiricallyValidated": false,
+          "state": "CONDITIONAL_MEANING_PROPOSED"
+        }
+      },
+      "originalRequiredConditions": [
+        {
+          "field": "/natalRequired",
+          "original": "원국 재성·자원 관리 조건 실제 근거"
+        },
+        {
+          "field": "/elementRequired",
+          "original": "일간이 제어하는 오행 관계; 부의 크기 미산출"
+        }
+      ],
+      "sourceGroupEvaluation": [],
+      "counterexamples": "UNKNOWN",
+      "prohibitedInferences": {
+        "forbidden": [
+          "횡재·투자 수익·외도·사업 성공을 예언하지 않음",
+          "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음"
+        ]
+      },
+      "originalBlockingReasons": [
+        {
+          "code": "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH",
+          "gate": "SOURCE_INTEGRITY",
+          "requiredFields": [
+            "originalRecordHash",
+            "sourceVerificationVersion"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "code": "SEMANTIC_REVIEW_REQUIRED",
+          "gate": "INTERPRETATION_REVIEW",
+          "requiredFields": [
+            "originalReviewState"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "code": "INCOMPLETE_REQUIRED_ANCESTRY",
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "requiredFields": [
+            "allActualAndResearchRequiredAncestors"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "code": "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "gate": "ACTUAL_USER_STATE",
+          "requiredFields": [
+            "/natalRequired",
+            "/elementRequired"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "code": "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "requiredFields": [
+            "counterexamples",
+            "prohibitions",
+            "introducedLedger"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "code": "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN",
+          "gate": "PRODUCT_SPECIALISM",
+          "requiredFields": [
+            "product",
+            "relationship",
+            "readerQuestion",
+            "coreMeaning"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "code": "CUSTOMER_APPROVAL_PENDING|OPERATOR_APPROVAL_PENDING",
+          "gate": "CUSTOMER_APPROVAL",
+          "requiredFields": [
+            "operatorApproval",
+            "customerApproval",
+            "originalRecordHash",
+            "approvalScope"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        }
+      ],
+      "additionalBlockingReasons": [
+        {
+          "state": "SOURCE_HELD",
+          "code": "ORIGINAL_SOURCE_OR_GROUP_HELD",
+          "fields": [
+            "sourceRequirements",
+            "sourceGroups"
+          ]
+        },
+        {
+          "state": "MEANING_REVIEW_REQUIRED",
+          "code": "ORIGINAL_MEANING_OR_CLAIM_NOT_APPROVED",
+          "fields": [
+            "meaningIdentity",
+            "claimIdentity",
+            "originalReviewState"
+          ]
+        },
+        {
+          "state": "CONTEXT_REQUIRED",
+          "code": "MISSING_REQUIRED_CONTEXT",
+          "fields": [
+            "/natalRequired",
+            "/elementRequired",
+            "requiredContext"
+          ]
+        },
+        {
+          "state": "PRODUCT_REVIEW_REQUIRED",
+          "code": "ORIGINAL_PRODUCT_APPLICABILITY_HELD",
+          "fields": [
+            "products",
+            "readerQuestion",
+            "coreMeaning"
+          ]
+        },
+        {
+          "state": "APPROVAL_PENDING",
+          "code": "CUSTOMER_CLAIM_NOT_AUTHORIZED",
+          "fields": [
+            "officialCustomerApproval"
+          ]
+        }
+      ]
+    }
+  ],
+  "unmatchedNativeEvidence": 420,
+  "factAttemptWithholds": 164,
+  "noMeaningEquivalenceInferredFromTenGodOrTextEquality": true,
+  "plannerAssignments": 0
+}

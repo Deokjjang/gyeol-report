@@ -1,0 +1,170 @@
+[
+  {
+    "id": "ker:expression:comprehensive:1",
+    "sourceHash": "97ef9d5ca429ff5125d82396f71db705b97e141e9e1c00dcc05f9f44282afa2c",
+    "meaning": "ker:meaning:comprehensive",
+    "claimRef": "ker:claim:comprehensive",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:comprehensive:2",
+    "sourceHash": "dccd2267cda00345ea283b9386cedde1c5533c1998901d3ebfe408de853d2a4b",
+    "meaning": "ker:meaning:comprehensive",
+    "claimRef": "ker:claim:comprehensive",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:career:1",
+    "sourceHash": "d4ce11bf251455d4d4dcef45583a6336592fd6782b8cd282ebefd0fb4f7fdff1",
+    "meaning": "ker:meaning:career",
+    "claimRef": "ker:claim:career",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:career:2",
+    "sourceHash": "c7c97bd619ca6b170b22927a810be81daddd2d07848692573e4e6754f84c5d3f",
+    "meaning": "ker:meaning:career",
+    "claimRef": "ker:claim:career",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:love:1",
+    "sourceHash": "9c19e14fbe9191bd78110bfdf40bd7d5bc2ae8a82705e34abec10d4a80b2e371",
+    "meaning": "ker:meaning:love",
+    "claimRef": "ker:claim:love",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:love:2",
+    "sourceHash": "1b37d4d2feadc64bbaa3dab062f7f7a64ebeec3e7b2bde7219bb7a1869e2769a",
+    "meaning": "ker:meaning:love",
+    "claimRef": "ker:claim:love",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:pair-love:1",
+    "sourceHash": "ba01961268b6cb201782ec9eeb89ca60ee319f11bc17a3c5fb1f2e217e24f9f9",
+    "meaning": "ker:meaning:pair-love",
+    "claimRef": "ker:claim:pair-love",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:pair-love:2",
+    "sourceHash": "b3bd6305c7ed194f8c65a7e29bcc921fc6fc190f5c013bb29a346c2726e3607c",
+    "meaning": "ker:meaning:pair-love",
+    "claimRef": "ker:claim:pair-love",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:pair-marriage:1",
+    "sourceHash": "6054acf3303a923174f85ba359895633e30904c7cb175851f9e24fa052c090a7",
+    "meaning": "ker:meaning:pair-marriage",
+    "claimRef": "ker:claim:pair-marriage",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:pair-marriage:2",
+    "sourceHash": "b86ccbb34c4ff18a1a3347d191ebdd252bbce7b619c1988b514fd8654f2612ad",
+    "meaning": "ker:meaning:pair-marriage",
+    "claimRef": "ker:claim:pair-marriage",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:pair-parent-child:1",
+    "sourceHash": "c786de949edfb85d915a6ae79572ecdb041d3d581554a033a97563903d1b1009",
+    "meaning": "ker:meaning:pair-parent-child",
+    "claimRef": "ker:claim:pair-parent-child",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:pair-parent-child:2",
+    "sourceHash": "2d0227f75f4c694ea71953fe476fc02b32d73ec7fd7a40ffd30b6d26cbae7060",
+    "meaning": "ker:meaning:pair-parent-child",
+    "claimRef": "ker:claim:pair-parent-child",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:pair-coworker:1",
+    "sourceHash": "3fe89ff89a8e17bc4f9cb73eadab6293f88cc654b65418aaeb7971f7651f2d17",
+    "meaning": "ker:meaning:pair-coworker",
+    "claimRef": "ker:claim:pair-coworker",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:pair-coworker:2",
+    "sourceHash": "e92f637c437c7aaa34f598f8706300b504ea2b13a00aad096f0b442da19ecc77",
+    "meaning": "ker:meaning:pair-coworker",
+    "claimRef": "ker:claim:pair-coworker",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:pair-manager-report:1",
+    "sourceHash": "3912c02cbc2ffeadfaca73b98c7efe1737c61378aebb27142867dd89de958cc4",
+    "meaning": "ker:meaning:pair-manager-report",
+    "claimRef": "ker:claim:pair-manager-report",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:pair-manager-report:2",
+    "sourceHash": "d0d0732b8d71167ba3006f700cd787db2b1c5a375008b2cfde38aa4d0f028698",
+    "meaning": "ker:meaning:pair-manager-report",
+    "claimRef": "ker:claim:pair-manager-report",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:pair-business-partner:1",
+    "sourceHash": "3f053227f9ab008870633afd9f6f8e9c902060bf8dc35068021a5836afb8e5ce",
+    "meaning": "ker:meaning:pair-business-partner",
+    "claimRef": "ker:claim:pair-business-partner",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:pair-business-partner:2",
+    "sourceHash": "faf592b791bd0a3154ee4526af28b5a751b14c81a6f3db3f64189cbb043a9a27",
+    "meaning": "ker:meaning:pair-business-partner",
+    "claimRef": "ker:claim:pair-business-partner",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:pair-friendship:1",
+    "sourceHash": "956f2dc31b380e0fabefb54c33ec29339b556533f4f7e20c1ff22f72bb9e23c3",
+    "meaning": "ker:meaning:pair-friendship",
+    "claimRef": "ker:claim:pair-friendship",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:pair-friendship:2",
+    "sourceHash": "3d1d90b192fb56bf801188b4c572e02425de5bac8ae7b6d23af0d17a8e9210b2",
+    "meaning": "ker:meaning:pair-friendship",
+    "claimRef": "ker:claim:pair-friendship",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:major:1",
+    "sourceHash": "71d1debbf9daf1b66d4956dd9341c73fbc3ba5451ea33ec01af712b1abac9bdc",
+    "meaning": "ker:meaning:major",
+    "claimRef": "ker:claim:major",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:major:2",
+    "sourceHash": "5a6ec47c307c5e80ac60174649c5b887fa4be0d9c368438b3762fb6dfca86c0e",
+    "meaning": "ker:meaning:major",
+    "claimRef": "ker:claim:major",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:annual:1",
+    "sourceHash": "685196f180fde76ed00bafbc37423fc53733ad23a6a134778e97f7ec62dc8089",
+    "meaning": "ker:meaning:annual",
+    "claimRef": "ker:claim:annual",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  },
+  {
+    "id": "ker:expression:annual:2",
+    "sourceHash": "c814bbf0539dba977ee994fa43890e74001d572976b4becf9699ee0ae3ee4e1a",
+    "meaning": "ker:meaning:annual",
+    "claimRef": "ker:claim:annual",
+    "disposition": "RESEARCH_EXPRESSION_REFERENCE_NO_AUTOMATIC_SYNTHETIC_MAPPING"
+  }
+]

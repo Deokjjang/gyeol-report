@@ -1,0 +1,44 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "OBJECT",
+  "keys": [
+    "engine",
+    "mode",
+    "plan",
+    "algorithmComparison",
+    "actualCustomerDisplayRecordsIssued"
+  ],
+  "logicalJsonHash": "9fea9e2dccc4d19713b55bfe8209a55b8577b1db5f18f2286103f8747ba61aa4",
+  "parts": [
+    {
+      "file": "display-dependencies-part-0003.json",
+      "sha256": "9ae4b1cc993a9bd7f9cc65c4c054ea91edd72ce5d88e2120225cbc844d794663",
+      "kind": "FIELD",
+      "key": "engine"
+    },
+    {
+      "file": "display-dependencies-part-0004.json",
+      "sha256": "96d68af8c6f051c3517607e2b689932ea504496b3dd7bf2288de5e981d9caa2f",
+      "kind": "FIELD",
+      "key": "mode"
+    },
+    {
+      "file": "display-dependencies-part-0005.json",
+      "sha256": "403df00ea17647a21f8cc1b9c53a43e59b4d9bd54aa128d1a0b9e3443b17d8eb",
+      "kind": "FIELD",
+      "key": "plan"
+    },
+    {
+      "file": "display-dependencies-part-0041.json",
+      "sha256": "30e1c1802cb387fda9032d2bfe8e3122f9b05bc048a97dd95ad0aec92d116729",
+      "kind": "FIELD",
+      "key": "algorithmComparison"
+    },
+    {
+      "file": "display-dependencies-part-0042.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "actualCustomerDisplayRecordsIssued"
+    }
+  ]
+}

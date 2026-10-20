@@ -1,0 +1,420 @@
+{
+  "baseSha": "c048218cc5961e0f53a1deab2603511e17559fc3",
+  "evaluatedAt": "2026-10-12T12:00:00+09:00",
+  "cases": [
+    {
+      "id": "A",
+      "beforeParagraphs": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        4
+      ],
+      "afterParagraphs": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "beforeBodyLength": 9424,
+      "afterBodyLength": 9625,
+      "bodyTextOnlyLength": 9555,
+      "beforeChapterLength": [
+        1033,
+        1057,
+        1138,
+        1128,
+        1030,
+        1166,
+        1004,
+        757,
+        1043
+      ],
+      "afterChapterLength": [
+        1027,
+        1025,
+        1255,
+        1136,
+        985,
+        1046,
+        981,
+        1032,
+        1068
+      ],
+      "quality": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "calculationsUnchanged": true,
+      "profilesUnchanged": true,
+      "unknownMbtiNodes": null,
+      "unknownHourRoots": null
+    },
+    {
+      "id": "B",
+      "beforeParagraphs": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "afterParagraphs": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "beforeBodyLength": 9856,
+      "afterBodyLength": 9859,
+      "bodyTextOnlyLength": 9789,
+      "beforeChapterLength": [
+        1039,
+        1034,
+        1139,
+        1117,
+        1057,
+        1189,
+        1048,
+        1160,
+        1003
+      ],
+      "afterChapterLength": [
+        1031,
+        1032,
+        1330,
+        1172,
+        960,
+        1054,
+        1003,
+        1139,
+        1068
+      ],
+      "quality": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "calculationsUnchanged": true,
+      "profilesUnchanged": true,
+      "unknownMbtiNodes": null,
+      "unknownHourRoots": null
+    },
+    {
+      "id": "C",
+      "beforeParagraphs": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "afterParagraphs": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "beforeBodyLength": 9733,
+      "afterBodyLength": 9734,
+      "bodyTextOnlyLength": 9664,
+      "beforeChapterLength": [
+        1052,
+        1039,
+        1091,
+        1110,
+        1023,
+        1198,
+        1028,
+        1092,
+        1030
+      ],
+      "afterChapterLength": [
+        1035,
+        1033,
+        1309,
+        1180,
+        1016,
+        1000,
+        984,
+        1024,
+        1083
+      ],
+      "quality": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "calculationsUnchanged": true,
+      "profilesUnchanged": true,
+      "unknownMbtiNodes": null,
+      "unknownHourRoots": null
+    },
+    {
+      "id": "D",
+      "beforeParagraphs": [
+        4,
+        4,
+        4,
+        3,
+        4,
+        3,
+        4,
+        3,
+        3
+      ],
+      "afterParagraphs": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "beforeBodyLength": 8642,
+      "afterBodyLength": 9819,
+      "bodyTextOnlyLength": 9749,
+      "beforeChapterLength": [
+        1053,
+        1042,
+        1117,
+        877,
+        1018,
+        868,
+        1021,
+        867,
+        717
+      ],
+      "afterChapterLength": [
+        1047,
+        1022,
+        1251,
+        1194,
+        966,
+        1016,
+        1010,
+        1175,
+        1068
+      ],
+      "quality": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "calculationsUnchanged": true,
+      "profilesUnchanged": true,
+      "unknownMbtiNodes": null,
+      "unknownHourRoots": []
+    },
+    {
+      "id": "E",
+      "beforeParagraphs": [
+        4,
+        4,
+        4,
+        3,
+        4,
+        3,
+        3,
+        3,
+        3
+      ],
+      "afterParagraphs": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "beforeBodyLength": 8443,
+      "afterBodyLength": 9996,
+      "bodyTextOnlyLength": 9926,
+      "beforeChapterLength": [
+        1189,
+        1052,
+        1116,
+        869,
+        1028,
+        876,
+        759,
+        751,
+        743
+      ],
+      "afterChapterLength": [
+        1200,
+        1076,
+        1246,
+        1190,
+        1025,
+        1047,
+        1003,
+        1063,
+        1076
+      ],
+      "quality": {
+        "hardErrors": [],
+        "qualityIssues": []
+      },
+      "calculationsUnchanged": true,
+      "profilesUnchanged": true,
+      "unknownMbtiNodes": 0,
+      "unknownHourRoots": null
+    },
+    {
+      "id": "F",
+      "beforeParagraphs": [
+        4,
+        4,
+        4,
+        3,
+        4,
+        3,
+        4,
+        3,
+        2
+      ],
+      "afterParagraphs": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "beforeBodyLength": 8593,
+      "afterBodyLength": 10089,
+      "bodyTextOnlyLength": 10019,
+      "beforeChapterLength": [
+        1149,
+        1055,
+        1130,
+        877,
+        1034,
+        868,
+        1045,
+        865,
+        510
+      ],
+      "afterChapterLength": [
+        1151,
+        1088,
+        1266,
+        1198,
+        1031,
+        1035,
+        1001,
+        1177,
+        1072
+      ],
+      "quality": {
+        "hardErrors": [],
+        "qualityIssues": [
+          "BODY_LENGTH"
+        ]
+      },
+      "calculationsUnchanged": true,
+      "profilesUnchanged": true,
+      "unknownMbtiNodes": 0,
+      "unknownHourRoots": []
+    }
+  ],
+  "crossProducts": [
+    {
+      "id": "01-comprehensive",
+      "fullBytesIdentical": true,
+      "compositionBefore": "e3cfeb7ec07867b61db70dba0e92872261870aa5cb6b3395aad23d644b7999ca",
+      "compositionAfter": "e3cfeb7ec07867b61db70dba0e92872261870aa5cb6b3395aad23d644b7999ca",
+      "evidenceBefore": "234ef73802c350867cd68392981661c7374ad44e0445d7a97aa84999f802a35b",
+      "evidenceAfter": "234ef73802c350867cd68392981661c7374ad44e0445d7a97aa84999f802a35b",
+      "bookBefore": "e14c10e82ab8e76137a3f2caaa21f37d581c4f633dc7320f24b20fbb14e668e6",
+      "bookAfter": "e14c10e82ab8e76137a3f2caaa21f37d581c4f633dc7320f24b20fbb14e668e6"
+    },
+    {
+      "id": "03-love",
+      "fullBytesIdentical": true,
+      "compositionBefore": "fa4fc611d42f7420fd35ca6b17f1ea01b612f8d06ee89c14c37a96ee669fe208",
+      "compositionAfter": "fa4fc611d42f7420fd35ca6b17f1ea01b612f8d06ee89c14c37a96ee669fe208",
+      "evidenceBefore": "3d24c78ee620ef0ce913d3303d550476e22ca0cb8452175c13e4a06acbae0ae3",
+      "evidenceAfter": "3d24c78ee620ef0ce913d3303d550476e22ca0cb8452175c13e4a06acbae0ae3",
+      "bookBefore": "405f55f694420b67fb27694e917894d2d06956257037b8913467c495286f1ce2",
+      "bookAfter": "405f55f694420b67fb27694e917894d2d06956257037b8913467c495286f1ce2"
+    },
+    {
+      "id": "04-compatibility",
+      "fullBytesIdentical": true,
+      "compositionBefore": "f5053efa471451677b96e0f026950c2403288058bc7a3c9f33f6dabb1116f1e7",
+      "compositionAfter": "f5053efa471451677b96e0f026950c2403288058bc7a3c9f33f6dabb1116f1e7",
+      "evidenceBefore": "da1b271ea10d92d8f8b83df6c124c7f9d00dcb4143b82884d81d32014bc73384",
+      "evidenceAfter": "da1b271ea10d92d8f8b83df6c124c7f9d00dcb4143b82884d81d32014bc73384",
+      "bookBefore": "ccc55a5ddfa636d7bb94195437a21aa7c9063a92c5b2c951a4cf5dd2fe499f12",
+      "bookAfter": "ccc55a5ddfa636d7bb94195437a21aa7c9063a92c5b2c951a4cf5dd2fe499f12"
+    },
+    {
+      "id": "05-major-fortune",
+      "fullBytesIdentical": true,
+      "compositionBefore": "d5d131753ce591ea97514da501a35bd814afdd1e00a48b8ad0105e098ae6b4c3",
+      "compositionAfter": "d5d131753ce591ea97514da501a35bd814afdd1e00a48b8ad0105e098ae6b4c3",
+      "evidenceBefore": "1a542af76cf47e2946713c5c41e66979e8dff4a2140cb9471cdb52e26d9a9f1b",
+      "evidenceAfter": "1a542af76cf47e2946713c5c41e66979e8dff4a2140cb9471cdb52e26d9a9f1b",
+      "bookBefore": "8ed2622e653aff6aa1aeebe072051165ecf7137d17337ea7444220e6189ae4ea",
+      "bookAfter": "8ed2622e653aff6aa1aeebe072051165ecf7137d17337ea7444220e6189ae4ea"
+    },
+    {
+      "id": "06-annual-fortune",
+      "fullBytesIdentical": true,
+      "compositionBefore": "26283eea68143759fd7eeef0a4c4fd40c40c61d9aa5efb9fd7539f907a2472c6",
+      "compositionAfter": "26283eea68143759fd7eeef0a4c4fd40c40c61d9aa5efb9fd7539f907a2472c6",
+      "evidenceBefore": "156330987332fdc7d06869709439f8444949066451ad63d57109703bf6521a39",
+      "evidenceAfter": "156330987332fdc7d06869709439f8444949066451ad63d57109703bf6521a39",
+      "bookBefore": "b28ea633f5e450e6c122b67731239ed33c987aaa4999a0a507477b73baf61318",
+      "bookAfter": "b28ea633f5e450e6c122b67731239ed33c987aaa4999a0a507477b73baf61318"
+    }
+  ],
+  "apiFailedCasesSame": true,
+  "typescriptBaselineCount": 390,
+  "typescriptFinalCount": 390,
+  "typescriptNewDiagnostics": [],
+  "typescriptRemovedDiagnostics": [],
+  "originalWorkspace": {
+    "branchUnchanged": true,
+    "shaUnchanged": true,
+    "statusUnchanged": true,
+    "checkedFiles": 1857,
+    "changedFiles": []
+  }
+}

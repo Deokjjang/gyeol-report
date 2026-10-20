@@ -1,0 +1,1209 @@
+[
+  {
+    "id": "sar:tag:precision",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "precision",
+    "relatedAxes": [
+      "PRECISION"
+    ],
+    "relation": "RELATED_CONDITIONAL",
+    "commonMeaning": "작은 차이와 오류를 확인하는 의미가 겹침",
+    "difference": "기존 현침·귀문 상징의 존재가 실제 오류 탐지 능력을 증명하지 않음",
+    "preservationRequirement": "오류 탐지·논리 일관성·완성도를 분리",
+    "existingMaterials": [
+      "sinsal_gwimun",
+      "sinsal_hyeonchim",
+      "ten_god_shang_guan",
+      "v4_structure:hurtingOfficerMeetsOfficer"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "marriage",
+      "money",
+      "relationships",
+      "strengths",
+      "study",
+      "success/fortune",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "entp-question-authority-structure",
+      "entj-needle",
+      "entp-needle",
+      "infp-needle",
+      "istj-needle",
+      "estj-needle",
+      "isfp-needle",
+      "estp-needle"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "ENTP",
+        "area": "thinkingStyle",
+        "traitId": "flaw_detection"
+      },
+      {
+        "type": "ENTP",
+        "area": "thinkingStyle",
+        "traitId": "flaw_detection"
+      },
+      {
+        "type": "INFP",
+        "area": "thinkingStyle",
+        "traitId": "contextual_truth_detection"
+      },
+      {
+        "type": "ISTJ",
+        "area": "thinkingStyle",
+        "traitId": "efficient_error_detection"
+      },
+      {
+        "type": "ESTJ",
+        "area": "communication",
+        "traitId": "corrective_feedback"
+      },
+      {
+        "type": "ISFP",
+        "area": "thinkingStyle",
+        "traitId": "sensory_truth_detector"
+      },
+      {
+        "type": "ESTP",
+        "area": "thinkingStyle",
+        "traitId": "se_now_data"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:decisive-correction",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "decisive-correction",
+    "relatedAxes": [
+      "DECISION_STYLE",
+      "PRECISION",
+      "INITIATIVE"
+    ],
+    "relation": "ONE_TO_MANY",
+    "commonMeaning": "판단과 수정 행동이 함께 드러나는 조합",
+    "difference": "결론을 내림·오류를 봄·직접 고침은 각각 다름",
+    "preservationRequirement": "선택·수정·착수 시점을 따로 확인",
+    "existingMaterials": [
+      "ten_god_qi_sha"
+    ],
+    "existingDomains": [
+      "identity",
+      "strengths",
+      "success/fortune",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "entj-needle"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "ENTJ",
+        "area": "thinkingStyle",
+        "traitId": "fast_decisive_filter"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:leadership",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "leadership",
+    "relatedAxes": [
+      "LEADERSHIP",
+      "INITIATIVE",
+      "DUTY"
+    ],
+    "relation": "ONE_TO_MANY",
+    "commonMeaning": "앞에 서고 책임지는 설명이 겹침",
+    "difference": "경쟁에서 힘을 얻는 겁재와 타인을 조율하는 권한은 같지 않음",
+    "preservationRequirement": "위임권·목표 조율·책임 범위를 확인",
+    "existingMaterials": [
+      "sinsal_yangin",
+      "ten_god_jie_cai",
+      "ten_god_qi_sha",
+      "twelve_sinsal_jangseong",
+      "v4_structure:mixedOfficers",
+      "v4_structure:peerHeavy",
+      "v4_structure:officerHeavy"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "marriage",
+      "money",
+      "relationships",
+      "strengths",
+      "study",
+      "success/fortune",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "entj-pressure",
+      "estj-status"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "ENTJ",
+        "area": "identity",
+        "traitId": "commanding_goal_builder"
+      },
+      {
+        "type": "ESTJ",
+        "area": "identity",
+        "traitId": "responsible_operator"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:status",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "status",
+    "relatedAxes": [
+      "STATUS_DRIVE"
+    ],
+    "relation": "RELATED_CONDITIONAL",
+    "commonMeaning": "사회적 인정과 자리를 의식",
+    "difference": "전통적 반안·장성의 위치 상징을 개인의 인정 욕구로 바로 바꿀 수 없음",
+    "preservationRequirement": "인정의 기준과 실제 역할을 분리",
+    "existingMaterials": [
+      "ten_god_zheng_guan",
+      "twelve_sinsal_banan",
+      "twelve_sinsal_jangseong",
+      "v4_structure:wealthCreatesOfficer",
+      "v4_structure:officerHeavy"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "marriage",
+      "money",
+      "relationships",
+      "strengths",
+      "study",
+      "success/fortune",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [],
+    "existingMbtiTraits": [],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:wealth",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "wealth",
+    "relatedAxes": [
+      "RESOURCE_SENSE",
+      "OPPORTUNITY_SENSE",
+      "PRACTICALITY"
+    ],
+    "relation": "NOT_EQUIVALENT",
+    "commonMeaning": "자원 관리와 현실 성과에 관련",
+    "difference": "재물 흐름·축재 상징은 개인의 관리 습관이나 실제 부가 아님",
+    "preservationRequirement": "수입 결과와 배분 행동을 분리",
+    "existingMaterials": [
+      "gwiin_jaego",
+      "ten_god_pian_cai",
+      "ten_god_zheng_cai",
+      "v4_structure:wealthHeavyWeakDaymaster",
+      "v4_structure:outputCreatesWealth",
+      "v4_structure:wealthCreatesOfficer",
+      "v4_structure:wealthHeavy"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "marriage",
+      "money",
+      "relationships",
+      "strengths",
+      "study",
+      "success/fortune",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "entj-wealth-pressure-structure",
+      "entj-made-value-structure",
+      "entj-wealth"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "ENTJ",
+        "area": "money",
+        "traitId": "high_earning_orientation"
+      },
+      {
+        "type": "ENTJ",
+        "area": "money",
+        "traitId": "high_earning_orientation"
+      },
+      {
+        "type": "ENTJ",
+        "area": "money",
+        "traitId": "high_earning_orientation"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:accumulation",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "accumulation",
+    "relatedAxes": [
+      "PERSISTENCE",
+      "RESOURCE_SENSE",
+      "STABILITY"
+    ],
+    "relation": "ONE_TO_MANY",
+    "commonMeaning": "시간을 두고 남기는 결과",
+    "difference": "재고귀인의 축적 상징·꾸준한 반복·보유 자산은 서로 다름",
+    "preservationRequirement": "축적 대상과 유지 비용을 명시",
+    "existingMaterials": [
+      "gwiin_jaego",
+      "ten_god_zheng_cai",
+      "v4_structure:wealthHeavy"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "marriage",
+      "money",
+      "relationships",
+      "strengths",
+      "study",
+      "success/fortune",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [],
+    "existingMbtiTraits": [],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:help",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "help",
+    "relatedAxes": [
+      "CARE",
+      "SOCIAL_ATTUNEMENT"
+    ],
+    "relation": "NOT_EQUIVALENT",
+    "commonMeaning": "돌봄과 사회적 연결의 접점",
+    "difference": "도움을 받는 귀인과 도움을 주는 행동은 방향이 반대일 수 있음",
+    "preservationRequirement": "수혜자·제공자·요청·동의를 구분",
+    "existingMaterials": [
+      "gwiin_cheondeok",
+      "gwiin_cheoneul",
+      "gwiin_woldeok",
+      "ten_god_zheng_yin",
+      "v4_structure:officerResourceFlow",
+      "v4_structure:resourceHeavy"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "marriage",
+      "money",
+      "relationships",
+      "strengths",
+      "study",
+      "success/fortune",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "enfj-help",
+      "esfj-help"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "ENFJ",
+        "area": "identity",
+        "traitId": "compassionate_facilitator"
+      },
+      {
+        "type": "ESFJ",
+        "area": "identity",
+        "traitId": "warm_provider_identity"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:first-attraction",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "first-attraction",
+    "relatedAxes": [
+      "CHARISMA",
+      "EXPRESSION"
+    ],
+    "relation": "NOT_EQUIVALENT",
+    "commonMeaning": "처음 눈에 띄는 표현과 존재감",
+    "difference": "도화 상징이 호감·상대의 동의·관계 성립을 보장하지 않음",
+    "preservationRequirement": "노출·첫인상·실제 호감을 분리",
+    "existingMaterials": [
+      "sinsal_dohwa"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "relationships",
+      "strengths",
+      "success/fortune"
+    ],
+    "existingFusionRuleIds": [
+      "esfp-charm"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "ESFP",
+        "area": "identity",
+        "traitId": "spotlight_identity"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:intimate-attraction",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "intimate-attraction",
+    "relatedAxes": [
+      "RELATION_STYLE",
+      "EXPRESSION",
+      "CARE"
+    ],
+    "relation": "NOT_EQUIVALENT",
+    "commonMeaning": "친밀한 관계에서 드러나는 온기",
+    "difference": "홍염 상징을 애정 표현 능력이나 결혼 결과로 동일시 불가",
+    "preservationRequirement": "관계 단계와 상대 반응을 확인",
+    "existingMaterials": [
+      "sinsal_hongyeom"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "marriage",
+      "relationships",
+      "strengths",
+      "success/fortune"
+    ],
+    "existingFusionRuleIds": [
+      "intj-charm",
+      "isfp-love"
+    ],
+    "existingMbtiTraits": [],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:mobility",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "mobility",
+    "relatedAxes": [
+      "CHANGE_ORIENTATION",
+      "OPPORTUNITY_SENSE"
+    ],
+    "relation": "NOT_EQUIVALENT",
+    "commonMeaning": "새 장소와 외부 기회에 관련",
+    "difference": "이동의 상징·실제 이동·변화 선호는 서로 다름",
+    "preservationRequirement": "장소·기간·선택권을 확인",
+    "existingMaterials": [
+      "ten_god_pian_cai",
+      "twelve_sinsal_yeokma"
+    ],
+    "existingDomains": [
+      "identity",
+      "money",
+      "relationships",
+      "strengths",
+      "study",
+      "success/fortune",
+      "work"
+    ],
+    "existingFusionRuleIds": [],
+    "existingMbtiTraits": [],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:solitude",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "solitude",
+    "relatedAxes": [
+      "ENERGY_DIRECTION",
+      "RELATION_STYLE",
+      "DEPTH",
+      "RECOVERY_NEED"
+    ],
+    "relation": "ONE_TO_MANY",
+    "commonMeaning": "혼자 정리하고 몰입하는 모습",
+    "difference": "사적 공간·내부 처리·깊은 탐구·휴식은 독립적으로 달라짐",
+    "preservationRequirement": "혼자인 이유와 기능을 보존",
+    "existingMaterials": [
+      "ten_god_pian_yin",
+      "twelve_sinsal_hwagae"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "marriage",
+      "relationships",
+      "strengths",
+      "study",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "entj-alone",
+      "infj-marriage",
+      "enfp-alone",
+      "esfj-alone",
+      "istp-marriage"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "INFJ",
+        "area": "marriage",
+        "traitId": "private_time_needed"
+      },
+      {
+        "type": "ISTP",
+        "area": "marriage",
+        "traitId": "space_based_marriage"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:inquiry",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "inquiry",
+    "relatedAxes": [
+      "CURIOSITY",
+      "DEPTH",
+      "PATTERN_SENSE"
+    ],
+    "relation": "ONE_TO_MANY",
+    "commonMeaning": "이유와 연결을 찾는 질문",
+    "difference": "질문 수·탐구 깊이·패턴 발견은 서로 다른 행동",
+    "preservationRequirement": "무엇을 얼마나 끝까지 확인하는지 구분",
+    "existingMaterials": [
+      "sinsal_gwimun",
+      "ten_god_pian_yin",
+      "twelve_sinsal_hwagae",
+      "v4_structure:killingResourceFlow",
+      "v4_structure:resourceHeavy"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "marriage",
+      "money",
+      "relationships",
+      "strengths",
+      "study",
+      "success/fortune",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "intp-pressure-learning-structure",
+      "intj-inquiry",
+      "intp-inquiry",
+      "infj-depth",
+      "enfp-connection"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "INTP",
+        "area": "thinkingStyle",
+        "traitId": "why_question_loop"
+      },
+      {
+        "type": "INTJ",
+        "area": "thinkingStyle",
+        "traitId": "system_first_thinking"
+      },
+      {
+        "type": "INTP",
+        "area": "thinkingStyle",
+        "traitId": "why_question_loop"
+      },
+      {
+        "type": "INFJ",
+        "area": "thinkingStyle",
+        "traitId": "private_analysis_loop"
+      },
+      {
+        "type": "ENFP",
+        "area": "thinkingStyle",
+        "traitId": "ne_connection_thinking"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:expression",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "expression",
+    "relatedAxes": [
+      "EXPRESSION",
+      "CREATION",
+      "COMMUNICATION_STYLE"
+    ],
+    "relation": "ONE_TO_MANY",
+    "commonMeaning": "내용을 외부로 꺼내는 통로",
+    "difference": "말의 직설성·작품 제작·표현량은 같지 않음",
+    "preservationRequirement": "매체·청자·전달 목적을 확인",
+    "existingMaterials": [
+      "gwiin_munchang",
+      "sinsal_hongyeom",
+      "ten_god_shang_guan",
+      "ten_god_shi_shen",
+      "v4_structure:outputCreatesWealth",
+      "v4_structure:outputHeavy"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "marriage",
+      "money",
+      "relationships",
+      "strengths",
+      "study",
+      "success/fortune",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "intp-expression",
+      "infp-expression",
+      "enfj-expression",
+      "enfp-expression",
+      "esfp-expression"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "INTP",
+        "area": "communication",
+        "traitId": "topic_triggered_talk"
+      },
+      {
+        "type": "INFP",
+        "area": "study",
+        "traitId": "storytelling_learning"
+      },
+      {
+        "type": "ENFJ",
+        "area": "communication",
+        "traitId": "eloquent_social_speech"
+      },
+      {
+        "type": "ENFP",
+        "area": "identity",
+        "traitId": "expressive_authenticity"
+      },
+      {
+        "type": "ESFP",
+        "area": "communication",
+        "traitId": "honest_self_disclosure"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:expression-gap",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "expression-gap",
+    "relatedAxes": [
+      "EXPRESSION"
+    ],
+    "relation": "NO_TRAIT_INFERENCE",
+    "commonMeaning": "분포상 출력 신호 부족을 점검",
+    "difference": "식상 저신호는 말·감정·창작 능력 결핍의 증거가 아님",
+    "preservationRequirement": "다른 표현 통로를 열어두고 무능 판단 금지",
+    "existingMaterials": [
+      "distribution:output-low"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "relationships",
+      "strengths",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "intp-expression",
+      "enfj-expression",
+      "enfp-expression",
+      "esfp-expression"
+    ],
+    "existingMbtiTraits": [],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:autonomy",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "autonomy",
+    "relatedAxes": [
+      "AUTONOMY",
+      "BOUNDARY"
+    ],
+    "relation": "RELATED_CONDITIONAL",
+    "commonMeaning": "자기 판단과 선택 영역",
+    "difference": "사주 비견·양인 상징은 실제 의사결정권과 구별",
+    "preservationRequirement": "개인 선택·공동 의무·권한을 확인",
+    "existingMaterials": [
+      "sinsal_yangin",
+      "ten_god_bijian",
+      "v4_structure:peerHeavy"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "marriage",
+      "money",
+      "relationships",
+      "strengths",
+      "study",
+      "success/fortune",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "intp-space",
+      "istp-love"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "INTP",
+        "area": "love",
+        "traitId": "freedom_based_attachment"
+      },
+      {
+        "type": "ISTP",
+        "area": "love",
+        "traitId": "freedom_love_boundary"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:consistency",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "consistency",
+    "relatedAxes": [
+      "PERSISTENCE",
+      "DUTY",
+      "STABILITY",
+      "STRUCTURE_STYLE"
+    ],
+    "relation": "ONE_TO_MANY",
+    "commonMeaning": "지속·약속·예측 가능성의 교집합",
+    "difference": "현금흐름 설계와 연애 약속의 신뢰를 같은 행동으로 압축하면 손실",
+    "preservationRequirement": "지키는 대상과 변경 조건을 보존",
+    "existingMaterials": [
+      "ten_god_zheng_cai",
+      "ten_god_zheng_guan",
+      "ten_god_zheng_yin",
+      "v4_structure:wealthCreatesOfficer",
+      "v4_structure:officerResourceFlow",
+      "v4_structure:mixedOfficers",
+      "v4_structure:officerHeavy"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "marriage",
+      "money",
+      "relationships",
+      "strengths",
+      "study",
+      "success/fortune",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "intj-money",
+      "entp-rules",
+      "enfp-budget",
+      "istj-love",
+      "istj-marriage",
+      "isfj-love"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "INTJ",
+        "area": "money",
+        "traitId": "cashflow_system_design"
+      },
+      {
+        "type": "ISTJ",
+        "area": "love",
+        "traitId": "trust_first_love"
+      },
+      {
+        "type": "ISTJ",
+        "area": "marriage",
+        "traitId": "fixed_role_and_budget"
+      },
+      {
+        "type": "ISFJ",
+        "area": "love",
+        "traitId": "slow_trust_love"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:learning",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "learning",
+    "relatedAxes": [
+      "LEARNING",
+      "DEPTH"
+    ],
+    "relation": "RELATED_CONDITIONAL",
+    "commonMeaning": "이해하고 지식을 축적",
+    "difference": "정인·학당 상징과 실제 학습법·성적은 구별",
+    "preservationRequirement": "학습 자료·연습·전이 확인",
+    "existingMaterials": [
+      "gwiin_hakdang",
+      "gwiin_munchang",
+      "ten_god_zheng_yin",
+      "v4_structure:officerResourceFlow",
+      "v4_structure:killingResourceFlow",
+      "v4_structure:resourceHeavy"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "marriage",
+      "money",
+      "relationships",
+      "strengths",
+      "study",
+      "success/fortune",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "isfj-learning",
+      "estp-study"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "ISFJ",
+        "area": "thinkingStyle",
+        "traitId": "sensory_memory_judgment"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:sociability",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "sociability",
+    "relatedAxes": [
+      "RELATION_STYLE",
+      "SOCIAL_ATTUNEMENT",
+      "ENERGY_DIRECTION"
+    ],
+    "relation": "ONE_TO_MANY",
+    "commonMeaning": "사람과 연결되고 교류하는 모습",
+    "difference": "사교량·상대 읽기·외부 에너지 방향은 같지 않음",
+    "preservationRequirement": "교류 빈도·정서 읽기·사적 공간을 구분",
+    "existingMaterials": [
+      "sinsal_dohwa",
+      "ten_god_jie_cai"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "relationships",
+      "strengths",
+      "success/fortune",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "entj-alone",
+      "enfp-alone",
+      "esfj-alone"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "ENTJ",
+        "area": "identity",
+        "traitId": "public_presence_private_distance"
+      },
+      {
+        "type": "ENFP",
+        "area": "identity",
+        "traitId": "people_centered_energy"
+      },
+      {
+        "type": "ESFJ",
+        "area": "identity",
+        "traitId": "social_adaptation_engine"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:reserved-affection",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "reserved-affection",
+    "relatedAxes": [
+      "RELATION_STYLE",
+      "COMMUNICATION_STYLE",
+      "EXPRESSION"
+    ],
+    "relation": "ONE_TO_MANY",
+    "commonMeaning": "애정 공개와 관계 결정에 신중",
+    "difference": "조심스러운 표현은 애정 없음이나 매력 부족이 아님",
+    "preservationRequirement": "표현 매체와 관계 단계 확인",
+    "existingMaterials": [],
+    "existingDomains": [
+      "love",
+      "relationships"
+    ],
+    "existingFusionRuleIds": [
+      "intj-charm",
+      "isfp-love"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "INTJ",
+        "area": "love",
+        "traitId": "slow_high_standard_love"
+      },
+      {
+        "type": "ISFP",
+        "area": "love",
+        "traitId": "slow_open_romantic"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:experimentation",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "experimentation",
+    "relatedAxes": [
+      "CURIOSITY",
+      "CHANGE_ORIENTATION",
+      "RISK_STYLE",
+      "CREATION"
+    ],
+    "relation": "ONE_TO_MANY",
+    "commonMeaning": "대안을 시험하는 행동",
+    "difference": "새로움을 좋아하는 것과 위험 감수·검증 가능한 실험은 다름",
+    "preservationRequirement": "가설·작은 시험·중단 조건 확인",
+    "existingMaterials": [
+      "ten_god_shang_guan",
+      "v4_structure:hurtingOfficerMeetsOfficer"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "marriage",
+      "money",
+      "relationships",
+      "strengths",
+      "study",
+      "success/fortune",
+      "weaknesses",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "entp-rules"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "ENTP",
+        "area": "thinkingStyle",
+        "traitId": "possibility_scanning"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:experience-spending",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "experience-spending",
+    "relatedAxes": [
+      "RESOURCE_SENSE",
+      "MEANING",
+      "OPPORTUNITY_SENSE"
+    ],
+    "relation": "NOT_EQUIVALENT",
+    "commonMeaning": "경험의 가치에 자원을 배분",
+    "difference": "소비 항목 하나로 낭비·가난·재무 능력을 판단할 수 없음",
+    "preservationRequirement": "한도·가치·실제 여력 확인",
+    "existingMaterials": [],
+    "existingDomains": [
+      "money"
+    ],
+    "existingFusionRuleIds": [
+      "enfp-budget"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "ENFP",
+        "area": "money",
+        "traitId": "experience_spending"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  },
+  {
+    "id": "sar:tag:practical-learning",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_semantic_candidate",
+    "sourceRefs": [
+      "repo:materialRegistry",
+      "repo:fusionRules"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "tag": "practical-learning",
+    "relatedAxes": [
+      "LEARNING",
+      "PRACTICALITY",
+      "ACTION_TEMPO"
+    ],
+    "relation": "ONE_TO_MANY",
+    "commonMeaning": "직접 적용하며 이해하는 학습",
+    "difference": "손으로 시험하는 것은 일반 실용주의나 빠른 실행과 동일하지 않음",
+    "preservationRequirement": "과제·피드백·개념 이해를 함께 확인",
+    "existingMaterials": [
+      "ten_god_shi_shen"
+    ],
+    "existingDomains": [
+      "identity",
+      "love",
+      "strengths",
+      "study",
+      "success/fortune",
+      "work"
+    ],
+    "existingFusionRuleIds": [
+      "istp-study",
+      "estp-study"
+    ],
+    "existingMbtiTraits": [
+      {
+        "type": "ISTP",
+        "area": "study",
+        "traitId": "hands_on_learning"
+      },
+      {
+        "type": "ESTP",
+        "area": "study",
+        "traitId": "experiential_learning"
+      }
+    ],
+    "exactEquivalenceApproved": false
+  }
+]

@@ -719,7 +719,7 @@ describe("majorFortuneReportDraftValidator", () => {
   });
 
   it("repairs missing safetyNotes with default notes", () => {
-    const draftWithoutSafetyNotes: Partial<MajorFortuneReportDraft> = {
+    const draftWithoutSafetyNotes: { -readonly [K in keyof MajorFortuneReportDraft]?: MajorFortuneReportDraft[K] } = {
       ...createValidMajorFortuneDraft(),
     };
     delete draftWithoutSafetyNotes.safetyNotes;
@@ -817,7 +817,7 @@ describe("majorFortuneReportDraftValidator", () => {
   it("rejects missing phaseTimeline", () => {
     const draft = {
       ...createValidMajorFortuneDraft(),
-    } as Partial<MajorFortuneReportDraft>;
+    } as { -readonly [K in keyof MajorFortuneReportDraft]?: MajorFortuneReportDraft[K] };
     delete draft.phaseTimeline;
 
     expect(validateMajorFortuneReportDraft(draft).ok).toBe(false);

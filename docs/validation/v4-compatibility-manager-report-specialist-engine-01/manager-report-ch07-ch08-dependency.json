@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "mrpr:material:CH07.P2:report-time-clash",
+    "address": "CH07.P2",
+    "repair": {
+      "firstFactCheck": "가상: 확정값 전 필요한 중간 판단 자료를 요청",
+      "aChange": "결정 시한과 중간 보고 범위 설명",
+      "bChange": "미확인 항목·다음 확인 시간 제시",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "timing_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-set-report-time",
+    "address": "CH08.P2",
+    "repair": {
+      "firstFactCheck": "가상: 잠정 상태와 확정 결과의 보고 시점을 나눔",
+      "aChange": "판단 시한·중간 정보·지원 응답 설명",
+      "bChange": "잠정·확정·미확인을 구분",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "timing_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P2:report-time-clash"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P2:report-time-clash",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P4:excluded-team-voice",
+    "address": "CH07.P4",
+    "repair": {
+      "firstFactCheck": "가상: 사전 자료와 회의 뒤 확인 창구를 제공",
+      "aChange": "사전 질문·응답 시간·대체 통로 마련",
+      "bChange": "안전한 방식으로 검토 의견 제시",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "voice_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-multiple-voice-channels",
+    "address": "CH08.P4",
+    "repair": {
+      "firstFactCheck": "가상: 문서 의견 시한 뒤 결정 사항 공유",
+      "aChange": "응답 경로·검토 시점·결정 이유 설명",
+      "bChange": "검토 의견·미확인 항목 전달",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "voice_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P4:excluded-team-voice"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P4:excluded-team-voice",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P1:goal-method-confusion",
+    "address": "CH07.P1",
+    "repair": {
+      "firstFactCheck": "가상: 안전선과 무관한 순서 차이로 재작업 요청",
+      "aChange": "필수 결과와 선호 방법을 구분",
+      "bChange": "방법 선택 이유·결과를 설명",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "method_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P1:vague-instructions",
+    "address": "CH07.P1",
+    "repair": {
+      "firstFactCheck": "가상: 개선 요청에 출력 형식·마감 이유가 없는 업무",
+      "aChange": "결과·제외 범위·기준 예시 설명",
+      "bChange": "모호한 항목을 확인 질문으로 제시",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "instruction_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P3:insufficient-credit",
+    "address": "CH07.P3",
+    "repair": {
+      "firstFactCheck": "가상: 누가 초안·검증을 했는지 제출 기록을 확인",
+      "aChange": "기여 사실을 확인해 정확히 남김",
+      "bChange": "수행·지원 받은 범위를 구분해 제시",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "credit_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P3:report-state-contribution",
+    "address": "CH08.P3",
+    "repair": {
+      "firstFactCheck": "가상: 검증 담당이 빠진 제출 기록의 정정 요청",
+      "aChange": "수행 사실 확인·기여 기록 정리",
+      "bChange": "수행 범위·지원 받은 항목 제시",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "credit_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P3:insufficient-credit"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P3:insufficient-credit",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+    "address": "CH07.P1",
+    "repair": {
+      "firstFactCheck": "가상: 방식은 맡긴다면서 모든 도구를 사후 반려",
+      "aChange": "필수 제약과 실제 재량을 공개",
+      "bChange": "변경 가능한 선택을 확인",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "discretion_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P1:excess-report-frequency",
+    "address": "CH07.P1",
+    "repair": {
+      "firstFactCheck": "가상: 같은 상태를 메신저·회의·문서에 반복 설명",
+      "aChange": "보고 목적·빈도·중복 채널 정리",
+      "bChange": "보고 시간·중단 비용을 사실로 알림",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "report_cost",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P3:overload-allocation",
+    "address": "CH07.P3",
+    "repair": {
+      "firstFactCheck": "가상: 겹치는 마감과 예상 시간을 함께 확인",
+      "aChange": "우선순위·기한·자원 중 조정 결정",
+      "bChange": "실제 작업량·충돌 범위 공유",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "load_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P3:public-personal-judgment",
+    "address": "CH07.P3",
+    "repair": {
+      "firstFactCheck": "가상: 자료 한 항목 오류를 사람 전체의 문제로 말한 회의",
+      "aChange": "공개 인격 판단 중단·구체적 수정 기준 제공",
+      "bChange": "안전할 때 사실·수정 조건 확인",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "safe_feedback",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P4:late-risk-report",
+    "address": "CH07.P4",
+    "repair": {
+      "firstFactCheck": "가상: 잠재 지연과 확정 지연을 다른 상태로 공유",
+      "aChange": "불확실 보고의 사용·응답 조건 명시",
+      "bChange": "확인된 영향과 다음 검토 시점 알림",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "early_report_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P4:missing-change-history",
+    "address": "CH07.P4",
+    "repair": {
+      "firstFactCheck": "가상: 회의 중 수정한 납기·범위를 짧게 남김",
+      "aChange": "변경자·이유·시점·영향 기록",
+      "bChange": "이전 수행과 추가 소요를 구분",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "change_record_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+    "address": "CH07.P4",
+    "repair": {
+      "firstFactCheck": "가상: 작업 상태와 개인 온라인 반응을 분리",
+      "aChange": "보고 목적·수집 범위·사용처 명시",
+      "bChange": "업무 상태와 무관 정보의 경계 확인",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "report_boundary",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P3:report-request-specific-feedback",
+    "address": "CH08.P3",
+    "repair": {
+      "firstFactCheck": "가상: 직접 대응이 어려우면 별도 지원을 확인",
+      "aChange": "공개 인격 판단 중단·기준 설명",
+      "bChange": "안전한 통로에서 구체적 수정 항목 확인",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "safe_feedback",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P3:public-personal-judgment"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P3:public-personal-judgment",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P3:report-state-capacity",
+    "address": "CH08.P3",
+    "repair": {
+      "firstFactCheck": "가상: 겹치는 마감 두 개와 추가 요청을 함께 표시",
+      "aChange": "우선순위·자원 조정 결정",
+      "bChange": "소요·충돌·가능 범위 공유",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "load_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P3:overload-allocation"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P3:overload-allocation",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P1:clarify-output",
+    "address": "CH08.P1",
+    "repair": {
+      "firstFactCheck": "가상: 착수 전에 필수 출력 항목을 함께 확인",
+      "aChange": "필수 기준·목적·지원 설명",
+      "bChange": "이해한 범위와 빈칸 질문",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "instruction_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P1:vague-instructions"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P1:vague-instructions",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P1:separate-method",
+    "address": "CH08.P1",
+    "repair": {
+      "firstFactCheck": "가상: 서로 다른 순서로 만든 결과의 필수 항목 검토",
+      "aChange": "선호와 필수 기준 구분",
+      "bChange": "선택한 방식·결과·위험 공유",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "method_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P1:goal-method-confusion"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P1:goal-method-confusion",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P1:make-discretion-visible",
+    "address": "CH08.P1",
+    "repair": {
+      "firstFactCheck": "가상: 순서 선택은 맡기고 안전선만 확인",
+      "aChange": "선택 범위·지원·예외 설명",
+      "bChange": "선택할 항목과 확인할 예외 재진술",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "discretion_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P1:autonomy-with-no-discretion"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P1:reduce-duplicate-report",
+    "address": "CH08.P1",
+    "repair": {
+      "firstFactCheck": "가상: 같은 상태를 한 문서에서 확인",
+      "aChange": "정보 목적·주기·응답을 정함",
+      "bChange": "중복 준비 시간·긴급 조건 공유",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "report_cost",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P1:excess-report-frequency"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P1:excess-report-frequency",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-change-log",
+    "address": "CH08.P4",
+    "repair": {
+      "firstFactCheck": "가상: 변경 한 번마다 범위·영향·결정자 확인",
+      "aChange": "변경 사유·지원·일정 책임 명시",
+      "bChange": "추가 수행·영향 사실 확인",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "change_record_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P4:missing-change-history"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P4:missing-change-history",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-early-risk-response",
+    "address": "CH08.P4",
+    "repair": {
+      "firstFactCheck": "가상: 위험 상태가 바뀔 때만 예외 보고",
+      "aChange": "초기 정보 수용·지원 응답 명시",
+      "bChange": "상태 변화·영향·다음 확인 전달",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "early_report_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P4:late-risk-report"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P4:late-risk-report",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-report-purpose",
+    "address": "CH08.P4",
+    "repair": {
+      "firstFactCheck": "가상: 작업 상태 보고에서 개인 온라인 반응을 제외",
+      "aChange": "목적·범위·사용·지원 통로 명시",
+      "bChange": "업무 상태와 개인 정보 경계 확인",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "report_boundary",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P4:reporting-versus-surveillance"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P2:priority-change-harm",
+    "address": "CH07.P2",
+    "repair": {
+      "firstFactCheck": "가상: 새 요청이 들어와 기존 두 작업 중 하나를 미룸",
+      "aChange": "변경 사유·우선순위·기한 재조정",
+      "bChange": "현재 수행과 변경 영향 공유",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "priority_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P2:rework-with-half-harmony",
+    "address": "CH07.P2",
+    "repair": {
+      "firstFactCheck": "가상: 초안 승인 뒤 평가 기준이 추가되는 검토",
+      "aChange": "수정 이유·범위·기한 설명",
+      "bChange": "기존 기준 충족 항목과 추가 소요 제시",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "rework_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P2:final-authority-unsupported",
+    "address": "CH07.P2",
+    "repair": {
+      "firstFactCheck": "가상: 서로 다른 승인 의견으로 B가 멈춘 변경안",
+      "aChange": "실제 최종 결정자·대리 범위 확인",
+      "bChange": "상충 지시와 결정 필요 시점 알림",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "authority_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-close-revision",
+    "address": "CH08.P2",
+    "repair": {
+      "firstFactCheck": "가상: 기존 오류 두 개와 새 요구 한 개를 나눔",
+      "aChange": "수정 출처·범위·기한·재검토 정리",
+      "bChange": "기존 기준 충족·추가 소요 알림",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "rework_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P2:rework-with-half-harmony"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-record-priority",
+    "address": "CH08.P2",
+    "repair": {
+      "firstFactCheck": "가상: 새 긴급 요청과 중단할 기존 작업을 함께 기록",
+      "aChange": "변경자·이유·기한·지원 결정",
+      "bChange": "현재 수행·추가 소요 확인",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "priority_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P2:priority-change-harm"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P2:priority-change-harm",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-confirm-final-authority",
+    "address": "CH08.P2",
+    "repair": {
+      "firstFactCheck": "가상: 다른 지시자의 요구와 승인 순서를 확인",
+      "aChange": "실제 결정 경로·대리 범위 확인",
+      "bChange": "상충 조건·필요 결정 시점 공유",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "authority_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P2:final-authority-unsupported"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P2:final-authority-unsupported",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P1:responsibility-without-delegation",
+    "address": "CH07.P1",
+    "repair": {
+      "firstFactCheck": "가상: 담당자는 B지만 수정마다 별도 승인 필요",
+      "aChange": "실제 결정 범위·응답 책임·지원 확인",
+      "bChange": "승인 대기·영향·필요 시점 보고",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "delegation_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P3:fear-of-retaliation",
+    "address": "CH07.P3",
+    "repair": {
+      "firstFactCheck": "가상: 지시자에게 직접 말하기 어려워 적절한 지원 통로 확인",
+      "aChange": "위험 신호를 정상화하지 않고 조직 지원 확인",
+      "bChange": "안전한 통로와 필요한 보호 조건 확인",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "voice_support",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P3:insufficient-resources",
+    "address": "CH07.P3",
+    "repair": {
+      "firstFactCheck": "가상: 자료 접근 담당자 회신을 기다리는 작업",
+      "aChange": "지원 담당·가능 시점·대안 결정",
+      "bChange": "필요 자원·대기 영향·기한 공유",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "resource_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+    "address": "CH07.P4",
+    "repair": {
+      "firstFactCheck": "가상: 예산·범위 결정이 필요한 막힘을 B에게 되돌림",
+      "aChange": "실제 권한 안에서 결정·상위 확인·지원 수행",
+      "bChange": "확인 필요한 결정과 영향 정리",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "decision_transfer_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P3:report-name-blocked-resource",
+    "address": "CH08.P3",
+    "repair": {
+      "firstFactCheck": "가상: 승인된 자료 접근 요청의 대기 영향을 공유",
+      "aChange": "지원 담당·가능 시점·대안 결정",
+      "bChange": "필요 자원·막힘·영향 구분",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "resource_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P3:insufficient-resources"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P3:insufficient-resources",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P3:report-safe-support-route",
+    "address": "CH08.P3",
+    "repair": {
+      "firstFactCheck": "가상: 직접 지시자 외 적절한 조직 지원 경로 확인",
+      "aChange": "위험을 정상화하지 않고 적절한 지원 확인",
+      "bChange": "안전·동의·지원 필요를 우선 확인",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "voice_support",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P3:fear-of-retaliation"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P3:fear-of-retaliation",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+    "address": "CH07.P2",
+    "repair": {
+      "firstFactCheck": "가상: 더 주도적이어야 한다는 말만 받은 상황",
+      "aChange": "관찰 행동·업무 영향·수정 기준 설명",
+      "bChange": "예시·우선순위·수정 시점 확인",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "evaluation_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [],
+    "originalIntroductionRequirements": [],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-explain-evaluation",
+    "address": "CH08.P2",
+    "repair": {
+      "firstFactCheck": "가상: 적극성이라는 말 대신 필요한 사전 확인 행동 제시",
+      "aChange": "관찰 항목·기준·지원·재검토 설명",
+      "bChange": "수정 이해·우선순위 확인",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "evaluation_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P2:vague-evaluation-no-relation"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P1:delegate-decision",
+    "address": "CH08.P1",
+    "repair": {
+      "firstFactCheck": "가상: 승인 대기 작업의 결정 목록을 작성",
+      "aChange": "실제 권한·지원·응답 책임 확인",
+      "bChange": "대기 영향·필요 시각 제시",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "delegation_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P1:responsibility-without-delegation"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-retained-manager-decision",
+    "address": "CH08.P4",
+    "repair": {
+      "firstFactCheck": "가상: 선택지 보고 뒤 승인·미결 상태를 남김",
+      "aChange": "결정 결과·보류 이유·다음 응답 시점 명시",
+      "bChange": "실행 가능 범위·결정 요청 구분",
+      "authority": "UNKNOWN_verify_existing_organization_procedure",
+      "scope": "decision_transfer_gap",
+      "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+      "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+      "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+    },
+    "precedingMeaningRefs": [
+      "mrpr:material:CH07.P4:manager-responsibility-transfer"
+    ],
+    "originalIntroductionRequirements": [
+      {
+        "materialId": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "expectedMode": "JOINT",
+        "direction": null,
+        "actualOwnersMustMatch": true,
+        "actualTaskMustMatch": true,
+        "actuallyDisplayedRequired": true,
+        "mayUseOnlyCompatibleDisplayedSubset": true
+      }
+    ],
+    "samePairTaskRootMeaningDisplayRequired": true,
+    "actualHistory": "UNKNOWN",
+    "actualRecoveryApproved": false
+  }
+]

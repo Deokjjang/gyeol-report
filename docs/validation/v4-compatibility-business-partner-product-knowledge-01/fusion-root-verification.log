@@ -1,0 +1,8 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-compatibility-business-partner-product-knowledge-01
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 45 skipped (46)
+   Start at  05:44:42
+   Duration  12.12s (transform 1.63s, setup 18ms, import 2.01s, tests 9.91s, environment 0ms)

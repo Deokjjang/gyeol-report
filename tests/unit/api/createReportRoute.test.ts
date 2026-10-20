@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi, assert } from "vitest";
 
 import { POST } from "@/app/api/reports/create/route";
 import { createReportPersistenceRuntime } from "@/lib/persistence/reportPersistenceRuntime";
@@ -321,6 +321,7 @@ describe("create report route", () => {
 
     expect(body.ok).toBe(true);
     if (body.ok) {
+      assert("report" in body, "Expected the legacy API response variant");
       expect(body.report.version).toBe("v1");
       expect(body.report.titleKo).toBe("결리포트");
       expect(body.report.sections).toHaveLength(expectedSectionIds.length);
@@ -589,6 +590,7 @@ describe("create report route", () => {
 
     expect(body.ok).toBe(true);
     if (body.ok) {
+      assert("report" in body, "Expected the legacy API response variant");
       const responseText = JSON.stringify(body.report);
 
       expect(responseText).toContain("당신");
@@ -606,6 +608,7 @@ describe("create report route", () => {
 
     expect(body.ok).toBe(true);
     if (body.ok) {
+      assert("report" in body, "Expected the legacy API response variant");
       const responseText = JSON.stringify(body);
 
       expect(body.report).toBeDefined();
@@ -631,6 +634,7 @@ describe("create report route", () => {
 
     expect(body.ok).toBe(false);
     if (!body.ok) {
+      assert("error" in body, "Expected the legacy API response variant");
       expect(body.error.code).toBe("INVALID_REQUEST");
       expect(body.errors.map((error) => error.code)).toContain(
         "DISPLAY_NAME_TOO_LONG",
@@ -647,6 +651,7 @@ describe("create report route", () => {
 
     expect(body.ok).toBe(false);
     if (!body.ok) {
+      assert("error" in body, "Expected the legacy API response variant");
       expect(body.error.code).toBe("INVALID_REQUEST");
       expect(body.error.messageKo).toBe(apiErrorMessageKo);
       expect(body.errors).toEqual(expect.any(Array));
@@ -670,6 +675,7 @@ describe("create report route", () => {
 
     expect(body.ok).toBe(false);
     if (!body.ok) {
+      assert("error" in body, "Expected the legacy API response variant");
       expect(body.error).toEqual({
         code: "INVALID_REQUEST",
         messageKo: apiErrorMessageKo,
@@ -688,6 +694,7 @@ describe("create report route", () => {
 
     expect(body.ok).toBe(false);
     if (!body.ok) {
+      assert("error" in body, "Expected the legacy API response variant");
       expect(body.error.code).toBe("INVALID_REQUEST");
       expect(body.error.messageKo).toBe(apiErrorMessageKo);
       expect(body.errors).toEqual(expect.any(Array));
@@ -708,6 +715,7 @@ describe("create report route", () => {
 
     expect(body.ok).toBe(false);
     if (!body.ok) {
+      assert("error" in body, "Expected the legacy API response variant");
       expect(body.error.code).toBe("INVALID_REQUEST");
       expect(body.error.messageKo).toBe(apiErrorMessageKo);
       expect(body.errors).toEqual(expect.any(Array));

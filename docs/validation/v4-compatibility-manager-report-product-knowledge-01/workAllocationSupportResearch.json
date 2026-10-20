@@ -1,0 +1,123 @@
+[
+  {
+    "id": "mrpr:view:workAllocationSupportResearch:material:CH01.P1:support-execution-interface",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH01.P1:support-execution-interface",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:workAllocationSupportResearch:material:CH02.P1:manager-people-purpose",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH02.P1:manager-people-purpose",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:workAllocationSupportResearch:material:CH02.P3:manager-support-limit",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH02.P3:manager-support-limit",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:workAllocationSupportResearch:material:CH03.P4:report-overacceptance",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH03.P4:report-overacceptance",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:workAllocationSupportResearch:material:CH05.P2:manager-resource-removal",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH05.P2:manager-resource-removal",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:workAllocationSupportResearch:material:CH06.P2:report-capacity-information",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH06.P2:report-capacity-information",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:workAllocationSupportResearch:material:CH07.P3:overload-allocation",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH07.P3:overload-allocation",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:workAllocationSupportResearch:material:CH07.P3:insufficient-resources",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH07.P3:insufficient-resources",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:workAllocationSupportResearch:material:CH08.P3:report-state-capacity",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH08.P3:report-state-capacity",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:workAllocationSupportResearch:material:CH08.P3:report-name-blocked-resource",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH08.P3:report-name-blocked-resource",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:workAllocationSupportResearch:material:CH09.P2:recall-supported-possibility",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH09.P2:recall-supported-possibility",
+    "notAdditionalIndependentFact": true
+  }
+]

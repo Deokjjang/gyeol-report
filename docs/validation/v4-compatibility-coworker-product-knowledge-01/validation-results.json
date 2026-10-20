@@ -1,0 +1,210 @@
+{
+  "baseSha": "d25c058a65dad3cd121ac477e194e64ee75374f2",
+  "existingRelatedFiles": 38,
+  "baseline": {
+    "passed": 5031,
+    "failed": 16,
+    "conditionalNotRun": 1,
+    "total": 5048
+  },
+  "after": {
+    "passed": 5031,
+    "failed": 16,
+    "conditionalNotRun": 1,
+    "total": 5048
+  },
+  "sameFailureNamesAndFirstMessages": true,
+  "existingFailures": [
+    {
+      "test": " tests/unit/interpretation-v4/careerProductLocks.test.ts > 'annual' customer/evidence/Book stays frozen",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerProductLocks.test.ts > 'compatibility' customer/evidence/Book stays frozen",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerProductLocks.test.ts > 'comprehensive' customer/evidence/Book stays frozen",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerProductLocks.test.ts > 'love' customer/evidence/Book stays frozen",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerProductLocks.test.ts > 'major' customer/evidence/Book stays frozen",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'annual' previous saved edition remains identical",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'compatibility' previous saved edition remains identical",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'comprehensive' previous saved edition remains identical",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'love' previous saved edition remains identical",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'major' previous saved edition remains identical",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+      "message": "AssertionError: expected [] to include 'composite'"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > recovery-axis Fusion can serve C9 even when its original application is work",
+      "message": "AssertionError: expected false to be true // Object.is equality"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts > actual 12-person review cohort and isolation > scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+      "message": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/…/comprehensivePlanCore[\"']"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/foundationAdapter.test.ts > Phase13D-1A stays off all six product paths > only foundation modules reference the foundation; no writer/UI/calculation import",
+      "message": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality"
+    },
+    {
+      "test": " tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects annual_fortune bypass before order writes and allows stable input",
+      "message": "SyntaxError: Unexpected end of JSON input"
+    },
+    {
+      "test": " tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects major_fortune bypass before order writes and allows stable input",
+      "message": "SyntaxError: Unexpected end of JSON input"
+    }
+  ],
+  "failureGroups": {
+    "oldAllowlist": 2,
+    "comprehensiveAllocation": 2,
+    "customerDayunEmptyJsonResponse": 2,
+    "historicalDigestExpectations": 10
+  },
+  "supplementaryBookRegression": {
+    "files": 5,
+    "baseline": {
+      "passed": 99,
+      "failed": 11,
+      "total": 110
+    },
+    "after": {
+      "passed": 99,
+      "failed": 11,
+      "total": 110
+    },
+    "sameFailures": true,
+    "failures": [
+      {
+        "test": " tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'career': every original paragraph and final line in original order",
+        "message": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [ '도울 범위를 먼저 정하세요', '중요한 오류부터 보세요' ] to include '나는 어떻게 일하는 사람인가'"
+      },
+      {
+        "test": " tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'compatibility': every original paragraph and final line in original order",
+        "message": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+      },
+      {
+        "test": " tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'love': every original paragraph and final line in original order",
+        "message": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '사랑할 때의 나'"
+      },
+      {
+        "test": " tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-02-marriage': every original paragraph and final line in original order",
+        "message": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+      },
+      {
+        "test": " tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-03-parent': every original paragraph and final line in original order",
+        "message": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+      },
+      {
+        "test": " tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-04-coworker': every original paragraph and final line in original order",
+        "message": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+      },
+      {
+        "test": " tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-05-manager': every original paragraph and final line in original order",
+        "message": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+      },
+      {
+        "test": " tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-06-business': every original paragraph and final line in original order",
+        "message": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+      },
+      {
+        "test": " tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-07-friend': every original paragraph and final line in original order",
+        "message": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+      },
+      {
+        "test": " tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 'pair-08-love': every original paragraph and final line in original order",
+        "message": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+      },
+      {
+        "test": " tests/unit/app/dev/bookRuntime.test.tsx > actual V4 packet → book pages; no new calculation or prose > 14 years, 10 future years, all ages, transitions and clickable full narratives",
+        "message": "AssertionError: expected [ 2031, 48, '丁卯 → 丙寅', '辛亥', …(1) ] to deeply equal [ 2031, 48, '丙寅', '辛亥', …(1) ]"
+      }
+    ],
+    "groups": {
+      "oldReaderHeadingExpectations": 10,
+      "oldMajorTransitionDisplayExpectation": 1
+    },
+    "initialHookTimeout": "baseline bookReading13b beforeAll 10000ms under parallel load; rerun both versions maxWorkers=1 hookTimeout=240000;16 tests execute and pass; original tests unchanged"
+  },
+  "newResearchTests": 1175,
+  "newActualGenerationTests": 38,
+  "newPassed": 1213,
+  "deduplicatedTotal": {
+    "passed": 6343,
+    "failed": 27,
+    "conditionalNotRun": 1,
+    "total": 6371,
+    "files": 45
+  },
+  "newFailures": 0,
+  "newSkipped": 0,
+  "tsDiagnosticsBefore": 0,
+  "tsDiagnosticsAfter": 0,
+  "lint": {
+    "pass": true,
+    "errors": 0,
+    "warnings": 0
+  },
+  "build": {
+    "pass": true,
+    "staticPages": 47,
+    "nftWarnings": 0,
+    "deploymentExecuted": false
+  },
+  "actualInputCases": 35,
+  "actualVariants": 43,
+  "generatedVariants": 43,
+  "digestSetsUnchanged": 43,
+  "actualDomainObservationUnchanged": true,
+  "existingSourceFilesUnchanged": 2755,
+  "otherWorktreesPreserved": 27,
+  "originalDirtyEntriesPreserved": 11,
+  "runtimeConnected": false,
+  "customerApproved": false,
+  "diagnosticAttempts": [
+    "An initial new test assumed all reader provenance nodes were projected nodes; it exposed existing CHILDREN provenance in W. Reproduced on archived base; final test compares the actual baseline, without changing runtime.",
+    "Initial new test TypeScript narrowed excluded-domain array too far; explicit readonly string[] fixed it; final full diagnostics0."
+  ],
+  "knownRemainingIssues": [
+    "16 requested baseline failures;1 conditional not run",
+    "11 additional pre-existing Book expectation failures",
+    "L/M/AG existing editorial Major fallback",
+    "W CHILDREN provenance outside projection nodes",
+    "251 Pair directions common reference only",
+    "not all type/paragraph/task combinations covered",
+    "WORK/CAREER/THINKING source/domain/context approval and actual work/authority needed",
+    "actual evidence binding and introduced ledger not implemented"
+  ],
+  "diffCheck": {
+    "pass": true,
+    "exitCode": 0,
+    "command": "git diff --cached --check",
+    "existingModifiedFilesStaged": 0,
+    "scopedAddedFiles": 149
+  }
+}

@@ -1,0 +1,704 @@
+[
+  {
+    "chapter": "CH01",
+    "registered": 20,
+    "fixtureQuestionOccurrences": 80,
+    "linkedOccurrences": 80,
+    "witnessOccurrences": 55,
+    "customerEligible": 0,
+    "originalQuestions": [
+      {
+        "address": "CH01.P1",
+        "question": "나는 어떤 일을 먼저 확인하는 사람인가?",
+        "purpose": "나는 어떤 일을 먼저 확인하는 사람인가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH01.P2",
+        "question": "이 인물상은 무엇을 근거로 설명할 수 있는가?",
+        "purpose": "이 인물상은 무엇을 근거로 설명할 수 있는가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH01.P3",
+        "question": "MBTI를 함께 보면 어떤 질문이 추가되는가?",
+        "purpose": "MBTI를 함께 보면 어떤 질문이 추가되는가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH01.P4",
+        "question": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?",
+        "purpose": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "identity"
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "CH02",
+    "registered": 20,
+    "fixtureQuestionOccurrences": 80,
+    "linkedOccurrences": 80,
+    "witnessOccurrences": 30,
+    "customerEligible": 0,
+    "originalQuestions": [
+      {
+        "address": "CH02.P1",
+        "question": "내 원국의 구성과 유효성은 어떻게 다른가?",
+        "purpose": "내 원국의 구성과 유효성은 어떻게 다른가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH02.P2",
+        "question": "실제 확인된 기운을 어떤 조건에서 잘 쓸 수 있는가?",
+        "purpose": "실제 확인된 기운을 어떤 조건에서 잘 쓸 수 있는가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH02.P3",
+        "question": "부재·편중은 실제로 무엇까지 말해 주는가?",
+        "purpose": "부재·편중은 실제로 무엇까지 말해 주는가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH02.P4",
+        "question": "확인된 구성에서 지금 어떤 선택을 해볼 수 있는가?",
+        "purpose": "확인된 구성에서 지금 어떤 선택을 해볼 수 있는가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "identity"
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "CH03",
+    "registered": 20,
+    "fixtureQuestionOccurrences": 80,
+    "linkedOccurrences": 80,
+    "witnessOccurrences": 60,
+    "customerEligible": 0,
+    "originalQuestions": [
+      {
+        "address": "CH03.P1",
+        "question": "정확히 같은 대상·방향을 가리키는가?",
+        "purpose": "정확히 같은 대상·방향을 가리키는가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH03.P2",
+        "question": "비슷한 장점의 원인은 정말 같은가?",
+        "purpose": "비슷한 장점의 원인은 정말 같은가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH03.P3",
+        "question": "두 신호는 반대인가 다른 상황인가?",
+        "purpose": "두 신호는 반대인가 다른 상황인가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH03.P4",
+        "question": "검토한 차이를 어떻게 입체적으로 사용할 수 있는가?",
+        "purpose": "검토한 차이를 어떻게 입체적으로 사용할 수 있는가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "identity"
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "CH04",
+    "registered": 20,
+    "fixtureQuestionOccurrences": 80,
+    "linkedOccurrences": 80,
+    "witnessOccurrences": 50,
+    "customerEligible": 0,
+    "originalQuestions": [
+      {
+        "address": "CH04.P1",
+        "question": "처음 드러난 행동에서 무엇을 알 수 있는가?",
+        "purpose": "처음 드러난 행동에서 무엇을 알 수 있는가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "social"
+        ]
+      },
+      {
+        "address": "CH04.P2",
+        "question": "혼자 정리할 때 어떤 여건이 필요한가?",
+        "purpose": "혼자 정리할 때 어떤 여건이 필요한가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "social"
+        ]
+      },
+      {
+        "address": "CH04.P3",
+        "question": "가까워지면 어떤 표현 선택이 달라질 수 있는가?",
+        "purpose": "가까워지면 어떤 표현 선택이 달라질 수 있는가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "social"
+        ]
+      },
+      {
+        "address": "CH04.P4",
+        "question": "처음에 놓칠 수 있는 가치는 무엇인가?",
+        "purpose": "처음에 놓칠 수 있는 가치는 무엇인가?",
+        "domain": [
+          "identity"
+        ],
+        "context": [
+          "social"
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "CH05",
+    "registered": 20,
+    "fixtureQuestionOccurrences": 80,
+    "linkedOccurrences": 80,
+    "witnessOccurrences": 55,
+    "customerEligible": 0,
+    "originalQuestions": [
+      {
+        "address": "CH05.P1",
+        "question": "이 기능은 무엇을 가능하게 하는가?",
+        "purpose": "이 기능은 무엇을 가능하게 하는가?",
+        "domain": [
+          "strengths"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH05.P2",
+        "question": "첫 강점과 다른 두 번째 기능은 무엇인가?",
+        "purpose": "첫 강점과 다른 두 번째 기능은 무엇인가?",
+        "domain": [
+          "strengths"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH05.P3",
+        "question": "예상과 다른 장점은 어떤 조합에서 가능한가?",
+        "purpose": "예상과 다른 장점은 어떤 조합에서 가능한가?",
+        "domain": [
+          "strengths"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH05.P4",
+        "question": "재능을 오래 쓰려면 무엇을 지켜야 하는가?",
+        "purpose": "재능을 오래 쓰려면 무엇을 지켜야 하는가?",
+        "domain": [
+          "strengths"
+        ],
+        "context": [
+          "identity"
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "CH06",
+    "registered": 20,
+    "fixtureQuestionOccurrences": 80,
+    "linkedOccurrences": 80,
+    "witnessOccurrences": 45,
+    "customerEligible": 0,
+    "originalQuestions": [
+      {
+        "address": "CH06.P1",
+        "question": "좋은 기능이 언제 비용이 되는가?",
+        "purpose": "좋은 기능이 언제 비용이 되는가?",
+        "domain": [
+          "weaknesses"
+        ],
+        "context": [
+          "stress"
+        ]
+      },
+      {
+        "address": "CH06.P2",
+        "question": "그 비용을 무엇으로 설명할 수 있는가?",
+        "purpose": "그 비용을 무엇으로 설명할 수 있는가?",
+        "domain": [
+          "weaknesses"
+        ],
+        "context": [
+          "stress"
+        ]
+      },
+      {
+        "address": "CH06.P3",
+        "question": "내 의도와 받은 뜻은 어디에서 달라질 수 있는가?",
+        "purpose": "내 의도와 받은 뜻은 어디에서 달라질 수 있는가?",
+        "domain": [
+          "weaknesses"
+        ],
+        "context": [
+          "stress"
+        ]
+      },
+      {
+        "address": "CH06.P4",
+        "question": "기능을 버리지 않고 무엇을 조정할 수 있는가?",
+        "purpose": "기능을 버리지 않고 무엇을 조정할 수 있는가?",
+        "domain": [
+          "weaknesses"
+        ],
+        "context": [
+          "stress"
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "CH07",
+    "registered": 20,
+    "fixtureQuestionOccurrences": 80,
+    "linkedOccurrences": 80,
+    "witnessOccurrences": 15,
+    "customerEligible": 0,
+    "originalQuestions": [
+      {
+        "address": "CH07.P1",
+        "question": "원국에서 실제 확인되는 좋은 상징은 무엇인가?",
+        "purpose": "원국에서 실제 확인되는 좋은 상징은 무엇인가?",
+        "domain": [
+          "success/fortune"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH07.P2",
+        "question": "첫 좋은 패와 다른 힘은 무엇인가?",
+        "purpose": "첫 좋은 패와 다른 힘은 무엇인가?",
+        "domain": [
+          "success/fortune"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH07.P3",
+        "question": "이 좋은 기운을 어떤 행동으로 드러낼 수 있는가?",
+        "purpose": "이 좋은 기운을 어떤 행동으로 드러낼 수 있는가?",
+        "domain": [
+          "success/fortune"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH07.P4",
+        "question": "지금 활용할 좋은 패를 어떻게 고르는가?",
+        "purpose": "지금 활용할 좋은 패를 어떻게 고르는가?",
+        "domain": [
+          "success/fortune"
+        ],
+        "context": [
+          "identity"
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "CH08",
+    "registered": 20,
+    "fixtureQuestionOccurrences": 80,
+    "linkedOccurrences": 80,
+    "witnessOccurrences": 40,
+    "customerEligible": 0,
+    "originalQuestions": [
+      {
+        "address": "CH08.P1",
+        "question": "실제 일에서 나는 무엇부터 맞추는가?",
+        "purpose": "실제 일에서 나는 무엇부터 맞추는가?",
+        "domain": [
+          "work"
+        ],
+        "context": [
+          "work"
+        ]
+      },
+      {
+        "address": "CH08.P2",
+        "question": "어떤 역할에 내 기능을 배정할 수 있는가?",
+        "purpose": "어떤 역할에 내 기능을 배정할 수 있는가?",
+        "domain": [
+          "work"
+        ],
+        "context": [
+          "work"
+        ]
+      },
+      {
+        "address": "CH08.P3",
+        "question": "어떤 환경 조건이 기능을 막을 수 있는가?",
+        "purpose": "어떤 환경 조건이 기능을 막을 수 있는가?",
+        "domain": [
+          "work"
+        ],
+        "context": [
+          "work"
+        ]
+      },
+      {
+        "address": "CH08.P4",
+        "question": "현재 상태에서 무엇을 어떻게 익힐 수 있는가?",
+        "purpose": "현재 상태에서 무엇을 어떻게 익힐 수 있는가?",
+        "domain": [
+          "work"
+        ],
+        "context": [
+          "work"
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "CH09",
+    "registered": 20,
+    "fixtureQuestionOccurrences": 80,
+    "linkedOccurrences": 80,
+    "witnessOccurrences": 45,
+    "customerEligible": 0,
+    "originalQuestions": [
+      {
+        "address": "CH09.P1",
+        "question": "돈을 선택할 때 어떤 목적을 중요하게 보는가?",
+        "purpose": "돈을 선택할 때 어떤 목적을 중요하게 보는가?",
+        "domain": [
+          "money"
+        ],
+        "context": [
+          "money"
+        ]
+      },
+      {
+        "address": "CH09.P2",
+        "question": "재물 관련 상징은 어떤 현실 조건이 필요한가?",
+        "purpose": "재물 관련 상징은 어떤 현실 조건이 필요한가?",
+        "domain": [
+          "money"
+        ],
+        "context": [
+          "money"
+        ]
+      },
+      {
+        "address": "CH09.P3",
+        "question": "어떤 판단이 자원 부담을 가릴 수 있는가?",
+        "purpose": "어떤 판단이 자원 부담을 가릴 수 있는가?",
+        "domain": [
+          "money"
+        ],
+        "context": [
+          "money"
+        ]
+      },
+      {
+        "address": "CH09.P4",
+        "question": "내 자원을 지킬 다음 기준은 무엇인가?",
+        "purpose": "내 자원을 지킬 다음 기준은 무엇인가?",
+        "domain": [
+          "money"
+        ],
+        "context": [
+          "money"
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "CH10",
+    "registered": 20,
+    "fixtureQuestionOccurrences": 80,
+    "linkedOccurrences": 80,
+    "witnessOccurrences": 45,
+    "customerEligible": 0,
+    "originalQuestions": [
+      {
+        "address": "CH10.P1",
+        "question": "관심을 어떤 통로와 속도로 전하고 싶은가?",
+        "purpose": "관심을 어떤 통로와 속도로 전하고 싶은가?",
+        "domain": [
+          "relationships"
+        ],
+        "context": [
+          "love"
+        ]
+      },
+      {
+        "address": "CH10.P2",
+        "question": "어떤 표현이 관계에서 가치가 될 수 있는가?",
+        "purpose": "어떤 표현이 관계에서 가치가 될 수 있는가?",
+        "domain": [
+          "relationships"
+        ],
+        "context": [
+          "love"
+        ]
+      },
+      {
+        "address": "CH10.P3",
+        "question": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?",
+        "purpose": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?",
+        "domain": [
+          "relationships"
+        ],
+        "context": [
+          "love"
+        ]
+      },
+      {
+        "address": "CH10.P4",
+        "question": "다른 선택이 있어도 편한 관계의 조건은 무엇인가?",
+        "purpose": "다른 선택이 있어도 편한 관계의 조건은 무엇인가?",
+        "domain": [
+          "relationships"
+        ],
+        "context": [
+          "love"
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "CH11",
+    "registered": 20,
+    "fixtureQuestionOccurrences": 80,
+    "linkedOccurrences": 80,
+    "witnessOccurrences": 30,
+    "customerEligible": 0,
+    "originalQuestions": [
+      {
+        "address": "CH11.P1",
+        "question": "가까운 관계에서 실제 맡은 몫은 무엇인가?",
+        "purpose": "가까운 관계에서 실제 맡은 몫은 무엇인가?",
+        "domain": [
+          "relationships"
+        ],
+        "context": [
+          "social"
+        ]
+      },
+      {
+        "address": "CH11.P2",
+        "question": "가까운 사람에게 어떤 도움이 실제로 남는가?",
+        "purpose": "가까운 사람에게 어떤 도움이 실제로 남는가?",
+        "domain": [
+          "relationships"
+        ],
+        "context": [
+          "social"
+        ]
+      },
+      {
+        "address": "CH11.P3",
+        "question": "가까움 때문에 어떤 기대를 생략하기 쉬운가?",
+        "purpose": "가까움 때문에 어떤 기대를 생략하기 쉬운가?",
+        "domain": [
+          "relationships"
+        ],
+        "context": [
+          "social"
+        ]
+      },
+      {
+        "address": "CH11.P4",
+        "question": "역할과 거리를 어떻게 함께 조정할 수 있는가?",
+        "purpose": "역할과 거리를 어떻게 함께 조정할 수 있는가?",
+        "domain": [
+          "relationships"
+        ],
+        "context": [
+          "social"
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "CH12",
+    "registered": 20,
+    "fixtureQuestionOccurrences": 80,
+    "linkedOccurrences": 80,
+    "witnessOccurrences": 35,
+    "customerEligible": 0,
+    "originalQuestions": [
+      {
+        "address": "CH12.P1",
+        "question": "자발적인 우정에서 어떤 참여를 제안하는가?",
+        "purpose": "자발적인 우정에서 어떤 참여를 제안하는가?",
+        "domain": [
+          "relationships"
+        ],
+        "context": [
+          "social"
+        ]
+      },
+      {
+        "address": "CH12.P2",
+        "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?",
+        "purpose": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?",
+        "domain": [
+          "relationships"
+        ],
+        "context": [
+          "social"
+        ]
+      },
+      {
+        "address": "CH12.P3",
+        "question": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?",
+        "purpose": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?",
+        "domain": [
+          "relationships"
+        ],
+        "context": [
+          "social"
+        ]
+      },
+      {
+        "address": "CH12.P4",
+        "question": "나와 다르면서도 편할 관계는 어떤 조건인가?",
+        "purpose": "나와 다르면서도 편할 관계는 어떤 조건인가?",
+        "domain": [
+          "relationships"
+        ],
+        "context": [
+          "social"
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": "CH13",
+    "registered": 20,
+    "fixtureQuestionOccurrences": 80,
+    "linkedOccurrences": 80,
+    "witnessOccurrences": 0,
+    "customerEligible": 0,
+    "originalQuestions": [
+      {
+        "address": "CH13.P1",
+        "question": "앞선 발견에서 어떤 선택 기준을 기억할 것인가?",
+        "purpose": "앞선 발견에서 어떤 선택 기준을 기억할 것인가?",
+        "domain": [
+          "strengths"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?",
+        "purpose": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?",
+        "domain": [
+          "strengths"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH13.P3",
+        "question": "일상에서 오늘 바꿀 작은 선택은 무엇인가?",
+        "purpose": "일상에서 오늘 바꿀 작은 선택은 무엇인가?",
+        "domain": [
+          "strengths"
+        ],
+        "context": [
+          "identity"
+        ]
+      },
+      {
+        "address": "CH13.P4",
+        "question": "나를 잘 쓸 다음 방향을 어떤 이미지로 기억할 것인가?",
+        "purpose": "나를 잘 쓸 다음 방향을 어떤 이미지로 기억할 것인가?",
+        "domain": [
+          "strengths"
+        ],
+        "context": [
+          "identity"
+        ]
+      }
+    ]
+  }
+]

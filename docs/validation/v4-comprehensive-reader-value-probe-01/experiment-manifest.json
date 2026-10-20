@@ -1,0 +1,40 @@
+{
+  "task": "V4-COMPREHENSIVE-READER-VALUE-PROBE-01",
+  "baseSha": "b88cf5dd6f7dda903a568955c4f736408b856c86",
+  "status": "RESEARCH_ONLY_EDITORIAL_PROTOTYPE",
+  "product": "saju_mbti_full",
+  "customerAssignable": false,
+  "customerApproved": 0,
+  "customerEligible": 0,
+  "customerSelections": 0,
+  "claimsEmitted": 0,
+  "bookAllocations": 0,
+  "fixtures": 2,
+  "baselinePublishedEditions": [
+    "comprehensive-editorial-quality-fix-01-v1",
+    "comprehensive-editorial-quality-fix-01-v1"
+  ],
+  "baselineParagraphs": 8,
+  "experimentalParagraphs": 8,
+  "experimentalClauses": 32,
+  "researchInventory": 179,
+  "materialsDirectlyReadForProse": 7,
+  "applicableCatalogCandidates": 200,
+  "inheritedFourFixtureWitnessOccurrences": 557,
+  "inheritedFourFixtureStructuralOccurrences": 23,
+  "probeTwoFixtureWitnessOccurrences": 180,
+  "probeTwoFixtureStructuralOccurrences": 9,
+  "referencedDistinctPublicGraphNodes": 15,
+  "selectedWitnessAddresses": 8,
+  "verifiedCalculatedClauses": 4,
+  "verifiedInputClauses": 1,
+  "conditionalClauses": 27,
+  "bridgeRelations": {
+    "EXACT_VERIFIED_COUNTERPART": 0,
+    "EVIDENCE_SUPPORTED_TOPIC_COMPARISON": 3,
+    "EDITORIAL_TOPIC_COMPARISON_ONLY": 5,
+    "NOT_COMPARABLE": 0
+  },
+  "writerImportsFromExperiment": 0,
+  "newIndependentFactsIssued": 0
+}

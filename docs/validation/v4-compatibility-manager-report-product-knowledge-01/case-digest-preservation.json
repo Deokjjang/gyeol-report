@@ -1,0 +1,854 @@
+{
+  "variants": 42,
+  "actualCompatibilitySuccesses": 40,
+  "expectedVersionRejections": 2,
+  "fixedTime": "2026-10-12T12:00:00+09:00",
+  "digestKeys": [
+    "calculation",
+    "fullEvidence",
+    "narrative",
+    "integration",
+    "personA",
+    "personB",
+    "book"
+  ],
+  "allMatches": true,
+  "cases": [
+    {
+      "letter": "A",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "B",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "43b70f33efec505c1cc4e02167c015dd40c46b74c1e9305a3cc486c3f4e521d2",
+        "narrative": "5336dbb5d0986b3e409c9095c7fdc530a9f279d7c977025b66f384d9809a6756",
+        "integration": "75bf00c31634de985235ad5d1f8bf5420a56ae1a30673769b5b5c34c78b4ede7",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "127489893f60f61f4761b9d98a381e2c307adc18ff8232dcb0855e9887394531",
+        "book": "9e814391ea86e2661edfec51f70569177e834b54e90810e9286e6b1ea2cc90da"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "C",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "7b9a9640e24fedc09b11d62623ecd7b52d9f27d7a74c30e01857b758a043e765",
+        "narrative": "db7714d6e0abc203cfc156fa75b2e96d42ae28803140f448a1f83415de801cd8",
+        "integration": "72e4be58c50929836e5eb8a2b0bae35f28ad15460146c3570d908a67dd99f810",
+        "personA": "ef0996dc8e18e9263d92f47b98f895872973f6a5acc822c0719f21b6ab0d0266",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "523fd22ef033b33678b1048a31dc611fa8811992c424e6904a1b8a45cd2f91ac"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "D",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ee84871fbc9667ed43421ccdcec930c438b4149d3a72b2b476b16a61fe51a8b3",
+        "narrative": "5a89e0b4f75d3be52d534e34c5ab399614e86d05b3a66668cad2b70a8ff2e49f",
+        "integration": "747cd74355fc94db064c9f008fcf8787b722585ccc0e316469abafb7e2e06d09",
+        "personA": "ef0996dc8e18e9263d92f47b98f895872973f6a5acc822c0719f21b6ab0d0266",
+        "personB": "127489893f60f61f4761b9d98a381e2c307adc18ff8232dcb0855e9887394531",
+        "book": "b9f8982799f99ab9d1e0c7d7b4ac2db9072f502043070b2ed245ed03c9d57dc2"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "E",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "9846b96d06bfacbee5f0d6b2719e1d8e1a0cbad93f5c007e8a940da71a762f5f",
+        "fullEvidence": "4f0c4bd79c84c25f77487917e91de9560214fce538a2a6fa2a4b8be9e7ac2d3a",
+        "narrative": "e63e6e084b6e82a48ac0a66102d1a41b7b38e0bbf13627495c8fc00ee05623ed",
+        "integration": "048eb7344db5e7a915abdb48bd19dfa8b1dd5c975056a772cf7e42a12ff45181",
+        "personA": "01782df46b3e7834a400702d09be2962133368104502d4dfa73195beba41bcc4",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "32103640d23c81c9188b903fbdf67303bc8a89134d761472b0cc1eea33775aea"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "F",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "622072c9764dff2b0ff4e3239862d4330ae31f30f46cd0d6340cbfc6d3bf1845",
+        "fullEvidence": "f4bdb1508671e2134717e6760edfbecdba446ca213a63be84d4e40c61469af49",
+        "narrative": "ff98fa2c336fc3d38d871aec33860e2ad58cad00cde2206d38cfc39bbc73f991",
+        "integration": "5af96b4d782afa9ad51c141522b3a27b911d3a923dca3ab7e6c406b6e88b35b2",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "85a8309d53973d26c680db1700c17329eff0558c479e254c0a933cfa30d81ac2",
+        "book": "5fe73a7209f6f574f689bb9d9e948159bce0bcb4ef5a37a26cfbb5e17ed4b119"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "G",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "H",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "b3066b42776c5a5d74c0fae4b6d2c1d1f9ed98b3e229ec57c0d77afafa476221",
+        "narrative": "692cc90bfe0873eaf89985ebafd40228bfb68cd8575b55419a9465cac74d159b",
+        "integration": "089f9f299448896347d1e783082041a5bb9ff1259b4b21e030da7c17992544ae",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "23c45e1a9189871bfa8fd58e912d0da55af1af80d115cd8e23085d53ded36926",
+        "book": "08791a3a2d91d579ad6685baaafbd8aa15b0eb21dc918bde5e90c1dd447c82ad"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "I",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "J",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "K",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "L",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-product-13d-7b-v1",
+      "hashes": {
+        "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+        "fullEvidence": "063c0d6d5700df52e5910a997b2869b3ddda8698c85923e9cbc7b0384aa285f7",
+        "narrative": "422e1c6ded47e3b2e029cd9fa36047bb87f3dbe930351b63da0caaaf90e6ac77",
+        "integration": "75af01278c5ec14b0bbb1cadca519dc48fe0e26ef1158bfd973c38ec44a6441f",
+        "personA": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+        "personB": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+        "book": "30a507cef8c0abbd2598b921378432f56ea76df014df905b6482d440af58d2b2"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "M",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-product-13d-7b-v1",
+      "hashes": {
+        "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+        "fullEvidence": "063c0d6d5700df52e5910a997b2869b3ddda8698c85923e9cbc7b0384aa285f7",
+        "narrative": "422e1c6ded47e3b2e029cd9fa36047bb87f3dbe930351b63da0caaaf90e6ac77",
+        "integration": "75af01278c5ec14b0bbb1cadca519dc48fe0e26ef1158bfd973c38ec44a6441f",
+        "personA": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+        "personB": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+        "book": "30a507cef8c0abbd2598b921378432f56ea76df014df905b6482d440af58d2b2"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "N",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "O",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cb81fb5048f956f3cb34034d61d96621c6ce9d3499342d081e88370a8ec4d0d7",
+        "fullEvidence": "b263f865404209289d9dc7b5e7bf28301c936e38b38bdc34ebcad197a37083e1",
+        "narrative": "0f3860af88a3c57629715e5f59d75f11610755b330793b08093433e70fb325fb",
+        "integration": "132d5d712ba680f70b598d386487d6c1298cbf1cc6baf7306c0c8f7ce0331040",
+        "personA": "5af4130eb30aff6ae8e7d1553c18c098c0d9a4c32f7c411162dc1bd64af4c4c8",
+        "personB": "262bf7ccbfd396d7b0a51819898564ae9cf7748da4d7b3173ac872899ad86901",
+        "book": "6c4f1fed332d1c36e2fe8b481fb7ac0eb56e4eedf9d1b2419507de38786c13bf"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "P",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "Q",
+      "variant": 0,
+      "ok": false,
+      "publishedEdition": null,
+      "hashes": null,
+      "errors": {
+        "code": "INVALID_REPORT_INPUT",
+        "message": "V4_COMPATIBILITY_GENERATION_FAILED",
+        "validationErrors": [
+          "V4_COMPATIBILITY_GENERATION_FAILED"
+        ]
+      },
+      "hardErrors": null,
+      "shortages": null,
+      "chapters": null,
+      "paragraphs": null
+    },
+    {
+      "letter": "R",
+      "variant": 0,
+      "ok": false,
+      "publishedEdition": null,
+      "hashes": null,
+      "errors": {
+        "code": "INVALID_REPORT_INPUT",
+        "message": "INVALID_COMPATIBILITY_ROLE_VERSION",
+        "validationErrors": [
+          "INVALID_COMPATIBILITY_ROLE_VERSION"
+        ]
+      },
+      "hardErrors": null,
+      "shortages": null,
+      "chapters": null,
+      "paragraphs": null
+    },
+    {
+      "letter": "S",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "S",
+      "variant": 1,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "21b7b87c4fba0182ba44ab0007f42d0d1019416c8dd548d46f94394ecf620eb7",
+        "fullEvidence": "dd4ffd4956a8d68a0924989fce0c36478dcb197d05a22a63024eb60b631e79e0",
+        "narrative": "536ec75b76c872ef234e3ca59f0b87c92740a7a86cdb6395ff4c3e77745414b3",
+        "integration": "fce5e72361fd07be5faa2cf2a4d0cb999e34d0efb83ea67fc746937eadb493e3",
+        "personA": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "personB": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "book": "506ccf93f241351744681e8d506a3bd5c3ee2a98b0bf4efa8f0d530324bf1a5b"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "T",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "T",
+      "variant": 1,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "2a2fc834e11172961fec28f0042b365abc28af03180b5b27ff7497d2c89b5f7c",
+        "narrative": "49a878aac7f7b8ba76680076f877e6835752f1787ae6702a152db197f5b6a9d2",
+        "integration": "a5c33906eae4ae878d926a2341a5290c06c4786ddc7d284717ad215dd62500f3",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "702062b2e97311329856c4e3ed241dfd47f61150e9f3ccb0530ea42f858c9834"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "U",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "V",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "W",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "X",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "Y",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "Z",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "AA",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "AB",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "AC",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "AD",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "AE",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "AF",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "AG",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "AH",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "79d1b1230b5e588111f6bba127cc6bb06edf776d4946e52275674dbe42b02d8c",
+        "narrative": "98339ef2d7b55144ce7378697874a712c4e9b26c3480424a037f81300f7796a0",
+        "integration": "be0e9f02978347568e634a83387f59f34fdf0a835c4f8df3686deea225dbc312",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "fd666b0ff509299796162ee00d9e121fc1be82846b24277de9bad2fc56582d05"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "AI",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+        "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+        "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "AJ",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "AK",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "AL",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-product-13d-7b-v1",
+      "hashes": {
+        "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+        "fullEvidence": "063c0d6d5700df52e5910a997b2869b3ddda8698c85923e9cbc7b0384aa285f7",
+        "narrative": "422e1c6ded47e3b2e029cd9fa36047bb87f3dbe930351b63da0caaaf90e6ac77",
+        "integration": "75af01278c5ec14b0bbb1cadca519dc48fe0e26ef1158bfd973c38ec44a6441f",
+        "personA": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+        "personB": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+        "book": "30a507cef8c0abbd2598b921378432f56ea76df014df905b6482d440af58d2b2"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "AN",
+      "variant": 0,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    },
+    {
+      "letter": "AN",
+      "variant": 1,
+      "ok": true,
+      "publishedEdition": "compatibility-editorial-quality-01-v1",
+      "hashes": {
+        "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+        "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+        "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+        "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+        "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+        "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+      },
+      "errors": null,
+      "hardErrors": [],
+      "shortages": [],
+      "chapters": 9,
+      "paragraphs": 36
+    }
+  ]
+}

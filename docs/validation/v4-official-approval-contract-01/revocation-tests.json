@@ -1,0 +1,73 @@
+{
+  "signedLedgerEventsRequired": true,
+  "authorityAndPinsVerified": true,
+  "revisionFloorAndFreshnessChecked": true,
+  "existingRecordInvalidImmediatelyAfterRevocation": true,
+  "originalApprovalDeleted": false,
+  "negative": [
+    {
+      "name": "05 revoked signing key",
+      "rejected": true,
+      "reasons": [
+        "REVIEWER_AUTHORITY_SNAPSHOT_CHANGED_REAPPROVAL_REQUIRED",
+        "SIGNING_KEY_REVOKED"
+      ]
+    },
+    {
+      "name": "revocation registry unavailable",
+      "rejected": true,
+      "reasons": [
+        "REVOCATION_REGISTRY_UNAVAILABLE"
+      ]
+    },
+    {
+      "name": "stale revocation registry",
+      "rejected": true,
+      "reasons": [
+        "REVOCATION_LEDGER_STALE_OR_INVALID"
+      ]
+    },
+    {
+      "name": "revocation registry rollback",
+      "rejected": true,
+      "reasons": [
+        "REVOCATION_LEDGER_PIN_OR_REVISION_MISMATCH"
+      ]
+    },
+    {
+      "name": "29 approval revoked",
+      "rejected": true,
+      "reasons": [
+        "APPROVAL_REVOKED"
+      ]
+    },
+    {
+      "name": "30 superseded approval",
+      "rejected": true,
+      "reasons": [
+        "APPROVAL_SUPERSEDED"
+      ]
+    },
+    {
+      "name": "key rotation old signature reused",
+      "rejected": true,
+      "reasons": [
+        "SIGNING_KEY_SUPERSEDED_BY_ROTATION"
+      ]
+    },
+    {
+      "name": "tampered revocation signature",
+      "rejected": true,
+      "reasons": [
+        "INVALID_LEDGER_SIGNATURE"
+      ]
+    },
+    {
+      "name": "ledger event replay",
+      "rejected": true,
+      "reasons": [
+        "INVALID_OR_REPLAYED_LEDGER_RECORD"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2640 @@
+{
+  "requiredAncestryChecked": true,
+  "actual": [
+    {
+      "id": "lkr:material:CH05.P4:sustain-reciprocal-expression",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-esfj-belonging",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P1:care-ledger",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P3:reliable-attention",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P4:humor-stop-signal",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-consent-respect",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P3:difference-welcomed",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P1:good-help-access",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P3:recall-space-return",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P4:closing-choice-care",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P4:sustain-current-person",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P2:natal-rule-not-control",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P3:space-care-fusion",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P3:new-experience-design",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P4:reciprocal-care",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P4:home-optout-legitimate",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P3:single-overhelp",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P3:space-not-passcode",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-optout-warmth",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P4:some-answer-not-label",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P2:home-care-rotation",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P4:selection-response-over-image",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P3:difference-direct-gentle",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P2:private-playfulness",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P1:first-quiet-room",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P2:home-kin-information",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P4:closing-trust-current",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P1:home-conditional-rule",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P2:mbti-speed-not-motive",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P4:home-spending-threshold",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P2:comfort-explained-change",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P1:close-shared-story",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P3:broken-promise-loop",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P2:fusion-visible-care",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P1:solution-over-listen",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P1:first-clear-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P2:saju-equality-context",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P4:selection-no-test",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P3:difference-new-and-stable",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P3:recall-pace-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P1:self-retained",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-estp-activity-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P2:married-talk-not-demand",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-age-aware-question",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P2:unknown-channel-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P1:home-self-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P3:recall-care-request",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P1:precision-not-person",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-intj-reasoning",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P4:repair-space-with-return",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P2:private-remembering",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P1:attracted-to-safe-kindness",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P4:married-current-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P2:single-small-invite",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-care-sustainable",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-istp-help-access",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P1:home-planned-not-fixed",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P4:repair-action-not-apology",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P2:preparing-decision-pace",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P2:dating-expression-update",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P4:home-revision-meeting",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P1:close-attuned-question",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P1:held-hongyeom-expansion",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P1:dating-current-interest",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P4:repair-boundary-safety",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P4:warmth-with-refusal",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P2:gift-care-with-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P1:attracted-to-direction",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P4:selection-refusal",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-model-commitment",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P4:repair-heard-first",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P4:single-open-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P1:first-invitation",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P4:safe-dissent",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-overprotection",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P1:unknown-open-context",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P2:attune-interpretation-loop",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P1:quiet-concentration",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P3:home-correction-fatigue",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P3:space-chosen-company",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P4:depth-small-dose",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P2:gift-trust-expression",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-debate-as-listen",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-estj-rules-explained",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P1:good-output-joy",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P3:memory-updated",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P4:home-rest-fairness",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P2:home-minimum-system",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P3:married-labor-invisible",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P3:home-peace-not-consent",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P4:honesty-with-listening",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-entp-experiment",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P1:single-interest",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P3:unknown-no-stage-script",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P3:pace-escalation",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-infp-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-support-channel",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-enfj-emotional-base",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P2:need-return-signal",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P3:mutual-growth-question",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P4:sustain-repair-access",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P2:comfort-emotional-answer",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P3:recall-care-with-safety",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P3:home-novelty-cost",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P1:attracted-to-liveliness",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P2:saju-output-context",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-results-only",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-isfp-warm-limit",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P3:expression-and-receipt",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P1:care-asked",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P2:need-acknowledged-care",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P2:private-calm-help",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P2:private-listening-depth",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P4:selection-reciprocity",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P4:preparing-both-directions",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P1:close-practical-trust",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P1:silent-agreement-cost",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P2:fusion-care-space",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P1:married-person-interest",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P4:closing-meaning-difference",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P4:trust-as-condition",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-intp-patience",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P2:need-not-changed-person",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P2:gift-autonomy-respect",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P2:some-response-window",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P1:good-dohwa-symbol",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-high-expectation",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P4:closing-quiet-visible",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P3:preparing-finance-consent",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P3:difference-listening-and-solution",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P3:home-money-power",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P1:preparing-affection-not-task",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P3:dating-unspoken-score",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P1:close-unguarded-detail",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P4:sustain-small-promises",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-monopoly-fatigue",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P4:meaning-not-sameness",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-infj-opinion",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-esfp-shared-interest",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P3:unasked-help-escalation",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-enfp-encouragement",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-emotion-reading",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P1:some-observed",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P4:dating-renew-small",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-istj-predictability",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P4:unknown-no-deficit",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P2:need-deep-understood",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P3:quiet-request",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P3:space-recovery-attunement",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P3:practical-not-substitute",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-isfj-security",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P1:home-warm-rhythm",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P1:first-warm-humor",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-entj-responsibility",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P3:avoidance-escalation",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P2:home-change-buffer",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P2:comfort-unforced-self",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P1:attracted-to-dialogue",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P2:fusion-meaning-care",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P2:comfort-space",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P3:difference-rest-and-company",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P2:gift-meaningful-listen",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P1:shared-meaning",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P3:some-reading-delay",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P4:sustain-reciprocal-expression",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-esfj-belonging",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P1:care-ledger",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P3:reliable-attention",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P4:humor-stop-signal",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-consent-respect",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P3:difference-welcomed",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P1:good-help-access",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P3:recall-space-return",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P4:closing-choice-care",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P4:sustain-current-person",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P2:natal-rule-not-control",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P3:space-care-fusion",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P3:new-experience-design",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P4:reciprocal-care",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P4:home-optout-legitimate",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P3:single-overhelp",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P3:space-not-passcode",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-optout-warmth",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P4:some-answer-not-label",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P2:home-care-rotation",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P4:selection-response-over-image",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P3:difference-direct-gentle",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P2:private-playfulness",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P1:first-quiet-room",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P2:home-kin-information",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P4:closing-trust-current",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P1:home-conditional-rule",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P2:mbti-speed-not-motive",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P4:home-spending-threshold",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P2:comfort-explained-change",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P1:close-shared-story",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P3:broken-promise-loop",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P2:fusion-visible-care",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P1:solution-over-listen",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P1:first-clear-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P2:saju-equality-context",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P4:selection-no-test",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P3:difference-new-and-stable",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P3:recall-pace-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P1:self-retained",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-estp-activity-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P2:married-talk-not-demand",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-age-aware-question",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P2:unknown-channel-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P1:home-self-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P3:recall-care-request",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P1:precision-not-person",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-intj-reasoning",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P4:repair-space-with-return",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P2:private-remembering",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P1:attracted-to-safe-kindness",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P4:married-current-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P2:single-small-invite",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-care-sustainable",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-istp-help-access",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P1:home-planned-not-fixed",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P4:repair-action-not-apology",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P2:preparing-decision-pace",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P2:dating-expression-update",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P4:home-revision-meeting",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P1:close-attuned-question",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P1:held-hongyeom-expansion",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P1:dating-current-interest",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P4:repair-boundary-safety",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P4:warmth-with-refusal",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P2:gift-care-with-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P1:attracted-to-direction",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P4:selection-refusal",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-model-commitment",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P4:repair-heard-first",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P4:single-open-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P1:first-invitation",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P4:safe-dissent",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-overprotection",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P1:unknown-open-context",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P2:attune-interpretation-loop",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P1:quiet-concentration",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P3:home-correction-fatigue",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P3:space-chosen-company",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P4:depth-small-dose",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P2:gift-trust-expression",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-debate-as-listen",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-estj-rules-explained",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P1:good-output-joy",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P3:memory-updated",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P4:home-rest-fairness",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P2:home-minimum-system",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P3:married-labor-invisible",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P3:home-peace-not-consent",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P4:honesty-with-listening",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-entp-experiment",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P1:single-interest",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P3:unknown-no-stage-script",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P3:pace-escalation",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-infp-choice",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-support-channel",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-enfj-emotional-base",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P2:need-return-signal",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P3:mutual-growth-question",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P4:sustain-repair-access",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P2:comfort-emotional-answer",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P3:recall-care-with-safety",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P3:home-novelty-cost",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P1:attracted-to-liveliness",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P2:saju-output-context",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-results-only",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-isfp-warm-limit",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P3:expression-and-receipt",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P1:care-asked",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P2:need-acknowledged-care",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P2:private-calm-help",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P2:private-listening-depth",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P4:selection-reciprocity",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P4:preparing-both-directions",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P1:close-practical-trust",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P1:silent-agreement-cost",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P2:fusion-care-space",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P1:married-person-interest",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P4:closing-meaning-difference",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P4:trust-as-condition",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-intp-patience",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P2:need-not-changed-person",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P2:gift-autonomy-respect",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P2:some-response-window",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P1:good-dohwa-symbol",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-high-expectation",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P4:closing-quiet-visible",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P3:preparing-finance-consent",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P3:difference-listening-and-solution",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P3:home-money-power",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P1:preparing-affection-not-task",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P3:dating-unspoken-score",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P1:close-unguarded-detail",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P4:sustain-small-promises",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-monopoly-fatigue",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P4:meaning-not-sameness",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-infj-opinion",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-esfp-shared-interest",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P3:unasked-help-escalation",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-enfp-encouragement",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-emotion-reading",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P1:some-observed",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P4:dating-renew-small",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-istj-predictability",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P4:unknown-no-deficit",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P2:need-deep-understood",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P3:quiet-request",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH05.P3:space-recovery-attunement",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P3:practical-not-substitute",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-isfj-security",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P1:home-warm-rhythm",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH02.P1:first-warm-humor",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-entj-responsibility",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P3:avoidance-escalation",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH07.P2:home-change-buffer",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P2:comfort-unforced-self",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P1:attracted-to-dialogue",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH06.P2:fusion-meaning-care",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P2:comfort-space",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH03.P3:difference-rest-and-company",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH09.P2:gift-meaningful-listen",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH01.P1:shared-meaning",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    },
+    {
+      "id": "lkr:material:CH04.P3:some-reading-delay",
+      "pairBlocked": false,
+      "childBlocked": false,
+      "blockedSources": [],
+      "blockedNodes": [],
+      "reasons": []
+    }
+  ],
+  "synthetic": [
+    {
+      "name": "requiredPairAncestor",
+      "eligible": 0,
+      "reasons": [
+        "PAIR_REFERENCE_CANNOT_BECOME_PERSONAL_EVIDENCE"
+      ]
+    }
+  ],
+  "pairResearchGloballyDeleted": false,
+  "compatibilityPoliciesChanged": false
+}

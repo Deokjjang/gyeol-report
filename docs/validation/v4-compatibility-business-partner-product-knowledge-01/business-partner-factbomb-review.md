@@ -1,0 +1,94 @@
+# 팩폭·반전의 검토
+
+사람의 인격·미래를 공격하지 않고 서로 다른 사업 조건의 누락을 드러낸다. 실제 과거 사건은 만들지 않는다.
+
+- bppr:material:CH01.P1:idea-demand-interface: “둘이 좋아한 아이디어가 고객의 구매 이유가 되는 것은 아니다” / 반전 “반대 질문이 기회를 버리는 말보다 검증할 길을 열 수 있다” / 조건 검증 시간·시험비는 아직 가정이며 공동 지출 승인과 별도.
+- bppr:material:CH01.P1:opportunity-capacity-interface: “기회에 동의했다고 상대의 추가 출자까지 승인한 것은 아니다” / 반전 “자원 한계를 묻는 사람이 기회에 반대하는 것은 아닐 수 있다” / 조건 추가 자금·시간을 낼 실제 여력은 UNKNOWN.
+- bppr:material:CH01.P2:harmony-not-revenue: “명리의 합은 고객의 계약서나 통장 내역이 아니다” / 반전 “의견이 잘 맞아도 다른 검토 역할을 남길 수 있다” / 조건 매출·비용·현금 자료는 명리 정의로 생성하지 않음.
+- bppr:material:CH01.P2:half-harmony-not-governance: “사주가 이어져도 결재권이 나뉜 것은 아니다” / 반전 “잘 맞는 관계에서도 권한을 먼저 확인하는 것이 필요할 수 있다” / 조건 서명·지출·책임의 실제 범위는 UNKNOWN.
+- bppr:material:CH01.P3:analysis-and-use: “이론을 납득한 것과 사용자가 값을 지불하는 것은 다르다” / 반전 “짧은 사용 예시가 더 정교한 가설을 만들 수도 있다” / 조건 제안·조사·시험 시간과 현금은 별도 추정.
+- bppr:material:CH01.P3:same-type-different-stakes: “같은 MBTI는 같은 통장 잔고나 계약 조건을 뜻하지 않는다” / 반전 “닮았을수록 다른 이해관계를 먼저 적어볼 수 있다” / 조건 실제 출자액·부채·운영 부담은 UNKNOWN.
+- bppr:material:CH01.P4:trust-verification-boundary: “믿는다는 말은 상대가 감당할 약속의 범위를 대신하지 못한다” / 반전 “기록을 남기는 것이 서로를 덜 추측하게 할 수도 있다” / 조건 분쟁·추가 비용을 개인 성향으로 배분하지 않음.
+- bppr:material:CH01.P4:stop-before-risk-lock: “사업을 멈추는 결정이 개인 관계의 실패를 뜻하지는 않는다” / 반전 “중단 기준이 있어야 작은 실험에도 함께 동의할 수 있다” / 조건 이미 쓴 돈과 앞으로 쓸 비용을 구분;손실 능력 추정 금지.
+- bppr:material:CH02.P1:a-opportunity-model: “가설이 늘어나는 속도와 사업이 검증되는 속도는 다르다” / 반전 “보류할 아이디어를 남기는 것도 현재 안을 돕는 행동일 수 있다” / 조건 가설별 조사·개발 시간과 시험비는 추정으로 표시.
+- bppr:material:CH02.P1:a-resource-as-goal: “큰 목표는 상대의 추가 출자 동의를 대신하지 못한다” / 반전 “목표를 분명히 하면 지금 쓰지 않을 돈도 보일 수 있다” / 조건 추가 자금·인력·장비·유지비를 실제 견적과 구분.
+- bppr:material:CH02.P2:a-record-before-commit: “서명된 문서도 실제 이행·회수 능력까지 보장하지는 않는다” / 반전 “기록은 친분을 줄이는 대신 추측을 줄일 수 있다” / 조건 납기·대금·추가 작업 비용을 분리해 확인.
+- bppr:material:CH02.P2:a-meaning-and-finance: “의미 있는 사업도 공급자에게 낼 돈은 필요하다” / 반전 “비용 질문이 명분에 대한 반대가 아닐 수 있다” / 조건 무료 제공 범위·기회비용·반복 운영비를 별도 확인.
+- bppr:material:CH02.P3:a-small-working-test: “작동하는 제품과 돈을 내고 선택하는 고객은 별개의 검증이다” / 반전 “작은 실패가 큰 약속 전에 필요한 정보일 수 있다” / 조건 시험비·작업 시간·되돌릴 수 없는 지출을 확인.
+- bppr:material:CH02.P3:a-correct-assumptions: “계획을 바꾸는 것이 곧 약속을 가볍게 여기는 것은 아니다” / 반전 “잘못된 가정을 남기지 않는 것이 책임을 지키는 방식일 수 있다” / 조건 예상·실제 차이와 앞으로 필요한 비용을 분리.
+- bppr:material:CH02.P4:a-theory-without-demand: “설명이 아름다워도 대금이 들어오는 것은 아니다” / 반전 “분석을 줄이기보다 검증할 질문을 바꾸는 것이 필요할 수 있다” / 조건 조사·개발 시간의 기회비용과 추가 시험비 확인.
+- bppr:material:CH02.P4:a-support-becomes-funding: “도왔다는 마음만으로 상대의 지분이 정해지지는 않는다” / 반전 “지원 형태를 정하는 일이 관계의 따뜻함을 지킬 수도 있다” / 조건 자금·장비·시간 제공과 실제 회수 부담은 UNKNOWN.
+- bppr:material:CH03.P1:b-operational-conditions: “과정을 묻는 질문이 기회에 대한 반대는 아니다” / 반전 “실행 조건을 확인해야 더 독립적으로 맡을 수 있다” / 조건 실제 납기·인력·추가 작업 비용은 별도 확인.
+- bppr:material:CH03.P1:b-method-and-data: “돌아간다는 사실만으로 유지할 돈과 시간이 확보되지는 않는다” / 반전 “작은 시험이 더 큰 유지 질문을 드러낼 수 있다” / 조건 장비·유지·지원·작업 시간이 다른 비용.
+- bppr:material:CH03.P2:b-terms-before-money: “친하다는 이유로 정산 기준을 추측할 수는 없다” / 반전 “기준을 먼저 정하는 것이 돈 얘기를 줄일 수도 있다” / 조건 정산액·분배액·입금 가능액은 서로 다른 항목.
+- bppr:material:CH03.P2:b-value-before-price: “고객에게 친절한 약속이 상대에게는 무료 노동일 수 있다” / 반전 “범위를 줄이는 것이 고객 약속을 더 확실히 지킬 조건일 수 있다” / 조건 작업 시간·외부 비용·추가 검토를 별도 확인.
+- bppr:material:CH03.P3:b-customer-observation: “고맙다는 반응과 다시 돈을 내겠다는 약속은 다르다” / 반전 “불편한 문의가 다음 제품의 중요한 질문일 수 있다” / 조건 시연·지원·반복 문의 대응의 비용 확인.
+- bppr:material:CH03.P3:b-cost-gap-review: “숫자를 잘 따지는 것처럼 보여도 공동 계좌 관리 책임이 자동 생기지는 않는다” / 반전 “회수 시점 질문이 좋은 매출 제안을 실행 가능하게 할 수도 있다” / 조건 수익성 전망과 지급할 현금의 시점은 별개.
+- bppr:material:CH03.P4:b-review-without-close: “자료를 더 본다는 말에도 이번 결정에 필요한 끝이 있어야 한다” / 반전 “모른다는 범위를 밝히고 작은 시험으로 옮길 수도 있다” / 조건 검토 시간·기회비용·기존 외부 약속 구분.
+- bppr:material:CH03.P4:b-relationship-cost-blindness: “상대를 믿는 마음이 모든 비용을 이해했다는 뜻은 아니다” / 반전 “조건을 묻는 것이 관계의 거절이 아닐 수 있다” / 조건 추가 지출·손실 한도·회수 약속은 실제 확인 필요.
+- bppr:material:CH04.P1:shared-proof-before-investment: “우리끼리 납득한 사업은 아직 고객에게 검증된 사업이 아니다” / 반전 “반대 증거를 함께 찾는 것이 제안을 살릴 수도 있다” / 조건 시험비·응답 편향·구매 의사와 실제 입금은 별개.
+- bppr:material:CH04.P1:shared-scope-repeatability: “문서에 적힌 약속도 수행할 자원이 없으면 지킬 수 없다” / 반전 “제공 범위를 좁히면 반복 운영이 더 쉬워질 수 있다” / 조건 기본 작업·추가 수정·유지 지원 비용 구분.
+- bppr:material:CH04.P2:exploration-delivery-interface: “좋은 제안도 누군가의 공짜 운영을 전제로 하면 보완이 아니다” / 반전 “실행의 질문이 아이디어를 줄이기보다 제공 형태를 바꿀 수도 있다” / 조건 추가 기능의 개발·지원·납기 비용은 분리.
+- bppr:material:CH04.P2:trial-and-contract-boundary: “한 번 작동한 결과가 모든 사용 조건의 보증은 아니다” / 반전 “계약 전에 드러난 한계가 더 정확한 시험을 만들 수도 있다” / 조건 시험·보증·유지·보완 비용의 주체 미확인.
+- bppr:material:CH04.P3:customer-signal-product-adjustment: “반복 문의를 열심히 처리하는 것과 원인을 줄이는 것은 다르다” / 반전 “친절한 대응과 제품 수정은 경쟁하는 기여가 아닐 수 있다” / 조건 응답 시간·개발 시간·검증 비용 비교 필요.
+- bppr:material:CH04.P3:crisis-information-two-views: “급하다는 이유가 상대가 모르는 지출의 동의가 되지는 않는다” / 반전 “원인을 모르는 범위를 밝히면 임시 대응을 좁힐 수도 있다” / 조건 복구비·환불 의무·지체 비용 실제 확인 필요.
+- bppr:material:CH04.P4:repeatable-operation-value: “다음 계약이 없어도 오늘 유지해야 할 약속은 남아 있다” / 반전 “안 받는 주문의 기준이 기존 고객 약속을 지킬 수 있다” / 조건 매출 성장과 유지·지원·회수 비용은 별개.
+- bppr:material:CH04.P4:contribution-recognition-without-shares: “고맙다는 말과 정산을 마쳤다는 말은 다르다” / 반전 “서로 다른 기여를 같은 단위로 환산하지 않고 인정할 수 있다” / 조건 출자·보수·손익 배분·지분 가치 혼동 금지.
+- bppr:material:CH05.P1:a-alternative-b-standard: “가능성을 꺼낸 사람이 검토 비용을 상대에게 자동 넘길 수는 없다” / 반전 “기준 질문은 기회를 없애는 반응이 아닐 수 있다” / 조건 조사·시간·기존 약속의 비용 확인.
+- bppr:material:CH05.P1:a-resource-b-obligation: “돈을 보태는 방식과 모든 일의 최종 결정권은 같은 질문이 아니다” / 반전 “투입을 미루는 것이 책임을 명확하게 할 수도 있다” / 조건 자원 가치·유지비·반환·손실 부담 별도.
+- bppr:material:CH05.P2:a-prototype-b-service-cost: “만든 사람의 완료와 고객을 받는 사람의 완료는 다를 수 있다” / 반전 “시연의 한계를 밝히면 판매 조건을 더 선명하게 만들 수 있다” / 조건 시제품 비용과 운영·지원 비용 분리.
+- bppr:material:CH05.P2:a-meaning-b-allocation: “가치 있는 일을 했다는 말이 비용 자료를 대신하지는 않는다” / 반전 “정산을 묻는 것이 기여의 의미를 부정하는 것은 아니다” / 조건 보수·비용 정산·이익 배분·출자 반환은 별개.
+- bppr:material:CH05.P3:a-client-promise-b-cost: “고객에게 한마디 더 해준 약속이 상대에게 며칠의 일이 될 수 있다” / 반전 “추가 약속을 보류하는 것이 기존 약속을 지키는 선택일 수 있다” / 조건 추가 수정·외주·지체 비용 실제 확인.
+- bppr:material:CH05.P3:a-expand-b-cash-timing: “매출 전망이 좋아도 이번 달 지급할 돈이 있다는 뜻은 아니다” / 반전 “현금 질문이 확장 반대보다 규모 조정으로 이어질 수 있다” / 조건 계약액·청구·입금·지급 의무 시점 분리.
+- bppr:material:CH05.P4:a-change-small-safe-trial: “생각을 바꿨다는 이유로 이미 한 약속이 사라지지는 않는다” / 반전 “작게 바꾸면 다른 의견도 실제 자료로 만날 수 있다” / 조건 시험 비용·기존 약속·원복 비용 확인.
+- bppr:material:CH05.P4:a-risk-disclosure-before-consent: “설명 자료를 보냈다는 사실만으로 상대가 위험을 수락한 것은 아니다” / 반전 “거절할 수 있어야 동의의 범위를 알 수 있다” / 조건 실제 손실 한도·추가 의무는 계약 검토 필요.
+- bppr:material:CH06.P1:b-operation-a-support-question: “실행 조건을 묻는 일도 제안의 일부를 만드는 기여일 수 있다” / 반전 “B의 질문이 A가 못 본 고객 조건을 드러낼 수 있다” / 조건 실행·검토·지원의 시간과 비용 구분.
+- bppr:material:CH06.P1:b-boundary-a-resource-choice: “상대의 시간도 공짜로 늘어나는 자원이 아니다” / 반전 “덜 맡는 제안이 약속 이행을 더 확실하게 할 수 있다” / 조건 추가 노동·외주·기존 약속 비용 구분.
+- bppr:material:CH06.P2:b-customer-issue-a-hypothesis: “고객의 말을 가져온 사람이 모든 해결 비용까지 맡는 것은 아니다” / 반전 “문의는 즉시 바꾸라는 명령보다 검증할 가설일 수 있다” / 조건 지원 시간·변경 비용·구매 증거 분리.
+- bppr:material:CH06.P2:b-cost-log-a-commitment: “자료를 만든 사람과 지출을 결정한 사람의 책임은 별도로 확인해야 한다” / 반전 “회수 시점 확인이 좋은 수주를 받을 순서를 바꿀 수 있다” / 조건 매출·이익·현금 유입·지출은 다른 정보.
+- bppr:material:CH06.P3:b-contract-risk-a-delay: “질문이 많다는 이유로 책임 있는 검토가 자동 완성되지는 않는다” / 반전 “반대처럼 들리는 질문도 조건부 수락안을 만들 수 있다” / 조건 검토 비용·기회비용·외부 약속 구분.
+- bppr:material:CH06.P3:b-maintenance-a-direction: “보이지 않는 유지 작업은 없던 비용이 아니다” / 반전 “운영 부담을 밝히는 것이 새로운 방향의 지속 조건일 수 있다” / 조건 고정·변동·유지 비용과 추가 노동 확인.
+- bppr:material:CH06.P4:b-small-trial-before-expansion: “시험을 통과한 범위와 사업 전체의 가능성은 다르다” / 반전 “작게 실패할 수 있는 조건이 더 나은 다음 결정을 줄 수 있다” / 조건 시험 손실 한도·고객 약속·회수 조건 확인.
+- bppr:material:CH06.P4:b-hold-with-decision-question: “답이 늦다는 이유로 동의했다고 처리할 수는 없다” / 반전 “명확한 보류가 관계를 끊지 않고 논의를 좁힐 수 있다” / 조건 지출 의무·계약 구속·검토 비용은 실제 확인.
+- bppr:material:CH07.P1:direction-disagreement: “같은 사업을 말하면서 서로 다른 고객을 보고 있을 수도 있다” / 반전 “방향 합의 전에 고객 문제의 차이를 찾을 수 있다” / 조건 검증 비용·기존 약속·전환 비용 미확인.
+- bppr:material:CH07.P1:unreviewed-spending: “필요한 지출이라는 판단이 상대의 동의를 대신하지는 않는다” / 반전 “지출을 멈추는 것이 제안을 살릴 조건일 수 있다” / 조건 확정 비용·취소 비용·추가 지급 구분.
+- bppr:material:CH07.P1:external-contract-without-consent: “이미 약속했다는 말은 미동의 작업의 설명이 되지 못한다” / 반전 “고객 약속을 지키려면 내부 빈칸을 먼저 드러내야 할 수도 있다” / 조건 계약 의무·수행 비용·변경 비용 별도.
+- bppr:material:CH07.P1:expected-return-actual-cost: “많이 팔릴 것이라는 말에는 얼마가 남는지 아직 들어 있지 않다” / 반전 “낮은 매출의 안도 반복 비용이 낮으면 다른 검토 대상일 수 있다” / 조건 고정·변동·유지·노동·회수 비용 구분.
+- bppr:material:CH07.P1:capital-expectation-difference: “기여했다는 사실과 어떤 권리를 합의했는지는 따로 확인해야 한다” / 반전 “기여를 인정하면서 권리 주장은 미확정으로 둘 수 있다” / 조건 투입액·소유권·반환·손실 감당은 별개.
+- bppr:material:CH07.P2:credit-imbalance: “소개한 사람만 없었어도 못 했지만 마무리한 사람도 없었으면 못 했다” / 반전 “다른 기여를 같은 단위로 줄이지 않고 인정할 수 있다” / 조건 보수·비용·분배·지분은 구분.
+- bppr:material:CH07.P2:unclear-work-responsibility: “같이 한다는 말에는 누가 끝내는지가 아직 없을 수 있다” / 반전 “담당을 좁히면 공동 작업의 빈칸이 더 잘 보일 수 있다” / 조건 누락·중복·추가 인력·납기 비용 확인.
+- bppr:material:CH07.P2:unclear-loss-allocation: “이익을 같이 기대했다고 손실 부담까지 합의한 것은 아니다” / 반전 “손실 질문을 일찍 하는 것이 공동 기회를 지킬 수 있다” / 조건 실제 손실·부담 주체·추가 의무 미확인.
+- bppr:material:CH07.P2:missing-cash-information: “매출 숫자를 공유했다고 돈이 언제 들어오는지 공유한 것은 아니다” / 반전 “필요한 범위의 자료 공개가 오해보다 결정을 줄일 수 있다” / 조건 계약·매출·현금 유입·지출 시점 별도.
+- bppr:material:CH07.P2:contract-change: “작아 보이는 문구 변경도 상대의 작업은 크게 바꿀 수 있다” / 반전 “변경을 보류하면 원래 약속을 더 정확히 확인할 수 있다” / 조건 추가 작업·보증·지체·변경 비용 별도.
+- bppr:material:CH07.P3:customer-promise-execution: “고객에게 친절한 말이 상대에게 무료 노동이 될 수 있다” / 반전 “추가 약속을 줄여 기존 납품을 지킬 수도 있다” / 조건 추가 노동·외주·지체 비용 확인.
+- bppr:material:CH07.P3:ip-output-use: “같이 만들었다는 말만으로 모든 사용에 동의한 것은 아니다” / 반전 “소유와 사용을 나누면 허용할 범위를 찾을 수도 있다” / 조건 라이선스·재작업·공개·회수 비용 미확인.
+- bppr:material:CH07.P3:information-not-shared: “같이 책임질 결정이라면 같은 핵심 정보를 볼 수 있는지 먼저 물어야 한다” / 반전 “공유를 늘리기보다 필요한 정보를 좁힐 수도 있다” / 조건 정보 지연·재작업·고객 약속 비용 확인.
+- bppr:material:CH07.P3:deadlock: “둘이 있다는 사실만으로 동률 처리 규칙이 생기지는 않는다” / 반전 “합의가 안 된 부분을 보류하면 합의 가능한 부분이 보일 수 있다” / 조건 논의 시간·기회비용·외부 의무 미확인.
+- bppr:material:CH07.P3:trust-verification: “상대를 믿어도 내가 동의할 조건은 확인할 수 있어야 한다” / 반전 “검증 절차가 사람의 진심을 판정하지 않을 수 있다” / 조건 추가 투입·손실·회수 조건 미확인.
+- bppr:material:CH07.P4:expansion-speed: “커지는 매출이 먼저 나갈 돈을 대신 내주지는 않는다” / 반전 “확장을 늦추기보다 먼저 받을 일을 바꿀 수 있다” / 조건 확장비·운전자금·반복 지원 비용 별도.
+- bppr:material:CH07.P4:ops-burden-imbalance: “처음에 많이 했다는 말이 지금의 모든 유지 작업을 대신하지는 않는다” / 반전 “기여를 다시 보는 일이 과거 기여를 부정하지 않을 수 있다” / 조건 현재 노동·유지·외주·기회비용 별도.
+- bppr:material:CH07.P4:unilateral-decision: “먼저 움직인 사람이 모든 결정권을 얻는 것은 아니다” / 반전 “결정권을 확인하면 작은 결정을 더 빨리 할 수도 있다” / 조건 확정 의무·변경·미동의 노동 비용 확인.
+- bppr:material:CH07.P4:no-stop-conditions: “지금까지 쓴 돈이 앞으로 더 쓸 돈의 이유가 되지는 않는다” / 반전 “중단 조건이 있어야 작은 시험을 시작하기 쉬울 수도 있다” / 조건 매몰·추가 비용·채권·채무·잔여재산 구분.
+- bppr:material:CH07.P4:hide-problem-for-relationship: “사이가 좋다는 이유로 사업의 빈칸이 사라지지는 않는다” / 반전 “보류를 말하는 것이 관계를 끝내겠다는 뜻은 아닐 수 있다” / 조건 지연·추가 노동·위험 수락 비용 확인.
+- bppr:material:CH08.P1:repair-direction-disagreement: “시험 전 가정과 변경 금지 범위를 남김” / 반전 “시험 후 관찰·비용으로 방향 재검토” / 조건 검증 비용·기존 약속·전환 비용 미확인.
+- bppr:material:CH08.P1:repair-unreviewed-spending: “추가 확정 전 공유할 항목을 정함” / 반전 “다음 지출에서 사전 확인이 있었는지 검토” / 조건 확정 비용·취소 비용·추가 지급 구분.
+- bppr:material:CH08.P1:repair-external-contract-without-consent: “향후 외부 확정 전 필요한 동의를 기록” / 반전 “다음 계약에서 확인·약속의 순서 검토” / 조건 계약 의무·수행 비용·변경 비용 별도.
+- bppr:material:CH08.P1:repair-expected-return-actual-cost: “가정과 실제의 비교 항목·시점 기록” / 반전 “다음 실제 비용 자료로 가격·범위 재검토” / 조건 고정·변동·유지·노동·회수 비용 구분.
+- bppr:material:CH08.P1:repair-capital-expectation-difference: “앞으로 투입·대가·반환의 확인 절차 남김” / 반전 “다음 투입 전 기대 차이가 줄었는지 검토” / 조건 투입액·소유권·반환·손실 감당은 별개.
+- bppr:material:CH08.P2:repair-credit-imbalance: “향후 완료·유지 기여를 함께 남기는 방식 합의” / 반전 “다음 정산·소개에서 누락 여부 재검토” / 조건 보수·비용·분배·지분은 구분.
+- bppr:material:CH08.P2:repair-unclear-work-responsibility: “변경 시 다시 확인할 작업 경계 남김” / 반전 “다음 납품에서 미담당·중복 작업 확인” / 조건 누락·중복·추가 인력·납기 비용 확인.
+- bppr:material:CH08.P2:repair-unclear-loss-allocation: “손실 한도·중단·추가 투입 확인 절차 남김” / 반전 “다음 위험 수락 전 동의 범위 재검토” / 조건 실제 손실·부담 주체·추가 의무 미확인.
+- bppr:material:CH08.P2:repair-missing-cash-information: “정기 공유·변경 통지·추정 표시 방식 남김” / 반전 “다음 지급 결정 전에 정보 누락 확인” / 조건 계약·매출·현금 유입·지출 시점 별도.
+- bppr:material:CH08.P2:repair-contract-change: “변경 이력과 승인 전 확정 금지 기준 남김” / 반전 “다음 변경에서 새 동의가 확인됐는지 검토” / 조건 추가 작업·보증·지체·변경 비용 별도.
+- bppr:material:CH08.P3:repair-customer-promise-execution: “외부 약속 전 수행 확인 절차 남김” / 반전 “다음 납품에서 무상 추가·기한 영향 확인” / 조건 추가 노동·외주·지체 비용 확인.
+- bppr:material:CH08.P3:repair-ip-output-use: “향후 사용·표시·보관·회수의 확인 절차 남김” / 반전 “다음 공개 전 허락·기밀 확인 여부 검토” / 조건 라이선스·재작업·공개·회수 비용 미확인.
+- bppr:material:CH08.P3:repair-information-not-shared: “변경 통지·접근 범위·보관 기준 남김” / 반전 “다음 결정에서 같은 정보 조건인지 검토” / 조건 정보 지연·재작업·고객 약속 비용 확인.
+- bppr:material:CH08.P3:repair-deadlock: “재검토 시점과 교착 유지 시 다음 절차 남김” / 반전 “같은 결정을 반복하지 않았는지 확인” / 조건 논의 시간·기회비용·외부 의무 미확인.
+- bppr:material:CH08.P3:repair-trust-verification: “검증을 허용하는 합의·보류 기준 남김” / 반전 “다음 질문에 압박 없이 답할 수 있는지 검토” / 조건 추가 투입·손실·회수 조건 미확인.
+- bppr:material:CH08.P4:repair-expansion-speed: “확대 조건·손실 한도·재검토 시점 남김” / 반전 “실제 유입·운영량으로 다음 확대 검토” / 조건 확장비·운전자금·반복 지원 비용 별도.
+- bppr:material:CH08.P4:repair-ops-burden-imbalance: “유지 작업의 기록·재분배 기준 남김” / 반전 “다음 운영 주기에서 부담 변화 확인” / 조건 현재 노동·유지·외주·기회비용 별도.
+- bppr:material:CH08.P4:repair-unilateral-decision: “단독·공유·협의·동의 범주를 기록” / 반전 “다음 결정에서 같은 규칙이 적용됐는지 검토” / 조건 확정 의무·변경·미동의 노동 비용 확인.
+- bppr:material:CH08.P4:repair-no-stop-conditions: “손실 한도·검토 시점·종료 절차 남김” / 반전 “기준 미충족 시 다음 절차를 실제 확인” / 조건 매몰·추가 비용·채권·채무·잔여재산 구분.
+- bppr:material:CH08.P4:repair-hide-problem-for-relationship: “불가·지연·변경을 알릴 통로·시점 남김” / 반전 “다음 문제를 압박 없이 공유할 수 있는지 검토” / 조건 지연·추가 노동·위험 수락 비용 확인.
+
+사기·강요·착취 의심은 일반 조율·같은 비율 양보·동업 유지로 처리하지 않는다.

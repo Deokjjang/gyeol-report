@@ -1,0 +1,11 @@
+> gyeol-report@0.1.0 test
+> vitest run tests/unit/interpretation-v4/sixProductIntegration.test.ts
+
+
+ RUN  v4.1.5 /private/tmp/gyeol-career-product-knowledge-01
+
+
+ Test Files  1 passed (1)
+      Tests  64 passed (64)
+   Start at  21:33:36
+   Duration  179.23s (transform 1.67s, setup 19ms, import 2.09s, tests 176.94s, environment 0ms)

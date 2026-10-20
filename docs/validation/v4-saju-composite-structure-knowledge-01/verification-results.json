@@ -1,0 +1,180 @@
+{
+  "baseSha": "7ff6aba0c9e0abd74284a388369b20ff6229be38",
+  "branch": "v4/saju-composite-structure-knowledge-01",
+  "baseline": {
+    "passed": 231,
+    "failed": 1,
+    "total": 232,
+    "files": [
+      {
+        "path": "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+        "passed": 19,
+        "failed": 1
+      },
+      {
+        "path": "tests/unit/report-knowledge/sajuFoundationCompletion.test.ts",
+        "passed": 69,
+        "failed": 0
+      },
+      {
+        "path": "tests/unit/report-knowledge/sajuFoundationDeepKnowledge.test.ts",
+        "passed": 131,
+        "failed": 0
+      },
+      {
+        "path": "tests/unit/report-knowledge/sajuFoundationKnowledge.test.ts",
+        "passed": 12,
+        "failed": 0
+      }
+    ],
+    "failures": [
+      {
+        "name": "Phase13D-1A stays off all six product paths only foundation modules reference the foundation; no writer/UI/calculation import",
+        "message": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality",
+        "path": "tests/unit/interpretation-v4/foundationAdapter.test.ts"
+      }
+    ]
+  },
+  "knowledgeAfter": {
+    "passed": 448,
+    "failed": 1,
+    "total": 449,
+    "files": [
+      {
+        "path": "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+        "passed": 19,
+        "failed": 1
+      },
+      {
+        "path": "tests/unit/report-knowledge/sajuCompositeStructureResearch.test.ts",
+        "passed": 217,
+        "failed": 0
+      },
+      {
+        "path": "tests/unit/report-knowledge/sajuFoundationCompletion.test.ts",
+        "passed": 69,
+        "failed": 0
+      },
+      {
+        "path": "tests/unit/report-knowledge/sajuFoundationDeepKnowledge.test.ts",
+        "passed": 131,
+        "failed": 0
+      },
+      {
+        "path": "tests/unit/report-knowledge/sajuFoundationKnowledge.test.ts",
+        "passed": 12,
+        "failed": 0
+      }
+    ],
+    "failures": [
+      {
+        "name": "Phase13D-1A stays off all six product paths only foundation modules reference the foundation; no writer/UI/calculation import",
+        "message": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality",
+        "path": "tests/unit/interpretation-v4/foundationAdapter.test.ts"
+      }
+    ]
+  },
+  "calculationAndBookRegression": {
+    "passed": 73,
+    "failed": 0,
+    "total": 73,
+    "files": [
+      {
+        "path": "tests/unit/interpretation-v4/sixProductIntegration.test.ts",
+        "passed": 64,
+        "failed": 0
+      },
+      {
+        "path": "tests/unit/interpretation-v4/structureMatrix.test.ts",
+        "passed": 1,
+        "failed": 0
+      },
+      {
+        "path": "tests/unit/saju/structureAnalysis.test.ts",
+        "passed": 8,
+        "failed": 0
+      }
+    ],
+    "failures": []
+  },
+  "newResearchTests": {
+    "passed": 217,
+    "failed": 0
+  },
+  "aggregateRelatedTests": {
+    "passed": 521,
+    "failed": 1,
+    "total": 522
+  },
+  "typescript": {
+    "beforeDiagnostics": 0,
+    "afterDiagnostics": 0,
+    "command": "node_modules/.bin/tsc --noEmit --incremental false"
+  },
+  "lint": "PASS",
+  "build": {
+    "initialSandbox": "FAIL: fonts.googleapis.com DNS ENOTFOUND; no source/build config change",
+    "sameCommandWithPublicNetwork": "PASS",
+    "staticPages": 47,
+    "nftWarnings": 0,
+    "newWarningTypes": [],
+    "log": "logs/build-final.log",
+    "command": "OPENAI_REPORT_WRITER_ENABLED=0 TOSS_CONFIRM_API_ENABLED=0 PAID_REPORT_RELIABILITY_ENABLED=0 npm run build -- --webpack"
+  },
+  "sourcePreservation": {
+    "existingFiles": 912,
+    "changed": 0,
+    "manifest": "preservation-manifest.json"
+  },
+  "workspacePreservation": {
+    "existingWorktrees": 14,
+    "preserved": 14,
+    "dirtyFiles": 11,
+    "manifest": "workspace-preservation.json"
+  },
+  "offlineGeneration": {
+    "sixProductFixtureTests": 64,
+    "successfulGenerations": 62,
+    "expectedUnknownTimeMajorRejections": 2,
+    "preservedDigests": [
+      "calculations",
+      "editorialInvariants",
+      "draft",
+      "evidence",
+      "narrative",
+      "integration",
+      "book",
+      "snapshot",
+      "bookStructure"
+    ],
+    "storedBookReplay": [
+      "current owner",
+      "current shared URL",
+      "six pre-change fixture snapshots owner and shared URL"
+    ],
+    "productionAccess": false,
+    "snapshotWrites": false
+  },
+  "researchReview": {
+    "profiles": 29,
+    "domainCells": 232,
+    "modernApplicationBundles": 176,
+    "unverifiedBoundaryReviews": 56,
+    "customerApplicationsApproved": 0,
+    "runtimeConnection": false,
+    "semanticReview": "See semantic-audit.json and full domain-review.md; exact string uniqueness is a supporting check, not empirical validity."
+  },
+  "scope": {
+    "runtimeCodeChanged": false,
+    "oldKnowledgeChanged": false,
+    "relations9x8Started": false,
+    "paymentAuthDbTouched": false,
+    "productionDeployed": false
+  },
+  "diffCheck": {
+    "staged": "PASS",
+    "command": "git diff --cached --check",
+    "existingFilesModified": 0,
+    "newFiles": 32
+  }
+}

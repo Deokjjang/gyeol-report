@@ -1,3 +1,4 @@
+import { MBTI_TRAIT_DOMAINS, type MbtiSourceNode } from "./mbtiSemanticCore";
 import { getMbtiSourceProfile, type MbtiTraitArea } from "../report-knowledge/mbti/sourceRuntimeAdapter";
 import { materialLabel } from "./contentEvidence";
 import type { BoundMaterial } from "./materialPacket";
@@ -141,4 +142,29 @@ export function chapterMbtiReadings(type: string | null | undefined, roots: read
       provenance: `mbti:${profile.type}:traits:${area}:${r[0]}`,
       coverage: source.sourceCoverage, area }];
   });
+}
+
+
+/** Existing reviewed Korean realization of this exact source trait. This is
+ * MBTI behavior only; callers still validate both sides before claiming Fusion. */
+export function reviewedMbtiBehavior(node: MbtiSourceNode): string | undefined {
+  if (node.classification !== "SCORING_SEMANTIC" || !node.id.endsWith(":plainKo")) return;
+  const type = node.mbtiType;
+  const options = [...Object.entries(READINGS[type] ?? {}).map(([area, reading]) => ({ area: area as MbtiTraitArea, reading })),
+    ...ADDITIONAL.filter(r => r.type === type)];
+  const option = options.find(({ area, reading }) => node.id === `mbti:${type}:traits:${area}:${reading[0]}:plainKo`);
+  // These two real traits were selected by the Love composer but flattened
+  // into generic care/communication advice. Reuse their existing customer
+  // strongLine verbatim; no new research, trait, score or Fusion is created.
+  const sourceCopy = [
+    { type: "ESFP", area: "love" as const, trait: "romantic_surprise" },
+    { type: "ESFP", area: "relationships" as const, trait: "introvert_bridge" },
+  ].find(r => r.type === type && node.id === `mbti:${type}:traits:${r.area}:${r.trait}:plainKo`);
+  const area = option?.area ?? sourceCopy?.area;
+  if (!area || node.sourceDomain !== MBTI_TRAIT_DOMAINS[area]) return;
+  const source = getMbtiSourceProfile(type)?.traits?.[area]?.find(t => t.id === (option?.reading[0] ?? sourceCopy?.trait));
+  if (!source?.plainKo || source.plainKo !== node.value || !["direct", "inferred"].includes(source.sourceCoverage ?? "")) return;
+  // The surrounding sentence supplies the explicit type once.
+  const behavior = option?.reading[3] ?? source?.strongLine;
+  return behavior?.replace(new RegExp(`^${type}(?:는|은|에게|의)\\s+`), "");
 }

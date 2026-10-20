@@ -1,0 +1,191 @@
+[
+  {
+    "fixtureId": "fixture-comprehensive-A",
+    "product": "saju_mbti_full",
+    "relationship": null,
+    "file": "shards/fixture-comprehensive-A-nodes.json",
+    "count": 3628
+  },
+  {
+    "fixtureId": "fixture-comprehensive-F",
+    "product": "saju_mbti_full",
+    "relationship": null,
+    "file": "shards/fixture-comprehensive-F-nodes.json",
+    "count": 163
+  },
+  {
+    "fixtureId": "fixture-career-A",
+    "product": "career_money_study",
+    "relationship": null,
+    "file": "shards/fixture-career-A-nodes.json",
+    "count": 3462
+  },
+  {
+    "fixtureId": "fixture-career-F",
+    "product": "career_money_study",
+    "relationship": null,
+    "file": "shards/fixture-career-F-nodes.json",
+    "count": 148
+  },
+  {
+    "fixtureId": "fixture-love-A",
+    "product": "love_marriage_child",
+    "relationship": null,
+    "file": "shards/fixture-love-A-nodes.json",
+    "count": 3925
+  },
+  {
+    "fixtureId": "fixture-love-F",
+    "product": "love_marriage_child",
+    "relationship": null,
+    "file": "shards/fixture-love-F-nodes.json",
+    "count": 149
+  },
+  {
+    "fixtureId": "fixture-compatibility-A",
+    "product": "saju_mbti_compatibility",
+    "relationship": "love",
+    "file": "shards/fixture-compatibility-A-nodes.json",
+    "count": 7485
+  },
+  {
+    "fixtureId": "fixture-compatibility-marriage",
+    "product": "saju_mbti_compatibility",
+    "relationship": "marriage",
+    "file": "shards/fixture-compatibility-marriage-nodes.json",
+    "count": 7485
+  },
+  {
+    "fixtureId": "fixture-compatibility-parentChild",
+    "product": "saju_mbti_compatibility",
+    "relationship": "parentChild",
+    "file": "shards/fixture-compatibility-parentChild-nodes.json",
+    "count": 7486
+  },
+  {
+    "fixtureId": "fixture-compatibility-coworker",
+    "product": "saju_mbti_compatibility",
+    "relationship": "coworker",
+    "file": "shards/fixture-compatibility-coworker-nodes.json",
+    "count": 7485
+  },
+  {
+    "fixtureId": "fixture-compatibility-managerReport",
+    "product": "saju_mbti_compatibility",
+    "relationship": "managerReport",
+    "file": "shards/fixture-compatibility-managerReport-nodes.json",
+    "count": 7486
+  },
+  {
+    "fixtureId": "fixture-compatibility-businessPartner",
+    "product": "saju_mbti_compatibility",
+    "relationship": "businessPartner",
+    "file": "shards/fixture-compatibility-businessPartner-nodes.json",
+    "count": 7486
+  },
+  {
+    "fixtureId": "fixture-compatibility-friendship",
+    "product": "saju_mbti_compatibility",
+    "relationship": "friendship",
+    "file": "shards/fixture-compatibility-friendship-nodes.json",
+    "count": 7486
+  },
+  {
+    "fixtureId": "fixture-major-A",
+    "product": "major_fortune",
+    "relationship": null,
+    "file": "shards/fixture-major-A-nodes.json",
+    "count": 4179
+  },
+  {
+    "fixtureId": "fixture-major-F",
+    "product": "major_fortune",
+    "relationship": null,
+    "file": "shards/fixture-major-F-nodes.json",
+    "count": 320
+  },
+  {
+    "fixtureId": "fixture-annual-A",
+    "product": "annual_fortune",
+    "relationship": null,
+    "file": "shards/fixture-annual-A-nodes.json",
+    "count": 4391
+  },
+  {
+    "fixtureId": "fixture-annual-F",
+    "product": "annual_fortune",
+    "relationship": null,
+    "file": "shards/fixture-annual-F-nodes.json",
+    "count": 530
+  },
+  {
+    "fixtureId": "fixture-major-transition-C",
+    "product": "major_fortune",
+    "relationship": null,
+    "file": "shards/fixture-major-transition-C-nodes.json",
+    "count": 3823
+  },
+  {
+    "fixtureId": "fixture-annual-transition-C2028",
+    "product": "annual_fortune",
+    "relationship": null,
+    "file": "shards/fixture-annual-transition-C2028-nodes.json",
+    "count": 4076
+  },
+  {
+    "fixtureId": "fixture-compatibility-unknown-both",
+    "product": "saju_mbti_compatibility",
+    "relationship": "love",
+    "file": "shards/fixture-compatibility-unknown-both-nodes.json",
+    "count": 261
+  },
+  {
+    "fixtureId": "fixture-compatibility-slot-swap",
+    "product": "saju_mbti_compatibility",
+    "relationship": "love",
+    "file": "shards/fixture-compatibility-slot-swap-nodes.json",
+    "count": 7485
+  },
+  {
+    "fixtureId": "fixture-same-natal-different-mbti",
+    "product": "saju_mbti_full",
+    "relationship": null,
+    "file": "shards/fixture-same-natal-different-mbti-nodes.json",
+    "count": 4104
+  },
+  {
+    "fixtureId": "fixture-same-mbti-different-natal",
+    "product": "saju_mbti_full",
+    "relationship": null,
+    "file": "shards/fixture-same-mbti-different-natal-nodes.json",
+    "count": 3659
+  },
+  {
+    "fixtureId": "fixture-same-natal-career",
+    "product": "career_money_study",
+    "relationship": null,
+    "file": "shards/fixture-same-natal-career-nodes.json",
+    "count": 3612
+  },
+  {
+    "fixtureId": "fixture-annual-ranged-transition",
+    "product": "annual_fortune",
+    "relationship": null,
+    "file": "shards/fixture-annual-ranged-transition-nodes.json",
+    "count": 4367
+  },
+  {
+    "fixtureId": "fixture-annual-before-first-dayun",
+    "product": "annual_fortune",
+    "relationship": null,
+    "file": "shards/fixture-annual-before-first-dayun-nodes.json",
+    "count": 4444
+  },
+  {
+    "fixtureId": "fixture-compatibility-no-detected-pair",
+    "product": "saju_mbti_compatibility",
+    "relationship": "love",
+    "file": "shards/fixture-compatibility-no-detected-pair-nodes.json",
+    "count": 208
+  }
+]

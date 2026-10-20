@@ -1,0 +1,50 @@
+import type { ProductKey, RelationshipCategory, KnowledgeSourcePointer } from "../types";
+import type { KnowledgeBindingRequest, KnowledgeBindingReceipt, KnowledgeBindingCoverage, KnowledgeCandidate, NormalizedKnowledgeRequirement } from "../knowledge-binder/types";
+import type { ProductSpecialistFoundation } from "../product-specialist-foundation/binderIntegration";
+import type { SpecialistFoundationResult, ProductQuestionContract, QuestionMaterialLink } from "../product-specialist-foundation/types";
+import type { ActualEvidenceNode } from "../actual-evidence-graph/types";
+
+export type NativeInvocation = {
+  version: string; receipts: KnowledgeBindingReceipt[]; baseline: KnowledgeBindingReceipt[];
+  candidates: Map<string, KnowledgeCandidate>; diagnostics: readonly unknown[];
+  originalResult: unknown; errors: readonly string[]; finish: () => Promise<unknown>;
+  temporal: unknown; policies: unknown;
+  semantic: unknown;
+  approvalObservations: Readonly<Record<string, number | boolean>>;
+  nativeQuestionLinks: readonly {questionId: string; catalogKey: string; kind: string; reason: string; customerEligible: false}[];
+  nativeResultViews: Record<string, unknown>;
+};
+export type EngineInvoker = (foundation: ProductSpecialistFoundation) => (request: KnowledgeBindingRequest, prepared: SpecialistFoundationResult) => NativeInvocation;
+export type EngineRegistration = {
+  engineId: string; engineVersion: string; productKey: ProductKey; relationshipCategory: RelationshipCategory | null;
+  sourceResearchFamily: string; readerContract: unknown; questionRegistryVersion: string;
+  evidenceRequirementKinds: readonly string[]; sourceGroupPolicy: string; temporalPolicy: string;
+  ownerPolicy: string; directionPolicy: string; domainPolicy: string; meaningPolicy: string;
+  reusePolicy: unknown; recallPolicy: string; specialistAdapter: string; actualEngineInvoker: string;
+  currentApprovalPolicy: "REAL_RESEARCH_APPROVAL_ZERO"; fixtureIds: readonly string[];
+  originalManifestLocator: string; originalManifestHash: string; policySources: readonly { file: string; sha256: string }[];
+  invoke: EngineInvoker;
+};
+export type CandidateEnvelope = {
+  identity: { globalId: string; originalResearchId: string; catalogKey: string; materialId: string; addressNamespace: readonly (string | null)[] };
+  engine: string; productScope: ProductKey; relationshipScope: RelationshipCategory | null;
+  fixtureScope: { fixtureId: string; graphVersion: string; ownerIds: readonly string[] };
+  originalMaterial: { locator: KnowledgeSourcePointer; recordHash: string | null; knowledgeKind: string; provenance: string };
+  nativeQuestionLinks: NativeInvocation["nativeQuestionLinks"];
+  questionLinks: readonly QuestionMaterialLink[]; readerAddress: readonly ProductQuestionContract["address"][];
+  sourceRequirements: NormalizedKnowledgeRequirement["sourceRequirements"]; sourceGroups: NormalizedKnowledgeRequirement["sourceGroups"];
+  originalLocators: readonly KnowledgeSourcePointer[]; sourceHashes: readonly { hash: string | null; encoding: string }[];
+  actualEvidenceWitnesses: readonly string[]; ownerRequirements: NormalizedKnowledgeRequirement["requiredOwner"];
+  directionRequirements: NormalizedKnowledgeRequirement["requiredDirection"]; temporalRequirements: unknown;
+  actualContextRequirements: unknown; informationRoots: readonly string[]; supportingAncestryRoots: readonly string[];
+  informationRootAddresses: readonly {address: string; originalRootId: string; ownerId: string; producer: ActualEvidenceNode["producer"]; temporal: ActualEvidenceNode["temporal"]; rootType: ActualEvidenceNode["fact"]["rootType"]; independentFact: boolean}[];
+  semanticIdentity: string | null; claimIdentity: string | null; counterexamples: unknown; prohibitions: unknown;
+  semanticDescription: {normalizedCoreMeaning: string | null; normalizedReaderQuestion: string | null; nativeCoreMeaning: unknown; nativeReaderQuestion: unknown};
+  nativeSpecialistContract: {diagnosticRef: string; sourceFields: Record<string, unknown>};
+  specialistPolicies: { registryRef: string; diagnosticRef: string; originalRequirementHash: string };
+  originalBinderReceipt: { key: string; hash: string }; normalizedGateResults: KnowledgeBindingReceipt["allTwelveGateResults"];
+  withholdReasons: readonly string[]; approvalState: "CUSTOMER_APPROVAL_REQUIRED";
+  displayRequirements: unknown; plannerReadiness: { schemaReady: true; customerEligible: false; plannerAssignable: false; customerPublished: false };
+};
+export type InvocationLedger = { engineId: string; fixtureId: string; product: ProductKey; relationship: RelationshipCategory | null; before: KnowledgeBindingCoverage; after: KnowledgeBindingCoverage; receiptHashes: readonly string[]; graphHash: string; graphStatus: string; nativeApprovalObservations: Readonly<Record<string, number | boolean>>; errors: readonly string[] };
+export type ScopedWitness = { globalAddress: string; fixtureId: string; graphVersion: string; originalNode: ActualEvidenceNode; valueHash: string; value: unknown };

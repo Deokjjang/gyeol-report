@@ -1,0 +1,22 @@
+{
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/artifacts.ts": "a27fb64897e27533c5c4add943a894880f20ccdf3d21e33c9eb21ec2ecc834b2",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/businessContext.ts": "b3bf73f9a4155aa2465b0fc8d7ebaae500cb2d0a7b3de6b8f2b230519db7924e",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/candidateIndex.ts": "020e8ffd3f92c1ee07916fde5e6f8e858732b4bf6980c0e14b157f894656d313",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/conflictGraph.ts": "f74b6e549730f553666677c568c840db089323d5ebc8d0cfd611debb65b6a472",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/domainBoundary.ts": "2265ce2e94f5417764b31654f534be52fe6e915110b461d73c1cabfc9e465318",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/engine.ts": "713323b8fa5cf6f5ef20bddd3e3a929e1526d894c263a7ddc6a9f53970286c8e",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/observations.ts": "691eb0f0accf851a6885a3ea6e60db7a9e394c8cfbf762b41b38d147fa82b09c",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/policy.ts": "2759ae72461825cb825df572b5027e35eb32d14278fb3c644b52911cc8eb0508",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/requirementAdapter.ts": "288edfed07819767dbee2e90592ecf983e70ab2cda7ec5f565c09111dc97fa9d",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/researchCatalog.ts": "488bc4a9ac28ce994e27cdcddd779822d6e13823fc263385371efa0e78e04c3a",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/roleValidator.ts": "1209243ad7ba98ad2f960215bf698ab80c1f2300eddac3a0436fff16ea178a6a",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/selection.ts": "c3c4a7931491e99b765646d5a8a2aa45ea98125b31d9c55ca3de870256891210",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/sourceGroups.ts": "e89ae191fb15390582a6657250a6111a011304c04c07906c7805f8fcdc89e6e4",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/synthetic.ts": "c132efe5516b6a737b7bcac0337e4f429483204309bf882e0d44616a706b2300",
+  "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json": "6d0e307e75446075f35f2b3218a6ec1e01b7c2cd937b70b922c8f434dd3c3b51",
+  "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts": "48dda91ad01c621b6e9f742ccc332092b207b7d79af265eca5deea98954e4a86",
+  "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistEngine.test.ts": "87d6b009100201858d5e69ad6fc9f560fd18a660434076ef98f7de8b78dba18f",
+  "tools/compatibility-business-partner-specialist-engine/researchTypes.ts": "1768cbfb844438faf0aeed6a3960a19318a5d1b7dbb9b1544df35bfdf84ec5d3",
+  "tools/compatibility-business-partner-specialist-engine/sharedServices.ts": "a076f7206b02a5b89ff20e6a07b35031a94123d7ebef43bbfa267d13b73d2bd2",
+  "tools/compatibility-business-partner-specialist-engine/verify.mjs": "3fb87f6ec156d761438cd4d2395fdb0c0864b6ce33348d9b7ed3f836fff84b81"
+}

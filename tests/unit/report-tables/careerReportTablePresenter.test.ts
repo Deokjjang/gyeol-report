@@ -85,13 +85,13 @@ describe("career report table presenter", () => {
       ]),
     );
     expect(
-      data?.reportUsageNotes.some((note) => note.plainKo.includes("career 섹션")),
+      data?.reportUsageNotes.some((note) => note.plainKo?.includes("career 섹션")),
     ).toBe(false);
     expect(
-      data?.reportUsageNotes.some((note) => note.plainKo.includes("workplace 문장")),
+      data?.reportUsageNotes.some((note) => note.plainKo?.includes("workplace 문장")),
     ).toBe(false);
     expect(
-      data?.reportUsageNotes.some((note) => note.plainKo.includes("money 섹션")),
+      data?.reportUsageNotes.some((note) => note.plainKo?.includes("money 섹션")),
     ).toBe(false);
     expect(
       data?.reportUsageNotes.some((note) => note.categoryKey === "money"),

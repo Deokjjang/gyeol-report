@@ -1,0 +1,21 @@
+{
+  "numTotalTests": 1362,
+  "numPassedTests": 1362,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "success": true,
+  "rawReportSha256": "19c58cb39c544d43dbf68cabd56223d0d887842c68ef9a535a05aa12066e24ad",
+  "rawReportLocalPath": "/tmp/gyeol-compatibility-business-partner-knowledge-validation/new-static.json",
+  "storage": "compact actual Vitest result; full raw JSON retained outside repository; execution logs committed",
+  "files": [
+    {
+      "file": "tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts",
+      "status": "passed",
+      "passed": 1362,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    }
+  ]
+}

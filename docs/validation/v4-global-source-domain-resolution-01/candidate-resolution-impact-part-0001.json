@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "candidate-resolution-impact-part-0001.json.gz",
+  "payloadHash": "17554e19434e0703a3f3ade94ea0964e0cd9e56314056cd09eadc696bb1c62bf",
+  "logicalJsonHash": "280f19cd197d98d79d1526ea9f8f0d2f9e0ad3c279346cfd26ad102caa12e06c",
+  "uncompressedBytes": 17696079
+}

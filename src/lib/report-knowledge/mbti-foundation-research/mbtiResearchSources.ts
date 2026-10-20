@@ -1,0 +1,175 @@
+import type { MbtiResearchSource } from "./mbtiResearchTypes";
+
+export const MBTI_RESEARCH_SOURCES = [
+  {
+    "id": "user-source:INTJ",
+    "title": "결리포트 INTJ 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/INTJ.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:INTP",
+    "title": "결리포트 INTP 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/INTP.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:ENTJ",
+    "title": "결리포트 ENTJ 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/ENTJ.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:ENTP",
+    "title": "결리포트 ENTP 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/ENTP.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:INFJ",
+    "title": "결리포트 INFJ 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/INFJ.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:INFP",
+    "title": "결리포트 INFP 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/INFP.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:ENFJ",
+    "title": "결리포트 ENFJ 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/ENFJ.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:ENFP",
+    "title": "결리포트 ENFP 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/ENFP.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:ISTJ",
+    "title": "결리포트 ISTJ 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/ISTJ.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:ISFJ",
+    "title": "결리포트 ISFJ 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/ISFJ.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:ESTJ",
+    "title": "결리포트 ESTJ 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/ESTJ.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:ESFJ",
+    "title": "결리포트 ESFJ 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/ESFJ.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:ISTP",
+    "title": "결리포트 ISTP 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/ISTP.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:ISFP",
+    "title": "결리포트 ISFP 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/ISFP.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:ESTP",
+    "title": "결리포트 ESTP 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/ESTP.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "user-source:ESFP",
+    "title": "결리포트 ESFP 사용자 제공 재구성 원천",
+    "author": "기존 저장소 편집 자료; 최초 원문 작성자·원출처 확인 불가",
+    "location": "docs/product/mbti/source/ESFP.json",
+    "checked": "2026-10-13: 전체 구조·trait·coverage·참조 경로와 digest 확인",
+    "supports": "원천에 기재된 설명과 direct/inferred 분류의 존재",
+    "limitations": "sourceStatus는 정리·재작성 자료임을 명시한다. 최초 원문이 없어 직접 인용의 정확성·실증 타당성은 검증하지 못했다. direct는 원천 작성 당시 범위이며 신규 후보를 검증하지 않는다."
+  },
+  {
+    "id": "mbf:ethics",
+    "title": "MBTI Code of Ethics",
+    "author": "Myers & Briggs Foundation",
+    "location": "https://www.myersbriggs.org/using-type-as-a-professional/mbti-code-of-ethics/home.htm",
+    "checked": "2026-10-13: Interpreting MBTI Results 1–6 직접 열람",
+    "supports": "선호를 절대적 특성이 아닌 경향으로 설명하고, 능력·지능·성공 판정이나 유형만으로 직업·관계를 제한하지 않는 윤리 경계",
+    "limitations": "사용 지침이며 512개 생활 적용이나 16유형별 특성을 실증 검증한 자료가 아니다."
+  },
+  {
+    "id": "mbf:results",
+    "title": "Understanding My MBTI Results",
+    "author": "Myers & Briggs Foundation",
+    "location": "https://www.myersbriggs.org/my-mbti-personality-type/my-mbti-results/home.htm",
+    "checked": "2026-10-13: Tips / Reasons / Your Type is One Part of You 직접 열람",
+    "supports": "자가보고의 시점·환경 영향과 개인의 최적합 유형 확인 필요성",
+    "limitations": "공식 검사를 실시한 적 없으며 사용자 입력을 검사 결과·확정 진단으로 취급하지 않는다. 기능 모형의 신경학적 검증 자료가 아니다."
+  },
+  {
+    "id": "mbf:careers",
+    "title": "Personality Type and Careers",
+    "author": "Myers & Briggs Foundation",
+    "location": "https://www.myersbriggs.org/type-in-my-life/personality-type-and-careers/",
+    "checked": "2026-10-13: Know Your Work-Self / All Types in All Careers 직접 열람",
+    "supports": "흥미·가치·능력·환경을 함께 고려하며 유형이 직업 선택이나 역량을 결정하지 않는다는 경계",
+    "limitations": "직업 추천·취업 성과의 근거로 사용하지 않는다. 개별 작업 선호는 당사자 확인이 필요하다."
+  }
+] as const satisfies readonly MbtiResearchSource[];

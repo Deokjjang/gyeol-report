@@ -1,0 +1,2946 @@
+[
+  {
+    "id": "fkr:legacy:entj-wealth-pressure-structure",
+    "originalRuleId": "entj-wealth-pressure-structure",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "money",
+      "work"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH06.P2:wealth-and-load"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:entj-made-value-structure",
+    "originalRuleId": "entj-made-value-structure",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "work",
+      "money"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:intp-pressure-learning-structure",
+    "originalRuleId": "intp-pressure-learning-structure",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "study",
+      "work"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:entp-question-authority-structure",
+    "originalRuleId": "entp-question-authority-structure",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "work",
+      "relationships"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH06.P2:output-authority-collision"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:entj-wealth",
+    "originalRuleId": "entj-wealth",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "money",
+      "success/fortune"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH03.P2:resource-versus-goal"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:entj-pressure",
+    "originalRuleId": "entj-pressure",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "work",
+      "strengths",
+      "identity"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH01.P3:lead-and-listen"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:entj-needle",
+    "originalRuleId": "entj-needle",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "work",
+      "strengths",
+      "weaknesses"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:entj-alone",
+    "originalRuleId": "entj-alone",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "identity",
+      "relationships"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:intj-inquiry",
+    "originalRuleId": "intj-inquiry",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "study",
+      "identity",
+      "strengths"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH01.P3:criteria-and-questions"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:intj-charm",
+    "originalRuleId": "intj-charm",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "love"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:intj-money",
+    "originalRuleId": "intj-money",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "money"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:intp-inquiry",
+    "originalRuleId": "intp-inquiry",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "study",
+      "identity",
+      "strengths"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH03.P1:question-roots"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:intp-space",
+    "originalRuleId": "intp-space",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "love",
+      "relationships"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:intp-expression",
+    "originalRuleId": "intp-expression",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "relationships",
+      "identity"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:entp-rules",
+    "originalRuleId": "entp-rules",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "work",
+      "identity"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:entp-needle",
+    "originalRuleId": "entp-needle",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "strengths",
+      "work",
+      "weaknesses"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:infj-depth",
+    "originalRuleId": "infj-depth",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "identity",
+      "study",
+      "weaknesses"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:infj-marriage",
+    "originalRuleId": "infj-marriage",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "marriage"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:infp-expression",
+    "originalRuleId": "infp-expression",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "study",
+      "strengths"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:infp-needle",
+    "originalRuleId": "infp-needle",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "relationships",
+      "weaknesses"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:enfj-help",
+    "originalRuleId": "enfj-help",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "relationships",
+      "strengths",
+      "work"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH03.P2:support-received-and-given"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:enfj-expression",
+    "originalRuleId": "enfj-expression",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "relationships",
+      "work"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:enfp-connection",
+    "originalRuleId": "enfp-connection",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "identity",
+      "work",
+      "strengths"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:enfp-expression",
+    "originalRuleId": "enfp-expression",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "identity",
+      "relationships",
+      "love"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:enfp-alone",
+    "originalRuleId": "enfp-alone",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "identity",
+      "relationships"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:enfp-budget",
+    "originalRuleId": "enfp-budget",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "money"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH03.P3:save-and-experience"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:istj-needle",
+    "originalRuleId": "istj-needle",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "work",
+      "strengths",
+      "study"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:istj-love",
+    "originalRuleId": "istj-love",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "love",
+      "relationships"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:istj-marriage",
+    "originalRuleId": "istj-marriage",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "marriage"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH03.P1:promise-and-regularity"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:isfj-learning",
+    "originalRuleId": "isfj-learning",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "study",
+      "strengths"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:isfj-love",
+    "originalRuleId": "isfj-love",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "love",
+      "relationships"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:estj-needle",
+    "originalRuleId": "estj-needle",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "work",
+      "weaknesses"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:estj-status",
+    "originalRuleId": "estj-status",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "work",
+      "success/fortune",
+      "strengths"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:esfj-help",
+    "originalRuleId": "esfj-help",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "relationships",
+      "strengths"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:esfj-alone",
+    "originalRuleId": "esfj-alone",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "identity"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH03.P3:private-social-channel"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:istp-study",
+    "originalRuleId": "istp-study",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "study",
+      "strengths",
+      "work"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH03.P1:learn-with-practice"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:istp-love",
+    "originalRuleId": "istp-love",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "love",
+      "relationships"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:istp-marriage",
+    "originalRuleId": "istp-marriage",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "marriage"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:isfp-love",
+    "originalRuleId": "isfp-love",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "love",
+      "relationships"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:isfp-needle",
+    "originalRuleId": "isfp-needle",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "identity",
+      "strengths"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:estp-needle",
+    "originalRuleId": "estp-needle",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "work",
+      "strengths"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:estp-study",
+    "originalRuleId": "estp-study",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "study"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH03.P3:learn-before-try"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:esfp-charm",
+    "originalRuleId": "esfp-charm",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "identity",
+      "strengths",
+      "success/fortune"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:legacy:esfp-expression",
+    "originalRuleId": "esfp-expression",
+    "origin": "legacy_rule",
+    "originalDomains": [
+      "relationships",
+      "identity"
+    ],
+    "originalContexts": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C001",
+    "originalRuleId": "C001",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work",
+      "learning",
+      "social"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C002",
+    "originalRuleId": "C002",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work",
+      "learning"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH05.P1:analysis-that-decides"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C003",
+    "originalRuleId": "C003",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work",
+      "learning"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C004",
+    "originalRuleId": "C004",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work",
+      "learning"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C005",
+    "originalRuleId": "C005",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work",
+      "learning"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C006",
+    "originalRuleId": "C006",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work",
+      "learning"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH03.P4:from-question-to-small-proof"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C007",
+    "originalRuleId": "C007",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work",
+      "learning"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C008",
+    "originalRuleId": "C008",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work",
+      "learning"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH08.P2:diagnose-assumptions"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C009",
+    "originalRuleId": "C009",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work",
+      "learning"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C010",
+    "originalRuleId": "C010",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work",
+      "learning"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C011",
+    "originalRuleId": "C011",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work",
+      "learning"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C012",
+    "originalRuleId": "C012",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work",
+      "learning"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C013",
+    "originalRuleId": "C013",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C014",
+    "originalRuleId": "C014",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C015",
+    "originalRuleId": "C015",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C016",
+    "originalRuleId": "C016",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C017",
+    "originalRuleId": "C017",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C018",
+    "originalRuleId": "C018",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C019",
+    "originalRuleId": "C019",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C020",
+    "originalRuleId": "C020",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C021",
+    "originalRuleId": "C021",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C022",
+    "originalRuleId": "C022",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C023",
+    "originalRuleId": "C023",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C024",
+    "originalRuleId": "C024",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C025",
+    "originalRuleId": "C025",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C026",
+    "originalRuleId": "C026",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C027",
+    "originalRuleId": "C027",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH05.P1:start-with-consent"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C028",
+    "originalRuleId": "C028",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C029",
+    "originalRuleId": "C029",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C030",
+    "originalRuleId": "C030",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C031",
+    "originalRuleId": "C031",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C032",
+    "originalRuleId": "C032",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C033",
+    "originalRuleId": "C033",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C034",
+    "originalRuleId": "C034",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C035",
+    "originalRuleId": "C035",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C036",
+    "originalRuleId": "C036",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C037",
+    "originalRuleId": "C037",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "money",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C038",
+    "originalRuleId": "C038",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "money",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C039",
+    "originalRuleId": "C039",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "money",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C040",
+    "originalRuleId": "C040",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "money",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH03.P4:keep-joy-and-reserve"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C041",
+    "originalRuleId": "C041",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "money",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C042",
+    "originalRuleId": "C042",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "money",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C043",
+    "originalRuleId": "C043",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "money",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C044",
+    "originalRuleId": "C044",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "money",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C045",
+    "originalRuleId": "C045",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "money",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C046",
+    "originalRuleId": "C046",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "money",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C047",
+    "originalRuleId": "C047",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "money",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH05.P2:resource-route"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C048",
+    "originalRuleId": "C048",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "money",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C049",
+    "originalRuleId": "C049",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "social",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH05.P1:support-need-not-guess"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C050",
+    "originalRuleId": "C050",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "social",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C051",
+    "originalRuleId": "C051",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "social",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C052",
+    "originalRuleId": "C052",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "social",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C053",
+    "originalRuleId": "C053",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "social",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH06.P2:support-versus-obligation"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C054",
+    "originalRuleId": "C054",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "social",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C055",
+    "originalRuleId": "C055",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "social",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C056",
+    "originalRuleId": "C056",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "social",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C057",
+    "originalRuleId": "C057",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "social",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH01.P3:values-and-expression",
+      "cpr:material:CH03.P2:output-and-meaning"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C058",
+    "originalRuleId": "C058",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "social",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C059",
+    "originalRuleId": "C059",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "social",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C060",
+    "originalRuleId": "C060",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "social",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C061",
+    "originalRuleId": "C061",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "learning",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH01.P1:open-small-door"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C062",
+    "originalRuleId": "C062",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "learning",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C063",
+    "originalRuleId": "C063",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "learning",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C064",
+    "originalRuleId": "C064",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "learning",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C065",
+    "originalRuleId": "C065",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "learning",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH05.P2:make-visible"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C066",
+    "originalRuleId": "C066",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "learning",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH05.P2:translate-for-learner"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C067",
+    "originalRuleId": "C067",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "learning",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C068",
+    "originalRuleId": "C068",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "learning",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C069",
+    "originalRuleId": "C069",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "learning",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C070",
+    "originalRuleId": "C070",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "learning",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C071",
+    "originalRuleId": "C071",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "learning",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C072",
+    "originalRuleId": "C072",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "learning",
+      "work",
+      "identity"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C073",
+    "originalRuleId": "C073",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "love",
+      "social"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C074",
+    "originalRuleId": "C074",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "love",
+      "social"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C075",
+    "originalRuleId": "C075",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "love",
+      "social"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C076",
+    "originalRuleId": "C076",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "love",
+      "social"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C077",
+    "originalRuleId": "C077",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "love",
+      "social"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH01.P4:care-with-choice",
+      "cpr:material:CH03.P4:choose-support-mode",
+      "cpr:material:CH05.P3:boundaries-enable-support"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C078",
+    "originalRuleId": "C078",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "love",
+      "social"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C079",
+    "originalRuleId": "C079",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "love",
+      "social"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C080",
+    "originalRuleId": "C080",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "love",
+      "social"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH04.P2:after-help-load"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C081",
+    "originalRuleId": "C081",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "love",
+      "social"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C082",
+    "originalRuleId": "C082",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "love"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C083",
+    "originalRuleId": "C083",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C084",
+    "originalRuleId": "C084",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH01.P4:change-keeps-purpose"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C085",
+    "originalRuleId": "C085",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C086",
+    "originalRuleId": "C086",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C087",
+    "originalRuleId": "C087",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C088",
+    "originalRuleId": "C088",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C089",
+    "originalRuleId": "C089",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH05.P3:quiet-lead"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C090",
+    "originalRuleId": "C090",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH05.P3:standards-open-way"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C091",
+    "originalRuleId": "C091",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C092",
+    "originalRuleId": "C092",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C093",
+    "originalRuleId": "C093",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C094",
+    "originalRuleId": "C094",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C095",
+    "originalRuleId": "C095",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [
+      "cpr:material:CH01.P1:keep-room-for-others"
+    ],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:complement:C096",
+    "originalRuleId": "C096",
+    "origin": "complement_rule",
+    "originalDomains": [],
+    "originalContexts": [
+      "identity",
+      "recovery",
+      "stress",
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "specific_source_not_yet_bound",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:intj-official-process",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "work"
+    ],
+    "originalContexts": [
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:intj-expertise-price",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "money"
+    ],
+    "originalContexts": [
+      "money"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:intp-review-window",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "work"
+    ],
+    "originalContexts": [
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:entj-resource-learning",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "money"
+    ],
+    "originalContexts": [
+      "money"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:entj-score-question",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "study"
+    ],
+    "originalContexts": [
+      "learning"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:entp-accountable-method",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "work"
+    ],
+    "originalContexts": [
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:infj-fair-role",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "work"
+    ],
+    "originalContexts": [
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:infj-value-budget",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "money"
+    ],
+    "originalContexts": [
+      "money"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:infp-paid-output",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "money"
+    ],
+    "originalContexts": [
+      "money"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:infp-chosen-learning",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "work"
+    ],
+    "originalContexts": [
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:enfj-care-budget",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "money"
+    ],
+    "originalContexts": [
+      "money"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:enfj-shared-choice",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "work"
+    ],
+    "originalContexts": [
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:enfp-renewable-routine",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "work"
+    ],
+    "originalContexts": [
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:enfp-question-practice",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "study"
+    ],
+    "originalContexts": [
+      "learning"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:istj-safe-question",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "work"
+    ],
+    "originalContexts": [
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:isfj-guided-depth",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "work"
+    ],
+    "originalContexts": [
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:isfj-budgeted-making",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "money"
+    ],
+    "originalContexts": [
+      "money"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:estj-learning-handoff",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "work"
+    ],
+    "originalContexts": [
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:esfj-shared-budget",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "money"
+    ],
+    "originalContexts": [
+      "money"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:istp-tool-understanding",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "money"
+    ],
+    "originalContexts": [
+      "money"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:isfp-exit-notice",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "work"
+    ],
+    "originalContexts": [
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:estp-small-goal-base",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "study"
+    ],
+    "originalContexts": [
+      "learning"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:estp-check-act",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "work"
+    ],
+    "originalContexts": [
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  },
+  {
+    "id": "fkr:candidate:esfp-procedure-choice",
+    "originalRuleId": null,
+    "origin": "new_candidate",
+    "originalDomains": [
+      "work"
+    ],
+    "originalContexts": [
+      "work"
+    ],
+    "review": "conditional_editorial_not_empirical",
+    "sourceStatus": "existing_local_source_not_empirical",
+    "actualSourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+    "selectedMaterials": [],
+    "requires": "양측 실제 원천·owner·Domain·조건·반례·source assignment를 별도 검토; 현재 미등록 연구를 등록 규칙으로 만들지 않음",
+    "approvedForCustomer": false,
+    "connectedToRuntime": false
+  }
+]

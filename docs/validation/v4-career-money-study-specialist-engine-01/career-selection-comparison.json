@@ -1,0 +1,158 @@
+[
+  {
+    "method": "FIRST_ELIGIBLE",
+    "selected": [
+      {
+        "questionId": "synthetic:career:q:1",
+        "candidateId": "synthetic:career:a"
+      },
+      {
+        "questionId": "synthetic:career:q:2",
+        "candidateId": "synthetic:career:c"
+      },
+      {
+        "questionId": "synthetic:career:q:3",
+        "candidateId": "synthetic:career:d"
+      },
+      {
+        "questionId": "synthetic:career:q:4",
+        "candidateId": "synthetic:career:e"
+      }
+    ],
+    "coveredQuestions": 4,
+    "importanceCovered": 4,
+    "requiredMeaningUnits": 4,
+    "independentMeanings": 4,
+    "roots": {
+      "distinct": 1,
+      "references": 4,
+      "repeated": 3
+    },
+    "conflicts": [],
+    "missingQuestions": [
+      "synthetic:career:q:5"
+    ],
+    "search": {
+      "visits": 0,
+      "complete": true
+    },
+    "notSelected": [
+      {
+        "id": "synthetic:career:b",
+        "reasons": [
+          "QUESTION_ASSIGNED_TWICE"
+        ]
+      },
+      {
+        "id": "synthetic:career:f",
+        "reasons": [
+          "CAREER_POSITIVE_FACET_BUDGET"
+        ]
+      }
+    ],
+    "customerClaimsEmitted": 0
+  },
+  {
+    "method": "QUESTION_FIT_FIRST",
+    "selected": [
+      {
+        "questionId": "synthetic:career:q:1",
+        "candidateId": "synthetic:career:a"
+      },
+      {
+        "questionId": "synthetic:career:q:2",
+        "candidateId": "synthetic:career:c"
+      },
+      {
+        "questionId": "synthetic:career:q:3",
+        "candidateId": "synthetic:career:d"
+      },
+      {
+        "questionId": "synthetic:career:q:4",
+        "candidateId": "synthetic:career:e"
+      }
+    ],
+    "coveredQuestions": 4,
+    "importanceCovered": 4,
+    "requiredMeaningUnits": 4,
+    "independentMeanings": 4,
+    "roots": {
+      "distinct": 1,
+      "references": 4,
+      "repeated": 3
+    },
+    "conflicts": [],
+    "missingQuestions": [
+      "synthetic:career:q:5"
+    ],
+    "search": {
+      "visits": 0,
+      "complete": true
+    },
+    "notSelected": [
+      {
+        "id": "synthetic:career:b",
+        "reasons": [
+          "QUESTION_ASSIGNED_TWICE"
+        ]
+      },
+      {
+        "id": "synthetic:career:f",
+        "reasons": [
+          "CAREER_POSITIVE_FACET_BUDGET"
+        ]
+      }
+    ],
+    "customerClaimsEmitted": 0
+  },
+  {
+    "method": "CONSTRAINT_AWARE_SELECTION",
+    "selected": [
+      {
+        "questionId": "synthetic:career:q:1",
+        "candidateId": "synthetic:career:b"
+      },
+      {
+        "questionId": "synthetic:career:q:2",
+        "candidateId": "synthetic:career:c"
+      },
+      {
+        "questionId": "synthetic:career:q:3",
+        "candidateId": "synthetic:career:d"
+      },
+      {
+        "questionId": "synthetic:career:q:4",
+        "candidateId": "synthetic:career:e"
+      },
+      {
+        "questionId": "synthetic:career:q:5",
+        "candidateId": "synthetic:career:f"
+      }
+    ],
+    "coveredQuestions": 5,
+    "importanceCovered": 6,
+    "requiredMeaningUnits": 5,
+    "independentMeanings": 5,
+    "roots": {
+      "distinct": 2,
+      "references": 5,
+      "repeated": 3
+    },
+    "conflicts": [],
+    "missingQuestions": [],
+    "search": {
+      "visits": 31,
+      "complete": true
+    },
+    "notSelected": [
+      {
+        "id": "synthetic:career:a",
+        "reasons": [
+          "CAREER_POSITIVE_FACET_BUDGET",
+          "QUESTION_ASSIGNED_TWICE"
+        ]
+      }
+    ],
+    "customerClaimsEmitted": 0
+  }
+]

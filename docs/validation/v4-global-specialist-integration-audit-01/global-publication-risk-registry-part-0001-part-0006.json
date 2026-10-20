@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-publication-risk-registry-part-0001-part-0006.json.gz",
+  "payloadHash": "7020940a5beea8e606b4e67c2f09fc07de26fcb3d00224fbfb534382242de249",
+  "logicalJsonHash": "1f39da6f7c1908bbf4ce30dc10c007611e07f5c54de767d0a48727d90bdf186d",
+  "uncompressedBytes": 15920039
+}

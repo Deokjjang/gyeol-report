@@ -1,0 +1,23 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "OBJECT",
+  "keys": [
+    "engine",
+    "handoff"
+  ],
+  "logicalJsonHash": "67033b70188b8b929295c870ce8217080f128c3ab84dcfe2f9aa9f62cf408ed3",
+  "parts": [
+    {
+      "file": "editorial-handoff-part-0025.json",
+      "sha256": "e73b136203550910e0b1319f494f481feded738f0a1b1bae438bb0d75cf59851",
+      "kind": "FIELD",
+      "key": "engine"
+    },
+    {
+      "file": "editorial-handoff-part-0026.json",
+      "sha256": "c328d5c568283f00d64663138a20b3dd034fbc49e146c5965e9be13a3ae6efba",
+      "kind": "FIELD",
+      "key": "handoff"
+    }
+  ]
+}

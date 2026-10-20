@@ -1,0 +1,7 @@
+RUN  v4.1.5 /private/tmp/gyeol-compatibility-marriage-product-knowledge-01
+
+
+ Test Files  1 passed (1)
+      Tests  626 passed (626)
+   Start at  01:01:59
+   Duration  1.76s (transform 480ms, setup 19ms, import 574ms, tests 981ms, environment 0ms)

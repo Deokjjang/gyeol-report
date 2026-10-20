@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-evidence-witness-index.json.gz",
+  "payloadHash": "188223a4caef2d3cbc494b2bca2cf40fb9567ff507300c6e125783bfe0bf3f89",
+  "logicalJsonHash": "c667c3ba5b7ec4af1d4898ddb21878dff7d327e6be856c3a89a322afb163d745",
+  "uncompressedBytes": 2820248
+}

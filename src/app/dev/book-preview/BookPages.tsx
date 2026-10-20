@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useRef, useState, Fragment, type CSSProperties } from "react";
 import { REPORT_PRICE_LABEL_KO } from "../../../lib/payment/reportProductCatalog";
 import type { ReportTableElementColorToken } from "../../../lib/report-tables/types";
@@ -64,25 +65,26 @@ export function Receipt({ book, person, title, member, setMember, consents, setC
   </>;
 }
 
-export function Publishing({ book, name, state, notice = "출판 과정 미리보기 · 결제·저장 없음" }: { book: Book; name: string; state: PublishingState; notice?: string }) {
+export function Publishing({ book, name, state, notice = "출판 과정 미리보기 · 결제·저장 없음", visualOnly = false }: { book?: Book; name?: string; state: PublishingState; notice?: string; visualOnly?: boolean }) {
   return <div className={s.publishing} data-publishing={state}>
-    <div className={s.press} style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties} aria-hidden="true">
+    <div className={s.press} style={{ "--cover": book?.color ?? "#111111", "--ink": book?.ink ?? "#FFFFFF" } as CSSProperties} aria-hidden="true">
       {[0, 1, 2, 3].map(i => <div key={i} className={s.sheet} style={{ "--sheet": i } as CSSProperties}><i /><i /><i /><i /></div>)}
-      <div className={s.binding} /><div className={s.printedCover}><Cover book={book} name={state === "complete" ? name : undefined} /></div>
+      <div className={s.binding} /><div className={s.printedCover}>{book ? <Cover book={book} name={state === "complete" ? name : undefined} /> : <div className={s.cover} />}</div>
     </div>
-    <h1 aria-live="polite">{name}님의 책을<br />출판하고 있습니다.</h1>
+    {!visualOnly ? <><h1 aria-live="polite">{name ? `${name}님의 책을` : "책을"}<br />출판하고 있습니다.</h1>
     <p className={s.micro}>A PERSONAL EDITION, IN THE MAKING.</p>
-    <p className={s.hint}>{notice}</p>
+    <p className={s.hint}>{notice}</p></> : null}
   </div>;
 }
 
 
 // Semantic tokens from the canonical table contract, independent of cover color.
 export const ELEMENT_LABELS = { "wood-green": "목 木", "fire-red": "화 火", "earth-soil": "토 土", "metal-gold": "금 金", "water-sky": "수 水" } satisfies Record<ReportTableElementColorToken, string>;
-// Verbatim SVG geometry from ReportShareActions; no production actions/SDK imported.
+// Official Kakao resource; other action geometry and preview-only behavior stay unchanged.
 export function ShareIcon({ kind }: { kind: number }) {
+  if (kind === 0) return <Image src="/brand/kakao-talk-share.svg" width="24" height="25" alt="" aria-hidden="true" />;
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" focusable="false">
-    {kind === 0 ? <path fill="currentColor" stroke="none" d="M12 4C6.8 4 2.6 7.28 2.6 11.32c0 2.6 1.74 4.88 4.36 6.18l-.9 3.3c-.08.3.26.54.52.36l3.92-2.6c.5.06 1 .1 1.5.1 5.2 0 9.4-3.28 9.4-7.34S17.2 4 12 4Z" /> : kind === 1 ? <><circle cx="18" cy="5" r="2.5" /><circle cx="6" cy="12" r="2.5" /><circle cx="18" cy="19" r="2.5" /><path d="m8.2 10.8 7.6-4.5M8.2 13.2l7.6 4.5" /></> : <><rect x="8" y="8" width="10" height="10" rx="2" /><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" /></>}
+    {kind === 1 ? <><circle cx="18" cy="5" r="2.5" /><circle cx="6" cy="12" r="2.5" /><circle cx="18" cy="19" r="2.5" /><path d="m8.2 10.8 7.6-4.5M8.2 13.2l7.6 4.5" /></> : <><rect x="8" y="8" width="10" height="10" rx="2" /><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" /></>}
   </svg>;
 }
 export function NatalTable({ data }: { data: V4CustomerTables[number] }) {
@@ -109,7 +111,7 @@ export function PreviewFooter({ publicPresentation = false }: { publicPresentati
   const [legal, setLegal] = useState(false);
   return <footer className={s.siteFooter}><div className={s.footerTop}><span className={s.micro}>GYEOL REPORT<br />PERSONAL PUBLISHING</span><nav aria-label="소셜과 고객 문의">
     <a href="https://www.instagram.com/gyeolreport/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="18" cy="6" r="1" /></svg></a>
-    <a href="http://pf.kakao.com/_sbHaX/chat" target="_blank" rel="noopener noreferrer" aria-label="카카오톡 고객 문의"><svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6 3 2 6.5 2 11c0 3 2 5 5 6.5L6 21l4-2.5h2c6 0 10-3.5 10-7.5S18 3 12 3Z" /></svg></a>
+    <a href="http://pf.kakao.com/_sbHaX/chat" target="_blank" rel="noopener noreferrer" aria-label="카카오톡 고객 문의"><ShareIcon kind={0} /></a>
     <a href="http://pf.kakao.com/_sbHaX" target="_blank" rel="noopener noreferrer">채널 보기</a>
     </nav></div><p>{SUPPORT_COPY}</p><p>전화 상담은 제공하지 않습니다.</p>
     <details data-business><summary>사업자 정보 <span aria-hidden="true">+</span></summary><BusinessDetails /></details>

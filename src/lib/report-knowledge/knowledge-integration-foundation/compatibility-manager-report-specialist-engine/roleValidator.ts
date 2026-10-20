@@ -1,0 +1,4 @@
+import {toCompatibilityGenerationInput} from "../../../report-generation/reportInputAdapter";
+export const ROLE_VERSION="compatibility-fixed-ab-v1" as const;
+export function validateFixedRole(version:unknown,roles?:{personA:string;personB:string}){return [...(version!==ROLE_VERSION?["V4_FIXED_ROLE_REQUIRED"]:[]),...(roles&&(roles.personA!=="상사"||roles.personB!=="부하·팀원")?["ROLE_DECLARATION_CHANGED"]:[])];}
+export function auditLegacyRole(payload:unknown){const normalized=toCompatibilityGenerationInput(payload);return {normalized:normalized.ok,normalizationError:normalized.ok?null:normalized.error,normalizedRoleVersion:normalized.ok?normalized.value.compatibilityRoleVersion:null,v4RoleAccepted:normalized.ok&&!validateFixedRole(normalized.value.compatibilityRoleVersion).length,actualReportingRelationship:"UNKNOWN",actualAuthority:"UNKNOWN"};}

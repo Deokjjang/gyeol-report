@@ -1,0 +1,136 @@
+{
+  "status": "PASS",
+  "originalLegacyReaderUsed": true,
+  "formats": [
+    "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+    "GYEOL_GLOBAL_AUDIT_SHARDS_V1"
+  ],
+  "readRoots": [
+    {
+      "file": "global-book-planner-manifest.json",
+      "status": "PASS",
+      "logicalHash": "da1c8967586f4701fc06c0f3ef8d0f46cb45215248ecf119d12370c11f8db790"
+    },
+    {
+      "file": "planner-registry.json",
+      "status": "PASS",
+      "logicalHash": "ae3340e36f4c4fee6515f81b3da817de65956c2c526de38695882c09abca0055"
+    },
+    {
+      "file": "product-reader-contracts.json",
+      "status": "PASS",
+      "logicalHash": "7f9add74f439a7dada200f630124f67ca327ca57696d42b49e2e5cc530a8185a"
+    },
+    {
+      "file": "strict-customer-plan.json",
+      "status": "PASS",
+      "logicalHash": "b8d9f495feb375915c217faa5d045b5932272256ab114b02a87dbb7e1903e7f4"
+    },
+    {
+      "file": "candidate-eligibility.json",
+      "status": "PASS",
+      "logicalHash": "477abd6a6d23a751a668b62ae0e7f9b0e498ec125ff57009e299cfaac11a28e4"
+    },
+    {
+      "file": "original-receipt-preservation.json",
+      "status": "PASS",
+      "logicalHash": "c74b9460015ff1d292f5de6ff2c87f6299fae002459f650458ff39df56608e68"
+    },
+    {
+      "file": "question-material-links.json",
+      "status": "PASS",
+      "logicalHash": "ee738c822ec54849549feac88351b674b5b99474461b65b9a388ab4462588f3d"
+    },
+    {
+      "file": "reader-bridge-audit.json",
+      "status": "PASS",
+      "logicalHash": "69189dc17ce547fb9beba0e582bab8bdb878f24c0ccb831612f5497cf92358f3"
+    },
+    {
+      "file": "root-ownership.json",
+      "status": "PASS",
+      "logicalHash": "dc9e0426a160652db5523c9518634a39d314fc9ea76eea0a60ce1926b92b039f"
+    },
+    {
+      "file": "actual-evidence-index.json",
+      "status": "PASS",
+      "logicalHash": "746d91e05a06a6d323024392a3a9d05d425d7e499c0bc23f2bb4eb4e4510684f"
+    },
+    {
+      "file": "conflict-constraints.json",
+      "status": "PASS",
+      "logicalHash": "f7a01d86b2d71fb8d70e518db1ad69661ed5736b0eac99d95e7eca0fb48d1dd8"
+    },
+    {
+      "file": "synthetic-conflict-constraints.json",
+      "status": "PASS",
+      "logicalHash": "09a84f1a24db5bbba2c7c17e4e811e74b5c43fdec9ee2ad2c2f859b2c76aae64"
+    },
+    {
+      "file": "reuse-budgets.json",
+      "status": "PASS",
+      "logicalHash": "db053301f2c81778d85c0523b87f186fba14013e8ebd95c80a0d2c2dfd4cc154"
+    },
+    {
+      "file": "synthetic-rehearsal-input.json",
+      "status": "PASS",
+      "logicalHash": "0516c567121bfe7c3592eef4f48b2d79cbe354779e955659fbd1d9e97c6072a1"
+    },
+    {
+      "file": "synthetic-verified-binder.json",
+      "status": "PASS",
+      "logicalHash": "d06b1578863b9499e383f07ddda7f613217032adf08c9c0cf4f66a66ce5cf75b"
+    },
+    {
+      "file": "synthetic-rehearsal-plan.json",
+      "status": "PASS",
+      "logicalHash": "c85e2e8c5aea6b1065b8b49557a727b77afd86285cd51ae726777626055c969a"
+    },
+    {
+      "file": "algorithm-comparison.json",
+      "status": "PASS",
+      "logicalHash": "f026ff5a0462caa7c645e3a63cf65fb6daf81256bb58cef3992ba31ce4476bbe"
+    },
+    {
+      "file": "question-coverage.json",
+      "status": "PASS",
+      "logicalHash": "a98643dc1a1e1bb97568b297fa130c1ba6bb51e78af0ef4a46808a7f84471f26"
+    },
+    {
+      "file": "unfilled-questions.json",
+      "status": "PASS",
+      "logicalHash": "3a41e1130b9db83ef5ddce79cf5578610a011ceed373bb2c5754e4a52d29f52b"
+    },
+    {
+      "file": "temporal-assignments.json",
+      "status": "PASS",
+      "logicalHash": "de90e66eee08087e2f0b9704d264618976f7c47baf7f3f80bd6d82cab2ca5b57"
+    },
+    {
+      "file": "compatibility-assignments.json",
+      "status": "PASS",
+      "logicalHash": "bd649372b569dac0b4ff31f03b9fddfbc396354a20aab57fcacf5fb8ac908be2"
+    },
+    {
+      "file": "display-dependencies.json",
+      "status": "PASS",
+      "logicalHash": "1c637922ff882e190e424dbf5fc17d3e348d814b05171bf7355c82a1a7c717bf"
+    },
+    {
+      "file": "editorial-handoff.json",
+      "status": "PASS",
+      "logicalHash": "5864eeaa914e23fa9f5c9dc4770b1fbab59da42580a6e2816aa620781a2e2d7d"
+    },
+    {
+      "file": "meaning-identity.json",
+      "status": "PASS",
+      "logicalHash": "86febf28241bb3970786d0204d0f9ac0bda2fb7f3d335e2bcd540063061bd309"
+    },
+    {
+      "file": "planner-validation.json",
+      "status": "PASS",
+      "logicalHash": "2a9dc4e1dd05bb151fe4717acfcc3a96b7a2064cdd74d013136da0c6258ab380"
+    }
+  ],
+  "logicalDataChanged": false
+}

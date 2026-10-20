@@ -1,0 +1,9 @@
+{
+  "appServerNftBefore": 88,
+  "appServerNftAfter": 88,
+  "includingNextServerTracesBefore": 90,
+  "includingNextServerTracesAfter": 90,
+  "allPathSetsIdentical": true,
+  "newEngineResearchValidationFixtureOrCliIncluded": [],
+  "remoteCompressedFunctionSizeNotAsserted": true
+}

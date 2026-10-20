@@ -1,0 +1,17 @@
+{
+  "distinctResearchRecords": 18610,
+  "distinctPotentialInterpretationCandidates": 4270,
+  "candidateFixtureOccurrences": 5073,
+  "sourceRequirementEvaluations": 8646,
+  "indexedIdentityHits": 1640,
+  "actualNodeMatchingAttempts": 1248,
+  "acceptedWitnessMatchOccurrences": 917,
+  "distinctMatchedGraphNodesByFixture": 405,
+  "selectedWitnessReferenceOccurrences": 591,
+  "sourceGroupRecordOccurrences": 192,
+  "internalGroupEvaluations": 201,
+  "gateEvaluations": 60876,
+  "witnessSearchBoundPerCandidate": 10000,
+  "witnessSearchInternalStepCount": "not exported; distinct from actual node matching attempts",
+  "nodeMatchingAttemptDefinition": "Each accepted or rejected node in the exact-match validation loop, after indexed query and owner prioritization; repeat visits in different requirements count separately."
+}

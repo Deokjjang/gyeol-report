@@ -1,0 +1,88 @@
+{
+  "baselineSha": "df70c0d587b2e0af17d6bacb64fca92d32a4df30",
+  "baselineArchive": "/tmp/gyeol-career-knowledge-baseline-df70",
+  "additionalExistingFailures": 10,
+  "failureNamesAndExpectedActualDigestArraysMatched": true,
+  "failures": {
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'comprehensive' customer/evidence/Book stays frozen": [
+      "79e6f83b152d9efbeea6ffacbeba6b65682da18728571b1f45457449d3d3b1f0",
+      "cf6b97069cfda561ca29910da0aa8fbd8276dd6ce8a1a4b11bf35dfc2ca06d3a",
+      "27cdc93d2473150e53638211d76e46f2d0c193ea1f84fb31835bfae62337d502",
+      "7abeaf415fc6e3987f97d5a23660c44de3b2b0555b17d6e7dd4962251849b6df",
+      "9489bd1889c289bdf0d736bea07f5ca8416c3f3be99703712d711d3e0683ff85",
+      "77f9a788f81c8adce8d60909748af3383af68d6e520afec6a94ca7ec6f923b67"
+    ],
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'love' customer/evidence/Book stays frozen": [
+      "258b6c08fa486ff838638a336bfd89b14b9da2e0e1f24ca115515789c877847d",
+      "31689af92401bda9724fbff1f92f2ae0227fd2d761d344df212f7d5d68b442ef",
+      "5aa3f85dc2ce7c15c8cffff86489d32ff675cc4774bfad0d0175fb9d3d4b8e4d",
+      "5b756f9299610de087852de1f904be8227ce632bfa71221080da067e3f670a14"
+    ],
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'compatibility' customer/evidence/Book stays frozen": [
+      "1ac3b7f26fbc5c3e83c03055fd172d98aeda4cee736006f40c39db1a2a41b0c3",
+      "b90fffb36cdfe0a9b648d2390dd61ab9624931d41ecaa41624053f6cfdaaac0b",
+      "a790548d932fa0d28dc5c72ee0f1d8f5254ef8f47c6568e8605b1933354169d3",
+      "6b72bb3315deb01dc30e6c17b3de206bb48136cedd5e17b98d3328d5fea496b3"
+    ],
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'major' customer/evidence/Book stays frozen": [
+      "71465d70a0800b6d7430b45287e47afe5438919c6cb56d99deef9a875d51a15b",
+      "cf9b8c3aaef4fb7488028e622b023ebe9db3cb677e469bb3c30ec9f82bd56dfd",
+      "eb31c1fe7addcee764b3df970a892850180cb9751d73c2ecbd5198e96e821204",
+      "793cf165f7979fdca53538ce7e1179dec7420cfbc56d6c9c8850c50bec190e0f",
+      "c8f9971936e1978a23f94be2f0324b586c656c9c3c041b98ad145ad07cefaec5",
+      "9bca83d261e8785699976a73dee286f67967a93280caba648df3c6623524e4e4"
+    ],
+    "tests/unit/interpretation-v4/careerProductLocks.test.ts > 'annual' customer/evidence/Book stays frozen": [
+      "8525e0e39cc824c3f1f9cdd763cb33bfd4402c9718f6ba6d1e4a33f69309be5f",
+      "85e4470a0b5a60c0e89c634dae80915263744f26dbef600e11132092d0c74125",
+      "d21b5665c2e24402bf37a1a33021e47c5f1ccefa42f22c402c4ed2ee2acba69f",
+      "e15fbecb49542416d6466a31ffaa87e09f7baf3d618faf49ff87d70d0670364e",
+      "30a943c0de301112caaf4ae4589cdfe23a62ab8d71881fbf63db816f2fba8a6a",
+      "c5421a0c7a29fb764f06e0f9037cf452ef55f1bebb7c15f4daf9d3a88ba7b1f7"
+    ],
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'comprehensive' previous saved edition remains identical": [
+      "79e6f83b152d9efbeea6ffacbeba6b65682da18728571b1f45457449d3d3b1f0",
+      "cf6b97069cfda561ca29910da0aa8fbd8276dd6ce8a1a4b11bf35dfc2ca06d3a",
+      "27cdc93d2473150e53638211d76e46f2d0c193ea1f84fb31835bfae62337d502",
+      "7abeaf415fc6e3987f97d5a23660c44de3b2b0555b17d6e7dd4962251849b6df",
+      "9489bd1889c289bdf0d736bea07f5ca8416c3f3be99703712d711d3e0683ff85",
+      "77f9a788f81c8adce8d60909748af3383af68d6e520afec6a94ca7ec6f923b67"
+    ],
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'love' previous saved edition remains identical": [
+      "dc65e1cff1fdaef863b242387ca333913335507ca0c3e296eb399150c0f16ae8",
+      "d2b6fc40dcafd7de79170fb641dc45acf42fcf7749de8e83f766d1105c8d5fce",
+      "17571a8443a3a6a43c54c2d517ec88c6f2898b07f92b6328a2f591db54ba3978",
+      "8009c7ebb1e39c0b170eca7a3266a2869d8cbcc0b344b405e1e76bdd996bcacd",
+      "2bf558eef40e20df2eed197310879f06934ff31b543b3d56671ca3d55e32d278",
+      "c5c9c7bb29db41aa08b76b81446a7b97e5c05ea460b7503192dc5e75a9a1a774"
+    ],
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'compatibility' previous saved edition remains identical": [
+      "da6593ae6c10583c2a6f28ee29c26b5609b409b4edcccde35dd512bb1b2454f4",
+      "d0694ae557383ea3cd0b4cacd3f51cb7ac2d096c3e70ec3cc593b32fe44c6d7e",
+      "e161afa18d5465c6ff7e4cd46b6c13d7e8e48bcc851ca65dd9d3fbebe24b5696",
+      "bddfc2dc4be673fc2b23b173c95c47c144be6c21be7d4d921a941d9c0e43e749",
+      "715080cd3b2885bc90ecf3699451be739f5f7ef5a980f5fb7cdb8fcc1b1ebcf2",
+      "f9471b5169e4ecf60ee73701e42a1d8575eaf8047ab909fb53f8b82d77fabb44"
+    ],
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'major' previous saved edition remains identical": [
+      "8c911d6dc3d24f4be969bf7017d1b098a7523078d8018115db7fa5187ce21dde",
+      "cdb60d8939e2e97cd06840093ada974b11b9369b6b06f881b788eac3f54d1f3a",
+      "a774832dc671df08d9c2395850a54bfe1e8446d9e72256695d4107244c27752b",
+      "bff2f1ccbc222b5b33e7df9a86ba6907afac782c8afda99de9b47e3b4dfd317d",
+      "9957f1348ea06e4a098dec827a23a4f07f721f41e2cc2d0433f12bff721d89c6",
+      "6e5e255f8400110d10a0230af508f98db941a99936bb363a30a2f2f3957b23cd"
+    ],
+    "tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'annual' previous saved edition remains identical": [
+      "58150101a8224de5ddd09f6fee598e67f39ee0ed8a83a238efbfc43706c1d378",
+      "fd698806ddf394fd2c3d4c145a1e2471f4b834c1dad3b5596ea37522a8c8a634",
+      "ba2cf9b612db5290bd1bf55bd639d750364fbe5eb5366bee106e2a4e88284626",
+      "382fe497a223d7f3eff4024ca980d4c521592bf06e8ee56a78f1635895a1da57",
+      "6c885a9c3b98185df7bf7959a4b2cd1fc6e5b4723ed9cfab85b62eacfd546be8",
+      "da933fc11732c159856aeb881d6fe884247e20d0af696f355319f7ab2a27ef08"
+    ]
+  },
+  "originalExistingSourcesUnchanged": true,
+  "filterNotRun": 36,
+  "filterSelectedPass": 1,
+  "newTestSkipsAdded": 0
+}

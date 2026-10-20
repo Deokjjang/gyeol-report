@@ -1,0 +1,28 @@
+{
+  "version": "business-partner-cli-output-contract-v1",
+  "independentFullRuns": [
+    {
+      "run": "one",
+      "allGeneratedJson": 46,
+      "exactByteMatch": true,
+      "frozenInputsCheckedBeforeAndAfter": 20,
+      "allOriginalFilesCheckedBeforeAndAfter": 4932,
+      "originalManagerReportGeneratedFilesMatched": 53,
+      "networkDisabled": true
+    },
+    {
+      "run": "two",
+      "allGeneratedJson": 46,
+      "exactByteMatch": true,
+      "frozenInputsCheckedBeforeAndAfter": 20,
+      "allOriginalFilesCheckedBeforeAndAfter": 4932,
+      "originalManagerReportGeneratedFilesMatched": 53,
+      "networkDisabled": true
+    }
+  ],
+  "outputsByteEqual": true,
+  "unrelatedNonemptyOutputRejected": true,
+  "forgedOwnershipRejected": true,
+  "unsafeSourceOutputRejected": true,
+  "performanceLogsAreExternal": true
+}

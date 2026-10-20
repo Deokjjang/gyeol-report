@@ -1,0 +1,3 @@
+PASS: git diff --check
+PASS: git diff --cached --check
+96 task-only new files; no existing tracked file changed.

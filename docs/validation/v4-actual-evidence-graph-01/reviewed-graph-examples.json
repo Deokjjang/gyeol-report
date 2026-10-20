@@ -1,0 +1,802 @@
+[
+  {
+    "fixtureId": "fixture-comprehensive-A",
+    "nodeId": "fixture-comprehensive-A:node:45",
+    "kind": "CALCULATED_NATAL_FACT",
+    "originalIdOrPrivacyAlias": "month:사",
+    "value": {
+      "stage": "사",
+      "scope": "natal",
+      "provenance": [
+        "canonical-natal-table-v1",
+        "saju-calendar-kst-v2",
+        "canonical-natal-table-v1:pillars:month:twelveLifeStage"
+      ],
+      "involvedPillars": [
+        "month"
+      ],
+      "involvedCharacters": [
+        "卯"
+      ]
+    },
+    "owner": {
+      "slot": "person",
+      "fixtureOwnerId": "fixture-person-1"
+    },
+    "direction": null,
+    "participants": [],
+    "temporal": null,
+    "sources": [],
+    "roots": [
+      "fixture-root-418",
+      "fixture-root-977"
+    ],
+    "blockers": [],
+    "review": "Directly inspected actual node/edge/source/period distinctions; not operator or customer approval",
+    "customerApproved": false
+  },
+  {
+    "fixtureId": "fixture-comprehensive-A",
+    "nodeId": "fixture-comprehensive-A:node:4",
+    "kind": "MBTI_SOURCE_NODE",
+    "originalIdOrPrivacyAlias": "mbti:ENFJ:traits:communication:eloquent_social_speech:plainKo",
+    "value": {
+      "type": "ENFJ",
+      "sourceDomain": "COMMUNICATION",
+      "classification": "SCORING_SEMANTIC",
+      "sourceCoverage": "direct",
+      "value": "ENFJ는 말과 글의 재능이 뛰어나며, 대화의 주도권을 쉽게 가져간다. 분위기에 맞는 표현과 비유로 사람들의 공감을 끌어낸다.",
+      "sourcePath": "/traits/communication/0/plainKo",
+      "empiricallyValidatedPersonality": false
+    },
+    "owner": {
+      "slot": "person",
+      "fixtureOwnerId": "fixture-person-1"
+    },
+    "direction": null,
+    "participants": [],
+    "temporal": null,
+    "sources": [
+      {
+        "file": "docs/product/mbti/source/ENFJ.json",
+        "pointer": "/traits/communication/0/plainKo",
+        "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+        "catalogKeys": [
+          "kc:v1:2ae9ddb3dd7fe5527c62baf8d64a7561b06e8659e54d6638da19b276058572a6"
+        ],
+        "sourceReferenceKeys": [
+          "sv:ref:0a22ea3844e8450bc8a48468c7f58a9c2e50e1558246450b5f49bda610473f6d",
+          "sv:ref:b64e2bd3b07d7f6ca5be36f02657205401845985b662da1e943b94a5de7f4d6c",
+          "sv:ref:f3ce0ef80b3196117ba3f22e177d80b048bc92293638da741af9b05393e9c350"
+        ],
+        "semanticDecisionKeys": [],
+        "state": "VERIFIED",
+        "originalClassification": "SCORING_SEMANTIC",
+        "sourceCoverage": "direct"
+      }
+    ],
+    "roots": [
+      "fixture-root-5158",
+      "fixture-root-9394"
+    ],
+    "blockers": [],
+    "review": "Directly inspected actual node/edge/source/period distinctions; not operator or customer approval",
+    "customerApproved": false
+  },
+  {
+    "fixtureId": "fixture-comprehensive-A",
+    "nodeId": "fixture-comprehensive-A:node:6",
+    "kind": "FUSION_DERIVATION",
+    "originalIdOrPrivacyAlias": "fusion:COMPLEMENT:C053:social:CARE:1:BOUNDARY:1",
+    "value": {
+      "type": "COMPLEMENT",
+      "ruleId": "C053",
+      "axes": [
+        "BOUNDARY",
+        "CARE"
+      ],
+      "contexts": [
+        "social"
+      ],
+      "primaryContext": "social",
+      "rankingScore": 0.373,
+      "rankingFactors": {
+        "sideStrengthBase": 0.5,
+        "contextFit": 1,
+        "diversityFactor": 1.075,
+        "sourceQualityFactor": 0.8,
+        "specificityFactor": 1.1,
+        "duplicationPenalty": 0.1,
+        "priorDependencyPenalty": 0,
+        "amplifierOnlyPenalty": 0
+      },
+      "conditionSplit": null,
+      "metadata": {
+        "relationship": "SYNTHESIS",
+        "promotion": "CANDIDATE_ONLY",
+        "causation": false
+      },
+      "independentFactsAdded": 0
+    },
+    "owner": {
+      "slot": "person",
+      "fixtureOwnerId": "fixture-person-1"
+    },
+    "direction": null,
+    "participants": [],
+    "temporal": null,
+    "sources": [],
+    "roots": [
+      "fixture-root-977",
+      "fixture-root-2886",
+      "fixture-root-9394",
+      "fixture-root-16675"
+    ],
+    "blockers": [],
+    "review": "Directly inspected actual node/edge/source/period distinctions; not operator or customer approval",
+    "customerApproved": false
+  },
+  {
+    "fixtureId": "fixture-compatibility-A",
+    "nodeId": "fixture-compatibility-A:node:396",
+    "kind": "CANONICAL_PAIR_FACT",
+    "originalIdOrPrivacyAlias": "six_harmony:fixture-person-7:month:申|fixture-person-8:day:巳",
+    "value": {
+      "kind": "six_harmony",
+      "branches": [
+        "巳",
+        "申"
+      ],
+      "actualCrossPersonDetection": true
+    },
+    "owner": {
+      "slot": "pair",
+      "fixtureOwnerId": "fixture-pair:fixture-person-7|fixture-person-8"
+    },
+    "direction": null,
+    "participants": [
+      {
+        "owner": "fixture-person-7",
+        "position": "month",
+        "slot": "branch",
+        "value": "申"
+      },
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "branch",
+        "value": "巳"
+      }
+    ],
+    "temporal": null,
+    "sources": [],
+    "roots": [
+      "fixture-root-4006",
+      "fixture-root-12206",
+      "fixture-root-17906"
+    ],
+    "blockers": [],
+    "review": "Directly inspected actual node/edge/source/period distinctions; not operator or customer approval",
+    "customerApproved": false
+  },
+  {
+    "fixtureId": "fixture-compatibility-A",
+    "nodeId": "fixture-compatibility-A:node:242",
+    "kind": "DIRECTIONAL_RELATION_FACT",
+    "originalIdOrPrivacyAlias": "fixture-person-8:to:fixture-person-7",
+    "value": {
+      "receivedTenGod": {
+        "viewerDayStem": "甲",
+        "targetDayStem": "乙",
+        "tenGod": "劫財",
+        "tenGodKo": "겁재",
+        "relationLabel": "갑목이 을목를 보면 겁재"
+      },
+      "element": {
+        "sourceStem": "乙",
+        "targetStem": "甲",
+        "sourceElement": "wood",
+        "targetElement": "wood",
+        "relation": "same",
+        "relationLabel": "을목 -> 갑목",
+        "summary": "을목와 갑목가 같은 오행으로 공명하는 구조입니다."
+      }
+    },
+    "owner": {
+      "slot": "personB",
+      "fixtureOwnerId": "fixture-person-8"
+    },
+    "direction": {
+      "subject": "fixture-person-8",
+      "recipient": "fixture-person-7",
+      "relationId": "fixture-person-8:to:fixture-person-7",
+      "recipientDayMaster": "甲",
+      "subjectDayMaster": "乙"
+    },
+    "participants": [
+      {
+        "owner": "fixture-person-8",
+        "position": "day",
+        "slot": "stem",
+        "value": "乙"
+      },
+      {
+        "owner": "fixture-person-7",
+        "position": "day",
+        "slot": "stem",
+        "value": "甲"
+      }
+    ],
+    "temporal": null,
+    "sources": [],
+    "roots": [
+      "fixture-root-2093",
+      "fixture-root-5160",
+      "fixture-root-7514"
+    ],
+    "blockers": [],
+    "review": "Directly inspected actual node/edge/source/period distinctions; not operator or customer approval",
+    "customerApproved": false
+  },
+  {
+    "fixtureId": "fixture-compatibility-friendship",
+    "nodeId": "fixture-compatibility-friendship:node:180",
+    "kind": "FUSION_DERIVATION",
+    "originalIdOrPrivacyAlias": "fusion:REINFORCE:CREATION:social:CREATION:1:CREATION:1",
+    "value": {
+      "type": "REINFORCE",
+      "ruleId": "UNKNOWN",
+      "axes": [
+        "CREATION"
+      ],
+      "contexts": [
+        "social"
+      ],
+      "primaryContext": "social",
+      "rankingScore": 0.45999999999999996,
+      "rankingFactors": {
+        "sideStrengthBase": 0.5,
+        "contextFit": 1,
+        "diversityFactor": 1.15,
+        "sourceQualityFactor": 0.8,
+        "specificityFactor": 1,
+        "duplicationPenalty": 0,
+        "priorDependencyPenalty": 0,
+        "amplifierOnlyPenalty": 0
+      },
+      "conditionSplit": null,
+      "metadata": {
+        "relationship": "CORRESPONDENCE",
+        "promotion": "CANDIDATE_ONLY",
+        "causation": false
+      },
+      "independentFactsAdded": 0
+    },
+    "owner": {
+      "slot": "personB",
+      "fixtureOwnerId": "fixture-person-8"
+    },
+    "direction": null,
+    "participants": [],
+    "temporal": null,
+    "sources": [],
+    "roots": [
+      "fixture-root-737",
+      "fixture-root-1187",
+      "fixture-root-5484",
+      "fixture-root-7514",
+      "fixture-root-8472",
+      "fixture-root-10757",
+      "fixture-root-12627",
+      "fixture-root-13552",
+      "fixture-root-14136",
+      "fixture-root-15253",
+      "fixture-root-15588",
+      "fixture-root-17906",
+      "fixture-root-17972"
+    ],
+    "blockers": [
+      {
+        "code": "DISALLOWED_ANCESTOR_DOMAIN",
+        "refs": [
+          "sdv:policy:friendship-child-ban",
+          "frpr:binding:all-ancestors",
+          "CHILDREN"
+        ]
+      },
+      {
+        "code": "REQUIRED_ANCESTOR_WITHHELD",
+        "refs": [
+          "fixture-compatibility-friendship:node:7038"
+        ]
+      }
+    ],
+    "review": "Directly inspected actual node/edge/source/period distinctions; not operator or customer approval",
+    "customerApproved": false
+  },
+  {
+    "fixtureId": "fixture-major-transition-C",
+    "nodeId": "fixture-major-transition-C:node:268",
+    "kind": "CALCULATED_PERIOD_FACT",
+    "originalIdOrPrivacyAlias": null,
+    "value": {
+      "cycleIndex": 3,
+      "ganji": "壬申",
+      "tenGod": "편재",
+      "startYear": 2018,
+      "endYear": 2027,
+      "tenYearCycle": true,
+      "activeAtEvaluation": true,
+      "timePosition": "current"
+    },
+    "owner": {
+      "slot": "person",
+      "fixtureOwnerId": "fixture-person-11"
+    },
+    "direction": null,
+    "participants": [],
+    "temporal": {
+      "scope": "dayun",
+      "start": "2018-04-23T21:42:00+09:00",
+      "endExclusive": "2028-04-23T21:42:00+09:00",
+      "certainty": "confirmed",
+      "originalBounds": {
+        "cycle": {
+          "index": 3,
+          "ganji": "壬申",
+          "tenGod": "편재",
+          "elements": [
+            "수",
+            "금"
+          ],
+          "startYear": 2018,
+          "endYear": 2027,
+          "theme": "밖의 기회와 자원을 연결하는 것"
+        },
+        "startSolarRange": {
+          "earliestKst": "2018-04-23T21:42:00+09:00",
+          "latestKst": "2018-04-23T21:42:00+09:00"
+        },
+        "nextTransition": {
+          "year": 2028,
+          "dateLabel": "2028-04-23 21:42 한국시간",
+          "startSolarKst": "2028-04-23T21:42:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2028-04-23T21:42:00+09:00",
+            "latestKst": "2028-04-23T21:42:00+09:00"
+          },
+          "before": {
+            "index": 3,
+            "ganji": "壬申",
+            "tenGod": "편재",
+            "elements": [
+              "수",
+              "금"
+            ],
+            "startYear": 2018,
+            "endYear": 2027,
+            "theme": "밖의 기회와 자원을 연결하는 것"
+          },
+          "after": {
+            "index": 4,
+            "ganji": "辛未",
+            "tenGod": "상관",
+            "elements": [
+              "금",
+              "토"
+            ],
+            "startYear": 2028,
+            "endYear": 2037,
+            "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+          }
+        }
+      },
+      "compatibleCombination": true,
+      "transitionRange": {
+        "earliestKst": "2018-04-23T21:42:00+09:00",
+        "latestKst": "2018-04-23T21:42:00+09:00"
+      }
+    },
+    "sources": [],
+    "roots": [
+      "fixture-root-9939"
+    ],
+    "blockers": [
+      {
+        "code": "UNADDRESSABLE_PRODUCER_OBSERVATION",
+        "refs": [
+          "/composition/result/evidence/horizon/cycles/3"
+        ]
+      }
+    ],
+    "review": "Directly inspected actual node/edge/source/period distinctions; not operator or customer approval",
+    "customerApproved": false
+  },
+  {
+    "fixtureId": "fixture-annual-transition-C2028",
+    "nodeId": "fixture-annual-transition-C2028:node:146",
+    "kind": "TEMPORAL_BOUNDARY",
+    "originalIdOrPrivacyAlias": null,
+    "value": {
+      "month": 4,
+      "boundaryReason": [
+        "dayun_transition"
+      ],
+      "uncertainty": [],
+      "activeDayunContext": {
+        "status": "active",
+        "cycles": [
+          {
+            "index": 4,
+            "ganji": "辛未"
+          }
+        ],
+        "includesBeforeFirstCycle": false,
+        "transitionRange": null
+      },
+      "timePosition": "future",
+      "focus": false
+    },
+    "owner": {
+      "slot": "person",
+      "fixtureOwnerId": "fixture-person-11"
+    },
+    "direction": null,
+    "participants": [],
+    "temporal": {
+      "scope": "month",
+      "start": "2028-04-23T21:42:00+09:00",
+      "endExclusive": "2028-05-01T00:00:00+09:00",
+      "certainty": "confirmed",
+      "originalBounds": {
+        "boundaryReason": [
+          "dayun_transition"
+        ]
+      },
+      "compatibleCombination": true
+    },
+    "sources": [],
+    "roots": [],
+    "blockers": [],
+    "review": "Directly inspected actual node/edge/source/period distinctions; not operator or customer approval",
+    "customerApproved": false
+  },
+  {
+    "fixtureId": "fixture-annual-ranged-transition",
+    "nodeId": "fixture-annual-ranged-transition:node:42",
+    "kind": "CALCULATED_PERIOD_FACT",
+    "originalIdOrPrivacyAlias": "month-v2:2027:8:2:dayun",
+    "value": {
+      "component": "dayun",
+      "activeDayunContext": {
+        "status": "transition_uncertain",
+        "cycles": [
+          {
+            "index": 2,
+            "ganji": "己巳"
+          },
+          {
+            "index": 3,
+            "ganji": "戊辰"
+          }
+        ],
+        "includesBeforeFirstCycle": false,
+        "transitionRange": {
+          "earliestKst": "2027-04-08T00:00:00+09:00",
+          "latestKst": "2027-08-08T21:59:59+09:00"
+        }
+      }
+    },
+    "owner": {
+      "slot": "person",
+      "fixtureOwnerId": "fixture-person-14"
+    },
+    "direction": null,
+    "participants": [],
+    "temporal": {
+      "scope": "month",
+      "start": "2027-08-08T02:26:46+09:00",
+      "endExclusive": "2027-08-08T21:59:59+09:00",
+      "certainty": "conditional",
+      "originalBounds": {
+        "boundaryReason": [
+          "jie:입추"
+        ]
+      },
+      "compatibleCombination": true,
+      "transitionRange": {
+        "earliestKst": "2027-04-08T00:00:00+09:00",
+        "latestKst": "2027-08-08T21:59:59+09:00"
+      }
+    },
+    "sources": [],
+    "roots": [
+      "fixture-root-14955",
+      "fixture-root-15993"
+    ],
+    "blockers": [
+      {
+        "code": "UNCERTAIN_TRANSITION",
+        "refs": []
+      }
+    ],
+    "review": "Directly inspected actual node/edge/source/period distinctions; not operator or customer approval",
+    "customerApproved": false
+  },
+  {
+    "fixtureId": "fixture-annual-before-first-dayun",
+    "nodeId": "fixture-annual-before-first-dayun:node:416",
+    "kind": "UNKNOWN_REQUIREMENT",
+    "originalIdOrPrivacyAlias": "month-v2:2007:2:2:dayun",
+    "value": {
+      "component": "dayun",
+      "activeDayunContext": {
+        "status": "before_first_cycle",
+        "cycles": [],
+        "includesBeforeFirstCycle": true,
+        "transitionRange": null
+      }
+    },
+    "owner": {
+      "slot": "person",
+      "fixtureOwnerId": "fixture-person-15"
+    },
+    "direction": null,
+    "participants": [],
+    "temporal": {
+      "scope": "month",
+      "start": "2007-02-04T14:18:12+09:00",
+      "endExclusive": "2007-03-01T00:00:00+09:00",
+      "certainty": "confirmed",
+      "originalBounds": {
+        "boundaryReason": [
+          "jie:입춘"
+        ]
+      },
+      "compatibleCombination": true
+    },
+    "sources": [],
+    "roots": [],
+    "blockers": [
+      {
+        "code": "BEFORE_FIRST_DAYUN",
+        "refs": []
+      }
+    ],
+    "review": "Directly inspected actual node/edge/source/period distinctions; not operator or customer approval",
+    "customerApproved": false
+  },
+  {
+    "fixtureId": "fixture-compatibility-no-detected-pair",
+    "nodeId": "fixture-compatibility-no-detected-pair:node:127",
+    "kind": "CONTEXT_INPUT",
+    "originalIdOrPrivacyAlias": null,
+    "value": {
+      "detection": "NO_RELATION_DETECTED",
+      "meansBadCompatibility": false
+    },
+    "owner": {
+      "slot": "pair",
+      "fixtureOwnerId": "fixture-pair:fixture-person-16|fixture-person-17"
+    },
+    "direction": null,
+    "participants": [],
+    "temporal": null,
+    "sources": [],
+    "roots": [],
+    "blockers": [],
+    "review": "Directly inspected actual node/edge/source/period distinctions; not operator or customer approval",
+    "customerApproved": false
+  },
+  {
+    "fixtureId": "fixture-annual-A",
+    "nodeId": "fixture-annual-A:node:7",
+    "kind": "CALCULATED_PERIOD_FACT",
+    "originalIdOrPrivacyAlias": "annual-month:2026-11-07T18:52:05+09:00:MUN_CHANG_GWIIN:month.branch",
+    "value": {
+      "code": "MUN_CHANG_GWIIN",
+      "kind": "noble",
+      "basis": {
+        "anchor": "natal.day.stem",
+        "anchorValue": "庚",
+        "target": "month.branch",
+        "targetValue": "亥",
+        "rule": "DAY_STEM_TO_BRANCH"
+      },
+      "sourceRefs": [
+        "src/lib/saju/shinsalConstants.ts:SHINSAL_RULES:MUN_CHANG_GWIIN",
+        "calendarMonths:11:2026-11-07T18:52:05+09:00",
+        "natal.day.stem"
+      ]
+    },
+    "owner": {
+      "slot": "person",
+      "fixtureOwnerId": "fixture-person-9"
+    },
+    "direction": null,
+    "participants": [
+      {
+        "owner": "fixture-person-9",
+        "position": "day",
+        "slot": "stem",
+        "value": "庚"
+      },
+      {
+        "owner": "fixture-person-9",
+        "position": "month",
+        "slot": "branch",
+        "value": "亥"
+      }
+    ],
+    "temporal": {
+      "scope": "month",
+      "start": "2026-11-07T18:52:05+09:00",
+      "endExclusive": "2026-12-01T00:00:00+09:00",
+      "certainty": "confirmed",
+      "originalBounds": {
+        "boundaryReason": [
+          "jie:입동"
+        ]
+      },
+      "compatibleCombination": true
+    },
+    "sources": [
+      {
+        "file": "src/lib/saju/shinsalConstants.ts",
+        "pointer": "",
+        "fileSha256": "161d5600b88cb096b80ed9ec618a6639b9ab3b89613baa8cf51e0986467865d3",
+        "catalogKeys": [],
+        "sourceReferenceKeys": [],
+        "semanticDecisionKeys": [],
+        "state": "VERIFIED"
+      }
+    ],
+    "roots": [
+      "fixture-root-8158",
+      "fixture-root-10888",
+      "fixture-root-18042"
+    ],
+    "blockers": [],
+    "review": "Directly inspected actual node/edge/source/period distinctions; not operator or customer approval",
+    "customerApproved": false
+  },
+  {
+    "fixtureId": "fixture-annual-A",
+    "nodeId": "fixture-annual-A:node:64",
+    "kind": "CALCULATED_PERIOD_FACT",
+    "originalIdOrPrivacyAlias": "month-v2:2026:10:2:month_dayun_branch:4:반합:寅戌",
+    "value": {
+      "id": "month-v2:2026:10:2:month_dayun_branch:4:반합:寅戌",
+      "source": "month_dayun_branch",
+      "type": "반합",
+      "participants": [
+        "寅",
+        "戌"
+      ],
+      "monthBranch": "戌",
+      "counterpart": {
+        "scope": "dayun",
+        "cycleIndex": 4,
+        "pillar": "戊寅"
+      },
+      "certainty": "confirmed"
+    },
+    "owner": {
+      "slot": "person",
+      "fixtureOwnerId": "fixture-person-9"
+    },
+    "direction": null,
+    "participants": [
+      {
+        "owner": "fixture-person-9",
+        "position": "month",
+        "slot": "transit_branch",
+        "value": "戌"
+      },
+      {
+        "owner": "fixture-person-9",
+        "position": "dayun-cycle:4",
+        "slot": "branch",
+        "value": "寅"
+      }
+    ],
+    "temporal": {
+      "scope": "month",
+      "start": "2026-10-08T15:29:17+09:00",
+      "endExclusive": "2026-11-01T00:00:00+09:00",
+      "certainty": "confirmed",
+      "originalBounds": {
+        "boundaryReason": [
+          "jie:한로"
+        ]
+      },
+      "compatibleCombination": true,
+      "transitionRange": null
+    },
+    "sources": [],
+    "roots": [
+      "fixture-root-1754",
+      "fixture-root-11331",
+      "fixture-root-17592"
+    ],
+    "blockers": [],
+    "review": "Directly inspected actual node/edge/source/period distinctions; not operator or customer approval",
+    "customerApproved": false
+  },
+  {
+    "fixtureId": "fixture-compatibility-friendship",
+    "nodeId": "fixture-compatibility-friendship:node:180",
+    "kind": "FUSION_DERIVATION",
+    "originalIdOrPrivacyAlias": "fusion:REINFORCE:CREATION:social:CREATION:1:CREATION:1",
+    "value": {
+      "type": "REINFORCE",
+      "ruleId": "UNKNOWN",
+      "axes": [
+        "CREATION"
+      ],
+      "contexts": [
+        "social"
+      ],
+      "primaryContext": "social",
+      "rankingScore": 0.45999999999999996,
+      "rankingFactors": {
+        "sideStrengthBase": 0.5,
+        "contextFit": 1,
+        "diversityFactor": 1.15,
+        "sourceQualityFactor": 0.8,
+        "specificityFactor": 1,
+        "duplicationPenalty": 0,
+        "priorDependencyPenalty": 0,
+        "amplifierOnlyPenalty": 0
+      },
+      "conditionSplit": null,
+      "metadata": {
+        "relationship": "CORRESPONDENCE",
+        "promotion": "CANDIDATE_ONLY",
+        "causation": false
+      },
+      "independentFactsAdded": 0
+    },
+    "owner": {
+      "slot": "personB",
+      "fixtureOwnerId": "fixture-person-8"
+    },
+    "direction": null,
+    "participants": [],
+    "temporal": null,
+    "sources": [],
+    "roots": [
+      "fixture-root-737",
+      "fixture-root-1187",
+      "fixture-root-5484",
+      "fixture-root-7514",
+      "fixture-root-8472",
+      "fixture-root-10757",
+      "fixture-root-12627",
+      "fixture-root-13552",
+      "fixture-root-14136",
+      "fixture-root-15253",
+      "fixture-root-15588",
+      "fixture-root-17906",
+      "fixture-root-17972"
+    ],
+    "blockers": [
+      {
+        "code": "DISALLOWED_ANCESTOR_DOMAIN",
+        "refs": [
+          "sdv:policy:friendship-child-ban",
+          "frpr:binding:all-ancestors",
+          "CHILDREN"
+        ]
+      },
+      {
+        "code": "REQUIRED_ANCESTOR_WITHHELD",
+        "refs": [
+          "fixture-compatibility-friendship:node:7038"
+        ]
+      }
+    ],
+    "review": "Directly inspected actual node/edge/source/period distinctions; not operator or customer approval",
+    "customerApproved": false
+  }
+]

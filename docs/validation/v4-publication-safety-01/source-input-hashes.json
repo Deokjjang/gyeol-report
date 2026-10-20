@@ -1,0 +1,22 @@
+{
+  "src/lib/interpretation-v4/compatibilityProductAdapter.ts": "a02bfc2e1cfab018a8b1fa8ab43e679aec6a18628363f56b5b3197264b272d36",
+  "src/lib/interpretation-v4/compatibilityReleaseRenderer.ts": "1ef6ab02d9a7cedc08aea244158ad806dae1ce0caedca1250054d5a9129cdf63",
+  "src/lib/report-generation/productPreviewSnapshot.ts": "4bb50d7dfda76f4e4b739971c938ca69ab9f0f66384782734ed69fb92e66b8d2",
+  "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/actualFixture.ts": "aed6ca7dbdd62327ca98a3332064b6df23ae4be556ea64171c5f7142dcb7d430",
+  "src/lib/interpretation-v4/publication-safety/engine.ts": "66cfd188a2d345c74c26ca45cd68c649feb3d14a91b4643065355c05ae63cd73",
+  "src/lib/interpretation-v4/publication-safety/ancestry.ts": "a60d9232fa12a298e116b6ad356406a76ce8140c95ff0985cd7fee360a9b1cf3",
+  "tools/publication-safety/bootstrap.mjs": "72a583034b8728be3ac424c0ec5a622ddf8c126b4d6474c1f996d1848f1c34c6",
+  "tools/publication-safety/verify.mjs": "76071b20abed59cc0edff8211e13c1ebfe6c4dc56b72c6a917c7f70c92082247",
+  "tools/publication-safety/source-risk-verify.mjs": "b00ead2875e8b386664941fa071e05f8b306465d79b60da876d8c997ec67b272",
+  "tests/unit/interpretation-v4/publicationSafety.test.ts": "4440b932504e5395bac32396df5b5ca5b937715c671b38a7703c58695c45369b",
+  "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts": "aa1b778b20661a932a9175f2a370b33ce20444a4a1403672a4d482df5a547c6a",
+  "tests/fixtures/publication-safety-01/source-revision-contract.json": "afdcb18f96f9a6252c96b23c3a050d71473b6c27385affa97752d790b1f30580",
+  "tests/fixtures/six-product-integration-01/source-locks.json": "8fffe0410a9fb947d76474defbf208974dce613670dc1de3168477c5eaf0d913",
+  "docs/validation/v4-compatibility-love-product-knowledge-01/input-cases.json": "9c250a48fe6719c08683a76588b5c57212b3635897aa6a8c13f4e16d1e478815",
+  "docs/validation/v4-compatibility-marriage-product-knowledge-01/input-cases.json": "ac2cbc85049ba7a8752242a12b0dc815eeb980e32f62bdbd571095d2a9614bba",
+  "docs/validation/v4-compatibility-parent-child-product-knowledge-01/input-cases.json": "e5918f85632536dd2ed4e95ddebb5a2b1d522e13f3ede2c0afc7c61e45d8bc77",
+  "docs/validation/v4-compatibility-coworker-product-knowledge-01/input-cases.json": "84dcfc57fe3ac1b12a64748208a3306a86041bd5945d0a51aecce85d9954ab48",
+  "docs/validation/v4-compatibility-manager-report-product-knowledge-01/input-cases.json": "e1bb59e22d1c19782121b876975f94cf5abef20b8e07b035d5d44d65d13879cf",
+  "docs/validation/v4-compatibility-business-partner-product-knowledge-01/input-cases.json": "4537e8dd7d2d6eedabdace7e4af557d63a5cf2ebe840c88066af61904091c590",
+  "docs/validation/v4-compatibility-friendship-product-knowledge-01/input-cases.json": "cf4d9d34cc2d986f6adec223210da454e0df1c11c0c93a162171a1a2e6c7379c"
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "group": "major",
+    "id": "S",
+    "snapshot": "84b55f44cb111c8b2753137186a8772324caf73be9a347b73350c7898d9da1ef",
+    "book": "0cb5bf03fbce81b1089142401b035d8efb410375c3fa97f4b6d6786a227068e2",
+    "immutable": true
+  },
+  {
+    "group": "major",
+    "id": "A",
+    "snapshot": "157e9078bfd0b44eb9e6f9f20980fcb9a48e51155877236c6fb7ed916ecf00dd",
+    "book": "4e1b8adf6b8687984bbb1311a294186a34175e7876b3b131959ba242c9456a07",
+    "immutable": true
+  },
+  {
+    "group": "major",
+    "id": "B",
+    "snapshot": "bf97e6b635709b62b5d428f7561a5ce23377d095aefe509ebdfaa05ad9b42e17",
+    "book": "243f005ae81e91d0a16e008e9869ff5848d5b97231c1c229a73c64478fcfcb1d",
+    "immutable": true
+  },
+  {
+    "group": "major",
+    "id": "C",
+    "snapshot": "2688084e392f602bd3ef0ad96358270b1543c7bd9c396fa230eaed2c5c6f6fb7",
+    "book": "e85d0ba3da8b36be3d018dedbf84e113a23bfd0c934332a2d978c05ad490ec85",
+    "immutable": true
+  },
+  {
+    "group": "major",
+    "id": "D",
+    "snapshot": "0331b56291240a5f53f44eb2e91c96026f58218905c893e857d2d54b3653ed04",
+    "book": "f0c9071a1c738a4c75d1b0d5ff0aeecc3ff4723b69bcaa075fca5464467b9b22",
+    "immutable": true
+  },
+  {
+    "group": "major",
+    "id": "E",
+    "snapshot": "8a9aa33293c78e64875a230155b6a552e7877cb4727d12ea50d0c1a6570834ee",
+    "book": "da59676a2dc33caca8b24e20843c1e7a31020cb00d2332df393649d91e3cf72e",
+    "immutable": true
+  },
+  {
+    "group": "major",
+    "id": "F",
+    "snapshot": "9f77426501f75a13ee85affe17f9070e0144b6b6c4f247dc8fcd3487ccd603a7",
+    "book": "e00fa4138bc6e472663760494001cdf93ffd32d2b5f8ad0160f6b54db365c82f",
+    "immutable": true
+  },
+  {
+    "group": "major",
+    "id": "S-mbti",
+    "snapshot": "525378746c404b8118248884c46b67b02da4dc70f78fda89f69b6ee131d7b009",
+    "book": "2cfaafb4a3fc6e844e1c92b6ea2a928fa58b3497ab3326065fc32fa62d82fa79",
+    "immutable": true
+  },
+  {
+    "group": "annual",
+    "id": "H",
+    "snapshot": "ace6bee1a7973f0d13c110df9d9146197675bb0a6f935b997c206bd8498c06ee",
+    "book": "50213a34ed37e2cb8be8720e7e3d1630ae42d7fe190b6701b37b23130cbce439",
+    "immutable": true
+  },
+  {
+    "group": "annual",
+    "id": "A",
+    "snapshot": "5e87d899a010136268901d48685d652cfb1998472a5a52e7b761e6c8db049775",
+    "book": "5e6fc9045f31354eaf3af82f254e25045f8f7193833a79ece3cc5b3ab2867132",
+    "immutable": true
+  },
+  {
+    "group": "annual",
+    "id": "B",
+    "snapshot": "22c8893b85a67e92ea4c27ad2c40eea98aa4161db2a608543973fa119c93829c",
+    "book": "355a98c0933f53145e6f9fb448cc7a5cc65f01b0d486e6c36448119b863773df",
+    "immutable": true
+  },
+  {
+    "group": "annual",
+    "id": "C",
+    "snapshot": "226517a28f62a9bb24207d1b261bb253c9167e98a88ae6947e6546acb9664724",
+    "book": "bb27b0618bf27a10e6791100f7b69e1276f59f3bba0365efc301b175cc38af53",
+    "immutable": true
+  },
+  {
+    "group": "annual",
+    "id": "D",
+    "snapshot": "9458ba7afb6f37008dc28ff6c95f08294a2aa341ec3465d2bcb255096c32a81f",
+    "book": "a991ef3af243dbe135d142386fb2e6da1ef0d74644fb27ac505de16769daf6ea",
+    "immutable": true
+  },
+  {
+    "group": "annual",
+    "id": "E",
+    "snapshot": "d4bcacd4491ee454ea39191bf0f741ad6466208b3644ba0772aa57771d103015",
+    "book": "80f68eabcd31bfab10383821679bbe99dab62f5c2142e6e40a1c3f02febce40b",
+    "immutable": true
+  },
+  {
+    "group": "annual",
+    "id": "F",
+    "snapshot": "10141b912cb7b48a70a1bf1bc3ae28699e188cd8a33326747bba7215ee521e75",
+    "book": "03c1c4b2d2c09d91ca0345d699ebabde10013bdfc4ea61245b5e74e629a7e428",
+    "immutable": true
+  },
+  {
+    "group": "annual",
+    "id": "H2025",
+    "snapshot": "3fa25b16457b7bfcba5f8952bf1ca416c9f04cdf841534a9217f537cf4f5c376",
+    "book": "7ea80332bc71c2d6d2daefad98186f1a5cf0d620fb97ceb9d8b67dbc0f59cc43",
+    "immutable": true
+  },
+  {
+    "group": "annual",
+    "id": "H2027",
+    "snapshot": "6a952161c972c988cb8e2f7fdc1376ff08d05fbeacbd930ae289c557f1fea2f2",
+    "book": "5e42911353a1284dec3be77bc9df2bee6ea06b619e6d1f48a3a14c1fb8a36a66",
+    "immutable": true
+  },
+  {
+    "group": "annual",
+    "id": "C2028",
+    "snapshot": "cc01839053724fbfe7dd6e3bba6985de71a77f3808e6e66a113b1e6b48992101",
+    "book": "c75b551329bddb22190fec8e6ebab07357631db3a3e2063fe73bcd3510cc98a0",
+    "immutable": true
+  }
+]

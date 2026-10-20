@@ -1,0 +1,8 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-love-marriage-child-product-knowledge-01
+
+
+ Test Files  1 passed (1)
+      Tests  398 passed (398)
+   Start at  22:46:28
+   Duration  162.67s (transform 2.25s, setup 20ms, import 2.42s, tests 160.05s, environment 0ms)

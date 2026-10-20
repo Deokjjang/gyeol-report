@@ -1,0 +1,26 @@
+{
+  "files": {
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/temporalEvidence.ts": "562f457e8b2214c4774b8b781a85e5bf8cc09a1df0dc564291f750f5f57252e3",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/requirementAdapter.ts": "9f60db4d88628752b77360095694739e7d4d47ea6fa9beea2ad7bac24e365354",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/cycleMatcher.ts": "1b37cee4e19c964e9c2e1e7751d789d21cd07bf8297512c48dd42d5629776092",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/reuseConstraints.ts": "7f9b3f7b7a3f43863a56d58c1c5899a016d410e0088053df6078f370721958f2",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/artifacts.ts": "f6864d47aadac131186e4b40d18531af4480ec68d6b69dcf0c2df8d8a7537d2c",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/candidateIndex.ts": "fb2143d587783ea65741b49a9b8a002b6872939801a868957bc778780ad9932a",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/transitionValidator.ts": "71fb9eb7a2ff4d68845bea7881b32e659cfe5ddcd36c6ebe8b5de9c329a1b198",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/syntheticValidation.ts": "2e6be9777506ef3e0f3d7101b81fc20d5286044990449d309f33867469f1ee33",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/inputProbes.ts": "fb5726ca5975a611ec5368a511ff6066fbcd96af1c76f02bc9462390a307d162",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/engine.ts": "007df65cd8ff1b5fb4518fc8be53ef5706899548913f0947f2fae5a2d15394ad",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/selectionEngine.ts": "8083f352366709f51b89466f0806c4fdb82619bfd9633c3c0ccb2182f2885f0f",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/types.ts": "2982be674a2688eba40f21b5ac728dbf7003d82f4510dc772af46e1eebf4d149",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/periodQuestionRegistry.ts": "8fea61c8f52571448648b8cc8df7dc83d84d23cc4ba57ac0e83499b9c09e63c9",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/diagnostics.ts": "9cf739cbaa245a937edff2e097bf7aba8a021e09907ce5b66f25d16db3ec28b3",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/conflictGraph.ts": "9329277fa853362a9e9d442246346bf24d10684903ecef36d760cf4895ebfacc",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/relationMatcher.ts": "161beacab545060637afbb5a388e97cafe9d828b96d3bc660849a764c81dba3e",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/tenGodMatcher.ts": "aa2eb33e038ea1b3d2bf8c1a8bde4618a5d3e966cfcf36e5d39be5c4d9666e38",
+    "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/yearComparator.ts": "03b842ac3d3d19ca56407332be3fb0fdf52ec4d8b9e3f18200f20f7029d4d9af",
+    "tools/major-fortune-specialist-engine/verify.mjs": "75ac51f108502821fcc96856c849c284c47b7fc264a72d65ff4705198398b379",
+    "tests/unit/report-knowledge/majorFortuneSpecialistEngine.test.ts": "772476dbae0b1095e1be223963af60f9d56918faf84e7ac9b1d223d04f4ac0eb",
+    "tests/fixtures/major-fortune-specialist-engine-01/synthetic-knowledge.json": "ac76cb5f1012dfcbabf0b71d7f4e121ac41a5019df7e96108cdbceeb90b00718"
+  },
+  "sourceUnchangedAcrossFinalExecutions": true
+}

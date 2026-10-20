@@ -1,0 +1,531 @@
+{
+  "originalReviewFile": "docs/validation/v4-conditional-temporal-meaning-source-review-01/temporal-meaning-source-review.json",
+  "originalReviewFileSha256": "7c3fb51e95373a965e6ee4a4e236d4d57af9b65c63db544c128b4b35c92d9577",
+  "originalMeaningFields": 30,
+  "conceptualCDProposals": 24,
+  "weakEDProposals": 6,
+  "meaningsApproved": 0,
+  "customerApproved": 0,
+  "sourceIntegrityFailuresRemain": 30,
+  "rows": [
+    {
+      "originalResearchId": "tr:god:편재",
+      "field": "dayun",
+      "originalRecordHash": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "580cbe76013eac2ec2d9539de7cf64485c428f2b91517d88455ea90c60e82439",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 9,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:편재",
+      "field": "saeun",
+      "originalRecordHash": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "69f495df6ecf4c89b5575217c2d9d9d98d38fd80232e62ba0f7f39822db04d10",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 0,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:편재",
+      "field": "wolun",
+      "originalRecordHash": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "16dd9ed370cddf3462288620c34ff88c1e2d2a436104469f738aeffbbe5f1de1",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 21,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:식신",
+      "field": "dayun",
+      "originalRecordHash": "333338cea579b6134c53c7a46065d5acb290b4d52e7b18303fa77a6ac7d3c19b",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "ac5ee18c1ccd7c14529b8a583ea9bd8f0ee57a27ebaf42ad29abb301c2b132d6",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 0,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:식신",
+      "field": "saeun",
+      "originalRecordHash": "333338cea579b6134c53c7a46065d5acb290b4d52e7b18303fa77a6ac7d3c19b",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "235399b3e7341d50a786d9d924337b7616194487c0ac6455bcfa5922c53ad0f0",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 3,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:식신",
+      "field": "wolun",
+      "originalRecordHash": "333338cea579b6134c53c7a46065d5acb290b4d52e7b18303fa77a6ac7d3c19b",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "fbdf7b2431b96c5aaa3a2a70f318994f487a0af9d8167a7e11f5e7af9e555e1c",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 16,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:정인",
+      "field": "dayun",
+      "originalRecordHash": "986a593480c8ec2a38cd30dd3b2e8e8b432032f80adcc69689cce30df34b3aae",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "4221c6a23e0f91f56834d81d75a8db7cf428075b3609ae364df5f57b84cb4a36",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 0,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:정인",
+      "field": "saeun",
+      "originalRecordHash": "986a593480c8ec2a38cd30dd3b2e8e8b432032f80adcc69689cce30df34b3aae",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "41bd3cc71eafa02ae849f2934ec4c932f1bd58803176ea3a53f56db9a250f1a7",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 3,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:정인",
+      "field": "wolun",
+      "originalRecordHash": "986a593480c8ec2a38cd30dd3b2e8e8b432032f80adcc69689cce30df34b3aae",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "712d0c47b27024b85d094fd0d3f8217969824c3bb06ee984f14f1e22d1358a28",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 24,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:겁재",
+      "field": "dayun",
+      "originalRecordHash": "9863d8642beb06774fa12710950d04a4b6581e431a25de663f5c26dabc8a3e0a",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "0b04f278f98aed387a2fe26461277e95fdd31f3d58439c02bc770c90840f718f",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 0,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:겁재",
+      "field": "saeun",
+      "originalRecordHash": "9863d8642beb06774fa12710950d04a4b6581e431a25de663f5c26dabc8a3e0a",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "ccb1e372b2a76812d3e9ad23b060e0780e4c3f935350856d79446c34a4bdb84c",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 0,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:겁재",
+      "field": "wolun",
+      "originalRecordHash": "9863d8642beb06774fa12710950d04a4b6581e431a25de663f5c26dabc8a3e0a",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "1e0557224738fcaa5fe6d2d147109205b338ade0f131aa31454a1a0009af9c49",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 18,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:정관",
+      "field": "dayun",
+      "originalRecordHash": "92e2aa5479b78c6a2f46616af1ae92195cd5a19de01003e975140f681d240f67",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "d58a6ff50f4aa43d98f31f4a8e9faacca98c20fde9f7a7b714551c3ea80c6d7c",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 0,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:정관",
+      "field": "saeun",
+      "originalRecordHash": "92e2aa5479b78c6a2f46616af1ae92195cd5a19de01003e975140f681d240f67",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "15f939b8c2b6b2ed644a960be32da55a185e31f0da780c3fdb9a3db98100dcc0",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 0,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:정관",
+      "field": "wolun",
+      "originalRecordHash": "92e2aa5479b78c6a2f46616af1ae92195cd5a19de01003e975140f681d240f67",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "915a8e4755f76e90f6b17191fe0b2056de970d36dc9fb83d2d1aebc6a1ca086d",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 18,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:상관",
+      "field": "dayun",
+      "originalRecordHash": "e67b38c01e2c59119d4252dbfd51b9cdee47345be660b38ccad65c2f14f83336",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "0d8c38a70277e4b3f037bb09653d2e46c99af9e00848c3900f913d4238e80120",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 17,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:상관",
+      "field": "saeun",
+      "originalRecordHash": "e67b38c01e2c59119d4252dbfd51b9cdee47345be660b38ccad65c2f14f83336",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "82352fc8e4f7c40f10a32ac41e11165417b0ca1f827c04830be8452a8e34c28b",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 23,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:상관",
+      "field": "wolun",
+      "originalRecordHash": "e67b38c01e2c59119d4252dbfd51b9cdee47345be660b38ccad65c2f14f83336",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "2feb2d03df2c4fde317e5c66e474cbc5151a4638cc20958cc99f3a42376de856",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 16,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:편관",
+      "field": "dayun",
+      "originalRecordHash": "ea096abda77e0e956ddfb8652cc89ca97a3dca68fb9012d7b199f22220a4b9e3",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "731dc0b975428f7e256f2a1265da7998c3758a2087d224112410a035dde3fc36",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 0,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:편관",
+      "field": "saeun",
+      "originalRecordHash": "ea096abda77e0e956ddfb8652cc89ca97a3dca68fb9012d7b199f22220a4b9e3",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "01c210e2ff5a923c660660dfeefb717378f76845986b62b88576d3d6a35bdddc",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 42,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:편관",
+      "field": "wolun",
+      "originalRecordHash": "ea096abda77e0e956ddfb8652cc89ca97a3dca68fb9012d7b199f22220a4b9e3",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "b318003a6f9421583caaeb3316ccf6c950211bac24cfc9cffc4ac695efb953e4",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 19,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:편인",
+      "field": "dayun",
+      "originalRecordHash": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "4a6b2af0dff3727788f61fcb2f45ff91566c1901e19f7789191168cbc3513469",
+      "classification": [
+        "E",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 25,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:편인",
+      "field": "saeun",
+      "originalRecordHash": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "378c72fcdc4810327412fac5b6c3aac639fda90342c4e7e96f47f4d381fd2174",
+      "classification": [
+        "E",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 0,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:편인",
+      "field": "wolun",
+      "originalRecordHash": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "66fed58abb525f118517cfe6aee46998e6a08fbe67cb6e188df6f20711605370",
+      "classification": [
+        "E",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 24,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:정재",
+      "field": "dayun",
+      "originalRecordHash": "2722dac82480e160224c7ef79a0cbc335abe0470fbb109f9d1f970bac28c8b96",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "125dab5f0a72583f9d43f409da701abc4e461d4844d0921938991e1debfd1d42",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 0,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:정재",
+      "field": "saeun",
+      "originalRecordHash": "2722dac82480e160224c7ef79a0cbc335abe0470fbb109f9d1f970bac28c8b96",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "a762e2d1ae73c7df969b87b7f77a5562accff157ca666ab60c18866385129c6d",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 6,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:정재",
+      "field": "wolun",
+      "originalRecordHash": "2722dac82480e160224c7ef79a0cbc335abe0470fbb109f9d1f970bac28c8b96",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "e44ec7184a0637ed58fb66a67d22009454e16af907a429355d473950c7b9362d",
+      "classification": [
+        "C",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 20,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:비견",
+      "field": "dayun",
+      "originalRecordHash": "919bb133baec54197fba1fff05feeb8abe8490a9d59144651968ee4b7cf80320",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "001943594cb6c3deab85d08a17cd9d686b40870dcf9bcf77b13e664979a74af9",
+      "classification": [
+        "E",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 0,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:비견",
+      "field": "saeun",
+      "originalRecordHash": "919bb133baec54197fba1fff05feeb8abe8490a9d59144651968ee4b7cf80320",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "d082896dc759ea06fe4d4b3f82a27683b814223e40435e39f0d33b8c8c2a650e",
+      "classification": [
+        "E",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 22,
+      "meaningOrClaimPromoted": false
+    },
+    {
+      "originalResearchId": "tr:god:비견",
+      "field": "wolun",
+      "originalRecordHash": "919bb133baec54197fba1fff05feeb8abe8490a9d59144651968ee4b7cf80320",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalReviewPacketHash": "a48a1a002366302a04e75e08b1ebd0274ae4f338d335014e716bf71ab23bde27",
+      "classification": [
+        "E",
+        "D"
+      ],
+      "exactConditionalSource": "SOURCE_UNVERIFIED",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "customerApproval": "CUSTOMER_APPROVAL_PENDING",
+      "actualScopedFactLinks": 22,
+      "meaningOrClaimPromoted": false
+    }
+  ],
+  "natalAndFlowAutoMapping": false,
+  "requiredBeforeFutureClaims": [
+    "Authentic Unit revalidation with original context/source/Graph",
+    "Exact interpretive source/meaning and product/domain review",
+    "Actual required natal/element/personal-context evidence",
+    "All twelve original Binder hard gates",
+    "Authentic official customer authorization, validity and revocation"
+  ],
+  "interpretiveSourceFailureDoesNotInvalidateIndependentVerifiedFact": true
+}

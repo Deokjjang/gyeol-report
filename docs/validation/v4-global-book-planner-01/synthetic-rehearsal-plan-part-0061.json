@@ -1,0 +1,13 @@
+[
+  {
+    "option": "synthetic:coworker:000-early-steal",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION",
+      "SAME_ROOT_NOT_NEW_FACT"
+    ]
+  }
+]

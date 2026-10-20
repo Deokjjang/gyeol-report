@@ -1,0 +1,29 @@
+[
+  {
+    "id": "nhs-relationships",
+    "url": "https://www.nhs.uk/every-mind-matters/lifes-challenges/maintaining-healthy-relationships-and-mental-wellbeing/",
+    "access": "actual_page_read",
+    "accessDateKst": "2026-10-13",
+    "use": "general_safety_boundary_not_personality_validation",
+    "directQuotationWords": 0,
+    "customerApproval": false
+  },
+  {
+    "id": "unicef-young-child-communication",
+    "url": "https://www.unicef.org/lac/en/parenting-lac/nurturing-care/how-communicate-effectively-young-child",
+    "access": "actual_page_read",
+    "accessDateKst": "2026-10-13",
+    "use": "general_safety_boundary_not_personality_validation",
+    "directQuotationWords": 0,
+    "customerApproval": false
+  },
+  {
+    "id": "wirral-consent-safety",
+    "url": "https://www.wchc.nhs.uk/services/lets-talk/young-people/relationships-and-sex-education-rse/healthy-relationships/",
+    "access": "actual_page_read",
+    "accessDateKst": "2026-10-13",
+    "use": "general_safety_boundary_not_personality_validation",
+    "directQuotationWords": 0,
+    "customerApproval": false
+  }
+]

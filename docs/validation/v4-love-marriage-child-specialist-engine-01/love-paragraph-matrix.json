@@ -1,0 +1,1483 @@
+[
+  {
+    "id": "lkr:paragraph:CH01.P1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P1",
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "originalPurpose": "나의 기본적인 연애 스타일",
+    "readerQuestion": "나의 기본적인 연애 스타일",
+    "domain": "love",
+    "independentInformation": [
+      "필요를 알아보는 관심과 동의한 도움을 건네는 행동을 나눠 사랑의 방식을 연구한다.",
+      "표현량이 작은 애정에서 선택한 사람에게 주의를 지속하는 방식과 전달 통로를 구분한다.",
+      "각자의 관심사에 머물 시간과 함께할 선택이 공존하는 애정 방식을 연구한다.",
+      "감정적 유대의 깊이를 거창한 운명보다 서로 중요하게 여기는 의미를 알아가는 과정으로 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L1",
+      "L3",
+      "L6"
+    ],
+    "materialIds": [
+      "lkr:material:CH01.P1:care-asked",
+      "lkr:material:CH01.P1:quiet-concentration",
+      "lkr:material:CH01.P1:self-retained",
+      "lkr:material:CH01.P1:shared-meaning"
+    ],
+    "sourceCandidateKeys": [
+      "6e846060eca8b8a32399",
+      "ed6c765a89a6653fbe49",
+      "2f90ecfe06a11bd76f98",
+      "1ad75d65f36179f32968"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH01.P2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P2",
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "originalPurpose": "명리와 MBTI가 설명하는 사랑",
+    "readerQuestion": "명리와 MBTI가 설명하는 사랑",
+    "domain": "love",
+    "independentInformation": [
+      "식신의 산출 관계와 함께 즐기는 현대적 연애 적용을 서로 다른 근거 수준으로 분리한다.",
+      "비견의 동류 관계와 본인의 독립성을 연애에서 대등하게 의견을 내는 조건부 질문으로 연결한다.",
+      "돌봄 필요를 살피는 힘과 애정을 전달하는 힘을 실제 양측 근거가 충족될 때만 함께 연구한다.",
+      "아끼는 마음과 자기 선택권이 동시에 필요한 경우 돌봄의 지속 가능한 범위를 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L1",
+      "L3"
+    ],
+    "materialIds": [
+      "lkr:material:CH01.P2:saju-output-context",
+      "lkr:material:CH01.P2:saju-equality-context",
+      "lkr:material:CH01.P2:fusion-visible-care",
+      "lkr:material:CH01.P2:fusion-care-space"
+    ],
+    "sourceCandidateKeys": [
+      "90e77590d3ea07930ba1",
+      "9a582309fae56a95316b",
+      "22219e4de369178b0387",
+      "3f130780549c6cb7a467",
+      "5a745f7c32242de3a71e",
+      "2f90ecfe06a11bd76f98",
+      "16a8411e967484ac9826",
+      "fa83818c7308d0737c2f"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH01.P3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P3",
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "originalPurpose": "마음을 표현하고 받아들이는 방식",
+    "readerQuestion": "마음을 표현하고 받아들이는 방식",
+    "domain": "love",
+    "independentInformation": [
+      "애정이 드러나는 방식과 상대가 반갑게 받는 방식의 차이를 연구한다.",
+      "행동으로 마음을 전할 때 실제 도움과 감정 대화가 서로 대체되지 않는 조건을 연구한다.",
+      "마음을 직접 말하기 어려울 때 호감과 불편을 작은 요청으로 나누는 방법을 연구한다.",
+      "기억한 취향을 현재의 필요와 다시 맞추는 애정 표현을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L3",
+      "L5"
+    ],
+    "materialIds": [
+      "lkr:material:CH01.P3:expression-and-receipt",
+      "lkr:material:CH01.P3:practical-not-substitute",
+      "lkr:material:CH01.P3:quiet-request",
+      "lkr:material:CH01.P3:memory-updated"
+    ],
+    "sourceCandidateKeys": [
+      "22219e4de369178b0387",
+      "8e927df60c470175a28b",
+      "4d4a080342aae90654f6",
+      "c2b4165c3415338f558a"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH01.P4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P4",
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "originalPurpose": "나에게 사랑이란 무엇인가",
+    "readerQuestion": "나에게 사랑이란 무엇인가",
+    "domain": "love",
+    "independentInformation": [
+      "신뢰를 설렘의 반대가 아니라 함께 예측할 수 있는 최소 조건으로 연구한다.",
+      "함께 가는 방향을 원할 때 모든 취향과 계획이 같아야 한다는 요구와 구분한다.",
+      "자기 요청을 말할 수 있어야 돌보는 성향이 일방적인 역할로 고정되지 않는다는 조건을 연구한다.",
+      "관계의 피드백을 원할 때 반대 답을 말해도 되는 조건을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L1",
+      "L2",
+      "L6"
+    ],
+    "materialIds": [
+      "lkr:material:CH01.P4:trust-as-condition",
+      "lkr:material:CH01.P4:meaning-not-sameness",
+      "lkr:material:CH01.P4:reciprocal-care",
+      "lkr:material:CH01.P4:safe-dissent"
+    ],
+    "sourceCandidateKeys": [
+      "5190684455c102b45097",
+      "829aba7d8c1c08596ec1",
+      "78cdb2e803560073a1c5",
+      "0893c89cb6a0f134a6d6"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH02.P1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P1",
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "originalPurpose": "처음 만날 때의 매력",
+    "readerQuestion": "처음 만날 때의 매력",
+    "domain": "love",
+    "independentInformation": [
+      "낯선 자리에서 대화에 들어갈 문턱을 낮추는 매력을 연구한다.",
+      "명확한 제안이 상대에게 선택할 정보를 주는 첫 매력으로 작동할 조건을 연구한다.",
+      "부드러운 전달이 상대가 과장하지 않고 말할 공간을 만드는 매력으로 작동할 수 있다.",
+      "재치가 서로의 생각을 즐기는 초대로 작동하는 조건을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L1",
+      "L2"
+    ],
+    "materialIds": [
+      "lkr:material:CH02.P1:first-invitation",
+      "lkr:material:CH02.P1:first-clear-choice",
+      "lkr:material:CH02.P1:first-quiet-room",
+      "lkr:material:CH02.P1:first-warm-humor"
+    ],
+    "sourceCandidateKeys": [
+      "071798fc5431dbcf7bcc",
+      "3c4908e2cedec63d2de9",
+      "8a3b104ce2a794e55b60",
+      "ebfb52ae727700f5083f"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH02.P2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P2",
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "originalPurpose": "가까워질수록 살아나는 매력",
+    "readerQuestion": "가까워질수록 살아나는 매력",
+    "domain": "love",
+    "independentInformation": [
+      "가까워질수록 이전에 들은 작은 관심을 기억하는 매력을 연구한다.",
+      "처음의 절제된 모습과 편안한 사이의 작은 장난이 달라질 가능성을 연구한다.",
+      "생각을 깊게 나누는 관심이 가까운 사람의 설명을 존중하는 매력으로 쓰일 조건을 연구한다.",
+      "조용하게 필요한 행동을 하는 매력이 가까운 사이에서 알아보이게 되는 조건을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L2",
+      "L4"
+    ],
+    "materialIds": [
+      "lkr:material:CH02.P2:private-remembering",
+      "lkr:material:CH02.P2:private-playfulness",
+      "lkr:material:CH02.P2:private-listening-depth",
+      "lkr:material:CH02.P2:private-calm-help"
+    ],
+    "sourceCandidateKeys": [
+      "471b73edd84a2be883e2",
+      "ed6c765a89a6653fbe49",
+      "9d19fa78e4846ba01bef",
+      "90de97440a025970e638"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH02.P3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P3",
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "originalPurpose": "나만의 특별한 연애 장점",
+    "readerQuestion": "나만의 특별한 연애 장점",
+    "domain": "love",
+    "independentInformation": [
+      "다른 취향을 서둘러 평가하지 않는 개방성을 독립적인 연애 장점으로 연구한다.",
+      "둘의 취향을 반영한 작은 경험을 만드는 감각을 연구한다.",
+      "관계에서 새로운 관심을 함께 탐색하도록 초대하는 장점을 연구한다.",
+      "눈에 띄는 이벤트와 다른 반복 돌봄의 가치를 양측 근거가 있을 때 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L2",
+      "L3"
+    ],
+    "materialIds": [
+      "lkr:material:CH02.P3:difference-welcomed",
+      "lkr:material:CH02.P3:new-experience-design",
+      "lkr:material:CH02.P3:mutual-growth-question",
+      "lkr:material:CH02.P3:reliable-attention"
+    ],
+    "sourceCandidateKeys": [
+      "8c257adb6000e17c121d",
+      "ba4aed5f58e7de310848",
+      "25d739dcf45ad93cec8a",
+      "0cd0bd812b5a8be66358"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH02.P4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P4",
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "originalPurpose": "내 매력을 가장 잘 활용하는 방법",
+    "readerQuestion": "내 매력을 가장 잘 활용하는 방법",
+    "domain": "love",
+    "independentInformation": [
+      "챙기는 매력을 유지하면서 거절할 권리를 남기는 활용법을 연구한다.",
+      "솔직한 유머를 계속 쓰기보다 상대가 멈출 수 있는 신호를 두는 활용법을 연구한다.",
+      "명료한 솔직함에 상대의 사정을 들을 순서를 더하는 활용법을 연구한다.",
+      "깊게 알아가는 매력을 처음부터 무거운 답을 요구하지 않는 방식으로 활용한다."
+    ],
+    "loveQuestionRefs": [
+      "L2",
+      "L5",
+      "L7"
+    ],
+    "materialIds": [
+      "lkr:material:CH02.P4:warmth-with-refusal",
+      "lkr:material:CH02.P4:humor-stop-signal",
+      "lkr:material:CH02.P4:honesty-with-listening",
+      "lkr:material:CH02.P4:depth-small-dose"
+    ],
+    "sourceCandidateKeys": [
+      "cbf1428b3d23661a2472",
+      "792c101d29cd3707902d",
+      "9157cb32f6c4c40c5336",
+      "f4b08443773729cee364"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH03.P1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P1",
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "originalPurpose": "내가 끌리기 쉬운 사람",
+    "readerQuestion": "내가 끌리기 쉬운 사람",
+    "domain": "relationships",
+    "independentInformation": [
+      "지적인 재치에 끌리는 마음과 함께 지내기 편한 조건을 별도로 연구한다.",
+      "중요한 방향을 공유하는 모습에 끌릴 때 선언과 실제 선택을 구분한다.",
+      "함께 움직이는 즐거움에 끌릴 때 참여 속도와 거절 권리를 구분한다.",
+      "천천히 신뢰를 확인하는 선호에서 친절한 인상과 실제 존중을 나눠 본다."
+    ],
+    "loveQuestionRefs": [
+      "L2"
+    ],
+    "materialIds": [
+      "lkr:material:CH03.P1:attracted-to-dialogue",
+      "lkr:material:CH03.P1:attracted-to-direction",
+      "lkr:material:CH03.P1:attracted-to-liveliness",
+      "lkr:material:CH03.P1:attracted-to-safe-kindness"
+    ],
+    "sourceCandidateKeys": [
+      "6710f0f66fdf88a7a033",
+      "829aba7d8c1c08596ec1",
+      "e49363e69d48e0771b10",
+      "d048a1db929d8e81a67f"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH03.P2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P2",
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "originalPurpose": "나와 편안한 사람",
+    "readerQuestion": "나와 편안한 사람",
+    "domain": "relationships",
+    "independentInformation": [
+      "개인 시간을 설명하고도 관계에서 밀려날 걱정을 덜 수 있는 조건을 연구한다.",
+      "일정이 늘 같아야 하는 관계보다 변경의 이유를 알려주는 관계 조건을 연구한다.",
+      "마음의 확인을 원하는 본인에게 추측 대신 서로 답할 통로가 있는 조건을 연구한다.",
+      "내면의 관심을 모두 공개하지 않아도 존중받는 조건을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L2",
+      "L6"
+    ],
+    "materialIds": [
+      "lkr:material:CH03.P2:comfort-space",
+      "lkr:material:CH03.P2:comfort-explained-change",
+      "lkr:material:CH03.P2:comfort-emotional-answer",
+      "lkr:material:CH03.P2:comfort-unforced-self"
+    ],
+    "sourceCandidateKeys": [
+      "f3a71de74732acc8d4fd",
+      "5190684455c102b45097",
+      "8a6e798d5bb288c958fa",
+      "04bdba29a1fd1c319537"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH03.P3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P3",
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "originalPurpose": "서로 다른 모습이 도움이 될 때",
+    "readerQuestion": "서로 다른 모습이 도움이 될 때",
+    "domain": "relationships",
+    "independentInformation": [
+      "새 경험을 좋아하는 본인이 안정된 약속을 함께 두면 도움이 되는 조건을 연구한다.",
+      "해결을 잘 제안하려는 본인이 듣기를 원하는 경우와 만났을 때의 조건부 보완을 연구한다.",
+      "돌려 말하는 본인이 직접적인 질문을 받았을 때 활용할 조건을 연구한다.",
+      "사회 반응을 살피는 활동과 회복의 필요가 다를 때 둘의 시간을 조율하는 조건을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L2",
+      "L5",
+      "L6"
+    ],
+    "materialIds": [
+      "lkr:material:CH03.P3:difference-new-and-stable",
+      "lkr:material:CH03.P3:difference-listening-and-solution",
+      "lkr:material:CH03.P3:difference-direct-gentle",
+      "lkr:material:CH03.P3:difference-rest-and-company"
+    ],
+    "sourceCandidateKeys": [
+      "dfc34b2596abcc59968f",
+      "c72ad7e4dbeab2b8b75f",
+      "d35d738ef528ee981728",
+      "e8152f5a228dde8da538",
+      "1be2f30bf579c8de2ede"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH03.P4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P4",
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "originalPurpose": "관계를 선택할 때 중요한 기준",
+    "readerQuestion": "관계를 선택할 때 중요한 기준",
+    "domain": "relationships",
+    "independentInformation": [
+      "높은 관계 기준을 비밀 시험 대신 말할 수 있는 질문으로 바꾸는 연구다.",
+      "거절할 때 선택이 유지되는지를 관계 선택의 관찰 기준으로 연구한다.",
+      "좋은 이미지를 바라는 마음과 실제 상대의 응답을 나눠 보는 기준을 연구한다.",
+      "잘해주는 정도보다 서로 필요한 몫을 조정할 수 있는지를 기준으로 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L2",
+      "L5",
+      "L7"
+    ],
+    "materialIds": [
+      "lkr:material:CH03.P4:selection-no-test",
+      "lkr:material:CH03.P4:selection-refusal",
+      "lkr:material:CH03.P4:selection-response-over-image",
+      "lkr:material:CH03.P4:selection-reciprocity"
+    ],
+    "sourceCandidateKeys": [
+      "00a52eadb4c1c9dbf9d1",
+      "86ce278eca349b89b4d4",
+      "46657b0a756f0987de92",
+      "7dd6ccfe702fb492ef5e",
+      "78cdb2e803560073a1c5"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH04.P1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P1",
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "originalPurpose": "호감이 생겼을 때의 나",
+    "readerQuestion": "호감이 생겼을 때의 나",
+    "domain": "love",
+    "independentInformation": [
+      "솔로 상태에서 호감은 만남을 늘리는 의무보다 자신의 관심을 알아보는 질문이 된다.",
+      "썸에서는 관찰한 반응과 관계에 붙인 해석을 나눠 관심을 읽는다.",
+      "연애 중에는 처음의 방식이 지금도 반가운지 확인하는 관심을 연구한다.",
+      "결혼 준비의 결정과 서로에게 관심을 보이는 대화를 분리한다.",
+      "기혼 상태에서도 생활 역할과 그 사람 자체에 대한 관심을 구분한다.",
+      "상태 미입력에서는 관계 단계를 정하지 않고 마음을 보이는 조건만 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L2",
+      "L3"
+    ],
+    "materialIds": [
+      "lkr:material:CH04.P1:single-interest",
+      "lkr:material:CH04.P1:some-observed",
+      "lkr:material:CH04.P1:dating-current-interest",
+      "lkr:material:CH04.P1:preparing-affection-not-task",
+      "lkr:material:CH04.P1:married-person-interest",
+      "lkr:material:CH04.P1:unknown-open-context"
+    ],
+    "sourceCandidateKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "dfc34b2596abcc59968f",
+      "8a6e798d5bb288c958fa",
+      "1004e6a907ac24e91902",
+      "793ccb7ecbcc8f1751b7",
+      "6689bf3aa131cde10ea0",
+      "ed0c5d1ef8da661c9fde"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH04.P2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P2",
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "originalPurpose": "마음을 표현하는 속도",
+    "readerQuestion": "마음을 표현하는 속도",
+    "domain": "love",
+    "independentInformation": [
+      "빠르게 제안하는 힘을 관계를 서두르는 속도와 분리한다.",
+      "신중한 마음을 썸에서 무기한 침묵으로 전달하지 않는 속도 연구다.",
+      "연애 중 표현의 빈도를 둘의 생활 변화에 맞춰 다시 정하는 연구다.",
+      "준비 결정을 빠르게 하는 힘과 둘이 받아들일 시간을 나눠 연구한다.",
+      "기혼의 대화 빈도를 정할 때 혼자 정리할 시간과 함께 확인할 시간을 연구한다.",
+      "관계 상태 없이도 말·글·행동 중 편한 전달 통로를 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L3",
+      "L5"
+    ],
+    "materialIds": [
+      "lkr:material:CH04.P2:single-small-invite",
+      "lkr:material:CH04.P2:some-response-window",
+      "lkr:material:CH04.P2:dating-expression-update",
+      "lkr:material:CH04.P2:preparing-decision-pace",
+      "lkr:material:CH04.P2:married-talk-not-demand",
+      "lkr:material:CH04.P2:unknown-channel-choice"
+    ],
+    "sourceCandidateKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "3f713efd6c7ca838b2f8",
+      "f4b08443773729cee364",
+      "99d6728eeef28d090237",
+      "63e067b6cec4f0da1ffe",
+      "bedf4254e50989e1a90e",
+      "b750d95ce60a2ec5ba58"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH04.P3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P3",
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "originalPurpose": "썸에서 반복하기 쉬운 실수",
+    "readerQuestion": "썸에서 반복하기 쉬운 실수",
+    "domain": "love",
+    "independentInformation": [
+      "처음 알아가는 사람에게 도움을 많이 주는 것으로 호감의 답을 대신 받으려는 위험을 연구한다.",
+      "썸의 연락 지연을 거절이나 밀당으로 단정하는 해석 위험을 연구한다.",
+      "익숙한 연애에서 말하지 않은 부탁을 수고의 비교로 바꾸는 위험을 연구한다.",
+      "결혼 준비 비용을 많이 부담한 사람이 결정권도 자동으로 갖는다는 위험을 연구한다.",
+      "기혼 생활에서 분위기를 관리하는 수고가 보이지 않는 담당으로 고정되는 위험을 연구한다.",
+      "관계 상태를 모를 때 맞춤처럼 보이는 단계 추정을 피하는 연구다."
+    ],
+    "loveQuestionRefs": [
+      "L3",
+      "L7"
+    ],
+    "materialIds": [
+      "lkr:material:CH04.P3:single-overhelp",
+      "lkr:material:CH04.P3:some-reading-delay",
+      "lkr:material:CH04.P3:dating-unspoken-score",
+      "lkr:material:CH04.P3:preparing-finance-consent",
+      "lkr:material:CH04.P3:married-labor-invisible",
+      "lkr:material:CH04.P3:unknown-no-stage-script"
+    ],
+    "sourceCandidateKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "6e846060eca8b8a32399",
+      "8a6e798d5bb288c958fa",
+      "78cdb2e803560073a1c5",
+      "8670a7cd306dd817250d",
+      "d43c7946bfba7c3d5f9a",
+      "2b973ff1bebbfb3da944"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH04.P4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P4",
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "originalPurpose": "관계를 시작할 때 기억할 것",
+    "readerQuestion": "관계를 시작할 때 기억할 것",
+    "domain": "love",
+    "independentInformation": [
+      "주저함이 확인된 솔로에게 작은 관심 표현과 만남을 하지 않을 선택을 함께 연구한다.",
+      "썸에서는 관계 이름의 확정보다 지금 가능한 다음 선택을 묻는 연구다.",
+      "기존 관계에서 작고 반복 가능한 표현을 함께 고르는 방향 연구다.",
+      "준비를 잘 끝내는 것보다 두 사람이 결정 방식을 알아가는 방향을 연구한다.",
+      "기혼 관계에서 지금 고를 수 있는 작은 관심을 다시 찾는 방향 연구다.",
+      "관계 이름 없이도 자기 기준을 정하는 긍정적 마무리를 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L2",
+      "L5",
+      "L9"
+    ],
+    "materialIds": [
+      "lkr:material:CH04.P4:single-open-choice",
+      "lkr:material:CH04.P4:some-answer-not-label",
+      "lkr:material:CH04.P4:dating-renew-small",
+      "lkr:material:CH04.P4:preparing-both-directions",
+      "lkr:material:CH04.P4:married-current-choice",
+      "lkr:material:CH04.P4:unknown-no-deficit"
+    ],
+    "sourceCandidateKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "d49fb42c265aa76d5310",
+      "00a52eadb4c1c9dbf9d1",
+      "5cee60f48e9d45ace3fb",
+      "048c520649d4c0b898cb",
+      "61b30ec0831489592e05",
+      "3571efa2a1cfc06f784f"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH05.P1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P1",
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "originalPurpose": "가까운 사람에게 보여주는 모습",
+    "readerQuestion": "가까운 사람에게 보여주는 모습",
+    "domain": "love",
+    "independentInformation": [
+      "가까워질수록 사소한 취향과 불편을 숨길 필요가 줄어드는 모습을 연구한다.",
+      "익숙한 사람의 변화를 빨리 알아채는 감각을 확인 질문으로 쓰는 친밀함을 연구한다.",
+      "가까운 사이에서 약속한 몫을 이어가는 행동이 신뢰로 쓰이는 조건을 연구한다.",
+      "작은 하루의 이야기를 나누며 같은 경험이 없어도 가까움을 잇는 방식을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L3",
+      "L4"
+    ],
+    "materialIds": [
+      "lkr:material:CH05.P1:close-unguarded-detail",
+      "lkr:material:CH05.P1:close-attuned-question",
+      "lkr:material:CH05.P1:close-practical-trust",
+      "lkr:material:CH05.P1:close-shared-story"
+    ],
+    "sourceCandidateKeys": [
+      "7262748ae842a059b4fc",
+      "6e846060eca8b8a32399",
+      "1cb30f8035bfd0a67e8e",
+      "62e33b4e8bf4f9071748"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH05.P2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P2",
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "originalPurpose": "깊은 관계에서 원하는 것",
+    "readerQuestion": "깊은 관계에서 원하는 것",
+    "domain": "love",
+    "independentInformation": [
+      "돌봄을 알아봐주길 원하는 필요와 실제 책임 분담을 서로 다른 답으로 연구한다.",
+      "깊게 이해받고 싶은 필요에서 상대가 동의해야 한다는 요구를 구분한다.",
+      "자기 목표를 지지받고 싶은 필요를 상대가 모든 목표를 대신 떠받치는 역할과 구분한다.",
+      "깊은 관계에서 혼자 정리할 필요와 다시 연결될 정보를 함께 원하는 조건을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L4",
+      "L6"
+    ],
+    "materialIds": [
+      "lkr:material:CH05.P2:need-acknowledged-care",
+      "lkr:material:CH05.P2:need-deep-understood",
+      "lkr:material:CH05.P2:need-not-changed-person",
+      "lkr:material:CH05.P2:need-return-signal"
+    ],
+    "sourceCandidateKeys": [
+      "0c283e400d1572c869f6",
+      "a469049c0715564eddeb",
+      "61214d91803abc1b85d2",
+      "2f90ecfe06a11bd76f98"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH05.P3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P3",
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "originalPurpose": "애정과 독립성의 균형",
+    "readerQuestion": "애정과 독립성의 균형",
+    "domain": "love",
+    "independentInformation": [
+      "같은 활동을 하되 각자 참여 강도를 고를 수 있는 친밀함을 연구한다.",
+      "친밀함을 개인 정보의 무제한 접근으로 증명하지 않는 경계를 연구한다.",
+      "관계를 아끼면서 혼자 있고 싶은 두 필요를 동시에 말하는 조건부 연구다.",
+      "상대 반응을 살피느라 쓴 에너지와 실제 회복 방법을 분리하는 연구다."
+    ],
+    "loveQuestionRefs": [
+      "L4",
+      "L6"
+    ],
+    "materialIds": [
+      "lkr:material:CH05.P3:space-chosen-company",
+      "lkr:material:CH05.P3:space-not-passcode",
+      "lkr:material:CH05.P3:space-care-fusion",
+      "lkr:material:CH05.P3:space-recovery-attunement"
+    ],
+    "sourceCandidateKeys": [
+      "bab526a6c2566c56931d",
+      "86ce278eca349b89b4d4",
+      "fa83818c7308d0737c2f",
+      "1be2f30bf579c8de2ede"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH05.P4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P4",
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "originalPurpose": "오래 관계를 유지하는 힘",
+    "readerQuestion": "오래 관계를 유지하는 힘",
+    "domain": "love",
+    "independentInformation": [
+      "오래 유지할 힘을 작은 약속의 이행과 수정으로 연구한다.",
+      "익숙한 사람을 예전 취향에 고정하지 않고 현재 관심을 듣는 지속 강점을 연구한다.",
+      "오래가는 관계에서 완벽히 다투지 않는 것보다 다시 말할 통로를 연구한다.",
+      "표현을 지속하는 힘에 지금도 맞는 방식인지 확인하는 조건을 더한다."
+    ],
+    "loveQuestionRefs": [
+      "L4",
+      "L5",
+      "L9"
+    ],
+    "materialIds": [
+      "lkr:material:CH05.P4:sustain-small-promises",
+      "lkr:material:CH05.P4:sustain-current-person",
+      "lkr:material:CH05.P4:sustain-repair-access",
+      "lkr:material:CH05.P4:sustain-reciprocal-expression"
+    ],
+    "sourceCandidateKeys": [
+      "5190684455c102b45097",
+      "96a809889e7203550ec2",
+      "855363fd8de29e58adea",
+      "5cee60f48e9d45ace3fb"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH06.P1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P1",
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "originalPurpose": "연애에서 가장 아픈 단점",
+    "readerQuestion": "연애에서 가장 아픈 단점",
+    "domain": "weaknesses",
+    "independentInformation": [
+      "돕고 싶은 마음이 상대가 말할 시간을 줄이는 행동으로 바뀌는 위험을 연구한다.",
+      "분위기를 해치기 싫어 말하지 않은 불편을 나중에 합의 위반처럼 다루는 위험을 연구한다.",
+      "책임을 먼저 맡는 강점이 말하지 않은 기대를 쌓는 위험을 연구한다.",
+      "틀린 부분을 고치는 힘이 사람 전체를 평가하는 말로 번지는 위험을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L7"
+    ],
+    "materialIds": [
+      "lkr:material:CH06.P1:solution-over-listen",
+      "lkr:material:CH06.P1:silent-agreement-cost",
+      "lkr:material:CH06.P1:care-ledger",
+      "lkr:material:CH06.P1:precision-not-person"
+    ],
+    "sourceCandidateKeys": [
+      "d35d738ef528ee981728",
+      "fbf6075c276ff0b58116",
+      "78cdb2e803560073a1c5",
+      "09f88fe7ec21e62f0659"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH06.P2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P2",
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "originalPurpose": "왜 그런 문제가 생기는가",
+    "readerQuestion": "왜 그런 문제가 생기는가",
+    "domain": "weaknesses",
+    "independentInformation": [
+      "정관의 규범 관계와 연애에서 서로 지킬 기준을 묻는 현대 적용을 분리한다.",
+      "빠른 시작 자료로 상대가 같은 속도를 원한다고 추론하는 오류를 연구한다.",
+      "관계를 중요하게 느끼는 마음과 필요한 돌봄이 다를 때의 긴장을 연구한다.",
+      "반응을 잘 살피는 본인이 관찰보다 해석을 빨리 확정하는 위험을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L1",
+      "L7"
+    ],
+    "materialIds": [
+      "lkr:material:CH06.P2:natal-rule-not-control",
+      "lkr:material:CH06.P2:mbti-speed-not-motive",
+      "lkr:material:CH06.P2:fusion-meaning-care",
+      "lkr:material:CH06.P2:attune-interpretation-loop"
+    ],
+    "sourceCandidateKeys": [
+      "ce1defc1af72408fec4a",
+      "cf50142dddc360c3324a",
+      "3f713efd6c7ca838b2f8",
+      "10f1b188eaa3ff171bee",
+      "6e846060eca8b8a32399"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH06.P3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P3",
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "originalPurpose": "갈등이 커지는 순간",
+    "readerQuestion": "갈등이 커지는 순간",
+    "domain": "weaknesses",
+    "independentInformation": [
+      "답을 빨리 듣고 싶은 행동이 상대의 설명을 줄이는 조건을 연구한다.",
+      "다투기 싫어 대화를 미루는 행동이 이유 없는 거리로 전달되는 조건을 연구한다.",
+      "도움이 거절됐을 때 감사 부족으로 읽으면 통제로 바뀔 수 있는 조건을 연구한다.",
+      "잦은 변경을 가볍게 설명하면 상대가 더 강한 확약을 요구할 가능성을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L5",
+      "L7"
+    ],
+    "materialIds": [
+      "lkr:material:CH06.P3:pace-escalation",
+      "lkr:material:CH06.P3:avoidance-escalation",
+      "lkr:material:CH06.P3:unasked-help-escalation",
+      "lkr:material:CH06.P3:broken-promise-loop"
+    ],
+    "sourceCandidateKeys": [
+      "16577eb313d7ad41b01b",
+      "be9cb942010f0a199f50",
+      "1f40e8e8931a7e80cec7",
+      "c72ad7e4dbeab2b8b75f"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH06.P4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P4",
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "originalPurpose": "다툰 뒤 다시 가까워지는 방법",
+    "readerQuestion": "다툰 뒤 다시 가까워지는 방법",
+    "domain": "weaknesses",
+    "independentInformation": [
+      "다툰 뒤 관계를 빨리 밝게 돌리기보다 남은 뜻을 먼저 듣는 회복을 연구한다.",
+      "사과의 어려움을 인정하되 다음 행동의 변화가 없는 설명과 구분한다.",
+      "생각 뒤에 감정을 알아차리는 경우 쉬는 시간과 재대화 통로를 함께 연구한다.",
+      "회복을 원해도 위협과 동의 없는 통제가 있다면 안전을 우선하는 경계를 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L5",
+      "L7",
+      "L9"
+    ],
+    "materialIds": [
+      "lkr:material:CH06.P4:repair-heard-first",
+      "lkr:material:CH06.P4:repair-action-not-apology",
+      "lkr:material:CH06.P4:repair-space-with-return",
+      "lkr:material:CH06.P4:repair-boundary-safety"
+    ],
+    "sourceCandidateKeys": [
+      "f1a63049534f1dfb09b7",
+      "6a97973055bda9994161",
+      "c0d70c49b5a928ce5a82",
+      "86ce278eca349b89b4d4"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH07.P1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P1",
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "originalPurpose": "결혼생활에서의 나",
+    "readerQuestion": "결혼생활에서의 나",
+    "domain": "marriage",
+    "independentInformation": [
+      "공동생활을 선택한다면 개인 공간과 공동 책임을 별도로 정하는 성향 적용을 연구한다.",
+      "미래를 계획하는 성향을 실제 생활 변화에 수정 가능한 운영으로 연구한다.",
+      "함께하는 일상을 돌보는 성향을 생활의 예측 가능한 조건으로 연구한다.",
+      "정재의 관리 관계를 공동생활의 책임과 실제 합의 질문으로 제한해 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L6",
+      "L8"
+    ],
+    "materialIds": [
+      "lkr:material:CH07.P1:home-self-choice",
+      "lkr:material:CH07.P1:home-planned-not-fixed",
+      "lkr:material:CH07.P1:home-warm-rhythm",
+      "lkr:material:CH07.P1:home-conditional-rule"
+    ],
+    "sourceCandidateKeys": [
+      "30b373f5892dd5de9b47",
+      "f3061cb47601ea867c4f",
+      "657f0a60c702c59fd825",
+      "e08794b5eb33c746679f",
+      "e2ed5b09b1f8185708cd"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH07.P2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P2",
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "originalPurpose": "함께 사는 사람에게 줄 수 있는 힘",
+    "readerQuestion": "함께 사는 사람에게 줄 수 있는 힘",
+    "domain": "marriage",
+    "independentInformation": [
+      "돌봄을 잘하는 사람이 모두 맡지 않도록 역할을 다시 나누는 생활 강점을 연구한다.",
+      "반복되는 일을 간단한 체계로 만들 때 양쪽이 사용할 수 있는 조건을 연구한다.",
+      "예상 못 한 일정 변화에도 생활을 유지할 여유를 두는 강점을 연구한다.",
+      "가족과의 관계를 잘 잇는 힘에 둘이 먼저 정할 정보와 결정을 구분한다."
+    ],
+    "loveQuestionRefs": [
+      "L3",
+      "L8"
+    ],
+    "materialIds": [
+      "lkr:material:CH07.P2:home-care-rotation",
+      "lkr:material:CH07.P2:home-minimum-system",
+      "lkr:material:CH07.P2:home-change-buffer",
+      "lkr:material:CH07.P2:home-kin-information"
+    ],
+    "sourceCandidateKeys": [
+      "4b07fe3f9004cfc8a777",
+      "d8ee6a6775c1d5a71420",
+      "ede67b716c40fbe4b6c4",
+      "24baf614208a551324d1"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH07.P3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P3",
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "originalPurpose": "결혼생활에서의 팩폭",
+    "readerQuestion": "결혼생활에서의 팩폭",
+    "domain": "marriage",
+    "independentInformation": [
+      "생활비 기여와 의사결정 권한을 동일시하는 위험을 연구한다.",
+      "효율적으로 생활을 고치려는 마음이 모든 방식의 평가로 번지는 위험을 연구한다.",
+      "새로운 생활 제안 뒤에 반복될 관리 비용을 놓치는 위험을 연구한다.",
+      "분위기를 지키려고 작은 불편을 넘기면 합의한 생활처럼 보이는 위험을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L7",
+      "L8"
+    ],
+    "materialIds": [
+      "lkr:material:CH07.P3:home-money-power",
+      "lkr:material:CH07.P3:home-correction-fatigue",
+      "lkr:material:CH07.P3:home-novelty-cost",
+      "lkr:material:CH07.P3:home-peace-not-consent"
+    ],
+    "sourceCandidateKeys": [
+      "8670a7cd306dd817250d",
+      "048c520649d4c0b898cb",
+      "c72ad7e4dbeab2b8b75f",
+      "cd4db85b9a6b894d203d"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH07.P4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P4",
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "originalPurpose": "오래 함께할 수 있는 생활의 조건",
+    "readerQuestion": "오래 함께할 수 있는 생활의 조건",
+    "domain": "marriage",
+    "independentInformation": [
+      "오래 함께할 조건을 처음의 분담을 주기적으로 바꿀 수 있는 절차로 연구한다.",
+      "큰 지출과 외부 지원에서 먼저 상의할 범위를 정하는 생활 조건을 연구한다.",
+      "각자의 쉬는 필요와 돌봄·가사의 공백을 함께 조율하는 조건을 연구한다.",
+      "결혼과 공동생활을 선택하지 않는 답도 생활의 기준으로 인정하는 연구다."
+    ],
+    "loveQuestionRefs": [
+      "L5",
+      "L6",
+      "L8"
+    ],
+    "materialIds": [
+      "lkr:material:CH07.P4:home-revision-meeting",
+      "lkr:material:CH07.P4:home-spending-threshold",
+      "lkr:material:CH07.P4:home-rest-fairness",
+      "lkr:material:CH07.P4:home-optout-legitimate"
+    ],
+    "sourceCandidateKeys": [
+      "048c520649d4c0b898cb",
+      "d4a61263d8611202dcef",
+      "060272ee97676577841a",
+      "d4e7f0e0e2cbaab22aa7",
+      "3571efa2a1cfc06f784f"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH08.P1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P1",
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "originalPurpose": "내가 부모가 된다면",
+    "readerQuestion": "내가 부모가 된다면",
+    "domain": "relationships",
+    "independentInformation": [
+      "본인이 부모 역할을 선택한다면 정답보다 생각하는 과정을 돕는 강점의 적용 조건을 연구한다.",
+      "낯선 관심을 바로 닫지 않고 탐색할 시간을 주는 부모 본인의 강점을 연구한다.",
+      "부모 역할을 진지하게 준비하는 강점을 분명한 기준과 설명에 쓰는 연구다.",
+      "직접 해보며 배우게 하고 싶은 부모 본인의 강점을 안전한 시행착오로 연구한다.",
+      "어른과 의견이 달라도 이유를 말할 수 있게 돕는 부모 본인의 강점을 연구한다.",
+      "개성을 존중하는 부모 본인의 강점을 안전한 선택 범위로 옮기는 연구다.",
+      "마음을 말할 때 반응해주는 부모 본인의 강점을 답을 대신 정하지 않는 경청으로 연구한다.",
+      "애정을 알아듣게 전하고 작은 시도를 응원하는 부모 본인의 강점을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L6",
+      "L8"
+    ],
+    "materialIds": [
+      "lkr:material:CH08.P1:parent-intj-reasoning",
+      "lkr:material:CH08.P1:parent-intp-patience",
+      "lkr:material:CH08.P1:parent-entj-responsibility",
+      "lkr:material:CH08.P1:parent-entp-experiment",
+      "lkr:material:CH08.P1:parent-infj-opinion",
+      "lkr:material:CH08.P1:parent-infp-choice",
+      "lkr:material:CH08.P1:parent-enfj-emotional-base",
+      "lkr:material:CH08.P1:parent-enfp-encouragement"
+    ],
+    "sourceCandidateKeys": [
+      "825fd4e9a742a121464b",
+      "96124cd17e5740ab238f",
+      "41f807794a6c25d13e93",
+      "1ff3e720872ec12c58db",
+      "89f7385eacb614219d5c",
+      "10d4177606458102491b",
+      "cb9ee7415c4e3089e7f9",
+      "caa9d371cf4fbf58585d"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH08.P2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P2",
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "originalPurpose": "아이에게 줄 수 있는 좋은 영향",
+    "readerQuestion": "아이에게 줄 수 있는 좋은 영향",
+    "domain": "relationships",
+    "independentInformation": [
+      "준비를 이어가는 부모 본인의 강점을 예측 가능한 작은 생활 순서로 연구한다.",
+      "일정한 돌봄을 주려는 부모 본인의 강점 안에 작은 선택을 남기는 연구다.",
+      "규칙을 분명하게 전하는 부모 본인의 강점을 이유와 어른의 모범으로 연구한다.",
+      "함께하는 돌봄을 주려는 부모 본인의 강점을 소속감과 개별 선택이 공존하는 조건으로 연구한다.",
+      "간섭을 줄이는 부모 본인의 강점에 도움을 청할 통로를 같이 두는 연구다.",
+      "편안하게 함께하는 부모 본인의 강점에 필요한 한계를 짧게 말하는 조건을 연구한다.",
+      "새 활동을 함께 해보는 부모 본인의 강점에 참여 강도와 중단 선택을 두는 연구다.",
+      "새로운 장소와 활동을 나누는 부모 본인의 강점을 아이의 관심을 듣는 조건으로 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L3",
+      "L8"
+    ],
+    "materialIds": [
+      "lkr:material:CH08.P2:parent-istj-predictability",
+      "lkr:material:CH08.P2:parent-isfj-security",
+      "lkr:material:CH08.P2:parent-estj-rules-explained",
+      "lkr:material:CH08.P2:parent-esfj-belonging",
+      "lkr:material:CH08.P2:parent-istp-help-access",
+      "lkr:material:CH08.P2:parent-isfp-warm-limit",
+      "lkr:material:CH08.P2:parent-estp-activity-choice",
+      "lkr:material:CH08.P2:parent-esfp-shared-interest"
+    ],
+    "sourceCandidateKeys": [
+      "63aa4d746575e86c7743",
+      "f9709a2aaf92c814cb26",
+      "d2987b5b1ad27d7ff7dc",
+      "59af620140e08fabfd3e",
+      "63356dc69674fed27d17",
+      "ed69b25578fd3caf28c9",
+      "15008cf38f6d07145c5e",
+      "1efb6b1d8473aa2560f6"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH08.P3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P3",
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "originalPurpose": "부모 역할에서 조심할 점",
+    "readerQuestion": "부모 역할에서 조심할 점",
+    "domain": "relationships",
+    "independentInformation": [
+      "높은 기대를 가진 부모 본인이 아이 목표와 어른 목표를 분리할 조건을 연구한다.",
+      "미리 위험을 막으려는 부모 본인이 안전과 단지 낯선 선택을 구분하는 연구다.",
+      "감정을 이해하고 싶은 부모 본인이 아이의 말보다 추측을 앞세우는 위험을 연구한다.",
+      "현실적인 준비를 돕는 부모 본인이 결과만으로 하루의 가치를 판단하는 위험을 연구한다.",
+      "질문을 즐기는 부모 본인이 대화에서 이기려는 태도를 경청과 구분하는 연구다.",
+      "돌봄을 혼자 맡으려는 부모 본인이 책임을 나누고 지원을 요청할 조건을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L7",
+      "L8"
+    ],
+    "materialIds": [
+      "lkr:material:CH08.P3:parent-high-expectation",
+      "lkr:material:CH08.P3:parent-overprotection",
+      "lkr:material:CH08.P3:parent-emotion-reading",
+      "lkr:material:CH08.P3:parent-results-only",
+      "lkr:material:CH08.P3:parent-debate-as-listen",
+      "lkr:material:CH08.P3:parent-monopoly-fatigue"
+    ],
+    "sourceCandidateKeys": [
+      "46eb373ed8de497e1ba3",
+      "3888aa2e5b9fb179e218",
+      "ea9519a12540624c4823",
+      "d34d165d4966692ca6cb",
+      "1de5594bb3cc1a883744",
+      "31fe578398dda7ed2b7e"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH08.P4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P4",
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "originalPurpose": "나에게 맞는 부모 역할",
+    "readerQuestion": "나에게 맞는 부모 역할",
+    "domain": "relationships",
+    "independentInformation": [
+      "질문하는 양육을 쓰기 전에 아이의 실제 연령과 이해 범위를 확인하는 조건을 연구한다.",
+      "규칙을 알려주는 어른 자신도 지킬 작은 약속을 남기는 양육 행동을 연구한다.",
+      "자기 선택을 존중하는 양육 강점을 몸·정보·취향의 경계를 설명하는 행동으로 연구한다.",
+      "사생활을 존중하면서 필요한 도움을 청할 통로를 남기는 양육 방향을 연구한다.",
+      "부모 본인의 혼자 회복할 필요를 아이의 돌봄 공백과 구분하는 연구다.",
+      "부모 역할을 선택하지 않아도 돌봄의 강점을 가질 수 있다는 적용 범위를 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L5",
+      "L6",
+      "L8",
+      "L9"
+    ],
+    "materialIds": [
+      "lkr:material:CH08.P4:parent-age-aware-question",
+      "lkr:material:CH08.P4:parent-model-commitment",
+      "lkr:material:CH08.P4:parent-consent-respect",
+      "lkr:material:CH08.P4:parent-support-channel",
+      "lkr:material:CH08.P4:parent-care-sustainable",
+      "lkr:material:CH08.P4:parent-optout-warmth"
+    ],
+    "sourceCandidateKeys": [
+      "825fd4e9a742a121464b",
+      "d2987b5b1ad27d7ff7dc",
+      "10d4177606458102491b",
+      "5d03c8ad1c25fc371767",
+      "ff09b3cb5318045846ad",
+      "d4e7f0e0e2cbaab22aa7",
+      "7dd6ccfe702fb492ef5e"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH09.P1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P1",
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "originalPurpose": "내가 가진 좋은 사랑의 기운",
+    "readerQuestion": "내가 가진 좋은 사랑의 기운",
+    "domain": "success/fortune",
+    "independentInformation": [
+      "실제 계산된 도화의 전통 보조 상징과 현대의 관심·표현 질문을 구분하는 연구다.",
+      "실제 천을귀인의 도움 상징을 관계의 어려움을 혼자 떠안지 않을 질문으로 연구한다.",
+      "실제 식신 조건이 지원할 때 함께 즐기는 자원을 어려운 대화의 통로로 연구한다.",
+      "홍염의 저장소 내부 정의만으로 새로운 연애 매력 의미를 확정할 수 없어 보류한다."
+    ],
+    "loveQuestionRefs": [
+      "L1",
+      "L2",
+      "L9"
+    ],
+    "materialIds": [
+      "lkr:material:CH09.P1:good-dohwa-symbol",
+      "lkr:material:CH09.P1:good-help-access",
+      "lkr:material:CH09.P1:good-output-joy",
+      "lkr:material:CH09.P1:held-hongyeom-expansion"
+    ],
+    "sourceCandidateKeys": [
+      "beca248f566aa61effd2",
+      "8404eadd074651539efa",
+      "9a582309fae56a95316b",
+      "209a3219dab16ceb0e58"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH09.P2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P2",
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "originalPurpose": "나만의 관계 재능",
+    "readerQuestion": "나만의 관계 재능",
+    "domain": "success/fortune",
+    "independentInformation": [
+      "필요를 살피고 표현하는 두 자원이 함께 확인되면 상대가 고를 수 있는 도움을 연구한다.",
+      "깊이 생각하는 관심과 필요한 도움을 살피는 자원이 함께 있을 때 경청의 가치를 연구한다.",
+      "표현의 반복과 전달 확인이 함께 지원될 때 생활 변화 속의 관심을 연구한다.",
+      "자기 선택을 중요하게 여기는 본인이 타인의 선택도 남기는 관계 재능을 연구한다."
+    ],
+    "loveQuestionRefs": [
+      "L1",
+      "L3",
+      "L9"
+    ],
+    "materialIds": [
+      "lkr:material:CH09.P2:gift-care-with-choice",
+      "lkr:material:CH09.P2:gift-meaningful-listen",
+      "lkr:material:CH09.P2:gift-trust-expression",
+      "lkr:material:CH09.P2:gift-autonomy-respect"
+    ],
+    "sourceCandidateKeys": [
+      "16a8411e967484ac9826",
+      "376e1bd05d115df434fd",
+      "5cee60f48e9d45ace3fb",
+      "f3a71de74732acc8d4fd"
+    ],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH09.P3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P3",
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "originalPurpose": "더 좋은 관계를 위한 선택",
+    "readerQuestion": "더 좋은 관계를 위한 선택",
+    "domain": "success/fortune",
+    "independentInformation": [
+      "실제로 앞에서 소개된 상호 돌봄 의미가 있을 때만 다음 부탁을 구체화하는 회수 연구다.",
+      "앞서 소개된 속도와 듣기 의미가 실제로 있을 때 결론 전에 듣는 행동으로 잇는 회수다.",
+      "앞서 개인 공간과 재연결의 의미를 읽은 경우에만 쉬는 시간의 안내를 회수한다.",
+      "거절과 안전 의미가 앞에서 소개됐을 때만 좋은 관계 선택의 기준으로 회수한다."
+    ],
+    "loveQuestionRefs": [
+      "L5",
+      "L7",
+      "L9"
+    ],
+    "materialIds": [
+      "lkr:material:CH09.P3:recall-care-request",
+      "lkr:material:CH09.P3:recall-pace-choice",
+      "lkr:material:CH09.P3:recall-space-return",
+      "lkr:material:CH09.P3:recall-care-with-safety"
+    ],
+    "sourceCandidateKeys": [],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  },
+  {
+    "id": "lkr:paragraph:CH09.P4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P4",
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "originalPurpose": "마지막 메시지",
+    "readerQuestion": "마지막 메시지",
+    "domain": "success/fortune",
+    "independentInformation": [
+      "실제로 소개된 조용한 표현의 뜻만 마지막 기준으로 회수한다.",
+      "독립성과 가능한 돌봄의 뜻이 실제로 소개됐을 때 자기 선택을 잃지 않는 기준으로 회수한다.",
+      "의미 있는 연결과 다른 답의 존중이 소개된 경우 그 기준만 마지막에 회수한다.",
+      "신뢰와 현재 관심의 뜻이 실제로 소개됐을 때 고정된 이미지보다 계속 알아가는 기준을 회수한다."
+    ],
+    "loveQuestionRefs": [
+      "L1",
+      "L6",
+      "L9"
+    ],
+    "materialIds": [
+      "lkr:material:CH09.P4:closing-quiet-visible",
+      "lkr:material:CH09.P4:closing-choice-care",
+      "lkr:material:CH09.P4:closing-meaning-difference",
+      "lkr:material:CH09.P4:closing-trust-current"
+    ],
+    "sourceCandidateKeys": [],
+    "missingEvidence": "개인화 source·owner·조건이 없으면 해당 역할 보류. 다른 상태·다른 유형·아이·상대·기간의 자료로 빈칸을 채우지 않음.",
+    "unresolvedBinding": true
+  }
+]

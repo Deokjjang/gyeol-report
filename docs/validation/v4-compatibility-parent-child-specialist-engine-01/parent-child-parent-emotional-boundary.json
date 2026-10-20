@@ -1,0 +1,25 @@
+{
+  "policy": "PARENT_EMOTIONAL_SELF_REGULATION_AND_ADULT_SUPPORT; CHILD_NOT_RESPONSIBLE_FOR_PARENT_EMOTIONS",
+  "actualFamilyFacts": [
+    "parentage",
+    "guardianship",
+    "cohabitation",
+    "familyHistory",
+    "childAbility",
+    "schoolPerformance",
+    "developmentalAssessment",
+    "emotionalHealth",
+    "childConsent",
+    "supportNeed",
+    "legalAuthority",
+    "actualRisk"
+  ],
+  "synthetic": [
+    {
+      "id": "synthetic:parent-child:negative:child-emotional-burden",
+      "reasons": [
+        "CHILD_REPAIR_BURDEN_FORBIDDEN"
+      ]
+    }
+  ]
+}

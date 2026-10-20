@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "global-meaning-review-index-part-0002.json.gz",
+  "payloadHash": "aaaed07b0a0e5508028f35a2155347c7cb1c5d7650714d85e95a0d741bc9db97",
+  "logicalJsonHash": "d9c733a362da9d4ad239b70b4cc08b011d69522f1b287bb4b799efe56ad87e87",
+  "uncompressedBytes": 17528946
+}

@@ -95,7 +95,7 @@ describe("section-specific allocations, reservations, fallback and budgets", () 
     expect(r.sections.C8.questionSlots.WORK_STYLE).toContain("work"); expect(r.sections.C8.questionSlots.MONEY_STYLE).toContain("money"); expect(r.sections.C8.questionSlots.CURRENT_CONTEXT).toContain("work");
   });
   it("C9 element composite beats a five-element dictionary and balanced yin yang is not a story", () => {
-    const rows = [row("composite", { elementComposite: true, contexts: ["recovery"], allowedSections: ["C9"], preferredSections: ["C9"], slots: ["ELEMENT_COMPOSITE"] }), row("recovery", { contexts: ["recovery"], allowedSections: ["C9"], preferredSections: ["C9"], slots: ["RECOVERY_STYLE"] })];
+    const rows = [row("composite", { sourceText: "회복할 때 편한 환경을 확인합니다.", elementComposite: true, contexts: ["recovery"], allowedSections: ["C9"], preferredSections: ["C9"], slots: ["ELEMENT_COMPOSITE"] }), row("recovery", { contexts: ["recovery"], allowedSections: ["C9"], preferredSections: ["C9"], slots: ["RECOVERY_STYLE"] })];
     const r = allocate(rows); expect(r.sections.C9.primaryCandidateIds).toContain("composite");
     const balanced = buildYinYangEvidence(4, 4); if (!balanced.ok) return expect.unreachable();
     const i = schedulerInputs(myProfile([balanced.value.evidence]), null, {});
@@ -109,8 +109,9 @@ describe("section-specific allocations, reservations, fallback and budgets", () 
     expect(r.reservations.filter(x => x.sectionId === "C8")).toHaveLength(1);
   });
   it("recovery-axis Fusion can serve C9 even when its original application is work", () => {
-    const c = fusion("recover-after-work", "COMPLEMENT", { contexts: ["work"], primaryAxes: ["STABILITY", "RECOVERY_NEED"] });
+    const c = fusion("recover-after-work", "COMPLEMENT", { sourceText: "일을 마친 뒤에는 자료를 정리하며 회복합니다.", contexts: ["work"], primaryAxes: ["STABILITY", "RECOVERY_NEED"] });
     expect(primarySectionEligible(c, "C9", "RECOVERY_ENVIRONMENT")).toBe(true);
+    expect(primarySectionEligible({ ...c, sourceText: "업무를 꼼꼼히 확인합니다." }, "C9", "RECOVERY_ENVIRONMENT")).toBe(false);
     const generic = fusion("work-only", "COMPLEMENT", { contexts: ["work", "recovery"], primaryAxes: ["DUTY"] });
     expect(primarySectionEligible(generic, "C9", "RECOVERY_ENVIRONMENT")).toBe(false);
   });

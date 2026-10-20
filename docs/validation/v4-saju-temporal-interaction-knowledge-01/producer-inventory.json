@@ -1,0 +1,263 @@
+[
+  {
+    "path": "src/lib/saju/customerDayun.ts",
+    "symbol": "calculateCustomerDayun",
+    "input": "정규화 입력·가능 출생 분 범위",
+    "output": "sect2 순역·시작 KST/범위·12cycles",
+    "owners": "dayun",
+    "timeCertainty": "exact/approximate/unknown; 불안정 구간 DAYUN_UNCERTAIN",
+    "limit": "순서 안정성과 시각 확정은 별개"
+  },
+  {
+    "path": "src/lib/saju/customerDayun.ts",
+    "symbol": "selectCustomerDayun",
+    "input": "cycles·선택연도·평가시각",
+    "output": "명목 selectedCycle·activeCycleAtEvaluation·transition",
+    "owners": "dayun",
+    "timeCertainty": "정확/범위·첫 운 이전",
+    "limit": "연도 선택이 활성 시각을 대신하지 않음"
+  },
+  {
+    "path": "src/lib/saju/solarTerms.ts",
+    "symbol": "getSolarTermInstants",
+    "input": "명시 KST 구간",
+    "output": "기존 library의 절기 절대시각",
+    "owners": "calendar",
+    "timeCertainty": "KST 고객 시각과 UTC8 비교용 시각 분리",
+    "limit": "새 천문 계산 아님"
+  },
+  {
+    "path": "src/lib/saju/lunarJavascriptPillars.ts",
+    "symbol": "createSajuCalendarContext",
+    "input": "실제 KST instant",
+    "output": "canonical 연월일시주",
+    "owners": "calendar",
+    "timeCertainty": "입춘·절입 전후",
+    "limit": "출생 원국과 기간 구간 context는 다른 소유자"
+  },
+  {
+    "path": "src/lib/report-knowledge/majorFortuneRules.ts",
+    "symbol": "getMajorFortuneGanjiInfo",
+    "input": "기존 대운 간지",
+    "output": "간지·음양·오행",
+    "owners": "dayun",
+    "timeCertainty": "기본 구성 B",
+    "limit": "구성에서 길흉 산출 안 함"
+  },
+  {
+    "path": "src/lib/report-knowledge/majorFortuneRules.ts",
+    "symbol": "getMajorFortuneCycleForYear",
+    "input": "명목 cycle연도",
+    "output": "현재/이전/다음 nominal cycle",
+    "owners": "dayun",
+    "timeCertainty": "연도 범위 inclusive",
+    "limit": "정확 교운 시각 선택 아님"
+  },
+  {
+    "path": "src/lib/report-knowledge/majorFortuneEvidence.ts",
+    "symbol": "getMajorFortuneBranchInteractions",
+    "input": "실제 운지·natal 배열",
+    "output": "육합·충·삼합·형·해·반합·파",
+    "owners": "natal_dayun",
+    "timeCertainty": "원국 자리 유지가 전제",
+    "limit": "레거시 혼합 배열 호출과 분리된 호출 구분"
+  },
+  {
+    "path": "src/lib/report-knowledge/majorFortuneEvidence.ts",
+    "symbol": "buildMajorFortuneEvidence",
+    "input": "계산된 원국·대운·맥락",
+    "output": "십성·오행·관계·기존 신호·MBTI bridge",
+    "owners": "natal_dayun",
+    "timeCertainty": "source별 실제 조건",
+    "limit": "lifeArea 신호·기존 해석은 신규 연구 사실로 재집계 안 함"
+  },
+  {
+    "path": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+    "symbol": "buildMajorFortuneDecadeReading",
+    "input": "packet·선택 cycle·natal",
+    "output": "10개 연주와 cycleRelations/natalRelations 분리",
+    "owners": "dayun_saeun + natal_saeun",
+    "timeCertainty": "nominal 연도 단위",
+    "limit": "3·4·3 편집 phase는 새 시간 계산 아님"
+  },
+  {
+    "path": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+    "symbol": "getTenGodForStemPair",
+    "input": "기준 stem→대상 stem",
+    "output": "십성10",
+    "owners": "reference-sensitive",
+    "timeCertainty": "native 일간 또는 명시 cycle 기준",
+    "limit": "역방향 십성과 문자열 비교만 하면 안 됨"
+  },
+  {
+    "path": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+    "symbol": "getAnnualGanjiInfo",
+    "input": "선택 연도",
+    "output": "연간 간지·오행",
+    "owners": "saeun",
+    "timeCertainty": "선택연도 표",
+    "limit": "입춘 전 actual연주 ledger와 별개"
+  },
+  {
+    "path": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+    "symbol": "getBranchPairRelations",
+    "input": "실제 두 지지",
+    "output": "육합·충·형·해·반합·파",
+    "owners": "기간간3scope",
+    "timeCertainty": "caller가 owner/time 부착",
+    "limit": "삼합·천간합·원진·전체삼형 없음"
+  },
+  {
+    "path": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+    "symbol": "getAnnualBranchInteractions",
+    "input": "기간 지지·실제 natal 지지들",
+    "output": "쌍 + 실제3자 삼합/부분 반합",
+    "owners": "natal_period",
+    "timeCertainty": "affectedPillars ordinal은 natal만인 배열 전제",
+    "limit": "동일관계 여러 자리의 중복 vs 실제owner 구분"
+  },
+  {
+    "path": "src/lib/report-knowledge/annualFortuneEvidence.ts",
+    "symbol": "buildAnnualFortuneEvidence",
+    "input": "선택연도·원국·customerDayun",
+    "output": "실제 annual packet·calendarMonths·legacy fallback",
+    "owners": "natal_saeun",
+    "timeCertainty": "현행 customerDayun있으면 v2 monthly ledger",
+    "limit": "Dayun미제공 레거시 진단 월배열은 actualJie ledger 아님"
+  },
+  {
+    "path": "src/lib/report-knowledge/annualFortuneEvidence.ts",
+    "symbol": "buildAnnualMonthlyFortunes",
+    "input": "레거시 연도·일간·원국",
+    "output": "옛 월별 고정 seed",
+    "owners": "legacy monthly",
+    "timeCertainty": "customerDayun없는 진단 fallback",
+    "limit": "최신 actual 절입 근거로 승인 안 함"
+  },
+  {
+    "path": "src/lib/report-knowledge/annualMonthJie.ts",
+    "symbol": "getAnnualJieBoundaries",
+    "input": "선택 civil year",
+    "output": "실제 월주 바뀌는12절입",
+    "owners": "calendar",
+    "timeCertainty": "t-1초 vs t canonical month 변경",
+    "limit": "중기 포함24절기를 전부 월경계로 쓰지 않음"
+  },
+  {
+    "path": "src/lib/report-knowledge/annualMonthJie.ts",
+    "symbol": "buildAnnualMonthCalendar",
+    "input": "natal dayMaster/branches·customerDayun",
+    "output": "12civilmonth와 다중 segment·effectiveAnnualPillar·대운context",
+    "owners": "natal_wolun + dayun_wolun + saeun_wolun",
+    "timeCertainty": "[start,end); 교운 earliest/latest 추가분할",
+    "limit": "대운 후보의 관계만 conditional"
+  },
+  {
+    "path": "src/lib/report-knowledge/annualMonthRelationFacts.ts",
+    "symbol": "buildAnnualMonthRelationFacts",
+    "input": "월주·확인된 natal 지지·분포표지",
+    "output": "월-natal7관계·missing/heavy 관찰",
+    "owners": "natal_wolun",
+    "timeCertainty": "confirmed source month_natal_branch/element",
+    "limit": "missing/heavy는 신강약·희기·건강 판정 아님"
+  },
+  {
+    "path": "src/lib/report-knowledge/annualMonthExtendedEvidence.ts",
+    "symbol": "extendAnnualMonthEvidence",
+    "input": "actual calendarMonths·실제 natal anchor",
+    "output": "지정 신살·십이운성·원진 관찰",
+    "owners": "natal_wolun",
+    "timeCertainty": "각 segment의 source/basis 보존",
+    "limit": "원국표지 재투영이 아님; unsupported 유지"
+  },
+  {
+    "path": "src/lib/report-knowledge/annualFortuneReading.ts",
+    "symbol": "buildAnnualFortuneReading",
+    "input": "actual packet·segments",
+    "output": "기존 고객 해설·crossPeriods",
+    "owners": "dayun_saeun",
+    "timeCertainty": "인접 활성운·실효연주 같으면 구간연결",
+    "limit": "설명 문자열과 원시 계산은 별개"
+  },
+  {
+    "path": "src/lib/interpretation-v3/majorFortuneHorizon.ts",
+    "symbol": "buildMajorFortuneHorizon",
+    "input": "기존 packet·계산·futureYears10",
+    "output": "지난3+현재1+미래10=14rows·transition",
+    "owners": "major_product",
+    "timeCertainty": "actual KST/range 보존",
+    "limit": "horizon row는 연간 상세 관계구간 아님"
+  },
+  {
+    "path": "src/lib/interpretation-v4/majorEvidence.ts",
+    "symbol": "majorNarrativeEvidence",
+    "input": "실제payload·평가시각",
+    "output": "14년별 annual reading·원래cycle majorNatal",
+    "owners": "major_product",
+    "timeCertainty": "writer-disabled; transitionrange유지",
+    "limit": "검증된 원래cycle natal근거를 다음cycle에 복사 안 함"
+  },
+  {
+    "path": "src/lib/interpretation-v4/annualEvidence.ts",
+    "symbol": "annualNarrativeEvidence",
+    "input": "실제payload·currentDate·선택year",
+    "output": "12월전체·focus·crossPeriods·annualStemRelations",
+    "owners": "annual_product",
+    "timeCertainty": "현재clock과 commerce policyDate분리",
+    "limit": "annualStemRelations 선택연주와 actual구간 연주 구별"
+  },
+  {
+    "path": "src/lib/interpretation-v4/annualEvidence.ts",
+    "symbol": "annualTransitMaterials",
+    "input": "canonical target월 feature",
+    "output": "accepted관찰·held목록",
+    "owners": "natal_wolun",
+    "timeCertainty": "망신모호·미지원·비canonical held",
+    "limit": "같은feature 관찰합침은 영향 가산 아님"
+  },
+  {
+    "path": "src/lib/interpretation-v4/timeProductContext.ts",
+    "symbol": "createTimeProductContext",
+    "input": "natal자료·맥락·기존기간근거",
+    "output": "기간별 관련 응용 후보",
+    "owners": "editorial",
+    "timeCertainty": "MBTI/Fusion은 natal반응·대응 관점",
+    "limit": "관련성 점수가 기간 명리 인과관계 아님"
+  },
+  {
+    "path": "src/lib/interpretation-v4/periodPlanner.ts",
+    "symbol": "planMajorYears",
+    "input": "14년근거",
+    "output": "현재·전환·관계 등 편집강조",
+    "owners": "major_product",
+    "timeCertainty": "강조순위",
+    "limit": "좋은운 점수·예측확률 아님"
+  },
+  {
+    "path": "src/lib/interpretation-v4/periodPlanner.ts",
+    "symbol": "planAnnualMonths",
+    "input": "12월focus·전체ledger",
+    "output": "월별 편집 강조·boundary 설명",
+    "owners": "annual_product",
+    "timeCertainty": "focus는 대표선택",
+    "limit": "focus조건을 전체월에 확장 안 함"
+  },
+  {
+    "path": "src/lib/report-generation/dayunPublication.ts",
+    "symbol": "validateDayunPublication",
+    "input": "발행 draft·evidence",
+    "output": "기존 대운조건 검증",
+    "owners": "publication",
+    "timeCertainty": "기존저장본·신규발행계약 구별",
+    "limit": "연구자료가 gate를 우회하지 않음"
+  },
+  {
+    "path": "src/lib/report-generation/annualMonthlyPublication.ts",
+    "symbol": "annualMonthlyEvidenceMatches",
+    "input": "draft·actual monthly packet",
+    "output": "기존 월운 발행 정합성",
+    "owners": "publication",
+    "timeCertainty": "legacy와 v2 구별",
+    "limit": "이번에 발행 로직 수정 없음"
+  }
+]

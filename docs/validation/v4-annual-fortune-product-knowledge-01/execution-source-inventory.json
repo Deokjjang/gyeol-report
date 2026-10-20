@@ -1,0 +1,1124 @@
+[
+  {
+    "file": "src/lib/interpretation-v4/annualProductAdapter.ts",
+    "sha256": "6b14c10bed460ad632998d50791a768d964c5629e7e44621c0bc775b2c440d66",
+    "symbols": [
+      {
+        "line": 7,
+        "text": "export const ANNUAL_PRODUCT_VERSION = \"annual-product-13d-7c-v1\";"
+      },
+      {
+        "line": 8,
+        "text": "export async function buildV4AnnualProduct(payload: unknown, clock: AnnualClock) {"
+      },
+      {
+        "line": 35,
+        "text": "export type AnnualProduct = Extract<Awaited<ReturnType<typeof buildV4AnnualProduct>>, { ok: true }>;"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualEvidence.ts",
+    "sha256": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+    "symbols": [
+      {
+        "line": 12,
+        "text": "export type AnnualClock = {"
+      },
+      {
+        "line": 18,
+        "text": "export type AnnualTime = \"past\" | \"current\" | \"future\";"
+      },
+      {
+        "line": 20,
+        "text": "export const annualPeriodTime = (start: string, end: string, now: string): AnnualTime => Date.parse(now) < Date.parse(start) ? \"future\" : Date.parse(now) >= Date.parse(end) ? \"past"
+      },
+      {
+        "line": 24,
+        "text": "export function annualTransitMaterials(features: readonly MonthFeature[]) {"
+      },
+      {
+        "line": 39,
+        "text": "export async function annualNarrativeEvidence(payload: unknown, clock: AnnualClock) {"
+      },
+      {
+        "line": 88,
+        "text": "export type AnnualEvidence = Extract<Awaited<ReturnType<typeof annualNarrativeEvidence>>, { ok: true }>;"
+      },
+      {
+        "line": 89,
+        "text": "export type AnnualMonthEvidence = AnnualEvidence[\"months\"][number];"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualComposer.ts",
+    "sha256": "e8329cd7b325ce17917fbb7ef71e93ab142b66277500479a91cc20c62a5c80ed",
+    "symbols": [
+      {
+        "line": 42,
+        "text": "export async function composeAnnualFortuneNarrative(payload: unknown, clock: AnnualClock) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualMonthNarrative.ts",
+    "sha256": "240f39a46dc8cadecd9ddd6cf3955b01f53d6dcbad702966a9979c2ca6e79c06",
+    "symbols": [
+      {
+        "line": 17,
+        "text": "export type AnnualEditorialState = { godUses: Map<TenGod, number>; features: Set<string>; relations: Set<string>; fusions: Set<string>; natalRoots?: Set<string>; interactions?: Set"
+      },
+      {
+        "line": 24,
+        "text": "export function annualBehavior(e: AnnualEvidence, m: AnnualMonthEvidence, god: TenGod, state: AnnualEditorialState) {"
+      },
+      {
+        "line": 67,
+        "text": "export function annualMonthNarrative(e: AnnualEvidence, m: AnnualMonthEvidence, c: MajorContext, state: AnnualEditorialState) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualInteractionReading.ts",
+    "sha256": "d007589d7e3acb208617b119d2698b8dc18c52f4eabafcf09bdf3112e87a3320",
+    "symbols": [
+      {
+        "line": 46,
+        "text": "export function annualMonthInteractions(e: AnnualEvidence, m: AnnualMonthEvidence, god: TenGod, used: Set<string> = new Set(),"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualEvidenceReading.ts",
+    "sha256": "71262f4dcc68bfa3ea2aa5571a8aaaad5f94374f40e2435bb83c2f2bee0d803a",
+    "symbols": [
+      {
+        "line": 7,
+        "text": "export function separateAnnualChapter(id: string, blocks: readonly NarrativeBlock[], packet: MaterialPacket, context?: MajorContext): NarrativeBlock[] {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualMonthPractice.ts",
+    "sha256": "96c520d83bc67f6b69b436d6340d809b9bd0c68dbd8d9e2b1d8119b82aaffc97",
+    "symbols": [
+      {
+        "line": 49,
+        "text": "export function annualMonthPractice(c: MajorContext, god: TenGod, occurrence: number) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualStories.ts",
+    "sha256": "cce67558f2374078809f086a5ee77451962717e396ca161c9ac00a3acb91c085",
+    "symbols": [
+      {
+        "line": 6,
+        "text": "export const ANNUAL_MONTH_STORIES: Record<TenGod, readonly [Story, Story]> = {"
+      },
+      {
+        "line": 51,
+        "text": "export const ANNUAL_TRANSIT_STORIES: Record<string, { title: string; body: string; theme: string }> = {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualSceneDetails.ts",
+    "sha256": "7ea1cfb3f806cee01e64039e5386b9d92d5ac7b736a879fd49da70e9c14030a5",
+    "symbols": [
+      {
+        "line": 108,
+        "text": "export function annualSceneDetail(c: MajorContext, god: TenGod, variant: number) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualRealization.ts",
+    "sha256": "3b7d4331855717483d1b98e061e9222c3d1a92161d2face2e563faf3b72aa430",
+    "symbols": [
+      {
+        "line": 29,
+        "text": "export function annualMonthLead(god: TenGod, variant: number, time: AnnualTime, month: number) {"
+      },
+      {
+        "line": 44,
+        "text": "export const annualGiftTitle = (feature: string, mode: MajorContext[\"mode\"], fallback: string) => giftTitles[feature]?.[mode] ?? fallback;"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/periodPlanner.ts",
+    "sha256": "ed0a1c4b9d35c656bd8c2df9ea72140d696e18167b4cf8743f7d7e75dc1cf39c",
+    "symbols": [
+      {
+        "line": 4,
+        "text": "export type PeriodImportance = \"HIGH\" | \"MEDIUM\" | \"BACKGROUND\";"
+      },
+      {
+        "line": 6,
+        "text": "export function planMajorYears(e: MajorEvidence) {"
+      },
+      {
+        "line": 22,
+        "text": "export function planAnnualMonths(e: AnnualEvidence) {"
+      },
+      {
+        "line": 39,
+        "text": "export function annualYearMap(e: AnnualEvidence) {"
+      },
+      {
+        "line": 54,
+        "text": "export function monthBoundaryDescription(m: AnnualMonthEvidence) {"
+      },
+      {
+        "line": 63,
+        "text": "export function friendlyTransition(label: string) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/timeProductContext.ts",
+    "sha256": "ca3fd07c2fdd39a43c3e1694f3c36b156c26750a8d5290c31cac0a93958c32c6",
+    "symbols": [
+      {
+        "line": 18,
+        "text": "export type TimeProductPeriod = {"
+      },
+      {
+        "line": 22,
+        "text": "export type TimeContextProjection = {"
+      },
+      {
+        "line": 36,
+        "text": "export function createTimeProductContext(input: NarrativeInput, version: string) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeShadow.ts",
+    "sha256": "6c0fe9e34c523442d4964bcb2328eb4964f2eb9426c3ca0ae0d472f7b79adef2",
+    "symbols": [
+      {
+        "line": 27,
+        "text": "export type V4ShadowClock = { readonly evaluatedAt: string; readonly policyDate?: string };"
+      },
+      {
+        "line": 33,
+        "text": "export async function generateV4ShadowReport(payload: unknown, clock: V4ShadowClock): Promise<ProductGenerationResult> {"
+      },
+      {
+        "line": 105,
+        "text": "export async function runV4ShadowJob(localStore: ReliabilityStore, clock: V4ShadowClock) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "sha256": "793ef8b1dce3b693e01a6a243a7dfcca793af467b7ac232b1219523029a2feee",
+    "symbols": [
+      {
+        "line": 28,
+        "text": "export type V4Composition ="
+      },
+      {
+        "line": 35,
+        "text": "export type V4RuntimeEvidence = {"
+      },
+      {
+        "line": 52,
+        "text": "export function stableV4Json(v: unknown): string {"
+      },
+      {
+        "line": 57,
+        "text": "export const v4Digest = (v: unknown) => createHash(\"sha256\").update(stableV4Json(v)).digest(\"hex\");"
+      },
+      {
+        "line": 62,
+        "text": "export function projectV4Composition(c: V4Composition): V4CustomerReport {"
+      },
+      {
+        "line": 87,
+        "text": "export function validateV4Publication(product: string, draft: unknown, evidence: unknown): { ok: boolean; errors: string[] } {"
+      },
+      {
+        "line": 172,
+        "text": "export function projectV4Tables(e: V4RuntimeEvidence): V4CustomerTables {"
+      },
+      {
+        "line": 188,
+        "text": "export function projectV4Snapshot(snapshot: unknown): V4ShadowView | null {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/annualFortuneEvidence.ts",
+    "sha256": "133314070c86ad93a77aa641f9100ff1c25a0dc98176e1ddb0a61594f53a9a08",
+    "symbols": [
+      {
+        "line": 47,
+        "text": "export interface AnnualFortuneEvidencePacket {"
+      },
+      {
+        "line": 270,
+        "text": "export type AnnualPersonInput = {"
+      },
+      {
+        "line": 744,
+        "text": "export function buildAnnualMonthlyFortunes(input: {"
+      },
+      {
+        "line": 1290,
+        "text": "export function buildAnnualFortuneEvidence(input: {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/annualFortuneReading.ts",
+    "sha256": "bd386bc141e177ec330c98225f5d4f4681730abb143642237a2addda70529836",
+    "symbols": [
+      {
+        "line": 13,
+        "text": "export type AnnualReadingSegment = {"
+      },
+      {
+        "line": 17,
+        "text": "export type AnnualReadingMonth = {"
+      },
+      {
+        "line": 21,
+        "text": "export type AnnualFortuneReading = {"
+      },
+      {
+        "line": 96,
+        "text": "export function annualRelationLabel(f: AnnualJieRelationFact): string {"
+      },
+      {
+        "line": 175,
+        "text": "export function buildAnnualFortuneReading(p: AnnualFortuneEvidencePacket): AnnualFortuneReading {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/annualMonthJie.ts",
+    "sha256": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+    "symbols": [
+      {
+        "line": 9,
+        "text": "export const ANNUAL_MONTH_CALCULATION_VERSION = \"annual-month-jie-kst-v2\" as const;"
+      },
+      {
+        "line": 14,
+        "text": "export type MonthDayunContext = {"
+      },
+      {
+        "line": 20,
+        "text": "export type AnnualJieRelationFact = (AnnualMonthRelationFact & { certainty: \"confirmed\" }) | {"
+      },
+      {
+        "line": 29,
+        "text": "export type AnnualMonthSegment = {"
+      },
+      {
+        "line": 43,
+        "text": "export type AnnualCalendarMonth = {"
+      },
+      {
+        "line": 53,
+        "text": "export type AnnualMonthCalendarInput = {"
+      },
+      {
+        "line": 62,
+        "text": "export const monthPillarText = (p: Pillar): string => p.stem + p.branch;"
+      },
+      {
+        "line": 67,
+        "text": "export function getAnnualJieBoundaries(year: number) {"
+      },
+      {
+        "line": 121,
+        "text": "export function buildAnnualMonthCalendar(input: AnnualMonthCalendarInput): readonly AnnualCalendarMonth[] {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/annualMonthExtendedEvidence.ts",
+    "sha256": "2294adaac0464612f2d9b5b433520a06f0c844c2d39b9ec581ed5fee02fe5872",
+    "symbols": [
+      {
+        "line": 8,
+        "text": "export const ANNUAL_MONTH_EVIDENCE_VERSION = \"annual-month-evidence-v1\" as const;"
+      },
+      {
+        "line": 9,
+        "text": "export type MonthFeature = {"
+      },
+      {
+        "line": 14,
+        "text": "export type ExtendedMonthSegment = {"
+      },
+      {
+        "line": 19,
+        "text": "export type AnnualMonthExtendedEvidence = {"
+      },
+      {
+        "line": 53,
+        "text": "export function extendAnnualMonthEvidence(packet: Pick<AnnualFortuneEvidencePacket, \"baseSaju\" | \"calendarMonths\">): AnnualMonthExtendedEvidence {"
+      },
+      {
+        "line": 83,
+        "text": "export function annualSegmentAt(months: readonly AnnualCalendarMonth[], instant: string) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/annualMonthRelationFacts.ts",
+    "sha256": "71eee0d4c83ce665cf35257ba08e0fdd6d7cef30880632539e15314dee73a7fe",
+    "symbols": [
+      {
+        "line": 7,
+        "text": "export type AnnualMonthRelationFact = {"
+      },
+      {
+        "line": 22,
+        "text": "export type AnnualMonthClassification = {"
+      },
+      {
+        "line": 35,
+        "text": "export function classifyAnnualMonthFacts(facts: readonly AnnualMonthRelationFact[]): AnnualMonthClassification {"
+      },
+      {
+        "line": 50,
+        "text": "export function buildAnnualMonthRelationFacts(input: {"
+      },
+      {
+        "line": 106,
+        "text": "export function explainAnnualMonthFact(fact: AnnualMonthRelationFact): string {"
+      },
+      {
+        "line": 117,
+        "text": "export function summarizeAnnualMonthFacts(facts: readonly AnnualMonthRelationFact[]): string {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+    "sha256": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe",
+    "symbols": [
+      {
+        "line": 15,
+        "text": "export const ANNUAL_FORTUNE_TIME_ZONE = \"Asia/Seoul\";"
+      },
+      {
+        "line": 16,
+        "text": "export const ANNUAL_FORTUNE_COMMERCE_YEAR_COUNT = 6;"
+      },
+      {
+        "line": 18,
+        "text": "export type AnnualFortuneSeoulDateParts = {"
+      },
+      {
+        "line": 24,
+        "text": "export type AnnualFortuneCommerceYearPolicy = {"
+      },
+      {
+        "line": 38,
+        "text": "export function getAnnualFortuneSeoulDateParts("
+      },
+      {
+        "line": 49,
+        "text": "export function getAnnualFortuneCurrentYear("
+      },
+      {
+        "line": 55,
+        "text": "export function getAnnualFortuneCommerceYearPolicy("
+      },
+      {
+        "line": 72,
+        "text": "export function isAnnualFortuneCommerceYearSelectable("
+      },
+      {
+        "line": 338,
+        "text": "export function getStemElement(stem: HeavenlyStem): FiveElement {"
+      },
+      {
+        "line": 342,
+        "text": "export function getBranchElement(branch: EarthlyBranch): FiveElement {"
+      },
+      {
+        "line": 346,
+        "text": "export function getStemYinYang(stem: HeavenlyStem): YinYang {"
+      },
+      {
+        "line": 350,
+        "text": "export function getBranchYinYang(branch: EarthlyBranch): YinYang {"
+      },
+      {
+        "line": 354,
+        "text": "export function getGeneratedElement(element: FiveElement): FiveElement {"
+      },
+      {
+        "line": 358,
+        "text": "export function getAnnualGanjiInfo(year: number): AnnualGanjiInfo {"
+      },
+      {
+        "line": 384,
+        "text": "export function getAnnualMonthGanjiInfo(params: {"
+      },
+      {
+        "line": 426,
+        "text": "export function getAnnualFortuneYearAccess(params: {"
+      },
+      {
+        "line": 488,
+        "text": "export function getTenGodForStemPair("
+      },
+      {
+        "line": 556,
+        "text": "export function getBranchPairRelations(left: EarthlyBranch, right: EarthlyBranch): readonly Pick<AnnualBranchInteraction, \"type\" | \"branches\">[] {"
+      },
+      {
+        "line": 664,
+        "text": "export function getAnnualBranchInteractions(params: {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/annualFortuneTypes.ts",
+    "sha256": "ad86f0c6e095a433ef2d3696b9411a2cefd5f080e5a17ad5c51a62a4e8d672f2",
+    "symbols": [
+      {
+        "line": 1,
+        "text": "export type AnnualFortuneMode ="
+      },
+      {
+        "line": 7,
+        "text": "export type HeavenlyStem ="
+      },
+      {
+        "line": 19,
+        "text": "export type EarthlyBranch ="
+      },
+      {
+        "line": 33,
+        "text": "export type FiveElement = \"wood\" | \"fire\" | \"earth\" | \"metal\" | \"water\";"
+      },
+      {
+        "line": 35,
+        "text": "export type YinYang = \"yang\" | \"yin\";"
+      },
+      {
+        "line": 37,
+        "text": "export type TenGod ="
+      },
+      {
+        "line": 49,
+        "text": "export interface AnnualGanjiInfo {"
+      },
+      {
+        "line": 62,
+        "text": "export interface AnnualMonthGanjiInfo {"
+      },
+      {
+        "line": 75,
+        "text": "export interface AnnualFortuneYearAccess {"
+      },
+      {
+        "line": 83,
+        "text": "export type AnnualBranchInteractionType ="
+      },
+      {
+        "line": 92,
+        "text": "export type AnnualPillarPosition = \"year\" | \"month\" | \"day\" | \"hour\";"
+      },
+      {
+        "line": 94,
+        "text": "export interface AnnualBranchInteraction {"
+      },
+      {
+        "line": 101,
+        "text": "export type AnnualFortuneYearAccessStatus ="
+      },
+      {
+        "line": 106,
+        "text": "export type AnnualFortuneDomainFlowKey ="
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuKnowledgeBase.ts",
+    "sha256": "bfdc165ef1d5e9740b11abd5dbe182c2b53dd0f41091d25e0bfc1e6afd168a9f",
+    "symbols": [
+      {
+        "line": 12,
+        "text": "export const FIVE_ELEMENTS = ["
+      },
+      {
+        "line": 20,
+        "text": "export const TEN_GODS = ["
+      },
+      {
+        "line": 1654,
+        "text": "export const SAJU_KNOWLEDGE_BASE = ["
+      },
+      {
+        "line": 1664,
+        "text": "export const SAJU_KNOWLEDGE_BY_ID = new Map("
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuFeatureTaxonomy.ts",
+    "sha256": "6ab3949dcd373b6dc99ec8b84caa62b85565614d850cbf10c74d335ba4b686e8",
+    "symbols": [
+      {
+        "line": 1650,
+        "text": "export const SAJU_FEATURE_TAXONOMY = ["
+      },
+      {
+        "line": 1664,
+        "text": "export const SAJU_FEATURE_BY_ID = new Map<string, SajuFeatureEntry>("
+      },
+      {
+        "line": 1668,
+        "text": "export function getSajuFeatureEntry(featureId: string): SajuFeatureEntry | undefined {"
+      },
+      {
+        "line": 1672,
+        "text": "export function requireSajuFeatureEntry(featureId: string): SajuFeatureEntry {"
+      },
+      {
+        "line": 1682,
+        "text": "export function findSajuFeatureByLabelOrAlias("
+      },
+      {
+        "line": 1702,
+        "text": "export type SajuFeatureCopySafetyViolation = {"
+      },
+      {
+        "line": 1722,
+        "text": "export function findUnsafeSajuFeatureSeedClaims(): readonly SajuFeatureCopySafetyViolation[] {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuKnowledgeTypes.ts",
+    "sha256": "40c2cc7282852a0971703c8c5855d8e1e1219ec4047d5aef2fc599f61c62f357",
+    "symbols": [
+      {
+        "line": 3,
+        "text": "export type FiveElement = \"wood\" | \"fire\" | \"earth\" | \"metal\" | \"water\";"
+      },
+      {
+        "line": 5,
+        "text": "export type TenGod ="
+      },
+      {
+        "line": 17,
+        "text": "export type SajuKnowledgeTopic ="
+      },
+      {
+        "line": 30,
+        "text": "export type SajuKnowledgeCategory ="
+      },
+      {
+        "line": 41,
+        "text": "export type KnowledgePhraseSeeds = {"
+      },
+      {
+        "line": 48,
+        "text": "export type SajuTopicInterpretation = {"
+      },
+      {
+        "line": 55,
+        "text": "export type SajuBalanceHints = {"
+      },
+      {
+        "line": 61,
+        "text": "export type SajuMatchingHints = {"
+      },
+      {
+        "line": 67,
+        "text": "export type SajuCareerHints = {"
+      },
+      {
+        "line": 73,
+        "text": "export type SajuMoneyHints = {"
+      },
+      {
+        "line": 79,
+        "text": "export type SajuPatternHints = {"
+      },
+      {
+        "line": 88,
+        "text": "export type SajuDayPillarHints = {"
+      },
+      {
+        "line": 98,
+        "text": "export type SajuKnowledgeEntry = {"
+      },
+      {
+        "line": 122,
+        "text": "export const SAJU_KNOWLEDGE_TOPICS = ["
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuFeatureTypes.ts",
+    "sha256": "eb73d56a19f5965d6283fd6df1f866bcc9a7135a628478dba001a23336bd04ff",
+    "symbols": [
+      {
+        "line": 1,
+        "text": "export type SajuFeatureCategory ="
+      },
+      {
+        "line": 13,
+        "text": "export type SajuFeatureTopic ="
+      },
+      {
+        "line": 25,
+        "text": "export type SajuFeaturePolarity = \"positive\" | \"warning\" | \"mixed\";"
+      },
+      {
+        "line": 27,
+        "text": "export type MbtiBridgeNeed ="
+      },
+      {
+        "line": 37,
+        "text": "export type SajuFeatureEntry = {"
+      },
+      {
+        "line": 58,
+        "text": "export type SajuFeatureScoreStrength ="
+      },
+      {
+        "line": 64,
+        "text": "export type SajuFeatureScore = {"
+      },
+      {
+        "line": 74,
+        "text": "export type SajuFeatureChapterId ="
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-generation/annualFortuneGenerationHandler.ts",
+    "sha256": "56498fb9dae10f233dda934b209284763c73535b14640f01fd5463fc4b85ce1d",
+    "symbols": [
+      {
+        "line": 43,
+        "text": "export type AnnualFortuneGenerationErrorCode ="
+      },
+      {
+        "line": 48,
+        "text": "export type AnnualFortuneGenerationResult ="
+      },
+      {
+        "line": 64,
+        "text": "export type AnnualFortuneGenerationHandlerOptions = {"
+      },
+      {
+        "line": 103,
+        "text": "export async function generateAnnualFortuneProductDraft("
+      },
+      {
+        "line": 221,
+        "text": "export function calculateAnnualFortuneSaju("
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-generation/annualMonthlyPublication.ts",
+    "sha256": "8b9659ef27e5b51ac959c42f10e559f013b5b6c7c1447a51172c215b66249a72",
+    "symbols": [
+      {
+        "line": 15,
+        "text": "export function buildAnnualMonthlyPublication(packet: AnnualFortuneEvidencePacket): Pick<"
+      },
+      {
+        "line": 54,
+        "text": "export function buildAnnualReadingPublication(packet: AnnualFortuneEvidencePacket): Partial<AnnualFortuneReportDraft> {"
+      },
+      {
+        "line": 67,
+        "text": "export function annualReadingMatches(packet: AnnualFortuneEvidencePacket): boolean {"
+      },
+      {
+        "line": 76,
+        "text": "export function annualMonthlyEvidenceMatches(packet: AnnualFortuneEvidencePacket): boolean {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-generation/annualMonthJiePublication.ts",
+    "sha256": "52b93a0c3b7b6379cc535fc126b3a006ee608f258876c2baa70c9b10be84ea89",
+    "symbols": [
+      {
+        "line": 5,
+        "text": "export const MONTH_JIE_BASIS = \"절입 기준 월운 · 한국 표준시\";"
+      },
+      {
+        "line": 8,
+        "text": "export const monthSegmentPeriod = (s: AnnualMonthSegment) => `${s.startKst.slice(5, 19).replace(\"T\", \" \")}~${s.endKstExclusive.slice(5, 19).replace(\"T\", \" \")} 미만 KST`;"
+      },
+      {
+        "line": 10,
+        "text": "export function explainAnnualJieFact(f: AnnualJieRelationFact): string {"
+      },
+      {
+        "line": 17,
+        "text": "export function describeAnnualMonthSegment(s: AnnualMonthSegment): string {"
+      },
+      {
+        "line": 24,
+        "text": "export function annualCalendarMonthTitle(month: AnnualCalendarMonth): string {"
+      },
+      {
+        "line": 30,
+        "text": "export function buildAnnualJieMonthlyPublication(months: readonly AnnualCalendarMonth[]): Pick<AnnualFortuneReportDraft, \"monthlyFlow\" | \"monthlyHighlights\" | \"monthlyFlowReading\">"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-generation/annualFortuneReportDraftValidator.ts",
+    "sha256": "8fa8f08149e25fd7e9d42730e6b569d52420b8e919357e30423f367dae640604",
+    "symbols": [
+      {
+        "line": 9,
+        "text": "export type AnnualFortuneReportDraftValidationResult = {"
+      },
+      {
+        "line": 16,
+        "text": "export type AnnualFortuneDraftQualitySummary = {"
+      },
+      {
+        "line": 282,
+        "text": "export function sanitizeAnnualFortuneKoreanCopy(text: string): string {"
+      },
+      {
+        "line": 366,
+        "text": "export function sanitizeAnnualFortuneVisibleText(text: string): string {"
+      },
+      {
+        "line": 370,
+        "text": "export function getAnnualMonthlyBasisDisplayLabel("
+      },
+      {
+        "line": 386,
+        "text": "export function getAnnualMonthlySectionBasisNote(): string {"
+      },
+      {
+        "line": 390,
+        "text": "export function getAnnualMonthlyCardBasisLabel(basis: string | null): string {"
+      },
+      {
+        "line": 428,
+        "text": "export type AnnualAdviceDomainLabel ="
+      },
+      {
+        "line": 440,
+        "text": "export type DomainLockedAnnualAdviceItem = {"
+      },
+      {
+        "line": 445,
+        "text": "export function inferAnnualAdviceDomain(body: string): AnnualAdviceDomainLabel {"
+      },
+      {
+        "line": 685,
+        "text": "export function buildAnnualDomainLockedFinalAdvice(params: {"
+      },
+      {
+        "line": 1372,
+        "text": "export function summarizeAnnualFortuneDraftQuality("
+      },
+      {
+        "line": 1572,
+        "text": "export function validateAnnualFortuneReportDraft("
+      },
+      {
+        "line": 1645,
+        "text": "export function assertValidAnnualFortuneReportDraft("
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-generation/reportInputAdapter.ts",
+    "sha256": "1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+    "symbols": [
+      {
+        "line": 26,
+        "text": "export type ReportInputAdapterOptions = {"
+      },
+      {
+        "line": 30,
+        "text": "export type ReportProductKind ="
+      },
+      {
+        "line": 38,
+        "text": "export type ReportInputAdapterErrorCode ="
+      },
+      {
+        "line": 57,
+        "text": "export type ReportInputAdapterResult<T> ="
+      },
+      {
+        "line": 68,
+        "text": "export type GenerationPersonInput = {"
+      },
+      {
+        "line": 81,
+        "text": "export type SinglePersonGenerationInput = {"
+      },
+      {
+        "line": 99,
+        "text": "export type CompatibilityGenerationInput = {"
+      },
+      {
+        "line": 110,
+        "text": "export type ReportGenerationInput ="
+      },
+      {
+        "line": 132,
+        "text": "export function getReportProductKind("
+      },
+      {
+        "line": 145,
+        "text": "export function normalizeReportInputPayload("
+      },
+      {
+        "line": 165,
+        "text": "export function toSinglePersonGenerationInput("
+      },
+      {
+        "line": 220,
+        "text": "export function toCompatibilityGenerationInput("
+      },
+      {
+        "line": 435,
+        "text": "export type {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/report-generation/productPreviewSnapshot.ts",
+    "sha256": "339ef6fdad096da95457bb9694b7727dd22604c88a8de0dea5433b32b2319274",
+    "symbols": [
+      {
+        "line": 19,
+        "text": "export const PRODUCT_PREVIEW_PRODUCT_TYPES = ["
+      },
+      {
+        "line": 28,
+        "text": "export type ProductPreviewProductType ="
+      },
+      {
+        "line": 31,
+        "text": "export type ComprehensiveV2ProductPreviewDraft ="
+      },
+      {
+        "line": 36,
+        "text": "export type ProductPreviewSnapshotDraft ="
+      },
+      {
+        "line": 50,
+        "text": "export type ProductPreviewSnapshotAccess = {"
+      },
+      {
+        "line": 56,
+        "text": "export type ProductPreviewSnapshot = {"
+      },
+      {
+        "line": 73,
+        "text": "export type ProductPreviewSnapshotErrorCode ="
+      },
+      {
+        "line": 82,
+        "text": "export type ProductPreviewSnapshotResult ="
+      },
+      {
+        "line": 92,
+        "text": "export type CreateProductPreviewSnapshotParams = {"
+      },
+      {
+        "line": 111,
+        "text": "export function createProductPreviewSnapshot("
+      },
+      {
+        "line": 177,
+        "text": "export function isProductPreviewSnapshot("
+      },
+      {
+        "line": 235,
+        "text": "export type { ReportProductKey, ReportProductSlug };"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/saju/customerDayun.ts",
+    "sha256": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123",
+    "symbols": [
+      {
+        "line": 10,
+        "text": "export const DAYUN_UNCERTAIN_MESSAGE = \"선택하신 출생시간 정보로는 대운 기준이 하나로 확정되지 않습니다. 정확한 출생시간을 입력해 주세요.\";"
+      },
+      {
+        "line": 11,
+        "text": "export type CustomerDayunInput = BirthTimeInput & { birthDate: string; gender: unknown; name?: string };"
+      },
+      {
+        "line": 12,
+        "text": "export type DayunTimeRange = { earliestKst: string; latestKst: string };"
+      },
+      {
+        "line": 13,
+        "text": "export type CustomerDayunCycle = MajorFortuneCycle & {"
+      },
+      {
+        "line": 17,
+        "text": "export type CustomerDayun = {"
+      },
+      {
+        "line": 38,
+        "text": "export type DayunSelection = {"
+      },
+      {
+        "line": 74,
+        "text": "export function formatDayunKst(instant: number): string {"
+      },
+      {
+        "line": 88,
+        "text": "export function calculateCustomerDayun(input: CustomerDayunInput): { ok: true; value: CustomerDayun } | Failure {"
+      },
+      {
+        "line": 155,
+        "text": "export function selectCustomerDayun(basis: CustomerDayun, targetYear: number, now?: Date): { ok: true; value: DayunSelection } | Failure {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/saju/lunarJavascriptPillars.ts",
+    "sha256": "eff812c0acb2d730ddeccf4304e150942f36c5c700bb10c4f31e8d0f89cf19f1",
+    "symbols": [
+      {
+        "line": 6,
+        "text": "export type LunarJavascriptPillarSet = {"
+      },
+      {
+        "line": 14,
+        "text": "export function createSajuCalendarContext(solarDateTimeKst: string) {"
+      },
+      {
+        "line": 39,
+        "text": "export function getLunarJavascriptPillarsFromSolarDateTime("
+      }
+    ]
+  },
+  {
+    "file": "src/lib/saju/solarTerms.ts",
+    "sha256": "4069419419f2872c4849883633674edae76ae2bac91cda991efdf8d85cee8e60",
+    "symbols": [
+      {
+        "line": 187,
+        "text": "export function getSolarTermContext(solarDateTimeKst: string) {"
+      },
+      {
+        "line": 229,
+        "text": "export function getSolarTermInstants(startKst: string, endKst: string): readonly number[] {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/book/paidRuntime.ts",
+    "sha256": "9130235b1bdcc313fc5806952df600ef8129aa5e3a402cd46b15fbafaba5fe59",
+    "symbols": [
+      {
+        "line": 12,
+        "text": "export async function runPublicPaidReportJob(store: ReliabilityStore, runtime: ReportWriterRuntime) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/book/storedReport.tsx",
+    "sha256": "ea5748a27f7f6fdad4a3faefb01546d2f855e7365541f6c4c676eaa18b6a5590",
+    "symbols": [
+      {
+        "line": 11,
+        "text": "export const validateBookPublication: typeof validateProductPublication = (product, draft, evidence) =>"
+      },
+      {
+        "line": 15,
+        "text": "export function storedBook(snapshot: unknown, shareUrl?: string | null) {"
+      },
+      {
+        "line": 22,
+        "text": "export function StoredBookReport({ snapshot, shareUrl, home, saveToLibrary, shareOwner }: { snapshot: unknown; shareUrl?: string | null; home?: string; saveToLibrary?: { reportId: "
+      }
+    ]
+  },
+  {
+    "file": "src/app/dev/book-preview/bookProjection.ts",
+    "sha256": "1759e0707414c5eef5f4efc9e067b2f4b54b9693743d80e5352463537996e222",
+    "symbols": [
+      {
+        "line": 40,
+        "text": "export function bookFeatureInventory(e: V4RuntimeEvidence, slot: \"person\" | \"personA\" | \"personB\", name: string): Entry[] {"
+      },
+      {
+        "line": 88,
+        "text": "export function projectBook(e: V4RuntimeEvidence): BookData | null {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/tickets/publicationWorker.ts",
+    "sha256": "9c8061b72cc096c8bf0c12d283ace23a651fdefb3feee4d5aa42c94cd76fef42",
+    "symbols": [
+      {
+        "line": 13,
+        "text": "export const TICKET_WORKER_LIMITS = { maxJobs: 2, claimWindowMs: 30_000, maxRssBytes: 1.25 * 1024 ** 3 } as const;"
+      },
+      {
+        "line": 14,
+        "text": "export async function runTicketPublicationJob(store: TicketPublicationStore, generate?: ProductGenerator): Promise<TicketResult> {"
+      },
+      {
+        "line": 46,
+        "text": "export async function runTicketPublicationBatch(store: TicketPublicationStore, dependencies: { now?: () => number; rss?: () => number; runJob?: typeof runTicketPublicationJob } = {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/tickets/localDatabase.ts",
+    "sha256": "931e1eba5d0bd46190d8a4e7eba1a45b376fd49819e8304416ded45aa7eab6c3",
+    "symbols": [
+      {
+        "line": 10,
+        "text": "export async function createTicketTestDatabase(): Promise<PGlite> {"
+      },
+      {
+        "line": 23,
+        "text": "export function sqlTicketStore(db: PGlite): TicketStore {"
+      },
+      {
+        "line": 27,
+        "text": "export function failNextLocalTicketPublish(user: string) {"
+      },
+      {
+        "line": 30,
+        "text": "export const localTicketUserId = (user: string) => {"
+      },
+      {
+        "line": 34,
+        "text": "export async function localTicketStore(): Promise<TicketStore | null> {"
+      },
+      {
+        "line": 49,
+        "text": "export async function localTicketDatabase() {"
+      },
+      {
+        "line": 54,
+        "text": "export async function grantTestReportTickets(store: TicketStore, user: string, scenario: \"one\" | \"several\") {"
+      }
+    ]
+  }
+]

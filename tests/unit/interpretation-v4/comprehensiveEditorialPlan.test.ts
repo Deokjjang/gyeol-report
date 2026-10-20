@@ -1,7 +1,6 @@
 import { afterAll, describe, expect, it } from "vitest";
 import { createHash } from "node:crypto";
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { buildComprehensiveEditorialPlan, COMPREHENSIVE_EDITORIAL_STEPS } from "../../../src/lib/interpretation-v4/comprehensiveEditorialPlan";
 import { COMPREHENSIVE_SECTIONS } from "../../../src/lib/interpretation-v4/comprehensivePlanCore";
 import { COMPREHENSIVE_SECTION_CONTRACTS } from "../../../src/lib/interpretation-v4/comprehensiveSectionContracts";
@@ -10,6 +9,9 @@ import { buildIntegratedMyeongliProfile } from "../../../src/lib/interpretation-
 import { schedulerInputs, schedulerPlan } from "./comprehensiveSchedulerFixtures";
 import { myProfile } from "./fusionSemanticFixtures";
 import { NARRATIVE_FIXTURES, fixtureInput } from "./narrativeFixtures";
+
+import moduleContract from "../../fixtures/technical-stabilization-01/module-contract.json";
+import { layerImports, readModuleGraph, runtimeImports } from "../../helpers/moduleDependencyGraph";
 
 const hash = (v: unknown) => createHash("sha256").update(JSON.stringify(v)).digest("hex");
 const review: unknown[] = [];
@@ -124,25 +126,11 @@ describe("actual 12-person review cohort and isolation", () => {
   }, 60000);
   it("scheduler is not consumed by prior layers, six products, UI, calculations or providers", () => {
     const modules = ["comprehensivePlanCore", "comprehensiveSectionContracts", "comprehensiveCandidateAdapter", "comprehensiveScoring", "comprehensiveConflictGraph", "comprehensiveReservation", "comprehensiveAllocator", "comprehensiveEvidenceOwnership", "comprehensiveDiagnostics", "comprehensiveQualityAudit", "comprehensiveEditorialPlan"];
-    function walk(dir: string): string[] { return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []); }
-    for (const file of walk("src")) {
-      // Product adapters may consume normalization/types; schedulers and core remain isolated.
-      if (["comprehensiveProductAdapter", "careerProductSelection", "careerProductNarrative", "relationshipProductView", "relationshipProductNarrative"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) continue;
-      const text = readFileSync(file, "utf8");
-      if (file === "src/lib/interpretation-v4/comprehensiveRenderability.ts") {
-        for (const m of modules.filter(m => m !== "comprehensivePlanCore")) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${m}["']`));
-        continue;
-      }
-      if (file === "src/lib/interpretation-v4/timeProductContext.ts") {
-        // Approved Major/Annual integration reuses candidates and types, not
-        // the Comprehensive scheduler/allocation or its section rendering.
-        for (const m of modules.filter(m => !["comprehensiveCandidateAdapter", "comprehensivePlanCore"].includes(m))) {
-          expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${m}["']`));
-        }
-        continue;
-      }
-      if (modules.some(m => file === `src/lib/interpretation-v4/${m}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|from ["'][^"']*(?:Composer|bookProjection|runtimeShadow|supabase|openai)/i);
-      else if (!["narrativeSceneCore", "narrativeTitleCore", "comprehensiveNarrativeAdapter", "comprehensiveManuscriptCore", "comprehensiveSectionRenderer", "comprehensiveManuscriptValidator", "comprehensiveManuscriptRenderer", "narrativeMbtiReason", "narrativeMeaningSignature", "narrativePositiveReward", "narrativeTitleShort", "comprehensiveManuscriptPolish", "operatingRuleCore", "operatingRuleBuilder", "narrativeHumanFirst", "narrativeHumanSurface", "narrativeCausality", "narrativeRecovery"].some(m => file === `src/lib/interpretation-v4/${m}.ts`)) for (const m of modules) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${m}["']`));
+    expect(layerImports(readModuleGraph(), modules)).toEqual(moduleContract.layers.scheduler);
+    for (const name of modules) {
+      const file = `src/lib/interpretation-v4/${name}.ts`, text = readFileSync(file, "utf8");
+      expect(text, file).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(/i);
+      expect(runtimeImports(text, file).specifiers.join("\n"), file).not.toMatch(/Composer|bookProjection|runtimeShadow|supabase|openai/i);
     }
   });
 });

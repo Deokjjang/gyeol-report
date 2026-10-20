@@ -1,0 +1,1601 @@
+[
+  {
+    "nodeId": "fixture-comprehensive-A:node:1034",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-comprehensive-A:node:1577",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-comprehensive-F:node:51",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-comprehensive-F:node:77",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-career-A:node:2566",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-career-A:node:3313",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-career-F:node:9",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-career-F:node:117",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-love-A:node:1571",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-love-A:node:3720",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-love-F:node:25",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-love-F:node:144",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-A:node:108",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-A:node:1408",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-A:node:2042",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "directional-harmony"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-A:node:2717",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "wonjin"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-A:node:4024",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "punishment"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-A:node:4228",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "stem-combination"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-A:node:4739",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-A:node:6875",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-A:node:6922",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "break"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-marriage:node:108",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-marriage:node:1408",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-marriage:node:2042",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "directional-harmony"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-marriage:node:2717",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "wonjin"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-marriage:node:4024",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "punishment"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-marriage:node:4228",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "stem-combination"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-marriage:node:4739",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-marriage:node:6875",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-marriage:node:6922",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "break"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-parentChild:node:108",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-parentChild:node:1408",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-parentChild:node:2042",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "directional-harmony"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-parentChild:node:2717",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "wonjin"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-parentChild:node:4025",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "punishment"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-parentChild:node:4229",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "stem-combination"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-parentChild:node:4740",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-parentChild:node:6876",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-parentChild:node:6923",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "break"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-coworker:node:108",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-coworker:node:1408",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-coworker:node:2042",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "directional-harmony"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-coworker:node:2717",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "wonjin"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-coworker:node:4024",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "punishment"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-coworker:node:4228",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "stem-combination"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-coworker:node:4739",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-coworker:node:6875",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-coworker:node:6922",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "break"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-managerReport:node:108",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-managerReport:node:1408",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-managerReport:node:2042",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "directional-harmony"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-managerReport:node:2717",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "wonjin"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-managerReport:node:4025",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "punishment"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-managerReport:node:4229",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "stem-combination"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-managerReport:node:4740",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-managerReport:node:6876",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-managerReport:node:6923",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "break"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-businessPartner:node:108",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-businessPartner:node:1408",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-businessPartner:node:2042",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "directional-harmony"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-businessPartner:node:2717",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "wonjin"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-businessPartner:node:4024",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "punishment"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-businessPartner:node:4228",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "stem-combination"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-businessPartner:node:4739",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-businessPartner:node:6876",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-businessPartner:node:6923",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "break"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-friendship:node:108",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-friendship:node:1408",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-friendship:node:2042",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "directional-harmony"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-friendship:node:2717",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "wonjin"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-friendship:node:4024",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "punishment"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-friendship:node:4228",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "stem-combination"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-friendship:node:4739",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-friendship:node:6876",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-friendship:node:6923",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "break"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-major-A:node:376",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-major-A:node:2926",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-major-F:node:225",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-major-F:node:269",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-A:node:401",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-A:node:1081",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "BAEKHODAESAL",
+          "NATAL_ONLY_RULE_NO_TRANSIT_CONTRACT"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-A:node:1809",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "banghap",
+          "NO_VERIFIED_CANONICAL_RULE"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-A:node:2455",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_COMPOSITE",
+        "refs": [
+          "Existing pair relations do not establish an independent 3/4-layer formation"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-A:node:2687",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "HYEONCHIMSAL",
+          "NATAL_ONLY_RULE_NO_TRANSIT_CONTRACT"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-A:node:3068",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-F:node:195",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "banghap",
+          "NO_VERIFIED_CANONICAL_RULE"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-F:node:217",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_COMPOSITE",
+        "refs": [
+          "Existing pair relations do not establish an independent 3/4-layer formation"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-F:node:233",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "BAEKHODAESAL",
+          "NATAL_ONLY_RULE_NO_TRANSIT_CONTRACT"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-F:node:389",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-F:node:458",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-F:node:482",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "HYEONCHIMSAL",
+          "NATAL_ONLY_RULE_NO_TRANSIT_CONTRACT"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-major-transition-C:node:507",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-major-transition-C:node:1455",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-transition-C2028:node:547",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-transition-C2028:node:768",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "BAEKHODAESAL",
+          "NATAL_ONLY_RULE_NO_TRANSIT_CONTRACT"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-transition-C2028:node:1572",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-transition-C2028:node:1766",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_COMPOSITE",
+        "refs": [
+          "Existing pair relations do not establish an independent 3/4-layer formation"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-transition-C2028:node:2455",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "banghap",
+          "NO_VERIFIED_CANONICAL_RULE"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-transition-C2028:node:3401",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "HYEONCHIMSAL",
+          "NATAL_ONLY_RULE_NO_TRANSIT_CONTRACT"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-unknown-both:node:8",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-unknown-both:node:73",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "punishment"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-unknown-both:node:82",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "wonjin"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-unknown-both:node:89",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "break"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-unknown-both:node:132",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "stem-combination"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-unknown-both:node:191",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-unknown-both:node:199",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-unknown-both:node:219",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-unknown-both:node:235",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "directional-harmony"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-slot-swap:node:796",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-slot-swap:node:2003",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-slot-swap:node:2026",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "directional-harmony"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-slot-swap:node:2692",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "wonjin"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-slot-swap:node:4018",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "punishment"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-slot-swap:node:4219",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "stem-combination"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-slot-swap:node:4700",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-slot-swap:node:5285",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-slot-swap:node:6907",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "break"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-same-natal-different-mbti:node:1231",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-same-natal-different-mbti:node:1770",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-same-mbti-different-natal:node:2752",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-same-mbti-different-natal:node:3533",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-same-natal-career:node:1031",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-same-natal-career:node:1572",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-ranged-transition:node:151",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "BAEKHODAESAL",
+          "NATAL_ONLY_RULE_NO_TRANSIT_CONTRACT"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-ranged-transition:node:541",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "banghap",
+          "NO_VERIFIED_CANONICAL_RULE"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-ranged-transition:node:2346",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_COMPOSITE",
+        "refs": [
+          "Existing pair relations do not establish an independent 3/4-layer formation"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-ranged-transition:node:2402",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-ranged-transition:node:2903",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "HYEONCHIMSAL",
+          "NATAL_ONLY_RULE_NO_TRANSIT_CONTRACT"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-ranged-transition:node:3323",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-before-first-dayun:node:1416",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_COMPOSITE",
+        "refs": [
+          "Existing pair relations do not establish an independent 3/4-layer formation"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-before-first-dayun:node:2180",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "HYEONCHIMSAL",
+          "NATAL_ONLY_RULE_NO_TRANSIT_CONTRACT"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-before-first-dayun:node:2437",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "BAEKHODAESAL",
+          "NATAL_ONLY_RULE_NO_TRANSIT_CONTRACT"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-before-first-dayun:node:2532",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-before-first-dayun:node:3490",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "banghap",
+          "NO_VERIFIED_CANONICAL_RULE"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-annual-before-first-dayun:node:4111",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-no-detected-pair:node:14",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "break"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-no-detected-pair:node:32",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "stem-combination"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-no-detected-pair:node:47",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "punishment"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-no-detected-pair:node:81",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "wonjin"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-no-detected-pair:node:126",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-no-detected-pair:node:157",
+    "reasons": [
+      {
+        "code": "MISSING_PRODUCER_OUTPUT",
+        "refs": [
+          "Persisted V4 packet does not expose the complete resonance source graph; no new claims are generated here"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-no-detected-pair:node:173",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-no-detected-pair:node:194",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "109 facet definitions are declarations, not 109 observed facts"
+        ]
+      }
+    ]
+  },
+  {
+    "nodeId": "fixture-compatibility-no-detected-pair:node:201",
+    "reasons": [
+      {
+        "code": "UNSUPPORTED_PRODUCER",
+        "refs": [
+          "directional-harmony"
+        ]
+      }
+    ]
+  }
+]

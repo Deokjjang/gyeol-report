@@ -1,0 +1,11 @@
+> gyeol-report@0.1.0 test
+> vitest run tests/unit/report-knowledge/fusionKnowledgeResearch.test.ts
+
+
+ RUN  v4.1.5 /private/tmp/gyeol-fusion-semantic-knowledge-depth-01
+
+
+ Test Files  1 passed (1)
+      Tests  201 passed (201)
+   Start at  18:35:31
+   Duration  1.58s (transform 645ms, setup 47ms, import 736ms, tests 480ms, environment 0ms)

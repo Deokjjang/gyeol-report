@@ -1,0 +1,54 @@
+{
+  "status": "OFFLINE_IMPLEMENTED",
+  "newTests": {
+    "pass": 125,
+    "fail": 0,
+    "skip": 0
+  },
+  "existingRelated": {
+    "pass": 629,
+    "fail": 0,
+    "skip": 0
+  },
+  "knownFailedFiles": {
+    "pass": 5837,
+    "fail": 46,
+    "sameFullSignatures": true
+  },
+  "typescript": {
+    "before": 0,
+    "after": 0,
+    "new": 0
+  },
+  "lint": "PASS",
+  "build": "PASS",
+  "warnings": 0,
+  "originalFiles": 4578,
+  "books": 17,
+  "digests": 102,
+  "pairVariants": 32,
+  "oldWorktrees": 46,
+  "dirtyFiles": 11,
+  "deterministicJson": 25,
+  "customerApproved": 0,
+  "customerSelections": 0,
+  "claims": 0,
+  "preview": {
+    "scope": "implementation",
+    "state": "READY",
+    "sha": "e665da249a4ba9882f4465dee74dec4cd323197c",
+    "url": "https://gyeol-report-9ipxccpfu-gyeol-report-s-projects.vercel.app",
+    "finalReceiptOnlyHeadVerifiedInCompletionResponse": true
+  },
+  "productionApproved": false,
+  "newEngineTests": {
+    "pass": 115,
+    "fail": 0,
+    "skip": 0
+  },
+  "artifactTests": {
+    "pass": 10,
+    "fail": 0,
+    "skip": 0
+  }
+}

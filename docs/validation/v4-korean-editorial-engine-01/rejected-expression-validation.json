@@ -1,0 +1,380 @@
+[
+  {
+    "id": "ker:invariant:0",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:invariant:1",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:invariant:2",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:invariant:3",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:invariant:4",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:invariant:5",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:invariant:6",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:invariant:7",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:invariant:8",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:invariant:9",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:invariant:10",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:invariant:11",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:invariant:12",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:invariant:13",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:1",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:1:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:2",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:2:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:3",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:3:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:4",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:4:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:5",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:5:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:6",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:6:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:7",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:7:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:8",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:8:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:9",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:9:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:10",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:10:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:11",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:11:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:12",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:12:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:13",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:13:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:14",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:14:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:15",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:15:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:16",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:16:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:17",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:17:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:18",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:18:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:19",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:19:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:20",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  },
+  {
+    "id": "ker:rejected:20:soft",
+    "rejected": true,
+    "errors": [
+      "ACTUAL_TEXT_NOT_LICENSED_BY_TYPED_MEANING"
+    ]
+  }
+]

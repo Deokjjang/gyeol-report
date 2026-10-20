@@ -219,7 +219,7 @@ describe("annualFortuneReportDraftValidator", () => {
     });
 
     expect(result.ok).toBe(true);
-    expect("interestArea" in (result.value as Record<string, unknown>)).toBe(
+    expect("interestArea" in result.value!).toBe(
       false,
     );
   });
@@ -506,7 +506,7 @@ describe("annualFortuneReportDraftValidator", () => {
   });
 
   it("rejects missing monthlyFlow", () => {
-    const draft = { ...createValidAnnualDraft() } as Partial<AnnualFortuneReportDraft>;
+    const draft = { ...createValidAnnualDraft() } as { -readonly [K in keyof AnnualFortuneReportDraft]?: AnnualFortuneReportDraft[K] };
     delete draft.monthlyFlow;
 
     expect(validateAnnualFortuneReportDraft(draft).ok).toBe(false);

@@ -1,0 +1,840 @@
+{
+  "original": [
+    {
+      "engine": "comprehensive",
+      "fixture": "fixture-comprehensive-A",
+      "requirementsHash": "705442222494b5e3dd58df472dd2089f4f4b3402a913b62e4271731a5c91a120"
+    },
+    {
+      "engine": "comprehensive",
+      "fixture": "fixture-comprehensive-F",
+      "requirementsHash": "705442222494b5e3dd58df472dd2089f4f4b3402a913b62e4271731a5c91a120"
+    },
+    {
+      "engine": "career",
+      "fixture": "fixture-career-A",
+      "requirementsHash": "b5f502821f9b6d16b5a530130793dcd8cf2254a51b42e2652472ebbeda43675a"
+    },
+    {
+      "engine": "career",
+      "fixture": "fixture-career-F",
+      "requirementsHash": "b5f502821f9b6d16b5a530130793dcd8cf2254a51b42e2652472ebbeda43675a"
+    },
+    {
+      "engine": "love",
+      "fixture": "fixture-love-A",
+      "requirementsHash": "3777ae8a19b700b1e299538ea7d32b2f90f191961e15ce8e30e10f0bc2a26832"
+    },
+    {
+      "engine": "love",
+      "fixture": "fixture-love-F",
+      "requirementsHash": "3777ae8a19b700b1e299538ea7d32b2f90f191961e15ce8e30e10f0bc2a26832"
+    },
+    {
+      "engine": "compatibility-love",
+      "fixture": "fixture-compatibility-A",
+      "requirementsHash": "4a90c137907f3763e43ba4daaedeb6ac4d1b6d8255ce849a825813f6c8b08cb7"
+    },
+    {
+      "engine": "compatibility-marriage",
+      "fixture": "fixture-compatibility-marriage",
+      "requirementsHash": "7473d1fe7ae6fbe4ad23a1e6e32bd47aa8f4f29f4e531f32499021acfb819e55"
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "fixture": "fixture-compatibility-parentChild",
+      "requirementsHash": "c8dba926b8b1433d7b265528d8381a2112b36f1bc97ce6cf460b16ea4ab6efe2"
+    },
+    {
+      "engine": "compatibility-coworker",
+      "fixture": "fixture-compatibility-coworker",
+      "requirementsHash": "f6ec72406be7b66279b47403fc76fdaa8112f695172ef6341f4e0d94cd83ae33"
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "fixture": "fixture-compatibility-managerReport",
+      "requirementsHash": "361e38b774b53f81bff1c5eafbadca8cf22e6e612073bfa711ba4238db74d118"
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "fixture": "fixture-compatibility-businessPartner",
+      "requirementsHash": "c78b50886e9c1598ab24e775d8b6ffca886c5e2d39273a351985ec526ee43887"
+    },
+    {
+      "engine": "compatibility-friendship",
+      "fixture": "fixture-compatibility-friendship",
+      "requirementsHash": "8ffa093de04285413be896103a460b37be553f9a25745195a60654ec8d7dc6a3"
+    },
+    {
+      "engine": "major-fortune",
+      "fixture": "fixture-major-A",
+      "requirementsHash": "3e5aa62c22a1e9d4086920997799e0b98d4657d8656b54c51722d30015a06300"
+    },
+    {
+      "engine": "major-fortune",
+      "fixture": "fixture-major-F",
+      "requirementsHash": "9f4ce8b2d9d8ecfaa4e70c29db00c4cdc4624d52cf5bb7e15f8f57d914a111cd"
+    },
+    {
+      "engine": "annual-fortune",
+      "fixture": "fixture-annual-A",
+      "requirementsHash": "95465c7429d527a8d24dda83766fd952d058880f3d8e7b2d8b937f2b8b4ab9fc"
+    },
+    {
+      "engine": "annual-fortune",
+      "fixture": "fixture-annual-F",
+      "requirementsHash": "95465c7429d527a8d24dda83766fd952d058880f3d8e7b2d8b937f2b8b4ab9fc"
+    },
+    {
+      "engine": "major-fortune",
+      "fixture": "fixture-major-transition-C",
+      "requirementsHash": "337ec9c6aae2ff897dcd0b060dff61d11def2c063a849cd1d00f2887eadabdfc"
+    },
+    {
+      "engine": "annual-fortune",
+      "fixture": "fixture-annual-transition-C2028",
+      "requirementsHash": "95465c7429d527a8d24dda83766fd952d058880f3d8e7b2d8b937f2b8b4ab9fc"
+    },
+    {
+      "engine": "compatibility-love",
+      "fixture": "fixture-compatibility-unknown-both",
+      "requirementsHash": "4a90c137907f3763e43ba4daaedeb6ac4d1b6d8255ce849a825813f6c8b08cb7"
+    },
+    {
+      "engine": "compatibility-love",
+      "fixture": "fixture-compatibility-slot-swap",
+      "requirementsHash": "4a90c137907f3763e43ba4daaedeb6ac4d1b6d8255ce849a825813f6c8b08cb7"
+    },
+    {
+      "engine": "comprehensive",
+      "fixture": "fixture-same-natal-different-mbti",
+      "requirementsHash": "705442222494b5e3dd58df472dd2089f4f4b3402a913b62e4271731a5c91a120"
+    },
+    {
+      "engine": "comprehensive",
+      "fixture": "fixture-same-mbti-different-natal",
+      "requirementsHash": "705442222494b5e3dd58df472dd2089f4f4b3402a913b62e4271731a5c91a120"
+    },
+    {
+      "engine": "career",
+      "fixture": "fixture-same-natal-career",
+      "requirementsHash": "b5f502821f9b6d16b5a530130793dcd8cf2254a51b42e2652472ebbeda43675a"
+    },
+    {
+      "engine": "annual-fortune",
+      "fixture": "fixture-annual-ranged-transition",
+      "requirementsHash": "95465c7429d527a8d24dda83766fd952d058880f3d8e7b2d8b937f2b8b4ab9fc"
+    },
+    {
+      "engine": "annual-fortune",
+      "fixture": "fixture-annual-before-first-dayun",
+      "requirementsHash": "95465c7429d527a8d24dda83766fd952d058880f3d8e7b2d8b937f2b8b4ab9fc"
+    },
+    {
+      "engine": "compatibility-love",
+      "fixture": "fixture-compatibility-no-detected-pair",
+      "requirementsHash": "4a90c137907f3763e43ba4daaedeb6ac4d1b6d8255ce849a825813f6c8b08cb7"
+    }
+  ],
+  "rehearsal": [
+    {
+      "engine": "comprehensive",
+      "audit": {
+        "kind": "NON_TEMPORAL",
+        "newTemporalAssertions": 0
+      }
+    },
+    {
+      "engine": "career",
+      "audit": {
+        "kind": "NON_TEMPORAL",
+        "newTemporalAssertions": 0
+      }
+    },
+    {
+      "engine": "love",
+      "audit": {
+        "kind": "NON_TEMPORAL",
+        "newTemporalAssertions": 0
+      }
+    },
+    {
+      "engine": "major-fortune",
+      "audit": {
+        "kind": "MAJOR_FORTUNE",
+        "editorialHorizonYears": 14,
+        "years": [
+          2023,
+          2024,
+          2025,
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2031,
+          2032,
+          2033,
+          2034,
+          2035,
+          2036
+        ],
+        "tenYearCyclesNotReplacedByHorizon": true,
+        "exactOrRangeTransitionNotModified": true,
+        "assignments": [
+          {
+            "question": "synthetic:major:q:2028:transition",
+            "period": "2028",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2028-01-01T00:00:00+09:00",
+                "endExclusive": "2029-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              },
+              {
+                "scope": "dayun",
+                "start": "2028-04-23T21:42:00+09:00",
+                "endExclusive": "2038-04-23T21:42:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "COMPARISON"
+          },
+          {
+            "question": "synthetic:major:q:2023:background",
+            "period": "2023",
+            "windows": [
+              {
+                "scope": "dayun",
+                "start": "2018-04-23T21:42:00+09:00",
+                "endExclusive": "2028-04-23T21:42:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          },
+          {
+            "question": "synthetic:major:q:2024:annual",
+            "period": "2024",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2024-01-01T00:00:00+09:00",
+                "endExclusive": "2025-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          },
+          {
+            "question": "synthetic:major:q:2024:background",
+            "period": "2024",
+            "windows": [
+              {
+                "scope": "dayun",
+                "start": "2018-04-23T21:42:00+09:00",
+                "endExclusive": "2028-04-23T21:42:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          },
+          {
+            "question": "synthetic:major:q:2025:annual",
+            "period": "2025",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2025-01-01T00:00:00+09:00",
+                "endExclusive": "2026-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          },
+          {
+            "question": "synthetic:major:q:2025:domain",
+            "period": "2025",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2025-01-01T00:00:00+09:00",
+                "endExclusive": "2026-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              },
+              {
+                "scope": "dayun",
+                "start": "2018-04-23T21:42:00+09:00",
+                "endExclusive": "2028-04-23T21:42:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "CONDITIONAL_APPLICATION"
+          },
+          {
+            "question": "synthetic:major:q:2026:annual",
+            "period": "2026",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2026-01-01T00:00:00+09:00",
+                "endExclusive": "2027-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          },
+          {
+            "question": "synthetic:major:q:2027:annual",
+            "period": "2027",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2027-01-01T00:00:00+09:00",
+                "endExclusive": "2028-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          },
+          {
+            "question": "synthetic:major:q:2029:annual",
+            "period": "2029",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2029-01-01T00:00:00+09:00",
+                "endExclusive": "2030-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          },
+          {
+            "question": "synthetic:major:q:2030:annual",
+            "period": "2030",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2030-01-01T00:00:00+09:00",
+                "endExclusive": "2031-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          },
+          {
+            "question": "synthetic:major:q:2031:annual",
+            "period": "2031",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2031-01-01T00:00:00+09:00",
+                "endExclusive": "2032-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          },
+          {
+            "question": "synthetic:major:q:2032:annual",
+            "period": "2032",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2032-01-01T00:00:00+09:00",
+                "endExclusive": "2033-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          },
+          {
+            "question": "synthetic:major:q:2033:annual",
+            "period": "2033",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2033-01-01T00:00:00+09:00",
+                "endExclusive": "2034-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          },
+          {
+            "question": "synthetic:major:q:2034:annual",
+            "period": "2034",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2034-01-01T00:00:00+09:00",
+                "endExclusive": "2035-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          },
+          {
+            "question": "synthetic:major:q:2035:annual",
+            "period": "2035",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2035-01-01T00:00:00+09:00",
+                "endExclusive": "2036-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          },
+          {
+            "question": "synthetic:major:q:2036:annual",
+            "period": "2036",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2036-01-01T00:00:00+09:00",
+                "endExclusive": "2037-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          },
+          {
+            "question": "synthetic:major:q:2023:annual",
+            "period": "2023",
+            "windows": [
+              {
+                "scope": "annual",
+                "start": "2023-01-01T00:00:00+09:00",
+                "endExclusive": "2024-01-01T00:00:00+09:00",
+                "certainty": "confirmed",
+                "originalBounds": {
+                  "syntheticOnly": true
+                },
+                "compatibleCombination": true
+              }
+            ],
+            "informationFunction": "EXPLANATION"
+          }
+        ],
+        "unknownIntervalsRemainUnknown": true
+      }
+    },
+    {
+      "engine": "annual-fortune",
+      "audit": {
+        "kind": "ANNUAL_FORTUNE",
+        "civilMonths": 12,
+        "registeredSegments": 16,
+        "months": [
+          {
+            "civilMonth": 1,
+            "requiredSegments": [
+              {
+                "id": "segment-1",
+                "start": "2026-01-01T00:00:00+09:00",
+                "endExclusive": "2026-02-01T00:00:00+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-before",
+                "monthPillar": "synthetic-month-1",
+                "activeDayun": 1,
+                "uncertainDayun": false
+              }
+            ],
+            "plannedQuestions": [
+              "synthetic:annual:q:1"
+            ],
+            "fullMonthMeaningApproved": false,
+            "focusSegmentIsNotWholeMonth": true
+          },
+          {
+            "civilMonth": 2,
+            "requiredSegments": [
+              {
+                "id": "segment-2",
+                "start": "2026-02-04T05:02:08+09:00",
+                "endExclusive": "2026-03-01T00:00:00+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-after",
+                "monthPillar": "synthetic-month-2",
+                "activeDayun": 1,
+                "uncertainDayun": false
+              },
+              {
+                "id": "feb-before",
+                "start": "2026-02-01T00:00:00+09:00",
+                "endExclusive": "2026-02-04T05:02:08+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-before",
+                "monthPillar": "synthetic-old-month",
+                "activeDayun": 1,
+                "uncertainDayun": false
+              }
+            ],
+            "plannedQuestions": [
+              "synthetic:annual:q:2"
+            ],
+            "fullMonthMeaningApproved": false,
+            "focusSegmentIsNotWholeMonth": true
+          },
+          {
+            "civilMonth": 3,
+            "requiredSegments": [
+              {
+                "id": "segment-3",
+                "start": "2026-03-01T00:00:00+09:00",
+                "endExclusive": "2026-04-01T00:00:00+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-after",
+                "monthPillar": "synthetic-month-3",
+                "activeDayun": 1,
+                "uncertainDayun": false
+              }
+            ],
+            "plannedQuestions": [
+              "synthetic:annual:q:3"
+            ],
+            "fullMonthMeaningApproved": false,
+            "focusSegmentIsNotWholeMonth": true
+          },
+          {
+            "civilMonth": 4,
+            "requiredSegments": [
+              {
+                "id": "segment-4",
+                "start": "2026-04-23T21:42:00+09:00",
+                "endExclusive": "2026-05-01T00:00:00+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-after",
+                "monthPillar": "synthetic-month-4",
+                "activeDayun": 2,
+                "uncertainDayun": false
+              },
+              {
+                "id": "april-before",
+                "start": "2026-04-01T00:00:00+09:00",
+                "endExclusive": "2026-04-04T15:03:06+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-after",
+                "monthPillar": "synthetic-previous-month",
+                "activeDayun": 1,
+                "uncertainDayun": false
+              },
+              {
+                "id": "april-middle",
+                "start": "2026-04-04T15:03:06+09:00",
+                "endExclusive": "2026-04-23T21:42:00+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-after",
+                "monthPillar": "synthetic-month-4",
+                "activeDayun": 1,
+                "uncertainDayun": false
+              }
+            ],
+            "plannedQuestions": [
+              "synthetic:annual:q:4"
+            ],
+            "fullMonthMeaningApproved": false,
+            "focusSegmentIsNotWholeMonth": true
+          },
+          {
+            "civilMonth": 5,
+            "requiredSegments": [
+              {
+                "id": "segment-5",
+                "start": "2026-05-01T00:00:00+09:00",
+                "endExclusive": "2026-06-01T00:00:00+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-after",
+                "monthPillar": "synthetic-month-5",
+                "activeDayun": 2,
+                "uncertainDayun": false
+              }
+            ],
+            "plannedQuestions": [
+              "synthetic:annual:q:5"
+            ],
+            "fullMonthMeaningApproved": false,
+            "focusSegmentIsNotWholeMonth": true
+          },
+          {
+            "civilMonth": 6,
+            "requiredSegments": [
+              {
+                "id": "segment-6",
+                "start": "2026-06-01T00:00:00+09:00",
+                "endExclusive": "2026-07-01T00:00:00+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-after",
+                "monthPillar": "synthetic-month-6",
+                "activeDayun": 2,
+                "uncertainDayun": false
+              }
+            ],
+            "plannedQuestions": [
+              "synthetic:annual:q:6"
+            ],
+            "fullMonthMeaningApproved": false,
+            "focusSegmentIsNotWholeMonth": true
+          },
+          {
+            "civilMonth": 7,
+            "requiredSegments": [
+              {
+                "id": "segment-7",
+                "start": "2026-07-01T00:00:00+09:00",
+                "endExclusive": "2026-08-01T00:00:00+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-after",
+                "monthPillar": "synthetic-month-7",
+                "activeDayun": 2,
+                "uncertainDayun": false
+              }
+            ],
+            "plannedQuestions": [
+              "synthetic:annual:q:7"
+            ],
+            "fullMonthMeaningApproved": false,
+            "focusSegmentIsNotWholeMonth": true
+          },
+          {
+            "civilMonth": 8,
+            "requiredSegments": [
+              {
+                "id": "segment-8",
+                "start": "2026-08-08T21:59:59+09:00",
+                "endExclusive": "2026-09-01T00:00:00+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-after",
+                "monthPillar": "synthetic-month-8",
+                "activeDayun": 2,
+                "uncertainDayun": false
+              },
+              {
+                "id": "aug-range",
+                "start": "2026-08-01T00:00:00+09:00",
+                "endExclusive": "2026-08-08T21:59:59+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-after",
+                "monthPillar": "synthetic-month-8",
+                "activeDayun": null,
+                "uncertainDayun": true
+              }
+            ],
+            "plannedQuestions": [
+              "synthetic:annual:q:8"
+            ],
+            "fullMonthMeaningApproved": false,
+            "focusSegmentIsNotWholeMonth": true
+          },
+          {
+            "civilMonth": 9,
+            "requiredSegments": [
+              {
+                "id": "segment-9",
+                "start": "2026-09-01T00:00:00+09:00",
+                "endExclusive": "2026-10-01T00:00:00+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-after",
+                "monthPillar": "synthetic-month-9",
+                "activeDayun": 2,
+                "uncertainDayun": false
+              }
+            ],
+            "plannedQuestions": [
+              "synthetic:annual:q:9"
+            ],
+            "fullMonthMeaningApproved": false,
+            "focusSegmentIsNotWholeMonth": true
+          },
+          {
+            "civilMonth": 10,
+            "requiredSegments": [
+              {
+                "id": "segment-10",
+                "start": "2026-10-01T00:00:00+09:00",
+                "endExclusive": "2026-11-01T00:00:00+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-after",
+                "monthPillar": "synthetic-month-10",
+                "activeDayun": 2,
+                "uncertainDayun": false
+              }
+            ],
+            "plannedQuestions": [
+              "synthetic:annual:q:10"
+            ],
+            "fullMonthMeaningApproved": false,
+            "focusSegmentIsNotWholeMonth": true
+          },
+          {
+            "civilMonth": 11,
+            "requiredSegments": [
+              {
+                "id": "segment-11",
+                "start": "2026-11-01T00:00:00+09:00",
+                "endExclusive": "2026-12-01T00:00:00+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-after",
+                "monthPillar": "synthetic-month-11",
+                "activeDayun": 2,
+                "uncertainDayun": false
+              }
+            ],
+            "plannedQuestions": [
+              "synthetic:annual:q:11"
+            ],
+            "fullMonthMeaningApproved": false,
+            "focusSegmentIsNotWholeMonth": true
+          },
+          {
+            "civilMonth": 12,
+            "requiredSegments": [
+              {
+                "id": "segment-12",
+                "start": "2026-12-01T00:00:00+09:00",
+                "endExclusive": "2027-01-01T00:00:00+09:00",
+                "nominalAndEffectiveAnnualKeptSeparate": true,
+                "effectiveAnnual": "synthetic-year-after",
+                "monthPillar": "synthetic-month-12",
+                "activeDayun": 2,
+                "uncertainDayun": false
+              }
+            ],
+            "plannedQuestions": [
+              "synthetic:annual:q:12"
+            ],
+            "fullMonthMeaningApproved": false,
+            "focusSegmentIsNotWholeMonth": true
+          }
+        ],
+        "stemAndBranchMainAreDistinct": true,
+        "newCompositeJudgments": 0
+      }
+    },
+    {
+      "engine": "compatibility-love",
+      "audit": {
+        "kind": "NON_TEMPORAL",
+        "newTemporalAssertions": 0
+      }
+    },
+    {
+      "engine": "compatibility-marriage",
+      "audit": {
+        "kind": "NON_TEMPORAL",
+        "newTemporalAssertions": 0
+      }
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "audit": {
+        "kind": "NON_TEMPORAL",
+        "newTemporalAssertions": 0
+      }
+    },
+    {
+      "engine": "compatibility-coworker",
+      "audit": {
+        "kind": "NON_TEMPORAL",
+        "newTemporalAssertions": 0
+      }
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "audit": {
+        "kind": "NON_TEMPORAL",
+        "newTemporalAssertions": 0
+      }
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "audit": {
+        "kind": "NON_TEMPORAL",
+        "newTemporalAssertions": 0
+      }
+    },
+    {
+      "engine": "compatibility-friendship",
+      "audit": {
+        "kind": "NON_TEMPORAL",
+        "newTemporalAssertions": 0
+      }
+    }
+  ]
+}

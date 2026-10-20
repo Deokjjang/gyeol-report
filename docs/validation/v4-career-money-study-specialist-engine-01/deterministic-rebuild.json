@@ -1,0 +1,11 @@
+{
+  "freshExecutions": 2,
+  "generatedFilesCompared": 35,
+  "allBytesEqual": true,
+  "outputDigest": "65c5bf7250a9f5e2dfa98bcdef6c0810d6e29519492fd5f36abef6746cbdf578",
+  "timingsExcluded": true,
+  "originalFoundationGeneratedFilesComparedPerRun": 64,
+  "originalBinderGeneratedFilesComparedPerRun": 83,
+  "originalGraphGeneratedFilesComparedPerRun": 105,
+  "originalComprehensiveGeneratedFilesComparedPerRun": 29
+}

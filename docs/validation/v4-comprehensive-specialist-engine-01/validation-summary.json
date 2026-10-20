@@ -1,0 +1,31 @@
+{
+  "newTests": {
+    "pass": 62,
+    "fail": 0
+  },
+  "originalRelatedValidation": {
+    "pass": 282,
+    "fail": 0
+  },
+  "existing16FailedFiles": {
+    "pass": 5837,
+    "fail": 46,
+    "signaturesUnchanged": true
+  },
+  "typescript": {
+    "frozenBase": 0,
+    "after": 0,
+    "new": 0
+  },
+  "lint": "PASS",
+  "build": "PASS",
+  "buildWarnings": 0,
+  "diffCheck": "PASS",
+  "books": 17,
+  "digests": 102,
+  "preview": {
+    "implementation": "READY",
+    "receipt": "implementation-preview-receipt.json",
+    "finalDocumentationHead": "Checked separately in final report"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "task": "V4-PUBLICATION-SAFETY-01",
+  "baseSha": "c315a04e31b316a88e1f0bc28169484379187a13",
+  "cases": 39,
+  "generated": 39,
+  "safeOffline": 32,
+  "withheld": [
+    {
+      "id": "coworker/W/0",
+      "errors": [
+        "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+        "READER_9_36_144_REQUIRED",
+        "UNVERIFIED_LEGACY_FALLBACK"
+      ]
+    },
+    {
+      "id": "manager-report/AJ/0",
+      "errors": [
+        "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+        "READER_9_36_144_REQUIRED",
+        "UNVERIFIED_LEGACY_FALLBACK"
+      ]
+    },
+    {
+      "id": "manager-report/AK/0",
+      "errors": [
+        "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+        "READER_9_36_144_REQUIRED",
+        "UNVERIFIED_LEGACY_FALLBACK"
+      ]
+    },
+    {
+      "id": "business-partner/AM/0",
+      "errors": [
+        "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+        "READER_9_36_144_REQUIRED",
+        "UNVERIFIED_LEGACY_FALLBACK"
+      ]
+    },
+    {
+      "id": "business-partner/AN/0",
+      "errors": [
+        "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+        "READER_9_36_144_REQUIRED",
+        "UNVERIFIED_LEGACY_FALLBACK"
+      ]
+    },
+    {
+      "id": "friendship/A0/0",
+      "errors": [
+        "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+        "READER_9_36_144_REQUIRED",
+        "UNVERIFIED_LEGACY_FALLBACK"
+      ]
+    },
+    {
+      "id": "friendship/H0/0",
+      "errors": [
+        "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+        "READER_9_36_144_REQUIRED",
+        "UNVERIFIED_LEGACY_FALLBACK"
+      ]
+    }
+  ],
+  "originalChildrenCases": 7,
+  "childrenReproduced": 7,
+  "changes": 573,
+  "negatives": 21,
+  "actualOperatorApproved": 0,
+  "actualCustomerApproved": 0,
+  "actualCustomerEligible": 0,
+  "actualCustomerClaims": 0,
+  "actualBookAllocations": 0,
+  "customerActivationAuthorized": false,
+  "humanQualityApproved": false
+}

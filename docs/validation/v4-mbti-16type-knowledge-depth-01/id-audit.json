@@ -1,0 +1,13 @@
+{
+  "stableSourceEvidenceIds": 1213,
+  "stableSourceEvidenceIdCollisions": 0,
+  "bareTraitIdReusedAcrossDomains": {
+    "ISTP:technical_problem_income": [
+      "/traits/career/6",
+      "/traits/money/3"
+    ]
+  },
+  "rule": "traits are scoped by type/domain/id; repeated bare aliases are not globally unique identifiers",
+  "researchIds": 512,
+  "researchIdCollisions": 0
+}

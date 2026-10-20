@@ -178,7 +178,7 @@ function createPacket() {
   }).packet;
 }
 
-function createPacketForMbti(mbtiType: string) {
+function createPacketForMbti(mbtiType: Parameters<typeof buildComprehensiveReportEvidencePacketFromComputedFacts>[0]["mbtiType"]) {
   return buildComprehensiveReportEvidencePacketFromComputedFacts({
     mbtiType,
     sajuFacts: deokminSampleFacts,
@@ -499,9 +499,8 @@ describe("OpenAI comprehensive report writer", () => {
     };
     const userText = requestBody.input
       ?.flatMap((message) =>
-        typeof message.content === "string" ? [message.content] : message.content ?? [],
+        typeof message.content === "string" ? [message.content] : (message.content ?? []).map(content => content.text ?? ""),
       )
-      .map((content) => (typeof content === "string" ? content : content.text ?? ""))
       .join("\n") ?? "";
     const evidenceStart = userText.indexOf('"selectedSajuFeatureEvidence"');
     const evidenceText = evidenceStart >= 0 ? userText.slice(evidenceStart) : "";

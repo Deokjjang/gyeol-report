@@ -1,0 +1,2818 @@
+[
+  {
+    "id": "lkr:role:CH01.P1.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P1.S1",
+    "originalRole": "대표 성향",
+    "materialIds": [
+      "lkr:material:CH01.P1:care-asked",
+      "lkr:material:CH01.P1:quiet-concentration",
+      "lkr:material:CH01.P1:self-retained",
+      "lkr:material:CH01.P1:shared-meaning"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P1.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P1.S2",
+    "originalRole": "친밀감의 행동",
+    "materialIds": [
+      "lkr:material:CH01.P1:care-asked",
+      "lkr:material:CH01.P1:quiet-concentration",
+      "lkr:material:CH01.P1:self-retained",
+      "lkr:material:CH01.P1:shared-meaning"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P1.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P1.S3",
+    "originalRole": "긍정적인 면",
+    "materialIds": [
+      "lkr:material:CH01.P1:care-asked",
+      "lkr:material:CH01.P1:quiet-concentration",
+      "lkr:material:CH01.P1:self-retained",
+      "lkr:material:CH01.P1:shared-meaning"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P1.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P1.S4",
+    "originalRole": "핵심 연애 방식",
+    "materialIds": [
+      "lkr:material:CH01.P1:care-asked",
+      "lkr:material:CH01.P1:quiet-concentration",
+      "lkr:material:CH01.P1:self-retained",
+      "lkr:material:CH01.P1:shared-meaning"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P2.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P2.S1",
+    "originalRole": "실제 명리 근거",
+    "materialIds": [
+      "lkr:material:CH01.P2:saju-output-context",
+      "lkr:material:CH01.P2:saju-equality-context",
+      "lkr:material:CH01.P2:fusion-visible-care",
+      "lkr:material:CH01.P2:fusion-care-space"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P2.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P2.S2",
+    "originalRole": "쉬운 의미",
+    "materialIds": [
+      "lkr:material:CH01.P2:saju-output-context",
+      "lkr:material:CH01.P2:saju-equality-context",
+      "lkr:material:CH01.P2:fusion-visible-care",
+      "lkr:material:CH01.P2:fusion-care-space"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P2.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P2.S3",
+    "originalRole": "실제 관계 MBTI",
+    "materialIds": [
+      "lkr:material:CH01.P2:saju-output-context",
+      "lkr:material:CH01.P2:saju-equality-context",
+      "lkr:material:CH01.P2:fusion-visible-care",
+      "lkr:material:CH01.P2:fusion-care-space"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P2.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P2.S4",
+    "originalRole": "검증된 결합",
+    "materialIds": [
+      "lkr:material:CH01.P2:saju-output-context",
+      "lkr:material:CH01.P2:saju-equality-context",
+      "lkr:material:CH01.P2:fusion-visible-care",
+      "lkr:material:CH01.P2:fusion-care-space"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P3.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P3.S1",
+    "originalRole": "애정 행동",
+    "materialIds": [
+      "lkr:material:CH01.P3:expression-and-receipt",
+      "lkr:material:CH01.P3:practical-not-substitute",
+      "lkr:material:CH01.P3:quiet-request",
+      "lkr:material:CH01.P3:memory-updated"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P3.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P3.S2",
+    "originalRole": "근거",
+    "materialIds": [
+      "lkr:material:CH01.P3:expression-and-receipt",
+      "lkr:material:CH01.P3:practical-not-substitute",
+      "lkr:material:CH01.P3:quiet-request",
+      "lkr:material:CH01.P3:memory-updated"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P3.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P3.S3",
+    "originalRole": "오해 조건",
+    "materialIds": [
+      "lkr:material:CH01.P3:expression-and-receipt",
+      "lkr:material:CH01.P3:practical-not-substitute",
+      "lkr:material:CH01.P3:quiet-request",
+      "lkr:material:CH01.P3:memory-updated"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P3.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P3.S4",
+    "originalRole": "잘 전달되는 상황",
+    "materialIds": [
+      "lkr:material:CH01.P3:expression-and-receipt",
+      "lkr:material:CH01.P3:practical-not-substitute",
+      "lkr:material:CH01.P3:quiet-request",
+      "lkr:material:CH01.P3:memory-updated"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P4.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P4.S1",
+    "originalRole": "중요 조건",
+    "materialIds": [
+      "lkr:material:CH01.P4:trust-as-condition",
+      "lkr:material:CH01.P4:meaning-not-sameness",
+      "lkr:material:CH01.P4:reciprocal-care",
+      "lkr:material:CH01.P4:safe-dissent"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P4.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P4.S2",
+    "originalRole": "개인적 이유",
+    "materialIds": [
+      "lkr:material:CH01.P4:trust-as-condition",
+      "lkr:material:CH01.P4:meaning-not-sameness",
+      "lkr:material:CH01.P4:reciprocal-care",
+      "lkr:material:CH01.P4:safe-dissent"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P4.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P4.S3",
+    "originalRole": "충족 여부의 차이",
+    "materialIds": [
+      "lkr:material:CH01.P4:trust-as-condition",
+      "lkr:material:CH01.P4:meaning-not-sameness",
+      "lkr:material:CH01.P4:reciprocal-care",
+      "lkr:material:CH01.P4:safe-dissent"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH01.P4.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH01.P4.S4",
+    "originalRole": "핵심 특징",
+    "materialIds": [
+      "lkr:material:CH01.P4:trust-as-condition",
+      "lkr:material:CH01.P4:meaning-not-sameness",
+      "lkr:material:CH01.P4:reciprocal-care",
+      "lkr:material:CH01.P4:safe-dissent"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P1.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P1.S1",
+    "originalRole": "첫 매력",
+    "materialIds": [
+      "lkr:material:CH02.P1:first-invitation",
+      "lkr:material:CH02.P1:first-clear-choice",
+      "lkr:material:CH02.P1:first-quiet-room",
+      "lkr:material:CH02.P1:first-warm-humor"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P1.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P1.S2",
+    "originalRole": "근거",
+    "materialIds": [
+      "lkr:material:CH02.P1:first-invitation",
+      "lkr:material:CH02.P1:first-clear-choice",
+      "lkr:material:CH02.P1:first-quiet-room",
+      "lkr:material:CH02.P1:first-warm-humor"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P1.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P1.S3",
+    "originalRole": "생활 장면",
+    "materialIds": [
+      "lkr:material:CH02.P1:first-invitation",
+      "lkr:material:CH02.P1:first-clear-choice",
+      "lkr:material:CH02.P1:first-quiet-room",
+      "lkr:material:CH02.P1:first-warm-humor"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P1.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P1.S4",
+    "originalRole": "좋게 작동할 조건",
+    "materialIds": [
+      "lkr:material:CH02.P1:first-invitation",
+      "lkr:material:CH02.P1:first-clear-choice",
+      "lkr:material:CH02.P1:first-quiet-room",
+      "lkr:material:CH02.P1:first-warm-humor"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P2.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P2.S1",
+    "originalRole": "친밀한 매력",
+    "materialIds": [
+      "lkr:material:CH02.P2:private-remembering",
+      "lkr:material:CH02.P2:private-playfulness",
+      "lkr:material:CH02.P2:private-listening-depth",
+      "lkr:material:CH02.P2:private-calm-help"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P2.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P2.S2",
+    "originalRole": "개인 근거",
+    "materialIds": [
+      "lkr:material:CH02.P2:private-remembering",
+      "lkr:material:CH02.P2:private-playfulness",
+      "lkr:material:CH02.P2:private-listening-depth",
+      "lkr:material:CH02.P2:private-calm-help"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P2.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P2.S3",
+    "originalRole": "함께하는 행동",
+    "materialIds": [
+      "lkr:material:CH02.P2:private-remembering",
+      "lkr:material:CH02.P2:private-playfulness",
+      "lkr:material:CH02.P2:private-listening-depth",
+      "lkr:material:CH02.P2:private-calm-help"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P2.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P2.S4",
+    "originalRole": "상대에게 주는 가치",
+    "materialIds": [
+      "lkr:material:CH02.P2:private-remembering",
+      "lkr:material:CH02.P2:private-playfulness",
+      "lkr:material:CH02.P2:private-listening-depth",
+      "lkr:material:CH02.P2:private-calm-help"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P3.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P3.S1",
+    "originalRole": "다른 장점",
+    "materialIds": [
+      "lkr:material:CH02.P3:difference-welcomed",
+      "lkr:material:CH02.P3:new-experience-design",
+      "lkr:material:CH02.P3:mutual-growth-question",
+      "lkr:material:CH02.P3:reliable-attention"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P3.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P3.S2",
+    "originalRole": "독립 근거와 결합",
+    "materialIds": [
+      "lkr:material:CH02.P3:difference-welcomed",
+      "lkr:material:CH02.P3:new-experience-design",
+      "lkr:material:CH02.P3:mutual-growth-question",
+      "lkr:material:CH02.P3:reliable-attention"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P3.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P3.S3",
+    "originalRole": "도움이 되는 순간",
+    "materialIds": [
+      "lkr:material:CH02.P3:difference-welcomed",
+      "lkr:material:CH02.P3:new-experience-design",
+      "lkr:material:CH02.P3:mutual-growth-question",
+      "lkr:material:CH02.P3:reliable-attention"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P3.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P3.S4",
+    "originalRole": "유지 조건",
+    "materialIds": [
+      "lkr:material:CH02.P3:difference-welcomed",
+      "lkr:material:CH02.P3:new-experience-design",
+      "lkr:material:CH02.P3:mutual-growth-question",
+      "lkr:material:CH02.P3:reliable-attention"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P4.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P4.S1",
+    "originalRole": "대표 매력",
+    "materialIds": [
+      "lkr:material:CH02.P4:warmth-with-refusal",
+      "lkr:material:CH02.P4:humor-stop-signal",
+      "lkr:material:CH02.P4:honesty-with-listening",
+      "lkr:material:CH02.P4:depth-small-dose"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P4.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P4.S2",
+    "originalRole": "과사용 위험",
+    "materialIds": [
+      "lkr:material:CH02.P4:warmth-with-refusal",
+      "lkr:material:CH02.P4:humor-stop-signal",
+      "lkr:material:CH02.P4:honesty-with-listening",
+      "lkr:material:CH02.P4:depth-small-dose"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P4.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P4.S3",
+    "originalRole": "자연스러운 행동",
+    "materialIds": [
+      "lkr:material:CH02.P4:warmth-with-refusal",
+      "lkr:material:CH02.P4:humor-stop-signal",
+      "lkr:material:CH02.P4:honesty-with-listening",
+      "lkr:material:CH02.P4:depth-small-dose"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH02.P4.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH02.P4.S4",
+    "originalRole": "긍정적 결론",
+    "materialIds": [
+      "lkr:material:CH02.P4:warmth-with-refusal",
+      "lkr:material:CH02.P4:humor-stop-signal",
+      "lkr:material:CH02.P4:honesty-with-listening",
+      "lkr:material:CH02.P4:depth-small-dose"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P1.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P1.S1",
+    "originalRole": "끌리는 특징",
+    "materialIds": [
+      "lkr:material:CH03.P1:attracted-to-dialogue",
+      "lkr:material:CH03.P1:attracted-to-direction",
+      "lkr:material:CH03.P1:attracted-to-liveliness",
+      "lkr:material:CH03.P1:attracted-to-safe-kindness"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P1.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P1.S2",
+    "originalRole": "매력의 이유",
+    "materialIds": [
+      "lkr:material:CH03.P1:attracted-to-dialogue",
+      "lkr:material:CH03.P1:attracted-to-direction",
+      "lkr:material:CH03.P1:attracted-to-liveliness",
+      "lkr:material:CH03.P1:attracted-to-safe-kindness"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P1.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P1.S3",
+    "originalRole": "호감 장면",
+    "materialIds": [
+      "lkr:material:CH03.P1:attracted-to-dialogue",
+      "lkr:material:CH03.P1:attracted-to-direction",
+      "lkr:material:CH03.P1:attracted-to-liveliness",
+      "lkr:material:CH03.P1:attracted-to-safe-kindness"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P1.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P1.S4",
+    "originalRole": "조건과 관계의 구분",
+    "materialIds": [
+      "lkr:material:CH03.P1:attracted-to-dialogue",
+      "lkr:material:CH03.P1:attracted-to-direction",
+      "lkr:material:CH03.P1:attracted-to-liveliness",
+      "lkr:material:CH03.P1:attracted-to-safe-kindness"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P2.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P2.S1",
+    "originalRole": "편안한 조건",
+    "materialIds": [
+      "lkr:material:CH03.P2:comfort-space",
+      "lkr:material:CH03.P2:comfort-explained-change",
+      "lkr:material:CH03.P2:comfort-emotional-answer",
+      "lkr:material:CH03.P2:comfort-unforced-self"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P2.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P2.S2",
+    "originalRole": "자신의 근거",
+    "materialIds": [
+      "lkr:material:CH03.P2:comfort-space",
+      "lkr:material:CH03.P2:comfort-explained-change",
+      "lkr:material:CH03.P2:comfort-emotional-answer",
+      "lkr:material:CH03.P2:comfort-unforced-self"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P2.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P2.S3",
+    "originalRole": "맞춰갈 행동",
+    "materialIds": [
+      "lkr:material:CH03.P2:comfort-space",
+      "lkr:material:CH03.P2:comfort-explained-change",
+      "lkr:material:CH03.P2:comfort-emotional-answer",
+      "lkr:material:CH03.P2:comfort-unforced-self"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P2.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P2.S4",
+    "originalRole": "안정감의 요소",
+    "materialIds": [
+      "lkr:material:CH03.P2:comfort-space",
+      "lkr:material:CH03.P2:comfort-explained-change",
+      "lkr:material:CH03.P2:comfort-emotional-answer",
+      "lkr:material:CH03.P2:comfort-unforced-self"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P3.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P3.S1",
+    "originalRole": "도움 되는 차이",
+    "materialIds": [
+      "lkr:material:CH03.P3:difference-new-and-stable",
+      "lkr:material:CH03.P3:difference-listening-and-solution",
+      "lkr:material:CH03.P3:difference-direct-gentle",
+      "lkr:material:CH03.P3:difference-rest-and-company"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P3.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P3.S2",
+    "originalRole": "검증된 근거",
+    "materialIds": [
+      "lkr:material:CH03.P3:difference-new-and-stable",
+      "lkr:material:CH03.P3:difference-listening-and-solution",
+      "lkr:material:CH03.P3:difference-direct-gentle",
+      "lkr:material:CH03.P3:difference-rest-and-company"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P3.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P3.S3",
+    "originalRole": "긍정적 영향",
+    "materialIds": [
+      "lkr:material:CH03.P3:difference-new-and-stable",
+      "lkr:material:CH03.P3:difference-listening-and-solution",
+      "lkr:material:CH03.P3:difference-direct-gentle",
+      "lkr:material:CH03.P3:difference-rest-and-company"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P3.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P3.S4",
+    "originalRole": "갈등으로 변할 조건",
+    "materialIds": [
+      "lkr:material:CH03.P3:difference-new-and-stable",
+      "lkr:material:CH03.P3:difference-listening-and-solution",
+      "lkr:material:CH03.P3:difference-direct-gentle",
+      "lkr:material:CH03.P3:difference-rest-and-company"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P4.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P4.S1",
+    "originalRole": "관계 기준",
+    "materialIds": [
+      "lkr:material:CH03.P4:selection-no-test",
+      "lkr:material:CH03.P4:selection-refusal",
+      "lkr:material:CH03.P4:selection-response-over-image",
+      "lkr:material:CH03.P4:selection-reciprocity"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P4.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P4.S2",
+    "originalRole": "필요한 이유",
+    "materialIds": [
+      "lkr:material:CH03.P4:selection-no-test",
+      "lkr:material:CH03.P4:selection-refusal",
+      "lkr:material:CH03.P4:selection-response-over-image",
+      "lkr:material:CH03.P4:selection-reciprocity"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P4.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P4.S3",
+    "originalRole": "실제 살필 행동",
+    "materialIds": [
+      "lkr:material:CH03.P4:selection-no-test",
+      "lkr:material:CH03.P4:selection-refusal",
+      "lkr:material:CH03.P4:selection-response-over-image",
+      "lkr:material:CH03.P4:selection-reciprocity"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH03.P4.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH03.P4.S4",
+    "originalRole": "알아보는 방법",
+    "materialIds": [
+      "lkr:material:CH03.P4:selection-no-test",
+      "lkr:material:CH03.P4:selection-refusal",
+      "lkr:material:CH03.P4:selection-response-over-image",
+      "lkr:material:CH03.P4:selection-reciprocity"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P1.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P1.S1",
+    "originalRole": "상태에 맞는 관심",
+    "materialIds": [
+      "lkr:material:CH04.P1:single-interest",
+      "lkr:material:CH04.P1:some-observed",
+      "lkr:material:CH04.P1:dating-current-interest",
+      "lkr:material:CH04.P1:preparing-affection-not-task",
+      "lkr:material:CH04.P1:married-person-interest",
+      "lkr:material:CH04.P1:unknown-open-context"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P1.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P1.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "lkr:material:CH04.P1:single-interest",
+      "lkr:material:CH04.P1:some-observed",
+      "lkr:material:CH04.P1:dating-current-interest",
+      "lkr:material:CH04.P1:preparing-affection-not-task",
+      "lkr:material:CH04.P1:married-person-interest",
+      "lkr:material:CH04.P1:unknown-open-context"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P1.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P1.S3",
+    "originalRole": "만남과 대화",
+    "materialIds": [
+      "lkr:material:CH04.P1:single-interest",
+      "lkr:material:CH04.P1:some-observed",
+      "lkr:material:CH04.P1:dating-current-interest",
+      "lkr:material:CH04.P1:preparing-affection-not-task",
+      "lkr:material:CH04.P1:married-person-interest",
+      "lkr:material:CH04.P1:unknown-open-context"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P1.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P1.S4",
+    "originalRole": "매력의 조건",
+    "materialIds": [
+      "lkr:material:CH04.P1:single-interest",
+      "lkr:material:CH04.P1:some-observed",
+      "lkr:material:CH04.P1:dating-current-interest",
+      "lkr:material:CH04.P1:preparing-affection-not-task",
+      "lkr:material:CH04.P1:married-person-interest",
+      "lkr:material:CH04.P1:unknown-open-context"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P2.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P2.S1",
+    "originalRole": "방식과 속도",
+    "materialIds": [
+      "lkr:material:CH04.P2:single-small-invite",
+      "lkr:material:CH04.P2:some-response-window",
+      "lkr:material:CH04.P2:dating-expression-update",
+      "lkr:material:CH04.P2:preparing-decision-pace",
+      "lkr:material:CH04.P2:married-talk-not-demand",
+      "lkr:material:CH04.P2:unknown-channel-choice"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P2.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P2.S2",
+    "originalRole": "근거",
+    "materialIds": [
+      "lkr:material:CH04.P2:single-small-invite",
+      "lkr:material:CH04.P2:some-response-window",
+      "lkr:material:CH04.P2:dating-expression-update",
+      "lkr:material:CH04.P2:preparing-decision-pace",
+      "lkr:material:CH04.P2:married-talk-not-demand",
+      "lkr:material:CH04.P2:unknown-channel-choice"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P2.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P2.S3",
+    "originalRole": "속도 차이",
+    "materialIds": [
+      "lkr:material:CH04.P2:single-small-invite",
+      "lkr:material:CH04.P2:some-response-window",
+      "lkr:material:CH04.P2:dating-expression-update",
+      "lkr:material:CH04.P2:preparing-decision-pace",
+      "lkr:material:CH04.P2:married-talk-not-demand",
+      "lkr:material:CH04.P2:unknown-channel-choice"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P2.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P2.S4",
+    "originalRole": "편안한 표현",
+    "materialIds": [
+      "lkr:material:CH04.P2:single-small-invite",
+      "lkr:material:CH04.P2:some-response-window",
+      "lkr:material:CH04.P2:dating-expression-update",
+      "lkr:material:CH04.P2:preparing-decision-pace",
+      "lkr:material:CH04.P2:married-talk-not-demand",
+      "lkr:material:CH04.P2:unknown-channel-choice"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P3.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P3.S1",
+    "originalRole": "초기 약점",
+    "materialIds": [
+      "lkr:material:CH04.P3:single-overhelp",
+      "lkr:material:CH04.P3:some-reading-delay",
+      "lkr:material:CH04.P3:dating-unspoken-score",
+      "lkr:material:CH04.P3:preparing-finance-consent",
+      "lkr:material:CH04.P3:married-labor-invisible",
+      "lkr:material:CH04.P3:unknown-no-stage-script"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P3.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P3.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "lkr:material:CH04.P3:single-overhelp",
+      "lkr:material:CH04.P3:some-reading-delay",
+      "lkr:material:CH04.P3:dating-unspoken-score",
+      "lkr:material:CH04.P3:preparing-finance-consent",
+      "lkr:material:CH04.P3:married-labor-invisible",
+      "lkr:material:CH04.P3:unknown-no-stage-script"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P3.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P3.S3",
+    "originalRole": "오해의 장면",
+    "materialIds": [
+      "lkr:material:CH04.P3:single-overhelp",
+      "lkr:material:CH04.P3:some-reading-delay",
+      "lkr:material:CH04.P3:dating-unspoken-score",
+      "lkr:material:CH04.P3:preparing-finance-consent",
+      "lkr:material:CH04.P3:married-labor-invisible",
+      "lkr:material:CH04.P3:unknown-no-stage-script"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P3.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P3.S4",
+    "originalRole": "조정 행동",
+    "materialIds": [
+      "lkr:material:CH04.P3:single-overhelp",
+      "lkr:material:CH04.P3:some-reading-delay",
+      "lkr:material:CH04.P3:dating-unspoken-score",
+      "lkr:material:CH04.P3:preparing-finance-consent",
+      "lkr:material:CH04.P3:married-labor-invisible",
+      "lkr:material:CH04.P3:unknown-no-stage-script"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P4.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P4.S1",
+    "originalRole": "좋은 힘",
+    "materialIds": [
+      "lkr:material:CH04.P4:single-open-choice",
+      "lkr:material:CH04.P4:some-answer-not-label",
+      "lkr:material:CH04.P4:dating-renew-small",
+      "lkr:material:CH04.P4:preparing-both-directions",
+      "lkr:material:CH04.P4:married-current-choice",
+      "lkr:material:CH04.P4:unknown-no-deficit"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P4.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P4.S2",
+    "originalRole": "서두름과 주저함",
+    "materialIds": [
+      "lkr:material:CH04.P4:single-open-choice",
+      "lkr:material:CH04.P4:some-answer-not-label",
+      "lkr:material:CH04.P4:dating-renew-small",
+      "lkr:material:CH04.P4:preparing-both-directions",
+      "lkr:material:CH04.P4:married-current-choice",
+      "lkr:material:CH04.P4:unknown-no-deficit"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P4.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P4.S3",
+    "originalRole": "선택의 여지",
+    "materialIds": [
+      "lkr:material:CH04.P4:single-open-choice",
+      "lkr:material:CH04.P4:some-answer-not-label",
+      "lkr:material:CH04.P4:dating-renew-small",
+      "lkr:material:CH04.P4:preparing-both-directions",
+      "lkr:material:CH04.P4:married-current-choice",
+      "lkr:material:CH04.P4:unknown-no-deficit"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH04.P4.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH04.P4.S4",
+    "originalRole": "긍정적 메시지",
+    "materialIds": [
+      "lkr:material:CH04.P4:single-open-choice",
+      "lkr:material:CH04.P4:some-answer-not-label",
+      "lkr:material:CH04.P4:dating-renew-small",
+      "lkr:material:CH04.P4:preparing-both-directions",
+      "lkr:material:CH04.P4:married-current-choice",
+      "lkr:material:CH04.P4:unknown-no-deficit"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P1.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P1.S1",
+    "originalRole": "친밀한 행동",
+    "materialIds": [
+      "lkr:material:CH05.P1:close-unguarded-detail",
+      "lkr:material:CH05.P1:close-attuned-question",
+      "lkr:material:CH05.P1:close-practical-trust",
+      "lkr:material:CH05.P1:close-shared-story"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P1.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P1.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "lkr:material:CH05.P1:close-unguarded-detail",
+      "lkr:material:CH05.P1:close-attuned-question",
+      "lkr:material:CH05.P1:close-practical-trust",
+      "lkr:material:CH05.P1:close-shared-story"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P1.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P1.S3",
+    "originalRole": "긍정적 가치",
+    "materialIds": [
+      "lkr:material:CH05.P1:close-unguarded-detail",
+      "lkr:material:CH05.P1:close-attuned-question",
+      "lkr:material:CH05.P1:close-practical-trust",
+      "lkr:material:CH05.P1:close-shared-story"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P1.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P1.S4",
+    "originalRole": "첫인상과 차이",
+    "materialIds": [
+      "lkr:material:CH05.P1:close-unguarded-detail",
+      "lkr:material:CH05.P1:close-attuned-question",
+      "lkr:material:CH05.P1:close-practical-trust",
+      "lkr:material:CH05.P1:close-shared-story"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P2.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P2.S1",
+    "originalRole": "유지 조건",
+    "materialIds": [
+      "lkr:material:CH05.P2:need-acknowledged-care",
+      "lkr:material:CH05.P2:need-deep-understood",
+      "lkr:material:CH05.P2:need-not-changed-person",
+      "lkr:material:CH05.P2:need-return-signal"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P2.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P2.S2",
+    "originalRole": "성향적 이유",
+    "materialIds": [
+      "lkr:material:CH05.P2:need-acknowledged-care",
+      "lkr:material:CH05.P2:need-deep-understood",
+      "lkr:material:CH05.P2:need-not-changed-person",
+      "lkr:material:CH05.P2:need-return-signal"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P2.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P2.S3",
+    "originalRole": "이해받을 때",
+    "materialIds": [
+      "lkr:material:CH05.P2:need-acknowledged-care",
+      "lkr:material:CH05.P2:need-deep-understood",
+      "lkr:material:CH05.P2:need-not-changed-person",
+      "lkr:material:CH05.P2:need-return-signal"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P2.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P2.S4",
+    "originalRole": "충족되지 않을 때",
+    "materialIds": [
+      "lkr:material:CH05.P2:need-acknowledged-care",
+      "lkr:material:CH05.P2:need-deep-understood",
+      "lkr:material:CH05.P2:need-not-changed-person",
+      "lkr:material:CH05.P2:need-return-signal"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P3.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P3.S1",
+    "originalRole": "친밀감과 공간",
+    "materialIds": [
+      "lkr:material:CH05.P3:space-chosen-company",
+      "lkr:material:CH05.P3:space-not-passcode",
+      "lkr:material:CH05.P3:space-care-fusion",
+      "lkr:material:CH05.P3:space-recovery-attunement"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P3.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P3.S2",
+    "originalRole": "명리와 MBTI",
+    "materialIds": [
+      "lkr:material:CH05.P3:space-chosen-company",
+      "lkr:material:CH05.P3:space-not-passcode",
+      "lkr:material:CH05.P3:space-care-fusion",
+      "lkr:material:CH05.P3:space-recovery-attunement"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P3.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P3.S3",
+    "originalRole": "서로 다른 필요",
+    "materialIds": [
+      "lkr:material:CH05.P3:space-chosen-company",
+      "lkr:material:CH05.P3:space-not-passcode",
+      "lkr:material:CH05.P3:space-care-fusion",
+      "lkr:material:CH05.P3:space-recovery-attunement"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P3.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P3.S4",
+    "originalRole": "거리와 소통",
+    "materialIds": [
+      "lkr:material:CH05.P3:space-chosen-company",
+      "lkr:material:CH05.P3:space-not-passcode",
+      "lkr:material:CH05.P3:space-care-fusion",
+      "lkr:material:CH05.P3:space-recovery-attunement"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P4.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P4.S1",
+    "originalRole": "지속 강점",
+    "materialIds": [
+      "lkr:material:CH05.P4:sustain-small-promises",
+      "lkr:material:CH05.P4:sustain-current-person",
+      "lkr:material:CH05.P4:sustain-repair-access",
+      "lkr:material:CH05.P4:sustain-reciprocal-expression"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P4.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P4.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "lkr:material:CH05.P4:sustain-small-promises",
+      "lkr:material:CH05.P4:sustain-current-person",
+      "lkr:material:CH05.P4:sustain-repair-access",
+      "lkr:material:CH05.P4:sustain-reciprocal-expression"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P4.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P4.S3",
+    "originalRole": "오랜 관계의 행동",
+    "materialIds": [
+      "lkr:material:CH05.P4:sustain-small-promises",
+      "lkr:material:CH05.P4:sustain-current-person",
+      "lkr:material:CH05.P4:sustain-repair-access",
+      "lkr:material:CH05.P4:sustain-reciprocal-expression"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH05.P4.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH05.P4.S4",
+    "originalRole": "과사용 방지",
+    "materialIds": [
+      "lkr:material:CH05.P4:sustain-small-promises",
+      "lkr:material:CH05.P4:sustain-current-person",
+      "lkr:material:CH05.P4:sustain-repair-access",
+      "lkr:material:CH05.P4:sustain-reciprocal-expression"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P1.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P1.S1",
+    "originalRole": "실제 약점",
+    "materialIds": [
+      "lkr:material:CH06.P1:solution-over-listen",
+      "lkr:material:CH06.P1:silent-agreement-cost",
+      "lkr:material:CH06.P1:care-ledger",
+      "lkr:material:CH06.P1:precision-not-person"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P1.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P1.S2",
+    "originalRole": "구체적 행동",
+    "materialIds": [
+      "lkr:material:CH06.P1:solution-over-listen",
+      "lkr:material:CH06.P1:silent-agreement-cost",
+      "lkr:material:CH06.P1:care-ledger",
+      "lkr:material:CH06.P1:precision-not-person"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P1.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P1.S3",
+    "originalRole": "의도와 행동 차이",
+    "materialIds": [
+      "lkr:material:CH06.P1:solution-over-listen",
+      "lkr:material:CH06.P1:silent-agreement-cost",
+      "lkr:material:CH06.P1:care-ledger",
+      "lkr:material:CH06.P1:precision-not-person"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P1.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P1.S4",
+    "originalRole": "인상적인 팩폭",
+    "materialIds": [
+      "lkr:material:CH06.P1:solution-over-listen",
+      "lkr:material:CH06.P1:silent-agreement-cost",
+      "lkr:material:CH06.P1:care-ledger",
+      "lkr:material:CH06.P1:precision-not-person"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P2.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P2.S1",
+    "originalRole": "명리 근거",
+    "materialIds": [
+      "lkr:material:CH06.P2:natal-rule-not-control",
+      "lkr:material:CH06.P2:mbti-speed-not-motive",
+      "lkr:material:CH06.P2:fusion-meaning-care",
+      "lkr:material:CH06.P2:attune-interpretation-loop"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P2.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P2.S2",
+    "originalRole": "쉬운 의미",
+    "materialIds": [
+      "lkr:material:CH06.P2:natal-rule-not-control",
+      "lkr:material:CH06.P2:mbti-speed-not-motive",
+      "lkr:material:CH06.P2:fusion-meaning-care",
+      "lkr:material:CH06.P2:attune-interpretation-loop"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P2.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P2.S3",
+    "originalRole": "MBTI 조건",
+    "materialIds": [
+      "lkr:material:CH06.P2:natal-rule-not-control",
+      "lkr:material:CH06.P2:mbti-speed-not-motive",
+      "lkr:material:CH06.P2:fusion-meaning-care",
+      "lkr:material:CH06.P2:attune-interpretation-loop"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P2.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P2.S4",
+    "originalRole": "개인별 원인",
+    "materialIds": [
+      "lkr:material:CH06.P2:natal-rule-not-control",
+      "lkr:material:CH06.P2:mbti-speed-not-motive",
+      "lkr:material:CH06.P2:fusion-meaning-care",
+      "lkr:material:CH06.P2:attune-interpretation-loop"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P3.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P3.S1",
+    "originalRole": "문제 상황",
+    "materialIds": [
+      "lkr:material:CH06.P3:pace-escalation",
+      "lkr:material:CH06.P3:avoidance-escalation",
+      "lkr:material:CH06.P3:unasked-help-escalation",
+      "lkr:material:CH06.P3:broken-promise-loop"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P3.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P3.S2",
+    "originalRole": "의도",
+    "materialIds": [
+      "lkr:material:CH06.P3:pace-escalation",
+      "lkr:material:CH06.P3:avoidance-escalation",
+      "lkr:material:CH06.P3:unasked-help-escalation",
+      "lkr:material:CH06.P3:broken-promise-loop"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P3.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P3.S3",
+    "originalRole": "상대의 해석",
+    "materialIds": [
+      "lkr:material:CH06.P3:pace-escalation",
+      "lkr:material:CH06.P3:avoidance-escalation",
+      "lkr:material:CH06.P3:unasked-help-escalation",
+      "lkr:material:CH06.P3:broken-promise-loop"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P3.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P3.S4",
+    "originalRole": "반복 조건",
+    "materialIds": [
+      "lkr:material:CH06.P3:pace-escalation",
+      "lkr:material:CH06.P3:avoidance-escalation",
+      "lkr:material:CH06.P3:unasked-help-escalation",
+      "lkr:material:CH06.P3:broken-promise-loop"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P4.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P4.S1",
+    "originalRole": "개인별 행동",
+    "materialIds": [
+      "lkr:material:CH06.P4:repair-heard-first",
+      "lkr:material:CH06.P4:repair-action-not-apology",
+      "lkr:material:CH06.P4:repair-space-with-return",
+      "lkr:material:CH06.P4:repair-boundary-safety"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P4.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P4.S2",
+    "originalRole": "대화 방식",
+    "materialIds": [
+      "lkr:material:CH06.P4:repair-heard-first",
+      "lkr:material:CH06.P4:repair-action-not-apology",
+      "lkr:material:CH06.P4:repair-space-with-return",
+      "lkr:material:CH06.P4:repair-boundary-safety"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P4.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P4.S3",
+    "originalRole": "실제 시도",
+    "materialIds": [
+      "lkr:material:CH06.P4:repair-heard-first",
+      "lkr:material:CH06.P4:repair-action-not-apology",
+      "lkr:material:CH06.P4:repair-space-with-return",
+      "lkr:material:CH06.P4:repair-boundary-safety"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH06.P4.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH06.P4.S4",
+    "originalRole": "장점 회복",
+    "materialIds": [
+      "lkr:material:CH06.P4:repair-heard-first",
+      "lkr:material:CH06.P4:repair-action-not-apology",
+      "lkr:material:CH06.P4:repair-space-with-return",
+      "lkr:material:CH06.P4:repair-boundary-safety"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P1.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P1.S1",
+    "originalRole": "상태별 생활 성향",
+    "materialIds": [
+      "lkr:material:CH07.P1:home-self-choice",
+      "lkr:material:CH07.P1:home-planned-not-fixed",
+      "lkr:material:CH07.P1:home-warm-rhythm",
+      "lkr:material:CH07.P1:home-conditional-rule"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P1.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P1.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "lkr:material:CH07.P1:home-self-choice",
+      "lkr:material:CH07.P1:home-planned-not-fixed",
+      "lkr:material:CH07.P1:home-warm-rhythm",
+      "lkr:material:CH07.P1:home-conditional-rule"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P1.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P1.S3",
+    "originalRole": "생활 행동",
+    "materialIds": [
+      "lkr:material:CH07.P1:home-self-choice",
+      "lkr:material:CH07.P1:home-planned-not-fixed",
+      "lkr:material:CH07.P1:home-warm-rhythm",
+      "lkr:material:CH07.P1:home-conditional-rule"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P1.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P1.S4",
+    "originalRole": "장점과 조건",
+    "materialIds": [
+      "lkr:material:CH07.P1:home-self-choice",
+      "lkr:material:CH07.P1:home-planned-not-fixed",
+      "lkr:material:CH07.P1:home-warm-rhythm",
+      "lkr:material:CH07.P1:home-conditional-rule"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P2.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P2.S1",
+    "originalRole": "생활 강점",
+    "materialIds": [
+      "lkr:material:CH07.P2:home-care-rotation",
+      "lkr:material:CH07.P2:home-minimum-system",
+      "lkr:material:CH07.P2:home-change-buffer",
+      "lkr:material:CH07.P2:home-kin-information"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P2.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P2.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "lkr:material:CH07.P2:home-care-rotation",
+      "lkr:material:CH07.P2:home-minimum-system",
+      "lkr:material:CH07.P2:home-change-buffer",
+      "lkr:material:CH07.P2:home-kin-information"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P2.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P2.S3",
+    "originalRole": "책임 돌봄 운영",
+    "materialIds": [
+      "lkr:material:CH07.P2:home-care-rotation",
+      "lkr:material:CH07.P2:home-minimum-system",
+      "lkr:material:CH07.P2:home-change-buffer",
+      "lkr:material:CH07.P2:home-kin-information"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P2.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P2.S4",
+    "originalRole": "안정적 생활",
+    "materialIds": [
+      "lkr:material:CH07.P2:home-care-rotation",
+      "lkr:material:CH07.P2:home-minimum-system",
+      "lkr:material:CH07.P2:home-change-buffer",
+      "lkr:material:CH07.P2:home-kin-information"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P3.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P3.S1",
+    "originalRole": "생활 위험",
+    "materialIds": [
+      "lkr:material:CH07.P3:home-money-power",
+      "lkr:material:CH07.P3:home-correction-fatigue",
+      "lkr:material:CH07.P3:home-novelty-cost",
+      "lkr:material:CH07.P3:home-peace-not-consent"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P3.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P3.S2",
+    "originalRole": "성향적 이유",
+    "materialIds": [
+      "lkr:material:CH07.P3:home-money-power",
+      "lkr:material:CH07.P3:home-correction-fatigue",
+      "lkr:material:CH07.P3:home-novelty-cost",
+      "lkr:material:CH07.P3:home-peace-not-consent"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P3.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P3.S3",
+    "originalRole": "역할 돈 습관",
+    "materialIds": [
+      "lkr:material:CH07.P3:home-money-power",
+      "lkr:material:CH07.P3:home-correction-fatigue",
+      "lkr:material:CH07.P3:home-novelty-cost",
+      "lkr:material:CH07.P3:home-peace-not-consent"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P3.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P3.S4",
+    "originalRole": "조정 방법",
+    "materialIds": [
+      "lkr:material:CH07.P3:home-money-power",
+      "lkr:material:CH07.P3:home-correction-fatigue",
+      "lkr:material:CH07.P3:home-novelty-cost",
+      "lkr:material:CH07.P3:home-peace-not-consent"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P4.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P4.S1",
+    "originalRole": "생활 기준",
+    "materialIds": [
+      "lkr:material:CH07.P4:home-revision-meeting",
+      "lkr:material:CH07.P4:home-spending-threshold",
+      "lkr:material:CH07.P4:home-rest-fairness",
+      "lkr:material:CH07.P4:home-optout-legitimate"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P4.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P4.S2",
+    "originalRole": "필요한 이유",
+    "materialIds": [
+      "lkr:material:CH07.P4:home-revision-meeting",
+      "lkr:material:CH07.P4:home-spending-threshold",
+      "lkr:material:CH07.P4:home-rest-fairness",
+      "lkr:material:CH07.P4:home-optout-legitimate"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P4.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P4.S3",
+    "originalRole": "함께 조정할 부분",
+    "materialIds": [
+      "lkr:material:CH07.P4:home-revision-meeting",
+      "lkr:material:CH07.P4:home-spending-threshold",
+      "lkr:material:CH07.P4:home-rest-fairness",
+      "lkr:material:CH07.P4:home-optout-legitimate"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH07.P4.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH07.P4.S4",
+    "originalRole": "편안한 생활",
+    "materialIds": [
+      "lkr:material:CH07.P4:home-revision-meeting",
+      "lkr:material:CH07.P4:home-spending-threshold",
+      "lkr:material:CH07.P4:home-rest-fairness",
+      "lkr:material:CH07.P4:home-optout-legitimate"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P1.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P1.S1",
+    "originalRole": "조건부 부모 강점",
+    "materialIds": [
+      "lkr:material:CH08.P1:parent-intj-reasoning",
+      "lkr:material:CH08.P1:parent-intp-patience",
+      "lkr:material:CH08.P1:parent-entj-responsibility",
+      "lkr:material:CH08.P1:parent-entp-experiment",
+      "lkr:material:CH08.P1:parent-infj-opinion",
+      "lkr:material:CH08.P1:parent-infp-choice",
+      "lkr:material:CH08.P1:parent-enfj-emotional-base",
+      "lkr:material:CH08.P1:parent-enfp-encouragement"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P1.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P1.S2",
+    "originalRole": "실제 본인 근거",
+    "materialIds": [
+      "lkr:material:CH08.P1:parent-intj-reasoning",
+      "lkr:material:CH08.P1:parent-intp-patience",
+      "lkr:material:CH08.P1:parent-entj-responsibility",
+      "lkr:material:CH08.P1:parent-entp-experiment",
+      "lkr:material:CH08.P1:parent-infj-opinion",
+      "lkr:material:CH08.P1:parent-infp-choice",
+      "lkr:material:CH08.P1:parent-enfj-emotional-base",
+      "lkr:material:CH08.P1:parent-enfp-encouragement"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P1.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P1.S3",
+    "originalRole": "돌봄 행동",
+    "materialIds": [
+      "lkr:material:CH08.P1:parent-intj-reasoning",
+      "lkr:material:CH08.P1:parent-intp-patience",
+      "lkr:material:CH08.P1:parent-entj-responsibility",
+      "lkr:material:CH08.P1:parent-entp-experiment",
+      "lkr:material:CH08.P1:parent-infj-opinion",
+      "lkr:material:CH08.P1:parent-infp-choice",
+      "lkr:material:CH08.P1:parent-enfj-emotional-base",
+      "lkr:material:CH08.P1:parent-enfp-encouragement"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P1.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P1.S4",
+    "originalRole": "좋은 적용 조건",
+    "materialIds": [
+      "lkr:material:CH08.P1:parent-intj-reasoning",
+      "lkr:material:CH08.P1:parent-intp-patience",
+      "lkr:material:CH08.P1:parent-entj-responsibility",
+      "lkr:material:CH08.P1:parent-entp-experiment",
+      "lkr:material:CH08.P1:parent-infj-opinion",
+      "lkr:material:CH08.P1:parent-infp-choice",
+      "lkr:material:CH08.P1:parent-enfj-emotional-base",
+      "lkr:material:CH08.P1:parent-enfp-encouragement"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P2.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P2.S1",
+    "originalRole": "다른 양육 강점",
+    "materialIds": [
+      "lkr:material:CH08.P2:parent-istj-predictability",
+      "lkr:material:CH08.P2:parent-isfj-security",
+      "lkr:material:CH08.P2:parent-estj-rules-explained",
+      "lkr:material:CH08.P2:parent-esfj-belonging",
+      "lkr:material:CH08.P2:parent-istp-help-access",
+      "lkr:material:CH08.P2:parent-isfp-warm-limit",
+      "lkr:material:CH08.P2:parent-estp-activity-choice",
+      "lkr:material:CH08.P2:parent-esfp-shared-interest"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P2.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P2.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "lkr:material:CH08.P2:parent-istj-predictability",
+      "lkr:material:CH08.P2:parent-isfj-security",
+      "lkr:material:CH08.P2:parent-estj-rules-explained",
+      "lkr:material:CH08.P2:parent-esfj-belonging",
+      "lkr:material:CH08.P2:parent-istp-help-access",
+      "lkr:material:CH08.P2:parent-isfp-warm-limit",
+      "lkr:material:CH08.P2:parent-estp-activity-choice",
+      "lkr:material:CH08.P2:parent-esfp-shared-interest"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P2.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P2.S3",
+    "originalRole": "함께하는 상황",
+    "materialIds": [
+      "lkr:material:CH08.P2:parent-istj-predictability",
+      "lkr:material:CH08.P2:parent-isfj-security",
+      "lkr:material:CH08.P2:parent-estj-rules-explained",
+      "lkr:material:CH08.P2:parent-esfj-belonging",
+      "lkr:material:CH08.P2:parent-istp-help-access",
+      "lkr:material:CH08.P2:parent-isfp-warm-limit",
+      "lkr:material:CH08.P2:parent-estp-activity-choice",
+      "lkr:material:CH08.P2:parent-esfp-shared-interest"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P2.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P2.S4",
+    "originalRole": "양육 조건",
+    "materialIds": [
+      "lkr:material:CH08.P2:parent-istj-predictability",
+      "lkr:material:CH08.P2:parent-isfj-security",
+      "lkr:material:CH08.P2:parent-estj-rules-explained",
+      "lkr:material:CH08.P2:parent-esfj-belonging",
+      "lkr:material:CH08.P2:parent-istp-help-access",
+      "lkr:material:CH08.P2:parent-isfp-warm-limit",
+      "lkr:material:CH08.P2:parent-estp-activity-choice",
+      "lkr:material:CH08.P2:parent-esfp-shared-interest"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P3.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P3.S1",
+    "originalRole": "과해질 성향",
+    "materialIds": [
+      "lkr:material:CH08.P3:parent-high-expectation",
+      "lkr:material:CH08.P3:parent-overprotection",
+      "lkr:material:CH08.P3:parent-emotion-reading",
+      "lkr:material:CH08.P3:parent-results-only",
+      "lkr:material:CH08.P3:parent-debate-as-listen",
+      "lkr:material:CH08.P3:parent-monopoly-fatigue"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P3.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P3.S2",
+    "originalRole": "부담의 이유",
+    "materialIds": [
+      "lkr:material:CH08.P3:parent-high-expectation",
+      "lkr:material:CH08.P3:parent-overprotection",
+      "lkr:material:CH08.P3:parent-emotion-reading",
+      "lkr:material:CH08.P3:parent-results-only",
+      "lkr:material:CH08.P3:parent-debate-as-listen",
+      "lkr:material:CH08.P3:parent-monopoly-fatigue"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P3.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P3.S3",
+    "originalRole": "보호 교육 기대",
+    "materialIds": [
+      "lkr:material:CH08.P3:parent-high-expectation",
+      "lkr:material:CH08.P3:parent-overprotection",
+      "lkr:material:CH08.P3:parent-emotion-reading",
+      "lkr:material:CH08.P3:parent-results-only",
+      "lkr:material:CH08.P3:parent-debate-as-listen",
+      "lkr:material:CH08.P3:parent-monopoly-fatigue"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P3.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P3.S4",
+    "originalRole": "의도와 필요 구분",
+    "materialIds": [
+      "lkr:material:CH08.P3:parent-high-expectation",
+      "lkr:material:CH08.P3:parent-overprotection",
+      "lkr:material:CH08.P3:parent-emotion-reading",
+      "lkr:material:CH08.P3:parent-results-only",
+      "lkr:material:CH08.P3:parent-debate-as-listen",
+      "lkr:material:CH08.P3:parent-monopoly-fatigue"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P4.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P4.S1",
+    "originalRole": "긍정적 역할",
+    "materialIds": [
+      "lkr:material:CH08.P4:parent-age-aware-question",
+      "lkr:material:CH08.P4:parent-model-commitment",
+      "lkr:material:CH08.P4:parent-consent-respect",
+      "lkr:material:CH08.P4:parent-support-channel",
+      "lkr:material:CH08.P4:parent-care-sustainable",
+      "lkr:material:CH08.P4:parent-optout-warmth"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P4.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P4.S2",
+    "originalRole": "주의점 보완",
+    "materialIds": [
+      "lkr:material:CH08.P4:parent-age-aware-question",
+      "lkr:material:CH08.P4:parent-model-commitment",
+      "lkr:material:CH08.P4:parent-consent-respect",
+      "lkr:material:CH08.P4:parent-support-channel",
+      "lkr:material:CH08.P4:parent-care-sustainable",
+      "lkr:material:CH08.P4:parent-optout-warmth"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P4.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P4.S3",
+    "originalRole": "일상 행동",
+    "materialIds": [
+      "lkr:material:CH08.P4:parent-age-aware-question",
+      "lkr:material:CH08.P4:parent-model-commitment",
+      "lkr:material:CH08.P4:parent-consent-respect",
+      "lkr:material:CH08.P4:parent-support-channel",
+      "lkr:material:CH08.P4:parent-care-sustainable",
+      "lkr:material:CH08.P4:parent-optout-warmth"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH08.P4.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH08.P4.S4",
+    "originalRole": "따뜻한 마무리",
+    "materialIds": [
+      "lkr:material:CH08.P4:parent-age-aware-question",
+      "lkr:material:CH08.P4:parent-model-commitment",
+      "lkr:material:CH08.P4:parent-consent-respect",
+      "lkr:material:CH08.P4:parent-support-channel",
+      "lkr:material:CH08.P4:parent-care-sustainable",
+      "lkr:material:CH08.P4:parent-optout-warmth"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P1.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P1.S1",
+    "originalRole": "검증된 좋은 힘",
+    "materialIds": [
+      "lkr:material:CH09.P1:good-dohwa-symbol",
+      "lkr:material:CH09.P1:good-help-access",
+      "lkr:material:CH09.P1:good-output-joy",
+      "lkr:material:CH09.P1:held-hongyeom-expansion"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P1.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P1.S2",
+    "originalRole": "실제 명리 근거",
+    "materialIds": [
+      "lkr:material:CH09.P1:good-dohwa-symbol",
+      "lkr:material:CH09.P1:good-help-access",
+      "lkr:material:CH09.P1:good-output-joy",
+      "lkr:material:CH09.P1:held-hongyeom-expansion"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P1.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P1.S3",
+    "originalRole": "좋은 가능성",
+    "materialIds": [
+      "lkr:material:CH09.P1:good-dohwa-symbol",
+      "lkr:material:CH09.P1:good-help-access",
+      "lkr:material:CH09.P1:good-output-joy",
+      "lkr:material:CH09.P1:held-hongyeom-expansion"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P1.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P1.S4",
+    "originalRole": "활용 조건",
+    "materialIds": [
+      "lkr:material:CH09.P1:good-dohwa-symbol",
+      "lkr:material:CH09.P1:good-help-access",
+      "lkr:material:CH09.P1:good-output-joy",
+      "lkr:material:CH09.P1:held-hongyeom-expansion"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P2.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P2.S1",
+    "originalRole": "다른 강점",
+    "materialIds": [
+      "lkr:material:CH09.P2:gift-care-with-choice",
+      "lkr:material:CH09.P2:gift-meaningful-listen",
+      "lkr:material:CH09.P2:gift-trust-expression",
+      "lkr:material:CH09.P2:gift-autonomy-respect"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P2.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P2.S2",
+    "originalRole": "명리와 MBTI 근거",
+    "materialIds": [
+      "lkr:material:CH09.P2:gift-care-with-choice",
+      "lkr:material:CH09.P2:gift-meaningful-listen",
+      "lkr:material:CH09.P2:gift-trust-expression",
+      "lkr:material:CH09.P2:gift-autonomy-respect"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P2.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P2.S3",
+    "originalRole": "상대에게 주는 가치",
+    "materialIds": [
+      "lkr:material:CH09.P2:gift-care-with-choice",
+      "lkr:material:CH09.P2:gift-meaningful-listen",
+      "lkr:material:CH09.P2:gift-trust-expression",
+      "lkr:material:CH09.P2:gift-autonomy-respect"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P2.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P2.S4",
+    "originalRole": "지속 조건",
+    "materialIds": [
+      "lkr:material:CH09.P2:gift-care-with-choice",
+      "lkr:material:CH09.P2:gift-meaningful-listen",
+      "lkr:material:CH09.P2:gift-trust-expression",
+      "lkr:material:CH09.P2:gift-autonomy-respect"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P3.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P3.S1",
+    "originalRole": "소개한 원칙",
+    "materialIds": [
+      "lkr:material:CH09.P3:recall-care-request",
+      "lkr:material:CH09.P3:recall-pace-choice",
+      "lkr:material:CH09.P3:recall-space-return",
+      "lkr:material:CH09.P3:recall-care-with-safety"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P3.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P3.S2",
+    "originalRole": "앞선 위험과 연결",
+    "materialIds": [
+      "lkr:material:CH09.P3:recall-care-request",
+      "lkr:material:CH09.P3:recall-pace-choice",
+      "lkr:material:CH09.P3:recall-space-return",
+      "lkr:material:CH09.P3:recall-care-with-safety"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P3.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P3.S3",
+    "originalRole": "작은 행동",
+    "materialIds": [
+      "lkr:material:CH09.P3:recall-care-request",
+      "lkr:material:CH09.P3:recall-pace-choice",
+      "lkr:material:CH09.P3:recall-space-return",
+      "lkr:material:CH09.P3:recall-care-with-safety"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P3.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P3.S4",
+    "originalRole": "긍정적 변화",
+    "materialIds": [
+      "lkr:material:CH09.P3:recall-care-request",
+      "lkr:material:CH09.P3:recall-pace-choice",
+      "lkr:material:CH09.P3:recall-space-return",
+      "lkr:material:CH09.P3:recall-care-with-safety"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P4.S1",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P4.S1",
+    "originalRole": "대표 사랑의 특징",
+    "materialIds": [
+      "lkr:material:CH09.P4:closing-quiet-visible",
+      "lkr:material:CH09.P4:closing-choice-care",
+      "lkr:material:CH09.P4:closing-meaning-difference",
+      "lkr:material:CH09.P4:closing-trust-current"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P4.S2",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P4.S2",
+    "originalRole": "긍정적 강점",
+    "materialIds": [
+      "lkr:material:CH09.P4:closing-quiet-visible",
+      "lkr:material:CH09.P4:closing-choice-care",
+      "lkr:material:CH09.P4:closing-meaning-difference",
+      "lkr:material:CH09.P4:closing-trust-current"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P4.S3",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P4.S3",
+    "originalRole": "앞으로의 기준",
+    "materialIds": [
+      "lkr:material:CH09.P4:closing-quiet-visible",
+      "lkr:material:CH09.P4:closing-choice-care",
+      "lkr:material:CH09.P4:closing-meaning-difference",
+      "lkr:material:CH09.P4:closing-trust-current"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  },
+  {
+    "id": "lkr:role:CH09.P4.S4",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "address": "CH09.P4.S4",
+    "originalRole": "개인별 마무리",
+    "materialIds": [
+      "lkr:material:CH09.P4:closing-quiet-visible",
+      "lkr:material:CH09.P4:closing-choice-care",
+      "lkr:material:CH09.P4:closing-meaning-difference",
+      "lkr:material:CH09.P4:closing-trust-current"
+    ],
+    "absentEvidence": "withhold_not_fill",
+    "independentMaterialCount": false
+  }
+]

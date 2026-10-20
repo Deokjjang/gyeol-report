@@ -1,0 +1,112 @@
+{
+  "audits": [
+    {
+      "fixtureId": "fixture-comprehensive-A",
+      "alias": "검토 가",
+      "hashes": {
+        "input": "fc17b4b2b0e144c1f91d095810968743238a00750a919e9fa53c64ec925bac17",
+        "calculation": "89e0559c46846256e5fcc6ea353e9d9d58380c865a0514aab87c00d54fd8f3b5",
+        "profiles": "0d36ef50d88965915b021a553da2c98c644d92ddb4edaf934200b09c1dfc66d9",
+        "evidence": "26185b5ba4107b16cf516a1125db5d3a71d6ad31d99edc8fd78bf600fe925c84",
+        "narrative": "555e5b77c1cbbd44b95d9e515763adc79419d290fe1e9f4d617f9af676e48b7b",
+        "book": "a159ae6501c9f57cea682aa62a54cbecadfa8460022330ed812cf30e81d4e27f"
+      },
+      "mbtiInput": "ENFJ",
+      "timeInput": "EXACT",
+      "fusion": {
+        "available": true,
+        "reinforce": 93,
+        "tensions": 12,
+        "complements": 227,
+        "unknownInputNotFilled": false
+      },
+      "writerVersion": "comprehensive-editorial-quality-fix-01-v1",
+      "manuscriptVersion": "comprehensive-manuscript-13d-5b-v1",
+      "releaseDraftVersion": "comprehensive-editorial-quality-fix-01-v1",
+      "publishedEdition": "comprehensive-editorial-quality-fix-01-v1",
+      "releaseIsSelected": true,
+      "fallback": false,
+      "fallbackCause": null,
+      "hardErrors": [],
+      "qualityIssues": [],
+      "chapters": 13,
+      "paragraphs": 52,
+      "bookProjectionContainsAllFinalNarrativeParagraphs": true,
+      "bookDigest": "a159ae6501c9f57cea682aa62a54cbecadfa8460022330ed812cf30e81d4e27f",
+      "graphInput": {
+        "sameGeneratedEvidencePacket": true,
+        "profilesFromSameStoredCalculation": true,
+        "birthCalendarRecalculationsByGraph": 0,
+        "owner": "fixture-person-1",
+        "allOriginalGraphNodesMatched": 3628,
+        "originalFixture": "fixture-comprehensive-A",
+        "originalNodeAndRootAddressesPreserved": true
+      }
+    },
+    {
+      "fixtureId": "fixture-comprehensive-F",
+      "alias": "검토 나",
+      "hashes": {
+        "input": "ee56f4ed124d7e74bdf95786d90e13a8c77455a8d41155b70af90f33062cfc42",
+        "calculation": "eaacda485c5d1989132773fc94dda31f27d463d0df6b8362cc630b0f027126cd",
+        "profiles": "0867ce7c4ed41c296bfaa611aaf1391a1e54d87cd95f1b6a10088329c1e88106",
+        "evidence": "68ad2a420cc7a5b0801cbc72826fa3c1947b6a8f6090a8d72b91b4a3dce5e4b4",
+        "narrative": "00062a59e44716cd5801b5705549f6831739d505dded0813f73117267083a255",
+        "book": "936b3e5fb0c45a007d933824729eafb49c0081e21afb1e3c371dd3c879e155fb"
+      },
+      "mbtiInput": "UNKNOWN",
+      "timeInput": "UNKNOWN",
+      "fusion": {
+        "available": false,
+        "reinforce": 0,
+        "tensions": 0,
+        "complements": 0,
+        "unknownInputNotFilled": true
+      },
+      "writerVersion": "comprehensive-editorial-quality-fix-01-v1",
+      "manuscriptVersion": "comprehensive-manuscript-13d-5b-v1",
+      "releaseDraftVersion": "comprehensive-editorial-quality-fix-01-v1",
+      "publishedEdition": "comprehensive-editorial-quality-fix-01-v1",
+      "releaseIsSelected": true,
+      "fallback": false,
+      "fallbackCause": null,
+      "hardErrors": [],
+      "qualityIssues": [],
+      "chapters": 13,
+      "paragraphs": 52,
+      "bookProjectionContainsAllFinalNarrativeParagraphs": true,
+      "bookDigest": "936b3e5fb0c45a007d933824729eafb49c0081e21afb1e3c371dd3c879e155fb",
+      "graphInput": {
+        "sameGeneratedEvidencePacket": true,
+        "profilesFromSameStoredCalculation": true,
+        "birthCalendarRecalculationsByGraph": 0,
+        "owner": "fixture-person-2",
+        "allOriginalGraphNodesMatched": 163,
+        "originalFixture": "fixture-comprehensive-F",
+        "originalNodeAndRootAddressesPreserved": true
+      }
+    }
+  ],
+  "path": "paidRuntime → generateV4ShadowReport → buildV4ComprehensiveProduct → Manuscript → Release → validateComprehensiveRelease → selected narrative → validateV4Publication → projectBook",
+  "noProductionPublicationExecuted": true,
+  "missingRequestedAuditFile": {
+    "requested": "narrativeHumanAudit.ts",
+    "actual": "manuscriptHumanAudit.ts"
+  },
+  "sourceFileHashes": {
+    "src/lib/book/paidRuntime.ts": "9130235b1bdcc313fc5806952df600ef8129aa5e3a402cd46b15fbafaba5fe59",
+    "src/lib/interpretation-v4/comprehensiveProductAdapter.ts": "ece7c58bcd7d28a1d6fee0ff0567a5de2be8953590e17966667d64787b0debef",
+    "src/lib/interpretation-v4/comprehensiveEditorialPlan.ts": "fce9aa42cf74fefdbf4b81e21964b581308d57c1bacff90ccbcc9e78969e4a33",
+    "src/lib/interpretation-v4/comprehensiveManuscriptRenderer.ts": "c86f1bfa02ed5b34be2949fdf0f89b3765d13f0200138a8b5790a31c0c339535",
+    "src/lib/interpretation-v4/comprehensiveReleaseRenderer.ts": "4489b26a4ad16b1e2498f99441b7cb7274793acec22ce2916fb7ee265c44163e",
+    "src/lib/interpretation-v4/comprehensiveReleaseValidator.ts": "3bd16b450ac98c08b2d889fafc4c1ca04ccc620f583800f929a604c774f95b90",
+    "src/lib/interpretation-v4/comprehensiveReleaseContracts.ts": "e8d105999376cb61b6da101fe236ba60e7af47708dfdcf81f894622ef1d956d3",
+    "src/lib/interpretation-v4/comprehensiveReaderApplications.ts": "cddf85e053c25ffa9860962c1177977d51811c6d1b3366f4f88be52c0b312138",
+    "src/lib/interpretation-v4/comprehensiveQualityAudit.ts": "29716b68525386fbf214c5bed68c3a63133dad159dd12bbd04da82a7baf06bf0",
+    "src/lib/interpretation-v4/comprehensiveManuscriptValidator.ts": "18bec40fceb9bfe0876adc8ac60ead2c0833685646bfb7d51ae8a05285c497dd",
+    "src/lib/interpretation-v4/comprehensiveManuscriptPolish.ts": "98aef2a9b9853f5376dbf49f1ca3e0f9e1fc4598fffa5731f4b35e74ee587e6b",
+    "src/lib/interpretation-v4/manuscriptHumanAudit.ts": "9aad5dd25ef0d4986c1a4f52a5d5502caf9fb5dd633f293ed7ba2ebc19ed60cf",
+    "src/lib/interpretation-v4/runtimeProjection.ts": "793ef8b1dce3b693e01a6a243a7dfcca793af467b7ac232b1219523029a2feee",
+    "src/app/dev/book-preview/bookProjection.ts": "1759e0707414c5eef5f4efc9e067b2f4b54b9693743d80e5352463537996e222"
+  }
+}

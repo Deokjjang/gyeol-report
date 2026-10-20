@@ -1,0 +1,13 @@
+[
+  {
+    "address": "CH06.P4",
+    "excerpt": "자녀는 해보고 싶은 일과 도움이 필요한 곳을 말할 수 있으며, 부모가 안전과 최종 결정의 책임을 맡아야 합니다.",
+    "originalParagraphHash": "d94eb1935e88ab541d1181f3432ccb31d7bcc30c601df1abf102c1921739bd9c",
+    "states": [
+      "ACTUAL_READER_ADULT_BOUNDARY_RISK",
+      "CURRENT_WRITER_UNCHANGED",
+      "SPECIALIST_ADULT_CONTEXT_WITHHELD",
+      "FUTURE_WRITER_REPAIR_REQUIRED"
+    ]
+  }
+]

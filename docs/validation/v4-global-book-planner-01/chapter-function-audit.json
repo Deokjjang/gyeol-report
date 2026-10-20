@@ -1,0 +1,954 @@
+{
+  "derivedFromActualPlans": true,
+  "diversityIsNotIndependentInformation": true,
+  "chapters": [
+    {
+      "engine": "comprehensive",
+      "chapter": "CH01",
+      "functions": {
+        "RISK": 1,
+        "TWIST": 1,
+        "POSITIVE": 2
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "career",
+      "chapter": "CH01",
+      "functions": {
+        "POSITIVE": 1
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "career",
+      "chapter": "CH02",
+      "functions": {
+        "POSITIVE": 1
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "career",
+      "chapter": "CH03",
+      "functions": {
+        "POSITIVE": 1
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "career",
+      "chapter": "CH04",
+      "functions": {
+        "POSITIVE": 1
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "career",
+      "chapter": "CH05",
+      "functions": {
+        "POSITIVE": 1
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "love",
+      "chapter": "CH01",
+      "functions": {
+        "POSITIVE": 1
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "love",
+      "chapter": "CH02",
+      "functions": {
+        "POSITIVE": 1
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "love",
+      "chapter": "CH03",
+      "functions": {
+        "POSITIVE": 1
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "love",
+      "chapter": "CH04",
+      "functions": {
+        "POSITIVE": 1
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "love",
+      "chapter": "CH05",
+      "functions": {
+        "POSITIVE": 1
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "love",
+      "chapter": "CH06",
+      "functions": {
+        "POSITIVE": 1
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "love",
+      "chapter": "CH07",
+      "functions": {
+        "POSITIVE": 1
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-love",
+      "chapter": "CH01",
+      "functions": {
+        "CONDITIONAL_APPLICATION": 20
+      },
+      "onlyOneFunction": true,
+      "reviewRequired": true,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-love",
+      "chapter": "CH02",
+      "functions": {
+        "CONDITIONAL_APPLICATION": 20
+      },
+      "onlyOneFunction": true,
+      "reviewRequired": true,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-love",
+      "chapter": "CH03",
+      "functions": {
+        "CONDITIONAL_APPLICATION": 20
+      },
+      "onlyOneFunction": true,
+      "reviewRequired": true,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-love",
+      "chapter": "CH04",
+      "functions": {
+        "CONDITIONAL_APPLICATION": 20
+      },
+      "onlyOneFunction": true,
+      "reviewRequired": true,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-love",
+      "chapter": "CH05",
+      "functions": {
+        "CONDITIONAL_APPLICATION": 20
+      },
+      "onlyOneFunction": true,
+      "reviewRequired": true,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-love",
+      "chapter": "CH06",
+      "functions": {
+        "CONDITIONAL_APPLICATION": 20
+      },
+      "onlyOneFunction": true,
+      "reviewRequired": true,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-love",
+      "chapter": "CH07",
+      "functions": {
+        "CONDITIONAL_APPLICATION": 20
+      },
+      "onlyOneFunction": true,
+      "reviewRequired": true,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-love",
+      "chapter": "CH08",
+      "functions": {
+        "CONDITIONAL_APPLICATION": 20
+      },
+      "onlyOneFunction": true,
+      "reviewRequired": true,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-love",
+      "chapter": "CH09",
+      "functions": {},
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-marriage",
+      "chapter": "CH01",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-marriage",
+      "chapter": "CH02",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-marriage",
+      "chapter": "CH03",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-marriage",
+      "chapter": "CH04",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-marriage",
+      "chapter": "CH05",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-marriage",
+      "chapter": "CH06",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-marriage",
+      "chapter": "CH07",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-marriage",
+      "chapter": "CH08",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-marriage",
+      "chapter": "CH09",
+      "functions": {},
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "chapter": "CH01",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "chapter": "CH02",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "chapter": "CH03",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "chapter": "CH04",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "chapter": "CH05",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "chapter": "CH06",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "chapter": "CH07",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "chapter": "CH08",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "chapter": "CH09",
+      "functions": {},
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-coworker",
+      "chapter": "CH01",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-coworker",
+      "chapter": "CH02",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-coworker",
+      "chapter": "CH03",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-coworker",
+      "chapter": "CH04",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-coworker",
+      "chapter": "CH05",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-coworker",
+      "chapter": "CH06",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-coworker",
+      "chapter": "CH07",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-coworker",
+      "chapter": "CH08",
+      "functions": {},
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-coworker",
+      "chapter": "CH09",
+      "functions": {},
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "chapter": "CH01",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "chapter": "CH02",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "chapter": "CH03",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "chapter": "CH04",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "chapter": "CH05",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "chapter": "CH06",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "chapter": "CH07",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "chapter": "CH08",
+      "functions": {},
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "chapter": "CH09",
+      "functions": {},
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "chapter": "CH01",
+      "functions": {
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5,
+        "POSITIVE": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "chapter": "CH02",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "chapter": "CH03",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "chapter": "CH04",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "chapter": "CH05",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "chapter": "CH06",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "chapter": "CH07",
+      "functions": {
+        "POSITIVE": 5,
+        "RISK": 5,
+        "EXPLANATION": 5,
+        "TWIST": 5
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "chapter": "CH08",
+      "functions": {},
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "chapter": "CH09",
+      "functions": {},
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-friendship",
+      "chapter": "CH01",
+      "functions": {
+        "POSITIVE": 4,
+        "RISK": 4,
+        "EXPLANATION": 8,
+        "TWIST": 4
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-friendship",
+      "chapter": "CH02",
+      "functions": {
+        "EXPLANATION": 8,
+        "POSITIVE": 4,
+        "RISK": 4,
+        "TWIST": 4
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-friendship",
+      "chapter": "CH03",
+      "functions": {
+        "EXPLANATION": 8,
+        "POSITIVE": 4,
+        "RISK": 4,
+        "TWIST": 4
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-friendship",
+      "chapter": "CH04",
+      "functions": {
+        "EXPLANATION": 8,
+        "POSITIVE": 4,
+        "RISK": 4,
+        "TWIST": 4
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-friendship",
+      "chapter": "CH05",
+      "functions": {
+        "EXPLANATION": 8,
+        "POSITIVE": 4,
+        "RISK": 4,
+        "TWIST": 4
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-friendship",
+      "chapter": "CH06",
+      "functions": {
+        "EXPLANATION": 8,
+        "POSITIVE": 4,
+        "RISK": 4,
+        "TWIST": 4
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-friendship",
+      "chapter": "CH07",
+      "functions": {
+        "EXPLANATION": 8,
+        "POSITIVE": 4,
+        "RISK": 4,
+        "TWIST": 4
+      },
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-friendship",
+      "chapter": "CH08",
+      "functions": {},
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    },
+    {
+      "engine": "compatibility-friendship",
+      "chapter": "CH09",
+      "functions": {},
+      "onlyOneFunction": false,
+      "reviewRequired": false,
+      "automaticMeaningDuplicationClaimed": false,
+      "newHardCap": 0
+    }
+  ]
+}

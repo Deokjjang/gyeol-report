@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "relationship-style-matrix.json.gz",
+  "payloadHash": "63c4e41199c4142e30f37e55e72bd41b9c5a028f098e6bf3074d99cc3718be5e",
+  "logicalJsonHash": "a3351f7bc4bf3627dd68db061039e5552c2d6f9f4e114c07807e8dd7d69379b8",
+  "uncompressedBytes": 673994
+}

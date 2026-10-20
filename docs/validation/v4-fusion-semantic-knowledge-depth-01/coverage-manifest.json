@@ -1,0 +1,1731 @@
+{
+  "baseSha": "071acdc456ddba3b8467667d53f4ff809c9b39dd",
+  "connectedToRuntime": false,
+  "approvedForCustomer": false,
+  "counts": {
+    "legacyProfiles": 44,
+    "complementProfiles": 96,
+    "complementGroups": 8,
+    "tensionSplits": 10,
+    "axes": 36,
+    "facets": 109,
+    "selectedFacets": 104,
+    "additionalFacetStudies": 5,
+    "newSourceTaskCandidates": 24,
+    "newFacetInteractions": 18,
+    "existingMeaningConditionExtensions": 6,
+    "individualFusionMaterials": 169,
+    "positiveMaterials": 179,
+    "riskMaterials": 179,
+    "twistMaterials": 169,
+    "fictionalScenes": 179,
+    "conditionalMaterials": 179,
+    "relationContractDefinitions": 3,
+    "rejectedInferenceExamples": 16,
+    "applicabilityRecords": 164,
+    "productCells": 984,
+    "relationshipCells": 1148,
+    "newSpecialistInterpretations": 0,
+    "newRuntimeRules": 0,
+    "newEvidenceFacts": 0,
+    "legacyTags": 22
+  },
+  "countingPolicy": "164 main materials +5 facet studies =169; +10 split studies =179 positives/risks/scenes/conditional studies. Protocol/group/source rows and preserved original strings are not additional authored material. Applicability cells inherit existing distinct axis/role questions and are not 2132 new interpretations.",
+  "legacyByType": {
+    "INTJ": 3,
+    "INTP": 4,
+    "ENTJ": 6,
+    "ENTP": 3,
+    "INFJ": 2,
+    "INFP": 2,
+    "ENFJ": 2,
+    "ENFP": 4,
+    "ISTJ": 3,
+    "ISFJ": 2,
+    "ESTJ": 2,
+    "ESFJ": 2,
+    "ISTP": 3,
+    "ISFP": 2,
+    "ESTP": 2,
+    "ESFP": 2
+  },
+  "complementByGroup": {
+    "THINKING_ANALYSIS": 12,
+    "EXECUTION_STRATEGY": 12,
+    "LEADERSHIP_STATUS": 12,
+    "MONEY_REALITY": 12,
+    "SOCIAL_COMMUNICATION": 12,
+    "CREATION_LEARNING": 12,
+    "RELATIONSHIP": 10,
+    "CHANGE_RECOVERY": 14
+  },
+  "sourceCoverage": {
+    "originalTraits": 1213,
+    "sourceCoverage": {
+      "direct": 938,
+      "inferred": 275
+    },
+    "inheritedResearchRecords": 2991,
+    "conditionalIndividualResearch": 512,
+    "directionalPairResearch": 256,
+    "oldNotablePairs": 256,
+    "sajuFamilies": 11,
+    "sourceLocators": 22,
+    "allPreviousFileLocks": 2133
+  },
+  "pairAudit": {
+    "legacyPairs": 946,
+    "complementPairs": 4560,
+    "cross": 4224,
+    "exactAxisDirectionDuplicates": [
+      [
+        "C001",
+        "C081"
+      ]
+    ],
+    "claimEquivalenceApproved": 0
+  },
+  "axesAndFacets": [
+    {
+      "facetRef": "sar:facet:ACTION_TEMPO:start-latency",
+      "axis": "ACTION_TEMPO",
+      "definition": "결론과 첫 행동 사이의 간격",
+      "condition": "결론이 실제로 난 뒤의 간격을 비교",
+      "selectedIn": [
+        "fkr:complement:C022"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:ACTION_TEMPO:review-window",
+      "axis": "ACTION_TEMPO",
+      "definition": "행동 전 검토 시간을 배정",
+      "condition": "오류 비용과 기한이 모두 주어진 상황",
+      "selectedIn": [],
+      "facetStudyRefs": [
+        "fkr:facet-study:ACTION_TEMPO:review-window"
+      ],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:ACTION_TEMPO:paced-handoff",
+      "axis": "ACTION_TEMPO",
+      "definition": "자기 착수와 타인의 준비 속도를 조정",
+      "condition": "공동 과제의 의존 단계가 있을 때",
+      "selectedIn": [
+        "fkr:complement:C021",
+        "fkr:candidate:estp-check-act"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:ENERGY_DIRECTION:private-processing",
+      "axis": "ENERGY_DIRECTION",
+      "definition": "생각을 먼저 사적으로 정리",
+      "condition": "혼자 정리할 접근성과 응답 기한 확인",
+      "selectedIn": [
+        "fkr:legacy:infj-depth",
+        "fkr:complement:C089",
+        "fkr:candidate:intp-review-window"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:ENERGY_DIRECTION:dialogic-processing",
+      "axis": "ENERGY_DIRECTION",
+      "definition": "대화 속에서 생각을 발전",
+      "condition": "대화 상대가 참여에 동의할 때",
+      "selectedIn": [
+        "fkr:complement:C088"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:ENERGY_DIRECTION:channel-switch",
+      "axis": "ENERGY_DIRECTION",
+      "definition": "장면에 따른 정리 통로의 전환",
+      "condition": "여러 장면의 실제 관찰이 있을 때",
+      "selectedIn": [
+        "fkr:legacy:entj-alone"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:STRUCTURE_STYLE:fixed-minimum",
+      "axis": "STRUCTURE_STYLE",
+      "definition": "반드시 지킬 최소 절차를 선택",
+      "condition": "법·안전상 필수와 취향을 분리",
+      "selectedIn": [
+        "fkr:complement:C018",
+        "fkr:candidate:istj-safe-question"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:STRUCTURE_STYLE:flexible-method",
+      "axis": "STRUCTURE_STYLE",
+      "definition": "목적 안에서 방법을 열어둠",
+      "condition": "결과 기준과 변경 권한이 확인될 때",
+      "selectedIn": [],
+      "facetStudyRefs": [
+        "fkr:facet-study:STRUCTURE_STYLE:flexible-method"
+      ],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:STRUCTURE_STYLE:change-log",
+      "axis": "STRUCTURE_STYLE",
+      "definition": "계획 변경을 서로 확인 가능한 기록으로 남김",
+      "condition": "공동 일정이나 담당이 바뀔 때",
+      "selectedIn": [
+        "fkr:legacy:intj-money",
+        "fkr:complement:C090",
+        "fkr:candidate:isfj-guided-depth"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:COMMUNICATION_STYLE:direct-request",
+      "axis": "COMMUNICATION_STYLE",
+      "definition": "원하는 행동을 명시",
+      "condition": "거절 가능한 실제 선택권이 있을 때",
+      "selectedIn": [
+        "fkr:legacy:estj-needle",
+        "fkr:complement:C054",
+        "fkr:complement:C060"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:COMMUNICATION_STYLE:contextual-delivery",
+      "axis": "COMMUNICATION_STYLE",
+      "definition": "맥락과 관계를 고려해 전달",
+      "condition": "민감한 피드백의 장소와 수신자 확인",
+      "selectedIn": [
+        "fkr:complement:C055"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:COMMUNICATION_STYLE:intent-check",
+      "axis": "COMMUNICATION_STYLE",
+      "definition": "표현과 이해된 뜻을 다시 확인",
+      "condition": "해석 차이를 당사자가 확인할 때",
+      "selectedIn": [
+        "fkr:legacy:enfp-expression"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CHANGE_ORIENTATION:preserve-value",
+      "axis": "CHANGE_ORIENTATION",
+      "definition": "유지할 이유를 선택적으로 확인",
+      "condition": "유지 효과의 실제 자료가 있을 때",
+      "selectedIn": [],
+      "facetStudyRefs": [
+        "fkr:facet-study:CHANGE_ORIENTATION:preserve-value"
+      ],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CHANGE_ORIENTATION:novelty-trial",
+      "axis": "CHANGE_ORIENTATION",
+      "definition": "새 방식의 일부를 시험",
+      "condition": "시험을 되돌릴 수 있는 상황",
+      "selectedIn": [
+        "fkr:legacy:entp-rules",
+        "fkr:complement:C083",
+        "fkr:candidate:enfp-renewable-routine"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CHANGE_ORIENTATION:chosen-change",
+      "axis": "CHANGE_ORIENTATION",
+      "definition": "스스로 선택한 변화와 강제 변화를 구별",
+      "condition": "변경 권한과 실제 제약이 확인될 때",
+      "selectedIn": [
+        "fkr:complement:C023",
+        "fkr:complement:C084"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:DECISION_STYLE:closure-criteria",
+      "axis": "DECISION_STYLE",
+      "definition": "어떤 정보면 결론을 닫을지 정의",
+      "condition": "결정의 영향과 정보 범위가 명시될 때",
+      "selectedIn": [
+        "fkr:complement:C020"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:DECISION_STYLE:option-hold",
+      "axis": "DECISION_STYLE",
+      "definition": "가능성을 남길 이유와 기한을 설명",
+      "condition": "보류의 이익과 비용을 비교할 때",
+      "selectedIn": [
+        "fkr:legacy:intj-charm",
+        "fkr:legacy:isfj-love"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:DECISION_STYLE:reopen-trigger",
+      "axis": "DECISION_STYLE",
+      "definition": "결정을 다시 볼 새 근거를 정함",
+      "condition": "기존 결정과 변경 권한을 확인",
+      "selectedIn": [
+        "fkr:legacy:entj-needle"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:RELATION_STYLE:contact-range",
+      "axis": "RELATION_STYLE",
+      "definition": "연락·만남의 참여 범위를 정함",
+      "condition": "실제 관계와 생활 제약이 주어진 때",
+      "selectedIn": [
+        "fkr:legacy:isfp-love",
+        "fkr:complement:C078"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:RELATION_STYLE:shared-participation",
+      "axis": "RELATION_STYLE",
+      "definition": "함께할 활동의 참여 방식을 선택",
+      "condition": "참여·공개 동의가 있을 때",
+      "selectedIn": [
+        "fkr:legacy:enfp-alone",
+        "fkr:legacy:esfp-expression",
+        "fkr:complement:C059",
+        "fkr:candidate:enfj-shared-choice",
+        "fkr:candidate:esfj-shared-budget"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:RELATION_STYLE:private-space",
+      "axis": "RELATION_STYLE",
+      "definition": "공동 관계 안의 사적 영역을 유지",
+      "condition": "공동 책임과 사적 권한을 구분",
+      "selectedIn": [
+        "fkr:legacy:entj-alone",
+        "fkr:legacy:intp-space",
+        "fkr:legacy:infj-marriage",
+        "fkr:legacy:istp-marriage",
+        "fkr:candidate:isfp-exit-notice"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:RISK_STYLE:loss-limit",
+      "axis": "RISK_STYLE",
+      "definition": "감당 가능한 손실 범위를 정함",
+      "condition": "돈·시간·안전의 실제 한계 확인",
+      "selectedIn": [
+        "fkr:complement:C046"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:RISK_STYLE:reversible-probe",
+      "axis": "RISK_STYLE",
+      "definition": "되돌릴 수 있는 시험을 선택",
+      "condition": "복구 비용과 선택권이 확인될 때",
+      "selectedIn": [
+        "fkr:legacy:estp-study",
+        "fkr:complement:C091"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:RISK_STYLE:hazard-check",
+      "axis": "RISK_STYLE",
+      "definition": "위험의 종류와 정보 부족을 구별",
+      "condition": "건강·법적 문제는 별도 전문 판단 필요",
+      "selectedIn": [
+        "fkr:complement:C092"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:INITIATIVE:opening-proposal",
+      "axis": "INITIATIVE",
+      "definition": "멈춘 상황에 첫 선택지를 제시",
+      "condition": "제안과 실행 권한을 분리",
+      "selectedIn": [
+        "fkr:complement:C017",
+        "fkr:complement:C018"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:INITIATIVE:help-initiation",
+      "axis": "INITIATIVE",
+      "definition": "필요한 도움을 먼저 요청",
+      "condition": "상대의 거절·자원 조건을 확인",
+      "selectedIn": [],
+      "facetStudyRefs": [
+        "fkr:facet-study:INITIATIVE:help-initiation"
+      ],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:INITIATIVE:small-first-step",
+      "axis": "INITIATIVE",
+      "definition": "큰 승인 전 허용된 작은 단계를 수행",
+      "condition": "되돌릴 수 있고 재량이 있는 일",
+      "selectedIn": [
+        "fkr:complement:C013"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:GOAL_DRIVE:priority-focus",
+      "axis": "GOAL_DRIVE",
+      "definition": "목적에 따라 우선 과제를 고름",
+      "condition": "목표의 실제 소유자·동의를 확인",
+      "selectedIn": [
+        "fkr:legacy:entj-wealth-pressure-structure",
+        "fkr:complement:C013",
+        "fkr:complement:C015",
+        "fkr:complement:C023",
+        "fkr:complement:C068"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:GOAL_DRIVE:progress-feedback",
+      "axis": "GOAL_DRIVE",
+      "definition": "진행 결과와 목적의 차이를 확인",
+      "condition": "목표와 지표의 관계가 명확할 때",
+      "selectedIn": [
+        "fkr:legacy:entj-wealth",
+        "fkr:complement:C014",
+        "fkr:complement:C032",
+        "fkr:complement:C034",
+        "fkr:complement:C042",
+        "fkr:candidate:estp-small-goal-base"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:GOAL_DRIVE:goal-release",
+      "axis": "GOAL_DRIVE",
+      "definition": "목적을 위해 불필요한 과제를 내려놓음",
+      "condition": "목적·비용이 바뀌었는지 확인",
+      "selectedIn": [
+        "fkr:complement:C016"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:EXPANSION:scope-extension",
+      "axis": "EXPANSION",
+      "definition": "같은 기능의 적용 범위를 넓힘",
+      "condition": "새 대상의 요구가 실제 확인될 때",
+      "selectedIn": [
+        "fkr:complement:C096"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:EXPANSION:network-reach",
+      "axis": "EXPANSION",
+      "definition": "연결할 사람·영역을 확대",
+      "condition": "실제 접근·동의·역할 확인",
+      "selectedIn": [
+        "fkr:complement:C043"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:EXPANSION:capacity-check",
+      "axis": "EXPANSION",
+      "definition": "확대 전에 운영 여력을 점검",
+      "condition": "실제 운영 비용과 담당이 주어질 때",
+      "selectedIn": [
+        "fkr:complement:C016",
+        "fkr:complement:C048"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:PERSISTENCE:repeat-practice",
+      "axis": "PERSISTENCE",
+      "definition": "정한 연습을 반복",
+      "condition": "피드백을 받을 수 있는 과제",
+      "selectedIn": [
+        "fkr:complement:C022"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:PERSISTENCE:maintenance-effort",
+      "axis": "PERSISTENCE",
+      "definition": "시작 후 필요한 관리를 지속",
+      "condition": "담당과 기간이 합의된 상황",
+      "selectedIn": [],
+      "facetStudyRefs": [
+        "fkr:facet-study:PERSISTENCE:maintenance-effort"
+      ],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:PERSISTENCE:stop-rule",
+      "axis": "PERSISTENCE",
+      "definition": "지속의 종료 조건을 정함",
+      "condition": "효과·비용을 다시 볼 자료가 있을 때",
+      "selectedIn": [
+        "fkr:complement:C014"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:ADAPTABILITY:method-revision",
+      "axis": "ADAPTABILITY",
+      "definition": "목적 안에서 방법을 바꿈",
+      "condition": "방법의 재량이 실제 있을 때",
+      "selectedIn": [
+        "fkr:complement:C019",
+        "fkr:complement:C044",
+        "fkr:complement:C090"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:ADAPTABILITY:feedback-uptake",
+      "axis": "ADAPTABILITY",
+      "definition": "받은 정보의 유효 부분을 반영",
+      "condition": "정보의 신뢰성과 권한을 확인",
+      "selectedIn": [
+        "fkr:complement:C017",
+        "fkr:complement:C084"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:ADAPTABILITY:constraint-response",
+      "axis": "ADAPTABILITY",
+      "definition": "새 제약에 가능한 행동을 재배치",
+      "condition": "거절의 불이익과 안전을 먼저 확인",
+      "selectedIn": [
+        "fkr:complement:C024"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:DEPTH:cause-tracing",
+      "axis": "DEPTH",
+      "definition": "표면 결과 뒤의 과정을 탐색",
+      "condition": "실제 과정 정보가 있을 때",
+      "selectedIn": [
+        "fkr:legacy:intp-pressure-learning-structure",
+        "fkr:legacy:intj-inquiry",
+        "fkr:complement:C002",
+        "fkr:complement:C010",
+        "fkr:candidate:isfj-guided-depth",
+        "fkr:candidate:istp-tool-understanding"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:DEPTH:context-layer",
+      "axis": "DEPTH",
+      "definition": "같은 행동의 다른 조건을 검토",
+      "condition": "행동 사실과 해석을 구분",
+      "selectedIn": [
+        "fkr:legacy:infj-depth",
+        "fkr:complement:C005",
+        "fkr:complement:C075",
+        "fkr:complement:C088"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:DEPTH:compact-explanation",
+      "axis": "DEPTH",
+      "definition": "깊게 검토한 내용을 짧게 전달",
+      "condition": "수신자가 필요한 정보 범위를 확인",
+      "selectedIn": [
+        "fkr:legacy:intp-inquiry",
+        "fkr:complement:C006",
+        "fkr:complement:C065",
+        "fkr:complement:C086",
+        "fkr:candidate:intj-expertise-price"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CURIOSITY:question-making",
+      "axis": "CURIOSITY",
+      "definition": "모르는 지점을 질문으로 구체화",
+      "condition": "정보 요청의 목적과 동의를 확인",
+      "selectedIn": [
+        "fkr:legacy:intp-expression",
+        "fkr:complement:C004",
+        "fkr:complement:C070",
+        "fkr:candidate:entj-score-question"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CURIOSITY:alternative-search",
+      "axis": "CURIOSITY",
+      "definition": "기존 답 밖의 자료를 찾아봄",
+      "condition": "조사 시간과 종료 조건 확인",
+      "selectedIn": [
+        "fkr:legacy:enfp-connection",
+        "fkr:complement:C011"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CURIOSITY:question-parking",
+      "axis": "CURIOSITY",
+      "definition": "당장 필요 없는 질문을 보관",
+      "condition": "다시 볼 시점을 정할 수 있을 때",
+      "selectedIn": [
+        "fkr:legacy:intp-inquiry",
+        "fkr:candidate:enfp-question-practice"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:PATTERN_SENSE:recurrence",
+      "axis": "PATTERN_SENSE",
+      "definition": "같은 조건에서 반복된 현상을 비교",
+      "condition": "비교 가능한 관찰이 여럿 있을 때",
+      "selectedIn": [
+        "fkr:complement:C003",
+        "fkr:complement:C007"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:PATTERN_SENSE:cross-link",
+      "axis": "PATTERN_SENSE",
+      "definition": "다른 영역의 관계를 가설로 연결",
+      "condition": "공통점과 차이를 모두 명시",
+      "selectedIn": [
+        "fkr:legacy:enfp-connection",
+        "fkr:complement:C005",
+        "fkr:complement:C011"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:PATTERN_SENSE:counterpattern",
+      "axis": "PATTERN_SENSE",
+      "definition": "맞지 않는 사례를 적극 확인",
+      "condition": "자료의 출처·범위를 확인",
+      "selectedIn": [
+        "fkr:legacy:intj-inquiry",
+        "fkr:legacy:entp-needle",
+        "fkr:legacy:isfj-learning",
+        "fkr:complement:C071"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:PRECISION:error-detection",
+      "axis": "PRECISION",
+      "definition": "작은 오류를 기준에 비추어 발견",
+      "condition": "검증 기준이 합의된 상황",
+      "selectedIn": [
+        "fkr:legacy:entj-needle",
+        "fkr:legacy:istj-needle",
+        "fkr:complement:C001",
+        "fkr:complement:C002",
+        "fkr:complement:C009"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:PRECISION:standard-consistency",
+      "axis": "PRECISION",
+      "definition": "상황 사이 기준 적용의 일관성을 확인",
+      "condition": "같은 기준을 적용해도 되는 조건 확인",
+      "selectedIn": [
+        "fkr:legacy:isfp-needle",
+        "fkr:complement:C003",
+        "fkr:complement:C012",
+        "fkr:complement:C051",
+        "fkr:complement:C081"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:PRECISION:completion-quality",
+      "axis": "PRECISION",
+      "definition": "최종 결과물의 누락을 점검",
+      "condition": "완료 수준과 마감이 명시된 때",
+      "selectedIn": [
+        "fkr:legacy:estj-needle",
+        "fkr:complement:C008",
+        "fkr:complement:C020",
+        "fkr:complement:C036",
+        "fkr:complement:C062"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:PRECISION:argument-coherence",
+      "axis": "PRECISION",
+      "definition": "설명의 전제와 결론 사이 모순 확인",
+      "condition": "주장 사실과 감정 경험을 구분",
+      "selectedIn": [
+        "fkr:legacy:entp-question-authority-structure",
+        "fkr:legacy:entp-needle",
+        "fkr:legacy:infp-needle",
+        "fkr:complement:C004",
+        "fkr:complement:C060"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:LEARNING:acquisition",
+      "axis": "LEARNING",
+      "definition": "새 내용을 이해하고 익힘",
+      "condition": "연습·피드백 기회가 있을 때",
+      "selectedIn": [
+        "fkr:legacy:estp-study",
+        "fkr:complement:C033",
+        "fkr:complement:C068",
+        "fkr:complement:C069",
+        "fkr:candidate:entj-resource-learning",
+        "fkr:candidate:infp-chosen-learning"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:LEARNING:retrieval",
+      "axis": "LEARNING",
+      "definition": "익힌 내용을 다시 꺼내 사용",
+      "condition": "현재 조건이 배운 조건과 맞는지 확인",
+      "selectedIn": [
+        "fkr:legacy:isfj-learning",
+        "fkr:complement:C006",
+        "fkr:complement:C066",
+        "fkr:candidate:enfp-question-practice",
+        "fkr:candidate:estp-check-act"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:LEARNING:transfer",
+      "axis": "LEARNING",
+      "definition": "다른 문제에 배운 구조를 시험",
+      "condition": "다른 점을 비교하고 시험할 수 있을 때",
+      "selectedIn": [
+        "fkr:legacy:intp-pressure-learning-structure",
+        "fkr:legacy:infp-expression",
+        "fkr:legacy:istp-study",
+        "fkr:complement:C064",
+        "fkr:complement:C067",
+        "fkr:candidate:estj-learning-handoff"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:STRATEGY:route-comparison",
+      "axis": "STRATEGY",
+      "definition": "목적에 이르는 여러 경로를 비교",
+      "condition": "목적·자원·기한이 명시된 상황",
+      "selectedIn": [
+        "fkr:complement:C019",
+        "fkr:complement:C029"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:STRATEGY:sequence-design",
+      "axis": "STRATEGY",
+      "definition": "의존 관계에 맞게 순서를 배치",
+      "condition": "담당자의 재량·동의 확인",
+      "selectedIn": [
+        "fkr:complement:C008",
+        "fkr:complement:C021",
+        "fkr:complement:C047",
+        "fkr:complement:C072"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:STRATEGY:contingency",
+      "axis": "STRATEGY",
+      "definition": "조건이 바뀔 때의 대안을 준비",
+      "condition": "실제 가능한 대안의 비용 확인",
+      "selectedIn": [
+        "fkr:complement:C007",
+        "fkr:complement:C091"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CREATION:prototype",
+      "axis": "CREATION",
+      "definition": "아이디어를 시험 가능한 형태로 만듦",
+      "condition": "미완성 상태와 시험 목적을 알릴 때",
+      "selectedIn": [
+        "fkr:legacy:istp-study",
+        "fkr:complement:C063",
+        "fkr:complement:C064",
+        "fkr:complement:C070",
+        "fkr:candidate:isfj-budgeted-making"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CREATION:recombination",
+      "axis": "CREATION",
+      "definition": "알고 있는 재료를 다른 방식으로 결합",
+      "condition": "사용 목적과 저작 권리 확인",
+      "selectedIn": [
+        "fkr:legacy:infp-expression",
+        "fkr:complement:C071"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CREATION:finish-output",
+      "axis": "CREATION",
+      "definition": "산출물을 전달 가능한 상태로 정리",
+      "condition": "완료 기준이 합의된 상황",
+      "selectedIn": [
+        "fkr:legacy:entj-made-value-structure",
+        "fkr:complement:C061",
+        "fkr:complement:C062",
+        "fkr:complement:C065",
+        "fkr:complement:C072",
+        "fkr:candidate:infp-paid-output"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:EXPRESSION:channel-choice",
+      "axis": "EXPRESSION",
+      "definition": "뜻에 맞는 말·글·행동을 선택",
+      "condition": "상대가 전달 통로에 접근할 수 있을 때",
+      "selectedIn": [
+        "fkr:legacy:intp-expression",
+        "fkr:complement:C057",
+        "fkr:complement:C074",
+        "fkr:candidate:istj-safe-question"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:EXPRESSION:visibility-control",
+      "axis": "EXPRESSION",
+      "definition": "드러낼 범위와 대상을 고름",
+      "condition": "공개 동의를 별도로 확인",
+      "selectedIn": [
+        "fkr:legacy:enfp-expression",
+        "fkr:legacy:isfp-love",
+        "fkr:legacy:esfp-charm",
+        "fkr:legacy:esfp-expression",
+        "fkr:complement:C056",
+        "fkr:complement:C087"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:EXPRESSION:receipt-check",
+      "axis": "EXPRESSION",
+      "definition": "표현이 어떻게 전달됐는지 확인",
+      "condition": "확인 질문을 거절할 여지도 보장",
+      "selectedIn": [
+        "fkr:legacy:intj-charm",
+        "fkr:legacy:enfj-expression",
+        "fkr:complement:C050",
+        "fkr:complement:C061",
+        "fkr:complement:C066",
+        "fkr:complement:C082"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:SOCIAL_ATTUNEMENT:cue-observation",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "definition": "말·표정·참여의 변화를 관찰",
+      "condition": "추측과 관찰을 명확히 분리",
+      "selectedIn": [
+        "fkr:legacy:isfp-needle",
+        "fkr:legacy:estp-needle",
+        "fkr:complement:C051",
+        "fkr:complement:C080"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:SOCIAL_ATTUNEMENT:context-adjustment",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "definition": "상황에 맞게 전달·참여를 조절",
+      "condition": "안전하게 이견을 말할 통로가 있을 때",
+      "selectedIn": [
+        "fkr:legacy:enfj-expression",
+        "fkr:legacy:esfj-alone",
+        "fkr:complement:C050",
+        "fkr:complement:C052"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:SOCIAL_ATTUNEMENT:interpretation-check",
+      "axis": "SOCIAL_ATTUNEMENT",
+      "definition": "관찰한 뜻을 당사자에게 묻기",
+      "condition": "말하지 않을 선택권을 보장",
+      "selectedIn": [
+        "fkr:legacy:infp-needle",
+        "fkr:complement:C026",
+        "fkr:complement:C049",
+        "fkr:complement:C058",
+        "fkr:complement:C076"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CARE:need-check",
+      "axis": "CARE",
+      "definition": "상대가 원하는 도움을 확인",
+      "condition": "요청·거절·실제 역할 확인",
+      "selectedIn": [
+        "fkr:legacy:enfj-help",
+        "fkr:complement:C001",
+        "fkr:complement:C049",
+        "fkr:complement:C079",
+        "fkr:complement:C081"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CARE:practical-support",
+      "axis": "CARE",
+      "definition": "동의한 구체적 부담을 덜어줌",
+      "condition": "역할과 감당할 자원 확인",
+      "selectedIn": [
+        "fkr:legacy:esfj-help",
+        "fkr:complement:C054",
+        "fkr:complement:C074",
+        "fkr:complement:C095"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CARE:sustainable-care",
+      "axis": "CARE",
+      "definition": "자기 한계를 포함해 도움을 설계",
+      "condition": "상호 기대를 다시 합의할 수 있을 때",
+      "selectedIn": [
+        "fkr:complement:C025",
+        "fkr:complement:C053",
+        "fkr:complement:C073",
+        "fkr:candidate:enfj-care-budget"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CARE:respectful-nonintervention",
+      "axis": "CARE",
+      "definition": "돕지 않을 선택을 존중",
+      "condition": "보호 의무와 선택 지원을 구분",
+      "selectedIn": [
+        "fkr:complement:C055",
+        "fkr:complement:C075",
+        "fkr:complement:C077"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CHARISMA:situated-attention",
+      "axis": "CHARISMA",
+      "definition": "특정 장면에서 타인이 주목한 현상",
+      "condition": "실제 관찰자와 장면이 필요",
+      "selectedIn": [
+        "fkr:legacy:esfp-charm",
+        "fkr:complement:C058"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:CHARISMA:memorable-signal",
+      "axis": "CHARISMA",
+      "definition": "기억에 남는 표현·행동을 확인",
+      "condition": "기억되는 이유를 따로 확인",
+      "selectedIn": [
+        "fkr:complement:C056"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:DUTY:role-fulfilment",
+      "axis": "DUTY",
+      "definition": "합의한 담당을 이행",
+      "condition": "담당·권한·기한이 확인될 때",
+      "selectedIn": [
+        "fkr:legacy:istj-marriage",
+        "fkr:complement:C036",
+        "fkr:candidate:intj-official-process",
+        "fkr:candidate:estj-learning-handoff",
+        "fkr:candidate:esfp-procedure-choice"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:DUTY:promise-update",
+      "axis": "DUTY",
+      "definition": "못 지킬 가능성을 미리 알림",
+      "condition": "대안·인수인계를 협의할 수 있을 때",
+      "selectedIn": [
+        "fkr:legacy:entp-rules",
+        "fkr:legacy:istj-love",
+        "fkr:complement:C095",
+        "fkr:candidate:intp-review-window",
+        "fkr:candidate:entp-accountable-method",
+        "fkr:candidate:enfp-renewable-routine",
+        "fkr:candidate:isfp-exit-notice"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:DUTY:scope-responsibility",
+      "axis": "DUTY",
+      "definition": "책임의 경계를 구분",
+      "condition": "실제 계약과 동의 우선",
+      "selectedIn": [
+        "fkr:legacy:entj-pressure",
+        "fkr:legacy:estj-status",
+        "fkr:complement:C027",
+        "fkr:candidate:infj-fair-role"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:LEADERSHIP:direction-proposal",
+      "axis": "LEADERSHIP",
+      "definition": "공동 목적을 제안하고 조율",
+      "condition": "참여자의 동의와 공식 권한 확인",
+      "selectedIn": [
+        "fkr:complement:C028",
+        "fkr:complement:C029",
+        "fkr:complement:C089"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:LEADERSHIP:delegation",
+      "axis": "LEADERSHIP",
+      "definition": "역할에 맞는 권한과 책임을 나눔",
+      "condition": "담당자의 자원과 거절 가능성 확인",
+      "selectedIn": [
+        "fkr:legacy:entj-pressure",
+        "fkr:complement:C025",
+        "fkr:complement:C027",
+        "fkr:complement:C030",
+        "fkr:complement:C035"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:LEADERSHIP:dissent-channel",
+      "axis": "LEADERSHIP",
+      "definition": "이견이 들어올 통로를 만듦",
+      "condition": "권력·평가 관계를 먼저 확인",
+      "selectedIn": [
+        "fkr:complement:C026",
+        "fkr:complement:C031"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:AUTONOMY:choice-ownership",
+      "axis": "AUTONOMY",
+      "definition": "자신에게 속한 선택을 확인",
+      "condition": "영향받는 사람과 권한 확인",
+      "selectedIn": [
+        "fkr:legacy:istp-love",
+        "fkr:complement:C041",
+        "fkr:complement:C059",
+        "fkr:complement:C093"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:AUTONOMY:method-discretion",
+      "axis": "AUTONOMY",
+      "definition": "합의된 결과 안에서 방법을 고름",
+      "condition": "업무·계약의 실제 재량 확인",
+      "selectedIn": [
+        "fkr:complement:C069",
+        "fkr:complement:C094",
+        "fkr:candidate:entp-accountable-method",
+        "fkr:candidate:enfj-shared-choice",
+        "fkr:candidate:esfp-procedure-choice"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:AUTONOMY:chosen-support",
+      "axis": "AUTONOMY",
+      "definition": "받을 도움의 방식을 선택",
+      "condition": "도움 수용·거절 모두 가능할 때",
+      "selectedIn": [
+        "fkr:legacy:intp-space",
+        "fkr:legacy:enfj-help",
+        "fkr:legacy:esfj-help",
+        "fkr:complement:C077",
+        "fkr:candidate:infp-chosen-learning"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:COMPETITION:reference-choice",
+      "axis": "COMPETITION",
+      "definition": "비교할 기준을 목적에 맞게 선택",
+      "condition": "공정하고 자발적인 비교일 때",
+      "selectedIn": [
+        "fkr:candidate:entj-score-question"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:COMPETITION:self-comparison",
+      "axis": "COMPETITION",
+      "definition": "지난 수행과 현재 수행을 비교",
+      "condition": "조건의 차이를 함께 기록",
+      "selectedIn": [
+        "fkr:complement:C034"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:COMPETITION:cooperative-challenge",
+      "axis": "COMPETITION",
+      "definition": "공동 과제의 외부 기준에 도전",
+      "condition": "팀이 비교 방식에 합의할 때",
+      "selectedIn": [
+        "fkr:complement:C035"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:BOUNDARY:refusal",
+      "axis": "BOUNDARY",
+      "definition": "받지 않을 요청을 명시",
+      "condition": "거절의 안전과 실제 의무 확인",
+      "selectedIn": [
+        "fkr:complement:C012",
+        "fkr:complement:C052"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:BOUNDARY:role-border",
+      "axis": "BOUNDARY",
+      "definition": "자기 담당과 타인 담당을 구분",
+      "condition": "합의된 업무·가족 역할 확인",
+      "selectedIn": [
+        "fkr:legacy:entp-question-authority-structure",
+        "fkr:legacy:istp-marriage",
+        "fkr:complement:C028",
+        "fkr:complement:C053",
+        "fkr:candidate:intj-official-process"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:BOUNDARY:privacy",
+      "axis": "BOUNDARY",
+      "definition": "정보·시간의 사적 범위를 정함",
+      "condition": "공개 동의와 공유 의무 구분",
+      "selectedIn": [
+        "fkr:legacy:istp-love",
+        "fkr:complement:C078"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:BOUNDARY:renegotiation",
+      "axis": "BOUNDARY",
+      "definition": "상황 변화에 맞게 선을 다시 합의",
+      "condition": "바뀐 영향과 기존 약속을 설명",
+      "selectedIn": [
+        "fkr:legacy:infj-marriage",
+        "fkr:candidate:infj-fair-role"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:PRACTICALITY:use-test",
+      "axis": "PRACTICALITY",
+      "definition": "실제 사용 환경에서 작동 여부를 확인",
+      "condition": "사용 목적과 사용자가 확인될 때",
+      "selectedIn": [
+        "fkr:legacy:estp-needle",
+        "fkr:complement:C009",
+        "fkr:complement:C067",
+        "fkr:complement:C094"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:PRACTICALITY:feasible-step",
+      "axis": "PRACTICALITY",
+      "definition": "현재 자원으로 가능한 단계를 고름",
+      "condition": "현재 제약과 변경 가능성을 구분",
+      "selectedIn": [
+        "fkr:complement:C030",
+        "fkr:complement:C045",
+        "fkr:complement:C048"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:PRACTICALITY:outcome-check",
+      "axis": "PRACTICALITY",
+      "definition": "실행 뒤 남은 결과를 확인",
+      "condition": "평가 기간과 기준을 명시",
+      "selectedIn": [
+        "fkr:legacy:istj-needle",
+        "fkr:complement:C015",
+        "fkr:complement:C037"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:RESOURCE_SENSE:flow-account",
+      "axis": "RESOURCE_SENSE",
+      "definition": "자원 유입과 소모를 구분",
+      "condition": "실제 돈·시간 자료가 주어질 때",
+      "selectedIn": [
+        "fkr:legacy:entj-made-value-structure",
+        "fkr:legacy:intj-money",
+        "fkr:complement:C037",
+        "fkr:complement:C042",
+        "fkr:complement:C046",
+        "fkr:candidate:infp-paid-output"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:RESOURCE_SENSE:reserve",
+      "axis": "RESOURCE_SENSE",
+      "definition": "예비 여력을 남김",
+      "condition": "실제 부양·생활 제약 확인",
+      "selectedIn": [
+        "fkr:legacy:enfp-budget",
+        "fkr:complement:C038",
+        "fkr:candidate:infj-value-budget",
+        "fkr:candidate:isfj-budgeted-making",
+        "fkr:candidate:esfj-shared-budget"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:RESOURCE_SENSE:allocation",
+      "axis": "RESOURCE_SENSE",
+      "definition": "중요한 목적에 자원을 배정",
+      "condition": "자원 소유자·동의 확인",
+      "selectedIn": [
+        "fkr:legacy:entj-wealth-pressure-structure",
+        "fkr:legacy:entj-wealth",
+        "fkr:legacy:istj-marriage",
+        "fkr:complement:C039",
+        "fkr:complement:C040",
+        "fkr:complement:C041",
+        "fkr:complement:C047",
+        "fkr:candidate:intj-expertise-price",
+        "fkr:candidate:entj-resource-learning",
+        "fkr:candidate:enfj-care-budget",
+        "fkr:candidate:istp-tool-understanding"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:OPPORTUNITY_SENSE:option-discovery",
+      "axis": "OPPORTUNITY_SENSE",
+      "definition": "새 연결에서 가능한 선택을 찾음",
+      "condition": "접근 가능성과 조건 확인",
+      "selectedIn": [
+        "fkr:complement:C043",
+        "fkr:complement:C083"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:OPPORTUNITY_SENSE:screening",
+      "axis": "OPPORTUNITY_SENSE",
+      "definition": "발견한 선택의 실행 조건을 검토",
+      "condition": "필요 자원과 답변 기한 확인",
+      "selectedIn": [
+        "fkr:complement:C039"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:OPPORTUNITY_SENSE:decline-option",
+      "axis": "OPPORTUNITY_SENSE",
+      "definition": "지금 하지 않을 기회를 선택",
+      "condition": "기회의 기간과 대안 확인",
+      "selectedIn": [
+        "fkr:complement:C044",
+        "fkr:complement:C092"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:STABILITY:minimum-security",
+      "axis": "STABILITY",
+      "definition": "유지할 최소 생활 조건을 정함",
+      "condition": "실제 위험과 선호를 분리",
+      "selectedIn": [
+        "fkr:legacy:isfj-love",
+        "fkr:complement:C038",
+        "fkr:complement:C085",
+        "fkr:candidate:estp-small-goal-base"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:STABILITY:continuity",
+      "axis": "STABILITY",
+      "definition": "유지·인수인계 체계를 갖춤",
+      "condition": "기능·담당·검토 주기 확인",
+      "selectedIn": [
+        "fkr:legacy:istj-love",
+        "fkr:complement:C073",
+        "fkr:complement:C076",
+        "fkr:complement:C082"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:STABILITY:protective-change",
+      "axis": "STABILITY",
+      "definition": "지속을 위해 필요한 변경을 수용",
+      "condition": "유지할 가치와 바꿀 방법을 구분",
+      "selectedIn": [
+        "fkr:complement:C024",
+        "fkr:complement:C096"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:STATUS_DRIVE:recognition-target",
+      "axis": "STATUS_DRIVE",
+      "definition": "무엇을 인정받고 싶은지 명시",
+      "condition": "본인이 말한 평가 기대가 있을 때",
+      "selectedIn": [
+        "fkr:complement:C032",
+        "fkr:complement:C033"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:STATUS_DRIVE:formal-role",
+      "axis": "STATUS_DRIVE",
+      "definition": "공식 위치의 책임과 기준을 검토",
+      "condition": "실제 조직·계약의 권한 확인",
+      "selectedIn": [
+        "fkr:legacy:estj-status",
+        "fkr:complement:C031"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:MEANING:value-articulation",
+      "axis": "MEANING",
+      "definition": "자기에게 중요한 이유를 말함",
+      "condition": "본인이 밝힌 가치가 있을 때",
+      "selectedIn": [
+        "fkr:complement:C040",
+        "fkr:complement:C057",
+        "fkr:complement:C079"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:MEANING:purpose-check",
+      "axis": "MEANING",
+      "definition": "목표와 중요한 이유의 연결을 확인",
+      "condition": "작은 일의 현실 필요도 함께 고려",
+      "selectedIn": [
+        "fkr:complement:C010",
+        "fkr:complement:C093"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:MEANING:value-practice",
+      "axis": "MEANING",
+      "definition": "중요한 가치를 구체적 선택으로 옮김",
+      "condition": "자원·권한의 제약을 먼저 확인",
+      "selectedIn": [
+        "fkr:legacy:enfp-budget",
+        "fkr:complement:C045",
+        "fkr:complement:C063",
+        "fkr:candidate:infj-value-budget"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:RECOVERY_NEED:load-recognition",
+      "axis": "RECOVERY_NEED",
+      "definition": "현재 부담과 쉬는 필요를 알아봄",
+      "condition": "실제 생활·업무 부하가 확인될 때",
+      "selectedIn": [
+        "fkr:complement:C080"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:RECOVERY_NEED:rest-access",
+      "axis": "RECOVERY_NEED",
+      "definition": "쉬는 방식과 가능한 공간을 확보",
+      "condition": "선호·돌봄·경제 제약을 확인",
+      "selectedIn": [
+        "fkr:legacy:enfp-alone",
+        "fkr:complement:C085",
+        "fkr:complement:C086"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    },
+    {
+      "facetRef": "sar:facet:RECOVERY_NEED:return-agreement",
+      "axis": "RECOVERY_NEED",
+      "definition": "회복 뒤 다시 응답할 시점을 합의",
+      "condition": "완료 보장 대신 현재 가능한 연락만 합의",
+      "selectedIn": [
+        "fkr:legacy:esfj-alone",
+        "fkr:complement:C087"
+      ],
+      "facetStudyRefs": [],
+      "classification": "specific_research_comparison_not_evidence_binding",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false
+    }
+  ]
+}

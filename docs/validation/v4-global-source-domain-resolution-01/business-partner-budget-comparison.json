@@ -1,0 +1,34 @@
+{
+  "defaultBudgetMs": 5000,
+  "test": "creates genuine deterministic artifacts with no input data and no errors",
+  "baseDefault": {
+    "passed": 0,
+    "failed": 1,
+    "filtered": 360,
+    "observedExceededDefaultBudget": true,
+    "normalizedErrorMessages": [
+      "Error: STACK_TRACE_ERROR\n    at task (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at <ROOT>/tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistEngine.test.ts:76:1\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at VitestModuleEvaluator._runInlinedModule (file://<ROOT>/node_modules/.pnpm/vitest@4.1.5_@types+node@20.19.39_vite@8.0.10_@types+node@20.19.39_jiti@2.6.1_/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file://<ROOT>/node_modules/.pnpm/vite@8.0.10_@types+node@20.19.39_jiti@2.6.1/node_modules/vite/dist/node/module-runner.js:1247:59)\n    at VitestModuleRunner.cachedRequest (file://<ROOT>/node_modules/.pnpm/vite@8.0.10_@types+node@20.19.39_jiti@2.6.1/node_modules/vite/dist/node/module-runner.js:1154:73)\n    at VitestModuleRunner.import (file://<ROOT>/node_modules/.pnpm/vite@8.0.10_@types+node@20.19.39_jiti@2.6.1/node_modules/vite/dist/node/module-runner.js:1104:10)"
+    ]
+  },
+  "currentDefault": {
+    "passed": 0,
+    "failed": 1,
+    "filtered": 360,
+    "observedExceededDefaultBudget": true,
+    "normalizedErrorMessages": [
+      "Error: STACK_TRACE_ERROR\n    at task (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at <ROOT>/tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistEngine.test.ts:76:1\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at VitestModuleEvaluator._runInlinedModule (file://<ROOT>/node_modules/.pnpm/vitest@4.1.5_@types+node@20.19.39_vite@8.0.10_@types+node@20.19.39_jiti@2.6.1_/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file://<ROOT>/node_modules/.pnpm/vite@8.0.10_@types+node@20.19.39_jiti@2.6.1/node_modules/vite/dist/node/module-runner.js:1247:59)\n    at VitestModuleRunner.cachedRequest (file://<ROOT>/node_modules/.pnpm/vite@8.0.10_@types+node@20.19.39_jiti@2.6.1/node_modules/vite/dist/node/module-runner.js:1154:73)\n    at VitestModuleRunner.import (file://<ROOT>/node_modules/.pnpm/vite@8.0.10_@types+node@20.19.39_jiti@2.6.1/node_modules/vite/dist/node/module-runner.js:1104:10)"
+    ]
+  },
+  "normalizedErrorSignaturesEqual": true,
+  "base30sSelected": {
+    "passed": 1,
+    "failed": 0,
+    "filtered": 360
+  },
+  "current30sWholeEngineAndArtifacts": {
+    "passed": 383,
+    "failed": 0,
+    "pending": 0
+  },
+  "interpretation": "Existing default-budget-sensitive failure reproduced in base and current. Raw JSON error is STACK_TRACE_ERROR; default runs exceed 5 seconds, identical assertions pass at command-line 30 seconds. Original source/test/config untouched. Not reported as an unconditional default-suite PASS."
+}

@@ -1,0 +1,753 @@
+{
+  "hardRootCap": null,
+  "newRoots": 0,
+  "fusionIsIndependentThirdFact": false,
+  "observations": [
+    {
+      "id": "mrpr:material:CH08.P3:report-name-blocked-resource",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH04.P2:big-picture-field-interface",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH03.P3:report-participation-signal",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-close-revision",
+      "informationRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750",
+        "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47",
+        "aeg:root:ebe353437f03020ed4932b59bc87781016f9ba8c796b9981044c54ae59f6b0fa"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P3:report-detect-procedure-gap",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-request-specific-feedback",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P1:manager-to-report-exploration",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1e2977dc66c2bc6cc00d7515f297c2e2cffba36618f3f60978bdb2b050ea313d",
+        "aeg:root:3fba98c720c95af12b77443bd6ba09e06ee4b3d3d3fc44392b03ec9f8f9995a5",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:44f6ea50983df6a290035fd64ef483840740eb9130f8f4651e1017d8e3df5be8",
+        "aeg:root:507a4b6547393bbc02483680e50a7e59feaaa287c138182f5289a5fbe5500dc2",
+        "aeg:root:593288a94901b68c6d2b3fa7329a61afdc07dde0f21363df2d3224bc3f6e649a",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750",
+        "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47",
+        "aeg:root:b9bdb15dbe5bfc5349552d9ebb858f236b3d130675cf60860afc2707d196e018",
+        "aeg:root:cbcda3a192abb784c4b9db28af54564e3d29c94df766bf3b92978e59adf57209",
+        "aeg:root:d1d250d7fdf5403428dd8b094e20d55714304bf20a40f94bcc7701c52dc50427",
+        "aeg:root:deaf28e60340150a56e07f2ff9f1c84d23f0e6529b16da955c19668f373ab295",
+        "aeg:root:dfe267e1c88250c4b7251ed24e9d1b2947acd7500d0819d9b0d230c409b25cfc"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH06.P3:report-question-as-final-decision",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P4:excluded-team-voice",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH01.P2:half-harmony-not-completion",
+      "informationRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+        "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47",
+        "aeg:root:ebe353437f03020ed4932b59bc87781016f9ba8c796b9981044c54ae59f6b0fa"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P2:report-time-clash",
+      "informationRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+        "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47",
+        "aeg:root:ebe353437f03020ed4932b59bc87781016f9ba8c796b9981044c54ae59f6b0fa"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P1:responsibility-without-delegation",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH02.P3:manager-support-limit",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH03.P1:report-independent-focus",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH07.P1:excess-report-frequency",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH09.P3:recall-safe-voice",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-explain-evaluation",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P4:manager-delegation-confirm",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P3:manager-speed-pressure",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P2:manager-recognize-evidence",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P2:report-definition-before-work",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P1:separate-method",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH06.P4:report-feedback-clarification",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P1:delegate-decision",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH05.P2:manager-resource-removal",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P1:manager-to-report-constraint",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P3:insufficient-credit",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH04.P3:delegation-with-checkpoints",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH07.P4:late-risk-report",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH02.P2:manager-checkpoint-intent",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH07.P4:missing-change-history",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH09.P3:recall-delegation-principle",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH05.P4:manager-feedback-recheck",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P2:rework-with-half-harmony",
+      "informationRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+        "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47",
+        "aeg:root:ebe353437f03020ed4932b59bc87781016f9ba8c796b9981044c54ae59f6b0fa"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH07.P3:public-personal-judgment",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-set-report-time",
+      "informationRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750",
+        "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47",
+        "aeg:root:ebe353437f03020ed4932b59bc87781016f9ba8c796b9981044c54ae59f6b0fa"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P3:model-and-procedure",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-safe-support-route",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH05.P3:manager-care-as-surveillance",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P1:clarify-output",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH02.P2:manager-standard-evidence",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH01.P4:discretion-as-condition",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH02.P4:manager-overcontrol",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-early-risk-response",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH01.P2:harmony-not-approval",
+      "informationRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+        "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47",
+        "aeg:root:ebe353437f03020ed4932b59bc87781016f9ba8c796b9981044c54ae59f6b0fa"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P4:report-late-synthesis",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH06.P3:report-unclear-risk-timing",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P2:recall-personal-fusion",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH02.P1:manager-people-purpose",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH01.P1:goal-method-interface",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-multiple-voice-channels",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P1:make-discretion-visible",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH07.P3:fear-of-retaliation",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH01.P3:same-type-different-role",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH09.P1:recall-goal-execution",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH04.P3:feedback-credit-visible",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH01.P4:management-facts-before-compatibility",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH07.P3:insufficient-resources",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH01.P1:support-execution-interface",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH07.P3:overload-allocation",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH06.P2:report-capacity-information",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH02.P3:manager-correct-own-error",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH02.P1:manager-model-goal",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH04.P4:manager-response-to-early-risk",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH09.P4:recall-contribution-learning",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH06.P2:report-propose-bounded-method",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P2:priority-change-harm",
+      "informationRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+        "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47",
+        "aeg:root:ebe353437f03020ed4932b59bc87781016f9ba8c796b9981044c54ae59f6b0fa"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH09.P1:recall-shared-completion",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-report-purpose",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-confirm-final-authority",
+      "informationRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750",
+        "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47",
+        "aeg:root:ebe353437f03020ed4932b59bc87781016f9ba8c796b9981044c54ae59f6b0fa"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH07.P1:goal-method-confusion",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH09.P2:recall-supported-possibility",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P1:reduce-duplicate-report",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH06.P4:report-decision-ready-brief",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P2:report-private-feedback-space",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH07.P1:vague-instructions",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-record-priority",
+      "informationRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750",
+        "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47",
+        "aeg:root:ebe353437f03020ed4932b59bc87781016f9ba8c796b9981044c54ae59f6b0fa"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH03.P1:report-procedure-understanding",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH03.P4:report-overacceptance",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-change-log",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH07.P2:final-authority-unsupported",
+      "informationRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8",
+        "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47",
+        "aeg:root:ebe353437f03020ed4932b59bc87781016f9ba8c796b9981044c54ae59f6b0fa"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P2:idea-review-not-personal-approval",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-state-contribution",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH09.P4:recall-decision-responsibility",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH04.P1:shared-analysis-different-scope",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH02.P4:manager-avoid-feedback",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-state-capacity",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-retained-manager-decision",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "mrpr:material:CH06.P1:report-to-manager-customer-observation",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    }
+  ],
+  "rootIndex": [
+    {
+      "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc": [
+        "kc:v1:04660e1b2b218df18be0665c608efd00d23e57da1643ddc22bddc6085dadd73a",
+        "kc:v1:0c1226e31af4970c06bc390dd4ce7818ecb6f0e6a2d4762e6d3b672e5cb6b3c0",
+        "kc:v1:12fa3386cac5eb0bac26739ca499d22d5358b5131082571a1c2db201583a30c8",
+        "kc:v1:3f51b4e12903985952b2c2e70dff8abc60cff80b997366f2bc4c73bf82695657",
+        "kc:v1:73eeb2912097ccd153676607b6fb278b3554a1d750f6b12d2e318561270f115e",
+        "kc:v1:7f1c2e3e57318fe3855df3c7f33e2840036695d11c75331352bf75a111e3bd28",
+        "kc:v1:8b7487a5b9f7620a90bd4eb3803303f19b9a71bb198d54395b7dce12e671c4bb",
+        "kc:v1:b01b953021a52f665b16fc7218c365a7856885be712c086de5a11be1682b4e50",
+        "kc:v1:c025d42cb5343e28c4c5a2b51bcc5ccde848bcce033966f67f290dd71520b34e",
+        "kc:v1:dac3f916509ccf086442e80cb40bf1bfc7b333bcde05129dc495465dfc4b057a",
+        "kc:v1:edc60a5dcab353ac4773e0819165d37bc6a0b8aaab4119934ef3409a3832d0a4",
+        "kc:v1:f449e173e7289eee149564afedb6bb64163d8dbf440d08550c51d2662832670f",
+        "kc:v1:fab8637fabf542b09137a137ca1721d81862d1d1d1ed365b839d9add6817ea36"
+      ],
+      "aeg:root:3501390112e440ec5a52804d1e3e78fefe1518b735a509b29902c35f711979d8": [
+        "kc:v1:09e153497692aa6c2621afcc660c6309a5a27f6646622a6f19c11c49e1839ce1",
+        "kc:v1:16a8a61ff503c78eee4d82a74f5538d48af01d992adb316afd4491b141036af1",
+        "kc:v1:1b3e015733598acbc6e3dc2a07acb2d636187699ce5b9834ba9bb59fc74d1aab",
+        "kc:v1:5d1ba17aa9f70211870537c2e91d8f7856db46aad4f320b7a775521c0f44448f",
+        "kc:v1:7082902ae734a2c11b3697782dd3ea84ff986f58e09c46d1e23744fa97226107",
+        "kc:v1:7b5ae501fa9753eddeff947bcaf7b2c928943ce2998533a8a5ca22e92270f68e",
+        "kc:v1:c213f177d246b4c30ae2c90d50e9dca1a2c59e184b99df765c39a8fd2f385437",
+        "kc:v1:d4e67aada801d06d64511850b0989b05c7ed232d69e1d55cf55ed46d5f16d622",
+        "kc:v1:de4a1fb43443830b7aedddd0ff2874976c789c8a33f7d73eed05475cb60fb723",
+        "kc:v1:eae3a671072072a3010209480dd7ef049d6fea56936c00ce9b6603831f91bc70"
+      ],
+      "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750": [
+        "kc:v1:09e153497692aa6c2621afcc660c6309a5a27f6646622a6f19c11c49e1839ce1",
+        "kc:v1:0f5aa744fe2a578c6797815dd3140fbb14f709a2df1a126671fcc26ac12a775e",
+        "kc:v1:26da27e1da373db13997548bd92a840e6bd3a462811ae7c21979e26d30dfebc4",
+        "kc:v1:2923db7e4d30e8f9dd0def6553c0eabf6f689f34835d1c86953cb9e394ea65d7",
+        "kc:v1:373f412de8cc294e014ec0075c126fea3ccedccdb1afef58031a8397c0c48286",
+        "kc:v1:3993bd14331a88d980da49da9ee972bc28bce61ba9c1ed172fdd241db1f77437",
+        "kc:v1:4422401430c64f615e3ab2e136dbb5e63115feadee8c16bf06dce08b178f0a29",
+        "kc:v1:45969980d2d936fbe64f1956ca51a27f1aa8262e5b92af3d965f80e2b9beb706",
+        "kc:v1:5c92e2e1cac379945f36e169e51602f5c23224b130b90d32f674c6ddc7be75fb",
+        "kc:v1:7082902ae734a2c11b3697782dd3ea84ff986f58e09c46d1e23744fa97226107",
+        "kc:v1:75f217d20f99e7904f925cb1916e793c58533c7d842249beaa37a67931cf6588",
+        "kc:v1:d4e67aada801d06d64511850b0989b05c7ed232d69e1d55cf55ed46d5f16d622",
+        "kc:v1:de4a1fb43443830b7aedddd0ff2874976c789c8a33f7d73eed05475cb60fb723"
+      ]
+    }
+  ],
+  "actualDifferentApplicationsApproved": 0
+}

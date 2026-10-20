@@ -1,0 +1,11 @@
+{
+  "sameModelWroteAndAssessed": true,
+  "blindIndependentReview": false,
+  "readerSatisfactionMeasured": false,
+  "wholeBookSemanticIndependenceApproved": false,
+  "smallSampleParagraphs": 8,
+  "independentCustomerCohort": false,
+  "full52ResearchRewrite": false,
+  "changesInQuestionConfoundComparison": true,
+  "approvalProviderUnchanged": "NO_APPROVALS"
+}

@@ -1,0 +1,22 @@
+# 출처 확인과 적용 경계
+
+2991개 선행 source record와1213개 원천 trait의 locator·hash·작성 상태를 실제 저장소와 대조했다. 신규 선택 locator46개: {"individual_mbti":20,"external_context":12,"relation_definition":2,"mbti_pair_reference":2,"natal_definition":8,"individual_fusion_research":2}. 원천 정의·직접 작성 상태는 역사적 계보·실증 타당성·개인 관찰의 증명이 아니다. 과거 외부 자료는 이번 재접속으로 검증했다고 주장하지 않는다.
+
+이번 실제 열어 본 고유 외부 문서12개는 아래와 같다. 인용 원문을 대량 복제하지 않았으며 조건부 편집 질문으로 사용한다. 게시일이 본문에 없으면 null로 두었다. 한국 자료의2026-09-15는 페이지가 제시한 법령정보 기준일이다. 실제 법률 원문·판례의 현재 적용 효력은 별도 검증하지 않았다.
+
+- [U.S. Small Business Administration — Plan your business](https://www.sba.gov/counseling/plan-your-business/): 접근2026-10-14; 확인절 122–163,189–297,301–410. 고객 수요·대안·가격을 검토하고 사업별 초기·반복 비용과 가정을 구분하는 계획 안내. 적용 제한: 미국 일반 사업 계획. 세금·대출 자격·성공 보장과 환산하지 않음. 이전 두 URL은 같은 통합 페이지로 redirect하므로 출처2개로 세지 않음.
+- [Australian Government / business.gov.au — Create a budget](https://business.gov.au/finance/financial-tools-and-templates/create-a-budget): 접근2026-10-14; 확인절 168–226. 목표를 위한 예산과 현재 자료를 반영하는 전망을 구별하고 실제 비용과 비교하는 안내. 적용 제한: 미국·호주식 세금·인건비 분류나 일률적 비율을 한국 사업에 강제하지 않음. 개인 자산·대출 판단 아님.
+- [Tasmanian Government / Business Tasmania — Budgeting and cash flow management](https://www.business.tas.gov.au/running-a-business/money-tax-and-finance/budgeting-and-cash-flow): 접근2026-10-14; 확인절 132–191. 손익계산은 일정 기간의 매출·비용·손익, 현금흐름은 실제 현금 유입·유출이며 이익이 나도 지급 자금이 부족할 수 있음을 구분. 적용 제한: 경제 개념의 구분. 실제 개인 사업의 수익·지급능력·파산 판단이나 유형 성과 실증 아님.
+- [한국법령정보원 / 찾기쉬운 생활법령정보 — 동업계약 – 업무집행](https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=4&cciNo=2&cnpClsNo=1&csmSeq=633&popMenu=ov): 접근2026-10-14; 확인절 218–269. 업무집행·통상 사무·대리권·계약상 권한 제한은 다른 확인 항목이라는 일반 해설. 적용 제한: 실제 구조·약정·법령 검토 필요. 페이지 요약은 선임 과반수, 본문은 3분의2로 기재돼 내부 불일치가 있어 선임 정족수 주장은 보류. 전문 검토 없이 한국 고객의 실제 권한 판정 금지.
+- [한국법령정보원 / 찾기쉬운 생활법령정보 — 동업계약 – 계약서의 작성](https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=2&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov): 접근2026-10-14; 확인절 218–294. 목적·출자·손익·양도·존속·종료·기밀 등의 약속을 구분해 확인하는 안내. 적용 제한: 상법 특정 조합 규정과 일반 설명이 함께 있으므로 모든 동업의 서면 요건으로 확정하지 않음. 본 DB는 조항 작성·공증 권고·개별 효력 판단을 하지 않음.
+- [한국법령정보원 / 찾기쉬운 생활법령정보 — 동업계약 – 종료사유](https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=6&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov): 접근2026-10-14; 확인절 219–278. 탈퇴·존속기간·미완료 사무·지분 계산·해산의 조건을 구분하는 일반 해설. 적용 제한: 요약의 언제든 탈퇴를 무조건 규칙으로 쓰지 않음. 실제 약정·시기·구조·법적 사유 검토 필요. 출자금 원금 반환·종료 권리를 개별 확정하지 않음.
+- [한국법령정보원 / 찾기쉬운 생활법령정보 — 동업계약 – 출자](https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=3&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov): 접근2026-10-14; 확인절 218–265. 동업 유형에 따라 금전·재산·노무 등 출자 범위가 다를 수 있음을 확인. 적용 제한: 대한민국 일반 법령 해설. 실제 조합·익명·합자관계는 입력으로 확정하지 않으며 개별 출자액·책임·배분 비율 판정 없음.
+- [Australian Government / business.gov.au — Prepare a contract](https://business.gov.au/people/contractors/prepare-a-contract): 접근2026-10-14; 확인절 257–310,328–365,428–end contract sections. 지급 시점·성과 기준·IP 사용·비밀 정보·위험 이전을 별도 확인하는 외주 계약 안내. 적용 제한: 호주 hirer/contractor 관계. contractor IP 귀속 기본 규칙·조항 효력을 한국 동업자에게 전용하지 않음. 확인 질문만 전이.
+- [한국법령정보원 / 찾기쉬운 생활법령정보 — 동업계약 – 수익분배방법](https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=5&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov): 접근2026-10-14; 확인절 218–249. 약정·출자·손익 산정과 분배를 구분해 확인할 필요를 설명. 적용 제한: 법적 구조·계약·세무 사항별 차이를 전제로 함. 기본 손익 비율·세금·개인 지분의 정당성을 DB가 결정하지 않음.
+- [Australian Government / business.gov.au — Set up a cash flow statement](https://business.gov.au/finance/cash-flow/set-up-a-cash-flow-statement): 접근2026-10-14; 확인절 168–233. 실제 또는 추정 현금 유입·유출과 시점을 구분하고 예상과 실제를 표시하는 현금흐름 안내. 적용 제한: 일반 자금 검토 질문만 전이. 호주 GST·회계기준·고객 은행잔고를 추정하지 않음. 템플릿은 다운로드·실행하지 않음.
+- [Australian Government / business.gov.au — Partnership](https://business.gov.au/planning/business-structures-and-types/business-structures/partnership): 접근2026-10-14; 확인절 168–208,253–269. 파트너십 유형과 기여·권한·손익·기존/신규 IP·분쟁·종료를 구분하는 계약 검토 질문. 적용 제한: 호주 법적 구조·지역별 규정. ABN/GST·무한책임·호주 partnership 정의를 한국 고객에게 적용하지 않음.
+- [한국법령정보원 / 찾기쉬운 생활법령정보 — 동업계약 – 청산](https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=6&cciNo=1&cnpClsNo=2&csmSeq=633&popMenu=ov): 접근2026-10-14; 확인절 216–252. 종료 후 미완료 사무·채권·채무·잔여재산과 실제 처리 주체를 구분하는 해설. 적용 제한: 탈퇴와 해산·청산은 같지 않으며 특정 2인조합 사례를 모든 사업에 전용하지 않음. 손실·지분·반환금·채무 책임을 산정하지 않음.
+
+SBA의 기존 market/startup URL은 같은 통합 문서로 redirect되어1개로 계산했다. 한국 업무집행 자료 요약의 과반 선임과 본문의2/3 선임은 불일치하므로 정족수 주장을 보류했다. 종료 자료의 언제든 탈퇴라는 요약은 본문 조건을 생략한 보편 규칙으로 사용하지 않았다. 호주 contractor IP 귀속·서명·GST·ABN·책임 규칙을 한국 동업자에게 전용하지 않았다.
+
+16타입 source lens는 각자의 실제 원천 locator에 연결한 질문이다. 모든 질문이 각 타입의 검증된 사업 행동이라는 뜻은 아니다. 256방향은 direct158/inferred98이며 전문 사업 pattern은 존재하지 않는다. 선택된2방향을 제외한254방향은 공통 참고이며256×36 전문 후보 완성이 아니다.

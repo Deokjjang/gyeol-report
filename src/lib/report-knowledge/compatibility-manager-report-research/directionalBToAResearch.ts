@@ -1,0 +1,147 @@
+/** Static offline managerReport research. No runtime registration or customer approval. */
+import type { MaterialView } from "./researchTypes";
+export const MR_DIRECTIONAL_BTO_ARESEARCH: readonly MaterialView[] = [
+  {
+    "id": "mrpr:view:directionalBToAResearch:material:CH06.P1:report-to-manager-reality-check",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:directionalBToAResearch:material:CH06.P1:report-to-manager-customer-observation",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH06.P1:report-to-manager-customer-observation",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:directionalBToAResearch:material:CH06.P2:report-propose-bounded-method",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH06.P2:report-propose-bounded-method",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:directionalBToAResearch:material:CH06.P2:report-capacity-information",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH06.P2:report-capacity-information",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:directionalBToAResearch:material:CH06.P3:report-unclear-risk-timing",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH06.P3:report-unclear-risk-timing",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:directionalBToAResearch:material:CH06.P3:report-question-as-final-decision",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH06.P3:report-question-as-final-decision",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:directionalBToAResearch:material:CH06.P4:report-decision-ready-brief",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH06.P4:report-decision-ready-brief",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:directionalBToAResearch:material:CH06.P4:report-feedback-clarification",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH06.P4:report-feedback-clarification",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:directionalBToAResearch:material:CH08.P3:report-request-specific-feedback",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH08.P3:report-request-specific-feedback",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:directionalBToAResearch:material:CH08.P3:report-safe-support-route",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH08.P3:report-safe-support-route",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:directionalBToAResearch:material:CH08.P3:report-state-contribution",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH08.P3:report-state-contribution",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:directionalBToAResearch:material:CH08.P3:report-state-capacity",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH08.P3:report-state-capacity",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:directionalBToAResearch:material:CH08.P3:report-name-blocked-resource",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH08.P3:report-name-blocked-resource",
+    "notAdditionalIndependentFact": true
+  }
+];

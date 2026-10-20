@@ -1,0 +1,43 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "ARRAY",
+  "entries": 12,
+  "logicalJsonHash": "5864eeaa914e23fa9f5c9dc4770b1fbab59da42580a6e2816aa620781a2e2d7d",
+  "parts": [
+    {
+      "file": "editorial-handoff-part-0001.json",
+      "sha256": "47c06090238fa91bda06cd0966afbfd25822eb2bdd1abada2f72bb603ac91101",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "editorial-handoff-part-0002.json",
+      "sha256": "7687b9a352b9b2d5a9ef66f86083ab8d5afbc4ec450d67efb7de267d17df09a0",
+      "kind": "ITEM"
+    },
+    {
+      "file": "editorial-handoff-part-0003.json",
+      "sha256": "6c425251c5409954662e14f8c49871e274225a01a2248cd801538da6e94e21e8",
+      "kind": "ITEM"
+    },
+    {
+      "file": "editorial-handoff-part-0004.json",
+      "sha256": "48f7096e9289a597e6c5e99907104a6605cd5c5a206a69102973dffe9fbc9acb",
+      "kind": "ITEM"
+    },
+    {
+      "file": "editorial-handoff-part-0005.json",
+      "sha256": "058af591c6967e3f3227e74427c3a970fb1bdf31d22cd2bee8a1e1b23d696212",
+      "kind": "ITEM"
+    },
+    {
+      "file": "editorial-handoff-part-0024.json",
+      "sha256": "8c0c262b69265bc10090b406c3f715d1fa06f5d8719ed0f4b7c942d013639c9b",
+      "kind": "ITEM"
+    },
+    {
+      "file": "editorial-handoff-part-0048.json",
+      "sha256": "33b21f9f85637598b49debedbc2624e9df5c59d2f2c96978dddedaad4b4a683b",
+      "kind": "ITEM"
+    }
+  ]
+}

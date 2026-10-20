@@ -1,0 +1,912 @@
+/** Static offline research only. No scoring, resolution or customer output. */
+import type { ParagraphResearch } from "./researchTypes";
+export const LOVE_PAIR_PARAGRAPHS: readonly ParagraphResearch[] = [
+  {
+    "id": "clr:paragraph:CH01.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1",
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "originalPurpose": "두 사람을 한마디로 설명하면",
+    "titleTemplate": "두 사람을 한마디로 설명하면",
+    "readerQuestion": "두 사람을 한마디로 설명하면",
+    "internalQuestionRefs": [
+      "P1",
+      "P2",
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH01.P1:response-and-thought",
+      "clr:material:CH01.P1:steady-and-new"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH01.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2",
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "originalPurpose": "명리에서 보는 두 사람의 관계",
+    "titleTemplate": "명리에서 보는 두 사람의 관계",
+    "readerQuestion": "명리에서 보는 두 사람의 관계",
+    "internalQuestionRefs": [
+      "P1",
+      "P2",
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH01.P2:detected-harmony-context",
+      "clr:material:CH01.P2:clash-without-prophecy"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH01.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3",
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "originalPurpose": "MBTI가 보여주는 우리",
+    "titleTemplate": "MBTI가 보여주는 우리",
+    "readerQuestion": "MBTI가 보여주는 우리",
+    "internalQuestionRefs": [
+      "P1",
+      "P2",
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH01.P3:two-types-two-views",
+      "clr:material:CH01.P3:same-type-no-same-person"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH01.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4",
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "originalPurpose": "이 관계를 이해하는 가장 중요한 기준",
+    "titleTemplate": "이 관계를 이해하는 가장 중요한 기준",
+    "readerQuestion": "이 관계를 이해하는 가장 중요한 기준",
+    "internalQuestionRefs": [
+      "P1",
+      "P2",
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH01.P4:agreement-not-feeling-score",
+      "clr:material:CH01.P4:two-source-limits"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH02.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1",
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "originalPurpose": "A의 관계 성향",
+    "titleTemplate": "{{A}}의 관계 성향",
+    "readerQuestion": "A의 관계 성향",
+    "internalQuestionRefs": [
+      "P1",
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH02.P1:a-deliberate-affection",
+      "clr:material:CH02.P1:a-explicit-action"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH02.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2",
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "originalPurpose": "A가 관계에서 중요하게 여기는 것",
+    "titleTemplate": "{{A:subject}} 관계에서 중요하게 여기는 것",
+    "readerQuestion": "A가 관계에서 중요하게 여기는 것",
+    "internalQuestionRefs": [
+      "P1",
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH02.P2:a-space-with-connection",
+      "clr:material:CH02.P2:a-trust-change"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH02.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3",
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "originalPurpose": "A가 관계에 가져오는 장점",
+    "titleTemplate": "{{A:subject}} 관계에 가져오는 장점",
+    "readerQuestion": "A가 관계에 가져오는 장점",
+    "internalQuestionRefs": [
+      "P1",
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH02.P3:a-help-with-permission",
+      "clr:material:CH02.P3:a-playful-encouragement"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH02.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4",
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "originalPurpose": "A가 조심해야 할 부분",
+    "titleTemplate": "{{A:subject}} 조심해야 할 부분",
+    "readerQuestion": "A가 조심해야 할 부분",
+    "internalQuestionRefs": [
+      "P1",
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH02.P4:a-fix-before-hearing",
+      "clr:material:CH02.P4:a-read-response"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH03.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1",
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "originalPurpose": "B의 관계 성향",
+    "titleTemplate": "{{B}}의 관계 성향",
+    "readerQuestion": "B의 관계 성향",
+    "internalQuestionRefs": [
+      "P1",
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH03.P1:b-reaction-as-participation",
+      "clr:material:CH03.P1:b-practical-quietness"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH03.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2",
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "originalPurpose": "B가 관계에서 중요하게 여기는 것",
+    "titleTemplate": "{{B:subject}} 관계에서 중요하게 여기는 것",
+    "readerQuestion": "B가 관계에서 중요하게 여기는 것",
+    "internalQuestionRefs": [
+      "P1",
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH03.P2:b-safe-disagreement",
+      "clr:material:CH03.P2:b-chosen-presence"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH03.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3",
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "originalPurpose": "B가 관계에 가져오는 장점",
+    "titleTemplate": "{{B:subject}} 관계에 가져오는 장점",
+    "readerQuestion": "B가 관계에 가져오는 장점",
+    "internalQuestionRefs": [
+      "P1",
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH03.P3:b-reliable-small-care",
+      "clr:material:CH03.P3:b-new-view-with-listening"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH03.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4",
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "originalPurpose": "B가 조심해야 할 부분",
+    "titleTemplate": "{{B:subject}} 조심해야 할 부분",
+    "readerQuestion": "B가 조심해야 할 부분",
+    "internalQuestionRefs": [
+      "P1",
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH03.P4:b-silent-resentment",
+      "clr:material:CH03.P4:b-novelty-with-cost"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH04.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1",
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "originalPurpose": "두 사람의 공통점",
+    "titleTemplate": "두 사람의 공통점",
+    "readerQuestion": "두 사람의 공통점",
+    "internalQuestionRefs": [
+      "P2",
+      "P3",
+      "P7"
+    ],
+    "materialIds": [
+      "clr:material:CH04.P1:shared-trust-not-same-rule",
+      "clr:material:CH04.P1:same-care-different-help"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH04.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2",
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "originalPurpose": "서로 다른 장점이 만날 때",
+    "titleTemplate": "서로 다른 장점이 만날 때",
+    "readerQuestion": "서로 다른 장점이 만날 때",
+    "internalQuestionRefs": [
+      "P2",
+      "P3",
+      "P7"
+    ],
+    "materialIds": [
+      "clr:material:CH04.P2:curiosity-and-continuity",
+      "clr:material:CH04.P2:clear-and-considered"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH04.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3",
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "originalPurpose": "함께 있을 때 좋은 순간",
+    "titleTemplate": "함께 있을 때 좋은 순간",
+    "readerQuestion": "함께 있을 때 좋은 순간",
+    "internalQuestionRefs": [
+      "P2",
+      "P3",
+      "P7"
+    ],
+    "materialIds": [
+      "clr:material:CH04.P3:chosen-shared-adventure",
+      "clr:material:CH04.P3:quiet-co-presence"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH04.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4",
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "originalPurpose": "이 관계에서 키울 수 있는 좋은 힘",
+    "titleTemplate": "이 관계에서 키울 수 있는 좋은 힘",
+    "readerQuestion": "이 관계에서 키울 수 있는 좋은 힘",
+    "internalQuestionRefs": [
+      "P2",
+      "P3",
+      "P7"
+    ],
+    "materialIds": [
+      "clr:material:CH04.P4:positive-harmony-with-choice",
+      "clr:material:CH04.P4:mutual-chosen-strength"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH05.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1",
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "originalPurpose": "A는 B에게 어떤 자극을 주는가",
+    "titleTemplate": "{{A:topic}} {{B}}에게 어떤 자극을 주는가",
+    "readerQuestion": "A는 B에게 어떤 자극을 주는가",
+    "internalQuestionRefs": [
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH05.P1:ab-rule-as-option",
+      "clr:material:CH05.P1:ab-output-enjoyment",
+      "clr:material:CH05.P1:ab-resource-specificity"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH05.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2",
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "originalPurpose": "A가 B에게 주는 좋은 영향",
+    "titleTemplate": "{{A:subject}} {{B}}에게 주는 좋은 영향",
+    "readerQuestion": "A가 B에게 주는 좋은 영향",
+    "internalQuestionRefs": [
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH05.P2:ab-clear-invite",
+      "clr:material:CH05.P2:ab-care-with-autonomy",
+      "clr:material:CH05.P2:ab-new-meaning"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH05.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3",
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "originalPurpose": "A의 행동이 B에게 부담이 되는 순간",
+    "titleTemplate": "{{A}}의 행동이 {{B}}에게 부담이 되는 순간",
+    "readerQuestion": "A의 행동이 B에게 부담이 되는 순간",
+    "internalQuestionRefs": [
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH05.P3:ab-reaction-pressure",
+      "clr:material:CH05.P3:ab-correction-without-request",
+      "clr:material:CH05.P3:ab-care-debt"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH05.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4",
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "originalPurpose": "A가 영향력을 잘 사용하는 방법",
+    "titleTemplate": "{{A:subject}} 영향력을 잘 사용하는 방법",
+    "readerQuestion": "A가 영향력을 잘 사용하는 방법",
+    "internalQuestionRefs": [
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH05.P4:ab-listen-before-more",
+      "clr:material:CH05.P4:ab-offer-not-reservation",
+      "clr:material:CH05.P4:ab-return-with-boundary"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH06.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1",
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "originalPurpose": "B는 A에게 어떤 자극을 주는가",
+    "titleTemplate": "{{B:topic}} {{A}}에게 어떤 자극을 주는가",
+    "readerQuestion": "B는 A에게 어떤 자극을 주는가",
+    "internalQuestionRefs": [
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH06.P1:ba-care-receiving",
+      "clr:material:CH06.P1:ba-other-question",
+      "clr:material:CH06.P1:ba-equal-opinion"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH06.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2",
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "originalPurpose": "B가 A에게 주는 좋은 영향",
+    "titleTemplate": "{{B:subject}} {{A}}에게 주는 좋은 영향",
+    "readerQuestion": "B가 A에게 주는 좋은 영향",
+    "internalQuestionRefs": [
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH06.P2:ba-warm-feedback",
+      "clr:material:CH06.P2:ba-quiet-doing",
+      "clr:material:CH06.P2:ba-memory-open-question"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH06.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3",
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "originalPurpose": "B의 행동이 A에게 부담이 되는 순간",
+    "titleTemplate": "{{B}}의 행동이 {{A}}에게 부담이 되는 순간",
+    "readerQuestion": "B의 행동이 A에게 부담이 되는 순간",
+    "internalQuestionRefs": [
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH06.P3:ba-asking-becomes-monitoring",
+      "clr:material:CH06.P3:ba-explanation-too-late",
+      "clr:material:CH06.P3:ba-care-erases-choice"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH06.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4",
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "originalPurpose": "B가 영향력을 잘 사용하는 방법",
+    "titleTemplate": "{{B:subject}} 영향력을 잘 사용하는 방법",
+    "readerQuestion": "B가 영향력을 잘 사용하는 방법",
+    "internalQuestionRefs": [
+      "P5"
+    ],
+    "materialIds": [
+      "clr:material:CH06.P4:ba-present-not-explain-away",
+      "clr:material:CH06.P4:ba-update-memory",
+      "clr:material:CH06.P4:ba-name-own-need"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH07.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1",
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "originalPurpose": "가장 중요한 차이",
+    "titleTemplate": "가장 중요한 차이",
+    "readerQuestion": "가장 중요한 차이",
+    "internalQuestionRefs": [
+      "P4",
+      "P6"
+    ],
+    "materialIds": [
+      "clr:material:CH07.P1:mismatched-response-time",
+      "clr:material:CH07.P1:no-friction-no-hidden-fault"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH07.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2",
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "originalPurpose": "명리에서 보이는 충돌",
+    "titleTemplate": "명리에서 보이는 충돌",
+    "readerQuestion": "명리에서 보이는 충돌",
+    "internalQuestionRefs": [
+      "P4",
+      "P6"
+    ],
+    "materialIds": [
+      "clr:material:CH07.P2:clash-position-and-question",
+      "clr:material:CH07.P2:harm-is-not-wonjin"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH07.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3",
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "originalPurpose": "이 관계의 팩폭",
+    "titleTemplate": "이 관계의 팩폭",
+    "readerQuestion": "이 관계의 팩폭",
+    "internalQuestionRefs": [
+      "P4",
+      "P6"
+    ],
+    "materialIds": [
+      "clr:material:CH07.P3:correction-and-retreat",
+      "clr:material:CH07.P3:care-and-unasked-debt"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH07.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4",
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "originalPurpose": "갈등이 커지는 조건",
+    "titleTemplate": "갈등이 커지는 조건",
+    "readerQuestion": "갈등이 커지는 조건",
+    "internalQuestionRefs": [
+      "P4",
+      "P6"
+    ],
+    "materialIds": [
+      "clr:material:CH07.P4:safety-outside-type",
+      "clr:material:CH07.P4:assumption-grows-with-meaning"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH08.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1",
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "originalPurpose": "우리에게 필요한 조율",
+    "titleTemplate": "우리에게 필요한 조율",
+    "readerQuestion": "우리에게 필요한 조율",
+    "internalQuestionRefs": [
+      "P8"
+    ],
+    "materialIds": [
+      "clr:material:CH08.P1:repair-response-loop",
+      "clr:material:CH08.P1:repair-correction-loop"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH08.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2",
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "originalPurpose": "A가 바꾸면 좋은 행동",
+    "titleTemplate": "{{A:subject}} 바꾸면 좋은 행동",
+    "readerQuestion": "A가 바꾸면 좋은 행동",
+    "internalQuestionRefs": [
+      "P8"
+    ],
+    "materialIds": [
+      "clr:material:CH08.P2:a-change-delivery",
+      "clr:material:CH08.P2:a-change-unasked-care"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH08.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3",
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "originalPurpose": "B가 바꾸면 좋은 행동",
+    "titleTemplate": "{{B:subject}} 바꾸면 좋은 행동",
+    "readerQuestion": "B가 바꾸면 좋은 행동",
+    "internalQuestionRefs": [
+      "P8"
+    ],
+    "materialIds": [
+      "clr:material:CH08.P3:b-change-return-signal",
+      "clr:material:CH08.P3:b-change-help-boundary"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH08.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4",
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "originalPurpose": "둘이 함께 지킬 약속",
+    "titleTemplate": "둘이 함께 지킬 약속",
+    "readerQuestion": "둘이 함께 지킬 약속",
+    "internalQuestionRefs": [
+      "P8"
+    ],
+    "materialIds": [
+      "clr:material:CH08.P4:joint-contact-revision",
+      "clr:material:CH08.P4:joint-safe-stop"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH09.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1",
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "originalPurpose": "두 사람이 가진 좋은 힘",
+    "titleTemplate": "두 사람이 가진 좋은 힘",
+    "readerQuestion": "두 사람이 가진 좋은 힘",
+    "internalQuestionRefs": [
+      "P3",
+      "P7",
+      "P8"
+    ],
+    "materialIds": [
+      "clr:material:CH09.P1:recall-trust-as-choice",
+      "clr:material:CH09.P1:recall-mutual-care-limit"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH09.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2",
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "originalPurpose": "함께 활용할 수 있는 좋은 기운",
+    "titleTemplate": "함께 활용할 수 있는 좋은 기운",
+    "readerQuestion": "함께 활용할 수 있는 좋은 기운",
+    "internalQuestionRefs": [
+      "P3",
+      "P7",
+      "P8"
+    ],
+    "materialIds": [
+      "clr:material:CH09.P2:recall-symbol-grounded",
+      "clr:material:CH09.P2:recall-independent-fusions"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH09.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3",
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "originalPurpose": "관계를 오래 지키는 선택",
+    "titleTemplate": "관계를 오래 지키는 선택",
+    "readerQuestion": "관계를 오래 지키는 선택",
+    "internalQuestionRefs": [
+      "P3",
+      "P7",
+      "P8"
+    ],
+    "materialIds": [
+      "clr:material:CH09.P3:recall-response-agreement",
+      "clr:material:CH09.P3:recall-request-not-ledger"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "clr:paragraph:CH09.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "love",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4",
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "originalPurpose": "우리라는 관계의 마지막 메시지",
+    "titleTemplate": "우리라는 관계의 마지막 메시지",
+    "readerQuestion": "우리라는 관계의 마지막 메시지",
+    "internalQuestionRefs": [
+      "P3",
+      "P7",
+      "P8"
+    ],
+    "materialIds": [
+      "clr:material:CH09.P4:closing-response-with-choice",
+      "clr:material:CH09.P4:closing-new-and-held"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  }
+];

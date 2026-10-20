@@ -1,0 +1,2049 @@
+[
+  {
+    "original": {
+      "id": "cwpr:job:video",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "video",
+      "jobLabel": "영상·콘텐츠 편집",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:video",
+      "priorRecordHash": "23e66f3608d10fed08a2abe2555ec287f28cd4887862e56c6e613d1646aa8a70",
+      "tasks": "편집 구성과 전달 규격을 연결",
+      "personAStage": "구성·장면·편집 초안",
+      "personBStage": "자막·음량·화면 규격 검토",
+      "requiredInformation": "길이·매체·원소스·권리·승인자",
+      "output": "편집본과 수정 기록",
+      "qualityCriterion": "자막·음량·전달 규격이 맞는가?",
+      "problem": "초안 방향과 최종 규격 수정이 뒤섞임",
+      "usefulContribution": "서사 구성과 기술 검토의 다른 기여",
+      "handoff": "소스 위치·버전·미완료·사용 권리",
+      "revisionDone": "구성 변경과 자막 오류를 구분",
+      "nextProcedure": "다음 편집 전 승인 지점 확인",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:teaching",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "teaching",
+      "jobLabel": "교육·강의",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:teaching",
+      "priorRecordHash": "ff682f71105365a5538a5e537ebc9e800ee7aa44cfbc18b8e858cf4cd30b0ce8",
+      "tasks": "수업 설계와 학습 확인을 연결",
+      "personAStage": "목표·활동 순서",
+      "personBStage": "이해 확인·자료 점검",
+      "requiredInformation": "학습 대상·목표·시간·지원 필요",
+      "output": "수업안과 이해 확인 질문",
+      "qualityCriterion": "활동이 목표와 연결되고 확인 가능한가?",
+      "problem": "재미있는 반응을 학습 완료로 간주",
+      "usefulContribution": "활동 설계와 이해 질문의 연결",
+      "handoff": "목표·자료·미확인 이해·다음 지원",
+      "revisionDone": "자료 오류와 목표 변경을 구분",
+      "nextProcedure": "다음 수업의 확인 질문 갱신",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:photography",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "photography",
+      "jobLabel": "사진가·프리랜서 사진가",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:photography",
+      "priorRecordHash": "3ad978e11fe0cc41d9ad5d0de96406b22fe0a182da76b27a898083d936972dab",
+      "tasks": "촬영 준비와 선별·납품을 연결",
+      "personAStage": "필수 컷·현장 계획",
+      "personBStage": "선별 기준·색·규격 검토",
+      "requiredInformation": "사용 매체·대상·필수 컷·동의 범위",
+      "output": "컷 목록과 납품 이미지",
+      "qualityCriterion": "필수 정보·색·규격이 실제 쓰임에 맞는가?",
+      "problem": "분위기 참고만 있고 필수 컷이 없음",
+      "usefulContribution": "촬영 전 컷 목적 확인과 촬영 후 누락 검토의 다른 도움",
+      "handoff": "선별본·촬영 조건·보정 전후·미완료",
+      "revisionDone": "재촬영과 보정 요청을 구분",
+      "nextProcedure": "다음 촬영 전 컷 기준 갱신",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:marketing",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "marketing",
+      "jobLabel": "마케팅·캠페인 기획",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:marketing",
+      "priorRecordHash": "28ef6fae7737477b5c80ffc105c529c2a41cd2e76c2a83fdb60d3e7717eb4f71",
+      "tasks": "캠페인 가설과 측정·운영을 연결",
+      "personAStage": "대상·메시지 가설",
+      "personBStage": "측정 조건·운영 여력 검토",
+      "requiredInformation": "대상·매체·목적·측정 범위·권한",
+      "output": "가설별 캠페인 계획",
+      "qualityCriterion": "지표의 의미와 운영 조건이 분명한가?",
+      "problem": "노출 반응을 성과 보장으로 승격",
+      "usefulContribution": "발상과 측정 질문의 다른 기여",
+      "handoff": "메시지 버전·지표 정의·미확인",
+      "revisionDone": "표현 수정과 전략 전환을 구분",
+      "nextProcedure": "다음 검토의 기준 지표 유지",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:translation",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "translation",
+      "jobLabel": "전문 번역·언어 중개",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:translation",
+      "priorRecordHash": "42c33c3312092ba0ba9c3aef6915163b2bd4385639f720f09c5f29f0f42156cc",
+      "tasks": "의미 해석과 용어 검토를 연결",
+      "personAStage": "원문 맥락·초벌",
+      "personBStage": "용어·숫자·대상 독자 검토",
+      "requiredInformation": "원문 버전·분야·독자·용어 기준",
+      "output": "번역본과 미확인 용어",
+      "qualityCriterion": "원문의 의미·수치·조건이 보존됐는가?",
+      "problem": "자연스러운 문장으로 조건을 누락",
+      "usefulContribution": "맥락 질문과 일관성 검토의 다른 도움",
+      "handoff": "원문·용어표·보류 표현·검토 범위",
+      "revisionDone": "오역 수정과 독자별 새 표현 구분",
+      "nextProcedure": "다음 용어 기준 갱신",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:logistics",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "logistics",
+      "jobLabel": "생산·물류·현장",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:logistics",
+      "priorRecordHash": "11cd1d5d756321182e20ff64d1dfa2e9fe2d9fa3267d9b81302849962c46fcbb",
+      "tasks": "작업 실행과 수량·안전 인계를 연결",
+      "personAStage": "허용 절차의 실제 작업",
+      "personBStage": "수량·결함·다음 단계 확인",
+      "requiredInformation": "안전 절차·자격·규격·시간·상태",
+      "output": "수량·상태·이상 기록",
+      "qualityCriterion": "규격과 안전 상태가 확인됐는가?",
+      "problem": "속도 목표로 확인 단계 생략",
+      "usefulContribution": "실행과 오류·상태 검토의 분리",
+      "handoff": "미처리·이상·수량·책임 범위",
+      "revisionDone": "이상 발견 시 조직 안전 절차",
+      "nextProcedure": "다음 반복의 체크 항목 유지",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:counsel_support",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "counsel_support",
+      "jobLabel": "상담·지원 업무",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:counsel_support",
+      "priorRecordHash": "55a1ce8a3a320d989c8ab2f0e60a4eb2532df6a6999034a3389929442c582a21",
+      "tasks": "지원 안내와 경계 확인을 연결",
+      "personAStage": "지원 요청 범위 듣기",
+      "personBStage": "안내 정확성·적절한 통로 확인",
+      "requiredInformation": "동의·역할·기관 지원 범위·긴급 절차",
+      "output": "지원 안내와 연결 정보",
+      "qualityCriterion": "개인 정보와 역할 경계가 지켜지는가?",
+      "problem": "동료가 전문 상담·진단까지 맡음",
+      "usefulContribution": "듣기와 전문 지원 연결의 다른 역할",
+      "handoff": "동의한 최소 정보·미확인·기관 통로",
+      "revisionDone": "지원 요청 변경은 새 동의 확인",
+      "nextProcedure": "다음 지원의 범위 재확인",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:project_planning",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "project_planning",
+      "jobLabel": "기획·전략",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:project_planning",
+      "priorRecordHash": "1fa349020ae8f25c5211523986e9b7853719908bb79b643635362288253549f8",
+      "tasks": "목표·순서와 의존성 검토를 연결",
+      "personAStage": "목표·단계 제안",
+      "personBStage": "가용량·의존·변경 영향 확인",
+      "requiredInformation": "산출물·참여자·제약·권한",
+      "output": "의존 계획과 미결정 목록",
+      "qualityCriterion": "각 단계에 입력·수신자·승인 필요가 있는가?",
+      "problem": "계획표를 실제 담당 동의로 오인",
+      "usefulContribution": "큰 경로와 실제 시작 조건의 연결",
+      "handoff": "현재 범위·미결정·변경·담당",
+      "revisionDone": "새 범위는 자원·권한 재확인",
+      "nextProcedure": "다음 점검 때 영향표 갱신",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:ux",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "ux",
+      "jobLabel": "사용자 경험 설계",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:ux",
+      "priorRecordHash": "0b30e7a42621e45687990c6e797fd37a0e7444fb14b4b35fdf2d4581e45d0c95",
+      "tasks": "사용 흐름 설계와 관찰 검토를 연결",
+      "personAStage": "사용 과제·흐름 초안",
+      "personBStage": "관찰·접근성·막힘 검토",
+      "requiredInformation": "대상·과제·환경·검증 방식",
+      "output": "흐름과 관찰 질문",
+      "qualityCriterion": "목표 과제를 실제로 수행할 수 있는가?",
+      "problem": "보기 좋은 화면을 사용성 검증으로 간주",
+      "usefulContribution": "가설 설계와 관찰 기록의 분리",
+      "handoff": "시안·미검증 가설·관찰 범위",
+      "revisionDone": "새 가설과 확인된 오류를 구분",
+      "nextProcedure": "다음 관찰 질문 한정",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:sales",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "sales",
+      "jobLabel": "영업·고객 제안",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:sales",
+      "priorRecordHash": "073767a3759e137fb0de07feec53c6323bf771876bd633e2d5badce1691ee295",
+      "tasks": "고객 요구와 이행 가능한 제안을 연결",
+      "personAStage": "고객 목적·범위 질문",
+      "personBStage": "제공 조건·이행 여력 검토",
+      "requiredInformation": "실제 요구·가격 권한·납기·제공 범위",
+      "output": "조건부 제안서",
+      "qualityCriterion": "승인된 범위로 이행 가능한가?",
+      "problem": "좋은 반응을 계약·납기 확정으로 해석",
+      "usefulContribution": "요구 듣기와 운영 확인의 연결",
+      "handoff": "확정·미확정 조건·승인 필요",
+      "revisionDone": "요구 확대는 기존 약속과 별도 검토",
+      "nextProcedure": "다음 제안 전 이행 조건 갱신",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:brand_design",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "brand_design",
+      "jobLabel": "브랜드·시각 디자인",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:brand_design",
+      "priorRecordHash": "33b7fc738e31f8a3e16c34886244b99147662cef687e164faae1891790a03f10",
+      "tasks": "시각 표현과 사용 조건 검토를 연결",
+      "personAStage": "표현 대안·초안",
+      "personBStage": "매체·가독·규격 점검",
+      "requiredInformation": "대상·매체·필수 정보·사용 크기",
+      "output": "디자인 파일과 사용 안내",
+      "qualityCriterion": "작은 크기에서도 필수 정보가 읽히는가?",
+      "problem": "멋짐 의견이 실제 사용 문제와 섞임",
+      "usefulContribution": "표현 선택과 사용 환경 질문의 다른 기여",
+      "handoff": "원본·폰트·매체별 파일·미확정",
+      "revisionDone": "오류와 새 취향 변경을 구분",
+      "nextProcedure": "다음 매체 적용 조건 기록",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:small_business",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "small_business",
+      "jobLabel": "소규모 사업 운영",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:small_business",
+      "priorRecordHash": "5ba1f5fd038759fde0182de94b4ad2bfb260e25ddddedcca18d7407ffd332ef4",
+      "tasks": "운영 지원의 역할과 사업 권한을 구분",
+      "personAStage": "요청된 운영 작업",
+      "personBStage": "증빙·후속·인계 확인",
+      "requiredInformation": "실제 요청·담당·자원·결정권",
+      "output": "운영 지원 기록",
+      "qualityCriterion": "요청 범위와 현재 상태가 맞는가?",
+      "problem": "같이 돕는다고 지분·손실 책임 생성",
+      "usefulContribution": "업무 지원만 연구하며 사업 판단은 별도",
+      "handoff": "진행·미완료·결정 필요",
+      "revisionDone": "새 사업 결정과 운영 수정 구분",
+      "nextProcedure": "다음 지원의 담당·권한 재확인",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:accounting",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "accounting",
+      "jobLabel": "회계·증빙 검토",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:accounting",
+      "priorRecordHash": "a9c491e3a922feff9f4a16d804e12ab47103986e751902ddd323c05cc3f159e0",
+      "tasks": "기장 자료와 증빙·규정 검토를 연결",
+      "personAStage": "자료 수집·분류",
+      "personBStage": "증빙·일치·현행 요건 검토",
+      "requiredInformation": "기간·증빙·현행 기준·검토 권한",
+      "output": "대사표와 미확인 항목",
+      "qualityCriterion": "원자료·합계·분류 근거가 맞는가?",
+      "problem": "숫자 일치를 적법성 검증으로 확대",
+      "usefulContribution": "자료 정리와 요건 확인의 다른 작업",
+      "handoff": "증빙·보류 분류·확인 담당",
+      "revisionDone": "규정 해석은 자격·조직 절차 확인",
+      "nextProcedure": "다음 정산 전 증빙 기준 갱신",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:cafe",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "cafe",
+      "jobLabel": "카페·소상공인 운영",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:cafe",
+      "priorRecordHash": "4e8784c9c7afcc1818505f3e526a1aa5b6d85e7b3d4207de9b4417da581e4b88",
+      "tasks": "준비·제조와 매장 인계를 연결",
+      "personAStage": "현재 준비량·변경 조건",
+      "personBStage": "남은 재고·미완료·교대 정보",
+      "requiredInformation": "실제 담당·자격·수요·보관·안전 절차",
+      "output": "준비 상태와 교대 기록",
+      "qualityCriterion": "안전·재고·주문 상태가 확인되는가?",
+      "problem": "친절한 인사만 하고 미완료 주문 누락",
+      "usefulContribution": "현장 대응과 상태 기록의 연결",
+      "handoff": "남은 주문·준비 상태·위험·담당",
+      "revisionDone": "주문 수정은 실제 요청과 절차 확인",
+      "nextProcedure": "다음 교대의 필수 항목 갱신",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:retail",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "retail",
+      "jobLabel": "판매·매장 운영",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:retail",
+      "priorRecordHash": "d77fa92a4665afe8486aa952ad7cbc8247ae30aa6f9906a544790028e73d8426",
+      "tasks": "고객 응대와 재고·후속 확인을 연결",
+      "personAStage": "고객 요청·현장 응대",
+      "personBStage": "재고·주문 상태 검토",
+      "requiredInformation": "제품 조건·주문·재고·권한·규정",
+      "output": "응대·재고 상태 기록",
+      "qualityCriterion": "고객 안내와 실제 재고가 맞는가?",
+      "problem": "응대자가 확인 없이 제공 약속",
+      "usefulContribution": "현재 요청 듣기와 이행 확인의 연결",
+      "handoff": "미완료 주문·재고·안내 내용",
+      "revisionDone": "정책 밖 약속은 별도 승인",
+      "nextProcedure": "다음 교대 전 상태 확인",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:administration",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "administration",
+      "jobLabel": "행정·공공 사무",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:administration",
+      "priorRecordHash": "ea8633f3d750410bf4dc1bbde54eadd8017615a1cdabf8eb36160bf998db0011",
+      "tasks": "문서 접수와 요건 검토를 연결",
+      "personAStage": "요청·기한·필수 서류 정리",
+      "personBStage": "규정 적용·누락 검토",
+      "requiredInformation": "관할·현행 기준·제출 양식·승인 절차",
+      "output": "제출 문서와 확인 목록",
+      "qualityCriterion": "현행 요건과 실제 자료가 맞는가?",
+      "problem": "지난 양식을 현행 기준으로 사용",
+      "usefulContribution": "접수 정보와 규정 확인의 분리",
+      "handoff": "양식 버전·누락·기한·담당",
+      "revisionDone": "새 요건과 단순 기재 오류 구분",
+      "nextProcedure": "다음 접수 전 기준일 확인",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:hands_on_service",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "hands_on_service",
+      "jobLabel": "미용·공방 등 손기술 서비스",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:hands_on_service",
+      "priorRecordHash": "cad0658302607d5fb3c6127e03e2705fa1de04308de48f347d916936b7f2c533",
+      "tasks": "시술·제작 준비와 요청·완료 확인을 연결",
+      "personAStage": "동의한 작업·도구 준비",
+      "personBStage": "요청 범위·상태·안전 확인",
+      "requiredInformation": "자격·고객 동의·사용 목적·안전 절차",
+      "output": "작업 상태와 전달 안내",
+      "qualityCriterion": "동의 범위와 실제 결과·안전이 맞는가?",
+      "problem": "능숙해 보인다고 자격·동의 생략",
+      "usefulContribution": "실행 준비와 요청·상태 확인의 분리",
+      "handoff": "진행·주의 조건·미완료·후속",
+      "revisionDone": "범위 변경은 실제 동의·절차 확인",
+      "nextProcedure": "다음 예약·작업 전에 범위 재확인",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:finance",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "finance",
+      "jobLabel": "재무기획",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:finance",
+      "priorRecordHash": "a58e3b5a3e83c8d8f0ce9c19b89cb307467b5c4395ccbf03ca007924786a1087",
+      "tasks": "가정 정리와 전망 검토를 연결",
+      "personAStage": "자료 기간·가정 정리",
+      "personBStage": "민감도·대안 비교",
+      "requiredInformation": "기준일·자료 출처·가정·결정 목적",
+      "output": "가정별 전망표",
+      "qualityCriterion": "관측과 가정·추정이 구별되는가?",
+      "problem": "다른 기간 자료를 같은 합계로 사용",
+      "usefulContribution": "모델의 구조와 입력 수치의 교차 검토",
+      "handoff": "가정 버전·미확인 값·범위",
+      "revisionDone": "새 입력과 모형 변경을 구분",
+      "nextProcedure": "다음 전망의 기준일 갱신",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:software",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "software",
+      "jobLabel": "개발·IT 구현",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:software",
+      "priorRecordHash": "4f6f4aec4ecc2b151b1e4fbfd81ecad93008fa992a54215300c9018953a5794e",
+      "tasks": "기능 구현과 검토·배포 확인을 연결",
+      "personAStage": "요구사항·작은 구현",
+      "personBStage": "재현 조건·코드·배포 전 검토",
+      "requiredInformation": "입력·예상 동작·의존성·권한",
+      "output": "구현 변경과 확인 기록",
+      "qualityCriterion": "요청 동작·오류·권한을 확인했는가?",
+      "problem": "구현 완료를 배포 승인으로 혼동",
+      "usefulContribution": "만드는 질문과 실패 조건을 찾는 질문의 연결",
+      "handoff": "변경 범위·실행 방법·미해결·승인 상태",
+      "revisionDone": "결함 수정과 기능 추가를 구분",
+      "nextProcedure": "다음 변경 전 재현 조건 보존",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:care",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "care",
+      "jobLabel": "의료·돌봄 지원",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:care",
+      "priorRecordHash": "281113f069ce5c28b84446679b34ad2318ad8c78bb5bb0004161f14b94c7f31d",
+      "tasks": "돌봄 일정·관찰과 자격 있는 판단을 구분",
+      "personAStage": "확인된 업무 범위·관찰 기록",
+      "personBStage": "전문 담당에게 전달할 정보 확인",
+      "requiredInformation": "실제 자격·업무 지시·상태·지원 절차",
+      "output": "관찰·전달 기록",
+      "qualityCriterion": "확인된 사실과 추측이 나뉘는가?",
+      "problem": "성향으로 진단·처치 판단을 대신함",
+      "usefulContribution": "정보 확인·질문 기회의 지원만 연구",
+      "handoff": "상태·변화·미완료·담당자",
+      "revisionDone": "전문 지시 없이 임의 처치 변경 금지",
+      "nextProcedure": "조직의 안전·자격 절차 유지",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:research",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "research",
+      "jobLabel": "전문 연구·분석",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:research",
+      "priorRecordHash": "a267959d7d78ee943a6f4f7ac39383839229cf62b70f5efeebbb8b4494744faf",
+      "tasks": "질문·분석과 반례·재현 검토를 연결",
+      "personAStage": "연구 질문·가정·분석",
+      "personBStage": "자료 출처·반례·재현 조건",
+      "requiredInformation": "자료·방법·표본 범위·가정",
+      "output": "분석 결과와 한계",
+      "qualityCriterion": "관측·가정·추론이 구별되는가?",
+      "problem": "그럴듯한 설명을 인과 증명으로 사용",
+      "usefulContribution": "가설 만들기와 반례 확인의 다른 기여",
+      "handoff": "원자료·분석 버전·미확인·한계",
+      "revisionDone": "새 자료와 방법 변경을 구분",
+      "nextProcedure": "다음 분석의 재현 조건 보존",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:writing",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "writing",
+      "jobLabel": "글·정보 콘텐츠",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:writing",
+      "priorRecordHash": "40b664c26cc0ea997a2aabdbb107dd77b2390b991e388efaaee5980e68b5cddc",
+      "tasks": "글 구성과 사실·독자 검토를 연결",
+      "personAStage": "주제·구조·초안",
+      "personBStage": "사실·출처·독자 이해 검토",
+      "requiredInformation": "매체·독자·목적·자료·권리",
+      "output": "원고와 출처·미확인 표",
+      "qualityCriterion": "핵심 주장·조건·출처가 보존되는가?",
+      "problem": "읽기 쉽게 고치며 근거 조건 삭제",
+      "usefulContribution": "서사 구성과 사실 검토의 다른 기여",
+      "handoff": "버전·출처·보류 주장·수정 의도",
+      "revisionDone": "오류 수정과 새 주제 추가 구분",
+      "nextProcedure": "다음 원고의 확인 질문 유지",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  },
+  {
+    "original": {
+      "id": "cwpr:job:customer_support",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "jobKey": "customer_support",
+      "jobLabel": "고객 지원·서비스",
+      "priorAuditRef": "career-context-source-audit.json#ckr:job:customer_support",
+      "priorRecordHash": "0378b762386291300c84c5c3eb551a197d85bee9fadd61ce5a732ef1421307a3",
+      "tasks": "문의 듣기와 해결 상태 인계를 연결",
+      "personAStage": "요청·증상·제약 듣기",
+      "personBStage": "해결 범위·미완료·후속 확인",
+      "requiredInformation": "실제 문의·지원 권한·절차·시각",
+      "output": "문의 상태와 응답 기록",
+      "qualityCriterion": "고객 요청과 안내·진행 상태가 맞는가?",
+      "problem": "친절한 응답을 실제 해결로 처리",
+      "usefulContribution": "요청 이해와 실제 완료 확인의 분리",
+      "handoff": "확정·미해결·다음 담당·약속",
+      "revisionDone": "새 문제와 기존 해결 확인 구분",
+      "nextProcedure": "다음 문의 전 상태 갱신",
+      "additionalInput": [
+        "actual_jobA",
+        "actual_jobB",
+        "actual_task",
+        "output_purpose",
+        "qualification_if_needed",
+        "verified_authority",
+        "available_resources"
+      ],
+      "authority": "UNKNOWN",
+      "actualJob": "UNKNOWN",
+      "sceneStatus": "hypothetical_only",
+      "notNewOccupationFact": true,
+      "materialRefs": [
+        "cwpr:material:CH01.P4:phase-before-person",
+        "cwpr:material:CH04.P2:autonomy-and-continuity",
+        "cwpr:material:CH05.P2:ab-continuous-record",
+        "cwpr:material:CH05.P4:ab-request-with-acceptance",
+        "cwpr:material:CH05.P4:ab-pass-uncertainty",
+        "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+        "cwpr:material:CH06.P4:ba-confirm-receipt",
+        "cwpr:material:CH07.P1:deadline-dependency",
+        "cwpr:material:CH07.P3:handoff-omission",
+        "cwpr:material:CH08.P1:repair-dependency-time",
+        "cwpr:material:CH08.P2:a-handoff-status",
+        "cwpr:material:CH09.P2:recall-handoff-interface"
+      ]
+    },
+    "actualJob": "UNKNOWN",
+    "checks": [
+      {
+        "field": "jobA",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "jobB",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "task",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "outputPurpose",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "qualification",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "decisionAuthority",
+        "state": "UNKNOWN"
+      },
+      {
+        "field": "availableCapacity",
+        "state": "UNKNOWN"
+      }
+    ],
+    "jobMatched": false,
+    "applicable": false,
+    "actualAuthority": "UNKNOWN",
+    "abilityProven": false,
+    "exampleAllocationIsActualRole": false
+  }
+]

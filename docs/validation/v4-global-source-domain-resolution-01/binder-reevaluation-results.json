@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "binder-reevaluation-results.json.gz",
+  "payloadHash": "a17eb2de9cc1c057072895921f83b315dc81b382ed53a91f449afc74806d720d",
+  "logicalJsonHash": "e232f7e4876968422ce89b157088c2ad583816e1ebc7b2550e24e4225e212c6f",
+  "uncompressedBytes": 18048432
+}

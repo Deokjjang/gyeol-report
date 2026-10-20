@@ -1,0 +1,207 @@
+{
+  "baseTrackedFiles": 3869,
+  "changedBaseFiles": [],
+  "catalogGeneratedJson": 59,
+  "byteIdenticalCatalogJson": 59,
+  "sourceVerificationGeneratedJson": 20,
+  "byteIdenticalSourceVerificationJson": 20,
+  "researchFamilies": 20,
+  "researchRecords": 18610,
+  "foundationSlots": 4799,
+  "actualBookCases": 17,
+  "digestComparisons": 102,
+  "completeObservationsEqual": true,
+  "existingGrammarObservationEqual": true,
+  "books": [
+    {
+      "id": "comprehensive/A",
+      "hashes": {
+        "calculations": "89e0559c46846256e5fcc6ea353e9d9d58380c865a0514aab87c00d54fd8f3b5",
+        "evidence": "26185b5ba4107b16cf516a1125db5d3a71d6ad31d99edc8fd78bf600fe925c84",
+        "draft": "4d82b1670b60d68a40cc91127b455e6e4932534fe3537de11ee42ce428582d1b",
+        "narrative": "555e5b77c1cbbd44b95d9e515763adc79419d290fe1e9f4d617f9af676e48b7b",
+        "book": "a159ae6501c9f57cea682aa62a54cbecadfa8460022330ed812cf30e81d4e27f",
+        "snapshot": "ff9693346133067d08c07f0f96b54e3e1fa3431eeda86ea0f6da4db1cf9769ed"
+      }
+    },
+    {
+      "id": "comprehensive/F",
+      "hashes": {
+        "calculations": "eaacda485c5d1989132773fc94dda31f27d463d0df6b8362cc630b0f027126cd",
+        "evidence": "68ad2a420cc7a5b0801cbc72826fa3c1947b6a8f6090a8d72b91b4a3dce5e4b4",
+        "draft": "b71d4073f4dbef330b685f8db813f3ca1f09c7c472771db85151f6fe3130551c",
+        "narrative": "00062a59e44716cd5801b5705549f6831739d505dded0813f73117267083a255",
+        "book": "936b3e5fb0c45a007d933824729eafb49c0081e21afb1e3c371dd3c879e155fb",
+        "snapshot": "3ad6eef86db61e26ff66e85da659aad134e67c10edacc20d9905d73cec7e85f5"
+      }
+    },
+    {
+      "id": "career/A",
+      "hashes": {
+        "calculations": "a40fe08474cc5f68c0a7100c05d795edfd105ab0fa68b403333e1b8a046b1731",
+        "evidence": "a6c91341c12054bcd535736edd95b16b2581b1876b3bfd36608a4191a0d0bdab",
+        "draft": "d92465e712d834596a418afd7bcadbf172c73c0cf15f257ae0085bde78ee78a4",
+        "narrative": "83fe3722462fa90ba36c82fc087fc0ad7fcfa323255dd6e745c58f6b3abdaba8",
+        "book": "48886e58ce2b5290bada8407c462183bb756e0739a3c48a5de96f8d15fabe529",
+        "snapshot": "c1fb12b2240d506bb62b330feafdf56bda2febe9a9a171b6fe270bdb1d3234a4"
+      }
+    },
+    {
+      "id": "career/F",
+      "hashes": {
+        "calculations": "ea7ca08540b599db720eec57b2ab9df99eb3c046e64370b9de6b1e3968a4d3db",
+        "evidence": "b8c05fcea2fa67154f51b1c5313ea1c276c03e148fbbb9d5f860f384cfdb8a0e",
+        "draft": "8a97a7da508e861be9ba2282e9fb2dddc055ec4d8ef3392d5a5d7b65ea359169",
+        "narrative": "1bf47cc37476d063ee266300b39f7a7d71b3b348379bd29340431ffbe4e7bfcc",
+        "book": "c81b59782d8c34739fe4b601c0865e2884797167ad9e02cbf39a44c60dcbd11f",
+        "snapshot": "b63b3d53690943f6db7f35f6c4c27f8ef88b66ea32da685e6d50d69fb7be163d"
+      }
+    },
+    {
+      "id": "love/A",
+      "hashes": {
+        "calculations": "1c46f577701e75dd77957c6b6043cd9a6bdc6197f0f0c66f2ee50e99e2e53b72",
+        "evidence": "fe824d4f890d2abe84b790d5d8ee0df0e0449a92ad6b0bf34428fbb9fe4d9b69",
+        "draft": "eea02ec4c81ee9e9331348b7cc62f76293db830d23ebd68dfcd7ff004e4f5e21",
+        "narrative": "a743defbb0ff4f93b08ae0388fdb554db8ac72fc1a868825997e866a042f3d4c",
+        "book": "c2ea4d853b746d36983ecbaa5a6d92cad6b91dda5d4edd8c36361f6d4d20dc51",
+        "snapshot": "a92977e2b9667d12f351e2194a9d752f141be562cccda8971cf117c1af167cd6"
+      }
+    },
+    {
+      "id": "love/F",
+      "hashes": {
+        "calculations": "0653c360334416c6b55bf7c9dfda4c3638e008d472f03539391b42a1a119367c",
+        "evidence": "951f1dc1a4fb2720daa39d3f872fc02533151b23a85fe96c429d163f41124baf",
+        "draft": "f892c0cc60e341b4e98114f10a2af2731dffc87c9fa35884f17e6d5b250204b6",
+        "narrative": "21e43debb64075d448aa6895bcc9f61018ab3a122d9285a89ca985aaace1a135",
+        "book": "51dddc8ef1a4ed9cce3a4c8dc6bc2e7ad465cd47c33d7c333ced774b80c20534",
+        "snapshot": "5661daa43fb4b56f989a69f70bab7845011a839339cabe440741f35d68c954d4"
+      }
+    },
+    {
+      "id": "compatibility/A",
+      "hashes": {
+        "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+        "evidence": "ad58a76a7abe2e65d084af211aaf6865c9482ba17b2c1d221672cfebb4876ef4",
+        "draft": "cd4a84e0ea02a5b818a802823820cb17070f41512fa0c2200f84850c90a2d38a",
+        "narrative": "c9057718210913e7c58b9eb7f00b4817773265ed61003e16935db7f5c396b5e0",
+        "book": "fcb9657f7080887977310348b36bd9e029d453086d355078c3233a9aa85e7f1c",
+        "snapshot": "eb76435b9fc295326bc8eb5f67010f1c3b27e3b3995d919ab08473a4382f2f9f"
+      }
+    },
+    {
+      "id": "compatibility/marriage",
+      "hashes": {
+        "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+        "evidence": "722d60bf839363c8273c32dab1b2444dd3ea5cfa034221aa8c21fb9a30bd110b",
+        "draft": "0f4f41aedbb2d24eb01d7c5f99cef26270fa77889abf3289144cbe81f1638bb2",
+        "narrative": "cb1c88f746573a0362511e73e9ecb6d39e74e2a50b7bed6a46e218852bfa6474",
+        "book": "61dcc6d04f3df80c28ade187982d1ae927cd8ebe16b745cdf70dc31dbe5a4ad2",
+        "snapshot": "8f89ff5e1d4f59c0ca613b06926b37f2edcaaa0391ef27d4f4507741543f5554"
+      }
+    },
+    {
+      "id": "compatibility/parentChild",
+      "hashes": {
+        "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+        "evidence": "51662b68b3829382f8d153d243bce7bc06805feff1450a1669583ba2abcebed6",
+        "draft": "5fc00bdfe82b73c4db0e89e1d72a75413b32d07e1671139edc3e1c1e4ed52949",
+        "narrative": "baf43c6155c3e1fccf2e05c9b0a7240c4c3cf51c4c9b25857763f2f8adce25d3",
+        "book": "c526051d096e8754fcb0f65935c91cbcca27e11c74d61020a82778b5e6cee248",
+        "snapshot": "dac59d4929fd6f3fd9de4414caf7853abea23e6229123be69acea8ba30fdb54c"
+      }
+    },
+    {
+      "id": "compatibility/coworker",
+      "hashes": {
+        "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+        "evidence": "ee16495ddb8c04f565b1848554ba927d553730cd673cb7d4a8244efd40258323",
+        "draft": "726b73d5a390fbf62b4776811399de048e1d169d5f367e0697d2a62dd22e1260",
+        "narrative": "8eec611e7b2311c1e567a5a3a3feca42af6b7e3c43d4925d14918a9a5705cb1f",
+        "book": "8b5d6dd927cefffef558956f561dd5d229a721c400977a732776670b1494a976",
+        "snapshot": "d24d78586ce5cac30f249c5bdaad92c2ba9e5d1aed81aabd76c684e8b4296a9b"
+      }
+    },
+    {
+      "id": "compatibility/managerReport",
+      "hashes": {
+        "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+        "evidence": "67dfce0f4e48025cc8befcdb568139dc378ea672e20d094c9ba8b2c4433e4851",
+        "draft": "4100e9d3bf6d87d5837a2a0e6712dbeff41a886299099e5299b089750f2cff30",
+        "narrative": "0fc8ef2ca03b5a6a2e1cfd49926a3c43d6c563e68294cb4e907be53c3b501944",
+        "book": "4a1142d9ac3f71416100b2d21d8ab05fe540c132222de08c188abd38352ded01",
+        "snapshot": "16666b882ef4e7247801d58268fa03dbe9c8d26ae4f0dce7864a27bad674960e"
+      }
+    },
+    {
+      "id": "compatibility/businessPartner",
+      "hashes": {
+        "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+        "evidence": "d2820239e0f4716a89509a6809ae9d7256d1ace7ed3bb426ceeba0542f7fa1a4",
+        "draft": "60e49262ce61516e1af7aca491a611ec75ca43fbf93171ce38faedb1a4f80b19",
+        "narrative": "2bf2942055f8bd33b7a7e11a2aa9d7ddf894ca8a5dcfcb58fb43418cf6012479",
+        "book": "013774ee82ba034bca227e254b38f4dc472f88ea048a8af1dc98da1922682e97",
+        "snapshot": "cc354330df567045e0a7c61f9c3369ef83c2cbc8dba164fa7a0d868b67100bf3"
+      }
+    },
+    {
+      "id": "compatibility/friendship",
+      "hashes": {
+        "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+        "evidence": "235ca43d7cec3efaddeac806979e8893824267360967a082457a0a27472e28e4",
+        "draft": "8bd82055861572ddf58687fa0d466d7d5110b0cdc29b0a8992dda61b0224652b",
+        "narrative": "d0e41f88b12fdb8308c5bb555fb5659f9b1c7c5111e6d9b0730775dfa882ad59",
+        "book": "d993316c087489934c9a1ae52590dd1d0964314c0445e4132c4b9bed38160e1c",
+        "snapshot": "1a8f46c473bd4474e017f05bf3599ce78b3facba0a5392a9c1b5571566f52b4b"
+      }
+    },
+    {
+      "id": "major/A",
+      "hashes": {
+        "calculations": "087dc6b06e00e4fe6db2cc6481c6813edcbe38c1e69e550bd248e2fe2c3c8fdb",
+        "evidence": "2b0adee44ca4c94e00c3b1a3d85bed1e564719e82364093a02a6dcd9f46f7ca5",
+        "draft": "8039bad6ac7fdfc47e025becdf78be5d8d11431ed230876401a72db4903ba4a1",
+        "narrative": "06e96c8ae11139e83bcdfe466e5aef41e5f3ee120e845401cb468e9606bf07b6",
+        "book": "51e2e0d4e64a138d4ec30ba798b7eefe6eb82c2907f5ee99306e11fb98a15113",
+        "snapshot": "0c3ccfe38bd72ad00301302791cdf52fa1245e3e57107504bc5080bd4e64ad5a"
+      }
+    },
+    {
+      "id": "major/F",
+      "hashes": {
+        "calculations": "eb3174160cfb8da3d08c5ec03ebbd780cb9d97314a894441706844c7c5d24c34",
+        "evidence": "10d0c0d916198e46c95b272442a9fe32fc8bb2194db27a99e3d6d1c9cc6f25fd",
+        "draft": "1cf793a5adcd6a7ffee5e09a33c09cbc9a40f04af23ccf37b5f3ce66958d7f79",
+        "narrative": "b4b75c31c5f3c03b467c535b83d034148e4f213617a7b20547c701e845814587",
+        "book": "e2ddb6dcd946450afa4353ba9540f6171b5c8a7472c1db5639f8762e8bc7273c",
+        "snapshot": "afae0ac29574770cb3297eb0b6a78c85948828b131dd83ca812683e0ab3f65fd"
+      }
+    },
+    {
+      "id": "annual/A",
+      "hashes": {
+        "calculations": "087dc6b06e00e4fe6db2cc6481c6813edcbe38c1e69e550bd248e2fe2c3c8fdb",
+        "evidence": "654c5764944af0a6f29bde9fb0c9dbeb437c77f1abdb87201a7cf5b47866613a",
+        "draft": "3001a277e3a7023f5fb90d2b127ec2e18c9f34d8c6c8d05c4e485291be1ed1d6",
+        "narrative": "ae2e50212d4c9ad426c01f5790d12a21b9bf87ec7fc6b42bace6f77396a52fd7",
+        "book": "da0bc604b4ded64cbfa83349cf8054fb8fef57102e4b2e6a6bfca21f45577944",
+        "snapshot": "0ae425124bc4434fe6cefbc83e579c0518c7382f46fc959a45ac584a5d038a76"
+      }
+    },
+    {
+      "id": "annual/F",
+      "hashes": {
+        "calculations": "eb3174160cfb8da3d08c5ec03ebbd780cb9d97314a894441706844c7c5d24c34",
+        "evidence": "9e003508ed772c7d6cb82484d48633e9263069f44bd2790b860bdf1a6a5fe236",
+        "draft": "a6cc76a7cf0bf784b782ceff09f55bca794352da069d5682693726ff64569c6e",
+        "narrative": "aa84cdbb7eb55a78bff24be84954e784f32040677331d5afeb197298dc03bda3",
+        "book": "ee4a6cc847a0940c9d5f69ffd8b2511a5d570a78a162be0d0b5f6f8d2fe3f5e7",
+        "snapshot": "ad72b675594bcdde8d38164dcca544870f3a6454d6d83c2799a45cd9379b12d1"
+      }
+    }
+  ],
+  "preexistingWorktreesPreserved": 37,
+  "originalDirtyFilesPreserved": 11,
+  "scope": "Tracked and nonignored files, HEAD, branch and status; ignored build caches excluded. Reopening is existing local fixture verification; no Production account access or stored Book writes."
+}

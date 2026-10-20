@@ -1,0 +1,3506 @@
+[
+  {
+    "fixtureId": "fixture-comprehensive-A",
+    "product": "saju_mbti_full",
+    "relationship": null,
+    "file": "shards/fixture-comprehensive-A-receipts.json",
+    "candidateOccurrences": 200,
+    "graphNodesConsidered": 3628,
+    "coverage": {
+      "candidateOccurrences": 200,
+      "sourceMatchOccurrences": 455,
+      "actualEvidenceMatchOccurrences": 97,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 9,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 200,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 200,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 200
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 77,
+          "FAIL": 11,
+          "UNKNOWN": 112,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 9,
+          "FAIL": 72,
+          "UNKNOWN": 119,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 16,
+          "FAIL": 0,
+          "UNKNOWN": 184,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 200,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 9,
+          "FAIL": 78,
+          "UNKNOWN": 113,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 200,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 200,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 35,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 165
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 179,
+          "FAIL": 0,
+          "UNKNOWN": 21,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 200
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 191,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 71,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 72,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 112,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 35,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 200,
+        "CUSTOMER_APPROVAL_PENDING": 200,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 112,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 78,
+        "OPERATOR_APPROVAL_PENDING": 200,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 200,
+        "REQUIRED_FUSION_ANCESTOR_NOT_MATCHED": 1,
+        "RULE_SPECIFIC_FUSION_NOT_FOUND": 11,
+        "SEMANTIC_REVIEW_REQUIRED": 200,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 21
+      },
+      "distinctFactRoots": 75,
+      "factRootReferenceOccurrences": 374
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-comprehensive-F",
+    "product": "saju_mbti_full",
+    "relationship": null,
+    "file": "shards/fixture-comprehensive-F-receipts.json",
+    "candidateOccurrences": 200,
+    "graphNodesConsidered": 163,
+    "coverage": {
+      "candidateOccurrences": 200,
+      "sourceMatchOccurrences": 455,
+      "actualEvidenceMatchOccurrences": 0,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 0,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 200,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 200,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 200
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 55,
+          "FAIL": 33,
+          "UNKNOWN": 112,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 0,
+          "FAIL": 33,
+          "UNKNOWN": 167,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 200,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 200,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 0,
+          "FAIL": 78,
+          "UNKNOWN": 122,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 200,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 200,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 35,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 165
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 179,
+          "FAIL": 0,
+          "UNKNOWN": 21,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 200
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 200,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 88,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 88,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 112,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 35,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 200,
+        "CUSTOMER_APPROVAL_PENDING": 200,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 112,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 78,
+        "OPERATOR_APPROVAL_PENDING": 200,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 200,
+        "RULE_SPECIFIC_FUSION_NOT_FOUND": 33,
+        "SEMANTIC_REVIEW_REQUIRED": 200,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 21,
+        "UNKNOWN_MBTI": 88
+      },
+      "distinctFactRoots": 0,
+      "factRootReferenceOccurrences": 0
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-career-A",
+    "product": "career_money_study",
+    "relationship": null,
+    "file": "shards/fixture-career-A-receipts.json",
+    "candidateOccurrences": 268,
+    "graphNodesConsidered": 3462,
+    "coverage": {
+      "candidateOccurrences": 268,
+      "sourceMatchOccurrences": 320,
+      "actualEvidenceMatchOccurrences": 21,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 0,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 268,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 268,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 268
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 119,
+          "FAIL": 3,
+          "UNKNOWN": 146,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 10,
+          "FAIL": 110,
+          "UNKNOWN": 148,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 12,
+          "FAIL": 0,
+          "UNKNOWN": 256,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 268,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 0,
+          "FAIL": 258,
+          "UNKNOWN": 10,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 268,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 53,
+          "FAIL": 0,
+          "UNKNOWN": 215,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 20,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 248
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 192,
+          "FAIL": 0,
+          "UNKNOWN": 76,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 268
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 258,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 110,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 110,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 146,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 20,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 268,
+        "CUSTOMER_APPROVAL_PENDING": 268,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 146,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 258,
+        "OPERATOR_APPROVAL_PENDING": 268,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 268,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 215,
+        "RULE_SPECIFIC_FUSION_NOT_FOUND": 3,
+        "SEMANTIC_REVIEW_REQUIRED": 268,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 76
+      },
+      "distinctFactRoots": 28,
+      "factRootReferenceOccurrences": 56
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-career-F",
+    "product": "career_money_study",
+    "relationship": null,
+    "file": "shards/fixture-career-F-receipts.json",
+    "candidateOccurrences": 268,
+    "graphNodesConsidered": 148,
+    "coverage": {
+      "candidateOccurrences": 268,
+      "sourceMatchOccurrences": 320,
+      "actualEvidenceMatchOccurrences": 0,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 0,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 268,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 268,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 268
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 117,
+          "FAIL": 5,
+          "UNKNOWN": 146,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 0,
+          "FAIL": 5,
+          "UNKNOWN": 263,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 268,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 268,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 0,
+          "FAIL": 258,
+          "UNKNOWN": 10,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 268,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 53,
+          "FAIL": 0,
+          "UNKNOWN": 215,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 20,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 248
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 192,
+          "FAIL": 0,
+          "UNKNOWN": 76,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 268
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 268,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 122,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 122,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 146,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 20,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 268,
+        "CUSTOMER_APPROVAL_PENDING": 268,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 146,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 258,
+        "OPERATOR_APPROVAL_PENDING": 268,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 268,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 215,
+        "RULE_SPECIFIC_FUSION_NOT_FOUND": 5,
+        "SEMANTIC_REVIEW_REQUIRED": 268,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 76,
+        "UNKNOWN_MBTI": 122
+      },
+      "distinctFactRoots": 0,
+      "factRootReferenceOccurrences": 0
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-love-A",
+    "product": "love_marriage_child",
+    "relationship": null,
+    "file": "shards/fixture-love-A-receipts.json",
+    "candidateOccurrences": 170,
+    "graphNodesConsidered": 3925,
+    "coverage": {
+      "candidateOccurrences": 170,
+      "sourceMatchOccurrences": 319,
+      "actualEvidenceMatchOccurrences": 34,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 6,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 170,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 170,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 170
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 138,
+          "FAIL": 3,
+          "UNKNOWN": 29,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 16,
+          "FAIL": 125,
+          "UNKNOWN": 29,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 16,
+          "FAIL": 0,
+          "UNKNOWN": 154,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 170,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 6,
+          "FAIL": 18,
+          "UNKNOWN": 146,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 170,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 6,
+          "FAIL": 20,
+          "UNKNOWN": 144,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 8,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 162
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 164,
+          "FAIL": 0,
+          "UNKNOWN": 6,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 170
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 154,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 122,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 125,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 29,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 8,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 170,
+        "CUSTOMER_APPROVAL_PENDING": 170,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 29,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 18,
+        "OPERATOR_APPROVAL_PENDING": 170,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 170,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 20,
+        "RULE_SPECIFIC_FUSION_NOT_FOUND": 3,
+        "SEMANTIC_REVIEW_REQUIRED": 170,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 6
+      },
+      "distinctFactRoots": 47,
+      "factRootReferenceOccurrences": 222
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-love-F",
+    "product": "love_marriage_child",
+    "relationship": null,
+    "file": "shards/fixture-love-F-receipts.json",
+    "candidateOccurrences": 170,
+    "graphNodesConsidered": 149,
+    "coverage": {
+      "candidateOccurrences": 170,
+      "sourceMatchOccurrences": 319,
+      "actualEvidenceMatchOccurrences": 0,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 0,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 170,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 170,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 170
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 128,
+          "FAIL": 13,
+          "UNKNOWN": 29,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 0,
+          "FAIL": 13,
+          "UNKNOWN": 157,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 170,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 170,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 0,
+          "FAIL": 18,
+          "UNKNOWN": 152,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 170,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 6,
+          "FAIL": 20,
+          "UNKNOWN": 144,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 8,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 162
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 164,
+          "FAIL": 0,
+          "UNKNOWN": 6,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 170
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 170,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 128,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 141,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 29,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 8,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 170,
+        "CUSTOMER_APPROVAL_PENDING": 170,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 29,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 18,
+        "OPERATOR_APPROVAL_PENDING": 170,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 170,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 20,
+        "RULE_SPECIFIC_FUSION_NOT_FOUND": 13,
+        "SEMANTIC_REVIEW_REQUIRED": 170,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 6,
+        "UNKNOWN_MBTI": 128
+      },
+      "distinctFactRoots": 0,
+      "factRootReferenceOccurrences": 0
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-compatibility-A",
+    "product": "saju_mbti_compatibility",
+    "relationship": "love",
+    "file": "shards/fixture-compatibility-A-receipts.json",
+    "candidateOccurrences": 190,
+    "graphNodesConsidered": 7485,
+    "coverage": {
+      "candidateOccurrences": 190,
+      "sourceMatchOccurrences": 365,
+      "actualEvidenceMatchOccurrences": 64,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 5,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 190,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 190,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 190
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 105,
+          "FAIL": 30,
+          "UNKNOWN": 55,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 5,
+          "FAIL": 100,
+          "UNKNOWN": 85,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 5,
+          "FAIL": 5,
+          "UNKNOWN": 180,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 28,
+          "FAIL": 0,
+          "UNKNOWN": 6,
+          "NOT_APPLICABLE": 156,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 5,
+          "FAIL": 13,
+          "UNKNOWN": 172,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 36,
+          "NOT_APPLICABLE": 154,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 74,
+          "FAIL": 0,
+          "UNKNOWN": 116,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 8,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 182
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 80,
+          "FAIL": 0,
+          "UNKNOWN": 110,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 190
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 185,
+        "ACTUAL_DIRECTION_ID_REQUIRED": 6,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 86,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 100,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 85,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 8,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 156,
+        "CUSTOMER_APPROVAL_PENDING": 190,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 85,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 13,
+        "MISSING_PARTICIPANT": 14,
+        "OPERATOR_APPROVAL_PENDING": 190,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 190,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 36,
+        "SEMANTIC_REVIEW_REQUIRED": 190,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 110,
+        "UNKNOWN_INTERVAL": 36,
+        "UNSUPPORTED_PRODUCER": 30,
+        "WRONG_OWNER": 5
+      },
+      "distinctFactRoots": 61,
+      "factRootReferenceOccurrences": 226
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-compatibility-marriage",
+    "product": "saju_mbti_compatibility",
+    "relationship": "marriage",
+    "file": "shards/fixture-compatibility-marriage-receipts.json",
+    "candidateOccurrences": 222,
+    "graphNodesConsidered": 7485,
+    "coverage": {
+      "candidateOccurrences": 222,
+      "sourceMatchOccurrences": 675,
+      "actualEvidenceMatchOccurrences": 72,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 4,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 222,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 222,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 222
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 146,
+          "FAIL": 30,
+          "UNKNOWN": 46,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 4,
+          "FAIL": 142,
+          "UNKNOWN": 76,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 4,
+          "FAIL": 22,
+          "UNKNOWN": 196,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 40,
+          "FAIL": 0,
+          "UNKNOWN": 14,
+          "NOT_APPLICABLE": 168,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 4,
+          "FAIL": 19,
+          "UNKNOWN": 199,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 36,
+          "NOT_APPLICABLE": 186,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 10,
+          "FAIL": 0,
+          "UNKNOWN": 212,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 12,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 210
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 112,
+          "FAIL": 0,
+          "UNKNOWN": 110,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 222
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 218,
+        "ACTUAL_DIRECTION_ID_REQUIRED": 14,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 128,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 142,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 76,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 12,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 222,
+        "CUSTOMER_APPROVAL_PENDING": 222,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 76,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 19,
+        "MISSING_PARTICIPANT": 14,
+        "OPERATOR_APPROVAL_PENDING": 222,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 222,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 36,
+        "SEMANTIC_REVIEW_REQUIRED": 222,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 110,
+        "UNKNOWN_INTERVAL": 36,
+        "UNSUPPORTED_PRODUCER": 30,
+        "WRONG_OWNER": 22
+      },
+      "distinctFactRoots": 60,
+      "factRootReferenceOccurrences": 289
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-compatibility-parentChild",
+    "product": "saju_mbti_compatibility",
+    "relationship": "parentChild",
+    "file": "shards/fixture-compatibility-parentChild-receipts.json",
+    "candidateOccurrences": 235,
+    "graphNodesConsidered": 7486,
+    "coverage": {
+      "candidateOccurrences": 235,
+      "sourceMatchOccurrences": 526,
+      "actualEvidenceMatchOccurrences": 50,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 6,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 235,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 235,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 235
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 128,
+          "FAIL": 30,
+          "UNKNOWN": 77,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 6,
+          "FAIL": 122,
+          "UNKNOWN": 107,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 6,
+          "FAIL": 13,
+          "UNKNOWN": 216,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 40,
+          "FAIL": 0,
+          "UNKNOWN": 2,
+          "NOT_APPLICABLE": 193,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 6,
+          "FAIL": 13,
+          "UNKNOWN": 216,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 36,
+          "NOT_APPLICABLE": 199,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 235,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 12,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 223
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 120,
+          "FAIL": 0,
+          "UNKNOWN": 115,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 235
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 229,
+        "ACTUAL_DIRECTION_ID_REQUIRED": 2,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 106,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 122,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 107,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 12,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 235,
+        "CUSTOMER_APPROVAL_PENDING": 235,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 107,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 13,
+        "MISSING_PARTICIPANT": 14,
+        "OPERATOR_APPROVAL_PENDING": 235,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 235,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 235,
+        "SEMANTIC_REVIEW_REQUIRED": 235,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 115,
+        "UNKNOWN_INTERVAL": 36,
+        "UNSUPPORTED_PRODUCER": 30,
+        "WRONG_OWNER": 13
+      },
+      "distinctFactRoots": 19,
+      "factRootReferenceOccurrences": 144
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-compatibility-coworker",
+    "product": "saju_mbti_compatibility",
+    "relationship": "coworker",
+    "file": "shards/fixture-compatibility-coworker-receipts.json",
+    "candidateOccurrences": 335,
+    "graphNodesConsidered": 7485,
+    "coverage": {
+      "candidateOccurrences": 335,
+      "sourceMatchOccurrences": 715,
+      "actualEvidenceMatchOccurrences": 131,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 14,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 335,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 335,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 335
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 166,
+          "FAIL": 30,
+          "UNKNOWN": 139,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 16,
+          "FAIL": 138,
+          "UNKNOWN": 181,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 28,
+          "FAIL": 11,
+          "UNKNOWN": 296,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 52,
+          "FAIL": 0,
+          "UNKNOWN": 6,
+          "NOT_APPLICABLE": 277,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 14,
+          "FAIL": 173,
+          "UNKNOWN": 148,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 36,
+          "NOT_APPLICABLE": 299,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 63,
+          "FAIL": 0,
+          "UNKNOWN": 272,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 40,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 295
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 172,
+          "FAIL": 0,
+          "UNKNOWN": 163,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 335
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 319,
+        "ACTUAL_DIRECTION_ID_REQUIRED": 6,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 120,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 138,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 169,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 40,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 335,
+        "CUSTOMER_APPROVAL_PENDING": 335,
+        "DISALLOWED_ANCESTOR_DOMAIN": 165,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 169,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 46,
+        "MISSING_PARTICIPANT": 14,
+        "OPERATOR_APPROVAL_PENDING": 335,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 335,
+        "REQUIRED_ANCESTOR_WITHHELD": 9,
+        "REQUIRED_GRAPH_NODE_WITHHELD": 9,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 208,
+        "SEMANTIC_REVIEW_REQUIRED": 335,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 163,
+        "UNKNOWN_INTERVAL": 36,
+        "UNSUPPORTED_PRODUCER": 30,
+        "WRONG_OWNER": 11
+      },
+      "distinctFactRoots": 42,
+      "factRootReferenceOccurrences": 277
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-compatibility-managerReport",
+    "product": "saju_mbti_compatibility",
+    "relationship": "managerReport",
+    "file": "shards/fixture-compatibility-managerReport-receipts.json",
+    "candidateOccurrences": 275,
+    "graphNodesConsidered": 7486,
+    "coverage": {
+      "candidateOccurrences": 275,
+      "sourceMatchOccurrences": 515,
+      "actualEvidenceMatchOccurrences": 71,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 4,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 275,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 275,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 275
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 106,
+          "FAIL": 30,
+          "UNKNOWN": 139,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 4,
+          "FAIL": 87,
+          "UNKNOWN": 184,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 19,
+          "FAIL": 1,
+          "UNKNOWN": 255,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 26,
+          "FAIL": 0,
+          "UNKNOWN": 2,
+          "NOT_APPLICABLE": 247,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 9,
+          "FAIL": 137,
+          "UNKNOWN": 129,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 36,
+          "NOT_APPLICABLE": 239,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 275,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 28,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 247
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 96,
+          "FAIL": 0,
+          "UNKNOWN": 179,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 275
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 261,
+        "ACTUAL_DIRECTION_ID_REQUIRED": 2,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 73,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 87,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 169,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED": 28,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 28,
+        "ALL_AND_GROUP_SOURCES_REQUIRED": 82,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 275,
+        "CUSTOMER_APPROVAL_PENDING": 275,
+        "DISALLOWED_ANCESTOR_DOMAIN": 128,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 169,
+        "INCOMPATIBLE_SOURCE_GROUP": 17,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 39,
+        "INHERITED_SOURCE_GROUP_HELD": 94,
+        "MISSING_PARTICIPANT": 14,
+        "OPERATOR_APPROVAL_PENDING": 275,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 275,
+        "REQUIRED_ANCESTOR_WITHHELD": 2,
+        "REQUIRED_GRAPH_NODE_WITHHELD": 2,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 275,
+        "SEMANTIC_REVIEW_REQUIRED": 275,
+        "SOURCE_GROUP_OWNER_TYPE_MISMATCH": 74,
+        "SOURCE_REFERENCE_UNRESOLVED": 17,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 179,
+        "UNKNOWN_INTERVAL": 36,
+        "UNSUPPORTED_PRODUCER": 30,
+        "WRONG_OWNER": 1
+      },
+      "distinctFactRoots": 22,
+      "factRootReferenceOccurrences": 131
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-compatibility-businessPartner",
+    "product": "saju_mbti_compatibility",
+    "relationship": "businessPartner",
+    "file": "shards/fixture-compatibility-businessPartner-receipts.json",
+    "candidateOccurrences": 317,
+    "graphNodesConsidered": 7486,
+    "coverage": {
+      "candidateOccurrences": 317,
+      "sourceMatchOccurrences": 682,
+      "actualEvidenceMatchOccurrences": 28,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 4,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 317,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 317,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 317
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 101,
+          "FAIL": 30,
+          "UNKNOWN": 186,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 4,
+          "FAIL": 95,
+          "UNKNOWN": 218,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 6,
+          "FAIL": 0,
+          "UNKNOWN": 311,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 16,
+          "FAIL": 0,
+          "UNKNOWN": 3,
+          "NOT_APPLICABLE": 298,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 4,
+          "FAIL": 209,
+          "UNKNOWN": 104,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 36,
+          "NOT_APPLICABLE": 281,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 121,
+          "FAIL": 0,
+          "UNKNOWN": 196,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 28,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 289
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 96,
+          "FAIL": 0,
+          "UNKNOWN": 221,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 317
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 313,
+        "ACTUAL_DIRECTION_ID_REQUIRED": 3,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 81,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 95,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 216,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_GROUP_REQUIRED": 28,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 28,
+        "ALL_AND_GROUP_SOURCES_REQUIRED": 95,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 317,
+        "CUSTOMER_APPROVAL_PENDING": 317,
+        "DISALLOWED_ANCESTOR_DOMAIN": 203,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 216,
+        "INCOMPATIBLE_SOURCE_GROUP": 16,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 17,
+        "INHERITED_SOURCE_GROUP_HELD": 94,
+        "MISSING_PARTICIPANT": 14,
+        "OPERATOR_APPROVAL_PENDING": 317,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 317,
+        "REQUIRED_ANCESTOR_WITHHELD": 2,
+        "REQUIRED_GRAPH_NODE_WITHHELD": 2,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 132,
+        "SEMANTIC_REVIEW_REQUIRED": 317,
+        "SOURCE_GROUP_OWNER_TYPE_MISMATCH": 93,
+        "SOURCE_REFERENCE_UNRESOLVED": 16,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 221,
+        "UNKNOWN_INTERVAL": 36,
+        "UNSUPPORTED_PRODUCER": 30
+      },
+      "distinctFactRoots": 15,
+      "factRootReferenceOccurrences": 66
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-compatibility-friendship",
+    "product": "saju_mbti_compatibility",
+    "relationship": "friendship",
+    "file": "shards/fixture-compatibility-friendship-receipts.json",
+    "candidateOccurrences": 173,
+    "graphNodesConsidered": 7486,
+    "coverage": {
+      "candidateOccurrences": 173,
+      "sourceMatchOccurrences": 342,
+      "actualEvidenceMatchOccurrences": 28,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 8,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 173,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 173,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 173
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 19,
+          "FAIL": 0,
+          "UNKNOWN": 154,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 8,
+          "FAIL": 0,
+          "UNKNOWN": 165,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 19,
+          "FAIL": 0,
+          "UNKNOWN": 154,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 16,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 157,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 8,
+          "FAIL": 0,
+          "UNKNOWN": 165,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 36,
+          "NOT_APPLICABLE": 137,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 101,
+          "FAIL": 0,
+          "UNKNOWN": 72,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 4,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 169
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 36,
+          "FAIL": 0,
+          "UNKNOWN": 137,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 173
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 165,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 154,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 165,
+        "CUSTOMER_APPROVAL_PENDING": 173,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 154,
+        "INTRODUCED_MEANING_CONTRACT_MISSING": 4,
+        "OPERATOR_APPROVAL_PENDING": 173,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 173,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 72,
+        "SEMANTIC_REVIEW_REQUIRED": 173,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 137,
+        "UNKNOWN_INTERVAL": 36
+      },
+      "distinctFactRoots": 7,
+      "factRootReferenceOccurrences": 57
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-major-A",
+    "product": "major_fortune",
+    "relationship": null,
+    "file": "shards/fixture-major-A-receipts.json",
+    "candidateOccurrences": 89,
+    "graphNodesConsidered": 4179,
+    "coverage": {
+      "candidateOccurrences": 89,
+      "sourceMatchOccurrences": 211,
+      "actualEvidenceMatchOccurrences": 1,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 0,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 89,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 79,
+          "FAIL": 10,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 89
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 10,
+          "FAIL": 0,
+          "UNKNOWN": 79,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 1,
+          "FAIL": 9,
+          "UNKNOWN": 79,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 1,
+          "FAIL": 0,
+          "UNKNOWN": 88,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 89,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 0,
+          "FAIL": 10,
+          "UNKNOWN": 79,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 1,
+          "FAIL": 0,
+          "UNKNOWN": 88,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 32,
+          "FAIL": 0,
+          "UNKNOWN": 57,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 89
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 8,
+          "FAIL": 0,
+          "UNKNOWN": 81,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 89
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 88,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 8,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 9,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 79,
+        "ACTUAL_PERIOD_REQUIRED": 42,
+        "CODEX_MODEL_REVIEW_IS_NOT_OPERATOR_APPROVAL": 1,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 79,
+        "CUSTOMER_APPROVAL_PENDING": 89,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 79,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 10,
+        "OPERATOR_APPROVAL_PENDING": 89,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 89,
+        "SEMANTIC_REVIEW_REQUIRED": 88,
+        "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH": 10,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 81,
+        "UNADDRESSABLE_PRODUCER_OBSERVATION": 1,
+        "UNKNOWN_INTERVAL": 47
+      },
+      "distinctFactRoots": 1,
+      "factRootReferenceOccurrences": 1
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-major-F",
+    "product": "major_fortune",
+    "relationship": null,
+    "file": "shards/fixture-major-F-receipts.json",
+    "candidateOccurrences": 89,
+    "graphNodesConsidered": 320,
+    "coverage": {
+      "candidateOccurrences": 89,
+      "sourceMatchOccurrences": 211,
+      "actualEvidenceMatchOccurrences": 1,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 0,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 89,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 79,
+          "FAIL": 10,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 89
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 10,
+          "FAIL": 0,
+          "UNKNOWN": 79,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 1,
+          "FAIL": 9,
+          "UNKNOWN": 79,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 1,
+          "FAIL": 0,
+          "UNKNOWN": 88,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 89,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 0,
+          "FAIL": 10,
+          "UNKNOWN": 79,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 89,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 32,
+          "FAIL": 0,
+          "UNKNOWN": 57,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 89
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 8,
+          "FAIL": 0,
+          "UNKNOWN": 81,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 89
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 88,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 8,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 9,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 79,
+        "ACTUAL_PERIOD_REQUIRED": 42,
+        "CODEX_MODEL_REVIEW_IS_NOT_OPERATOR_APPROVAL": 1,
+        "CONDITIONAL_INTERSECTION": 1,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 79,
+        "CUSTOMER_APPROVAL_PENDING": 89,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 79,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 10,
+        "OPERATOR_APPROVAL_PENDING": 89,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 89,
+        "SEMANTIC_REVIEW_REQUIRED": 88,
+        "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH": 10,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 81,
+        "UNADDRESSABLE_PRODUCER_OBSERVATION": 1,
+        "UNKNOWN_INTERVAL": 47
+      },
+      "distinctFactRoots": 1,
+      "factRootReferenceOccurrences": 1
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-annual-A",
+    "product": "annual_fortune",
+    "relationship": null,
+    "file": "shards/fixture-annual-A-receipts.json",
+    "candidateOccurrences": 109,
+    "graphNodesConsidered": 4391,
+    "coverage": {
+      "candidateOccurrences": 109,
+      "sourceMatchOccurrences": 314,
+      "actualEvidenceMatchOccurrences": 0,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 0,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 109,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 109,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 109,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 0,
+          "FAIL": 7,
+          "UNKNOWN": 102,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 109,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 109,
+        "ACTUAL_PERIOD_REQUIRED": 38,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 109,
+        "CUSTOMER_APPROVAL_PENDING": 109,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 109,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 7,
+        "OPERATOR_APPROVAL_PENDING": 109,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 109,
+        "SEMANTIC_REVIEW_REQUIRED": 109,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 109,
+        "UNKNOWN_INTERVAL": 71
+      },
+      "distinctFactRoots": 0,
+      "factRootReferenceOccurrences": 0
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-annual-F",
+    "product": "annual_fortune",
+    "relationship": null,
+    "file": "shards/fixture-annual-F-receipts.json",
+    "candidateOccurrences": 109,
+    "graphNodesConsidered": 530,
+    "coverage": {
+      "candidateOccurrences": 109,
+      "sourceMatchOccurrences": 314,
+      "actualEvidenceMatchOccurrences": 0,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 0,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 109,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 109,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 109,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 0,
+          "FAIL": 7,
+          "UNKNOWN": 102,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 109,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 109,
+        "ACTUAL_PERIOD_REQUIRED": 38,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 109,
+        "CUSTOMER_APPROVAL_PENDING": 109,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 109,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 7,
+        "OPERATOR_APPROVAL_PENDING": 109,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 109,
+        "SEMANTIC_REVIEW_REQUIRED": 109,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 109,
+        "UNKNOWN_INTERVAL": 71
+      },
+      "distinctFactRoots": 0,
+      "factRootReferenceOccurrences": 0
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-major-transition-C",
+    "product": "major_fortune",
+    "relationship": null,
+    "file": "shards/fixture-major-transition-C-receipts.json",
+    "candidateOccurrences": 89,
+    "graphNodesConsidered": 3823,
+    "coverage": {
+      "candidateOccurrences": 89,
+      "sourceMatchOccurrences": 211,
+      "actualEvidenceMatchOccurrences": 1,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 0,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 89,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 79,
+          "FAIL": 10,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 89
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 10,
+          "FAIL": 0,
+          "UNKNOWN": 79,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 1,
+          "FAIL": 9,
+          "UNKNOWN": 79,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 1,
+          "FAIL": 0,
+          "UNKNOWN": 88,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 89,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 0,
+          "FAIL": 10,
+          "UNKNOWN": 79,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 1,
+          "FAIL": 0,
+          "UNKNOWN": 88,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 32,
+          "FAIL": 0,
+          "UNKNOWN": 57,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 89
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 8,
+          "FAIL": 0,
+          "UNKNOWN": 81,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 89
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 88,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 8,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 9,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 79,
+        "ACTUAL_PERIOD_REQUIRED": 42,
+        "CODEX_MODEL_REVIEW_IS_NOT_OPERATOR_APPROVAL": 1,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 79,
+        "CUSTOMER_APPROVAL_PENDING": 89,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 79,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 10,
+        "OPERATOR_APPROVAL_PENDING": 89,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 89,
+        "SEMANTIC_REVIEW_REQUIRED": 88,
+        "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH": 10,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 81,
+        "UNADDRESSABLE_PRODUCER_OBSERVATION": 1,
+        "UNKNOWN_INTERVAL": 47
+      },
+      "distinctFactRoots": 1,
+      "factRootReferenceOccurrences": 1
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-annual-transition-C2028",
+    "product": "annual_fortune",
+    "relationship": null,
+    "file": "shards/fixture-annual-transition-C2028-receipts.json",
+    "candidateOccurrences": 109,
+    "graphNodesConsidered": 4076,
+    "coverage": {
+      "candidateOccurrences": 109,
+      "sourceMatchOccurrences": 314,
+      "actualEvidenceMatchOccurrences": 0,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 0,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 109,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 109,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 109,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 0,
+          "FAIL": 7,
+          "UNKNOWN": 102,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 109,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 109,
+        "ACTUAL_PERIOD_REQUIRED": 38,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 109,
+        "CUSTOMER_APPROVAL_PENDING": 109,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 109,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 7,
+        "OPERATOR_APPROVAL_PENDING": 109,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 109,
+        "SEMANTIC_REVIEW_REQUIRED": 109,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 109,
+        "UNKNOWN_INTERVAL": 71
+      },
+      "distinctFactRoots": 0,
+      "factRootReferenceOccurrences": 0
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-compatibility-unknown-both",
+    "product": "saju_mbti_compatibility",
+    "relationship": "love",
+    "file": "shards/fixture-compatibility-unknown-both-receipts.json",
+    "candidateOccurrences": 190,
+    "graphNodesConsidered": 261,
+    "coverage": {
+      "candidateOccurrences": 190,
+      "sourceMatchOccurrences": 365,
+      "actualEvidenceMatchOccurrences": 31,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 3,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 190,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 190,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 190
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 100,
+          "FAIL": 35,
+          "UNKNOWN": 55,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 3,
+          "FAIL": 42,
+          "UNKNOWN": 145,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 3,
+          "FAIL": 0,
+          "UNKNOWN": 187,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 28,
+          "FAIL": 0,
+          "UNKNOWN": 6,
+          "NOT_APPLICABLE": 156,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 3,
+          "FAIL": 13,
+          "UNKNOWN": 174,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 36,
+          "NOT_APPLICABLE": 154,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 74,
+          "FAIL": 0,
+          "UNKNOWN": 116,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 8,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 182
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 80,
+          "FAIL": 0,
+          "UNKNOWN": 110,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 190
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 187,
+        "ACTUAL_DIRECTION_ID_REQUIRED": 6,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 87,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 102,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 85,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 8,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 156,
+        "CUSTOMER_APPROVAL_PENDING": 190,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 85,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 13,
+        "MISSING_PARTICIPANT": 15,
+        "OPERATOR_APPROVAL_PENDING": 190,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 190,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 36,
+        "RULE_SPECIFIC_FUSION_NOT_FOUND": 5,
+        "SEMANTIC_REVIEW_REQUIRED": 190,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 110,
+        "UNKNOWN_INTERVAL": 36,
+        "UNKNOWN_MBTI": 71,
+        "UNSUPPORTED_PRODUCER": 30
+      },
+      "distinctFactRoots": 12,
+      "factRootReferenceOccurrences": 93
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-compatibility-slot-swap",
+    "product": "saju_mbti_compatibility",
+    "relationship": "love",
+    "file": "shards/fixture-compatibility-slot-swap-receipts.json",
+    "candidateOccurrences": 190,
+    "graphNodesConsidered": 7485,
+    "coverage": {
+      "candidateOccurrences": 190,
+      "sourceMatchOccurrences": 365,
+      "actualEvidenceMatchOccurrences": 49,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 4,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 190,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 190,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 190
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 105,
+          "FAIL": 30,
+          "UNKNOWN": 55,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 4,
+          "FAIL": 101,
+          "UNKNOWN": 85,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 4,
+          "FAIL": 10,
+          "UNKNOWN": 176,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 28,
+          "FAIL": 0,
+          "UNKNOWN": 6,
+          "NOT_APPLICABLE": 156,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 4,
+          "FAIL": 13,
+          "UNKNOWN": 173,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 36,
+          "NOT_APPLICABLE": 154,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 74,
+          "FAIL": 0,
+          "UNKNOWN": 116,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 8,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 182
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 80,
+          "FAIL": 0,
+          "UNKNOWN": 110,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 190
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 186,
+        "ACTUAL_DIRECTION_ID_REQUIRED": 6,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 86,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 101,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 85,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 8,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 156,
+        "CUSTOMER_APPROVAL_PENDING": 190,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 85,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 13,
+        "MISSING_PARTICIPANT": 14,
+        "OPERATOR_APPROVAL_PENDING": 190,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 190,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 36,
+        "SEMANTIC_REVIEW_REQUIRED": 190,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 110,
+        "UNKNOWN_INTERVAL": 36,
+        "UNSUPPORTED_PRODUCER": 30,
+        "WRONG_OWNER": 10
+      },
+      "distinctFactRoots": 61,
+      "factRootReferenceOccurrences": 256
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-same-natal-different-mbti",
+    "product": "saju_mbti_full",
+    "relationship": null,
+    "file": "shards/fixture-same-natal-different-mbti-receipts.json",
+    "candidateOccurrences": 200,
+    "graphNodesConsidered": 4104,
+    "coverage": {
+      "candidateOccurrences": 200,
+      "sourceMatchOccurrences": 455,
+      "actualEvidenceMatchOccurrences": 90,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 5,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 200,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 200,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 200
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 76,
+          "FAIL": 12,
+          "UNKNOWN": 112,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 5,
+          "FAIL": 80,
+          "UNKNOWN": 115,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 8,
+          "FAIL": 0,
+          "UNKNOWN": 192,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 200,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 5,
+          "FAIL": 78,
+          "UNKNOWN": 117,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 200,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 200,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 35,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 165
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 179,
+          "FAIL": 0,
+          "UNKNOWN": 21,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 200
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 195,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 79,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 80,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 112,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 35,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 200,
+        "CUSTOMER_APPROVAL_PENDING": 200,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 112,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 78,
+        "OPERATOR_APPROVAL_PENDING": 200,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 200,
+        "REQUIRED_FUSION_ANCESTOR_NOT_MATCHED": 1,
+        "RULE_SPECIFIC_FUSION_NOT_FOUND": 12,
+        "SEMANTIC_REVIEW_REQUIRED": 200,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 21
+      },
+      "distinctFactRoots": 56,
+      "factRootReferenceOccurrences": 296
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-same-mbti-different-natal",
+    "product": "saju_mbti_full",
+    "relationship": null,
+    "file": "shards/fixture-same-mbti-different-natal-receipts.json",
+    "candidateOccurrences": 200,
+    "graphNodesConsidered": 3659,
+    "coverage": {
+      "candidateOccurrences": 200,
+      "sourceMatchOccurrences": 455,
+      "actualEvidenceMatchOccurrences": 100,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 9,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 200,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 200,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 200
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 77,
+          "FAIL": 11,
+          "UNKNOWN": 112,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 9,
+          "FAIL": 72,
+          "UNKNOWN": 119,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 16,
+          "FAIL": 0,
+          "UNKNOWN": 184,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 200,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 9,
+          "FAIL": 78,
+          "UNKNOWN": 113,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 200,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 200,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 35,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 165
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 179,
+          "FAIL": 0,
+          "UNKNOWN": 21,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 200
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 191,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 71,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 72,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 112,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 35,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 200,
+        "CUSTOMER_APPROVAL_PENDING": 200,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 112,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 78,
+        "OPERATOR_APPROVAL_PENDING": 200,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 200,
+        "REQUIRED_FUSION_ANCESTOR_NOT_MATCHED": 1,
+        "RULE_SPECIFIC_FUSION_NOT_FOUND": 11,
+        "SEMANTIC_REVIEW_REQUIRED": 200,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 21
+      },
+      "distinctFactRoots": 69,
+      "factRootReferenceOccurrences": 331
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-same-natal-career",
+    "product": "career_money_study",
+    "relationship": null,
+    "file": "shards/fixture-same-natal-career-receipts.json",
+    "candidateOccurrences": 268,
+    "graphNodesConsidered": 3612,
+    "coverage": {
+      "candidateOccurrences": 268,
+      "sourceMatchOccurrences": 320,
+      "actualEvidenceMatchOccurrences": 20,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 0,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 268,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 268,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 268
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 119,
+          "FAIL": 3,
+          "UNKNOWN": 146,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 10,
+          "FAIL": 110,
+          "UNKNOWN": 148,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 12,
+          "FAIL": 0,
+          "UNKNOWN": 256,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 268,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 0,
+          "FAIL": 258,
+          "UNKNOWN": 10,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 268,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 53,
+          "FAIL": 0,
+          "UNKNOWN": 215,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 20,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 248
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 192,
+          "FAIL": 0,
+          "UNKNOWN": 76,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 268
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 258,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 110,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 110,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 146,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 20,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 268,
+        "CUSTOMER_APPROVAL_PENDING": 268,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 146,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 258,
+        "OPERATOR_APPROVAL_PENDING": 268,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 268,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 215,
+        "RULE_SPECIFIC_FUSION_NOT_FOUND": 3,
+        "SEMANTIC_REVIEW_REQUIRED": 268,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 76
+      },
+      "distinctFactRoots": 29,
+      "factRootReferenceOccurrences": 53
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-annual-ranged-transition",
+    "product": "annual_fortune",
+    "relationship": null,
+    "file": "shards/fixture-annual-ranged-transition-receipts.json",
+    "candidateOccurrences": 109,
+    "graphNodesConsidered": 4367,
+    "coverage": {
+      "candidateOccurrences": 109,
+      "sourceMatchOccurrences": 314,
+      "actualEvidenceMatchOccurrences": 0,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 0,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 109,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 109,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 109,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 0,
+          "FAIL": 7,
+          "UNKNOWN": 102,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 109,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 109,
+        "ACTUAL_PERIOD_REQUIRED": 38,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 109,
+        "CUSTOMER_APPROVAL_PENDING": 109,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 109,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 7,
+        "OPERATOR_APPROVAL_PENDING": 109,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 109,
+        "SEMANTIC_REVIEW_REQUIRED": 109,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 109,
+        "UNKNOWN_INTERVAL": 71
+      },
+      "distinctFactRoots": 0,
+      "factRootReferenceOccurrences": 0
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-annual-before-first-dayun",
+    "product": "annual_fortune",
+    "relationship": null,
+    "file": "shards/fixture-annual-before-first-dayun-receipts.json",
+    "candidateOccurrences": 109,
+    "graphNodesConsidered": 4444,
+    "coverage": {
+      "candidateOccurrences": 109,
+      "sourceMatchOccurrences": 314,
+      "actualEvidenceMatchOccurrences": 0,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 0,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 109,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 109,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 109,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 0,
+          "FAIL": 7,
+          "UNKNOWN": 102,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 109,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 109
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 109,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 109,
+        "ACTUAL_PERIOD_REQUIRED": 38,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 109,
+        "CUSTOMER_APPROVAL_PENDING": 109,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 109,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 7,
+        "OPERATOR_APPROVAL_PENDING": 109,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 109,
+        "SEMANTIC_REVIEW_REQUIRED": 109,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 109,
+        "UNKNOWN_INTERVAL": 71
+      },
+      "distinctFactRoots": 0,
+      "factRootReferenceOccurrences": 0
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  },
+  {
+    "fixtureId": "fixture-compatibility-no-detected-pair",
+    "product": "saju_mbti_compatibility",
+    "relationship": "love",
+    "file": "shards/fixture-compatibility-no-detected-pair-receipts.json",
+    "candidateOccurrences": 190,
+    "graphNodesConsidered": 208,
+    "coverage": {
+      "candidateOccurrences": 190,
+      "sourceMatchOccurrences": 365,
+      "actualEvidenceMatchOccurrences": 28,
+      "sourceGroupPassOccurrences": 0,
+      "structurallyMatched": 0,
+      "approvalPending": 0,
+      "customerEligible": 0,
+      "withheld": 190,
+      "gateStates": {
+        "SOURCE_INTEGRITY": {
+          "PASS": 190,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "INTERPRETATION_REVIEW": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 190
+        },
+        "PRODUCER_SUPPORT": {
+          "PASS": 100,
+          "FAIL": 35,
+          "UNKNOWN": 55,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_CALCULATED_FACT": {
+          "PASS": 0,
+          "FAIL": 45,
+          "UNKNOWN": 145,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_OWNER": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 190,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_DIRECTION": {
+          "PASS": 28,
+          "FAIL": 0,
+          "UNKNOWN": 6,
+          "NOT_APPLICABLE": 156,
+          "REVIEW_REQUIRED": 0
+        },
+        "ALL_ANCESTOR_DOMAINS": {
+          "PASS": 0,
+          "FAIL": 13,
+          "UNKNOWN": 177,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "TIME_INTERSECTION": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 36,
+          "NOT_APPLICABLE": 154,
+          "REVIEW_REQUIRED": 0
+        },
+        "ACTUAL_USER_STATE": {
+          "PASS": 74,
+          "FAIL": 0,
+          "UNKNOWN": 116,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "COUNTEREXAMPLES_AND_PROHIBITIONS": {
+          "PASS": 0,
+          "FAIL": 8,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 182
+        },
+        "PRODUCT_SPECIALISM": {
+          "PASS": 80,
+          "FAIL": 0,
+          "UNKNOWN": 110,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 0
+        },
+        "CUSTOMER_APPROVAL": {
+          "PASS": 0,
+          "FAIL": 0,
+          "UNKNOWN": 0,
+          "NOT_APPLICABLE": 0,
+          "REVIEW_REQUIRED": 190
+        }
+      },
+      "reasons": {
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED": 190,
+        "ACTUAL_DIRECTION_ID_REQUIRED": 6,
+        "ACTUAL_EVIDENCE_NOT_FOUND": 105,
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND": 105,
+        "ACTUAL_OWNER_REQUIREMENT_MISSING": 85,
+        "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED": 8,
+        "CONTRACT_NOT_MACHINE_CHECKABLE": 156,
+        "CUSTOMER_APPROVAL_PENDING": 190,
+        "EXACT_PRODUCER_REQUIREMENT_MISSING": 85,
+        "INCOMPLETE_REQUIRED_ANCESTRY": 13,
+        "OPERATOR_APPROVAL_PENDING": 190,
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED": 190,
+        "REQUIRED_USER_STATE_NOT_VERIFIED": 36,
+        "RULE_SPECIFIC_FUSION_NOT_FOUND": 5,
+        "SEMANTIC_REVIEW_REQUIRED": 190,
+        "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN": 110,
+        "UNKNOWN_INTERVAL": 36,
+        "UNKNOWN_MBTI": 71,
+        "UNSUPPORTED_PRODUCER": 30
+      },
+      "distinctFactRoots": 4,
+      "factRootReferenceOccurrences": 84
+    },
+    "fields": {
+      "matches": "/matches",
+      "gates": "/allTwelveGateResults",
+      "approval": "/approvalRequirement"
+    }
+  }
+]

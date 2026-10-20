@@ -1,0 +1,66 @@
+[
+  {
+    "id": "sm2",
+    "url": "https://zh.wikisource.org/wiki/三命通會_(四庫全書本)/卷02",
+    "status": 200,
+    "sha256": "865b58c5a90d5aea1fb6a6d9401270367af64409abb0fad08a59d5fce4ed6e50",
+    "bytes": 184177,
+    "accessed": "2026-10-13"
+  },
+  {
+    "id": "dt",
+    "url": "https://zh.wikisource.org/wiki/滴天髓",
+    "status": 200,
+    "sha256": "a37edddffb6d8589aac087a62a3083adb63e2cb1b3a7ecc32a4b3a0d14055c88",
+    "bytes": 162728,
+    "accessed": "2026-10-13"
+  },
+  {
+    "id": "zp7",
+    "url": "https://www.diancangwang.cn/xuanxuewushu/03cf53eede8a/e441cca6da67.html",
+    "status": 200,
+    "sha256": "069df97fc99208e60206e7ee93a7fe4d7a6cade808d4bbbe78f642d0a845911d",
+    "bytes": 12535,
+    "accessed": "2026-10-13"
+  },
+  {
+    "id": "zp5",
+    "url": "https://www.mingsage.com/zh/classics/zi-ping-zhen-quan/lun-shi-gan-he-er-bu-he",
+    "status": 200,
+    "sha256": "720f416ae5ada162467f35b1a46ebaa0ef0bf97edb067284fedff835049aad03",
+    "bytes": 224504,
+    "accessed": "2026-10-13"
+  },
+  {
+    "id": "pa",
+    "url": "https://sajuclass.com/명리-사전/합충형파해/파/",
+    "status": 200,
+    "sha256": "a424fa4d00de27770ea6a70c68c0dbb977f4a66c3c1b044477ad5412786cfb5d",
+    "bytes": 166296,
+    "accessed": "2026-10-13"
+  },
+  {
+    "id": "half",
+    "url": "https://sajuclass.com/명리-사전/합충형파해/삼합/",
+    "status": 200,
+    "sha256": "e3cbe4910eeda3f926d5cdcbe5cbf620380b6e6e790b803bc22350a7b3cd8739",
+    "bytes": 168708,
+    "accessed": "2026-10-13"
+  },
+  {
+    "id": "wonjin",
+    "url": "https://yavares.tistory.com/143",
+    "status": 200,
+    "sha256": "cc98ed931299839ea083d1ee52598b525d86a9f3a205d3180e5a68335699e246",
+    "bytes": 105571,
+    "accessed": "2026-10-13"
+  },
+  {
+    "id": "kci",
+    "url": "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART001802048",
+    "status": 200,
+    "sha256": "ec3ca32a61075edaea15747e29e9c34574785df042592025ada577ba3a1478da",
+    "bytes": 70420,
+    "accessed": "2026-10-13"
+  }
+]

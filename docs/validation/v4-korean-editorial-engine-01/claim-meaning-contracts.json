@@ -1,0 +1,3854 @@
+{
+  "version": "korean-editorial-synthetic-definitions-v1",
+  "provenance": "SYNTHETIC_TEST_ONLY",
+  "actualApprovals": 0,
+  "actualClaims": 0,
+  "actualBookAllocations": 0,
+  "definitions": [
+    {
+      "id": "synthetic:kee:definition:0",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "comprehensive",
+        "fixture": "synthetic:cse:selection",
+        "product": "saju_mbti_full",
+        "relationship": null,
+        "questionId": "synthetic:cse:q:2",
+        "questionHash": "dd6d54666250740a05c4767593b59d1bc8ee7d1a3da19807321dbc209102a082",
+        "materialId": "synthetic:cse:c",
+        "claimId": "synthetic:cse:claim:two",
+        "meaningId": "synthetic:cse:meaning:two",
+        "originalMeaningHash": "db3b5ab5a9a8a79765b82d00dc8873c9addf4f0f439d0803c20194eb0c1b458e",
+        "assignmentHash": "6eeaa07c1ce103b946bea7cfaf7926e739e47223a137d242aa7544b039f00572",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/comprehensive-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/2",
+            "recordSha256": "da080969564b861f69cbd27f6c2c591bcf0a98636455ce1aa8d4e5197f294782",
+            "fileSha256": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039",
+            "sourceVersion": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039"
+          },
+          "hash": "da080969564b861f69cbd27f6c2c591bcf0a98636455ce1aa8d4e5197f294782",
+          "version": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039"
+        }
+      },
+      "identifierDefinitions": [
+        {
+          "originalId": "required-2",
+          "role": "meaning",
+          "definition": "판단할 기준이 정해지지 않았다면, 반복해서 늘린 검토는 결정 시점을 늦출 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:0:primary"
+        },
+        {
+          "originalId": "condition-c",
+          "role": "condition",
+          "definition": "판단할 기준이 정해지지 않았다면,",
+          "semanticUnitRef": "synthetic:kee:definition:0:primary"
+        },
+        {
+          "originalId": "action-c",
+          "role": "action",
+          "definition": "판단할 기준이 정해지지 않았다면, 검토를 마칠 기준과 결론을 낼 시점을 물어볼 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:0:action"
+        }
+      ],
+      "syntheticQuestionGloss": "어떤 기준이 없을 때 검토의 비용이 생길까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:0:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:0:primary",
+          "meaningKey": "synthetic:kee:definition:0:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "risk",
+            "summary",
+            "closing"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:99ede5d6970161efef9c679370d703d0ee9ca52ba507a49d57dd1ed4d5874275",
+            "clause": "판단할 기준이 정해지지 않았다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": {
+            "kind": "noun_phrase",
+            "surface": "반복해서 늘린 검토",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "반복해서 늘린 검토",
+              "final": "none"
+            }
+          },
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "결정 시점",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "결정 시점",
+              "final": "other"
+            }
+          },
+          "predicate": "delay",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:0:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:0:action",
+          "meaningKey": "synthetic:kee:definition:0:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:99ede5d6970161efef9c679370d703d0ee9ca52ba507a49d57dd1ed4d5874275",
+            "clause": "판단할 기준이 정해지지 않았다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "검토를 마칠 기준과 결론을 낼 시점",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "검토를 마칠 기준과 결론을 낼 시점",
+              "final": "other"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "comprehensive:검토를 마칠 기준과 결론을 낼 시점",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:0:function:opening",
+          "meaningKey": "synthetic:kee:definition:0:function-meaning:opening",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "opening"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:6eb722937fb4a8cbe80a89eb683db0f4a5d850f4fea8dc993489983c6f079720",
+            "clause": "결정을 앞두고 확인 순서를 정한다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "결정 전에 먼저 정할 기준",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "결정 전에 먼저 정할 기준",
+              "final": "other"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:0:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:0:function:explanation",
+          "meaningKey": "synthetic:kee:definition:0:function-meaning:explanation",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "explanation"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:68c929daf85678998f070bebec3070241408781df7dfb21bf8b26e33e752c2cd",
+            "clause": "검토와 결정의 역할을 나누어 본다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "확인이 필요한 항목과 결정에 필요한 이유",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "확인이 필요한 항목과 결정에 필요한 이유",
+              "final": "none"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:0:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:0:function:concretization",
+          "meaningKey": "synthetic:kee:definition:0:function-meaning:concretization",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "concretization"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:d80dee04839d8374eef5b82b7cf1703de4f957dc4fd7c9398d0e634fc884a535",
+            "clause": "제출할 자료를 점검하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "비교할 두 항목과 제출 시점",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "비교할 두 항목과 제출 시점",
+              "final": "other"
+            }
+          },
+          "predicate": "check",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:0:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:0:function:positive",
+          "meaningKey": "synthetic:kee:definition:0:function-meaning:positive",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:43866a8cc66fb3bba63b8fd747cf711cb8ce65ccf1c96e4877731d1e0f7c0137",
+            "clause": "점검할 기준과 마감이 분명한 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "결정에 활용할 검토 자료",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "결정에 활용할 검토 자료",
+              "final": "none"
+            }
+          },
+          "predicate": "retain",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:0:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:0:function:twist",
+          "meaningKey": "synthetic:kee:definition:0:function-meaning:twist",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "twist"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:a013e4ffa3bf0cefb6e8ebd0219371464e1188f5f368f29a62ae31db6863d05e",
+            "clause": "무엇을 확인할지 먼저 정했다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "검토를 끝내고 결정할 수 있는 기준",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "검토를 끝내고 결정할 수 있는 기준",
+              "final": "other"
+            }
+          },
+          "predicate": "check",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:0:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:0:function:comparison",
+          "meaningKey": "synthetic:kee:definition:0:function-meaning:comparison",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "comparison"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:0a2d7c9c008ca7e0d8266541dc667c153e9142a2e43e16512291e840ceba311a",
+            "clause": "혼자 살펴볼 때와 함께 결정할 때를 비교한다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "개인이 확인할 근거와 함께 합의할 기준",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "개인이 확인할 근거와 함께 합의할 기준",
+              "final": "other"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:0:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:0:function:scene",
+          "meaningKey": "synthetic:kee:definition:0:function-meaning:scene",
+          "kind": "HYPOTHETICAL_SCENE",
+          "functions": [
+            "scene"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:e999c16ca9bb7d1b08bf46caa96e288c70c8537c8452f752f0bc3a08f82f0a3e",
+            "clause": "가령 서로 다른 약속 중 하나를 골라야 한다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "서로 겹친 시간과 먼저 지킬 약속",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "서로 겹친 시간과 먼저 지킬 약속",
+              "final": "other"
+            }
+          },
+          "predicate": "compare",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:0:advice",
+          "sceneRef": "ker:scene:day-choice",
+          "sceneCondition": "서로 다른 약속 중 하나를 고르는 가상 상황",
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:0:function:action",
+          "meaningKey": "synthetic:kee:definition:0:function-meaning:action",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:99ede5d6970161efef9c679370d703d0ee9ca52ba507a49d57dd1ed4d5874275",
+            "clause": "판단할 기준이 정해지지 않았다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "판단할 항목과 결론을 낼 시점",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "판단할 항목과 결론을 낼 시점",
+              "final": "other"
+            }
+          },
+          "predicate": "check",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:0:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:0:function:transition",
+          "meaningKey": "synthetic:kee:definition:0:function-meaning:transition",
+          "kind": "EDITORIAL_CONNECTIVE",
+          "functions": [
+            "transition"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:2e15b8ee113cf6f433537c81679b5d9f778dc2c3e86609b6dcd04671bb9bb32f",
+            "clause": "그 기준의 적용을 다른 질문에서 살펴본다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "이미 확인한 정보와 다음에 확인할 질문",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "이미 확인한 정보와 다음에 확인할 질문",
+              "final": "other"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:0:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": true,
+          "displayPrerequisiteUnitIds": [
+            "synthetic:kee:definition:0:primary"
+          ]
+        },
+        {
+          "id": "synthetic:kee:definition:0:blunt",
+          "meaningKey": "synthetic:kee:definition:0:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "risk",
+            "blunt"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:99ede5d6970161efef9c679370d703d0ee9ca52ba507a49d57dd1ed4d5874275",
+            "clause": "판단할 기준이 정해지지 않았다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": {
+            "kind": "noun_phrase",
+            "surface": "늘어난 검토",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "늘어난 검토",
+              "final": "none"
+            }
+          },
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "결정",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "결정",
+              "final": "other"
+            }
+          },
+          "predicate": "delay",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:0:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:1",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "comprehensive",
+        "fixture": "synthetic:cse:selection",
+        "product": "saju_mbti_full",
+        "relationship": null,
+        "questionId": "synthetic:cse:q:3",
+        "questionHash": "248915ff48efc4ad956c050c8040feb37be2af183859d51485b84cb19cdfe2cb",
+        "materialId": "synthetic:cse:d",
+        "claimId": "synthetic:cse:claim:three",
+        "meaningId": "synthetic:cse:meaning:three",
+        "originalMeaningHash": "87d787b3df64d07e3d7e9ba9d55556d4a96869ae1985f73b1f1b8954dddbe6d9",
+        "assignmentHash": "a57f12e0dc87463141521f01635ddd4b331347bd30b07bbec8225ba275682653",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/comprehensive-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/3",
+            "recordSha256": "d477595f937fa9a1eb4930b673bf2e2f72f379da707f5fdc6104db969d7d238f",
+            "fileSha256": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039",
+            "sourceVersion": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039"
+          },
+          "hash": "d477595f937fa9a1eb4930b673bf2e2f72f379da707f5fdc6104db969d7d238f",
+          "version": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039"
+        }
+      },
+      "identifierDefinitions": [
+        {
+          "originalId": "required-3",
+          "role": "meaning",
+          "definition": "확인할 항목과 종료 기준을 정했다면, 결정에 쓸 비교 자료를 남길 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:1:primary"
+        },
+        {
+          "originalId": "condition-d",
+          "role": "condition",
+          "definition": "확인할 항목과 종료 기준을 정했다면,",
+          "semanticUnitRef": "synthetic:kee:definition:1:primary"
+        },
+        {
+          "originalId": "action-d",
+          "role": "action",
+          "definition": "확인할 항목과 종료 기준을 정했다면, 검토를 마칠 기준과 결론을 낼 시점을 물어볼 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:1:action"
+        }
+      ],
+      "syntheticQuestionGloss": "신중한 검토를 결정에 활용할 조건은 무엇일까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:1:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:1:primary",
+          "meaningKey": "synthetic:kee:definition:1:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "twist"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:3d7f54094841c7ec7beba51615ddfad0b9b60ffb861a3857a57a8a4dfc668958",
+            "clause": "확인할 항목과 종료 기준을 정했다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "결정에 쓸 비교 자료",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "결정에 쓸 비교 자료",
+              "final": "none"
+            }
+          },
+          "predicate": "retain",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:1:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:1:action",
+          "meaningKey": "synthetic:kee:definition:1:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:3d7f54094841c7ec7beba51615ddfad0b9b60ffb861a3857a57a8a4dfc668958",
+            "clause": "확인할 항목과 종료 기준을 정했다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "검토를 마칠 기준과 결론을 낼 시점",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "검토를 마칠 기준과 결론을 낼 시점",
+              "final": "other"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "comprehensive:검토를 마칠 기준과 결론을 낼 시점",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:2",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "comprehensive",
+        "fixture": "synthetic:cse:selection",
+        "product": "saju_mbti_full",
+        "relationship": null,
+        "questionId": "synthetic:cse:q:4",
+        "questionHash": "2f4264acf7c0d3e8433a292fcba6d0ec5678e52cbbaf5278a12b5d8a5ecc4e36",
+        "materialId": "synthetic:cse:e",
+        "claimId": "synthetic:cse:claim:four",
+        "meaningId": "synthetic:cse:meaning:four",
+        "originalMeaningHash": "33d9e71f2076ba07e1cdaffa8aeb201f3fe817fd2990f6b4661571fd16ebb03f",
+        "assignmentHash": "d58cf2010375a6a8dcdeac11594950b05cb80772a09e49d0c9a1c719e574c3bf",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/comprehensive-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/4",
+            "recordSha256": "c4c41a26cb0c2957e9f68bc4793b420f72debfc591eeccef385d07221db82175",
+            "fileSha256": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039",
+            "sourceVersion": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039"
+          },
+          "hash": "c4c41a26cb0c2957e9f68bc4793b420f72debfc591eeccef385d07221db82175",
+          "version": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039"
+        }
+      },
+      "identifierDefinitions": [
+        {
+          "originalId": "required-4",
+          "role": "meaning",
+          "definition": "점검할 범위가 분명하다면, 놓치기 쉬운 항목을 확인해 볼 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:2:primary"
+        },
+        {
+          "originalId": "condition-e",
+          "role": "condition",
+          "definition": "점검할 범위가 분명하다면,",
+          "semanticUnitRef": "synthetic:kee:definition:2:primary"
+        },
+        {
+          "originalId": "action-e",
+          "role": "action",
+          "definition": "점검할 범위가 분명하다면, 검토를 마칠 기준과 결론을 낼 시점을 물어볼 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:2:action"
+        }
+      ],
+      "syntheticQuestionGloss": "세부 확인이 도움이 될 조건은 무엇일까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:2:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:2:primary",
+          "meaningKey": "synthetic:kee:definition:2:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:dbfae498a0d965143b0050ae95911a4c44825cdb2d1b771ebe9f7624fdfc8880",
+            "clause": "점검할 범위가 분명하다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "놓치기 쉬운 항목",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "놓치기 쉬운 항목",
+              "final": "other"
+            }
+          },
+          "predicate": "check",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:2:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:2:action",
+          "meaningKey": "synthetic:kee:definition:2:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:dbfae498a0d965143b0050ae95911a4c44825cdb2d1b771ebe9f7624fdfc8880",
+            "clause": "점검할 범위가 분명하다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "검토를 마칠 기준과 결론을 낼 시점",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "검토를 마칠 기준과 결론을 낼 시점",
+              "final": "other"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "comprehensive:검토를 마칠 기준과 결론을 낼 시점",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:3",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "comprehensive",
+        "fixture": "synthetic:cse:selection",
+        "product": "saju_mbti_full",
+        "relationship": null,
+        "questionId": "synthetic:cse:q:1",
+        "questionHash": "d57a525fda42de39b0713258be9b4fe813842dcf36f7a0e0b30ec48a4ee477c1",
+        "materialId": "synthetic:cse:b",
+        "claimId": "synthetic:cse:claim:one-alt",
+        "meaningId": "synthetic:cse:meaning:one-alt",
+        "originalMeaningHash": "6873fdbb7184d0821fce97dcd95805bd97704f9cb5d4e631d148d5611694cb5c",
+        "assignmentHash": "716b122908945882f5e7e9d1f0ba9ecaf185597e81d99ea382b7cb36d7fc2e98",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/comprehensive-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/1",
+            "recordSha256": "475224fc9d7bd77d12fb2f09f8c1604161ef8dd867595ca179bf1c3bfc1b23cf",
+            "fileSha256": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039",
+            "sourceVersion": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039"
+          },
+          "hash": "475224fc9d7bd77d12fb2f09f8c1604161ef8dd867595ca179bf1c3bfc1b23cf",
+          "version": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039"
+        }
+      },
+      "identifierDefinitions": [
+        {
+          "originalId": "required-1",
+          "role": "meaning",
+          "definition": "서로 다른 설명을 비교하는 상황이라면, 판단에 쓸 이유를 비교해 볼 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:3:primary"
+        },
+        {
+          "originalId": "condition-b",
+          "role": "condition",
+          "definition": "서로 다른 설명을 비교하는 상황이라면,",
+          "semanticUnitRef": "synthetic:kee:definition:3:primary"
+        },
+        {
+          "originalId": "action-b",
+          "role": "action",
+          "definition": "서로 다른 설명을 비교하는 상황이라면, 검토를 마칠 기준과 결론을 낼 시점을 물어볼 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:3:action"
+        }
+      ],
+      "syntheticQuestionGloss": "설명을 비교할 때 무엇을 남길까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:3:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:3:primary",
+          "meaningKey": "synthetic:kee:definition:3:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:47b68a776d93a68d63137561a973b5f53333492c3cb0bb48cf30e5c08911631b",
+            "clause": "서로 다른 설명을 비교하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "판단에 쓸 이유",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "판단에 쓸 이유",
+              "final": "none"
+            }
+          },
+          "predicate": "compare",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:3:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:3:action",
+          "meaningKey": "synthetic:kee:definition:3:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:47b68a776d93a68d63137561a973b5f53333492c3cb0bb48cf30e5c08911631b",
+            "clause": "서로 다른 설명을 비교하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "검토를 마칠 기준과 결론을 낼 시점",
+            "owner": "synthetic:cse:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "검토를 마칠 기준과 결론을 낼 시점",
+              "final": "other"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "comprehensive:검토를 마칠 기준과 결론을 낼 시점",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:4",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "career",
+        "fixture": "synthetic:career:selection",
+        "product": "career_money_study",
+        "relationship": null,
+        "questionId": "synthetic:career:q:2",
+        "questionHash": "fe762ed3b1033d0aba543756e86c61991581dd8627d28b4b4b323545c92f032a",
+        "materialId": "synthetic:career:c",
+        "claimId": "synthetic:career:claim:c",
+        "meaningId": "synthetic:career:meaning:c",
+        "originalMeaningHash": "6c547d04c74873f09cdec64ceecfd85683820a20368194ea54363a504c57267f",
+        "assignmentHash": "28d959d7b4a8f398186fdfed56d7c8f893562c311f054673cd31921c6f68dfe1",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/2",
+            "recordSha256": "36b9c8021496125fec14410197d7e0a0f450d55fb1829c18b1cd3ef7fc4ab682",
+            "fileSha256": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+            "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8"
+          },
+          "hash": "36b9c8021496125fec14410197d7e0a0f450d55fb1829c18b1cd3ef7fc4ab682",
+          "version": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8"
+        }
+      },
+      "identifierDefinitions": [
+        {
+          "originalId": "synthetic:career:required:2",
+          "role": "meaning",
+          "definition": "새 의뢰를 수락할지 검토하는 상황이라면, 결과물의 범위와 수정 횟수를 확인해 볼 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:4:primary"
+        },
+        {
+          "originalId": "synthetic:career:condition:c",
+          "role": "condition",
+          "definition": "새 의뢰를 수락할지 검토하는 상황이라면,",
+          "semanticUnitRef": "synthetic:kee:definition:4:primary"
+        },
+        {
+          "originalId": "synthetic:career:action:c",
+          "role": "action",
+          "definition": "새 의뢰를 수락할지 검토하는 상황이라면, 수정 요청을 어디까지 받을지 정할 기준을 물어볼 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:4:action"
+        }
+      ],
+      "syntheticQuestionGloss": "의뢰를 받기 전에 어떤 범위를 확인할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:4:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:4:primary",
+          "meaningKey": "synthetic:kee:definition:4:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:28342680e7be63d94276558f22bed59c9dca761d1acbc22edb66ff88e16c7a30",
+            "clause": "새 의뢰를 수락할지 검토하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "결과물의 범위와 수정 횟수",
+            "owner": "synthetic:career:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "결과물의 범위와 수정 횟수",
+              "final": "none"
+            }
+          },
+          "predicate": "check",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:4:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:4:action",
+          "meaningKey": "synthetic:kee:definition:4:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:28342680e7be63d94276558f22bed59c9dca761d1acbc22edb66ff88e16c7a30",
+            "clause": "새 의뢰를 수락할지 검토하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "수정 요청을 어디까지 받을지 정할 기준",
+            "owner": "synthetic:career:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "수정 요청을 어디까지 받을지 정할 기준",
+              "final": "other"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "career:수정 요청을 어디까지 받을지 정할 기준",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:5",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "career",
+        "fixture": "synthetic:career:selection",
+        "product": "career_money_study",
+        "relationship": null,
+        "questionId": "synthetic:career:q:3",
+        "questionHash": "a50d6f5f0e8d3da5ff11954a78701931fcf8d851c651f7844ef6ef69cf714d6b",
+        "materialId": "synthetic:career:d",
+        "claimId": "synthetic:career:claim:d",
+        "meaningId": "synthetic:career:meaning:d",
+        "originalMeaningHash": "303ea5af32cfcaa5364346bee5b708f36f39801d265d37dd08a1888e0a16bd64",
+        "assignmentHash": "ec37915729837bb0f2f6f8769fe7f548be5071d004be27ba6ed7cd2d0ea924c5",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/3",
+            "recordSha256": "8b0704e7d0047a0e695379ebcb19f0ff7952a5f0c756304956b7ecbf46b31850",
+            "fileSha256": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+            "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8"
+          },
+          "hash": "8b0704e7d0047a0e695379ebcb19f0ff7952a5f0c756304956b7ecbf46b31850",
+          "version": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8"
+        }
+      },
+      "identifierDefinitions": [
+        {
+          "originalId": "synthetic:career:required:3",
+          "role": "meaning",
+          "definition": "학습 자료를 고르는 상황이라면, 직접 해 볼 과제와 필요한 시간을 비교해 볼 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:5:primary"
+        },
+        {
+          "originalId": "synthetic:career:condition:d",
+          "role": "condition",
+          "definition": "학습 자료를 고르는 상황이라면,",
+          "semanticUnitRef": "synthetic:kee:definition:5:primary"
+        },
+        {
+          "originalId": "synthetic:career:action:d",
+          "role": "action",
+          "definition": "학습 자료를 고르는 상황이라면, 수정 요청을 어디까지 받을지 정할 기준을 물어볼 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:5:action"
+        }
+      ],
+      "syntheticQuestionGloss": "배운 내용을 어떻게 확인할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:5:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:5:primary",
+          "meaningKey": "synthetic:kee:definition:5:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:49e944b35d5060bc16fc39c712297eb1cde89a5ea2c9ae0418f25162c2412be1",
+            "clause": "학습 자료를 고르는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "직접 해 볼 과제와 필요한 시간",
+            "owner": "synthetic:career:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "직접 해 볼 과제와 필요한 시간",
+              "final": "other"
+            }
+          },
+          "predicate": "compare",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:5:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:5:action",
+          "meaningKey": "synthetic:kee:definition:5:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:49e944b35d5060bc16fc39c712297eb1cde89a5ea2c9ae0418f25162c2412be1",
+            "clause": "학습 자료를 고르는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "수정 요청을 어디까지 받을지 정할 기준",
+            "owner": "synthetic:career:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "수정 요청을 어디까지 받을지 정할 기준",
+              "final": "other"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "career:수정 요청을 어디까지 받을지 정할 기준",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:6",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "love",
+        "fixture": "synthetic:love:selection",
+        "product": "love_marriage_child",
+        "relationship": null,
+        "questionId": "synthetic:love:q:02",
+        "questionHash": "41c7445dc553f3f89dd82e16e8ad91c7e9d1d00943121bf919200b45d2b156ce",
+        "materialId": "synthetic:love:c",
+        "claimId": "synthetic:love:claim:c",
+        "meaningId": "synthetic:love:meaning:c",
+        "originalMeaningHash": "1c41116554428e4b11b4da043c2cc9da307f38c64cb111ae000d15dccd21f554",
+        "assignmentHash": "96784dbd9489db3bde89317d1f56be7797d396b267d5afe7fa5a3b57e0b9278a",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/love-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/2",
+            "recordSha256": "94461744d7bcba8357da9cc0959d2fcb6d2fad7d5226b678ef4f525303bc617e",
+            "fileSha256": "01f71057f1c08d968a3e60521ec141a716731cf74ca258cfb474720ddff9232f",
+            "sourceVersion": "01f71057f1c08d968a3e60521ec141a716731cf74ca258cfb474720ddff9232f"
+          },
+          "hash": "94461744d7bcba8357da9cc0959d2fcb6d2fad7d5226b678ef4f525303bc617e",
+          "version": "01f71057f1c08d968a3e60521ec141a716731cf74ca258cfb474720ddff9232f"
+        }
+      },
+      "identifierDefinitions": [
+        {
+          "originalId": "answer-2",
+          "role": "meaning",
+          "definition": "누군가에게 도움을 건네는 상황이라면, 상대가 원하는 도움의 종류를 물어볼 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:6:primary"
+        },
+        {
+          "originalId": "synthetic-condition-c",
+          "role": "condition",
+          "definition": "누군가에게 도움을 건네는 상황이라면,",
+          "semanticUnitRef": "synthetic:kee:definition:6:primary"
+        },
+        {
+          "originalId": "synthetic-action-c",
+          "role": "action",
+          "definition": "누군가에게 도움을 건네는 상황이라면, 도움이 필요한지 직접 묻고 멈출 조건을 물어볼 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:6:action"
+        }
+      ],
+      "syntheticQuestionGloss": "배려를 전하기 전에 무엇을 물어볼까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:6:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:6:primary",
+          "meaningKey": "synthetic:kee:definition:6:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:31b3fda001105fb0c019a75229b191a4f2b1083e45c3a517186e8215f9c9087f",
+            "clause": "누군가에게 도움을 건네는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "상대가 원하는 도움의 종류",
+            "owner": "synthetic:love:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "상대가 원하는 도움의 종류",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:6:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:6:action",
+          "meaningKey": "synthetic:kee:definition:6:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:31b3fda001105fb0c019a75229b191a4f2b1083e45c3a517186e8215f9c9087f",
+            "clause": "누군가에게 도움을 건네는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "도움이 필요한지 직접 묻고 멈출 조건",
+            "owner": "synthetic:love:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "도움이 필요한지 직접 묻고 멈출 조건",
+              "final": "other"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "love:도움이 필요한지 직접 묻고 멈출 조건",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:7",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "love",
+        "fixture": "synthetic:love:selection",
+        "product": "love_marriage_child",
+        "relationship": null,
+        "questionId": "synthetic:love:q:03",
+        "questionHash": "541c00daa3e242e0b4492fd278f483037e512fca198a7b1736a69097560bc7b1",
+        "materialId": "synthetic:love:d",
+        "claimId": "synthetic:love:claim:d",
+        "meaningId": "synthetic:love:meaning:d",
+        "originalMeaningHash": "d85cf17ae51833160f58a31baa49c75a767e50c14273ac12b7437059811fef73",
+        "assignmentHash": "39ae95edba07403a9c1f8b4f95e17f8e9ab456bf7dd092af0466dfed7016c50e",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/love-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/3",
+            "recordSha256": "c448e438526a804c0c384cdc4e5b690b9546773bd88cf90555d4b2f8a938f7e1",
+            "fileSha256": "01f71057f1c08d968a3e60521ec141a716731cf74ca258cfb474720ddff9232f",
+            "sourceVersion": "01f71057f1c08d968a3e60521ec141a716731cf74ca258cfb474720ddff9232f"
+          },
+          "hash": "c448e438526a804c0c384cdc4e5b690b9546773bd88cf90555d4b2f8a938f7e1",
+          "version": "01f71057f1c08d968a3e60521ec141a716731cf74ca258cfb474720ddff9232f"
+        }
+      },
+      "identifierDefinitions": [
+        {
+          "originalId": "answer-3",
+          "role": "meaning",
+          "definition": "내가 편한 친밀감의 방식을 살펴본다면, 내가 원하는 거리와 상대에게 확인할 동의를 구분해 볼 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:7:primary"
+        },
+        {
+          "originalId": "synthetic-condition-d",
+          "role": "condition",
+          "definition": "내가 편한 친밀감의 방식을 살펴본다면,",
+          "semanticUnitRef": "synthetic:kee:definition:7:primary"
+        },
+        {
+          "originalId": "synthetic-action-d",
+          "role": "action",
+          "definition": "내가 편한 친밀감의 방식을 살펴본다면, 도움이 필요한지 직접 묻고 멈출 조건을 물어볼 수 있습니다.",
+          "semanticUnitRef": "synthetic:kee:definition:7:action"
+        }
+      ],
+      "syntheticQuestionGloss": "나의 선호와 상대의 선택을 어떻게 구분할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:7:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:7:primary",
+          "meaningKey": "synthetic:kee:definition:7:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:fe7650e0493c63ecffef8fcb6f194a5be0aef8b2d7fbbee87101154b6b142def",
+            "clause": "내가 편한 친밀감의 방식을 살펴본다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "내가 원하는 거리와 상대에게 확인할 동의",
+            "owner": "synthetic:love:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "내가 원하는 거리와 상대에게 확인할 동의",
+              "final": "none"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:7:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:7:action",
+          "meaningKey": "synthetic:kee:definition:7:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:fe7650e0493c63ecffef8fcb6f194a5be0aef8b2d7fbbee87101154b6b142def",
+            "clause": "내가 편한 친밀감의 방식을 살펴본다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "도움이 필요한지 직접 묻고 멈출 조건",
+            "owner": "synthetic:love:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "도움이 필요한지 직접 묻고 멈출 조건",
+              "final": "other"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "love:도움이 필요한지 직접 묻고 멈출 조건",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:8",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "major-fortune",
+        "fixture": "synthetic:major:selection",
+        "product": "major_fortune",
+        "relationship": null,
+        "questionId": "synthetic:major:q:2028:transition",
+        "questionHash": "b1ce4ead352e178973d02524288626177c9eea0c3c54f073b591f6af2cd5bcf8",
+        "materialId": "synthetic:major:transition-comparison",
+        "claimId": "synthetic:major:claim:shared-transition",
+        "meaningId": "synthetic:major:meaning:shared-transition",
+        "originalMeaningHash": "ce0abb3709f7fe2d1af97665c017fadc9d4a2835d244eaddb9d66c0f8d95b13c",
+        "assignmentHash": "1d12f169f04891503e16c8072a028447fba5c0982c3ffec5c355355cd55da666",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/major-fortune-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/6",
+            "recordSha256": "4985ca87e7572712cc7b668d08aa465d05427a152e37072b9e45f65b169212b5",
+            "fileSha256": "ac76cb5f1012dfcbabf0b71d7f4e121ac41a5019df7e96108cdbceeb90b00718",
+            "sourceVersion": "ac76cb5f1012dfcbabf0b71d7f4e121ac41a5019df7e96108cdbceeb90b00718"
+          },
+          "hash": "4985ca87e7572712cc7b668d08aa465d05427a152e37072b9e45f65b169212b5",
+          "version": "ac76cb5f1012dfcbabf0b71d7f4e121ac41a5019df7e96108cdbceeb90b00718"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "대운 전환 전후의 적용 시점을 어떻게 구분할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:8:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:8:primary",
+          "meaningKey": "synthetic:kee:definition:8:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "comparison"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:29b555e2a94b2c68adfd68eb4e0bec408ff644c5496a54d8919a1bff96408adf",
+            "clause": "전환 이후의 장기 조건을 살펴보는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "2028년 4월 23일 21시 42분 이후와 그 이전의 적용 구간",
+            "owner": "synthetic:major:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "2028년 4월 23일 21시 42분 이후와 그 이전의 적용 구간",
+              "final": "other"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:8:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:8:action",
+          "meaningKey": "synthetic:kee:definition:8:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:29b555e2a94b2c68adfd68eb4e0bec408ff644c5496a54d8919a1bff96408adf",
+            "clause": "전환 이후의 장기 조건을 살펴보는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "전환 이전의 근거를 이후에 적용하고 있지 않은지",
+            "owner": "synthetic:major:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "전환 이전의 근거를 이후에 적용하고 있지 않은지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "major-fortune:전환 이전의 근거를 이후에 적용하고 있지 않은지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:9",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "major-fortune",
+        "fixture": "synthetic:major:selection",
+        "product": "major_fortune",
+        "relationship": null,
+        "questionId": "synthetic:major:q:2023:background",
+        "questionHash": "0064cfb32d324106ef0d7d976f46713a8dbee5787a66461c34b1bbffd9243208",
+        "materialId": "synthetic:major:background-first",
+        "claimId": "synthetic:major:claim:cycle-1",
+        "meaningId": "synthetic:major:meaning:cycle-1",
+        "originalMeaningHash": "4ab45b3cf145167c5cbed98df07abc2a87dd94707567f4803b8f2e5bac17c901",
+        "assignmentHash": "2e6808a996563bdcf497515c6abedc5d39f9bd4c4728bb28f761ffcea6233f6c",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/major-fortune-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/15",
+            "recordSha256": "7baec68f241770d44eb4a63debe28908fe192b19d9d6aa9b6c4f1113ea721fee",
+            "fileSha256": "ac76cb5f1012dfcbabf0b71d7f4e121ac41a5019df7e96108cdbceeb90b00718",
+            "sourceVersion": "ac76cb5f1012dfcbabf0b71d7f4e121ac41a5019df7e96108cdbceeb90b00718"
+          },
+          "hash": "7baec68f241770d44eb4a63debe28908fe192b19d9d6aa9b6c4f1113ea721fee",
+          "version": "ac76cb5f1012dfcbabf0b71d7f4e121ac41a5019df7e96108cdbceeb90b00718"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "큰 배경의 적용 범위는 어디까지일까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:9:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:9:primary",
+          "meaningKey": "synthetic:kee:definition:9:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "explanation",
+            "opening",
+            "concretization"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:f44106ea4cc257cbc0c5bc2ecd629e8693c0a2a13d04ac551376e53a9db14f94",
+            "clause": "장기 배경을 설명하는 구간을 읽는다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "2018년 4월 23일 21시 42분부터 2028년 4월 23일 21시 42분 전까지의 범위",
+            "owner": "synthetic:major:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "2018년 4월 23일 21시 42분부터 2028년 4월 23일 21시 42분 전까지의 범위",
+              "final": "none"
+            }
+          },
+          "predicate": "check",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:9:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:9:action",
+          "meaningKey": "synthetic:kee:definition:9:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:f44106ea4cc257cbc0c5bc2ecd629e8693c0a2a13d04ac551376e53a9db14f94",
+            "clause": "장기 배경을 설명하는 구간을 읽는다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "전환 이전의 근거를 이후에 적용하고 있지 않은지",
+            "owner": "synthetic:major:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "전환 이전의 근거를 이후에 적용하고 있지 않은지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "major-fortune:전환 이전의 근거를 이후에 적용하고 있지 않은지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:10",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "annual-fortune",
+        "fixture": "synthetic:annual:selection",
+        "product": "annual_fortune",
+        "relationship": null,
+        "questionId": "synthetic:annual:q:2",
+        "questionHash": "68eda791393df5b96405efcdee7f4a1fdf083f7fa429413a966ebe5d10afb1b0",
+        "materialId": "synthetic:annual:feb-critical",
+        "claimId": "synthetic:annual:claim:2",
+        "meaningId": "synthetic:annual:meaning:2",
+        "originalMeaningHash": "e7526845706f55b85f062582baf5e837880845b3cca786e193f1ed502a664053",
+        "assignmentHash": "4d25bedcd2b28ff911ec9b985ab34ff93079158346b698a751327b06ebb96a4e",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/annual-fortune-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/2",
+            "recordSha256": "db9dca468838f23e02fddeafa684ab261215dab4d2e7178c9738177a71c317ec",
+            "fileSha256": "8a244029276543937a1d09e5fac4b7b2bc54237db552a9f5c45834212dfdf75d",
+            "sourceVersion": "8a244029276543937a1d09e5fac4b7b2bc54237db552a9f5c45834212dfdf75d"
+          },
+          "hash": "db9dca468838f23e02fddeafa684ab261215dab4d2e7178c9738177a71c317ec",
+          "version": "8a244029276543937a1d09e5fac4b7b2bc54237db552a9f5c45834212dfdf75d"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "원국 근거와 월간 근거를 어떻게 나눌까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:10:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:10:primary",
+          "meaningKey": "synthetic:kee:definition:10:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "explanation",
+            "opening",
+            "concretization"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:669dbcc9192263ac013182bfd4b08b51d74ffd94f06d369ed2840a7f1f0d50dc",
+            "clause": "2월의 해석 근거를 검토한다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "원국 천간의 근거와 월간의 근거",
+            "owner": "synthetic:annual:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "원국 천간의 근거와 월간의 근거",
+              "final": "none"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:10:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:10:action",
+          "meaningKey": "synthetic:kee:definition:10:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:669dbcc9192263ac013182bfd4b08b51d74ffd94f06d369ed2840a7f1f0d50dc",
+            "clause": "2월의 해석 근거를 검토한다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "대표 구간 밖에도 같은 설명을 적용할 근거가 있는지",
+            "owner": "synthetic:annual:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "대표 구간 밖에도 같은 설명을 적용할 근거가 있는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "annual-fortune:대표 구간 밖에도 같은 설명을 적용할 근거가 있는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:11",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "annual-fortune",
+        "fixture": "synthetic:annual:selection",
+        "product": "annual_fortune",
+        "relationship": null,
+        "questionId": "synthetic:annual:q:4",
+        "questionHash": "b580612af5c4b9e50e6e1bf1521a6dbc60ed7830c731cf1bc2505c5adf59f8b8",
+        "materialId": "synthetic:annual:april-comparison",
+        "claimId": "synthetic:annual:claim:4",
+        "meaningId": "synthetic:annual:meaning:4",
+        "originalMeaningHash": "990cc84bdd1dcc51116021ec18c502fa0e4a754c646a9ea82c4ceee28244ef07",
+        "assignmentHash": "685f40667082caf9c0a304fce475b6d79a133efc92a65a421cb7b30ce5cd9ec1",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/annual-fortune-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/13",
+            "recordSha256": "ff88a4b1ac1c01dcdcaa2dd62e5e8a55902c277e080098f0068921d0533e0506",
+            "fileSha256": "8a244029276543937a1d09e5fac4b7b2bc54237db552a9f5c45834212dfdf75d",
+            "sourceVersion": "8a244029276543937a1d09e5fac4b7b2bc54237db552a9f5c45834212dfdf75d"
+          },
+          "hash": "ff88a4b1ac1c01dcdcaa2dd62e5e8a55902c277e080098f0068921d0533e0506",
+          "version": "8a244029276543937a1d09e5fac4b7b2bc54237db552a9f5c45834212dfdf75d"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "대표 구간과 월 전체를 어떻게 구분할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:11:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:11:primary",
+          "meaningKey": "synthetic:kee:definition:11:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "comparison"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:6363178c74395a79db0a4522529adda48870aea71b8126e608ddc5e9a7298249",
+            "clause": "4월 안의 실제 구간을 비교한다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "각 구간의 시작과 끝, 월간에 해당하는 근거",
+            "owner": "synthetic:annual:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "각 구간의 시작과 끝, 월간에 해당하는 근거",
+              "final": "none"
+            }
+          },
+          "predicate": "check",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:11:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:11:action",
+          "meaningKey": "synthetic:kee:definition:11:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:6363178c74395a79db0a4522529adda48870aea71b8126e608ddc5e9a7298249",
+            "clause": "4월 안의 실제 구간을 비교한다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "대표 구간 밖에도 같은 설명을 적용할 근거가 있는지",
+            "owner": "synthetic:annual:owner",
+            "pronunciation": {
+              "status": "known",
+              "reading": "대표 구간 밖에도 같은 설명을 적용할 근거가 있는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "annual-fortune:대표 구간 밖에도 같은 설명을 적용할 근거가 있는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:12",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-love",
+        "fixture": "synthetic:love:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "love",
+        "questionId": "synthetic:love:question:CH05.P1",
+        "questionHash": "599c9c0aff27a138a7d91c99560b3cacf441605a27b34b079191f6656547781a",
+        "materialId": "synthetic:love:material:CH05.P1",
+        "claimId": "synthetic:love:claim:CH05.P1",
+        "meaningId": "synthetic:love:meaning:CH05.P1",
+        "originalMeaningHash": "177d62c2f44541fe771e0a466f434064d171c4b6af55a4a6d3bbf39ccead3df1",
+        "assignmentHash": "64999d3cde6b4d1a99ab58062a0c33ea90ec91968d5effe5c1a5f9b4c9aec4a2",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-love-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/80",
+            "recordSha256": "01c0300f8f65f3920438767dfd62c78b8f6196ddc80920ab65c10e732e1eefc7",
+            "fileSha256": "e32450d13f5fa39f8ec37bc410502a3d66047d9050937769b797ca5f16cfb9d4",
+            "sourceVersion": "e32450d13f5fa39f8ec37bc410502a3d66047d9050937769b797ca5f16cfb9d4"
+          },
+          "hash": "01c0300f8f65f3920438767dfd62c78b8f6196ddc80920ab65c10e732e1eefc7",
+          "version": "e32450d13f5fa39f8ec37bc410502a3d66047d9050937769b797ca5f16cfb9d4"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "연락을 제안할 때 어떤 선택을 남길까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:12:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:12:primary",
+          "meaningKey": "synthetic:kee:definition:12:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action",
+            "scene"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:f0ec11f24698799249528ebdcc38a1b066ede5c3f121e9cecf3f93212de04cdc",
+            "clause": "A가 B에게 연락을 제안하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "원하는 연락 방식과 거절할 선택",
+            "owner": "synthetic:love:owner:A",
+            "pronunciation": {
+              "status": "known",
+              "reading": "원하는 연락 방식과 거절할 선택",
+              "final": "other"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:12:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:12:action",
+          "meaningKey": "synthetic:kee:definition:12:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:f0ec11f24698799249528ebdcc38a1b066ede5c3f121e9cecf3f93212de04cdc",
+            "clause": "A가 B에게 연락을 제안하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "원치 않는 연락을 거절할 수 있는지",
+            "owner": "synthetic:love:owner:A",
+            "pronunciation": {
+              "status": "known",
+              "reading": "원치 않는 연락을 거절할 수 있는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-love:원치 않는 연락을 거절할 수 있는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:13",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-love",
+        "fixture": "synthetic:love:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "love",
+        "questionId": "synthetic:love:question:CH06.P1",
+        "questionHash": "71b4d153c4b94429ce33483a3758ab7de39e7b37af717b81b6a62c76d2afaa73",
+        "materialId": "synthetic:love:material:CH06.P1",
+        "claimId": "synthetic:love:claim:CH06.P1",
+        "meaningId": "synthetic:love:meaning:CH06.P1",
+        "originalMeaningHash": "5e006145fb8b48127c5eb26cdf16acfbcfbe1207069acc3d9f905a966a9cdfd1",
+        "assignmentHash": "43f9684dbfd3224db7eeb63a641176a769855509b6b4a86ee152fa828b1fc422",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-love-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/100",
+            "recordSha256": "92e9fbbfa77677aac4d8f1ff8da19271fad7790a45fca37648e4c4cf1c898383",
+            "fileSha256": "e32450d13f5fa39f8ec37bc410502a3d66047d9050937769b797ca5f16cfb9d4",
+            "sourceVersion": "e32450d13f5fa39f8ec37bc410502a3d66047d9050937769b797ca5f16cfb9d4"
+          },
+          "hash": "92e9fbbfa77677aac4d8f1ff8da19271fad7790a45fca37648e4c4cf1c898383",
+          "version": "e32450d13f5fa39f8ec37bc410502a3d66047d9050937769b797ca5f16cfb9d4"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "답변할 때 무엇을 확인할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:13:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:13:primary",
+          "meaningKey": "synthetic:kee:definition:13:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action",
+            "scene"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:3c1315d3b268742f443bd9113f504f23c774e0b6425a756c6e659a904afaef97",
+            "clause": "B가 A에게 답할 방식을 정하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "말할 수 있는 범위와 기다릴 수 있는 시간",
+            "owner": "synthetic:love:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "말할 수 있는 범위와 기다릴 수 있는 시간",
+              "final": "other"
+            }
+          },
+          "predicate": "check",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:13:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:13:action",
+          "meaningKey": "synthetic:kee:definition:13:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:3c1315d3b268742f443bd9113f504f23c774e0b6425a756c6e659a904afaef97",
+            "clause": "B가 A에게 답할 방식을 정하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "원치 않는 연락을 거절할 수 있는지",
+            "owner": "synthetic:love:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "원치 않는 연락을 거절할 수 있는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-love:원치 않는 연락을 거절할 수 있는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:14",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-marriage",
+        "fixture": "synthetic:marriage:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "marriage",
+        "questionId": "synthetic:marriage:question:CH05.P1",
+        "questionHash": "ccc0141e97ebe9f1b1204f87a7bdba8b4ea67708fe1b47f7c220d161bb8875ae",
+        "materialId": "synthetic:marriage:material:CH05.P1",
+        "claimId": "synthetic:marriage:claim:CH05.P1",
+        "meaningId": "synthetic:marriage:meaning:CH05.P1",
+        "originalMeaningHash": "5cca18e2ca8b49978e5fd963829d4ea34310f4bb1a31a0087c827401b4088403",
+        "assignmentHash": "cbab9a0dfd7ed82819ab06eb47f762908dff81dec370886a00ac21a491e78c2f",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-marriage-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/80",
+            "recordSha256": "37189fb6f135da88e3363eb129e7ccbd4534f70a46fc1d86ed257dae57f5f8f0",
+            "fileSha256": "b676adb6f10db984c3875c107ea740baa88bab444a2eddae51dc636e18270d08",
+            "sourceVersion": "b676adb6f10db984c3875c107ea740baa88bab444a2eddae51dc636e18270d08"
+          },
+          "hash": "37189fb6f135da88e3363eb129e7ccbd4534f70a46fc1d86ed257dae57f5f8f0",
+          "version": "b676adb6f10db984c3875c107ea740baa88bab444a2eddae51dc636e18270d08"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "함께 맡을 일의 완료 범위를 어떻게 정할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:14:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:14:primary",
+          "meaningKey": "synthetic:kee:definition:14:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:597ef87ea84384c66a64aee107a1a8f21a6955424fd6f913740a27f028b03dd0",
+            "clause": "함께 집안일을 정하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "결정과 실행, 다음 주기의 확인을 누가 맡을지",
+            "owner": "synthetic:marriage:owner:A",
+            "pronunciation": {
+              "status": "known",
+              "reading": "결정과 실행, 다음 주기의 확인을 누가 맡을지",
+              "final": "none"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:14:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:14:action",
+          "meaningKey": "synthetic:kee:definition:14:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:597ef87ea84384c66a64aee107a1a8f21a6955424fd6f913740a27f028b03dd0",
+            "clause": "함께 집안일을 정하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "바뀐 생활 조건에 다시 동의했는지",
+            "owner": "synthetic:marriage:owner:A",
+            "pronunciation": {
+              "status": "known",
+              "reading": "바뀐 생활 조건에 다시 동의했는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-marriage:바뀐 생활 조건에 다시 동의했는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:15",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-marriage",
+        "fixture": "synthetic:marriage:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "marriage",
+        "questionId": "synthetic:marriage:question:CH06.P1",
+        "questionHash": "640769e376f303cf69f46d0a0abcf7483c84cd31d749bfcd6936995ace8903f7",
+        "materialId": "synthetic:marriage:material:CH06.P1",
+        "claimId": "synthetic:marriage:claim:CH06.P1",
+        "meaningId": "synthetic:marriage:meaning:CH06.P1",
+        "originalMeaningHash": "0de2a544c1c09728cf763fa2caa4c48ac5bf718fcbb2a570153ea99686fb0989",
+        "assignmentHash": "b9d10e1922294ef03d65b355745a7d631455f2512ecdce67dcc25d4bd769df89",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-marriage-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/100",
+            "recordSha256": "de2968e3733884e816a47b6be29e2b9f7afaf5d24552026503e8ddc93e93456d",
+            "fileSha256": "b676adb6f10db984c3875c107ea740baa88bab444a2eddae51dc636e18270d08",
+            "sourceVersion": "b676adb6f10db984c3875c107ea740baa88bab444a2eddae51dc636e18270d08"
+          },
+          "hash": "de2968e3733884e816a47b6be29e2b9f7afaf5d24552026503e8ddc93e93456d",
+          "version": "b676adb6f10db984c3875c107ea740baa88bab444a2eddae51dc636e18270d08"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "생활 조건의 변경에 무엇을 다시 합의할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:15:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:15:primary",
+          "meaningKey": "synthetic:kee:definition:15:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:45835f0c49350db8ee023b9f51eefbea0e43e1abeaeba4a7e6f32aa5f7ef5dff",
+            "clause": "생활 방식을 바꾸자고 제안하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "기존 약속과 새로 동의할 범위",
+            "owner": "synthetic:marriage:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "기존 약속과 새로 동의할 범위",
+              "final": "none"
+            }
+          },
+          "predicate": "compare",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:15:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:15:action",
+          "meaningKey": "synthetic:kee:definition:15:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:45835f0c49350db8ee023b9f51eefbea0e43e1abeaeba4a7e6f32aa5f7ef5dff",
+            "clause": "생활 방식을 바꾸자고 제안하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "바뀐 생활 조건에 다시 동의했는지",
+            "owner": "synthetic:marriage:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "바뀐 생활 조건에 다시 동의했는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-marriage:바뀐 생활 조건에 다시 동의했는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:16",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-parent-child",
+        "fixture": "synthetic:parent-child:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "parentChild",
+        "questionId": "synthetic:parent-child:question:CH05.P1",
+        "questionHash": "feba809e272f5667618da310c743e11996b5dd7c10421801f9adaa2e6b6ff205",
+        "materialId": "synthetic:parent-child:material:CH05.P1",
+        "claimId": "synthetic:parent-child:meaning:CH05.P1:claim",
+        "meaningId": "synthetic:parent-child:meaning:CH05.P1",
+        "originalMeaningHash": "a7d4728aa2b067085d87cf30a9df39af7567cf761bc30ac869fff3409a4533c1",
+        "assignmentHash": "4dd3d50561b26cb31acca79a6d9e6987df5337ae788b35d3e43d4fa629a9c227",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/81",
+            "recordSha256": "0b23d0e3d5bd78942ff6d908b89caac93dcd99c7aa8abc3cf92048765cf54c60",
+            "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+            "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+          },
+          "hash": "0b23d0e3d5bd78942ff6d908b89caac93dcd99c7aa8abc3cf92048765cf54c60",
+          "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "보호 책임과 선택 범위를 어떻게 나눌까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:16:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:16:primary",
+          "meaningKey": "synthetic:kee:definition:16:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:2006d4a0e09dc001aaf93f8c1229f0ec058b86124821d461f3df6a94be00cf1a",
+            "clause": "부모 A가 자녀 B에게 설명하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "부모가 맡아야 할 보호 책임과 자녀가 선택할 범위",
+            "owner": "synthetic:parent-child:owner:A",
+            "pronunciation": {
+              "status": "known",
+              "reading": "부모가 맡아야 할 보호 책임과 자녀가 선택할 범위",
+              "final": "none"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:16:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:16:action",
+          "meaningKey": "synthetic:kee:definition:16:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:2006d4a0e09dc001aaf93f8c1229f0ec058b86124821d461f3df6a94be00cf1a",
+            "clause": "부모 A가 자녀 B에게 설명하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "자녀가 설명을 거절해도 보호 책임이 유지되는지",
+            "owner": "synthetic:parent-child:owner:A",
+            "pronunciation": {
+              "status": "known",
+              "reading": "자녀가 설명을 거절해도 보호 책임이 유지되는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-parent-child:자녀가 설명을 거절해도 보호 책임이 유지되는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:16:fusion",
+          "meaningKey": "synthetic:kee:definition:16:fusion",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "fusion"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:2006d4a0e09dc001aaf93f8c1229f0ec058b86124821d461f3df6a94be00cf1a",
+            "clause": "부모 A가 자녀 B에게 설명하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "같은 사람의 명리 근거와 MBTI 선호가 각각 설명하는 범위",
+            "owner": "synthetic:parent-child:owner:A",
+            "pronunciation": {
+              "status": "known",
+              "reading": "같은 사람의 명리 근거와 MBTI 선호가 각각 설명하는 범위",
+              "final": "none"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:16:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [
+            "FUSION_DERIVATION",
+            "MBTI_SOURCE_NODE",
+            "CALCULATED_NATAL_FACT"
+          ],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:17",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-parent-child",
+        "fixture": "synthetic:parent-child:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "parentChild",
+        "questionId": "synthetic:parent-child:question:CH06.P1",
+        "questionHash": "199477771568e59bb0ef2da07c132735edb173645836f7d63c3176767fc5aee6",
+        "materialId": "synthetic:parent-child:material:CH06.P1",
+        "claimId": "synthetic:parent-child:meaning:CH06.P1:claim",
+        "meaningId": "synthetic:parent-child:meaning:CH06.P1",
+        "originalMeaningHash": "b353ec88b1eeb50044692069ddd8248e7efa584848b9f4d52ca0e82038b7a631",
+        "assignmentHash": "0b25d860ac7456b9046b207bde717d1555376071638893570066e31a8c446cae",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/101",
+            "recordSha256": "ae07493026b76a3aac6769b0d5ff5182fe7553b4e9e9fcf493838c1b9b156d13",
+            "fileSha256": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
+            "sourceVersion": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+          },
+          "hash": "ae07493026b76a3aac6769b0d5ff5182fe7553b4e9e9fcf493838c1b9b156d13",
+          "version": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "의견을 전할 때 누구의 책임이 남아야 할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:17:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:17:primary",
+          "meaningKey": "synthetic:kee:definition:17:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:e6af26ae5c9cbe2254d898d264ecfe6e68d9661e0d6c10662b327beb8d81e256",
+            "clause": "자녀 B가 부모 A에게 의견을 전하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "자녀가 말할 선택과 부모가 맡을 조정 책임",
+            "owner": "synthetic:parent-child:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "자녀가 말할 선택과 부모가 맡을 조정 책임",
+              "final": "other"
+            }
+          },
+          "predicate": "retain",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:17:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:17:action",
+          "meaningKey": "synthetic:kee:definition:17:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:e6af26ae5c9cbe2254d898d264ecfe6e68d9661e0d6c10662b327beb8d81e256",
+            "clause": "자녀 B가 부모 A에게 의견을 전하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "자녀가 설명을 거절해도 보호 책임이 유지되는지",
+            "owner": "synthetic:parent-child:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "자녀가 설명을 거절해도 보호 책임이 유지되는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-parent-child:자녀가 설명을 거절해도 보호 책임이 유지되는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:18",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-coworker",
+        "fixture": "synthetic:coworker:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "coworker",
+        "questionId": "synthetic:coworker:question:CH05.P1",
+        "questionHash": "4af5ef1b2a91891d56e308bde1747cea92552d8a253645031181b80d66798c1d",
+        "materialId": "synthetic:coworker:material:CH05.P1",
+        "claimId": "synthetic:coworker:meaning:CH05.P1:claim",
+        "meaningId": "synthetic:coworker:meaning:CH05.P1",
+        "originalMeaningHash": "4109bc4f98817e8182461ecd1df49340d7a008c0f59c6bd3c167694cbd5c0de4",
+        "assignmentHash": "392db5b35ae7b3843072c974f72c51d53e25edf6dedf4a1dfe226be24c314875",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/81",
+            "recordSha256": "69df2b629ec87219c5c15bb596e98a400a2048654bb45dc8ec2acb2f90ed25c7",
+            "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+            "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+          },
+          "hash": "69df2b629ec87219c5c15bb596e98a400a2048654bb45dc8ec2acb2f90ed25c7",
+          "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "인계와 수락은 어떻게 다를까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:18:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:18:primary",
+          "meaningKey": "synthetic:kee:definition:18:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:0d18a1a4a70b40d4b171c1cf3cec0f47be956c4faaefe4f5337e1badf6884ab7",
+            "clause": "업무 결과물을 넘기는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "전달했다는 사실과 상대가 수락했다는 확인",
+            "owner": "synthetic:coworker:owner:A",
+            "pronunciation": {
+              "status": "known",
+              "reading": "전달했다는 사실과 상대가 수락했다는 확인",
+              "final": "other"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:18:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:18:action",
+          "meaningKey": "synthetic:kee:definition:18:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:0d18a1a4a70b40d4b171c1cf3cec0f47be956c4faaefe4f5337e1badf6884ab7",
+            "clause": "업무 결과물을 넘기는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "인계 뒤 누가 수락을 확인할지",
+            "owner": "synthetic:coworker:owner:A",
+            "pronunciation": {
+              "status": "known",
+              "reading": "인계 뒤 누가 수락을 확인할지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-coworker:인계 뒤 누가 수락을 확인할지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:19",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-coworker",
+        "fixture": "synthetic:coworker:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "coworker",
+        "questionId": "synthetic:coworker:question:CH06.P1",
+        "questionHash": "46d82b02a87ebadb61b21dc72697ef1921099a731fa95f0562b0d263287b668e",
+        "materialId": "synthetic:coworker:material:CH06.P1",
+        "claimId": "synthetic:coworker:meaning:CH06.P1:claim",
+        "meaningId": "synthetic:coworker:meaning:CH06.P1",
+        "originalMeaningHash": "bf55afc803b5b65efa88a4ead2af96afb5842c10e54fbcaffba6d64da22c9671",
+        "assignmentHash": "2cd7b35dd2b6e0a2ca70ee097b07089c25f595b21aa549d1cc47b4cbdbd677bb",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/101",
+            "recordSha256": "58273aecb97c3bdeb345a07f10e8fdf29a19b005e8063074c0c60da6d81d851b",
+            "fileSha256": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
+            "sourceVersion": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+          },
+          "hash": "58273aecb97c3bdeb345a07f10e8fdf29a19b005e8063074c0c60da6d81d851b",
+          "version": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "수정 의견이 어느 권한까지 이어질까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:19:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:19:primary",
+          "meaningKey": "synthetic:kee:definition:19:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:ca3c66be2167a1343f20387c95475fd9db5eef4ceb70ca0280fc7822012b4a2e",
+            "clause": "현장 정보를 함께 검토하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "수정 의견과 실제 승인 권한",
+            "owner": "synthetic:coworker:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "수정 의견과 실제 승인 권한",
+              "final": "other"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:19:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:19:action",
+          "meaningKey": "synthetic:kee:definition:19:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:ca3c66be2167a1343f20387c95475fd9db5eef4ceb70ca0280fc7822012b4a2e",
+            "clause": "현장 정보를 함께 검토하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "인계 뒤 누가 수락을 확인할지",
+            "owner": "synthetic:coworker:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "인계 뒤 누가 수락을 확인할지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-coworker:인계 뒤 누가 수락을 확인할지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:20",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-manager-report",
+        "fixture": "synthetic:manager-report:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "managerReport",
+        "questionId": "synthetic:manager-report:question:CH05.P1",
+        "questionHash": "10b164243cd6b0fd1f8c968c57e47212fafd9e631a7a9710b2ddc46cc47df71c",
+        "materialId": "synthetic:manager-report:material:CH05.P1",
+        "claimId": "synthetic:manager-report:meaning:CH05.P1:claim",
+        "meaningId": "synthetic:manager-report:meaning:CH05.P1",
+        "originalMeaningHash": "b9b61c0bce012eac380f08ec02277f432ed9d2265d3d9dcf066213229bea2f5e",
+        "assignmentHash": "649779c25a81ac8c3045be9e372fa8a613acdca373be182f403d742525c3a44a",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/81",
+            "recordSha256": "84cbeee07651603b1f5a3b793e006a044e2bf4afc59a3f77bf7afe11f650e036",
+            "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+            "sourceVersion": "synthetic-manager-report-v1"
+          },
+          "hash": "84cbeee07651603b1f5a3b793e006a044e2bf4afc59a3f77bf7afe11f650e036",
+          "version": "synthetic-manager-report-v1"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "위임과 결정권을 어떻게 구분할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:20:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:20:primary",
+          "meaningKey": "synthetic:kee:definition:20:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:9bed68a7567f9c232ad450d61a22d20a3046c2a066a5690c72316700795f5f28",
+            "clause": "상사 A가 팀원 B에게 업무를 맡기는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "위임한 업무와 별도로 확인해야 할 결정권",
+            "owner": "synthetic:manager-report:owner:A",
+            "pronunciation": {
+              "status": "known",
+              "reading": "위임한 업무와 별도로 확인해야 할 결정권",
+              "final": "other"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:20:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:20:action",
+          "meaningKey": "synthetic:kee:definition:20:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:9bed68a7567f9c232ad450d61a22d20a3046c2a066a5690c72316700795f5f28",
+            "clause": "상사 A가 팀원 B에게 업무를 맡기는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "팀원에게 실행 자원과 거절할 경로가 있는지",
+            "owner": "synthetic:manager-report:owner:A",
+            "pronunciation": {
+              "status": "known",
+              "reading": "팀원에게 실행 자원과 거절할 경로가 있는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-manager-report:팀원에게 실행 자원과 거절할 경로가 있는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:21",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-manager-report",
+        "fixture": "synthetic:manager-report:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "managerReport",
+        "questionId": "synthetic:manager-report:question:CH06.P1",
+        "questionHash": "57a0101c83c76ebdf1489fe917e4be104030e4907d2ba99b7672c24cdde6060b",
+        "materialId": "synthetic:manager-report:material:CH06.P1",
+        "claimId": "synthetic:manager-report:meaning:CH06.P1:claim",
+        "meaningId": "synthetic:manager-report:meaning:CH06.P1",
+        "originalMeaningHash": "07a291f6eb04e3379144df13bbe4ac1494ac06838ed36dbfc8141ce6cd76e877",
+        "assignmentHash": "a3df0815e9bbec3566c74c55dc0abacb53e6288829c29083feed7f8f1f7e8190",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/101",
+            "recordSha256": "c7d3b80dd25f1d855df2012db6c3461be567eb6b5f65199a167671dcc57f137e",
+            "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+            "sourceVersion": "synthetic-manager-report-v1"
+          },
+          "hash": "c7d3b80dd25f1d855df2012db6c3461be567eb6b5f65199a167671dcc57f137e",
+          "version": "synthetic-manager-report-v1"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "보고 이후 누구에게 어떤 책임이 남을까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:21:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:21:primary",
+          "meaningKey": "synthetic:kee:definition:21:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:61843af2da3bb8dc67e0344948368b13b58b23474d0f5a0b3e722c803ae01e7c",
+            "clause": "팀원 B가 상사 A에게 진행 상황을 보고한다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "팀원의 실행 범위와 상사가 조정할 자원",
+            "owner": "synthetic:manager-report:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "팀원의 실행 범위와 상사가 조정할 자원",
+              "final": "other"
+            }
+          },
+          "predicate": "check",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:21:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:21:action",
+          "meaningKey": "synthetic:kee:definition:21:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:61843af2da3bb8dc67e0344948368b13b58b23474d0f5a0b3e722c803ae01e7c",
+            "clause": "팀원 B가 상사 A에게 진행 상황을 보고한다면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "팀원에게 실행 자원과 거절할 경로가 있는지",
+            "owner": "synthetic:manager-report:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "팀원에게 실행 자원과 거절할 경로가 있는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-manager-report:팀원에게 실행 자원과 거절할 경로가 있는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:22",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-business-partner",
+        "fixture": "synthetic:business-partner:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "businessPartner",
+        "questionId": "synthetic:business-partner:question:CH05.P1",
+        "questionHash": "7e56b5904eb97111c6f49d28fdcfa0055f6d59a46042c7f23ab2d4a8a2fbe921",
+        "materialId": "synthetic:business-partner:material:CH05.P1",
+        "claimId": "synthetic:business-partner:meaning:CH05.P1:claim",
+        "meaningId": "synthetic:business-partner:meaning:CH05.P1",
+        "originalMeaningHash": "86fb641aae3a9482691a12e7c6ea4b2d4bcc4d31066e5ae3ca066695161d24ac",
+        "assignmentHash": "9657c9349da4b539bde4a8e77f4a7ed3f0f5beb3548d029e60d8fe7502b9792e",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/80",
+            "recordSha256": "29876faeb4e590b6e8ec09416de3a5ebd2e632195c0a4e00a0b4e346fe08f0e2",
+            "fileSha256": "6d0e307e75446075f35f2b3218a6ec1e01b7c2cd937b70b922c8f434dd3c3b51",
+            "sourceVersion": "synthetic-business-partner-v1"
+          },
+          "hash": "29876faeb4e590b6e8ec09416de3a5ebd2e632195c0a4e00a0b4e346fe08f0e2",
+          "version": "synthetic-business-partner-v1"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "사업 제안에서 돈의 어떤 기준을 구분할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:22:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:22:primary",
+          "meaningKey": "synthetic:kee:definition:22:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:f62a6e9b6de89edfbe71dba4850f90e11de7886943a2f5216601c0bef4db27a6",
+            "clause": "두 사람이 새 제안을 검토하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "매출과 실제 입금, 비용을 뺀 이익",
+            "owner": "synthetic:business-partner:owner:A",
+            "pronunciation": {
+              "status": "known",
+              "reading": "매출과 실제 입금, 비용을 뺀 이익",
+              "final": "other"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:22:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:22:action",
+          "meaningKey": "synthetic:kee:definition:22:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:f62a6e9b6de89edfbe71dba4850f90e11de7886943a2f5216601c0bef4db27a6",
+            "clause": "두 사람이 새 제안을 검토하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "실제 권한과 비용 부담에 별도의 합의가 있는지",
+            "owner": "synthetic:business-partner:owner:A",
+            "pronunciation": {
+              "status": "known",
+              "reading": "실제 권한과 비용 부담에 별도의 합의가 있는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-business-partner:실제 권한과 비용 부담에 별도의 합의가 있는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:23",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-business-partner",
+        "fixture": "synthetic:business-partner:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "businessPartner",
+        "questionId": "synthetic:business-partner:question:CH06.P1",
+        "questionHash": "b9e77ce0bb754e12fb03f7626a3d56946590b12298f9af7eb97e6a1ec8e5b33f",
+        "materialId": "synthetic:business-partner:material:CH06.P1",
+        "claimId": "synthetic:business-partner:meaning:CH06.P1:claim",
+        "meaningId": "synthetic:business-partner:meaning:CH06.P1",
+        "originalMeaningHash": "40540291a231279ad126c50266d93ae29789a5c0e7fbec10394d69d6f3507073",
+        "assignmentHash": "056037ebdff8db2b88b74ed9dbd702f7d556ae777d251ac183e229b917514836",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/100",
+            "recordSha256": "b9735f6b07c7a06b2d142c2912529909661676b5f4a140d27bfc04c5896e8741",
+            "fileSha256": "6d0e307e75446075f35f2b3218a6ec1e01b7c2cd937b70b922c8f434dd3c3b51",
+            "sourceVersion": "synthetic-business-partner-v1"
+          },
+          "hash": "b9735f6b07c7a06b2d142c2912529909661676b5f4a140d27bfc04c5896e8741",
+          "version": "synthetic-business-partner-v1"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "제안과 실제 결정권은 어떻게 다를까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:23:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:23:primary",
+          "meaningKey": "synthetic:kee:definition:23:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:12245763aa1fb912a194abee38d94d1915a5af5e78182dd2307d486b7db83fc4",
+            "clause": "운영 범위를 바꾸자고 제안하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "의견을 낼 범위와 별도로 합의할 결정권",
+            "owner": "synthetic:business-partner:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "의견을 낼 범위와 별도로 합의할 결정권",
+              "final": "other"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:23:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:23:action",
+          "meaningKey": "synthetic:kee:definition:23:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:12245763aa1fb912a194abee38d94d1915a5af5e78182dd2307d486b7db83fc4",
+            "clause": "운영 범위를 바꾸자고 제안하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "실제 권한과 비용 부담에 별도의 합의가 있는지",
+            "owner": "synthetic:business-partner:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "실제 권한과 비용 부담에 별도의 합의가 있는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-business-partner:실제 권한과 비용 부담에 별도의 합의가 있는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:24",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-friendship",
+        "fixture": "synthetic:friendship:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "friendship",
+        "questionId": "synthetic:friendship:q:CH01.P1.S1",
+        "questionHash": "109e809d9d17c0af4971067282893e2bb6b56a69aa1f0657274a7925257b03c7",
+        "materialId": "synthetic:friendship:material:CH01.P1.S1",
+        "claimId": "synthetic:friendship:claim:CH01.P1.S1",
+        "meaningId": "synthetic:friendship:meaning:CH01.P1.S1",
+        "originalMeaningHash": "7537d4e73619ec9a1652aedf8376ac0c8497f917e8814ef0207ed0056dbb6a01",
+        "assignmentHash": "585e517357a8eca3bef5b81f138712fbba1becb19431e3dba670e9ebf9204027",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/1",
+            "recordSha256": "d88bbc800f02dacf56c4040832d0c305cfb4804a41405be5e41cd21e4bf3c9e7",
+            "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+            "sourceVersion": "synthetic-friendship-v1"
+          },
+          "hash": "d88bbc800f02dacf56c4040832d0c305cfb4804a41405be5e41cd21e4bf3c9e7",
+          "version": "synthetic-friendship-v1"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "다시 만날 때 어떤 선택을 남길까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:24:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:24:primary",
+          "meaningKey": "synthetic:kee:definition:24:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:597e1bbb8603dae4a36e521425cf5e2122e590bd4b7b36cd769698b1eca2fa06",
+            "clause": "다시 만날 시간을 제안하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "함께할 시간과 각자가 거절할 선택",
+            "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "함께할 시간과 각자가 거절할 선택",
+              "final": "other"
+            }
+          },
+          "predicate": "retain",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:24:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:24:action",
+          "meaningKey": "synthetic:kee:definition:24:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:597e1bbb8603dae4a36e521425cf5e2122e590bd4b7b36cd769698b1eca2fa06",
+            "clause": "다시 만날 시간을 제안하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "서로 다시 만나지 않을 선택도 존중할 수 있는지",
+            "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "서로 다시 만나지 않을 선택도 존중할 수 있는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-friendship:서로 다시 만나지 않을 선택도 존중할 수 있는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:25",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-friendship",
+        "fixture": "synthetic:friendship:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "friendship",
+        "questionId": "synthetic:friendship:q:CH01.P1.S2",
+        "questionHash": "ecd4d7f6e9bd59c2fb593cc9ef7e20e39c5f663cff9e037ffe340d69851d7e40",
+        "materialId": "synthetic:friendship:material:CH01.P1.S2",
+        "claimId": "synthetic:friendship:claim:CH01.P1.S2",
+        "meaningId": "synthetic:friendship:meaning:CH01.P1.S2",
+        "originalMeaningHash": "120ad2aa95f3e4f855ab85d2f52f2c20c1d377b573e1e7fee75d033001cd1b73",
+        "assignmentHash": "c429dd3290a3a8da6f5774e35ed61ca210f1d70cd992e2489a90006028c02ddf",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/2",
+            "recordSha256": "3b2e3714fdb759ab921ffaa0140f23d584049a4a9abf6cbd9031aac28541bb7a",
+            "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+            "sourceVersion": "synthetic-friendship-v1"
+          },
+          "hash": "3b2e3714fdb759ab921ffaa0140f23d584049a4a9abf6cbd9031aac28541bb7a",
+          "version": "synthetic-friendship-v1"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "친밀함과 다른 만남을 어떻게 함께 존중할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:25:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:25:primary",
+          "meaningKey": "synthetic:kee:definition:25:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "risk",
+            "blunt"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:9c5f4e0089e050bac1785711faeff88b84289963b9044dffcb9c2ec588baeb22",
+            "clause": "서로 다른 모임에 참여하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "친밀함과 각자의 다른 만남",
+            "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "친밀함과 각자의 다른 만남",
+              "final": "other"
+            }
+          },
+          "predicate": "distinguish",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:25:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:25:action",
+          "meaningKey": "synthetic:kee:definition:25:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:9c5f4e0089e050bac1785711faeff88b84289963b9044dffcb9c2ec588baeb22",
+            "clause": "서로 다른 모임에 참여하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "서로 다시 만나지 않을 선택도 존중할 수 있는지",
+            "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "서로 다시 만나지 않을 선택도 존중할 수 있는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-friendship:서로 다시 만나지 않을 선택도 존중할 수 있는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:26",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-friendship",
+        "fixture": "synthetic:friendship:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "friendship",
+        "questionId": "synthetic:friendship:q:CH04.P1",
+        "questionHash": "c44daaa0a1c8cc741f25dd648830bbcf6288742b30aae83d36d233c0946b7ead",
+        "materialId": "synthetic:friendship:material:CH04.P1",
+        "claimId": "synthetic:friendship:claim:CH04.P1",
+        "meaningId": "synthetic:friendship:meaning:CH04.P1",
+        "originalMeaningHash": "f72760069bc618836d7c07a9e7aedc7baf14898a2bc97a03f68e759d8f64c613",
+        "assignmentHash": "8c532ccd29c97fbba11fcad586375f5c46a76917c8569eaaf3d1b7899e987397",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/60",
+            "recordSha256": "4c4277dd96e2aa244aaad0b654d1605b7415fd48156ab745b719f0ddcf1f1497",
+            "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+            "sourceVersion": "synthetic-friendship-v1"
+          },
+          "hash": "4c4277dd96e2aa244aaad0b654d1605b7415fd48156ab745b719f0ddcf1f1497",
+          "version": "synthetic-friendship-v1"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "연락할 방식을 정할 때 어떤 범위를 확인할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:26:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:26:primary",
+          "meaningKey": "synthetic:kee:definition:26:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "explanation",
+            "opening",
+            "concretization"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:6d05ec99af2d445b47d9a7829ca34cff84ac8d6d11eec5548bc993f8a0fb2b15",
+            "clause": "서로 연락할 방식을 정하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "연락할 여유와 답을 재촉하지 않을 범위",
+            "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "연락할 여유와 답을 재촉하지 않을 범위",
+              "final": "none"
+            }
+          },
+          "predicate": "check",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:26:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:26:action",
+          "meaningKey": "synthetic:kee:definition:26:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:597e1bbb8603dae4a36e521425cf5e2122e590bd4b7b36cd769698b1eca2fa06",
+            "clause": "다시 만날 시간을 제안하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "서로 다시 만나지 않을 선택도 존중할 수 있는지",
+            "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "서로 다시 만나지 않을 선택도 존중할 수 있는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-friendship:서로 다시 만나지 않을 선택도 존중할 수 있는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:27",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-friendship",
+        "fixture": "synthetic:friendship:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "friendship",
+        "questionId": "synthetic:friendship:q:CH07.P1.S1",
+        "questionHash": "85446624842e3501014efe1aebff739de56a5ea2dfa12f96f438db4310373e78",
+        "materialId": "synthetic:friendship:material:CH07.P1.S1",
+        "claimId": "synthetic:friendship:claim:CH07.P1.S1",
+        "meaningId": "synthetic:friendship:meaning:CH07.P1.S1",
+        "originalMeaningHash": "e7a9c977f9112b0775146129164a13808a24dd7f532d38cf0b573977baa81ada",
+        "assignmentHash": "e22832629bd03ade0055d60c7678bc99b36100bde21219a2e02ec15363e2c1d8",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/121",
+            "recordSha256": "dab6d35b50cffda9a9e77e864537fcd41d0bcfd179d122f4a92f3235dbfa18d2",
+            "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+            "sourceVersion": "synthetic-friendship-v1"
+          },
+          "hash": "dab6d35b50cffda9a9e77e864537fcd41d0bcfd179d122f4a92f3235dbfa18d2",
+          "version": "synthetic-friendship-v1"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "거절할 선택이 제한될 때 어떤 범위를 다시 확인할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:27:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:27:primary",
+          "meaningKey": "synthetic:kee:definition:27:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:7988ad4876d2a71f5a463726212b859a8cb77952626061db8e2e55d6fa1e3684",
+            "clause": "약속 제안에서 거절할 선택이 제한되는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "함께할 시간과 각자가 거절할 선택",
+            "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "함께할 시간과 각자가 거절할 선택",
+              "final": "other"
+            }
+          },
+          "predicate": "retain",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:27:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        },
+        {
+          "id": "synthetic:kee:definition:27:action",
+          "meaningKey": "synthetic:kee:definition:27:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:597e1bbb8603dae4a36e521425cf5e2122e590bd4b7b36cd769698b1eca2fa06",
+            "clause": "다시 만날 시간을 제안하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "서로 다시 만나지 않을 선택도 존중할 수 있는지",
+            "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "서로 다시 만나지 않을 선택도 존중할 수 있는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-friendship:서로 다시 만나지 않을 선택도 존중할 수 있는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": []
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:28",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-friendship",
+        "fixture": "synthetic:friendship:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "friendship",
+        "questionId": "synthetic:friendship:q:CH08.P1.S1",
+        "questionHash": "11fb5dd2bd129944860fbd9f2327ab384f01eb4cd365b4b423847ff9895d4bd9",
+        "materialId": "synthetic:friendship:material:CH08.P1.S1",
+        "claimId": "synthetic:friendship:claim:CH08.P1.S1",
+        "meaningId": "synthetic:friendship:meaning:CH08.P1.S1",
+        "originalMeaningHash": "8dbced6e37155f9f44eb0bce5dcdb0c60188adf7563e25e0ea8c3f1d10d27433",
+        "assignmentHash": "45cd2cbedb4052168b383acee2b912fc398b7a06f394e05878d4379ac4106c5c",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/141",
+            "recordSha256": "6ecd0e46805e1022fd4c873368b826bed97a91c43f0c041be2325df2e092820b",
+            "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+            "sourceVersion": "synthetic-friendship-v1"
+          },
+          "hash": "6ecd0e46805e1022fd4c873368b826bed97a91c43f0c041be2325df2e092820b",
+          "version": "synthetic-friendship-v1"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "회복을 시도하기 전에 무엇을 확인할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:28:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:28:primary",
+          "meaningKey": "synthetic:kee:definition:28:meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "positive"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:7f479a302b6f8e89c5ad3f44c7cdd2e7f0087647e3dca1e574f5155a273befa6",
+            "clause": "서로 다시 대화하기를 원하고 안전한 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "다시 말할 범위와 대화를 멈출 선택",
+            "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "다시 말할 범위와 대화를 멈출 선택",
+              "final": "other"
+            }
+          },
+          "predicate": "check",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:28:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": true,
+          "displayPrerequisiteUnitIds": [
+            "synthetic:kee:definition:27:primary"
+          ]
+        },
+        {
+          "id": "synthetic:kee:definition:28:action",
+          "meaningKey": "synthetic:kee:definition:28:action-meaning",
+          "kind": "CONDITIONAL_APPLICATION",
+          "functions": [
+            "action"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:7f479a302b6f8e89c5ad3f44c7cdd2e7f0087647e3dca1e574f5155a273befa6",
+            "clause": "서로 다시 대화하기를 원하고 안전한 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "서로 다시 만나지 않을 선택도 존중할 수 있는지",
+            "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "서로 다시 만나지 않을 선택도 존중할 수 있는지",
+              "final": "none"
+            }
+          },
+          "predicate": "ask",
+          "certainty": "conditional",
+          "adviceIdentity": "compatibility-friendship:서로 다시 만나지 않을 선택도 존중할 수 있는지",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": false,
+          "displayPrerequisiteUnitIds": [
+            "synthetic:kee:definition:27:primary"
+          ]
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    },
+    {
+      "id": "synthetic:kee:definition:29",
+      "provenance": "SYNTHETIC_TEST_ONLY",
+      "existingResearchMeaning": false,
+      "automaticClaimAnchorMapping": false,
+      "actualCustomerAuthorization": false,
+      "native": {
+        "engine": "compatibility-friendship",
+        "fixture": "synthetic:friendship:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "friendship",
+        "questionId": "synthetic:friendship:q:CH09.P1",
+        "questionHash": "efebe5588c8a845616d612623c09df698d977195fae985a46c79c7056ad52556",
+        "materialId": "synthetic:friendship:material:CH09.P1",
+        "claimId": "synthetic:friendship:claim:CH04.P1",
+        "meaningId": "synthetic:friendship:meaning:CH04.P1",
+        "originalMeaningHash": "e3501fc7a7f824e58436ac190ee8e3aec022016cf6745dea408652b9d1b951de",
+        "assignmentHash": "e47e9615c1e048837d4f6d9b5bc15695aa17ae6c52cae7f33c334f5dfa1388ed",
+        "source": {
+          "locator": {
+            "file": "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json",
+            "pointer": "/materials/160",
+            "recordSha256": "fbdd0d65e76ca99297c8f8996e36c498028742ad2384a7d48343f8456ee22383",
+            "fileSha256": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+            "sourceVersion": "synthetic-friendship-v1"
+          },
+          "hash": "fbdd0d65e76ca99297c8f8996e36c498028742ad2384a7d48343f8456ee22383",
+          "version": "synthetic-friendship-v1"
+        }
+      },
+      "identifierDefinitions": [],
+      "syntheticQuestionGloss": "앞에서 소개한 연락의 여유와 재촉하지 않을 범위를 어떻게 기억할까?",
+      "glossIsNewSyntheticTestData": true,
+      "primaryUnit": "synthetic:kee:definition:29:primary",
+      "units": [
+        {
+          "id": "synthetic:kee:definition:29:primary",
+          "meaningKey": "synthetic:kee:definition:26:meaning",
+          "kind": "RECALL",
+          "functions": [
+            "summary",
+            "closing"
+          ],
+          "condition": {
+            "id": "synthetic:kee:condition:6d05ec99af2d445b47d9a7829ca34cff84ac8d6d11eec5548bc993f8a0fb2b15",
+            "clause": "서로 연락할 방식을 정하는 상황이라면,"
+          },
+          "negationScope": "NO_NEGATION",
+          "subject": null,
+          "object": {
+            "kind": "noun_phrase",
+            "surface": "연락할 여유와 답을 재촉하지 않을 범위",
+            "owner": "fixture-pair:synthetic:friendship:owner:A|synthetic:friendship:owner:B",
+            "pronunciation": {
+              "status": "known",
+              "reading": "연락할 여유와 답을 재촉하지 않을 범위",
+              "final": "none"
+            }
+          },
+          "predicate": "check",
+          "certainty": "conditional",
+          "adviceIdentity": "synthetic:kee:definition:26:advice",
+          "sceneRef": null,
+          "sceneCondition": null,
+          "requiredEvidenceKinds": [],
+          "requiresPreviousDisplay": true,
+          "displayPrerequisiteUnitIds": [
+            "synthetic:kee:definition:26:primary"
+          ]
+        }
+      ],
+      "counterexamples": [
+        "조건에 해당하지 않는 상황에는 이 테스트 적용을 넓히지 않는다."
+      ],
+      "prohibitedInferences": [
+        "미입력 과거 경험",
+        "타인의 감정 확정",
+        "미래 사건 보장",
+        "새 명리 또는 MBTI 계산 근거",
+        "실제 권한·계약·지분·수익·동의의 창작"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,865 @@
+{
+  "profiles": [
+    {
+      "id": "rr:profile:stem_hap",
+      "targetId": "foundation:relation:stem_hap",
+      "key": "stem_hap",
+      "label": "천간합",
+      "hanja": "天干合",
+      "aliases": [
+        "천간합",
+        "십간합",
+        "오합"
+      ]
+    },
+    {
+      "id": "rr:profile:yukhap",
+      "targetId": "foundation:relation:yukhap",
+      "key": "yukhap",
+      "label": "지지 육합",
+      "hanja": "地支六合",
+      "aliases": [
+        "지지 육합",
+        "육합",
+        "지합"
+      ]
+    },
+    {
+      "id": "rr:profile:chung",
+      "targetId": "foundation:relation:chung",
+      "key": "chung",
+      "label": "지지 충",
+      "hanja": "地支衝",
+      "aliases": [
+        "지지 충",
+        "충",
+        "육충",
+        "沖"
+      ]
+    },
+    {
+      "id": "rr:profile:samhap",
+      "targetId": "foundation:relation:samhap",
+      "key": "samhap",
+      "label": "지지 삼합",
+      "hanja": "地支三合",
+      "aliases": [
+        "지지 삼합",
+        "삼합",
+        "삼합국"
+      ]
+    },
+    {
+      "id": "rr:profile:hyeong",
+      "targetId": "foundation:relation:hyeong",
+      "key": "hyeong",
+      "label": "지지 형",
+      "hanja": "地支刑",
+      "aliases": [
+        "지지 형",
+        "형",
+        "삼형",
+        "자형"
+      ]
+    },
+    {
+      "id": "rr:profile:hae",
+      "targetId": "foundation:relation:hae",
+      "key": "hae",
+      "label": "지지 해",
+      "hanja": "地支害",
+      "aliases": [
+        "지지 해",
+        "해",
+        "육해",
+        "六害"
+      ]
+    },
+    {
+      "id": "rr:profile:banhap",
+      "targetId": "foundation:relation:banhap",
+      "key": "banhap",
+      "label": "지지 반합",
+      "hanja": "地支半合",
+      "aliases": [
+        "지지 반합",
+        "반합",
+        "삼합의 부분 조합"
+      ]
+    },
+    {
+      "id": "rr:profile:pa",
+      "targetId": "foundation:relation:pa",
+      "key": "pa",
+      "label": "지지 파",
+      "hanja": "地支破",
+      "aliases": [
+        "지지 파",
+        "파",
+        "육파",
+        "六破"
+      ]
+    },
+    {
+      "id": "rr:profile:wonjin",
+      "targetId": "foundation:relation:wonjin",
+      "key": "wonjin",
+      "label": "원진 관계",
+      "hanja": "怨嗔",
+      "aliases": [
+        "원진 관계",
+        "원진",
+        "怨嗔煞"
+      ]
+    }
+  ],
+  "combinations": [
+    {
+      "id": "rr:combination:stem_hap:甲己",
+      "relation": "stem_hap",
+      "members": [
+        "甲",
+        "己"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:stem_hap:乙庚",
+      "relation": "stem_hap",
+      "members": [
+        "乙",
+        "庚"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:stem_hap:丙辛",
+      "relation": "stem_hap",
+      "members": [
+        "丙",
+        "辛"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:stem_hap:丁壬",
+      "relation": "stem_hap",
+      "members": [
+        "丁",
+        "壬"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:stem_hap:戊癸",
+      "relation": "stem_hap",
+      "members": [
+        "戊",
+        "癸"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:yukhap:子丑",
+      "relation": "yukhap",
+      "members": [
+        "子",
+        "丑"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:yukhap:寅亥",
+      "relation": "yukhap",
+      "members": [
+        "寅",
+        "亥"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:pa:寅亥"
+      ]
+    },
+    {
+      "id": "rr:combination:yukhap:卯戌",
+      "relation": "yukhap",
+      "members": [
+        "卯",
+        "戌"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:yukhap:辰酉",
+      "relation": "yukhap",
+      "members": [
+        "辰",
+        "酉"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:yukhap:巳申",
+      "relation": "yukhap",
+      "members": [
+        "巳",
+        "申"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:hyeong:巳申",
+        "rr:combination:pa:巳申"
+      ]
+    },
+    {
+      "id": "rr:combination:yukhap:午未",
+      "relation": "yukhap",
+      "members": [
+        "午",
+        "未"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:chung:子午",
+      "relation": "chung",
+      "members": [
+        "子",
+        "午"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:chung:丑未",
+      "relation": "chung",
+      "members": [
+        "丑",
+        "未"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:hyeong:未丑"
+      ]
+    },
+    {
+      "id": "rr:combination:chung:寅申",
+      "relation": "chung",
+      "members": [
+        "寅",
+        "申"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:hyeong:申寅"
+      ]
+    },
+    {
+      "id": "rr:combination:chung:卯酉",
+      "relation": "chung",
+      "members": [
+        "卯",
+        "酉"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:chung:辰戌",
+      "relation": "chung",
+      "members": [
+        "辰",
+        "戌"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:chung:巳亥",
+      "relation": "chung",
+      "members": [
+        "巳",
+        "亥"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:samhap:申子辰",
+      "relation": "samhap",
+      "members": [
+        "申",
+        "子",
+        "辰"
+      ],
+      "form": "triple",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:samhap:亥卯未",
+      "relation": "samhap",
+      "members": [
+        "亥",
+        "卯",
+        "未"
+      ],
+      "form": "triple",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:samhap:寅午戌",
+      "relation": "samhap",
+      "members": [
+        "寅",
+        "午",
+        "戌"
+      ],
+      "form": "triple",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:samhap:巳酉丑",
+      "relation": "samhap",
+      "members": [
+        "巳",
+        "酉",
+        "丑"
+      ],
+      "form": "triple",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:hyeong:寅巳",
+      "relation": "hyeong",
+      "members": [
+        "寅",
+        "巳"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:hae:寅巳"
+      ]
+    },
+    {
+      "id": "rr:combination:hyeong:巳申",
+      "relation": "hyeong",
+      "members": [
+        "巳",
+        "申"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:yukhap:巳申",
+        "rr:combination:pa:巳申"
+      ]
+    },
+    {
+      "id": "rr:combination:hyeong:申寅",
+      "relation": "hyeong",
+      "members": [
+        "申",
+        "寅"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:chung:寅申"
+      ]
+    },
+    {
+      "id": "rr:combination:hyeong:丑戌",
+      "relation": "hyeong",
+      "members": [
+        "丑",
+        "戌"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:hyeong:戌未",
+      "relation": "hyeong",
+      "members": [
+        "戌",
+        "未"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:pa:未戌"
+      ]
+    },
+    {
+      "id": "rr:combination:hyeong:未丑",
+      "relation": "hyeong",
+      "members": [
+        "未",
+        "丑"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:chung:丑未"
+      ]
+    },
+    {
+      "id": "rr:combination:hyeong:子卯",
+      "relation": "hyeong",
+      "members": [
+        "子",
+        "卯"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:hyeong:辰辰",
+      "relation": "hyeong",
+      "members": [
+        "辰",
+        "辰"
+      ],
+      "form": "self_pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:hyeong:午午",
+      "relation": "hyeong",
+      "members": [
+        "午",
+        "午"
+      ],
+      "form": "self_pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:hyeong:酉酉",
+      "relation": "hyeong",
+      "members": [
+        "酉",
+        "酉"
+      ],
+      "form": "self_pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:hyeong:亥亥",
+      "relation": "hyeong",
+      "members": [
+        "亥",
+        "亥"
+      ],
+      "form": "self_pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:hyeong:寅巳申",
+      "relation": "hyeong",
+      "members": [
+        "寅",
+        "巳",
+        "申"
+      ],
+      "form": "triple",
+      "producerMembership": "historical_group_only",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:hyeong:丑戌未",
+      "relation": "hyeong",
+      "members": [
+        "丑",
+        "戌",
+        "未"
+      ],
+      "form": "triple",
+      "producerMembership": "historical_group_only",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:hae:子未",
+      "relation": "hae",
+      "members": [
+        "子",
+        "未"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:wonjin:子未"
+      ]
+    },
+    {
+      "id": "rr:combination:hae:丑午",
+      "relation": "hae",
+      "members": [
+        "丑",
+        "午"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:wonjin:丑午"
+      ]
+    },
+    {
+      "id": "rr:combination:hae:寅巳",
+      "relation": "hae",
+      "members": [
+        "寅",
+        "巳"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:hyeong:寅巳"
+      ]
+    },
+    {
+      "id": "rr:combination:hae:卯辰",
+      "relation": "hae",
+      "members": [
+        "卯",
+        "辰"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:hae:申亥",
+      "relation": "hae",
+      "members": [
+        "申",
+        "亥"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:hae:酉戌",
+      "relation": "hae",
+      "members": [
+        "酉",
+        "戌"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:banhap:申子",
+      "relation": "banhap",
+      "members": [
+        "申",
+        "子"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:banhap:申辰",
+      "relation": "banhap",
+      "members": [
+        "申",
+        "辰"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:banhap:子辰",
+      "relation": "banhap",
+      "members": [
+        "子",
+        "辰"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:banhap:亥卯",
+      "relation": "banhap",
+      "members": [
+        "亥",
+        "卯"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:banhap:亥未",
+      "relation": "banhap",
+      "members": [
+        "亥",
+        "未"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:banhap:卯未",
+      "relation": "banhap",
+      "members": [
+        "卯",
+        "未"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:banhap:寅午",
+      "relation": "banhap",
+      "members": [
+        "寅",
+        "午"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:banhap:寅戌",
+      "relation": "banhap",
+      "members": [
+        "寅",
+        "戌"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:banhap:午戌",
+      "relation": "banhap",
+      "members": [
+        "午",
+        "戌"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:banhap:巳酉",
+      "relation": "banhap",
+      "members": [
+        "巳",
+        "酉"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:banhap:巳丑",
+      "relation": "banhap",
+      "members": [
+        "巳",
+        "丑"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:banhap:酉丑",
+      "relation": "banhap",
+      "members": [
+        "酉",
+        "丑"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:pa:子酉",
+      "relation": "pa",
+      "members": [
+        "子",
+        "酉"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:pa:丑辰",
+      "relation": "pa",
+      "members": [
+        "丑",
+        "辰"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:pa:寅亥",
+      "relation": "pa",
+      "members": [
+        "寅",
+        "亥"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:yukhap:寅亥"
+      ]
+    },
+    {
+      "id": "rr:combination:pa:卯午",
+      "relation": "pa",
+      "members": [
+        "卯",
+        "午"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:pa:巳申",
+      "relation": "pa",
+      "members": [
+        "巳",
+        "申"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:yukhap:巳申",
+        "rr:combination:hyeong:巳申"
+      ]
+    },
+    {
+      "id": "rr:combination:pa:未戌",
+      "relation": "pa",
+      "members": [
+        "未",
+        "戌"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:hyeong:戌未"
+      ]
+    },
+    {
+      "id": "rr:combination:wonjin:子未",
+      "relation": "wonjin",
+      "members": [
+        "子",
+        "未"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:hae:子未"
+      ]
+    },
+    {
+      "id": "rr:combination:wonjin:丑午",
+      "relation": "wonjin",
+      "members": [
+        "丑",
+        "午"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": [
+        "rr:combination:hae:丑午"
+      ]
+    },
+    {
+      "id": "rr:combination:wonjin:寅酉",
+      "relation": "wonjin",
+      "members": [
+        "寅",
+        "酉"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:wonjin:卯申",
+      "relation": "wonjin",
+      "members": [
+        "卯",
+        "申"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:wonjin:辰亥",
+      "relation": "wonjin",
+      "members": [
+        "辰",
+        "亥"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    },
+    {
+      "id": "rr:combination:wonjin:巳戌",
+      "relation": "wonjin",
+      "members": [
+        "巳",
+        "戌"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "overlaps": []
+    }
+  ]
+}

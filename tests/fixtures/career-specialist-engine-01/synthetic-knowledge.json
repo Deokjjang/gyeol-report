@@ -1,0 +1,835 @@
+{
+  "scope": "SYNTHETIC_ONLY; no real research records or approvals",
+  "enterableFacts": [
+    "synthetic:career:money:netProfit",
+    "synthetic:career:learning:independentPerformance",
+    "synthetic:career:learning:interest"
+  ],
+  "questions": [
+    {
+      "id": "synthetic:career:q:1",
+      "requiredMeanings": [
+        "synthetic:career:required:1"
+      ],
+      "context": "work",
+      "domain": "career_money_study",
+      "chapter": "CH01",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:career:q:2",
+      "requiredMeanings": [
+        "synthetic:career:required:2"
+      ],
+      "context": "work",
+      "domain": "career_money_study",
+      "chapter": "CH02",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:career:q:3",
+      "requiredMeanings": [
+        "synthetic:career:required:3"
+      ],
+      "context": "work",
+      "domain": "career_money_study",
+      "chapter": "CH03",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:career:q:4",
+      "requiredMeanings": [
+        "synthetic:career:required:4"
+      ],
+      "context": "work",
+      "domain": "career_money_study",
+      "chapter": "CH04",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:career:q:5",
+      "requiredMeanings": [
+        "synthetic:career:required:5"
+      ],
+      "context": "work",
+      "domain": "career_money_study",
+      "chapter": "CH05",
+      "importance": 2
+    },
+    {
+      "id": "synthetic:career:q:6",
+      "requiredMeanings": [
+        "synthetic:career:required:6"
+      ],
+      "context": "work",
+      "domain": "career_money_study",
+      "chapter": "CH06",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:career:q:7",
+      "requiredMeanings": [
+        "synthetic:career:required:7"
+      ],
+      "context": "work",
+      "domain": "career_money_study",
+      "chapter": "CH07",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:career:q:8",
+      "requiredMeanings": [
+        "synthetic:career:required:8"
+      ],
+      "context": "work",
+      "domain": "career_money_study",
+      "chapter": "CH08",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:career:q:9",
+      "requiredMeanings": [
+        "synthetic:career:required:9"
+      ],
+      "context": "closing",
+      "domain": "career_money_study",
+      "chapter": "CH09",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:career:q:10",
+      "requiredMeanings": [
+        "synthetic:career:required:10"
+      ],
+      "context": "work",
+      "domain": "career_money_study",
+      "chapter": "CH06",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:career:q:11",
+      "requiredMeanings": [
+        "synthetic:career:required:11"
+      ],
+      "context": "work",
+      "domain": "career_money_study",
+      "chapter": "CH07",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:career:q:12",
+      "requiredMeanings": [
+        "synthetic:career:required:12"
+      ],
+      "context": "work",
+      "domain": "career_money_study",
+      "chapter": "CH03",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:career:q:13",
+      "requiredMeanings": [
+        "synthetic:career:required:13"
+      ],
+      "context": "work",
+      "domain": "career_money_study",
+      "chapter": "CH02",
+      "importance": 1
+    }
+  ],
+  "materials": [
+    {
+      "id": "synthetic:career:a",
+      "questionId": "synthetic:career:q:1",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:a",
+        "claimId": "synthetic:career:claim:a",
+        "reviewId": "synthetic:career:review:a",
+        "requiredMeanings": [
+          "synthetic:career:required:1"
+        ],
+        "conditions": [
+          "synthetic:career:condition:a"
+        ],
+        "action": "synthetic:career:action:a",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:shared",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:career:b",
+      "questionId": "synthetic:career:q:1",
+      "root": "y",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:b",
+        "claimId": "synthetic:career:claim:b",
+        "reviewId": "synthetic:career:review:b",
+        "requiredMeanings": [
+          "synthetic:career:required:1"
+        ],
+        "conditions": [
+          "synthetic:career:condition:b"
+        ],
+        "action": "synthetic:career:action:b",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:b",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:career:c",
+      "questionId": "synthetic:career:q:2",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:c",
+        "claimId": "synthetic:career:claim:c",
+        "reviewId": "synthetic:career:review:c",
+        "requiredMeanings": [
+          "synthetic:career:required:2"
+        ],
+        "conditions": [
+          "synthetic:career:condition:c"
+        ],
+        "action": "synthetic:career:action:c",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:shared",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:career:d",
+      "questionId": "synthetic:career:q:3",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:d",
+        "claimId": "synthetic:career:claim:d",
+        "reviewId": "synthetic:career:review:d",
+        "requiredMeanings": [
+          "synthetic:career:required:3"
+        ],
+        "conditions": [
+          "synthetic:career:condition:d"
+        ],
+        "action": "synthetic:career:action:d",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:shared",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:career:e",
+      "questionId": "synthetic:career:q:4",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:e",
+        "claimId": "synthetic:career:claim:e",
+        "reviewId": "synthetic:career:review:e",
+        "requiredMeanings": [
+          "synthetic:career:required:4"
+        ],
+        "conditions": [
+          "synthetic:career:condition:e"
+        ],
+        "action": "synthetic:career:action:e",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:shared",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:career:f",
+      "questionId": "synthetic:career:q:5",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:f",
+        "claimId": "synthetic:career:claim:f",
+        "reviewId": "synthetic:career:review:f",
+        "requiredMeanings": [
+          "synthetic:career:required:5"
+        ],
+        "conditions": [
+          "synthetic:career:condition:f"
+        ],
+        "action": "synthetic:career:action:f",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:shared",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:career:tension-positive",
+      "questionId": "synthetic:career:q:6",
+      "root": "z",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:tension-positive",
+        "claimId": "synthetic:career:claim:tension-positive",
+        "reviewId": "synthetic:career:review:tension-positive",
+        "requiredMeanings": [
+          "synthetic:career:required:6"
+        ],
+        "conditions": [
+          "synthetic:career:condition:tension-positive"
+        ],
+        "action": "synthetic:career:action:tension-positive",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:tension-positive",
+        "polarity": "positive",
+        "axis": {
+          "id": "synthetic:career:axis:one",
+          "direction": 1
+        },
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:career:tension-negative",
+      "questionId": "synthetic:career:q:7",
+      "root": "w",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:tension-negative",
+        "claimId": "synthetic:career:claim:tension-negative",
+        "reviewId": "synthetic:career:review:tension-negative",
+        "requiredMeanings": [
+          "synthetic:career:required:7"
+        ],
+        "conditions": [
+          "synthetic:career:condition:tension-negative"
+        ],
+        "action": "synthetic:career:action:tension-negative",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:tension-negative",
+        "polarity": "risk",
+        "axis": {
+          "id": "synthetic:career:axis:one",
+          "direction": -1
+        },
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:career:tension-resolved",
+      "questionId": "synthetic:career:q:7",
+      "root": "v",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:tension-resolved",
+        "claimId": "synthetic:career:claim:tension-resolved",
+        "reviewId": "synthetic:career:review:tension-resolved",
+        "requiredMeanings": [
+          "synthetic:career:required:7"
+        ],
+        "conditions": [
+          "synthetic:career:condition:tension-resolved"
+        ],
+        "action": "synthetic:career:action:tension-resolved",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:tension-resolved",
+        "polarity": "risk",
+        "axis": {
+          "id": "synthetic:career:axis:one",
+          "direction": -1
+        },
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [
+          "synthetic:career:tension-positive"
+        ],
+        "verifiedComplementWith": [
+          "synthetic:career:tension-positive"
+        ],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:career:i",
+      "questionId": "synthetic:career:q:8",
+      "root": "k",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:i",
+        "claimId": "synthetic:career:claim:i",
+        "reviewId": "synthetic:career:review:i",
+        "requiredMeanings": [
+          "synthetic:career:required:8"
+        ],
+        "conditions": [
+          "synthetic:career:condition:i"
+        ],
+        "action": "synthetic:career:action:i",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:i",
+        "polarity": "positive",
+        "axis": null,
+        "direct": false,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:career:j",
+      "questionId": "synthetic:career:q:8",
+      "root": "j",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:j",
+        "claimId": "synthetic:career:claim:j",
+        "reviewId": "synthetic:career:review:j",
+        "requiredMeanings": [
+          "synthetic:career:required:8"
+        ],
+        "conditions": [
+          "synthetic:career:condition:j"
+        ],
+        "action": "synthetic:career:action:j",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:j",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:career:recall",
+      "questionId": "synthetic:career:q:9",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:a",
+        "claimId": "synthetic:career:claim:a",
+        "reviewId": "synthetic:career:review:recall",
+        "requiredMeanings": [
+          "synthetic:career:required:9"
+        ],
+        "conditions": [
+          "synthetic:career:condition:recall"
+        ],
+        "action": "synthetic:career:action:recall",
+        "context": "closing",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:recall",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": "synthetic:career:a",
+        "compatiblePriorContexts": [
+          "work"
+        ],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": [
+          "synthetic:career:q:1"
+        ]
+      }
+    },
+    {
+      "id": "synthetic:career:money",
+      "questionId": "synthetic:career:q:10",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:money",
+        "claimId": "synthetic:career:claim:money",
+        "reviewId": "synthetic:career:review:money",
+        "requiredMeanings": [
+          "synthetic:career:required:10"
+        ],
+        "conditions": [
+          "synthetic:career:condition:money"
+        ],
+        "action": "synthetic:career:action:money",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:money",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [
+          "synthetic:career:money:netProfit"
+        ],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:career:learning",
+      "questionId": "synthetic:career:q:11",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:learning",
+        "claimId": "synthetic:career:claim:learning",
+        "reviewId": "synthetic:career:review:learning",
+        "requiredMeanings": [
+          "synthetic:career:required:11"
+        ],
+        "conditions": [
+          "synthetic:career:condition:learning"
+        ],
+        "action": "synthetic:career:action:learning",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:learning",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [
+          "synthetic:career:learning:independentPerformance"
+        ],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:career:recommendation",
+      "questionId": "synthetic:career:q:12",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:recommendation",
+        "claimId": "synthetic:career:claim:recommendation",
+        "reviewId": "synthetic:career:review:recommendation",
+        "requiredMeanings": [
+          "synthetic:career:required:12"
+        ],
+        "conditions": [
+          "synthetic:career:condition:recommendation"
+        ],
+        "action": "synthetic:career:action:recommendation",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:recommendation",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": "synthetic:career:route:review",
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:career:same-claim",
+      "questionId": "synthetic:career:q:13",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:c",
+        "claimId": "synthetic:career:claim:c",
+        "reviewId": "synthetic:career:review:same-claim",
+        "requiredMeanings": [
+          "synthetic:career:required:13"
+        ],
+        "conditions": [
+          "synthetic:career:condition:same-claim"
+        ],
+        "action": "synthetic:career:action:same-claim",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:same-claim",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      }
+    }
+  ]
+}

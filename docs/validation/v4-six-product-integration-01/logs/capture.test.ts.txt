@@ -1,0 +1,25 @@
+import {it,expect} from '/Users/Deokmin/Dev/projects/gyeol-report/node_modules/vitest/dist/index.js';
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {generateV4ShadowReport} from '@/lib/interpretation-v4/runtimeShadow';
+import {projectBook} from '@/app/dev/book-preview/bookProjection';
+import {v4Digest} from '@/lib/interpretation-v4/runtimeProjection';
+import {createProductPreviewSnapshot} from '@/lib/report-generation/productPreviewSnapshot';
+import {storedBook} from '@/lib/book/storedReport';
+const dir='/tmp/gyeol-six-integration-validation',group=process.env.CASE_GROUP!,phase=process.env.CAPTURE_PHASE??'source';
+const cases=JSON.parse(readFileSync(dir+'/cases.json','utf8'))[group];
+mkdirSync(dir+'/'+phase+'/'+group,{recursive:true});
+it.each(cases.filter(f=>!process.env.CASE_PREFIX||f.id.startsWith(process.env.CASE_PREFIX)))('$id actual paid generation, full Book and saved reader',async f=>{
+ const g=await generateV4ShadowReport(f.payload,f.clock);
+ const old=phase==='source'?null:JSON.parse(readFileSync(dir+'/source/'+group+'/'+f.id+'.json','utf8'));
+ if(!g.ok){expect(['S-time','S-both']).toContain(f.id);expect(g.error).toMatchObject({code:'INVALID_REPORT_INPUT',validationErrors:['DAYUN_UNCERTAIN']});if(old)expect(g).toEqual(old.g);writeFileSync(dir+'/'+phase+'/'+group+'/'+f.id+'.json',JSON.stringify({g}));return;}
+ const e=g.evidencePacket,r=e.composition.result,book=projectBook(e);expect(book).toBeTruthy();
+ const edition=r.integration?.readerEdition;
+ if(['comprehensive','career','love','compatibility'].includes(group)){expect(edition.chapters).toHaveLength(group==='comprehensive'?13:9);expect(edition.chapters.flatMap(c=>c.paragraphs)).toHaveLength(group==='comprehensive'?52:36);}
+ if(group==='major')expect(r.years.map(y=>y.year)).toEqual(Array.from({length:14},(_,i)=>2023+i));
+ if(group==='annual')expect(r.months).toHaveLength(12);
+ const made=createProductPreviewSnapshot({reportId:'integration-'+group+'-'+f.id,createdAtIso:e.generatedAt,productKey:f.payload.productKey,productSlug:f.payload.productSlug,draft:g.draft,evidencePacket:e});expect(made.ok).toBe(true);if(!made.ok)return;
+ const snapshot=made.value;expect(storedBook(snapshot)?.data).toEqual(book);expect(storedBook(snapshot,'https://gyeolreport.com/r/abcdefghijklmnopqrstuvwx')?.data).toEqual(book);
+ const hashes={draft:v4Digest(g.draft),evidence:v4Digest(e),calculations:v4Digest(e.calculations),narrative:v4Digest(r.narrative),integration:v4Digest(r.integration),book:v4Digest(book),snapshot:v4Digest(snapshot)};
+ if(old){expect(hashes).toEqual(old.hashes);expect(g).toEqual(old.g);expect(book).toEqual(old.book);const saved=JSON.parse(JSON.stringify(old.snapshot)),h=v4Digest(saved);expect(storedBook(saved)?.data).toEqual(old.book);expect(storedBook(saved,'https://gyeolreport.com/r/abcdefghijklmnopqrstuvwx')?.data).toEqual(old.book);expect(v4Digest(saved)).toBe(h);const repeat=await generateV4ShadowReport(f.payload,f.clock);expect(repeat).toEqual(g);}
+ writeFileSync(dir+'/'+phase+'/'+group+'/'+f.id+'.json',JSON.stringify({g,book,snapshot,hashes}));
+},120000);

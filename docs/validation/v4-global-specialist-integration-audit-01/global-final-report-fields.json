@@ -1,0 +1,161 @@
+{
+  "TASK": "V4-GLOBAL-SPECIALIST-INTEGRATION-AUDIT-01",
+  "BASE_SHA": "0872595559ccd88a0452ad1edfe9f771b1ef4678",
+  "BRANCH": "v4/global-specialist-integration-audit-01",
+  "COMMIT_SHA": "POST_COMMIT_RECEIPT_OUTSIDE_GIT",
+  "REMOTE_SHA_MATCH": "POST_PUSH_VERIFICATION_OUTSIDE_GIT",
+  "GLOBAL_INTEGRATION_STATUS": "OFFLINE_IMPLEMENTED_WITH_OPEN_GATES",
+  "SPECIALIST_ENGINE_COUNT": 12,
+  "PRODUCT_COVERAGE": [
+    "annual_fortune",
+    "career_money_study",
+    "love_marriage_child",
+    "major_fortune",
+    "saju_mbti_compatibility",
+    "saju_mbti_full"
+  ],
+  "RELATIONSHIP_COVERAGE": [
+    "businessPartner",
+    "coworker",
+    "friendship",
+    "love",
+    "managerReport",
+    "marriage",
+    "parentChild"
+  ],
+  "ACTUAL_ENGINE_INVOCATIONS": {
+    "valid": 27,
+    "classes": 12,
+    "wrongScopeCallsRejected": 24
+  },
+  "GRAPH_CASES": {
+    "count": 27,
+    "allStatus": "PARTIAL"
+  },
+  "CANDIDATE_FIXTURE_EVALUATIONS": 5073,
+  "SOURCE_MATCH_BEFORE": 10536,
+  "SOURCE_MATCH_AFTER": 11170,
+  "ACTUAL_EVIDENCE_MATCH_BEFORE": 917,
+  "ACTUAL_EVIDENCE_MATCH_AFTER": 1489,
+  "STRUCTURAL_MATCH_BEFORE": 81,
+  "STRUCTURAL_MATCH_AFTER": 81,
+  "GLOBAL_CANDIDATE_ENVELOPES": 5073,
+  "ORIGINAL_RECEIPTS_PRESERVED": {
+    "count": 5073,
+    "completeReceipts": true,
+    "exactHashesAndGateStates": true
+  },
+  "SOURCE_PROVENANCE_COVERAGE": {
+    "envelopesWithOriginalLocator": 5073,
+    "nativeSourceIntegrityStates": {
+      "PASS": 5043,
+      "FAIL": 30,
+      "UNKNOWN": 0,
+      "NOT_APPLICABLE": 0,
+      "REVIEW_REQUIRED": 0
+    },
+    "existingFailedCatalogRecords": 10
+  },
+  "SOURCE_HASH_INTEGRITY": {
+    "all5086BaseFileBytes": "PASS",
+    "all19OwnInputs": "PASS",
+    "originalEncodingPreserved": true,
+    "nativeExistingSourceFailuresHeld": 30
+  },
+  "ACTUAL_EVIDENCE_IDENTITY": "Original node/producer IDs preserved; scoped addresses are lookup IDs, not new facts",
+  "OWNER_SCOPE_VALIDATION": "Fixture+graph+owner+producer+period; prepared cache foreign scope rejected",
+  "DIRECTION_SCOPE_VALIDATION": "Actual A_TO_B/B_TO_A and ReceivedTenGod retained; whole/name swaps checked by7native observation auditors",
+  "FIXTURE_ISOLATION": {
+    "graphs": 27,
+    "cacheNegatives": 36,
+    "crossFixtureRootMerge": false
+  },
+  "QUESTION_REGISTRY_COVERAGE": {
+    "foundationQuestions": 2060,
+    "majorNativeYearQuestionViews": 168,
+    "nativeYearIdsAndLinkKindsPreserved": true
+  },
+  "READER_ADDRESS_COVERAGE": "Original chapter/paragraph/role/period addresses; native Major @year IDs separate",
+  "MATERIAL_LINK_KIND_COVERAGE": "Original seven Foundation link kinds plus original native Major reference/proposed links; no fact promotion",
+  "SOURCE_GROUP_SEMANTICS": "Exact native requirements captured at Binder call; AND/conditional/UNKNOWN semantics unchanged",
+  "TEMPORAL_SCOPE_VALIDATION": "Original native Major/Annual outputs and12gate states preserved; unknown/conditional bounds not promoted",
+  "MAJOR_FORTUNE_TIME_CONTRACT": "14year horizon separate from10year cycles; existing publicMajorObservation reused; exact/range/precycle gaps retained",
+  "ANNUAL_FORTUNE_TIME_CONTRACT": "12civil months; full variable Jie/Dayun segment ledger and typed role attempts retained",
+  "FULL_ANCESTRY_DOMAIN_GATE": "Selected nodes and all ancestors inspected; original native domain gates and CHILDREN/WORK/MONEY constraints retained",
+  "HARD_GATE_PRESERVATION": "12ordered hard gates; exact5states; required owner/direction/time cannot become NOT_APPLICABLE",
+  "SPECIALIST_POLICY_PRESERVATION": "12native policy/source/reuse contracts and19own frozen inputs; no generic global cap",
+  "FACT_ROOT_REUSE": "Scoped original roots indexed separately from source attribution, semantic/fusion ancestry, research and questions",
+  "NEW_CANONICAL_FACT_ROOTS": 0,
+  "MEANING_IDENTITY_RESOLVED": 0,
+  "MEANING_REVIEW_REQUIRED": {
+    "candidateFixtureEntries": 5073,
+    "distinctCatalogKeys": 2367,
+    "customerApprovedMeaningRelations": 0
+  },
+  "GLOBAL_SEMANTIC_CONFLICT_CANDIDATES": "Exact source-overlap review groups and original native semantic audits; operator review only",
+  "CONFIRMED_SEMANTIC_CONFLICTS": 0,
+  "SOURCE_VERIFICATION_PENDING": {
+    "originalReferences": 6490,
+    "technicalRecovery": 3288,
+    "unresolved": 3202,
+    "technicalRecoveryIsApproval": false
+  },
+  "DOMAIN_REVIEW_PENDING": 2966,
+  "APPROVAL_ISOLATION": "Runtime native counters measured0/false; authentic Binder receipts actual research only; no global approval provider",
+  "ACTUAL_OPERATOR_APPROVED": 0,
+  "ACTUAL_CUSTOMER_ELIGIBLE": 0,
+  "ACTUAL_CUSTOMER_SELECTIONS": 0,
+  "ACTUAL_SPECIALIST_CLAIMS_EMITTED": 0,
+  "SYNTHETIC_APPROVAL_ISOLATION": "No synthetic session/provider accepted by global compiler; synthetic records/forged approvals rejected",
+  "GLOBAL_WITHHOLD_REASON_COVERAGE": "Bidirectional original code/category index retains every original gate, reason and next action",
+  "GLOBAL_BLOCKER_IMPACT": "Actual source ancestry reverse edges;6490source refs/2966domain decisions with exact original JSON pointers and hashes; lossless hashed shards",
+  "GLOBAL_OPERATOR_REVIEW_QUEUE": {
+    "entries": 5073,
+    "researchReviewGroupsSeparateFromActualApplications": true,
+    "customerRank": null
+  },
+  "PUBLICATION_RISK_REGISTRY": {
+    "nativeCategoryAuditorsActuallyRerun": 7,
+    "writerRepaired": false,
+    "artifact": "global-publication-risk-registry.json"
+  },
+  "GLOBAL_PLANNER_HANDOFF": "5073compiled metadata/constraints with native question/display/repair/context references;0allocations",
+  "GLOBAL_PLANNER_SCHEMA_READY": true,
+  "GLOBAL_PLANNER_CUSTOMER_SELECTION_READY": false,
+  "CALCULATION_PRESERVATION": "17fixedBooks102digests+20Friendship140digests+40fullprofiles byte equal; all5086basefiles unchanged",
+  "COMPATIBILITY_SCORE_PRESERVATION": "7native category archived digest and score audits; whole/name swaps retained",
+  "NARRATIVE_PRESERVATION": "Full17Book and20Friendship narrative bytes identical before/after;7native publication observation cohorts archived hashes match",
+  "BOOK_PRESERVATION": {
+    "fixedBooks": 17,
+    "fixedBookDigests": 102,
+    "storedBookOfflineRoundtrip": true,
+    "fullNarrativeAndBookBytesEqual": true,
+    "friendshipCases": 20,
+    "friendshipDigests": 140,
+    "fullFriendshipNarrativeIntegrationAndBookBytesEqual": true,
+    "fullProfiles": 40,
+    "profileBytesPerSide": 308432008,
+    "fullProfileBytesEqual": true,
+    "existingCustomerBookReadOrWrite": false,
+    "sixProductsAndSevenRelationshipsCovered": true
+  },
+  "EXISTING_TEST_FAILURES": "5837PASS46FAIL before/quiet-after; all46full normalized messages identical; entireSuite not executed",
+  "ADDITIONAL_BASELINE_TIMEOUT": "Historical BP5s timeout not reproduced: exactBase selected1PASS360filtered; workbranch full361defaultPASS;30sCLI full361PASS. Initial overloaded related9test/2hook timeouts retained;9files409PASS singleworker30s recheck",
+  "NEW_TEST_FAILURES": 0,
+  "TYPESCRIPT": "0before/0after",
+  "LINT": "PASS0warnings",
+  "BUILD": "PASS0warnings",
+  "DIFF_CHECK": "PASS",
+  "NFT_TRACE_PRESERVATION": "88App/Server+2NextRoot=90; exact dependency sets unchanged; new integration/JSON entries0",
+  "DETERMINISTIC_BUILD": "2freshCLI executions; every JSON and gzip payload byte identical; all original logical JSON hashes preserved;64Foundation JSON reproduced perrun",
+  "PRIVACY_CHECK": "PASS final full-output forbidden names/DOB and secret checks; publicMajorObservation excludes raw input; real customer access0",
+  "VERCEL_PREVIEW": "POST_COMMIT_EXACT_SHA_READY_RECEIPT_OUTSIDE_GIT",
+  "REMAINING_GAPS": [
+    "3202unresolved source references;2966domain reviews; all meaning/operator/customer approvals pending",
+    "All27actual graphs remainPARTIAL; unsupported producers/time/real-context requirements remainheld",
+    "Existing source integrity30evaluation failures10Major records retained",
+    "Legacy fallback/CHILDREN provenance/adultParentChildV andFriendship4study-to-group bridges remainunrepaired",
+    "Global Planner allocation, KoreanEditor and customer runtime not connected"
+  ],
+  "NEXT_STAGE_READY": "OFFLINE_SCHEMA_HANDOFF_ONLY; customer selection/claims/publication NOT_READY; no next phase started"
+}
