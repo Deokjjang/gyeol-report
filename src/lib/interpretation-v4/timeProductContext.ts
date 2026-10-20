@@ -1,3 +1,4 @@
+import { buildFoundationReferences } from "./evidenceFoundation";
 import "server-only";
 import { createHash } from "node:crypto";
 import { buildRelationshipProfiles } from "./relationshipProductView";
@@ -97,7 +98,7 @@ export function createTimeProductContext(input: NarrativeInput, version: string)
       }
     }
   }
-  return { ok: true as const, project, render, represented,
+  return { ok: true as const, project, render, represented, foundationReferences: buildFoundationReferences(profiles),
     personalDigest: createHash("sha256").update(JSON.stringify(profiles)).digest("hex"),
     natalBuilds: 1 as const, timeClaimSource: "canonical-period-only" as const };
 }

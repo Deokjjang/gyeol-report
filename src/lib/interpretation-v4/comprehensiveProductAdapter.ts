@@ -1,3 +1,4 @@
+import { buildFoundationReferences } from "./evidenceFoundation";
 import "server-only";
 import { createHash } from "node:crypto";
 import { buildIntegratedMyeongliProfile } from "./foundationIntegratedProfile";
@@ -83,6 +84,7 @@ export function buildV4ComprehensiveProduct(input: NarrativeInput) {
   const narrative = release.narrative.opening.length && release.narrative.sections.some(s => s.id === "direction")
     ? release.narrative : legacyNarrative;
   return { ok: true as const, writerVersion: COMPREHENSIVE_PRODUCT_VERSION, narrative,
+    foundationReferences: buildFoundationReferences(profiles),
     // Existing appendix material selection is retained, not used to write prose.
     materials: buildMyeongliMaterialPacket({ calculation: input.calculation, mbti: input.mbti }), editorial: [],
     integration: { reportStableKey, manuscriptVersion: draft.version, coreGyeol: draft.coreGyeol.text, context: g.value.context,

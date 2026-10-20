@@ -26,7 +26,7 @@ export async function buildV4AnnualProduct(payload: unknown, clock: AnnualClock)
     return { ...s, blocks: extra ? [...blocks, extra] : blocks };
   });
   const narrative = { ...legacy.narrative, opening, sections };
-  return { ...legacy, narrative, writerVersion: legacy.writerVersion, behaviorBasis: [],
+  return { ...legacy, narrative, writerVersion: legacy.writerVersion, behaviorBasis: [], foundationReferences: time.foundationReferences,
     months: legacy.months.map(m => ({ ...m, behavior: null, blocks: sections.find(s => s.id === `month-${m.month}`)!.blocks })),
     editorial: reviewNarrative(narrative), integration: { version: ANNUAL_PRODUCT_VERSION, natalBuilds: time.natalBuilds,
       personalDigest: time.personalDigest, timeClaimSource: time.timeClaimSource, represented: time.represented,

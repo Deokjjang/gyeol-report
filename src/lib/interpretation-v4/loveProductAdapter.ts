@@ -1,3 +1,4 @@
+import { buildFoundationReferences } from "./evidenceFoundation";
 import "server-only";
 import { createHash } from "node:crypto";
 import { composeLoveNarrative } from "./loveComposer";
@@ -46,6 +47,7 @@ export function buildV4LoveProduct(input: NarrativeInput) {
     && ["current", "home", "parenting", "fortune", "direction"].every(id => release.narrative.sections.some(s => s.id === id))
     && !reviewed.some(i => i.severity === "Blocker" || i.severity === "Major" && !["DUPLICATE_SENTENCE", "REPEATED_LONG_PHRASE"].includes(i.code)) ? release.narrative : narrative;
   return { ...legacy, narrative: published, writerVersion: LOVE_PRODUCT_VERSION,
+    foundationReferences: buildFoundationReferences(built.profiles),
     mbtiBasis: legacy.mbtiBasis ? { ...legacy.mbtiBasis, pairHint: null } : null,
     editorial: published === release.narrative ? reviewed : reviewNarrative(narrative),
     integration: { version: LOVE_PRODUCT_VERSION, represented: renderer.represented, suppressed: renderer.suppressed,

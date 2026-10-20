@@ -1,3 +1,4 @@
+import type { ComprehensivePlanInputs } from "./comprehensivePlanCore";
 import { canonicalV4Feature } from "./materialRegistry";
 import { depthFeature } from "./materialDepth";
 import type { MaterialPacket, NarrativeBlock, NarrativeProof, NarrativeSection } from "./narrativeTypes";
@@ -226,4 +227,46 @@ export function inspectMaterialCoverage(
     unusedFusion: [...fusion].filter(id => !referencedFusions.includes(id)).sort(),
     outsidePacketFusion: referencedFusions.filter(id => !fusion.has(id)),
   };
+}
+
+/** Reuse profiles already built by the product adapter. No calendar/profile
+ * recomputation, source-text guessing or additional database query. */
+export function buildFoundationReferences(
+  profiles: Pick<ComprehensivePlanInputs, "myeongli" | "mbti" | "fusion">,
+  subject = "person",
+): FoundationReference[] {
+  const refs: FoundationReference[] = [];
+  const strings = (v: unknown): string[] => typeof v === "string" ? [v] : Array.isArray(v) ? v.filter((x): x is string => typeof x === "string") : [];
+  for (const atom of profiles.myeongli.evidence) {
+    const m = atom.metadata ?? {};
+    const ancestry = unique([...strings(m.canonicalAtomId), ...strings(m.canonicalIds), ...strings(m.canonicalRelationId)]);
+    refs.push({ id: atom.id, subject, scope: "natal", basis: "natal", support: "derived", domains: atom.contexts,
+      // Atom identity is the producer's observation; the knowledge path is provenance.
+      lineage: (ancestry.length ? ancestry : [atom.id]).map(id => `${subject}:${id}`),
+      sourceRefs: strings(m.provenance), dependencies: ancestry });
+  }
+  for (const node of profiles.mbti.sourceNodes) {
+    if (node.classification !== "SCORING_SEMANTIC" || !node.sourcePath.startsWith("/traits/") || !node.sourcePath.endsWith("/plainKo") ||
+      !["direct", "inferred"].includes(node.sourceCoverage ?? "")) continue;
+    const annotation = profiles.mbti.annotations.find(a => a.sourceNodeId === node.id);
+    refs.push({ id: node.id, subject, scope: "natal", basis: "mbti", support: node.sourceCoverage === "direct" ? "direct-source" : "derived",
+      domains: annotation?.contexts ?? [], lineage: [`${subject}:${node.id}`],
+      sourceRefs: [`docs/product/mbti/source/${node.mbtiType}.json${node.sourcePath}`], dependencies: [] });
+  }
+  const byId = new Map(refs.map(r => [r.id, r]));
+  for (const f of [...profiles.fusion.reinforce, ...profiles.fusion.tensions, ...profiles.fusion.complements]) {
+    const dependencies = unique([...f.myeongli.evidenceIds, ...f.mbti.sourceNodeIds]);
+    // Missing dependencies cannot be made valid by a well-formed Fusion ID.
+    if (!dependencies.length || dependencies.some(id => !byId.has(id))) continue;
+    refs.push({ id: f.id, subject, scope: "natal", basis: "fusion", support: "conditional", domains: f.contexts,
+      lineage: unique(dependencies.flatMap(id => byId.get(id)!.lineage)),
+      sourceRefs: [profiles.fusion.version, profiles.fusion.registryVersion, ...(f.ruleId ? [f.ruleId] : [])], dependencies });
+  }
+  return refs.sort((a, b) => a.id.localeCompare(b.id));
+}
+
+export function materialFoundationReferences(packet: MaterialPacket): FoundationReference[] {
+  return packet.selected.map(m => ({ id: m.feature, subject: packet.subject, scope: "natal", basis: "natal", support: "derived",
+    domains: unique(m.material.seeds.flatMap(s => s.domains)), lineage: m.lineage, sourceRefs: m.sourceRefs,
+    dependencies: m.evidence.map(d => d.evidence.id) }));
 }
