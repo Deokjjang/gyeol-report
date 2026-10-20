@@ -6,12 +6,17 @@ import { validateV4Publication, type V4RuntimeEvidence } from "../../../src/lib/
 import {
   compareMaterialIndependence, inspectEvidenceFoundation, inspectMaterialCoverage,
 } from "../../../src/lib/interpretation-v4/evidenceFoundation";
+import type { FoundationReference } from "../../../src/lib/interpretation-v4/evidenceFoundation";
 import type { NarrativeBlock, NarrativeSection } from "../../../src/lib/interpretation-v4/narrativeTypes";
 
 const block = (id: string, text: string, feature: string, theme = "precision"): NarrativeBlock => ({
   id, text, tone: "observation", mode: "prose",
   editorial: { variant: "fixture", theme },
   proof: { features: feature ? [feature] : [], seedIds: [], fusionIds: [], sourceRefs: [] },
+});
+const reference = (id: string, basis: FoundationReference["basis"]): FoundationReference => ({
+  id, basis, subject: "person", scope: basis === "input" ? "current-context" : "natal", support: "calculated",
+  domains: ["identity"], lineage: [id], sourceRefs: ["fixture:calculated"], dependencies: [],
 });
 const section = (id: string, blocks: NarrativeBlock[], domain: NarrativeSection["domain"] = "identity"): NarrativeSection => ({
   id, title: id, domain, blocks,
@@ -28,7 +33,7 @@ describe("V4 evidence foundation: scope, independence, provenance, reuse", () =>
     } };
     const r = inspectEvidenceFoundation({
       opening: [a], sections: [section("context", [b, c])],
-    });
+    }, { references: [reference("ten_god_shi_shen", "natal"), reference("input:detailJob", "input")] });
     expect(r.chapters[0].rootedBlocks).toBe(1);
     expect(r.chapters[1].contextualBlocks).toBe(1);
     expect(r.chapters[1].supportedBlocks).toBe(1);
@@ -46,7 +51,8 @@ describe("V4 evidence foundation: scope, independence, provenance, reuse", () =>
   it("signals reused themes with unchanged roots inside the same domain", () => {
     const r = inspectEvidenceFoundation({ opening: [block("a", "첫 문장", "root")],
       sections: [section("one", [block("b", "다른 장에서 같은 이야기", "root")]),
-        section("two", [block("c", "새로운 근거", "new-root")])] });
+        section("two", [block("c", "새로운 근거", "new-root")])] },
+      { references: [reference("root", "natal"), reference("new-root", "natal")] });
     expect(r.issues).toContainEqual({
       code: "REUSED_THEME_WITHOUT_NEW_SUPPORT", location: "one/b", severity: "review",
     });
@@ -128,4 +134,25 @@ describe("six real V4 generators preserve Book shape with foundation inspection"
     expect(audit.chapters.length, id).toBeGreaterThan(4);
     expect(validateV4Publication(e.productType, generated.draft, e)).toEqual({ ok: true, errors: [] });
   }, 120000);
+});
+
+describe("foundation producer-backed references", () => {
+  it("never treats source prefixes or arbitrary feature labels as calculated facts", () => {
+    const forged = { ...block("forged", "검사 문장", "invented"), proof: { features: ["invented"], seedIds: [], fusionIds: [], sourceRefs: ["period-ten-god:정재", "dayun-cycle:99:甲子", "input:jobStatus"] } };
+    const result = inspectEvidenceFoundation({ opening: [forged], sections: [] });
+    expect(result.chapters[0].supportedBlocks).toBe(0);
+    expect(result.traces[0].references).toEqual([]);
+  });
+  it("recognizes actual semantic atoms without relabeling metadata as natal evidence", () => {
+    const b = { ...block("atom", "실제 근거", ""), proof: { features: [], seedIds: [], fusionIds: [], sourceRefs: ["natal:day:stem:甲", "metadata:edition"] } };
+    const result = inspectEvidenceFoundation({ opening: [b], sections: [] }, { references: [reference("natal:day:stem:甲", "natal")] });
+    expect(result.chapters[0].rootedBlocks).toBe(1);
+    expect(result.traces[0].unresolved).toEqual(["metadata:edition"]);
+  });
+  it("canonicalizes aliases and excludes metadata-only lineage from independent votes", () => {
+    const a = { feature: "sinsal_dohwa", category: "marker", lineage: ["person:natal:sinsal_dohwa"] };
+    expect(compareMaterialIndependence(a, { ...a, feature: "shinsal:TWELVE_NYEONSAL" })).toBe("dependent");
+    expect(compareMaterialIndependence(a, { feature: "other", category: "marker", lineage: ["docs/source.json"] })).toBe("unknown");
+    expect(compareMaterialIndependence({ ...a, subject: "personA" }, { ...a, subject: "personB" })).toBe("independent");
+  });
 });

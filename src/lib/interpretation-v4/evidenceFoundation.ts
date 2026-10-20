@@ -1,7 +1,9 @@
+import { canonicalV4Feature } from "./materialRegistry";
+import { depthFeature } from "./materialDepth";
 import type { MaterialPacket, NarrativeBlock, NarrativeProof, NarrativeSection } from "./narrativeTypes";
 
 /** Production-neutral evidence inspection. Never identifies a person or changes a Book. */
-export const EVIDENCE_FOUNDATION_REVISION = "v4-evidence-foundation-01" as const;
+export const EVIDENCE_FOUNDATION_REVISION = "v4-evidence-foundation-02" as const;
 
 export type EvidenceFoundationIssueCode =
   | "DUPLICATE_CHAPTER_ID" | "DUPLICATE_BLOCK_ID" | "EMPTY_NARRATIVE"
@@ -15,7 +17,7 @@ export type EvidenceFoundationIssue = {
   readonly severity: "error" | "review";
 };
 
-export type EvidenceBasis = "natal" | "fusion" | "period" | "input" | "editorial" | "unbound";
+export type EvidenceBasis = "natal" | "mbti" | "fusion" | "period" | "input" | "editorial" | "unbound";
 export type EvidenceFoundationChapter = {
   readonly id: string;
   readonly domain: string;
@@ -34,29 +36,40 @@ export type EvidenceFoundationReport = {
   readonly version: typeof EVIDENCE_FOUNDATION_REVISION;
   readonly chapters: readonly EvidenceFoundationChapter[];
   readonly issues: readonly EvidenceFoundationIssue[];
+  readonly traces: readonly FoundationTrace[];
 };
 
 const unique = (values: readonly string[]): string[] =>
   [...new Set(values.filter(value => Boolean(value.trim())))].sort();
 
-const hasPrefix = (text: string, values: readonly string[]) =>
-  values.some(prefix => text.startsWith(prefix));
+/** References must come from a producer's evaluated inventory. A spelling,
+ * source URL or registry entry alone cannot create a computed observation. */
+export type FoundationReference = {
+  readonly id: string;
+  readonly subject: string;
+  readonly scope: "natal" | "current-context" | "major" | "annual" | "monthly" | "pair";
+  readonly period?: string;
+  readonly basis: "natal" | "mbti" | "fusion" | "period" | "input";
+  readonly support: "calculated" | "derived" | "direct-source" | "conditional";
+  readonly domains: readonly string[];
+  readonly lineage: readonly string[];
+  readonly sourceRefs: readonly string[];
+  readonly dependencies: readonly string[];
+};
+export type FoundationTrace = {
+  readonly location: string;
+  readonly references: readonly FoundationReference[];
+  /** Unresolved provenance is preserved, never silently promoted to evidence. */
+  readonly unresolved: readonly string[];
+};
 
-// A source URL, editorial label or scene marker is provenance, NOT proof of a
-// computed natal fact. These prefixes denote a structured, time-bound claim.
-const PERIOD_FACT_REFS = [
-  "period-ten-god:", "period-element:", "dayun-cycle:", "content-period:",
-  "content-relation:", "compatibilityRelationRules:", "period-relation:",
-  "annual-month:", "jie:", "natal-element:",
-] as const;
-const INPUT_FACT_REFS = ["input:", "user-context:"] as const;
-
-function basis(proof: NarrativeProof): EvidenceBasis {
-  if (proof.fusionIds.length) return "fusion";
-  if (proof.features.length) return "natal";
-  if (proof.sourceRefs.some(ref => hasPrefix(ref, PERIOD_FACT_REFS))) return "period";
-  if (proof.sourceRefs.some(ref => hasPrefix(ref, INPUT_FACT_REFS))) return "input";
-  if (proof.seedIds.length || proof.sourceRefs.length) return "editorial";
+function basis(proof: NarrativeProof, references: readonly FoundationReference[]): EvidenceBasis {
+  if (references.some(r => r.basis === "fusion")) return "fusion";
+  if (references.some(r => r.basis === "natal")) return "natal";
+  if (references.some(r => r.basis === "mbti")) return "mbti";
+  if (references.some(r => r.basis === "period")) return "period";
+  if (references.some(r => r.basis === "input")) return "input";
+  if (proof.features.length || proof.fusionIds.length || proof.seedIds.length || proof.sourceRefs.length) return "editorial";
   return "unbound";
 }
 
@@ -69,20 +82,18 @@ function semanticSupport(proof: NarrativeProof): readonly string[] {
   ]);
 }
 
-const evidenceByBlock = (block: NarrativeBlock) => ({
-  basis: basis(block.proof),
-  support: semanticSupport(block.proof),
-});
-
 export function inspectEvidenceFoundation(
   narrative: { readonly opening: readonly NarrativeBlock[]; readonly sections: readonly NarrativeSection[] },
-  options: { readonly knownFeatures?: readonly string[]; readonly knownFusionIds?: readonly string[] } = {},
+  options: { readonly knownFeatures?: readonly string[]; readonly knownFusionIds?: readonly string[]; readonly references?: readonly FoundationReference[] } = {},
 ): EvidenceFoundationReport {
   const parts = [
     { id: "core", domain: "identity", blocks: narrative.opening },
     ...narrative.sections.map(s => ({ id: s.id, domain: s.domain, blocks: s.blocks })),
   ];
   const issues: EvidenceFoundationIssue[] = [];
+  const traces: FoundationTrace[] = [];
+  const referenceIndex = new Map<string, FoundationReference[]>();
+  for (const ref of options.references ?? []) referenceIndex.set(ref.id, [...(referenceIndex.get(ref.id) ?? []), ref]);
   const chapterIds = new Set<string>();
   const knownFeatures = options.knownFeatures ? new Set(options.knownFeatures) : null;
   const knownFusions = options.knownFusionIds ? new Set(options.knownFusionIds) : null;
@@ -93,7 +104,7 @@ export function inspectEvidenceFoundation(
     chapterIds.add(part.id);
     const seen = new Set<string>();
     const counts: Record<EvidenceBasis, number> = {
-      natal: 0, fusion: 0, period: 0, input: 0, editorial: 0, unbound: 0,
+      natal: 0, mbti: 0, fusion: 0, period: 0, input: 0, editorial: 0, unbound: 0,
     };
     for (const block of part.blocks) {
       const location = part.id + "/" + block.id;
@@ -104,7 +115,10 @@ export function inspectEvidenceFoundation(
       if (!block.text.trim()) issues.push({
         code: "EMPTY_NARRATIVE", location, severity: "error",
       });
-      const info = evidenceByBlock(block);
+      const declared = unique([...block.proof.features, ...block.proof.fusionIds, ...block.proof.sourceRefs]);
+      const references = declared.flatMap(id => referenceIndex.get(id) ?? []);
+      traces.push({ location, references, unresolved: declared.filter(id => !referenceIndex.has(id)) });
+      const info = { basis: basis(block.proof, references) };
       counts[info.basis]++;
       if (info.basis === "unbound") issues.push({
         code: "MISSING_PROOF", location, severity: "review",
@@ -126,7 +140,7 @@ export function inspectEvidenceFoundation(
       domain: part.domain,
       blockCount: part.blocks.length,
       supportedBlocks: part.blocks.length - counts.unbound - counts.editorial,
-      rootedBlocks: counts.natal + counts.fusion,
+      rootedBlocks: counts.natal + counts.fusion + counts.mbti,
       contextualBlocks: counts.period + counts.input,
       basisCounts: counts,
       uniqueFeatures: unique(evidence.flatMap(p => p.features)),
@@ -156,21 +170,33 @@ export function inspectEvidenceFoundation(
       previous.set(identity, support);
     }
   }
-  return { version: EVIDENCE_FOUNDATION_REVISION, chapters, issues };
+  return { version: EVIDENCE_FOUNDATION_REVISION, chapters, issues, traces };
 }
 
-/** Independent support must be proven, never assumed from different labels. */
-export function compareMaterialIndependence(
-  first: { readonly feature: string; readonly category: string; readonly lineage: readonly string[] },
-  second: { readonly feature: string; readonly category: string; readonly lineage: readonly string[] },
-): "independent" | "dependent" | "unknown" {
-  if (first.feature === second.feature) return "dependent";
-  const sameDayBasis = ["dayMaster", "dayPillar"].includes(first.category) &&
-    ["dayMaster", "dayPillar"].includes(second.category);
-  if (sameDayBasis) return "dependent";
-  const firstLineage = unique(first.lineage), secondLineage = unique(second.lineage);
-  if (!firstLineage.length || !secondLineage.length) return "unknown";
-  return firstLineage.some(ref => secondLineage.includes(ref)) ? "dependent" : "independent";
+type IndependenceInput = {
+  readonly feature: string; readonly category: string; readonly lineage: readonly string[];
+  readonly subject?: string; readonly scope?: string; readonly period?: string;
+};
+const canonicalSupport = (id: string) => depthFeature(canonicalV4Feature(id));
+const canonicalLineage = (lineage: readonly string[]) => unique(lineage
+  // Registry/source paths document knowledge, not separate observations.
+  .filter(id => !/^(?:https?:|docs\/|src\/|calendar:|sajuKnowledgeBase:|sajuFeatureTaxonomy:|v4:)/.test(id))
+  .map(id => {
+    const boundary = id.indexOf(":natal:");
+    return boundary < 0 ? canonicalSupport(id) : id.slice(0, boundary + 7) + canonicalSupport(id.slice(boundary + 7));
+  }));
+
+/** Same observation aliases and source ancestry never earn extra support.
+ * Subject and period are part of identity, not inferred from the feature label. */
+export function compareMaterialIndependence(first: IndependenceInput, second: IndependenceInput): "independent" | "dependent" | "unknown" {
+  if (first.subject && second.subject && first.subject !== second.subject ||
+      first.scope && second.scope && first.scope !== second.scope ||
+      first.period && second.period && first.period !== second.period) return "independent";
+  if (canonicalSupport(first.feature) === canonicalSupport(second.feature)) return "dependent";
+  if (["dayMaster", "dayPillar"].includes(first.category) && ["dayMaster", "dayPillar"].includes(second.category)) return "dependent";
+  const a = canonicalLineage(first.lineage), b = canonicalLineage(second.lineage);
+  if (!a.length || !b.length) return "unknown";
+  return a.some(ref => b.includes(ref)) ? "dependent" : "independent";
 }
 
 /** Trace knowledge availability separately from whether prose reused it. */
