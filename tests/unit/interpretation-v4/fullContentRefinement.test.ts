@@ -3,7 +3,8 @@ vi.mock("server-only", () => ({}));
 import { generateV4ShadowReport } from "../../../src/lib/interpretation-v4/runtimeShadow";
 import { projectBook } from "../../../src/app/dev/book-preview/bookProjection";
 import { validateV4Publication, type V4RuntimeEvidence } from "../../../src/lib/interpretation-v4/runtimeProjection";
-import { RUNTIME_FIXTURES, SHADOW_CLOCK } from "./runtimeFixtures";
+import { RUNTIME_FIXTURES, SHADOW_CLOCK, singleRuntimeInput } from "./runtimeFixtures";
+import { NARRATIVE_FIXTURES } from "./narrativeFixtures";
 import { READER_INNER_PORTRAIT, READER_TALENT_PORTRAIT, READER_PORTRAIT_ENDING } from "../../../src/lib/interpretation-v4/comprehensivePortraitMaterials";
 
 describe("full content refinement uses the actual publication path", () => {
@@ -27,4 +28,22 @@ describe("full content refinement uses the actual publication path", () => {
     if (back?.kind === "back") expect(back.finalLine).not.toMatch(/하세요|해보세요|고르세요/);
     expect(g.externalCalls).toEqual([]);
   }, 120000);
+  it("a photographer receives a full career book with distinct production, value and learning scenes", async () => {
+    const payload = singleRuntimeInput("career_money_study", "career-money-study", NARRATIVE_FIXTURES[9]);
+    Object.assign(payload.person, { name: "검수 사진가", birthDate: "1987-09-14", birthTime: "17:40", mbtiType: "ISFJ" });
+    Object.assign(payload.userContext, { jobStatus: "freelancer", detailJob: "프리랜서 사진작가" });
+    const g = await generateV4ShadowReport(payload, SHADOW_CLOCK);
+    expect(g.ok).toBe(true); if (!g.ok) return;
+    const e = g.evidencePacket as V4RuntimeEvidence;
+    expect(validateV4Publication("career_money_study", g.draft, e).ok).toBe(true);
+    const book = projectBook(e)!;
+    const paragraphs = book.pages.flatMap(p => p.kind === "narrative" ? p.paragraphs : []);
+    expect(paragraphs).toHaveLength(36);
+    const text = paragraphs.map(p => p.text).join("\n");
+    for (const word of ["촬영", "후보정", "납품", "수정 범위", "인접 확장", "새 직업·역할"]) expect(text).toContain(word);
+    expect(paragraphs.filter(p => /촬영|사진|후보정/.test(p.text)).length).toBeGreaterThanOrEqual(12);
+    expect(text).not.toMatch(/당신은 촬영을 해왔|현재 회사|부하 직원|무조건 성공/);
+    expect(g.externalCalls).toEqual([]);
+  }, 120000);
+
 });

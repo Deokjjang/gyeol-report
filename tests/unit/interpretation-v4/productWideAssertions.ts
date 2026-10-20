@@ -1,7 +1,7 @@
 import { expect } from "vitest";
 import { v4Digest, type V4RuntimeEvidence } from "../../../src/lib/interpretation-v4/runtimeProjection";
 import locks from "../../fixtures/product-wide-editorial-01/output-locks.json";
-export { default as editorialLocks } from "../../fixtures/product-wide-editorial-01/output-locks.json";
+export { default as editorialLocks } from "../../fixtures/full-content-refinement-01/output-locks.json";
 const record = (value: unknown): Record<string, unknown> => value && typeof value === "object" ? value as Record<string, unknown> : {};
 /** The editorial output lock may change; these pre-upgrade engine/source
  * signatures may not. Historical snapshot/lock fixtures remain unmodified. */

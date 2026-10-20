@@ -1,7 +1,7 @@
 import type { Domain } from "./types";
 import type { JobStatus } from "../report-generation/reportInputTypes";
 
-export const CAREER_RELEASE_VERSION = "career-editorial-quality-fix-01-v1" as const;
+export const CAREER_RELEASE_VERSION = "career-full-content-refinement-01-v2" as const;
 const chapter = (id: string, key: string, title: string, domain: Domain, paragraphs: readonly (readonly [string, string, string, string, string])[]) => ({
   id, key, title, domain, paragraphs: paragraphs.map(([purpose, ...sentences], i) => ({ id: `P${i + 1}`, purpose, sentences })),
 });

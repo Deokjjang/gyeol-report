@@ -20,7 +20,7 @@ import { materialLabel } from "./contentEvidence";
 import { CAREER_ROUTES } from "./careerRecommendations";
 import { careerWorkNarrative } from "./careerWorkNarrative";
 import { humanOutcome, mbtiHumanBehavior } from "./narrativeHumanOutcome";
-import { CAREER_JOB_SCENES, CAREER_JOB_STEPS, CAREER_ECONOMIC_USE, CAREER_WEALTH_APPLICATIONS, CAREER_GROWTH_RISKS } from "./careerQualityApplications";
+import { CAREER_JOB_SCENES, CAREER_JOB_STEPS, CAREER_ECONOMIC_USE, CAREER_WEALTH_APPLICATIONS, CAREER_GROWTH_RISKS, CAREER_PHOTO_APPLICATIONS } from "./careerQualityApplications";
 import { CAREER_STUDY_REMEDIES } from "./careerReleaseStudy";
 
 type Refs = { source: string; roots?: string[]; nodes?: string[]; fusion?: string[]; theme: string; material: string; sourceRefs?: readonly string[]; recall?: boolean; row?: CareerReleaseSource };
@@ -32,7 +32,8 @@ const quote = (s: string) => s.replace(/[.!?]$/, "").replace(/입니다$/, "");
 /** Only generation calls this independent edition. An incomplete editorial slot
  * is a diagnostic, never a new payment/Worker failure or a made-up source. */
 export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfiles, candidates: readonly EditorialCandidate[], legacy: CareerNarrative, state: NarrativeState) {
-  const jobFunction = careerWorkNarrative(input).workFunction;
+  const photography = /사진작가|사진\s*촬영|포토그래퍼/.test(input.context.detailJob);
+  const jobFunction = photography ? "photography" : careerWorkNarrative(input).workFunction;
   const mbtiMemory = freshNarrativeMemory();
   const jobSteps = input.context.detailJob ? CAREER_JOB_STEPS[jobFunction] : undefined;
   const scene = (r: CareerReleaseSource) => (input.context.detailJob && CAREER_JOB_SCENES[jobFunction]?.[r.facet]) || CAREER_RELEASE_MATERIALS[r.facet].scene;
@@ -83,7 +84,11 @@ export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfi
     const fallback = risk && !rows.length ? eligible(preferred, false, recall).filter(r => !!r.atom.shadowMeaning) : [];
     for (const row of [...rows, ...fallback]) {
       const texts = make(CAREER_RELEASE_MATERIALS[row.facet], row);
-      const lines = texts.flatMap(text => split(text).map(text => ({ text, refs: { ...sourceRefs(row), material: `career:${row.facet}:${key}`, recall } })));
+      const jobApplication = photography ? CAREER_PHOTO_APPLICATIONS[key] : undefined;
+      if (jobApplication && texts.length >= 3) texts[texts.length - 2] = jobApplication;
+      const lines = texts.flatMap(text => split(text).map(text => ({ text, refs: text === jobApplication
+        ? { ...contextRefs, material: `context:photography:${key}` }
+        : { ...sourceRefs(row), material: `career:${row.facet}:${key}`, recall } })));
       if (!add(p, lines)) continue;
       used.set(row.facet, (used.get(row.facet) ?? 0) + 1); roots.set(row.atom.id, (roots.get(row.atom.id) ?? 0) + 1); chosen.push(row);
       terms.add(`${row.atom.sourceType}:${row.atom.sourceKey}`); return row;
@@ -187,7 +192,7 @@ export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfi
         ].map(text => ({ text, refs })));
       }
     } else if (c.id === "CH03") {
-      application(0, "aptitude-common", (m, r) => [`적합한 일의 공통점은 ${particle(CAREER_TASKS[r.facet].task, "을", "를")} 실제로 필요로 한다는 점이며, 직함만으로 그 조건이 생기지는 않습니다.`, reason(r), m.fit, `업무 소개를 들을 때에는 ${particle(CAREER_TASKS[r.facet].criterion, "이", "가")} 있는지 묻는 편이, 직함보다 실제 과제를 이해하기 좋습니다.`]);
+      application(0, "aptitude-common", (m, r) => [`현재 분야에서 먼저 살릴 방향은 ${particle(CAREER_TASKS[r.facet].task, "을", "를")} 통해 실제로 다른 결과를 만드는 역할입니다.`, reason(r), m.fit, `업무 소개를 들을 때에는 ${particle(CAREER_TASKS[r.facet].criterion, "이", "가")} 있는지 묻는 편이, 직함보다 실제 과제를 이해하기 좋습니다.`]);
       for (const [p, indices] of [[1, [0]], [2, [1, 2]]] as const) {
         const recs = indices.flatMap(i => legacy.recommendations[i] ? [legacy.recommendations[i]] : []);
         const lines: Line[] = recs.flatMap(rec => {
@@ -196,10 +201,10 @@ export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfi
           const reasons = split(rec.reason), basis = reasons.find(text => text.includes("에서 볼 수 있는 장점을"));
           const route = CAREER_ROUTES.find(r => r.id === rec.id);
           const bridge = reasons.find(text => /의 직업 자료에서도/.test(text));
-          const texts = p === 1 ? [reasons[0], basis ?? reasons[1], ...split(rec.environment),
-            route ? `${route.avoid}에서는 필요한 역량이 있어도 쓰기 어려울 수 있으니, 역할과 환경을 함께 대조하세요.` : "작은 과제에서 해낸 범위와 어려웠던 부분을 비교한 뒤 준비할 역량을 좁혀 보세요.", ...(bridge ? [bridge] : [])]
+          const texts = p === 1 ? [`현재 분야의 인접 확장을 탐색한다면 ${reasons[0]}`, basis ?? reasons[1], ...(photography ? ["촬영 전의 의뢰 정리나 납품 뒤의 사용 안내처럼, 이미 다루는 과정에서 이 능력이 더 필요한 지점을 찾아볼 수 있습니다."] : split(rec.environment)),
+            photography ? "새 영역을 넓히기 전에는 촬영 결과에 더해 무엇을 맡고 어떤 준비가 더 드는지 작은 의뢰 범위로 확인해 볼 만합니다." : route ? `${route.avoid}에서는 필요한 역량이 있어도 쓰기 어려울 수 있으니, 역할과 환경을 함께 대조하세요.` : "작은 과제에서 해낸 범위와 어려웠던 부분을 비교한 뒤 준비할 역량을 좁혀 보세요.", ...(!photography && bridge ? [bridge] : [])]
             : route && basis ? [
-              `탐색 후보인 ${route.roles.join("·")}에는 다음 근거를 적용합니다: ${basis}`,
+              `새 직업·역할의 탐색 후보인 ${route.roles.join("·")}에는 다음 근거를 적용합니다: ${basis}`,
               `${route.environment}이 맞는 조건이며, ${route.avoid}에서는 이 강점을 쓰기 어려울 수 있습니다.`,
             ] : [reasons[0], rec.environment];
           return texts.filter(Boolean).map(text => ({ text, refs }));
@@ -207,7 +212,7 @@ export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfi
         // The full evidence-supported exploration candidates remain in narrative.recommendations.
         // Select whole sentences, never slice characters or invent a fourth route.
         if (lines.length > 5) lines.splice(5);
-        if (p === 2 && recs[1] && lines.length === 4) lines.push({ text: split(recs[0].reason).find(text => /의 직업 자료에서도/.test(text)) ?? "이 후보들은 하나의 객관적 적성 순위가 아니며, 실제로 해볼 과제와 준비할 조건을 비교하는 탐색 방향입니다.", refs: { source: `career-route:${recs[0].id}`, theme: `CAREER_ROUTE:${recs[0].id}`, material: `route:${recs[0].id}:db-match`, sourceRefs: recs[0].proof.sourceRefs } });
+        if (p === 2 && recs[1] && lines.length === 4) lines.push({ text: !photography && split(recs[0].reason).find(text => /의 직업 자료에서도/.test(text)) || "이 후보들은 하나의 객관적 적성 순위가 아니며, 실제로 해볼 과제와 준비할 조건을 비교하는 탐색 방향입니다.", refs: { source: `career-route:${recs[0].id}`, theme: `CAREER_ROUTE:${recs[0].id}`, material: `route:${recs[0].id}:db-match`, sourceRefs: recs[0].proof.sourceRefs } });
         if (lines.length < 4) lines.push({ text: "직업 이름으로 적합성을 확정하지 말고, 실제 과제와 준비할 역량을 대조하세요.", refs: { ...contextRefs, material: `route:conditions:${p}` } });
         if (!add(p, lines)) draft.shortages.push(`${c.id}.P${p + 1}:RECOMMENDATION_MATERIAL_SHORTAGE`);
       }
@@ -247,7 +252,7 @@ export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfi
         const wealth = row.atom.sourceType === "ten_god" ? CAREER_WEALTH_APPLICATIONS[row.atom.sourceKey] : undefined;
         add(0, [rootLine(`${careerAtomName(row.atom)}의 ‘${quote(row.atom.easyMeaning)}’이라는 해석을, 실제로 남길 자원과 수익 활동을 고르는 방식에 연결합니다.`, row, `career:${row.facet}:income`), rootLine(wealth?.[0] ?? economic(row)[0], row, `career:${row.facet}:income-basis`),
           ...(n ? [n] : [rootLine("수입의 크기나 자산을 입력받은 것은 아니므로, 여기서는 실제 재물 관련 성향이 업무의 값으로 이어지는 방식만 읽습니다.", row, "money:scope")]),
-          rootLine(wealth?.[1] ?? economic(row)[1], row, `career:${row.facet}:income-condition`)]);
+          photography ? { text: "촬영 시간을 넘어 준비와 후보정, 납품 규격과 수정 범위를 함께 설명할 수 있다면, 사진 한 장의 가격과 전체 작업의 대가를 나누어 이야기할 수 있습니다.", refs: { ...contextRefs, material: "context:photography:price" } } : rootLine(wealth?.[1] ?? economic(row)[1], row, `career:${row.facet}:income-condition`)]);
       } else {
         const money = careerNatalMoney(state), texts = split(money.text), feature = money.proof.features[0];
         const material = state.packet.selected.find(m => m.feature === feature);
@@ -281,7 +286,7 @@ export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfi
         add(1, [
           { text: "배운 내용을 직접 확인할 과제와 구체적인 피드백이 있는 환경인지 살펴보세요.", refs },
           rootLine(environment.learning, r, "study:environment-activity"),
-          { text: jobFunction === "engineering" ? "개발 기술을 익힐 때는 예제를 완성한 뒤 입력 조건을 바꿔 보고, 실패한 이유를 설명할 수 있는지 확인할 만합니다." : jobFunction === "design" ? "디자인 기법을 익힐 때는 같은 내용을 다른 매체에 옮겨 보고, 전달이 달라진 이유를 설명하는 연습을 해볼 만합니다." : jobFunction === "sales_operations" ? "영업 자료를 학습할 때는 서로 다른 고객 질문에 답을 만들어 보고, 확인이 더 필요한 조건을 따로 남겨 볼 만합니다." : "연습 과제를 고를 때는 익숙한 예제를 푼 뒤 조건을 바꾼 문제도 두어, 도움 없이 사용할 수 있는 범위를 확인할 만합니다.", refs },
+          { text: photography ? "촬영 연습에서는 빛이나 거리 하나만 바꾸어 결과를 비교하고, 후보정 뒤에도 살릴 정보가 남았는지 확인한다면 표현을 고르는 이유가 또렷해질 수 있습니다." : jobFunction === "engineering" ? "개발 기술을 익힐 때는 예제를 완성한 뒤 입력 조건을 바꿔 보고, 실패한 이유를 설명할 수 있는지 확인할 만합니다." : jobFunction === "design" ? "디자인 기법을 익힐 때는 같은 내용을 다른 매체에 옮겨 보고, 전달이 달라진 이유를 설명하는 연습을 해볼 만합니다." : jobFunction === "sales_operations" ? "영업 자료를 학습할 때는 서로 다른 고객 질문에 답을 만들어 보고, 확인이 더 필요한 조건을 따로 남겨 볼 만합니다." : "연습 과제를 고를 때는 익숙한 예제를 푼 뒤 조건을 바꾼 문제도 두어, 도움 없이 사용할 수 있는 범위를 확인할 만합니다.", refs },
           { text: "진도를 채운 양과 혼자 설명할 수 있는 내용을 구분하면, 다음 학습에 필요한 질문도 더 정확해집니다.", refs },
         ]);
         if (trait?.risk && node) {
@@ -331,7 +336,7 @@ export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfi
           `이 책에서 읽은 대표적인 힘은 ${m.label}이며, 직업 이름보다 실제 문제를 만났을 때 선명해집니다.`,
           last.atom.positiveMeaning ?? `다음에는 ${particle(CAREER_TASKS[last.facet].skill, "을", "를")} 키워, 이미 가진 성향을 새로운 역할의 근거로 넓힐 수 있습니다.`,
           `${particle(CAREER_TASKS[last.facet].criterion, "이", "가")} 있는지 살피면, 남들이 좋아하는 자리와 내가 힘을 쓸 자리를 가를 수 있습니다.`,
-          jobSteps ? `다음 선택 전에는 ${particle(CAREER_TASKS[last.facet].result, "을", "를")} 확인할 작은 과제를 먼저 고르고, 실제 결과가 바뀌었을 때 맡을 범위를 넓혀 보세요.` : "이 힘이 필요한 곳에 시간을 쓰면, 계속 나를 증명하려 애쓰기보다 내 힘이 쓸모 있는 경력이 남습니다.",
+          photography ? "당신이 고른 한 컷에 준비와 관찰, 완성의 판단이 함께 담길 때 사진은 결과이자 당신의 일하는 방식이 됩니다." : jobSteps ? `다음 선택 전에는 ${particle(CAREER_TASKS[last.facet].result, "을", "를")} 확인할 작은 과제를 먼저 고르고, 실제 결과가 바뀌었을 때 맡을 범위를 넓혀 보세요.` : "이 힘이 필요한 곳에 시간을 쓰면, 계속 나를 증명하려 애쓰기보다 내 힘이 쓸모 있는 경력이 남습니다.",
         ].map(text => ({ text, refs })));
       }
     }
