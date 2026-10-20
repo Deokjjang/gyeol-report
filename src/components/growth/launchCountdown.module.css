@@ -13,3 +13,6 @@
 .srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media (max-width: 600px) { .event { grid-template-columns: 1fr; gap: 9px; padding-top: 14px; } .heading h2 { font-size: 18px; } .clock { text-align: left; } .clock time { font-size: 25px; margin-top: 3px; } }
 @media (prefers-reduced-motion: reduce) { .event * { animation: none; transition: none; } }
+
+.benefit { font-size:14px!important; line-height:1.7; max-width:370px; }
+.notice summary,.entry { min-height:44px; display:flex; align-items:center; }

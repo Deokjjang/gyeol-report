@@ -28,13 +28,13 @@ describe("countdown actual component effects with isolated browser clock",()=>{
   });
   it("passing start floor is never activation; focus accepts explicit server activation",async()=>{
     payload={...active,state:"SCHEDULED",serverNow:"2026-10-10T14:59:59Z",budgetApproved:false,campaignAvailable:false};
-    await mount();expect(text(render())).toContain("시작 가능 시각까지");await vi.advanceTimersByTimeAsync(2000);
-    expect(text(render())).not.toContain("이벤트 진행 중");expect(text(render())).toContain("공개·운영 활성화를 기다리고");
+    await mount();expect(text(render())).toContain("시작 예정까지");await vi.advanceTimersByTimeAsync(2000);
+    expect(text(render())).not.toContain("이벤트 진행 중");expect(text(render())).toContain("이벤트 시작을 기다리고");
     payload={...active};window.dispatchEvent(new Event("focus"));await flush();expect(text(render())).toContain("이벤트 진행 중");
   });
   it("scheduled after earliest start shows no false countdown",async()=>{
     payload={...active,state:"SCHEDULED",budgetApproved:false,campaignAvailable:false};await mount();
-    expect(text(render())).toContain("공개·운영 활성화를 기다리고");expect(text(render())).not.toContain("이벤트 종료까지");
+    expect(text(render())).toContain("이벤트 시작을 기다리고");expect(text(render())).not.toContain("이벤트 종료까지");
   });
   it("background return refreshes authoritative state; cleanup leaves no timers or requests",async()=>{
     await mount();Object.assign(document,{hidden:true});await vi.advanceTimersByTimeAsync(20_000);expect(fetch).toHaveBeenCalledTimes(1);

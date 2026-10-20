@@ -24,7 +24,7 @@ export function ReferralBookCta({ share, local, home }: { share: BookShareModel;
     finally { lock.current = false; setBusy(false); }
   }
   return <div><button className={s.cta} style={{ background: "none", borderTop: 0, borderLeft: 0, borderRight: 0, cursor: "pointer" }} disabled={busy} onClick={() => void begin()}>나도 내 책 만들기 ↗</button>
-    {mayJoin ? <p className={s.notice}>처음 가입하고 필수 동의를 마치면 리포트 이용권 1장을 받을 수 있습니다.</p> : null}
-    <BookEventNotice view={view} remaining={remaining} />
+    {mayJoin ? <p className={s.notice}>이 초대 링크로 처음 가입하고 필수 동의를 마치면 무료 이용권 1장 대상이 될 수 있어요. 가입 자격과 계정당 한도를 확인합니다.</p> : null}
+    <BookEventNotice view={view} remaining={remaining} recipient />
     {error ? <p role="alert">{error}</p> : null}</div>;
 }

@@ -7,7 +7,7 @@ export type LaunchEventView = {
   campaignAvailable: boolean; referralAvailable: boolean; inviterAvailable: boolean;
   budgetApproved: boolean; campaignSlug: string | null;
 };
-export const LAUNCH_NOTICE = "10월 11일 00:00 KST 이후 서비스 공개와 운영 활성화 시 시작하며, 늦게 시작해도 11월 1일 00:00 KST에 종료됩니다. 이벤트 무료 이용권은 지급일과 관계없이 같은 시각에 만료됩니다. 신규 가입 보상은 평생 최대 1장(광고·추천 중복 불가), 추천 성공 보상은 평생 최대 1장입니다. 추천 성공은 초대한 친구의 첫 정상 발행 기준이며, 마감 후 발행 완료 시 지급되지 않습니다. 마감 직전에는 처리 지연으로 보상을 받지 못할 수 있습니다. 유료 이용권은 이벤트 만료와 무관합니다.";
+export const LAUNCH_NOTICE = "이벤트 페이지에서 참여한 뒤 처음 가입하고 필수 동의를 마친 적격 신규 회원에게 이용권 1장을 드립니다. 광고 클릭만으로 지급되지 않으며, 광고 없이 공식 이벤트 링크로도 참여할 수 있습니다. 유입 기록 없이 일반 메인에서 가입한 경우에는 혜택이 보장되지 않습니다. 신규 가입 혜택은 평생 최대 1장(광고·친구 초대 중복 불가), 친구 초대 추가 혜택은 평생 최대 1장으로 계정당 전체 최대 2장입니다. 공유 가능한 내 Book의 유효한 초대 링크로 친구가 처음 가입하고 필수 동의를 마친 뒤, 이벤트 기간 안에 첫 리포트를 정상 발행 완료해야 초대한 사람에게 이용권 1장이 추가됩니다. 일반 책 공유, 링크 클릭이나 친구 가입만으로 초대한 사람에게 지급되지는 않습니다. 이벤트는 10월 11일 0시 이후 운영 활성화 시 시작하며 11월 1일 0시에 종료됩니다. 이벤트 무료 이용권도 지급일과 관계없이 11월 1일 0시에 만료됩니다. 마감 후 발행 완료 시에는 초대 추가 혜택이 지급되지 않으며, 마감 직전에는 처리 지연으로 혜택을 받지 못할 수 있습니다. 유료 이용권은 이벤트 만료와 무관합니다.";
 export function isLaunchEventView(value: unknown): value is LaunchEventView {
   if (!value || typeof value !== "object") return false;
   const v = value as LaunchEventView;

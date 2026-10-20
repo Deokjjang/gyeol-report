@@ -61,7 +61,7 @@ export function BookShareActions({ owner, model, local = false }: { owner?: { re
     {!local && kakaoKey ? <Script id="gyeol-kakao-sdk" src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.3/kakao.min.js" integrity="sha384-oroumrnFVE0xtgqyDZJARgERibXg2C28380uaUZz2kHDS5CR7tu20eGiOU6GkTpy" crossOrigin="anonymous" strategy="afterInteractive" onReady={initKakao} /> : null}
     <h2>이 책 공유하기</h2>{!denied && (owner || ready) ? <div className={s.buttons}>{(["kakao", "native", "copy"] as const).map((mode, i) => <button key={mode} type="button" disabled={busy} aria-label={["카카오톡으로 책 공유", "시스템 공유", "공유 링크 복사"][i]} onClick={() => void share(mode)}><ShareIcon kind={i} /><span>{["카카오톡", "공유", "링크 복사"][i]}</span></button>)}</div> : null}
     <p className={s.notice}>링크를 받은 사람은 책 전체를 읽을 수 있습니다.</p>
-    {owner ? <BookEventNotice view={view} remaining={remaining} /> : null}
+    {owner ? <BookEventNotice view={view} remaining={remaining} invitation={ready ? Boolean(ready.referral) : undefined} /> : null}
     <p className={s.status} role="status">{message}</p>
     {manual ? <input aria-label="복사할 공유 링크" readOnly value={manual} onFocus={e => e.target.select()} /> : null}
     {local && owner && ready?.shareToken ? <a className={s.review} href={`/dev/book-flow/r/${ready.shareToken}${ready.referral ? `?ref=${ready.referral.token}` : ""}`}>로컬 공유 화면 검수 ↗</a> : null}
