@@ -1,3 +1,5 @@
+import { COMPATIBILITY_INDEX_VERSION } from "../../../src/lib/interpretation-v4/compatibilityIndex";
+import { buildLegacyCompatibilityIndex } from "../../../src/lib/interpretation-v4/compatibilityIndexLegacy";
 import contentBaseline from "./productNarrativeBaseline.json";
 import { createHash } from "node:crypto";
 import { describe, it, expect } from "vitest";
@@ -61,7 +63,7 @@ describe("Compatibility isolation, evidence and directionality", () => {
     expect(reports.every(r => JSON.stringify(r.evidence.invariant) === JSON.stringify(reports[0].evidence.invariant))).toBe(true);
     if (process.env.V4_PHASE5C_EXPORT === "1") writeFileSync("/tmp/gyeol-v4-phase5c/category-counterfactual.json", JSON.stringify(reports.map(r => ({ category: r.narrative.category, opening: narrativeText(r.narrative).slice(0, 800), directions: r.directions, final: r.narrative.finalLine })), null, 2));
   });
-  it("MBTI pair source fields retain both viewpoints; scores exist only in the explicit 13B index", () => {
+  it("MBTI pair source fields retain both viewpoints; scores exist only in the explicitly versioned index", () => {
     for (const { payload } of fixtures) {
       const r = must(payload);
       expect(r.mbtiPairBasis.length).toBeGreaterThan(0);
@@ -71,7 +73,8 @@ describe("Compatibility isolation, evidence and directionality", () => {
       }
       const visit = (v: unknown): void => { if (!v || typeof v !== "object") return; for (const [key, value] of Object.entries(v)) { expect(key).not.toMatch(/score|grade|rating|rank|percent/i); visit(value); } };
       const { compatibilityIndex, ...withoutIndex } = r;
-      expect(compatibilityIndex.version).toBe("gyeol-compatibility-index-13b-1");
+      expect(compatibilityIndex.version).toBe(COMPATIBILITY_INDEX_VERSION);
+      expect(buildLegacyCompatibilityIndex(r.evidence).version).toBe("gyeol-compatibility-index-13b-1");
       visit(withoutIndex);
       for (const p of Object.values(r.persons)) {
         if (p.fusion) expect(p.materials.fusions).toContainEqual(p.fusion);

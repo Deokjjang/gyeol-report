@@ -35,7 +35,8 @@ export function buildV4CompatibilityProduct(payload: unknown, calculated?: { per
   const profilesA = buildRelationshipProfiles({ calculation: calculations.personA, name: input.personA.name, mbti: input.personA.mbtiType, context });
   const profilesB = buildRelationshipProfiles({ calculation: calculations.personB, name: input.personB.name, mbti: input.personB.mbtiType, context });
   if (!profilesA.ok || !profilesB.ok) return { ok: false as const, errors: ["RELATIONSHIP_PAIR_PERSON_INVALID"] };
-  const a = offline?.views.personA ?? projectRelationshipView(profilesA.profiles, romantic), b = offline?.views.personB ?? projectRelationshipView(profilesB.profiles, romantic);
+  const professionalContext = e.category === "businessPartner" ? "business" : ["coworker", "managerReport"].includes(e.category) ? "work" : undefined;
+  const a = offline?.views.personA ?? projectRelationshipView(profilesA.profiles, romantic, professionalContext), b = offline?.views.personB ?? projectRelationshipView(profilesB.profiles, romantic, professionalContext);
   const pair = projectCompatibilityPairView(a, b, canonical);
   const stableKey = digest([COMPATIBILITY_PRODUCT_VERSION, e.category, e.invariant]);
   function personCore(view: RelationshipView, slot: "personA" | "personB") {

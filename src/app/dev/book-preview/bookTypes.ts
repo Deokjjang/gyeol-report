@@ -16,7 +16,7 @@ export type BookPage = (
   | { kind: "mbti"; title: string; person: number }
   | { kind: "narrative"; title: string; paragraphs: BookParagraph[]; notes: BookNote[] }
   | { kind: "contents"; title: string; entries: { title: string; targetId: string; page: number }[] }
-  | { kind: "score"; title: string; total: number; scores: { label: string; value: number; max: number }[]; verdict: string; notice: string; limitations: string[] }
+  | { kind: "score"; versionLabel?: string; scoreVersion?: string; explanations?: string[]; title: string; total: number; scores: { label: string; value: number; max: number }[]; verdict: string; notice: string; limitations: string[] }
   | { kind: "timeline"; title: string; years: BookYear[]; transitions: { date: string; exact?: string; before: string; after: string; page: number }[] }
   | { kind: "months"; title: string; months: BookMonth[]; map?: { label: string; months: number[] }[] }
   | { kind: "appendix"; title: string; items: BookFeature[]; from: number; total: number }

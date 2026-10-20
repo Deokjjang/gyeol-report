@@ -1,11 +1,11 @@
 {
-  "revision": "V4-SIX-PRODUCT-FULL-CONTENT-REFINEMENT-01:PHASE-C",
+  "revision": "V4-SIX-PRODUCT-FULL-CONTENT-REFINEMENT-01-PHASE-D",
   "groups": {
     "career": {
       "05-major-fortune": "7536fb94e0329d09ecf38a3fe3484cd7e7749ff5928417ba9eb56f9857801e1b",
       "01-comprehensive": "529c4061ab0a85574497afad613be2af0df545612348967d64ac3f0be62fcb45",
       "06-annual-fortune": "9b70bb5cfdd707995825f0236948a27fb4eaad0d09f07b4c2241f0bcd82205b4",
-      "04-compatibility": "3fcec89bac986a6dc5209de0adaa6f8ad8057dd4e9fccace855df979eb161b41",
+      "04-compatibility": "e60af3410d1c1e4a9e9fa87a718197d8eccbe9e6e3b757dacd5c02107200913b",
       "03-love": "8883eb9d2ab5076f76f01dbd55477cb48d13f3ccdab5ca95c2f7ccd491ac2523"
     },
     "love": {
@@ -20,9 +20,9 @@
         "50aee8a923d826f028469d65f2ae9b5d78274c68fcd3a85750ef42ef36f6fd9f"
       ],
       "04-compatibility": [
-        "c929b82cdcc2b38f4ec15a6fde17a1017ed92bd5c820965992ba68066f27c4f7",
-        "253383654112f58faa6a02fdad49ec03e44061e73edc0b3b0c2e37417a54c35d",
-        "e54f9608340942e8222c77e45e88a48f02eae51b04b224efc1276c476633d159"
+        "536b6b0d82cfbd6f696964f5c234f6f3e619fcda9ad0eca59d844b6fb1cc13a6",
+        "11c2c60cd0bf576e754bfee5cef57bd446a1ac96cef6c73a47ad8ecf2df7618c",
+        "095f26248df43e32c461cf3528686e21dc81ceb1980f81c167bb95decfbcb125"
       ],
       "05-major-fortune": [
         "4e695f96492074aa37386a4fef49efa79399c946ecf8e6f19233c46da0869792",
@@ -168,7 +168,7 @@
       "mbtiTables": "1f1cbdd9d889692c51806ed17910587f97f7874860ebab65de0aa7dfa878bab5",
       "natalTables": "36fcdfbfe5fa25e039c920c1f036ee215a4c389ae159fa16e226347461c03cfe",
       "materials": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
-      "index": "827b40a39f07ec3fcc5d4f0ababcb9c11cf92344bf6270f214f94832261aafeb",
+      "index": "e2220ab3ec8ded1eedef13ce580fab059dc96c2a9526e1baa823659dbe1255d7",
       "directions": "08ca208c805c457fce4f40475321591defad150c01bd3ae8b69c0bd2e7df58e6",
       "individuals": "6f211dc1a58d879d14b6d4bd00f544f5b0a1a3a3240a73e4a951a34a04360b7f",
       "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",

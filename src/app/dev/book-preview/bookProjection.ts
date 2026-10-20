@@ -132,7 +132,7 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
       directions: [], relations: unique(c.result.evidence.relations.map(r => r.labelKo)) });
     const index = c.result.compatibilityIndex;
     if (index) pages.push({ kind: "score", id: "compatibility-index", title: "결리포트 궁합 지수", total: index.total,
-      scores: index.scores.map(({ label, value, max }) => ({ label, value, max })), verdict: index.verdict, notice: index.notice, limitations: index.limitations });
+      scores: index.scores.map(({ label, value, max }) => ({ label, value, max })), verdict: index.verdict, notice: index.notice, limitations: index.limitations, ...(index.explanations ? { explanations: index.explanations, scoreVersion: index.version, versionLabel: index.versionLabel } : {}) });
   }
   people.forEach((p, i) => { pages.push({ kind: "manse", title: `${p.name}의 만세력`, person: i }, { kind: "mbti", title: `${p.name}의 MBTI`, person: i }); });
   const openingNotes: BookNote[] = [];

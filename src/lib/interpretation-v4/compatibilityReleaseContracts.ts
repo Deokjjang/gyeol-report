@@ -1,5 +1,5 @@
 import type { PairCategory } from "./compatibilityNarrativeTypes";
-export const COMPATIBILITY_RELEASE_VERSION = "compatibility-editorial-quality-01-v1" as const;
+export const COMPATIBILITY_RELEASE_VERSION = "compatibility-full-content-refinement-01-v2" as const;
 const chapter = (id: string, key: string, title: string, rows: readonly (readonly [string, string, string, string, string, string?])[]) => ({
   // Keep purpose stable for evidence themes; display names use separate explicit slots.
   id, key, title, paragraphs: rows.map(([purpose, s1, s2, s3, s4, titleTemplate = purpose], i) => ({ id: `P${i + 1}`, purpose, sentences: [s1, s2, s3, s4], titleTemplate })),

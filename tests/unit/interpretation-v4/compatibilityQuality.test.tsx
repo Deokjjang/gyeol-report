@@ -1,3 +1,5 @@
+import newIndexes from "../../fixtures/full-content-refinement-01/compatibility-indexes.json";
+import { buildLegacyCompatibilityIndex } from "../../../src/lib/interpretation-v4/compatibilityIndexLegacy";
 import { editorialLocks, expectEditorialFoundations } from "./productWideAssertions";
 import { describe, it, expect, vi } from "vitest";
 vi.mock("server-only", () => ({}));
@@ -26,8 +28,9 @@ describe("Compatibility actual quality edition at c048218 base", () => {
     const r = e.composition.result, d = r.integration.readerEdition;
     const frozen = fixtures.before[f.id as keyof typeof fixtures.before];
     for (const [key, value] of Object.entries({ calculations:e.calculations, natalTables:e.natalTableEvidence, mbtiTables:e.mbtiTables,
-      index:r.compatibilityIndex, directions:r.evidence.directions, invariant:r.evidence.invariant, individuals:r.integration.individualDigests }))
+      index:buildLegacyCompatibilityIndex(r.evidence), directions:r.evidence.directions, invariant:r.evidence.invariant, individuals:r.integration.individualDigests }))
       expect(v4Digest(value), `${f.id}:${key}`).toBe(frozen[key as keyof typeof frozen]);
+    expect(r.compatibilityIndex).toEqual(newIndexes.quality[f.id as keyof typeof newIndexes.quality]);
     expect(r.integration.publishedEdition).toBe(COMPATIBILITY_RELEASE_VERSION);
     expect(r.integration.readerValidation).toEqual({ hardErrors:[], qualityIssues:[] });
     expect(r.integration.readerEditorial).toEqual([]);
@@ -50,7 +53,7 @@ describe("Compatibility actual quality edition at c048218 base", () => {
       const profiles=buildRelationshipProfiles({calculation:e.calculations[slot],name:person.name,mbti:person.mbtiType,
         context:{jobStatus:"",detailJob:"",relationshipStatus:f.payload.relationshipType==="marriage"?"married":romantic?"dating":""}});
       if(!profiles.ok)return expect.unreachable();
-      return projectRelationshipView(profiles.profiles,romantic);
+      return projectRelationshipView(profiles.profiles,romantic,f.payload.relationshipType === "businessPartner" ? "business" : ["coworker", "managerReport"].includes(f.payload.relationshipType) ? "work" : undefined);
     });
     const atomIds=new Set(views.flatMap(v=>v.profiles.myeongli.evidence.map(a=>a.id)));
     // Pair comparisons retain the full canonical profile's contributing nodes;
@@ -77,8 +80,10 @@ describe("Compatibility actual quality edition at c048218 base", () => {
     expect(book.pages.flatMap(p=>p.kind==="narrative"?p.paragraphs.map(p=>p.text):[])).toEqual(paragraphs.map(p=>p.text));
     manuscripts.set(f.id,{paragraphs:paragraphs.map(p=>p.text),directions:[4,5].map(c=>d.chapters[c].paragraphs.map(p=>p.text).join("\n"))});
     if(f.id==="A") {
-      expect(r.compatibilityIndex.total).toBe(54); expect(r.compatibilityIndex.scores.map(s=>s.value)).toEqual([15,19,13,7]);
-      const score=book.pages.find(p=>p.kind==="score"); expect(score?.kind==="score"&&score.total).toBe(54);
+      const oldIndex = buildLegacyCompatibilityIndex(r.evidence);
+      expect(oldIndex.total).toBe(54); expect(oldIndex.scores.map(s=>s.value)).toEqual([15,19,13,7]);
+      expect(r.compatibilityIndex.total).toBe(newIndexes.quality.A.total);
+      const score=book.pages.find(p=>p.kind==="score"); expect(score?.kind==="score"&&score.total).toBe(newIndexes.quality.A.total);
       const appendix=book.pages.filter(p=>p.kind==="appendix");
       expect(appendix.map(p=>p.items.length)).toEqual([43,34]);
       expect(appendix.flatMap(p=>p.items).map(i=>i.person)).toEqual([...Array(43).fill("이준혁"),...Array(34).fill("정유진")]);

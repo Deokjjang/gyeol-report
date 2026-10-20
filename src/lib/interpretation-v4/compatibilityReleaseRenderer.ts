@@ -1,3 +1,4 @@
+import { PAIR_TEN_GOD_APPLICATIONS, PAIR_SHARED_POSSIBILITIES } from "./compatibilityReaderApplications";
 import { reviewedMbtiBehavior } from "./contentMbti";
 import { COMPATIBILITY_RELEASE_VERSION, COMPATIBILITY_READER_CHAPTERS, type PairReleaseDraft, type PairReleaseSentence } from "./compatibilityReleaseContracts";
 import { PAIR_RELEASE_CONTEXT, PAIR_RELEASE_FACETS } from "./compatibilityReleaseMaterials";
@@ -41,6 +42,8 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
   const a = people.personA, b = people.personB, A = `${a.name}님`, B = `${b.name}님`, ctx = PAIR_RELEASE_CONTEXT[e.category], scene = PAIR_RELEASE_SCENES[e.category];
   const copy = compatibilityCategoryCopy(e.category, a, b);
 
+  const possibilities = PAIR_SHARED_POSSIBILITIES[e.category];
+  const professionalDomains = e.category === "businessPartner" ? ["WORK", "CAREER", "MONEY"] : ["coworker", "managerReport"].includes(e.category) ? ["WORK", "CAREER"] : [];
   const registry: Record<string, Source> = {}, used = new Set<string>(), committed = new Map<string, number>();
   const draft: PairReleaseDraft = { version: publicationSafety ? "compatibility-publication-safety-01-v1" : COMPATIBILITY_RELEASE_VERSION, chapters: [], bodyLength: 0, shortages: [] };
   const rootTerms = new Set<string>();
@@ -52,15 +55,19 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
   const combined = register({ id: "opening", proof: publicationSafety ? pairProof(pa.proof, pb.proof) : pairProof(a.proof, b.proof), individual: [], nodes: [], fusions: publicationSafety ? [] : [...new Set([...a.proof.fusionIds, ...b.proof.fusionIds])], canonical: [], relations: [] });
   const L = (text: string, source: Source, application: Line["application"] = "CONDITIONAL_APPLICATION"): Line => ({ text, source, application });
   const pool = { personA: pairReleaseSources(views.personA), personB: pairReleaseSources(views.personB) };
-  function take(slot: "personA" | "personB", preferred: string[], avoid: PairReleaseSource[] = []) {
-    return [...pool[slot]].sort((x, y) => Number(avoid.some(r => r.material.axis === x.material.axis)) - Number(avoid.some(r => r.material.axis === y.material.axis))
-      || (preferred.includes(x.material.axis) ? preferred.indexOf(x.material.axis) : preferred.length) - (preferred.includes(y.material.axis) ? preferred.indexOf(y.material.axis) : preferred.length))[0];
+  function take(slot: "personA" | "personB", preferred: string[], avoid: PairReleaseSource[] = [], risk = false) {
+    const matching = pool[slot].filter(r => preferred.includes(r.material.axis));
+    return [...(matching.length ? matching : pool[slot])].sort((x, y) => Number(y.candidate.factBomb === risk) - Number(x.candidate.factBomb === risk)
+      || Number(avoid.some(r => r.material.axis === x.material.axis)) - Number(avoid.some(r => r.material.axis === y.material.axis))
+      || Number(y.candidate.rank === "SIGNATURE") - Number(x.candidate.rank === "SIGNATURE")
+      || y.candidate.priorityScore - x.candidate.priorityScore || y.atom.weight - x.atom.weight
+      || preferred.indexOf(x.material.axis) - preferred.indexOf(y.material.axis))[0];
   }
   const rows = (["personA", "personB"] as const).map(slot => {
-    const core = pool[slot].find(r => r.atom.metadata?.isDayMaster) ?? take(slot, ["AUTONOMY", "RELATION_STYLE", "EXPRESSION"]);
+    const core = pool[slot].find(r => !r.candidate.factBomb && r.candidate.sourceType === "PERSONAL_RESONANCE" && r.candidate.independentFamilies.length >= 2) ?? pool[slot].find(r => !r.candidate.factBomb && r.atom.metadata?.isDayMaster) ?? take(slot, ["AUTONOMY", "RELATION_STYLE", "EXPRESSION"]);
     const need = take(slot, ["BOUNDARY", "RECOVERY_NEED", "STABILITY"], core ? [core] : []);
     const gift = take(slot, ["CARE", "DUTY", "SOCIAL_ATTUNEMENT"], [core, need].filter((r): r is PairReleaseSource => !!r));
-    return { slot, p: people[slot], core, need, gift, risk: take(slot, ["COMMUNICATION_STYLE", "EXPRESSION", "AUTONOMY"], [core, need, gift].filter((r): r is PairReleaseSource => !!r)) };
+    return { slot, p: people[slot], core, need, gift, risk: take(slot, ["COMMUNICATION_STYLE", "EXPRESSION", "AUTONOMY"], [core, need, gift].filter((r): r is PairReleaseSource => !!r), true) };
   });
   function root(slot: "personA" | "personB", r: PairReleaseSource): Source {
     return register({ id: `${people[slot].personId}:${r.candidate.id}:${r.atom.id}:${r.material.axis}`, candidateId: r.candidate.id, proof: { ...emptyProof, sourceRefs: [r.candidate.sourceId, r.atom.id, `person:${people[slot].personId}`] },
@@ -72,11 +79,11 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
     return `${people[slot].name}님의 ${particle(pairRootName(r), "은", "는")} ‘${noun(r.atom.easyMeaning)}’이라는 뜻으로, ${application}.`;
   }
   function node(slot: "personA" | "personB", axis?: SemanticAxis, distinctOpening = false) {
-    const domains = e.category === "love" ? ["LOVE", "RELATIONSHIPS", "COMMUNICATION", "IDENTITY"] : e.category === "marriage" ? ["MARRIAGE", "RELATIONSHIPS", "COMMUNICATION", "IDENTITY"] : ["COMMUNICATION", "RELATIONSHIPS", "IDENTITY"];
+    const domains = e.category === "love" ? ["LOVE", "RELATIONSHIPS", "COMMUNICATION", "IDENTITY"] : e.category === "marriage" ? ["MARRIAGE", "RELATIONSHIPS", "COMMUNICATION", "IDENTITY"] : [...professionalDomains, "COMMUNICATION", "RELATIONSHIPS", "IDENTITY"];
     return views[slot].profiles.mbti.contributions.flatMap(c => {
       const n = views[slot].nodes.find(n => n.id === c.sourceNodeId && n.classification === "SCORING_SEMANTIC" && domains.includes(n.sourceDomain!) && n.id.endsWith(":plainKo"));
       const action = n && (reviewedMbtiBehavior(n) ?? mbtiHumanBehavior(c.axis, c.rawValue));
-      const openingAction = distinctOpening && draft.chapters[0]?.paragraphs.find(p => p.id === "CH01.P3")?.sentences.some(s => s.text.includes(action ?? ""));
+      const openingAction = distinctOpening && draft.chapters.some(c => c.paragraphs.some(p => p.sentences.some(s => s.text.includes(action ?? ""))));
       return n && action && !openingAction ? [{ n, axis: c.axis, sign: Math.sign(c.rawValue), action }] : [];
     }).sort((x, y) => Number(y.axis === axis) - Number(x.axis === axis)
       || Number(draft.chapters.some(ch => ch.paragraphs.some(p => p.sentences.some(s => s.mbtiSourceNodeIds.includes(x.n.id)))))
@@ -159,17 +166,21 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
     const p = draft.chapters[0].paragraphs.find(p => p.id === "CH01.P3");
     if (p) p.purpose = "유형을 모를 때 확인할 두 사람의 반응";
   }
-  add(0, 3, [L(`${A}의 ${particle(gift(ra), "과", "와")} ${B}의 ${particle(gift(rb), "은", "는")} 둘 사이에 쓸 수 있는 서로의 자원입니다`, combined),
-    L("장점은 상대에게 필요한 순간과 맞아야 도움이 되므로, 호의를 얼마나 크게 썼는지만으로 관계를 평가하기는 어렵습니다", combined),
-    L(`${scene.measure} 살피면 두 사람에게 맞는 기준이 더 분명해집니다`, combined),
-    L("한 사람의 영향력을 좋고 나쁨으로만 나누기보다, 받는 사람이 자기 선택을 유지하면서도 도움을 얻는 조건을 뒤의 두 방향에서 살펴보겠습니다", combined)]);
+  const index = pair.canonicalIndex;
+  const positiveFactors = [...new Set(index.scores.flatMap(s => s.factors.filter(f => f.value > .01).map(f => f.factor)))].slice(0, 2);
+  const adjustingFactors = [...new Set(index.scores.flatMap(s => s.factors.filter(f => f.value < -.01).map(f => f.factor)))].slice(0, 2);
+  const indexSource = register({ id: `compatibility-index:${index.version}`, proof: { ...emptyProof, sourceRefs: [...new Set([`compatibilityIndex:${index.version}`, ...index.scores.flatMap(score => score.factors.flatMap(f => f.sources))])] }, individual: [], nodes: [], fusions: [], canonical: [], relations: [] });
+  add(0, 3, [L(`${A}의 ${particle(gift(ra), "과", "와")} ${B}의 ${particle(gift(rb), "은", "는")} 함께할 때 쓸 수 있는 서로의 자원입니다`, combined),
+    L(`앞의 지수에서 ${positiveFactors.length ? `${positiveFactors.join("·")}은 좋은 연결로 반영했습니다` : "확인된 가산 근거가 없는 부분은 중립으로 남겼습니다"}${adjustingFactors.length ? `; ${adjustingFactors.join("·")}에서는 조율할 조건도 함께 보았습니다` : "; 자료가 적다는 이유로 단점을 만들어내지는 않습니다"}`, indexSource, "SOURCE"),
+    L("이 지수는 명리·MBTI의 연결과 반응 차이를 묶은 상징적 해석이며, 관계의 성공 확률이나 실제 행동의 평가가 아닙니다", indexSource, "SOURCE")]);
+
 
   function fusionGift(row: typeof ra, c: number) {
     const v = views[row.slot];
     for (const r of pool[row.slot]) {
       const f = [...v.profiles.fusion.complements, ...v.profiles.fusion.reinforce, ...v.profiles.fusion.tensions].find(f => f.id === r.candidate.sourceId && f.myeongli.side.axis === r.material.axis && f.myeongli.side.direction === r.material.sign);
       if (!f || r.candidate.sourceType !== "FUSION" || f.type === "TENSION") continue;
-      const n = v.profiles.mbti.contributions.find(n => f.mbti.sourceNodeIds.includes(n.sourceNodeId) && n.axis === f.mbti.side.axis && n.rawValue * f.mbti.side.direction > 0 && v.nodes.some(x => x.id === n.sourceNodeId && ["LOVE", "MARRIAGE", "COMMUNICATION", "RELATIONSHIPS", "IDENTITY"].includes(x.sourceDomain!)));
+      const n = v.profiles.mbti.contributions.find(n => f.mbti.sourceNodeIds.includes(n.sourceNodeId) && n.axis === f.mbti.side.axis && n.rawValue * f.mbti.side.direction > 0 && v.nodes.some(x => x.id === n.sourceNodeId && [...professionalDomains, "LOVE", "MARRIAGE", "COMMUNICATION", "RELATIONSHIPS", "IDENTITY"].includes(x.sourceDomain!)));
       const action = n && mbtiHumanBehavior(n.axis, n.rawValue);
       if (!n || !action) continue;
       const base = root(row.slot, r), s = register({ ...base, id: `${base.id}:fusion:${f.id}`, nodes: [n.sourceNodeId], fusions: [f.id], proof: { ...base.proof, fusionIds: [f.id], sourceRefs: [...base.proof.sourceRefs, f.id, n.sourceNodeId] } });
@@ -227,11 +238,11 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
     L(`${A} 쪽의 ${particle(act(ra), "과", "와")} ${B} 쪽의 ${particle(act(rb), "을", "를")} 같은 선택의 서로 다른 단계에 놓아볼 수 있습니다`, combined),
     L("먼저 제안한 사람이 결론까지 독점하지 않고 다른 사람이 조건을 보탤 자리를 남기면, 시작과 점검을 번갈아 맡을 수 있습니다", combined),
     L("둘이 한 일에서 시작을 연 사람과 빠진 조건을 찾은 사람의 몫을 따로 알아주면, 다음에도 서로 다른 강점을 꺼내기 편해집니다", combined)]);
-  add(3, 2, [L(ctx.good, combined),
+  add(3, 2, [L(possibilities[0], combined),
     L(`${A}이 해볼 수 있는 기여는 ${gift(ra)}입니다`, ra.gift ? root(ra.slot, ra.gift) : pa),
     L(`${B}의 ${particle(gift(rb), "이", "가")} 이어지면, 한쪽이 혼자 감당하지 않아도 함께 끝낼 여지가 생깁니다`, rb.gift ? root(rb.slot, rb.gift) : pb),
-    L("이런 시도를 한다면 즐거웠는지만 묻기보다 무엇이 편했고 무엇이 부담이었는지 나눠야, 다음에도 두 사람이 고를 수 있는 방식으로 남습니다", combined)]);
-  add(3, 3, [L("두 사람의 좋은 가능성을 키우려면 상대의 강점에 일을 모두 몰아주지 않는 감각도 필요합니다", combined),
+    L(possibilities[1], combined)]);
+  add(3, 3, [L(possibilities[2], combined),
     L(`${A} 쪽에서는 ‘${ra.need?.material.adjust ?? "가능한 도움과 어려운 부탁을 나눠 말하기"}’로 기여할 범위를 살펴볼 수 있습니다`, ra.need ? root(ra.slot, ra.need) : pa),
     L(`${B}도 ‘${rb.need?.material.adjust ?? "원하는 것과 감당할 수 있는 것을 함께 말하기"}’를 해보면, 함께하는 일이 의무만으로 굳는 것을 줄일 수 있습니다`, rb.need ? root(rb.slot, rb.need) : pb),
     L(ctx.future, combined)]);
@@ -242,15 +253,17 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
     const ds = register({ id: d.relationId, proof: { ...emptyProof, sourceRefs: [`compatibilityRelationRules:getCrossTenGodRelation:${d.relationId}`, `target-viewer:${to.p.personId}`] },
       individual: [], nodes: [], fusions: [], canonical: [d.relationId], relations: [], subject: d.subjectPerson, target: d.targetPerson, direction: d.relationId });
     const god = d.receivedTenGod?.tenGodKo;
+    const repeatedGod = i === 1 && e.directions.aToB.receivedTenGod?.tenGodKo === god;
     if (god && godEffects[god]) add(c, 0, [L(`${Q}의 일간 ${d.receivedTenGod!.viewerDayStem} 기준에서 ${P}의 일간 ${d.receivedTenGod!.targetDayStem}에 해당하는 십성은 ${god}입니다`, ds, "SOURCE"),
-      L(`${god}의 관계 자극을 풀면 ${P}의 존재가 ${Q}에게 ${godEffects[god]}`, ds, "SOURCE"),
-      L(i === 0 ? `${P} 쪽에서는 ${particle(act(from), "으로", "로")} 그 자극을 전할 수 있습니다` : `${P}에게 익숙한 ${particle(act(from), "이", "가")} ${Q}에게 닿는다면, 받는 쪽의 여건도 같이 살펴야 합니다`, own(from)),
-      L(i === 0 ? `${Q}에게 중요한 ${particle(need(to), "을", "를")} 함께 지켜야 이 자극이 선택 가능한 제안으로 도착합니다` : `${Q}이 필요로 하는 ${particle(need(to), "을", "를")} 먼저 살피면, ${e.directions.aToB.receivedTenGod?.tenGodKo === god ? "같은 십성" : god}의 자극도 그 사람에게 맞는 속도로 건넬 수 있습니다`, to.need ? root(to.slot, to.need) : own(to))]);
-    if (from.gift && to.core) { const s = root(from.slot, from.gift), ts = root(to.slot, to.core); add(c, 1, [
+      L(repeatedGod ? `${P}이 건네는 같은 ${god} 자극도 받는 ${Q} 쪽에서는 ${godEffects[god]}` : `${P}이 ${Q}에게 주는 ${god} 자극은 이렇게 읽습니다: ${PAIR_TEN_GOD_APPLICATIONS[god][0]}`, ds),
+      L(`${P}이 보탤 힘은 ${act(from)}입니다`, own(from)),
+      L(repeatedGod ? `${Q}은 ${withKoreanParticle(`‘${act(to)}’`, "object")} 바탕으로 자기 답을 찾을 수 있으며, ${P}의 기여가 이 과정을 대신하지 않을 때 함께 고를 여지가 남습니다` : `이를 작은 장면으로 옮겨 보면, ${PAIR_TEN_GOD_APPLICATIONS[god][1]}`, repeatedGod ? own(to) : ds),
+      L(i === 0 ? `${Q}에게 필요한 ${withKoreanParticle(`‘${need(to)}’`, "object")} 남겨야 상대도 자기 뜻으로 참여할 수 있습니다` : `이때 ${Q}의 ${withKoreanParticle(`‘${to.need?.material.gift ?? act(to)}’`, "topic")} 받은 기여를 자기 방식으로 이어갈 또 다른 힘이 될 수 있습니다`, to.need ? root(to.slot, to.need) : own(to))]);
+    if (from.gift && to.core) { const s = root(from.slot, from.gift), ts = root(to.slot, to.core), receiver = repeatedGod ? node(to.slot, to.core.material.axis, true) : undefined; add(c, 1, [
       L(`${scene.influence}, ${P}의 ${particle(from.gift.material.gift, "이", "가")} ${Q}에게 도움이 될 수 있습니다`, s),
       L(i === 0 ? `${Q}에게 익숙한 것은 ${act(to)}이며, 상대의 도움을 받아도 이 방식으로 직접 참여할 몫은 남겨둘 만합니다` : `${Q}은 ${particle(act(to), "을", "를")} 바탕으로 자기 답을 찾는 편이므로, ${P}의 기여를 받아도 선택을 직접 확인할 여지는 필요합니다`, ts, "SOURCE"),
       L(e.category === "parentChild" && i === 1 ? `자녀 ${P}의 시도를 보며 부모 ${Q}이 새 관점을 배울 수 있지만, 부모의 어려움을 해결하는 역할까지 자녀에게 맡기지는 않아야 합니다` : e.category === "managerReport" && i === 1 ? `팀원 ${P}의 제안은 상사 ${Q}의 판단에 정보를 더해줄 수 있으며, 최종 권한과 책임이 팀원에게 넘어가는 것은 아닙니다` : i === 0 ? `${P}이 가능한 도움을 먼저 설명하고 ${Q}이 쓸 부분을 고르면, 서로의 좋은 면을 같은 방식으로 바꾸지 않아도 함께 시도할 폭이 넓어집니다` : `${Q}이 평소 혼자 확인하던 부분에 ${P}의 관점을 보태보면, 도움을 받으면서도 최종 선택은 직접 할 수 있습니다`, s),
-      L(i === 0 ? `${Q}이 어떤 도움이 실제로 필요했는지 알려주면, ${P}도 수고를 더 늘리기보다 필요한 곳에 힘을 쓸 수 있습니다` : `${P}이 보탠 뒤 ${Q}이 혼자 이어갈 부분까지 정하면, 다음에도 같은 도움을 기다려야 하는 부담을 줄일 수 있습니다`, ts)]); }
+      L(repeatedGod ? receiver ? `이 도움을 받는 ${Q}의 ${to.p.mbti} 선호에는 또 다른 면도 있습니다: ${receiver.action}` : `${Q}에게 ${withKoreanParticle(`‘${need(to)}’`, "subject")} 남아 있을 때, ${P}의 기여도 자기 힘으로 다음 선택을 이어갈 여유가 됩니다` : d.receivedTenGod && PAIR_TEN_GOD_APPLICATIONS[d.receivedTenGod.tenGodKo] ? `${from.p.name}님이 건네는 ${d.receivedTenGod.tenGodKo} 자극에서 함께 살필 조건도 있습니다: ${PAIR_TEN_GOD_APPLICATIONS[d.receivedTenGod.tenGodKo][2]}` : `${P}이 보탠 뒤 ${Q}이 혼자 이어갈 부분까지 정하면, 다음에도 같은 도움을 기다려야 하는 부담을 줄일 수 있습니다`, repeatedGod ? receiver ? mbti(to.slot, receiver.n) : to.need ? root(to.slot, to.need) : own(to) : ds)]); }
     if (from.risk && to.need) { const rs = root(from.slot, from.risk), ns = root(to.slot, to.need), n = node(to.slot, to.need.material.axis); add(c, 2, [
       L(`${scene.burden}, ${P}의 ${particle(from.risk.material.risk, "이", "가")} ${Q}에게는 부담으로 커질 수 있습니다`, rs),
       L(i === 0 ? `${Q}에게 필요한 ${particle(to.need.material.need, "이", "가")} 빠지면, 도움의 크기보다 자신이 참여할 자리가 있는지를 먼저 묻게 되기 때문입니다` : `${Q}은 ${particle(to.need.material.need, "을", "를")} 중요하게 여기는 만큼, 선의로 건넨 행동도 자신의 기준을 무시한다고 느끼면 받아들이기 어려울 수 있습니다`, ns),
@@ -323,7 +336,7 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
     L("오래 안다는 이유로 현재의 어려움까지 알고 있다고 여기지 않는 태도가, 변화를 관계가 멀어진 증거로만 받아들이지 않게 해줍니다", combined)]);
   add(8, 3, [L(`${A}의 ${particle(act(ra), "과", "와")} ${B}의 ${particle(act(rb), "은", "는")} 서로에게 같은 답을 요구하는 대신 다음 선택을 넓히는 데 써볼 만합니다`, combined),
     L("잘 맞는다는 말의 힘은 아무 노력도 필요 없다는 안심보다, 차이가 드러났을 때 무엇을 다시 물으면 되는지 아는 데 있습니다", combined),
-    L("처음과 같은 방식으로 잘 지내야 한다는 부담을 내려놓고, 지금 두 사람에게 가능한 기여를 다시 고르면 관계도 변화할 자리를 얻습니다", combined),
+    L(`${A}과 ${B}이 서로의 다른 반응을 알아가는 동안, 함께하는 방식도 처음의 예상보다 넓어질 수 있습니다`, combined),
     L(ctx.close, combined)]);
   draft.bodyLength = draft.chapters.flatMap(c => c.paragraphs.map(p => p.text)).join("\n").length;
   const blocks = (chapter: PairReleaseDraft["chapters"][number]): NarrativeBlock[] => chapter.paragraphs.map(p => ({ id: p.id, text: p.text, mode: "prose",

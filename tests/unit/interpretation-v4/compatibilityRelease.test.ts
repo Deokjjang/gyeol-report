@@ -1,3 +1,5 @@
+import newIndexes from "../../fixtures/full-content-refinement-01/compatibility-indexes.json";
+import { buildLegacyCompatibilityIndex } from "../../../src/lib/interpretation-v4/compatibilityIndexLegacy";
 import { readableBookText } from "../../../src/lib/book/readerCopy";
 import { editorialLocks, expectEditorialFoundations } from "./productWideAssertions";
 import timeProductLocks from "../../fixtures/release-technical-01/time-product-locks.json";
@@ -71,7 +73,8 @@ describe("Compatibility reader release", () => {
     expect(d.bodyLength).toBeGreaterThanOrEqual(8000); expect(d.bodyLength).toBeLessThanOrEqual(10000);
     expect(text(d)).not.toMatch(/undefined|\[object Object\]|SourceCandidate|personA:|natal:|notablePairs/);
     const frozen = canonicalLocks[String(index) as keyof typeof canonicalLocks];
-    expect(r.compatibilityIndex).toEqual(frozen.index); expect(r.evidence.directions).toEqual(frozen.directions);
+    expect(buildLegacyCompatibilityIndex(r.evidence)).toEqual(frozen.index);
+    expect(r.compatibilityIndex).toEqual(newIndexes.canonical[String(index) as keyof typeof newIndexes.canonical]); expect(r.evidence.directions).toEqual(frozen.directions);
     expect(r.evidence.invariant).toEqual(frozen.invariant); expect(r.integration.individualDigests).toEqual(frozen.individuals);
     expect(r.integration.pair.canonicalRelationIds).toEqual(frozen.relations);
     for (const [chapter, slot] of [[4, "aToB"], [5, "bToA"]] as const) for (const p of d.chapters[chapter].paragraphs) for (const s of p.sentences) {
@@ -100,7 +103,7 @@ describe("Compatibility reader release", () => {
     if (!snapshot.ok) return expect.unreachable();
     const saved = JSON.parse(JSON.stringify(snapshot.value)); expect(storedBook(saved)?.data).toEqual(book); expect(storedBook(saved,"https://example.test/r/synthetic")?.data).toEqual(book);
     readers.push({ id: String.fromCharCode(65+index), draft:d });
-    exportJson(`manuscript-${String.fromCharCode(65+index)}`, {draft:d, validation:r.integration.readerValidation, editorial:r.integration.readerEditorial, index:r.compatibilityIndex, directions:r.evidence.directions, selection:r.selection, oldIndexEqual:true, book:{pages:book.pages.length, paragraphs:prose.length, anchors:36, directSharedRoundtrip:true}});
+    exportJson(`manuscript-${String.fromCharCode(65+index)}`, {draft:d, validation:r.integration.readerValidation, editorial:r.integration.readerEditorial, index:r.compatibilityIndex, directions:r.evidence.directions, selection:r.selection, legacyIndexPreserved:true,newIndexVersion:r.compatibilityIndex.version, book:{pages:book.pages.length, paragraphs:prose.length, anchors:36, directSharedRoundtrip:true}});
   },120000);
   it("records common sentences and facts without counting them as personalization", () => {
     exportJson("common-copy", readers.flatMap((a,i)=>readers.slice(i+1).map(b=>{

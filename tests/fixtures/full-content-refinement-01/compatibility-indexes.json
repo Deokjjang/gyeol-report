@@ -1,0 +1,2859 @@
+{
+  "canonical": {
+    "0": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 22/30점 — 함께 살필 좋은 조건은 부족한 오행을 서로 보탬·음양 리듬 보완입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다.",
+        "명리 관계 23/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계·돌봄·표현·책임의 자극입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 13/25점 — 함께 살필 좋은 조건은 움직이기 전 살피는 속도입니다; 함께할 거리 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 8/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법·차이를 역할로 바꿀 여지입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 66,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "부족한 오행을 서로 보탬",
+              "value": 4.8,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:0.1",
+                "SajuCalcResult:elements.weighted:EARTH:4.2",
+                "SajuCalcResult:elements.weighted:FIRE:0",
+                "SajuCalcResult:elements.weighted:FIRE:3.2",
+                "SajuCalcResult:elements:EARTH",
+                "SajuCalcResult:elements:FIRE",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:material-depth:element:EARTH:low",
+                "v4:material-depth:element:FIRE:high",
+                "v4:material-depth:element:FIRE:low",
+                "v4:symbolic-lifestyle:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:low",
+                "v4:symbolic-lifestyle:FIRE:high",
+                "v4:symbolic-lifestyle:FIRE:low"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 2.4,
+              "sources": [
+                "day:BRANCH_YIN_YANG:子",
+                "day:BRANCH_YIN_YANG:巳",
+                "day:STEM_YIN_YANG:己",
+                "day:STEM_YIN_YANG:甲",
+                "hour:BRANCH_YIN_YANG:亥",
+                "hour:BRANCH_YIN_YANG:巳",
+                "hour:STEM_YIN_YANG:乙",
+                "hour:STEM_YIN_YANG:己",
+                "month:BRANCH_YIN_YANG:子",
+                "month:BRANCH_YIN_YANG:辰",
+                "month:STEM_YIN_YANG:壬",
+                "month:STEM_YIN_YANG:庚",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:亥",
+                "year:BRANCH_YIN_YANG:申",
+                "year:STEM_YIN_YANG:乙",
+                "year:STEM_YIN_YANG:壬"
+              ]
+            }
+          ],
+          "value": 22
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 10.849003719240866,
+              "sources": [
+                "six_harmony:313b38ee316c7f0e3181b95f:hour:巳|51e2d73a80866288129d316d:year:申",
+                "three_harmony:313b38ee316c7f0e3181b95f:month:辰|51e2d73a80866288129d316d:day:子|51e2d73a80866288129d316d:year:申"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -7.146416766202657,
+              "sources": [
+                "clash:313b38ee316c7f0e3181b95f:hour:巳|51e2d73a80866288129d316d:hour:亥",
+                "harm:313b38ee316c7f0e3181b95f:year:亥|51e2d73a80866288129d316d:year:申"
+              ]
+            },
+            {
+              "factor": "돌봄·표현·책임의 자극",
+              "value": 2.4,
+              "sources": [
+                "received-ten-god:313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:정재",
+                "received-ten-god:51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:정관"
+              ]
+            }
+          ],
+          "value": 23
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "움직이기 전 살피는 속도",
+              "value": 3.5,
+              "sources": [
+                "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+                "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+                "mbti:ESFJ:traits:love:observing_then_devoted:plainKo",
+                "mbti:INTP:traits:love:careful_narrow_love:plainKo"
+              ]
+            },
+            {
+              "factor": "함께할 거리",
+              "value": -3.5,
+              "sources": [
+                "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+                "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+                "mbti:ESFJ:traits:love:avoidant_partner_trigger:plainKo",
+                "mbti:ESFJ:traits:love:reciprocal_expression_need:plainKo",
+                "mbti:ESFJ:traits:marriage:event_and_care_budget:plainKo",
+                "mbti:INTP:traits:love:careful_narrow_love:plainKo",
+                "mbti:INTP:traits:love:low_attention_partner_shock:plainKo",
+                "mbti:INTP:traits:marriage:emotional_checkin_frequency:plainKo"
+              ]
+            }
+          ],
+          "value": 13
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 0.5,
+              "sources": [
+                "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair:repairStrategy",
+                "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair:repairStrategy",
+                "mbti:ESFJ:traits:love:avoidant_partner_trigger:plainKo",
+                "mbti:ESFJ:traits:love:reciprocal_expression_need:plainKo",
+                "mbti:ESFJ:traits:marriage:event_and_care_budget:plainKo",
+                "mbti:INTP:traits:love:careful_narrow_love:plainKo",
+                "mbti:INTP:traits:love:low_attention_partner_shock:plainKo",
+                "mbti:INTP:traits:marriage:emotional_checkin_frequency:plainKo"
+              ]
+            },
+            {
+              "factor": "차이를 역할로 바꿀 여지",
+              "value": 2,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:0.1",
+                "SajuCalcResult:elements.weighted:EARTH:4.2",
+                "SajuCalcResult:elements.weighted:FIRE:0",
+                "SajuCalcResult:elements.weighted:FIRE:3.2",
+                "SajuCalcResult:elements:EARTH",
+                "SajuCalcResult:elements:FIRE",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:material-depth:element:EARTH:low",
+                "v4:material-depth:element:FIRE:high",
+                "v4:material-depth:element:FIRE:low",
+                "v4:symbolic-lifestyle:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:low",
+                "v4:symbolic-lifestyle:FIRE:high",
+                "v4:symbolic-lifestyle:FIRE:low"
+              ]
+            }
+          ],
+          "value": 8
+        }
+      ],
+      "category": "love",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "1": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 17/30점 — 함께 살필 좋은 조건은 일간 오행이 서로 생조입니다; 같은 오행으로 치우침 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "명리 관계 19/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계·돌봄·표현·책임의 자극입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 3/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 움직이기 전 살피는 속도·계획과 여지를 두는 방식·익숙함과 새로움을 고르는 방식 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 7/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 46,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "같은 오행으로 치우침",
+              "value": -1.5,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:4.2",
+                "SajuCalcResult:elements.weighted:EARTH:4.3",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:high"
+              ]
+            },
+            {
+              "factor": "일간 오행이 서로 생조",
+              "value": 3,
+              "sources": [
+                "daymaster-element:0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835",
+                "daymaster-element:32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2"
+              ]
+            }
+          ],
+          "value": 17
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 10.670362099651992,
+              "sources": [
+                "six_harmony:0239395c7851845e44da6cc2:year:戌|32aecba69ec1180156ea2835:month:卯",
+                "three_harmony:0239395c7851845e44da6cc2:day:申|0239395c7851845e44da6cc2:hour:辰|32aecba69ec1180156ea2835:day:子",
+                "three_harmony:0239395c7851845e44da6cc2:month:亥|32aecba69ec1180156ea2835:hour:未|32aecba69ec1180156ea2835:month:卯"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -10.004983472683719,
+              "sources": [
+                "clash:0239395c7851845e44da6cc2:year:戌|32aecba69ec1180156ea2835:year:辰",
+                "harm:0239395c7851845e44da6cc2:hour:辰|32aecba69ec1180156ea2835:month:卯"
+              ]
+            },
+            {
+              "factor": "돌봄·표현·책임의 자극",
+              "value": 1,
+              "sources": [
+                "received-ten-god:0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835:식신"
+              ]
+            }
+          ],
+          "value": 19
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "움직이기 전 살피는 속도",
+              "value": -3.266666666666666,
+              "sources": [
+                "0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835:mbti-pair",
+                "32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2:mbti-pair",
+                "mbti:ENFP:traits:love:spontaneous_love_risk:plainKo",
+                "mbti:ISTJ:traits:love:slow_start_relationship:plainKo"
+              ]
+            },
+            {
+              "factor": "계획과 여지를 두는 방식",
+              "value": -3.266666666666666,
+              "sources": [
+                "0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835:mbti-pair",
+                "32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2:mbti-pair",
+                "mbti:ENFP:traits:love:spontaneous_love_risk:plainKo",
+                "mbti:ISTJ:traits:love:slow_start_relationship:plainKo",
+                "mbti:ISTJ:traits:marriage:fixed_role_and_budget:plainKo",
+                "mbti:ISTJ:traits:marriage:spouse_control_risk:plainKo",
+                "mbti:ISTJ:traits:marriage:stable_household_builder:plainKo"
+              ]
+            },
+            {
+              "factor": "익숙함과 새로움을 고르는 방식",
+              "value": -3.266666666666666,
+              "sources": [
+                "0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835:mbti-pair",
+                "32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2:mbti-pair",
+                "mbti:ENFP:traits:marriage:creative_family_life:plainKo",
+                "mbti:ENFP:traits:marriage:emotional_novelty_loop:plainKo",
+                "mbti:ENFP:traits:marriage:freedom_with_agreement:plainKo",
+                "mbti:ISTJ:traits:marriage:change_buffer_marriage:plainKo"
+              ]
+            }
+          ],
+          "value": 3
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 2.0999999999999996,
+              "sources": [
+                "0239395c7851845e44da6cc2:to:32aecba69ec1180156ea2835:mbti-pair:repairStrategy",
+                "32aecba69ec1180156ea2835:to:0239395c7851845e44da6cc2:mbti-pair:repairStrategy",
+                "mbti:ENFP:traits:love:spontaneous_love_risk:plainKo",
+                "mbti:ENFP:traits:marriage:creative_family_life:plainKo",
+                "mbti:ENFP:traits:marriage:emotional_novelty_loop:plainKo",
+                "mbti:ENFP:traits:marriage:freedom_with_agreement:plainKo",
+                "mbti:ISTJ:traits:love:slow_start_relationship:plainKo",
+                "mbti:ISTJ:traits:marriage:change_buffer_marriage:plainKo",
+                "mbti:ISTJ:traits:marriage:fixed_role_and_budget:plainKo",
+                "mbti:ISTJ:traits:marriage:spouse_control_risk:plainKo",
+                "mbti:ISTJ:traits:marriage:stable_household_builder:plainKo"
+              ]
+            }
+          ],
+          "value": 7
+        }
+      ],
+      "category": "marriage",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "2": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 19/30점 — 함께 살필 좋은 조건은 부족한 오행을 서로 보탬입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다.",
+        "명리 관계 23/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계·돌봄·표현·책임의 자극입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 5/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 에너지를 나누고 모으는 방식·말을 전하는 방식·함께할 거리 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 9/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법·차이를 역할로 바꿀 여지입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 56,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "부족한 오행을 서로 보탬",
+              "value": 4.4,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:FIRE:0.3",
+                "SajuCalcResult:elements.weighted:FIRE:4.2",
+                "SajuCalcResult:elements.weighted:WATER:1.1",
+                "SajuCalcResult:elements.weighted:WATER:4.2",
+                "SajuCalcResult:elements:FIRE",
+                "SajuCalcResult:elements:WATER",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:FIRE:high",
+                "v4:material-depth:element:FIRE:low",
+                "v4:material-depth:element:WATER:high",
+                "v4:material-depth:element:WATER:low",
+                "v4:symbolic-lifestyle:FIRE:high",
+                "v4:symbolic-lifestyle:FIRE:low",
+                "v4:symbolic-lifestyle:WATER:high",
+                "v4:symbolic-lifestyle:WATER:low"
+              ]
+            }
+          ],
+          "value": 19
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 9.338378941044583,
+              "sources": [
+                "half_harmony:1684d09cd14c5996bb6ddc25:day:子|eecf971a8da1a10d76db7f5e:year:辰",
+                "half_harmony:1684d09cd14c5996bb6ddc25:month:酉|eecf971a8da1a10d76db7f5e:hour:巳",
+                "six_harmony:1684d09cd14c5996bb6ddc25:hour:未|eecf971a8da1a10d76db7f5e:month:午",
+                "six_harmony:1684d09cd14c5996bb6ddc25:month:酉|eecf971a8da1a10d76db7f5e:year:辰"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -5.367838514021744,
+              "sources": [
+                "clash:1684d09cd14c5996bb6ddc25:year:子|eecf971a8da1a10d76db7f5e:month:午"
+              ]
+            },
+            {
+              "factor": "돌봄·표현·책임의 자극",
+              "value": 2.2,
+              "sources": [
+                "received-ten-god:1684d09cd14c5996bb6ddc25:to:eecf971a8da1a10d76db7f5e:정관",
+                "received-ten-god:eecf971a8da1a10d76db7f5e:to:1684d09cd14c5996bb6ddc25:정재"
+              ]
+            }
+          ],
+          "value": 23
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "에너지를 나누고 모으는 방식",
+              "value": -2.566666666666667,
+              "sources": [
+                "1684d09cd14c5996bb6ddc25:to:eecf971a8da1a10d76db7f5e:mbti-pair",
+                "eecf971a8da1a10d76db7f5e:to:1684d09cd14c5996bb6ddc25:mbti-pair",
+                "mbti:ENTP:traits:child:social_but_independent_child:plainKo",
+                "mbti:ISFJ:traits:communication:listen_more_than_speak:plainKo"
+              ]
+            },
+            {
+              "factor": "말을 전하는 방식",
+              "value": -2.566666666666667,
+              "sources": [
+                "1684d09cd14c5996bb6ddc25:to:eecf971a8da1a10d76db7f5e:mbti-pair",
+                "eecf971a8da1a10d76db7f5e:to:1684d09cd14c5996bb6ddc25:mbti-pair",
+                "mbti:ENTP:traits:communication:direct_speech:plainKo",
+                "mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+                "mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo"
+              ]
+            },
+            {
+              "factor": "함께할 거리",
+              "value": -2.566666666666667,
+              "sources": [
+                "1684d09cd14c5996bb6ddc25:to:eecf971a8da1a10d76db7f5e:mbti-pair",
+                "eecf971a8da1a10d76db7f5e:to:1684d09cd14c5996bb6ddc25:mbti-pair",
+                "mbti:ENTP:traits:relationships:quick_connection:plainKo",
+                "mbti:ISFJ:traits:child:stable_friendship_child:plainKo"
+              ]
+            }
+          ],
+          "value": 5
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 2.25,
+              "sources": [
+                "1684d09cd14c5996bb6ddc25:to:eecf971a8da1a10d76db7f5e:mbti-pair:repairStrategy",
+                "eecf971a8da1a10d76db7f5e:to:1684d09cd14c5996bb6ddc25:mbti-pair:repairStrategy",
+                "mbti:ENTP:traits:child:social_but_independent_child:plainKo",
+                "mbti:ENTP:traits:communication:direct_speech:plainKo",
+                "mbti:ENTP:traits:relationships:quick_connection:plainKo",
+                "mbti:ISFJ:traits:child:stable_friendship_child:plainKo",
+                "mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+                "mbti:ISFJ:traits:communication:listen_more_than_speak:plainKo",
+                "mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo"
+              ]
+            },
+            {
+              "factor": "차이를 역할로 바꿀 여지",
+              "value": 2,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:FIRE:0.3",
+                "SajuCalcResult:elements.weighted:FIRE:4.2",
+                "SajuCalcResult:elements.weighted:WATER:1.1",
+                "SajuCalcResult:elements.weighted:WATER:4.2",
+                "SajuCalcResult:elements:FIRE",
+                "SajuCalcResult:elements:WATER",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:FIRE:high",
+                "v4:material-depth:element:FIRE:low",
+                "v4:material-depth:element:WATER:high",
+                "v4:material-depth:element:WATER:low",
+                "v4:symbolic-lifestyle:FIRE:high",
+                "v4:symbolic-lifestyle:FIRE:low",
+                "v4:symbolic-lifestyle:WATER:high",
+                "v4:symbolic-lifestyle:WATER:low"
+              ]
+            }
+          ],
+          "value": 9
+        }
+      ],
+      "category": "parentChild",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "3": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 18/30점 — 함께 살필 좋은 조건은 일간 오행이 서로 생조입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다.",
+        "명리 관계 18/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계·돌봄·표현·책임의 자극입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 5/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 움직이기 전 살피는 속도·계획과 여지를 두는 방식 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 6/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 47,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "일간 오행이 서로 생조",
+              "value": 3,
+              "sources": [
+                "daymaster-element:1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47",
+                "daymaster-element:a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038"
+              ]
+            }
+          ],
+          "value": 18
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 8.300781280928518,
+              "sources": [
+                "half_harmony:1e7e816adb0a760d063e3038:day:戌|a0a9396e146736119ec92f47:year:午",
+                "half_harmony:1e7e816adb0a760d063e3038:month:未|a0a9396e146736119ec92f47:hour:卯",
+                "six_harmony:1e7e816adb0a760d063e3038:day:戌|a0a9396e146736119ec92f47:hour:卯",
+                "six_harmony:1e7e816adb0a760d063e3038:month:未|a0a9396e146736119ec92f47:year:午"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -8.575700119443189,
+              "sources": [
+                "clash:1e7e816adb0a760d063e3038:year:子|a0a9396e146736119ec92f47:year:午",
+                "harm:1e7e816adb0a760d063e3038:year:子|a0a9396e146736119ec92f47:month:未"
+              ]
+            },
+            {
+              "factor": "돌봄·표현·책임의 자극",
+              "value": 1.3,
+              "sources": [
+                "received-ten-god:a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038:식신"
+              ]
+            }
+          ],
+          "value": 18
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "움직이기 전 살피는 속도",
+              "value": -4.2,
+              "sources": [
+                "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47:mbti-pair",
+                "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038:mbti-pair",
+                "mbti:ENTJ:traits:workplace:delegation_pressure_control:plainKo",
+                "mbti:INTP:traits:workplace:last_minute_execution:plainKo",
+                "mbti:INTP:traits:workplace:needs_thinking_time:plainKo"
+              ]
+            },
+            {
+              "factor": "계획과 여지를 두는 방식",
+              "value": -4.2,
+              "sources": [
+                "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47:mbti-pair",
+                "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038:mbti-pair",
+                "mbti:ENTJ:traits:career:large_team_manager:plainKo",
+                "mbti:ENTJ:traits:career:scale_operator:plainKo",
+                "mbti:INTP:traits:workplace:last_minute_execution:plainKo"
+              ]
+            }
+          ],
+          "value": 5
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 1.1,
+              "sources": [
+                "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47:mbti-pair:repairStrategy",
+                "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038:mbti-pair:repairStrategy",
+                "mbti:ENTJ:traits:career:large_team_manager:plainKo",
+                "mbti:ENTJ:traits:career:scale_operator:plainKo",
+                "mbti:ENTJ:traits:workplace:delegation_pressure_control:plainKo",
+                "mbti:INTP:traits:workplace:last_minute_execution:plainKo",
+                "mbti:INTP:traits:workplace:needs_thinking_time:plainKo"
+              ]
+            }
+          ],
+          "value": 6
+        }
+      ],
+      "category": "coworker",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "4": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 17/30점 — 함께 살필 좋은 조건은 부족한 오행을 서로 보탬입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다.",
+        "명리 관계 11/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 13/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다.",
+        "회복력 7/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법·차이를 역할로 바꿀 여지입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 48,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "부족한 오행을 서로 보탬",
+              "value": 2.2,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:METAL:1.1",
+                "SajuCalcResult:elements.weighted:METAL:3.7",
+                "SajuCalcResult:elements:METAL",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:METAL:high",
+                "v4:material-depth:element:METAL:low",
+                "v4:symbolic-lifestyle:METAL:high",
+                "v4:symbolic-lifestyle:METAL:low"
+              ]
+            }
+          ],
+          "value": 17
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 6.328585502890505,
+              "sources": [
+                "half_harmony:a111180ea4a40c4d615e0df9:day:寅|a673b4746105d7b0d371e031:month:午",
+                "half_harmony:a111180ea4a40c4d615e0df9:year:辰|a673b4746105d7b0d371e031:day:子",
+                "six_harmony:a111180ea4a40c4d615e0df9:month:丑|a673b4746105d7b0d371e031:day:子"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -12.38956295303973,
+              "sources": [
+                "clash:a111180ea4a40c4d615e0df9:hour:酉|a673b4746105d7b0d371e031:hour:卯",
+                "harm:a111180ea4a40c4d615e0df9:month:丑|a673b4746105d7b0d371e031:month:午",
+                "harm:a111180ea4a40c4d615e0df9:year:辰|a673b4746105d7b0d371e031:hour:卯"
+              ]
+            }
+          ],
+          "value": 11
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [],
+          "value": 13
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 0.7,
+              "sources": [
+                "a111180ea4a40c4d615e0df9:to:a673b4746105d7b0d371e031:mbti-pair:repairStrategy",
+                "a673b4746105d7b0d371e031:to:a111180ea4a40c4d615e0df9:mbti-pair:repairStrategy",
+                "mbti:ESTP:traits:career:deal_to_repeat_business:plainKo",
+                "mbti:ESTP:traits:career:field_emergency_fit:plainKo",
+                "mbti:ESTP:traits:workplace:crisis_solver:plainKo",
+                "mbti:ESTP:traits:workplace:fast_approval_lane:plainKo",
+                "mbti:INFJ:traits:workplace:slow_pace_quality:plainKo"
+              ]
+            },
+            {
+              "factor": "차이를 역할로 바꿀 여지",
+              "value": 1,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:METAL:1.1",
+                "SajuCalcResult:elements.weighted:METAL:3.7",
+                "SajuCalcResult:elements:METAL",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:METAL:high",
+                "v4:material-depth:element:METAL:low",
+                "v4:symbolic-lifestyle:METAL:high",
+                "v4:symbolic-lifestyle:METAL:low"
+              ]
+            }
+          ],
+          "value": 7
+        }
+      ],
+      "category": "managerReport",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "5": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 23/30점 — 함께 살필 좋은 조건은 부족한 오행을 서로 보탬·음양 리듬 보완입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다.",
+        "명리 관계 12/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계·돌봄·표현·책임의 자극입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 14/25점 — 함께 살필 좋은 조건은 움직이기 전 살피는 속도·계획과 여지를 두는 방식입니다; 말을 전하는 방식 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 8/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법·차이를 역할로 바꿀 여지입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 57,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "부족한 오행을 서로 보탬",
+              "value": 5.6,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:FIRE:1",
+                "SajuCalcResult:elements.weighted:FIRE:5.5",
+                "SajuCalcResult:elements.weighted:WATER:1.1",
+                "SajuCalcResult:elements.weighted:WATER:3.2",
+                "SajuCalcResult:elements:FIRE",
+                "SajuCalcResult:elements:WATER",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:FIRE:high",
+                "v4:material-depth:element:FIRE:low",
+                "v4:material-depth:element:WATER:high",
+                "v4:material-depth:element:WATER:low",
+                "v4:symbolic-lifestyle:FIRE:high",
+                "v4:symbolic-lifestyle:FIRE:low",
+                "v4:symbolic-lifestyle:WATER:high",
+                "v4:symbolic-lifestyle:WATER:low"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 2.8,
+              "sources": [
+                "day:BRANCH_YIN_YANG:亥",
+                "day:BRANCH_YIN_YANG:辰",
+                "day:STEM_YIN_YANG:丙",
+                "day:STEM_YIN_YANG:辛",
+                "hour:BRANCH_YIN_YANG:午",
+                "hour:BRANCH_YIN_YANG:卯",
+                "hour:STEM_YIN_YANG:甲",
+                "hour:STEM_YIN_YANG:辛",
+                "month:BRANCH_YIN_YANG:卯",
+                "month:BRANCH_YIN_YANG:巳",
+                "month:STEM_YIN_YANG:丁",
+                "month:STEM_YIN_YANG:癸",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:子",
+                "year:BRANCH_YIN_YANG:寅",
+                "year:STEM_YIN_YANG:丙",
+                "year:STEM_YIN_YANG:甲"
+              ]
+            }
+          ],
+          "value": 23
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 6.068357364754154,
+              "sources": [
+                "half_harmony:3eeff7a022598e3687affb14:day:辰|6e1932da8c9b9e802fbd8b50:year:子",
+                "six_harmony:3eeff7a022598e3687affb14:year:寅|6e1932da8c9b9e802fbd8b50:day:亥"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -14.30296229619662,
+              "sources": [
+                "clash:3eeff7a022598e3687affb14:hour:午|6e1932da8c9b9e802fbd8b50:year:子",
+                "clash:3eeff7a022598e3687affb14:month:巳|6e1932da8c9b9e802fbd8b50:day:亥",
+                "harm:3eeff7a022598e3687affb14:day:辰|6e1932da8c9b9e802fbd8b50:month:卯"
+              ]
+            },
+            {
+              "factor": "돌봄·표현·책임의 자극",
+              "value": 2.8,
+              "sources": [
+                "received-ten-god:3eeff7a022598e3687affb14:to:6e1932da8c9b9e802fbd8b50:정관",
+                "received-ten-god:6e1932da8c9b9e802fbd8b50:to:3eeff7a022598e3687affb14:정재"
+              ]
+            }
+          ],
+          "value": 12
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "움직이기 전 살피는 속도",
+              "value": 2.3333333333333335,
+              "sources": [
+                "3eeff7a022598e3687affb14:to:6e1932da8c9b9e802fbd8b50:mbti-pair",
+                "6e1932da8c9b9e802fbd8b50:to:3eeff7a022598e3687affb14:mbti-pair",
+                "mbti:ENTJ:traits:workplace:delegation_pressure_control:plainKo",
+                "mbti:ISTJ:traits:workplace:instant_error_correction:plainKo"
+              ]
+            },
+            {
+              "factor": "계획과 여지를 두는 방식",
+              "value": 2.3333333333333335,
+              "sources": [
+                "3eeff7a022598e3687affb14:to:6e1932da8c9b9e802fbd8b50:mbti-pair",
+                "6e1932da8c9b9e802fbd8b50:to:3eeff7a022598e3687affb14:mbti-pair",
+                "mbti:ENTJ:traits:career:large_team_manager:plainKo",
+                "mbti:ENTJ:traits:career:scale_operator:plainKo",
+                "mbti:ISTJ:traits:career:avoid_chaotic_creative_work:plainKo",
+                "mbti:ISTJ:traits:career:process_quality_operator:plainKo",
+                "mbti:ISTJ:traits:career:public_institution_fit:plainKo",
+                "mbti:ISTJ:traits:career:teacher_favored_student:plainKo",
+                "mbti:ISTJ:traits:workplace:clear_instruction_boundary:plainKo",
+                "mbti:ISTJ:traits:workplace:controlled_authority_risk:plainKo",
+                "mbti:ISTJ:traits:workplace:rule_following_reliability:plainKo"
+              ]
+            },
+            {
+              "factor": "말을 전하는 방식",
+              "value": -3.5,
+              "sources": [
+                "3eeff7a022598e3687affb14:to:6e1932da8c9b9e802fbd8b50:mbti-pair",
+                "6e1932da8c9b9e802fbd8b50:to:3eeff7a022598e3687affb14:mbti-pair",
+                "mbti:ENTJ:traits:career:executive_natural_habitat:plainKo",
+                "mbti:ENTJ:traits:workplace:direct_feedback_leader:plainKo",
+                "mbti:ISTJ:traits:workplace:silent_frustration_explosion:plainKo"
+              ]
+            }
+          ],
+          "value": 14
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 0.75,
+              "sources": [
+                "3eeff7a022598e3687affb14:to:6e1932da8c9b9e802fbd8b50:mbti-pair:repairStrategy",
+                "6e1932da8c9b9e802fbd8b50:to:3eeff7a022598e3687affb14:mbti-pair:repairStrategy",
+                "mbti:ENTJ:traits:career:executive_natural_habitat:plainKo",
+                "mbti:ENTJ:traits:workplace:direct_feedback_leader:plainKo",
+                "mbti:ISTJ:traits:workplace:silent_frustration_explosion:plainKo"
+              ]
+            },
+            {
+              "factor": "차이를 역할로 바꿀 여지",
+              "value": 2,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:FIRE:1",
+                "SajuCalcResult:elements.weighted:FIRE:5.5",
+                "SajuCalcResult:elements.weighted:WATER:1.1",
+                "SajuCalcResult:elements.weighted:WATER:3.2",
+                "SajuCalcResult:elements:FIRE",
+                "SajuCalcResult:elements:WATER",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:FIRE:high",
+                "v4:material-depth:element:FIRE:low",
+                "v4:material-depth:element:WATER:high",
+                "v4:material-depth:element:WATER:low",
+                "v4:symbolic-lifestyle:FIRE:high",
+                "v4:symbolic-lifestyle:FIRE:low",
+                "v4:symbolic-lifestyle:WATER:high",
+                "v4:symbolic-lifestyle:WATER:low"
+              ]
+            }
+          ],
+          "value": 8
+        }
+      ],
+      "category": "businessPartner",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "6": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 15/30점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다.",
+        "명리 관계 19/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계·돌봄·표현·책임의 자극입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 11/25점 — 함께 살필 좋은 조건은 함께할 거리입니다; 에너지를 나누고 모으는 방식 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 6/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 51,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [],
+          "value": 15
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 6.608052430593341,
+              "sources": [
+                "three_harmony:e11a478a128c1d3e0f21ec7e:day:卯|e11a478a128c1d3e0f21ec7e:month:未|f6d4d75abd9883eab9743bc8:month:亥"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -6.44702412841816,
+              "sources": [
+                "clash:e11a478a128c1d3e0f21ec7e:month:未|f6d4d75abd9883eab9743bc8:hour:丑",
+                "harm:e11a478a128c1d3e0f21ec7e:day:卯|f6d4d75abd9883eab9743bc8:day:辰"
+              ]
+            },
+            {
+              "factor": "돌봄·표현·책임의 자극",
+              "value": 1.8,
+              "sources": [
+                "received-ten-god:e11a478a128c1d3e0f21ec7e:to:f6d4d75abd9883eab9743bc8:정관",
+                "received-ten-god:f6d4d75abd9883eab9743bc8:to:e11a478a128c1d3e0f21ec7e:정재"
+              ]
+            }
+          ],
+          "value": 19
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "에너지를 나누고 모으는 방식",
+              "value": -2.8000000000000003,
+              "sources": [
+                "e11a478a128c1d3e0f21ec7e:to:f6d4d75abd9883eab9743bc8:mbti-pair",
+                "f6d4d75abd9883eab9743bc8:to:e11a478a128c1d3e0f21ec7e:mbti-pair",
+                "mbti:ENFP:traits:child:playful_social_child:plainKo",
+                "mbti:ENFP:traits:communication:easy_conversation:plainKo",
+                "mbti:ISFP:traits:communication:silent_when_angry:plainKo",
+                "mbti:ISFP:traits:relationships:quiet_social_acceptance:plainKo"
+              ]
+            },
+            {
+              "factor": "함께할 거리",
+              "value": 0.5833333333333331,
+              "sources": [
+                "e11a478a128c1d3e0f21ec7e:to:f6d4d75abd9883eab9743bc8:mbti-pair",
+                "f6d4d75abd9883eab9743bc8:to:e11a478a128c1d3e0f21ec7e:mbti-pair",
+                "mbti:ENFP:traits:child:playful_social_child:plainKo",
+                "mbti:ENFP:traits:relationships:wide_light_network:plainKo",
+                "mbti:ISFP:traits:child:peaceful_peer_child:plainKo",
+                "mbti:ISFP:traits:parenting:friend_like_parent:plainKo",
+                "mbti:ISFP:traits:relationships:quiet_social_acceptance:plainKo"
+              ]
+            }
+          ],
+          "value": 11
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 0.6,
+              "sources": [
+                "e11a478a128c1d3e0f21ec7e:to:f6d4d75abd9883eab9743bc8:mbti-pair:repairStrategy",
+                "f6d4d75abd9883eab9743bc8:to:e11a478a128c1d3e0f21ec7e:mbti-pair:repairStrategy",
+                "mbti:ENFP:traits:child:playful_social_child:plainKo",
+                "mbti:ENFP:traits:communication:easy_conversation:plainKo",
+                "mbti:ISFP:traits:communication:silent_when_angry:plainKo",
+                "mbti:ISFP:traits:relationships:quiet_social_acceptance:plainKo"
+              ]
+            }
+          ],
+          "value": 6
+        }
+      ],
+      "category": "friendship",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "출생시간이 불확실한 사람의 오행 부족·음양 보완은 점수에 사용하지 않았습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "7": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 16/30점 — 함께 살필 좋은 조건은 부족한 오행을 서로 보탬입니다; 같은 오행으로 치우침 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "명리 관계 24/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계·돌봄·표현·책임의 자극입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다.",
+        "MBTI 20/25점 — 함께 살필 좋은 조건은 에너지를 나누고 모으는 방식·함께할 거리입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다.",
+        "회복력 6/10점 — 함께 살필 좋은 조건은 차이를 역할로 바꿀 여지입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 66,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "부족한 오행을 서로 보탬",
+              "value": 2.4,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:0.6",
+                "SajuCalcResult:elements.weighted:EARTH:3.2",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:material-depth:element:EARTH:low",
+                "v4:symbolic-lifestyle:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:low"
+              ]
+            },
+            {
+              "factor": "같은 오행으로 치우침",
+              "value": -1.5,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:FIRE:3.2",
+                "SajuCalcResult:elements.weighted:FIRE:5.199999999999999",
+                "SajuCalcResult:elements:FIRE",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:FIRE:high",
+                "v4:symbolic-lifestyle:FIRE:high"
+              ]
+            }
+          ],
+          "value": 16
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 4.7473913370867935,
+              "sources": [
+                "half_harmony:186239da154b2cb6ab7cbe69:hour:巳|8906e16cd506c376b30eb32e:hour:丑"
+              ]
+            },
+            {
+              "factor": "돌봄·표현·책임의 자극",
+              "value": 2.4,
+              "sources": [
+                "received-ten-god:186239da154b2cb6ab7cbe69:to:8906e16cd506c376b30eb32e:정재",
+                "received-ten-god:8906e16cd506c376b30eb32e:to:186239da154b2cb6ab7cbe69:정관"
+              ]
+            }
+          ],
+          "value": 24
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "에너지를 나누고 모으는 방식",
+              "value": 3.5,
+              "sources": [
+                "186239da154b2cb6ab7cbe69:to:8906e16cd506c376b30eb32e:mbti-pair",
+                "8906e16cd506c376b30eb32e:to:186239da154b2cb6ab7cbe69:mbti-pair",
+                "mbti:INFJ:traits:marriage:private_time_needed:plainKo",
+                "mbti:ISTP:traits:love:quiet_warm_affection:plainKo",
+                "mbti:ISTP:traits:marriage:personal_time_agreement:plainKo"
+              ]
+            },
+            {
+              "factor": "함께할 거리",
+              "value": 3.5,
+              "sources": [
+                "186239da154b2cb6ab7cbe69:to:8906e16cd506c376b30eb32e:mbti-pair",
+                "8906e16cd506c376b30eb32e:to:186239da154b2cb6ab7cbe69:mbti-pair",
+                "mbti:INFJ:traits:love:careful_start_deep_love:plainKo",
+                "mbti:INFJ:traits:love:noise_sensitive_date:plainKo",
+                "mbti:INFJ:traits:marriage:meaningful_long_bond:plainKo",
+                "mbti:ISTP:traits:love:freedom_love_boundary:plainKo",
+                "mbti:ISTP:traits:marriage:space_based_marriage:plainKo"
+              ]
+            }
+          ],
+          "value": 20
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "차이를 역할로 바꿀 여지",
+              "value": 1,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:0.6",
+                "SajuCalcResult:elements.weighted:EARTH:3.2",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:material-depth:element:EARTH:low",
+                "v4:symbolic-lifestyle:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:low"
+              ]
+            }
+          ],
+          "value": 6
+        }
+      ],
+      "category": "love",
+      "verdict": "함께 움직이며 서로의 장점을 살릴 여지가 분명합니다. 차이를 역할로 나눠 쓸 때 더 편해져요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    }
+  },
+  "quality": {
+    "A": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 16/30점 — 함께 살필 좋은 조건은 음양 리듬 보완입니다; 같은 오행으로 치우침 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "명리 관계 19/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 6/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 움직이기 전 살피는 속도·계획과 여지를 두는 방식·익숙함과 새로움을 고르는 방식 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 7/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 48,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "같은 오행으로 치우침",
+              "value": -1.5,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:3.5000000000000004",
+                "SajuCalcResult:elements.weighted:EARTH:4.4",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:high"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 2.4,
+              "sources": [
+                "day:BRANCH_YIN_YANG:寅",
+                "day:BRANCH_YIN_YANG:巳",
+                "day:STEM_YIN_YANG:乙",
+                "day:STEM_YIN_YANG:甲",
+                "hour:BRANCH_YIN_YANG:未",
+                "hour:BRANCH_YIN_YANG:辰",
+                "hour:STEM_YIN_YANG:戊",
+                "hour:STEM_YIN_YANG:癸",
+                "month:BRANCH_YIN_YANG:丑",
+                "month:BRANCH_YIN_YANG:申",
+                "month:STEM_YIN_YANG:丙",
+                "month:STEM_YIN_YANG:乙",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:未",
+                "year:BRANCH_YIN_YANG:酉",
+                "year:STEM_YIN_YANG:癸",
+                "year:STEM_YIN_YANG:辛"
+              ]
+            }
+          ],
+          "value": 16
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 10.062803348464291,
+              "sources": [
+                "six_harmony:29a2534854378270a988c1f8:hour:辰|b425792e04d53877ee951f97:year:酉",
+                "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -8.0587801605227,
+              "sources": [
+                "clash:29a2534854378270a988c1f8:year:未|b425792e04d53877ee951f97:month:丑",
+                "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+              ]
+            }
+          ],
+          "value": 19
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "움직이기 전 살피는 속도",
+              "value": -2.3333333333333335,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:marriage:fast_decision_cooling_rule:plainKo",
+                "mbti:ESTP:traits:marriage:risk_spending_limit:plainKo",
+                "mbti:ISFJ:traits:love:slow_trust_love:plainKo"
+              ]
+            },
+            {
+              "factor": "계획과 여지를 두는 방식",
+              "value": -2.3333333333333335,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:marriage:freedom_time_contract:plainKo",
+                "mbti:ISFJ:traits:marriage:home_stability_builder:plainKo"
+              ]
+            },
+            {
+              "factor": "익숙함과 새로움을 고르는 방식",
+              "value": -2.3333333333333335,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:love:fun_active_love:plainKo",
+                "mbti:ESTP:traits:marriage:dynamic_marriage:plainKo",
+                "mbti:ISFJ:traits:marriage:traditional_family_role:plainKo"
+              ]
+            }
+          ],
+          "value": 6
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 1.5,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair:repairStrategy",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair:repairStrategy",
+                "mbti:ESTP:traits:love:fun_active_love:plainKo",
+                "mbti:ESTP:traits:marriage:dynamic_marriage:plainKo",
+                "mbti:ESTP:traits:marriage:fast_decision_cooling_rule:plainKo",
+                "mbti:ESTP:traits:marriage:freedom_time_contract:plainKo",
+                "mbti:ESTP:traits:marriage:risk_spending_limit:plainKo",
+                "mbti:ISFJ:traits:love:slow_trust_love:plainKo",
+                "mbti:ISFJ:traits:marriage:home_stability_builder:plainKo",
+                "mbti:ISFJ:traits:marriage:traditional_family_role:plainKo"
+              ]
+            }
+          ],
+          "value": 7
+        }
+      ],
+      "category": "love",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "B": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 20/30점 — 함께 살필 좋은 조건은 부족한 오행을 서로 보탬·음양 리듬 보완입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다.",
+        "명리 관계 25/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 6/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 움직이기 전 살피는 속도·계획과 여지를 두는 방식·익숙함과 새로움을 고르는 방식 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 8/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법·차이를 역할로 바꿀 여지입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 59,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "부족한 오행을 서로 보탬",
+              "value": 2.4,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:1.3",
+                "SajuCalcResult:elements.weighted:EARTH:5.8999999999999995",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:material-depth:element:EARTH:low",
+                "v4:symbolic-lifestyle:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:low"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 2.4,
+              "sources": [
+                "day:BRANCH_YIN_YANG:丑",
+                "day:BRANCH_YIN_YANG:酉",
+                "day:STEM_YIN_YANG:乙",
+                "day:STEM_YIN_YANG:辛",
+                "hour:BRANCH_YIN_YANG:亥",
+                "hour:BRANCH_YIN_YANG:申",
+                "hour:STEM_YIN_YANG:己",
+                "hour:STEM_YIN_YANG:甲",
+                "month:BRANCH_YIN_YANG:巳",
+                "month:BRANCH_YIN_YANG:戌",
+                "month:STEM_YIN_YANG:壬",
+                "month:STEM_YIN_YANG:癸",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:子",
+                "year:BRANCH_YIN_YANG:辰",
+                "year:STEM_YIN_YANG:丙",
+                "year:STEM_YIN_YANG:戊"
+              ]
+            }
+          ],
+          "value": 20
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 13.919424912571305,
+              "sources": [
+                "six_harmony:cebbb987f5eb772248e9a358:day:丑|f26f2ee00b5229be78515877:year:子",
+                "six_harmony:cebbb987f5eb772248e9a358:hour:申|f26f2ee00b5229be78515877:month:巳",
+                "six_harmony:cebbb987f5eb772248e9a358:year:辰|f26f2ee00b5229be78515877:day:酉",
+                "three_harmony:cebbb987f5eb772248e9a358:day:丑|f26f2ee00b5229be78515877:day:酉|f26f2ee00b5229be78515877:month:巳",
+                "three_harmony:cebbb987f5eb772248e9a358:hour:申|cebbb987f5eb772248e9a358:year:辰|f26f2ee00b5229be78515877:year:子"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -6.0939462918913705,
+              "sources": [
+                "harm:cebbb987f5eb772248e9a358:hour:申|f26f2ee00b5229be78515877:hour:亥",
+                "harm:cebbb987f5eb772248e9a358:month:戌|f26f2ee00b5229be78515877:day:酉"
+              ]
+            }
+          ],
+          "value": 25
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "움직이기 전 살피는 속도",
+              "value": -2.3333333333333335,
+              "sources": [
+                "cebbb987f5eb772248e9a358:to:f26f2ee00b5229be78515877:mbti-pair",
+                "f26f2ee00b5229be78515877:to:cebbb987f5eb772248e9a358:mbti-pair",
+                "mbti:ENFP:traits:love:spontaneous_love_risk:plainKo",
+                "mbti:ISTJ:traits:love:slow_start_relationship:plainKo"
+              ]
+            },
+            {
+              "factor": "계획과 여지를 두는 방식",
+              "value": -2.3333333333333335,
+              "sources": [
+                "cebbb987f5eb772248e9a358:to:f26f2ee00b5229be78515877:mbti-pair",
+                "f26f2ee00b5229be78515877:to:cebbb987f5eb772248e9a358:mbti-pair",
+                "mbti:ENFP:traits:love:spontaneous_love_risk:plainKo",
+                "mbti:ISTJ:traits:love:slow_start_relationship:plainKo",
+                "mbti:ISTJ:traits:marriage:fixed_role_and_budget:plainKo",
+                "mbti:ISTJ:traits:marriage:spouse_control_risk:plainKo",
+                "mbti:ISTJ:traits:marriage:stable_household_builder:plainKo"
+              ]
+            },
+            {
+              "factor": "익숙함과 새로움을 고르는 방식",
+              "value": -2.3333333333333335,
+              "sources": [
+                "cebbb987f5eb772248e9a358:to:f26f2ee00b5229be78515877:mbti-pair",
+                "f26f2ee00b5229be78515877:to:cebbb987f5eb772248e9a358:mbti-pair",
+                "mbti:ENFP:traits:marriage:creative_family_life:plainKo",
+                "mbti:ENFP:traits:marriage:emotional_novelty_loop:plainKo",
+                "mbti:ENFP:traits:marriage:freedom_with_agreement:plainKo",
+                "mbti:ISTJ:traits:marriage:change_buffer_marriage:plainKo"
+              ]
+            }
+          ],
+          "value": 6
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 1.5,
+              "sources": [
+                "cebbb987f5eb772248e9a358:to:f26f2ee00b5229be78515877:mbti-pair:repairStrategy",
+                "f26f2ee00b5229be78515877:to:cebbb987f5eb772248e9a358:mbti-pair:repairStrategy",
+                "mbti:ENFP:traits:love:spontaneous_love_risk:plainKo",
+                "mbti:ENFP:traits:marriage:creative_family_life:plainKo",
+                "mbti:ENFP:traits:marriage:emotional_novelty_loop:plainKo",
+                "mbti:ENFP:traits:marriage:freedom_with_agreement:plainKo",
+                "mbti:ISTJ:traits:love:slow_start_relationship:plainKo",
+                "mbti:ISTJ:traits:marriage:change_buffer_marriage:plainKo",
+                "mbti:ISTJ:traits:marriage:fixed_role_and_budget:plainKo",
+                "mbti:ISTJ:traits:marriage:spouse_control_risk:plainKo",
+                "mbti:ISTJ:traits:marriage:stable_household_builder:plainKo"
+              ]
+            },
+            {
+              "factor": "차이를 역할로 바꿀 여지",
+              "value": 1,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:1.3",
+                "SajuCalcResult:elements.weighted:EARTH:5.8999999999999995",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:material-depth:element:EARTH:low",
+                "v4:symbolic-lifestyle:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:low"
+              ]
+            }
+          ],
+          "value": 8
+        }
+      ],
+      "category": "love",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "C": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 16/30점 — 함께 살필 좋은 조건은 음양 리듬 보완입니다; 같은 오행으로 치우침 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "명리 관계 19/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 6/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 움직이기 전 살피는 속도·계획과 여지를 두는 방식·익숙함과 새로움을 고르는 방식 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 7/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 48,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "같은 오행으로 치우침",
+              "value": -1.5,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:3.5000000000000004",
+                "SajuCalcResult:elements.weighted:EARTH:4.4",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:high"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 2.4,
+              "sources": [
+                "day:BRANCH_YIN_YANG:寅",
+                "day:BRANCH_YIN_YANG:巳",
+                "day:STEM_YIN_YANG:乙",
+                "day:STEM_YIN_YANG:甲",
+                "hour:BRANCH_YIN_YANG:未",
+                "hour:BRANCH_YIN_YANG:辰",
+                "hour:STEM_YIN_YANG:戊",
+                "hour:STEM_YIN_YANG:癸",
+                "month:BRANCH_YIN_YANG:丑",
+                "month:BRANCH_YIN_YANG:申",
+                "month:STEM_YIN_YANG:丙",
+                "month:STEM_YIN_YANG:乙",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:未",
+                "year:BRANCH_YIN_YANG:酉",
+                "year:STEM_YIN_YANG:癸",
+                "year:STEM_YIN_YANG:辛"
+              ]
+            }
+          ],
+          "value": 16
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 10.062803348464291,
+              "sources": [
+                "six_harmony:29a2534854378270a988c1f8:hour:辰|b425792e04d53877ee951f97:year:酉",
+                "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -8.0587801605227,
+              "sources": [
+                "clash:29a2534854378270a988c1f8:year:未|b425792e04d53877ee951f97:month:丑",
+                "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+              ]
+            }
+          ],
+          "value": 19
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "움직이기 전 살피는 속도",
+              "value": -2.3333333333333335,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:marriage:fast_decision_cooling_rule:plainKo",
+                "mbti:ESTP:traits:marriage:risk_spending_limit:plainKo",
+                "mbti:ISFJ:traits:love:slow_trust_love:plainKo"
+              ]
+            },
+            {
+              "factor": "계획과 여지를 두는 방식",
+              "value": -2.3333333333333335,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:marriage:freedom_time_contract:plainKo",
+                "mbti:ISFJ:traits:marriage:home_stability_builder:plainKo"
+              ]
+            },
+            {
+              "factor": "익숙함과 새로움을 고르는 방식",
+              "value": -2.3333333333333335,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:love:fun_active_love:plainKo",
+                "mbti:ESTP:traits:marriage:dynamic_marriage:plainKo",
+                "mbti:ISFJ:traits:marriage:traditional_family_role:plainKo"
+              ]
+            }
+          ],
+          "value": 6
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 1.5,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair:repairStrategy",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair:repairStrategy",
+                "mbti:ESTP:traits:love:fun_active_love:plainKo",
+                "mbti:ESTP:traits:marriage:dynamic_marriage:plainKo",
+                "mbti:ESTP:traits:marriage:fast_decision_cooling_rule:plainKo",
+                "mbti:ESTP:traits:marriage:freedom_time_contract:plainKo",
+                "mbti:ESTP:traits:marriage:risk_spending_limit:plainKo",
+                "mbti:ISFJ:traits:love:slow_trust_love:plainKo",
+                "mbti:ISFJ:traits:marriage:home_stability_builder:plainKo",
+                "mbti:ISFJ:traits:marriage:traditional_family_role:plainKo"
+              ]
+            }
+          ],
+          "value": 7
+        }
+      ],
+      "category": "love",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "D": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 15/30점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다.",
+        "명리 관계 15/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 6/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 움직이기 전 살피는 속도·계획과 여지를 두는 방식·익숙함과 새로움을 고르는 방식 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 7/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 43,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [],
+          "value": 15
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 6.497112440246018,
+              "sources": [
+                "six_harmony:19468503eb84baad57326eb3:day:巳|aa91c65e793f6fa4d0ff690e:month:申"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -8.0587801605227,
+              "sources": [
+                "clash:19468503eb84baad57326eb3:month:丑|aa91c65e793f6fa4d0ff690e:year:未",
+                "harm:19468503eb84baad57326eb3:day:巳|aa91c65e793f6fa4d0ff690e:day:寅"
+              ]
+            }
+          ],
+          "value": 15
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "움직이기 전 살피는 속도",
+              "value": -2.3333333333333335,
+              "sources": [
+                "19468503eb84baad57326eb3:to:aa91c65e793f6fa4d0ff690e:mbti-pair",
+                "aa91c65e793f6fa4d0ff690e:to:19468503eb84baad57326eb3:mbti-pair",
+                "mbti:ESTP:traits:marriage:fast_decision_cooling_rule:plainKo",
+                "mbti:ESTP:traits:marriage:risk_spending_limit:plainKo",
+                "mbti:ISFJ:traits:love:slow_trust_love:plainKo"
+              ]
+            },
+            {
+              "factor": "계획과 여지를 두는 방식",
+              "value": -2.3333333333333335,
+              "sources": [
+                "19468503eb84baad57326eb3:to:aa91c65e793f6fa4d0ff690e:mbti-pair",
+                "aa91c65e793f6fa4d0ff690e:to:19468503eb84baad57326eb3:mbti-pair",
+                "mbti:ESTP:traits:marriage:freedom_time_contract:plainKo",
+                "mbti:ISFJ:traits:marriage:home_stability_builder:plainKo"
+              ]
+            },
+            {
+              "factor": "익숙함과 새로움을 고르는 방식",
+              "value": -2.3333333333333335,
+              "sources": [
+                "19468503eb84baad57326eb3:to:aa91c65e793f6fa4d0ff690e:mbti-pair",
+                "aa91c65e793f6fa4d0ff690e:to:19468503eb84baad57326eb3:mbti-pair",
+                "mbti:ESTP:traits:love:fun_active_love:plainKo",
+                "mbti:ESTP:traits:marriage:dynamic_marriage:plainKo",
+                "mbti:ISFJ:traits:marriage:traditional_family_role:plainKo"
+              ]
+            }
+          ],
+          "value": 6
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 1.5,
+              "sources": [
+                "19468503eb84baad57326eb3:to:aa91c65e793f6fa4d0ff690e:mbti-pair:repairStrategy",
+                "aa91c65e793f6fa4d0ff690e:to:19468503eb84baad57326eb3:mbti-pair:repairStrategy",
+                "mbti:ESTP:traits:love:fun_active_love:plainKo",
+                "mbti:ESTP:traits:marriage:dynamic_marriage:plainKo",
+                "mbti:ESTP:traits:marriage:fast_decision_cooling_rule:plainKo",
+                "mbti:ESTP:traits:marriage:freedom_time_contract:plainKo",
+                "mbti:ESTP:traits:marriage:risk_spending_limit:plainKo",
+                "mbti:ISFJ:traits:love:slow_trust_love:plainKo",
+                "mbti:ISFJ:traits:marriage:home_stability_builder:plainKo",
+                "mbti:ISFJ:traits:marriage:traditional_family_role:plainKo"
+              ]
+            }
+          ],
+          "value": 7
+        }
+      ],
+      "category": "love",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "출생시간이 불확실한 사람의 오행 부족·음양 보완은 점수에 사용하지 않았습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "E": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 16/30점 — 함께 살필 좋은 조건은 음양 리듬 보완입니다; 같은 오행으로 치우침 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "명리 관계 19/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 13/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다.",
+        "회복력 5/10점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 53,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "같은 오행으로 치우침",
+              "value": -1.5,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:3.5000000000000004",
+                "SajuCalcResult:elements.weighted:EARTH:4.4",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:high"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 2.4,
+              "sources": [
+                "day:BRANCH_YIN_YANG:寅",
+                "day:BRANCH_YIN_YANG:巳",
+                "day:STEM_YIN_YANG:乙",
+                "day:STEM_YIN_YANG:甲",
+                "hour:BRANCH_YIN_YANG:未",
+                "hour:BRANCH_YIN_YANG:辰",
+                "hour:STEM_YIN_YANG:戊",
+                "hour:STEM_YIN_YANG:癸",
+                "month:BRANCH_YIN_YANG:丑",
+                "month:BRANCH_YIN_YANG:申",
+                "month:STEM_YIN_YANG:丙",
+                "month:STEM_YIN_YANG:乙",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:未",
+                "year:BRANCH_YIN_YANG:酉",
+                "year:STEM_YIN_YANG:癸",
+                "year:STEM_YIN_YANG:辛"
+              ]
+            }
+          ],
+          "value": 16
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 10.062803348464291,
+              "sources": [
+                "six_harmony:29a2534854378270a988c1f8:hour:辰|b425792e04d53877ee951f97:year:酉",
+                "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -8.0587801605227,
+              "sources": [
+                "clash:29a2534854378270a988c1f8:year:未|b425792e04d53877ee951f97:month:丑",
+                "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+              ]
+            }
+          ],
+          "value": 19
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [],
+          "value": 13
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [],
+          "value": 5
+        }
+      ],
+      "category": "love",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "이 조합의 MBTI 관계 자료가 부족해 해당 항목은 중립으로 두었습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "F": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 15/30점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다.",
+        "명리 관계 15/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 13/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다.",
+        "회복력 5/10점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 48,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [],
+          "value": 15
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 6.497112440246018,
+              "sources": [
+                "six_harmony:19468503eb84baad57326eb3:day:巳|aa91c65e793f6fa4d0ff690e:month:申"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -8.0587801605227,
+              "sources": [
+                "clash:19468503eb84baad57326eb3:month:丑|aa91c65e793f6fa4d0ff690e:year:未",
+                "harm:19468503eb84baad57326eb3:day:巳|aa91c65e793f6fa4d0ff690e:day:寅"
+              ]
+            }
+          ],
+          "value": 15
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [],
+          "value": 13
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [],
+          "value": 5
+        }
+      ],
+      "category": "love",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "이 조합의 MBTI 관계 자료가 부족해 해당 항목은 중립으로 두었습니다.",
+        "출생시간이 불확실한 사람의 오행 부족·음양 보완은 점수에 사용하지 않았습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "marriage": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 16/30점 — 함께 살필 좋은 조건은 음양 리듬 보완입니다; 같은 오행으로 치우침 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "명리 관계 14/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 3/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 움직이기 전 살피는 속도·계획과 여지를 두는 방식·익숙함과 새로움을 고르는 방식 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 7/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 40,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "같은 오행으로 치우침",
+              "value": -1.5,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:3.5000000000000004",
+                "SajuCalcResult:elements.weighted:EARTH:4.4",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:high"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 2,
+              "sources": [
+                "day:BRANCH_YIN_YANG:寅",
+                "day:BRANCH_YIN_YANG:巳",
+                "day:STEM_YIN_YANG:乙",
+                "day:STEM_YIN_YANG:甲",
+                "hour:BRANCH_YIN_YANG:未",
+                "hour:BRANCH_YIN_YANG:辰",
+                "hour:STEM_YIN_YANG:戊",
+                "hour:STEM_YIN_YANG:癸",
+                "month:BRANCH_YIN_YANG:丑",
+                "month:BRANCH_YIN_YANG:申",
+                "month:STEM_YIN_YANG:丙",
+                "month:STEM_YIN_YANG:乙",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:未",
+                "year:BRANCH_YIN_YANG:酉",
+                "year:STEM_YIN_YANG:癸",
+                "year:STEM_YIN_YANG:辛"
+              ]
+            }
+          ],
+          "value": 16
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 8.385669457053575,
+              "sources": [
+                "six_harmony:29a2534854378270a988c1f8:hour:辰|b425792e04d53877ee951f97:year:酉",
+                "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -11.282292224731778,
+              "sources": [
+                "clash:29a2534854378270a988c1f8:year:未|b425792e04d53877ee951f97:month:丑",
+                "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+              ]
+            }
+          ],
+          "value": 14
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "움직이기 전 살피는 속도",
+              "value": -3.266666666666666,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:marriage:fast_decision_cooling_rule:plainKo",
+                "mbti:ESTP:traits:marriage:risk_spending_limit:plainKo",
+                "mbti:ISFJ:traits:love:slow_trust_love:plainKo"
+              ]
+            },
+            {
+              "factor": "계획과 여지를 두는 방식",
+              "value": -3.266666666666666,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:marriage:freedom_time_contract:plainKo",
+                "mbti:ISFJ:traits:marriage:home_stability_builder:plainKo"
+              ]
+            },
+            {
+              "factor": "익숙함과 새로움을 고르는 방식",
+              "value": -3.266666666666666,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:love:fun_active_love:plainKo",
+                "mbti:ESTP:traits:marriage:dynamic_marriage:plainKo",
+                "mbti:ISFJ:traits:marriage:traditional_family_role:plainKo"
+              ]
+            }
+          ],
+          "value": 3
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 2.0999999999999996,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair:repairStrategy",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair:repairStrategy",
+                "mbti:ESTP:traits:love:fun_active_love:plainKo",
+                "mbti:ESTP:traits:marriage:dynamic_marriage:plainKo",
+                "mbti:ESTP:traits:marriage:fast_decision_cooling_rule:plainKo",
+                "mbti:ESTP:traits:marriage:freedom_time_contract:plainKo",
+                "mbti:ESTP:traits:marriage:risk_spending_limit:plainKo",
+                "mbti:ISFJ:traits:love:slow_trust_love:plainKo",
+                "mbti:ISFJ:traits:marriage:home_stability_builder:plainKo",
+                "mbti:ISFJ:traits:marriage:traditional_family_role:plainKo"
+              ]
+            }
+          ],
+          "value": 7
+        }
+      ],
+      "category": "marriage",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "parentChild": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 16/30점 — 함께 살필 좋은 조건은 음양 리듬 보완입니다; 같은 오행으로 치우침 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "명리 관계 16/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 5/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 움직이기 전 살피는 속도·에너지를 나누고 모으는 방식·말을 전하는 방식·함께할 거리 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 7/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 44,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "같은 오행으로 치우침",
+              "value": -1.5,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:3.5000000000000004",
+                "SajuCalcResult:elements.weighted:EARTH:4.4",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:high"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 2.2,
+              "sources": [
+                "day:BRANCH_YIN_YANG:寅",
+                "day:BRANCH_YIN_YANG:巳",
+                "day:STEM_YIN_YANG:乙",
+                "day:STEM_YIN_YANG:甲",
+                "hour:BRANCH_YIN_YANG:未",
+                "hour:BRANCH_YIN_YANG:辰",
+                "hour:STEM_YIN_YANG:戊",
+                "hour:STEM_YIN_YANG:癸",
+                "month:BRANCH_YIN_YANG:丑",
+                "month:BRANCH_YIN_YANG:申",
+                "month:STEM_YIN_YANG:丙",
+                "month:STEM_YIN_YANG:乙",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:未",
+                "year:BRANCH_YIN_YANG:酉",
+                "year:STEM_YIN_YANG:癸",
+                "year:STEM_YIN_YANG:辛"
+              ]
+            }
+          ],
+          "value": 16
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 7.547102511348218,
+              "sources": [
+                "six_harmony:29a2534854378270a988c1f8:hour:辰|b425792e04d53877ee951f97:year:酉",
+                "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -8.86465817657497,
+              "sources": [
+                "clash:29a2534854378270a988c1f8:year:未|b425792e04d53877ee951f97:month:丑",
+                "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+              ]
+            }
+          ],
+          "value": 16
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "움직이기 전 살피는 속도",
+              "value": -1.9250000000000003,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:communication:emotion_impatience:plainKo",
+                "mbti:ESTP:traits:relationships:low_grudge_high_motion:plainKo",
+                "mbti:ISFJ:traits:relationships:hard_to_enter_reliable_once_in:plainKo"
+              ]
+            },
+            {
+              "factor": "에너지를 나누고 모으는 방식",
+              "value": -1.9250000000000003,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:child:happy_active_child:plainKo",
+                "mbti:ESTP:traits:relationships:wide_social_circle:plainKo",
+                "mbti:ISFJ:traits:communication:listen_more_than_speak:plainKo"
+              ]
+            },
+            {
+              "factor": "말을 전하는 방식",
+              "value": -1.9250000000000003,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo",
+                "mbti:ESTP:traits:communication:short_explanation_preference:plainKo",
+                "mbti:ESTP:traits:communication:straight_humor:plainKo",
+                "mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+                "mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo"
+              ]
+            },
+            {
+              "factor": "함께할 거리",
+              "value": -1.9250000000000003,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:relationships:wide_social_circle:plainKo",
+                "mbti:ISFJ:traits:child:stable_friendship_child:plainKo"
+              ]
+            }
+          ],
+          "value": 5
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 2.25,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair:repairStrategy",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair:repairStrategy",
+                "mbti:ESTP:traits:child:happy_active_child:plainKo",
+                "mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo",
+                "mbti:ESTP:traits:communication:emotion_impatience:plainKo",
+                "mbti:ESTP:traits:communication:short_explanation_preference:plainKo",
+                "mbti:ESTP:traits:communication:straight_humor:plainKo",
+                "mbti:ESTP:traits:relationships:low_grudge_high_motion:plainKo",
+                "mbti:ESTP:traits:relationships:wide_social_circle:plainKo",
+                "mbti:ISFJ:traits:child:stable_friendship_child:plainKo",
+                "mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+                "mbti:ISFJ:traits:communication:listen_more_than_speak:plainKo",
+                "mbti:ISFJ:traits:relationships:hard_to_enter_reliable_once_in:plainKo",
+                "mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo"
+              ]
+            }
+          ],
+          "value": 7
+        }
+      ],
+      "category": "parentChild",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "coworker": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 16/30점 — 함께 살필 좋은 조건은 음양 리듬 보완입니다; 같은 오행으로 치우침 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "명리 관계 14/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 5/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 에너지를 나누고 모으는 방식·익숙함과 새로움을 고르는 방식 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 6/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 41,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "같은 오행으로 치우침",
+              "value": -1.5,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:3.5000000000000004",
+                "SajuCalcResult:elements.weighted:EARTH:4.4",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:high"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 2.6,
+              "sources": [
+                "day:BRANCH_YIN_YANG:寅",
+                "day:BRANCH_YIN_YANG:巳",
+                "day:STEM_YIN_YANG:乙",
+                "day:STEM_YIN_YANG:甲",
+                "hour:BRANCH_YIN_YANG:未",
+                "hour:BRANCH_YIN_YANG:辰",
+                "hour:STEM_YIN_YANG:戊",
+                "hour:STEM_YIN_YANG:癸",
+                "month:BRANCH_YIN_YANG:丑",
+                "month:BRANCH_YIN_YANG:申",
+                "month:STEM_YIN_YANG:丙",
+                "month:STEM_YIN_YANG:乙",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:未",
+                "year:BRANCH_YIN_YANG:酉",
+                "year:STEM_YIN_YANG:癸",
+                "year:STEM_YIN_YANG:辛"
+              ]
+            }
+          ],
+          "value": 16
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 6.708535565642861,
+              "sources": [
+                "six_harmony:29a2534854378270a988c1f8:hour:辰|b425792e04d53877ee951f97:year:酉",
+                "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -9.670536192627239,
+              "sources": [
+                "clash:29a2534854378270a988c1f8:year:未|b425792e04d53877ee951f97:month:丑",
+                "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+              ]
+            }
+          ],
+          "value": 14
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "에너지를 나누고 모으는 방식",
+              "value": -4.2,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:workplace:visible_charisma:plainKo",
+                "mbti:ISFJ:traits:career:behind_the_scenes_worker:plainKo"
+              ]
+            },
+            {
+              "factor": "익숙함과 새로움을 고르는 방식",
+              "value": -4.2,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:workplace:low_tolerance_for_boredom:plainKo",
+                "mbti:ISFJ:traits:workplace:formal_culture_fit:plainKo"
+              ]
+            }
+          ],
+          "value": 5
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 1.1,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair:repairStrategy",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair:repairStrategy",
+                "mbti:ESTP:traits:workplace:low_tolerance_for_boredom:plainKo",
+                "mbti:ESTP:traits:workplace:visible_charisma:plainKo",
+                "mbti:ISFJ:traits:career:behind_the_scenes_worker:plainKo",
+                "mbti:ISFJ:traits:workplace:formal_culture_fit:plainKo"
+              ]
+            }
+          ],
+          "value": 6
+        }
+      ],
+      "category": "coworker",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "managerReport": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 16/30점 — 함께 살필 좋은 조건은 음양 리듬 보완입니다; 같은 오행으로 치우침 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "명리 관계 12/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 3/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 에너지를 나누고 모으는 방식·익숙함과 새로움을 고르는 방식 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 6/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 37,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "같은 오행으로 치우침",
+              "value": -1.5,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:3.5000000000000004",
+                "SajuCalcResult:elements.weighted:EARTH:4.4",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:high"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 2.2,
+              "sources": [
+                "day:BRANCH_YIN_YANG:寅",
+                "day:BRANCH_YIN_YANG:巳",
+                "day:STEM_YIN_YANG:乙",
+                "day:STEM_YIN_YANG:甲",
+                "hour:BRANCH_YIN_YANG:未",
+                "hour:BRANCH_YIN_YANG:辰",
+                "hour:STEM_YIN_YANG:戊",
+                "hour:STEM_YIN_YANG:癸",
+                "month:BRANCH_YIN_YANG:丑",
+                "month:BRANCH_YIN_YANG:申",
+                "month:STEM_YIN_YANG:丙",
+                "month:STEM_YIN_YANG:乙",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:未",
+                "year:BRANCH_YIN_YANG:酉",
+                "year:STEM_YIN_YANG:癸",
+                "year:STEM_YIN_YANG:辛"
+              ]
+            }
+          ],
+          "value": 16
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 5.869968619937502,
+              "sources": [
+                "six_harmony:29a2534854378270a988c1f8:hour:辰|b425792e04d53877ee951f97:year:酉",
+                "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -11.282292224731778,
+              "sources": [
+                "clash:29a2534854378270a988c1f8:year:未|b425792e04d53877ee951f97:month:丑",
+                "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+              ]
+            }
+          ],
+          "value": 12
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "에너지를 나누고 모으는 방식",
+              "value": -4.8999999999999995,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:workplace:visible_charisma:plainKo",
+                "mbti:ISFJ:traits:career:behind_the_scenes_worker:plainKo"
+              ]
+            },
+            {
+              "factor": "익숙함과 새로움을 고르는 방식",
+              "value": -4.8999999999999995,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:workplace:low_tolerance_for_boredom:plainKo",
+                "mbti:ISFJ:traits:workplace:formal_culture_fit:plainKo"
+              ]
+            }
+          ],
+          "value": 3
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 1.4,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair:repairStrategy",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair:repairStrategy",
+                "mbti:ESTP:traits:workplace:low_tolerance_for_boredom:plainKo",
+                "mbti:ESTP:traits:workplace:visible_charisma:plainKo",
+                "mbti:ISFJ:traits:career:behind_the_scenes_worker:plainKo",
+                "mbti:ISFJ:traits:workplace:formal_culture_fit:plainKo"
+              ]
+            }
+          ],
+          "value": 6
+        }
+      ],
+      "category": "managerReport",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "businessPartner": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 16/30점 — 함께 살필 좋은 조건은 음양 리듬 보완입니다; 같은 오행으로 치우침 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "명리 관계 12/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 3/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 에너지를 나누고 모으는 방식·익숙함과 새로움을 고르는 방식 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 7/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 38,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "같은 오행으로 치우침",
+              "value": -1.5,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:3.5000000000000004",
+                "SajuCalcResult:elements.weighted:EARTH:4.4",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:high"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 2.8,
+              "sources": [
+                "day:BRANCH_YIN_YANG:寅",
+                "day:BRANCH_YIN_YANG:巳",
+                "day:STEM_YIN_YANG:乙",
+                "day:STEM_YIN_YANG:甲",
+                "hour:BRANCH_YIN_YANG:未",
+                "hour:BRANCH_YIN_YANG:辰",
+                "hour:STEM_YIN_YANG:戊",
+                "hour:STEM_YIN_YANG:癸",
+                "month:BRANCH_YIN_YANG:丑",
+                "month:BRANCH_YIN_YANG:申",
+                "month:STEM_YIN_YANG:丙",
+                "month:STEM_YIN_YANG:乙",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:未",
+                "year:BRANCH_YIN_YANG:酉",
+                "year:STEM_YIN_YANG:癸",
+                "year:STEM_YIN_YANG:辛"
+              ]
+            }
+          ],
+          "value": 16
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 6.708535565642861,
+              "sources": [
+                "six_harmony:29a2534854378270a988c1f8:hour:辰|b425792e04d53877ee951f97:year:酉",
+                "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -12.088170240784049,
+              "sources": [
+                "clash:29a2534854378270a988c1f8:year:未|b425792e04d53877ee951f97:month:丑",
+                "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+              ]
+            }
+          ],
+          "value": 12
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "에너지를 나누고 모으는 방식",
+              "value": -5.25,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:workplace:visible_charisma:plainKo",
+                "mbti:ISFJ:traits:career:behind_the_scenes_worker:plainKo"
+              ]
+            },
+            {
+              "factor": "익숙함과 새로움을 고르는 방식",
+              "value": -5.25,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:workplace:low_tolerance_for_boredom:plainKo",
+                "mbti:ISFJ:traits:workplace:formal_culture_fit:plainKo"
+              ]
+            }
+          ],
+          "value": 3
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 1.5,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair:repairStrategy",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair:repairStrategy",
+                "mbti:ESTP:traits:workplace:low_tolerance_for_boredom:plainKo",
+                "mbti:ESTP:traits:workplace:visible_charisma:plainKo",
+                "mbti:ISFJ:traits:career:behind_the_scenes_worker:plainKo",
+                "mbti:ISFJ:traits:workplace:formal_culture_fit:plainKo"
+              ]
+            }
+          ],
+          "value": 7
+        }
+      ],
+      "category": "businessPartner",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    },
+    "friendship": {
+      "version": "gyeol-compatibility-index-full-refinement-02",
+      "versionLabel": "해석 지수 2판",
+      "explanations": [
+        "오행·음양 15/30점 — 함께 살필 좋은 조건은 음양 리듬 보완입니다; 같은 오행으로 치우침 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "명리 관계 19/35점 — 함께 살필 좋은 조건은 이어지는 명리 관계입니다; 부딪히는 명리 관계 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "MBTI 7/25점 — 확인된 가산 근거가 없는 부분은 중립으로 남겼습니다; 움직이기 전 살피는 속도·에너지를 나누고 모으는 방식·말을 전하는 방식·함께할 거리 항목은 조율이 필요한 조건으로 반영했습니다.",
+        "회복력 7/10점 — 함께 살필 좋은 조건은 확인된 반응 차이에 쓸 대화 방법입니다; 자료가 적다는 이유로 단점을 만들어 감점하지 않습니다."
+      ],
+      "total": 48,
+      "max": 100,
+      "scores": [
+        {
+          "label": "오행·음양",
+          "max": 30,
+          "factors": [
+            {
+              "factor": "같은 오행으로 치우침",
+              "value": -1.5,
+              "sources": [
+                "BirthTimeCalculationContext:confirmed",
+                "SajuCalcResult:elements.weighted:EARTH:3.5000000000000004",
+                "SajuCalcResult:elements.weighted:EARTH:4.4",
+                "SajuCalcResult:elements:EARTH",
+                "calendar:saju-calendar-kst-v2",
+                "saju/analyze.ts:createElementLabels",
+                "v4:material-depth:element:EARTH:high",
+                "v4:symbolic-lifestyle:EARTH:high"
+              ]
+            },
+            {
+              "factor": "음양 리듬 보완",
+              "value": 1.8,
+              "sources": [
+                "day:BRANCH_YIN_YANG:寅",
+                "day:BRANCH_YIN_YANG:巳",
+                "day:STEM_YIN_YANG:乙",
+                "day:STEM_YIN_YANG:甲",
+                "hour:BRANCH_YIN_YANG:未",
+                "hour:BRANCH_YIN_YANG:辰",
+                "hour:STEM_YIN_YANG:戊",
+                "hour:STEM_YIN_YANG:癸",
+                "month:BRANCH_YIN_YANG:丑",
+                "month:BRANCH_YIN_YANG:申",
+                "month:STEM_YIN_YANG:丙",
+                "month:STEM_YIN_YANG:乙",
+                "visible-characters-unweighted",
+                "year:BRANCH_YIN_YANG:未",
+                "year:BRANCH_YIN_YANG:酉",
+                "year:STEM_YIN_YANG:癸",
+                "year:STEM_YIN_YANG:辛"
+              ]
+            }
+          ],
+          "value": 15
+        },
+        {
+          "label": "명리 관계",
+          "max": 35,
+          "factors": [
+            {
+              "factor": "이어지는 명리 관계",
+              "value": 8.385669457053575,
+              "sources": [
+                "six_harmony:29a2534854378270a988c1f8:hour:辰|b425792e04d53877ee951f97:year:酉",
+                "six_harmony:29a2534854378270a988c1f8:month:申|b425792e04d53877ee951f97:day:巳"
+              ]
+            },
+            {
+              "factor": "부딪히는 명리 관계",
+              "value": -6.44702412841816,
+              "sources": [
+                "clash:29a2534854378270a988c1f8:year:未|b425792e04d53877ee951f97:month:丑",
+                "harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳"
+              ]
+            }
+          ],
+          "value": 19
+        },
+        {
+          "label": "MBTI",
+          "max": 25,
+          "factors": [
+            {
+              "factor": "움직이기 전 살피는 속도",
+              "value": -1.4000000000000001,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:communication:emotion_impatience:plainKo",
+                "mbti:ESTP:traits:relationships:low_grudge_high_motion:plainKo",
+                "mbti:ISFJ:traits:relationships:hard_to_enter_reliable_once_in:plainKo"
+              ]
+            },
+            {
+              "factor": "에너지를 나누고 모으는 방식",
+              "value": -1.4000000000000001,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:child:happy_active_child:plainKo",
+                "mbti:ESTP:traits:relationships:wide_social_circle:plainKo",
+                "mbti:ISFJ:traits:communication:listen_more_than_speak:plainKo"
+              ]
+            },
+            {
+              "factor": "말을 전하는 방식",
+              "value": -1.4000000000000001,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo",
+                "mbti:ESTP:traits:communication:short_explanation_preference:plainKo",
+                "mbti:ESTP:traits:communication:straight_humor:plainKo",
+                "mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+                "mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo"
+              ]
+            },
+            {
+              "factor": "함께할 거리",
+              "value": -1.4000000000000001,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair",
+                "mbti:ESTP:traits:relationships:wide_social_circle:plainKo",
+                "mbti:ISFJ:traits:child:stable_friendship_child:plainKo"
+              ]
+            }
+          ],
+          "value": 7
+        },
+        {
+          "label": "회복력",
+          "max": 10,
+          "factors": [
+            {
+              "factor": "확인된 반응 차이에 쓸 대화 방법",
+              "value": 1.7999999999999998,
+              "sources": [
+                "29a2534854378270a988c1f8:to:b425792e04d53877ee951f97:mbti-pair:repairStrategy",
+                "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8:mbti-pair:repairStrategy",
+                "mbti:ESTP:traits:child:happy_active_child:plainKo",
+                "mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo",
+                "mbti:ESTP:traits:communication:emotion_impatience:plainKo",
+                "mbti:ESTP:traits:communication:short_explanation_preference:plainKo",
+                "mbti:ESTP:traits:communication:straight_humor:plainKo",
+                "mbti:ESTP:traits:relationships:low_grudge_high_motion:plainKo",
+                "mbti:ESTP:traits:relationships:wide_social_circle:plainKo",
+                "mbti:ISFJ:traits:child:stable_friendship_child:plainKo",
+                "mbti:ISFJ:traits:communication:careful_word_choice:plainKo",
+                "mbti:ISFJ:traits:communication:listen_more_than_speak:plainKo",
+                "mbti:ISFJ:traits:relationships:hard_to_enter_reliable_once_in:plainKo",
+                "mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo"
+              ]
+            }
+          ],
+          "value": 7
+        }
+      ],
+      "category": "friendship",
+      "verdict": "맞물리는 힘과 부딪히는 속도가 함께 있습니다. 좋은 부분을 살리되 조율할 약속은 분명해야 해요.",
+      "notice": "명리·MBTI의 확인된 관계를 묶은 상징적 해석 지수이며, 관계의 성공 확률이나 두 사람의 실제 행동에 대한 평가가 아닙니다.",
+      "limitations": [
+        "관계의 성공 확률이나 검증된 심리검사 점수가 아닙니다. 자료가 없는 항목은 중립값이며 좋은 근거로 가산하지 않습니다.",
+        "같은 지지 관계의 반복과 삼합 안의 반합은 중복 가산하지 않으며, 충돌을 회복력에서 다시 감점하지 않습니다.",
+        "MBTI는 해당 관계에 맞는 기존 자료의 행동 선호를 비교하며, 문장의 개수나 유형 이름에 붙은 궁합 등급을 점수로 바꾸지 않습니다.",
+        "회복력은 차이를 조율할 자료와 보완 조건의 여지이며 실제로 화해했다는 뜻은 아닙니다.",
+        "두 사람 사이의 천간합·형·파·원진·방합은 현재 검증된 교차 근거가 없어 반영하지 않았습니다."
+      ]
+    }
+  }
+}
