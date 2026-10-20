@@ -1,4 +1,5 @@
 "use client";
+import { metaOrigin } from "./metaConsent";
 import { metaProduct, metaPurchase, type FunnelEvent, type Interaction, type MetaEvent, type PurchaseFact } from "./events";
 
 declare global { interface Window { fbq?: (...args: unknown[]) => void; _fbq?: unknown } }
@@ -9,7 +10,10 @@ let retry: ReturnType<typeof setTimeout> | undefined;
 export const manualReviewSilent = () => process.env.NODE_ENV !== "production" && typeof window !== "undefined" &&
   (/^\/dev\/content-review(?:\/|$)/.test(window.location.pathname ?? "") || process.env.NEXT_PUBLIC_LOCAL_REVIEW_SILENT === "1");
 export const localMeasurement = () => process.env.NODE_ENV !== "production" && typeof window !== "undefined" && /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
-export const publicMetaAllowed = () => process.env.NODE_ENV === "production" && typeof window !== "undefined" && window.location.hostname === "gyeolreport.com";
+let metaChoice = false;
+export function setMetaChoice(agreed: boolean) { metaChoice = agreed; lastPage = undefined; if (!agreed) { pending.clear(); if (retry) clearTimeout(retry); retry = undefined; } }
+export const publicMetaAllowed = () => process.env.NODE_ENV === "production" && typeof window !== "undefined" && metaOrigin(window.location.origin) && metaChoice;
+const publicPath = (path: string) => path === "/" || path === "/campaign/gyeol-opening-2026" || path === "/report/new" || path === "/checkout";
 
 function capture(channel: "internal" | "meta", event: FunnelEvent | MetaEvent) {
   if (localMeasurement()) {
@@ -24,26 +28,21 @@ export function sendMeta(event: MetaEvent, key: string) {
   if (typeof window === "undefined" || delivered.has(key)) return;
   if (localMeasurement()) { delivered.add(key); capture("meta", event); return; }
   if (!publicMetaAllowed()) return;
+  // Business conversions are sent solely by server-verified durable facts.
+  if (!["PageView", "ViewContent", "InitiateCheckout"].includes(event.event) || !publicPath(window.location.pathname)) return;
+  if (pending.has(key)) return;
   pending.set(key, event);
-  const flush = () => {
-    if (retry) clearTimeout(retry);
-    retry = undefined;
-    if (!window.fbq) return;
-    for (const [id, message] of pending) {
-      window.fbq("track", message.event, message.params, ...(message.eventId ? [{ eventID: message.eventId }] : []));
-      delivered.add(id); pending.delete(id);
-    }
-  };
-  flush();
-  // SDK ready is also signalled by MetaPixel. No perpetual interval/background queue.
-  if (pending.size && !retry) retry = setTimeout(flush, 1000);
+  const productType = Array.isArray(event.params.content_ids) ? event.params.content_ids[0] : undefined;
+  void fetch("/api/analytics/meta", { method: "POST", headers: { "content-type": "application/json" },
+    body: JSON.stringify({ event: event.event, ...(typeof productType === "string" ? { productType } : {}), requestId: crypto.randomUUID() }), keepalive: true,
+  }).then(r => { if (r.ok) delivered.add(key); }).catch(() => {}).finally(() => pending.delete(key));
 }
 export function flushMeta() { for (const [key, event] of pending) sendMeta(event, key); }
 let lastPage: string | undefined;
 let pageSequence = 0;
 export function pageView(path: string) {
   if (manualReviewSilent()) return;
-  if (!path || path === lastPage) return;
+  if (!path || path === lastPage || (!localMeasurement() && (!publicMetaAllowed() || !publicPath(path)))) return;
   lastPage = path;
   sendMeta({ event: "PageView", params: {} }, `page:${++pageSequence}`);
 }
@@ -90,10 +89,10 @@ export async function syncLocalFacts() {
 }
 export async function dispatchPurchase(reportId: string, local = false) {
   if (manualReviewSilent()) return;
-  if (!(local ? localMeasurement() : publicMetaAllowed() && typeof window.fbq === "function")) return;
+  if (!(local ? localMeasurement() : publicMetaAllowed())) return;
   try {
     // Claim only when the transport is ready. The SQL unique order wins across tabs.
-    const response = await fetch(local ? "/dev/measurement" : "/api/analytics/purchase", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ reportId }), keepalive: true });
+    const response = await fetch(local ? "/dev/measurement" : "/api/analytics/purchase", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ reportId, ...(!local ? { requestId: crypto.randomUUID() } : {}) }), keepalive: true });
     const result = await response.json() as { purchase?: PurchaseFact };
     const event = response.ok && result.purchase ? metaPurchase(result.purchase) : null;
     if (event) sendMeta(event, event.eventId!);

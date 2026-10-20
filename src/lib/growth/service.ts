@@ -8,6 +8,7 @@ import type { TicketStore } from "../tickets/service";
 import { BOOK_SHARE_HEADERS } from "../book/shareServer";
 import { CAMPAIGN_SLUG, campaignUtm, type CampaignPresentation } from "./model";
 import { getReportProductCatalog } from "../payment/reportProductCatalog";
+import { recordMetaConsent } from "../analytics/metaDelivery";
 import { isPublicSameOrigin } from "../account/origin";
 export type CampaignResult = { ok: boolean; settled?: boolean; maxAge?: number; notice?: string | null;
   presentation?: CampaignPresentation; contexts?: Array<{kind:"campaign"|"referral";hash:string;acquiredAt:string}>;
@@ -63,7 +64,10 @@ export async function settleAcquisition(campaigns:CampaignStore,referrals:Referr
 export function withAcquisitionAccount(request:NextRequest,auth:AccountPort,campaigns:CampaignStore,referrals:ReferralStore,local=false):AccountPort {
   const hash=(name:string)=>{const s=request.cookies.get(name)?.value;return s&&/^[a-f0-9]{64}$/.test(s)?referralHash(s):undefined;};
   const hashes={campaignHash:hash(campaignCookie(local)),referralHash:hash(referralCookie(local))};
-  const settle=(user:string,consented:boolean)=>settleAcquisition(campaigns,referrals,user,hashes,consented);
+  const settle=async(user:string,consented:boolean)=>{
+    if (!local) await recordMetaConsent(request,user);
+    return settleAcquisition(campaigns,referrals,user,hashes,consented);
+  };
   return {...auth,async read(user){const snapshot=await auth.read(user);if(hashes.campaignHash||hashes.referralHash)await settle(user.id,!!snapshot&&accountSession(user,snapshot).status==="member");return snapshot;},
     async consent(user,id,source){const ok=await auth.consent(user,id,source);if(ok&&(hashes.campaignHash||hashes.referralHash))await settle(user.id,true);return ok;}};
 }

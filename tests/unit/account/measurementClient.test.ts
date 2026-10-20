@@ -31,15 +31,32 @@ describe("canonical browser adapter, no Meta network", () => {
     interaction("checkout_started","love_marriage_child");interaction("checkout_started","love_marriage_child");interaction("ticket_selected","love_marriage_child");
     expect(captured.filter(e=>e.channel==="meta").map(e=>e.event)).toEqual(["InitiateCheckout"]);
   });
-  it("late SDK is queued once; Purchase supplies stable eventID, safe params only",async()=>{
-    vi.stubEnv("NODE_ENV","production"); vi.useFakeTimers();
-    Object.assign(window,{location:{hostname:"gyeolreport.com"},fbq:undefined});
-    const {sendMeta,flushMeta}=await import("../../../src/lib/analytics/client");
+  it("www/apex require explicit choice; first-party dispatch hides the URL and never loads the SDK",async()=>{
+    vi.stubEnv("NODE_ENV","production");
+    Object.assign(window,{location:{origin:"https://www.gyeolreport.com",pathname:"/",search:"",hash:""}});
+    const {sendMeta,setMetaChoice,publicMetaAllowed}=await import("../../../src/lib/analytics/client");
+    sendMeta({event:"PageView",params:{}},"no-consent");expect(fetch).not.toHaveBeenCalled();
+    setMetaChoice(true); expect(publicMetaAllowed()).toBe(true);
     sendMeta({event:"PageView",params:{}},"navigation");sendMeta({event:"PageView",params:{}},"navigation");
-    window.fbq=vi.fn();flushMeta();expect(window.fbq).toHaveBeenCalledTimes(1);
-    sendMeta({event:"Purchase",params:{value:990,currency:"KRW"},eventId:`purchase_${"a".repeat(32)}`} ,"purchase");
-    expect(window.fbq).toHaveBeenLastCalledWith("track","Purchase",{value:990,currency:"KRW"},{eventID:`purchase_${"a".repeat(32)}`});
-    await vi.runAllTimersAsync();expect(window.fbq).toHaveBeenCalledTimes(2);
+    expect(fetch).toHaveBeenCalledTimes(1);expect(window.fbq).not.toHaveBeenCalled();
+    const [,init]=vi.mocked(fetch).mock.calls[0];
+    expect(JSON.parse(String(init?.body))).toEqual({event:"PageView",requestId:expect.any(String)});
+    setMetaChoice(false);expect(publicMetaAllowed()).toBe(false);
+    Object.assign(window,{location:{origin:"https://gyeolreport.com",pathname:"/",search:"",hash:""}});setMetaChoice(true);expect(publicMetaAllowed()).toBe(true);
+  });
+  it("sensitive routes and browser business conversions stay blocked; campaign query never enters payload",async()=>{
+    vi.stubEnv("NODE_ENV","production");
+    const client=await import("../../../src/lib/analytics/client");client.setMetaChoice(true);
+    for(const [pathname,search,hash] of [["/r/secret","",""],["/reports/report_secret","",""],["/auth/callback","?code=secret",""]]){
+      Object.assign(window,{location:{origin:"https://www.gyeolreport.com",pathname,search,hash}});client.pageView(pathname);
+    }
+    Object.assign(window,{location:{origin:"https://www.gyeolreport.com",pathname:"/",search:"",hash:""}});
+    client.sendMeta({event:"CompleteRegistration",params:{}},"fake-registration");client.sendMeta({event:"Purchase",params:{value:1}},"fake-purchase");
+    expect(fetch).not.toHaveBeenCalled();expect(window.fbq).not.toHaveBeenCalled();
+    Object.assign(window,{location:{origin:"https://www.gyeolreport.com",pathname:"/campaign/gyeol-opening-2026",search:"?fbclid=private&email=private",hash:"#private"}});
+    client.pageView("/campaign/gyeol-opening-2026"); expect(fetch).toHaveBeenCalledTimes(1);
+    const body=JSON.parse(String(vi.mocked(fetch).mock.calls[0][1]?.body));
+    expect(body).toEqual({event:"PageView",requestId:expect.any(String)});expect(JSON.stringify(body)).not.toContain("private");
   });
   it("server claim suppresses cross-tab/retry and storage loss; client supplies no amount",async()=>{
     let issued=false;vi.mocked(fetch).mockImplementation(async(_url,init)=>{

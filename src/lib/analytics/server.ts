@@ -2,6 +2,7 @@ import "server-only";
 import type { NextRequest } from "next/server";
 import { validReferralSnapshot } from "../referrals/service";
 import { createSupabaseServerClient } from "../db/supabaseServer";
+import { isPublicSameOrigin } from "../account/origin";
 import type { FunnelEvent, PurchaseFact } from "./events";
 export const MEASUREMENT_MIGRATION = "supabase/migrations/20261003165059_v4_growth_measurement.sql";
 export type MeasurementPort = { call(name: string, args: Record<string, unknown>): Promise<unknown> };
@@ -26,5 +27,5 @@ export async function claimPurchase(port: MeasurementPort, reportId: string): Pr
 export function measurementOrigin(request: NextRequest, local: boolean) {
   const url = new URL(request.url);
   if (local && request.headers.get("host")) url.host = request.headers.get("host")!;
-  return request.headers.get("origin") === (local ? url.origin : "https://gyeolreport.com");
+  return local ? request.headers.get("origin") === url.origin : isPublicSameOrigin(request);
 }

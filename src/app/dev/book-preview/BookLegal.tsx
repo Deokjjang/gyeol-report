@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { GYEOL_BUSINESS_INFO as business } from "../../../lib/legal/businessInfo";
 import { termsPolicyDescriptionKo, termsPolicySections } from "../../../lib/legal/termsPolicy";
 import {
+  privacyPolicyMetaNoticeKo, privacyPolicyMetaRetentionKo,
   privacyPolicyCollectionItems, privacyPolicyExternalServiceRows, privacyPolicyLegalRetentionKo,
   privacyPolicyMinorNoticeKo, privacyPolicyNoResidentRegistrationNumberKo, privacyPolicyOverseasProcessingKo,
   privacyPolicyProcessingScopeKo, privacyPolicyPurposeItems, privacyPolicyRetentionRows,
@@ -51,6 +52,7 @@ export function LegalDocument({ index, onNavigate }: { index: number; onNavigate
     <PolicySection title="미성년자 이용"><p>{privacyPolicyUnder14Ko}</p><p>{privacyPolicyMinorNoticeKo}</p></PolicySection>
     <PolicySection title="민감정보 수집 제한"><p>{privacyPolicySensitiveInfoLimitKo}</p><p>{privacyPolicyNoResidentRegistrationNumberKo}</p></PolicySection>
     <PolicySection title="이용자의 권리"><p>{privacyPolicyUserRightsKo}</p></PolicySection>
+    <PolicySection title="광고 성과 측정 (선택)"><p>{privacyPolicyMetaNoticeKo}</p><p>{privacyPolicyMetaRetentionKo}</p></PolicySection>
     <PolicySection title="개인정보 문의처"><Contacts /></PolicySection>
   </div>;
   if (index === 2) return <div className={s.legalDocument}>

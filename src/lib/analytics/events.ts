@@ -6,7 +6,7 @@ export const FACTS = ["account_created", "required_consent_completed", "campaign
 export type Interaction = typeof INTERACTIONS[number];
 export type FunnelEvent = { event: Interaction | typeof FACTS[number]; eventId: string; productType?: string; campaign?: string; occurredAt?: string; value?: number; currency?: "KRW" };
 export type PurchaseFact = { eventId: string; productType: string; value: number; currency: "KRW" };
-export type MetaEvent = { event: "PageView" | "ViewContent" | "InitiateCheckout" | "Purchase"; params: Record<string, unknown>; eventId?: string };
+export type MetaEvent = { event: "PageView" | "ViewContent" | "InitiateCheckout" | "Purchase" | "CompleteRegistration"; params: Record<string, unknown>; eventId?: string };
 
 // Rebuild the allowlisted payload; do NOT spread an input, report or OAuth object.
 export function metaProduct(event: "ViewContent" | "InitiateCheckout", productType: string): MetaEvent | null {
