@@ -20,7 +20,8 @@ const topics: Record<MajorContext["mode"] | "finance", readonly (readonly [strin
 /** Twenty authored story shapes (first/mature), selected by actual annual god.
  * Context is a concrete object of the interpretation, not a substituted name. */
 export function majorAnnualStory(god: TenGod, context: MajorContext, mature: boolean, past: boolean, current: boolean, distant = false) {
-  const later = distant ? distantMajorScene(god, mature) : undefined;
+  // Only the present-year example may assume today's occupation.
+  const later = !current || distant ? distantMajorScene(god, mature) : undefined;
   const c = later ? { ...context, craft: later.craft, noun: later.noun } : context;
   const futureLife = later;
   const o = futureLife?.topic ?? topics[c.fn === "finance_planning" && c.mode === "employee" ? "finance" : c.mode][gods.indexOf(god)][mature ? 1 : 0];
@@ -64,7 +65,7 @@ export function majorAnnualStory(god: TenGod, context: MajorContext, mature: boo
     편인: [`${p(s, "이", "가")} 뜻밖에 재미있어질 만합니다.`, `${p(s, "처럼", "처럼")} 다른 경험을 이어보는 모습이 어울립니다.`],
     정인: [`${p(s, "처럼", "처럼")} 설명 하나가 길을 열어주기도 합니다.`, `${p(s, "에서는", "에서는")} 받은 도움을 다시 나눌 여지도 보여요.`],
   };
-  const scene = `${past ? `지금의 ${p(s, "을", "를")} 예로 삼아 그 무렵을 돌아볼 수 있습니다.` : current ? sceneLeads[god][mature ? 1 : 0] : `‘${s}’ 같은 상황을 만난다면, ${withKoreanParticle(`‘${o}’`, "object")} 어떻게 다룰지 생각해볼 수 있습니다.`} ${futureLife?.detail ?? majorSceneDetail(c, god, mature)}`;
+  const scene = `${past ? `그 무렵 ‘${s}’ 같은 상황이 있었다면, 그 선택을 돌아볼 수 있습니다.` : current ? sceneLeads[god][mature ? 1 : 0] : `‘${s}’ 같은 상황을 만난다면, ${withKoreanParticle(`‘${o}’`, "object")} 어떻게 다룰지 생각해볼 수 있습니다.`} ${futureLife?.detail ?? majorSceneDetail(c, god, mature)}`;
   const gifts: Record<TenGod, string> = {
     비견: mature ? `${oo} 남의 기준에만 맞추지 않을 독립심이 좋은 패예요. 오래 해도 납득할 선택을 스스로 고르는 힘이 커집니다.` : `스스로 ${oo} 고른 경험이 자신감을 만듭니다. 남과 다르다는 이유만으로 접지 않는 끈기가 내 길을 넓혀줘요.`,
     겁재: mature ? `${ow} 함께할 사람을 보는 눈도 자랄 수 있어요. 서로 다른 재주를 공평하게 나누면 혼자 감당하던 한도 밖으로 나가볼 힘이 생깁니다.` : `${oo} 통해 서로의 실력을 합칠 수 있습니다. 잘하는 게 다른 사람과 힘을 보태면 경쟁만 하던 때보다 큰 결과를 만들어볼 만해요.`,

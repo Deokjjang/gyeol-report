@@ -16,7 +16,9 @@ export function expectBoundCohortReuse(reports: readonly Report[]) {
     const blocks = issue.location.split(" / ").map(location => {
       const slash = location.indexOf("/"), id = location.slice(0, slash), blockId = location.slice(slash + 1);
       const n = reports.find(r => r.id === id)?.narrative;
-      return n && [...n.opening, ...n.sections.flatMap(s => s.blocks)].find(b => b.id === blockId);
+      // The cohort checker also emits the real final line as /final.
+      // Resolve its supplied proof instead of treating it as a missing block.
+      return n && (blockId === "final" ? { proof: n.finalProof } : [...n.opening, ...n.sections.flatMap(s => s.blocks)].find(b => b.id === blockId));
     });
     expect(blocks.every(Boolean), issue.location).toBe(true);
     const keys = blocks.map(b => [

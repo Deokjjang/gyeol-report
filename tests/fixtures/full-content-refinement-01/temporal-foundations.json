@@ -1,0 +1,3506 @@
+{
+  "sourceSha": "3fb239f52e2c44aef69877735899e0f8448a2f2c",
+  "preservation": {
+    "4099c8cee256809f6ad54cda8e5cfed335f7857fa7757bd0470471daf02a4ae9": {
+      "calculations": "a548408b8af9716eee3c7f9613c194ce4f5934b2a0ca220ea3675b29bc5ccb11",
+      "mbtiTables": "c3e57873fd1e2f23581aec07e4c8f88e2a88664c112eb15410c791e713d8c207",
+      "natalTables": "8199ead216ad4e5a938057371ae3cda9c8aef2981f48f63b99766f1f211c77f1",
+      "materials": "1ee63fe06524b834c3e29b10685366ca13a627ee5def818d1dcc3dd1dc9f9cd7",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "49a277e902f565caac4c9ba3a454e91b4a2b0bd74502c0179537ecc7005b62ce",
+      "periods": "9d6f941a4516363e87804462faeeb59cc552f7f7318177dc01124ea998b396b5",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "f86f40a300dfe8ebee41100fbba91874c8cefede4d0c99c87e58371d80dbd495": {
+      "calculations": "89e0559c46846256e5fcc6ea353e9d9d58380c865a0514aab87c00d54fd8f3b5",
+      "mbtiTables": "ba22360b4f5318ffa0803dde0fef49145cb912fd5d5cb713d29f7066b6da2ef9",
+      "natalTables": "1031197d3421d5fa8436286b75bd42596307c6ff71390d5d6ba2ce9e2d43d916",
+      "materials": "21f4364a827778a075762ae5dd347b546761a34f7252a249ce1081d46826de21",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    },
+    "5b5a778d536dbf6af99953f5c6f62979e65690573da38699caca001cf261b0c8": {
+      "calculations": "0a8e0934a33806cd0be6be7885173246450d69422fa94c0ecc8b08fb0fe14294",
+      "mbtiTables": "a9d87740db60c2314bca154b83c45018bdc8134e32afeb384f1a9dae50ae8763",
+      "natalTables": "3d790d6eeaedf50863c7b01f797f3869a63a47eec45dc90068d5023826bf528b",
+      "materials": "02bd7e37abbe8f1225ffa53445a822c3dc7af77f8a36d1c5e6b1282da1c15575",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "4d3bcefdeb890b84be3ce8ee67016a545b13c798cf7d103b864a6f2e6017e0a3",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "aa37608231712c502d865e92661877a40fd7a22c6d86d4bfa32a22386a0c22d4": {
+      "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+      "mbtiTables": "1f1cbdd9d889692c51806ed17910587f97f7874860ebab65de0aa7dfa878bab5",
+      "natalTables": "36fcdfbfe5fa25e039c920c1f036ee215a4c389ae159fa16e226347461c03cfe",
+      "materials": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "index": "827b40a39f07ec3fcc5d4f0ababcb9c11cf92344bf6270f214f94832261aafeb",
+      "directions": "08ca208c805c457fce4f40475321591defad150c01bd3ae8b69c0bd2e7df58e6",
+      "individuals": "6f211dc1a58d879d14b6d4bd00f544f5b0a1a3a3240a73e4a951a34a04360b7f",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    },
+    "28c786071c3fd65fc8587a894013175cdce12172e05f1aef8ccfd1673b393c57": {
+      "calculations": "1c46f577701e75dd77957c6b6043cd9a6bdc6197f0f0c66f2ee50e99e2e53b72",
+      "mbtiTables": "482f150bbd083b2f84a75da4eef9a96ff45633ec8c100fd232aa539ec993ff38",
+      "natalTables": "b8dc319e62b171fdad6ae62c1323c4a58fe21c469873d0dbebcd965c88e29083",
+      "materials": "f4e26913fb5da724ddb7ae434e85c896f2277aafaa7939b45007ddc23f050138",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "933ac6e9b8d17fd0a8050724718520d3c344f9621e693fda819d956ddd25f868",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    },
+    "5d6623d8a2f4ebedfa01f305ead8eef1ab8b52b3a914966c7a858ac60e38ea3c": {
+      "calculations": "a40fe08474cc5f68c0a7100c05d795edfd105ab0fa68b403333e1b8a046b1731",
+      "mbtiTables": "9d9757efcc98d8778a18714e08717ab0b79bd2b53b06ffb7766742e42e1880b0",
+      "natalTables": "fd23d449047b8a43564539091fc8ba8aa99ad726cadbd536384e1bd3ef967326",
+      "materials": "67b8789b557aaedbf3131c389e5b0368fa5ee32a376f1926046509a2f68b3572",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "713e0e48fbf3a6df06a5ce322fe1d1805d236076a6d03cef9991f0248124cdfa",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    },
+    "5ff3c0ae5d389b2d919f90b07026532f9fe3e73ebb4ff5a2d2aace9afa70e61c": {
+      "calculations": "775a59ebb9b6f6559ab4f2ca35cded018a7be714954a45718fc8bbe6625acfd1",
+      "mbtiTables": "c3e57873fd1e2f23581aec07e4c8f88e2a88664c112eb15410c791e713d8c207",
+      "natalTables": "650bed2db1522f61e20e6f83e7dc994b8898594c194b2a0cdb831257d8b2bf02",
+      "materials": "c64115ac21c9e8d158e9d5b028629c1b919fc72c1e4d11f7f2fece98a5c5735d",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    },
+    "4d35724ce07e547e4afd5071b800b4aade3dc7e0a747181ec9451da1b7f3c82a": {
+      "calculations": "10b74c57294bfd52c92fca0c7a795e0171ea7797edf12552df02d9c749bad4da",
+      "mbtiTables": "9d9757efcc98d8778a18714e08717ab0b79bd2b53b06ffb7766742e42e1880b0",
+      "natalTables": "f5c6acd2b93f797c7b7e7f4479a6fb3f824e7c644d82df707810059f2b9adc59",
+      "materials": "50d1725c091c791c7301e7cc8a7e6b8db82a10b38fe497dda9234cc0de6800b0",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "ee04da0c9f723ed547b8f93a1f3d8d244363ac6588837be51f7c4fb202688d47",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    },
+    "3120de3708e86d1398d202075172038d1ea503321e75cfec8723a4089bbd4aa9": {
+      "calculations": "826d164bc98759ebb523c7dc0c14e09bebf96eee1584bcfebf81882104e91181",
+      "mbtiTables": "cd95d081498c3e2c372b8f46eaceda8fe44ddcc5f504ca174079dbad463ee719",
+      "natalTables": "0162e924d7714392eb34bcfcd44b41b631e10d10cf92c833fae86f1ee5b713f3",
+      "materials": "0678e524fa19c1f68e4bbf2bc7e79cd08fd6b62e65db58e6023567bb9e422dfd",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "7201e1645d3c156e2321654a3b844db3b6a1f347b4612d814cf2a11cb67fb10b",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    },
+    "db9c5841a47f5ed9604b5a22960c1948a70bf2f93cc6e7408ad0eb97a1576ff9": {
+      "calculations": "362db80c5e12e37dc26352e628ebb06eb9830f372e74668281a70267db9ea420",
+      "mbtiTables": "6a5daf5912d1767589a70e3b40406c25af5024d24231220e99f33b662eddd82e",
+      "natalTables": "df06e61575f9c176fbf0deac3add93a4ae1b7ecc7eb5a0299b34fd7612a44ec2",
+      "materials": "9cb20fff07047f03c7d0f532bf1ff784460614c2e4ab2ec85f9ead8c7294658b",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "ea6561e10ff5f69c993e524c3dd40903f7586de19417970fd69f97abba1cecee",
+      "periods": "52e3d4b038adadcdd1ec6462266259a60b70fd13dd38455ca26e14dbe9d98ace",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "f4a7df859b62918dd1a1a89196fd31b5d07a17a2e2e3ceacfd36d8a302a71ab6": {
+      "calculations": "087dc6b06e00e4fe6db2cc6481c6813edcbe38c1e69e550bd248e2fe2c3c8fdb",
+      "mbtiTables": "8ccb93b833a4999aaa2bc1439eea30659ef5022fcc2e719e4b107d665df54078",
+      "natalTables": "b92ce0b17a4139c9b13131e4d8803db2363be7d900ce53f0085d33ace89e7bf5",
+      "materials": "3f568f80cac2cbb2e05113d3f20369c61a7426cc0808b46b928bddb0c683d714",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "5c346812a0205505f95e099f1a9d5756a3b6306b2323c84853cfa0c3789f16d3",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "a4c9d8353ffbad927cd82a68807fcd7f0afbaf87ef6a12234667c0e9b860df5a": {
+      "calculations": "087dc6b06e00e4fe6db2cc6481c6813edcbe38c1e69e550bd248e2fe2c3c8fdb",
+      "mbtiTables": "8ccb93b833a4999aaa2bc1439eea30659ef5022fcc2e719e4b107d665df54078",
+      "natalTables": "b92ce0b17a4139c9b13131e4d8803db2363be7d900ce53f0085d33ace89e7bf5",
+      "materials": "3f568f80cac2cbb2e05113d3f20369c61a7426cc0808b46b928bddb0c683d714",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "5c346812a0205505f95e099f1a9d5756a3b6306b2323c84853cfa0c3789f16d3",
+      "periods": "69559ba8a85cea15a3f84690d871d7e0141f718edc8ac6ce9aa3a99f9dcf2908",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "c9fe9a6f1293afd1a02f9314d2702a143fa128d143918b48515411a825d6302b": {
+      "calculations": "775a59ebb9b6f6559ab4f2ca35cded018a7be714954a45718fc8bbe6625acfd1",
+      "mbtiTables": "c3e57873fd1e2f23581aec07e4c8f88e2a88664c112eb15410c791e713d8c207",
+      "natalTables": "650bed2db1522f61e20e6f83e7dc994b8898594c194b2a0cdb831257d8b2bf02",
+      "materials": "c64115ac21c9e8d158e9d5b028629c1b919fc72c1e4d11f7f2fece98a5c5735d",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "9103458c7bdd54b354c390e28f9fa8f90f29408b252705d4179d1c0d32bf4662",
+      "periods": "84ef2117cb8de13377daa0922e6a2dd8429d3b89137aaff6997830dcc0d69c55",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "1dd2e1ec024c9201474b37aa854e9b36146d120a0a0d95d9697fa6b0d2386a42": {
+      "calculations": "666d22660b0b76edae5040842b3d648075a13a73c81c1e5a4721f1c0601e1a74",
+      "mbtiTables": "39d01937f73e23c1fdbb27106c0a2541631918e73b30900e5ff479d6b785fdb0",
+      "natalTables": "6fdacfb9f16017521ba061ef0ab07c71348fbec0b16ef2a6aa44d749fc57cebc",
+      "materials": "3565bdb1051839462112048a105a9554756ce252924cba5634f0c1c2f06fb6dd",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "47d7d813706b4baeefd52a72c2a19ec9c692255134f124b335e889fb419f4467",
+      "periods": "2a2ff3ddc8c95ee2a3a1a1f30d7b9ff2000d244f50c7e33437382c05d1a433dd",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "c4229b46db98fb570a2a7e8a13c109f4293bd5f6c64578f49d55f2ec554f66c2": {
+      "calculations": "eb3174160cfb8da3d08c5ec03ebbd780cb9d97314a894441706844c7c5d24c34",
+      "mbtiTables": "8ccb93b833a4999aaa2bc1439eea30659ef5022fcc2e719e4b107d665df54078",
+      "natalTables": "2186a991ffba640320d03b8a0c7de9f34ee7ad00a0839a36b23038c1a963b954",
+      "materials": "6738c47062d40b54bbf4220c4cf60852c282772633f4d1303e2ecefa24c946cd",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "e53add681431d75f7564e48a0a3ed66300237d1268473e5617c23025e9a44570",
+      "periods": "37251cf1670b805e973f5531c5e649acfe6aa3bd392aa219bc4180e6433d7d89",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "b7f72cc685f7029c0baa3b9b7b2eb8df7d81cc71d75021a4f105348f57ab6a6f": {
+      "calculations": "087dc6b06e00e4fe6db2cc6481c6813edcbe38c1e69e550bd248e2fe2c3c8fdb",
+      "mbtiTables": "737b092d3740383053331b6dd494811d007c0417ea5f2635d8e9846ba2f840e5",
+      "natalTables": "b92ce0b17a4139c9b13131e4d8803db2363be7d900ce53f0085d33ace89e7bf5",
+      "materials": "57afb8d0b055c32faa64b973752b51764fdf2ddf677e4033660d1373b89f6083",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "c1515b7b300c3d0c56738b974bdebbc11760d4a35e09fb6517cd3d12eb0e0137",
+      "periods": "69559ba8a85cea15a3f84690d871d7e0141f718edc8ac6ce9aa3a99f9dcf2908",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "4def086473feed97a1858fbaf731c85072481aa02706c4d7c4fa5fd627c54277": {
+      "calculations": "eb3174160cfb8da3d08c5ec03ebbd780cb9d97314a894441706844c7c5d24c34",
+      "mbtiTables": "737b092d3740383053331b6dd494811d007c0417ea5f2635d8e9846ba2f840e5",
+      "natalTables": "2186a991ffba640320d03b8a0c7de9f34ee7ad00a0839a36b23038c1a963b954",
+      "materials": "e516d33072762c5ac82a97eecaf8686aaf21fffe1f4983af261d53b679e18278",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "f1a2b95d03f7ff3382e1240b08fa6a80386cdd2485a8044577be415edefb8a0b",
+      "periods": "37251cf1670b805e973f5531c5e649acfe6aa3bd392aa219bc4180e6433d7d89",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "aded01c3fa43d8798cd3f1b99d98e1eda6c13c7cb94693bb423fef46a3d80cd6": {
+      "calculations": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "mbtiTables": "79104727adf96c67bcffcfe8bc638ec829c85fff504a2b3d0a4c39a574167acf",
+      "natalTables": "48f965e405b7c74782daf65d65fbced3fcd59c904ed904826e2623aa5d37ef7c",
+      "materials": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "index": "d8b063154282b611578b06eaf683986d4a826ed4f4c782acf7701acd3b8966fe",
+      "directions": "b5a884ec9724765a086beb0e87cf24eec9a8fb3c69cf34f2faf554855ae4b33c",
+      "individuals": "19fe50891686dc22b7e2d3c8e902a8de7f1400af8602911a554bdf7f2d7c1a5c",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    }
+  },
+  "temporalMetadata": {
+    "4099c8cee256809f6ad54cda8e5cfed335f7857fa7757bd0470471daf02a4ae9": {
+      "transitions": [
+        {
+          "year": 2031,
+          "dateLabel": "2031-11-30 15:10 한국시간",
+          "startSolarKst": "2031-11-30T15:10:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2031-11-30T15:10:00+09:00",
+            "latestKst": "2031-11-30T15:10:00+09:00"
+          },
+          "before": {
+            "index": 4,
+            "ganji": "丙辰",
+            "tenGod": "정재",
+            "elements": [
+              "화",
+              "토"
+            ],
+            "startYear": 2021,
+            "endYear": 2030,
+            "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+          },
+          "after": {
+            "index": 5,
+            "ganji": "乙卯",
+            "tenGod": "식신",
+            "elements": [
+              "목"
+            ],
+            "startYear": 2031,
+            "endYear": 2040,
+            "theme": "좋아하는 것을 결과로 남기는 것"
+          }
+        }
+      ],
+      "horizon": {
+        "from": 2023,
+        "through": 2036,
+        "activeCycle": {
+          "index": 4,
+          "ganji": "丙辰",
+          "tenGod": "정재",
+          "elements": [
+            "화",
+            "토"
+          ],
+          "startYear": 2021,
+          "endYear": 2030,
+          "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+        },
+        "evaluatedAtKst": "2026-10-12T12:00:00+09:00",
+        "transitions": [
+          {
+            "year": 2031,
+            "dateLabel": "2031-11-30 15:10 한국시간",
+            "startSolarKst": "2031-11-30T15:10:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2031-11-30T15:10:00+09:00",
+              "latestKst": "2031-11-30T15:10:00+09:00"
+            },
+            "before": {
+              "index": 4,
+              "ganji": "丙辰",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "after": {
+              "index": 5,
+              "ganji": "乙卯",
+              "tenGod": "식신",
+              "elements": [
+                "목"
+              ],
+              "startYear": 2031,
+              "endYear": 2040,
+              "theme": "좋아하는 것을 결과로 남기는 것"
+            }
+          }
+        ],
+        "rows": [
+          {
+            "year": 2023,
+            "cycle": {
+              "index": 4,
+              "ganji": "丙辰",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2024,
+            "cycle": {
+              "index": 4,
+              "ganji": "丙辰",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2025,
+            "cycle": {
+              "index": 4,
+              "ganji": "丙辰",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2026,
+            "cycle": {
+              "index": 4,
+              "ganji": "丙辰",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2027,
+            "cycle": {
+              "index": 4,
+              "ganji": "丙辰",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2028,
+            "cycle": {
+              "index": 4,
+              "ganji": "丙辰",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2029,
+            "cycle": {
+              "index": 4,
+              "ganji": "丙辰",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2030,
+            "cycle": {
+              "index": 4,
+              "ganji": "丙辰",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2031,
+            "cycle": {
+              "index": 5,
+              "ganji": "乙卯",
+              "tenGod": "식신",
+              "elements": [
+                "목"
+              ],
+              "startYear": 2031,
+              "endYear": 2040,
+              "theme": "좋아하는 것을 결과로 남기는 것"
+            },
+            "beforeCycle": {
+              "index": 4,
+              "ganji": "丙辰",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "transitionDate": "2031-11-30 15:10 한국시간"
+          },
+          {
+            "year": 2032,
+            "cycle": {
+              "index": 5,
+              "ganji": "乙卯",
+              "tenGod": "식신",
+              "elements": [
+                "목"
+              ],
+              "startYear": 2031,
+              "endYear": 2040,
+              "theme": "좋아하는 것을 결과로 남기는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2033,
+            "cycle": {
+              "index": 5,
+              "ganji": "乙卯",
+              "tenGod": "식신",
+              "elements": [
+                "목"
+              ],
+              "startYear": 2031,
+              "endYear": 2040,
+              "theme": "좋아하는 것을 결과로 남기는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2034,
+            "cycle": {
+              "index": 5,
+              "ganji": "乙卯",
+              "tenGod": "식신",
+              "elements": [
+                "목"
+              ],
+              "startYear": 2031,
+              "endYear": 2040,
+              "theme": "좋아하는 것을 결과로 남기는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2035,
+            "cycle": {
+              "index": 5,
+              "ganji": "乙卯",
+              "tenGod": "식신",
+              "elements": [
+                "목"
+              ],
+              "startYear": 2031,
+              "endYear": 2040,
+              "theme": "좋아하는 것을 결과로 남기는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2036,
+            "cycle": {
+              "index": 5,
+              "ganji": "乙卯",
+              "tenGod": "식신",
+              "elements": [
+                "목"
+              ],
+              "startYear": 2031,
+              "endYear": 2040,
+              "theme": "좋아하는 것을 결과로 남기는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          }
+        ]
+      }
+    },
+    "f86f40a300dfe8ebee41100fbba91874c8cefede4d0c99c87e58371d80dbd495": {
+      "transitions": [],
+      "horizon": null
+    },
+    "5b5a778d536dbf6af99953f5c6f62979e65690573da38699caca001cf261b0c8": {
+      "transitions": [],
+      "horizon": null
+    },
+    "aa37608231712c502d865e92661877a40fd7a22c6d86d4bfa32a22386a0c22d4": {
+      "transitions": [],
+      "horizon": null
+    },
+    "28c786071c3fd65fc8587a894013175cdce12172e05f1aef8ccfd1673b393c57": {
+      "transitions": [],
+      "horizon": null
+    },
+    "5d6623d8a2f4ebedfa01f305ead8eef1ab8b52b3a914966c7a858ac60e38ea3c": {
+      "transitions": [],
+      "horizon": null
+    },
+    "5ff3c0ae5d389b2d919f90b07026532f9fe3e73ebb4ff5a2d2aace9afa70e61c": {
+      "transitions": [],
+      "horizon": null
+    },
+    "4d35724ce07e547e4afd5071b800b4aade3dc7e0a747181ec9451da1b7f3c82a": {
+      "transitions": [],
+      "horizon": null
+    },
+    "3120de3708e86d1398d202075172038d1ea503321e75cfec8723a4089bbd4aa9": {
+      "transitions": [],
+      "horizon": null
+    },
+    "db9c5841a47f5ed9604b5a22960c1948a70bf2f93cc6e7408ad0eb97a1576ff9": {
+      "transitions": [
+        {
+          "year": 2031,
+          "dateLabel": "2031-05-07 17:30 한국시간",
+          "startSolarKst": "2031-05-07T17:30:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2031-05-07T17:30:00+09:00",
+            "latestKst": "2031-05-07T17:30:00+09:00"
+          },
+          "before": {
+            "index": 4,
+            "ganji": "丁卯",
+            "tenGod": "정재",
+            "elements": [
+              "화",
+              "목"
+            ],
+            "startYear": 2021,
+            "endYear": 2030,
+            "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+          },
+          "after": {
+            "index": 5,
+            "ganji": "丙寅",
+            "tenGod": "편재",
+            "elements": [
+              "화",
+              "목"
+            ],
+            "startYear": 2031,
+            "endYear": 2040,
+            "theme": "밖의 기회와 자원을 연결하는 것"
+          }
+        }
+      ],
+      "horizon": {
+        "from": 2023,
+        "through": 2036,
+        "activeCycle": {
+          "index": 4,
+          "ganji": "丁卯",
+          "tenGod": "정재",
+          "elements": [
+            "화",
+            "목"
+          ],
+          "startYear": 2021,
+          "endYear": 2030,
+          "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+        },
+        "evaluatedAtKst": "2026-10-01T12:00:00+09:00",
+        "transitions": [
+          {
+            "year": 2031,
+            "dateLabel": "2031-05-07 17:30 한국시간",
+            "startSolarKst": "2031-05-07T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2031-05-07T17:30:00+09:00",
+              "latestKst": "2031-05-07T17:30:00+09:00"
+            },
+            "before": {
+              "index": 4,
+              "ganji": "丁卯",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "after": {
+              "index": 5,
+              "ganji": "丙寅",
+              "tenGod": "편재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2031,
+              "endYear": 2040,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            }
+          }
+        ],
+        "rows": [
+          {
+            "year": 2023,
+            "cycle": {
+              "index": 4,
+              "ganji": "丁卯",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2024,
+            "cycle": {
+              "index": 4,
+              "ganji": "丁卯",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2025,
+            "cycle": {
+              "index": 4,
+              "ganji": "丁卯",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2026,
+            "cycle": {
+              "index": 4,
+              "ganji": "丁卯",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2027,
+            "cycle": {
+              "index": 4,
+              "ganji": "丁卯",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2028,
+            "cycle": {
+              "index": 4,
+              "ganji": "丁卯",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2029,
+            "cycle": {
+              "index": 4,
+              "ganji": "丁卯",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2030,
+            "cycle": {
+              "index": 4,
+              "ganji": "丁卯",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2031,
+            "cycle": {
+              "index": 5,
+              "ganji": "丙寅",
+              "tenGod": "편재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2031,
+              "endYear": 2040,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "beforeCycle": {
+              "index": 4,
+              "ganji": "丁卯",
+              "tenGod": "정재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2021,
+              "endYear": 2030,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "transitionDate": "2031-05-07 17:30 한국시간"
+          },
+          {
+            "year": 2032,
+            "cycle": {
+              "index": 5,
+              "ganji": "丙寅",
+              "tenGod": "편재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2031,
+              "endYear": 2040,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2033,
+            "cycle": {
+              "index": 5,
+              "ganji": "丙寅",
+              "tenGod": "편재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2031,
+              "endYear": 2040,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2034,
+            "cycle": {
+              "index": 5,
+              "ganji": "丙寅",
+              "tenGod": "편재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2031,
+              "endYear": 2040,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2035,
+            "cycle": {
+              "index": 5,
+              "ganji": "丙寅",
+              "tenGod": "편재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2031,
+              "endYear": 2040,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2036,
+            "cycle": {
+              "index": 5,
+              "ganji": "丙寅",
+              "tenGod": "편재",
+              "elements": [
+                "화",
+                "목"
+              ],
+              "startYear": 2031,
+              "endYear": 2040,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          }
+        ]
+      }
+    },
+    "f4a7df859b62918dd1a1a89196fd31b5d07a17a2e2e3ceacfd36d8a302a71ab6": {
+      "transitions": [],
+      "horizon": null
+    },
+    "a4c9d8353ffbad927cd82a68807fcd7f0afbaf87ef6a12234667c0e9b860df5a": {
+      "transitions": [
+        {
+          "year": 2023,
+          "dateLabel": "2023-07-15 08:00 한국시간",
+          "startSolarKst": "2023-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2023-07-15T08:00:00+09:00",
+            "latestKst": "2023-07-15T08:00:00+09:00"
+          },
+          "before": {
+            "index": 3,
+            "ganji": "己卯",
+            "tenGod": "정인",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2013,
+            "endYear": 2022,
+            "theme": "배운 것과 도움을 오래 쓸 기반으로 남기는 것"
+          },
+          "after": {
+            "index": 4,
+            "ganji": "戊寅",
+            "tenGod": "편인",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2023,
+            "endYear": 2032,
+            "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+          }
+        },
+        {
+          "year": 2033,
+          "dateLabel": "2033-07-15 08:00 한국시간",
+          "startSolarKst": "2033-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2033-07-15T08:00:00+09:00",
+            "latestKst": "2033-07-15T08:00:00+09:00"
+          },
+          "before": {
+            "index": 4,
+            "ganji": "戊寅",
+            "tenGod": "편인",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2023,
+            "endYear": 2032,
+            "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+          },
+          "after": {
+            "index": 5,
+            "ganji": "丁丑",
+            "tenGod": "정관",
+            "elements": [
+              "화",
+              "토"
+            ],
+            "startYear": 2033,
+            "endYear": 2042,
+            "theme": "신뢰를 자리와 역할로 바꾸는 것"
+          }
+        }
+      ],
+      "horizon": {
+        "from": 2023,
+        "through": 2036,
+        "activeCycle": {
+          "index": 4,
+          "ganji": "戊寅",
+          "tenGod": "편인",
+          "elements": [
+            "토",
+            "목"
+          ],
+          "startYear": 2023,
+          "endYear": 2032,
+          "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+        },
+        "evaluatedAtKst": "2026-10-12T12:00:00+09:00",
+        "transitions": [
+          {
+            "year": 2023,
+            "dateLabel": "2023-07-15 08:00 한국시간",
+            "startSolarKst": "2023-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            },
+            "before": {
+              "index": 3,
+              "ganji": "己卯",
+              "tenGod": "정인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2013,
+              "endYear": 2022,
+              "theme": "배운 것과 도움을 오래 쓸 기반으로 남기는 것"
+            },
+            "after": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            }
+          },
+          {
+            "year": 2033,
+            "dateLabel": "2033-07-15 08:00 한국시간",
+            "startSolarKst": "2033-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2033-07-15T08:00:00+09:00",
+              "latestKst": "2033-07-15T08:00:00+09:00"
+            },
+            "before": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "after": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            }
+          }
+        ],
+        "rows": [
+          {
+            "year": 2023,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": {
+              "index": 3,
+              "ganji": "己卯",
+              "tenGod": "정인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2013,
+              "endYear": 2022,
+              "theme": "배운 것과 도움을 오래 쓸 기반으로 남기는 것"
+            },
+            "transitionDate": "2023-07-15 08:00 한국시간"
+          },
+          {
+            "year": 2024,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2025,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2026,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2027,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2028,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2029,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2030,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2031,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2032,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2033,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "transitionDate": "2033-07-15 08:00 한국시간"
+          },
+          {
+            "year": 2034,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2035,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2036,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          }
+        ]
+      }
+    },
+    "c9fe9a6f1293afd1a02f9314d2702a143fa128d143918b48515411a825d6302b": {
+      "transitions": [
+        {
+          "year": 2024,
+          "dateLabel": "2024-01-14 17:30 한국시간",
+          "startSolarKst": "2024-01-14T17:30:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2024-01-14T17:30:00+09:00",
+            "latestKst": "2024-01-14T17:30:00+09:00"
+          },
+          "before": {
+            "index": 3,
+            "ganji": "庚辰",
+            "tenGod": "편관",
+            "elements": [
+              "금",
+              "토"
+            ],
+            "startYear": 2014,
+            "endYear": 2023,
+            "theme": "압박 속에서 결정을 맡는 것"
+          },
+          "after": {
+            "index": 4,
+            "ganji": "己卯",
+            "tenGod": "정재",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2024,
+            "endYear": 2033,
+            "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+          }
+        },
+        {
+          "year": 2034,
+          "dateLabel": "2034-01-14 17:30 한국시간",
+          "startSolarKst": "2034-01-14T17:30:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2034-01-14T17:30:00+09:00",
+            "latestKst": "2034-01-14T17:30:00+09:00"
+          },
+          "before": {
+            "index": 4,
+            "ganji": "己卯",
+            "tenGod": "정재",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2024,
+            "endYear": 2033,
+            "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+          },
+          "after": {
+            "index": 5,
+            "ganji": "戊寅",
+            "tenGod": "편재",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2034,
+            "endYear": 2043,
+            "theme": "밖의 기회와 자원을 연결하는 것"
+          }
+        }
+      ],
+      "horizon": {
+        "from": 2023,
+        "through": 2036,
+        "activeCycle": {
+          "index": 4,
+          "ganji": "己卯",
+          "tenGod": "정재",
+          "elements": [
+            "토",
+            "목"
+          ],
+          "startYear": 2024,
+          "endYear": 2033,
+          "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+        },
+        "evaluatedAtKst": "2026-10-12T12:00:00+09:00",
+        "transitions": [
+          {
+            "year": 2024,
+            "dateLabel": "2024-01-14 17:30 한국시간",
+            "startSolarKst": "2024-01-14T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2024-01-14T17:30:00+09:00",
+              "latestKst": "2024-01-14T17:30:00+09:00"
+            },
+            "before": {
+              "index": 3,
+              "ganji": "庚辰",
+              "tenGod": "편관",
+              "elements": [
+                "금",
+                "토"
+              ],
+              "startYear": 2014,
+              "endYear": 2023,
+              "theme": "압박 속에서 결정을 맡는 것"
+            },
+            "after": {
+              "index": 4,
+              "ganji": "己卯",
+              "tenGod": "정재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2024,
+              "endYear": 2033,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            }
+          },
+          {
+            "year": 2034,
+            "dateLabel": "2034-01-14 17:30 한국시간",
+            "startSolarKst": "2034-01-14T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2034-01-14T17:30:00+09:00",
+              "latestKst": "2034-01-14T17:30:00+09:00"
+            },
+            "before": {
+              "index": 4,
+              "ganji": "己卯",
+              "tenGod": "정재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2024,
+              "endYear": 2033,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "after": {
+              "index": 5,
+              "ganji": "戊寅",
+              "tenGod": "편재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2034,
+              "endYear": 2043,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            }
+          }
+        ],
+        "rows": [
+          {
+            "year": 2023,
+            "cycle": {
+              "index": 3,
+              "ganji": "庚辰",
+              "tenGod": "편관",
+              "elements": [
+                "금",
+                "토"
+              ],
+              "startYear": 2014,
+              "endYear": 2023,
+              "theme": "압박 속에서 결정을 맡는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2024,
+            "cycle": {
+              "index": 4,
+              "ganji": "己卯",
+              "tenGod": "정재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2024,
+              "endYear": 2033,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": {
+              "index": 3,
+              "ganji": "庚辰",
+              "tenGod": "편관",
+              "elements": [
+                "금",
+                "토"
+              ],
+              "startYear": 2014,
+              "endYear": 2023,
+              "theme": "압박 속에서 결정을 맡는 것"
+            },
+            "transitionDate": "2024-01-14 17:30 한국시간"
+          },
+          {
+            "year": 2025,
+            "cycle": {
+              "index": 4,
+              "ganji": "己卯",
+              "tenGod": "정재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2024,
+              "endYear": 2033,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2026,
+            "cycle": {
+              "index": 4,
+              "ganji": "己卯",
+              "tenGod": "정재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2024,
+              "endYear": 2033,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2027,
+            "cycle": {
+              "index": 4,
+              "ganji": "己卯",
+              "tenGod": "정재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2024,
+              "endYear": 2033,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2028,
+            "cycle": {
+              "index": 4,
+              "ganji": "己卯",
+              "tenGod": "정재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2024,
+              "endYear": 2033,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2029,
+            "cycle": {
+              "index": 4,
+              "ganji": "己卯",
+              "tenGod": "정재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2024,
+              "endYear": 2033,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2030,
+            "cycle": {
+              "index": 4,
+              "ganji": "己卯",
+              "tenGod": "정재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2024,
+              "endYear": 2033,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2031,
+            "cycle": {
+              "index": 4,
+              "ganji": "己卯",
+              "tenGod": "정재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2024,
+              "endYear": 2033,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2032,
+            "cycle": {
+              "index": 4,
+              "ganji": "己卯",
+              "tenGod": "정재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2024,
+              "endYear": 2033,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2033,
+            "cycle": {
+              "index": 4,
+              "ganji": "己卯",
+              "tenGod": "정재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2024,
+              "endYear": 2033,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2034,
+            "cycle": {
+              "index": 5,
+              "ganji": "戊寅",
+              "tenGod": "편재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2034,
+              "endYear": 2043,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "beforeCycle": {
+              "index": 4,
+              "ganji": "己卯",
+              "tenGod": "정재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2024,
+              "endYear": 2033,
+              "theme": "돈과 생활을 반복 가능한 구조로 굳히는 것"
+            },
+            "transitionDate": "2034-01-14 17:30 한국시간"
+          },
+          {
+            "year": 2035,
+            "cycle": {
+              "index": 5,
+              "ganji": "戊寅",
+              "tenGod": "편재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2034,
+              "endYear": 2043,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2036,
+            "cycle": {
+              "index": 5,
+              "ganji": "戊寅",
+              "tenGod": "편재",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2034,
+              "endYear": 2043,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          }
+        ]
+      }
+    },
+    "1dd2e1ec024c9201474b37aa854e9b36146d120a0a0d95d9697fa6b0d2386a42": {
+      "transitions": [
+        {
+          "year": 2028,
+          "dateLabel": "2028-04-23 21:42 한국시간",
+          "startSolarKst": "2028-04-23T21:42:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2028-04-23T21:42:00+09:00",
+            "latestKst": "2028-04-23T21:42:00+09:00"
+          },
+          "before": {
+            "index": 3,
+            "ganji": "壬申",
+            "tenGod": "편재",
+            "elements": [
+              "수",
+              "금"
+            ],
+            "startYear": 2018,
+            "endYear": 2027,
+            "theme": "밖의 기회와 자원을 연결하는 것"
+          },
+          "after": {
+            "index": 4,
+            "ganji": "辛未",
+            "tenGod": "상관",
+            "elements": [
+              "금",
+              "토"
+            ],
+            "startYear": 2028,
+            "endYear": 2037,
+            "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+          }
+        }
+      ],
+      "horizon": {
+        "from": 2023,
+        "through": 2036,
+        "activeCycle": {
+          "index": 3,
+          "ganji": "壬申",
+          "tenGod": "편재",
+          "elements": [
+            "수",
+            "금"
+          ],
+          "startYear": 2018,
+          "endYear": 2027,
+          "theme": "밖의 기회와 자원을 연결하는 것"
+        },
+        "evaluatedAtKst": "2026-10-12T12:00:00+09:00",
+        "transitions": [
+          {
+            "year": 2028,
+            "dateLabel": "2028-04-23 21:42 한국시간",
+            "startSolarKst": "2028-04-23T21:42:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2028-04-23T21:42:00+09:00",
+              "latestKst": "2028-04-23T21:42:00+09:00"
+            },
+            "before": {
+              "index": 3,
+              "ganji": "壬申",
+              "tenGod": "편재",
+              "elements": [
+                "수",
+                "금"
+              ],
+              "startYear": 2018,
+              "endYear": 2027,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "after": {
+              "index": 4,
+              "ganji": "辛未",
+              "tenGod": "상관",
+              "elements": [
+                "금",
+                "토"
+              ],
+              "startYear": 2028,
+              "endYear": 2037,
+              "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+            }
+          }
+        ],
+        "rows": [
+          {
+            "year": 2023,
+            "cycle": {
+              "index": 3,
+              "ganji": "壬申",
+              "tenGod": "편재",
+              "elements": [
+                "수",
+                "금"
+              ],
+              "startYear": 2018,
+              "endYear": 2027,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2024,
+            "cycle": {
+              "index": 3,
+              "ganji": "壬申",
+              "tenGod": "편재",
+              "elements": [
+                "수",
+                "금"
+              ],
+              "startYear": 2018,
+              "endYear": 2027,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2025,
+            "cycle": {
+              "index": 3,
+              "ganji": "壬申",
+              "tenGod": "편재",
+              "elements": [
+                "수",
+                "금"
+              ],
+              "startYear": 2018,
+              "endYear": 2027,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2026,
+            "cycle": {
+              "index": 3,
+              "ganji": "壬申",
+              "tenGod": "편재",
+              "elements": [
+                "수",
+                "금"
+              ],
+              "startYear": 2018,
+              "endYear": 2027,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2027,
+            "cycle": {
+              "index": 3,
+              "ganji": "壬申",
+              "tenGod": "편재",
+              "elements": [
+                "수",
+                "금"
+              ],
+              "startYear": 2018,
+              "endYear": 2027,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2028,
+            "cycle": {
+              "index": 4,
+              "ganji": "辛未",
+              "tenGod": "상관",
+              "elements": [
+                "금",
+                "토"
+              ],
+              "startYear": 2028,
+              "endYear": 2037,
+              "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+            },
+            "beforeCycle": {
+              "index": 3,
+              "ganji": "壬申",
+              "tenGod": "편재",
+              "elements": [
+                "수",
+                "금"
+              ],
+              "startYear": 2018,
+              "endYear": 2027,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "transitionDate": "2028-04-23 21:42 한국시간"
+          },
+          {
+            "year": 2029,
+            "cycle": {
+              "index": 4,
+              "ganji": "辛未",
+              "tenGod": "상관",
+              "elements": [
+                "금",
+                "토"
+              ],
+              "startYear": 2028,
+              "endYear": 2037,
+              "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2030,
+            "cycle": {
+              "index": 4,
+              "ganji": "辛未",
+              "tenGod": "상관",
+              "elements": [
+                "금",
+                "토"
+              ],
+              "startYear": 2028,
+              "endYear": 2037,
+              "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2031,
+            "cycle": {
+              "index": 4,
+              "ganji": "辛未",
+              "tenGod": "상관",
+              "elements": [
+                "금",
+                "토"
+              ],
+              "startYear": 2028,
+              "endYear": 2037,
+              "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2032,
+            "cycle": {
+              "index": 4,
+              "ganji": "辛未",
+              "tenGod": "상관",
+              "elements": [
+                "금",
+                "토"
+              ],
+              "startYear": 2028,
+              "endYear": 2037,
+              "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2033,
+            "cycle": {
+              "index": 4,
+              "ganji": "辛未",
+              "tenGod": "상관",
+              "elements": [
+                "금",
+                "토"
+              ],
+              "startYear": 2028,
+              "endYear": 2037,
+              "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2034,
+            "cycle": {
+              "index": 4,
+              "ganji": "辛未",
+              "tenGod": "상관",
+              "elements": [
+                "금",
+                "토"
+              ],
+              "startYear": 2028,
+              "endYear": 2037,
+              "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2035,
+            "cycle": {
+              "index": 4,
+              "ganji": "辛未",
+              "tenGod": "상관",
+              "elements": [
+                "금",
+                "토"
+              ],
+              "startYear": 2028,
+              "endYear": 2037,
+              "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2036,
+            "cycle": {
+              "index": 4,
+              "ganji": "辛未",
+              "tenGod": "상관",
+              "elements": [
+                "금",
+                "토"
+              ],
+              "startYear": 2028,
+              "endYear": 2037,
+              "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          }
+        ]
+      }
+    },
+    "c4229b46db98fb570a2a7e8a13c109f4293bd5f6c64578f49d55f2ec554f66c2": {
+      "transitions": [
+        {
+          "year": 2023,
+          "dateLabel": "2023-06-14 02:00~2023-10-15 23:59 한국시간",
+          "startSolarKst": null,
+          "startSolarRange": {
+            "earliestKst": "2023-06-14T02:00:00+09:00",
+            "latestKst": "2023-10-15T23:59:59+09:00"
+          },
+          "before": {
+            "index": 3,
+            "ganji": "己卯",
+            "tenGod": "정인",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2013,
+            "endYear": 2022,
+            "theme": "배운 것과 도움을 오래 쓸 기반으로 남기는 것"
+          },
+          "after": {
+            "index": 4,
+            "ganji": "戊寅",
+            "tenGod": "편인",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2023,
+            "endYear": 2032,
+            "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+          }
+        },
+        {
+          "year": 2033,
+          "dateLabel": "2033-06-14 02:00~2033-10-15 23:59 한국시간",
+          "startSolarKst": null,
+          "startSolarRange": {
+            "earliestKst": "2033-06-14T02:00:00+09:00",
+            "latestKst": "2033-10-15T23:59:59+09:00"
+          },
+          "before": {
+            "index": 4,
+            "ganji": "戊寅",
+            "tenGod": "편인",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2023,
+            "endYear": 2032,
+            "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+          },
+          "after": {
+            "index": 5,
+            "ganji": "丁丑",
+            "tenGod": "정관",
+            "elements": [
+              "화",
+              "토"
+            ],
+            "startYear": 2033,
+            "endYear": 2042,
+            "theme": "신뢰를 자리와 역할로 바꾸는 것"
+          }
+        }
+      ],
+      "horizon": {
+        "from": 2023,
+        "through": 2036,
+        "activeCycle": {
+          "index": 4,
+          "ganji": "戊寅",
+          "tenGod": "편인",
+          "elements": [
+            "토",
+            "목"
+          ],
+          "startYear": 2023,
+          "endYear": 2032,
+          "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+        },
+        "evaluatedAtKst": "2026-10-12T12:00:00+09:00",
+        "transitions": [
+          {
+            "year": 2023,
+            "dateLabel": "2023-06-14 02:00~2023-10-15 23:59 한국시간",
+            "startSolarKst": null,
+            "startSolarRange": {
+              "earliestKst": "2023-06-14T02:00:00+09:00",
+              "latestKst": "2023-10-15T23:59:59+09:00"
+            },
+            "before": {
+              "index": 3,
+              "ganji": "己卯",
+              "tenGod": "정인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2013,
+              "endYear": 2022,
+              "theme": "배운 것과 도움을 오래 쓸 기반으로 남기는 것"
+            },
+            "after": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            }
+          },
+          {
+            "year": 2033,
+            "dateLabel": "2033-06-14 02:00~2033-10-15 23:59 한국시간",
+            "startSolarKst": null,
+            "startSolarRange": {
+              "earliestKst": "2033-06-14T02:00:00+09:00",
+              "latestKst": "2033-10-15T23:59:59+09:00"
+            },
+            "before": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "after": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            }
+          }
+        ],
+        "rows": [
+          {
+            "year": 2023,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": {
+              "index": 3,
+              "ganji": "己卯",
+              "tenGod": "정인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2013,
+              "endYear": 2022,
+              "theme": "배운 것과 도움을 오래 쓸 기반으로 남기는 것"
+            },
+            "transitionDate": "2023-06-14 02:00~2023-10-15 23:59 한국시간"
+          },
+          {
+            "year": 2024,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2025,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2026,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2027,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2028,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2029,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2030,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2031,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2032,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2033,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "transitionDate": "2033-06-14 02:00~2033-10-15 23:59 한국시간"
+          },
+          {
+            "year": 2034,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2035,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2036,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          }
+        ]
+      }
+    },
+    "b7f72cc685f7029c0baa3b9b7b2eb8df7d81cc71d75021a4f105348f57ab6a6f": {
+      "transitions": [
+        {
+          "year": 2023,
+          "dateLabel": "2023-07-15 08:00 한국시간",
+          "startSolarKst": "2023-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2023-07-15T08:00:00+09:00",
+            "latestKst": "2023-07-15T08:00:00+09:00"
+          },
+          "before": {
+            "index": 3,
+            "ganji": "己卯",
+            "tenGod": "정인",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2013,
+            "endYear": 2022,
+            "theme": "배운 것과 도움을 오래 쓸 기반으로 남기는 것"
+          },
+          "after": {
+            "index": 4,
+            "ganji": "戊寅",
+            "tenGod": "편인",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2023,
+            "endYear": 2032,
+            "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+          }
+        },
+        {
+          "year": 2033,
+          "dateLabel": "2033-07-15 08:00 한국시간",
+          "startSolarKst": "2033-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2033-07-15T08:00:00+09:00",
+            "latestKst": "2033-07-15T08:00:00+09:00"
+          },
+          "before": {
+            "index": 4,
+            "ganji": "戊寅",
+            "tenGod": "편인",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2023,
+            "endYear": 2032,
+            "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+          },
+          "after": {
+            "index": 5,
+            "ganji": "丁丑",
+            "tenGod": "정관",
+            "elements": [
+              "화",
+              "토"
+            ],
+            "startYear": 2033,
+            "endYear": 2042,
+            "theme": "신뢰를 자리와 역할로 바꾸는 것"
+          }
+        }
+      ],
+      "horizon": {
+        "from": 2023,
+        "through": 2036,
+        "activeCycle": {
+          "index": 4,
+          "ganji": "戊寅",
+          "tenGod": "편인",
+          "elements": [
+            "토",
+            "목"
+          ],
+          "startYear": 2023,
+          "endYear": 2032,
+          "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+        },
+        "evaluatedAtKst": "2026-10-12T12:00:00+09:00",
+        "transitions": [
+          {
+            "year": 2023,
+            "dateLabel": "2023-07-15 08:00 한국시간",
+            "startSolarKst": "2023-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            },
+            "before": {
+              "index": 3,
+              "ganji": "己卯",
+              "tenGod": "정인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2013,
+              "endYear": 2022,
+              "theme": "배운 것과 도움을 오래 쓸 기반으로 남기는 것"
+            },
+            "after": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            }
+          },
+          {
+            "year": 2033,
+            "dateLabel": "2033-07-15 08:00 한국시간",
+            "startSolarKst": "2033-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2033-07-15T08:00:00+09:00",
+              "latestKst": "2033-07-15T08:00:00+09:00"
+            },
+            "before": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "after": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            }
+          }
+        ],
+        "rows": [
+          {
+            "year": 2023,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": {
+              "index": 3,
+              "ganji": "己卯",
+              "tenGod": "정인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2013,
+              "endYear": 2022,
+              "theme": "배운 것과 도움을 오래 쓸 기반으로 남기는 것"
+            },
+            "transitionDate": "2023-07-15 08:00 한국시간"
+          },
+          {
+            "year": 2024,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2025,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2026,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2027,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2028,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2029,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2030,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2031,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2032,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2033,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "transitionDate": "2033-07-15 08:00 한국시간"
+          },
+          {
+            "year": 2034,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2035,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2036,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          }
+        ]
+      }
+    },
+    "4def086473feed97a1858fbaf731c85072481aa02706c4d7c4fa5fd627c54277": {
+      "transitions": [
+        {
+          "year": 2023,
+          "dateLabel": "2023-06-14 02:00~2023-10-15 23:59 한국시간",
+          "startSolarKst": null,
+          "startSolarRange": {
+            "earliestKst": "2023-06-14T02:00:00+09:00",
+            "latestKst": "2023-10-15T23:59:59+09:00"
+          },
+          "before": {
+            "index": 3,
+            "ganji": "己卯",
+            "tenGod": "정인",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2013,
+            "endYear": 2022,
+            "theme": "배운 것과 도움을 오래 쓸 기반으로 남기는 것"
+          },
+          "after": {
+            "index": 4,
+            "ganji": "戊寅",
+            "tenGod": "편인",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2023,
+            "endYear": 2032,
+            "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+          }
+        },
+        {
+          "year": 2033,
+          "dateLabel": "2033-06-14 02:00~2033-10-15 23:59 한국시간",
+          "startSolarKst": null,
+          "startSolarRange": {
+            "earliestKst": "2033-06-14T02:00:00+09:00",
+            "latestKst": "2033-10-15T23:59:59+09:00"
+          },
+          "before": {
+            "index": 4,
+            "ganji": "戊寅",
+            "tenGod": "편인",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2023,
+            "endYear": 2032,
+            "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+          },
+          "after": {
+            "index": 5,
+            "ganji": "丁丑",
+            "tenGod": "정관",
+            "elements": [
+              "화",
+              "토"
+            ],
+            "startYear": 2033,
+            "endYear": 2042,
+            "theme": "신뢰를 자리와 역할로 바꾸는 것"
+          }
+        }
+      ],
+      "horizon": {
+        "from": 2023,
+        "through": 2036,
+        "activeCycle": {
+          "index": 4,
+          "ganji": "戊寅",
+          "tenGod": "편인",
+          "elements": [
+            "토",
+            "목"
+          ],
+          "startYear": 2023,
+          "endYear": 2032,
+          "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+        },
+        "evaluatedAtKst": "2026-10-12T12:00:00+09:00",
+        "transitions": [
+          {
+            "year": 2023,
+            "dateLabel": "2023-06-14 02:00~2023-10-15 23:59 한국시간",
+            "startSolarKst": null,
+            "startSolarRange": {
+              "earliestKst": "2023-06-14T02:00:00+09:00",
+              "latestKst": "2023-10-15T23:59:59+09:00"
+            },
+            "before": {
+              "index": 3,
+              "ganji": "己卯",
+              "tenGod": "정인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2013,
+              "endYear": 2022,
+              "theme": "배운 것과 도움을 오래 쓸 기반으로 남기는 것"
+            },
+            "after": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            }
+          },
+          {
+            "year": 2033,
+            "dateLabel": "2033-06-14 02:00~2033-10-15 23:59 한국시간",
+            "startSolarKst": null,
+            "startSolarRange": {
+              "earliestKst": "2033-06-14T02:00:00+09:00",
+              "latestKst": "2033-10-15T23:59:59+09:00"
+            },
+            "before": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "after": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            }
+          }
+        ],
+        "rows": [
+          {
+            "year": 2023,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": {
+              "index": 3,
+              "ganji": "己卯",
+              "tenGod": "정인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2013,
+              "endYear": 2022,
+              "theme": "배운 것과 도움을 오래 쓸 기반으로 남기는 것"
+            },
+            "transitionDate": "2023-06-14 02:00~2023-10-15 23:59 한국시간"
+          },
+          {
+            "year": 2024,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2025,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2026,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2027,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2028,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2029,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2030,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2031,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2032,
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2033,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "transitionDate": "2033-06-14 02:00~2033-10-15 23:59 한국시간"
+          },
+          {
+            "year": 2034,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2035,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          },
+          {
+            "year": 2036,
+            "cycle": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            },
+            "beforeCycle": null,
+            "transitionDate": null
+          }
+        ]
+      }
+    },
+    "aded01c3fa43d8798cd3f1b99d98e1eda6c13c7cb94693bb423fef46a3d80cd6": {
+      "transitions": [],
+      "horizon": null
+    }
+  }
+}

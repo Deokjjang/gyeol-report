@@ -1,0 +1,2900 @@
+{
+  "version": "major-full-content-refinement-01-v2",
+  "sourceSha": "3fb239f52e2c44aef69877735899e0f8448a2f2c",
+  "majorNarratives": {
+    "01-business": {
+      "inputHash": "b1ba5e65cafe7b36aa62cc4ca322d63e8aa91fd1a7648e61bc8784b5be497a95",
+      "fixture": "tests/unit/interpretation-v4/majorFixtures.ts",
+      "clock": "2026-10-01T12:00:00+09:00",
+      "writerVersion": "major-full-content-refinement-01-v2",
+      "narrativeHash": "8c07122f47e60faf2cc61f7236227f241a4b000af355e2ee628591b62b2e69a2"
+    },
+    "02-employee": {
+      "inputHash": "d6fca29138334368d3c09fa6447783a12ba4d69097e91965675b5eb949e4262b",
+      "fixture": "tests/unit/interpretation-v4/majorFixtures.ts",
+      "clock": "2026-10-01T12:00:00+09:00",
+      "writerVersion": "major-full-content-refinement-01-v2",
+      "narrativeHash": "edb677ce23548b642ddf520fa0b1313bb5f080baa20bb1ab290d7c4cd9349995"
+    },
+    "03-freelance": {
+      "inputHash": "a9535d910c1238db4f42f1663702d44f1edb74a1edfb4535c76be84c36d7c25c",
+      "fixture": "tests/unit/interpretation-v4/majorFixtures.ts",
+      "clock": "2026-10-01T12:00:00+09:00",
+      "writerVersion": "major-full-content-refinement-01-v2",
+      "narrativeHash": "220dcebe18b893116125c1ccf42c51a854f7c869cd3307db6f17fc83d946f05b"
+    },
+    "04-student": {
+      "inputHash": "8fb0bc58ca4250a61ed645b83ff457e407a55dce0e50da32fde548a5e7ad6f8f",
+      "fixture": "tests/unit/interpretation-v4/majorFixtures.ts",
+      "clock": "2026-10-01T12:00:00+09:00",
+      "writerVersion": "major-full-content-refinement-01-v2",
+      "narrativeHash": "2d97f0df21b52065eec47056bb3e30527d7c063b2856d45546000e9d02ee5275"
+    },
+    "05-unknown": {
+      "inputHash": "b0bc61700d57c3c6e1ba5ab3784f9380de60f62eb955e9b61ff8844dc61efb56",
+      "fixture": "tests/unit/interpretation-v4/majorFixtures.ts",
+      "clock": "2026-10-01T12:00:00+09:00",
+      "writerVersion": "major-full-content-refinement-01-v2",
+      "narrativeHash": "8047256ed8d413db35862640ec88bfa816793cbfcc4c41641f76acd6ee4dec42"
+    },
+    "06-transition": {
+      "inputHash": "a88bf031d36771f7b8855584acff46d19b17137158ef821ceb4ddac2b5532415",
+      "fixture": "tests/unit/interpretation-v4/majorFixtures.ts",
+      "clock": "2026-10-01T12:00:00+09:00",
+      "writerVersion": "major-full-content-refinement-01-v2",
+      "narrativeHash": "c6ce1c27e61bcba17f5c7a5708487fccf1b28297ef8609be6c88bb06c15d2265"
+    }
+  },
+  "majorSeparation": {
+    "01-business": {
+      "inputHash": "b1ba5e65cafe7b36aa62cc4ca322d63e8aa91fd1a7648e61bc8784b5be497a95",
+      "fixture": "tests/unit/interpretation-v4/majorEditorialSafetyFixtures.ts",
+      "clock": {
+        "evaluatedAt": "2026-10-12T12:00:00+09:00"
+      },
+      "writerVersion": "major-full-content-refinement-01-v2",
+      "frozen": "9f5560a8114edeb75722cfd60035862f8e74981111dbe150f353ae0f14c1b161",
+      "blocks": {
+        "big-flow": {
+          "text": "7df9c4cf63c778bb0162ffcaaad012a0a227e3aa425b08df568d8b042a9b326c",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "first-gift": {
+          "text": "7ca95c5d8e77b7006946e115676acd475561e6fa47626a64d90114d14057ce85",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "next-boundary": {
+          "text": "441a5e706cba13852cc93b80b092bd8269d1f41d9b27c68e9f2fb7eb474d323b",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "core-why-sinsal_gwimun": {
+          "text": "ff4a15cfa6cc61b52fc815519c028bef23d31c9dc652ebcae8cd849136141e60",
+          "proof": "d1e18a7fddec8dbdfcf01f751d76f23b096936e5a1bd4643d351265f00896cea"
+        },
+        "natal-strength": {
+          "text": "09465d35319c2cf82c35d383ab73e955d0eae52d97d093510a9b85268dc8deae",
+          "proof": "24e0e31d3c2bb06b8b042e321a54f2d2e7d2e40d517580d8fbe4ed700f07fdde"
+        },
+        "core-synthesis-INFJ:helping_profession_fit": {
+          "text": "8c6558e81423510ec94ace528df089d6e368380ed9b049210579926a5f44073c",
+          "proof": "a68b6592089f2e33d73109f96b8782f435a76f267c0b027ba6834290dfc72389"
+        },
+        "current-dayun-natal-response": {
+          "text": "eea812cc110f8214975f585cf4e8420d753196e5cef35fadce6cf07df9a7c871",
+          "proof": "b096512409c031587f60d8c1d0b5b4b5ea5b96957d20ec85ed00bdd19330add3"
+        },
+        "current-setting": {
+          "text": "46373f93bc5d353e162b838bb5753a0a871c2a2aca9b2923255c092b002f9494",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "money-flow": {
+          "text": "002beb69eedd729e39a5d21806874f13ef64f685da55143750c99fc02f7b7b4a",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "current-context-why-ten_god_zheng_yin": {
+          "text": "276d35b07827161d7f59c3a8d36b16bb943bf3fb52e7c33335a8608490c0c9a3",
+          "proof": "cf664eb33e30cd86703a53d01bd96a43ae4a05afbe68448320e0a2091fae96c1"
+        },
+        "current-context-manifest-ten_god_zheng_yin": {
+          "text": "27aed413b59b0d5fa684177cd42e848d6255fd8c96958aa0b57891617cf451b7",
+          "proof": "efe893638f4bf64d7482880e7bb58ac7a1c4beb2215f2709b593a2dac84e62ea"
+        },
+        "current-context-manifest-gwiin_cheoneul": {
+          "text": "c41a0f442adc630c581206667892fc24dfde2f6d726756e9373287889dda74fb",
+          "proof": "6f8bb698cc209744548c2b8d261e79537fbff95b59d5ff28c61495be5b1de99b"
+        },
+        "current-context-natal-application": {
+          "text": "18d1ed7d11f1c0a8c24de2dafd9b1604c372906ea2bb013d30bc8e2b56c79bed",
+          "proof": "28d37d95bad23516c64d08d338cf130aae47422b24a2a0ef4c611dc7919fca23"
+        },
+        "natal-gift-0": {
+          "text": "7547aa20e93c358d233a3ae4ef0ee51d0b26e9e3913d5efd492de026b1ef12fd",
+          "proof": "569e4237c242ed37fb674ba26f7e2f7b734e1e230a448078cb8a4750e1c41f51"
+        },
+        "natal-gifts-why-sinsal_dohwa": {
+          "text": "605edc0f6271530c35db4e95fa8dc05779032d106f4f0a48707685dca16891f3",
+          "proof": "c30e5d64fff4af04ed6aef9268fa45ec32b194472e9230686221c85b9702a26e"
+        },
+        "natal-gift-1": {
+          "text": "7df793b2251ec0b4778aea5736beeae15d3e4c541b916db5235bf5d1d760d2a1",
+          "proof": "9d6adfc13094015afbb6895330efa2cdbabe35c433b516c87144f1cd2ddbb4a5"
+        },
+        "natal-gifts-synthesis-INFJ:graduate_depth_study": {
+          "text": "edf95d3335ad993aa7e7bb30d7829e4e5abdbd02ed9bd7f9c6145f5948d4e136",
+          "proof": "122531a9851e33c55ac4321b3d29be60e6116b2e2fdf20e3c25a0b33ddb1e828"
+        },
+        "relationship-context": {
+          "text": "972114db72e37099b66be00c22146362fac34299d988ea0c475361107792f3dc",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "element-life": {
+          "text": "76a715e68d606f29418f7a002815a7ff8e17c3891f43668c35526f2d2b69501a",
+          "proof": "bfa43c68a21a220f4c91db39aacae2420544186bffa1ee33a40e42290f7de5b9"
+        },
+        "relationships-why-ten_god_shang_guan": {
+          "text": "bdde9f312e3a4d4becd7bad2646614d8681d85b0648289f693593ac3b947cdd9",
+          "proof": "d97718d53ec916d5a965b8a292a7d6d307142322c89000ce6eb5bb9a25f16ead"
+        },
+        "relationships-manifest-ten_god_shang_guan": {
+          "text": "7633c219941ea28ad7df39bf82c99c2500348a9bdf51d30f14b4d40b24f4558f",
+          "proof": "86365ca5170cd782ca9ffbc3f2e66652dc03f4f2e37d98dc43dfda7121af603b"
+        },
+        "relationships-manifest-sinsal_dohwa": {
+          "text": "8b035f15e9508943370aed747f70b1b9d05bc3898834b2de9ed8e79fd48dec3e",
+          "proof": "42c6ba739e5cc1dc78bea13fdc3ce62316b5678c775caada80f2314c33b759d7"
+        },
+        "transition-2023-focus": {
+          "text": "2403aa76c15be744f89b6062476f1540dac0a06a6173b1b3515b64478ecb280d",
+          "proof": "64127db6d614f00b719fa36a756bbbebab186b537ce41589d2261f005d9f7013"
+        },
+        "transition-2023-work": {
+          "text": "1c8cca6762c320063875080153d2ee0ca2822c6987b91a759138b81c6069f758",
+          "proof": "64127db6d614f00b719fa36a756bbbebab186b537ce41589d2261f005d9f7013"
+        },
+        "transition-2023-people": {
+          "text": "6d326e23f4e83aea7a39650518e218263686522ff7a25865c25160bc23ab3ba9",
+          "proof": "64127db6d614f00b719fa36a756bbbebab186b537ce41589d2261f005d9f7013"
+        },
+        "transition-2023-life": {
+          "text": "f7fc4122ee4cb97a686df1c917a1438db1e3dcf17b6d4e2ff7723a8842faf575",
+          "proof": "64127db6d614f00b719fa36a756bbbebab186b537ce41589d2261f005d9f7013"
+        },
+        "transition-2033-focus": {
+          "text": "90c5a1f7528689881b4c911e829deeabfda7ba2161b05f576e163d0d088e2621",
+          "proof": "c22764dc7697bb390e8c587145395770ca7a0854ed2c5c69683bb480d6f1a4e0"
+        },
+        "transition-2033-work": {
+          "text": "33ebb44eb5c42824914dce3ea5182ea824d7caf433fa0f00c3f7418bb3731d77",
+          "proof": "c22764dc7697bb390e8c587145395770ca7a0854ed2c5c69683bb480d6f1a4e0"
+        },
+        "transition-2033-people": {
+          "text": "805efddc00a236716f8e6bf0066b148431edd5f6c14504ec40b58bf2decbd605",
+          "proof": "c22764dc7697bb390e8c587145395770ca7a0854ed2c5c69683bb480d6f1a4e0"
+        },
+        "transition-2033-life": {
+          "text": "ba2e48a285b2e4828cccb7fa547e977fb584927e0998f4bd4ca0fe2401d0a995",
+          "proof": "c22764dc7697bb390e8c587145395770ca7a0854ed2c5c69683bb480d6f1a4e0"
+        },
+        "next-work": {
+          "text": "f57a70b5a9f1ed0dc68309e0ec3b6a0db9c893d7bb1ff1de940b40670ca2395a",
+          "proof": "4143e391dee274f42a66c649de67dc22d7f3624c401f6fcc2cfc0843f1afe7e0"
+        },
+        "next-money": {
+          "text": "00cad18f96301e72859aa263d6916e351256cd018b2ca0bcc210b5dd2f8ce504",
+          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+        },
+        "next-people": {
+          "text": "fbcdc1d65b5a6343c74818653dbc8c341e6ae5d27bb24fadee9780ec8a9a19c1",
+          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+        },
+        "next-risk": {
+          "text": "f390d507c39aa83ec74a94e159af4b61258d0ca5c22f7d20c67e91a8f14689e8",
+          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+        },
+        "next-cycle-why-ten_god_zheng_cai": {
+          "text": "94ce4b2191824d21affa71a7882b804c67f1a5a5d4a79c7624cba6845bec5fda",
+          "proof": "485a761664e54aabc637e0bf5734ee40fe2da3e72a4a5def6316fc5bff98c538"
+        },
+        "next-cycle-why-twelve_sinsal_banan": {
+          "text": "fe0d658df59bd20bf2ef6ade887db3294c5a37c69578396a6bdb8bca69bde126",
+          "proof": "b37209e1d8e2338b1c75d0da3217b42b82203187fb5927bfe0fc110ed8c4f255"
+        },
+        "next-cycle-synthesis-INFJ:meaning_first_income_risk": {
+          "text": "8dd159b395c1681646a0fb18d5aa1ac42402057cf67bc7e2b9ca87b85b5f079a",
+          "proof": "32522268d406caab3a6bf5e5838958d34d81e8b0d58b430078b895756f10ccf4"
+        },
+        "next-cycle-natal-application": {
+          "text": "50920b7dca9bcaf78285554d1ad27c1c16ede03b0c977c15073ed2d57188df4d",
+          "proof": "f203c921440cf60103b11b50418acb211d79f8863394adfeae794c76090b4349"
+        },
+        "2023-scene": {
+          "text": "ee731ea26d33ca4d9a481cbd763510f221a27ab2fcc96f7f15e864fe939cbdbe",
+          "proof": "2d0ac05a78c70a580b426d170ac99a1c75492868d7e56a73752b417c6afe6724"
+        },
+        "2023-character": {
+          "text": "a44449d7e98578fbc07096086572a24d8bd532c7cb4c64f2031ce91950ffb284",
+          "proof": "2a20059b4ad8ae74120fd5b198489dac4141095bf5805c652e30def779f81d97"
+        },
+        "2023-why": {
+          "text": "07de1fd1696c209d51426aa4feaf06f8da7c923186761c798bd2f4823df92d41",
+          "proof": "6d8578567f809f1f17d40a057fd9f2a687591757e99902e52d7ed8d98a082fae"
+        },
+        "2023-gift": {
+          "text": "e82bf58929992258a8bae72c306a9096429530a3f98276f142f6f90814bca74c",
+          "proof": "782506d874e0a2471394bff485421f639e34eb8ca646452aea7e1fcf433d28c2"
+        },
+        "2023-friction": {
+          "text": "cd5116b74e80978d90ca1c2163b4549281ddfa92c62b0ccd776b7f4ceae7e23d",
+          "proof": "061bddae3955e7a348afcc09765d5718995140835a68bd347a02c397497a06bd"
+        },
+        "2023-boundary": {
+          "text": "c036109ff56ddc15862d951e3c24309f050b18e77cbda5a2f4363860442ead13",
+          "proof": "870dbe34ddfe1cd30058411a5636ae28cd5606af39ba9f61294420444c40f2a8"
+        },
+        "2024-character": {
+          "text": "4bb663a793f5f01841c26f508172c58dcd8695261169a7f65c01fc064f493480",
+          "proof": "2ddf2980555486476fc1bb2e3b19a678fa331d225493732938a001e6dd508c56"
+        },
+        "2024-scene": {
+          "text": "fbe22bf7a5e82b9b416395eda894b1a842267f8851c1c14a0add46799973e482",
+          "proof": "ab09da4b812f4884d05189a105ea319747de89cb42864738c1242f6e516277a7"
+        },
+        "2024-why": {
+          "text": "e3bda039946bd4fd0d4fcddcf3caced62f9ec75874294a0243b06c0aa443d6f1",
+          "proof": "cba01e524ce592226113e78a5154521a4f8cdd482b0ca20d21742ddc30e7cdd8"
+        },
+        "2024-gift": {
+          "text": "857afefd5f6c9e266070dd699d80915c31912cb941b738bb4adde4f8ebde613f",
+          "proof": "6bf1fdad0944db75a1d96d2f575d690d1d90dc5f8289a3fc3dc1411e7a7f8915"
+        },
+        "2024-friction": {
+          "text": "81ad972492cd0e12d1d1a9e3a7b17561ec5d47f8c4423fb5e397b872a65268fa",
+          "proof": "3d7ac5a373de96899c5233db7ebd83282c9876f888141f891e7598d416cac6f3"
+        },
+        "2025-character": {
+          "text": "ea207e49e803c64f6fb857028ee366481213e8949fd5fa74069b77102703de32",
+          "proof": "c698a9832794035a84c256d045b19e8d9d04c47643133a890fc20d57d977edd3"
+        },
+        "2025-scene": {
+          "text": "b6b4f343b7a3f62944c7095a8fc45b46461e4e1db41d43815b7c75027a0c93e7",
+          "proof": "cb39a5768f2108b3c9c6fefbcd42ce77a3beb07fe0318007c06ea006853520a0"
+        },
+        "2025-why": {
+          "text": "cfbe5210f533dea22d9fac2a2ca6e02d18bd69b81565c59b827d9bb61707017f",
+          "proof": "166af31155df0b36c6fd61baaf3c750f73f45b9973fc5ef726f502baa1f36397"
+        },
+        "2025-gift": {
+          "text": "2c013a9caca52945051f17e719e53659aa3c965c4798c852547729d56821d2e0",
+          "proof": "b48607a5fe42e496ac8106dc30bf289928ca14562d4f8cf905297ec64e91a604"
+        },
+        "2025-friction": {
+          "text": "8cf18c0765a0cb8a30a8f8a40cbe092f37dcb2b265aa18bda8ebe49e84cca1c0",
+          "proof": "1f6941e8e33969194885400936c193b036b1db0e32cbef9eade9705764eca3d7"
+        },
+        "2026-character": {
+          "text": "20cf7d673713640b268f01369e7ebf1630a1982f5b2f9fd782c5521e45d700cf",
+          "proof": "a340f29b98494cf7c1aff5866a63f7e221d7b7833090c55aab6eb72d5696329a"
+        },
+        "2026-scene": {
+          "text": "d4ab9e192e0c43f22609c2489d01890652d754be0344916ab90d11aa1412e396",
+          "proof": "3819418ac33cc9f84d317fd14a094ecfd9d26328b47e47f96f6143aa524fcc5f"
+        },
+        "2026-why": {
+          "text": "35e8fee68aca4108fe7dbcb4956ba19d0c19a00c92bdb46c203bf0e079789859",
+          "proof": "7d259b10e7300cf8d7340b130b4fd3768f713e51e5ddbc43493c1d15064b00ef"
+        },
+        "2026-gift": {
+          "text": "b8a3a6089409cd874a9291c1a5bf153981612d8e448e2058bb78a648425f1045",
+          "proof": "b8632068a551e6e918da58f93b6daddd6530efea8458c95c1bc6258274adac1b"
+        },
+        "2026-friction": {
+          "text": "a0e396f1fc2c0f3f33c5aa4b910f7b9f9a9d9c48e51ffb6b6771aef931f9fee8",
+          "proof": "9820f5b43997b38b58731fe04cfc51b7dfbe4d36addbf0ea8e96ffcfd3df85bc"
+        },
+        "2026-harmony": {
+          "text": "ff52c71168f9a1a12f2fb6fcfb09a74c88cf474d7458c0eabcb7fe66a59e6345",
+          "proof": "504a14e9f35e1ebac62f6957e62fe83ab702f2828caa815e2e9ab39d721e4e47"
+        },
+        "year-2026-natal-response": {
+          "text": "17be3afee70c0392d6e4cc94a812a0499a5e7c6253d36dcc6a89760bb3941384",
+          "proof": "be751638bbce351c99aa8162e5dd6a35d661eadd197f5332aa7cbf9ea0ffe44a"
+        },
+        "2027-character": {
+          "text": "83e6cba7ae9720896031864b6bfc0beb278210e48a11408b575e0ee8a8602eec",
+          "proof": "5322f13f9d970136ead873bf15d202e82abf8b8bfb438c0be7a2c2f1ab89d5c7"
+        },
+        "2027-scene": {
+          "text": "1e1847a823e581cf4a2c3771427f1e0373bca47f84fa13e049fcf3e24198e3a2",
+          "proof": "44d950e7817c608fbed2af882a8bd73ea1a3b6791def4083850298a4e7090fc9"
+        },
+        "2027-why": {
+          "text": "7769b3ea9092dd0d538220e23cfb1701bf14c149719d5c0f2ec682a64fbc4478",
+          "proof": "788fa15913c8429ef58a6915f8364f79508740297d933b7483acac92183501c6"
+        },
+        "2027-gift": {
+          "text": "d91e0512fe0efcde99e7d356a2dc5c011ef44165a3202ee7709abf9c92faa961",
+          "proof": "686910c67f97e594a4c4d1197631375cedaefe9d137127ef991d3e821d6652ff"
+        },
+        "2027-friction": {
+          "text": "7e387548638e032cd0bcb1a71e57bd8e867a223c1149e4a45c74326d89dcea22",
+          "proof": "32ae4a2396b416218c66aa23248cc2107a65b6114470dd2f6a4e1f39cd073ef4"
+        },
+        "2027-harmony": {
+          "text": "a450c54e7ed6ac1faae523a2108d589a00bda31ac536024d3fceecc6a9de67b3",
+          "proof": "995354098c1de6508ca5bbe85d38b8c7e436be916fc065f5532f41a75225ecff"
+        },
+        "2028-character": {
+          "text": "1f9853ec65047b1b3d69e1d03a1039527d40e181044bd57f7829a180b9af4a6a",
+          "proof": "ff75d422e089f06959da432c070495030953bad5f6c0dbb051fc090b9f1e734e"
+        },
+        "2028-scene": {
+          "text": "ed4f6f7e298f5b4c226888ed15a3c541dd65dae3273cc086eabac20d8f363548",
+          "proof": "6512c39142b8b57a12d8ebf128a31ca3e6779c80031554688f6addf94f8dd8b4"
+        },
+        "2028-why": {
+          "text": "baa052dbbf535eb67685a22888810587ba342acdd21aa4e25d9ede6a2d046b85",
+          "proof": "1fa9a5c0fca3682758ae74001cb1d72f37636fed4a28f0ed6e33886ece9c95c8"
+        },
+        "2028-gift": {
+          "text": "b1895d584bd4d3a126b754a5f5572e55c56d84f718eef99b517f7b5682deede5",
+          "proof": "a58301cac6f3b6eff15f00ca166a2697d204483d2e8cf6a44d0b17925e426358"
+        },
+        "2028-friction": {
+          "text": "e78ff9ed0b5d214331a36b0e3646822697487748a18e0b6c578ffd7fbf650d98",
+          "proof": "48e404614494806e34a009872a6b5dab76c8451f57058be8100af40320b6e741"
+        },
+        "2029-why": {
+          "text": "270b65bb78d7020d27c916bc5d00b645c9328ed3687a80d7dd0d72d6fcf9014e",
+          "proof": "c15a2497a03a672f137141f1921d47a8748c5c5d1467bd92050e9c671c318cb8"
+        },
+        "2029-scene": {
+          "text": "bc9627b5a32af5f48ff169418667201a119d1677b5d5189cc242aa609f14490e",
+          "proof": "977548c17cfcafcf12aafa6c3bd693b240ea86114b34432418221ea30e5b9388"
+        },
+        "2029-character": {
+          "text": "ec9979332ce8bc9c5b8075312f2097baf8c458ba2da29f534c1d44db8bad4cf8",
+          "proof": "6bed1281d820a27f7b1afdc09a2a6995df58697778b894cb1db0fa3b983b8988"
+        },
+        "2029-gift": {
+          "text": "168a23bc7b95786f911caa7e76f0510e2f42ddfd405b134330d4e9129fba01e4",
+          "proof": "65dbac441a99e3ce37bebcaee31a3665720186aa653893d4399022aae9c1ff23"
+        },
+        "2029-friction": {
+          "text": "564cce4e42fed877f9d7846132ff2d70f5995ed893d082f2f2b55796ff29c289",
+          "proof": "977548c17cfcafcf12aafa6c3bd693b240ea86114b34432418221ea30e5b9388"
+        },
+        "2030-character": {
+          "text": "8a6f600ba956efa2777a11af286e334c7e7d2653e703cf261e5f363d10c17229",
+          "proof": "7ab6038d4a63fcfb22b98813c01513b82401493aee7bb99b567b3d5d0f4b4eb1"
+        },
+        "2030-scene": {
+          "text": "ed71b0988f00d10003d5ba41c503ad553254867ee398fcd182eeb4f94bf0fb65",
+          "proof": "fcfb1f34554088902b2532f4ddbb7deacafa2a671f3afb0ccdc0f6afb8307b16"
+        },
+        "2030-why": {
+          "text": "9b019781112e4aedebd884e3ba2f8e27e8d5783f8f1a6a970ef7a33caafc1ba1",
+          "proof": "8292ccf248978263ba3bb75d53abee11e49846e514dc2c2031d4d1a0750e84cc"
+        },
+        "2030-gift": {
+          "text": "32c95e2dfe56be3c62839dcb4803d0e0e49372f63d34cd30baa130373a84e2ab",
+          "proof": "f2ae3c6a735fd1a564d2af9147540217e41781a74cfcb6fe657c2a5535f7485d"
+        },
+        "2030-friction": {
+          "text": "15652e622608ef1b8182afc8b51e4e9089fc0c0bb04defa7515862b176bf0e2f",
+          "proof": "951038acc04e5a445edd474037d19d7b93c0f10b890827fbcb3ae93e21a21135"
+        },
+        "2031-character": {
+          "text": "91efb91b44759b7cea96e46b03669bb9536a2ea5426b2d2603ab8706bc020939",
+          "proof": "5cf24b8112592f6a3195b314c77e4a422637d42c8c27db964a4c68d0b15cf361"
+        },
+        "2031-scene": {
+          "text": "3d546155c5acad19d5082c9d62be8ccf8d9ef5ac2a988d25c85e399eab608016",
+          "proof": "3a08d3d012f3728d112f77104112d9d761db78dea9f8ca90fa0dbed82252a005"
+        },
+        "2031-why": {
+          "text": "3bc0000494410daca51451d69d85c67779fcc44a7501250b783da479ef391771",
+          "proof": "1899c66a91c3a25161a78aa35cc68636563eecc051f22941b906d6904ce74541"
+        },
+        "2031-gift": {
+          "text": "be5ec63861ee722d39f80356175b1e035e827112e31069c7099ed308b1baf502",
+          "proof": "d0fc2474d48685f234142f00fd28f0179b31774d1f187e45aedbc054df6a2318"
+        },
+        "2031-friction": {
+          "text": "4b718253f4c361d0f1774deceaae127ce40058e8b660c97ea009c4061cee1c22",
+          "proof": "212d9040eb9f46cf1bac024b6fd7eff3cd29ff7a120cc438c022fdde33a7ebac"
+        },
+        "2032-scene": {
+          "text": "4f48ed090ec7bea0bb991f3881c7ece4fdadfb26ef2a60af834b774bb8a6ff7e",
+          "proof": "5e61efd5836e19daa6ac490c0de1ebfd27b9d1db95448dd200c639c40ae9b097"
+        },
+        "2032-character": {
+          "text": "9640ca336b2b1d5be6b2aef2e7c5d00615f4efbd8de205cc20943c7ee7ea87e7",
+          "proof": "c86ea93c7038d10b90e03f9d3af7e422a62d15cb1031ba0acf5dae49240b6e97"
+        },
+        "2032-why": {
+          "text": "788f0a0f87d02acba5c51c69c4fe8d2bb24ce6b663d9571521aad2489e48be22",
+          "proof": "c4f44430d0f74261abd4fcfae6e4e769dbcd52c3c4683fdbac14986ac311f3c7"
+        },
+        "2032-gift": {
+          "text": "e4e70505adc1266c49e0d12b27f20155c5c2bc7d0ea793d7180e4500ef16f194",
+          "proof": "ed20a5471544573bf5dac71d393d4df538b9e4fc9ce5ffb857fb97424be91cd4"
+        },
+        "2032-friction": {
+          "text": "4828b41ec6793bb11cfca4dd9dd1a45151551474d5235812cf6c28570f739528",
+          "proof": "c2aa7b2ce8ef67e3be787c95613d0278350d1f24aabba306f8aee7fae213c7a0"
+        },
+        "2033-scene": {
+          "text": "2eb0a19d1c92a7cad19d5c8570859e3d57776ec3ea24fab0b8cea327abbea103",
+          "proof": "f401e9176c820fa5374b5511698615b9136de601928994225022f07f14277314"
+        },
+        "2033-character": {
+          "text": "6af264ca17a9c66ce356cee08a43dd556d37b74b434db9f299eefaef262d1577",
+          "proof": "bd095eeb2c7ed546491cb96bdcdd4bf6b43febd97f24922d6cae1e6804c2747f"
+        },
+        "2033-why": {
+          "text": "30ba0f804b719f370d48e1597087db8688f00412e263a673c09984a283e4dd4f",
+          "proof": "0dfa55ec48bf837b4f6dd9cf5811e194cc0091f4e3b28a63f9b5f8ce12cefae9"
+        },
+        "2033-gift": {
+          "text": "5b5c410368c0daae1f9e2a7fd961a8dd97404c40c9df893b88209b625804c149",
+          "proof": "f9ec35f724dd0a41b8643d41aabbe99715ea23a6bf14304b31b1230f51733ec1"
+        },
+        "2033-friction": {
+          "text": "e74b72e86a0995f4b254d687d0b2cb3cc4b5ff393a4aa86c336889ca3a3d668d",
+          "proof": "c4e1d7ddac862137dcca42bebd4aa1a358e59f9924a46fc035bfdbecf08138a8"
+        },
+        "2033-harmony": {
+          "text": "d69c2e292309aba67961d060517178d61821740fb18a8825909c6c2e60ffa83e",
+          "proof": "075c5485a8cae6bdd2114f3745c85901bdd0bb97f9cbb537e5da926b4aa744f0"
+        },
+        "2033-boundary": {
+          "text": "7be856f826b29112e1cf178a78ca1fef9816f0238c532115d887b796787d3241",
+          "proof": "075c5485a8cae6bdd2114f3745c85901bdd0bb97f9cbb537e5da926b4aa744f0"
+        },
+        "year-2033-natal-response": {
+          "text": "43e8affdfa044bbf232d52ac5fc780fcaaa87f2c80283c237617bf2e6a6302a7",
+          "proof": "f0ea4d62ed97cbffc8fce05aa7a447ceb5369f952b8092f3b8a3df57266fbaa2"
+        },
+        "2034-character": {
+          "text": "d9dc302a2e267d2299aec8f4364ad20da34fce73a67b450f3fcb765b4e7b833a",
+          "proof": "eb07d4836a994a72c955ce1cf63093f3319c2b9676e76e5ad7b532acf9cc1d1b"
+        },
+        "2034-scene": {
+          "text": "1890f0d86558ef7c5e6761db06e0c681fbb2d57ea950d19ec071892775b92178",
+          "proof": "b2d69fa5f7cd824432b963d823844bf2255f23b1d8ff7b2a69722bba905f33cb"
+        },
+        "2034-gift": {
+          "text": "4a450ceb19ea252157ff27ad2b2c05bd240628a041ed0a252e1f2f7a63af741e",
+          "proof": "db0298f68220a888937707580e3b2cf322728aeb1f85229f5378c1a127d12a76"
+        },
+        "2035-character": {
+          "text": "487a9430504ce1dc846e949d6ee2b52fe5682c84fbe7a909b312a3f0bf08043a",
+          "proof": "d3730c3a4cd7b4997eed3335235997e2d22da53607a76273f58537df00ded497"
+        },
+        "2035-scene": {
+          "text": "fcb9e066d60b4b92cc68f901988d8c7deafdd2982a60c86946e4bc5ed9757802",
+          "proof": "393530e6457b4b81b939651a500ae2b39d1181bebb3c3b71bbddcb5b0da49db6"
+        },
+        "2035-why": {
+          "text": "35834d0b970e5b4b667695ff45a35a2e3769947c97180900fa81bd9d08f341b3",
+          "proof": "819a440c1cfc379ae38937c5ad669a83f6e86b18d2479cf8419d22de9c6605d4"
+        },
+        "2035-gift": {
+          "text": "586eff66260df7863a9cd1144ac9e34eb1c67e08166f99e27c11e34c8f219e1c",
+          "proof": "261cc555a20585d9cec55904bf664600567d15131aa751c64c012a4da81e33be"
+        },
+        "2035-friction": {
+          "text": "430a9b0fc8947d49c4ec9a3850b2e702d261a8f57a742db43642d635cdbce952",
+          "proof": "393530e6457b4b81b939651a500ae2b39d1181bebb3c3b71bbddcb5b0da49db6"
+        },
+        "2036-character": {
+          "text": "0a048b2a95653691f08ec679ab603d41ff92fc105a82b31408bab8fb446af409",
+          "proof": "7910fa7b3d4cadda02a7b80429c00814059ee57ea78b238bb61ba0901d5d4801"
+        },
+        "2036-scene": {
+          "text": "4e5994fb189ea51a3159dfe465d1410f92854bfaa50a78187dfc3a381be350a5",
+          "proof": "9c8d8c8dd78fc1447687ead35517ad17152bc8b855b28d8dcfb7e3a015aec9f1"
+        },
+        "2036-why": {
+          "text": "0570dacda87f18de442c40fa739ea854601dde2cb561f81dc8805c2e82f8d802",
+          "proof": "dc35b5222f28bfd13c5e0d9f004f99dccb57a38887f7f8bc4c18361d9962133e"
+        },
+        "2036-gift": {
+          "text": "e1544291ffe4804b261d2d85b400d0680b54dbdc2db9b4e81125d4ff0e5c45bd",
+          "proof": "539a78f32d772ff77864120064e8ce042fc42a7ba0129e228d5f393ece83a421"
+        },
+        "2036-friction": {
+          "text": "37f56a073466866ca0cc375621fcc958233f9c916b768e90c5330648eee6ad3b",
+          "proof": "9c8d8c8dd78fc1447687ead35517ad17152bc8b855b28d8dcfb7e3a015aec9f1"
+        },
+        "final-strength": {
+          "text": "b4d4609aebc72c3161833e72ae8e30d73d5ad337fc3778b912be32643a97ca7b",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "final-gift": {
+          "text": "2767e74c08b38934d8640fe2578cce3193d77d4b5bfddef03a814b786739f211",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "final-people": {
+          "text": "c7478d2f13e7d9c6c7ff5205f30fc6d8c1e13ff7ea75cde8f004a356925b6d3c",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "final-direction": {
+          "text": "d374c21fc797322b72ab81b66657076b816964c44c2084b8cd8175b86190e396",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        }
+      }
+    },
+    "02-employee": {
+      "inputHash": "d6fca29138334368d3c09fa6447783a12ba4d69097e91965675b5eb949e4262b",
+      "fixture": "tests/unit/interpretation-v4/majorEditorialSafetyFixtures.ts",
+      "clock": {
+        "evaluatedAt": "2026-10-12T12:00:00+09:00"
+      },
+      "writerVersion": "major-full-content-refinement-01-v2",
+      "frozen": "c52d0d9540ca5c4796a9373862f53f033f5130fb58eb02c452f62cdac74aaa3b",
+      "blocks": {
+        "big-flow": {
+          "text": "d9945dcb60de5619331d100fa39a2402d3a3763a9ba339199216d523c6af0e5e",
+          "proof": "6b4ab5d407e3c8f12b690f14a8a4c1c7666dcf53f862c5cce529c0ad0cee29a8"
+        },
+        "first-gift": {
+          "text": "57d6c7db8c43017b54a90e5d27ce0be70b75a61be0a7b6198d50219b66433fb6",
+          "proof": "6b4ab5d407e3c8f12b690f14a8a4c1c7666dcf53f862c5cce529c0ad0cee29a8"
+        },
+        "next-boundary": {
+          "text": "449e4010309da04899402854564eda94302e609ce117aa05a3010943802934de",
+          "proof": "0b378ad0c704dbe4e185b1adf8652f9b15ea515179364ae240fb903ca8a98f2a"
+        },
+        "core-why-sinsal_hyeonchim": {
+          "text": "db14e7fdef1144c5c1508a403fd1612593fada9c6d1284b03b435be9fb32af73",
+          "proof": "3d8fa0649ba58189aaccd95ba55775a36be989940fafb48132888ce8a81afff9"
+        },
+        "natal-strength": {
+          "text": "0ba443127ef2d79cb1e819c4cda1ae3602c3252a1e329559c92f105f9af951dc",
+          "proof": "3126b1c15060b6886ad12ed8696d54ff75afb40def674bc256d5a04a2fe14872"
+        },
+        "core-synthesis-ENTJ:executive_natural_habitat": {
+          "text": "d2d8a018d4b409344b8ca9ae1e60339f581bd02188ca0d03e5096c97d8ee8399",
+          "proof": "ab7a1803784a03cf4dee2ff128f485b70ff4f7673efa344e6df4df10344e1ba4"
+        },
+        "current-dayun-natal-response": {
+          "text": "be91ecd0f2e379e844a325ea29e3d55ed3be8b8954292571245df6161a5b85d9",
+          "proof": "2f1a7f45c9781a92dce70c91e6477531f81dcd8981c3dfca94fe2c76986e9f3f"
+        },
+        "current-setting": {
+          "text": "2eada55d7de81823dc92835a73d48ca6ab4ad46ce942a9d32fd22295fe209030",
+          "proof": "6b4ab5d407e3c8f12b690f14a8a4c1c7666dcf53f862c5cce529c0ad0cee29a8"
+        },
+        "money-flow": {
+          "text": "f8e4a060fca1b7f59c8d1618f547ff8e939e0ec8e7b10b479bacec875d3fb751",
+          "proof": "6b4ab5d407e3c8f12b690f14a8a4c1c7666dcf53f862c5cce529c0ad0cee29a8"
+        },
+        "current-context-why-gwiin_cheoneul": {
+          "text": "6867a96efbfd3853f5f242d3ba4e053f88b6a6924e55b141861c93b63817210e",
+          "proof": "018054bbb746a962c5f526ff39b79ee5e5e0fa1bbaeccac893c7d0a84293514b"
+        },
+        "current-context-manifest-ten_god_qi_sha": {
+          "text": "7f9eadb76ad60136b667e71cb62d6a5b2747d9996ff71487699303181d9a33a1",
+          "proof": "47969b08da07cdbb3bc6175298ab866f944c9f35a89f118880465a09d2908aea"
+        },
+        "current-context-manifest-gwiin_cheoneul": {
+          "text": "c41a0f442adc630c581206667892fc24dfde2f6d726756e9373287889dda74fb",
+          "proof": "a5755034c2d18bfb2806e7b08ad76c296bdaf3c9ca8521216ad9ca4fcf175185"
+        },
+        "current-context-synthesis-entj-pressure": {
+          "text": "6175210f6e6122f98c2cd57e1b30b1bc1a06c39cc714104dbc4595151f46329b",
+          "proof": "d3cd96035e0c1a4f79507cf1e4d7a6ffb7bff8fe48b862afa3fb61b2e3aacf72"
+        },
+        "current-context-natal-application": {
+          "text": "7a3c9309c142f9e5100ae1c246fd38b860e37a0609a11305c92705ca45d08d52",
+          "proof": "41f57b90bfaa214e0767e01411959c1c334e4a144d6f4b5272a3b8d2103db3f3"
+        },
+        "natal-gift-0": {
+          "text": "245fb5caa051127587c2754bc5a93e2dc3d238a0f18b2f13a09bd9278cf68fc6",
+          "proof": "adfd6a9ab3169efa9b112ca08592960e12e16d6695108928a2ab049a15018415"
+        },
+        "natal-gifts-why-sinsal_dohwa": {
+          "text": "605edc0f6271530c35db4e95fa8dc05779032d106f4f0a48707685dca16891f3",
+          "proof": "9bf8acba4049a0ae5c366254fce8e2e4a7b044cd6cfd85c4f249d74dd5d91168"
+        },
+        "natal-gift-1": {
+          "text": "fc112a47ba18cf0c91ba8c1e04d03517df8a1fe9ac2beb2dd013412780def7db",
+          "proof": "0f6abdc9e865b419a598f718c04a78185d4ddf0d077e562a438a029b68d89989"
+        },
+        "natal-gifts-synthesis-ENTJ:high_earning_orientation": {
+          "text": "41bd76381b00b97ff5d83b22e46de287dd04b294b975b89692c8feaa9aace4d0",
+          "proof": "c195baf4bc5dba33386784fd1629ae5d15ce5d804af902938eba264cdc027ba9"
+        },
+        "relationship-context": {
+          "text": "11c094edeb0f0de1cf7e58c58fcf1bc53421568f2536689a7a8a640d01264834",
+          "proof": "6b4ab5d407e3c8f12b690f14a8a4c1c7666dcf53f862c5cce529c0ad0cee29a8"
+        },
+        "element-life": {
+          "text": "09606b3578a2a1b506fe7467e3ec0f8b32afee158a68b87f00b8d8dbde56b0c1",
+          "proof": "980590484cd258f7807aa4c278fdd3dff49f6d30f1108712898219e4f8367414"
+        },
+        "relationships-why-ten_god_shang_guan": {
+          "text": "bdde9f312e3a4d4becd7bad2646614d8681d85b0648289f693593ac3b947cdd9",
+          "proof": "d97718d53ec916d5a965b8a292a7d6d307142322c89000ce6eb5bb9a25f16ead"
+        },
+        "relationships-why-gwiin_cheondeok": {
+          "text": "450ab5d646c4246dfc1fae706d9ffc3d91d1acdef8a7d90dca03c5188a576abe",
+          "proof": "9dbc5a4972023ec172734910625727eaa840d3f37c1b258e4703db60c25beb57"
+        },
+        "relationships-manifest-ten_god_shang_guan": {
+          "text": "7633c219941ea28ad7df39bf82c99c2500348a9bdf51d30f14b4d40b24f4558f",
+          "proof": "86365ca5170cd782ca9ffbc3f2e66652dc03f4f2e37d98dc43dfda7121af603b"
+        },
+        "relationships-manifest-gwiin_cheondeok": {
+          "text": "52d3f34df80b0aaaa7b2a8e0248c30c61cd607045d3a6ce8adf6d42785276d58",
+          "proof": "f2d1eadf632fcec87702f81fc08428d5246cce0d969dfaf10f84673300d2ec5d"
+        },
+        "transition-2024-focus": {
+          "text": "5d511dc67a047412e9d645531747aacd2bfd7c02d0238ae0f4ef44ecfc16596e",
+          "proof": "cf00dbcdaa1cdc2f52c6313eb0f0f9d68aea0621068909c5cb88e4899ab67add"
+        },
+        "transition-2024-work": {
+          "text": "263b441af2fc8bd8f7671a374b3cb90390e6bdb78b0349baf1a9e2d64b9f1f1c",
+          "proof": "cf00dbcdaa1cdc2f52c6313eb0f0f9d68aea0621068909c5cb88e4899ab67add"
+        },
+        "transition-2024-people": {
+          "text": "08828a28a90a73fd5a8880c44063176a4b102d67568e66862e212d1f76d8926b",
+          "proof": "cf00dbcdaa1cdc2f52c6313eb0f0f9d68aea0621068909c5cb88e4899ab67add"
+        },
+        "transition-2024-life": {
+          "text": "c0bb6bbf589aa053dc442af7e7c048aaf31059394f4585ae28d4bb4d925f20b3",
+          "proof": "cf00dbcdaa1cdc2f52c6313eb0f0f9d68aea0621068909c5cb88e4899ab67add"
+        },
+        "transition-2034-focus": {
+          "text": "ce8b3bd3917d1554980468530d4cf01f093126039948620eabe24ef7bf80a455",
+          "proof": "845065a9b26bde3213fe62c3a28701baaa33bc8da3ec0c378cdbad9964b84710"
+        },
+        "transition-2034-work": {
+          "text": "3aebadcb7b5bd22f15b8fbb5a9228ad47017ecd7731273e3435a5455f9316a47",
+          "proof": "845065a9b26bde3213fe62c3a28701baaa33bc8da3ec0c378cdbad9964b84710"
+        },
+        "transition-2034-people": {
+          "text": "e7060bd44a7ec55b72a4d581cf79741db4e68b660016ef0620bb06d33862ba2b",
+          "proof": "845065a9b26bde3213fe62c3a28701baaa33bc8da3ec0c378cdbad9964b84710"
+        },
+        "transition-2034-life": {
+          "text": "9ce866ac1bde6e26a5c28d39f78513fe3dc5aaacd23c8efb50c75d85544bea5d",
+          "proof": "845065a9b26bde3213fe62c3a28701baaa33bc8da3ec0c378cdbad9964b84710"
+        },
+        "next-work": {
+          "text": "7d0e889ff5e03651e20e29b869f4445892c5e870d67e2415132d5030f18921e4",
+          "proof": "e8e25c17ea8ffc7a78f111658e53ecd4078daa275302a86703d616e5e87c1a8e"
+        },
+        "next-money": {
+          "text": "ca9a842e65f471545692f951e5a45627cdd8ec46a17d53086d3de01a26d805e9",
+          "proof": "bbb6e7af4cba0ef2c195c25e18cfb73bd06196fbf6c95086933423535e51f3ee"
+        },
+        "next-people": {
+          "text": "23db2e5a45419a97fcb943ad806d9dacce9b9f4b327c2ffc706849df23ad203e",
+          "proof": "bbb6e7af4cba0ef2c195c25e18cfb73bd06196fbf6c95086933423535e51f3ee"
+        },
+        "next-risk": {
+          "text": "230653f2b85a251c58a87d59fb7f4faab70003da6812e3db47b626ac6f98b5aa",
+          "proof": "bbb6e7af4cba0ef2c195c25e18cfb73bd06196fbf6c95086933423535e51f3ee"
+        },
+        "next-cycle-why-ten_god_zheng_cai": {
+          "text": "94ce4b2191824d21affa71a7882b804c67f1a5a5d4a79c7624cba6845bec5fda",
+          "proof": "485a761664e54aabc637e0bf5734ee40fe2da3e72a4a5def6316fc5bff98c538"
+        },
+        "next-cycle-why-gwiin_woldeok": {
+          "text": "94adaf64a59d0097c2d1d4149a9d8f867c4982e8f91e9efb5c40382db53fe66e",
+          "proof": "39942158ef5b9b1fe4b552c3b6f66c2ae1ff29b533794611c429a25db8453da8"
+        },
+        "next-cycle-synthesis-entj-wealth": {
+          "text": "ddbef76f0583733821f944817bd9e5ca5702559d7ba318f902af70318028cff7",
+          "proof": "8394b3ce9eb28dc9a70c40e2d9eb5e12bbd55d85d162ae81ce7f428492139697"
+        },
+        "next-cycle-natal-application": {
+          "text": "f3ae4169acc03361e39525dd6979cc3651334c319c1398a77015b7e7f60d1dbc",
+          "proof": "52ba8da7955555c630130e4dd82cdf6aa8aa97e3740c8deeacdda8f1b204fd1b"
+        },
+        "2023-why": {
+          "text": "d53ab4da97baf1ad6a4e46f7db731aa139782deab44ce705537fe1e14768c980",
+          "proof": "20276fc4def6915439339a691c251f571cda26d05f39ad5044a1dfa631d443f8"
+        },
+        "2023-scene": {
+          "text": "44b40cd1dce00436781686b42f6e97957e19eec67a7bcee0836f28fc99f3d34e",
+          "proof": "0f6cb4f19c8bd1065a89775473a9524f933d98cca4748fdba85c2caa19a38732"
+        },
+        "2023-character": {
+          "text": "a43b38ffe2d6009f7823cbeeb63a9218e59c6d726e69aca6d9f4f3cf36b1eb68",
+          "proof": "74431ca318a24c32a3be533374d4459c7c623abd7e92de7008381fe3c47754f2"
+        },
+        "2023-gift": {
+          "text": "d08f2e59c4331e3e6c2d4fe8b001dac084bb8d01f6e19fd74a0c9354e319ccea",
+          "proof": "244fac4c43ace9d94f85ac096a7877024c1e2c8327194c956067c1088762f8e6"
+        },
+        "2023-friction": {
+          "text": "88cb6957ac23b149bf41171e686276e326bbfaabfae0599db736f3f12248e27d",
+          "proof": "6f4d0dced0492442ca0b5e8750180aa5fcfdcdef8bbff8b9998f9bec91863c0c"
+        },
+        "2024-character": {
+          "text": "009309a8f6823b5fa37e6182c6078b21d3a8d48b5aae8ceccdd1ec7c2e66f4e3",
+          "proof": "903b9c7be3e5544a33a1af920363ce0740a786c28db97849eb882d9be74875cc"
+        },
+        "2024-scene": {
+          "text": "effbac7c2f8387a59f22a89fbaa34676972b8051d03d302234014fd930204778",
+          "proof": "a899039f191a79027a23034ea060be5f32229458350e324364ff1cb9e5cdcb18"
+        },
+        "2024-why": {
+          "text": "6d63d35188000d55a3e2ff3061ffedd5166c4e5b4af91b328da5912d794fcd1e",
+          "proof": "bf51243898a47eb556356a41ec8a73a38170aa396ea9d9297e7d372a0c90c5d0"
+        },
+        "2024-gift": {
+          "text": "b98a833827b0e8944af36f5da99219d96cbcc6ff48e1e6831a2b8d42630d4885",
+          "proof": "ec2926cdd67d802504e9d6194dad5d8d260629c06e9fa265c407d47a0caab155"
+        },
+        "2024-friction": {
+          "text": "0129546b6d307f5822d567e1771ce0f65ebc090ebddd11340527cfbc44d7c812",
+          "proof": "1a9747994359b8edc7c7bb5f2df0164f2675f08ffe7e5bf2cb163c67f171afc2"
+        },
+        "2024-harmony": {
+          "text": "86331b65dbe1f13136230f5c22f823836a77a66c244c4b86d50127b1860e2718",
+          "proof": "10a7681a3c4c1983c470289e59aa4493919672e869bb698e7464c0a8e744aa3d"
+        },
+        "2024-boundary": {
+          "text": "14c3e975c7776c682f5b50405ad4bdffb5b04e4362e43a68f8c60568f5a6ba15",
+          "proof": "10a7681a3c4c1983c470289e59aa4493919672e869bb698e7464c0a8e744aa3d"
+        },
+        "2025-character": {
+          "text": "7110bfcd41fd185f4132d5f413c2bc4a51f68acceb9e3d5ce0207f1df5fe86e5",
+          "proof": "9bd38ec43c4315fbc0f9036364ef24b8dd98834da7034f698998b33c43ea1215"
+        },
+        "2025-scene": {
+          "text": "8b9217dd8869e05feafd9ef8d5902c4dcffbc703aac8894971ce5e1e9d900751",
+          "proof": "4ba287ea0a948696ad5b1387b7ed07ba1a454127e5ec54fceb391601e7610d2b"
+        },
+        "2025-why": {
+          "text": "3d4572659e625525801e6f53a35c39da4b00f6d2ef2d113277910fdd4807fd28",
+          "proof": "9cb36da88bb9df44aa58459cd1f89eac34ecf8f3c24b3df9ba808423771446bd"
+        },
+        "2025-gift": {
+          "text": "210c253b65461ecdcd9014ff45e518ac2e97c7434eebdd0179972259bbfe011c",
+          "proof": "95650563f53236ff401969624ba467abadf6c0b55c15907bd1243a906230b81e"
+        },
+        "2025-friction": {
+          "text": "0fa300a3257ee8cf0cc66830c618fbebb8e7c0c9a89902372f76affd250edf10",
+          "proof": "82ca97f37abb10c1f35fe56e08de485d785b4de4976a48134ab2ed4b36c171f1"
+        },
+        "2026-scene": {
+          "text": "ee731ea26d33ca4d9a481cbd763510f221a27ab2fcc96f7f15e864fe939cbdbe",
+          "proof": "a424f655fb32f930be0f41137ba150c36e5ed0ee253e83cb5c0dd612b48b9c26"
+        },
+        "2026-character": {
+          "text": "a63b7aff97a067516622f854fa0f8f8eeb7e777a27f8ad274f0f3de93ce737b1",
+          "proof": "d111bd650e6503f86b7abe118a024041fd302c25e791a325eafd48f057eea360"
+        },
+        "2026-why": {
+          "text": "1160b58b0818d1757fc22459733df21b04f7ceda8aeaeea6223c10cd6c73edaa",
+          "proof": "9f80160265755b17d40de22ec88ee88825cab1c649ea8bab8776c7ef777bfc55"
+        },
+        "2026-gift": {
+          "text": "e82bf58929992258a8bae72c306a9096429530a3f98276f142f6f90814bca74c",
+          "proof": "8a04db18b4cb8492af122483637ce60296d53c07de3f4d68fbff2c566d46ad76"
+        },
+        "2026-friction": {
+          "text": "a30a5ed3feb496dc199d27b15d46969894d4a714cc111935eb55f376ebd65ec2",
+          "proof": "1fe9ab014c71621f056f4fcef4867804862d48f4f629d115d56f4cee143c2bb4"
+        },
+        "2026-harmony": {
+          "text": "732aef5551aea81a98f8c0ce817e41c97faf989a6798d32892833740958db52e",
+          "proof": "3354cf052e24935aee2b1d1128e340a837b005536e5875fe0ba5bef9e72c6d91"
+        },
+        "2027-scene": {
+          "text": "84fc70050845ea0a593207a94f243212cdd85ab8f4e45ff26afe124c8fcaa02d",
+          "proof": "8e8d42cb76d7b01c184f257ccf0b7f9e88a3c8dfa4d086ac41cac99b830e58b7"
+        },
+        "2027-character": {
+          "text": "32bb8d0db573288e929517d051fdfb15c9bdba87140c88817ac80d04c1e99414",
+          "proof": "33887f3b5be41937297113495f0d6022f4774746de3a98e033d45ab3a065a6d4"
+        },
+        "2027-gift": {
+          "text": "fbb3918225110ebf8661031b20258578b77d37c47d669b3d11cd31bc98b5a91c",
+          "proof": "52a25397c44071f992ca90583cc594563a447c7d17ad3185b579c6bf2adbe660"
+        },
+        "2028-character": {
+          "text": "7807c6c2f7a373d7452fd05ad04e9451e2a2322b41f5b5d52743509b0bd6da97",
+          "proof": "61ab375466205a43c91d231ddc23403b93d32d41750c31d0cd2e8bfdd30e1289"
+        },
+        "2028-scene": {
+          "text": "fbe22bf7a5e82b9b416395eda894b1a842267f8851c1c14a0add46799973e482",
+          "proof": "43e46cbd5a24a9abd5d886a5d27ca1328e9fb78d88da8857730695635c64e521"
+        },
+        "2028-gift": {
+          "text": "a0c9f081f78411fe92619deccf193792480e94c9bff2f9501ff89d89281b7432",
+          "proof": "e8c45d43b3fe79babcc0ee7e5589b6c115a6362c8c37a95cf9b81b89dd82feb3"
+        },
+        "2029-character": {
+          "text": "a6c252955908135e94e5737dc28b58d1ccf5ee62ac0edf90a74ae0e34f9ebc7e",
+          "proof": "f18843937f959e43240c5cc4142858691d2aea08c77f10d604559fd664851cc8"
+        },
+        "2029-scene": {
+          "text": "47b774cc7bccae7bf0a47b3ad412fde18c001f6e51e26570f52ab8af5d2ac794",
+          "proof": "46279ba8f5c60cecaddc50530cfc91716e43020a13f50177fd3d68e626a1b9ec"
+        },
+        "2029-why": {
+          "text": "329c07479042868abf7eb97e1ce9b7927bbf112e0824f80ba0261fc71121f7f9",
+          "proof": "e07bb7bee3ab027fd098b18c37b5ec7c80d0c1066ae4c7abfd9ea6f73ccf07fd"
+        },
+        "2029-gift": {
+          "text": "ae0c4da4337e3acbc386657424931f6c0418eb4772164c94a1515f91fdeca225",
+          "proof": "723587276eb07c477513a33f0307d7898d50db6e5fdfea899b0378d3cf9bf947"
+        },
+        "2029-friction": {
+          "text": "ba712be7659fb4b687c9baf1bcfe4385f9093c268daa16c4889b8a11ec043662",
+          "proof": "dcc57bb3ceb0197374e92e26385b03e985fabf7760aabfc695dc21b20b8e5fea"
+        },
+        "2030-character": {
+          "text": "70b68c24fc555edadc77987f4d17995c1e6820acf15466d6d4c9ea7c23b07b70",
+          "proof": "f4b7f02305359b138d90a7bf2a6dd98fda893ad780a816a26ab88234da33323c"
+        },
+        "2030-scene": {
+          "text": "08de7a609946cbeca6eac90fa5daede45d33f1ff1b2b980cfdf022ff7bc9f287",
+          "proof": "23750330972ba448e346a1d0201d188ba291b5d6dac3e0994fbee08ad7361c38"
+        },
+        "2030-why": {
+          "text": "c545f34dcd227f74fc128edc99ecf3bf8b632f7053c94657fa185a57aeb3eb7c",
+          "proof": "32bec4e4d1a2e950fecb90ee2a17c9ec4997a0e0e428e43cb0036aaa043a52a9"
+        },
+        "2030-gift": {
+          "text": "deaae6a2c99db969ade09038ac6f78912516e6c38f6c7e1c8fb2f730cd249577",
+          "proof": "ba86fe4613195735bc153ccab049ef921b851df9e7cdf4d47153e7b04c98c8d0"
+        },
+        "2030-friction": {
+          "text": "9dc22bb7aeb99d592599e2b43b067f4f85bf3e84c0fe170882a509f8d4d6839a",
+          "proof": "bed72c6ce4d15add596e8eaacd6be5043df5f6d9e09ae51b1a734bcbbbd262d2"
+        },
+        "2030-harmony": {
+          "text": "18d2e60bfe7257f12cceffa06a2339745e67b70b970a9d05cb57e28ab274340d",
+          "proof": "bf6dfb45d86cbb5fb2363ec1101bd7575231a1cd2927ce2cb8163996afc5a5c0"
+        },
+        "year-2030-natal-response": {
+          "text": "50abc40f1b63506eb35897d28bdc586c34c8fb5e9dc71cdd1230f453886d0d36",
+          "proof": "b7468510909de848058b6b3889ce0680aef86b3ea63653bd4508381ba051e4e7"
+        },
+        "2031-character": {
+          "text": "6a1188084959499bb6105bdb3fc0a7e6b7314b933eeed722d5d5d099b51d6c54",
+          "proof": "549e04eb817697a46b0126e4427267e815fd0ef225b09bd701536847a732c8ac"
+        },
+        "2031-scene": {
+          "text": "3baaef6c1fb410617fd95d300ec3d43b9914f113bc7d5d683af3ba76047bc856",
+          "proof": "654c95665ce8ffc6bd63a858eecc116dfd1eed8b773199129797c93d54628d06"
+        },
+        "2031-why": {
+          "text": "d6e3e07b46fdbbe461ec8edb1f7ba28b1d668074a59350b191ccf7fb76ecdc97",
+          "proof": "9cc2593ea5485c4bf84131da88de65e970819add13bd55a4e2ed94deb637543d"
+        },
+        "2031-gift": {
+          "text": "c7bdf887724c9acca295e1fd7cfde8058d54255dd490b362090e93a9fa22d5ee",
+          "proof": "59bf3c9eabd9f75cda8d3e676477dca3040854912edafb548fa471418773cc53"
+        },
+        "2031-friction": {
+          "text": "4c33633d74424480f7379e90104ec3b850c828093b61a49ad324b194618886f7",
+          "proof": "2619b50f52c55e30424469286477285fac49d531172562e2c5ec85f86b531940"
+        },
+        "2032-character": {
+          "text": "2d448e4798c9c118c8b886eb891fb513e59c48b3379616f61b7cb22914c2a475",
+          "proof": "5d83097e8cbc3bf7b9d930c3fa212ef8a17ba4bcc7eee4bdb271dd6192391647"
+        },
+        "2032-scene": {
+          "text": "9a1d001779d7b5762fddd735f18b538fe7ee89518e2aae22438c548baca94df5",
+          "proof": "8ecd5829fc49c1711599d9573c3ec4bd3dc0eaa92168e2ef800619c3af5d147d"
+        },
+        "2032-why": {
+          "text": "8c5cf45963cb7d691dcf7f4803c56cf4684574a6807bff25bccea91d9056621d",
+          "proof": "570faefb2ffb48932d84a3d2d94d33a953c3097eba8e33890c219a5faf5c1559"
+        },
+        "2032-gift": {
+          "text": "f89daa5dadc34bbe053f0cdd3b6eb08b797a52f962c05cfcda3e04f851700add",
+          "proof": "1e34b188360b10c9f1ed2703ec720da33eefc867ee550d08e8f994ddd806d685"
+        },
+        "2032-friction": {
+          "text": "824bba19733763a54b79bd99b114d1472710751200d8157ae82c800eb6585919",
+          "proof": "089eb75e220cdc920ef626634b5e9f9e00baeb2e7de0b5bf2bca52bfb9ba4ba2"
+        },
+        "2033-character": {
+          "text": "0557751abf5261cb4d03b02f9cda7288d17a3aeab3ab53ca891ed03ee1090c7b",
+          "proof": "2e8956129d5b9408089002c2afdf105bf4288138055f29a22ed5300b575f1f1c"
+        },
+        "2033-scene": {
+          "text": "b0478b514b19460e47eabe0faef48199271867c341cc0bd8770dd9631c1bd244",
+          "proof": "df11276c1435876f4f17da44716dd36a36e055cf3778fcba20a33b5b063eb33c"
+        },
+        "2033-why": {
+          "text": "ab5fd3ddd853716c70c822e745475427270f2c6bae7cf0781f1c006ee4a9ee45",
+          "proof": "01fc399acc6955267b857012b60f800b0861b263323b17122098a0e049cd0382"
+        },
+        "2033-gift": {
+          "text": "0645a9a7fdbcb7e65a79d07f161fe8d80d8dd267e169577d2f5418ba33b9ccbf",
+          "proof": "4ae98bd82ec3a29e835485289522050d08f4d2ea4506050b95f04db9bde86b92"
+        },
+        "2033-friction": {
+          "text": "defd80a6df2cbcd1ae8ea5031f72921df872995fa0c5ad0ea85e537644383a69",
+          "proof": "bc678a1b6e405cc25b88e57aed456061d5274d005cc83ccc4e8d1dc0a55c947e"
+        },
+        "2034-character": {
+          "text": "41b6f9b92062b4e680b8743f9f68d1a0d5446773010b6577e3a52bc6c9b9ae4c",
+          "proof": "0dca4d7d925436a3ce68a067f318ac0d222ba9ceea01f0132aa37d723b695a6c"
+        },
+        "2034-scene": {
+          "text": "6e0736130efd485783aef66078b4817618675e5a1029f50044a250fd42de7a24",
+          "proof": "e4c1b2583afb0eeb1ca6c2d6bee64f2feae0face8dcb4b55664565a818b631ee"
+        },
+        "2034-why": {
+          "text": "93cfd406783a18593302fecf001bc9f22a4472a9b4442358856ed00052404a27",
+          "proof": "e5ed7f8ceef557430a94a366f8e9b3db77d729c1ae3dd820c72c806701f6ef5e"
+        },
+        "2034-gift": {
+          "text": "b5084b769c777ce139d8441188bcce41fc05cd5c67012e8129aff48edb28fa55",
+          "proof": "b2b1e4d3e0daad7f1bad672d23499e185975fd6cc7a28a0b773d4389d49a46cc"
+        },
+        "2034-friction": {
+          "text": "07f51841e2ff803ab0eaa5f70b217cc35da2a5a1076dc294edd96f58609e87a6",
+          "proof": "e4c1b2583afb0eeb1ca6c2d6bee64f2feae0face8dcb4b55664565a818b631ee"
+        },
+        "2034-harmony": {
+          "text": "29b9d161398b925f4b58721b56bef4327a1230bfc9e3f752aa04ad5f8acb54a3",
+          "proof": "e4c1b2583afb0eeb1ca6c2d6bee64f2feae0face8dcb4b55664565a818b631ee"
+        },
+        "2034-boundary": {
+          "text": "8b2ca8eea4adfc81df1a8ae79e72baabdc30494d42a08bcca8c2ca97e366ff5e",
+          "proof": "e4c1b2583afb0eeb1ca6c2d6bee64f2feae0face8dcb4b55664565a818b631ee"
+        },
+        "2035-character": {
+          "text": "a74e7ccb6b3e43c31ae4eed184d4f77df30912bdec8269273872b34d6073e047",
+          "proof": "3398ea7886337d469f1e43053e6e643c9ca0e8f963bc0ed5fb551d77b37c77a6"
+        },
+        "2035-scene": {
+          "text": "07765f0ea703a3208cdf51261d97efe42664cf952ff150d2fcf7f1ee4f866e99",
+          "proof": "77cc4ea58d082b954272b7621070b4032f748eca5ec6de95aaaeec5017a9019c"
+        },
+        "2035-why": {
+          "text": "ec4e14e611c2ab662c40ea9e60c53f999b6d3d8c918a7c86cadf36f5d886020b",
+          "proof": "d370bb97c4f508adb6a116d49c9acdcd5ce46d319fbce0132845c80578f97be2"
+        },
+        "2035-gift": {
+          "text": "42c9f4dddf37bb23ad81bb78d8df261e5bd776730034a4ad6589e73826883f90",
+          "proof": "69d8b379e81a31214936967efb1eaefc26916d019355dfe5e867313680d07bd5"
+        },
+        "2035-friction": {
+          "text": "2e0658e62e5f4ac8d47bc6bdadb8b24c65a5bb42cca700d26e9257021ca7c737",
+          "proof": "b766c64ae72e3afb8d2d3d47e225d0cd55d6c849bef100bf80858ebdd5af2477"
+        },
+        "2036-scene": {
+          "text": "340bcb28a69640f9a2619d9569ce813340c2a9ac55b194719caf21aad1c71f7e",
+          "proof": "deb1522e5128ed4cff5b4f993fbe21477c64cab681c3e294073c6276969c6cd1"
+        },
+        "2036-character": {
+          "text": "24f2c72c6f497c0616910a0a0306f939db6fefe361f1943fbf1056ac24c543c7",
+          "proof": "74f1a93e1c8804e67e3d85d179089fe691dc2ff57e2c05053f5b788c5bf1e127"
+        },
+        "2036-why": {
+          "text": "70421d64eea96e0bbbe33fa7bb70e3b4ec65d07d8f52477ea20bb0d2ba6f81c4",
+          "proof": "096826ac66fed31832e6a85d1605042a52dd87a42e5ce4882833a7c271299713"
+        },
+        "2036-gift": {
+          "text": "6ea712108237bc3678f79a3d1db6ae91459946e584f96650667f82b89b22d034",
+          "proof": "1dec66a9818fd1bc02cb95dd6174044e403d28983ee7d8c372829648f09ea5aa"
+        },
+        "2036-friction": {
+          "text": "1092ec59614b4a01ec862e67e4ef08a47555ec60ff0646df19021a0d39fe7339",
+          "proof": "deb1522e5128ed4cff5b4f993fbe21477c64cab681c3e294073c6276969c6cd1"
+        },
+        "final-strength": {
+          "text": "3d76fcbf3d1a1c219ef39e955cde63ffb4531829c3a9ac4e8027e10a903c6096",
+          "proof": "0b378ad0c704dbe4e185b1adf8652f9b15ea515179364ae240fb903ca8a98f2a"
+        },
+        "final-gift": {
+          "text": "12c34d9ffba92f6e963caa810d9e817f31c8d6773b11745f591bdab06863b67e",
+          "proof": "0b378ad0c704dbe4e185b1adf8652f9b15ea515179364ae240fb903ca8a98f2a"
+        },
+        "final-people": {
+          "text": "8f55636d4cc971392db77a6d5cfa2af10d2e87c8219ee18e26fa41738e3ed841",
+          "proof": "0b378ad0c704dbe4e185b1adf8652f9b15ea515179364ae240fb903ca8a98f2a"
+        },
+        "final-direction": {
+          "text": "f98800c2c4b401e6b47178401fa76136094a20d74379839d187acfc6b06850f8",
+          "proof": "0b378ad0c704dbe4e185b1adf8652f9b15ea515179364ae240fb903ca8a98f2a"
+        }
+      }
+    },
+    "03-freelance": {
+      "inputHash": "a9535d910c1238db4f42f1663702d44f1edb74a1edfb4535c76be84c36d7c25c",
+      "fixture": "tests/unit/interpretation-v4/majorEditorialSafetyFixtures.ts",
+      "clock": {
+        "evaluatedAt": "2026-10-12T12:00:00+09:00"
+      },
+      "writerVersion": "major-full-content-refinement-01-v2",
+      "frozen": "37cb5a27049d2cad340301008531dfe45d306ef52338ffeff05971f1d934b84d",
+      "blocks": {
+        "big-flow": {
+          "text": "5a47385cade61a261205dfd111d87a101d2307d6b748663901c15f5cd4682ac5",
+          "proof": "c37de7bbbe0d0a0aed5d2b4967f0be4f1df968635a977dc835fdc7c406e78cb6"
+        },
+        "first-gift": {
+          "text": "365b651f306820a25276abc7d7a3d37c0dcab4fd5c1836f9d5efdbaaafe6ff3b",
+          "proof": "c37de7bbbe0d0a0aed5d2b4967f0be4f1df968635a977dc835fdc7c406e78cb6"
+        },
+        "next-boundary": {
+          "text": "4a73a5fbf50051f0934108ab92e3cef2af6d2cce8f370e1a68de7abab51360d0",
+          "proof": "3d4cd7b9290b026f0fa0280f96a52c6c085ebb681572a8b38ece29101e170a15"
+        },
+        "core-why-ten_god_pian_yin": {
+          "text": "4cc67f2cb082c5c0b65899cdcffc613d8a81af6d9b45669501e45252c6b65739",
+          "proof": "a1656f845b838ab4dc1b346c1478e33f9fe2e98a369464afd8fb411ea305ed43"
+        },
+        "natal-strength": {
+          "text": "adebe71137aed2ab835c2cd4295fa22811d34b601a882d69d3cd457ba2c25e7e",
+          "proof": "9840f2d9cca5fdb179efcb60c0d8ca785bbb234b8247a0065eac0302aab87e9f"
+        },
+        "core-synthesis-ENFP:interest_switch_learning": {
+          "text": "50e6ad57e866846a6a0d785a078a172bc50a0f3bc7563ab970221bd450b84d15",
+          "proof": "25052d267ed721e39dcb4189c1976f6c3273fa74fec535d7367e1dbadf8b8ea5"
+        },
+        "current-dayun-natal-response": {
+          "text": "b3da66091e26bb9d4a8621f052859071d66762e49bd8cfbbc0b06d21105b1fe1",
+          "proof": "04a06a6e3b08da6b6addb662c10d01ed9084f1c048690518f27215bce654baf7"
+        },
+        "current-setting": {
+          "text": "94e2d0b4a9f7e057806b699416c3e3ebec2bdd29e12e59cbcca0b8f80817bb62",
+          "proof": "c37de7bbbe0d0a0aed5d2b4967f0be4f1df968635a977dc835fdc7c406e78cb6"
+        },
+        "money-flow": {
+          "text": "17b97268caba906ce1c6c12ca1098738b1dc594551c88e10261041a1b3d6635b",
+          "proof": "c37de7bbbe0d0a0aed5d2b4967f0be4f1df968635a977dc835fdc7c406e78cb6"
+        },
+        "current-context-why-ten_god_bijian": {
+          "text": "e67de0806c759154f0b207427baf51739e6018500fd6cc24cb50acb009538c56",
+          "proof": "e49a4d500e6c2cc164ab756dd1bcfaf461480b15cdbe0351137d46753fb95f1e"
+        },
+        "current-context-why-gwiin_jaego": {
+          "text": "701c032dd30a8dbf3b5b476ab400ca31a91a70cb26729735cd6484d35d4366f2",
+          "proof": "0868c58ca287eed52c0276905c31c91d74200b00fdc6caedd0bba76c00a2dea0"
+        },
+        "current-context-manifest-ten_god_bijian": {
+          "text": "db7976096647a37071e28001954c6b08c3f98cb11c80f568d3de9d57205a3899",
+          "proof": "9879e04e4b50b0833920acbbc266bc1705fee6d49e04721a82a946f6e50e12e2"
+        },
+        "current-context-manifest-gwiin_jaego": {
+          "text": "9c646759971eafcb777aed536c1ed4f8f4fbfc771c89cf9783be418cc79a1d76",
+          "proof": "48ce9911918b6e5c7c849bda78ff814b37835dd0104953c70b5350dc50f5278e"
+        },
+        "current-context-synthesis-ENFP:counseling_fit": {
+          "text": "f092de8bc4050d58fe58d6d3b795f705fc7f66303a71122cc3bfd17fbeff128b",
+          "proof": "485f53f499281809044fbbbee5c0f3d69c77496343179be0c50927e5a4861bcf"
+        },
+        "current-context-natal-application": {
+          "text": "e7caa5206f3db81579b788e7a0a99a617f2795e04d54295b66c0af135b473f14",
+          "proof": "1185ea4291eb9f27cf14e26911fd0144af52857099e8d6fcaafecad9a3cd2158"
+        },
+        "natal-gift-0": {
+          "text": "aa1ac4f912389bf6a24c977ad2271e37833c20d01467afff4c8bee7cf866b706",
+          "proof": "504c0f7d400a9d9974ad0831602d44e42b34721a84e97de09a4486ce579d27b3"
+        },
+        "natal-gifts-why-gwiin_amrok": {
+          "text": "18dfa739cd8c40419b224af80f6d066d8d502584b6048d497efa84628948d85a",
+          "proof": "5cce82a45b79511123d8852e66d04baf049ba61439d05733b9dbf9212063a6e1"
+        },
+        "natal-gift-1": {
+          "text": "48739ae061ddb163d08edbf1f4bf4d9e664901a7a7b2473ae3d82b5f03b8e1d9",
+          "proof": "882973be25ae3c5ef735781652701e47b46fa3a0ebeb24608fc6561a82597653"
+        },
+        "natal-gifts-synthesis-ENFP:experience_spending": {
+          "text": "4600fac2c24cc6d7d29d49b067aa1bcb6a0498864b0617e448f8da8ec81006f1",
+          "proof": "d900ed853eed97babba7e018087e9f220933a86ca8540c334a603b57a10b142a"
+        },
+        "relationship-context": {
+          "text": "322531a42984b5d12dc0caed3c94d9fbbf05b6d25f5865e4c37b98b2c85bbcb9",
+          "proof": "c37de7bbbe0d0a0aed5d2b4967f0be4f1df968635a977dc835fdc7c406e78cb6"
+        },
+        "element-life": {
+          "text": "85ce72857badb1221044e8bc4d30d4826db26303fd086ded44f524967ce230f7",
+          "proof": "2c54f81b65d1afefc0e6ad8e3c61cf329cb8024cfa5cb7c97c9229136bd57b7d"
+        },
+        "relationships-why-ten_god_zheng_guan": {
+          "text": "da4da2424caf657bfe0993369490c7fb1df669e2f02516408b46d14af9298eec",
+          "proof": "5d3a263a1a27babe01b7efc5e2eccb797c0274ff820610cbe28b2a2007f9b5c3"
+        },
+        "relationships-why-gwiin_cheondeok": {
+          "text": "450ab5d646c4246dfc1fae706d9ffc3d91d1acdef8a7d90dca03c5188a576abe",
+          "proof": "8de29470186d8ab779ef51a14348299f0dd8d270230a2af0e4eea5f6f12df113"
+        },
+        "relationships-manifest-ten_god_zheng_guan": {
+          "text": "1fc4ba07d642b85c63ad4a602fecd169adb7c9a29e75c8e0829827346a33533b",
+          "proof": "726b0336c87c68be96e952366f90659fbd5e970f9b43286822785fe06ee62093"
+        },
+        "relationships-manifest-gwiin_cheondeok": {
+          "text": "52d3f34df80b0aaaa7b2a8e0248c30c61cd607045d3a6ce8adf6d42785276d58",
+          "proof": "e37f574a07c89bbc5b16fb5d134df417db9e4f082d5ac447a66984a27a5d5619"
+        },
+        "transition-2028-focus": {
+          "text": "ee9335e9947d2fc2d51834ba9815313c47afa588bdc84eb083a5eed5439936fd",
+          "proof": "2f814cf564139aa788d5a8d293adcb9498fac42694f335b8883e6b669f550849"
+        },
+        "transition-2028-work": {
+          "text": "4df7b4bfecfc054c520cc2aa6c0e2289fc61e25ce71202f5736f4ccf6a0505f1",
+          "proof": "2f814cf564139aa788d5a8d293adcb9498fac42694f335b8883e6b669f550849"
+        },
+        "transition-2028-people": {
+          "text": "17b705032b7fa3b6243a8f523228a692c039ab94af59cd025cfc28e538c39f74",
+          "proof": "2f814cf564139aa788d5a8d293adcb9498fac42694f335b8883e6b669f550849"
+        },
+        "transition-2028-life": {
+          "text": "1340288a85625b2eabb1fee48ca0e7864006b5f17c531222fe0f669d0e0119bf",
+          "proof": "2f814cf564139aa788d5a8d293adcb9498fac42694f335b8883e6b669f550849"
+        },
+        "next-work": {
+          "text": "430c46712fd3a7463dda645de126dc6f04a7ed4916996477b14c4e8544537c7a",
+          "proof": "5d91a6c2a441f49efa539af52f1869778ea973433016aa72ff0465c926c3b80b"
+        },
+        "next-money": {
+          "text": "64f15e6e508dc3829370fac5c90daeee2a4cb140fe58e323564d77014e47c8a8",
+          "proof": "a381bb8d0084ee25cb20301cce6f4248d8c38c4ceda3f6a93a9128695981cd6d"
+        },
+        "next-people": {
+          "text": "89b55e27348b278ad2e26cf95281621715219f0b7204a921356b699b4365a350",
+          "proof": "a381bb8d0084ee25cb20301cce6f4248d8c38c4ceda3f6a93a9128695981cd6d"
+        },
+        "next-risk": {
+          "text": "3447ebd2fac8c67efca1a259330f998fbbddbcc55d01c3b80567eb0b3187e11b",
+          "proof": "a381bb8d0084ee25cb20301cce6f4248d8c38c4ceda3f6a93a9128695981cd6d"
+        },
+        "next-cycle-why-ten_god_qi_sha": {
+          "text": "d62d1e8ddcf70ff467053d308d37e53b86f7e23378fcfdf4668c7a42a5138d12",
+          "proof": "319327c58190cd71a92b1d9ba38b23ca4404ed793b6b419a93f64b60362655f2"
+        },
+        "next-cycle-why-gwiin_munchang": {
+          "text": "e9acf281276779afcd71f6637777a752f78e5a48e0ca288dcac8a7e13c5bc48d",
+          "proof": "a8dd801ac8b8f4ea6c485869ef2a747a7ec5c578b5f22e0326843ccafaa31245"
+        },
+        "next-cycle-natal-application": {
+          "text": "dcece18fb7789434214c43c497b746f384c50286e09fc525e2a09c63ed204e43",
+          "proof": "74b6def926238d57e8b91d8369fa346b0b5ba47f12ecdc727330be74fc73c11b"
+        },
+        "2023-character": {
+          "text": "798b7dbb76bbac5ac8946703d98add420fe0d86bbd862329fa31631e0a08b037",
+          "proof": "49c6d7613b6c8c902bd780c73ea41673556758d2d39314d266197c56d4817f72"
+        },
+        "2023-scene": {
+          "text": "90bb6990531813c4764d5c9b8ed1f1b5a3699f539b561be90197bee20e6b26cd",
+          "proof": "712aeafd7a0f5f30de9a053bca5acef7c8cf7d59c81e1ee078f17dd59fb31d79"
+        },
+        "2023-why": {
+          "text": "d26830fbadcec12edfbfabcf7ec2e55968f14bd909aa92bd9016f436522d7878",
+          "proof": "83051f9e3c761af0de24795115c3e18ddd03b9cb11baf556cccadfbbbcadad21"
+        },
+        "2023-gift": {
+          "text": "3accefc7daccb88656ebb6f8331a55c6bcfdc3ec64753a0e2cfcf3732491f8dd",
+          "proof": "93f82c8fd3a9fbea823343543a043a64c0582e13c49f9372e091c1d772594d16"
+        },
+        "2023-friction": {
+          "text": "3c8d428cfeeb2e5b4964dbb005d7dca80b2b339fed99b0f5e7526ce969af5020",
+          "proof": "bb4bae4e9c7a78a502d813783f6a3d7e94090e46301dc6b5beee6eb732868980"
+        },
+        "2024-character": {
+          "text": "7ffcc50f15f019827da5536af484b15218433cbc0881aeb5c3e4b1fda261e6c0",
+          "proof": "e786eded26f46b0fd23b8947ce32f8eb7caaaba0f1cea8426874b861fc2b32e3"
+        },
+        "2024-scene": {
+          "text": "c487b30128d7b1c4441f93ec2e550a49ba2ec4272513d8116898835002d9a029",
+          "proof": "db9672e9abc27605055bdfa49674f885a31f6475b8c04c9f4dbe43d2645b0509"
+        },
+        "2024-why": {
+          "text": "96481fce860a99ad0f10d84a8885e35c8f9452141f82824bccc81078512b50a4",
+          "proof": "8a43bafe69b448dfadc1f0649309aa0e2d679d567fd005c94f379bbd5a386a9a"
+        },
+        "2024-gift": {
+          "text": "a571bc774e2ba15b8299156c7a39354c3974c62f7e88be102587d5b99d9148b0",
+          "proof": "40e1722a65e7e0217e40b6c026d9e1ffae5b83c3505c7494bce4f4ba0b2fe286"
+        },
+        "2024-friction": {
+          "text": "740664d2023431676e73c819ea7837e781a9f482b8221c0e2149577d7ad04fbc",
+          "proof": "a6ff27a2e8a90a22905d2ae5af1816cce7c99ac92146e5a8511ba75e9b9c776f"
+        },
+        "2024-harmony": {
+          "text": "53155d2ebbf10c9aa7872b02d85895a4ae5626065d4e61901db182cd4799b7b4",
+          "proof": "d4de3f400a117245e3843c3e724e1387953d11242bc1c6836c7c14c5694ffce4"
+        },
+        "2025-character": {
+          "text": "86c2f469a4e5a65f019ca71e93c7c2c258ec4ccbe6c7673f775fce263cf255a8",
+          "proof": "cc9433bdadf150400bac052e80d6cbc8b72bb289e036c4a72d575102633aad83"
+        },
+        "2025-scene": {
+          "text": "a7774a94891f68315367581ba37fd73c3abe949558d7526c4eb81465391b63a0",
+          "proof": "a77382d57781e99175bb8fda508484343e4a8787c384b9fade6fa3f1e019f955"
+        },
+        "2025-why": {
+          "text": "fc1eaf7b6bb7b7c5491846c9368dde1f92e0657ade29aed87b0659609acce2d7",
+          "proof": "1219c49ea9c408b3de0a8cf705d30ed07e1ca79808b16fc662f135e67b42ae98"
+        },
+        "2025-gift": {
+          "text": "d91e0512fe0efcde99e7d356a2dc5c011ef44165a3202ee7709abf9c92faa961",
+          "proof": "e1cc5b16648c2458e8f00318284f8a0d824b5a641ea13ca4ee5bf25bb7cc0c67"
+        },
+        "2025-friction": {
+          "text": "a3385a1b1fdc439cc4006346d13bcbfbee6329f6955731d954beaef834bf972c",
+          "proof": "a77382d57781e99175bb8fda508484343e4a8787c384b9fade6fa3f1e019f955"
+        },
+        "2025-harmony": {
+          "text": "de0a9bdef9af74bd344a5a737c7470849ccb34bacad94297a6bf27b35cdbcc0f",
+          "proof": "a77382d57781e99175bb8fda508484343e4a8787c384b9fade6fa3f1e019f955"
+        },
+        "2026-character": {
+          "text": "c05948102a70a9aa66f2c094e855b1b6f48c60cca97af64175ee5a2baad7ad69",
+          "proof": "c6943ef3434beba0908c838db096f0ce2e872890c5a51f6d7d3353d59513c692"
+        },
+        "2026-scene": {
+          "text": "7e6d7f045838e562f1935d25368ef11312ff1dd083e94b9940dd6d9f0b83fde1",
+          "proof": "bc5b2aff2051b4b4db150f7584434abc1a6de44a2a99179e07b2bafe933ff3dd"
+        },
+        "2026-why": {
+          "text": "d6e042512af80eccf53d6e434b959d4b4af3c6f9d2e22074f4aefcecc7d3000a",
+          "proof": "ece3e9f849e8ceb5d007eca5d71f5b458285a27a6ed0a47690b1d586336f4b97"
+        },
+        "2026-gift": {
+          "text": "46a081bce99115023d69e4104116ca095be90b903cd687ef112cfc57ce6f1eb1",
+          "proof": "f9ccafada4070b5a04c9e5808fd6c5ebae6a4b32cd232fdfa244c2f9b645f0c3"
+        },
+        "2026-life": {
+          "text": "49e84cb691c32f6b7eb689a8cd1814bffe9b6938f16bf56495e396dc01dd0ae2",
+          "proof": "16e57158b42d165d24adf5749f21aea13acde382fd4c6125641fc08dd90e61f4"
+        },
+        "2026-harmony": {
+          "text": "75ccdfa6756728585cf7bd46ccfe0c9e839267617ad5fe65d6d91026a3233d51",
+          "proof": "16e57158b42d165d24adf5749f21aea13acde382fd4c6125641fc08dd90e61f4"
+        },
+        "year-2026-natal-response": {
+          "text": "6913d05bf1fdcc37cac17e33d863fa7f07ea7dbf00ec163f7eae2c14024f80ba",
+          "proof": "87f5d5af92b8d4975236756b37dbc60ec4f71bc5e71b570a84fffbbe444804e9"
+        },
+        "2027-why": {
+          "text": "38d39140a3d6e5f28ed331505323086334a98ca0e216631257935cfa68a8d74a",
+          "proof": "f36efdb52ff58482fae13b52bde5b5c5cea769ce8db9e71640efb8e4f9f50279"
+        },
+        "2027-scene": {
+          "text": "b0478b514b19460e47eabe0faef48199271867c341cc0bd8770dd9631c1bd244",
+          "proof": "ef762bdb302a79799485eb0f215aeb673bfa63fd5b00ba21a1feaf17565d09b0"
+        },
+        "2027-character": {
+          "text": "9a74eb7b8409be278d4ca0df9a85a677b17eaabe3171230519f15143e00788ab",
+          "proof": "3afa95e4977223b5eadfddc80eb9069356ccd80fd7f4cc839b2f78303da337da"
+        },
+        "2027-gift": {
+          "text": "689c865ad4f08284d41e222cba917dad03a97e3ce63bd5c28d8a2e4edbc91ebf",
+          "proof": "b3cebb00d8ab813c8a775705f5f1aed3748eb6457f703ecba79da51d5718edfb"
+        },
+        "2027-friction": {
+          "text": "68ad825e092eaef8fc3ce3186c2282a7bca5c24c1ff47e2a9f9e00bf714e7f1e",
+          "proof": "d08c6180fe4b1b1a9ed2837abe09caa5a4e247a42c8f8e2fa41ec485e7eb9aa7"
+        },
+        "2028-character": {
+          "text": "9af597318d482a4018d5632a17d152a265bbe82aeee828a27ecb29f4bc090df3",
+          "proof": "2fe1b94389cd38e1026cfd601119bac8ee67d705fbdb35ac18b662b404960d5b"
+        },
+        "2028-scene": {
+          "text": "14a7822265da4676a22676a9dc1c713a2e62dddb434fc7f68118c2d98156bc97",
+          "proof": "9461f0870cc20077b4c370e81523776ea22c2eb0099982167a750409061b0b12"
+        },
+        "2028-why": {
+          "text": "d2fe07bb60294ffcd84394ebaf0d2ec4b9808a92254e6ab3be7bf15529790c3c",
+          "proof": "578182f7002d1dc89a18e617825a7b7146a05416a0de0d14fd963a58a594d7e2"
+        },
+        "2028-gift": {
+          "text": "004f6e4aa0995e5f5ee69f1780be92f083bb7f9efe2c35e470cc004965af4c32",
+          "proof": "4560e54acbd05f513f9e8d6b4a8fa433b841313acca25b0cdda51af6d7288e75"
+        },
+        "2028-friction": {
+          "text": "6fe59aefecc1427375def2a127a61a61dbeb8ce864e6acb529c203475d35e6aa",
+          "proof": "8a9d96c8405a613aef682e185f7387f4924cf0b75f53b2712a6f29d649bebd8e"
+        },
+        "2028-harmony": {
+          "text": "50ba773135fe41cc8e345168581cd7c873aa4c7432274a2422e73aa61267f185",
+          "proof": "aabcba843f1bb0ec02f57921f9eb68d80a371de9a2363361735165666b05f065"
+        },
+        "2028-boundary": {
+          "text": "a3c3a3bf168d31b7ee967dd75f77805f9aa89ccb101480b35f3d86b8b5dcb7ed",
+          "proof": "aabcba843f1bb0ec02f57921f9eb68d80a371de9a2363361735165666b05f065"
+        },
+        "2029-character": {
+          "text": "b0c0653ee2ed59a24d1773ef9d3ed5ce5a79d1bc77eb37df038290053513599e",
+          "proof": "bba80f35465079887efc97ff2f8014e76b01fb0ecc17741b7b62716302d7cbc8"
+        },
+        "2029-scene": {
+          "text": "b6d16a8ae6154fe31d9ed1eacb0e7ccda5211ed0f3327f038f44a168ffc1b60c",
+          "proof": "b418bec77e8d11305d204e09be1bd106a76158df5276788b907d5af31a6b376a"
+        },
+        "2029-why": {
+          "text": "6b4f4a5b7527bcd6c7ce3787a2f8121fd19a8984e1b002b9e566e86454224e37",
+          "proof": "61ec7658f97288cfa84507d30d0133113b08e147c9b94091d7ca744f9be8f926"
+        },
+        "2029-gift": {
+          "text": "95846e9dd2f4d73b661793ba2db488afff309db9d85b1a66b7aa7adf34df5e4e",
+          "proof": "16a89f91f40fe2cc10dca6d977acc637edae5dfb7b40a92731a3de78657e2311"
+        },
+        "2029-friction": {
+          "text": "c1419d06baed3685d858aeec70ae12a88642e1111126e702d65d898d83b3ee63",
+          "proof": "b418bec77e8d11305d204e09be1bd106a76158df5276788b907d5af31a6b376a"
+        },
+        "2030-scene": {
+          "text": "4f48ed090ec7bea0bb991f3881c7ece4fdadfb26ef2a60af834b774bb8a6ff7e",
+          "proof": "e1326cde8a447146f832d720ff5e15ca5910a90038a39d1d58922d7696885429"
+        },
+        "2030-character": {
+          "text": "082f0478138cfef3cf5afbc99a0dfd21e6fb631c11319c2e06dd3d54d290c4f4",
+          "proof": "8a76b40c131b7acc06d3de2e49290e885031f6aa5951775d5c6ab5daaccc1e1b"
+        },
+        "2030-why": {
+          "text": "d54c0ac666a2300178fb778eab49ad163ce43fdad0eed9163b89b06280666f41",
+          "proof": "2e35a1d5f99c2e798da95aef7cb7b7762d573b5545d3fb40dab71535f63bdc48"
+        },
+        "2030-gift": {
+          "text": "017a841d4c3b9c42bb7158e8a3483454fe27efb2302437a3e462303f97141a67",
+          "proof": "4952bc744e0e61e6d67821045aaac1eb95422884cf8987add0c550011ad3f31c"
+        },
+        "2030-friction": {
+          "text": "c78b9d7ef01c6176b88bb73a1238703b90b4d7993898200b6eb918886ffabbb5",
+          "proof": "d3007e767ee2a10104fe3b858f7c9ec5b09aa7ff55f523c475a3226828761096"
+        },
+        "2031-scene": {
+          "text": "0e1aca1c83efeb6280b3b3889ae1907fb6dca4f5e67199f44cec3f472c6c6118",
+          "proof": "1e6e804a6cf7adbc7b336eed476a3f5225f3918fd39b829e4cce1e1d390a078a"
+        },
+        "2031-character": {
+          "text": "bd18fedc55d6d23ce3f439ecb25a863f5875ee79945a962dcfacb388b94bb1c3",
+          "proof": "80b0b2dd3e2567fe85eac900d6c93688cf654ed0b6aba80931f5a03405c8283b"
+        },
+        "2031-why": {
+          "text": "da6ddcc93fd7fbed401eac7df7545311b2a44173d0662d0b4d89edcebab91086",
+          "proof": "a1c8deeb05009753bc2d3955346984465900a7c453de8d48abcb3daf2d46af2b"
+        },
+        "2031-gift": {
+          "text": "422b2834dc520f89b699d42e6dbf0bf95b92c65a0ac08a64d6d30cbfd659a5fc",
+          "proof": "91d383da4402a7338b07c3def5551aecc5d715e3449af60c198cfb721b8a8f73"
+        },
+        "2031-friction": {
+          "text": "424cfb2bdaaa0402995567a6b0e7ec875fca521c70de3eb059dd6dc98694c22f",
+          "proof": "10b0310d83fed7ae9eae01dcd17b424867a50fbc2baf8a238fc5f952aba2aee2"
+        },
+        "2032-character": {
+          "text": "48617bbab06f1448a81972056b37daeb12fd03c9b13f2bbee6e989a41cd5035d",
+          "proof": "00a7f335692e4dbeafd9dbf821b18f05cd2c013442040b2d6c156dc0b2e7d469"
+        },
+        "2032-scene": {
+          "text": "e1dc499aaf435645ed8c83026af28eb279609e12d21997cd50d5104a1814d6de",
+          "proof": "ebf2ba10a7acbe3e2ce8692896eb8dc2a43524f96a88d118b36cec2fef7977db"
+        },
+        "2032-why": {
+          "text": "acb99fbd579e98e1db324111b7953a23489302339df2ac03992140a58ecee682",
+          "proof": "d57136a83273096f4c28b499d08fc46e85b65d157fccbd8fc76ca0f754d3d544"
+        },
+        "2032-gift": {
+          "text": "4162ca035dab986e2c51b731406ef99671498fa671f4ed3bf48f3a965a7b8369",
+          "proof": "f14a4cd81ab22717f9e799489f82938feedcefcc2e4721187e90fe596d0f3324"
+        },
+        "2032-friction": {
+          "text": "d544ca51b03c812a192ff9ef4f82cecd86c39037270a2d2d311013047a023d7f",
+          "proof": "7a47f1c7c35faa06384d24368131caef0daf39194b4a47b702f7685443028d02"
+        },
+        "2033-character": {
+          "text": "49e802917cb8f2e38d18f933447543589f47f01487aeb8f22bf71d015725cc30",
+          "proof": "e548ba4499941b6fd99ea61cef0c34a24dadf96f470bb762ffd575c8d712b16e"
+        },
+        "2033-scene": {
+          "text": "bbb96937da568ed928d284d5cdb965b7c49f32e932acb933fd1c962dfcf32336",
+          "proof": "292daeac8b457e73fc754f593174c32db963e9fab54a83083fe13cb17ad96556"
+        },
+        "2033-why": {
+          "text": "e6da518a520d83e903e27a48501904d5e2a56d9c3c3940cb4ada8a92e2251976",
+          "proof": "631b1e3a98487f970915be7f66c45c975063a3c645a9b7a1048cef4dc542681d"
+        },
+        "2033-gift": {
+          "text": "c8ca575dee60a57bd51385a258c5371938bbc78fa3562915be2bb7a960abce0d",
+          "proof": "7ad61bfa3149c39ed7a356b9db905c4c4cfbd09f271a8073d0ae48a7cdb26f75"
+        },
+        "2033-friction": {
+          "text": "cdba983ad8abb9b0aedd4ddbe09e06d40fe742b8ea0ea75f9930faa97c6d34ad",
+          "proof": "ad2856589338837755818e34629104ad86cd7953282d3f363638e3df9724eac0"
+        },
+        "2034-character": {
+          "text": "386a67569b6946f9624a466328db40c98e51b14795cc095ff5c9fa0397be15b2",
+          "proof": "399947bb4bbbc82725ea26ef7a1f7fc01bed4288d4899eca8f4e56c9b2ab5c2b"
+        },
+        "2034-scene": {
+          "text": "8d8ea750f868da8d300d131ca2d00b1f0d2259e4e425b9faba910732b90c9d1a",
+          "proof": "e8ff03c6b0e1c7aed9ba1bce8a91d8190bda028fd45225d260f538fb28ff82d5"
+        },
+        "2034-why": {
+          "text": "58a3a763f503759487955170bbac321e01104ce87b22c12565e6780cc82fd7d6",
+          "proof": "44a33095f3b48fb69fe3363906e58b5ad1163595623050850ca7ace8bb21dc8f"
+        },
+        "2034-gift": {
+          "text": "068ac11ac0d0122cbd91f48bf25b55a62ba8495250c15a0632978e3eb6a77ffd",
+          "proof": "f1e5070476133e9eb66c8f158b36f0a7fd7fee9b0b3a75dc2fdd375995cde6f9"
+        },
+        "2034-friction": {
+          "text": "78af83d1e0beb898fe77f1b96dfc0fbfbb005cfa65c1951155ef45f1c5214667",
+          "proof": "affaff315b7e43e83932b75efab5b41aa55c2d7308a89bb6d9845af8c29318be"
+        },
+        "2035-character": {
+          "text": "dda9ecc739c77b700a1fad7546bf52828d9740edc9d7552a511c00fef0a1bc2a",
+          "proof": "2f2a31e971dc56ef580850e5ae3ed7420c40d6631a76ee1a63ec6874e196bd48"
+        },
+        "2035-scene": {
+          "text": "e6d0e6f70282f85894be0a84428a5c9a23ccb35f64ee90ea1ba60d3abf32ac20",
+          "proof": "f475041f82de43aa0559b54b162b3ba82d0630975047aa674e481dbe4e8cc369"
+        },
+        "2035-why": {
+          "text": "2e19ca54faba003b0dd84fc6f505efddfda29719ebcf33ebfa7c00d8301894cd",
+          "proof": "dd91cb9369041735f4b2515e910d33466de34664d07817ef4a6a045b0be9f7ce"
+        },
+        "2035-gift": {
+          "text": "94d10c36b2174fd07c92aabda1423398b35901a1c43acc7691cf9de64552731c",
+          "proof": "261ca96ad2c67dc6626063fc268bdacb0e0061bca95cbc06b63a1255886fc4cc"
+        },
+        "2035-friction": {
+          "text": "6e3817d6c43d053084fabf02d37d5a5fa6ea2ba78551e9c52d0942d88865c0c7",
+          "proof": "55034b58974e6a82cf145ffa62a1334d64a4aefe061dc05734b4a3f51dddff55"
+        },
+        "2036-character": {
+          "text": "fc50345afd4082f4e06ec2fd12b012396e61548195c5767d19e9baad49b67fb1",
+          "proof": "810694e9a4b83ad78c74e34768e5eb1c6a5cab2b0b5d66ca4bdfed1b2512137b"
+        },
+        "2036-scene": {
+          "text": "ed4f6f7e298f5b4c226888ed15a3c541dd65dae3273cc086eabac20d8f363548",
+          "proof": "026a29ba9217c1f0efd55b4bf1a6a3ae8f6a77ff00534f43cfe265c37b71f865"
+        },
+        "2036-why": {
+          "text": "8daadc607d0895aa8a4d89b69e4690f823c7f82edef35e7f65e5e92c5b6eb10f",
+          "proof": "fce16500eefb431a7152ab86bb64f5517651c06b304df1a2cd68a43f5cd8c95d"
+        },
+        "2036-gift": {
+          "text": "77836a106f6d7cb733a8ae561db3e2954d80a54ccfdd11514fd8d90d7e795d8e",
+          "proof": "89b31c6b7e698e041f1925fea4c71b1477f9b3f7d94219bb9771f7bab3ba611a"
+        },
+        "2036-friction": {
+          "text": "22348bdba58912ad1f07b6b0b9c7ba943ad611300835cd1a956cb1bb55d48ded",
+          "proof": "b5386a8d976409119f08771060669b41afd6d794464d9b8c6f53c19c0479a242"
+        },
+        "final-strength": {
+          "text": "0ab0639a8a122bacb461e5c35f30abed629dec9ec2f8560d3904ed765b13442d",
+          "proof": "3d4cd7b9290b026f0fa0280f96a52c6c085ebb681572a8b38ece29101e170a15"
+        },
+        "final-gift": {
+          "text": "7de4c4ef019c87ded33ad70dcce610f646bea1d5a6037c0c4ba7945af43c9963",
+          "proof": "3d4cd7b9290b026f0fa0280f96a52c6c085ebb681572a8b38ece29101e170a15"
+        },
+        "final-people": {
+          "text": "6ea96032230f8310429b80c8b4e8164d75f8b1185526b5d1d9d6848ffb34eaac",
+          "proof": "3d4cd7b9290b026f0fa0280f96a52c6c085ebb681572a8b38ece29101e170a15"
+        },
+        "final-direction": {
+          "text": "194a11c3265e3ccb5315bd79974d0aaccdfd3faa9b0aa1986db6a6a6a658c6d6",
+          "proof": "3d4cd7b9290b026f0fa0280f96a52c6c085ebb681572a8b38ece29101e170a15"
+        }
+      }
+    },
+    "04-time-unknown": {
+      "inputHash": "727c100c9e52e06507fe26f067092c31064fe160300f6013014d493bba97ffde",
+      "fixture": "tests/unit/interpretation-v4/majorEditorialSafetyFixtures.ts",
+      "clock": {
+        "evaluatedAt": "2026-10-12T12:00:00+09:00"
+      },
+      "writerVersion": "major-full-content-refinement-01-v2",
+      "frozen": "b7fdfa059059c7316f88d21891ba0e827b1b312b2683c80e0d7d042e3d461e60",
+      "blocks": {
+        "big-flow": {
+          "text": "7df9c4cf63c778bb0162ffcaaad012a0a227e3aa425b08df568d8b042a9b326c",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "first-gift": {
+          "text": "7ca95c5d8e77b7006946e115676acd475561e6fa47626a64d90114d14057ce85",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "next-boundary": {
+          "text": "c67c87cd47861dbc9cfcbd6e77962a6a3dace2fe1596b8034da3cb27a8d47be4",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "core-why-sinsal_gwimun": {
+          "text": "ff4a15cfa6cc61b52fc815519c028bef23d31c9dc652ebcae8cd849136141e60",
+          "proof": "d1e18a7fddec8dbdfcf01f751d76f23b096936e5a1bd4643d351265f00896cea"
+        },
+        "natal-strength": {
+          "text": "09465d35319c2cf82c35d383ab73e955d0eae52d97d093510a9b85268dc8deae",
+          "proof": "24e0e31d3c2bb06b8b042e321a54f2d2e7d2e40d517580d8fbe4ed700f07fdde"
+        },
+        "core-synthesis-INFJ:helping_profession_fit": {
+          "text": "8c6558e81423510ec94ace528df089d6e368380ed9b049210579926a5f44073c",
+          "proof": "a68b6592089f2e33d73109f96b8782f435a76f267c0b027ba6834290dfc72389"
+        },
+        "current-dayun-natal-response": {
+          "text": "0421698b6ecc9aaf8f68b2c9eadc06e10cd18aa7ecefcf984756b61fa58ebf5d",
+          "proof": "83c502f3c99cb39f96943cc491e481c958ef4a88f28d9d9c01d7705629379a7d"
+        },
+        "current-setting": {
+          "text": "46373f93bc5d353e162b838bb5753a0a871c2a2aca9b2923255c092b002f9494",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "money-flow": {
+          "text": "002beb69eedd729e39a5d21806874f13ef64f685da55143750c99fc02f7b7b4a",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "current-context-why-ten_god_shi_shen": {
+          "text": "7d2226884929a01bde1c0fb97c4e802232ba4e0d9685e2b0fdb271a709f7bec8",
+          "proof": "232434703e29041fd9a589cd2e17888eff526b0630feacbd7c5d5cf9de3d306b"
+        },
+        "current-context-manifest-ten_god_shi_shen": {
+          "text": "55d11e5a2f7194ba6830240cf972f6ab90a5d71bd688c73c271629734b47f363",
+          "proof": "2f6ce2a06dcc694a7b9a8040ca501d2835b51501a661cd53e2efec8a8710c530"
+        },
+        "current-context-manifest-gwiin_cheoneul": {
+          "text": "c41a0f442adc630c581206667892fc24dfde2f6d726756e9373287889dda74fb",
+          "proof": "6f8bb698cc209744548c2b8d261e79537fbff95b59d5ff28c61495be5b1de99b"
+        },
+        "current-context-natal-application": {
+          "text": "fef684c6252ec6f65755687017380f8cb64e20b15c8aa364dc42ed7fa9e43b19",
+          "proof": "48b8cfbdd0174c73af829c1ca41bc6bbc3449fb48694bcb89cbf1a026bd58592"
+        },
+        "natal-gift-0": {
+          "text": "7547aa20e93c358d233a3ae4ef0ee51d0b26e9e3913d5efd492de026b1ef12fd",
+          "proof": "569e4237c242ed37fb674ba26f7e2f7b734e1e230a448078cb8a4750e1c41f51"
+        },
+        "natal-gifts-why-sinsal_dohwa": {
+          "text": "605edc0f6271530c35db4e95fa8dc05779032d106f4f0a48707685dca16891f3",
+          "proof": "c30e5d64fff4af04ed6aef9268fa45ec32b194472e9230686221c85b9702a26e"
+        },
+        "natal-gift-1": {
+          "text": "7df793b2251ec0b4778aea5736beeae15d3e4c541b916db5235bf5d1d760d2a1",
+          "proof": "9d6adfc13094015afbb6895330efa2cdbabe35c433b516c87144f1cd2ddbb4a5"
+        },
+        "natal-gifts-synthesis-INFJ:graduate_depth_study": {
+          "text": "2349abd1d7d9ed0e06578cb894c3022d518fa49f53d02f082f4cc00e9f07e80a",
+          "proof": "122531a9851e33c55ac4321b3d29be60e6116b2e2fdf20e3c25a0b33ddb1e828"
+        },
+        "relationship-context": {
+          "text": "972114db72e37099b66be00c22146362fac34299d988ea0c475361107792f3dc",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "element-life": {
+          "text": "76a715e68d606f29418f7a002815a7ff8e17c3891f43668c35526f2d2b69501a",
+          "proof": "bfa43c68a21a220f4c91db39aacae2420544186bffa1ee33a40e42290f7de5b9"
+        },
+        "relationships-why-ten_god_shang_guan": {
+          "text": "bdde9f312e3a4d4becd7bad2646614d8681d85b0648289f693593ac3b947cdd9",
+          "proof": "d97718d53ec916d5a965b8a292a7d6d307142322c89000ce6eb5bb9a25f16ead"
+        },
+        "relationships-manifest-ten_god_shang_guan": {
+          "text": "7633c219941ea28ad7df39bf82c99c2500348a9bdf51d30f14b4d40b24f4558f",
+          "proof": "86365ca5170cd782ca9ffbc3f2e66652dc03f4f2e37d98dc43dfda7121af603b"
+        },
+        "relationships-manifest-sinsal_dohwa": {
+          "text": "8b035f15e9508943370aed747f70b1b9d05bc3898834b2de9ed8e79fd48dec3e",
+          "proof": "42c6ba739e5cc1dc78bea13fdc3ce62316b5678c775caada80f2314c33b759d7"
+        },
+        "transition-2023-focus": {
+          "text": "f1895bb70a6c8620732557fc663c9e34fdc62b522446909808465b2c2fd0b873",
+          "proof": "8f1747a1cfe73ef15074aba4e4c7fe93771333febadd02680eb3175f4377e1ef"
+        },
+        "transition-2023-work": {
+          "text": "1c8cca6762c320063875080153d2ee0ca2822c6987b91a759138b81c6069f758",
+          "proof": "8f1747a1cfe73ef15074aba4e4c7fe93771333febadd02680eb3175f4377e1ef"
+        },
+        "transition-2023-people": {
+          "text": "6d326e23f4e83aea7a39650518e218263686522ff7a25865c25160bc23ab3ba9",
+          "proof": "8f1747a1cfe73ef15074aba4e4c7fe93771333febadd02680eb3175f4377e1ef"
+        },
+        "transition-2023-life": {
+          "text": "f7fc4122ee4cb97a686df1c917a1438db1e3dcf17b6d4e2ff7723a8842faf575",
+          "proof": "8f1747a1cfe73ef15074aba4e4c7fe93771333febadd02680eb3175f4377e1ef"
+        },
+        "transition-2033-focus": {
+          "text": "acbe701906849811d08cddebf994ac63dda3c45be29da217131850c25c665e09",
+          "proof": "df9fb11770e211d5e584679e4b56df8993268fee83c67aa83cc58afec6461405"
+        },
+        "transition-2033-work": {
+          "text": "33ebb44eb5c42824914dce3ea5182ea824d7caf433fa0f00c3f7418bb3731d77",
+          "proof": "df9fb11770e211d5e584679e4b56df8993268fee83c67aa83cc58afec6461405"
+        },
+        "transition-2033-people": {
+          "text": "805efddc00a236716f8e6bf0066b148431edd5f6c14504ec40b58bf2decbd605",
+          "proof": "df9fb11770e211d5e584679e4b56df8993268fee83c67aa83cc58afec6461405"
+        },
+        "transition-2033-life": {
+          "text": "ba2e48a285b2e4828cccb7fa547e977fb584927e0998f4bd4ca0fe2401d0a995",
+          "proof": "df9fb11770e211d5e584679e4b56df8993268fee83c67aa83cc58afec6461405"
+        },
+        "next-work": {
+          "text": "f57a70b5a9f1ed0dc68309e0ec3b6a0db9c893d7bb1ff1de940b40670ca2395a",
+          "proof": "4143e391dee274f42a66c649de67dc22d7f3624c401f6fcc2cfc0843f1afe7e0"
+        },
+        "next-money": {
+          "text": "00cad18f96301e72859aa263d6916e351256cd018b2ca0bcc210b5dd2f8ce504",
+          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+        },
+        "next-people": {
+          "text": "fbcdc1d65b5a6343c74818653dbc8c341e6ae5d27bb24fadee9780ec8a9a19c1",
+          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+        },
+        "next-risk": {
+          "text": "f390d507c39aa83ec74a94e159af4b61258d0ca5c22f7d20c67e91a8f14689e8",
+          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+        },
+        "next-cycle-why-ten_god_zheng_cai": {
+          "text": "94ce4b2191824d21affa71a7882b804c67f1a5a5d4a79c7624cba6845bec5fda",
+          "proof": "485a761664e54aabc637e0bf5734ee40fe2da3e72a4a5def6316fc5bff98c538"
+        },
+        "next-cycle-why-twelve_sinsal_banan": {
+          "text": "fe0d658df59bd20bf2ef6ade887db3294c5a37c69578396a6bdb8bca69bde126",
+          "proof": "b37209e1d8e2338b1c75d0da3217b42b82203187fb5927bfe0fc110ed8c4f255"
+        },
+        "next-cycle-synthesis-INFJ:meaning_first_income_risk": {
+          "text": "8dd159b395c1681646a0fb18d5aa1ac42402057cf67bc7e2b9ca87b85b5f079a",
+          "proof": "32522268d406caab3a6bf5e5838958d34d81e8b0d58b430078b895756f10ccf4"
+        },
+        "next-cycle-natal-application": {
+          "text": "50920b7dca9bcaf78285554d1ad27c1c16ede03b0c977c15073ed2d57188df4d",
+          "proof": "f203c921440cf60103b11b50418acb211d79f8863394adfeae794c76090b4349"
+        },
+        "2023-scene": {
+          "text": "ee731ea26d33ca4d9a481cbd763510f221a27ab2fcc96f7f15e864fe939cbdbe",
+          "proof": "3ec0de5d7d397e1fe5b247cef85fe9093af557329e40ed033c71e6bb619d5709"
+        },
+        "2023-character": {
+          "text": "1063d1061556a961cb85ca00bba5bacfa185bc301f45f6e9424ddc2058ae5fcd",
+          "proof": "f7a5da4f67ba96eaaa45cfdd2440a5e6b8042ce8fb9f79cebb1229386e2f3ec5"
+        },
+        "2023-why": {
+          "text": "60095f9bd029d1026cdfac319fbd250434c2ddbbdc3899695f54309a8d77761e",
+          "proof": "2c01e174defd8a321ed101396e59426f36c09f5d7fd484c2290373a69805ebfc"
+        },
+        "2023-gift": {
+          "text": "e82bf58929992258a8bae72c306a9096429530a3f98276f142f6f90814bca74c",
+          "proof": "474531884fd54fa001d815bf4dbf940f981b9f9158b11e6899a3e4aa03afe5fa"
+        },
+        "2023-friction": {
+          "text": "cd5116b74e80978d90ca1c2163b4549281ddfa92c62b0ccd776b7f4ceae7e23d",
+          "proof": "1e315217ac51e1be5f9e12a66c0b411a59ed8fc65be21319bccbc28941afa3fd"
+        },
+        "2023-boundary": {
+          "text": "9843c474394d39759932de79c35c21b5b2da5ffc4b4891f63b6680f2692b2dd8",
+          "proof": "635402e62ac1c4a8444dbf8d6f8ff6b2d5d9d60c7c50446252b6518c6ed68dcc"
+        },
+        "2024-character": {
+          "text": "4bb663a793f5f01841c26f508172c58dcd8695261169a7f65c01fc064f493480",
+          "proof": "cb321cd49bde19bf6fac58e169265af2118b21615d5aa761e610811cd00f2968"
+        },
+        "2024-scene": {
+          "text": "fbe22bf7a5e82b9b416395eda894b1a842267f8851c1c14a0add46799973e482",
+          "proof": "c3fd946446a55045461406e21ed083a347303adf4bda8766a5ed218ef1c9634d"
+        },
+        "2024-why": {
+          "text": "e3bda039946bd4fd0d4fcddcf3caced62f9ec75874294a0243b06c0aa443d6f1",
+          "proof": "1a36aa9b978d26133893a74f39bc46279c5b93cf1f6175cc93fbaaf2c8b084e1"
+        },
+        "2024-gift": {
+          "text": "857afefd5f6c9e266070dd699d80915c31912cb941b738bb4adde4f8ebde613f",
+          "proof": "2d3ec56b4c8b3a3676903922ac3838d4710dd89dc6d100ad41e22f53e884531c"
+        },
+        "2024-friction": {
+          "text": "81ad972492cd0e12d1d1a9e3a7b17561ec5d47f8c4423fb5e397b872a65268fa",
+          "proof": "60c029cdb42c0d5c9d4027ab199f9c670bf9fbc1a8a22b5b77ce48ffa588d196"
+        },
+        "2025-character": {
+          "text": "ea207e49e803c64f6fb857028ee366481213e8949fd5fa74069b77102703de32",
+          "proof": "09487bcd6fd7cbac5e6dd427ff9a3be209b4b6641ea6b0abae927d23715a3431"
+        },
+        "2025-scene": {
+          "text": "b6b4f343b7a3f62944c7095a8fc45b46461e4e1db41d43815b7c75027a0c93e7",
+          "proof": "4d345ab5062bf3e9adc65acff35eb89489f68c458b6c0043358a41e50dea118d"
+        },
+        "2025-why": {
+          "text": "cfbe5210f533dea22d9fac2a2ca6e02d18bd69b81565c59b827d9bb61707017f",
+          "proof": "42d096459b1b2a30572805a603a461678a31272dfd6d0ec75ad4f401ffbeb1e5"
+        },
+        "2025-gift": {
+          "text": "2c013a9caca52945051f17e719e53659aa3c965c4798c852547729d56821d2e0",
+          "proof": "e3faf451acfa54d043313fa8caaee7e1679b5d90f75bcd2219d7d18c32d8f397"
+        },
+        "2025-friction": {
+          "text": "8cf18c0765a0cb8a30a8f8a40cbe092f37dcb2b265aa18bda8ebe49e84cca1c0",
+          "proof": "536d3f9cfebb15197807228090cf7e182ed9446a674502e7b9b8f080c9f3d823"
+        },
+        "2026-character": {
+          "text": "20cf7d673713640b268f01369e7ebf1630a1982f5b2f9fd782c5521e45d700cf",
+          "proof": "12a63e51f4835e5ba2abc54d655fbc122e964e6deb7d49ef341d6d7e9d31c329"
+        },
+        "2026-scene": {
+          "text": "d4ab9e192e0c43f22609c2489d01890652d754be0344916ab90d11aa1412e396",
+          "proof": "e5b6006adffc7e52a49a97b04cf9ea5e344acac99e1bf7d5396afca37da917f7"
+        },
+        "2026-why": {
+          "text": "35e8fee68aca4108fe7dbcb4956ba19d0c19a00c92bdb46c203bf0e079789859",
+          "proof": "e5dd5b16f62267b8d1244438a98afa0fdefd0b05da8d825b04d5389154d59538"
+        },
+        "2026-gift": {
+          "text": "b8a3a6089409cd874a9291c1a5bf153981612d8e448e2058bb78a648425f1045",
+          "proof": "20d7d2b9a0ec3207ed2be2c4821f2b18e2a84865d1ebd2bfc4d8443dd4f35620"
+        },
+        "2026-friction": {
+          "text": "a0e396f1fc2c0f3f33c5aa4b910f7b9f9a9d9c48e51ffb6b6771aef931f9fee8",
+          "proof": "018a7af185542783f16cd2cd454c73a1fbb2aa9c1c51c1660c260d9bab9f1873"
+        },
+        "2026-harmony": {
+          "text": "ff52c71168f9a1a12f2fb6fcfb09a74c88cf474d7458c0eabcb7fe66a59e6345",
+          "proof": "a7d3b7fe73be682e997cf118d73956bf11acf6ef720b4745893693668c21163e"
+        },
+        "year-2026-natal-response": {
+          "text": "45fa0f4f3d54cc7037a458515e6cfae01ed36b79f0133f65edb030b79f88a6e7",
+          "proof": "69d80d92700dcee9b5a69b039de2a3291b3c8621d0181234a1c44bd845b09b66"
+        },
+        "2027-character": {
+          "text": "83e6cba7ae9720896031864b6bfc0beb278210e48a11408b575e0ee8a8602eec",
+          "proof": "b2bf5fc791d416310d0dcec56c0ea095f52a6d81471afd48226bfeb5b6d20e16"
+        },
+        "2027-scene": {
+          "text": "1e1847a823e581cf4a2c3771427f1e0373bca47f84fa13e049fcf3e24198e3a2",
+          "proof": "9ec72f26c68423d197009f9d8680c7d64ce8370d64877fa3c90b73bcad108f4d"
+        },
+        "2027-why": {
+          "text": "7769b3ea9092dd0d538220e23cfb1701bf14c149719d5c0f2ec682a64fbc4478",
+          "proof": "4d83829f14dc4056ca2edcb1c36f4df00faec941cf73f380a781cc66331df79e"
+        },
+        "2027-gift": {
+          "text": "b84752929e288893aa17e306c31bbde042fb0983e4befceea8e99528bc3aa934",
+          "proof": "cdcfebfdb66dbafbd07e84460de1829033bbeb5504d3e94d586fbac56e64ece1"
+        },
+        "2027-friction": {
+          "text": "7e387548638e032cd0bcb1a71e57bd8e867a223c1149e4a45c74326d89dcea22",
+          "proof": "7860c1b26e961ae9b64223088f89a8a1a64b5f516e0274ccc195a9ad49f3800f"
+        },
+        "2028-character": {
+          "text": "1f9853ec65047b1b3d69e1d03a1039527d40e181044bd57f7829a180b9af4a6a",
+          "proof": "ff75d422e089f06959da432c070495030953bad5f6c0dbb051fc090b9f1e734e"
+        },
+        "2028-scene": {
+          "text": "ed4f6f7e298f5b4c226888ed15a3c541dd65dae3273cc086eabac20d8f363548",
+          "proof": "6512c39142b8b57a12d8ebf128a31ca3e6779c80031554688f6addf94f8dd8b4"
+        },
+        "2028-why": {
+          "text": "baa052dbbf535eb67685a22888810587ba342acdd21aa4e25d9ede6a2d046b85",
+          "proof": "1fa9a5c0fca3682758ae74001cb1d72f37636fed4a28f0ed6e33886ece9c95c8"
+        },
+        "2028-gift": {
+          "text": "414a2493eb9e95a8bc416dc43bfce8259c4a574d8c177476652cd0f3ab218cce",
+          "proof": "a58301cac6f3b6eff15f00ca166a2697d204483d2e8cf6a44d0b17925e426358"
+        },
+        "2028-friction": {
+          "text": "e78ff9ed0b5d214331a36b0e3646822697487748a18e0b6c578ffd7fbf650d98",
+          "proof": "48e404614494806e34a009872a6b5dab76c8451f57058be8100af40320b6e741"
+        },
+        "2028-harmony": {
+          "text": "b7f6641306339c8de0217a5bb4a1fb7407769f819e124e3af1ebcf99e7428e4e",
+          "proof": "ddaebc2d1a93d73ad9cdce2794bda2e1acd4ffd9526bc34257fa970bff5a156e"
+        },
+        "2029-why": {
+          "text": "270b65bb78d7020d27c916bc5d00b645c9328ed3687a80d7dd0d72d6fcf9014e",
+          "proof": "75cac42e451cab817e4582341b0b314955dc5628edf74943ee5aa8acc992e8d6"
+        },
+        "2029-scene": {
+          "text": "bc9627b5a32af5f48ff169418667201a119d1677b5d5189cc242aa609f14490e",
+          "proof": "0e6d17ead68356ec4d4ed1abf0a70af6c9d806cc7cfa092efa081322ae37b725"
+        },
+        "2029-character": {
+          "text": "ec9979332ce8bc9c5b8075312f2097baf8c458ba2da29f534c1d44db8bad4cf8",
+          "proof": "75d946a91ea9dd4e5e5a0351e29898943f12835aef931fd52cbffd26d93c7af3"
+        },
+        "2029-gift": {
+          "text": "168a23bc7b95786f911caa7e76f0510e2f42ddfd405b134330d4e9129fba01e4",
+          "proof": "8315faa0209af190b287eb38ae9378b33c1274959bb95bfb3548434914351ac6"
+        },
+        "2029-friction": {
+          "text": "8c4e5664af57dc7b71a25d375061990090faf2d0edf16b7ffe43f479a6097a09",
+          "proof": "0e6d17ead68356ec4d4ed1abf0a70af6c9d806cc7cfa092efa081322ae37b725"
+        },
+        "2030-character": {
+          "text": "8a6f600ba956efa2777a11af286e334c7e7d2653e703cf261e5f363d10c17229",
+          "proof": "9de25c2a4c01f58383f003dfa024d7be4e5f923e8872370ceade481306c5ee9b"
+        },
+        "2030-scene": {
+          "text": "ed71b0988f00d10003d5ba41c503ad553254867ee398fcd182eeb4f94bf0fb65",
+          "proof": "60906fac02555e285794ec8f737d54bf156599ede2cc6d928ea0f1b4b29e9258"
+        },
+        "2030-why": {
+          "text": "9b019781112e4aedebd884e3ba2f8e27e8d5783f8f1a6a970ef7a33caafc1ba1",
+          "proof": "c201c83c7397f7ae951bc7a7e488e16ff21c107b2586f148fa9987e5866e1987"
+        },
+        "2030-gift": {
+          "text": "32c95e2dfe56be3c62839dcb4803d0e0e49372f63d34cd30baa130373a84e2ab",
+          "proof": "b651b07f246a97b2f1c5f30dbba86a2f9a0589613ee4dd5760445c7c3ed22617"
+        },
+        "2030-friction": {
+          "text": "15652e622608ef1b8182afc8b51e4e9089fc0c0bb04defa7515862b176bf0e2f",
+          "proof": "304b3e31236bd90c2e0f72ed2f014c44ba74b100927850997fb66f6146431d82"
+        },
+        "2031-character": {
+          "text": "91efb91b44759b7cea96e46b03669bb9536a2ea5426b2d2603ab8706bc020939",
+          "proof": "1bbb3a48d3ee7c0b8a58aed8973000e69379e795bbb6f14dd0aac8a98f483ad7"
+        },
+        "2031-scene": {
+          "text": "3d546155c5acad19d5082c9d62be8ccf8d9ef5ac2a988d25c85e399eab608016",
+          "proof": "92e40122e1fbf37bf9b5e545096fbe6932de1771b10589e6bac275eb02da480a"
+        },
+        "2031-why": {
+          "text": "3bc0000494410daca51451d69d85c67779fcc44a7501250b783da479ef391771",
+          "proof": "614cb521509ac53beb5c2373f1f68253d96061e1ccfc9a4ee246187bc2ec4c3b"
+        },
+        "2031-gift": {
+          "text": "c6efd130704dbf8f0ae141dcdc928bb88c9a19f0d4e24903b50952342f57546c",
+          "proof": "46ef2ab16f3ce9d5a3f0696f93fd4377cbebe74a4f112a898d2b88899992be87"
+        },
+        "2031-friction": {
+          "text": "4b718253f4c361d0f1774deceaae127ce40058e8b660c97ea009c4061cee1c22",
+          "proof": "d8aa0f9c81aa1725d0abb81426438ddd4ae52490e63992bba31000c9e225706e"
+        },
+        "2032-scene": {
+          "text": "33a7e918c035ab79363d7fd5a34a4746b953919022e7eebbbf4aa12c4373e85f",
+          "proof": "45deaa7f7e2e8751ddbf344975b8f62917b3c796ee0de85e5ec39841be97e8ec"
+        },
+        "2032-character": {
+          "text": "9640ca336b2b1d5be6b2aef2e7c5d00615f4efbd8de205cc20943c7ee7ea87e7",
+          "proof": "66d81eec179138ea9786fe1aa4aeb1fe149d0cb5ca7b650e50f865e1521c9a21"
+        },
+        "2032-why": {
+          "text": "788f0a0f87d02acba5c51c69c4fe8d2bb24ce6b663d9571521aad2489e48be22",
+          "proof": "a7285f43c5f670efad1342539b28d0781183e62056076f2785ae38e11d88fcc1"
+        },
+        "2032-gift": {
+          "text": "c2b2a987e890938e3a5ec3d7cbc3d8bb636030f4e77d145ea51c5d9c7ec283a4",
+          "proof": "a64ecb87cf4afafb08ad04e2f5c69244372455d3cd3b04f975ee9e898c66b4cb"
+        },
+        "2032-friction": {
+          "text": "4828b41ec6793bb11cfca4dd9dd1a45151551474d5235812cf6c28570f739528",
+          "proof": "689e6c168d13e73a29f9f9b5762a9866e76b5281ba7b8863f8b3e3a0d57ceed2"
+        },
+        "2033-scene": {
+          "text": "a0e1a97690faedcbc19d1c35417de50e33d6c8eed56a22b1fc315f2cebdda537",
+          "proof": "075c5485a8cae6bdd2114f3745c85901bdd0bb97f9cbb537e5da926b4aa744f0"
+        },
+        "2033-character": {
+          "text": "5ff9529de4aa7bb0a1e266f6be8a7332b770e7f0480c14977dd1ecb6d642dac6",
+          "proof": "47919fe972cdd28963fdae786e278507f1881f48e2ca4c2a0c2cf0a4429fd4fd"
+        },
+        "2033-why": {
+          "text": "6e8257a68720bb7c9cf9fc0f094af1827cdd32ad3697251dcdde60c1ce014379",
+          "proof": "5338d747dfd3963c23f4f4fb34f07cac205085d88822366400042cd06bf23476"
+        },
+        "2033-gift": {
+          "text": "47c540f2262765e5ac6e8ee179637e60466f111daacc054394f39319af2758a6",
+          "proof": "c89f620fb378cb5c062525b7dcfd6ee3eb9717af9a47ec1f9437ec3411970c7c"
+        },
+        "2033-friction": {
+          "text": "3381644dc20af58dcf20053f26363e108231dfcb1c3174f04e60d3bbc2ad2250",
+          "proof": "075c5485a8cae6bdd2114f3745c85901bdd0bb97f9cbb537e5da926b4aa744f0"
+        },
+        "2033-harmony": {
+          "text": "d69c2e292309aba67961d060517178d61821740fb18a8825909c6c2e60ffa83e",
+          "proof": "075c5485a8cae6bdd2114f3745c85901bdd0bb97f9cbb537e5da926b4aa744f0"
+        },
+        "2033-boundary": {
+          "text": "af5b45500583a3dfd58f8218448268fa08ca98de07513358d09a6e27998d30a9",
+          "proof": "075c5485a8cae6bdd2114f3745c85901bdd0bb97f9cbb537e5da926b4aa744f0"
+        },
+        "year-2033-natal-response": {
+          "text": "2794c17380c664843051f11b1c76fb4e057e2318ef6dd0e217d3009d014137df",
+          "proof": "d95a574220a6c2f2fcdcd1976ea4cc6e23341ecbbeecb73ffc3c4149491ab838"
+        },
+        "2034-character": {
+          "text": "d9dc302a2e267d2299aec8f4364ad20da34fce73a67b450f3fcb765b4e7b833a",
+          "proof": "0e153a120138af813bb8634d07cca5ce5c4c5bceb89670f29234071466884dec"
+        },
+        "2034-scene": {
+          "text": "1890f0d86558ef7c5e6761db06e0c681fbb2d57ea950d19ec071892775b92178",
+          "proof": "ecde85e686380c4ffa53118ca76c3dd69fea7d026e7beb647ef0ae1b648a1a60"
+        },
+        "2034-gift": {
+          "text": "4a450ceb19ea252157ff27ad2b2c05bd240628a041ed0a252e1f2f7a63af741e",
+          "proof": "d407ff9b00a9d17b6a7fadc45c136ce710c10a7c3a52beffdfe8283b54bc5c97"
+        },
+        "2035-character": {
+          "text": "487a9430504ce1dc846e949d6ee2b52fe5682c84fbe7a909b312a3f0bf08043a",
+          "proof": "73f7f549fd8159d102a3bfc94b3ba759003ad1d619320b7318984eea7db9cdc4"
+        },
+        "2035-scene": {
+          "text": "fcb9e066d60b4b92cc68f901988d8c7deafdd2982a60c86946e4bc5ed9757802",
+          "proof": "cb5b8334788dce3f5019ab67c849310efcaddbb3b8b88ac980b30d6a7ef76949"
+        },
+        "2035-why": {
+          "text": "35834d0b970e5b4b667695ff45a35a2e3769947c97180900fa81bd9d08f341b3",
+          "proof": "1004f6fe2c023aee0e8df046f687fe16090a8248831037d53e5af0c755ca3f11"
+        },
+        "2035-gift": {
+          "text": "586eff66260df7863a9cd1144ac9e34eb1c67e08166f99e27c11e34c8f219e1c",
+          "proof": "24938f141e913a823a1723c04f5f6b7f8a7a3fcc4f14785efa65949aeb179417"
+        },
+        "2035-friction": {
+          "text": "430a9b0fc8947d49c4ec9a3850b2e702d261a8f57a742db43642d635cdbce952",
+          "proof": "cb5b8334788dce3f5019ab67c849310efcaddbb3b8b88ac980b30d6a7ef76949"
+        },
+        "2036-character": {
+          "text": "0a048b2a95653691f08ec679ab603d41ff92fc105a82b31408bab8fb446af409",
+          "proof": "6271c1c3b8df6e1f2f79672e96e9934d10e847eaefe5a9d057fe2bf63e67543a"
+        },
+        "2036-scene": {
+          "text": "4e5994fb189ea51a3159dfe465d1410f92854bfaa50a78187dfc3a381be350a5",
+          "proof": "17c612bc8f92f1cfddeb683afe76a32ccab30822fef053eeda55b99460d3073e"
+        },
+        "2036-why": {
+          "text": "0570dacda87f18de442c40fa739ea854601dde2cb561f81dc8805c2e82f8d802",
+          "proof": "3a36bb1f83dc7c23b13d9fca3be1f2a61d4b794b8097be918b0de962a2b29dc9"
+        },
+        "2036-gift": {
+          "text": "e1544291ffe4804b261d2d85b400d0680b54dbdc2db9b4e81125d4ff0e5c45bd",
+          "proof": "4adfe111d301dd38c1d5fc2e4927beee4e003246d88bb7b000857b927993c306"
+        },
+        "2036-friction": {
+          "text": "37f56a073466866ca0cc375621fcc958233f9c916b768e90c5330648eee6ad3b",
+          "proof": "17c612bc8f92f1cfddeb683afe76a32ccab30822fef053eeda55b99460d3073e"
+        },
+        "final-strength": {
+          "text": "b4d4609aebc72c3161833e72ae8e30d73d5ad337fc3778b912be32643a97ca7b",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "final-gift": {
+          "text": "2767e74c08b38934d8640fe2578cce3193d77d4b5bfddef03a814b786739f211",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "final-people": {
+          "text": "c7478d2f13e7d9c6c7ff5205f30fc6d8c1e13ff7ea75cde8f004a356925b6d3c",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "final-direction": {
+          "text": "d374c21fc797322b72ab81b66657076b816964c44c2084b8cd8175b86190e396",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        }
+      }
+    },
+    "05-mbti-unknown": {
+      "inputHash": "d3396545f331250ccc4cb5c9610a5dd01df699c3511c4e5b3e6f92cdc38e046c",
+      "fixture": "tests/unit/interpretation-v4/majorEditorialSafetyFixtures.ts",
+      "clock": {
+        "evaluatedAt": "2026-10-12T12:00:00+09:00"
+      },
+      "writerVersion": "major-full-content-refinement-01-v2",
+      "frozen": "d775c25a829ba5f39f064dd0240735e9f51168768dd25633df1bd2e618c515d5",
+      "blocks": {
+        "big-flow": {
+          "text": "7df9c4cf63c778bb0162ffcaaad012a0a227e3aa425b08df568d8b042a9b326c",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "first-gift": {
+          "text": "7ca95c5d8e77b7006946e115676acd475561e6fa47626a64d90114d14057ce85",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "next-boundary": {
+          "text": "441a5e706cba13852cc93b80b092bd8269d1f41d9b27c68e9f2fb7eb474d323b",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "core-why-day_pillar_gyeongja": {
+          "text": "63afe8fb25909c6f85963f26b524c15bed825953a78730201dc83ecbf5470a2e",
+          "proof": "987526782f0875412842b2e50fd9622bb4ac5ddba8dbc3b1ff3a39266b2037b5"
+        },
+        "natal-strength": {
+          "text": "09465d35319c2cf82c35d383ab73e955d0eae52d97d093510a9b85268dc8deae",
+          "proof": "24e0e31d3c2bb06b8b042e321a54f2d2e7d2e40d517580d8fbe4ed700f07fdde"
+        },
+        "current-dayun-natal-response": {
+          "text": "31167f0fd47e43e2c6a5371690fe3367d5a43baa67f840ec0ebd1ef7c8a7f08e",
+          "proof": "b096512409c031587f60d8c1d0b5b4b5ea5b96957d20ec85ed00bdd19330add3"
+        },
+        "current-setting": {
+          "text": "46373f93bc5d353e162b838bb5753a0a871c2a2aca9b2923255c092b002f9494",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "money-flow": {
+          "text": "002beb69eedd729e39a5d21806874f13ef64f685da55143750c99fc02f7b7b4a",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "current-context-why-ten_god_zheng_yin": {
+          "text": "276d35b07827161d7f59c3a8d36b16bb943bf3fb52e7c33335a8608490c0c9a3",
+          "proof": "cf664eb33e30cd86703a53d01bd96a43ae4a05afbe68448320e0a2091fae96c1"
+        },
+        "current-context-why-gwiin_cheoneul": {
+          "text": "9dc86fba7c959dc19a7efd753806f090a06ba5dc7857775645b485e454f9f535",
+          "proof": "64af5a49039ef25a9d2aa1bfdb97a987eb6db863c78ebc104e8d06724e7f48c9"
+        },
+        "current-context-manifest-ten_god_zheng_yin": {
+          "text": "27aed413b59b0d5fa684177cd42e848d6255fd8c96958aa0b57891617cf451b7",
+          "proof": "efe893638f4bf64d7482880e7bb58ac7a1c4beb2215f2709b593a2dac84e62ea"
+        },
+        "current-context-manifest-gwiin_cheoneul": {
+          "text": "c41a0f442adc630c581206667892fc24dfde2f6d726756e9373287889dda74fb",
+          "proof": "6f8bb698cc209744548c2b8d261e79537fbff95b59d5ff28c61495be5b1de99b"
+        },
+        "current-context-natal-application": {
+          "text": "18d1ed7d11f1c0a8c24de2dafd9b1604c372906ea2bb013d30bc8e2b56c79bed",
+          "proof": "28d37d95bad23516c64d08d338cf130aae47422b24a2a0ef4c611dc7919fca23"
+        },
+        "natal-gift-0": {
+          "text": "7547aa20e93c358d233a3ae4ef0ee51d0b26e9e3913d5efd492de026b1ef12fd",
+          "proof": "569e4237c242ed37fb674ba26f7e2f7b734e1e230a448078cb8a4750e1c41f51"
+        },
+        "natal-gifts-why-sinsal_dohwa": {
+          "text": "605edc0f6271530c35db4e95fa8dc05779032d106f4f0a48707685dca16891f3",
+          "proof": "c30e5d64fff4af04ed6aef9268fa45ec32b194472e9230686221c85b9702a26e"
+        },
+        "natal-gift-1": {
+          "text": "7df793b2251ec0b4778aea5736beeae15d3e4c541b916db5235bf5d1d760d2a1",
+          "proof": "9d6adfc13094015afbb6895330efa2cdbabe35c433b516c87144f1cd2ddbb4a5"
+        },
+        "relationship-context": {
+          "text": "972114db72e37099b66be00c22146362fac34299d988ea0c475361107792f3dc",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "element-life": {
+          "text": "76a715e68d606f29418f7a002815a7ff8e17c3891f43668c35526f2d2b69501a",
+          "proof": "bfa43c68a21a220f4c91db39aacae2420544186bffa1ee33a40e42290f7de5b9"
+        },
+        "relationships-why-ten_god_shang_guan": {
+          "text": "bdde9f312e3a4d4becd7bad2646614d8681d85b0648289f693593ac3b947cdd9",
+          "proof": "d97718d53ec916d5a965b8a292a7d6d307142322c89000ce6eb5bb9a25f16ead"
+        },
+        "relationships-why-sinsal_gwimun": {
+          "text": "bd68a0cf51787749b7c063a8e652435c113949b90c5a47e51dc6ed72defafd60",
+          "proof": "d1e18a7fddec8dbdfcf01f751d76f23b096936e5a1bd4643d351265f00896cea"
+        },
+        "relationships-manifest-ten_god_shang_guan": {
+          "text": "7633c219941ea28ad7df39bf82c99c2500348a9bdf51d30f14b4d40b24f4558f",
+          "proof": "86365ca5170cd782ca9ffbc3f2e66652dc03f4f2e37d98dc43dfda7121af603b"
+        },
+        "relationships-manifest-sinsal_gwimun": {
+          "text": "a4f757b7e168b9e6f4275a77e9aecce468a069719a562559b8391d6a5a6bc7f5",
+          "proof": "d4c28d5077b775c6b28f186ce070006b563f50f0ebb8522d5524cb0268733da2"
+        },
+        "transition-2023-focus": {
+          "text": "2403aa76c15be744f89b6062476f1540dac0a06a6173b1b3515b64478ecb280d",
+          "proof": "64127db6d614f00b719fa36a756bbbebab186b537ce41589d2261f005d9f7013"
+        },
+        "transition-2023-work": {
+          "text": "1c8cca6762c320063875080153d2ee0ca2822c6987b91a759138b81c6069f758",
+          "proof": "64127db6d614f00b719fa36a756bbbebab186b537ce41589d2261f005d9f7013"
+        },
+        "transition-2023-people": {
+          "text": "6d326e23f4e83aea7a39650518e218263686522ff7a25865c25160bc23ab3ba9",
+          "proof": "64127db6d614f00b719fa36a756bbbebab186b537ce41589d2261f005d9f7013"
+        },
+        "transition-2023-life": {
+          "text": "f7fc4122ee4cb97a686df1c917a1438db1e3dcf17b6d4e2ff7723a8842faf575",
+          "proof": "64127db6d614f00b719fa36a756bbbebab186b537ce41589d2261f005d9f7013"
+        },
+        "transition-2033-focus": {
+          "text": "90c5a1f7528689881b4c911e829deeabfda7ba2161b05f576e163d0d088e2621",
+          "proof": "c22764dc7697bb390e8c587145395770ca7a0854ed2c5c69683bb480d6f1a4e0"
+        },
+        "transition-2033-work": {
+          "text": "33ebb44eb5c42824914dce3ea5182ea824d7caf433fa0f00c3f7418bb3731d77",
+          "proof": "c22764dc7697bb390e8c587145395770ca7a0854ed2c5c69683bb480d6f1a4e0"
+        },
+        "transition-2033-people": {
+          "text": "805efddc00a236716f8e6bf0066b148431edd5f6c14504ec40b58bf2decbd605",
+          "proof": "c22764dc7697bb390e8c587145395770ca7a0854ed2c5c69683bb480d6f1a4e0"
+        },
+        "transition-2033-life": {
+          "text": "ba2e48a285b2e4828cccb7fa547e977fb584927e0998f4bd4ca0fe2401d0a995",
+          "proof": "c22764dc7697bb390e8c587145395770ca7a0854ed2c5c69683bb480d6f1a4e0"
+        },
+        "next-work": {
+          "text": "f57a70b5a9f1ed0dc68309e0ec3b6a0db9c893d7bb1ff1de940b40670ca2395a",
+          "proof": "4143e391dee274f42a66c649de67dc22d7f3624c401f6fcc2cfc0843f1afe7e0"
+        },
+        "next-money": {
+          "text": "00cad18f96301e72859aa263d6916e351256cd018b2ca0bcc210b5dd2f8ce504",
+          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+        },
+        "next-people": {
+          "text": "fbcdc1d65b5a6343c74818653dbc8c341e6ae5d27bb24fadee9780ec8a9a19c1",
+          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+        },
+        "next-risk": {
+          "text": "f390d507c39aa83ec74a94e159af4b61258d0ca5c22f7d20c67e91a8f14689e8",
+          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+        },
+        "next-cycle-why-ten_god_zheng_cai": {
+          "text": "94ce4b2191824d21affa71a7882b804c67f1a5a5d4a79c7624cba6845bec5fda",
+          "proof": "485a761664e54aabc637e0bf5734ee40fe2da3e72a4a5def6316fc5bff98c538"
+        },
+        "next-cycle-why-twelve_sinsal_banan": {
+          "text": "fe0d658df59bd20bf2ef6ade887db3294c5a37c69578396a6bdb8bca69bde126",
+          "proof": "b37209e1d8e2338b1c75d0da3217b42b82203187fb5927bfe0fc110ed8c4f255"
+        },
+        "next-cycle-natal-application": {
+          "text": "50920b7dca9bcaf78285554d1ad27c1c16ede03b0c977c15073ed2d57188df4d",
+          "proof": "f203c921440cf60103b11b50418acb211d79f8863394adfeae794c76090b4349"
+        },
+        "2023-scene": {
+          "text": "ee731ea26d33ca4d9a481cbd763510f221a27ab2fcc96f7f15e864fe939cbdbe",
+          "proof": "2d0ac05a78c70a580b426d170ac99a1c75492868d7e56a73752b417c6afe6724"
+        },
+        "2023-character": {
+          "text": "a44449d7e98578fbc07096086572a24d8bd532c7cb4c64f2031ce91950ffb284",
+          "proof": "2a20059b4ad8ae74120fd5b198489dac4141095bf5805c652e30def779f81d97"
+        },
+        "2023-why": {
+          "text": "07de1fd1696c209d51426aa4feaf06f8da7c923186761c798bd2f4823df92d41",
+          "proof": "6d8578567f809f1f17d40a057fd9f2a687591757e99902e52d7ed8d98a082fae"
+        },
+        "2023-gift": {
+          "text": "e82bf58929992258a8bae72c306a9096429530a3f98276f142f6f90814bca74c",
+          "proof": "782506d874e0a2471394bff485421f639e34eb8ca646452aea7e1fcf433d28c2"
+        },
+        "2023-friction": {
+          "text": "cd5116b74e80978d90ca1c2163b4549281ddfa92c62b0ccd776b7f4ceae7e23d",
+          "proof": "061bddae3955e7a348afcc09765d5718995140835a68bd347a02c397497a06bd"
+        },
+        "2023-boundary": {
+          "text": "c036109ff56ddc15862d951e3c24309f050b18e77cbda5a2f4363860442ead13",
+          "proof": "870dbe34ddfe1cd30058411a5636ae28cd5606af39ba9f61294420444c40f2a8"
+        },
+        "2024-character": {
+          "text": "4bb663a793f5f01841c26f508172c58dcd8695261169a7f65c01fc064f493480",
+          "proof": "2ddf2980555486476fc1bb2e3b19a678fa331d225493732938a001e6dd508c56"
+        },
+        "2024-scene": {
+          "text": "fbe22bf7a5e82b9b416395eda894b1a842267f8851c1c14a0add46799973e482",
+          "proof": "ab09da4b812f4884d05189a105ea319747de89cb42864738c1242f6e516277a7"
+        },
+        "2024-why": {
+          "text": "e3bda039946bd4fd0d4fcddcf3caced62f9ec75874294a0243b06c0aa443d6f1",
+          "proof": "cba01e524ce592226113e78a5154521a4f8cdd482b0ca20d21742ddc30e7cdd8"
+        },
+        "2024-gift": {
+          "text": "857afefd5f6c9e266070dd699d80915c31912cb941b738bb4adde4f8ebde613f",
+          "proof": "6bf1fdad0944db75a1d96d2f575d690d1d90dc5f8289a3fc3dc1411e7a7f8915"
+        },
+        "2024-friction": {
+          "text": "81ad972492cd0e12d1d1a9e3a7b17561ec5d47f8c4423fb5e397b872a65268fa",
+          "proof": "3d7ac5a373de96899c5233db7ebd83282c9876f888141f891e7598d416cac6f3"
+        },
+        "2025-character": {
+          "text": "ea207e49e803c64f6fb857028ee366481213e8949fd5fa74069b77102703de32",
+          "proof": "c698a9832794035a84c256d045b19e8d9d04c47643133a890fc20d57d977edd3"
+        },
+        "2025-scene": {
+          "text": "b6b4f343b7a3f62944c7095a8fc45b46461e4e1db41d43815b7c75027a0c93e7",
+          "proof": "cb39a5768f2108b3c9c6fefbcd42ce77a3beb07fe0318007c06ea006853520a0"
+        },
+        "2025-why": {
+          "text": "cfbe5210f533dea22d9fac2a2ca6e02d18bd69b81565c59b827d9bb61707017f",
+          "proof": "166af31155df0b36c6fd61baaf3c750f73f45b9973fc5ef726f502baa1f36397"
+        },
+        "2025-gift": {
+          "text": "2c013a9caca52945051f17e719e53659aa3c965c4798c852547729d56821d2e0",
+          "proof": "b48607a5fe42e496ac8106dc30bf289928ca14562d4f8cf905297ec64e91a604"
+        },
+        "2025-friction": {
+          "text": "8cf18c0765a0cb8a30a8f8a40cbe092f37dcb2b265aa18bda8ebe49e84cca1c0",
+          "proof": "1f6941e8e33969194885400936c193b036b1db0e32cbef9eade9705764eca3d7"
+        },
+        "2026-character": {
+          "text": "20cf7d673713640b268f01369e7ebf1630a1982f5b2f9fd782c5521e45d700cf",
+          "proof": "a340f29b98494cf7c1aff5866a63f7e221d7b7833090c55aab6eb72d5696329a"
+        },
+        "2026-scene": {
+          "text": "d4ab9e192e0c43f22609c2489d01890652d754be0344916ab90d11aa1412e396",
+          "proof": "3819418ac33cc9f84d317fd14a094ecfd9d26328b47e47f96f6143aa524fcc5f"
+        },
+        "2026-why": {
+          "text": "35e8fee68aca4108fe7dbcb4956ba19d0c19a00c92bdb46c203bf0e079789859",
+          "proof": "7d259b10e7300cf8d7340b130b4fd3768f713e51e5ddbc43493c1d15064b00ef"
+        },
+        "2026-gift": {
+          "text": "b8a3a6089409cd874a9291c1a5bf153981612d8e448e2058bb78a648425f1045",
+          "proof": "b8632068a551e6e918da58f93b6daddd6530efea8458c95c1bc6258274adac1b"
+        },
+        "2026-friction": {
+          "text": "a0e396f1fc2c0f3f33c5aa4b910f7b9f9a9d9c48e51ffb6b6771aef931f9fee8",
+          "proof": "9820f5b43997b38b58731fe04cfc51b7dfbe4d36addbf0ea8e96ffcfd3df85bc"
+        },
+        "2026-harmony": {
+          "text": "ff52c71168f9a1a12f2fb6fcfb09a74c88cf474d7458c0eabcb7fe66a59e6345",
+          "proof": "504a14e9f35e1ebac62f6957e62fe83ab702f2828caa815e2e9ab39d721e4e47"
+        },
+        "year-2026-natal-response": {
+          "text": "b9c70787cf950d68728224e74c8f5ccdd3020e78efbc374f49d9ea4e81fbad1b",
+          "proof": "be751638bbce351c99aa8162e5dd6a35d661eadd197f5332aa7cbf9ea0ffe44a"
+        },
+        "2027-character": {
+          "text": "83e6cba7ae9720896031864b6bfc0beb278210e48a11408b575e0ee8a8602eec",
+          "proof": "5322f13f9d970136ead873bf15d202e82abf8b8bfb438c0be7a2c2f1ab89d5c7"
+        },
+        "2027-scene": {
+          "text": "1e1847a823e581cf4a2c3771427f1e0373bca47f84fa13e049fcf3e24198e3a2",
+          "proof": "44d950e7817c608fbed2af882a8bd73ea1a3b6791def4083850298a4e7090fc9"
+        },
+        "2027-why": {
+          "text": "7769b3ea9092dd0d538220e23cfb1701bf14c149719d5c0f2ec682a64fbc4478",
+          "proof": "788fa15913c8429ef58a6915f8364f79508740297d933b7483acac92183501c6"
+        },
+        "2027-gift": {
+          "text": "d91e0512fe0efcde99e7d356a2dc5c011ef44165a3202ee7709abf9c92faa961",
+          "proof": "686910c67f97e594a4c4d1197631375cedaefe9d137127ef991d3e821d6652ff"
+        },
+        "2027-friction": {
+          "text": "7e387548638e032cd0bcb1a71e57bd8e867a223c1149e4a45c74326d89dcea22",
+          "proof": "32ae4a2396b416218c66aa23248cc2107a65b6114470dd2f6a4e1f39cd073ef4"
+        },
+        "2027-harmony": {
+          "text": "a450c54e7ed6ac1faae523a2108d589a00bda31ac536024d3fceecc6a9de67b3",
+          "proof": "995354098c1de6508ca5bbe85d38b8c7e436be916fc065f5532f41a75225ecff"
+        },
+        "2028-character": {
+          "text": "1f9853ec65047b1b3d69e1d03a1039527d40e181044bd57f7829a180b9af4a6a",
+          "proof": "ff75d422e089f06959da432c070495030953bad5f6c0dbb051fc090b9f1e734e"
+        },
+        "2028-scene": {
+          "text": "ed4f6f7e298f5b4c226888ed15a3c541dd65dae3273cc086eabac20d8f363548",
+          "proof": "6512c39142b8b57a12d8ebf128a31ca3e6779c80031554688f6addf94f8dd8b4"
+        },
+        "2028-why": {
+          "text": "baa052dbbf535eb67685a22888810587ba342acdd21aa4e25d9ede6a2d046b85",
+          "proof": "1fa9a5c0fca3682758ae74001cb1d72f37636fed4a28f0ed6e33886ece9c95c8"
+        },
+        "2028-gift": {
+          "text": "b1895d584bd4d3a126b754a5f5572e55c56d84f718eef99b517f7b5682deede5",
+          "proof": "a58301cac6f3b6eff15f00ca166a2697d204483d2e8cf6a44d0b17925e426358"
+        },
+        "2028-friction": {
+          "text": "e78ff9ed0b5d214331a36b0e3646822697487748a18e0b6c578ffd7fbf650d98",
+          "proof": "48e404614494806e34a009872a6b5dab76c8451f57058be8100af40320b6e741"
+        },
+        "2029-why": {
+          "text": "270b65bb78d7020d27c916bc5d00b645c9328ed3687a80d7dd0d72d6fcf9014e",
+          "proof": "c15a2497a03a672f137141f1921d47a8748c5c5d1467bd92050e9c671c318cb8"
+        },
+        "2029-scene": {
+          "text": "bc9627b5a32af5f48ff169418667201a119d1677b5d5189cc242aa609f14490e",
+          "proof": "977548c17cfcafcf12aafa6c3bd693b240ea86114b34432418221ea30e5b9388"
+        },
+        "2029-character": {
+          "text": "ec9979332ce8bc9c5b8075312f2097baf8c458ba2da29f534c1d44db8bad4cf8",
+          "proof": "6bed1281d820a27f7b1afdc09a2a6995df58697778b894cb1db0fa3b983b8988"
+        },
+        "2029-gift": {
+          "text": "168a23bc7b95786f911caa7e76f0510e2f42ddfd405b134330d4e9129fba01e4",
+          "proof": "65dbac441a99e3ce37bebcaee31a3665720186aa653893d4399022aae9c1ff23"
+        },
+        "2029-friction": {
+          "text": "564cce4e42fed877f9d7846132ff2d70f5995ed893d082f2f2b55796ff29c289",
+          "proof": "977548c17cfcafcf12aafa6c3bd693b240ea86114b34432418221ea30e5b9388"
+        },
+        "2030-character": {
+          "text": "8a6f600ba956efa2777a11af286e334c7e7d2653e703cf261e5f363d10c17229",
+          "proof": "7ab6038d4a63fcfb22b98813c01513b82401493aee7bb99b567b3d5d0f4b4eb1"
+        },
+        "2030-scene": {
+          "text": "ed71b0988f00d10003d5ba41c503ad553254867ee398fcd182eeb4f94bf0fb65",
+          "proof": "fcfb1f34554088902b2532f4ddbb7deacafa2a671f3afb0ccdc0f6afb8307b16"
+        },
+        "2030-why": {
+          "text": "9b019781112e4aedebd884e3ba2f8e27e8d5783f8f1a6a970ef7a33caafc1ba1",
+          "proof": "8292ccf248978263ba3bb75d53abee11e49846e514dc2c2031d4d1a0750e84cc"
+        },
+        "2030-gift": {
+          "text": "32c95e2dfe56be3c62839dcb4803d0e0e49372f63d34cd30baa130373a84e2ab",
+          "proof": "f2ae3c6a735fd1a564d2af9147540217e41781a74cfcb6fe657c2a5535f7485d"
+        },
+        "2030-friction": {
+          "text": "15652e622608ef1b8182afc8b51e4e9089fc0c0bb04defa7515862b176bf0e2f",
+          "proof": "951038acc04e5a445edd474037d19d7b93c0f10b890827fbcb3ae93e21a21135"
+        },
+        "2031-character": {
+          "text": "91efb91b44759b7cea96e46b03669bb9536a2ea5426b2d2603ab8706bc020939",
+          "proof": "5cf24b8112592f6a3195b314c77e4a422637d42c8c27db964a4c68d0b15cf361"
+        },
+        "2031-scene": {
+          "text": "07765f0ea703a3208cdf51261d97efe42664cf952ff150d2fcf7f1ee4f866e99",
+          "proof": "3a08d3d012f3728d112f77104112d9d761db78dea9f8ca90fa0dbed82252a005"
+        },
+        "2031-why": {
+          "text": "3bc0000494410daca51451d69d85c67779fcc44a7501250b783da479ef391771",
+          "proof": "1899c66a91c3a25161a78aa35cc68636563eecc051f22941b906d6904ce74541"
+        },
+        "2031-gift": {
+          "text": "a24dd4f30562c9c39afb87bf4bae1e5549bcadf7bc55d3900e9dc9ce6859b239",
+          "proof": "3a8e5708f83c442ba1adc3ac71f697db3998a81467794d4de3bdd0fe880d5688"
+        },
+        "2031-friction": {
+          "text": "4b718253f4c361d0f1774deceaae127ce40058e8b660c97ea009c4061cee1c22",
+          "proof": "212d9040eb9f46cf1bac024b6fd7eff3cd29ff7a120cc438c022fdde33a7ebac"
+        },
+        "2032-scene": {
+          "text": "4f48ed090ec7bea0bb991f3881c7ece4fdadfb26ef2a60af834b774bb8a6ff7e",
+          "proof": "5e61efd5836e19daa6ac490c0de1ebfd27b9d1db95448dd200c639c40ae9b097"
+        },
+        "2032-character": {
+          "text": "9640ca336b2b1d5be6b2aef2e7c5d00615f4efbd8de205cc20943c7ee7ea87e7",
+          "proof": "c86ea93c7038d10b90e03f9d3af7e422a62d15cb1031ba0acf5dae49240b6e97"
+        },
+        "2032-why": {
+          "text": "788f0a0f87d02acba5c51c69c4fe8d2bb24ce6b663d9571521aad2489e48be22",
+          "proof": "c4f44430d0f74261abd4fcfae6e4e769dbcd52c3c4683fdbac14986ac311f3c7"
+        },
+        "2032-gift": {
+          "text": "e4e70505adc1266c49e0d12b27f20155c5c2bc7d0ea793d7180e4500ef16f194",
+          "proof": "ed20a5471544573bf5dac71d393d4df538b9e4fc9ce5ffb857fb97424be91cd4"
+        },
+        "2032-friction": {
+          "text": "4828b41ec6793bb11cfca4dd9dd1a45151551474d5235812cf6c28570f739528",
+          "proof": "c2aa7b2ce8ef67e3be787c95613d0278350d1f24aabba306f8aee7fae213c7a0"
+        },
+        "2033-scene": {
+          "text": "2eb0a19d1c92a7cad19d5c8570859e3d57776ec3ea24fab0b8cea327abbea103",
+          "proof": "f401e9176c820fa5374b5511698615b9136de601928994225022f07f14277314"
+        },
+        "2033-character": {
+          "text": "6af264ca17a9c66ce356cee08a43dd556d37b74b434db9f299eefaef262d1577",
+          "proof": "bd095eeb2c7ed546491cb96bdcdd4bf6b43febd97f24922d6cae1e6804c2747f"
+        },
+        "2033-why": {
+          "text": "30ba0f804b719f370d48e1597087db8688f00412e263a673c09984a283e4dd4f",
+          "proof": "0dfa55ec48bf837b4f6dd9cf5811e194cc0091f4e3b28a63f9b5f8ce12cefae9"
+        },
+        "2033-gift": {
+          "text": "5b5c410368c0daae1f9e2a7fd961a8dd97404c40c9df893b88209b625804c149",
+          "proof": "f9ec35f724dd0a41b8643d41aabbe99715ea23a6bf14304b31b1230f51733ec1"
+        },
+        "2033-friction": {
+          "text": "e74b72e86a0995f4b254d687d0b2cb3cc4b5ff393a4aa86c336889ca3a3d668d",
+          "proof": "c4e1d7ddac862137dcca42bebd4aa1a358e59f9924a46fc035bfdbecf08138a8"
+        },
+        "2033-harmony": {
+          "text": "d69c2e292309aba67961d060517178d61821740fb18a8825909c6c2e60ffa83e",
+          "proof": "075c5485a8cae6bdd2114f3745c85901bdd0bb97f9cbb537e5da926b4aa744f0"
+        },
+        "2033-boundary": {
+          "text": "7be856f826b29112e1cf178a78ca1fef9816f0238c532115d887b796787d3241",
+          "proof": "075c5485a8cae6bdd2114f3745c85901bdd0bb97f9cbb537e5da926b4aa744f0"
+        },
+        "2034-character": {
+          "text": "d9dc302a2e267d2299aec8f4364ad20da34fce73a67b450f3fcb765b4e7b833a",
+          "proof": "eb07d4836a994a72c955ce1cf63093f3319c2b9676e76e5ad7b532acf9cc1d1b"
+        },
+        "2034-scene": {
+          "text": "1890f0d86558ef7c5e6761db06e0c681fbb2d57ea950d19ec071892775b92178",
+          "proof": "b2d69fa5f7cd824432b963d823844bf2255f23b1d8ff7b2a69722bba905f33cb"
+        },
+        "2034-gift": {
+          "text": "4a450ceb19ea252157ff27ad2b2c05bd240628a041ed0a252e1f2f7a63af741e",
+          "proof": "db0298f68220a888937707580e3b2cf322728aeb1f85229f5378c1a127d12a76"
+        },
+        "2035-character": {
+          "text": "487a9430504ce1dc846e949d6ee2b52fe5682c84fbe7a909b312a3f0bf08043a",
+          "proof": "d3730c3a4cd7b4997eed3335235997e2d22da53607a76273f58537df00ded497"
+        },
+        "2035-scene": {
+          "text": "fcb9e066d60b4b92cc68f901988d8c7deafdd2982a60c86946e4bc5ed9757802",
+          "proof": "393530e6457b4b81b939651a500ae2b39d1181bebb3c3b71bbddcb5b0da49db6"
+        },
+        "2035-why": {
+          "text": "35834d0b970e5b4b667695ff45a35a2e3769947c97180900fa81bd9d08f341b3",
+          "proof": "819a440c1cfc379ae38937c5ad669a83f6e86b18d2479cf8419d22de9c6605d4"
+        },
+        "2035-gift": {
+          "text": "586eff66260df7863a9cd1144ac9e34eb1c67e08166f99e27c11e34c8f219e1c",
+          "proof": "261cc555a20585d9cec55904bf664600567d15131aa751c64c012a4da81e33be"
+        },
+        "2035-friction": {
+          "text": "430a9b0fc8947d49c4ec9a3850b2e702d261a8f57a742db43642d635cdbce952",
+          "proof": "393530e6457b4b81b939651a500ae2b39d1181bebb3c3b71bbddcb5b0da49db6"
+        },
+        "2036-character": {
+          "text": "0a048b2a95653691f08ec679ab603d41ff92fc105a82b31408bab8fb446af409",
+          "proof": "7910fa7b3d4cadda02a7b80429c00814059ee57ea78b238bb61ba0901d5d4801"
+        },
+        "2036-scene": {
+          "text": "4e5994fb189ea51a3159dfe465d1410f92854bfaa50a78187dfc3a381be350a5",
+          "proof": "9c8d8c8dd78fc1447687ead35517ad17152bc8b855b28d8dcfb7e3a015aec9f1"
+        },
+        "2036-why": {
+          "text": "0570dacda87f18de442c40fa739ea854601dde2cb561f81dc8805c2e82f8d802",
+          "proof": "dc35b5222f28bfd13c5e0d9f004f99dccb57a38887f7f8bc4c18361d9962133e"
+        },
+        "2036-gift": {
+          "text": "e1544291ffe4804b261d2d85b400d0680b54dbdc2db9b4e81125d4ff0e5c45bd",
+          "proof": "539a78f32d772ff77864120064e8ce042fc42a7ba0129e228d5f393ece83a421"
+        },
+        "2036-friction": {
+          "text": "37f56a073466866ca0cc375621fcc958233f9c916b768e90c5330648eee6ad3b",
+          "proof": "9c8d8c8dd78fc1447687ead35517ad17152bc8b855b28d8dcfb7e3a015aec9f1"
+        },
+        "final-strength": {
+          "text": "b4d4609aebc72c3161833e72ae8e30d73d5ad337fc3778b912be32643a97ca7b",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "final-gift": {
+          "text": "2767e74c08b38934d8640fe2578cce3193d77d4b5bfddef03a814b786739f211",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "final-people": {
+          "text": "c7478d2f13e7d9c6c7ff5205f30fc6d8c1e13ff7ea75cde8f004a356925b6d3c",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "final-direction": {
+          "text": "d374c21fc797322b72ab81b66657076b816964c44c2084b8cd8175b86190e396",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        }
+      }
+    },
+    "06-both-unknown": {
+      "inputHash": "3024c0eafa783380cd35784fc4e5f61d7d5da636b96c8d1363097bf1a2b1fcbe",
+      "fixture": "tests/unit/interpretation-v4/majorEditorialSafetyFixtures.ts",
+      "clock": {
+        "evaluatedAt": "2026-10-12T12:00:00+09:00"
+      },
+      "writerVersion": "major-full-content-refinement-01-v2",
+      "frozen": "1f2ea3d41305733b13b1744f82640e8bc83cfdeed8f0352eb38235780386f94f",
+      "blocks": {
+        "big-flow": {
+          "text": "7df9c4cf63c778bb0162ffcaaad012a0a227e3aa425b08df568d8b042a9b326c",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "first-gift": {
+          "text": "7ca95c5d8e77b7006946e115676acd475561e6fa47626a64d90114d14057ce85",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "next-boundary": {
+          "text": "c67c87cd47861dbc9cfcbd6e77962a6a3dace2fe1596b8034da3cb27a8d47be4",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "core-why-day_pillar_gyeongja": {
+          "text": "63afe8fb25909c6f85963f26b524c15bed825953a78730201dc83ecbf5470a2e",
+          "proof": "987526782f0875412842b2e50fd9622bb4ac5ddba8dbc3b1ff3a39266b2037b5"
+        },
+        "natal-strength": {
+          "text": "09465d35319c2cf82c35d383ab73e955d0eae52d97d093510a9b85268dc8deae",
+          "proof": "24e0e31d3c2bb06b8b042e321a54f2d2e7d2e40d517580d8fbe4ed700f07fdde"
+        },
+        "current-dayun-natal-response": {
+          "text": "728f46f3efb5f9611ce9e28ea018f04a1628d337e5201096f5124b8cf1007b19",
+          "proof": "b1c597c86e2cd76224c23b7367d099b92c4a80b959a0720fa4c5b7b575cf1169"
+        },
+        "current-setting": {
+          "text": "46373f93bc5d353e162b838bb5753a0a871c2a2aca9b2923255c092b002f9494",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "money-flow": {
+          "text": "002beb69eedd729e39a5d21806874f13ef64f685da55143750c99fc02f7b7b4a",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "current-context-why-ten_god_shi_shen": {
+          "text": "7d2226884929a01bde1c0fb97c4e802232ba4e0d9685e2b0fdb271a709f7bec8",
+          "proof": "232434703e29041fd9a589cd2e17888eff526b0630feacbd7c5d5cf9de3d306b"
+        },
+        "current-context-why-gwiin_cheoneul": {
+          "text": "9dc86fba7c959dc19a7efd753806f090a06ba5dc7857775645b485e454f9f535",
+          "proof": "64af5a49039ef25a9d2aa1bfdb97a987eb6db863c78ebc104e8d06724e7f48c9"
+        },
+        "current-context-manifest-ten_god_shi_shen": {
+          "text": "55d11e5a2f7194ba6830240cf972f6ab90a5d71bd688c73c271629734b47f363",
+          "proof": "2f6ce2a06dcc694a7b9a8040ca501d2835b51501a661cd53e2efec8a8710c530"
+        },
+        "current-context-manifest-gwiin_cheoneul": {
+          "text": "c41a0f442adc630c581206667892fc24dfde2f6d726756e9373287889dda74fb",
+          "proof": "6f8bb698cc209744548c2b8d261e79537fbff95b59d5ff28c61495be5b1de99b"
+        },
+        "current-context-natal-application": {
+          "text": "fef684c6252ec6f65755687017380f8cb64e20b15c8aa364dc42ed7fa9e43b19",
+          "proof": "48b8cfbdd0174c73af829c1ca41bc6bbc3449fb48694bcb89cbf1a026bd58592"
+        },
+        "natal-gift-0": {
+          "text": "7547aa20e93c358d233a3ae4ef0ee51d0b26e9e3913d5efd492de026b1ef12fd",
+          "proof": "569e4237c242ed37fb674ba26f7e2f7b734e1e230a448078cb8a4750e1c41f51"
+        },
+        "natal-gifts-why-sinsal_dohwa": {
+          "text": "605edc0f6271530c35db4e95fa8dc05779032d106f4f0a48707685dca16891f3",
+          "proof": "c30e5d64fff4af04ed6aef9268fa45ec32b194472e9230686221c85b9702a26e"
+        },
+        "natal-gift-1": {
+          "text": "7df793b2251ec0b4778aea5736beeae15d3e4c541b916db5235bf5d1d760d2a1",
+          "proof": "9d6adfc13094015afbb6895330efa2cdbabe35c433b516c87144f1cd2ddbb4a5"
+        },
+        "relationship-context": {
+          "text": "972114db72e37099b66be00c22146362fac34299d988ea0c475361107792f3dc",
+          "proof": "408f621bdefddc9597fc3e6afc2b62ad043d1a3908dbf0b166f812971dc6ec2e"
+        },
+        "element-life": {
+          "text": "76a715e68d606f29418f7a002815a7ff8e17c3891f43668c35526f2d2b69501a",
+          "proof": "bfa43c68a21a220f4c91db39aacae2420544186bffa1ee33a40e42290f7de5b9"
+        },
+        "relationships-why-ten_god_shang_guan": {
+          "text": "bdde9f312e3a4d4becd7bad2646614d8681d85b0648289f693593ac3b947cdd9",
+          "proof": "d97718d53ec916d5a965b8a292a7d6d307142322c89000ce6eb5bb9a25f16ead"
+        },
+        "relationships-why-sinsal_gwimun": {
+          "text": "bd68a0cf51787749b7c063a8e652435c113949b90c5a47e51dc6ed72defafd60",
+          "proof": "d1e18a7fddec8dbdfcf01f751d76f23b096936e5a1bd4643d351265f00896cea"
+        },
+        "relationships-manifest-ten_god_shang_guan": {
+          "text": "7633c219941ea28ad7df39bf82c99c2500348a9bdf51d30f14b4d40b24f4558f",
+          "proof": "86365ca5170cd782ca9ffbc3f2e66652dc03f4f2e37d98dc43dfda7121af603b"
+        },
+        "relationships-manifest-sinsal_gwimun": {
+          "text": "a4f757b7e168b9e6f4275a77e9aecce468a069719a562559b8391d6a5a6bc7f5",
+          "proof": "d4c28d5077b775c6b28f186ce070006b563f50f0ebb8522d5524cb0268733da2"
+        },
+        "transition-2023-focus": {
+          "text": "f1895bb70a6c8620732557fc663c9e34fdc62b522446909808465b2c2fd0b873",
+          "proof": "8f1747a1cfe73ef15074aba4e4c7fe93771333febadd02680eb3175f4377e1ef"
+        },
+        "transition-2023-work": {
+          "text": "1c8cca6762c320063875080153d2ee0ca2822c6987b91a759138b81c6069f758",
+          "proof": "8f1747a1cfe73ef15074aba4e4c7fe93771333febadd02680eb3175f4377e1ef"
+        },
+        "transition-2023-people": {
+          "text": "6d326e23f4e83aea7a39650518e218263686522ff7a25865c25160bc23ab3ba9",
+          "proof": "8f1747a1cfe73ef15074aba4e4c7fe93771333febadd02680eb3175f4377e1ef"
+        },
+        "transition-2023-life": {
+          "text": "f7fc4122ee4cb97a686df1c917a1438db1e3dcf17b6d4e2ff7723a8842faf575",
+          "proof": "8f1747a1cfe73ef15074aba4e4c7fe93771333febadd02680eb3175f4377e1ef"
+        },
+        "transition-2033-focus": {
+          "text": "acbe701906849811d08cddebf994ac63dda3c45be29da217131850c25c665e09",
+          "proof": "df9fb11770e211d5e584679e4b56df8993268fee83c67aa83cc58afec6461405"
+        },
+        "transition-2033-work": {
+          "text": "33ebb44eb5c42824914dce3ea5182ea824d7caf433fa0f00c3f7418bb3731d77",
+          "proof": "df9fb11770e211d5e584679e4b56df8993268fee83c67aa83cc58afec6461405"
+        },
+        "transition-2033-people": {
+          "text": "805efddc00a236716f8e6bf0066b148431edd5f6c14504ec40b58bf2decbd605",
+          "proof": "df9fb11770e211d5e584679e4b56df8993268fee83c67aa83cc58afec6461405"
+        },
+        "transition-2033-life": {
+          "text": "ba2e48a285b2e4828cccb7fa547e977fb584927e0998f4bd4ca0fe2401d0a995",
+          "proof": "df9fb11770e211d5e584679e4b56df8993268fee83c67aa83cc58afec6461405"
+        },
+        "next-work": {
+          "text": "f57a70b5a9f1ed0dc68309e0ec3b6a0db9c893d7bb1ff1de940b40670ca2395a",
+          "proof": "4143e391dee274f42a66c649de67dc22d7f3624c401f6fcc2cfc0843f1afe7e0"
+        },
+        "next-money": {
+          "text": "00cad18f96301e72859aa263d6916e351256cd018b2ca0bcc210b5dd2f8ce504",
+          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+        },
+        "next-people": {
+          "text": "fbcdc1d65b5a6343c74818653dbc8c341e6ae5d27bb24fadee9780ec8a9a19c1",
+          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+        },
+        "next-risk": {
+          "text": "f390d507c39aa83ec74a94e159af4b61258d0ca5c22f7d20c67e91a8f14689e8",
+          "proof": "5c15924d7e3c92147544af7be15cdf0df758df576c7813f76ed65ad98afc63b7"
+        },
+        "next-cycle-why-ten_god_zheng_cai": {
+          "text": "94ce4b2191824d21affa71a7882b804c67f1a5a5d4a79c7624cba6845bec5fda",
+          "proof": "485a761664e54aabc637e0bf5734ee40fe2da3e72a4a5def6316fc5bff98c538"
+        },
+        "next-cycle-why-twelve_sinsal_banan": {
+          "text": "fe0d658df59bd20bf2ef6ade887db3294c5a37c69578396a6bdb8bca69bde126",
+          "proof": "b37209e1d8e2338b1c75d0da3217b42b82203187fb5927bfe0fc110ed8c4f255"
+        },
+        "next-cycle-natal-application": {
+          "text": "50920b7dca9bcaf78285554d1ad27c1c16ede03b0c977c15073ed2d57188df4d",
+          "proof": "f203c921440cf60103b11b50418acb211d79f8863394adfeae794c76090b4349"
+        },
+        "2023-scene": {
+          "text": "ee731ea26d33ca4d9a481cbd763510f221a27ab2fcc96f7f15e864fe939cbdbe",
+          "proof": "3ec0de5d7d397e1fe5b247cef85fe9093af557329e40ed033c71e6bb619d5709"
+        },
+        "2023-character": {
+          "text": "1063d1061556a961cb85ca00bba5bacfa185bc301f45f6e9424ddc2058ae5fcd",
+          "proof": "f7a5da4f67ba96eaaa45cfdd2440a5e6b8042ce8fb9f79cebb1229386e2f3ec5"
+        },
+        "2023-why": {
+          "text": "60095f9bd029d1026cdfac319fbd250434c2ddbbdc3899695f54309a8d77761e",
+          "proof": "2c01e174defd8a321ed101396e59426f36c09f5d7fd484c2290373a69805ebfc"
+        },
+        "2023-gift": {
+          "text": "e82bf58929992258a8bae72c306a9096429530a3f98276f142f6f90814bca74c",
+          "proof": "474531884fd54fa001d815bf4dbf940f981b9f9158b11e6899a3e4aa03afe5fa"
+        },
+        "2023-friction": {
+          "text": "cd5116b74e80978d90ca1c2163b4549281ddfa92c62b0ccd776b7f4ceae7e23d",
+          "proof": "1e315217ac51e1be5f9e12a66c0b411a59ed8fc65be21319bccbc28941afa3fd"
+        },
+        "2023-boundary": {
+          "text": "9843c474394d39759932de79c35c21b5b2da5ffc4b4891f63b6680f2692b2dd8",
+          "proof": "635402e62ac1c4a8444dbf8d6f8ff6b2d5d9d60c7c50446252b6518c6ed68dcc"
+        },
+        "2024-character": {
+          "text": "4bb663a793f5f01841c26f508172c58dcd8695261169a7f65c01fc064f493480",
+          "proof": "cb321cd49bde19bf6fac58e169265af2118b21615d5aa761e610811cd00f2968"
+        },
+        "2024-scene": {
+          "text": "fbe22bf7a5e82b9b416395eda894b1a842267f8851c1c14a0add46799973e482",
+          "proof": "c3fd946446a55045461406e21ed083a347303adf4bda8766a5ed218ef1c9634d"
+        },
+        "2024-why": {
+          "text": "e3bda039946bd4fd0d4fcddcf3caced62f9ec75874294a0243b06c0aa443d6f1",
+          "proof": "1a36aa9b978d26133893a74f39bc46279c5b93cf1f6175cc93fbaaf2c8b084e1"
+        },
+        "2024-gift": {
+          "text": "857afefd5f6c9e266070dd699d80915c31912cb941b738bb4adde4f8ebde613f",
+          "proof": "2d3ec56b4c8b3a3676903922ac3838d4710dd89dc6d100ad41e22f53e884531c"
+        },
+        "2024-friction": {
+          "text": "81ad972492cd0e12d1d1a9e3a7b17561ec5d47f8c4423fb5e397b872a65268fa",
+          "proof": "60c029cdb42c0d5c9d4027ab199f9c670bf9fbc1a8a22b5b77ce48ffa588d196"
+        },
+        "2025-character": {
+          "text": "ea207e49e803c64f6fb857028ee366481213e8949fd5fa74069b77102703de32",
+          "proof": "09487bcd6fd7cbac5e6dd427ff9a3be209b4b6641ea6b0abae927d23715a3431"
+        },
+        "2025-scene": {
+          "text": "b6b4f343b7a3f62944c7095a8fc45b46461e4e1db41d43815b7c75027a0c93e7",
+          "proof": "4d345ab5062bf3e9adc65acff35eb89489f68c458b6c0043358a41e50dea118d"
+        },
+        "2025-why": {
+          "text": "cfbe5210f533dea22d9fac2a2ca6e02d18bd69b81565c59b827d9bb61707017f",
+          "proof": "42d096459b1b2a30572805a603a461678a31272dfd6d0ec75ad4f401ffbeb1e5"
+        },
+        "2025-gift": {
+          "text": "2c013a9caca52945051f17e719e53659aa3c965c4798c852547729d56821d2e0",
+          "proof": "e3faf451acfa54d043313fa8caaee7e1679b5d90f75bcd2219d7d18c32d8f397"
+        },
+        "2025-friction": {
+          "text": "8cf18c0765a0cb8a30a8f8a40cbe092f37dcb2b265aa18bda8ebe49e84cca1c0",
+          "proof": "536d3f9cfebb15197807228090cf7e182ed9446a674502e7b9b8f080c9f3d823"
+        },
+        "2026-character": {
+          "text": "20cf7d673713640b268f01369e7ebf1630a1982f5b2f9fd782c5521e45d700cf",
+          "proof": "12a63e51f4835e5ba2abc54d655fbc122e964e6deb7d49ef341d6d7e9d31c329"
+        },
+        "2026-scene": {
+          "text": "d4ab9e192e0c43f22609c2489d01890652d754be0344916ab90d11aa1412e396",
+          "proof": "e5b6006adffc7e52a49a97b04cf9ea5e344acac99e1bf7d5396afca37da917f7"
+        },
+        "2026-why": {
+          "text": "35e8fee68aca4108fe7dbcb4956ba19d0c19a00c92bdb46c203bf0e079789859",
+          "proof": "e5dd5b16f62267b8d1244438a98afa0fdefd0b05da8d825b04d5389154d59538"
+        },
+        "2026-gift": {
+          "text": "b8a3a6089409cd874a9291c1a5bf153981612d8e448e2058bb78a648425f1045",
+          "proof": "20d7d2b9a0ec3207ed2be2c4821f2b18e2a84865d1ebd2bfc4d8443dd4f35620"
+        },
+        "2026-friction": {
+          "text": "a0e396f1fc2c0f3f33c5aa4b910f7b9f9a9d9c48e51ffb6b6771aef931f9fee8",
+          "proof": "018a7af185542783f16cd2cd454c73a1fbb2aa9c1c51c1660c260d9bab9f1873"
+        },
+        "2026-harmony": {
+          "text": "ff52c71168f9a1a12f2fb6fcfb09a74c88cf474d7458c0eabcb7fe66a59e6345",
+          "proof": "a7d3b7fe73be682e997cf118d73956bf11acf6ef720b4745893693668c21163e"
+        },
+        "2027-character": {
+          "text": "83e6cba7ae9720896031864b6bfc0beb278210e48a11408b575e0ee8a8602eec",
+          "proof": "b2bf5fc791d416310d0dcec56c0ea095f52a6d81471afd48226bfeb5b6d20e16"
+        },
+        "2027-scene": {
+          "text": "1e1847a823e581cf4a2c3771427f1e0373bca47f84fa13e049fcf3e24198e3a2",
+          "proof": "9ec72f26c68423d197009f9d8680c7d64ce8370d64877fa3c90b73bcad108f4d"
+        },
+        "2027-why": {
+          "text": "7769b3ea9092dd0d538220e23cfb1701bf14c149719d5c0f2ec682a64fbc4478",
+          "proof": "4d83829f14dc4056ca2edcb1c36f4df00faec941cf73f380a781cc66331df79e"
+        },
+        "2027-gift": {
+          "text": "b84752929e288893aa17e306c31bbde042fb0983e4befceea8e99528bc3aa934",
+          "proof": "cdcfebfdb66dbafbd07e84460de1829033bbeb5504d3e94d586fbac56e64ece1"
+        },
+        "2027-friction": {
+          "text": "7e387548638e032cd0bcb1a71e57bd8e867a223c1149e4a45c74326d89dcea22",
+          "proof": "7860c1b26e961ae9b64223088f89a8a1a64b5f516e0274ccc195a9ad49f3800f"
+        },
+        "2028-character": {
+          "text": "1f9853ec65047b1b3d69e1d03a1039527d40e181044bd57f7829a180b9af4a6a",
+          "proof": "ff75d422e089f06959da432c070495030953bad5f6c0dbb051fc090b9f1e734e"
+        },
+        "2028-scene": {
+          "text": "ed4f6f7e298f5b4c226888ed15a3c541dd65dae3273cc086eabac20d8f363548",
+          "proof": "6512c39142b8b57a12d8ebf128a31ca3e6779c80031554688f6addf94f8dd8b4"
+        },
+        "2028-why": {
+          "text": "baa052dbbf535eb67685a22888810587ba342acdd21aa4e25d9ede6a2d046b85",
+          "proof": "1fa9a5c0fca3682758ae74001cb1d72f37636fed4a28f0ed6e33886ece9c95c8"
+        },
+        "2028-gift": {
+          "text": "414a2493eb9e95a8bc416dc43bfce8259c4a574d8c177476652cd0f3ab218cce",
+          "proof": "a58301cac6f3b6eff15f00ca166a2697d204483d2e8cf6a44d0b17925e426358"
+        },
+        "2028-friction": {
+          "text": "e78ff9ed0b5d214331a36b0e3646822697487748a18e0b6c578ffd7fbf650d98",
+          "proof": "48e404614494806e34a009872a6b5dab76c8451f57058be8100af40320b6e741"
+        },
+        "2028-harmony": {
+          "text": "b7f6641306339c8de0217a5bb4a1fb7407769f819e124e3af1ebcf99e7428e4e",
+          "proof": "ddaebc2d1a93d73ad9cdce2794bda2e1acd4ffd9526bc34257fa970bff5a156e"
+        },
+        "2029-why": {
+          "text": "270b65bb78d7020d27c916bc5d00b645c9328ed3687a80d7dd0d72d6fcf9014e",
+          "proof": "75cac42e451cab817e4582341b0b314955dc5628edf74943ee5aa8acc992e8d6"
+        },
+        "2029-scene": {
+          "text": "bc9627b5a32af5f48ff169418667201a119d1677b5d5189cc242aa609f14490e",
+          "proof": "0e6d17ead68356ec4d4ed1abf0a70af6c9d806cc7cfa092efa081322ae37b725"
+        },
+        "2029-character": {
+          "text": "ec9979332ce8bc9c5b8075312f2097baf8c458ba2da29f534c1d44db8bad4cf8",
+          "proof": "75d946a91ea9dd4e5e5a0351e29898943f12835aef931fd52cbffd26d93c7af3"
+        },
+        "2029-gift": {
+          "text": "168a23bc7b95786f911caa7e76f0510e2f42ddfd405b134330d4e9129fba01e4",
+          "proof": "8315faa0209af190b287eb38ae9378b33c1274959bb95bfb3548434914351ac6"
+        },
+        "2029-friction": {
+          "text": "8c4e5664af57dc7b71a25d375061990090faf2d0edf16b7ffe43f479a6097a09",
+          "proof": "0e6d17ead68356ec4d4ed1abf0a70af6c9d806cc7cfa092efa081322ae37b725"
+        },
+        "2030-character": {
+          "text": "8a6f600ba956efa2777a11af286e334c7e7d2653e703cf261e5f363d10c17229",
+          "proof": "9de25c2a4c01f58383f003dfa024d7be4e5f923e8872370ceade481306c5ee9b"
+        },
+        "2030-scene": {
+          "text": "ed71b0988f00d10003d5ba41c503ad553254867ee398fcd182eeb4f94bf0fb65",
+          "proof": "60906fac02555e285794ec8f737d54bf156599ede2cc6d928ea0f1b4b29e9258"
+        },
+        "2030-why": {
+          "text": "9b019781112e4aedebd884e3ba2f8e27e8d5783f8f1a6a970ef7a33caafc1ba1",
+          "proof": "c201c83c7397f7ae951bc7a7e488e16ff21c107b2586f148fa9987e5866e1987"
+        },
+        "2030-gift": {
+          "text": "32c95e2dfe56be3c62839dcb4803d0e0e49372f63d34cd30baa130373a84e2ab",
+          "proof": "b651b07f246a97b2f1c5f30dbba86a2f9a0589613ee4dd5760445c7c3ed22617"
+        },
+        "2030-friction": {
+          "text": "15652e622608ef1b8182afc8b51e4e9089fc0c0bb04defa7515862b176bf0e2f",
+          "proof": "304b3e31236bd90c2e0f72ed2f014c44ba74b100927850997fb66f6146431d82"
+        },
+        "2031-character": {
+          "text": "91efb91b44759b7cea96e46b03669bb9536a2ea5426b2d2603ab8706bc020939",
+          "proof": "1bbb3a48d3ee7c0b8a58aed8973000e69379e795bbb6f14dd0aac8a98f483ad7"
+        },
+        "2031-scene": {
+          "text": "07765f0ea703a3208cdf51261d97efe42664cf952ff150d2fcf7f1ee4f866e99",
+          "proof": "92e40122e1fbf37bf9b5e545096fbe6932de1771b10589e6bac275eb02da480a"
+        },
+        "2031-why": {
+          "text": "3bc0000494410daca51451d69d85c67779fcc44a7501250b783da479ef391771",
+          "proof": "614cb521509ac53beb5c2373f1f68253d96061e1ccfc9a4ee246187bc2ec4c3b"
+        },
+        "2031-gift": {
+          "text": "6fd89b35c4f0e1e0a266fa0e62f21adc686037ba9b8d18b58be030ab71cf8f4f",
+          "proof": "4c92a6e3c812a15716d8b88ad803655d2537e85fe9024cef18944a1aab738ee8"
+        },
+        "2031-friction": {
+          "text": "4b718253f4c361d0f1774deceaae127ce40058e8b660c97ea009c4061cee1c22",
+          "proof": "d8aa0f9c81aa1725d0abb81426438ddd4ae52490e63992bba31000c9e225706e"
+        },
+        "2032-scene": {
+          "text": "33a7e918c035ab79363d7fd5a34a4746b953919022e7eebbbf4aa12c4373e85f",
+          "proof": "45deaa7f7e2e8751ddbf344975b8f62917b3c796ee0de85e5ec39841be97e8ec"
+        },
+        "2032-character": {
+          "text": "9640ca336b2b1d5be6b2aef2e7c5d00615f4efbd8de205cc20943c7ee7ea87e7",
+          "proof": "66d81eec179138ea9786fe1aa4aeb1fe149d0cb5ca7b650e50f865e1521c9a21"
+        },
+        "2032-why": {
+          "text": "788f0a0f87d02acba5c51c69c4fe8d2bb24ce6b663d9571521aad2489e48be22",
+          "proof": "a7285f43c5f670efad1342539b28d0781183e62056076f2785ae38e11d88fcc1"
+        },
+        "2032-gift": {
+          "text": "c2b2a987e890938e3a5ec3d7cbc3d8bb636030f4e77d145ea51c5d9c7ec283a4",
+          "proof": "a64ecb87cf4afafb08ad04e2f5c69244372455d3cd3b04f975ee9e898c66b4cb"
+        },
+        "2032-friction": {
+          "text": "4828b41ec6793bb11cfca4dd9dd1a45151551474d5235812cf6c28570f739528",
+          "proof": "689e6c168d13e73a29f9f9b5762a9866e76b5281ba7b8863f8b3e3a0d57ceed2"
+        },
+        "2033-scene": {
+          "text": "a0e1a97690faedcbc19d1c35417de50e33d6c8eed56a22b1fc315f2cebdda537",
+          "proof": "075c5485a8cae6bdd2114f3745c85901bdd0bb97f9cbb537e5da926b4aa744f0"
+        },
+        "2033-character": {
+          "text": "5ff9529de4aa7bb0a1e266f6be8a7332b770e7f0480c14977dd1ecb6d642dac6",
+          "proof": "47919fe972cdd28963fdae786e278507f1881f48e2ca4c2a0c2cf0a4429fd4fd"
+        },
+        "2033-why": {
+          "text": "6e8257a68720bb7c9cf9fc0f094af1827cdd32ad3697251dcdde60c1ce014379",
+          "proof": "5338d747dfd3963c23f4f4fb34f07cac205085d88822366400042cd06bf23476"
+        },
+        "2033-gift": {
+          "text": "47c540f2262765e5ac6e8ee179637e60466f111daacc054394f39319af2758a6",
+          "proof": "c89f620fb378cb5c062525b7dcfd6ee3eb9717af9a47ec1f9437ec3411970c7c"
+        },
+        "2033-friction": {
+          "text": "3381644dc20af58dcf20053f26363e108231dfcb1c3174f04e60d3bbc2ad2250",
+          "proof": "075c5485a8cae6bdd2114f3745c85901bdd0bb97f9cbb537e5da926b4aa744f0"
+        },
+        "2033-harmony": {
+          "text": "d69c2e292309aba67961d060517178d61821740fb18a8825909c6c2e60ffa83e",
+          "proof": "075c5485a8cae6bdd2114f3745c85901bdd0bb97f9cbb537e5da926b4aa744f0"
+        },
+        "2033-boundary": {
+          "text": "af5b45500583a3dfd58f8218448268fa08ca98de07513358d09a6e27998d30a9",
+          "proof": "075c5485a8cae6bdd2114f3745c85901bdd0bb97f9cbb537e5da926b4aa744f0"
+        },
+        "2034-character": {
+          "text": "d9dc302a2e267d2299aec8f4364ad20da34fce73a67b450f3fcb765b4e7b833a",
+          "proof": "0e153a120138af813bb8634d07cca5ce5c4c5bceb89670f29234071466884dec"
+        },
+        "2034-scene": {
+          "text": "1890f0d86558ef7c5e6761db06e0c681fbb2d57ea950d19ec071892775b92178",
+          "proof": "ecde85e686380c4ffa53118ca76c3dd69fea7d026e7beb647ef0ae1b648a1a60"
+        },
+        "2034-gift": {
+          "text": "4a450ceb19ea252157ff27ad2b2c05bd240628a041ed0a252e1f2f7a63af741e",
+          "proof": "d407ff9b00a9d17b6a7fadc45c136ce710c10a7c3a52beffdfe8283b54bc5c97"
+        },
+        "2035-character": {
+          "text": "487a9430504ce1dc846e949d6ee2b52fe5682c84fbe7a909b312a3f0bf08043a",
+          "proof": "73f7f549fd8159d102a3bfc94b3ba759003ad1d619320b7318984eea7db9cdc4"
+        },
+        "2035-scene": {
+          "text": "fcb9e066d60b4b92cc68f901988d8c7deafdd2982a60c86946e4bc5ed9757802",
+          "proof": "cb5b8334788dce3f5019ab67c849310efcaddbb3b8b88ac980b30d6a7ef76949"
+        },
+        "2035-why": {
+          "text": "35834d0b970e5b4b667695ff45a35a2e3769947c97180900fa81bd9d08f341b3",
+          "proof": "1004f6fe2c023aee0e8df046f687fe16090a8248831037d53e5af0c755ca3f11"
+        },
+        "2035-gift": {
+          "text": "586eff66260df7863a9cd1144ac9e34eb1c67e08166f99e27c11e34c8f219e1c",
+          "proof": "24938f141e913a823a1723c04f5f6b7f8a7a3fcc4f14785efa65949aeb179417"
+        },
+        "2035-friction": {
+          "text": "430a9b0fc8947d49c4ec9a3850b2e702d261a8f57a742db43642d635cdbce952",
+          "proof": "cb5b8334788dce3f5019ab67c849310efcaddbb3b8b88ac980b30d6a7ef76949"
+        },
+        "2036-character": {
+          "text": "0a048b2a95653691f08ec679ab603d41ff92fc105a82b31408bab8fb446af409",
+          "proof": "6271c1c3b8df6e1f2f79672e96e9934d10e847eaefe5a9d057fe2bf63e67543a"
+        },
+        "2036-scene": {
+          "text": "4e5994fb189ea51a3159dfe465d1410f92854bfaa50a78187dfc3a381be350a5",
+          "proof": "17c612bc8f92f1cfddeb683afe76a32ccab30822fef053eeda55b99460d3073e"
+        },
+        "2036-why": {
+          "text": "0570dacda87f18de442c40fa739ea854601dde2cb561f81dc8805c2e82f8d802",
+          "proof": "3a36bb1f83dc7c23b13d9fca3be1f2a61d4b794b8097be918b0de962a2b29dc9"
+        },
+        "2036-gift": {
+          "text": "e1544291ffe4804b261d2d85b400d0680b54dbdc2db9b4e81125d4ff0e5c45bd",
+          "proof": "4adfe111d301dd38c1d5fc2e4927beee4e003246d88bb7b000857b927993c306"
+        },
+        "2036-friction": {
+          "text": "37f56a073466866ca0cc375621fcc958233f9c916b768e90c5330648eee6ad3b",
+          "proof": "17c612bc8f92f1cfddeb683afe76a32ccab30822fef053eeda55b99460d3073e"
+        },
+        "final-strength": {
+          "text": "b4d4609aebc72c3161833e72ae8e30d73d5ad337fc3778b912be32643a97ca7b",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "final-gift": {
+          "text": "2767e74c08b38934d8640fe2578cce3193d77d4b5bfddef03a814b786739f211",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "final-people": {
+          "text": "c7478d2f13e7d9c6c7ff5205f30fc6d8c1e13ff7ea75cde8f004a356925b6d3c",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        },
+        "final-direction": {
+          "text": "d374c21fc797322b72ab81b66657076b816964c44c2084b8cd8175b86190e396",
+          "proof": "07ad54664d448aa08dca81ae65a50bffa0c43f5c4e7c8267b4ae145c0db818da"
+        }
+      }
+    }
+  }
+}

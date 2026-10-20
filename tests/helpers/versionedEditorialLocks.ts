@@ -2,9 +2,11 @@ import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { expect } from "vitest";
 import locks from "../fixtures/technical-stabilization-01/current-edition-locks.json";
+import majorEdition from "../fixtures/full-content-refinement-01/major-edition-locks.json";
 
-/** Test receipts captured from the unmodified Base, never customer approval. */
-export const editorialLocks = locks;
+/** Historical receipts remain immutable. The explicitly revised major copy has
+ * separate current-edition receipts, never customer approval. */
+export const editorialLocks = { ...locks, majorNarratives: majorEdition.majorNarratives, majorSeparation: majorEdition.majorSeparation };
 export function editionRow<R extends Record<string, unknown>>(rows: R, id: string): R[keyof R] {
   expect(Object.hasOwn(rows, id), `missing versioned fixture: ${id}`).toBe(true);
   return rows[id as keyof R];

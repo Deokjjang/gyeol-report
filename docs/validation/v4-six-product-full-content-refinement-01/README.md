@@ -48,3 +48,13 @@
 기준 SHA에서 이미 실패하는 `compatibilitySafety.test.ts`의 과거 연애 원고 해시 7건을 같은 SHA에서 재현했다(`base-compatibility-safety.log`:34 PASS/7 FAIL). 현재 실패 해시는 기준과 모두 같으며 오래된 goldens를 수정하거나 skip하지 않았다. 신규 18개 궁합 품질 검사는 모두 통과했다. 최종 관련 검사 결과는 아래에 이어 기록한다.
 
 Phase D 확정: Release/Book Runtime/제목/신규 누적 회귀 115 PASS, 별도 품질18 PASS, 최종 지수12 PASS. TypeScript0진단, 변경 파일 lint 및 diff-check 통과. 지수 설명의 조사 오류도 독해 후 바로잡았다. 고정 역할 7유형, 교환·미상·대략 시간의 실제 전체 Book도 모두 생성됐다.
+
+## Phase E — 대운 14년
+
+대운의 정의를 매년 재출력하는 대신 첫 해/실제 전환에 충분히 설명하고, 실제 앞뒤 연도의 십성과 생활 주제를 연결했다. 같은 십성이 다시 등장할 때에는 이전 연도와 그때의 대운을 계속 구분한다. 다음 해에 전환이 있다면 전후 대운의 다른 과제를 미리 연결한다. 비교에 사용한 십성 의미·대운 ID도 실제 해당 자료로 연결했다. 현재 직업 장면은 현재 연도에만 쓰고, 과거·미래/과거 전환에는 특정 사업·고용이 지속된다고 가정하지 않는 조건부 장면을 쓴다. 마지막 문장은 현재 쓸 힘을 다음 장까지 가져가는 인물의 시간으로 마무리한다.
+
+실제 최은정 Book: 2023~2036년 14년, 114문단, 31페이지, 본문 16,671자(공백 포함, 제목/표/부록 제외). 19문단과 마지막 문장이 달라졌다. 새 Writer revision `major-full-content-refinement-01-v2`; 원래 `major-product-13d-7c-v1`은 개인 자료를 고르는 source 계약으로 유지해 선택 키·원국·MBTI/Fusion을 불필요하게 바꾸지 않았다.
+
+기준 SHA를 실제 실행해 18개 고정 입력의 추가 시간 메타데이터를 동결했다(`temporal-foundations.json`). 모든 대운 시각·범위·연도·주기가 현재 결과와 정확히 같다. 전환 원고 텍스트가 바뀐 해시는 새 revision의 출력 receipt로 따로 검사한다. 과거 fixture는 수정하지 않는다. 기존 비교 도구가 `/final`을 본문 블록으로만 찾던 누락을 수정해 실제 `finalProof`를 대조하게 했으며, 동일 결말 금지와 공통 실근거 요구는 그대로다.
+
+최종 관련 검사: 107 PASS, 5 기존 FAIL. 5건은 기준 SHA에서도 재현되는 `majorEvidenceSeparation.test.ts`의 예전 배정 블록/합성 블록 이름 기대이며 동일한 실패다(`base-major-separation.log`:4 PASS/5 FAIL). 신규 6개 실제 발행 회귀, 기존 Reader/저장본/정확 시점 경계/연도별 개인화/조사·사실성·구조 검사는 통과했다. TypeScript 0진단, 변경 파일 lint 0경고, diff-check 통과. 실제 전체 Book과 최종 전 페이지 SSR은 외부 `phase-e/`에 보존했다.

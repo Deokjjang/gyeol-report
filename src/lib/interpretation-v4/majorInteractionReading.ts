@@ -77,11 +77,27 @@ export function majorInteractionReading(e: MajorEvidence, y: MajorYearEvidence, 
     return `${y.year}년${transition ? " 전환이 완료된 뒤의 구간에서" : ""}, ${first.actors} 및 세운 ${y.annual.ganji}(${y.annual.tenGod})의 지지 ${y.annual.ganji.slice(-1)} 사이에서 읽는 ${meanings.join(". ")}.`;
   };
   const timing = majorYearPeriod(e, y).explanation;
-  const background = validPeriod
-    ? `${timing}${timing ? " " : ""}${transition ? "전환 이후에는" : `${y.year}년은`} ${cycle.ganji} 대운의 ${cycle.tenGod}, ${y.annual.ganji} 세운의 ${p(y.annual.tenGod, "subject")} 만나는 흐름입니다. ${previous
-      ? `같은 ${p(y.annual.tenGod, "object")} 읽었던 ${previous.year}년(${previous.cycle.ganji}·${previous.cycle.tenGod})과 비교하며, ${p(`‘${check}’`, "object")} ‘${MAJOR_MEANINGS[cycle.tenGod].theme}’의 관점에서 살펴볼 만해요.`
-      : cycle.tenGod === y.annual.tenGod ? `장기 과제인 ${p(`‘${MAJOR_MEANINGS[cycle.tenGod].theme}’`, "object")} 같은 관점에서 다시 살펴볼 때예요.`
-      : `큰 배경인 ‘${MAJOR_MEANINGS[cycle.tenGod].theme}’ 속에서 ‘${MAJOR_MEANINGS[y.annual.tenGod].theme}’에 주목합니다.`}` : "";
+  const adjacent = e.years.find(v => v.year === y.year - 1);
+  const following = e.years.find(v => v.year === y.year + 1);
+  const nextBoundary = e.horizon.transitions.find(t => t.year === following?.year);
+  const cycleOpens = !adjacent || adjacent.cycle.index !== cycle.index;
+  const annualMeaning = MAJOR_MEANINGS[y.annual.tenGod];
+  // Compare supplied calendar rows, not invented events or new relations.
+  // A cycle's full theme is introduced once; later years carry its context.
+  const cycleReading = cycleOpens
+    ? `${transition ? "전환 이후에는" : `${y.year}년은`} ${cycle.ganji} 대운의 ${cycle.tenGod}, ${y.annual.ganji} 세운의 ${p(y.annual.tenGod, "subject")} 만나는 흐름입니다. 큰 배경인 ‘${MAJOR_MEANINGS[cycle.tenGod].theme}’ 속에서 ‘${annualMeaning.theme}’에 주목합니다.`
+    : y.timePosition === "current"
+      ? `지금 ${y.year}년의 ${y.annual.ganji}(${y.annual.tenGod}) 세운은 ${cycle.ganji}(${cycle.tenGod}) 대운 안에서 ‘${annualMeaning.work}’에 힘을 줄 자리입니다.`
+      : "";
+  const comparison = previous
+    ? `같은 ${p(y.annual.tenGod, "object")} 읽었던 ${previous.year}년(${previous.cycle.ganji}·${previous.cycle.tenGod})과 비교하며, ${p(`‘${check}’`, "object")} ‘${MAJOR_MEANINGS[cycle.tenGod].theme}’의 관점에서 살펴볼 만해요.`
+    : adjacent && (y.year - e.horizon.from) % 2 === 0
+      ? `${cycle.ganji} 대운에서 ${p(`‘${MAJOR_MEANINGS[cycle.tenGod].work}’`, "object")} 다루는 동안, ${adjacent.year}년의 ‘${MAJOR_MEANINGS[adjacent.annual.tenGod].theme}’에서 ${p(`‘${annualMeaning.work}’`, "to")} 질문이 옮겨옵니다. 전해의 방식을 그대로 늘리기보다 ${annualMeaning.next}에 눈을 돌려볼 변화예요.`
+      : following && !e.horizon.transitions.some(t => t.year === following.year)
+        ? `${p(`‘${annualMeaning.work}’`, "object")} 다루는 데서 ${following.year}년의 ‘${MAJOR_MEANINGS[following.annual.tenGod].theme}’로 시선이 이어집니다. ${y.timePosition === "past" ? "그해" : "이때"} ${p(annualMeaning.gift, "object")} 써볼 장면이 있었다면, 다음에는 ${p(MAJOR_MEANINGS[following.annual.tenGod].work, "to")} 그 힘을 옮겨볼 수 있다는 뜻입니다.`
+        : following && nextBoundary ? `${following.year}년에는 ${nextBoundary.before.ganji}의 ‘${MAJOR_MEANINGS[nextBoundary.before.tenGod].theme}’에서 ${nextBoundary.after.ganji}의 ‘${MAJOR_MEANINGS[nextBoundary.after.tenGod].theme}’로 큰 장이 넘어갑니다. ‘${annualMeaning.work}’를 그때 ${`‘${MAJOR_MEANINGS[nextBoundary.after.tenGod].work}’에`} 가져간다면 무엇을 달리 써볼지 생각해볼 시간입니다.` : "";
+  const compared = previous ?? (adjacent && (y.year - e.horizon.from) % 2 === 0 ? adjacent : following);
+  const background = validPeriod ? [timing, cycleReading, comparison].filter(Boolean).join(" ") : "";
   const application = (r: NonNullable<ReturnType<typeof bind>> | undefined) => {
     if (!r) return "";
     const target = p(`‘${check}’`, "object");
@@ -104,6 +120,7 @@ export function majorInteractionReading(e: MajorEvidence, y: MajorYearEvidence, 
     }) : [];
   return { background, majorNatal,
     backgroundIds: validPeriod ? ["v4:major-reader-periods-01", `dayun-cycle:${cycle.index}:${cycle.ganji}`, `period-ten-god:${cycle.tenGod}`,
+      ...(compared ? [`period-ten-god:${compared.annual.tenGod}`, `period-ten-god:${compared.cycle.tenGod}`, `dayun-cycle:${compared.cycle.index}:${compared.cycle.ganji}`] : []),
       ...(transition ? [`dayun-cycle:${transition.before.index}:${transition.before.ganji}`, `transition:${transition.startSolarKst ?? transition.dateLabel}`] : [])] : [],
     harmonyAction: harmony && tension
       ? harmony.relation.type === "삼합" ? `각자 끝낼 몫을 나눌 때 ${p(`‘${check}’`, "object")} 이 해에 함께 조정할 조건으로 놓아보세요.`

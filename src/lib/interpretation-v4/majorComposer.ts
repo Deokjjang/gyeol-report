@@ -80,7 +80,7 @@ export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt
   const nextBehavior = future ? majorBehavior(e, c, future.after.tenGod, "next") : null;
   const transitions = e.horizon.transitions.map(t => {
     const a = MAJOR_MEANINGS[t.before.tenGod], z = MAJOR_MEANINGS[t.after.tenGod], past = t.year < e.currentYear;
-    const distant = t.year >= e.currentYear + 3;
+    const distant = t.year !== e.currentYear;
     const beforeScene = distant ? distantMajorScene(t.before.tenGod, false).setting : c.scenes[t.before.tenGod][0];
     const afterScene = distant ? distantMajorScene(t.after.tenGod, true).setting : c.scenes[t.after.tenGod][1];
     const lifeArea = distant ? "앞으로 맡을 역할" : c.noun;
@@ -120,7 +120,7 @@ export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt
     b("final-direction", `돈에서는 ‘${destination.money}’, 관계에서는 ${withKoreanParticle(`‘${destination.home}’`, "object")} 남겨보고 싶습니다. ${MAJOR_VOICE[last.cycle.tenGod].closing}`),
   ]));
   const narrative = { version: "v4-major-fortune-narrative-1" as const, headline, opening, sections,
-    finalLine: `${particle(c.craft, "은", "는")} 사라지지 않습니다 — ${particle(c.noun, "에서", "에서")} 키운 힘으로 ${particle(destination.work, "을", "를")} 만날 차례입니다.`, finalProof: source };
+    finalLine: `${e.input.name}님의 지금 ‘${c.craft}’에서, ${last.year}년의 ‘${destination.theme}’까지 — 맡는 역할보다 넓게, ${particle(m.gift, "을", "를")} 품고 이어갈 이야기입니다.`, finalProof: proof([], [], [], [...source.sourceRefs, `dayun-cycle:${last.cycle.index}:${last.cycle.ganji}`, `period-ten-god:${last.cycle.tenGod}`]) };
   const allocated = composeEvidenceChapters(e.input, e.materials, narrative, "major");
   const personalizeYear = createMajorYearPersonalization(e, [...allocated.narrative.opening, ...allocated.narrative.sections.filter(s => !s.id.startsWith("year-")).flatMap(s => s.blocks)]);
   const currentPeriod = { ...now, proof: source };
@@ -141,7 +141,7 @@ export async function composeMajorFortuneNarrative(payload: unknown, evaluatedAt
   const composed = { ...allocated, narrative: separated, contentAudit: auditContent(separated) };
   const publishedYears = years.map(y => ({ ...y, blocks: composed.narrative.sections.find(s => s.id === `year-${y.year}`)!.blocks }));
   const publishedTransitions = transitions.map(t => ({ ...t, blocks: composed.narrative.sections.find(s => s.id === `transition-${t.year}`)!.blocks }));
-  return { ok: true as const, ...composed, evidence: e, yearPlan, years: publishedYears, transitions: publishedTransitions, materials: e.materials,
+  return { ok: true as const, ...composed, writerVersion: "major-full-content-refinement-01-v2", evidence: e, yearPlan, years: publishedYears, transitions: publishedTransitions, materials: e.materials,
     behaviorBasis: [behavior?.source, nextBehavior?.source].filter(v => v !== undefined),
     completeness: { years: years.length, futureYears: years.filter(y => y.timePosition === "future").length, ages: years.every(y => Number.isInteger(y.age)), transitions: transitions.length, final: true },
     editorial: reviewNarrative(composed.narrative) };
