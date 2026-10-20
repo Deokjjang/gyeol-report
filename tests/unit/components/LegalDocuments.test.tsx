@@ -72,7 +72,8 @@ describe("legal document rendering", () => {
       privacy.privacyPolicyServiceRetentionKo, privacy.privacyPolicyLegalRetentionKo,
       privacy.privacyPolicyOverseasProcessingKo, privacy.privacyPolicyUnder14Ko,
       privacy.privacyPolicyMinorNoticeKo, privacy.privacyPolicySensitiveInfoLimitKo,
-      privacy.privacyPolicyNoResidentRegistrationNumberKo, privacy.privacyPolicyUserRightsKo]) {
+      privacy.privacyPolicyNoResidentRegistrationNumberKo, privacy.privacyPolicyUserRightsKo,
+      privacy.privacyPolicyMetaNoticeKo, privacy.privacyPolicyMetaRetentionKo]) {
       expect(content).toContain(item);
     }
     for (const row of privacy.privacyPolicyRetentionRows) {
@@ -85,7 +86,8 @@ describe("legal document rendering", () => {
     }
     expect(content).toContain("카드번호 등 결제수단 상세 정보를 직접 저장하지 않습니다.");
     expect(html.match(/<table\b/g)).toHaveLength(2);
-    expect(html.match(/<h2\b/g)).toHaveLength(11);
+    expect(html.match(/<h2\b/g)).toHaveLength(12);
+    expect(content).toContain("광고 성과 측정 (선택)");
     expect(html).not.toContain("deterministic");
   });
 
