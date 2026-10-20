@@ -1,3 +1,4 @@
+import { COMPATIBILITY_INDEX_VERSION } from "../../../src/lib/interpretation-v4/compatibilityIndex";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { NextRequest } from "next/server";
@@ -68,7 +69,9 @@ describe("V4 Book share, real V4 generation and existing SQL", () => {
       const pair = book.data.pages.find(p => p.kind === "pair"); expect(pair?.kind === "pair" && pair.directions).toHaveLength(2);
       expect(book.data.people).toHaveLength(2); expect(f.model.displayName).toBe(book.data.people[0].name);
       const index = book.data.pages.filter(p => p.kind === "score");
-      expect(index).toHaveLength(1); expect(index[0].notice).toBe("명리와 MBTI를 바탕으로 한 엔터테인먼트 해석입니다.");
+      expect(index).toHaveLength(1); expect(index[0].scoreVersion).toBe(COMPATIBILITY_INDEX_VERSION);
+      expect(index[0].notice).toContain("상징적 해석 지수");
+      expect(index[0].notice).toContain("성공 확률"); expect(index[0].notice).toContain("아닙니다");
       expect(JSON.stringify(book.data.pages.filter(p => p.kind !== "score"))).not.toMatch(/\bscore\b|\bgrade\b|\d+점/);
     }
     const entry = renderToStaticMarkup(<SharedBookEntry model={f.model} local />);

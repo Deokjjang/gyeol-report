@@ -119,7 +119,8 @@ describe("actual input → existing checkout builder → local publish/read → 
     expect(await publishLocalBook(prepared.orderId)).toMatchObject({ ok: true });
     const view = storedBook(await readLocalBook(prepared.orderId))!;
     expect(view).not.toBeNull();
-    if (payload.productKey === "saju_mbti_compatibility") { const spread = view.data.pages.find(p => p.kind === "pair"); expect(spread).toBeDefined(); expect(JSON.stringify(view.data)).not.toMatch(/67점|궁합 점수|궁합 등급/); }
+    if (payload.productKey === "saju_mbti_compatibility") { const spread = view.data.pages.find(p => p.kind === "pair"); expect(spread).toBeDefined(); // Actual versioned points belong only on the dedicated index page.
+      expect(JSON.stringify(view.data.pages.filter(p => p.kind !== "score"))).not.toMatch(/\d+점|궁합 점수|궁합 등급/); }
     else if (payload.person.birthTimeUnknown) expect(view.data.people[0].table.manse.stemRow.hour).toBeNull();
   }, 30000);
 });

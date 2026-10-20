@@ -68,3 +68,36 @@ Phase D 확정: Release/Book Runtime/제목/신규 누적 회귀 115 PASS, 별�
 문도하 Book: 12개월, 85문단, 26페이지, 본문 11,857자. 19문단과 실제로 어긋나던 2개 월 제목이 변경됐다. 새 Writer revision `annual-full-content-refinement-01-v2`; 원래 개인 자료 선택 version은 유지한다. 실제 계산/evidence/materials/Fusion integration은 기준 Book과 완전히 동일하다. 과거 저장본에 없는 새 caution 필드를 강제하지 않아 이전 DTO의 투영도 보존한다.
 
 관련 최종 101 PASS. 정확 절입/입춘/대운 경계와 ±1ms, 과거/현재/허용된 미래 연도, MBTI·시간 미상, 실제 발행/Book 저장·공유 재열람/전 페이지 SSR을 포함한다. 새 검사는 경계 전 현재 달의 focus 유지와 고객 화면의 기술적 시간 목록 부재도 확인한다. TypeScript 0진단, 변경 파일 lint 0경고 및 diff-check 통과. 외부 `phase-f/`에 전체 원고·Book을 보관했다. 모든 A~F 구현이 끝났으며 다음은 통합 검증과 실제 브라우저 6권 생성이다.
+
+## 최종 통합·실제 브라우저 검수
+
+A~F를 같은 브랜치에서 순서대로 구현·검증·커밋했다. 이후에만 새 localhost:3194 검수 화면을 열었다. 기존 launcher와 동일한 프로세스 한정 안전 플래그로 외부 Writer/실결제/운영 작업을 차단했고, 기존 3193 서버는 종료하거나 재사용하지 않았다. 임의 입력 → 실제 API/6상품 생성기 → 검증 → IndexedDB 저장 → Reader로 연결했다.
+
+아래는 **실제로 브라우저에서 생성한 6권**이다. 원고 전체를 생성·저장했고 END OF BOOK 및 새로고침 후 표지 재열람을 각각 확인했다. 브라우저 검수 도구에 보이는 입력/시각/digest로 오프라인에서 다시 계산해 6개 원본 evidence digest가 모두 정확히 일치했다. 따라서 아래 글자 수도 해당 브라우저 원본과 같은 생성 결과다. 원문은 변형하지 않았고 읽기용 한글·한자 표시는 기존 Reader가 담당한다.
+
+|상품|가상 인물·입력 맥락|페이지|문단|본문 글자 수|실제 저장 Book|
+|---|---|---:|---:|---:|---|
+|종합|김민서 · ENTP · 브랜드 기획자 · 썸|21|52|10,072|[책 열기](http://localhost:3194/dev/content-review/book?case=A&generation=0105ea2f-d05e-4bb9-a0fb-e7668e43a042)|
+|커리어·금전·학업|박태준 · ISFJ · 프리랜서 사진작가 · 솔로|17|36|9,351|[책 열기](http://localhost:3194/dev/content-review/book?case=B&generation=a2bf8fde-de42-44ef-8af2-83842b7cddbf)|
+|연애·결혼·자녀|이소율 · ESFP · 문화행사 기획자 · 연애|17|36|8,231|[책 열기](http://localhost:3194/dev/content-review/book?case=C&generation=6052b755-04de-463f-8afa-aac7b390783a)|
+|궁합|강현우 INTP / 오지안 ESTJ · 사업 파트너|21|36|9,963|[책 열기](http://localhost:3194/dev/content-review/book?case=D&generation=e4404fe3-9258-42dc-8b5f-dfb4311475b9)|
+|대운|최은정 · INFJ · 카페 자영업 · 기혼|31|114|16,671|[책 열기](http://localhost:3194/dev/content-review/book?case=E&generation=cc67d289-f7a8-4f23-890e-66184bdc614d)|
+|세운|문도하 · ENFJ · 대학생 · 결혼 준비 · 2026|26|85|11,857|[책 열기](http://localhost:3194/dev/content-review/book?case=F&generation=385f9021-1984-423b-b7c5-a7207c1ee110)|
+
+본문 글자 수는 공백 포함, 표지/제목/목차/만세력/MBTI표/부록을 제외한 해석 문단 합이다. 처음부터 읽을 수 있도록 6개 탭을 표지에 열어 두고 서버도 유지한다. 실제 검수 Book은 운영 결제·공유 권한을 발급받은 책이 아니므로 외부 공유 버튼이 비활성인 것은 기존 권한 계약에 따른 정상 동작이다. 공유 권한을 우회하지 않았다.
+
+### 통합 결과와 검증 한계
+
+- 실제 6상품 + 궁합 7유형 + 개인화13비교 + 미상/대략9사례 + 연애 상태6개: 오류0. 전체 페이지 SSR/본문 일치/부록/끝 문장/검수 API 경로 일치 확인. `final-books/verification.json`.
+- 최종 UI/공유/스냅샷 관련 10개 파일 164 PASS. 첫 동시 실행의 cold-generation 10초 hook 시간 초과는 기본 제한을 바꾸지 않고 serial 재실행해 47 PASS로 확인했다. 새 지수의 설명/숫자를 예전 고정값으로 거부하던 두 테스트는 실제 버전과 숫자 전용 페이지 계약을 검사하도록 수정했다. 신규 skip/테스트 삭제 없음.
+- 대운 107 PASS + 기준에서도 같은5 FAIL. 궁합 Safety의 예전 연애 원고 해시7 FAIL도 기준 SHA에서 같은 결과로 재현했다. 기존 goldens는 바꾸지 않았다. 이 두 기존 그룹12건을 전체 테스트 PASS라고 보고하지 않는다.
+- 최종 TypeScript0진단, 전체 ESLint0경고, 전체 Production build PASS(47개 static route 생성, 새 경고 없음), diff-check PASS. 전체 지식 연구 테스트를 재실행한 것은 아니다.
+- 원래 359문단 중 고정 대표 입력에서 107문단의 내용이 변경됐다. 비율만으로 품질을 승인하지 않는다. 단계별 전체 원고와 이전 원고는 외부 기록에 보관했다.
+- 기존 명리/달력/대운·세운 계산, MBTI 원천 DB, Fusion 계산, 연구 Source/Binder/Planner, V2/V3 경로, 결제/Auth/Worker/운영 DB는 변경하지 않았다. 새 것은 기존 실근거에 대응하는 조건부 생활 적용 재료 및 연결이다. 궁합 해석 지수만 명시적인 새 버전이며 과거 저장본 검증은 동결한 기존 계산으로 유지한다.
+- 원본 branch/HEAD/status 및 Dirty11 해시 일치. 기존86 Worktree 등록/HEAD와 기존 Ref 모두 유지되고 요청한 지속 Worktree/브랜치1개만 추가됐다. Git 공통 디렉터리는 지속 경로다. 이미 유실된 과거 임시 경로를 복구·정리하거나 그 파일들을 새로 정상이라고 선언하지 않았다.
+
+브랜치: `v4/six-product-full-content-refinement-01`. 최종 push 뒤 동일 SHA의 Vercel Preview 상태와 원격 SHA를 별도로 확인한다. 이는 master 통합 또는 Production 승인이 아니다. 최종 원격/배포 영수증은 외부 `FINAL-REPORT.json`과 작업 완료 응답에 기록한다.
+
+검수 화면: http://localhost:3194/dev/content-review
+
+외부 원본·로그·보존 비교: `~/Documents/gyeol-validation/v4-six-product-full-content-refinement-01/`. 판매 품질의 최종 승인은 운영자의 6권 독해 이후다. 후속 작업 또는 Production 전환을 시작하지 않는다.
