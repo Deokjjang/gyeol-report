@@ -6,3 +6,9 @@
 .actions button, .settings { border: 1px solid #b5a99b; background: #fffdf9; color: #49382e; border-radius: 7px; padding: 8px 14px; cursor: pointer; }
 .actions button:disabled { opacity: .55; cursor: wait; }
 .settings { font-size: 11px; padding: 5px 10px; }
+
+@media (max-width: 768px) {
+  .root {
+    display: none !important;
+  }
+}
