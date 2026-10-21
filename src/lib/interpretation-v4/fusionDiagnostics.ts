@@ -1,3 +1,4 @@
+import { selectFusionPair } from "./fusionContext";
 import type { MyeongliSemanticProfile } from "./foundationIntegratedProfile";
 import type { MbtiSemanticProfile } from "./mbtiSemanticProfile";
 import { inspectIntegratedSources } from "./foundationDiagnostics";
@@ -5,7 +6,7 @@ import { BIPOLAR_AXES } from "./semanticCore";
 import { FUSION_CONDITION_SPLITS, FUSION_TYPES, fusionUnique, fusionOrder,
   type FusionCandidate, type FusionDiagnostics, type FusionIssue, type FusionDebugCandidate } from "./fusionCore";
 import { FUSION_COMPLEMENT_RULES, type FusionCompositeRule } from "./fusionComplementRegistry";
-import { validFusionAxis, validFusionContexts } from "./fusionProfileAdapter";
+import { adaptMyeongliFusionSide, adaptMbtiFusionSide, validFusionAxis, validFusionContexts } from "./fusionProfileAdapter";
 
 export const stableFusionIssues = (rows: readonly FusionIssue[]) => [...new Map(rows.map(r => {
   const row = { ...r, refs: fusionUnique(r.refs) }; return [`${row.code}:${row.refs.join("|")}:${row.detail ?? ""}`, row];
@@ -35,6 +36,8 @@ export function inspectFusionMyeongliSource(m: MyeongliSemanticProfile): FusionI
 /** Publicly testable internal invariant gate. Invalid output is never returned
  * as a successful profile, including injected registry/candidate references. */
 export function validateFusionCandidates(candidates: readonly FusionCandidate[], m: MyeongliSemanticProfile, b: MbtiSemanticProfile): FusionIssue[] {
+  const sourceSides = { myeongli: adaptMyeongliFusionSide(m), mbti: adaptMbtiFusionSide(b).sides };
+  const sameIds = (a: readonly string[], z: readonly string[]) => JSON.stringify(fusionUnique(a)) === JSON.stringify(fusionUnique(z));
   const errors: FusionIssue[] = [], ids = new Set<string>(), mIds = new Set(m.evidence.map(e => e.id));
   const nodes = new Map(b.sourceNodes.map(n => [n.id, n])), annotations = new Set(b.annotations.filter(a => a.sourceType !== "reference_only").map(a => a.id));
   const fail = (code: string, c: FusionCandidate) => errors.push({ code, refs: [c.id] });
@@ -46,6 +49,18 @@ export function validateFusionCandidates(candidates: readonly FusionCandidate[],
     if (!c.myeongli.evidenceIds.length || c.myeongli.evidenceIds.some(id => !mIds.has(id))) fail("MISSING_MYEONGLI_EVIDENCE", c);
     if (!c.mbti.sourceNodeIds.length || c.mbti.sourceNodeIds.some(id => nodes.get(id)?.classification !== "SCORING_SEMANTIC") ||
       !c.mbti.actualSourceEvidenceIds.length || c.mbti.actualSourceEvidenceIds.some(id => !annotations.has(id))) fail("NON_SCORING_MBTI_SOURCE", c);
+    // Revalidate concrete sides, rather than accepting an existing ID with a
+    // forged axis, scope or contribution. These are the same source adapters
+    // used by the selector, not a second Fusion calculation.
+    for (const system of ["myeongli", "mbti"] as const) {
+      const side = c[system].side;
+      const expected = sourceSides[system].find(s => s.axis === side.axis && s.direction === side.direction && s.scope === side.scope);
+      if (!expected || JSON.stringify(side) !== JSON.stringify(expected)) fail("FUSION_SOURCE_SIDE_MISMATCH", c);
+    }
+    if (!sameIds(c.myeongli.evidenceIds, c.myeongli.side.evidenceIds) || !sameIds(c.mbti.sourceNodeIds, c.mbti.side.evidenceIds) ||
+      !sameIds(c.mbti.actualSourceEvidenceIds, c.mbti.side.annotationIds)) fail("FUSION_PROOF_IDENTITY_MISMATCH", c);
+    const pair = selectFusionPair([c.myeongli.side], [c.mbti.side], c.primaryContext);
+    if (!pair || pair.fit !== c.contextFit) fail("FUSION_SOURCE_CONTEXT_MISMATCH", c);
     if (c.conditionSplit) {
       const s = c.conditionSplit;
       if ((s.resolved && (!s.type || !(FUSION_CONDITION_SPLITS as readonly string[]).includes(s.type))) || (!s.resolved && c.strength !== "SUPPORT")) fail("INVALID_CONDITION_SPLIT", c);

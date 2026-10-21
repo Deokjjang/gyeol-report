@@ -1,3 +1,4 @@
+import { buildFoundationReferences } from "./evidenceFoundation";
 import "server-only";
 import { createHash } from "node:crypto";
 import { normalizeReportInputPayload } from "../report-generation/reportInputAdapter";
@@ -92,7 +93,8 @@ export function buildV4CompatibilityProduct(payload: unknown, calculated?: { per
     && reader.narrative.opening.length > 0 && reader.narrative.sections.every(s => s.blocks.length > 0);
   const published = publish ? reader.narrative : narrative;
   const readerVersion = reader.draft.version;
-  return { ...canonical, narrative: published, writerVersion: publish ? readerVersion : COMPATIBILITY_PRODUCT_VERSION, editorial: reviewNarrative(published),
+  return { ...canonical, narrative: published, writerVersion: publish ? readerVersion : COMPATIBILITY_PRODUCT_VERSION,
+    foundationReferences: [...buildFoundationReferences(profilesA.profiles, "personA"), ...buildFoundationReferences(profilesB.profiles, "personB")], editorial: reviewNarrative(published),
     integration: { version: COMPATIBILITY_PRODUCT_VERSION, pair,
       readerEdition: reader.draft, readerValidation, readerEditorial, readerAllocation: reader.allocation,
       ...(offline ? { publicationSafetyRegistry: reader.registry } : {}),

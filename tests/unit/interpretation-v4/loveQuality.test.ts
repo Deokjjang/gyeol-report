@@ -1,3 +1,4 @@
+import { preFoundationEvidence } from "../../helpers/versionedEditorialLocks";
 import { editorialLocks, expectEditorialFoundations } from "./productWideAssertions";
 import { beforeAll, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
@@ -115,7 +116,7 @@ describe("Love quality edition: actual paid generator without external calls", (
     const baseline = locks[id], r = await generateV4ShadowReport(baseline.input, clock);
     expect(r.ok).toBe(true); if (!r.ok) return;
     expectEditorialFoundations(r.evidencePacket as V4RuntimeEvidence, baseline.input, clock);
-    expect([v4Digest(r.draft), v4Digest(r.evidencePacket), v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(editorialLocks.groups.love[id]);
+    expect([v4Digest(r.draft), v4Digest(preFoundationEvidence(r.evidencePacket as V4RuntimeEvidence)), v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(editorialLocks.groups.love[id]);
   }, 120000);
 });
 

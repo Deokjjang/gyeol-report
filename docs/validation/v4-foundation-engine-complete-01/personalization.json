@@ -1,0 +1,10 @@
+{
+  "sameChartDifferentMbti": {
+    "sameCalculation": true,
+    "differentProse": true
+  },
+  "sameMbtiDifferentChart": {
+    "differentCalculation": true,
+    "differentProse": true
+  }
+}

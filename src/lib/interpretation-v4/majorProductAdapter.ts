@@ -1,3 +1,4 @@
+import { buildFoundationReferences } from "./evidenceFoundation";
 import "server-only";
 import { composeMajorFortuneNarrative } from "./majorComposer";
 import { createTimeProductContext, type TimeProductPeriod } from "./timeProductContext";
@@ -30,7 +31,7 @@ export async function buildV4MajorProduct(payload: unknown, evaluatedAt: string)
     return { ...s, blocks: extra ? [...blocks, extra] : blocks };
   });
   const narrative = { ...legacy.narrative, opening, sections };
-  return { ...legacy, narrative, writerVersion: legacy.writerVersion, behaviorBasis: [],
+  return { ...legacy, narrative, writerVersion: legacy.writerVersion, behaviorBasis: [], foundationReferences: buildFoundationReferences(projections[0].natalProfile),
     years: legacy.years.map(y => ({ ...y, blocks: sections.find(s => s.id === `year-${y.year}`)!.blocks })),
     transitions: legacy.transitions.map(t => ({ ...t, blocks: sections.find(s => s.id === `transition-${t.year}`)!.blocks })),
     editorial: reviewNarrative(narrative), integration: { version: MAJOR_PRODUCT_VERSION, natalBuilds: time.natalBuilds,

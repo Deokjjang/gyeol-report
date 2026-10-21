@@ -1,3 +1,4 @@
+import { preFoundationEvidence } from "../../helpers/versionedEditorialLocks";
 import { editorialLocks, expectEditorialFoundations } from "./productWideAssertions";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
@@ -83,6 +84,6 @@ describe("career specialist questions, actual occupation and source boundaries",
     const generated = await generateV4ShadowReport(payload, CAREER_QUALITY_CLOCK);
     expect(generated.ok).toBe(true);
     if (generated.ok) expectEditorialFoundations(generated.evidencePacket as V4RuntimeEvidence, payload, CAREER_QUALITY_CLOCK);
-    expect(hash({ generated, book: generated.ok ? projectBook(generated.evidencePacket as V4RuntimeEvidence) : null })).toBe(editorialLocks.groups.career[id as keyof typeof editorialLocks.groups.career]);
+    expect(hash({ generated: generated.ok ? { ...generated, evidencePacket: preFoundationEvidence(generated.evidencePacket as V4RuntimeEvidence) } : generated, book: generated.ok ? projectBook(generated.evidencePacket as V4RuntimeEvidence) : null })).toBe(editorialLocks.groups.career[id as keyof typeof editorialLocks.groups.career]);
   }, 120000);
 });

@@ -1,9 +1,11 @@
+import { evaluateEvidence } from "./evidencePolicy";
 import { STEM_YIN_YANG, BRANCH_YIN_YANG } from "../saju/constants";
 import { buildCanonicalNatalTable } from "../report-knowledge/natalTableEvidence";
 import { analyzeV4Strength, structureContext } from "./strength";
 import { MATERIAL_BY_FEATURE } from "./materialRegistry";
 import { depthFeature } from "./materialDepth";
 import { FUSION_RULES } from "./fusionRules";
+import { compareMaterialIndependence } from "./evidenceFoundation";
 import type { SajuCalcResult } from "../saju/types";
 import type { MaterialPacket } from "./narrativeTypes";
 import type { BoundMaterial } from "./materialPacket";
@@ -28,7 +30,7 @@ export type ContentEvidencePool = ReturnType<typeof buildContentEvidencePool>;
 export function buildContentEvidencePool(calculation: SajuCalcResult, materials: MaterialPacket) {
   const valid = structureContext(calculation).valid;
   const table = valid && calculation.birthTimeContext ? buildCanonicalNatalTable(calculation.birthTimeContext) : null;
-  return { materials: materials.selected, fusions: materials.fusions, fortunes: materials.fortuneComposites,
+  return { subject: materials.subject, materials: materials.selected, fusions: materials.fusions, fortunes: materials.fortuneComposites,
     elements: materials.symbolicElements, yinYang: projectYinYang(calculation),
     strength: analyzeV4Strength(calculation), relations: table?.relations ?? [],
     stages: table?.pillars.flatMap(p => (p.twelveLifeStage ?? []).map(label => ({ position: p.columnId, label, pillar: p.pillar }))) ?? [],
@@ -40,7 +42,10 @@ export const materialLabel = (m: BoundMaterial) => MATERIAL_BY_FEATURE.get(m.fea
 export function fusionDomains(f: FusionInterpretation): readonly Domain[] {
   // Phase1 stores only its first eligible domain. Recover the already reviewed
   // rule domains instead of treating that first domain as its entire meaning.
-  return FUSION_RULES.find(r => r.id === f.ruleId)?.domains ?? [f.domain];
+  const rule = FUSION_RULES.find(r => r.id === f.ruleId);
+  if (!rule || rule.type !== f.mbtiEvidence.type || rule.trait[1] !== f.mbtiEvidence.traitId) return [];
+  return rule.domains.filter(domain => f.myeongliEvidence.some(d =>
+    d.usable && evaluateEvidence(d.evidence).usable && MATERIAL_BY_FEATURE.get(d.evidence.feature)?.domains.includes(domain)));
 }
 
 export type ChapterEvidencePlan = {
@@ -59,14 +64,17 @@ export const createContentSelection = (): ContentSelectionState => ({ rootUses: 
  * Aliases, the day-master/day-pillar pair and overlapping source lineage do not
  * count twice. A material's many seed sentences are still ONE observation. */
 export function assertionPermission(roots: readonly BoundMaterial[], fusion: FusionInterpretation | null) {
-  roots = roots.filter(m => m.evidence.length && m.evidence.every(d => d.usable && d.strength === "strong"));
+  const subject = roots[0]?.evidence[0]?.evidence.subject;
+  roots = roots.filter(m => m.evidence.length && m.evidence.every(d => d.usable && d.strength === "strong" &&
+    d.evidence.subject === subject && d.evidence.scope === "natal" && !d.evidence.period && evaluateEvidence(d.evidence).strength === "strong"));
   const tags = [...new Set(roots.flatMap(m => MATERIAL_BY_FEATURE.get(m.feature)?.semanticTags ?? []))];
   const supported = tags.map(theme => {
     const independent: BoundMaterial[] = [];
     for (const m of roots.filter(m => MATERIAL_BY_FEATURE.get(m.feature)?.semanticTags.includes(theme))) {
-      if (independent.some(p => p.feature === m.feature ||
-        (["dayMaster", "dayPillar"].includes(p.material.category) && ["dayMaster", "dayPillar"].includes(m.material.category)) ||
-        p.lineage.some(ref => m.lineage.includes(ref)))) continue;
+      if (independent.some(p => compareMaterialIndependence(
+        { feature: p.feature, category: p.material.category, lineage: p.lineage },
+        { feature: m.feature, category: m.material.category, lineage: m.lineage },
+      ) !== "independent")) continue;
       independent.push(m);
     }
     return { theme, independentFeatures: independent.map(m => m.feature) };
@@ -84,7 +92,9 @@ export function assertionPermission(roots: readonly BoundMaterial[], fusion: Fus
  * material enters roots; DB-only/ambiguous/uncertain remain in held. */
 export function planChapter(pool: ContentEvidencePool, state: ContentSelectionState, id: string, domain: Domain, preferred: readonly string[] = [], anchors: readonly string[] = []): ChapterEvidencePlan {
   const areas: readonly Domain[] = domain === "weaknesses" ? ["weaknesses", "identity"] : [domain];
-  const candidates = pool.materials.filter(m => m.material.seeds.some(s => s.domains.some(d => areas.includes(d))) &&
+  const candidates = pool.materials.filter(m => m.evidence.length && m.evidence.every(d =>
+    d.usable && d.strength === "strong" && d.evidence.subject === pool.subject && !d.evidence.period &&
+    d.evidence.scope === "natal" && evaluateEvidence(d.evidence).strength === "strong") && m.material.seeds.some(s => s.domains.some(d => areas.includes(d))) &&
     MATERIAL_BY_FEATURE.get(m.feature)?.domains.some(d => areas.includes(d)) &&
     (anchors.includes(m.feature) || (state.rootUses.get(m.feature) ?? 0) < (m.material.category === "dayPillar" || m.material.category === "dayMaster" ? 2 : 3)));
   const fusions = pool.fusions.filter(f => fusionDomains(f).some(d => areas.includes(d)) && (state.fusionUses.get(f.ruleId) ?? 0) < 2);
@@ -102,7 +112,16 @@ export function planChapter(pool: ContentEvidencePool, state: ContentSelectionSt
   const anchored = candidates.filter(m => anchors.includes(m.feature));
   const ordered = (anchors.length ? anchored : candidates).toSorted((a, b) => rank(a) - rank(b) || a.feature.localeCompare(b.feature));
   const first = ordered[0];
-  const second = ordered.find(m => m !== first && m.material.category !== first?.material.category) ?? ordered[1];
+  // Choose genuinely independent support when possible. A missing lineage is
+  // unknown, not evidence of independence; preserve the legacy fallback for
+  // chapters whose verified material pool provides no independent candidate.
+  const independentSecond = first && ordered.find(m => m !== first &&
+    compareMaterialIndependence(
+      { feature: first.feature, category: first.material.category, lineage: first.lineage },
+      { feature: m.feature, category: m.material.category, lineage: m.lineage },
+    ) === "independent" && m.material.category !== first.material.category);
+  const second = independentSecond ?? ordered.find(m => m !== first &&
+    m.material.category !== first?.material.category) ?? ordered[1];
   const roots = [first, second].filter((m): m is BoundMaterial => Boolean(m));
   const relevant = fusions.filter(f => f.kind === "complement" || f.myeongliEvidence.some(d => roots.some(m => m.feature === contentFeature(d.evidence.feature))));
   const fusion = relevant.toSorted((a, b) => (state.fusionUses.get(a.ruleId) ?? 0) - (state.fusionUses.get(b.ruleId) ?? 0) ||

@@ -21,15 +21,16 @@ import { buildV4LoveProduct } from "./loveProductAdapter";
 import { buildV4CompatibilityProduct } from "./compatibilityProductAdapter";
 import { buildV4MajorProduct } from "./majorProductAdapter";
 import { buildV4AnnualProduct } from "./annualProductAdapter";
-import { projectV4Composition, validateV4Publication, v4Digest, type V4Composition, type V4RuntimeEvidence } from "./runtimeProjection";
+import { projectV4Composition, validateV4Publication, v4Digest, stableV4Json, type V4Composition, type V4RuntimeEvidence } from "./runtimeProjection";
 import type { NarrativeInput } from "./narrativeTypes";
+import { inspectPublicationFoundation } from "./evidenceFoundation";
 
 export type V4ShadowClock = { readonly evaluatedAt: string; readonly policyDate?: string };
 const disabledWriter = { enabled: false as const, reason: "flag_disabled" as const };
 const failure = (code: string): ProductGenerationResult => ({ ok: false, externalCalls: [], error: { code: "INVALID_REPORT_INPUT", message: code, validationErrors: [code] } });
 
-/** Deliberately not imported by any route, public dispatcher, worker or action.
- * No flag, env var, browser state or payload property activates this adapter. */
+/** Shared deterministic generation entry. Paid authorization belongs to
+ * paidRuntime; local review supplies an explicit clock and never writes a DB. */
 export async function generateV4ShadowReport(payload: unknown, clock: V4ShadowClock): Promise<ProductGenerationResult> {
   if (!clock || !/T.*(?:Z|[+-]\d\d:\d\d)$/.test(clock.evaluatedAt) || !Number.isFinite(Date.parse(clock.evaluatedAt)) ||
     clock.policyDate && !Number.isFinite(Date.parse(clock.policyDate))) return failure("V4_EXPLICIT_CLOCK_REQUIRED");
@@ -80,6 +81,11 @@ export async function generateV4ShadowReport(payload: unknown, clock: V4ShadowCl
         composition = { product: "love_marriage_child", result };
       }
     }
+    // New publications only: structural proof inspection does not recompute
+    // historical Books or alter their stored snapshots. Review-only findings
+    // remain offline diagnostics rather than customer-visible assertions.
+    const foundation = inspectPublicationFoundation(composition, input, stableV4Json);
+    if (foundation.issues.some(issue => issue.severity === "error")) return failure("V4_EVIDENCE_FOUNDATION_INVALID");
     const natalTableEvidence: Record<string, CanonicalNatalTableEvidence> = {};
     const mbtiTables: Record<string, MbtiCommonProfileTableData | null> = {};
     for (const [slot, calc] of Object.entries(calculations)) {
@@ -92,7 +98,7 @@ export async function generateV4ShadowReport(payload: unknown, clock: V4ShadowCl
     }
     // Normalize once to exactly the JSON representation persisted by the worker.
     const body = JSON.parse(JSON.stringify({ version: "v4-runtime-evidence-1", mode: "shadow", productType: input.productKey,
-      generatedAt: clock.evaluatedAt, bookEditorialRevision: "common-editorial-01", input, composition, calculations, natalTableEvidence, mbtiTables })) as Omit<V4RuntimeEvidence, "contentDigest">;
+      generatedAt: clock.evaluatedAt, foundationRevision: "foundation-engine-01", foundation, bookEditorialRevision: "common-editorial-01", input, composition, calculations, natalTableEvidence, mbtiTables })) as Omit<V4RuntimeEvidence, "contentDigest">;
     const evidencePacket: V4RuntimeEvidence = { ...body, contentDigest: v4Digest(body) };
     const draft = projectV4Composition(composition), gate = validateV4Publication(input.productKey, draft, evidencePacket);
     if (!gate.ok) return { ok: false, externalCalls: [], error: { code: "INVALID_REPORT_INPUT", message: "V4_PUBLISH_REJECTED", validationErrors: gate.errors } };

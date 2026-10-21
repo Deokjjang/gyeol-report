@@ -57,6 +57,13 @@ export function collectComprehensiveCandidates(i: ComprehensivePlanInputs): Cand
     ]);
     if (row.primaryAxes.some(a => ["GOAL_DRIVE", "CREATION", "PERSISTENCE"].includes(a))) row.slots.push("RESULT_STYLE");
     if (row.primaryAxes.includes("STATUS_DRIVE")) row.slots.push("SUCCESS_DESIRE");
+    const missing = [
+      ...row.evidenceIds.filter(id => !atomIds.has(id) && !sourceIds.has(id)),
+      ...row.myeongliEvidenceIds.filter(id => !atomIds.has(id)),
+      ...row.mbtiSourceNodeIds.filter(id => !sourceIds.has(id)),
+      ...row.fusionIds.filter(id => !fusion.some(f => f.id === id)),
+    ];
+    if (missing.length) { row.invalidReasons.push("UNRESOLVED_SOURCE_DEPENDENCY"); row.primaryEligible = false; }
     rows.push(row);
   }
 

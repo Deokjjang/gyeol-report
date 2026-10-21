@@ -1,3 +1,4 @@
+import { withKoreanParticle, type KoreanParticle } from "../report-knowledge/koreanCopyUtils";
 import type { MaterialSeed, SeedRole } from "./materialDepthTypes";
 import type { BoundMaterial } from "./materialPacket";
 import type { NarrativeBlock, NarrativeMode, NarrativeProof, NarrativeState, NarrativeTone } from "./narrativeTypes";
@@ -7,6 +8,10 @@ import { realizeEditorialVariant } from "./narrativeVariation";
 export const uniqueRefs = (values: readonly string[]) => [...new Set(values)].sort();
 export const cleanCopy = (text: string) => text.replace(/\s+/g, " ").trim();
 export function particle(word: string, final: string, open: string) {
+  if (final === open) return word + final;
+  const kinds: Readonly<Record<string, KoreanParticle>> = { "은/는": "topic", "이/가": "subject", "을/를": "object", "과/와": "with", "으로/로": "to", "이라는/라는": "called" };
+  const kind = kinds[`${final}/${open}`];
+  if (kind) return withKoreanParticle(word, kind);
   const code = word.trim().charCodeAt(word.trim().length - 1) - 0xac00;
   return word + (code >= 0 && code <= 11171 && code % 28 !== 0 ? final : open);
 }

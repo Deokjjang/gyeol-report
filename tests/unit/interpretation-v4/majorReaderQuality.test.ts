@@ -1,3 +1,4 @@
+import { preFoundationEvidence } from "../../helpers/versionedEditorialLocks";
 import { readableBookText } from "../../../src/lib/book/readerCopy";
 import { editorialLocks, expectEditorialFoundations } from "./productWideAssertions";
 import { beforeAll, expect, it } from "vitest";
@@ -156,7 +157,7 @@ it("S all Book pages render without lost paragraphs or leaked internal IDs", () 
 
 it.each(RUNTIME_FIXTURES.filter(f => f.payload.productKey !== "major_fortune"))("$id other product current edition is pinned separately from original foundations", async f => {
   const g = await generateV4ShadowReport(f.payload, SHADOW_CLOCK); expect(g.ok).toBe(true); if (!g.ok) return;
-  expect([v4Digest(g.draft), v4Digest(g.evidencePacket), v4Digest(projectBook(g.evidencePacket as V4RuntimeEvidence))])
+  expect([v4Digest(g.draft), v4Digest(preFoundationEvidence(g.evidencePacket as V4RuntimeEvidence)), v4Digest(projectBook(g.evidencePacket as V4RuntimeEvidence))])
     .toEqual(editorialLocks.groups.runtime[f.id as keyof typeof editorialLocks.groups.runtime]);
   expectEditorialFoundations(g.evidencePacket as V4RuntimeEvidence, f.payload, SHADOW_CLOCK);
 }, 120000);

@@ -1,3 +1,4 @@
+import { preFoundationEvidence } from "../../helpers/versionedEditorialLocks";
 import { afterAll, describe, expect, it, vi } from "vitest";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -103,7 +104,7 @@ describe("13D-6B actual customer generation to persisted Book", () => {
     const input = payload(), a = await generateV4ShadowReport(input, SHADOW_CLOCK), b = await generateV4ShadowReport(clone(input), SHADOW_CLOCK);
     if (!a.ok || !b.ok) return expect.unreachable(JSON.stringify([a, b]));
     expect(b).toEqual(a);
-    const e = clone(a.evidencePacket) as V4RuntimeEvidence;
+    const e = preFoundationEvidence(a.evidencePacket as V4RuntimeEvidence);
     const legacy = composeComprehensiveNarrative({ calculation: e.calculations.person, name: input.person.name, mbti: input.person.mbtiType, context: input.userContext });
     if (!legacy.ok) return expect.unreachable();
     const { contentDigest: _digest, ...body } = { ...e, composition: { product: "saju_mbti_full" as const, result: legacy } };

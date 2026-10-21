@@ -1,3 +1,4 @@
+import { compareMaterialIndependence } from "./evidenceFoundation";
 import { getMbtiSourceProfile, MBTI_TRAIT_AREAS } from "../report-knowledge/mbti/sourceRuntimeAdapter";
 import { BRIDGE_SCENE_RULES } from "../report-knowledge/bridge/interactionSceneRules";
 import type { SajuCalcResult } from "../saju/types";
@@ -40,7 +41,10 @@ function consolidate(observations: readonly Observation[]): EvidenceDecision[] {
 function independentSupport(groups: readonly (readonly string[])[], evidence: readonly EvidenceDecision[], selected: readonly EvidenceDecision[] = []): readonly EvidenceDecision[] | null {
   if (!groups.length) return selected;
   for (const d of evidence.filter(d => groups[0].includes(d.evidence.feature))) {
-    if (selected.some(s => s.evidence.feature === d.evidence.feature || s.evidence.lineage.some(ref => d.evidence.lineage.includes(ref)))) continue;
+    if (selected.some(s => compareMaterialIndependence(
+      { ...s.evidence, category: MATERIAL_BY_FEATURE.get(s.evidence.feature)?.depth?.category ?? "other" },
+      { ...d.evidence, category: MATERIAL_BY_FEATURE.get(d.evidence.feature)?.depth?.category ?? "other" },
+    ) !== "independent")) continue;
     const rest = independentSupport(groups.slice(1), evidence, [...selected, d]);
     if (rest) return rest;
   }
@@ -118,7 +122,7 @@ export function interpretFusion(input: {
   };
 }
 
-/** Offline integration entry; never invoked by current report dispatch/routes. */
+/** Existing material-packet entry used by all six V4 product adapters. */
 export function buildFusionCore(input: { readonly calculation: SajuCalcResult; readonly mbti?: string | null; readonly subject?: Observation["subject"]; readonly domains?: readonly Domain[] }) {
   const structureLayer = buildMyeongliStructure(input.calculation);
   const result = interpretFusion({ ...input, observations: buildV4Evidence(input.calculation, input.subject) });

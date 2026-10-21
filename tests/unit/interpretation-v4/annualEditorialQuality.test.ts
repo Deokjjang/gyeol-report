@@ -1,3 +1,4 @@
+import { preFoundationEvidence } from "../../helpers/versionedEditorialLocks";
 import { editorialLocks, expectEditorialFoundations } from "./productWideAssertions";
 import { beforeAll, expect, it } from "vitest";
 import locks from "./annualEditorialQualityLocks.json";
@@ -167,6 +168,6 @@ it.each(locks.products)("protected product $id keeps current copy receipts and o
   const f = RUNTIME_FIXTURES.find(f => f.id === lock.id)!;
   const g = await generateV4ShadowReport(f.payload, SHADOW_CLOCK);
   if (!g.ok) return expect.unreachable();
-  expect([v4Digest(g.draft), v4Digest(g.evidencePacket), v4Digest(projectBook(g.evidencePacket as V4RuntimeEvidence))]).toEqual(editorialLocks.groups.runtime[f.id as keyof typeof editorialLocks.groups.runtime]);
+  expect([v4Digest(g.draft), v4Digest(preFoundationEvidence(g.evidencePacket as V4RuntimeEvidence)), v4Digest(projectBook(g.evidencePacket as V4RuntimeEvidence))]).toEqual(editorialLocks.groups.runtime[f.id as keyof typeof editorialLocks.groups.runtime]);
   expectEditorialFoundations(g.evidencePacket as V4RuntimeEvidence, f.payload, SHADOW_CLOCK);
 }, 120000);

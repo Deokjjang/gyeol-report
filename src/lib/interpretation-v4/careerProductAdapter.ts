@@ -1,3 +1,4 @@
+import { buildFoundationReferences } from "./evidenceFoundation";
 import "server-only";
 import { createHash } from "node:crypto";
 import { buildIntegratedMyeongliProfile } from "./foundationIntegratedProfile";
@@ -149,7 +150,8 @@ export function buildV4CareerProduct(input: NarrativeInput) {
   const required = ["current", "money", "roles", "study", "direction"];
   const published = !readerValidation.hardErrors.length && release.narrative.opening.length
     && required.every(id => release.narrative.sections.some(s => s.id === id)) ? release.narrative : narrative;
-  return { ok: true as const, writerVersion: CAREER_PRODUCT_VERSION, narrative: published, materials: packet, editorial: [], studyBasis: study.basis,
+  return { ok: true as const, writerVersion: CAREER_PRODUCT_VERSION, narrative: published,
+    foundationReferences: buildFoundationReferences(profiles), materials: packet, editorial: [], studyBasis: study.basis,
     selection: { voice: voice.id, workFunction: context.workFunction, workMode: context.workMode },
     integration: { reportStableKey, context: g.value.context, explicitMbtiUsage: renderer.explicitMbtiUsage,
       publishedEdition: published === release.narrative ? release.draft.version : "career-product-13d-7a-v1",
