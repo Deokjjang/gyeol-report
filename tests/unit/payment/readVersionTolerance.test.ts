@@ -8,13 +8,13 @@ import type { ReliabilityResult, ReliabilityStore } from "../../../src/lib/payme
 import { storedBook, validateBookPublication } from "../../../src/lib/book/storedReport";
 import { validateNewProductPublication } from "../../../src/lib/report-generation/productPublishGate";
 import {
-  DAYUN_CALCULATION_VERSION, SAJU_CALENDAR_VERSION, isReadableDayunCalculationVersion, isReadableSajuCalendarVersion, unknownCalculationVersions,
+  DAYUN_CALCULATION_VERSION, SAJU_CALC_VERSION_ID, SAJU_CALENDAR_VERSION, isReadableDayunCalculationVersion, isReadableSajuCalendarVersion, unknownCalculationVersions,
 } from "../../../src/lib/saju/calendarVersion";
 import { SHINSAL_RULES, shinsalRulesFor } from "../../../src/lib/saju/shinsalConstants";
 
 // Paid snapshots written by the v5-lmt engine (v5/manseryeok-lmt df60d562: generateReportSnapshot with the
-// deterministic V3 generator or generateV4ShadowReport, inputs from BOOK_FIXTURES). This code generates
-// saju-calendar-kst-v2 only; it must still read these after a rollback, and never clear an unknown one.
+// deterministic V3 generator or generateV4ShadowReport, inputs from BOOK_FIXTURES). Phase 0 (463c4f8e) generated
+// kst-v2 and only read these; with v5 current they are native. Unknown versions are never cleared either way.
 const FIXTURES = ["v3-annual-exact", "v3-major-approximate", "v3-love-unknown", "v4-comprehensive-approximate"] as const;
 const load = (name: string): Record<string, unknown> =>
   JSON.parse(gunzipSync(readFileSync(`tests/fixtures/v5-lmt-snapshots/${name}.json.gz`)).toString("utf8"));
@@ -24,13 +24,12 @@ const readOnlyStore = (snapshot: unknown) => {
   return { store: { call } as ReliabilityStore, call };
 };
 
-describe("Phase 0: v5-lmt calculation versions are known on read", () => {
-  it("keeps the published versions and tables of new reports", () => {
-    expect(SAJU_CALENDAR_VERSION).toBe("saju-calendar-kst-v2");
-    expect(DAYUN_CALCULATION_VERSION).toBe("dayun-kst-sect2-v1");
+describe("v5-lmt and kst-v2 calculation versions are known on read", () => {
+  it("publishes v5-lmt and keeps kst-v2 readable", () => {
+    expect([SAJU_CALENDAR_VERSION, DAYUN_CALCULATION_VERSION, SAJU_CALC_VERSION_ID]).toEqual(["saju-calendar-v5-lmt", "dayun-utc-sect2-v2", "v5-lmt-2"]);
     expect(shinsalRulesFor(SAJU_CALENDAR_VERSION)).toBe(SHINSAL_RULES);
-    expect(isReadableSajuCalendarVersion("saju-calendar-v5-lmt")).toBe(true);
-    expect(isReadableDayunCalculationVersion("dayun-utc-sect2-v2")).toBe(true);
+    expect(isReadableSajuCalendarVersion("saju-calendar-kst-v2")).toBe(true);
+    expect(isReadableDayunCalculationVersion("dayun-kst-sect2-v1")).toBe(true);
     expect(isReadableSajuCalendarVersion("saju-calendar-v5-lmt-x")).toBe(false);
     expect(unknownCalculationVersions({ a: [{ calendarVersion: "saju-calendar-v6" }], timeBasis: { calcVersion: "v5-lmt-3" }, b: { calculationVersion: "dayun-x" } }))
       .toEqual(["saju-calendar-v6", "v5-lmt-3", "dayun-x"]);
@@ -48,9 +47,9 @@ describe("Phase 0: v5-lmt calculation versions are known on read", () => {
     if (snapshot.productVersion === "v4") expect(storedBook(snapshot)).not.toBeNull();
   });
 
-  it("does not let new generation publish a v5 calendar version", () => {
+  it("lets new generation publish the current v5-lmt version (legacy rejection: legacyBookProtection)", () => {
     const snapshot = load("v3-love-unknown");
-    expect(validateNewProductPublication(String(snapshot.productType), snapshot.draft, snapshot.evidencePacket).errors).toContain("SAJU_CALENDAR_CURRENT_REQUIRED");
+    expect(validateNewProductPublication(String(snapshot.productType), snapshot.draft, snapshot.evidencePacket)).toEqual({ ok: true, errors: [] });
   });
 });
 
