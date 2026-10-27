@@ -85,7 +85,8 @@ const fullPillarInput = {
         hiddenStems: ["庚 편관", "壬 편인", "戊 편재"],
         twelveLifeStage: ["절"],
         twelveSinsal: ["겁살"],
-        sinsal: ["망신살"],
+        // v5-lmt: 己卯년(亥卯未) 亡神 is 寅, not in this chart (was the 劫煞 table's 申).
+        sinsal: [],
         gwiin: ["월덕귀인", "천덕귀인"],
         interactions: ["연일 천간합 甲己", "申亥해"],
       },

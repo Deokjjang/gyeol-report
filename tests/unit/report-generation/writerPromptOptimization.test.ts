@@ -124,13 +124,15 @@ it("all 392 baseline instruction meanings and the output schema remain intact", 
   expect(hash(readEvidence(user).expanded)).toBe("a5baa0731256bbedb807948106bc3884e854d185284ec0c2ac0c33beac676e1a");
 });
 
+// v5-lmt shinsal tables (亡神 per 論劫煞亡神, 孤辰·寡宿 by 方): only the natal shinsal markers in the evidence
+// changed. With the kst-v2 tables forced these hashes are the previous ones (docs/manseryeok-lock-rebaseline.md).
 const otherRequestHashes = {
-  career_money_study: "5cf0de17d1b9d627b8a8303191fcea2a96e92c1308a9ed74589063a9413fd9d3",
-  love_marriage_child: "151ccbb50f9fdc2e8bd1e8e11f14814b15ca96cf1b701e7ae4173ae995091ceb",
-  saju_mbti_compatibility: "7232d1dbedb198730bca469869145527e71171de7a76a27ce697a4872b73fe5f",
+  career_money_study: "cdc69fd24dfed03e3542fb4d2fdd65005afcb0272b1cd8f8d7cb76be34f84dda",
+  love_marriage_child: "678805ce09ba0f0063f08076c20fd14f404cfbc44475a843e5ec7b4e8601a127",
+  saju_mbti_compatibility: "9f03af683c9800c93f796ad6e7c1d062fc859643a6cfc4b1e3704e4f02d5ac4e",
   // v5-lmt: customerDayun/dayunSelection version strings and calendarContext.timeBasis only (same chart and cycles).
-  major_fortune: "d3c5996af28bc3fad5c5fb4d9deeea38af7b2d96da124baa9edb3d65da560315",
-  annual_fortune: "07e4a2168b537cd20eb6c6c7bc75f9acd54a39ee94cc28a2db33255ee31da38c",
+  major_fortune: "0ca6fd85525cf038ff5d54d3d42cb4afffa3affbae2bd7e480b4feba3c814ce4",
+  annual_fortune: "45f3c026d2505042044c421eb5ed83b0b7e3521f0fe6bce1851d6a1ba8569b04",
 };
 it.each(Object.entries(otherRequestHashes))("%s current deterministic evidence keeps the reviewed writer request", async (key, digest) => {
   const result = await generateProductReport(payload(key), disabled, "deterministic_fallback");

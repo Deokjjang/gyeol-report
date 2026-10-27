@@ -137,7 +137,8 @@ it("Gaon: canonical metal weak, genuine multi-scene fusion and complete selected
   expect(metrics(r.draft, facts).compound).toBeGreaterThan(7);
   expect(r.draft.direction).toContain("이번 주");
   const trace = comprehensiveSelectionTrace(facts, r.draft);
-  for (const id of ["sinsal_baekho", "sinsal_yangin", "twelve_sinsal_yeokma", "twelve_sinsal_jangseong", "twelve_sinsal_banan", "gwiin_cheoneul", "gwiin_cheondeok", "twelve_sinsal_hwagae", "gwiin_jaego", "sinsal_cheonmunseong", "shinsal:GOSINSAL"]) {
+  // v5-lmt: 丙子년 孤辰 is 寅 (亥子丑 方), not in Gaon's chart; the kst-v2 三合 table gave 亥.
+  for (const id of ["sinsal_baekho", "sinsal_yangin", "twelve_sinsal_yeokma", "twelve_sinsal_jangseong", "twelve_sinsal_banan", "gwiin_cheoneul", "gwiin_cheondeok", "twelve_sinsal_hwagae", "gwiin_jaego", "sinsal_cheonmunseong"]) {
     const row = trace.find(t => t.featureId === id);
     expect(row?.observed, id).toBe(true); expect(row?.reason).toBeTruthy();
   }

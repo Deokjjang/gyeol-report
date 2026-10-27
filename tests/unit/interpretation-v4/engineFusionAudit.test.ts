@@ -14,6 +14,7 @@ import { ATOMIC_REGISTRY } from "../../../src/lib/interpretation-v3/atomicRegist
 import { COMPOUND_RULES, TEN_GOD_PAIR_REVIEW } from "../../../src/lib/interpretation-v3/compounds";
 import { EXTRACTOR_DIRECT_IDS, EXTRACTOR_SUPPLIED_IDS } from "../../../src/lib/interpretation-v3/featureCapabilities";
 import type { SajuKnowledgeEntry, SajuKnowledgeTopic } from "../../../src/lib/report-knowledge/sajuKnowledgeTypes";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 const baseSha = "5f71a7d0ff8ac4481e09a3f90049448035eb2aed";
 const topicForDomain = {
@@ -97,7 +98,9 @@ describe("V4 Phase 0 source audit (no production engine changes)", () => {
       expect(process.env.V4_AUDIT_EXPORT).toBe("/tmp/gyeol-v4-audit-data.json");
       writeFileSync(process.env.V4_AUDIT_EXPORT, JSON.stringify(audit, null, 2) + "\n");
     } else {
-      expect(audit).toEqual(JSON.parse(readFileSync("docs/product/v4/AUDIT_DATA.json", "utf8")));
+      // v5-lmt shinsal tables changed 亡神·孤辰·寡宿 only (the kst-v2 tables reproduce AUDIT_DATA.json exactly).
+      // AUDIT_DATA.json is byte-hashed by docs/validation manifests, so it stays as is.
+      expectLock(audit, JSON.parse(readFileSync("docs/product/v4/AUDIT_DATA.json", "utf8")), undefined, "engineFusionAudit:AUDIT_DATA");
     }
   });
   it.each(MBTI_SOURCE_TYPES)("%s has valid axes, stack, all domains, full pair and use-case data", type => {
