@@ -27,7 +27,7 @@ export const PUBLISH_GATE_VERSION = "paid-report-v1";
 // version-dispatched validator below so existing paid snapshots stay readable.
 export function validateNewProductPublication(product: string, draft: unknown, evidence: unknown, inputPayload?: unknown) {
   const result = validateProductPublication(product, draft, evidence, inputPayload);
-  // Reads accept every known calendar version; new generation publishes the current one only.
+  // Likewise, new generation must use the current calendar engine; legacy versions are read-only.
   if (isRecord(evidence) && evidence.calendarVersion !== undefined && evidence.calendarVersion !== SAJU_CALENDAR_VERSION) {
     return { ok: false, errors: [...result.errors, "SAJU_CALENDAR_CURRENT_REQUIRED"] };
   }

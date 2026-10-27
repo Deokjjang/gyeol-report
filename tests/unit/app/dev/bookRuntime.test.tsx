@@ -203,7 +203,8 @@ describe("actual V4 packet → book pages; no new calculation or prose", () => {
     expect(love.people[0].table.manse.stemRow.hour).toBeNull();
     expect(love.people[0].table.manse.branchRow.hour).toBeNull();
     expect(love.people[0].timeLabel).toBe("출생시간 모름");
-    expect(samples.get("full-approximate")!.data.people[0].timeLabel).toBe("대략 · 묘시 05:00~06:59");
+    // v5-lmt sample: MYOSI is solar 05-07, shown as Seoul civil time. Legacy Books keep "05:00~06:59".
+    expect(samples.get("full-approximate")!.data.people[0].timeLabel).toBe("대략 · 묘시 05:32~07:31");
     expect(love.context).toContainEqual({ label: "현재 관계", value: "연애" });
     expect(samples.get("career")!.data.context).toContainEqual({ label: "현재 직업", value: "제조업 재무기획 과장" });
   });

@@ -170,7 +170,8 @@ describe("createReportFromRawInput", () => {
       { keyKo: "년주", valueKo: "甲辰 갑진 — 갑목 + 진토" },
       { keyKo: "월주", valueKo: "丙寅 병인 — 병화 + 인목" },
       { keyKo: "일주", valueKo: "戊戌 무술 — 무토 + 술토" },
-      { keyKo: "시주", valueKo: "辛酉 신유 — 신금 + 유금" },
+      // v5-lmt: 17:28 KST is solar 16:56 (申).
+      { keyKo: "시주", valueKo: "庚申 경신 — 경금 + 신금" },
     ]);
   });
 

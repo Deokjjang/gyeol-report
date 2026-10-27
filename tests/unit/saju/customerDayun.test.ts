@@ -4,9 +4,15 @@ import { CUSTOMER_DAYUN_GOLDENS } from "../../fixtures/saju/customerDayunGoldens
 import { createSajuCalendarContext } from "../../../src/lib/saju/lunarJavascriptPillars";
 
 const base = { name: "고객", birthDate: "1999-07-31", birthTime: "07:30", gender: "MALE" };
+const V5_DAYUN_OVERRIDES: Record<string, { startSolarKst: string; offset: number[]; startYear: number; startAge: number }> = {
+  "1987-08-18": { startSolarKst: "1990-12-28T14:30:00+09:00", offset: [3, 4, 10, 2], startYear: 1990, startAge: 4 },
+};
 afterEach(() => vi.unstubAllGlobals());
 describe("customer Dayun product contract (not a universal school golden)", () => {
-  it.each(CUSTOMER_DAYUN_GOLDENS)("sect2 benchmark $birthDate $gender", (g) => {
+  it.each(CUSTOMER_DAYUN_GOLDENS)("sect2 benchmark $birthDate $gender", (frozen) => {
+    // v5-lmt: 1987-08-18 13:30 is summer time (UTC+10), one hour earlier than the frozen fixed-KST instant.
+    // Reverse direction loses 60 minutes = 5 days (sect2), so the start moves 5 days 1 hour earlier.
+    const g = { ...frozen, ...V5_DAYUN_OVERRIDES[frozen.birthDate] };
     const r = calculateCustomerDayun(g);
     expect(r.ok).toBe(true); if (!r.ok) return;
     expect(r.value.startSolarKst).toBe(g.startSolarKst);
@@ -15,7 +21,12 @@ describe("customer Dayun product contract (not a universal school golden)", () =
     expect(r.value.cycles[0]).toMatchObject({ index: 1, ganji: g.firstGanji, startYear: g.startYear, endYear: g.startYear + 9, startAge: g.startAge, endAge: g.startAge + 9 });
     expect(r.value.cycles).toHaveLength(DAYUN_ACTUAL_CYCLE_COUNT);
     expect(r.value.cycles.map(c => c.index)).toEqual([1,2,3,4,5,6,7,8,9,10,11,12]);
-    expect(Object.values(createSajuCalendarContext(`${g.birthDate}T13:30:00+09:00`).pillars).map(p => p.stem+p.branch).join(" ")).toBe(g.pillars);
+    // Year/month/day stay frozen; KST 13:30 is solar 12:58 (午), one branch before the frozen 未 hour.
+    const [year, month, day, hour] = g.pillars.split(" ");
+    const instant = frozen.birthDate === "1987-08-18" ? "12:30:00" : "13:30:00";
+    const stems = "甲乙丙丁戊己庚辛壬癸";
+    const expected = [year, month, day, stems[(stems.indexOf(hour[0]) + 9) % 10] + "午"].join(" ");
+    expect(Object.values(createSajuCalendarContext(`${g.birthDate}T${instant}+09:00`).pillars).map(p => p.stem+p.branch).join(" ")).toBe(expected);
   });
   it("normalizes a UTC8 Dec31 start and library age to KST Jan1", () => {
     // Independently read from raw getYun(1,2): 1985-12-31 23:30 UTC8, raw age4.
@@ -46,15 +57,17 @@ describe("customer Dayun product contract (not a universal school golden)", () =
     expect(r.value.startSolarKst).toBeNull(); expect(r.value.startOffset).toBeNull();
     expect(r.value.cycles[0]).toMatchObject({ ganji: "庚午", startYear: 2007, endYear: 2016, startAge: 9 });
     expect(r.value.startSolarRange).toEqual(precision === "approximate"
-      ? { earliestKst: "2007-05-13T07:00:00+09:00", latestKst: "2007-05-23T06:59:59+09:00" }
+      // v5-lmt: JINSI is solar 07-09 (KST 07:32-09:32); reverse direction adds 32 min = 2d16h to the start.
+      ? { earliestKst: "2007-05-15T23:32:00+09:00", latestKst: "2007-05-25T23:31:59+09:00" }
       : { earliestKst: "2007-04-08T00:00:00+09:00", latestKst: "2007-08-08T21:59:59+09:00" });
     expect(selectCustomerDayun(r.value, 2026)).toMatchObject({ ok: true, value: { selectedCycle: { ganji: "己巳", startYear: 2017 } } });
   });
   it.each([
-    { birthDate: "1981-03-03", gender: "FEMALE", approximateBirthTimeSlot: "MISI" },
+    // v5-lmt slots are solar 시진: the unstable 1981-03-03 window is now OSI (KST 11:32-13:32).
+    { birthDate: "1981-03-03", gender: "FEMALE", approximateBirthTimeSlot: "OSI" },
     { birthDate: "2001-06-22", gender: "MALE", birthTimeUnknown: true },
     { birthDate: "2024-02-04", gender: "MALE", birthTimeUnknown: true },
-    { birthDate: "1999-07-31", gender: "MALE", approximateBirthTimeSlot: "JASI" },
+    // 1999-07-31 JASI is no longer unstable: under the unified 子 rule the whole solar slot is one day.
   ])("rejects unstable interval %j", input => expect(calculateCustomerDayun(input)).toEqual({ ok: false, error: "DAYUN_UNCERTAIN" }));
   it.each([undefined, "", "male", "OTHER_OR_UNSPECIFIED", 0, 1])("never guesses gender %s", gender => {
     expect(calculateCustomerDayun({ ...base, gender })).toEqual({ ok: false, error: "DAYUN_GENDER_REQUIRED" });

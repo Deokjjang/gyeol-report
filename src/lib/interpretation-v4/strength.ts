@@ -1,8 +1,8 @@
 import { HIDDEN_STEMS, STEM_ELEMENT } from "../saju/constants";
 import { getTenGod } from "../saju/tenGods";
 import { analyzeRelations } from "../saju/relations";
-import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
-import { normalizeBirthTimePrecision, PILLAR_KEYS } from "../saju/birthTimePrecisionTypes";
+import { isReadableSajuCalendarVersion } from "../saju/calendarVersion";
+import { contextMatchesExactTime, normalizeBirthTimePrecision, PILLAR_KEYS } from "../saju/birthTimePrecisionTypes";
 import type { PillarSet } from "../saju/analyze";
 import type { SajuCalcResult, TenGod } from "../saju/types";
 import { STRUCTURE_VERSION, type DaymasterStrength, type GodFamily, type StructureAtom, type StructureContext, type StrengthEvidence } from "./structureTypes";
@@ -36,9 +36,9 @@ export function collectStructureAtoms(pillars: PillarSet): readonly StructureAto
 export function structureContext(calc: SajuCalcResult): StructureContext {
   const c = calc.birthTimeContext;
   const inputTime = normalizeBirthTimePrecision(calc.input);
-  const valid = Boolean(c && calc.calculationVersion === SAJU_CALENDAR_VERSION && c.calendarVersion === calc.calculationVersion &&
+  const valid = Boolean(c && isReadableSajuCalendarVersion(calc.calculationVersion) && c.calendarVersion === calc.calculationVersion &&
     inputTime.ok && inputTime.precision === c.birthTimePrecision &&
-    (inputTime.precision !== "exact" || c.range.startKst.startsWith(`${calc.input.birthDate}T${inputTime.time}:`)) &&
+    (inputTime.precision !== "exact" || contextMatchesExactTime(c, calc.input.birthDate, inputTime.time)) &&
     (inputTime.precision !== "approximate" || c.approximateBirthTimeSlot === inputTime.slot) &&
     c.birthDate === calc.input.birthDate && calc.dayMaster === calc.pillars.day.stem && PILLAR_KEYS.every(k => {
       const p = calc.pillars[k], confirmed = c.confirmed[k];

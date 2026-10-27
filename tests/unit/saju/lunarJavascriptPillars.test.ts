@@ -118,7 +118,8 @@ describe("getLunarJavascriptPillarsFromSolarDateTime", () => {
     // The true KST boundary is after midnight on December 7.
     expect(calculatedPillars.month).toEqual({ stem: "乙", branch: "亥" });
     expect(calculatedPillars.day).toEqual({ stem: "甲", branch: "辰" });
-    expect(calculatedPillars.hour).toEqual({ stem: "甲", branch: "子" });
+    // v5-lmt: 23:17 KST is solar 22:45 (亥), so no 子 hour and no day change.
+    expect(calculatedPillars.hour).toEqual({ stem: "乙", branch: "亥" });
     expect(lunarJavascriptPillars).toEqual(calculatedPillars);
     expect(lunarJavascriptPillars.month).toEqual({
       stem: "乙",

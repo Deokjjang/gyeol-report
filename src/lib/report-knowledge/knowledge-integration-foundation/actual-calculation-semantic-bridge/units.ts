@@ -2,7 +2,7 @@ import { canonicalJson, hash } from "../sourceReader";
 import { isRecord } from "../normalization";
 import { buildActualEvidenceGraph } from "../actual-evidence-graph/engine";
 import { observeActualProfiles } from "../actual-evidence-graph/producers";
-import { SAJU_CALENDAR_VERSION } from "../../../saju/calendarVersion";
+import { isReadableSajuCalendarVersion } from "../../../saju/calendarVersion";
 import { v4Digest } from "../../../interpretation-v4/runtimeProjection";
 import { TEMPORAL_DEFINITION_IDS, type TemporalGod, type TemporalTenGodSourceResolver } from "../global-source-domain-resolution/temporalTenGodSource";
 import { verifyTemporalTenGodCalculation, type TenGodApplicationRequest, type TenGodOrigin, type TenGodCalculationContract } from "../global-source-domain-resolution/temporalTenGodEvidence";
@@ -137,7 +137,7 @@ async function produce(context: ActualFactContext, nodeId: string, spec: TenGodA
       if (n.fact.observationPointer !== "/calculations/person/pillars/day/stem" || n.owner.slot !== "person" || n.temporal !== null || n.direction !== null
         || !isRecord(n.value) || n.value.value !== calc.dayMaster || n.value.isDayMaster !== true || calc.pillars.day.stem !== calc.dayMaster
         || confirmed?.stem !== calc.dayMaster || n.producer.file !== "src/lib/saju/calculateSaju.ts" || n.producer.symbol !== "calculateSaju"
-        || n.producer.version !== SAJU_CALENDAR_VERSION || calc.calculationVersion !== SAJU_CALENDAR_VERSION) throw Error("EXACT_ACTUAL_DAY_MASTER_REQUIRED");
+        || n.producer.version !== calc.calculationVersion || !isReadableSajuCalendarVersion(calc.calculationVersion)) throw Error("EXACT_ACTUAL_DAY_MASTER_REQUIRED");
       reference = calc.dayMaster; target = calc.dayMaster; support = [n.id]; calculationFile = n.producer.file;
       calculationSource = { file: n.producer.file, symbol: n.producer.symbol, fileSha256: input.resolver.frozen.get(n.producer.file)!, versionBasis: "EXACT_FROZEN_SOURCE_HASH" };
     }

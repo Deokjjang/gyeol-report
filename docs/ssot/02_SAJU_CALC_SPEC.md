@@ -66,6 +66,11 @@ KST UTC+09:00
 
 결리포트 V1은 한국 사용자 중심 서비스이므로 모든 출생시간은 기본적으로 한국 표준시 기준으로 계산한다.
 
+> **v5-lmt 개정 (2026-10-27, `saju-calendar-v5-lmt`)**: 새 리포트는 이 절과 아래 자시·정밀도 절 대신
+> `docs/manseryeok-policy.md`를 따른다. 민간시각→UTC는 IANA `Asia/Seoul` 이력(UTC+8:30·서머타임 포함),
+> 연·월주·대운은 절대시각, 일·시주는 지역 평균태양시(서울 126.98°E, 출생지 미수집), 23시대 기본 `unified`.
+> 아래 `saju-calendar-kst-v2` 서술은 저장된 기존 리포트의 읽기 계약으로만 유지한다.
+
 현재 원국 엔진 `saju-calendar-kst-v2`는 고정 UTC+09:00의 양력 입력을 사용한다.
 과거 Asia/Seoul IANA 표준시·서머타임 이력은 자동 적용하지 않는다.
 `createSajuCalendarContext`가 원래 KST 날짜·시각과 절기 비교 좌표를 함께 보관한다.

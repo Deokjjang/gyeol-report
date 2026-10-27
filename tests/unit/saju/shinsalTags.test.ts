@@ -27,12 +27,12 @@ describe("shinsal tag extraction", () => {
     const tags = extractSajuTags(result);
     const codes: string[] = tags.map((tag) => tag.code);
 
-    // HKO date golden + product KST hour policy: before 2024 Ipchun.
+    // HKO date golden, before 2024 Ipchun; v5-lmt hour: 17:27 KST is solar 16:55 (申).
     const expected = detectShinsal({
       year: { stem: "癸", branch: "卯" },
       month: { stem: "乙", branch: "丑" },
       day: { stem: "戊", branch: "戌" },
-      hour: { stem: "辛", branch: "酉" },
+      hour: { stem: "庚", branch: "申" },
     });
     expect(codes.filter((code) => code.startsWith("SHINSAL_"))).toEqual(
       expected.map((item) => `SHINSAL_${item.code}`),

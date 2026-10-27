@@ -1,7 +1,7 @@
 import { HIDDEN_STEMS } from "../../../saju/constants";
 import { STRUCTURE_VERSION } from "../../../interpretation-v4/structureTypes";
 import { ANNUAL_MONTH_CALCULATION_VERSION } from "../../../report-knowledge/annualMonthJie";
-import { SAJU_CALENDAR_VERSION, DAYUN_CALCULATION_VERSION } from "../../../saju/calendarVersion";
+import { isReadableDayunCalculationVersion, isReadableSajuCalendarVersion } from "../../../saju/calendarVersion";
 import { v4Digest } from "../../../interpretation-v4/runtimeProjection";
 import { evidenceHash } from "../actual-evidence-graph/graph";
 import { intersectEvidencePeriods } from "../actual-evidence-graph/temporal";
@@ -81,7 +81,7 @@ export function verifyTemporalTenGodCalculation(resolver: TemporalTenGodSourceRe
     const slot = n.owner.slot;
     if (!["person", "personA", "personB"].includes(slot)) throw Error("ACTUAL_PERSON_OWNER_REQUIRED");
     const calculation = request.graphInput.evidence.calculations[slot as "person"];
-    if (!calculation || calculation.calculationVersion !== SAJU_CALENDAR_VERSION || calculation.dayMaster !== calculation.pillars.day.stem)
+    if (!calculation || !isReadableSajuCalendarVersion(calculation.calculationVersion) || calculation.dayMaster !== calculation.pillars.day.stem)
       throw Error("NATAL_REFERENCE_STEM_REQUIRED");
     const c = request.graphInput.evidence.composition, value = isRecord(n.value) ? n.value : {}, pointer = n.fact.observationPointer;
     let god: string | null = null, target: string | null = null, reference: string = calculation.dayMaster;
@@ -105,8 +105,9 @@ export function verifyTemporalTenGodCalculation(resolver: TemporalTenGodSourceRe
           || cycle.endYear - cycle.startYear !== 9 || value.cycleIndex !== cycle.index || value.ganji !== cycle.ganji || value.tenGod !== cycle.tenGod)
           throw Error("ORIGINAL_DAYUN_CYCLE_REQUIRED");
         target = cycle.ganji[0]; god = cycle.tenGod;
-        producerFile = "src/lib/saju/customerDayun.ts"; producerSymbol = "calculateCustomerDayun"; version = DAYUN_CALCULATION_VERSION;
-        if (e.dayunSelection?.calculationVersion !== version) throw Error("UNSUPPORTED_DAYUN_PRODUCER_VERSION");
+        producerFile = "src/lib/saju/customerDayun.ts"; producerSymbol = "calculateCustomerDayun";
+        if (!isReadableDayunCalculationVersion(e.dayunSelection?.calculationVersion)) throw Error("UNSUPPORTED_DAYUN_PRODUCER_VERSION");
+        version = e.dayunSelection!.calculationVersion;
         calculationFile = "src/lib/report-knowledge/majorFortuneDecadeReading.ts"; calculationSymbol = "buildMajorFortuneDecadeReading";
       } else if (spec.origin === "ANNUAL_STEM") {
         const m = /^\/composition\/result\/evidence\/years\/(\d+)\/annual\/evidenceIds\/1$/.exec(pointer), y = m ? e.years[Number(m[1])] : null;
@@ -162,7 +163,7 @@ export function verifyTemporalTenGodCalculation(resolver: TemporalTenGodSourceRe
         && x.fact.observationPointer === `/calculations/${slot}/pillars/day/stem`);
       if (!referenceNode || !isRecord(referenceNode.value) || referenceNode.value.value !== reference
         || referenceNode.kind !== "CALCULATED_NATAL_FACT" || referenceNode.producer.symbol !== "calculateSaju"
-        || referenceNode.producer.version !== SAJU_CALENDAR_VERSION) throw Error("ACTUAL_REFERENCE_STEM_ROOT_REQUIRED");
+        || !isReadableSajuCalendarVersion(referenceNode.producer.version)) throw Error("ACTUAL_REFERENCE_STEM_ROOT_REQUIRED");
       visit(referenceNode.id); supporting.push(referenceNode);
     } else {
       const targetNode = request.graph.nodes.find(x => x.owner.fixtureOwnerId === spec.owner

@@ -1,4 +1,4 @@
-import { SAJU_CALC_VERSION_V5_LMT, SAJU_CALENDAR_V5_LMT, isReadableSajuCalendarVersion } from "../saju/calendarVersion";
+import { SAJU_CALC_VERSION_ID, SAJU_CALENDAR_VERSION, isReadableSajuCalendarVersion } from "../saju/calendarVersion";
 import { BIRTH_TIME_SLOT_DEFINITIONS, PILLAR_KEYS, type BirthTimeContexts } from "../saju/birthTimePrecisionTypes";
 import { normalizeGanji } from "../report-knowledge/sajuFeatureExtractionRules";
 
@@ -11,7 +11,7 @@ function pillar(value: unknown): string | undefined {
 }
 // Validate stored calculation metadata without importing the server calendar into readers.
 // Absence remains legacy; it never authorizes an incomplete four-pillar report.
-// Every readable calendar version is accepted so stored reports stay readable across engine versions.
+// Every readable calendar version is accepted so stored reports stay readable after an engine change.
 export function publicationBirthTimeContexts(evidence: unknown): BirthTimeContexts | null {
   if (!record(evidence) || !isReadableSajuCalendarVersion(evidence.calendarVersion) || !record(evidence.birthTimeContexts)) return null;
   const contexts = evidence.birthTimeContexts;
@@ -33,9 +33,9 @@ export function publicationBirthTimeContexts(evidence: unknown): BirthTimeContex
     const end = Date.parse(context.range.endKstExclusive);
     if (![midnight, start, end].every(Number.isFinite)) return null;
     const slot = BIRTH_TIME_SLOT_DEFINITIONS.find((s) => s.value === context.approximateBirthTimeSlot);
-    if (context.calendarVersion === SAJU_CALENDAR_V5_LMT) {
-      if (!validV5LmtRange(context, precision, slot, midnight, start, end)) return null;
-    } else if (!validKstV2Range(context, precision, slot, midnight, start, end)) return null;
+    if (context.calendarVersion === SAJU_CALENDAR_VERSION) {
+      if (!validCurrentRange(context, precision, slot, midnight, start, end)) return null;
+    } else if (!validLegacyRange(context, precision, slot, midnight, start, end)) return null;
     for (const key of PILLAR_KEYS) {
       const candidates = context.candidates[key];
       if (!Array.isArray(candidates) || candidates.length === 0 || candidates.some((p) => !pillar(p))) return null;
@@ -64,23 +64,11 @@ export function birthTimePromptContext(evidence: unknown) {
   } };
 }
 
-// saju-calendar-kst-v2: fixed +09:00 civil range.
-function validKstV2Range(context: Record<string, unknown>, precision: unknown, slot: { startMinute: number; endMinute: number } | undefined,
-  midnight: number, start: number, end: number): boolean {
-  if (precision === "approximate") {
-    if (!slot || start !== midnight + slot.startMinute * 60_000 || end !== midnight + slot.endMinute * 60_000) return false;
-  } else if (context.approximateBirthTimeSlot !== undefined) return false;
-  if (precision === "unknown" && (start !== midnight || end !== midnight + 86_400_000)) return false;
-  if (precision === "exact" && (start < midnight || start >= midnight + 86_400_000 || end !== start + 60_000)) return false;
-  return true;
-}
-
-// saju-calendar-v5-lmt (read-only here): the range is an absolute instant; slots are solar-time 시진
-// and the civil input lives in timeBasis.
-function validV5LmtRange(context: Record<string, unknown>, precision: unknown, slot: { startMinute: number; endMinute: number } | undefined,
+// v5-lmt: the range is an absolute instant; slots are solar-time 시진 and the civil input lives in timeBasis.
+function validCurrentRange(context: Record<string, unknown>, precision: unknown, slot: { startMinute: number; endMinute: number } | undefined,
   midnight: number, start: number, end: number): boolean {
   const basis = context.timeBasis;
-  if (!record(basis) || basis.calcVersion !== SAJU_CALC_VERSION_V5_LMT || typeof basis.civilDateTime !== "string" ||
+  if (!record(basis) || basis.calcVersion !== SAJU_CALC_VERSION_ID || typeof basis.civilDateTime !== "string" ||
     typeof basis.solarTimeCorrectionMinutes !== "number" || typeof basis.utcOffsetMinutes !== "number") return false;
   const near = (value: number) => Math.abs(value - midnight) <= 86_400_000 * 2;
   if (!near(start) || !near(end) || end <= start) return false;
@@ -90,4 +78,15 @@ function validV5LmtRange(context: Record<string, unknown>, precision: unknown, s
   if (context.approximateBirthTimeSlot !== undefined) return false;
   if (precision === "unknown") return basis.civilDateTime === context.birthDate && end - start >= 23 * 3_600_000 && end - start <= 25 * 3_600_000;
   return /^\d{4}-\d{2}-\d{2}T([01]\d|2[0-3]):[0-5]\d$/u.test(basis.civilDateTime) && basis.civilDateTime.startsWith(`${String(context.birthDate)}T`) && end === start + 60_000;
+}
+
+// saju-calendar-kst-v2: fixed +09:00 civil range, unchanged for stored reports.
+function validLegacyRange(context: Record<string, unknown>, precision: unknown, slot: { startMinute: number; endMinute: number } | undefined,
+  midnight: number, start: number, end: number): boolean {
+  if (precision === "approximate") {
+    if (!slot || start !== midnight + slot.startMinute * 60_000 || end !== midnight + slot.endMinute * 60_000) return false;
+  } else if (context.approximateBirthTimeSlot !== undefined) return false;
+  if (precision === "unknown" && (start !== midnight || end !== midnight + 86_400_000)) return false;
+  if (precision === "exact" && (start < midnight || start >= midnight + 86_400_000 || end !== start + 60_000)) return false;
+  return true;
 }

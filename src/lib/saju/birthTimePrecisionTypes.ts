@@ -1,21 +1,41 @@
 import { SAJU_CALENDAR_VERSION, type SajuCalendarVersion } from "./calendarVersion";
+import { DEFAULT_SAJU_TIME_POLICY, type ZiHourRule } from "./calcPolicy";
 import type { Pillar } from "./types";
 
-// Client-safe input SSOT. 子 belongs to the date on which the slot ends.
-export const BIRTH_TIME_SLOT_DEFINITIONS = [
-  { value: "JASI", labelKo: "자시 전날 23:00~당일 00:59", startMinute: -60, endMinute: 60 },
-  { value: "CHUKSI", labelKo: "축시 01:00~02:59", startMinute: 60, endMinute: 180 },
-  { value: "INSI", labelKo: "인시 03:00~04:59", startMinute: 180, endMinute: 300 },
-  { value: "MYOSI", labelKo: "묘시 05:00~06:59", startMinute: 300, endMinute: 420 },
-  { value: "JINSI", labelKo: "진시 07:00~08:59", startMinute: 420, endMinute: 540 },
-  { value: "SASI", labelKo: "사시 09:00~10:59", startMinute: 540, endMinute: 660 },
-  { value: "OSI", labelKo: "오시 11:00~12:59", startMinute: 660, endMinute: 780 },
-  { value: "MISI", labelKo: "미시 13:00~14:59", startMinute: 780, endMinute: 900 },
-  { value: "SINSI", labelKo: "신시 15:00~16:59", startMinute: 900, endMinute: 1020 },
-  { value: "YUSI", labelKo: "유시 17:00~18:59", startMinute: 1020, endMinute: 1140 },
-  { value: "SULSI", labelKo: "술시 19:00~20:59", startMinute: 1140, endMinute: 1260 },
-  { value: "HAESI", labelKo: "해시 21:00~22:59", startMinute: 1260, endMinute: 1380 },
+// Client-safe input SSOT. Slots are 시진 in local mean solar time (v5-lmt); minutes are
+// relative to the birth date's solar midnight. 子 belongs to the date on which the slot ends.
+const SLOTS = [
+  { value: "JASI", nameKo: "자시", startMinute: -60, endMinute: 60 },
+  { value: "CHUKSI", nameKo: "축시", startMinute: 60, endMinute: 180 },
+  { value: "INSI", nameKo: "인시", startMinute: 180, endMinute: 300 },
+  { value: "MYOSI", nameKo: "묘시", startMinute: 300, endMinute: 420 },
+  { value: "JINSI", nameKo: "진시", startMinute: 420, endMinute: 540 },
+  { value: "SASI", nameKo: "사시", startMinute: 540, endMinute: 660 },
+  { value: "OSI", nameKo: "오시", startMinute: 660, endMinute: 780 },
+  { value: "MISI", nameKo: "미시", startMinute: 780, endMinute: 900 },
+  { value: "SINSI", nameKo: "신시", startMinute: 900, endMinute: 1020 },
+  { value: "YUSI", nameKo: "유시", startMinute: 1020, endMinute: 1140 },
+  { value: "SULSI", nameKo: "술시", startMinute: 1140, endMinute: 1260 },
+  { value: "HAESI", nameKo: "해시", startMinute: 1260, endMinute: 1380 },
 ] as const;
+// Labels show today's Seoul civil clock (UTC+9) for each solar 시진: Seoul solar time runs ~32 minutes behind.
+export const SLOT_LABEL_CIVIL_SHIFT_MINUTES = 540 - Math.round(DEFAULT_SAJU_TIME_POLICY.longitude * 4);
+const clock = (minute: number) => {
+  const m = ((minute % 1440) + 1440) % 1440;
+  return `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
+};
+function slotLabel(slot: (typeof SLOTS)[number], shift = SLOT_LABEL_CIVIL_SHIFT_MINUTES): string {
+  const start = slot.startMinute + shift;
+  const end = slot.endMinute + shift - 1;
+  return `${slot.nameKo} ${start < 0 ? "전날 " : ""}${clock(start)}~${start < 0 ? "당일 " : ""}${clock(end)}`;
+}
+export const BIRTH_TIME_SLOT_DEFINITIONS = SLOTS.map((slot) => ({ ...slot, labelKo: slotLabel(slot) }));
+// Stored reports keep the label they were computed with: saju-calendar-kst-v2 slots were civil KST hours.
+export function birthTimeSlotLabel(slot: unknown, calendarVersion: unknown): string | undefined {
+  const definition = SLOTS.find((value) => value.value === slot);
+  if (!definition) return;
+  return calendarVersion === SAJU_CALENDAR_VERSION ? slotLabel(definition) : slotLabel(definition, 0);
+}
 export type ApproximateBirthTimeSlot = (typeof BIRTH_TIME_SLOT_DEFINITIONS)[number]["value"];
 export type BirthTimePrecision = "exact" | "approximate" | "unknown";
 export type BirthTimeInput = {
@@ -50,9 +70,24 @@ export type BirthTimeCalculationContext = {
   stable: Record<PillarKey, boolean>;
   candidates: Record<PillarKey, readonly Pillar[]>;
   confirmed: Partial<Record<PillarKey, Pillar>>;
-  // Stored saju-calendar-v5-lmt contexts only (read-only here). civilDateTime is the typed input:
-  // YYYY-MM-DDTHH:mm for exact, YYYY-MM-DD otherwise.
-  timeBasis?: { calcVersion: string; civilDateTime: string; utcOffsetMinutes: number; solarTimeCorrectionMinutes: number };
+  // v5-lmt only. Absent on legacy (saju-calendar-kst-v2) snapshots.
+  timeBasis?: BirthTimeBasis;
+};
+export type BirthTimeBasis = {
+  calcVersion: "v5-lmt";
+  zone: "Asia/Seoul";
+  // Civil input as typed: YYYY-MM-DDTHH:mm for exact, YYYY-MM-DD otherwise.
+  civilDateTime: string;
+  utcOffsetMinutes: number;
+  ambiguous: boolean;
+  nonexistent: boolean;
+  longitude: number;
+  longitudeSource: "default-seoul";
+  equationOfTime: boolean;
+  ziHourRule: ZiHourRule;
+  // Solar time minus civil time at the range start (negative = clock ahead of the sun).
+  solarTimeCorrectionMinutes: number;
+  slotBasis: "local_mean_solar" | "apparent_solar";
 };
 export type BirthTimeContexts = Partial<Record<"person" | "personA" | "personB", BirthTimeCalculationContext>>;
 export function withBirthTimeEvidence<T>(packet: T, contexts: BirthTimeContexts) {
@@ -65,10 +100,20 @@ export function withBirthTimeEvidence<T>(packet: T, contexts: BirthTimeContexts)
     birthTimeContexts: contexts,
   };
 }
-// The typed civil time of an exact context. A v5-lmt range is an absolute instant, which differs
-// from the civil clock in UTC+8:30 and summer-time periods, so v5-lmt keeps the input in timeBasis.
+// The typed civil time of an exact context. v5-lmt keeps it in timeBasis (the range is an absolute
+// instant, which differs from the civil clock in UTC+8:30 and summer-time periods).
 export function contextMatchesExactTime(context: Pick<BirthTimeCalculationContext, "range" | "timeBasis">, birthDate: string, time: string): boolean {
   return context.timeBasis
     ? context.timeBasis.civilDateTime === `${birthDate}T${time}`
     : context.range.startKst.startsWith(`${birthDate}T${time}:`);
+}
+// One customer-facing line next to the 만세력 table. Legacy snapshots and unknown birth times get none.
+export function solarTimeCorrectionNote(context: unknown): string | undefined {
+  if (context === null || typeof context !== "object") return;
+  const { timeBasis: basis, birthTimePrecision } = context as Partial<BirthTimeCalculationContext>;
+  if (!basis || basis.calcVersion !== "v5-lmt" || birthTimePrecision === "unknown" || typeof basis.solarTimeCorrectionMinutes !== "number") return;
+  const minutes = Math.round(basis.solarTimeCorrectionMinutes);
+  const era = basis.utcOffsetMinutes === 570 || basis.utcOffsetMinutes === 600 ? " (당시 서머타임 반영)"
+    : basis.utcOffsetMinutes === 510 ? " (당시 표준시 UTC+8:30 반영)" : "";
+  return `출생지 경도 기준 시간 보정 ${minutes > 0 ? "+" : ""}${minutes}분 적용${era}`;
 }

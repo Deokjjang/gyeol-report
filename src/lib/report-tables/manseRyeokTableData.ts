@@ -1,4 +1,5 @@
 import { getCanonicalNatalTable, type NatalPersonRole } from "../report-knowledge/natalTableEvidence";
+import { solarTimeCorrectionNote } from "../saju/birthTimePrecisionTypes";
 import {
   getBranchDisplay,
   getStemDisplay,
@@ -294,12 +295,20 @@ function getDetailValues(
   }
 }
 
+// V3 packets keep contexts per role; V4 packets keep them inside each calculation.
+function storedBirthTimeContext(evidence: unknown, role: NatalPersonRole): unknown {
+  if (evidence === null || typeof evidence !== "object") return;
+  const e = evidence as { birthTimeContexts?: Record<string, unknown>; calculations?: Record<string, { birthTimeContext?: unknown } | undefined> };
+  return e.birthTimeContexts?.[role] ?? e.calculations?.[role]?.birthTimeContext;
+}
+
 // Snapshot-only reader. No calendar or feature recomputation during rendering.
 export function buildCanonicalManseRyeokTableData(evidence: unknown, displayName?: string, role: NatalPersonRole = "person"): ManseRyeokCommonTableData | undefined {
   const natal = getCanonicalNatalTable(evidence, role);
   if (!natal) return;
   const data = buildManseRyeokCommonTableData({ displayName, fourPillarGrid: natal.pillars });
-  return { ...data, natalEvidence: natal, detailRows: data.detailRows.map(row => ({ ...row,
+  const timeCorrectionNote = solarTimeCorrectionNote(storedBirthTimeContext(evidence, role));
+  return { ...data, natalEvidence: natal, ...(timeCorrectionNote ? { timeCorrectionNote } : {}), detailRows: data.detailRows.map(row => ({ ...row,
     label: row.key === "twelveSinsal" ? "십이신살 · 연지 기준" : row.key === "interactions" ? "계산된 원국 합·충" : row.label,
   })) };
 }

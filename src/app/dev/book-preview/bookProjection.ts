@@ -20,7 +20,7 @@ import { compatibilityReaderPages, compatibilityReaderContents } from "../../../
 import { describeReportShare } from "../../../lib/sharing/reportShareMetadata";
 import type { NarrativeBlock, MaterialPacket } from "../../../lib/interpretation-v4/narrativeTypes";
 import type { GenerationPersonInput } from "../../../lib/report-generation/reportInputAdapter";
-import { BIRTH_TIME_SLOT_DEFINITIONS } from "../../../lib/saju/birthTimePrecisionTypes";
+import { birthTimeSlotLabel } from "../../../lib/saju/birthTimePrecisionTypes";
 import { BOOKS, JOBS, RELATIONSHIPS, CATEGORIES, readerTitle } from "./model";
 import type { BookData, BookFeature, BookNote, BookPage, BookPerson } from "./bookTypes";
 
@@ -78,9 +78,9 @@ export function bookFeatureInventory(e: V4RuntimeEvidence, slot: "person" | "per
     meaning: (entry.display.group === "십이운성" ? COMPREHENSIVE_STAGE_MEANINGS[entry.display.name] : COMPREHENSIVE_PLAIN_MEANINGS[entry.key]) ?? entry.display.meaning } })) : entries;
 }
 
-function personView(p: GenerationPersonInput, role: string, table: BookPerson["table"]): BookPerson {
+function personView(p: GenerationPersonInput, role: string, table: BookPerson["table"], calendarVersion: unknown): BookPerson {
   return { name: p.name, role, birth: p.birthDate, gender: p.gender, precision: p.birthTimePrecision ?? (p.birthTimeUnknown ? "unknown" : "exact"),
-    time: p.birthTime ?? "", mbti: p.mbtiType ?? "", timeLabel: p.birthTimePrecision === "unknown" ? "출생시간 모름" : p.birthTimePrecision === "approximate" ? `대략 · ${BIRTH_TIME_SLOT_DEFINITIONS.find(s => s.value === p.approximateBirthTimeSlot)?.labelKo ?? "입력 시간대"}` : `정확 · ${p.birthTime}`, table };
+    time: p.birthTime ?? "", mbti: p.mbtiType ?? "", timeLabel: p.birthTimePrecision === "unknown" ? "출생시간 모름" : p.birthTimePrecision === "approximate" ? `대략 · ${birthTimeSlotLabel(p.approximateBirthTimeSlot, calendarVersion) ?? "입력 시간대"}` : `정확 · ${p.birthTime}`, table };
 }
 
 /** Pure reading projection: validated frozen packet in, allowlisted pages out.
@@ -94,8 +94,10 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
   // The canonical table is unchanged. V4's disputed marker is presentation-held.
   const safeTables = tables.map(t => ({ ...t, manse: { ...t.manse, detailRows: t.manse.detailRows.map(r => ({ ...r,
     cells: { hour: r.cells.hour.filter(v => !v.includes("망신")), day: r.cells.day.filter(v => !v.includes("망신")), month: r.cells.month.filter(v => !v.includes("망신")), year: r.cells.year.filter(v => !v.includes("망신")) } })) } }));
-  const people = e.input.kind === "compatibility" ? [personView(e.input.personA, view.compatibility!.personA.role, safeTables[0]), personView(e.input.personB, view.compatibility!.personB.role, safeTables[1])]
-    : [personView(e.input.person, "주인공", safeTables[0])];
+  // Stored Books keep the slot label of the engine that computed them.
+  const version = (slot: string) => (e.calculations as Record<string, { calculationVersion?: unknown } | undefined>)[slot]?.calculationVersion;
+  const people = e.input.kind === "compatibility" ? [personView(e.input.personA, view.compatibility!.personA.role, safeTables[0], version("personA")), personView(e.input.personB, view.compatibility!.personB.role, safeTables[1], version("personB"))]
+    : [personView(e.input.person, "주인공", safeTables[0], version("person"))];
   const slots = e.input.kind === "compatibility" ? ["personA", "personB"] as const : ["person"] as const;
   const personalInventories = slots.map((slot, i) => bookFeatureInventory(e, slot, people[i].name));
   const inventory = personalInventories.flat();

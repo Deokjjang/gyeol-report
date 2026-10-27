@@ -99,6 +99,7 @@ export default function ManseRyeokCommonTable({
           {data.natalEvidence ? <p className="px-3 py-3 text-xs leading-5 text-[#7a6f63]">
             {data.natalEvidence.precision === "exact" ? "입력한 정확한 출생시각의 원국입니다." : data.natalEvidence.precision === "approximate" ? "선택한 시간대 전체에서 확정되는 원국입니다." : "출생시간 미상 · 확정된 연·월·일주만 표시합니다. 시주에 따라 달라질 수 있는 표식은 포함하지 않습니다."}
           </p> : null}
+          {data.timeCorrectionNote ? <p className="px-3 py-2 text-xs leading-5 text-[#7a6f63]">{data.timeCorrectionNote}</p> : null}
           {elementDistribution ?? <FiveElementDistribution data={data.fiveElementDistribution} />}
 
           {visibleDetailRows.map((row) => (

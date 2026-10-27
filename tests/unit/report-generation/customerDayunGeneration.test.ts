@@ -96,7 +96,7 @@ describe("customer Dayun production boundaries", () => {
     const written = await handler(normalized, { now: clock, writer: { enabled: true, config: { enabled: true, apiKey: "mock-only", model: "mock", fetchImpl: mockTransport } } });
     expect(written.ok, JSON.stringify(written.ok ? null : written)).toBe(true); if (!written.ok) return;
     expect(written.evidencePacket.customerDayun).toEqual(fallback.evidencePacket.customerDayun);
-    expect(requestText).toContain("dayun-kst-sect2-v1");
+    expect(requestText).toContain("dayun-utc-sect2-v2");
     expect(requestText).toContain("2026-12-30T15:30:00+09:00");
     expect(validateProductPublication(product, written.draft, written.evidencePacket, payload(product))).toEqual({ ok: true, errors: [] });
   });
@@ -151,7 +151,7 @@ describe("customer Dayun production boundaries", () => {
     expect(r.evidencePacket.currentYear).toBe(2027);
     expect(r.evidencePacket.dayunSelection).toMatchObject({ selectedCycle: { ganji: "戊辰", startYear: 2027 }, activeCycleAtEvaluation: 2, transition: { beforeCycle: { ganji: "己巳" } } });
     expect(r.draft.openingSummary).toContain("전환 전후");
-    expect(buildOpenAIMajorFortuneReportWriterMessages({ evidencePacket: r.evidencePacket }).user).toContain("dayun-kst-sect2-v1");
+    expect(buildOpenAIMajorFortuneReportWriterMessages({ evidencePacket: r.evidencePacket }).user).toContain("dayun-utc-sect2-v2");
     expect(validateProductPublication("major_fortune", r.draft, r.evidencePacket).ok).toBe(true);
   });
   it("rejects cross-customer data, timeline edits, lost transition and calculation version changes", async () => {
@@ -174,7 +174,7 @@ describe("customer Dayun production boundaries", () => {
       expect(normalizeReportInputPayload(payload(product, { gender }), { now: clock })).toMatchObject({ ok: false, error: "DAYUN_GENDER_REQUIRED" });
     }
     expect(normalizeReportInputPayload(payload(product, { birthTime: "", birthTimeUnknown: true }), { now: clock })).toMatchObject({ ok: false, error: "DAYUN_UNCERTAIN" });
-    expect(normalizeReportInputPayload(payload(product, { birthDate: "1981-03-03", birthTime: "", gender: "FEMALE", approximateBirthTimeSlot: "MISI" }), { now: clock })).toMatchObject({ ok: false, error: "DAYUN_UNCERTAIN" });
+    expect(normalizeReportInputPayload(payload(product, { birthDate: "1981-03-03", birthTime: "", gender: "FEMALE", approximateBirthTimeSlot: "OSI" }), { now: clock })).toMatchObject({ ok: false, error: "DAYUN_UNCERTAIN" }); // v5-lmt: solar 시진 shifts the unstable 1981 window to OSI
   });
   it("rejects handler bypass even when callers fake normalized input", async () => {
     const i = input();

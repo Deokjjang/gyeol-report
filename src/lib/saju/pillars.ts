@@ -6,6 +6,7 @@ import {
   SEXAGENARY_CYCLE,
   STEM_INDEX,
 } from "./constants";
+import type { ZiHourRule } from "./calcPolicy";
 import { getSolarTermContext } from "./solarTerms";
 import type { EarthlyBranch, HeavenlyStem, Pillar } from "./types";
 
@@ -138,4 +139,26 @@ export function getHourPillarFromBirthTime(
     stem: hourStem,
     branch: hourBranch,
   };
+}
+
+function nextSolarDate(solarDate: string): string {
+  return new Date(Date.parse(`${solarDate}T00:00:00Z`) + MS_PER_DAY).toISOString().slice(0, 10);
+}
+
+// Single day/hour path. `solarWallClockMs` is the local solar wall clock (read with getUTC*).
+// unified: 23:00 starts the next day's 子 hour and the next day pillar.
+// split: 23:00-23:59 keeps the day pillar and takes the next day's 子 stem (야자시);
+//        00:00-00:59 is the same day's 子 hour (조자시).
+export function getDayHourPillarsFromSolarTime(
+  solarWallClockMs: number,
+  ziHourRule: ZiHourRule,
+): { day: Pillar; hour: Pillar; solarDate: string; solarTime: string } {
+  const iso = new Date(solarWallClockMs).toISOString();
+  const solarDate = iso.slice(0, 10);
+  const solarTime = iso.slice(11, 16);
+  const lateZi = Number(solarTime.slice(0, 2)) === 23;
+  const dayDate = lateZi && ziHourRule === "unified" ? nextSolarDate(solarDate) : solarDate;
+  const day = getDayPillarFromSolarDate(dayDate);
+  const stemDay = lateZi ? getDayPillarFromSolarDate(nextSolarDate(solarDate)) : day;
+  return { day, hour: getHourPillarFromBirthTime(solarTime, stemDay.stem), solarDate, solarTime };
 }

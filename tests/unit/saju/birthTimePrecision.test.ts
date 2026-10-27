@@ -4,6 +4,8 @@ import { resolveBirthTimeCalculation, UncertainBirthTimeError } from "../../../s
 import { BIRTH_TIME_SLOT_DEFINITIONS, normalizeBirthTimePrecision } from "../../../src/lib/saju/birthTimePrecisionTypes";
 import { calculateSaju } from "../../../src/lib/saju/calculateSaju";
 import { createSajuCalendarContext } from "../../../src/lib/saju/lunarJavascriptPillars";
+import { DEFAULT_SAJU_TIME_POLICY } from "../../../src/lib/saju/calcPolicy";
+import { getDayPillarFromSolarDate } from "../../../src/lib/saju/pillars";
 
 const base = { birthDate: "1996-12-06", birthTimeUnknown: false, calendarType: "SOLAR", gender: "MALE", timezone: "Asia/Seoul" } as const;
 const chars = (values: readonly { stem: string; branch: string }[]) => values.map((p) => p.stem + p.branch);
@@ -25,26 +27,35 @@ describe("birth time precision contract", () => {
     const approximate = calculateSaju({ ...base, approximateBirthTimeSlot: "MISI", birthTimePrecision: "approximate" });
     expect(approximate.pillars).toEqual(exact.pillars);
     expect(approximate.input.birthTime).toBeUndefined();
-    expect(approximate.birthTimeContext?.range).toEqual({ startKst: "1996-12-06T13:00:00+09:00", endKstExclusive: "1996-12-06T15:00:00+09:00" });
+    // v5-lmt: MISI is solar 13:00-15:00, i.e. Seoul civil 13:32:05-15:32:05.
+    expect(approximate.birthTimeContext?.range).toEqual({ startKst: "1996-12-06T13:32:05+09:00", endKstExclusive: "1996-12-06T15:32:05+09:00" });
   });
   it.each(BIRTH_TIME_SLOT_DEFINITIONS)("evaluates $value branch across the entire slot", (slot) => {
     const context = resolveBirthTimeCalculation({ ...base, approximateBirthTimeSlot: slot.value });
     const branch = "子丑寅卯辰巳午未申酉戌亥"[BIRTH_TIME_SLOT_DEFINITIONS.indexOf(slot)];
     expect(context.candidates.hour.every((p) => p.branch === branch)).toBe(true);
-    expect(context.stable.day).toBe(slot.value !== "JASI");
+    // unified 子 rule: the whole solar JASI slot belongs to the ending date.
+    expect(context.stable.day).toBe(true);
+    const split = resolveBirthTimeCalculation({ ...base, approximateBirthTimeSlot: slot.value }, { ...DEFAULT_SAJU_TIME_POLICY, ziHourRule: "split" });
+    expect(split.stable.day).toBe(slot.value !== "JASI");
   });
-  it("preserves both days for Zi, attributed to the ending date", () => {
+  it("attributes Zi to the ending date (unified) and keeps both days under split", () => {
     const input = { ...base, birthDate: "2024-03-01", approximateBirthTimeSlot: "JASI" as const };
     const context = resolveBirthTimeCalculation(input);
-    expect(context.range).toEqual({ startKst: "2024-02-29T23:00:00+09:00", endKstExclusive: "2024-03-01T01:00:00+09:00" });
-    expect(chars(context.candidates.day)).toEqual(["癸亥", "甲子"]);
-    expect(chars(context.candidates.hour)).toEqual(["壬子", "甲子"]);
-    expect(context.confirmed.day).toBeUndefined();
-    expect(() => calculateSaju(input)).toThrow(UncertainBirthTimeError);
+    expect(context.range).toEqual({ startKst: "2024-02-29T23:32:05+09:00", endKstExclusive: "2024-03-01T01:32:05+09:00" });
+    expect(chars(context.candidates.day)).toEqual(["甲子"]);
+    expect(chars(context.candidates.hour)).toEqual(["甲子"]);
+    expect(calculateSaju(input).pillars.day).toEqual({ stem: "甲", branch: "子" });
+    const split = resolveBirthTimeCalculation(input, { ...DEFAULT_SAJU_TIME_POLICY, ziHourRule: "split" });
+    expect(chars(split.candidates.day)).toEqual(["癸亥", "甲子"]);
+    // 야자시 takes the next day's 子 stem, so both halves are 甲子 hours.
+    expect(chars(split.candidates.hour)).toEqual(["甲子"]);
+    expect(split.confirmed.day).toBeUndefined();
   });
   it.each([
-    ["2024-02-04", "YUSI", ["癸卯", "甲辰"], ["乙丑", "丙寅"]],
-    ["2024-03-05", "OSI", ["甲辰"], ["丙寅", "丁卯"]],
+    // 입춘 17:27 KST = solar 16:55 (SINSI); 경칩 11:23 KST = solar 10:51 (SASI).
+    ["2024-02-04", "SINSI", ["癸卯", "甲辰"], ["乙丑", "丙寅"]],
+    ["2024-03-05", "SASI", ["甲辰"], ["丙寅", "丁卯"]],
   ] as const)("keeps solar-term candidates for %s %s", (birthDate, slot, years, months) => {
     const context = resolveBirthTimeCalculation({ ...base, birthDate, approximateBirthTimeSlot: slot });
     expect(chars(context.candidates.year)).toEqual(years);
@@ -74,7 +85,9 @@ describe("birth time precision contract", () => {
       const { pillars } = createSajuCalendarContext("2024-02-04T" + time + ":00+09:00");
       for (const key of ["year", "month", "day", "hour"] as const) found[key].add(pillars[key].stem + pillars[key].branch);
     }
-    for (const key of ["year", "month", "day", "hour"] as const) expect(new Set(chars(context.candidates[key]))).toEqual(found[key]);
+    for (const key of ["year", "month", "hour"] as const) expect(new Set(chars(context.candidates[key]))).toEqual(found[key]);
+    // Unknown time has no solar anchor: the typed civil date is the day pillar.
+    expect(chars(context.candidates.day)).toEqual(chars([getDayPillarFromSolarDate("2024-02-04")]));
   });
   it("is independent of host timezone for Zi and unknown boundary", () => {
     const script = `const fs=require("node:fs"),ts=require("typescript"),url=require("node:url");
@@ -84,6 +97,6 @@ describe("birth time precision contract", () => {
       process.stdout.write(JSON.stringify([r({birthDate:"2024-01-01",approximateBirthTimeSlot:"JASI"}),r({birthDate:"2024-02-04",birthTimeUnknown:true})]));`;
     const results = ["UTC", "Asia/Seoul", "America/New_York"].map((TZ) => execFileSync(process.execPath, ["-e", script], { env: { ...process.env, TZ }, encoding: "utf8" }));
     expect(new Set(results).size).toBe(1);
-    expect(JSON.parse(results[0])[0].range.startKst).toBe("2023-12-31T23:00:00+09:00");
+    expect(JSON.parse(results[0])[0].range.startKst).toBe("2023-12-31T23:32:05+09:00");
   });
 });

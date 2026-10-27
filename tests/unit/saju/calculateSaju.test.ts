@@ -48,7 +48,8 @@ describe("calculateSaju", () => {
       year: { stem: "甲", branch: "辰" },
       month: { stem: "丙", branch: "寅" },
       day: { stem: "戊", branch: "戌" },
-      hour: { stem: "辛", branch: "酉" },
+      // v5-lmt: 17:28 KST is solar 16:56 (申).
+      hour: { stem: "庚", branch: "申" },
     });
     expect(result.dayMaster).toBe("戊");
     expect(result.notices).toEqual([]);
@@ -181,13 +182,15 @@ describe("calculateSaju", () => {
       year: { stem: "甲", branch: "辰" },
       month: { stem: "丙", branch: "寅" },
       day: { stem: "戊", branch: "戌" },
-      hour: { stem: "辛", branch: "酉" },
+      // v5-lmt: 17:28 KST is solar 16:56 (申).
+      hour: { stem: "庚", branch: "申" },
     });
     expect(serializedResult).not.toContain("SOLAR_TERM_YEAR_UNSUPPORTED");
   });
 
   it("handles 1996 Asia/Seoul time-pillar boundary smoke cases", () => {
-    const birthTimes = ["00:30", "01:30", "14:15", "23:30"] as const;
+    // 00:30 KST is solar 23:58 (子) and 02:30 is solar 01:58 (丑).
+    const birthTimes = ["00:30", "02:30", "14:15", "23:30"] as const;
     const results = birthTimes.map((birthTime) =>
       calculateSaju({
         ...broadYearProductionInput,
@@ -235,15 +238,17 @@ describe("calculateSaju", () => {
     }
   });
 
-  it("throws for lunar calendar", () => {
-    const input: SajuCalcInput = {
-      ...baseInput,
-      calendarType: "LUNAR",
-    };
+  it("converts lunar input, including a leap month, before calculating", () => {
+    const leap = calculateSaju({ ...baseInput, birthDate: "2023-02-15", birthTime: "12:00", calendarType: "LUNAR", isLeapMonth: true });
+    expect(leap.converted).toEqual({ solarDate: "2023-04-05", lunarDate: "2023-02-15", isLeapMonth: true });
+    expect(leap.pillars.day).toEqual(calculateSaju({ ...baseInput, birthDate: "2023-04-05", birthTime: "12:00" }).pillars.day);
+    const ordinary = calculateSaju({ ...baseInput, birthDate: "2023-02-15", birthTime: "12:00", calendarType: "LUNAR", isLeapMonth: false });
+    expect(ordinary.converted?.solarDate).toBe("2023-03-06");
+  });
 
-    expect(() => calculateSaju(input)).toThrow(
-      "Lunar calendar conversion is not supported in V1.",
-    );
+  it("rejects a lunar leap month that does not exist", () => {
+    expect(() => calculateSaju({ ...baseInput, birthDate: "2024-03-01", calendarType: "LUNAR", isLeapMonth: true }))
+      .toThrow("does not exist");
   });
 
   it("throws for non-Korea timezone", () => {

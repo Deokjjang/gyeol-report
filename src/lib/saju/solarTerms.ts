@@ -251,3 +251,31 @@ export function getSolarTermInstants(startKst: string, endKst: string): readonly
   }
   return [...instants].sort((a, b) => a - b);
 }
+
+export class InvalidLunarDateError extends Error {
+  constructor(readonly lunarDate: string, readonly isLeapMonth: boolean) {
+    super(`Lunar date ${lunarDate}${isLeapMonth ? " (leap month)" : ""} does not exist.`);
+    this.name = "InvalidLunarDateError";
+  }
+}
+
+// Lunar (Chinese calendar of lunar-javascript) -> solar date. A leap month is a negative month in the
+// library; a leap month or day that does not exist is rejected instead of being shifted.
+export function lunarToSolarDate(lunarDate: string, isLeapMonth: boolean): string {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(lunarDate);
+  if (!match) throw new InvalidLunarDateError(lunarDate, isLeapMonth);
+  const [year, month, day] = match.slice(1).map(Number);
+  const library = lunarJavascriptModule as { Lunar?: { fromYmd?: (y: number, m: number, d: number) => unknown } };
+  try {
+    const lunar = library.Lunar?.fromYmd?.(year, isLeapMonth ? -month : month, day);
+    if (!hasFunctionProperty(lunar, "getSolar") || !hasFunctionProperty(lunar, "getDay")) throw new Error("Invalid calendar result.");
+    if (lunar.getDay() !== day) throw new Error("Lunar day overflow.");
+    const solar = lunar.getSolar();
+    if (!hasFunctionProperty(solar, "toYmd")) throw new Error("Invalid calendar result.");
+    const value = solar.toYmd();
+    if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) throw new Error("Invalid calendar result.");
+    return value;
+  } catch {
+    throw new InvalidLunarDateError(lunarDate, isLeapMonth);
+  }
+}

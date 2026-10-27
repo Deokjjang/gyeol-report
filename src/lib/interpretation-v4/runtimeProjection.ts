@@ -181,7 +181,8 @@ export function projectV4Tables(e: V4RuntimeEvidence): V4CustomerTables {
     const profile = e.mbtiTables[slot];
     // Explicit public table contract; natalEvidence/reportUseCases remain internal.
     return { name: person.name, manse: { title: data.title, columns: data.columns, stemRow: data.stemRow, branchRow: data.branchRow,
-      fiveElementDistribution: data.fiveElementDistribution, detailRows: data.detailRows },
+      fiveElementDistribution: data.fiveElementDistribution, detailRows: data.detailRows,
+      ...(data.timeCorrectionNote ? { timeCorrectionNote: data.timeCorrectionNote } : {}) },
       mbti: profile ? publicMbti(profile) : null,
       elements: ([["WOOD", "목"], ["FIRE", "화"], ["EARTH", "토"], ["METAL", "금"], ["WATER", "수"]] as const).map(([element, label]) =>
         ({ label, visible: e.calculations[slot].elements.visible[element], weighted: e.calculations[slot].elements.weighted[element],

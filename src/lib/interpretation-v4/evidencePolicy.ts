@@ -1,6 +1,6 @@
 import { buildCanonicalNatalTable } from "../report-knowledge/natalTableEvidence";
 import { SHINSAL_RULES } from "../saju/shinsalConstants";
-import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
+import { isReadableSajuCalendarVersion } from "../saju/calendarVersion";
 import { EXTRACTOR_DIRECT_IDS } from "../interpretation-v3/featureCapabilities";
 import { adaptCalculation } from "../interpretation-v3/evidence";
 import { GOD_CODES, storySupport } from "../interpretation-v3/comprehensiveStoryEvidence";
@@ -65,7 +65,7 @@ export function evaluateEvidence(raw: Observation): EvidenceDecision {
  * layer. Never accept a precomputed structure packet from another chart. */
 export function buildV4Evidence(calc: SajuCalcResult, subject: Observation["subject"] = "person"): readonly Observation[] {
   const context = calc.birthTimeContext;
-  const contextMatches = context?.calendarVersion === calc.calculationVersion && context?.birthDate === calc.input.birthDate && calc.calculationVersion === SAJU_CALENDAR_VERSION &&
+  const contextMatches = context?.calendarVersion === calc.calculationVersion && context?.birthDate === calc.input.birthDate && isReadableSajuCalendarVersion(calc.calculationVersion) &&
     (["year", "month", "day", "hour"] as const).every(key => {
       const p = calc.pillars[key], c = context?.confirmed[key];
       return p?.stem === c?.stem && p?.branch === c?.branch;

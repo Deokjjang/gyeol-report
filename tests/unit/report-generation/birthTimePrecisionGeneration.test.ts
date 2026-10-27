@@ -89,8 +89,9 @@ describe("precision through all six product boundaries", () => {
     const network = vi.fn(() => { throw Error("NETWORK_FORBIDDEN"); });
     vi.stubGlobal("fetch", network);
     for (const input of [
-      { ...person, birthTime: "", approximateBirthTimeSlot: "JASI" },
-      { ...person, birthDate: "2024-02-04", birthTime: "", approximateBirthTimeSlot: "YUSI" },
+      // v5-lmt: JASI is one day under the unified 子 rule; the solar slots holding 입춘/경칩 are SINSI/SASI.
+      { ...person, birthDate: "2024-03-05", birthTime: "", approximateBirthTimeSlot: "SASI" },
+      { ...person, birthDate: "2024-02-04", birthTime: "", approximateBirthTimeSlot: "SINSI" },
       { ...person, birthDate: "2024-02-04", birthTime: "", birthTimeUnknown: true },
     ]) {
       const result = await prepareProductGenerationFromPayload(payload([productKey, productSlug] as typeof products[number], input), options);

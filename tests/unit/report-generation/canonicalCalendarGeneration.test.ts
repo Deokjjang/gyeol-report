@@ -10,7 +10,8 @@ const person = {
   birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ",
 } as const;
 // HKO date/term golden + existing product hour rule, NOT generated expectations.
-const expectedPillars = { year: "甲辰", month: "丙寅", day: "戊戌", hour: "辛酉" };
+// v5-lmt: 17:28 KST is solar 16:56, so the hour is 庚申.
+const expectedPillars = { year: "甲辰", month: "丙寅", day: "戊戌", hour: "庚申" };
 const products = [
   ["saju_mbti_full", "saju-mbti-full"],
   ["career_money_study", "career-money-study"],
@@ -52,7 +53,7 @@ describe("canonical calendar through six deterministic product pipelines", () =>
     expect(result.evidencePacket).toMatchObject({ calendarCalculationVersion: SAJU_CALENDAR_VERSION });
     if (productKey === "saju_mbti_full") {
       expect(result.draft).toMatchObject({ profileTable: {
-        yearPillar: "갑진", monthPillar: "병인", dayPillar: "무술일주", hourPillar: "신유",
+        yearPillar: "갑진", monthPillar: "병인", dayPillar: "무술일주", hourPillar: "경신",
       } });
     } else if (productKey === "love_marriage_child") {
       expect(result.evidencePacket).toMatchObject({ sajuBasis: {

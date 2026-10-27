@@ -6,6 +6,7 @@ import {
 import { analyzeRelations } from "./relations";
 import { detectShinsal } from "./shinsal";
 import { resolveBirthTimeCalculation, UncertainBirthTimeError } from "./birthTimePrecision";
+import { lunarToSolarDate } from "./solarTerms";
 import { analyzeSajuStructure } from "./structureAnalysis";
 import type { SajuCalcInput, SajuCalcResult } from "./types";
 
@@ -33,12 +34,11 @@ export function calculateSaju(input: SajuCalcInput): SajuCalcResult {
     throw new Error("Only Asia/Seoul timezone is supported.");
   }
 
-  if (input.calendarType === "LUNAR") {
-    throw new Error("Lunar calendar conversion is not supported in V1.");
-  }
-
+  // Lunar input is converted to the solar date first; birthDate then holds the lunar date.
+  const lunar = input.calendarType === "LUNAR";
+  const solarDate = lunar ? lunarToSolarDate(input.birthDate, input.isLeapMonth === true) : input.birthDate;
   const notices: string[] = [];
-  const calendar = resolveBirthTimeCalculation(input);
+  const calendar = resolveBirthTimeCalculation({ ...input, birthDate: solarDate });
   const { year, month, day, hour } = calendar.confirmed;
   if (!year || !month || !day) throw new UncertainBirthTimeError(calendar);
   const pillars = { year, month, day, ...(hour ? { hour } : {}) };
@@ -57,7 +57,8 @@ export function calculateSaju(input: SajuCalcInput): SajuCalcResult {
     calculationVersion: calendar.calendarVersion,
     birthTimeContext: calendar,
     converted: {
-      solarDate: input.birthDate,
+      solarDate,
+      ...(lunar ? { lunarDate: input.birthDate } : {}),
       ...(typeof input.isLeapMonth === "boolean"
         ? { isLeapMonth: input.isLeapMonth }
         : {}),

@@ -39,7 +39,7 @@ export function validateDayunPublication(product: string, draft: Record<string, 
     const person = b.customerInput;
     const context = b.calendarContext;
     const time = normalizeBirthTimePrecision(person);
-    // Stored Dayun stays readable: both versions must be readable and come from the same engine.
+    // Stored Dayun stays readable: the Dayun and calendar versions must be readable and belong to the same engine.
     if (!isReadableDayunCalculationVersion(b.calculationVersion) || !isReadableSajuCalendarVersion(b.calendarVersion) ||
         (b.calendarVersion === SAJU_CALENDAR_VERSION) !== (b.calculationVersion === DAYUN_CALCULATION_VERSION) ||
         b.libraryVersion !== "1.7.7" || b.yunSect !== 2 || b.stable !== true || b.ageConvention !== "kst_cycle_year_minus_birth_year_plus_one" ||

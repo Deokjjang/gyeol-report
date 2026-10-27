@@ -32,12 +32,12 @@ describe("calculateSaju shinsal integration", () => {
     const result = calculateSaju(knownTimeInput);
     const codes = result.shinsal.map((item) => item.code);
 
-    // HKO date golden + product KST hour policy: before 2024 Ipchun.
+    // HKO date golden, before 2024 Ipchun; v5-lmt hour: 17:27 KST is solar 16:55 (申).
     const expected = detectShinsal({
       year: { stem: "癸", branch: "卯" },
       month: { stem: "乙", branch: "丑" },
       day: { stem: "戊", branch: "戌" },
-      hour: { stem: "辛", branch: "酉" },
+      hour: { stem: "庚", branch: "申" },
     });
     expect(result.shinsal).toEqual(expected);
     expect(codes).toContain("HYEONCHIMSAL");
@@ -63,12 +63,8 @@ describe("calculateSaju shinsal integration", () => {
   it("includes hour-based detection for known-time calculation", () => {
     const result = calculateSaju(knownTimeInput);
 
-    expect(
-      result.shinsal.some(
-        (item) =>
-          item.code === "HYEONCHIMSAL" && item.positions.includes("hour"),
-      ),
-    ).toBe(true);
+    expect(result.pillars.hour).toEqual({ stem: "庚", branch: "申" });
+    expect(result.shinsal.some((item) => item.positions.includes("hour"))).toBe(true);
   });
 
   it("includes shinsal array for unknown-time calculation", () => {

@@ -1,13 +1,13 @@
 import { collectStructureAtoms } from "../../../interpretation-v4/strength";
 import { STRUCTURE_VERSION } from "../../../interpretation-v4/structureTypes";
 import { adaptSupplementTable, SUPPLEMENT_FOUNDATION_VERSION } from "../../../interpretation-v4/foundationSupplement";
-import { SAJU_CALENDAR_VERSION } from "../../../saju/calendarVersion";
+import { isReadableSajuCalendarVersion } from "../../../saju/calendarVersion";
 import { NATAL_TABLE_VERSION } from "../../natalTableEvidence";
 import type { EvidenceBuilder } from "./builder";
 export function adaptNatalEvidence(b: EvidenceBuilder, slot: "person" | "personA" | "personB") {
   const e = b.input.evidence, calc = e.calculations[slot], table = e.natalTableEvidence[slot], owner = b.owner(slot);
   if (!calc || !table) { b.requirement(owner, "MISSING_PRODUCER_OUTPUT", `/calculations/${slot}`); return; }
-  if (calc.calculationVersion !== SAJU_CALENDAR_VERSION || table.calendarVersion !== SAJU_CALENDAR_VERSION || table.version !== NATAL_TABLE_VERSION || calc.dayMaster !== calc.pillars.day.stem) { b.requirement(owner, "UNSUPPORTED_PRODUCER", `/calculations/${slot}/producerVersion`, true); return; }
+  if (!isReadableSajuCalendarVersion(calc.calculationVersion) || table.calendarVersion !== calc.calculationVersion || table.version !== NATAL_TABLE_VERSION || calc.dayMaster !== calc.pillars.day.stem) { b.requirement(owner, "UNSUPPORTED_PRODUCER", `/calculations/${slot}/producerVersion`, true); return; }
   const producer = b.producer("report-knowledge/natalTableEvidence", "buildCanonicalNatalTable", `${table.version}/${table.calendarVersion}`);
   // All six inspected handlers call this same calendar producer. Preserve that
   // identity across products instead of counting its wrappers as new facts.
