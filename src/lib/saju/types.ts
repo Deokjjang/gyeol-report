@@ -65,6 +65,8 @@ export type SajuCalcInput = {
   isLeapMonth?: boolean;
   gender: Gender;
   timezone: "Asia/Seoul";
+  // Birthplace degrees east; absent uses the default 127.5°E (calcPolicy.ts).
+  birthLongitude?: number;
 };
 
 export type ElementLabel =

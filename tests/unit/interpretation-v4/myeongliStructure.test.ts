@@ -31,7 +31,8 @@ function synthetic(pillars: PillarSet) {
 describe("V4 strength: season, roots, exposure and hidden support", () => {
   it.each([
     ["veryWeak", "1986-06-18", "09:30"], ["weak", "1985-05-06", "09:30"], ["balanced", "1984-03-06", "09:30"],
-    ["strong", "1984-10-06", "17:30"], ["veryStrong", "1987-05-18", "09:30"],
+    // v5-lmt: 1987-05-18 is summer time; 10:30 keeps the 丁卯 乙巳 丁卯 乙巳 chart (09:30 is now 甲辰 hour).
+    ["strong", "1984-10-06", "17:30"], ["veryStrong", "1987-05-18", "10:30"],
   ] as const)("actual %s: %s %s", (level, date, time) => {
     const result = analyzeV4Strength(calc(date, time));
     expect(result.level).toBe(level);
@@ -117,7 +118,8 @@ describe("V4 meaningful structures, not two labels coexisting", () => {
     expect(JSON.parse(JSON.stringify(layer))).toEqual(layer);
   });
   it("wealth-heavy but strong is not wealth-heavy weak", () => {
-    const r = buildMyeongliStructure(calc("1985-03-06", "23:30"));
+    // v5-lmt: 23:30 now starts the next day (unified 子 rule); 01:00 keeps the 乙丑 己卯 甲辰 甲子 chart.
+    const r = buildMyeongliStructure(calc("1985-03-06", "01:00"));
     expect(r.strength.level).toBe("strong");
     expect(r.candidates.some(c => c.id === "wealthHeavy")).toBe(true);
     expect(r.candidates.some(c => c.id === "wealthHeavyWeakDaymaster")).toBe(false);

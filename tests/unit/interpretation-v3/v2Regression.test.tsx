@@ -17,7 +17,8 @@ import { PRODUCTS } from "../../../src/lib/interpretation-v3/types";
 import { adaptAnnualFortune, adaptMajorFortune, adaptMbti, adaptMonthSegment, adaptNatalTable, validateEvidence } from "../../../src/lib/interpretation-v3/evidence";
 import { interpretV3 } from "../../../src/lib/interpretation-v3/engine";
 
-const p = { name: "기준인", birthDate: "1989-09-07", birthTime: "07:24", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "INFP" };
+// v5-lmt pin (original +30 min) so the chart equals the frozen kst-v2 chart; see tests/unit/saju/fixturePins.test.ts.
+const p = { name: "기준인", birthDate: "1989-09-07", birthTime: "07:54", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "INFP" };
 const q = { ...p, name: "상대인", birthDate: "2002-02-17", birthTime: "19:53", gender: "FEMALE", mbtiType: "ESTP" };
 const hash = (value: unknown) => createHash("sha256").update(JSON.stringify(value)).digest("hex");
 // Frozen baseline of edacb1b production sources (no production file changed).

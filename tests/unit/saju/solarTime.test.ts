@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { DEFAULT_SAJU_TIME_POLICY } from "@/lib/saju/calcPolicy";
+import { DEFAULT_SAJU_TIME_POLICY, InvalidBirthLongitudeError, withBirthLongitude } from "@/lib/saju/calcPolicy";
 import {
   civilToUtc, equationOfTimeMinutes, solarTimeCorrectionMinutes, solarWallClockMs, utcFromSolarWallClockMs, utcOffsetMinutesAt,
 } from "@/lib/saju/solarTime";
@@ -66,16 +66,29 @@ describe("civil time -> UTC", () => {
 });
 
 describe("longitude (local mean solar time) correction", () => {
-  it("Seoul 126.98E is UTC+8:27:55, i.e. 32 min 05 s behind KST", () => {
+  it("default 127.5E is UTC+8:30, i.e. 30 min behind KST", () => {
     const utc = Date.parse("2000-05-11T08:05:00Z");
-    expect(solarWallClockMs(utc, DEFAULT_SAJU_TIME_POLICY) - utc).toBe((8 * 3600 + 27 * 60 + 55) * 1000);
-    expect(solarTimeCorrectionMinutes(utc, DEFAULT_SAJU_TIME_POLICY)).toBeCloseTo(-32.08, 2);
-    expect(iso(solarWallClockMs(utc, DEFAULT_SAJU_TIME_POLICY))).toBe("2000-05-11T16:32:55Z");
+    expect(DEFAULT_SAJU_TIME_POLICY).toMatchObject({ longitude: 127.5, longitudeSource: "default-127.5" });
+    expect(solarWallClockMs(utc, DEFAULT_SAJU_TIME_POLICY) - utc).toBe((8 * 3600 + 30 * 60) * 1000);
+    expect(solarTimeCorrectionMinutes(utc, DEFAULT_SAJU_TIME_POLICY)).toBe(-30);
+    expect(iso(solarWallClockMs(utc, DEFAULT_SAJU_TIME_POLICY))).toBe("2000-05-11T16:35:00Z");
+  });
+
+  it("a birthplace longitude replaces the default (Seoul 126.98E = UTC+8:27:55)", () => {
+    const utc = Date.parse("2000-05-11T08:05:00Z");
+    const seoul = withBirthLongitude(DEFAULT_SAJU_TIME_POLICY, 126.98);
+    expect(seoul).toMatchObject({ longitude: 126.98, longitudeSource: "birthplace" });
+    expect(solarWallClockMs(utc, seoul) - utc).toBe((8 * 3600 + 27 * 60 + 55) * 1000);
+    expect(solarTimeCorrectionMinutes(utc, seoul)).toBeCloseTo(-32.08, 2);
+    expect(withBirthLongitude(DEFAULT_SAJU_TIME_POLICY, undefined)).toBe(DEFAULT_SAJU_TIME_POLICY);
+    for (const bad of [Number.NaN, 123.9, 132.1, "127", {}]) {
+      expect(() => withBirthLongitude(DEFAULT_SAJU_TIME_POLICY, bad)).toThrow(InvalidBirthLongitudeError);
+    }
   });
 
   it("includes the historical civil offset (summer time, UTC+8:30)", () => {
-    expect(solarTimeCorrectionMinutes(Date.parse("1987-07-15T03:00:00Z"), DEFAULT_SAJU_TIME_POLICY)).toBeCloseTo(-92.08, 2);
-    expect(solarTimeCorrectionMinutes(Date.parse("1955-01-15T03:00:00Z"), DEFAULT_SAJU_TIME_POLICY)).toBeCloseTo(-2.08, 2);
+    expect(solarTimeCorrectionMinutes(Date.parse("1987-07-15T03:00:00Z"), DEFAULT_SAJU_TIME_POLICY)).toBe(-90);
+    expect(solarTimeCorrectionMinutes(Date.parse("1955-01-15T03:00:00Z"), DEFAULT_SAJU_TIME_POLICY)).toBe(0);
   });
 
   it("inverts the solar wall clock exactly, with and without the equation of time", () => {

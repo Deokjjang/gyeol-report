@@ -120,15 +120,17 @@ it("all 392 baseline instruction meanings and the output schema remain intact", 
   // Updated only for canonical natal hidden-stem correction (MAIN/SUB/MINOR).
   // Instruction/schema remain unchanged; product evidence fixtures below track
   // the current context/grammar refinements separately from transport packing.
-  expect(hash(readEvidence(user).expanded)).toBe("ff35bf1ecf58f43c503e36c636b053c401696553ed93a610a209f771683a7f70");
+  // v5-lmt: only calendarVersion strings and birthTimeContext.timeBasis changed in the evidence (same chart).
+  expect(hash(readEvidence(user).expanded)).toBe("a5baa0731256bbedb807948106bc3884e854d185284ec0c2ac0c33beac676e1a");
 });
 
 const otherRequestHashes = {
   career_money_study: "5cf0de17d1b9d627b8a8303191fcea2a96e92c1308a9ed74589063a9413fd9d3",
   love_marriage_child: "151ccbb50f9fdc2e8bd1e8e11f14814b15ca96cf1b701e7ae4173ae995091ceb",
   saju_mbti_compatibility: "7232d1dbedb198730bca469869145527e71171de7a76a27ce697a4872b73fe5f",
-  major_fortune: "3b72e0f4574b10691139e09feb1b33d43660b1b8885a519728021f9cc36ddb93",
-  annual_fortune: "013ee2e5278b3d722061eaa5c7afe1e467375c47ba81972c315a628f8a37e3ed",
+  // v5-lmt: customerDayun/dayunSelection version strings and calendarContext.timeBasis only (same chart and cycles).
+  major_fortune: "d3c5996af28bc3fad5c5fb4d9deeea38af7b2d96da124baa9edb3d65da560315",
+  annual_fortune: "07e4a2168b537cd20eb6c6c7bc75f9acd54a39ee94cc28a2db33255ee31da38c",
 };
 it.each(Object.entries(otherRequestHashes))("%s current deterministic evidence keeps the reviewed writer request", async (key, digest) => {
   const result = await generateProductReport(payload(key), disabled, "deterministic_fallback");

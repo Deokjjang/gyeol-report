@@ -1,10 +1,12 @@
 import type { RelationshipStatus, ReportGender } from "../../../src/lib/report-generation/reportInputTypes";
 // Existing editorial QA dates; expected flags are checked against real facts.
+// v5-lmt pin: times marked below are the original +30 min (+60 in 1987 summer time) so the solar-time
+// chart equals the frozen kst-v2 chart these locks were written for (tests/unit/saju/fixturePins.test.ts).
 export const LOVE_V3_FIXTURES = [
   ["A", "가온", "1996-12-06", "09:30", "MALE", "ENTJ", "single", false, false],
   ["B", "라온", "2006-03-22", "18:10", "MALE", "ENFP", "single", true, true],
-  ["C", "도윤", "1989-09-07", "07:24", "MALE", "ENFP", "dating", true, false],
-  ["D", "유나", "1993-10-17", "13:20", "FEMALE", "INFJ", "dating", false, true],
+  ["C", "도윤", "1989-09-07", "07:54", "MALE", "ENFP", "dating", true, false], // pin: 07:24
+  ["D", "유나", "1993-10-17", "13:50", "FEMALE", "INFJ", "dating", false, true], // pin: 13:20
   ["E", "서연", "1984-06-15", "14:20", "FEMALE", "ISFJ", "single", false, false],
   ["F", "수현", "1996-12-06", "09:30", "FEMALE", "ISTJ", "married", false, false],
   ["G", "나래", "1992-02-08", "15:30", "FEMALE", "ENFJ", "marriage_preparing", false, false],

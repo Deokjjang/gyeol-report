@@ -21,9 +21,9 @@ import type { CompatibilityEvidencePacket } from "../../../src/lib/report-knowle
 const disabled = { enabled: false as const, reason: "flag_disabled" as const };
 const products = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility", "major_fortune", "annual_fortune"] as const;
 const profiles = [
-  { name: "현우", birthDate: "1989-09-07", birthTime: "07:24", gender: "MALE", mbtiType: "INFP", jobStatus: "employee", detailJob: "B2B 소프트웨어 영업기획" },
+  { name: "현우", birthDate: "1989-09-07", birthTime: "07:54", /* pin: 07:24 */ gender: "MALE", mbtiType: "INFP", jobStatus: "employee", detailJob: "B2B 소프트웨어 영업기획" },
   { name: "지아", birthDate: "2002-02-17", birthTime: "19:53", gender: "FEMALE", mbtiType: "ESTP", jobStatus: "student", detailJob: "경영학 전공 대학생" },
-  { name: "준혁", birthDate: "1979-11-08", birthTime: "13:26", gender: "MALE", mbtiType: "ISFJ", jobStatus: "employee", detailJob: "제조업 품질관리 책임자" },
+  { name: "준혁", birthDate: "1979-11-08", birthTime: "13:56", /* pin: 13:26 */ gender: "MALE", mbtiType: "ISFJ", jobStatus: "employee", detailJob: "제조업 품질관리 책임자" },
 ];
 const person = (i: number) => { const { jobStatus: _job, detailJob: _detail, ...p } = profiles[i]; void _job; void _detail; return { ...p, birthTimeUnknown: false, approximateBirthTimeSlot: "" }; };
 const payload = (product: string, i = 0) => ({ productKey: product, productSlug: product === "saju_mbti_compatibility" ? "compatibility" : product.replaceAll("_", "-"),

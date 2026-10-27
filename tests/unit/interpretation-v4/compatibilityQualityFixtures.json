@@ -504,7 +504,7 @@
         "person": {
           "name": "김하린",
           "birthDate": "1992-03-17",
-          "birthTime": "09:20",
+          "birthTime": "09:50",
           "gender": "FEMALE",
           "mbtiType": "ENFJ",
           "birthTimeUnknown": false,
@@ -597,7 +597,7 @@
         "person": {
           "name": "윤시우",
           "birthDate": "1983-09-02",
-          "birthTime": "05:10",
+          "birthTime": "05:40",
           "gender": "MALE",
           "mbtiType": "ENTJ",
           "birthTimeUnknown": false,

@@ -1,5 +1,5 @@
-import { SAJU_CALENDAR_VERSION, type SajuCalendarVersion } from "./calendarVersion";
-import { DEFAULT_SAJU_TIME_POLICY, type ZiHourRule } from "./calcPolicy";
+import { SAJU_CALC_VERSION_ID, SAJU_CALENDAR_VERSION, type SajuCalendarVersion } from "./calendarVersion";
+import { DEFAULT_SAJU_TIME_POLICY, type LongitudeSource, type ZiHourRule } from "./calcPolicy";
 import type { Pillar } from "./types";
 
 // Client-safe input SSOT. Slots are 시진 in local mean solar time (v5-lmt); minutes are
@@ -18,7 +18,8 @@ const SLOTS = [
   { value: "SULSI", nameKo: "술시", startMinute: 1140, endMinute: 1260 },
   { value: "HAESI", nameKo: "해시", startMinute: 1260, endMinute: 1380 },
 ] as const;
-// Labels show today's Seoul civil clock (UTC+9) for each solar 시진: Seoul solar time runs ~32 minutes behind.
+// Labels show today's Korean civil clock (UTC+9) for each solar 시진 at the default longitude
+// (127.5°E runs 30 minutes behind). A birthplace longitude is not collected by the intake form.
 export const SLOT_LABEL_CIVIL_SHIFT_MINUTES = 540 - Math.round(DEFAULT_SAJU_TIME_POLICY.longitude * 4);
 const clock = (minute: number) => {
   const m = ((minute % 1440) + 1440) % 1440;
@@ -43,6 +44,8 @@ export type BirthTimeInput = {
   birthTimeUnknown?: unknown;
   approximateBirthTimeSlot?: unknown;
   birthTimePrecision?: unknown;
+  // Degrees east. Absent: DEFAULT_SAJU_TIME_POLICY.longitude.
+  birthLongitude?: unknown;
 };
 export function normalizeBirthTimePrecision(input: BirthTimeInput) {
   const time = typeof input.birthTime === "string" ? input.birthTime.trim() : "";
@@ -74,7 +77,7 @@ export type BirthTimeCalculationContext = {
   timeBasis?: BirthTimeBasis;
 };
 export type BirthTimeBasis = {
-  calcVersion: "v5-lmt";
+  calcVersion: typeof SAJU_CALC_VERSION_ID;
   zone: "Asia/Seoul";
   // Civil input as typed: YYYY-MM-DDTHH:mm for exact, YYYY-MM-DD otherwise.
   civilDateTime: string;
@@ -82,7 +85,7 @@ export type BirthTimeBasis = {
   ambiguous: boolean;
   nonexistent: boolean;
   longitude: number;
-  longitudeSource: "default-seoul";
+  longitudeSource: LongitudeSource;
   equationOfTime: boolean;
   ziHourRule: ZiHourRule;
   // Solar time minus civil time at the range start (negative = clock ahead of the sun).
@@ -111,9 +114,13 @@ export function contextMatchesExactTime(context: Pick<BirthTimeCalculationContex
 export function solarTimeCorrectionNote(context: unknown): string | undefined {
   if (context === null || typeof context !== "object") return;
   const { timeBasis: basis, birthTimePrecision } = context as Partial<BirthTimeCalculationContext>;
-  if (!basis || basis.calcVersion !== "v5-lmt" || birthTimePrecision === "unknown" || typeof basis.solarTimeCorrectionMinutes !== "number") return;
+  if (!basis || basis.calcVersion !== SAJU_CALC_VERSION_ID || birthTimePrecision === "unknown" ||
+      typeof basis.solarTimeCorrectionMinutes !== "number" || typeof basis.longitude !== "number") return;
   const minutes = Math.round(basis.solarTimeCorrectionMinutes);
+  const meridian = `${basis.longitudeSource === "birthplace" ? "출생지 경도" : "기준 경도"} 동경 ${basis.longitude}°`;
   const era = basis.utcOffsetMinutes === 570 || basis.utcOffsetMinutes === 600 ? " (당시 서머타임 반영)"
     : basis.utcOffsetMinutes === 510 ? " (당시 표준시 UTC+8:30 반영)" : "";
-  return `출생지 경도 기준 시간 보정 ${minutes > 0 ? "+" : ""}${minutes}분 적용${era}`;
+  // 1954-61 standard time was UTC+8:30, i.e. exactly the 127.5°E meridian.
+  if (minutes === 0) return `${meridian}로 시간 보정 없음${era}`;
+  return `${meridian}로 시간 보정 ${minutes > 0 ? "+" : ""}${minutes}분 적용${era}`;
 }

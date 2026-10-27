@@ -688,11 +688,11 @@ describe("new report page source", () => {
 
   it("renders traditional time branch and midnight warning copy", () => {
     const branchMarkers = [
-      // v5-lmt: slots are solar-time 시진, labelled in Seoul civil time (solar runs 32 min behind).
-      "자시 전날 23:32~당일 01:31",
-      "진시 07:32~09:31",
-      "유시 17:32~19:31",
-      "해시 21:32~23:31",
+      // v5-lmt: slots are solar-time 시진, labelled in civil time (127.5E solar runs 30 min behind).
+      "자시 전날 23:30~당일 01:29",
+      "진시 07:30~09:29",
+      "유시 17:30~19:29",
+      "해시 21:30~23:29",
       "자정 전후 출생은 날짜 기준에 따라 일주·시주 해석이 달라질 수 있습니다.",
       "가능하면 가족에게 실제 출생일과 시간을 다시 확인해 주세요.",
       "달력",

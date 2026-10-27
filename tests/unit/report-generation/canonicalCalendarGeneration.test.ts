@@ -10,7 +10,7 @@ const person = {
   birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ",
 } as const;
 // HKO date/term golden + existing product hour rule, NOT generated expectations.
-// v5-lmt: 17:28 KST is solar 16:56, so the hour is 庚申.
+// v5-lmt: 17:28 KST is solar 16:58, so the hour is 庚申.
 const expectedPillars = { year: "甲辰", month: "丙寅", day: "戊戌", hour: "庚申" };
 const products = [
   ["saju_mbti_full", "saju-mbti-full"],

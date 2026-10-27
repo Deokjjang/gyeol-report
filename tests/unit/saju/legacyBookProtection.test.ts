@@ -96,11 +96,16 @@ describe("stored annual month calendars re-validate under the new engine", () =>
 
 describe("customer note", () => {
   it.each([
-    ["2000-05-11", "17:05", "출생지 경도 기준 시간 보정 -32분 적용"],
-    ["1987-07-15", "12:00", "출생지 경도 기준 시간 보정 -92분 적용 (당시 서머타임 반영)"],
-    ["1955-01-15", "12:00", "출생지 경도 기준 시간 보정 -2분 적용 (당시 표준시 UTC+8:30 반영)"],
+    ["2000-05-11", "17:05", "기준 경도 동경 127.5°로 시간 보정 -30분 적용"],
+    ["1987-07-15", "12:00", "기준 경도 동경 127.5°로 시간 보정 -90분 적용 (당시 서머타임 반영)"],
+    ["1955-01-15", "12:00", "기준 경도 동경 127.5°로 시간 보정 없음 (당시 표준시 UTC+8:30 반영)"],
   ])("%s %s", (birthDate, birthTime, note) => {
     expect(solarTimeCorrectionNote(resolveBirthTimeCalculation({ birthDate, birthTime }))).toBe(note);
+  });
+  it("names the birthplace longitude when one is supplied", () => {
+    const context = resolveBirthTimeCalculation({ birthDate: "2000-05-11", birthTime: "17:05", birthLongitude: 126.98 });
+    expect(context.timeBasis).toMatchObject({ longitude: 126.98, longitudeSource: "birthplace" });
+    expect(solarTimeCorrectionNote(context)).toBe("출생지 경도 동경 126.98°로 시간 보정 -32분 적용");
   });
   it("is omitted when the birth time is unknown", () => {
     expect(solarTimeCorrectionNote(resolveBirthTimeCalculation({ birthDate: "2000-05-11", birthTimeUnknown: true }))).toBeUndefined();
@@ -113,8 +118,8 @@ describe("manse table data carries the note for new reports only", () => {
     const natalTableEvidence = { person: buildCanonicalNatalTable(context) };
     const v3 = buildCanonicalManseRyeokTableData({ natalTableEvidence, birthTimeContexts: { person: context } }, "고객");
     const v4 = buildCanonicalManseRyeokTableData({ natalTableEvidence, calculations: { person: { birthTimeContext: context } } }, "고객");
-    expect(v3?.timeCorrectionNote).toBe("출생지 경도 기준 시간 보정 -32분 적용");
-    expect(v4?.timeCorrectionNote).toBe("출생지 경도 기준 시간 보정 -32분 적용");
+    expect(v3?.timeCorrectionNote).toBe("기준 경도 동경 127.5°로 시간 보정 -30분 적용");
+    expect(v4?.timeCorrectionNote).toBe("기준 경도 동경 127.5°로 시간 보정 -30분 적용");
     expect(v3?.stemRow.hour?.hanja).toBe("壬");
     expect(v3?.branchRow.hour?.hanja).toBe("申");
   });
@@ -124,8 +129,8 @@ describe("approximate slot labels follow the engine that computed the report", (
   it("keeps civil KST labels for stored kst-v2 Books and solar 시진 labels for v5-lmt", () => {
     expect(birthTimeSlotLabel("MYOSI", "saju-calendar-kst-v2")).toBe("묘시 05:00~06:59");
     expect(birthTimeSlotLabel("JASI", "saju-calendar-kst-v2")).toBe("자시 전날 23:00~당일 00:59");
-    expect(birthTimeSlotLabel("MYOSI", SAJU_CALENDAR_VERSION)).toBe("묘시 05:32~07:31");
-    expect(birthTimeSlotLabel("JASI", SAJU_CALENDAR_VERSION)).toBe("자시 전날 23:32~당일 01:31");
+    expect(birthTimeSlotLabel("MYOSI", SAJU_CALENDAR_VERSION)).toBe("묘시 05:30~07:29");
+    expect(birthTimeSlotLabel("JASI", SAJU_CALENDAR_VERSION)).toBe("자시 전날 23:30~당일 01:29");
     expect(birthTimeSlotLabel("NOT_A_SLOT", SAJU_CALENDAR_VERSION)).toBeUndefined();
   });
 });

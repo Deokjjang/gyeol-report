@@ -1,5 +1,5 @@
 import { SAJU_CALENDAR_VERSION, SAJU_CALC_VERSION_ID } from "./calendarVersion";
-import { DEFAULT_SAJU_TIME_POLICY, type SajuTimePolicy } from "./calcPolicy";
+import { DEFAULT_SAJU_TIME_POLICY, withBirthLongitude, type SajuTimePolicy } from "./calcPolicy";
 import { createSajuCalendarContext } from "./lunarJavascriptPillars";
 import { getDayPillarFromSolarDate } from "./pillars";
 import { civilToUtc, solarTimeCorrectionMinutes, solarWallClockMs, utcFromSolarWallClockMs } from "./solarTime";
@@ -26,12 +26,14 @@ export class UncertainBirthTimeError extends Error {
 }
 // exact: civil time -> UTC (IANA history). approximate: the slot is a solar-time 시진.
 // unknown: the civil day; the day pillar is the typed date and no hour pillar is made.
+// A birthplace longitude in the input replaces the policy longitude.
 export function resolveBirthTimeCalculation(
   input: BirthTimeInput & { birthDate: string },
-  policy: SajuTimePolicy = DEFAULT_SAJU_TIME_POLICY,
+  basePolicy: SajuTimePolicy = DEFAULT_SAJU_TIME_POLICY,
 ): BirthTimeCalculationContext {
   const parsed = normalizeBirthTimePrecision(input);
   if (!parsed.ok) throw new Error("출생시간 입력을 확인해 주세요.");
+  const policy = withBirthLongitude(basePolicy, input.birthLongitude);
   // Also validates the civil date without host-local timezone parsing.
   createSajuCalendarContext(`${input.birthDate}T00:00:00+09:00`, policy);
   const slot = BIRTH_TIME_SLOT_DEFINITIONS.find((value) => value.value === parsed.slot);

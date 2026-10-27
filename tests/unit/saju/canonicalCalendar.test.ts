@@ -64,16 +64,16 @@ describe("canonical v5-lmt calendar", () => {
   it("keeps the solar date/hour separate from the solar-term comparison coordinate", () => {
     const context = createSajuCalendarContext("2024-12-07T00:16:00+09:00");
     expect(context.solarDate).toBe("2024-12-06");
-    expect(context.solarTime).toBe("23:43");
+    expect(context.solarTime).toBe("23:46");
     expect(context.utcOffsetMinutes).toBe(540);
-    expect(context.solarTimeCorrectionMinutes).toBeCloseTo(-32.08, 2);
+    expect(context.solarTimeCorrectionMinutes).toBe(-30);
     expect(context.solarTermComparisonDateTime).toBe("2024-12-06T23:16:00+08:00");
-    // unified 子: solar 23:43 already belongs to 乙巳 day.
+    // unified 子: solar 23:46 already belongs to 乙巳 day.
     expect(format(context.pillars.day)).toBe("乙巳");
     expect(format(context.pillars.hour)).toBe("丙子");
   });
 
-  it("applies the 子 rule on solar time at KST 23:40 (solar 23:08)", () => {
+  it("applies the 子 rule on solar time at KST 23:40 (solar 23:10)", () => {
     expect(parts("1988-02-15T23:40:00+09:00").join(" ")).toBe("戊辰 甲寅 辛丑 戊子");
   });
 

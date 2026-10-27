@@ -21,11 +21,13 @@ describe("customer Dayun product contract (not a universal school golden)", () =
     expect(r.value.cycles[0]).toMatchObject({ index: 1, ganji: g.firstGanji, startYear: g.startYear, endYear: g.startYear + 9, startAge: g.startAge, endAge: g.startAge + 9 });
     expect(r.value.cycles).toHaveLength(DAYUN_ACTUAL_CYCLE_COUNT);
     expect(r.value.cycles.map(c => c.index)).toEqual([1,2,3,4,5,6,7,8,9,10,11,12]);
-    // Year/month/day stay frozen; KST 13:30 is solar 12:58 (午), one branch before the frozen 未 hour.
+    // KST 13:30 is solar 13:00, the frozen 未 hour. 1987-08-18 is summer time: its instant is
+    // 12:30+09:00 = solar 12:00 (午), one branch before the frozen 未; year/month/day stay frozen.
     const [year, month, day, hour] = g.pillars.split(" ");
-    const instant = frozen.birthDate === "1987-08-18" ? "12:30:00" : "13:30:00";
+    const summer = frozen.birthDate === "1987-08-18";
+    const instant = summer ? "12:30:00" : "13:30:00";
     const stems = "甲乙丙丁戊己庚辛壬癸";
-    const expected = [year, month, day, stems[(stems.indexOf(hour[0]) + 9) % 10] + "午"].join(" ");
+    const expected = summer ? [year, month, day, stems[(stems.indexOf(hour[0]) + 9) % 10] + "午"].join(" ") : g.pillars;
     expect(Object.values(createSajuCalendarContext(`${g.birthDate}T${instant}+09:00`).pillars).map(p => p.stem+p.branch).join(" ")).toBe(expected);
   });
   it("normalizes a UTC8 Dec31 start and library age to KST Jan1", () => {
@@ -57,13 +59,14 @@ describe("customer Dayun product contract (not a universal school golden)", () =
     expect(r.value.startSolarKst).toBeNull(); expect(r.value.startOffset).toBeNull();
     expect(r.value.cycles[0]).toMatchObject({ ganji: "庚午", startYear: 2007, endYear: 2016, startAge: 9 });
     expect(r.value.startSolarRange).toEqual(precision === "approximate"
-      // v5-lmt: JINSI is solar 07-09 (KST 07:32-09:32); reverse direction adds 32 min = 2d16h to the start.
-      ? { earliestKst: "2007-05-15T23:32:00+09:00", latestKst: "2007-05-25T23:31:59+09:00" }
+      // v5-lmt: JINSI is solar 07-09 (KST 07:30-09:30). Reverse direction: the 30 min later birth adds
+      // 30 min to the instant and 2d12h (sect2) to the offset.
+      ? { earliestKst: "2007-05-15T19:30:00+09:00", latestKst: "2007-05-25T19:29:59+09:00" }
       : { earliestKst: "2007-04-08T00:00:00+09:00", latestKst: "2007-08-08T21:59:59+09:00" });
     expect(selectCustomerDayun(r.value, 2026)).toMatchObject({ ok: true, value: { selectedCycle: { ganji: "己巳", startYear: 2017 } } });
   });
   it.each([
-    // v5-lmt slots are solar 시진: the unstable 1981-03-03 window is now OSI (KST 11:32-13:32).
+    // v5-lmt slots are solar 시진: the unstable 1981-03-03 window is now OSI (KST 11:30-13:30).
     { birthDate: "1981-03-03", gender: "FEMALE", approximateBirthTimeSlot: "OSI" },
     { birthDate: "2001-06-22", gender: "MALE", birthTimeUnknown: true },
     { birthDate: "2024-02-04", gender: "MALE", birthTimeUnknown: true },

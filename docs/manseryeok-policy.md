@@ -1,6 +1,7 @@
 # 만세력 계산 정책 (saju-calendar-v5-lmt)
 
 - 작성: 2026-10-27, 브랜치 `v5/manseryeok-lmt` (기준 origin/master 84826020)
+- 개정: 2026-10-27 — 기본 경도를 126.98°E(−32분)에서 **127.5°E(−30분)**로 바꾸고, 출생지 경도 입력을 지원한다(`calcVersion: v5-lmt-2`).
 - 적용 대상: 이 버전 이후 **새로 생성되는** 리포트. 저장된 기존 리포트는 `saju-calendar-kst-v2` 계약으로만 읽는다(§3).
 - 표기: 아래 "현재 기준"은 코드 위치로 확인한 값이다. "선택지"는 바꾸지 않았고 결정만 요청한다.
 
@@ -15,31 +16,36 @@
 | 민간시각 → UTC | IANA `Asia/Seoul`(런타임 tzdata)로 변환. 1954-03-21~1961-08-09 UTC+8:30, 1948~51·1955~60·1987~88 서머타임을 자동 반영. 오프셋 하드코딩 없음 | `src/lib/saju/solarTime.ts` `civilToUtc` |
 | 년주·월주 | UTC 출생 시각과 절입 시각(절대 시각) 비교. 태양시 보정 미적용 | `solarTerms.ts` `getSolarTermContext` |
 | 대운수 | 같은 절대 시각으로 lunar-javascript `getYun(sect 2)` | `customerDayun.ts` (변경 없음) |
-| 일주·시주 | 지역 평균태양시 = UTC + 경도/15시간. 출생지 미수집이므로 서울 126.98°E 고정(UTC+8:27:55, 현재 KST보다 32분 05초 늦음) | `solarTime.ts` `solarWallClockMs`, `pillars.ts` `getDayHourPillarsFromSolarTime` |
+| 일주·시주 | 지역 평균태양시 = UTC + 경도/15시간. 기본 **동경 127.5°**(UTC+8:30, 현재 KST보다 정확히 30분 늦음, 한국 만세력 관례). 입력에 `birthLongitude`(124~132°E)가 있으면 그 경도를 쓴다 | `solarTime.ts` `solarWallClockMs`, `calcPolicy.ts` `withBirthLongitude`, `pillars.ts` `getDayHourPillarsFromSolarTime` |
 | 진태양시(균시차) | 기본 **미적용**. `equationOfTime: true`로 켤 수 있음(NOAA 근사) | `calcPolicy.ts` |
 | 23시대 | `ziHourRule` 기본 `unified`(태양시 23:00에 다음 날 일주·子시). `split`은 23시대 일주 유지 + 다음 날 子시 천간(야자시), 00시대는 당일 子시(조자시) | `calcPolicy.ts`, `pillars.ts` |
 
-설정은 `DEFAULT_SAJU_TIME_POLICY`(`src/lib/saju/calcPolicy.ts`) 한 곳이다. 쓰인 값은 리포트마다 `birthTimeContext.timeBasis`에 기록된다.
+설정은 `DEFAULT_SAJU_TIME_POLICY`(`src/lib/saju/calcPolicy.ts`) 한 곳이다. 쓰인 값은 리포트마다 `birthTimeContext.timeBasis`에 기록된다(`longitude`, `longitudeSource: "default-127.5" | "birthplace"`).
+
+### 1.0 출생지 경도
+- 엔진 입력(`SajuCalcInput.birthLongitude`, `BirthTimeInput.birthLongitude`)에 경도가 있으면 기본값 대신 쓴다. 범위 밖(124~132°E 외)이거나 숫자가 아니면 `InvalidBirthLongitudeError`로 계산을 거부한다(시간대는 `Asia/Seoul` 고정이므로 한국 경도만 받는다).
+- **현재 입력 화면과 결제 payload에는 출생지 필드가 없다.** 따라서 지금 생성되는 모든 신규 리포트는 기본 127.5°E를 쓴다. 출생지를 받으려면 입력 화면·`reportInputAdapter`·생성 핸들러에 필드를 연결하는 별도 작업이 필요하다.
 
 ### 1.1 경계 규칙
 - **존재하지 않는 시각**(서머타임 시작, 1961-08-10 00:00~00:29): 전환 **직전** 오프셋으로 해석한다(시계를 앞으로 민 것과 같음). `timeBasis.nonexistent = true`.
 - **두 번 있는 시각**(서머타임 종료 1시간): **앞(서머타임) 시각**을 쓴다. `timeBasis.ambiguous = true`.
   - 선택지: 뒤(표준시) 시각을 쓰거나, 두 시각의 시주가 다르면 시주를 생략할 수 있다. 결정 필요.
 - **시간 미상**: 입력 날짜(민간 날짜)의 일주를 그대로 쓰고 시주는 만들지 않는다(기존 계약 유지). 연·월주는 그날 전체를 평가하며, 그날 절입이 있으면 계산을 거부한다(기존 동작).
-- **근사 시간대(시진)**: 슬롯은 **태양시 시진**이다. 예: 유시 = 태양시 17:00~18:59 = 서울 민간시 17:32~19:31. 입력 화면 라벨도 이 민간시로 표시된다(`birthTimePrecisionTypes.ts`). 시주는 슬롯 안에서 항상 하나로 정해진다. `unified`에서는 자시 슬롯 전체가 입력 날짜의 일주다.
+- **근사 시간대(시진)**: 슬롯은 **태양시 시진**이다. 예: 유시 = 태양시 17:00~18:59 = 민간시 17:30~19:29(기본 127.5°E). 입력 화면 라벨도 이 민간시로 표시된다(`birthTimePrecisionTypes.ts`). 시주는 슬롯 안에서 항상 하나로 정해진다. `unified`에서는 자시 슬롯 전체가 입력 날짜의 일주다.
 - **음력 입력**: 엔진만 지원한다(`calculateSaju`). lunar-javascript의 음력(중국 기준)으로 양력 날짜를 구한 뒤 계산한다. 윤달은 `isLeapMonth`. 없는 윤달이나 없는 날은 오류로 처리한다. 입력 화면·결제 흐름은 계속 양력만 받는다.
   - 주의(**UNVERIFIED**): 한국천문연구원 음력과 중국 음력은 합삭 시각이 자정 근처일 때 드물게 하루 다르다. 해당 날짜는 확인하지 않았다.
 
 ### 1.2 시간 정책 선택지 (결정 필요)
-- **경도 관례**: 현재 서울 126.98°E(−32분 05초)다. 한국 만세력 앱은 대개 동경 127.5°E로 **−30분**을 쓴다. 홀수 정시 뒤 :30~:32에 태어난 경우 결과가 다르다.
-  - 예: 1999-07-31 07:30은 −32분이면 卯시, −30분이면 辰시다. 저장소의 기존 외부 만세력 픽스처는 戊辰이었다(`sajuFeatureAudit.ts:155-200`). 골든 CSV `C01`에서 확인할 수 있다.
-  - 선택지: (a) 126.98 유지, (b) `longitude: 127.5`로 바꿔 관례에 맞춘다(설정 한 줄).
+- **경도 관례 (결정됨)**: 기본 동경 127.5°E(**−30분**)를 쓴다. 출생지 경도가 입력되면 그 경도를 쓴다.
+  - 예: 1999-07-31 07:30은 −30분이면 辰시(기존 외부 만세력 픽스처 戊辰과 일치), 서울 126.98°E(−32분)이면 卯시다. 골든 CSV `C01`.
 - **23시대**: 기존 SSOT(`02_SAJU_CALC_SPEC.md` 자시 절)는 00:00 일자 변경을 기본으로 정했다. 이번에 지시에 따라 `unified`(23:00 일자 변경)를 기본으로 바꿨다. `split`은 설정 한 줄로 켤 수 있다.
 - **서머타임 종료 중복 시각**: §1.1 참고.
 
 ### 1.3 고객 표시
-만세력 표 아래에 한 줄을 표시한다: `출생지 경도 기준 시간 보정 -32분 적용`.
-- 서머타임이면 `(당시 서머타임 반영)`, UTC+8:30 시기이면 `(당시 표준시 UTC+8:30 반영)`을 덧붙인다.
+만세력 표 아래에 한 줄을 표시한다.
+- 기본: `기준 경도 동경 127.5°로 시간 보정 -30분 적용`
+- 출생지 경도 입력 시: `출생지 경도 동경 126.98°로 시간 보정 -32분 적용` (입력한 경도 표시)
+- 서머타임이면 `(당시 서머타임 반영)`, UTC+8:30 시기이면 `(당시 표준시 UTC+8:30 반영)`을 덧붙인다. 1954~61년 UTC+8:30 시기는 127.5°E와 같아서 `시간 보정 없음 (당시 표준시 UTC+8:30 반영)`으로 표시한다.
 - 시간 미상이거나 기존(v2) 리포트이면 표시하지 않는다.
 - 코드: `solarTimeCorrectionNote`(`birthTimePrecisionTypes.ts`). 표시 위치는 `BookPages.tsx` `NatalTable`, `ManseRyeokCommonTable.tsx`.
 
@@ -60,7 +66,7 @@
 |---|---|---|
 | `SAJU_CALENDAR_VERSION` | `saju-calendar-v5-lmt` | `saju-calendar-kst-v2` |
 | `DAYUN_CALCULATION_VERSION` | `dayun-utc-sect2-v2` | `dayun-kst-sect2-v1` |
-| `timeBasis.calcVersion` | `v5-lmt` | (없음) |
+| `timeBasis.calcVersion` | `v5-lmt-2` (기본 127.5°E + 출생지 경도) | (없음). 미배포 `v5-lmt`(126.98°E)는 저장된 리포트가 없어 읽기 허용 목록에 넣지 않았다 |
 
 - 고객 Book과 리포트는 **저장된 스냅샷으로 렌더링**한다. 열람할 때 사주를 다시 계산하지 않는다.
 - 다만 V1~V3 읽기 게이트는 버전을 현재 상수와 **완전 일치**로 비교했다. 실패하면 `quarantine`이 `snapshot_json`을 null로 만든다(`paidReportReliability.ts:107`). 그래서 버전을 그냥 올리면 기존 리포트가 지워진다.

@@ -27,8 +27,8 @@ describe("birth time precision contract", () => {
     const approximate = calculateSaju({ ...base, approximateBirthTimeSlot: "MISI", birthTimePrecision: "approximate" });
     expect(approximate.pillars).toEqual(exact.pillars);
     expect(approximate.input.birthTime).toBeUndefined();
-    // v5-lmt: MISI is solar 13:00-15:00, i.e. Seoul civil 13:32:05-15:32:05.
-    expect(approximate.birthTimeContext?.range).toEqual({ startKst: "1996-12-06T13:32:05+09:00", endKstExclusive: "1996-12-06T15:32:05+09:00" });
+    // v5-lmt: MISI is solar 13:00-15:00, i.e. civil 13:30-15:30 at the default 127.5E.
+    expect(approximate.birthTimeContext?.range).toEqual({ startKst: "1996-12-06T13:30:00+09:00", endKstExclusive: "1996-12-06T15:30:00+09:00" });
   });
   it.each(BIRTH_TIME_SLOT_DEFINITIONS)("evaluates $value branch across the entire slot", (slot) => {
     const context = resolveBirthTimeCalculation({ ...base, approximateBirthTimeSlot: slot.value });
@@ -42,7 +42,7 @@ describe("birth time precision contract", () => {
   it("attributes Zi to the ending date (unified) and keeps both days under split", () => {
     const input = { ...base, birthDate: "2024-03-01", approximateBirthTimeSlot: "JASI" as const };
     const context = resolveBirthTimeCalculation(input);
-    expect(context.range).toEqual({ startKst: "2024-02-29T23:32:05+09:00", endKstExclusive: "2024-03-01T01:32:05+09:00" });
+    expect(context.range).toEqual({ startKst: "2024-02-29T23:30:00+09:00", endKstExclusive: "2024-03-01T01:30:00+09:00" });
     expect(chars(context.candidates.day)).toEqual(["甲子"]);
     expect(chars(context.candidates.hour)).toEqual(["甲子"]);
     expect(calculateSaju(input).pillars.day).toEqual({ stem: "甲", branch: "子" });
@@ -53,7 +53,7 @@ describe("birth time precision contract", () => {
     expect(split.confirmed.day).toBeUndefined();
   });
   it.each([
-    // 입춘 17:27 KST = solar 16:55 (SINSI); 경칩 11:23 KST = solar 10:51 (SASI).
+    // 입춘 17:27 KST = solar 16:57 (SINSI); 경칩 11:23 KST = solar 10:53 (SASI).
     ["2024-02-04", "SINSI", ["癸卯", "甲辰"], ["乙丑", "丙寅"]],
     ["2024-03-05", "SASI", ["甲辰"], ["丙寅", "丁卯"]],
   ] as const)("keeps solar-term candidates for %s %s", (birthDate, slot, years, months) => {
@@ -97,6 +97,6 @@ describe("birth time precision contract", () => {
       process.stdout.write(JSON.stringify([r({birthDate:"2024-01-01",approximateBirthTimeSlot:"JASI"}),r({birthDate:"2024-02-04",birthTimeUnknown:true})]));`;
     const results = ["UTC", "Asia/Seoul", "America/New_York"].map((TZ) => execFileSync(process.execPath, ["-e", script], { env: { ...process.env, TZ }, encoding: "utf8" }));
     expect(new Set(results).size).toBe(1);
-    expect(JSON.parse(results[0])[0].range.startKst).toBe("2023-12-31T23:32:05+09:00");
+    expect(JSON.parse(results[0])[0].range.startKst).toBe("2023-12-31T23:30:00+09:00");
   });
 });

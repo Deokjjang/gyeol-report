@@ -218,7 +218,7 @@ describe("Final assembly preserves complete compatibility Books", () => {
   // This actual pair produced a valid 36-paragraph reader edition, but five
   // non-romantic categories silently selected the older 23-paragraph edition.
   const payload = { ...base,
-    personA: { ...base.personA, name: "강현우", birthDate: "1990-04-26", birthTime: "11:10", gender: "MALE", mbtiType: "INTP" },
+    personA: { ...base.personA, name: "강현우", birthDate: "1990-04-26", birthTime: "11:40", /* v5-lmt pin: 11:10 (fixturePins.test.ts) */ gender: "MALE", mbtiType: "INTP" },
     personB: { ...base.personB, name: "오지안", birthDate: "1994-12-05", birthTime: "06:50", gender: "FEMALE", mbtiType: "ESTJ" },
   };
   it.each(categories)("%s retains every supported paragraph despite phrase repetition", async relationshipType => {

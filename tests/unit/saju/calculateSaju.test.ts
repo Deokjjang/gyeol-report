@@ -48,7 +48,7 @@ describe("calculateSaju", () => {
       year: { stem: "甲", branch: "辰" },
       month: { stem: "丙", branch: "寅" },
       day: { stem: "戊", branch: "戌" },
-      // v5-lmt: 17:28 KST is solar 16:56 (申).
+      // v5-lmt: 17:28 KST is solar 16:58 (申).
       hour: { stem: "庚", branch: "申" },
     });
     expect(result.dayMaster).toBe("戊");
@@ -182,14 +182,14 @@ describe("calculateSaju", () => {
       year: { stem: "甲", branch: "辰" },
       month: { stem: "丙", branch: "寅" },
       day: { stem: "戊", branch: "戌" },
-      // v5-lmt: 17:28 KST is solar 16:56 (申).
+      // v5-lmt: 17:28 KST is solar 16:58 (申).
       hour: { stem: "庚", branch: "申" },
     });
     expect(serializedResult).not.toContain("SOLAR_TERM_YEAR_UNSUPPORTED");
   });
 
   it("handles 1996 Asia/Seoul time-pillar boundary smoke cases", () => {
-    // 00:30 KST is solar 23:58 (子) and 02:30 is solar 01:58 (丑).
+    // 00:30 KST is solar 00:00 (子) and 02:30 is solar 02:00 (丑).
     const birthTimes = ["00:30", "02:30", "14:15", "23:30"] as const;
     const results = birthTimes.map((birthTime) =>
       calculateSaju({

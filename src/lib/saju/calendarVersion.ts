@@ -7,8 +7,9 @@ export type SajuCalendarVersion = typeof SAJU_CALENDAR_VERSION | (typeof LEGACY_
 export const DAYUN_CALCULATION_VERSION = "dayun-utc-sect2-v2" as const;
 export const LEGACY_DAYUN_CALCULATION_VERSIONS = ["dayun-kst-sect2-v1"] as const;
 export const DAYUN_ACTUAL_CYCLE_COUNT = 12;
-// Customer-facing short id recorded on newly generated reports.
-export const SAJU_CALC_VERSION_ID = "v5-lmt" as const;
+// Short id recorded in timeBasis of newly generated reports. v5-lmt-2: default longitude 127.5°E
+// (was 126.98°E in the unreleased v5-lmt) and birthplace longitude when supplied.
+export const SAJU_CALC_VERSION_ID = "v5-lmt-2" as const;
 
 const readableCalendarVersions: readonly string[] = [SAJU_CALENDAR_VERSION, ...LEGACY_SAJU_CALENDAR_VERSIONS];
 const readableDayunVersions: readonly string[] = [DAYUN_CALCULATION_VERSION, ...LEGACY_DAYUN_CALCULATION_VERSIONS];

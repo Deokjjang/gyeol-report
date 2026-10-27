@@ -73,8 +73,8 @@ describe("frozen 48 Jie boundaries before / exact / after", () => {
     expect(c.solarTermComparisonDateTime).toBe("2026-06-05T23:48:21+08:00");
     expect(monthPillarText(c.pillars.month)).toBe("甲午");
     for (const year of [2024, 2025, 2026, 2027]) {
-      // v5-lmt unified 子 rule: the day changes at solar 23:00 = 23:32:05 KST, not at civil midnight.
-      const boundary = Date.parse(`${year - 1}-12-31T23:32:05+09:00`);
+      // v5-lmt unified 子 rule: the day changes at solar 23:00 = 23:30 KST (127.5E), not at civil midnight.
+      const boundary = Date.parse(`${year - 1}-12-31T23:30:00+09:00`);
       const before = createSajuCalendarContext(formatDayunKst(boundary - 1000));
       const after = createSajuCalendarContext(formatDayunKst(boundary));
       expect(before.pillars.month).toEqual(after.pillars.month);
@@ -167,9 +167,9 @@ describe("Dayun boundary and precision", () => {
   it.each(["approximate", "unknown"] as const)("retains %s transition candidates across all affected months", async precision => {
     const r = await generate(0, 2027, { birthDate: "1999-07-31", birthTime: "", birthTimeUnknown: precision === "unknown", approximateBirthTimeSlot: precision === "approximate" ? "JINSI" : "" });
     const months = r.evidencePacket.calendarMonths!, all = months.flatMap(m => m.segments);
-    // v5-lmt: JINSI is solar 07-09 (KST 07:32-09:32); reverse direction adds 32 min = 2d16h to the start.
-    const start = precision === "approximate" ? "2027-05-15T23:32:00+09:00" : "2027-04-08T00:00:00+09:00";
-    const end = precision === "approximate" ? "2027-05-25T23:31:59+09:00" : "2027-08-08T21:59:59+09:00";
+    // v5-lmt: JINSI is solar 07-09 (KST 07:30-09:30); reverse direction adds 30 min + 2d12h to the start.
+    const start = precision === "approximate" ? "2027-05-15T19:30:00+09:00" : "2027-04-08T00:00:00+09:00";
+    const end = precision === "approximate" ? "2027-05-25T19:29:59+09:00" : "2027-08-08T21:59:59+09:00";
     expect(at(all, start).activeDayunContext).toMatchObject({ status: "transition_uncertain", transitionRange: { earliestKst: start, latestKst: end }, cycles: [{ ganji: "己巳" }, { ganji: "戊辰" }] });
     expect(at(all, end).activeDayunContext).toMatchObject({ status: "active", cycles: [{ ganji: "戊辰" }] });
     const uncertain = all.filter(s => s.uncertainty.length);

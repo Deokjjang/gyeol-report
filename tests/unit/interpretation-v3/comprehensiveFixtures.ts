@@ -1,6 +1,8 @@
+// v5-lmt pin: times marked below are the original +30 min (+60 in 1987 summer time) so the solar-time
+// chart equals the frozen kst-v2 chart these locks were written for (tests/unit/saju/fixturePins.test.ts).
 export const COMPREHENSIVE_V3_FIXTURES = [
   ["A", "가온", "1996-12-06", "09:30", "ENTJ", "employee", "소프트웨어 기획", "dating"],
-  ["B", "나래", "1989-09-07", "07:24", "INFP", "freelancer", "브랜드 디자인", "single"],
+  ["B", "나래", "1989-09-07", "07:54", "INFP", "freelancer", "브랜드 디자인", "single"], // pin: 07:24
   ["C", "다온", "1984-06-15", "14:20", "ISTP", "business_owner", "제조 품질 책임자", "married"],
   ["D", "라온", "2003-03-22", "18:10", "ENFJ", "student", "콘텐츠 디자인", "single"],
   ["E", "마루", "1999-11-02", "05:45", "", "job_seeker", "", "single"],

@@ -17,7 +17,7 @@ import { MAJOR_NARRATIVE_FIXTURES } from "./majorFixtures";
 import { RUNTIME_FIXTURES, SHADOW_CLOCK } from "./runtimeFixtures";
 import locks from "./majorReaderQualityLocks.json";
 
-const main = { productKey: "major_fortune", productSlug: "major-fortune", person: { name: "윤시우", birthDate: "1983-09-02", birthTime: "05:10", gender: "MALE", mbtiType: "ENTJ", birthTimeUnknown: false, birthTimePrecision: "exact", approximateBirthTimeSlot: "" },
+const main = { productKey: "major_fortune", productSlug: "major-fortune", person: { name: "윤시우", birthDate: "1983-09-02", birthTime: "05:40", /* v5-lmt pin: 05:10 (fixturePins.test.ts) */ gender: "MALE", mbtiType: "ENTJ", birthTimeUnknown: false, birthTimePrecision: "exact", approximateBirthTimeSlot: "" },
   userContext: { jobStatus: "employee", detailJob: "기획자", relationshipStatus: "", focusAreas: [] }, productOptions: { contentVersion: "v4" } };
 const cases = [{ id: "S", payload: main }, ...MAJOR_SAFETY_CASES.map((f, i) => ({ id: "ABCDEF"[i], payload: f.payload })),
   { id: "S-mbti", payload: { ...main, person: { ...main.person, mbtiType: "" } } }];

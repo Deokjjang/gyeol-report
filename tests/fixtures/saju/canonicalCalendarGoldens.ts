@@ -37,23 +37,23 @@ export const CANONICAL_CALENDAR_GOLDENS = [
   ["2024-12-07 00:18:00","甲辰 丙子 乙巳 丙子","HKO+policy"],
 ] as const;
 
-// v5-lmt day/hour, hand-derived (not generated): solar = KST - 32:05 (Seoul 126.98E), unified 子 rule
+// v5-lmt day/hour, hand-derived (not generated): solar = KST - 30:00 (default 127.5E), unified 子 rule
 // (solar 23:00 starts the next day). Year/month stay the frozen external values above (absolute instants).
 // Only entries whose day/hour changes are listed; every other golden keeps its frozen day/hour.
+// 1999-07-31 07:30 is solar 07:00 辰, i.e. the frozen external 戊辰.
 export const V5_LMT_DAY_HOUR: Readonly<Record<string, string>> = {
-  "1999-07-31 07:30:00": "甲申 丁卯", // solar 06:58 卯
-  "1999-06-07 09:11:00": "庚寅 庚辰", // solar 08:39 辰
-  "2020-01-06 11:22:00": "戊申 丁巳", // solar 10:50 巳
-  "2024-02-04 17:28:00": "戊戌 庚申", // solar 16:56 申
-  "2024-03-05 11:22:00": "戊辰 丁巳", // solar 10:50 巳
-  "2024-03-05 11:24:00": "戊辰 丁巳", // solar 10:52 巳
-  "2024-05-05 09:09:00": "己巳 戊辰", // solar 08:37 辰
-  "2024-05-05 09:11:00": "己巳 戊辰", // solar 08:39 辰
-  "1988-02-15 23:00:00": "庚子 丁亥", // solar 22:28 亥
-  "1988-02-15 23:59:00": "辛丑 戊子", // solar 23:27 子 -> next day 辛丑
-  "1988-02-16 01:00:00": "辛丑 戊子", // solar 00:28 子
-  "2024-12-06 23:16:00": "甲辰 乙亥", // solar 22:44 亥
-  "2024-12-06 23:30:00": "甲辰 乙亥", // solar 22:58 亥
+  "1999-06-07 09:11:00": "庚寅 庚辰", // solar 08:41 辰
+  "2020-01-06 11:22:00": "戊申 丁巳", // solar 10:52 巳
+  "2024-02-04 17:28:00": "戊戌 庚申", // solar 16:58 申
+  "2024-03-05 11:22:00": "戊辰 丁巳", // solar 10:52 巳
+  "2024-03-05 11:24:00": "戊辰 丁巳", // solar 10:54 巳
+  "2024-05-05 09:09:00": "己巳 戊辰", // solar 08:39 辰
+  "2024-05-05 09:11:00": "己巳 戊辰", // solar 08:41 辰
+  "1988-02-15 23:00:00": "庚子 丁亥", // solar 22:30 亥
+  "1988-02-15 23:59:00": "辛丑 戊子", // solar 23:29 子 -> next day 辛丑
+  "1988-02-16 01:00:00": "辛丑 戊子", // solar 00:30 子
+  "2024-12-06 23:16:00": "甲辰 乙亥", // solar 22:46 亥
+  "2024-12-06 23:30:00": "乙巳 丙子", // solar 23:00 子 -> next day 乙巳
 };
 export function v5LmtGolden(civil: string, frozen: string): string {
   const parts = frozen.split(" ");

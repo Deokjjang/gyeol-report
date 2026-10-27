@@ -243,23 +243,18 @@ describe("love marriage child report table presenter", () => {
     );
     const careerData = buildCareerDeokminManseRyeokTableData();
 
-    // The love fixture is frozen from the kst-v2 engine (07:30 -> 戊辰 hour). The career table is
-    // calculated live: v5-lmt reads 07:30 KST as solar 06:58 (丁卯). Year/month/day columns must still match.
-    const columns = ["year", "month", "day"] as const;
-    const pick = <T,>(row: Record<string, T>) => Object.fromEntries(columns.map((key) => [key, row[key]]));
-    expect(pick(loveData.stemRow)).toEqual(pick(careerData.stemRow));
-    expect(pick(loveData.branchRow)).toEqual(pick(careerData.branchRow));
-    expect(careerData.stemRow.hour?.hanja).toBe("丁");
-    expect(careerData.branchRow.hour?.hanja).toBe("卯");
+    expect(loveData.stemRow).toEqual(careerData.stemRow);
+    expect(loveData.branchRow).toEqual(careerData.branchRow);
 
     for (const key of [
       "hiddenStems",
       "twelveLifeStage",
       "twelveSinsal",
       "sinsalAndGwiin",
+      "interactions",
     ] as const) {
-      expect(pick(loveData.detailRows.find((row) => row.key === key)!.cells)).toEqual(
-        pick(careerData.detailRows.find((row) => row.key === key)!.cells),
+      expect(loveData.detailRows.find((row) => row.key === key)?.cells).toEqual(
+        careerData.detailRows.find((row) => row.key === key)?.cells,
       );
     }
   });
