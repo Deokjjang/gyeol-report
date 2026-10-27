@@ -50,7 +50,7 @@
 | 17 | interpretation-v4/majorSafety | V4 궁합 내레이션 해시(8) | 7/24 | 시각 | 0 | 입력 8건 별도 발행 PASS, Book 렌더 |
 | 18 | report-knowledge/sajuTemporalScenarios | 대운·세운 기간 오프라인 출력 전체 | 12/12(파일 단위) | 버전, 사주 변경(신살) | 파일 단위로 다름 | 입력 6건 별도 발행 PASS, Book 렌더 |
 
-- 재기준화 후 18개 파일 359/359 PASS(`compatibilityRelease`의 부하성 `STACK_TRACE_ERROR` 3건은 단독 재실행 48/48 PASS).
+- 재기준화·신살 커밋 후 18개 파일 359/359 PASS. 최종 전체 실행에서는 357/359였고, 나머지 2건(`loveQuality`, 부하성 `STACK_TRACE_ERROR`)은 순차 재실행 18/18 PASS.
 - "별도 발행"은 그 테스트가 내레이션만 잠그는 경우다. 같은 입력을 `generateV4ShadowReport`로 만들고 `validateV4Publication`과 `storedBook`을 확인했다(임시 테스트, 커밋 안 함).
 
 ## 신살 수정으로 실패한 3건 (+ 같은 원인의 단정 1개)
