@@ -422,7 +422,7 @@ function matchRule(
   }
 }
 
-// calendarVersion of the report being built or read; stored reports keep their engine's tables.
+// calendarVersion of the report being built or read; stored kst-v2 reports keep their tables.
 export function detectShinsal(pillars: PillarSet, calendarVersion: unknown = SAJU_CALENDAR_VERSION): ShinsalDetection[] {
   const entries = getOrderedPillars(pillars);
   const detections: ShinsalDetection[] = [];

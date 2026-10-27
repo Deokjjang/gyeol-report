@@ -125,16 +125,18 @@ describe("V4 Phase 0 source audit (no production engine changes)", () => {
   it("does not infer gwimun without its branch pair", () => {
     expect(extractComputedSajuFeatures({ earthlyBranches: ["자", "축"] }).featureIds).not.toContain("sinsal_gwimun");
   });
-  it("records the unresolved same-anchor mangsin rule conflict without blessing either rule", () => {
-    // Phase 0 characterization only. A later canonical-rule review must update
-    // this finding explicitly; silently merging the two labels loses evidence.
-    const detections = detectShinsal({
+  it("records the same-anchor mangsin rule conflict for stored kst-v2 reports and its v5-lmt resolution", () => {
+    // Phase 0 characterization, updated by the canonical-rule review (docs/manseryeok-report-2.md §3):
+    // 三命通會 亥卯未以寅為亡神. Stored kst-v2 reports keep the conflicting (劫煞) table.
+    const pillars = {
       year: { stem: "乙", branch: "亥" },
       month: { stem: "甲", branch: "申" },
       day: { stem: "丙", branch: "寅" },
-    });
-    expect(detections.filter(d => d.code === "MANGSINSAL").map(d => d.positions)).toEqual([["month"]]);
-    expect(detections.filter(d => d.code === "TWELVE_MANGSINSAL").map(d => d.positions)).toEqual([["day"]]);
+    } as const;
+    const legacy = detectShinsal(pillars, "saju-calendar-kst-v2"), current = detectShinsal(pillars);
+    expect(legacy.filter(d => d.code === "MANGSINSAL").map(d => d.positions)).toEqual([["month"]]);
+    expect(current.filter(d => d.code === "MANGSINSAL").map(d => d.positions)).toEqual([["day"]]);
+    for (const detections of [legacy, current]) expect(detections.filter(d => d.code === "TWELVE_MANGSINSAL").map(d => d.positions)).toEqual([["day"]]);
   });
   it("every authored bridge references real source traits", () => {
     for (const r of BRIDGE_SCENE_RULES) {
