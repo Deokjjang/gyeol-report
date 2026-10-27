@@ -17,6 +17,7 @@ import { contextualTenGodReading, selectReportActivity } from "../../../src/lib/
 import type { AnnualFortuneEvidencePacket } from "../../../src/lib/report-knowledge/annualFortuneEvidence";
 import type { CareerReportEvidencePacket } from "../../../src/lib/report-knowledge/careerReportTypes";
 import type { CompatibilityEvidencePacket } from "../../../src/lib/report-knowledge/compatibilityEvidenceBuilder";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 const disabled = { enabled: false as const, reason: "flag_disabled" as const };
 const products = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility", "major_fortune", "annual_fortune"] as const;
@@ -72,7 +73,7 @@ describe("deterministic-first quality without changing calculation", () => {
   it.each(products.flatMap(product => profiles.map((_, i) => ({ product, i }))))("$product / $i → publish → SSR", async ({ product, i }) => {
     const r = await generate(payload(product, i));
     const expected = canonicalGolden[product][i];
-    if (expected) expect(canonicalHash(r.evidencePacket)).toBe(expected);
+    if (expected) expectLock(canonicalHash(r.evidencePacket), expected);
     const html = render(product, r);
     expect(html).toContain(profiles[i].name);
     expect(html).not.toMatch(/토을|화을|세운와|대운와|활용가|통제을|영업기획라는|반복 압박|번째 점검/);

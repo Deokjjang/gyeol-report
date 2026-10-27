@@ -16,9 +16,13 @@ import { composeMajorFortuneNarrative } from "../../../src/lib/interpretation-v4
 import { MAJOR_NARRATIVE_FIXTURES } from "./majorFixtures";
 import { RUNTIME_FIXTURES, SHADOW_CLOCK } from "./runtimeFixtures";
 import locks from "./majorReaderQualityLocks.json";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 const main = { productKey: "major_fortune", productSlug: "major-fortune", person: { name: "윤시우", birthDate: "1983-09-02", birthTime: "05:40", /* v5-lmt pin: 05:10 (fixturePins.test.ts) */ gender: "MALE", mbtiType: "ENTJ", birthTimeUnknown: false, birthTimePrecision: "exact", approximateBirthTimeSlot: "" },
   userContext: { jobStatus: "employee", detailJob: "기획자", relationshipStatus: "", focusAreas: [] }, productOptions: { contentVersion: "v4" } };
+// v5-lmt regression baseline (not a quality approval): S is pinned +30 min (fixturePins.test.ts), which moves its
+// Dayun transition by 2 days 12h30m (3 days = 1 year). Before: 2031-11-30 15:10. docs/manseryeok-lock-rebaseline.md
+const TRANSITION_2031 = "2031-12-03 03:40";
 const cases = [{ id: "S", payload: main }, ...MAJOR_SAFETY_CASES.map((f, i) => ({ id: "ABCDEF"[i], payload: f.payload })),
   { id: "S-mbti", payload: { ...main, person: { ...main.person, mbtiType: "" } } }];
 async function generate(payload: unknown, evaluatedAt = clock.evaluatedAt) {
@@ -36,8 +40,8 @@ beforeAll(async () => { for (const f of cases) samples.set(f.id, await generate(
 
 it.each(cases)("$id: exact baseline calculations, complete evidence, MBTI/Fusion and 14 years", ({ id, payload }) => {
   const { e, r, g } = samples.get(id)!;
-  expect(v4Digest({ calculations: e.calculations, evidence: r.evidence, materials: r.materials, integration: r.integration,
-    periods: r.years.map(y => ({ year: y.year, annual: y.annual, cycle: y.cycle, beforeCycle: y.beforeCycle, age: y.age, timePosition: y.timePosition })) })).toBe(locks.major[id as keyof typeof locks.major].invariant);
+  expectLock(v4Digest({ calculations: e.calculations, evidence: r.evidence, materials: r.materials, integration: r.integration,
+    periods: r.years.map(y => ({ year: y.year, annual: y.annual, cycle: y.cycle, beforeCycle: y.beforeCycle, age: y.age, timePosition: y.timePosition })) }), locks.major[id as keyof typeof locks.major].invariant);
   expect(r.years.map(y => y.year)).toEqual(Array.from({ length: 14 }, (_, i) => 2023 + i));
   expect(r.editorial).toEqual([]); expect(g.externalCalls).toEqual([]);
   expect(body(samples.get(id)!)).not.toMatch(/선택에 보탤 내 바탕은|의 반대편도 살펴보세요|연결되는 역할과 약속의 범위 확인|감각을 믿고 맡겼다는|붙드는 시간에서 당연하게|오래 지킬 선택을 오래 지켜|함께할 사람의 기준을 함께 다룰|꾸준히 보여줄 솜씨를 잘 만든다는|정재을|편인였습니다|\$\{|undefined|NaN/);
@@ -84,25 +88,25 @@ it("2034 expression selects the actual precision/work seed instead of intimate a
 
 it("2031 prose, contents, timeline and notes qualify the post-November period", () => {
   const { r, e } = samples.get("S")!, y = year("S", 2031), period = majorYearPeriod(r.evidence, y), book = projectBook(e)!;
-  expect(period.explanation).toContain("2031년 연초부터 2031-11-30 15:10:00 KST 직전까지는 丙辰(정재)");
+  expect(period.explanation).toContain(`2031년 연초부터 ${TRANSITION_2031}:00 KST 직전까지는 丙辰(정재)`);
   expect(period.explanation).toContain("같은 시각부터 乙卯(식신)"); expect(period.explanation).toContain("남은 기간");
   const section = r.narrative.sections.find(s => s.id === "year-2031")!;
-  expect(section.title).toContain("2031-11-30 15:10 한국시간 전후");
+  expect(section.title).toContain(`${TRANSITION_2031} 한국시간 전후`);
   expect(y.blocks.find(b => b.id === "2031-character")!.text).not.toContain("2031년은 乙卯");
   const timeline = book.pages.find(p => p.kind === "timeline")!;
   if (timeline.kind !== "timeline") return expect.unreachable();
-  expect(timeline.years.find(y => y.year === 2031)).toMatchObject({ cycle: "丙辰 → 乙卯", transition: "2031-11-30 15:10 한국시간 전후" });
+  expect(timeline.years.find(y => y.year === 2031)).toMatchObject({ cycle: "丙辰 → 乙卯", transition: `${TRANSITION_2031} 한국시간 전후` });
   const page = book.pages.find(p => p.id === "chapter-year-2031")!;
   if (page.kind !== "narrative") return expect.unreachable();
   expect(page.notes.some(n => n.text.includes("丙辰 → 乙卯") && n.text.includes("전환 완료 뒤"))).toBe(true);
   const contents = book.pages.find(p => p.kind === "contents")!;
   if (contents.kind !== "contents") return expect.unreachable();
-  expect(contents.entries.some(c => c.title.includes("2031-11-30 15:10"))).toBe(true);
+  expect(contents.entries.some(c => c.title.includes(TRANSITION_2031))).toBe(true);
 });
 
 it("2031 transition instant minus 1ms / exact / plus 1ms uses canonical active cycle", async () => {
   const t = samples.get("S")!.r.evidence.horizon.transitions[0], at = Date.parse(t.startSolarKst!);
-  expect(t.startSolarKst).toBe("2031-11-30T15:10:00+09:00");
+  expect(t.startSolarKst).toBe(`${TRANSITION_2031.replace(" ", "T")}:00+09:00`);
   for (const delta of [-1, 0, 1]) {
     const { r } = await generate(main, new Date(at + delta).toISOString());
     expect(r.evidence.horizon.activeCycle?.ganji).toBe(delta < 0 ? "丙辰" : "乙卯");
@@ -156,8 +160,8 @@ it("S all Book pages render without lost paragraphs or leaked internal IDs", () 
 
 it.each(RUNTIME_FIXTURES.filter(f => f.payload.productKey !== "major_fortune"))("$id other product current edition is pinned separately from original foundations", async f => {
   const g = await generateV4ShadowReport(f.payload, SHADOW_CLOCK); expect(g.ok).toBe(true); if (!g.ok) return;
-  expect([v4Digest(g.draft), v4Digest(g.evidencePacket), v4Digest(projectBook(g.evidencePacket as V4RuntimeEvidence))])
-    .toEqual(editorialLocks.groups.runtime[f.id as keyof typeof editorialLocks.groups.runtime]);
+  expectLock([v4Digest(g.draft), v4Digest(g.evidencePacket), v4Digest(projectBook(g.evidencePacket as V4RuntimeEvidence))],
+    editorialLocks.groups.runtime[f.id as keyof typeof editorialLocks.groups.runtime]);
   expectEditorialFoundations(g.evidencePacket as V4RuntimeEvidence, f.payload, SHADOW_CLOCK);
 }, 120000);
 

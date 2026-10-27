@@ -15,6 +15,7 @@ import { COMPREHENSIVE_V3_FIXTURES, comprehensiveFixture } from "./comprehensive
 import type { Evidence } from "../../../src/lib/interpretation-v3/types";
 import type { SajuCalcResult } from "../../../src/lib/saju/types";
 import type { ComprehensiveV3Draft, ComprehensiveV3Input } from "../../../src/lib/interpretation-v3/comprehensive";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 const runtime = { enabled: false, reason: "flag_disabled" } as const;
 // Frozen V3.2 story contract. Phase 2D has a separate current-version suite.
@@ -53,7 +54,7 @@ it.each(COMPREHENSIVE_V3_FIXTURES)("%s V3.2 generation, source/style/variety, ol
   const { facts, calculation } = (r.evidencePacket as Packet).comprehensiveV3;
   const input = { name: payload.person.name, facts, calculation, profileTable: r.draft.profileTable, context: normalizeContext({ lifeStatus: payload.userContext.jobStatus, fieldLabel: payload.userContext.detailJob, relationshipStatus: payload.userContext.relationshipStatus }), relationshipStatus: payload.userContext.relationshipStatus };
   const before = buildComprehensiveV31(input), draft = r.draft;
-  expect(sha(before)).toBe(hashes[id.charCodeAt(0) - 65]);
+  expectLock(sha(before), hashes[id.charCodeAt(0) - 65]);
   expect(validateProductPublication("saju_mbti_full", before, r.evidencePacket).ok).toBe(true);
   expect(renderToStaticMarkup(createElement(ComprehensiveReportV3View, { draft: before, evidencePacket: r.evidencePacket }))).not.toContain("리포트를 준비하고 있습니다");
   expect(draft.version).toBe(STORY_COMPREHENSIVE_VERSION);

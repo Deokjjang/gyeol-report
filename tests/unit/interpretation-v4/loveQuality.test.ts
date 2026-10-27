@@ -13,6 +13,7 @@ import { renderLoveRelease } from "../../../src/lib/interpretation-v4/loveReleas
 import { LOVE_RELEASE_VERSION } from "../../../src/lib/interpretation-v4/loveReleaseContracts";
 import fixtures from "./loveQualityFixtures.json";
 import locks from "./loveQualityLocks.json";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 const clock = { evaluatedAt: "2026-10-12T12:00:00+09:00" };
 type Generated = Extract<Awaited<ReturnType<typeof generateV4ShadowReport>>, { ok: true }>;
@@ -34,10 +35,10 @@ describe("Love quality edition: actual paid generator without external calls", (
     expect(d.chapters.map(c => c.paragraphs.length)).toEqual(Array(9).fill(4));
     expect(d.bodyLength).toBeGreaterThanOrEqual(8000); expect(d.bodyLength).toBeLessThanOrEqual(10000);
     const baseline = locks[f.id as "A" | "B" | "C" | "D" | "E" | "F"];
-    expect(v4Digest(e.calculations)).toBe(baseline.calculations);
-    expect(v4Digest(e.mbtiTables)).toBe(baseline.mbtiTables);
-    expect(v4Digest(e.natalTableEvidence)).toBe(baseline.natalTableEvidence);
-    expect(result.integration.personalDigest).toBe(baseline.personalDigest);
+    expectLock(v4Digest(e.calculations), baseline.calculations);
+    expectLock(v4Digest(e.mbtiTables), baseline.mbtiTables);
+    expectLock(v4Digest(e.natalTableEvidence), baseline.natalTableEvidence);
+    expectLock(result.integration.personalDigest, baseline.personalDigest);
     expect(r.externalCalls).toEqual([]);
     const sentences = d.chapters.flatMap(c => c.paragraphs.flatMap(p => p.sentences));
     const text = sentences.map(s => s.text).join("\n");
@@ -115,7 +116,7 @@ describe("Love quality edition: actual paid generator without external calls", (
     const baseline = locks[id], r = await generateV4ShadowReport(baseline.input, clock);
     expect(r.ok).toBe(true); if (!r.ok) return;
     expectEditorialFoundations(r.evidencePacket as V4RuntimeEvidence, baseline.input, clock);
-    expect([v4Digest(r.draft), v4Digest(r.evidencePacket), v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(editorialLocks.groups.love[id]);
+    expectLock([v4Digest(r.draft), v4Digest(r.evidencePacket), v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))],editorialLocks.groups.love[id], undefined, `love:${id}`);
   }, 120000);
 });
 

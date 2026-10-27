@@ -13,6 +13,7 @@ import { projectBook } from "../../../src/app/dev/book-preview/bookProjection";
 import { BookReader } from "../../../src/app/dev/book-preview/BookReader";
 import { storedBook } from "../../../src/lib/book/storedReport";
 import { createProductPreviewSnapshot, type ProductPreviewSnapshotDraft } from "../../../src/lib/report-generation/productPreviewSnapshot";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 const main = { productKey: "annual_fortune", productSlug: "annual-fortune", person: { name: "한예린", birthDate: "2000-12-14", birthTime: "11:50", gender: "FEMALE", mbtiType: "INTJ", birthTimeUnknown: false, birthTimePrecision: "exact", approximateBirthTimeSlot: "" },
   userContext: { jobStatus: "student", detailJob: "", relationshipStatus: "", focusAreas: [] }, productOptions: { contentVersion: "v4", selectedYear: "2026" } };
@@ -36,7 +37,7 @@ const text = (s: Sample) => [...s.r.narrative.opening, ...s.r.narrative.sections
 it.each(cases)("$id keeps baseline calculation, every relation ID, MBTI and Fusion", ({ id }) => {
   const { e, r, g } = samples.get(id)!;
   const lock = locks.annual[id as keyof typeof locks.annual];
-  expect(v4Digest({ calculations: e.calculations, evidence: r.evidence, materials: r.materials, integration: r.integration })).toBe(lock.invariant);
+  expectLock(v4Digest({ calculations: e.calculations, evidence: r.evidence, materials: r.materials, integration: r.integration }), lock.invariant);
   expect(r.months.map(m => m.month)).toEqual(Array.from({ length: 12 }, (_, i) => i + 1));
   expect(r.editorial).toEqual([]);
   expect(g.externalCalls).toEqual([]);
@@ -156,6 +157,6 @@ it.each(locks.products)("protected $id current edition and original source found
   const f = RUNTIME_FIXTURES.find(f => f.id === lock.id)!;
   const g = await generateV4ShadowReport(f.payload, SHADOW_CLOCK);
   if (!g.ok) return expect.unreachable();
-  expect([v4Digest(g.draft), v4Digest(g.evidencePacket), v4Digest(projectBook(g.evidencePacket as V4RuntimeEvidence))]).toEqual(editorialLocks.groups.runtime[f.id as keyof typeof editorialLocks.groups.runtime]);
+  expectLock([v4Digest(g.draft), v4Digest(g.evidencePacket), v4Digest(projectBook(g.evidencePacket as V4RuntimeEvidence))],editorialLocks.groups.runtime[f.id as keyof typeof editorialLocks.groups.runtime]);
   expectEditorialFoundations(g.evidencePacket as V4RuntimeEvidence, f.payload, SHADOW_CLOCK);
 }, 120000);

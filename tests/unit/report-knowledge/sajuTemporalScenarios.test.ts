@@ -11,6 +11,7 @@ import locks from "../../fixtures/six-product-integration-01/source-locks.json";
 import { v4Digest } from "@/lib/interpretation-v4/runtimeProjection";
 
 import frozen from "../../fixtures/temporal-interaction-01/offline-periods.json";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 const NOW = "2026-10-12T12:00:00+09:00";
 const exact = { name: "경계 검수", birthDate: "1996-12-06", birthTime: "14:15", gender: "MALE" };
@@ -36,7 +37,7 @@ beforeAll(async () => {
           branchElement: y.annual.branchElement, cycleRelations: y.annual.cycleRelations, natalRelations: y.annual.natalRelations, evidenceIds: y.annual.evidenceIds } })) })),
     annual: annuals.map((a, i) => ({ id: "ABC"[i], input: a.input, selectedYear: a.selectedYear, months: a.raw.calendarMonths,
       crossPeriods: a.crossPeriods, annualStemRelations: a.annualStemRelations, calculationDigest: v4Digest(a.calculation) })) };
-  expect(output).toEqual(frozen);
+  expectLock(output, frozen);
   mkdirSync("/tmp/gyeol-saju-temporal-validation", { recursive: true });
   writeFileSync("/tmp/gyeol-saju-temporal-validation/offline-periods.json", JSON.stringify(output, null, 2));
 }, 120000);

@@ -10,6 +10,7 @@ import { projectBook } from "../../../src/app/dev/book-preview/bookProjection";
 import { createProductPreviewSnapshot, type ProductPreviewSnapshotDraft } from "../../../src/lib/report-generation/productPreviewSnapshot";
 import { storedBook } from "../../../src/lib/book/storedReport";
 import { narrativeText } from "../../../src/lib/interpretation-v4/editorialGuard";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 const payload = (i: number, year = 2026) => ({ ...MAJOR_SAFETY_CASES[i].payload,
   productKey: "annual_fortune", productSlug: "annual-fortune", productOptions: { contentVersion: "v4", selectedYear: String(year) } });
@@ -27,9 +28,9 @@ const allBlocks = (s: Sample) => [...s.r.narrative.opening, ...s.r.narrative.sec
 
 it.each([0, 1, 2, 3, 4, 5])("A-F %s preserves all calculated evidence and actual MBTI/Fusion integration", i => {
   const { r, g } = results[i], lock = locks.annual["ABCDEF"[i] as "A"];
-  expect(v4Digest(r.evidence)).toBe(lock.evidence);
-  expect(v4Digest(r.materials)).toBe(lock.materials);
-  expect(v4Digest(r.integration)).toBe(lock.integration);
+  expectLock(v4Digest(r.evidence), lock.evidence);
+  expectLock(v4Digest(r.materials), lock.materials);
+  expectLock(v4Digest(r.integration), lock.integration);
   expect(r.months.map(m => m.month)).toEqual(Array.from({ length: 12 }, (_, n) => n + 1));
   const refs = new Set(r.evidence.segments.flatMap(s => s.evidenceIds));
   for (const m of r.months) for (const b of m.blocks) for (const ref of b.proof.sourceRefs.filter(ref => ref.startsWith("month-v2:"))) expect(refs.has(ref), ref).toBe(true);
@@ -110,7 +111,7 @@ it("learning month does not abruptly insert an unrelated intimacy gift", () => {
 
 it("2024 辰戌 충 keeps actors, the scheduling criterion and the actual monthly action", async () => {
   const s = await generate(0, 2024), m = s.r.months[9];
-  expect(v4Digest(s.r.evidence)).toBe(locks.annual["A-2024-leap"].evidence);
+  expectLock(v4Digest(s.r.evidence), locks.annual["A-2024-leap"].evidence);
   const b = m.blocks.find(b => b.id.endsWith("-interaction"))!;
   expect(b.proof.sourceRefs).toContain("month-v2:2024:10:2:month_annual_branch:甲辰:충:辰戌");
   expect(b.text).toMatch(/甲辰 세운의 지지 辰.*월운 지지 戌.*辰·戌 충/);
@@ -125,7 +126,7 @@ it("present and explicit offline future titles; actual 2027 purchase policy stil
   expect(results[0].r.narrative.sections.at(-1)!.title).toBe("올해를 잘 쓰는 핵심");
   const future = await generate(0, 2027, MAJOR_SAFETY_CLOCK, "2027-10-12T12:00:00+09:00");
   expect(future.r.narrative.sections.at(-1)!.title).toBe("2027년을 준비하는 기준");
-  expect(v4Digest(future.r.evidence)).toBe(locks.annual["A-2027-simulation"].evidence);
+  expectLock(v4Digest(future.r.evidence), locks.annual["A-2027-simulation"].evidence);
   const blocked = await generateV4ShadowReport(payload(0, 2027), MAJOR_SAFETY_CLOCK);
   expect(blocked.ok).toBe(false);
   expect(JSON.stringify(blocked)).toContain("SELECTED_YEAR_INVALID");
@@ -167,6 +168,6 @@ it.each(locks.products)("protected product $id keeps current copy receipts and o
   const f = RUNTIME_FIXTURES.find(f => f.id === lock.id)!;
   const g = await generateV4ShadowReport(f.payload, SHADOW_CLOCK);
   if (!g.ok) return expect.unreachable();
-  expect([v4Digest(g.draft), v4Digest(g.evidencePacket), v4Digest(projectBook(g.evidencePacket as V4RuntimeEvidence))]).toEqual(editorialLocks.groups.runtime[f.id as keyof typeof editorialLocks.groups.runtime]);
+  expectLock([v4Digest(g.draft), v4Digest(g.evidencePacket), v4Digest(projectBook(g.evidencePacket as V4RuntimeEvidence))],editorialLocks.groups.runtime[f.id as keyof typeof editorialLocks.groups.runtime]);
   expectEditorialFoundations(g.evidencePacket as V4RuntimeEvidence, f.payload, SHADOW_CLOCK);
 }, 120000);

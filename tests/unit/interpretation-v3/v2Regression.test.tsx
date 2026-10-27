@@ -16,6 +16,7 @@ import type { MajorFortuneEvidencePacket } from "../../../src/lib/report-knowled
 import { PRODUCTS } from "../../../src/lib/interpretation-v3/types";
 import { adaptAnnualFortune, adaptMajorFortune, adaptMbti, adaptMonthSegment, adaptNatalTable, validateEvidence } from "../../../src/lib/interpretation-v3/evidence";
 import { interpretV3 } from "../../../src/lib/interpretation-v3/engine";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 // v5-lmt pin (original +30 min) so the chart equals the frozen kst-v2 chart; see tests/unit/saju/fixturePins.test.ts.
 const p = { name: "기준인", birthDate: "1989-09-07", birthTime: "07:54", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "INFP" };
@@ -73,7 +74,7 @@ it.each(PRODUCTS)("%s: unchanged V2 generate → publish → SSR, V3 consumption
   }
   if (product === "major_fortune") expect(validateEvidence(adaptMajorFortune(result.evidencePacket as MajorFortuneEvidencePacket))).toEqual([]);
   expect(hash([result.draft, result.evidencePacket, html])).toBe(before);
-  expect(before, product).toBe(GOLDEN[product]);
+  expectLock(before, GOLDEN[product], product);
   if (product !== "saju_mbti_full") {
     const requestedV3 = await generateProductReport(payload, { enabled: false, reason: "flag_disabled" }, "deterministic_fallback", undefined, { comprehensiveVersion: "v3" });
     expect(requestedV3.ok).toBe(true);

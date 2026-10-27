@@ -7,6 +7,7 @@ import { majorInteractionReading } from "../../../src/lib/interpretation-v4/majo
 import { MATERIAL_BY_FEATURE } from "../../../src/lib/interpretation-v4/materialRegistry";
 import { MAJOR_SAFETY_CASES, MAJOR_SAFETY_CLOCK } from "./majorEditorialSafetyFixtures";
 import locks from "./majorPersonalizationLocks.json";
+import { currentVersionRefs, expectLock } from "../../helpers/v5LmtLocks";
 
 type Result = Extract<V4RuntimeEvidence["composition"], { product: "major_fortune" }>["result"];
 const results = new Map<string, Result>();
@@ -32,11 +33,11 @@ describe("Major evidence-bound personalization", () => {
       years: r.years.map(y => ({ ...Object.fromEntries(Object.entries(y).filter(([key]) => key !== "blocks")), blockIds: y.blocks.map(b => b.id) })) };
     const old = locks.rows[id as keyof typeof locks.rows];
     expectEditorialFoundations(packets.get(id)!, payload, MAJOR_SAFETY_CLOCK);
-    expect(v4Digest(invariant)).toBe(editorialLocks.groups.major[id as keyof typeof editorialLocks.groups.major]);
+    expectLock(v4Digest(invariant), editorialLocks.groups.major[id as keyof typeof editorialLocks.groups.major]);
     expect(r.editorial).toEqual([]);
     for (const y of r.years) for (const b of y.blocks) {
       const previous = locks.proofs[old.proofs[b.id as keyof typeof old.proofs] as keyof typeof locks.proofs];
-      for (const key of ["features", "seedIds", "fusionIds", "sourceRefs"] as const) expect(b.proof[key]).toEqual(expect.arrayContaining(previous[key]));
+      for (const key of ["features", "seedIds", "fusionIds", "sourceRefs"] as const) expect(b.proof[key]).toEqual(expect.arrayContaining(currentVersionRefs(previous[key])));
       for (const seedId of b.proof.seedIds.filter(s => !(previous.seedIds as string[]).includes(s))) {
         const root = r.materials.selected.find(m => m.material.seeds.some(s => s.id === seedId));
         expect(root, seedId).toBeDefined();

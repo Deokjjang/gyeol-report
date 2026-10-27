@@ -12,6 +12,7 @@ import { buildRelationshipProfiles, projectRelationshipView } from "../../../src
 import { projectBook } from "../../../src/app/dev/book-preview/bookProjection";
 import { BookReader } from "../../../src/app/dev/book-preview/BookReader";
 import fixtures from "./compatibilityQualityFixtures.json";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 const clock = { evaluatedAt: "2026-10-12T12:00:00+09:00" };
 const manuscripts = new Map<string, { paragraphs: string[]; directions: string[] }>();
@@ -29,8 +30,8 @@ describe("Compatibility actual quality edition at c048218 base", () => {
     const frozen = fixtures.before[f.id as keyof typeof fixtures.before];
     for (const [key, value] of Object.entries({ calculations:e.calculations, natalTables:e.natalTableEvidence, mbtiTables:e.mbtiTables,
       index:buildLegacyCompatibilityIndex(r.evidence), directions:r.evidence.directions, invariant:r.evidence.invariant, individuals:r.integration.individualDigests }))
-      expect(v4Digest(value), `${f.id}:${key}`).toBe(frozen[key as keyof typeof frozen]);
-    expect(r.compatibilityIndex).toEqual(newIndexes.quality[f.id as keyof typeof newIndexes.quality]);
+      expectLock(v4Digest(value), frozen[key as keyof typeof frozen], `${f.id}:${key}`);
+    expectLock(r.compatibilityIndex, newIndexes.quality[f.id as keyof typeof newIndexes.quality]);
     expect(r.integration.publishedEdition).toBe(COMPATIBILITY_RELEASE_VERSION);
     expect(r.integration.readerValidation).toEqual({ hardErrors:[], qualityIssues:[] });
     expect(r.integration.readerEditorial).toEqual([]);
@@ -85,8 +86,8 @@ describe("Compatibility actual quality edition at c048218 base", () => {
       expect(r.compatibilityIndex.total).toBe(newIndexes.quality.A.total);
       const score=book.pages.find(p=>p.kind==="score"); expect(score?.kind==="score"&&score.total).toBe(newIndexes.quality.A.total);
       const appendix=book.pages.filter(p=>p.kind==="appendix");
-      expect(appendix.map(p=>p.items.length)).toEqual([43,34]);
-      expect(appendix.flatMap(p=>p.items).map(i=>i.person)).toEqual([...Array(43).fill("이준혁"),...Array(34).fill("정유진")]);
+      expectLock(appendix.map(p=>p.items.length), [43,34]);
+      expectLock(appendix.flatMap(p=>p.items).map(i=>i.person), [...Array(43).fill("이준혁"),...Array(34).fill("정유진")]);
       const notePages=book.pages.filter(p=>p.kind==="narrative"&&p.notes?.length);
       expect(notePages.length).toBeGreaterThan(0);
       for(const page of notePages) {
@@ -118,6 +119,6 @@ describe("Compatibility actual quality edition at c048218 base", () => {
   it.each(fixtures.otherProducts)("$id reviewed common manuscript/Book retains engine baseline",async f=>{
     const g=await generateV4ShadowReport(f.input,clock);if(!g.ok)return expect.unreachable();
     expectEditorialFoundations(g.evidencePacket as V4RuntimeEvidence,f.input,clock);
-    expect([g.draft,g.evidencePacket,projectBook(g.evidencePacket as V4RuntimeEvidence)].map(v4Digest)).toEqual(editorialLocks.groups.compatibilityQuality[f.id as keyof typeof editorialLocks.groups.compatibilityQuality]);
+    expectLock([g.draft,g.evidencePacket,projectBook(g.evidencePacket as V4RuntimeEvidence)].map(v4Digest),editorialLocks.groups.compatibilityQuality[f.id as keyof typeof editorialLocks.groups.compatibilityQuality]);
   },120000);
 });

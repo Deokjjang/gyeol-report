@@ -31,6 +31,7 @@ import { RUNTIME_FIXTURES, SHADOW_CLOCK } from "./runtimeFixtures";
 import locks from "./compatibilityReleaseLocks.json";
 import canonicalLocks from "./compatibilityCanonicalLocks.json";
 import titleSafetyLocks from "./compatibilityTitleSafetyLocks.json";
+import { expectLock } from "../../helpers/v5LmtLocks";
 const root = "/tmp/gyeol-compatibility-release", base = COMPATIBILITY_NARRATIVE_FIXTURES[0].payload;
 const categories = ["love", "marriage", "parentChild", "coworker", "managerReport", "businessPartner", "friendship"] as const;
 const readers: { id: string; draft: PairReleaseDraft }[] = [];
@@ -48,7 +49,7 @@ function verifyTitleSafety(r: CompatibilityProduct, id: keyof typeof titleSafety
   const titles = r.integration.readerEdition.chapters.flatMap(c => c.paragraphs.map(p => p.purpose));
   // The old unknown fixture also lost CH04.P1 and CH09.P1. Their restored
   // headings are checked by the complete 36-paragraph contract below.
-  expect(id === "both-unknown" ? titles.filter(t => (frozen.titles as string[]).includes(t)) : titles).toEqual(frozen.titles);
+  expectLock(id === "both-unknown" ? titles.filter(t => (frozen.titles as string[]).includes(t)) : titles, frozen.titles);
   // This edition intentionally changes manuscript text. Keep the historical
   // title locks, canonical evidence locks and saved Book snapshot untouched.
   if (process.env.PAIR_TITLE_EXPORT === "1") {
@@ -73,10 +74,10 @@ describe("Compatibility reader release", () => {
     expect(d.bodyLength).toBeGreaterThanOrEqual(8000); expect(d.bodyLength).toBeLessThanOrEqual(10000);
     expect(text(d)).not.toMatch(/undefined|\[object Object\]|SourceCandidate|personA:|natal:|notablePairs/);
     const frozen = canonicalLocks[String(index) as keyof typeof canonicalLocks];
-    expect(buildLegacyCompatibilityIndex(r.evidence)).toEqual(frozen.index);
-    expect(r.compatibilityIndex).toEqual(newIndexes.canonical[String(index) as keyof typeof newIndexes.canonical]); expect(r.evidence.directions).toEqual(frozen.directions);
-    expect(r.evidence.invariant).toEqual(frozen.invariant); expect(r.integration.individualDigests).toEqual(frozen.individuals);
-    expect(r.integration.pair.canonicalRelationIds).toEqual(frozen.relations);
+    expectLock(buildLegacyCompatibilityIndex(r.evidence), frozen.index);
+    expectLock(r.compatibilityIndex, newIndexes.canonical[String(index) as keyof typeof newIndexes.canonical]); expectLock(r.evidence.directions, frozen.directions);
+    expectLock(r.evidence.invariant, frozen.invariant); expectLock(r.integration.individualDigests, frozen.individuals);
+    expectLock(r.integration.pair.canonicalRelationIds, frozen.relations);
     for (const [chapter, slot] of [[4, "aToB"], [5, "bToA"]] as const) for (const p of d.chapters[chapter].paragraphs) for (const s of p.sentences) {
       expect(s.directionId).toBe(r.evidence.directions[slot].relationId);
       expect([s.subjectPersonId, s.targetPersonId]).toEqual([r.evidence.directions[slot].subjectPerson, r.evidence.directions[slot].targetPerson]);
@@ -164,7 +165,7 @@ describe("Compatibility reader release", () => {
     }
     const r=await generateV4ShadowReport(f.payload,SHADOW_CLOCK);if(!r.ok)return expect.unreachable();
     expectEditorialFoundations(r.evidencePacket as V4RuntimeEvidence,f.payload,SHADOW_CLOCK);
-    expect([v4Digest(r.draft),v4Digest(r.evidencePacket),v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(editorialLocks.groups.compatibilityRelease[f.id as keyof typeof editorialLocks.groups.compatibilityRelease]);
+    expectLock([v4Digest(r.draft),v4Digest(r.evidencePacket),v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))],editorialLocks.groups.compatibilityRelease[f.id as keyof typeof editorialLocks.groups.compatibilityRelease]);
   },120000);
   it.each(["parentChild", "managerReport"] as const)("%s swapped people keep fixed A/B responsibilities", relationshipType=>{
     const payload={...base,relationshipType}, a=build(payload),b=build({...payload,personA:payload.personB,personB:payload.personA});

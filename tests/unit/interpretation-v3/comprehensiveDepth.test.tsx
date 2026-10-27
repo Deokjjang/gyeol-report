@@ -16,6 +16,7 @@ import { REALITY_VOICES } from "../../../src/lib/interpretation-v3/comprehensive
 import { publicSignalRows } from "../../../src/lib/interpretation-v3/comprehensivePublicSignals";
 import { ComprehensiveReportV3View } from "../../../src/app/reports/[reportId]/ComprehensiveReportV3View";
 import { COMPREHENSIVE_V3_FIXTURES, comprehensiveFixture } from "./comprehensiveFixtures";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 const sha = (x: unknown) => createHash("sha256").update(JSON.stringify(x)).digest("hex");
 const finalHashes = ["3bc2b0ad78fbfdaa00dcc7073091523563ab35e88471b7c0726011d72bea3884", "767b4d50cd6bec8f14080355c400890ca988161998b3e8029a18a2815c39d89b", "ea3c845877b0fe35085aa8af4ecdfa0df30f8dfe38d1fea1012ee7024b12981d", "522a8474e0dc09cd50c97508b362af81db5e9fcf68335416de0f5715c31db215", "f72719d9c59919ff0e90479d56b7c8460407e9d8e317eaf96ba6bcd7a07d117c", "eb9e8b38f4a3d0deafbb3ffe229d61e615ccbd745839da7dc8fabb989acf92b9"];
@@ -37,7 +38,7 @@ it.each(COMPREHENSIVE_V3_FIXTURES)("%s editorial depth, exact old snapshot, publ
   const scenes = assembly.composition!.scenes;
   expect(scenes.some((s, i) => i > 0 && s.tone === scenes[i - 1].tone), id).toBe(false);
   const old = buildComprehensiveFinal(input);
-  expect(sha(old)).toBe(finalHashes[id.charCodeAt(0) - 65]);
+  expectLock(sha(old), finalHashes[id.charCodeAt(0) - 65]);
   expect(validateProductPublication("saju_mbti_full", JSON.parse(JSON.stringify(old)), result.evidencePacket).ok).toBe(true);
   const qa = draft.editorialAudit;
   process.stdout.write(JSON.stringify({ id, chars: text.length, mix: qa?.mix, rejected: qa?.rejected, warnings: qa?.warnings, publication: validateProductPublication("saju_mbti_full", draft, result.evidencePacket), questions: (text.match(/\?/g) ?? []).length }) + "\n");

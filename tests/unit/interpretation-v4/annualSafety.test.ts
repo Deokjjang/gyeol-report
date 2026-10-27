@@ -15,6 +15,7 @@ import { narrativeText } from "../../../src/lib/interpretation-v4/editorialGuard
 import { MAJOR_NARRATIVE_FIXTURES, MAJOR_EVALUATED_AT } from "./majorFixtures";
 import { ANNUAL_NARRATIVE_FIXTURES as fixtures, ANNUAL_CLOCK } from "./annualFixtures";
 import { editorialLocks, editionRow, expectHistoricalEditorialFiles } from "../../helpers/versionedEditorialLocks";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 // Reviewed Phase 7A Major prose. Original Phase 6A hashes and immutable
 // evidence/proof hashes remain in finalEditorialBaseline.json.
@@ -25,7 +26,7 @@ describe("Annual V4 canonical evidence, clock and regression boundaries", () => 
     expectHistoricalEditorialFiles();
     expect(hash).toBe(editionRow(editorialLocks.historicalMajorNarratives, id));
     const r = await composeMajorFortuneNarrative(payload, MAJOR_EVALUATED_AT); expect(r.ok).toBe(true); if (!r.ok) return;
-    expect(createHash("sha256").update(JSON.stringify(r.narrative)).digest("hex")).toBe(editionRow(editorialLocks.majorNarratives, id).narrativeHash);
+    expectLock(createHash("sha256").update(JSON.stringify(r.narrative)).digest("hex"), editionRow(editorialLocks.majorNarratives, id).narrativeHash);
   });
   it.each(fixtures)("$id: same canonical generation, monthly extension, exact segments; V3 unchanged", async f => {
     const inputBefore = JSON.stringify(f.payload);

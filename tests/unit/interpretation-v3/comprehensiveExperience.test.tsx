@@ -16,6 +16,7 @@ import { ComprehensiveReportV3View } from "../../../src/app/reports/[reportId]/C
 import { COMPREHENSIVE_V3_FIXTURES, comprehensiveFixture } from "./comprehensiveFixtures";
 import type { Evidence } from "../../../src/lib/interpretation-v3/types";
 import type { SajuCalcResult } from "../../../src/lib/saju/types";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 const runtime = { enabled: false, reason: "flag_disabled" } as const;
 // Frozen V3.2-final contract; comprehensiveDepth tests the current product path.
@@ -41,7 +42,7 @@ it.each(COMPREHENSIVE_V3_FIXTURES)("%s final experience and stored V3.2 compatib
   const draft = result.draft, { facts, calculation } = (result.evidencePacket as Packet).comprehensiveV3;
   const input = { name: payload.person.name, facts, calculation, profileTable: draft.profileTable, context: normalizeContext({ lifeStatus: payload.userContext.jobStatus, fieldLabel: payload.userContext.detailJob, relationshipStatus: payload.userContext.relationshipStatus }), relationshipStatus: payload.userContext.relationshipStatus };
   const before = buildComprehensiveV32(input), text = comprehensiveV3CustomerText(draft), bs = blocks(draft);
-  expect(sha(before)).toBe(hashes[id.charCodeAt(0) - 65]);
+  expectLock(sha(before), hashes[id.charCodeAt(0) - 65]);
   expect(validateProductPublication("saju_mbti_full", JSON.parse(JSON.stringify(before)), result.evidencePacket).ok).toBe(true);
   expect(draft.version).toBe(FINAL_COMPREHENSIVE_VERSION);
   expect(validateProductPublication("saju_mbti_full", JSON.parse(JSON.stringify(draft)), result.evidencePacket).ok).toBe(true);

@@ -11,6 +11,7 @@ import { narrativeText } from "../../../src/lib/interpretation-v4/editorialGuard
 import { MBTI_TYPES } from "../../../src/lib/report-generation/reportInputTypes";
 import { MAJOR_NARRATIVE_FIXTURES as fixtures, MAJOR_EVALUATED_AT as at } from "./majorFixtures";
 import { COMPATIBILITY_NARRATIVE_FIXTURES as pairs } from "./compatibilityFixtures";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 // Reviewed Phase 7A pair prose. Original Phase 5C and immutable evidence/proof
 // hashes are preserved in finalEditorialBaseline.json, alongside the other products.
@@ -19,7 +20,7 @@ const must = async (payload: unknown, time = at) => { const r = await composeMaj
 describe("Major canonical calculation, isolation and evidence", () => {
   it.each(pairs.map((f, i) => ({ ...f, hash: PAIR_HASHES[i] })))("$id: Compatibility V4 hash unchanged", ({ payload, hash }) => {
     const r = composeCompatibilityNarrative(payload); expect(r.ok).toBe(true); if (!r.ok) return;
-    expect(createHash("sha256").update(JSON.stringify(r.narrative)).digest("hex")).toBe(hash);
+    expectLock(createHash("sha256").update(JSON.stringify(r.narrative)).digest("hex"), hash);
   });
   it.each(fixtures)("$id: reuse V3 horizon, exact boundaries, annual facts and input without mutation", async ({ payload }) => {
     const frozen = JSON.stringify(payload), original = await createMajorFortuneV3(payload, { now: () => new Date(at) });

@@ -11,6 +11,7 @@ import { CAREER_RELEASE_VERSION, type CareerReleaseDraft } from "../../../src/li
 import { buildV4CareerProduct } from "../../../src/lib/interpretation-v4/careerProductAdapter";
 import { fixtureInput, NARRATIVE_FIXTURES } from "./narrativeFixtures";
 import { CAREER_QUALITY_CASES, CAREER_QUALITY_CLOCK } from "./careerQualityFixtures";
+import { expectLock } from "../../helpers/v5LmtLocks";
 const fixture = (name: string) => JSON.parse(readFileSync(new URL(`../../fixtures/career-quality-01/${name}.json`, import.meta.url), "utf8"));
 const hash = (value: unknown) => createHash("sha256").update(JSON.stringify(value)).digest("hex");
 const readers = new Map<string, CareerReleaseDraft>();
@@ -28,8 +29,8 @@ describe("career specialist questions, actual occupation and source boundaries",
     expect(r.integration.readerValidation.hardErrors).toEqual([]);
     expect(r.integration.readerValidation.qualityIssues.filter(x => x !== "BODY_LENGTH")).toEqual([]);
     if (["A", "B", "C"].includes(id)) { expect(d.bodyLength).toBeGreaterThanOrEqual(8000); expect(d.bodyLength).toBeLessThanOrEqual(10000); }
-    expect(hash(e.calculations)).toBe(fixture("engine-locks").find((f: { id: string }) => f.id === id).calculationsSha256);
-    expect(hash(r.narrative.recommendations.map(({ id, roleExamples, proof }) => ({ id, roleExamples, proof })))).toBe(fixture("engine-locks").find((f: { id: string }) => f.id === id).recommendationProofsSha256);
+    expectLock(hash(e.calculations), fixture("engine-locks").find((f: { id: string }) => f.id === id).calculationsSha256);
+    expectLock(hash(r.narrative.recommendations.map(({ id, roleExamples, proof }) => ({ id, roleExamples, proof }))), fixture("engine-locks").find((f: { id: string }) => f.id === id).recommendationProofsSha256);
     expect(generated.externalCalls).toEqual([]); expect(payload).toEqual(before);
     expect(await generateV4ShadowReport(payload, CAREER_QUALITY_CLOCK)).toEqual(generated);
     expect(validateV4Publication("career_money_study", generated.draft, e)).toEqual({ ok: true, errors: [] });
@@ -83,6 +84,6 @@ describe("career specialist questions, actual occupation and source boundaries",
     const generated = await generateV4ShadowReport(payload, CAREER_QUALITY_CLOCK);
     expect(generated.ok).toBe(true);
     if (generated.ok) expectEditorialFoundations(generated.evidencePacket as V4RuntimeEvidence, payload, CAREER_QUALITY_CLOCK);
-    expect(hash({ generated, book: generated.ok ? projectBook(generated.evidencePacket as V4RuntimeEvidence) : null })).toBe(editorialLocks.groups.career[id as keyof typeof editorialLocks.groups.career]);
+    expectLock(hash({ generated, book: generated.ok ? projectBook(generated.evidencePacket as V4RuntimeEvidence) : null }), editorialLocks.groups.career[id as keyof typeof editorialLocks.groups.career]);
   }, 120000);
 });

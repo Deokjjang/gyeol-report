@@ -11,6 +11,7 @@ import { storedBook } from "../../../src/lib/book/storedReport";
 import { MAJOR_SAFETY_CASES, MAJOR_SAFETY_CLOCK } from "./majorEditorialSafetyFixtures";
 import editions from "../../fixtures/common-editorial-01/edition-locks.json";
 import { editorialInvariants } from "./editorialInvariants";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 type Generated = Extract<Awaited<ReturnType<typeof generateV4ShadowReport>>, { ok: true }>;
 const generated = new Map<string, Generated & { evidencePacket: V4RuntimeEvidence }>();
@@ -47,7 +48,7 @@ describe("Major editorial assembly safety", () => {
     if (g.evidencePacket.composition.product !== "major_fortune") return;
     const r = g.evidencePacket.composition.result;
     const key = "ABCDEF"[MAJOR_SAFETY_CASES.findIndex(f => f.id === id)];
-    expect(v4Digest(editorialInvariants(g.evidencePacket))).toBe(editions.find(f => f.product === "major" && f.id === key)!.invariant);
+    expectLock(v4Digest(editorialInvariants(g.evidencePacket)), editions.find(f => f.product === "major" && f.id === key)!.invariant);
     expect(r.contentAudit.hedgeChapters).toEqual(auditContent(r.narrative).hedgeChapters);
     expect(r.years.map(y => y.year)).toEqual(Array.from({ length: 14 }, (_, i) => 2023 + i));
     expect(r.completeness).toMatchObject({ years: 14, futureYears: 10, ages: true, final: true });

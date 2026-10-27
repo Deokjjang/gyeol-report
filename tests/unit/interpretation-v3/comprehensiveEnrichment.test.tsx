@@ -17,6 +17,7 @@ import { getCanonicalNatalTable } from "../../../src/lib/report-knowledge/natalT
 import { ComprehensiveReportV3View } from "../../../src/app/reports/[reportId]/ComprehensiveReportV3View";
 import type { Evidence } from "../../../src/lib/interpretation-v3/types";
 import type { SajuCalcResult } from "../../../src/lib/saju/types";
+import { expectLock } from "../../helpers/v5LmtLocks";
 
 const runtime = { enabled: false, reason: "flag_disabled" } as const;
 // Freeze this suite on the stored V3.1 contract; V3.2 has its own product suite.
@@ -118,7 +119,7 @@ it.each(COMPREHENSIVE_V3_FIXTURES.filter(r => r[0] !== "F"))("%s stored Phase 2 
   const draft = buildComprehensiveV3Legacy({ name: payload.person.name, facts: packet.comprehensiveV3.facts,
     context: normalizeContext({ lifeStatus: payload.userContext.jobStatus, fieldLabel: payload.userContext.detailJob, relationshipStatus: payload.userContext.relationshipStatus }),
     relationshipStatus: payload.userContext.relationshipStatus, profileTable: result.draft.profileTable });
-  expect(hash(draft)).toBe(LEGACY_HASHES[id]);
+  expectLock(hash(draft), LEGACY_HASHES[id]);
   expect(validateProductPublication("saju_mbti_full", draft, packet)).toEqual({ ok: true, errors: [] });
   expect(renderToStaticMarkup(createElement(ComprehensiveReportV3View, { draft, evidencePacket: packet }))).not.toContain("리포트를 준비하고 있습니다");
 });
