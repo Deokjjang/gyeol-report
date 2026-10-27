@@ -1,4 +1,4 @@
-import { DAYUN_CALCULATION_VERSION, DAYUN_ACTUAL_CYCLE_COUNT, SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
+import { DAYUN_ACTUAL_CYCLE_COUNT, DAYUN_CALCULATION_VERSION, SAJU_CALENDAR_VERSION, isReadableDayunCalculationVersion, isReadableSajuCalendarVersion } from "../saju/calendarVersion";
 import { normalizeBirthTimePrecision } from "../saju/birthTimePrecisionTypes";
 import { normalizeGanji } from "../report-knowledge/sajuFeatureExtractionRules";
 import type { CustomerDayun, DayunSelection } from "../saju/customerDayun";
@@ -39,7 +39,9 @@ export function validateDayunPublication(product: string, draft: Record<string, 
     const person = b.customerInput;
     const context = b.calendarContext;
     const time = normalizeBirthTimePrecision(person);
-    if (b.calculationVersion !== DAYUN_CALCULATION_VERSION || b.calendarVersion !== SAJU_CALENDAR_VERSION ||
+    // Stored Dayun stays readable: both versions must be readable and come from the same engine.
+    if (!isReadableDayunCalculationVersion(b.calculationVersion) || !isReadableSajuCalendarVersion(b.calendarVersion) ||
+        (b.calendarVersion === SAJU_CALENDAR_VERSION) !== (b.calculationVersion === DAYUN_CALCULATION_VERSION) ||
         b.libraryVersion !== "1.7.7" || b.yunSect !== 2 || b.stable !== true || b.ageConvention !== "kst_cycle_year_minus_birth_year_plus_one" ||
         evidence.calendarVersion !== b.calendarVersion || !record(evidence.birthTimeContexts) || !same(context, evidence.birthTimeContexts.person) ||
         !time.ok || time.precision !== b.precision || context.birthTimePrecision !== b.precision || context.birthDate !== person.birthDate ||

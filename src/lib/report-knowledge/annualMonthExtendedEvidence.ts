@@ -1,4 +1,4 @@
-import { SHINSAL_METADATA, SHINSAL_RULES } from "../saju/shinsalConstants";
+import { SHINSAL_METADATA, shinsalRulesFor } from "../saju/shinsalConstants";
 import type { ShinsalRuleDefinition, ShinsalRuleTarget } from "../saju/shinsalTypes";
 import type { AnnualCalendarMonth, AnnualMonthSegment } from "./annualMonthJie";
 import { normalizeBranch, normalizeStem, relationPairs } from "./sajuFeatureExtractionRules";
@@ -50,13 +50,13 @@ function matchRule(rule: ShinsalRuleDefinition, natal: AnnualFortuneEvidencePack
   return candidates.filter(c => targets?.includes(c.value)).map(c => ({ anchor, anchorValue, target: c.target, targetValue: c.value, rule: source.kind }));
 }
 
-export function extendAnnualMonthEvidence(packet: Pick<AnnualFortuneEvidencePacket, "baseSaju" | "calendarMonths">): AnnualMonthExtendedEvidence {
+export function extendAnnualMonthEvidence(packet: Pick<AnnualFortuneEvidencePacket, "baseSaju" | "calendarMonths"> & { readonly calendarVersion?: unknown }): AnnualMonthExtendedEvidence {
   const natal = packet.baseSaju.pillars;
   return { version: ANNUAL_MONTH_EVIDENCE_VERSION, months: (packet.calendarMonths ?? []).map(month => ({ month: month.month, segments: month.segments.map(segment => {
     const prefix = `annual-month:${segment.startKst}`;
     const features: MonthFeature[] = [];
     const unsupported = [{ code: "banghap", reason: "NO_VERIFIED_CANONICAL_RULE" }];
-    for (const rule of SHINSAL_RULES as readonly ShinsalRuleDefinition[]) {
+    for (const rule of shinsalRulesFor(packet.calendarVersion)) {
       const matches = matchRule(rule, natal, segment);
       if (matches === null) { unsupported.push({ code: rule.code, reason: "NATAL_ONLY_RULE_NO_TRANSIT_CONTRACT" }); continue; }
       for (const basis of matches) features.push({ id: `${prefix}:${rule.code}:${basis.target}`, code: rule.code, label: SHINSAL_METADATA[rule.code].labelKo,

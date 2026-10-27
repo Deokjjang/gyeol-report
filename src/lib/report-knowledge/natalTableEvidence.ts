@@ -55,7 +55,7 @@ export function buildCanonicalNatalTable(context: BirthTimeCalculationContext): 
   if (!year || !month || !day) return null;
   const pillars = { year, month, day, ...(hour ? { hour } : {}) };
   if (Object.values(pillars).some(p => !Object.hasOwn(STEM_ELEMENT, p.stem) || !Object.hasOwn(HIDDEN_STEMS, p.branch))) return null;
-  const detection = detectShinsal(pillars);
+  const detection = detectShinsal(pillars, context.calendarVersion);
   const tenGods = analyzeFullTenGods(pillars);
   const input = { yearPillar: year.stem + year.branch, monthPillar: month.stem + month.branch,
     dayPillar: day.stem + day.branch, ...(hour ? { hourPillar: hour.stem + hour.branch } : {}), dayMaster: day.stem };

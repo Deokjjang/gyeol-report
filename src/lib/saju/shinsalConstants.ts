@@ -1,3 +1,4 @@
+import { SAJU_CALENDAR_V5_LMT } from "./calendarVersion";
 import type {
   ShinsalCode,
   ShinsalMetadata,
@@ -749,3 +750,20 @@ export const SHINSAL_RULES = [
     },
   },
 ] as const satisfies readonly ShinsalRuleDefinition[];
+
+// Tables saju-calendar-v5-lmt reports were computed with: 亡神 per 三命通會 論劫煞亡神 (申子辰亥 寅午戌巳
+// 巳酉丑申 亥卯未寅), 孤辰·寡宿 grouped by 方 (論孤辰寡宿). Read-only here: read paths rebuild natal tables
+// from stored pillars (validateNatalTableEvidence), so stored v5 reports need their own tables.
+const V5_LMT_TABLES: Partial<Record<ShinsalCode, Readonly<Record<string, readonly string[]>>>> = {
+  MANGSINSAL: { 亥: ["寅"], 卯: ["寅"], 未: ["寅"], 寅: ["巳"], 午: ["巳"], 戌: ["巳"], 巳: ["申"], 酉: ["申"], 丑: ["申"], 申: ["亥"], 子: ["亥"], 辰: ["亥"] },
+  GOSINSAL: { 亥: ["寅"], 子: ["寅"], 丑: ["寅"], 寅: ["巳"], 卯: ["巳"], 辰: ["巳"], 巳: ["申"], 午: ["申"], 未: ["申"], 申: ["亥"], 酉: ["亥"], 戌: ["亥"] },
+  GWASUKSAL: { 亥: ["戌"], 子: ["戌"], 丑: ["戌"], 寅: ["丑"], 卯: ["丑"], 辰: ["丑"], 巳: ["辰"], 午: ["辰"], 未: ["辰"], 申: ["未"], 酉: ["未"], 戌: ["未"] },
+};
+const V5_LMT_SHINSAL_RULES = SHINSAL_RULES.map((rule) => {
+  const table = V5_LMT_TABLES[rule.code];
+  return table ? { ...rule, source: { ...rule.source, table } } : rule;
+}) as readonly ShinsalRuleDefinition[];
+
+export function shinsalRulesFor(calendarVersion: unknown): readonly ShinsalRuleDefinition[] {
+  return calendarVersion === SAJU_CALENDAR_V5_LMT ? V5_LMT_SHINSAL_RULES : SHINSAL_RULES;
+}

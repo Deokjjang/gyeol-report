@@ -1,6 +1,6 @@
 import { createSajuCalendarContext } from "../saju/lunarJavascriptPillars";
 import { getSolarTermInstants } from "../saju/solarTerms";
-import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
+import { isReadableSajuCalendarVersion } from "../saju/calendarVersion";
 import { formatDayunKst, type CustomerDayun, type CustomerDayunCycle, type DayunTimeRange } from "../saju/customerDayun";
 import { buildAnnualMonthRelationFacts, type AnnualMonthRelationFact } from "./annualMonthRelationFacts";
 import { getBranchPairRelations, getBranchElement, getStemElement, getTenGodForStemPair } from "./annualFortuneYearRules";
@@ -120,7 +120,7 @@ function segmentFacts(input: AnnualMonthCalendarInput, segment: Pick<AnnualMonth
 
 export function buildAnnualMonthCalendar(input: AnnualMonthCalendarInput): readonly AnnualCalendarMonth[] {
   if (!Number.isInteger(input.selectedYear) || input.selectedYear < 1 || input.selectedYear > 9998 ||
-      input.customerDayun.calendarVersion !== SAJU_CALENDAR_VERSION || !input.customerDayun.cycles.length) return [];
+      !isReadableSajuCalendarVersion(input.customerDayun.calendarVersion) || !input.customerDayun.cycles.length) return [];
   const jie = getAnnualJieBoundaries(input.selectedYear);
   if (jie.length !== 12) return [];
   return Array.from({ length: 12 }, (_, index) => {

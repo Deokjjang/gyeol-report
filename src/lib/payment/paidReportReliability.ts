@@ -5,6 +5,7 @@ import { createProductPreviewSnapshot, type ProductPreviewSnapshotDraft, type Pr
 import type { ProductGenerationResult } from "../report-generation/productGenerationDispatcher";
 import type { ReportWriterRuntime } from "../report-generation/reportWriterRuntime";
 import { deliveryIssueCodes } from "../report-generation/paidWriterRescue";
+import { unknownCalculationVersions } from "../saju/calendarVersion";
 import type { ReliabilityStore } from "./paidReportReliabilityStore";
 import type { TossConfirmClientResult, TossConfirmRequest } from "./tossConfirmTypes";
 
@@ -102,6 +103,13 @@ export async function readPublishedReport(store: ReliabilityStore, reportId: str
   if (!result.ok || result.status !== "COMPLETED") return { ...result, snapshot: null };
   const snapshot = result.snapshot;
   if (!isRecord(snapshot) || snapshot.reportId !== reportId || !validatePublication(String(snapshot.productType), snapshot.draft, snapshot.evidencePacket).ok) {
+    // A calculation version this code does not know comes from a newer engine (e.g. after a
+    // rollback). Quarantine may clear snapshot_json, so keep the row as is and only hide it.
+    const unknownVersions = isRecord(snapshot) && snapshot.reportId === reportId ? unknownCalculationVersions(snapshot) : [];
+    if (unknownVersions.length) {
+      console.error(JSON.stringify({ event: "REPORT_READ_UNKNOWN_CALCULATION_VERSION", reportId, versions: unknownVersions }));
+      return { ok: true, status: "FAILED_REQUIRES_ATTENTION", code: "UNKNOWN_CALCULATION_VERSION", snapshot: null };
+    }
     // Compare the observed value under DB locks so a delayed read cannot
     // quarantine a replacement published by an admin recovery run.
     await store.call("quarantine", { reportId, expectedSnapshot: snapshot ?? null });

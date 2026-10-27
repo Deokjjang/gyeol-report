@@ -1,4 +1,4 @@
-import { SAJU_CALENDAR_VERSION } from "./calendarVersion";
+import { SAJU_CALENDAR_VERSION, type SajuCalendarVersion } from "./calendarVersion";
 import type { Pillar } from "./types";
 
 // Client-safe input SSOT. 子 belongs to the date on which the slot ends.
@@ -42,7 +42,7 @@ export function normalizeBirthTimePrecision(input: BirthTimeInput) {
 export const PILLAR_KEYS = ["year", "month", "day", "hour"] as const;
 export type PillarKey = (typeof PILLAR_KEYS)[number];
 export type BirthTimeCalculationContext = {
-  calendarVersion: typeof SAJU_CALENDAR_VERSION;
+  calendarVersion: SajuCalendarVersion;
   birthTimePrecision: BirthTimePrecision;
   birthDate: string;
   approximateBirthTimeSlot?: ApproximateBirthTimeSlot;
@@ -50,6 +50,9 @@ export type BirthTimeCalculationContext = {
   stable: Record<PillarKey, boolean>;
   candidates: Record<PillarKey, readonly Pillar[]>;
   confirmed: Partial<Record<PillarKey, Pillar>>;
+  // Stored saju-calendar-v5-lmt contexts only (read-only here). civilDateTime is the typed input:
+  // YYYY-MM-DDTHH:mm for exact, YYYY-MM-DD otherwise.
+  timeBasis?: { calcVersion: string; civilDateTime: string; utcOffsetMinutes: number; solarTimeCorrectionMinutes: number };
 };
 export type BirthTimeContexts = Partial<Record<"person" | "personA" | "personB", BirthTimeCalculationContext>>;
 export function withBirthTimeEvidence<T>(packet: T, contexts: BirthTimeContexts) {
@@ -61,4 +64,11 @@ export function withBirthTimeEvidence<T>(packet: T, contexts: BirthTimeContexts)
     },
     birthTimeContexts: contexts,
   };
+}
+// The typed civil time of an exact context. A v5-lmt range is an absolute instant, which differs
+// from the civil clock in UTC+8:30 and summer-time periods, so v5-lmt keeps the input in timeBasis.
+export function contextMatchesExactTime(context: Pick<BirthTimeCalculationContext, "range" | "timeBasis">, birthDate: string, time: string): boolean {
+  return context.timeBasis
+    ? context.timeBasis.civilDateTime === `${birthDate}T${time}`
+    : context.range.startKst.startsWith(`${birthDate}T${time}:`);
 }

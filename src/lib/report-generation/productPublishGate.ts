@@ -10,6 +10,7 @@ import type { AnnualFortuneEvidencePacket } from "../report-knowledge/annualFort
 import { publicationBirthTimeContexts, publishedPillarMatches } from "./birthTimePublication";
 import { validateDayunPublication } from "./dayunPublication";
 import { validateProductEvidence } from "./productEvidenceValidation";
+import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
 import { COMPREHENSIVE_REPORT_SECTION_IDS } from "../report-knowledge/reportSectionSchema";
 import { deriveAllowedCompatibilityMbtiTerms, deriveAllowedCompatibilitySajuTerms } from "./openaiCompatibilityReportWriterPrompt";
 import type { CompatibilityEvidencePacket } from "../report-knowledge/compatibilityEvidenceBuilder";
@@ -26,6 +27,10 @@ export const PUBLISH_GATE_VERSION = "paid-report-v1";
 // version-dispatched validator below so existing paid snapshots stay readable.
 export function validateNewProductPublication(product: string, draft: unknown, evidence: unknown, inputPayload?: unknown) {
   const result = validateProductPublication(product, draft, evidence, inputPayload);
+  // Reads accept every known calendar version; new generation publishes the current one only.
+  if (isRecord(evidence) && evidence.calendarVersion !== undefined && evidence.calendarVersion !== SAJU_CALENDAR_VERSION) {
+    return { ok: false, errors: [...result.errors, "SAJU_CALENDAR_CURRENT_REQUIRED"] };
+  }
   if (product === "annual_fortune" && (!isRecord(evidence) || evidence.monthlyCalculationVersion !== "annual-month-jie-kst-v2")) {
     return { ok: false, errors: [...result.errors, "ANNUAL_MONTH_V2_REQUIRED"] };
   }

@@ -1,6 +1,6 @@
 import { publicationBirthTimeContexts, publishedPillarMatches } from "./birthTimePublication";
-import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
-import { normalizeBirthTimePrecision } from "../saju/birthTimePrecisionTypes";
+import { isReadableSajuCalendarVersion } from "../saju/calendarVersion";
+import { contextMatchesExactTime, normalizeBirthTimePrecision } from "../saju/birthTimePrecisionTypes";
 import { STEM_ELEMENT, BRANCH_MAIN_ELEMENT } from "../saju/constants";
 import { getAnnualGanjiInfo, getAnnualMonthGanjiInfo } from "../report-knowledge/annualFortuneYearRules";
 import { COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS } from "./comprehensiveReportDraftTypes";
@@ -20,7 +20,7 @@ export function validateProductEvidence(product: string, draft: Row, value: unkn
   const need = (ok: boolean, field: string) => { if (!ok) errors.push(`EVIDENCE_INVALID:${field}`); };
   const contexts = publicationBirthTimeContexts(e);
   need(!!contexts, "canonical_calendar");
-  need(e.calendarCalculationVersion === undefined || e.calendarCalculationVersion === SAJU_CALENDAR_VERSION, "calendarCalculationVersion");
+  need(e.calendarCalculationVersion === undefined || isReadableSajuCalendarVersion(e.calendarCalculationVersion), "calendarCalculationVersion");
   const basis = record(e.inputBasis) ? e.inputBasis : {};
   const roles = product === "saju_mbti_compatibility" ? ["personA", "personB"] as const : ["person"] as const;
   for (const role of roles) {
@@ -31,7 +31,7 @@ export function validateProductEvidence(product: string, draft: Row, value: unkn
     need(fields(p, ["name", "birthDate"]) && p.calendarType === "solar" && p.timezone === "Asia/Seoul" &&
       (p.mbtiType === "" || (typeof p.mbtiType === "string" && /^[IE][NS][TF][JP]$/.test(p.mbtiType))) &&
       precision.ok && precision.precision === c.birthTimePrecision && p.birthDate === c.birthDate &&
-      (precision.precision !== "exact" || c.range.startKst.startsWith(`${p.birthDate}T${precision.time}:`)) &&
+      (precision.precision !== "exact" || contextMatchesExactTime(c, p.birthDate, precision.time)) &&
       (precision.precision !== "approximate" || c.approximateBirthTimeSlot === precision.slot), `inputBasis.${role}`);
     if (payload !== undefined) {
       const raw = record(payload) && record(payload[role]) ? payload[role] : {};

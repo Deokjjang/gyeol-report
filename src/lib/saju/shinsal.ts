@@ -1,4 +1,5 @@
-import { SHINSAL_METADATA, SHINSAL_RULES } from "./shinsalConstants";
+import { SAJU_CALENDAR_VERSION } from "./calendarVersion";
+import { SHINSAL_METADATA, shinsalRulesFor } from "./shinsalConstants";
 import type { PillarSet } from "./analyze";
 import type {
   ShinsalDetection,
@@ -421,11 +422,12 @@ function matchRule(
   }
 }
 
-export function detectShinsal(pillars: PillarSet): ShinsalDetection[] {
+// calendarVersion of the report being built or read; stored reports keep their engine's tables.
+export function detectShinsal(pillars: PillarSet, calendarVersion: unknown = SAJU_CALENDAR_VERSION): ShinsalDetection[] {
   const entries = getOrderedPillars(pillars);
   const detections: ShinsalDetection[] = [];
 
-  for (const rule of SHINSAL_RULES) {
+  for (const rule of shinsalRulesFor(calendarVersion)) {
     detections.push(...matchRule(rule, pillars, entries));
   }
 
