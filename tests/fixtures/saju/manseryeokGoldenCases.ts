@@ -17,6 +17,17 @@ const solar = (id: string, category: string, date: string, time: string, gender:
 const lunar = (id: string, date: string, leap: boolean, note: string): ManseryeokGoldenCase =>
   ({ id, category: "lunar", calendar: "LUNAR", leap, date, time: "12:00", slot: "", unknown: false, gender: "FEMALE", note });
 
+// Cases to check against a reference app first (CSV column priority, 1 = first). 23시 rule: T02, Z08.
+export const MANSERYEOK_GOLDEN_PRIORITY: Readonly<Record<string, number>> = {
+  T02: 1, Z08: 2, // 23시대: unified and split give different day pillars
+  T03: 3, // 00:20 (solar time 23:50 the day before)
+  C01: 4, // odd hour + 30 min: 127.5°E (-30) and 126.98°E (-32) give different hour pillars
+  Z05: 5, // summer time UTC+10
+  Z03: 6, // standard time UTC+8:30
+  J04: 7, // 입춘 10 minutes after; current and v5 engines disagree on year and month
+  J06: 8, // 월 절입 (입하) 10 minutes after
+};
+
 export const MANSERYEOK_GOLDEN_CASES: readonly ManseryeokGoldenCase[] = [
   solar("G01", "required", "2000-05-11", "17:05", "FEMALE", "필수: 庚辰 辛巳 己巳 壬申"),
   solar("T01", "hour", "2000-05-11", "23:10", "FEMALE", "태양시 22:40 亥"),

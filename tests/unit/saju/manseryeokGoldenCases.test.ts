@@ -4,13 +4,13 @@ import { describe, expect, it } from "vitest";
 import { resolveBirthTimeCalculation } from "@/lib/saju/birthTimePrecision";
 import { DEFAULT_SAJU_TIME_POLICY } from "@/lib/saju/calcPolicy";
 import { lunarToSolarDate } from "@/lib/saju/solarTerms";
-import { MANSERYEOK_GOLDEN_CASES, type ManseryeokGoldenCase } from "../../fixtures/saju/manseryeokGoldenCases";
+import { MANSERYEOK_GOLDEN_CASES, MANSERYEOK_GOLDEN_PRIORITY, type ManseryeokGoldenCase } from "../../fixtures/saju/manseryeokGoldenCases";
 import { LEGACY_ENGINE_GOLDEN_OUTPUT } from "../../fixtures/saju/manseryeokLegacyGoldenOutput";
 
 // docs/manseryeok-golden-cases.csv is generated here (GOLDEN_WRITE=1) and otherwise locked to the engine.
 // The expected column is left for a human to fill from a reference app; it is preserved on rewrite.
 const CSV = resolve(__dirname, "../../../docs/manseryeok-golden-cases.csv");
-const HEADER = ["id", "category", "calendar", "leap", "date", "time", "gender", "solar_date", "utc_offset_min", "correction_min",
+const HEADER = ["id", "priority", "category", "calendar", "leap", "date", "time", "gender", "solar_date", "utc_offset_min", "correction_min",
   "current_engine", "new_unified", "new_split", "expected", "note"] as const;
 
 function run(c: ManseryeokGoldenCase, ziHourRule: "unified" | "split") {
@@ -29,11 +29,11 @@ function run(c: ManseryeokGoldenCase, ziHourRule: "unified" | "split") {
 const cell = (value: string) => /[",\n]/.test(value) ? `"${value.replace(/"/g, '""')}"` : value;
 function parseExpected(): Map<string, string> {
   try {
-    const rows = readFileSync(CSV, "utf8").trim().split("\n").slice(1);
-    return new Map(rows.map((row) => {
-      const cells = row.match(/("([^"]|"")*"|[^,]*)(,|$)/g)!.map((v) => v.replace(/,$/, "").replace(/^"|"$/g, "").replace(/""/g, '"'));
-      return [cells[0], cells[HEADER.indexOf("expected")] ?? ""];
-    }));
+    const [header, ...rows] = readFileSync(CSV, "utf8").trim().split("\n").map((row) =>
+      row.match(/("([^"]|"")*"|[^,]*)(,|$)/g)!.map((v) => v.replace(/,$/, "").replace(/^"|"$/g, "").replace(/""/g, '"')));
+    // The file's own header locates expected, so adding a column never shifts human-entered values.
+    const column = header.indexOf("expected");
+    return new Map(rows.map((cells) => [cells[0], cells[column] ?? ""]));
   } catch {
     return new Map();
   }
@@ -45,7 +45,7 @@ function buildCsv(): string {
     const unified = run(c, "unified");
     const split = run(c, "split");
     const time = c.unknown ? "(미상)" : c.slot ? `(${c.slot})` : c.time;
-    return [c.id, c.category, c.calendar, c.leap ? "Y" : "N", c.date, time, c.gender === "MALE" ? "M" : "F", unified.birthDate,
+    return [c.id, String(MANSERYEOK_GOLDEN_PRIORITY[c.id] ?? ""), c.category, c.calendar, c.leap ? "Y" : "N", c.date, time, c.gender === "MALE" ? "M" : "F", unified.birthDate,
       unified.offset, unified.correction, LEGACY_ENGINE_GOLDEN_OUTPUT[c.id] ?? "", unified.pillars, split.pillars,
       expected.get(c.id) ?? "", c.note].map(cell).join(",");
   });
