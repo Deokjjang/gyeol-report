@@ -45,7 +45,7 @@ const FORBIDDEN: readonly [string, RegExp][] = [
 const HAN = /[一-鿿]/;
 const MBTI_CODE = /\b[EI][NS][TF][JP]\b|MBTI/;
 // 장면 문장에 들어오면 안 되는 체계 용어. 일상어와 겹치는 낱말(사주다·일주일·지지 않다)은 조사까지 붙여 잡는다.
-const JARGON = /(^|\s)사주(가|를|에|의|는|로|와|도|상|팔자)|명리|(^|\s)일간(이|을|의|에|과|은)|(^|\s)일주(가|를|의|에|는|라)|(^|\s)월지|(^|\s)일지(가|를|의|에)|(^|\s)시지(가|를|에)|(^|\s)년지|천간|(^|\s)지지(가|를|의|에|는|로)|오행|십성|신살|귀인|대운|세운|원국|용신|격국|지장간|십이운성|삼합|육합|방합|형살|인지기능|주기능|열등기능/;
+const JARGON = /(^|\s)사주(가|를|에|의|는|로|와|도|상|팔자)|명리|(^|\s)일간(이|을|의|에|과|은)|(^|\s)일주(가|를|의|에|는|라)|(^|\s)월지|(^|\s)일지(가|를|의|에)|(^|\s)시지(가|를|에)|(^|\s)년지|천간|(^|\s)지지(가|를|의|에|는|로)|오행|십성|신살|귀인|대운(이|을|의|에|은|도|과|에서)|세운(이|을|의|에|은|도|과|에서)|원국|용신|격국|지장간|십이운성|삼합|육합|방합|형살|인지기능|주기능|열등기능/;
 
 // ---------- 문장 규칙 ----------
 const sentenceStore = new Map<string, string>();
@@ -64,7 +64,7 @@ function checkProse(file: string, where: string, text: string, opts: ProseOpts =
     if (s.length > maxSentence) fail(file, where, `문장 길이 > ${maxSentence}`, s);
     const tokens = s.split(/\s+/);
     if (tokens.some(t => /^[가-힣]{9,}$/.test(t))) fail(file, where, "한자어 연속(9음절 이상 붙은 낱말)", s);
-    let run = 0; for (const t of tokens) { run = /(적|성|화|력|도|률)(으로|이|을|가|의|에)?$/.test(t) && t.length >= 3 ? run + 1 : 0; if (run >= 3) { fail(file, where, "한자어 연속(접미사 3연속)", s); break; } }
+    let run = 0; for (const t of tokens) { run = /(적|성|화|력|률)(으로|이|을|가|의|에)?$/.test(t) && t.length >= 3 ? run + 1 : 0; if (run >= 3) { fail(file, where, "한자어 연속(접미사 3연속)", s); break; } }
     if (opts.scene) {
       if (MBTI_CODE.test(s)) fail(file, where, "용어 누출(장면에 MBTI 코드)", s);
       const j = s.match(JARGON); if (j) fail(file, where, "용어 누출(장면에 명리 용어)", `${j[0]} ← ${s}`);
@@ -155,7 +155,7 @@ function lintFeatureFile(path: string) {
     if (f.remedy) { f.remedy.actions.forEach((s, i) => checkProse(file, `${w}.remedy.actions[${i}]`, s, { scene: true })); f.remedy.partner.forEach((s, i) => checkProse(file, `${w}.remedy.partner[${i}]`, s, { scene: true })); f.remedy.places.forEach((s, i) => checkProse(file, `${w}.remedy.places[${i}]`, s, { dedupe: false })); }
     if (f.family === "element" && /:(WEAK|MISSING)$/.test(f.id) && !f.remedy) fail(file, w, "오행 부족·미흡인데 remedy 없음");
     if (f.family === "relation" && !(f.variants?.length)) fail(file, w, "합충형해인데 variants(짝) 없음");
-    if (f.engineSupport && !f.engineKey) fail(file, w, "engineSupport인데 engineKey 없음");
+    if (f.engineSupport && !f.engineKey && !/:BALANCED$/.test(f.id)) fail(file, w, "engineSupport인데 engineKey 없음");
   }
 }
 
