@@ -14,32 +14,32 @@
       },
       "scenes": {
         "work": [
-          "혼자 풀리지 않던 일이 상사나 선배 한마디로 풀리는 경험이 반복됩니다. 위기 때 윗사람이 당신 편에 섭니다.",
-          "이직 자리가 공고보다 소개로 먼저 옵니다. '너 생각나서'라는 연락이 남보다 잦습니다."
+          { "text": "혼자 풀리지 않던 일이 상사나 선배 한마디로 풀리는 경험이 반복됩니다. 위기 때 윗사람이 당신 편에 섭니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+          { "text": "이직 자리가 공고보다 소개로 먼저 옵니다. '너 생각나서'라는 연락이 남보다 잦습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } }
         ],
         "money": [
-          "큰 손해를 볼 뻔한 순간, 누군가의 조언 한 줄로 피합니다. 돈이 쏟아지기보다 새는 걸 막아 주는 쪽입니다.",
-          "급전이 필요할 때 손 벌릴 사람이 있습니다. 그리고 당신도 남의 급한 사정에 지갑을 엽니다."
+          { "text": "큰 손해를 볼 뻔한 순간, 누군가의 조언 한 줄로 피합니다. 돈이 쏟아지기보다 새는 걸 막아 주는 쪽입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "급전이 필요할 때 손 벌릴 사람이 있습니다. 그리고 당신도 남의 급한 사정에 지갑을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
-          "좋은 선생님을 만납니다. 학원을 옮기거나 반이 바뀔 때 유난히 잘 가르치는 사람을 만나는 쪽입니다.",
-          "시험 직전 친구가 건넨 요약 노트에서 그 문제가 나오는 식의 일이 몇 번 있었습니다."
+          { "text": "좋은 선생님을 만납니다. 학원을 옮기거나 반이 바뀔 때 유난히 잘 가르치는 사람을 만나는 쪽입니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+          { "text": "시험 직전 친구가 건넨 요약 노트에서 그 문제가 나오는 식의 일이 몇 번 있었습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
-          "사람을 소개받아 만나는 인연이 많습니다. 아는 사람의 아는 사람이 연인이 됩니다.",
-          "상대의 부모나 어른들이 당신을 먼저 좋아합니다. 어른 복이 연애를 받쳐 줍니다."
+          { "text": "사람을 소개받아 만나는 인연이 많습니다. 아는 사람의 아는 사람이 연인이 됩니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
+          { "text": "상대의 부모나 어른들이 당신을 먼저 좋아합니다. 어른 복이 연애를 받쳐 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          "부부 사이에 위기가 와도 양가 어른이나 오랜 지인이 중간에서 다리를 놓아 줍니다.",
-          "배우자를 통해 인맥이 넓어집니다. 배우자의 사람들이 당신의 사람이 됩니다."
+          { "text": "부부 사이에 위기가 와도 양가 어른이나 오랜 지인이 중간에서 다리를 놓아 줍니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "배우자를 통해 인맥이 넓어집니다. 배우자의 사람들이 당신의 사람이 됩니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          "당신 주변에는 늘 한두 사람 '어른'이 있습니다. 나이와 상관없이 당신을 챙기는 사람입니다.",
-          "힘든 날 전화 한 통으로 달려와 주는 친구가 있고, 당신도 그런 친구가 됩니다."
+          { "text": "당신 주변에는 늘 한두 사람 '어른'이 있습니다. 나이와 상관없이 당신을 챙기는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "힘든 날 전화 한 통으로 달려와 주는 친구가 있고, 당신도 그런 친구가 됩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
-          "혼자 막힌 밤에 문득 떠오르는 사람이 있고, 그 사람에게 연락하면 길이 열립니다.",
-          "받은 도움을 혼자 적어 둡니다. 언젠가 갚아야 한다는 마음이 혼자 있는 시간에 무겁게도, 따뜻하게도 옵니다."
+          { "text": "혼자 막힌 밤에 문득 떠오르는 사람이 있고, 그 사람에게 연락하면 길이 열립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "받은 도움을 혼자 적어 둡니다. 언젠가 갚아야 한다는 마음이 혼자 있는 시간에 무겁게도, 따뜻하게도 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [

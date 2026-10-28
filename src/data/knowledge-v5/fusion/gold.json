@@ -9,7 +9,7 @@
       "kind": "resonance",
       "dimension": "directness",
       "why": "현침의 바늘은 틀린 것을 그 자리에서 짚고, ENTJ의 Te는 결론과 책임을 먼저 묻습니다. 둘이 겹치면 지적의 정확도와 속도가 함께 올라가 '맞는 말을 가장 빨리 하는 사람'이 됩니다.",
-      "scene": "발표가 끝나고 박수가 나올 때 '3쪽 숫자 틀렸는데 그거 누가 확인했죠?'라고 먼저 묻습니다. 맞는 말이고, 그래서 더 무섭습니다.",
+      "scene": { "text": "발표가 끝나고 박수가 나올 때 '3쪽 숫자 틀렸는데 그거 누가 확인했죠?'라고 먼저 묻습니다. 맞는 말이고, 그래서 더 무섭습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": { "requires": ["mbtiKnown"], "forbids": ["직업 단정", "상사와의 갈등 사건 단정"] },
       "sources": ["shinsal:HYEONCHIMSAL", "mbti:ENTJ:functionStack", "v4:fusionRules:entj-pressure"]
     },
@@ -20,7 +20,7 @@
       "kind": "conditional",
       "dimension": "introspection",
       "why": "넘치는 물은 생각을 안에 오래 가두고, ISFP의 Fi는 그 깊이를 같이 갑니다. 다만 Se가 몸을 움직여 물을 흘려보내니 겉은 가볍고 속은 무거운 사람이 됩니다. 몸을 쓰는 날은 괜찮고, 집에만 있는 날은 잠깁니다.",
-      "scene": "친구들과 신나게 놀고 집에 돌아와 현관에 앉은 채 한 시간 동안 아까 한 말을 되새깁니다.",
+      "scene": { "text": "친구들과 신나게 놀고 집에 돌아와 현관에 앉은 채 한 시간 동안 아까 한 말을 되새깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": { "requires": ["mbtiKnown"], "forbids": ["우울 단정", "건강 단정"] },
       "sources": ["element:WATER:STRONG", "mbti:ISFP:functionStack", "통용"]
     },
@@ -31,7 +31,7 @@
       "kind": "resonance",
       "dimension": "attentionSeeking",
       "why": "꽃길은 눈길이 먼저 오는 기운이고, 외향형은 받은 눈길에서 에너지를 얻습니다. 둘이 겹치면 사람 앞에서 평소보다 큰 사람이 되고, 혼자 있는 시간이 유난히 길게 느껴집니다.",
-      "scene": "모임이 끝나고 '오늘 네가 제일 재밌었어'라는 말을 듣고 집에 와서, 그 말 하나로 다음 모임을 기다립니다.",
+      "scene": { "text": "모임이 끝나고 '오늘 네가 제일 재밌었어'라는 말을 듣고 집에 와서, 그 말 하나로 다음 모임을 기다립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": { "requires": ["mbtiKnown"], "forbids": ["연애 사건 단정", "외모 평가"] },
       "sources": ["shinsal:DOHWASAL", "v4:fusionKnowledgeBase:fusion_dohwa_entj_public_love", "통용"]
     }

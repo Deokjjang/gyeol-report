@@ -14,33 +14,33 @@
       },
       "scenes": {
         "work": [
-          "신학기 첫 주처럼 새 일 다섯 개를 한꺼번에 벌여 놓고, 팀장이 '이 중 두 개만 해요'라고 잘라 주는 날 오히려 속도가 붙습니다.",
-          "3월 첫 회의에서 연간 계획을 가장 먼저 내밀지만, 마감과 담당자를 못 박아 주는 동료가 옆에 있어야 그 계획이 실제로 굴러갑니다.",
-          "아침 일곱 시 사무실에 먼저 나와 블라인드부터 올리고, 볕 드는 창가 자리에 앉아야 머리가 깨는 사람입니다."
+          { "text": "신학기 첫 주처럼 새 일 다섯 개를 한꺼번에 벌여 놓고, 팀장이 '이 중 두 개만 해요'라고 잘라 주는 날 오히려 속도가 붙습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+          { "text": "3월 첫 회의에서 연간 계획을 가장 먼저 내밀지만, 마감과 담당자를 못 박아 주는 동료가 옆에 있어야 그 계획이 실제로 굴러갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "아침 일곱 시 사무실에 먼저 나와 블라인드부터 올리고, 볕 드는 창가 자리에 앉아야 머리가 깨는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
-          "봄마다 새 적금과 새 가계부 앱을 시작합니다. 자동이체 날짜를 정해 둔 통장만 여름까지 살아남습니다.",
-          "부업 아이디어가 셋쯤 떠오르면 장비부터 사고 싶어지는데, 친구가 '하나만 먼저 해 봐' 하면 그제야 결제를 멈춥니다."
+          { "text": "봄마다 새 적금과 새 가계부 앱을 시작합니다. 자동이체 날짜를 정해 둔 통장만 여름까지 살아남습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "부업 아이디어가 셋쯤 떠오르면 장비부터 사고 싶어지는데, 친구가 '하나만 먼저 해 봐' 하면 그제야 결제를 멈춥니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
-          "새 문제집을 사면 첫 단원은 빽빽하게 푸는데, 진도표에 빨간 줄을 그어 줄 선생님이 있어야 마지막 장까지 갑니다.",
-          "벚꽃 필 무렵 학원 세 곳 상담을 다 받아 놓고, 결국 숙제를 가장 엄하게 내는 곳을 고릅니다."
+          { "text": "새 문제집을 사면 첫 단원은 빽빽하게 푸는데, 진도표에 빨간 줄을 그어 줄 선생님이 있어야 마지막 장까지 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "벚꽃 필 무렵 학원 세 곳 상담을 다 받아 놓고, 결국 숙제를 가장 엄하게 내는 곳을 고릅니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } }
         ],
         "love": [
-          "봄바람 불 때 소개팅 제안이 오면 거의 거절하지 않습니다. 대신 마음이 정해지면 다른 연락은 스스로 정리합니다.",
-          "연인이 '그건 좀 아닌 것 같아'라고 분명히 말해 줄 때 오히려 믿음이 생깁니다. 뭐든 좋다는 사람에겐 금방 심심해집니다."
+          { "text": "봄바람 불 때 소개팅 제안이 오면 거의 거절하지 않습니다. 대신 마음이 정해지면 다른 연락은 스스로 정리합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "연인이 '그건 좀 아닌 것 같아'라고 분명히 말해 줄 때 오히려 믿음이 생깁니다. 뭐든 좋다는 사람에겐 금방 심심해집니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          "이사, 이직, 베란다 텃밭까지 새 계획을 한 달에 세 개씩 꺼내면, 배우자가 '올해는 이거 하나'라고 골라 줍니다.",
-          "주말 아침 베란다 창을 활짝 열고 볕 드는 식탁에서 밥을 먹어야 집이 집 같다고 느낍니다."
+          { "text": "이사, 이직, 베란다 텃밭까지 새 계획을 한 달에 세 개씩 꺼내면, 배우자가 '올해는 이거 하나'라고 골라 줍니다.", "requires": { "relationship": "married", "children": "any", "job": "employed" } },
+          { "text": "주말 아침 베란다 창을 활짝 열고 볕 드는 식탁에서 밥을 먹어야 집이 집 같다고 느낍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          "봄마다 새 모임 단톡방을 하나씩 만들지만, 회비를 걷어 줄 꼼꼼한 친구가 총무를 맡은 방만 오래 갑니다.",
-          "후배가 '선배는 하고 싶은 게 너무 많아요'라고 웃으면, 그 말이 칭찬인지 경고인지 한참 생각합니다."
+          { "text": "봄마다 새 모임 단톡방을 하나씩 만들지만, 회비를 걷어 줄 꼼꼼한 친구가 총무를 맡은 방만 오래 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "후배가 '선배는 하고 싶은 게 너무 많아요'라고 웃으면, 그 말이 칭찬인지 경고인지 한참 생각합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
-          "혼자 있는 봄밤, 휴대폰 메모장에 하고 싶은 일을 스무 줄 적고 그중 절반에 줄을 긋는 시간이 가장 개운합니다.",
-          "환절기 아침 쌀쌀한 공기에 기운이 처지면 커튼을 걷고 햇볕 앞에 십 분 서 있다가 하루를 시작합니다."
+          { "text": "혼자 있는 봄밤, 휴대폰 메모장에 하고 싶은 일을 스무 줄 적고 그중 절반에 줄을 긋는 시간이 가장 개운합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "환절기 아침 쌀쌀한 공기에 기운이 처지면 커튼을 걷고 햇볕 앞에 십 분 서 있다가 하루를 시작합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -74,7 +74,8 @@
         { "target": "ISTJ", "kind": "tension", "why": "하나를 끝내고 다음으로 가는 Si-Te에게 가지 많은 봄 나무는 어수선해 보입니다" },
         { "target": "Si", "kind": "tension", "why": "검증된 순서를 지키려는 Si가 한꺼번에 벌이는 습관에 브레이크를 겁니다" }
       ],
-      "engineSupport": false,
+      "engineSupport": true,
+      "engineKey": "甲:spring",
       "sources": ["통용(조후론)", "classic:sm1:論五行生尅", "foundation:day_master:甲", "foundation:element:wood", "foundation:element:metal"],
       "confidence": "통용"
     },
@@ -90,33 +91,33 @@
       },
       "scenes": {
         "work": [
-          "프로젝트에 불이 붙으면 점심도 거르고 밤 열한 시까지 달리다, 금요일 저녁엔 말 한마디 할 기운도 남지 않습니다.",
-          "회의 자료는 화려하게 꽉 채우는데, 숫자를 다시 확인해 줄 차분한 동료가 옆에 있어야 실수가 줄어듭니다.",
-          "에어컨 고장 난 여름 사무실에서 남들이 늘어질 때 혼자 '일단 끝내고 쉬죠' 하고 몰아치는 사람입니다."
+          { "text": "프로젝트에 불이 붙으면 점심도 거르고 밤 열한 시까지 달리다, 금요일 저녁엔 말 한마디 할 기운도 남지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "회의 자료는 화려하게 꽉 채우는데, 숫자를 다시 확인해 줄 차분한 동료가 옆에 있어야 실수가 줄어듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "에어컨 고장 난 여름 사무실에서 남들이 늘어질 때 혼자 '일단 끝내고 쉬죠' 하고 몰아치는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
-          "일이 잘 풀린 주에는 팀 아이스커피를 열 잔씩 쏘고, 월말 카드값을 보고 얼음물을 벌컥벌컥 들이켭니다.",
-          "벌이가 늘수록 쓰는 속도도 같이 빨라집니다. 월급날 일부를 손 안 닿는 통장으로 옮겨 둬야 그제야 돈이 고입니다."
+          { "text": "일이 잘 풀린 주에는 팀 아이스커피를 열 잔씩 쏘고, 월말 카드값을 보고 얼음물을 벌컥벌컥 들이켭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "벌이가 늘수록 쓰는 속도도 같이 빨라집니다. 월급날 일부를 손 안 닿는 통장으로 옮겨 둬야 그제야 돈이 고입니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } }
         ],
         "study": [
-          "열 받으면 하루에 문제집 한 권을 끝내지만 이틀 뒤엔 책을 펴기도 싫어집니다. 하루 두 시간씩 쪼개야 한 학기를 버팁니다.",
-          "시원한 도서관 지하 열람실에 물병 하나 들고 들어가야 머리가 식고 외운 것이 남습니다."
+          { "text": "열 받으면 하루에 문제집 한 권을 끝내지만 이틀 뒤엔 책을 펴기도 싫어집니다. 하루 두 시간씩 쪼개야 한 학기를 버팁니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+          { "text": "시원한 도서관 지하 열람실에 물병 하나 들고 들어가야 머리가 식고 외운 것이 남습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
-          "좋아하면 첫 달에 모든 걸 쏟습니다. 매일 만나고 매일 선물하다가 석 달째쯤 스스로 지쳐 연락이 뜸해집니다.",
-          "말없이 들어 주고 '오늘은 그냥 쉬자'고 말해 주는 사람 옆에서 비로소 숨이 고릅니다."
+          { "text": "좋아하면 첫 달에 모든 걸 쏟습니다. 매일 만나고 매일 선물하다가 석 달째쯤 스스로 지쳐 연락이 뜸해집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "말없이 들어 주고 '오늘은 그냥 쉬자'고 말해 주는 사람 옆에서 비로소 숨이 고릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          "집안일도 한번 시작하면 냉장고 청소까지 몰아서 해 버립니다. 그날 밤 배우자가 발을 주물러 줘야 다음 주가 굴러갑니다.",
-          "다툼이 붙으면 말이 빠르고 뜨거워집니다. 배우자가 찬물 한 잔 건네며 '내일 얘기하자' 하면 금세 식습니다."
+          { "text": "집안일도 한번 시작하면 냉장고 청소까지 몰아서 해 버립니다. 그날 밤 배우자가 발을 주물러 줘야 다음 주가 굴러갑니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "다툼이 붙으면 말이 빠르고 뜨거워집니다. 배우자가 찬물 한 잔 건네며 '내일 얘기하자' 하면 금세 식습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          "여름휴가 계획을 친구들 대신 다 짜고 숙소 예약까지 끝내 놓지만, 정작 여행 둘째 날엔 혼자 숙소에서 낮잠만 잡니다.",
-          "사람을 잘 챙기다 보니 부탁이 몰려옵니다. 셋 중 하나는 거절해야 자기 그늘이 남습니다."
+          { "text": "여름휴가 계획을 친구들 대신 다 짜고 숙소 예약까지 끝내 놓지만, 정작 여행 둘째 날엔 혼자 숙소에서 낮잠만 잡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "사람을 잘 챙기다 보니 부탁이 몰려옵니다. 셋 중 하나는 거절해야 자기 그늘이 남습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
-          "혼자 있는 휴일엔 샤워를 오래 하고 선풍기 앞에 누워 아무것도 안 해야 다시 충전됩니다.",
-          "바쁘게 산 한 주가 끝나면 강가나 수영장처럼 물이 보이는 곳에 가서야 머릿속이 조용해집니다."
+          { "text": "혼자 있는 휴일엔 샤워를 오래 하고 선풍기 앞에 누워 아무것도 안 해야 다시 충전됩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "바쁘게 산 한 주가 끝나면 강가나 수영장처럼 물이 보이는 곳에 가서야 머릿속이 조용해집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -149,7 +150,8 @@
         { "target": "INTP", "kind": "tension", "why": "한 발 떨어져 분석하는 Ti와 뜨겁게 몰아치는 방식이 속도에서 부딪칩니다" },
         { "target": "Si", "kind": "tension", "why": "같은 속도를 오래 지키는 Si에게 몰아치고 쓰러지는 리듬은 불안해 보입니다" }
       ],
-      "engineSupport": false,
+      "engineSupport": true,
+      "engineKey": "甲:summer",
       "sources": ["통용(조후론)", "classic:sm1:論五行生尅", "foundation:day_master:甲", "foundation:element:water"],
       "confidence": "통용"
     },
@@ -165,33 +167,33 @@
       },
       "scenes": {
         "work": [
-          "평가 시즌에 빨간 펜 자국이 가득한 기획서를 돌려받으면, 그날 밤 고쳐서 다음 날 더 날이 선 버전으로 다시 올립니다.",
-          "느슨한 팀보다 기준이 엄한 상사 밑에서 실력이 붙습니다. 혼나면서도 '그래서 어떻게 고치면 돼요?'를 묻습니다.",
-          "회의에서 길게 토론하기보다 시안 한 장을 만들어 와서 '이걸로 보죠' 하고 책상에 올려놓는 사람입니다."
+          { "text": "평가 시즌에 빨간 펜 자국이 가득한 기획서를 돌려받으면, 그날 밤 고쳐서 다음 날 더 날이 선 버전으로 다시 올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "느슨한 팀보다 기준이 엄한 상사 밑에서 실력이 붙습니다. 혼나면서도 '그래서 어떻게 고치면 돼요?'를 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+          { "text": "회의에서 길게 토론하기보다 시안 한 장을 만들어 와서 '이걸로 보죠' 하고 책상에 올려놓는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
-          "추석 상여금이 들어오면 쓰기 전에 계산기를 꺼내 고정비부터 떼어 둡니다. 남은 돈만 '내 몫'으로 봅니다.",
-          "돈 되는 기술에 돈을 씁니다. 취미 장비보다 자격증 강의나 공구 세트 같은 데서 지갑이 열립니다."
+          { "text": "추석 상여금이 들어오면 쓰기 전에 계산기를 꺼내 고정비부터 떼어 둡니다. 남은 돈만 '내 몫'으로 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "돈 되는 기술에 돈을 씁니다. 취미 장비보다 자격증 강의나 공구 세트 같은 데서 지갑이 열립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
-          "모의고사 오답 노트를 빨간색과 파란색으로 나눠 정리하고, 틀린 문제를 일주일 뒤에 다시 풀어야 마음이 놓입니다.",
-          "칭찬만 하는 과외 선생님보다 '여기 틀렸어' 하고 짚어 주는 선생님 밑에서 성적이 오릅니다."
+          { "text": "모의고사 오답 노트를 빨간색과 파란색으로 나눠 정리하고, 틀린 문제를 일주일 뒤에 다시 풀어야 마음이 놓입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "칭찬만 하는 과외 선생님보다 '여기 틀렸어' 하고 짚어 주는 선생님 밑에서 성적이 오릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
-          "좋아해도 쉽게 말로 꺼내지 않습니다. 대신 상대 집의 삐걱대는 의자 다리를 말없이 고쳐 두고 가는 사람입니다.",
-          "상대가 서운한 점을 또박또박 말해 주면 상처받기보다 메모해 두고 다음 만남에 고쳐 옵니다."
+          { "text": "좋아해도 쉽게 말로 꺼내지 않습니다. 대신 상대 집의 삐걱대는 의자 다리를 말없이 고쳐 두고 가는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "상대가 서운한 점을 또박또박 말해 주면 상처받기보다 메모해 두고 다음 만남에 고쳐 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          "집 안에 덜컹거리는 문이 있으면 주말에 직접 경첩을 갈아 끼웁니다. 집을 손보는 일로 애정을 보여 줍니다.",
-          "배우자의 날카로운 한마디에 그 자리에선 굳어도, 며칠 뒤 행동으로 고쳐 놓아 상대를 놀라게 합니다."
+          { "text": "집 안에 덜컹거리는 문이 있으면 주말에 직접 경첩을 갈아 끼웁니다. 집을 손보는 일로 애정을 보여 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "배우자의 날카로운 한마디에 그 자리에선 굳어도, 며칠 뒤 행동으로 고쳐 놓아 상대를 놀라게 합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          "친구가 부탁한 자기소개서를 봐 주면 문장 하나하나 고쳐 돌려줍니다. 고맙다는 말 반, 무섭다는 말 반을 듣습니다.",
-          "새로 만난 사람과는 한동안 거리를 둡니다. 함께 일을 한 번 끝내 본 뒤에야 마음을 엽니다."
+          { "text": "친구가 부탁한 자기소개서를 봐 주면 문장 하나하나 고쳐 돌려줍니다. 고맙다는 말 반, 무섭다는 말 반을 듣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "새로 만난 사람과는 한동안 거리를 둡니다. 함께 일을 한 번 끝내 본 뒤에야 마음을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
-          "선선한 가을 저녁 혼자 산책하며 올해 잘라 낼 습관 하나를 정합니다. 버린 만큼 가벼워진다고 믿습니다.",
-          "남에게 들은 쓴소리를 혼자 있을 때 다시 꺼내 보고, 맞는 부분만 골라 일기장에 옮겨 적습니다."
+          { "text": "선선한 가을 저녁 혼자 산책하며 올해 잘라 낼 습관 하나를 정합니다. 버린 만큼 가벼워진다고 믿습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "남에게 들은 쓴소리를 혼자 있을 때 다시 꺼내 보고, 맞는 부분만 골라 일기장에 옮겨 적습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -224,7 +226,8 @@
         { "target": "ENFP", "kind": "tension", "why": "가능성을 넓게 여는 Ne와 잘라 내며 다듬는 가을 나무가 방향에서 엇갈립니다" },
         { "target": "Fe", "kind": "tension", "why": "분위기부터 맞추는 Fe에게 쓴소리를 반기는 태도는 차갑게 비칩니다" }
       ],
-      "engineSupport": false,
+      "engineSupport": true,
+      "engineKey": "甲:autumn",
       "sources": ["통용(조후론)", "classic:sm1:論五行生尅", "foundation:day_master:甲", "foundation:element:fire", "foundation:element:metal"],
       "confidence": "통용"
     },
@@ -240,33 +243,33 @@
       },
       "scenes": {
         "work": [
-          "회사에 칼바람이 불어 다들 이직 사이트를 볼 때, 자기 자리를 지키며 맡은 일을 끝까지 마무리하는 사람입니다.",
-          "기획안을 석 달째 다듬기만 하다가, 팀장이 '좋은데 이제 내 보자'고 등을 데워 줘야 결재 버튼을 누릅니다.",
-          "분위기가 얼어붙은 회의실에서 누가 먼저 농담을 던져 주면, 그제야 준비해 둔 의견을 꺼냅니다."
+          { "text": "회사에 칼바람이 불어 다들 이직 사이트를 볼 때, 자기 자리를 지키며 맡은 일을 끝까지 마무리하는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+          { "text": "기획안을 석 달째 다듬기만 하다가, 팀장이 '좋은데 이제 내 보자'고 등을 데워 줘야 결재 버튼을 누릅니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+          { "text": "분위기가 얼어붙은 회의실에서 누가 먼저 농담을 던져 주면, 그제야 준비해 둔 의견을 꺼냅니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } }
         ],
         "money": [
-          "겨울을 나듯 비상금을 넉넉히 쟁여 둡니다. 통장 잔고가 석 달 생활비 아래로 내려가면 잠이 얕아집니다.",
-          "써야 할 때도 '혹시 몰라'가 먼저 나와 미룹니다. 믿는 사람이 '이건 써도 돼'라고 해 줘야 지갑을 엽니다."
+          { "text": "겨울을 나듯 비상금을 넉넉히 쟁여 둡니다. 통장 잔고가 석 달 생활비 아래로 내려가면 잠이 얕아집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "써야 할 때도 '혹시 몰라'가 먼저 나와 미룹니다. 믿는 사람이 '이건 써도 돼'라고 해 줘야 지갑을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
-          "겨울방학 내내 도서관에서 개념서를 세 번 읽습니다. 문제를 풀어 볼 용기는 늦게 와서 모의고사 직전에 몰립니다.",
-          "혼자 공부할 땐 생각만 길어지다가, 친구와 따뜻한 카페에서 말로 설명하는 순간 머리가 풀립니다."
+          { "text": "겨울방학 내내 도서관에서 개념서를 세 번 읽습니다. 문제를 풀어 볼 용기는 늦게 와서 모의고사 직전에 몰립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "혼자 공부할 땐 생각만 길어지다가, 친구와 따뜻한 카페에서 말로 설명하는 순간 머리가 풀립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
-          "마음이 데워지기까지 오래 걸립니다. 상대가 서너 번 먼저 연락해 줘야 '사실 나도 좋았어'를 꺼냅니다.",
-          "추운 날 상대가 건넨 장갑 한 켤레를 몇 년 동안 버리지 않고 겨울마다 꺼내 낍니다."
+          { "text": "마음이 데워지기까지 오래 걸립니다. 상대가 서너 번 먼저 연락해 줘야 '사실 나도 좋았어'를 꺼냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "추운 날 상대가 건넨 장갑 한 켤레를 몇 년 동안 버리지 않고 겨울마다 꺼내 낍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          "보일러를 켜고 전기장판을 깔아 둔 뒤에야 배우자와 속 이야기를 시작합니다. 집이 따뜻해야 입이 열립니다.",
-          "힘든 시기에도 집안을 받치는 기둥 노릇을 묵묵히 하지만, 배우자가 '고생했어' 해 줘야 언 마음이 풀립니다."
+          { "text": "보일러를 켜고 전기장판을 깔아 둔 뒤에야 배우자와 속 이야기를 시작합니다. 집이 따뜻해야 입이 열립니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "힘든 시기에도 집안을 받치는 기둥 노릇을 묵묵히 하지만, 배우자가 '고생했어' 해 줘야 언 마음이 풀립니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          "오래된 친구 몇 명과만 깊이 지냅니다. 새 모임에선 한겨울 첫 만남처럼 외투를 벗기까지 시간이 걸립니다.",
-          "어려운 일을 당한 친구 곁에 가장 오래 남는 사람입니다. 말은 적어도 밤새 옆자리를 지켜 줍니다."
+          { "text": "오래된 친구 몇 명과만 깊이 지냅니다. 새 모임에선 한겨울 첫 만남처럼 외투를 벗기까지 시간이 걸립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "어려운 일을 당한 친구 곁에 가장 오래 남는 사람입니다. 말은 적어도 밤새 옆자리를 지켜 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
-          "혼자 있는 겨울밤 이불을 덮고 앉아 내년 계획을 공책에 쓰고 또 고칩니다. 머릿속엔 이미 봄이 와 있습니다.",
-          "볕이 짧은 계절엔 기운이 눈에 띄게 줄어서, 점심시간에 일부러 해 드는 길로 산책을 나갑니다."
+          { "text": "혼자 있는 겨울밤 이불을 덮고 앉아 내년 계획을 공책에 쓰고 또 고칩니다. 머릿속엔 이미 봄이 와 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "볕이 짧은 계절엔 기운이 눈에 띄게 줄어서, 점심시간에 일부러 해 드는 길로 산책을 나갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -300,7 +303,8 @@
         { "target": "ESTP", "kind": "tension", "why": "바로 뛰어드는 Se에게 오래 데워져야 움직이는 나무는 느려 보입니다" },
         { "target": "Ne", "kind": "tension", "why": "가능성을 빠르게 여는 Ne와 하나를 오래 준비하는 습관이 속도에서 어긋납니다" }
       ],
-      "engineSupport": false,
+      "engineSupport": true,
+      "engineKey": "甲:winter",
       "sources": ["통용(조후론)", "classic:sm1:論五行生尅", "foundation:day_master:甲", "foundation:element:fire"],
       "confidence": "학파차이"
     },
@@ -316,33 +320,33 @@
       },
       "scenes": {
         "work": [
-          "칭찬 한마디와 구체적인 조언 한마디를 같이 들은 날, 그 주 내내 일이 술술 풀립니다. 둘 중 하나만 오면 금세 시듭니다.",
-          "새 판이 짜일 때 가장 빨리 뿌리를 내립니다. 입사 첫 달에 벌써 옆 팀 회식 자리까지 초대받습니다.",
-          "혼자 맡은 일보다 밝은 선배 한 명과 짝을 이룬 일에서 결과물이 두 배로 좋아집니다."
+          { "text": "칭찬 한마디와 구체적인 조언 한마디를 같이 들은 날, 그 주 내내 일이 술술 풀립니다. 둘 중 하나만 오면 금세 시듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "새 판이 짜일 때 가장 빨리 뿌리를 내립니다. 입사 첫 달에 벌써 옆 팀 회식 자리까지 초대받습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+          { "text": "혼자 맡은 일보다 밝은 선배 한 명과 짝을 이룬 일에서 결과물이 두 배로 좋아집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
-          "봄옷 세일 문자에 약합니다. 꽃무늬 셔츠를 장바구니에 담았다가 통장 관리 잘하는 친구에게 사진을 보내 물어본 뒤 삽니다.",
-          "돈을 모을 때도 응원이 필요합니다. 친구와 같이 적금 챌린지를 하면 혼자보다 훨씬 오래 갑니다."
+          { "text": "봄옷 세일 문자에 약합니다. 꽃무늬 셔츠를 장바구니에 담았다가 통장 관리 잘하는 친구에게 사진을 보내 물어본 뒤 삽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "돈을 모을 때도 응원이 필요합니다. 친구와 같이 적금 챌린지를 하면 혼자보다 훨씬 오래 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
-          "스터디 카페 창가 자리에 작은 화분 하나 놓고 공부하면 같은 시간에도 더 많이 외웁니다.",
-          "선생님이 '많이 늘었네' 한마디만 해 줘도 다음 숙제를 두 배로 해 갑니다."
+          { "text": "스터디 카페 창가 자리에 작은 화분 하나 놓고 공부하면 같은 시간에도 더 많이 외웁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "선생님이 '많이 늘었네' 한마디만 해 줘도 다음 숙제를 두 배로 해 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
-          "벚꽃길 산책 한 번에 마음이 열립니다. 상대가 사진을 찍어 주며 웃어 주면 그날 바로 다음 약속을 잡습니다.",
-          "연인이 바빠 연락이 뜸해지면 목마른 꽃처럼 시무룩해집니다. 짧은 안부 하나에 금세 다시 살아납니다."
+          { "text": "벚꽃길 산책 한 번에 마음이 열립니다. 상대가 사진을 찍어 주며 웃어 주면 그날 바로 다음 약속을 잡습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "연인이 바빠 연락이 뜸해지면 목마른 꽃처럼 시무룩해집니다. 짧은 안부 하나에 금세 다시 살아납니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          "베란다를 작은 정원으로 꾸미고, 주말 아침 배우자와 나란히 물을 주며 이야기하는 시간을 가장 아낍니다.",
-          "배우자가 웃어 주는 날과 무심한 날의 얼굴빛 차이가 큽니다. 집안 공기를 온몸으로 받아들이는 사람입니다."
+          { "text": "베란다를 작은 정원으로 꾸미고, 주말 아침 배우자와 나란히 물을 주며 이야기하는 시간을 가장 아낍니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "배우자가 웃어 주는 날과 무심한 날의 얼굴빛 차이가 큽니다. 집안 공기를 온몸으로 받아들이는 사람입니다.", "requires": { "relationship": "married", "children": "has", "job": "any" } }
         ],
         "relationships": [
-          "모임에서 분위기 좋은 사람 옆에 자연스럽게 자리를 잡고, 그 사람의 친구들과도 금세 가까워집니다.",
-          "친구에게 축하할 일이 생기면 가장 먼저 꽃 한 다발을 사 들고 찾아갑니다."
+          { "text": "모임에서 분위기 좋은 사람 옆에 자연스럽게 자리를 잡고, 그 사람의 친구들과도 금세 가까워집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "친구에게 축하할 일이 생기면 가장 먼저 꽃 한 다발을 사 들고 찾아갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
-          "혼자 있는 날엔 창문을 열어 봄바람을 들이고, 좋아하는 노래를 틀어 놓고 옷장을 계절에 맞게 바꿉니다.",
-          "아무에게도 연락이 없는 조용한 봄날 오후엔 괜히 마음이 가라앉아, 작년 꽃놀이 사진을 넘겨 봅니다."
+          { "text": "혼자 있는 날엔 창문을 열어 봄바람을 들이고, 좋아하는 노래를 틀어 놓고 옷장을 계절에 맞게 바꿉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "아무에게도 연락이 없는 조용한 봄날 오후엔 괜히 마음이 가라앉아, 작년 꽃놀이 사진을 넘겨 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -375,7 +379,8 @@
         { "target": "INTP", "kind": "tension", "why": "평가와 상관없이 자기 논리로 가는 Ti에게 칭찬 따라 피는 꽃은 낯섭니다" },
         { "target": "Te", "kind": "tension", "why": "결과만 짧게 묻는 Te의 말투가 볕을 기다리는 꽃을 쉽게 시들게 합니다" }
       ],
-      "engineSupport": false,
+      "engineSupport": true,
+      "engineKey": "乙:spring",
       "sources": ["통용(조후론)", "classic:sm1:論五行生尅", "foundation:day_master:乙", "foundation:element:fire", "foundation:element:water"],
       "confidence": "통용"
     },
@@ -391,33 +396,33 @@
       },
       "scenes": {
         "work": [
-          "축제나 행사처럼 사람 많고 뜨거운 현장에서 가장 반짝입니다. 무대 뒤 정리까지 웃으며 해내고 집에 가면 그대로 쓰러집니다.",
-          "평범한 보고서도 보기 좋게 꾸미는 손이 있어서, 발표 자료 디자인은 늘 당신에게 넘어옵니다.",
-          "바쁜 철엔 점심을 거르며 일하다 오후 서너 시에 말수가 뚝 줄어듭니다. 시원한 음료 한 잔이 있어야 다시 웃습니다."
+          { "text": "축제나 행사처럼 사람 많고 뜨거운 현장에서 가장 반짝입니다. 무대 뒤 정리까지 웃으며 해내고 집에 가면 그대로 쓰러집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "평범한 보고서도 보기 좋게 꾸미는 손이 있어서, 발표 자료 디자인은 늘 당신에게 넘어옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "바쁜 철엔 점심을 거르며 일하다 오후 서너 시에 말수가 뚝 줄어듭니다. 시원한 음료 한 잔이 있어야 다시 웃습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
-          "예쁜 것에 돈이 잘 나갑니다. 여름 원피스, 향수, 카페 신메뉴에 쓰고 나서 월말에 영수증을 모아 보며 한숨을 쉽니다.",
-          "기분이 들뜬 날 담은 물건은 하루 지나 장바구니에서 다시 봅니다. 그 하루가 통장을 지킵니다."
+          { "text": "예쁜 것에 돈이 잘 나갑니다. 여름 원피스, 향수, 카페 신메뉴에 쓰고 나서 월말에 영수증을 모아 보며 한숨을 쉽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "기분이 들뜬 날 담은 물건은 하루 지나 장바구니에서 다시 봅니다. 그 하루가 통장을 지킵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
-          "과목의 재미있는 부분만 반짝이게 정리한 노트를 만들어, 친구들이 시험 전에 빌려 갑니다.",
-          "더운 오후 공부는 진도가 안 나갑니다. 새벽이나 해 진 뒤 선선할 때 두 배로 외웁니다."
+          { "text": "과목의 재미있는 부분만 반짝이게 정리한 노트를 만들어, 친구들이 시험 전에 빌려 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "더운 오후 공부는 진도가 안 나갑니다. 새벽이나 해 진 뒤 선선할 때 두 배로 외웁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
-          "여름 연애에 강합니다. 바닷가 사진, 불꽃놀이 약속처럼 반짝이는 순간을 만드는 데 진심입니다.",
-          "애정 표현을 아끼지 않는 만큼 상대의 미지근한 반응에 쉽게 시듭니다. '오늘 예쁘다' 한마디가 물 한 바가지입니다."
+          { "text": "여름 연애에 강합니다. 바닷가 사진, 불꽃놀이 약속처럼 반짝이는 순간을 만드는 데 진심입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "애정 표현을 아끼지 않는 만큼 상대의 미지근한 반응에 쉽게 시듭니다. '오늘 예쁘다' 한마디가 물 한 바가지입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          "계절마다 커튼과 쿠션 커버를 바꾸고, 퇴근한 배우자를 붙잡고 '어때?'부터 묻습니다.",
-          "더위와 피로가 겹친 날엔 작은 말에도 날카로워집니다. 배우자가 시원한 수박 한 쪽을 내밀면 금세 풀립니다."
+          { "text": "계절마다 커튼과 쿠션 커버를 바꾸고, 퇴근한 배우자를 붙잡고 '어때?'부터 묻습니다.", "requires": { "relationship": "married", "children": "any", "job": "employed" } },
+          { "text": "더위와 피로가 겹친 날엔 작은 말에도 날카로워집니다. 배우자가 시원한 수박 한 쪽을 내밀면 금세 풀립니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          "모임 사진을 가장 예쁘게 찍고 보정해서 단톡방에 올리는 사람입니다. 덕분에 다들 다음 약속을 잡습니다.",
-          "여기저기 불려 다니다 지치면 며칠 연락을 끊고 혼자만의 그늘로 숨습니다."
+          { "text": "모임 사진을 가장 예쁘게 찍고 보정해서 단톡방에 올리는 사람입니다. 덕분에 다들 다음 약속을 잡습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "여기저기 불려 다니다 지치면 며칠 연락을 끊고 혼자만의 그늘로 숨습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
-          "혼자 있는 여름밤, 찬물 샤워 뒤 얼음 띄운 차를 마시며 낮에 들은 말들을 하나씩 식힙니다.",
-          "기운이 바닥나면 바닷가나 계곡 사진을 찾아보며 다음 휴가를 그리는 것만으로도 조금 살아납니다."
+          { "text": "혼자 있는 여름밤, 찬물 샤워 뒤 얼음 띄운 차를 마시며 낮에 들은 말들을 하나씩 식힙니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "기운이 바닥나면 바닷가나 계곡 사진을 찾아보며 다음 휴가를 그리는 것만으로도 조금 살아납니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -450,7 +455,8 @@
         { "target": "ISTJ", "kind": "tension", "why": "같은 속도를 지키는 Si-Te에게 몰아서 피고 시드는 리듬은 불안해 보입니다" },
         { "target": "Ni", "kind": "tension", "why": "먼 그림을 오래 품는 Ni와 오늘의 반짝임에 쓰는 기운이 엇갈립니다" }
       ],
-      "engineSupport": false,
+      "engineSupport": true,
+      "engineKey": "乙:summer",
       "sources": ["통용(조후론)", "classic:sm1:論五行生尅", "foundation:day_master:乙", "foundation:element:water"],
       "confidence": "통용"
     },
@@ -466,33 +472,33 @@
       },
       "scenes": {
         "work": [
-          "날카로운 피드백이 오간 회의가 끝나면 화장실에서 숨을 한 번 고르고, 돌아와서는 지적받은 부분부터 조용히 고칩니다.",
-          "남들이 다 지친 연말 마감 시즌에 오히려 집중이 올라와, 마지막 주에 가장 깔끔한 결과물을 냅니다.",
-          "깐깐한 부장과 신입 사이에서 말을 부드럽게 옮겨 주며, 딱딱한 조직의 온도를 맞추는 역할을 맡습니다."
+          { "text": "날카로운 피드백이 오간 회의가 끝나면 화장실에서 숨을 한 번 고르고, 돌아와서는 지적받은 부분부터 조용히 고칩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "남들이 다 지친 연말 마감 시즌에 오히려 집중이 올라와, 마지막 주에 가장 깔끔한 결과물을 냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "깐깐한 부장과 신입 사이에서 말을 부드럽게 옮겨 주며, 딱딱한 조직의 온도를 맞추는 역할을 맡습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } }
         ],
         "money": [
-          "가을 정기 세일까지 기다렸다가 필요한 것만 삽니다. 장바구니에 석 달 담아 둔 코트를 그때 결제합니다.",
-          "돈 문제로 누가 날 선 말을 하면 액수보다 말투가 오래 남아, 그 사람과의 거래를 조용히 줄입니다."
+          { "text": "가을 정기 세일까지 기다렸다가 필요한 것만 삽니다. 장바구니에 석 달 담아 둔 코트를 그때 결제합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "돈 문제로 누가 날 선 말을 하면 액수보다 말투가 오래 남아, 그 사람과의 거래를 조용히 줄입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
-          "남들보다 늦게 시동이 걸리지만 한번 이해한 내용은 오래 갑니다. 학기 말로 갈수록 성적이 오르는 쪽입니다.",
-          "다정하게 설명해 주는 선생님 앞에서는 질문이 많아지고, 무섭게 몰아치는 수업에서는 입을 닫습니다."
+          { "text": "남들보다 늦게 시동이 걸리지만 한번 이해한 내용은 오래 갑니다. 학기 말로 갈수록 성적이 오르는 쪽입니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+          { "text": "다정하게 설명해 주는 선생님 앞에서는 질문이 많아지고, 무섭게 몰아치는 수업에서는 입을 닫습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
-          "쉽게 반하지 않지만, 쌀쌀한 날 상대가 따뜻한 캔커피를 건네는 장면 하나로 마음이 기웁니다.",
-          "연인의 한마디가 서늘하면 그날 밤 그 말을 몇 번이고 다시 떠올리다, 다음 날 아무렇지 않은 척 웃습니다."
+          { "text": "쉽게 반하지 않지만, 쌀쌀한 날 상대가 따뜻한 캔커피를 건네는 장면 하나로 마음이 기웁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "연인의 한마디가 서늘하면 그날 밤 그 말을 몇 번이고 다시 떠올리다, 다음 날 아무렇지 않은 척 웃습니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          "배우자의 말투가 차가워지는 걸 가장 먼저 알아챕니다. 반찬 하나를 더 놓으며 슬쩍 분위기를 데우려 합니다.",
-          "기념일엔 큰 이벤트보다 처음 만난 가을 길을 다시 걸으며 그때 이야기를 꺼냅니다."
+          { "text": "배우자의 말투가 차가워지는 걸 가장 먼저 알아챕니다. 반찬 하나를 더 놓으며 슬쩍 분위기를 데우려 합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "기념일엔 큰 이벤트보다 처음 만난 가을 길을 다시 걸으며 그때 이야기를 꺼냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          "모임에서 누가 상처 주는 농담을 하면 웃어넘기면서도, 상처받은 사람에게 따로 메시지를 보냅니다.",
-          "친구 수는 줄어도 남는 친구는 깊어집니다. 십 년 된 친구들과 매년 가을 같은 식당에서 만납니다."
+          { "text": "모임에서 누가 상처 주는 농담을 하면 웃어넘기면서도, 상처받은 사람에게 따로 메시지를 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "친구 수는 줄어도 남는 친구는 깊어집니다. 십 년 된 친구들과 매년 가을 같은 식당에서 만납니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
-          "혼자 있는 가을 저녁 창가에서 따뜻한 차를 마시며 낮에 들은 쓴소리를 천천히 소화합니다.",
-          "찬바람이 불기 시작하면 이유 없이 마음이 가라앉아, 좋아하는 담요와 노래로 스스로를 감쌉니다."
+          { "text": "혼자 있는 가을 저녁 창가에서 따뜻한 차를 마시며 낮에 들은 쓴소리를 천천히 소화합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "찬바람이 불기 시작하면 이유 없이 마음이 가라앉아, 좋아하는 담요와 노래로 스스로를 감쌉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -525,7 +531,8 @@
         { "target": "ENTJ", "kind": "tension", "why": "곧장 결론과 책임을 따지는 Te-Ni의 말투가 서늘한 바람처럼 닿습니다" },
         { "target": "T", "kind": "tension", "why": "사실부터 짧게 말하는 판단 습관이 늦게 피는 꽃의 섬세함과 부딪칩니다" }
       ],
-      "engineSupport": false,
+      "engineSupport": true,
+      "engineKey": "乙:autumn",
       "sources": ["통용(조후론)", "classic:sm1:論五行生尅", "foundation:day_master:乙", "foundation:element:water", "foundation:element:fire"],
       "confidence": "통용"
     },
@@ -541,33 +548,33 @@
       },
       "scenes": {
         "work": [
-          "차가운 분위기의 팀에선 말수가 확 줄지만, 따뜻한 팀장 밑으로 옮기면 석 달 만에 다른 사람처럼 아이디어를 냅니다.",
-          "추운 겨울 출근길엔 몸이 굳어 있어서, 따뜻한 음료를 손에 쥐고 첫 한 시간을 메일 정리로 천천히 엽니다.",
-          "새 일을 맡으면 먼저 조용히 지켜봅니다. 확신이 서기 전까지 손을 들지 않아 회의에선 늘 마지막에 의견을 냅니다."
+          { "text": "차가운 분위기의 팀에선 말수가 확 줄지만, 따뜻한 팀장 밑으로 옮기면 석 달 만에 다른 사람처럼 아이디어를 냅니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+          { "text": "추운 겨울 출근길엔 몸이 굳어 있어서, 따뜻한 음료를 손에 쥐고 첫 한 시간을 메일 정리로 천천히 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+          { "text": "새 일을 맡으면 먼저 조용히 지켜봅니다. 확신이 서기 전까지 손을 들지 않아 회의에선 늘 마지막에 의견을 냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
-          "불안할수록 지갑을 닫습니다. 겨울 외투 한 벌을 몇 주 고민하다 결국 작년 코트를 다시 꺼내 입습니다.",
-          "마음이 얼어 있는 날 따뜻한 국밥 한 그릇, 두툼한 이불 한 장 같은 '몸 데우는 소비'만큼은 아끼지 않습니다."
+          { "text": "불안할수록 지갑을 닫습니다. 겨울 외투 한 벌을 몇 주 고민하다 결국 작년 코트를 다시 꺼내 입습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "마음이 얼어 있는 날 따뜻한 국밥 한 그릇, 두툼한 이불 한 장 같은 '몸 데우는 소비'만큼은 아끼지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
-          "추운 방에서는 집중이 안 돼서, 전기방석을 깔고 담요를 덮어야 책장이 넘어갑니다.",
-          "모르는 걸 묻기까지 오래 망설입니다. 다정한 선배가 먼저 '어디 막혔어?'라고 물어 줘야 입이 열립니다."
+          { "text": "추운 방에서는 집중이 안 돼서, 전기방석을 깔고 담요를 덮어야 책장이 넘어갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "모르는 걸 묻기까지 오래 망설입니다. 다정한 선배가 먼저 '어디 막혔어?'라고 물어 줘야 입이 열립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
-          "좋아해도 먼저 다가가지 못합니다. 상대가 따뜻하게 손을 내밀어야 비로소 한 걸음 나옵니다.",
-          "화려한 데이트보다 겨울밤 따뜻한 방에서 귤을 까며 영화를 보는 저녁을 더 오래 기억합니다."
+          { "text": "좋아해도 먼저 다가가지 못합니다. 상대가 따뜻하게 손을 내밀어야 비로소 한 걸음 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "화려한 데이트보다 겨울밤 따뜻한 방에서 귤을 까며 영화를 보는 저녁을 더 오래 기억합니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          "배우자가 퇴근길에 붕어빵 한 봉지를 사 오는 날, 그동안 말 못 한 이야기를 꺼냅니다.",
-          "다툰 뒤엔 오래 얼어붙습니다. 먼저 말을 거는 쪽이 늘 배우자라는 걸 알기에 미안함을 아침 밥상으로 전합니다."
+          { "text": "배우자가 퇴근길에 붕어빵 한 봉지를 사 오는 날, 그동안 말 못 한 이야기를 꺼냅니다.", "requires": { "relationship": "married", "children": "any", "job": "employed" } },
+          { "text": "다툰 뒤엔 오래 얼어붙습니다. 먼저 말을 거는 쪽이 늘 배우자라는 걸 알기에 미안함을 아침 밥상으로 전합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          "낯선 모임에선 벽 쪽 자리에 앉아 듣기만 합니다. 누가 먼저 이름을 불러 주면 그때부터 웃음이 늘어납니다.",
-          "몇 안 되는 친구와 겨울마다 작은 방에 모여 전골을 끓여 먹는 모임을 십 년째 이어 갑니다."
+          { "text": "낯선 모임에선 벽 쪽 자리에 앉아 듣기만 합니다. 누가 먼저 이름을 불러 주면 그때부터 웃음이 늘어납니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "몇 안 되는 친구와 겨울마다 작은 방에 모여 전골을 끓여 먹는 모임을 십 년째 이어 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
-          "혼자 있는 겨울 주말엔 해가 드는 오후 두 시쯤 창가에 앉아 볕을 쬐는 것만으로 기운이 돌아옵니다.",
-          "해가 짧아지면 마음도 같이 움츠러들어, 일부러 조명을 노란빛으로 바꾸고 따뜻한 노래를 틀어 둡니다."
+          { "text": "혼자 있는 겨울 주말엔 해가 드는 오후 두 시쯤 창가에 앉아 볕을 쬐는 것만으로 기운이 돌아옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "해가 짧아지면 마음도 같이 움츠러들어, 일부러 조명을 노란빛으로 바꾸고 따뜻한 노래를 틀어 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -601,7 +608,8 @@
         { "target": "ESTP", "kind": "tension", "why": "바로 부딪혀 보는 Se에게 볕을 기다리는 화초는 망설임으로 보입니다" },
         { "target": "Te", "kind": "tension", "why": "속도와 결과를 재촉하는 Te가 데워지기 전의 화초를 더 움츠리게 합니다" }
       ],
-      "engineSupport": false,
+      "engineSupport": true,
+      "engineKey": "乙:winter",
       "sources": ["통용(조후론)", "classic:sm1:論五行生尅", "foundation:day_master:乙", "foundation:element:fire"],
       "confidence": "통용"
     },
@@ -617,33 +625,33 @@
       },
       "scenes": {
         "work": [
-          "봄 신규 프로젝트 첫 회의에서 가장 큰 목소리로 '해 봅시다'를 외치고, 첫 주에 팀 분위기를 확 끌어올립니다.",
-          "열정이 앞서 일정을 크게 잡는 편이라, 마감과 범위를 정해 주는 차분한 기획자와 짝을 이루면 결과가 빛납니다.",
-          "규칙이 분명한 큰 행사나 공식 무대에서 오히려 더 편안해집니다. 정해진 순서 안에서 가장 환하게 웃는 사람입니다."
+          { "text": "봄 신규 프로젝트 첫 회의에서 가장 큰 목소리로 '해 봅시다'를 외치고, 첫 주에 팀 분위기를 확 끌어올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "열정이 앞서 일정을 크게 잡는 편이라, 마감과 범위를 정해 주는 차분한 기획자와 짝을 이루면 결과가 빛납니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "규칙이 분명한 큰 행사나 공식 무대에서 오히려 더 편안해집니다. 정해진 순서 안에서 가장 환하게 웃는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
-          "새봄 맞이로 운동 등록, 옷, 여행 예약을 한 주에 다 해 버리고, 통장 관리하는 친구에게 '나 좀 말려 줘'라고 연락합니다.",
-          "자동이체로 저축이 먼저 빠져나가게 해 두면 남은 돈 안에서 즐겁게 삽니다. 틀이 있어야 지갑이 편합니다."
+          { "text": "새봄 맞이로 운동 등록, 옷, 여행 예약을 한 주에 다 해 버리고, 통장 관리하는 친구에게 '나 좀 말려 줘'라고 연락합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "자동이체로 저축이 먼저 빠져나가게 해 두면 남은 돈 안에서 즐겁게 삽니다. 틀이 있어야 지갑이 편합니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } }
         ],
         "study": [
-          "공부 계획을 세울 때 가장 신납니다. 형광펜 다섯 색을 사고 첫날엔 열 시간을 앉아 있습니다.",
-          "진도를 점검해 주는 스터디 그룹에 들어가야 불꽃이 꾸준한 불이 됩니다. 혼자 하면 꽃 질 무렵 흐지부지됩니다."
+          { "text": "공부 계획을 세울 때 가장 신납니다. 형광펜 다섯 색을 사고 첫날엔 열 시간을 앉아 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "진도를 점검해 주는 스터디 그룹에 들어가야 불꽃이 꾸준한 불이 됩니다. 혼자 하면 꽃 질 무렵 흐지부지됩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
-          "봄날 첫 데이트에 쉽게 마음이 달아오릅니다. 만난 지 일주일 만에 친구들에게 '요즘 좋은 사람 생겼어'라고 소문을 냅니다.",
-          "자기 열기를 차분히 받아 주는 사람에게 끌립니다. 말없이 웃어 주는 연인 앞에서 오히려 더 빛납니다."
+          { "text": "봄날 첫 데이트에 쉽게 마음이 달아오릅니다. 만난 지 일주일 만에 친구들에게 '요즘 좋은 사람 생겼어'라고 소문을 냅니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
+          { "text": "자기 열기를 차분히 받아 주는 사람에게 끌립니다. 말없이 웃어 주는 연인 앞에서 오히려 더 빛납니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          "집안 행사를 크게 벌이는 걸 좋아합니다. 배우자가 예산과 인원을 정리해 줘야 잔치가 무사히 끝납니다.",
-          "열이 오르면 목소리가 커지지만, 배우자가 '잠깐 산책하고 오자'고 하면 강가를 한 바퀴 돌고 금세 웃습니다."
+          { "text": "집안 행사를 크게 벌이는 걸 좋아합니다. 배우자가 예산과 인원을 정리해 줘야 잔치가 무사히 끝납니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "열이 오르면 목소리가 커지지만, 배우자가 '잠깐 산책하고 오자'고 하면 강가를 한 바퀴 돌고 금세 웃습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          "봄 소풍, 꽃놀이 모임을 가장 먼저 제안하고 공원 명당 자리 맡기까지 해 두는 사람입니다.",
-          "모든 사람을 반갑게 대하다 보니 가끔 '나한테만 잘해 주는 줄 알았다'는 오해를 삽니다."
+          { "text": "봄 소풍, 꽃놀이 모임을 가장 먼저 제안하고 공원 명당 자리 맡기까지 해 두는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "모든 사람을 반갑게 대하다 보니 가끔 '나한테만 잘해 주는 줄 알았다'는 오해를 삽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
-          "혼자 있을 때는 강변이나 호숫가를 걸으며 머릿속 불을 식혀야 다음 날 다시 환하게 나갑니다.",
-          "들떠서 벌인 일들을 밤에 하나씩 떠올리며, 내일 마무리할 일과 사과할 사람을 메모장에 적습니다."
+          { "text": "혼자 있을 때는 강변이나 호숫가를 걸으며 머릿속 불을 식혀야 다음 날 다시 환하게 나갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "들떠서 벌인 일들을 밤에 하나씩 떠올리며, 내일 마무리할 일과 사과할 사람을 메모장에 적습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -676,7 +684,8 @@
         { "target": "ISTP", "kind": "tension", "why": "필요할 때만 조용히 움직이는 Ti-Se에게 커지는 열기는 과해 보입니다" },
         { "target": "Si", "kind": "tension", "why": "검증된 속도를 지키는 Si가 자꾸 커지는 약속 앞에서 브레이크를 겁니다" }
       ],
-      "engineSupport": false,
+      "engineSupport": true,
+      "engineKey": "丙:spring",
       "sources": ["통용(조후론)", "classic:sm1:論五行生尅", "foundation:day_master:丙", "foundation:element:water"],
       "confidence": "통용"
     },
@@ -692,33 +701,33 @@
       },
       "scenes": {
         "work": [
-          "모두 지친 여름 성수기에 혼자 힘이 넘쳐 '하나 더 합시다'를 외칩니다. 팀원들은 그 말에 반쯤 웃고 반쯤 한숨을 쉽니다.",
-          "일이 막히면 바로 상사 방문을 두드립니다. 메일 답장을 기다리는 것보다 마주 앉아 푸는 쪽이 빠르다고 믿습니다.",
-          "냉정하게 숫자를 따지는 동료와 같은 팀일 때 결과가 가장 좋습니다. 그 사람의 '잠깐만요'가 열을 식혀 줍니다."
+          { "text": "모두 지친 여름 성수기에 혼자 힘이 넘쳐 '하나 더 합시다'를 외칩니다. 팀원들은 그 말에 반쯤 웃고 반쯤 한숨을 쉽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "일이 막히면 바로 상사 방문을 두드립니다. 메일 답장을 기다리는 것보다 마주 앉아 푸는 쪽이 빠르다고 믿습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+          { "text": "냉정하게 숫자를 따지는 동료와 같은 팀일 때 결과가 가장 좋습니다. 그 사람의 '잠깐만요'가 열을 식혀 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
-          "기분이 오르면 결제 버튼이 빨라집니다. 큰돈 쓰는 일은 에어컨 켠 방에서 하루 자고 나서 정합니다.",
-          "여름휴가에 아낌없이 쓰는 편이라, 연초부터 휴가 통장을 따로 만들어 두면 다른 달이 편해집니다."
+          { "text": "기분이 오르면 결제 버튼이 빨라집니다. 큰돈 쓰는 일은 에어컨 켠 방에서 하루 자고 나서 정합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "여름휴가에 아낌없이 쓰는 편이라, 연초부터 휴가 통장을 따로 만들어 두면 다른 달이 편해집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
-          "단기 집중엔 누구보다 강합니다. 시험 전 사흘을 밤새워 몰아치고, 그 뒤 일주일은 책을 쳐다보지도 않습니다.",
-          "더운 오후엔 머리가 끓어 진도가 멈추니, 찬물로 세수하고 해 진 뒤 두 시간 공부하는 쪽이 낫습니다."
+          { "text": "단기 집중엔 누구보다 강합니다. 시험 전 사흘을 밤새워 몰아치고, 그 뒤 일주일은 책을 쳐다보지도 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "더운 오후엔 머리가 끓어 진도가 멈추니, 찬물로 세수하고 해 진 뒤 두 시간 공부하는 쪽이 낫습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
-          "좋아하면 숨기지 못하고 바로 고백합니다. 대답을 기다리는 하루가 일주일처럼 길게 느껴집니다.",
-          "같이 열을 올리는 사람과는 불꽃이 크게 튀고 빨리 꺼집니다. 뜨거움을 차분히 받아 주는 연인 곁에서 오래 갑니다."
+          { "text": "좋아하면 숨기지 못하고 바로 고백합니다. 대답을 기다리는 하루가 일주일처럼 길게 느껴집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "같이 열을 올리는 사람과는 불꽃이 크게 튀고 빨리 꺼집니다. 뜨거움을 차분히 받아 주는 연인 곁에서 오래 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          "주말 계획을 배우자보다 먼저 꽉 채워 둡니다. 배우자가 '이번 주는 쉬자'고 할 때 그 말을 들어 주는 게 가장 큰 숙제입니다.",
-          "화가 나면 그 자리에서 크게 터지고 십 분 뒤 먼저 '미안' 합니다. 배우자는 그 십 분을 견디는 법을 익힙니다."
+          { "text": "주말 계획을 배우자보다 먼저 꽉 채워 둡니다. 배우자가 '이번 주는 쉬자'고 할 때 그 말을 들어 주는 게 가장 큰 숙제입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "화가 나면 그 자리에서 크게 터지고 십 분 뒤 먼저 '미안' 합니다. 배우자는 그 십 분을 견디는 법을 익힙니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          "여름밤 야외 술자리나 캠핑을 주도하고, 숯불 앞 고기 굽는 자리를 끝까지 지킵니다.",
-          "솔직함이 지나쳐 친구 표정이 굳는 순간이 있습니다. 집에 와서 '아까 말이 셌나' 하고 문자 한 통을 보냅니다."
+          { "text": "여름밤 야외 술자리나 캠핑을 주도하고, 숯불 앞 고기 굽는 자리를 끝까지 지킵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "솔직함이 지나쳐 친구 표정이 굳는 순간이 있습니다. 집에 와서 '아까 말이 셌나' 하고 문자 한 통을 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
-          "혼자 있을 때도 가만있지 못해 땀을 쏟는 운동을 합니다. 샤워 뒤 찬물 한 잔을 마셔야 마음이 가라앉습니다.",
-          "바닷가나 계곡처럼 물소리 나는 곳에 혼자 다녀오면 머리가 식어 다시 사람을 만날 힘이 생깁니다."
+          { "text": "혼자 있을 때도 가만있지 못해 땀을 쏟는 운동을 합니다. 샤워 뒤 찬물 한 잔을 마셔야 마음이 가라앉습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "바닷가나 계곡처럼 물소리 나는 곳에 혼자 다녀오면 머리가 식어 다시 사람을 만날 힘이 생깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -752,7 +761,8 @@
         { "target": "INFP", "kind": "tension", "why": "속으로 오래 고르는 Fi에게 그 자리에서 터지는 불은 뜨겁게 닿습니다" },
         { "target": "ISFJ", "kind": "tension", "why": "주변 기분을 조용히 살피는 Si-Fe가 불볕 같은 직설에 쉽게 지칩니다" }
       ],
-      "engineSupport": false,
+      "engineSupport": true,
+      "engineKey": "丙:summer",
       "sources": ["통용(조후론)", "classic:sm1:論五行生尅", "foundation:day_master:丙", "foundation:element:water", "foundation:element:metal"],
       "confidence": "통용"
     }

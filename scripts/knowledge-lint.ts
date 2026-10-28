@@ -9,6 +9,9 @@
  *      → 중복 문장 0(가족 간 포함) → 이미지 중복 0(전체) → 금지 표현(정보량 0·확정 예언·비하·흐린 말투) → 한자 금지(이름·출처 제외)
  *      → 문장 길이(≤90) · 한자어 연속 상한 → 용어 누출(장면 문장에 MBTI 코드·명리 일반 용어 금지) → mbtiLinks ≥ 2(스키마) → 위치 가족 positionNuance 필수
  *      → Fusion 같은 유형 안 반복 구절(12자 창)·MBTI 원문 복사(14자 창)·고정 공식 유형당 1회.
+ *      → (P2) 장면 사실 조건: requires 필수(스키마), 고객 프로필(미혼·연애 중·기혼 × 직업 정보 없음)마다 영역별 장면 ≥ 1,
+ *        결혼 영역은 기혼 전용과 언젠가형(unmarried)을 둘 다, 자녀 있음 전용 장면은 같은 영역에 언젠가형(none)도.
+ *      → (P2, 경고) 이미지 유사: 문자 3-gram Dice ≥ 0.6. --strict에서는 실패로 친다.
  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -17,8 +20,8 @@ import { z } from "zod";
 import {
   ActionTemplateFileSchema, BadgeFileSchema, BehaviorOntologySchema, FlowRuleSchema, FusionFileSchema, GanjiEnergyFileSchema, GanjiEnergySchema, IdMapSchema,
   MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema,
-  DOMAINS, FEATURE_FAMILIES, MBTI_TYPES, POSITIONAL_FAMILIES, STEMS, BRANCHES, TEN_GODS, ELEMENTS,
-  type FusionRule, type MbtiProfile, type MyeongriFeature,
+  DOMAINS, FEATURE_FAMILIES, MBTI_TYPES, TIMELINE_ACTION_DOMAINS, POSITIONAL_FAMILIES, STEMS, BRANCHES, TEN_GODS, ELEMENTS,
+  type FusionRule, type MbtiProfile, type MyeongriFeature, type SceneItem,
 } from "../src/data/knowledge-v5/schema";
 
 const ROOT = resolve(import.meta.dirname, "..");
@@ -31,6 +34,8 @@ const wantCoverage = args.includes("--coverage");
 type Issue = { file: string; where: string; rule: string; text?: string };
 const issues: Issue[] = [];
 const fail = (file: string, where: string, rule: string, text?: string) => issues.push({ file, where, rule, text });
+const warnings: Issue[] = [];
+const warn = (file: string, where: string, rule: string, text?: string) => warnings.push({ file, where, rule, text });
 const readJson = (p: string) => JSON.parse(readFileSync(p, "utf8").replace(/^﻿/, ""));
 const listJson = (dir: string) => existsSync(dir) ? readdirSync(dir).filter(f => f.endsWith(".json")).sort().map(f => join(dir, f)) : [];
 const zodMsg = (e: z.ZodError) => e.issues.slice(0, 8).map(i => `${i.path.join(".")}: ${i.message}`).join(" | ");
@@ -83,6 +88,45 @@ function checkImage(file: string, where: string, image: { metaphor: string; visu
   for (const k of ["metaphor", "visual"] as const) {
     const key = norm(image[k]); const prev = imageStore.get(key);
     if (prev && prev !== where) fail(file, `${where}.${k}`, "이미지 중복", `${image[k]} (먼저: ${prev})`); else imageStore.set(key, where);
+    imageList.push({ file, where: `${where}.${k}`, text: image[k], grams: trigrams(image[k]) });
+  }
+}
+
+// ---------- (P2) 이미지 유사(문자 3-gram Dice) ----------
+const IMAGE_SIMILARITY = 0.6;
+const imageList: { file: string; where: string; text: string; grams: Set<string> }[] = [];
+function trigrams(s: string) {
+  const n = s.replace(/[\s.,'"!?·…~\-()]/g, ""); const g = new Set<string>();
+  for (let i = 0; i + 3 <= n.length; i++) g.add(n.slice(i, i + 3)); return g;
+}
+function lintImageSimilarity() {
+  for (let i = 0; i < imageList.length; i++) for (let j = i + 1; j < imageList.length; j++) {
+    const a = imageList[i], b = imageList[j]; let inter = 0;
+    for (const g of a.grams) if (b.grams.has(g)) inter++;
+    const dice = inter ? (2 * inter) / (a.grams.size + b.grams.size) : 0;
+    if (dice >= IMAGE_SIMILARITY) warn(b.file, b.where, "이미지 유사(3-gram ≥ 0.6)", `${dice.toFixed(2)} ${b.text} ≈ ${a.where} ${a.text}`);
+  }
+}
+
+// ---------- (P2) 장면 사실 조건 ----------
+/** 브리프 선택 규칙과 같은 판정(src/lib/brief/facts.ts sceneFits와 맞춘다). 자녀·직업 정보가 없는 고객 기준. */
+const FACT_PROFILES = [
+  { name: "미혼", relationship: "single" },
+  { name: "연애 중", relationship: "dating" },
+  { name: "기혼", relationship: "married" },
+] as const;
+const fitsProfile = (s: SceneItem, relationship: string) =>
+  (s.requires.relationship === "any" || s.requires.relationship === relationship || (s.requires.relationship === "unmarried" && relationship !== "married"))
+  && s.requires.children !== "has" && s.requires.job === "any";
+function checkSceneFacts(file: string, where: string, scenes: Partial<Record<string, SceneItem[]>>) {
+  for (const [d, list] of Object.entries(scenes)) {
+    if (!list) continue;
+    for (const pr of FACT_PROFILES) if (!list.some(s => fitsProfile(s, pr.relationship))) fail(file, `${where}.${d}`, "프로필 장면 없음", `${pr.name}·직업 정보 없음 고객이 쓸 장면이 없다`);
+    if (d === "marriage") {
+      if (!list.some(s => s.requires.relationship === "married")) fail(file, `${where}.${d}`, "결혼 장면 짝 없음", "기혼 전용(married) 장면 필요");
+      if (!list.some(s => s.requires.relationship === "unmarried")) fail(file, `${where}.${d}`, "결혼 장면 짝 없음", "언젠가형(unmarried) 장면 필요");
+    }
+    if (list.some(s => s.requires.children === "has") && !list.some(s => s.requires.children === "none")) fail(file, `${where}.${d}`, "자녀 장면 짝 없음", "자녀 있음 전용 장면에 언젠가형(none) 장면 필요");
   }
 }
 
@@ -145,7 +189,8 @@ function lintFeatureFile(path: string) {
     checkProse(file, `${w}.name`, f.name, { allowHan: true, dedupe: false });
     checkProse(file, `${w}.oneLiner`, f.oneLiner);
     checkImage(file, `${w}.image`, f.image);
-    for (const d of DOMAINS) f.scenes[d].forEach((s, i) => checkProse(file, `${w}.scenes.${d}[${i}]`, s, { scene: true }));
+    for (const d of DOMAINS) f.scenes[d].forEach((s, i) => checkProse(file, `${w}.scenes.${d}[${i}]`, s.text, { scene: true }));
+    checkSceneFacts(file, `${w}.scenes`, f.scenes);
     f.strengths.forEach((s, i) => checkProse(file, `${w}.strengths[${i}]`, s));
     f.overuse.forEach((s, i) => checkProse(file, `${w}.overuse[${i}]`, s));
     if (POSITIONAL_FAMILIES.includes(f.family) && !f.positionNuance) fail(file, w, "위치 가족인데 positionNuance 없음");
@@ -173,7 +218,8 @@ function lintProfile(file: string, p: MbtiProfile) {
   checkProse(file, `${w}.oneLiner`, p.oneLiner);
   checkImage(file, `${w}.image`, p.image);
   p.cognitiveFunctions.forEach((c, i) => checkProse(file, `${w}.fn[${i}]`, c.easy));
-  for (const d of DOMAINS) p.signals[d].forEach((s, i) => checkProse(file, `${w}.signals.${d}[${i}]`, s, { scene: true }));
+  for (const d of DOMAINS) p.signals[d].forEach((s, i) => checkProse(file, `${w}.signals.${d}[${i}]`, s.text, { scene: true }));
+  checkSceneFacts(file, `${w}.signals`, p.signals);
   p.shadows.forEach((s, i) => checkProse(file, `${w}.shadows[${i}]`, s));
   const compatTypes = new Set(p.conventionalCompat.map(c => c.type));
   if (compatTypes.has(p.type)) fail(file, `${w}.conventionalCompat`, "자기 유형이 궁합표에 있음");
@@ -198,7 +244,7 @@ function lintFusionFile(path: string) {
     if (featureIds.size && !featureIds.has(x.myeongriId)) fail(file, x.id, "myeongriId 미해결", x.myeongriId);
     if (x.dimension && dimensionIds.size && !dimensionIds.has(x.dimension)) fail(file, x.id, "차원 id 미해결", x.dimension);
     checkProse(file, `${x.id}.why`, x.why);
-    if (x.scene) checkProse(file, `${x.id}.scene`, x.scene, { scene: true });
+    if (x.scene) checkProse(file, `${x.id}.scene`, x.scene.text, { scene: true });
     fusionRules.push(x); fusionFileOf.set(x.id, file);
   }
 }
@@ -222,10 +268,10 @@ function lintFusionRepetition() {
   for (const [type, rules] of byType) {
     const seen = new Map<string, string>(); let formula = 0;
     const p = profilesByType.get(type);
-    const profileWins = new Set(p ? [p.oneLiner, ...p.cognitiveFunctions.map(c => c.easy), ...DOMAINS.flatMap(d => p.signals[d]), ...p.shadows].flatMap(s => [...windows(s, PROFILE_WINDOW)]) : []);
+    const profileWins = new Set(p ? [p.oneLiner, ...p.cognitiveFunctions.map(c => c.easy), ...DOMAINS.flatMap(d => p.signals[d].map(s => s.text)), ...p.shadows].flatMap(s => [...windows(s, PROFILE_WINDOW)]) : []);
     for (const r of rules) {
       const file = fusionFileOf.get(r.id) ?? "fusion";
-      for (const [k, text] of [["why", r.why], ["scene", r.scene ?? ""]] as const) {
+      for (const [k, text] of [["why", r.why], ["scene", r.scene?.text ?? ""]] as const) {
         const ws = windows(text, REPEAT_WINDOW);
         const hit = [...ws].find(w => seen.has(w) && seen.get(w) !== r.id);
         if (hit) fail(file, `${r.id}.${k}`, "유형 내 반복 구절", `「${hit}」 ← ${seen.get(hit)}`);
@@ -257,7 +303,8 @@ function lintTimeline() {
   one("ten-god-period.json", TenGodPeriodFileSchema, d => {
     for (const e of d.entries) for (const k of ["year", "month"] as const) {
       checkProse("timeline/ten-god-period.json", `${e.tenGod}.${k}.meaning`, e[k].meaning);
-      e[k].scenes.forEach((s: string, i: number) => checkProse("timeline/ten-god-period.json", `${e.tenGod}.${k}.scenes[${i}]`, s, { scene: true }));
+      e[k].scenes.forEach((s: SceneItem, i: number) => checkProse("timeline/ten-god-period.json", `${e.tenGod}.${k}.scenes[${i}]`, s.text, { scene: true }));
+      checkSceneFacts("timeline/ten-god-period.json", `${e.tenGod}.${k}`, { scenes: e[k].scenes });
       checkProse("timeline/ten-god-period.json", `${e.tenGod}.${k}.action`, e[k].action);
       if (k === "year") checkProse("timeline/ten-god-period.json", `${e.tenGod}.year.caution`, e.year.caution);
     }
@@ -265,7 +312,16 @@ function lintTimeline() {
   });
   one("badges.json", BadgeFileSchema, d => { d.badges.forEach((b: any, i: number) => checkProse("timeline/badges.json", `badge[${i}]`, b.line)); stats.badges = d.badges.length; });
   one("flow-rule.json", FlowRuleSchema, d => { stats.flowWeights = d.weights.length; });
-  one("action-templates.json", ActionTemplateFileSchema, d => { d.templates.forEach((t: any) => t.text.forEach((s: string, i: number) => checkProse("timeline/action-templates.json", `${t.id}[${i}]`, s))); stats.actionTemplates = d.templates.length; });
+  one("action-templates.json", ActionTemplateFileSchema, d => {
+    d.templates.forEach((t: any) => t.text.forEach((s: string, i: number) => checkProse("timeline/action-templates.json", `${t.id}[${i}]`, s)));
+    stats.actionTemplates = d.templates.length;
+    // (P2) 십성 × 영역 × 세기 구간 조합 완비 → 세운 12개월에서 템플릿 반복 0
+    const ids = new Set<string>(); for (const t of d.templates) { if (ids.has(t.id)) fail("timeline/action-templates.json", t.id, "템플릿 id 중복"); ids.add(t.id); }
+    const band = (f?: number[]) => (f?.length ? (Math.min(...f) >= 4 ? "high" : Math.max(...f) <= 3 ? "low" : "mixed") : "any");
+    const combos = new Set(d.templates.filter((t: any) => t.when.tenGod && t.when.domain).map((t: any) => `${t.when.tenGod}|${t.when.domain}|${band(t.when.flow)}`));
+    stats.actionCombos = combos.size;
+    if (strict) for (const tg of TEN_GODS) for (const dom of TIMELINE_ACTION_DOMAINS) for (const b of ["low", "high"]) if (!combos.has(`${tg}|${dom}|${b}`)) fail("timeline/action-templates.json", `${tg}|${dom}|${b}`, "행동 템플릿 조합 없음");
+  });
 }
 
 function lintNarratives() {
@@ -337,15 +393,17 @@ if (only) {
   for (const p of listJson(join(DATA, "myeongri"))) lintFeatureFile(p);
   for (const p of listJson(join(DATA, "mbti"))) lintMbtiFile(p);
   for (const p of listJson(join(DATA, "fusion"))) lintFusionFile(p);
-  lintCompatSymmetry(); lintFusionRepetition(); lintTimeline(); lintNarratives(); lintIdMap();
+  lintCompatSymmetry(); lintFusionRepetition(); lintTimeline(); lintNarratives(); lintIdMap(); lintImageSimilarity();
   stats.features = featureIds.size; stats.byFamily = Object.fromEntries(Object.entries(featuresByFamily).map(([k, v]) => [k, v.length]));
   stats.scenes = Object.values(featuresByFamily).flat().reduce((n, f) => n + DOMAINS.reduce((m, d) => m + f.scenes[d].length, 0), 0);
   stats.mbtiProfiles = mbtiTypesSeen.size; stats.fusionRules = fusionRules.length; stats.fusionWithScene = fusionRules.filter(r => r.scene).length;
   coverage();
 }
 stats.sentences = sentenceCount; stats.avgSentenceChars = sentenceCount ? Math.round((sentenceChars / sentenceCount) * 10) / 10 : 0;
+if (strict) issues.push(...warnings);
 const byRule: Record<string, number> = {}; for (const i of issues) byRule[i.rule] = (byRule[i.rule] ?? 0) + 1;
-console.log(JSON.stringify({ stats, issueCount: issues.length, byRule }, null, 1));
+console.log(JSON.stringify({ stats, issueCount: issues.length, warningCount: warnings.length, byRule }, null, 1));
+if (!strict) for (const i of warnings) console.log(`WARN ${i.file} :: ${i.where} :: ${i.rule} :: ${i.text}`);
 const max = Number(process.env.LINT_MAX ?? 80);
 for (const i of issues.slice(0, max)) console.log(`${i.file} :: ${i.where} :: ${i.rule}${i.text ? ` :: ${i.text}` : ""}`);
 if (issues.length > max) console.log(`... ${issues.length - max} more`);

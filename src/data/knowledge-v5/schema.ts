@@ -31,6 +31,23 @@ export const DimensionId = z.string().regex(/^[a-z][a-zA-Z]+$/);
 export const Line = z.string().min(6).max(90);
 /** 장면: 사람·상황·행동이 보이는 1~2문장. */
 export const Scene = z.string().min(20).max(140);
+/**
+ * 장면 사실 조건(P2). 브리프는 고객 사실과 맞는 장면만 고른다.
+ * relationship: unmarried = "결혼하면/함께 살게 되면" 같은 언젠가형(미혼·관계 미상 전용, 기혼 제외).
+ * children: has = 자녀 있음 전용, none = "아이를 키우게 되면" 같은 언젠가형(자녀 없음·미상 전용).
+ * job: employed = 회사·조직 소속 전제, business = 가게·사업 전제, student = 학교 전제.
+ */
+export const RELATIONSHIP_REQUIREMENTS = ["any", "single", "dating", "married", "unmarried"] as const;
+export const CHILDREN_REQUIREMENTS = ["any", "has", "none"] as const;
+export const JOB_REQUIREMENTS = ["any", "employed", "business", "student"] as const;
+export const SceneRequiresSchema = z.object({
+  relationship: z.enum(RELATIONSHIP_REQUIREMENTS),
+  children: z.enum(CHILDREN_REQUIREMENTS),
+  job: z.enum(JOB_REQUIREMENTS),
+}).strict();
+export type SceneRequires = z.infer<typeof SceneRequiresSchema>;
+export const SceneItemSchema = z.object({ text: Scene, requires: SceneRequiresSchema }).strict();
+export type SceneItem = z.infer<typeof SceneItemSchema>;
 /** 설명문(강약 규칙·위치 뉘앙스·근거 포함 팩폭). */
 export const Para = z.string().min(10).max(220);
 export const Sources = z.array(z.string().min(2)).min(1);
@@ -42,7 +59,7 @@ export const LinkKindSchema = z.enum(["resonance", "tension", "conditional"]);
 export const DimensionTagsSchema = z.record(DimensionId, z.number().min(-1).max(1).refine(v => v !== 0, "0은 태그를 빼라"));
 
 const domainRecord = <T extends z.ZodTypeAny>(inner: T) => z.object(Object.fromEntries(DOMAINS.map(d => [d, inner])) as Record<Domain, T>);
-export const ScenesSchema = domainRecord(z.array(Scene).min(2).max(5));
+export const ScenesSchema = domainRecord(z.array(SceneItemSchema).min(2).max(6));
 export type Scenes = z.infer<typeof ScenesSchema>;
 
 export const ImageSchema = z.object({ metaphor: Line, visual: Line });
@@ -120,7 +137,7 @@ export const MyeongriFileSchema = z.object({ version: z.string(), family: Featur
 export type MyeongriFile = z.infer<typeof MyeongriFileSchema>;
 
 // ---------- 3) mbti/<TYPE>.json ----------
-export const MbtiSignalsSchema = domainRecord(z.array(Scene).length(3));
+export const MbtiSignalsSchema = domainRecord(z.array(SceneItemSchema).min(3).max(5));
 export const MbtiCompatSchema = z.object({ type: MbtiTypeSchema, fit: z.enum(["좋음", "보통", "노력"]), why: Line });
 export const MbtiProfileSchema = z.object({
   type: MbtiTypeSchema,
@@ -152,7 +169,7 @@ export const FusionRuleSchema = z.object({
   /** 왜 겹치는지(공명) 또는 왜 당기는지(긴장). 명리 근거와 MBTI 근거를 한 문장씩. */
   why: Para,
   /** 상위 쌍은 장면 필수. 나머지는 생략 가능. */
-  scene: Scene.optional(),
+  scene: SceneItemSchema.optional(),
   factBoundary: z.object({ requires: z.array(FactRequirementSchema), forbids: z.array(z.string()) }),
   sources: Sources,
 });
@@ -180,8 +197,8 @@ export const GanjiEnergyFileSchema = z.object({ version: z.string(), entries: z.
 /** 일간 대비 십성이 연·월로 들어올 때의 뜻. */
 export const TenGodPeriodSchema = z.object({
   tenGod: TenGodSchema,
-  year: z.object({ meaning: Para, scenes: z.array(Scene).min(2).max(4), action: Line, caution: Para }),
-  month: z.object({ meaning: Para, scenes: z.array(Scene).min(2).max(4), action: Line }),
+  year: z.object({ meaning: Para, scenes: z.array(SceneItemSchema).min(2).max(5), action: Line, caution: Para }),
+  month: z.object({ meaning: Para, scenes: z.array(SceneItemSchema).min(2).max(5), action: Line }),
   sources: Sources, confidence: ConfidenceSchema,
 });
 export const TenGodPeriodFileSchema = z.object({ version: z.string(), entries: z.array(TenGodPeriodSchema).length(10) });
@@ -209,10 +226,12 @@ export const FlowRuleSchema = z.object({
 });
 export type FlowRule = z.infer<typeof FlowRuleSchema>;
 
-/** 추천 행동 템플릿: 십성·오행·세기 조합 → 한 줄 행동. {name} 치환 허용. */
+/** 추천 행동 템플릿: 십성·영역·세기 조합 → 한 줄 행동. {name} 치환 허용. 사실 중립(직장·연인·자녀 전제 금지).
+ *  P2: 십성 10 × 타임라인 영역 6 × 세기 2구간(flow [1,2,3] / [4,5]) = 120 조합이 모두 있어야 한다(세운 12개월 템플릿 반복 0). */
+export const TIMELINE_ACTION_DOMAINS = ["work", "money", "study", "love", "relationships", "alone"] as const;
 export const ActionTemplateSchema = z.object({
   id: z.string().min(3),
-  when: z.object({ tenGod: TenGodSchema.optional(), element: z.enum(ELEMENTS).optional(), flow: z.array(z.number().int().min(1).max(5)).optional(), badge: z.enum(BADGE_KINDS).optional() }),
+  when: z.object({ tenGod: TenGodSchema.optional(), domain: z.enum(TIMELINE_ACTION_DOMAINS).optional(), element: z.enum(ELEMENTS).optional(), flow: z.array(z.number().int().min(1).max(5)).optional(), badge: z.enum(BADGE_KINDS).optional() }),
   text: z.array(Line).min(2).max(4),
 });
 export const ActionTemplateFileSchema = z.object({ version: z.string(), templates: z.array(ActionTemplateSchema).min(20) });
