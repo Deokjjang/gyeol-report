@@ -8,10 +8,10 @@ import { MANSERYEOK_GOLDEN_CASES, MANSERYEOK_GOLDEN_PRIORITY, type ManseryeokGol
 import { LEGACY_ENGINE_GOLDEN_OUTPUT } from "../../fixtures/saju/manseryeokLegacyGoldenOutput";
 
 // docs/manseryeok-golden-cases.csv is generated here (GOLDEN_WRITE=1) and otherwise locked to the engine.
-// The expected column is left for a human to fill from a reference app; it is preserved on rewrite.
+// expected and other_app_settings come from the independent oracle (tests/oracle, ORACLE_WRITE=1); they are preserved on rewrite.
 const CSV = resolve(__dirname, "../../../docs/manseryeok-golden-cases.csv");
 const HEADER = ["id", "priority", "category", "calendar", "leap", "date", "time", "gender", "solar_date", "utc_offset_min", "correction_min",
-  "current_engine", "new_unified", "new_split", "expected", "note"] as const;
+  "current_engine", "new_unified", "new_split", "expected", "other_app_settings", "note"] as const;
 
 function run(c: ManseryeokGoldenCase, ziHourRule: "unified" | "split") {
   try {
@@ -27,27 +27,28 @@ function run(c: ManseryeokGoldenCase, ziHourRule: "unified" | "split") {
 }
 
 const cell = (value: string) => /[",\n]/.test(value) ? `"${value.replace(/"/g, '""')}"` : value;
-function parseExpected(): Map<string, string> {
+function parsePreserved(): Map<string, { expected: string; other: string }> {
   try {
     const [header, ...rows] = readFileSync(CSV, "utf8").trim().split("\n").map((row) =>
       row.match(/("([^"]|"")*"|[^,]*)(,|$)/g)!.map((v) => v.replace(/,$/, "").replace(/^"|"$/g, "").replace(/""/g, '"')));
-    // The file's own header locates expected, so adding a column never shifts human-entered values.
-    const column = header.indexOf("expected");
-    return new Map(rows.map((cells) => [cells[0], cells[column] ?? ""]));
+    // The file's own header locates the columns, so adding a column never shifts preserved values.
+    const expected = header.indexOf("expected");
+    const other = header.indexOf("other_app_settings");
+    return new Map(rows.map((cells) => [cells[0], { expected: cells[expected] ?? "", other: other < 0 ? "" : cells[other] ?? "" }]));
   } catch {
     return new Map();
   }
 }
 
 function buildCsv(): string {
-  const expected = parseExpected();
+  const preserved = parsePreserved();
   const lines = MANSERYEOK_GOLDEN_CASES.map((c) => {
     const unified = run(c, "unified");
     const split = run(c, "split");
     const time = c.unknown ? "(미상)" : c.slot ? `(${c.slot})` : c.time;
     return [c.id, String(MANSERYEOK_GOLDEN_PRIORITY[c.id] ?? ""), c.category, c.calendar, c.leap ? "Y" : "N", c.date, time, c.gender === "MALE" ? "M" : "F", unified.birthDate,
       unified.offset, unified.correction, LEGACY_ENGINE_GOLDEN_OUTPUT[c.id] ?? "", unified.pillars, split.pillars,
-      expected.get(c.id) ?? "", c.note].map(cell).join(",");
+      preserved.get(c.id)?.expected ?? "", preserved.get(c.id)?.other ?? "", c.note].map(cell).join(",");
   });
   return [HEADER.join(","), ...lines].join("\n") + "\n";
 }
