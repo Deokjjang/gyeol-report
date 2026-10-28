@@ -22,7 +22,7 @@ describe("ticket owner before paid-order lookup", () => {
   });
   it("storage error is not presented as no ownership or redirected to payment", async () => {
     ports.owned.mockResolvedValue({ kind: "storageError" }); const html = await render();
-    expect(html).toContain("열람 정보를 확인하지 못했습니다"); expect(html).not.toContain("결제하기"); expect(ports.paid).not.toHaveBeenCalled();
+    expect(html).toContain("리포트 상태를 확인하지 못했습니다"); expect(html).toContain("자동으로 다시 확인"); expect(html).not.toContain("결제하기"); expect(ports.paid).not.toHaveBeenCalled();
   });
   it("absent ticket proceeds to unchanged paid lookup; gate OFF never constructs ticket read", async () => {
     vi.stubEnv("NODE_ENV", "production");

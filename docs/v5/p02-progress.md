@@ -9,3 +9,13 @@
 - [ ] 3b) q1 knowledge-v5 + lint + inputs.json 가져옴(staged), 다음: zod/tsx 설치, lint 테스트, 커밋
 - [x] 3b) knowledge-v5/lint/inputs.json/zod+tsx(pnpm add)/lint test
 - [ ] 3c) 로딩 화면(q2 컴포넌트·page.tsx retry·테스트), 절입일 문구(q3 route+test, q3c 테스트 es2017 수정) 복원됨 → 테스트 확인 후 커밋
+- [x] 3c) 로딩/절입일/knowledge 커밋 완료(54b9bcfa에 knowledge 포함, d74b22ca deps)
+- [ ] 3d) annualEvidence 해시 재고정 7파일 staged, 관련 테스트(report-knowledge·interpretation-v4) 백그라운드 실행 중
+- [ ] 4) LLM 어댑터 src/lib/llm/
+- [x] 3d) 해시 재고정 커밋, 4) 어댑터 커밋(20 테스트 통과)
+- [ ] 5) OpenAI 점검(.env.local 키 존재 확인→/v1/models→스트림 1회, api-cost-log) 6) infra-notes 7) 기준선·시크릿 스캔·push, carryover·report 문서
+- [x] 5) OpenAI 점검 완료: models 134개 조회, gpt-4o-mini 스트림 1회 $0.0000275 (gpt-4.1-nano는 404 deprecated)
+- [x] 6) 조사 중(서브에이전트) / 7) tsc 0, lint 0 확인. 전체 vitest JSON → scratchpad/full.json (백그라운드), 다음: build, 기준선 비교, 시크릿 스캔, push
+- [x] p0-carryover.md 작성
+- [x] 6) docs/v5/infra-notes.md
+- [x] 전체 vitest: 608 파일/144 실패 파일. 기준선(140) 대비 신규 4 → 3은 origin/master에서도 동일 17건 실패(기존), 1(ticketOwnerRoute)은 내 변경→q2 테스트 갱신으로 해소
