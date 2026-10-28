@@ -177,9 +177,15 @@ function lintProfile(file: string, p: MbtiProfile) {
   if (compatTypes.has(p.type)) fail(file, `${w}.conventionalCompat`, "자기 유형이 궁합표에 있음");
   for (const t of MBTI_TYPES) if (t !== p.type && !compatTypes.has(t)) fail(file, `${w}.conventionalCompat`, "상대 유형 누락", t);
   p.conventionalCompat.forEach((c, i) => checkProse(file, `${w}.conventionalCompat[${i}].why`, c.why));
+  compatTable.set(p.type, new Map(p.conventionalCompat.map(c => [c.type, c.fit])));
   for (const d of Object.keys(p.dimensionTags)) if (dimensionIds.size && !dimensionIds.has(d)) fail(file, `${w}.dimensionTags`, "차원 id 미해결", d);
 }
 
+/** 통념 궁합표 대칭: A가 B를 좋음이라 하면 B도 A를 좋음이라 해야 한다(둘 다 있을 때만). */
+const compatTable = new Map<string, Map<string, string>>();
+function lintCompatSymmetry() {
+  for (const [a, row] of compatTable) for (const [b, fit] of row) { const back = compatTable.get(b)?.get(a); if (back && back !== fit) fail("mbti", `${a}↔${b}`, "통념 궁합표 비대칭", `${a}→${b} ${fit} / ${b}→${a} ${back}`); }
+}
 function lintFusionFile(path: string) {
   const file = `fusion/${basename(path)}`;
   const r = FusionFileSchema.safeParse(readJson(path));
@@ -294,7 +300,7 @@ if (only) {
   for (const p of listJson(join(DATA, "myeongri"))) lintFeatureFile(p);
   for (const p of listJson(join(DATA, "mbti"))) lintMbtiFile(p);
   for (const p of listJson(join(DATA, "fusion"))) lintFusionFile(p);
-  lintTimeline(); lintNarratives(); lintIdMap();
+  lintCompatSymmetry(); lintTimeline(); lintNarratives(); lintIdMap();
   stats.features = featureIds.size; stats.byFamily = Object.fromEntries(Object.entries(featuresByFamily).map(([k, v]) => [k, v.length]));
   stats.scenes = Object.values(featuresByFamily).flat().reduce((n, f) => n + DOMAINS.reduce((m, d) => m + f.scenes[d].length, 0), 0);
   stats.mbtiProfiles = mbtiTypesSeen.size; stats.fusionRules = fusionRules.length; stats.fusionWithScene = fusionRules.filter(r => r.scene).length;
