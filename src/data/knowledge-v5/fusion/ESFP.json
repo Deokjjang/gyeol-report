@@ -1,0 +1,696 @@
+{
+  "version": "fusion-v5-2",
+  "method": "cross-score 상위 후보(배치 X1~X6, docs/v5/p1-fusion-candidates.json) → 유형별 파일로 재편, 작성자 판단으로 kind 조정",
+  "rules": [
+    {
+      "id": "fusion:dayPillar:己丑:ESFP",
+      "myeongriId": "dayPillar:己丑",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "spendingControl",
+      "score": 2.56,
+      "why": "기축은 언 마당에 묻은 김장독이라 모은 것을 오래 묵히고 마음도 속에서 천천히 익힙니다. ESFP의 Se-Fi는 지금 이 자리에서 쓰고, 웃고, 바로 표현해야 살아납니다. 묻어 두는 손과 꺼내 쓰는 손이 한 사람 안에 같이 있어, 돈과 감정 앞에서 매번 저울질이 일어납니다.",
+      "scene": "친구들과 여행 계획을 짜며 제일 신나 하다가, 결제 직전에 혼자 숙소를 한 단계 싼 곳으로 바꿔 둡니다. 여행지에서는 아낀 돈으로 모두에게 아이스크림을 돌립니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재정 손실 단정",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:己丑",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:branch:午:ESFP",
+      "myeongriId": "branch:午",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 2.51,
+      "why": "오화는 한여름 정오의 핀 조명이라 좋으면 좋다는 게 얼굴에 다 쓰입니다. 지금 이 자리의 소리와 색을 그대로 받는 ESFP의 Se가 그 열에 무대를 깔아 줍니다. 감정이 숨겨지지 않고 방 안 온도를 바로 바꾸는 사람이 되며, 식는 속도도 그만큼 빠릅니다.",
+      "scene": "노래방에서 첫 곡이 나오자마자 탬버린을 집어 들고, 끝날 무렵엔 처음 본 옆 팀 사람과 듀엣을 부르고 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "외모 평가"
+        ]
+      },
+      "sources": [
+        "branch:午",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丙:ESFP",
+      "myeongriId": "dayMaster:丙",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 2.51,
+      "why": "켜지는 순간 운동장 전체를 밝히는 조명탑이 병화입니다. ESFP는 Se로 지금 이 자리의 소리와 색을 그대로 받아 웃음으로 돌려주는 사람이고요. 두 불이 겹치면 감정이 숨김없이 밖으로 나와 판의 온도를 올리는 대신, 반응이 끊긴 날엔 불이 꺼지는 속도도 빠릅니다.",
+      "scene": "친구 집들이에서 블루투스 스피커부터 찾아 연결하고 첫 곡을 고르는 사람이 당신입니다. 집에 와서 단톡방이 조용하면 괜히 그날 사진을 다시 올립니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "외모 평가"
+        ]
+      },
+      "sources": [
+        "dayMaster:丙",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丙午:ESFP",
+      "myeongriId": "dayPillar:丙午",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "attentionSeeking",
+      "score": 2.51,
+      "why": "병오는 불 위에 불을 얹은 일주라 들어서는 순간 그 자리 온도부터 바꿉니다. ESFP의 Se는 지금 이 자리의 소리와 색을 그대로 받아 몸으로 돌려줍니다. 둘이 만나면 무대가 없는 곳에도 무대를 세우는 사람이 되고, 흥이 오를수록 대화가 혼자만의 독무대로 기울기 쉽습니다.",
+      "scene": "회사 야유회 장기자랑에 신청자가 없자 '제가 먼저 갈게요' 하고 마이크를 잡습니다. 노래 두 곡이 끝날 즈음엔 부장님까지 무대 앞에서 손뼉을 치고 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "외모 평가",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丙午",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丙寅:ESFP",
+      "myeongriId": "dayPillar:丙寅",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 2.38,
+      "why": "병인은 동트기 전 산길 맨 앞에서 소나무 횃불을 든 사람처럼 무리를 출발선에 세웁니다. ESFP의 Se는 음악이 바뀌면 몸이 먼저 반응하고, 겉도는 사람을 가운데로 끌어옵니다. 판을 여는 불과 판을 즐기는 감각이 만나 모임의 시작 버튼이 늘 이 사람 손에 있습니다.",
+      "scene": "회사 체육대회 날 아침 다들 쭈뼛거릴 때 확성기를 먼저 집어 들고 '우리 팀 이쪽으로 모여요!'를 외칩니다. 응원 구호도 그 자리에서 지어 냅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丙寅",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:stem:丙:ESFP",
+      "myeongriId": "stem:丙",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 2.36,
+      "why": "음악이 바뀌면 몸이 먼저 반응하는 ESFP의 Se-Fi 위에, 병화가 등대 불빛을 하나 더 얹습니다. 숨길 줄 모르는 밝음이 두 겹이라 사람들이 자연스럽게 당신 쪽으로 모입니다. 그만큼 혼자 남는 저녁은 유난히 어둡게 느껴집니다.",
+      "scene": "생일 파티에 늦게 도착해 문을 열자마자 '나 왔다!' 하고 외치고, 오 분 뒤엔 처음 보는 친구의 친구와 같이 케이크 초에 불을 붙이고 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "외모 평가",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "stem:丙",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:DOHWASAL:ESFP",
+      "myeongriId": "shinsal:DOHWASAL",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "attentionSeeking",
+      "score": 2.31,
+      "why": "도화는 가만히 있어도 눈길이 먼저 와 닿는 복숭아꽃이고, ESFP의 Se는 그 눈길에 즉석으로 웃음과 몸짓을 돌려줍니다. 받는 힘과 돌려주는 힘이 함께 있어 무대 체질이 뚜렷합니다. 다만 평가가 끊긴 조용한 저녁엔 자기 가치까지 흐려지기 쉽습니다.",
+      "scene": "동네 플리마켓에서 물건을 팔다 지나가던 사람에게 농담을 걸었더니 어느새 좌판 앞에 줄이 생깁니다. 사진 같이 찍자는 부탁까지 받고 돌아옵니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "외모 평가"
+        ]
+      },
+      "sources": [
+        "shinsal:DOHWASAL",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:TWELVE_NYEONSAL:ESFP",
+      "myeongriId": "shinsal:TWELVE_NYEONSAL",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "score": 2.3,
+      "why": "년살은 막 씻고 단장한 얼굴처럼 꾸밈과 호기심으로 눈길을 붙드는 별입니다. ESFP는 Se가 앞서는 유형이라 음악이 바뀌면 몸이, 새것이 보이면 손이 먼저 반응합니다. 둘이 겹치면 유행이 이 사람 몸에서 먼저 시작되고, 설렘이 식는 속도도 그만큼 빠릅니다.",
+      "scene": "새로 산 선글라스를 쓴 날, 퇴근길 엘리베이터 거울 앞에서 각도를 바꿔 가며 사진을 찍어 친구 셋에게 보냅니다. 다음 주엔 다른 모양을 검색하고 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "외모 평가",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:TWELVE_NYEONSAL",
+        "mbti:ESFP:functionStack",
+        "mbti:ESFP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:乙丑:ESFP",
+      "myeongriId": "dayPillar:乙丑",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 2.05,
+      "why": "을축 일주는 밟힐수록 뿌리를 내리는 겨울 보리라, 불편한 말을 봄이 올 때까지 미룹니다. 반대로 ESFP는 좋으면 얼굴에 다 드러나고 지금 이 순간을 즐거운 장면으로 바꾸려 하지요. 겉은 웃고 속은 참는 두 겹이 생겨, 가까운 사람도 마음이 닫힌 뒤에야 알아챕니다.",
+      "scene": "생일 파티 사회를 보며 내내 웃던 날, 집에 와서는 몇 달 전 들은 서운한 말을 메모장에 적어 둡니다. 친구들은 그 메모가 있는 줄 모릅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정",
+          "관계 단절 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:乙丑",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:FIRE:MISSING:ESFP",
+      "myeongriId": "element:FIRE:MISSING",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 2.05,
+      "why": "화 없음은 불을 넣은 적 없는 온돌방처럼 속의 기쁨을 겉으로 꺼내는 연습이 적은 상태입니다. ESFP는 Se로 이 자리의 색을 받아들이고, 분위기를 지키려 속마음을 웃음 뒤에 숨기곤 합니다. 판은 잘 띄우는데 내 진짜 기분을 데울 불은 약해서, 괜찮은 척하는 시간이 길어집니다.",
+      "scene": "생일 파티 사회까지 보며 모두를 웃겨 놓고, 집에 와서 '오늘 즐거웠어?'라는 엄마 질문엔 '응, 그냥' 하고 방문을 닫습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "element:FIRE:MISSING",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:FIRE:STRONG:ESFP",
+      "myeongriId": "element:FIRE:STRONG",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 1.95,
+      "why": "화 과다는 장작더미에 불이 한꺼번에 옮겨붙듯 표현과 열정이 먼저 타오릅니다. ESFP는 Se로 음악이 바뀌면 몸이 먼저 움직이고 Fi의 좋음을 얼굴에 그대로 띄웁니다. 같은 온도의 두 불이 만나 자리를 데우는 속도는 최고인데, 연료가 닳는 속도도 함께 빨라집니다.",
+      "scene": "금요일 밤 회식을 노래방 3차까지 끝까지 끌고 간 다음, 토요일엔 휴대폰을 무음으로 둔 채 오후 세 시까지 이불 밖으로 나오지 못합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "element:FIRE:STRONG",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:twelveStage:沐浴:ESFP",
+      "myeongriId": "twelveStage:沐浴",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "score": 1.94,
+      "why": "목욕은 처음 씻기고 처음 꾸미는 자리라 감각이 예민하고 마음이 물처럼 출렁입니다. 지금 이 순간의 색과 소리를 그대로 받아들이는 ESFP의 Se가 그 출렁임에 박자를 더합니다. 아름다운 것을 가장 먼저 알아보는 눈이 생기는 대신, 기분과 호감이 하루에도 몇 번씩 뒤집힙니다.",
+      "scene": "카페 스피커에서 좋아하는 노래가 나오자 주문하다 말고 어깨를 흔듭니다. 십 분 뒤 친구의 짧은 답장 한 줄에 금세 입이 삐죽 나옵니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "외모 평가"
+        ]
+      },
+      "sources": [
+        "twelveStage:沐浴",
+        "mbti:ESFP:functionStack",
+        "mbti:ESFP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:丙:spring:ESFP",
+      "myeongriId": "climate:丙:spring",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 1.84,
+      "why": "봄 병화는 나무를 땔감 삼아 점점 커지는 불이라, 판이 넓을수록 빛이 멀리 갑니다. ESFP는 사람이 모인 자리에 온기를 붙이고 지금을 즐거운 장면으로 바꿉니다. 처음 보는 사이도 금세 데우는 사람이 되지만, 박수가 멈추면 불도 같이 줄어듭니다.",
+      "scene": "벚꽃 철 회사 야유회에서 즉석 사진 부스를 꾸려 줄을 세우고, 끝날 땐 다른 팀 사람들까지 단체 사진에 넣어 버립니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "외모 평가"
+        ]
+      },
+      "sources": [
+        "climate:丙:spring",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:乙巳:ESFP",
+      "myeongriId": "dayPillar:乙巳",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 1.84,
+      "why": "을사는 축제 무대 조명 아래 쉬지 않고 휘감기는 리본처럼 반응이 오는 쪽으로 방향을 바꿉니다. ESFP의 Se 역시 누가 들어오면 바로 웃어 주는 감각이라, 둘 다 사람 앞에서 살아납니다. 낯선 자리를 금세 내 편으로 만드는 대신 약속이 겹쳐 한 사람에게 늦게 연락하는 일이 생깁니다.",
+      "scene": "결혼식 뒤풀이에서 처음 본 신랑 친구와 노래방 애창곡이 같다는 걸 알고, 그 자리에서 2차 장소를 잡아 열 명을 데리고 갑니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:乙巳",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:戊:winter:ESFP",
+      "myeongriId": "climate:戊:winter",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 1.75,
+      "why": "한겨울 능선의 언 흙은 볕이 들어야 비로소 흙으로 돌아옵니다. ESFP는 지금 이 순간을 즐거운 장면으로 바꾸고 기분이 얼굴에 다 드러나는 사람이죠. 속은 꽁꽁 아끼고 겉은 밝게 쓰려 하니, 지갑과 마음 모두 열었다 닫았다를 반복합니다.",
+      "scene": "모임에서 '오늘 내가 쏠게' 하고 카드를 내밀고는, 집에 와 가계부 앱을 열어 다음 주 점심값을 하나씩 줄여 맞춥니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정",
+          "우울 단정"
+        ]
+      },
+      "sources": [
+        "climate:戊:winter",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:壬:winter:ESFP",
+      "myeongriId": "climate:壬:winter",
+      "mbtiTarget": "ESFP",
+      "kind": "conditional",
+      "dimension": "emotionalExpression",
+      "score": 1.72,
+      "why": "겨울의 임수는 물이 가장 왕성한 철의 큰물이라 깊고 세지만, 햇볕이 없으면 차갑고 무겁게 보입니다. ESFP는 Se로 지금 이 자리를 데우면서도, 분위기를 지키려 진짜 속마음은 웃음 뒤에 숨깁니다. 겉은 따뜻한 조명인데 속은 언 강이라, 모임에선 가장 밝다가 집에 오면 혼자 오래 가라앉는 온도 차가 생깁니다.",
+      "scene": "송년회에서 마이크를 놓지 않던 날, 택시에서 내리자마자 휴대폰을 끄고 불 꺼진 방에서 한참 창밖 눈만 봅니다. 다음 날 단톡방엔 웃는 사진만 올립니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "climate:壬:winter",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:乙:summer:ESFP",
+      "myeongriId": "climate:乙:summer",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 1.61,
+      "why": "여름 을목은 칠월 정오에 가장 화려하게 피는 수국이라, 분위기를 살리는 데 따로 힘이 들지 않습니다. 음악이 바뀌면 몸이 먼저 반응하는 ESFP의 Se가 그 꽃에 무대를 줍니다. 한낮엔 누구보다 반짝이지만, 물 한 바가지를 놓치면 오후에 고개를 숙입니다.",
+      "scene": "여름 페스티벌에서 처음 만난 사람들과 응원 구호를 만들어 외치다가, 집에 오는 막차에서는 휴대폰도 못 보고 바로 잠듭니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "외모 평가",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "climate:乙:summer",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:食神:ESFP",
+      "myeongriId": "tenGod:食神",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 1.6,
+      "why": "식신은 냄비 하나로 한 상을 차려 식구를 깨우는 손맛이라, 좋아하는 걸 만들어 나눌 때 힘이 납니다. ESFP의 Se는 지금 맛보고 만지는 감각을 즐기고, Fi는 좋은 걸 좋다고 말합니다. 곁에 있기만 해도 자리가 풀리지만, 즐거움이 마감을 미루는 핑계가 되기도 합니다.",
+      "scene": "친구 집들이에 빈손 대신 직접 만든 떡볶이 소스를 들고 가, 부엌을 빌려 즉석에서 한 냄비 끓여 내고 사진까지 찍어 줍니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:食神",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:戊:summer:ESFP",
+      "myeongriId": "climate:戊:summer",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 1.59,
+      "why": "여름 무토는 볕을 머금어 단단하지만 겉이 말라, 감정을 말로 꺼내는 길이 좁습니다. ESFP는 지금 이 자리의 색과 소리를 바로 표정과 몸짓으로 돌려주는 쪽입니다. 밖으로는 웃음이 많은데 속의 서운함은 갈라진 흙처럼 말없이 남아, 가까운 사람도 모르고 지나칩니다.",
+      "scene": "생일 파티에서 제일 크게 웃고 사진도 제일 많이 찍었는데, 집에 와서는 '아무도 요즘 어떠냐고는 안 물어봤네' 하고 혼잣말을 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "climate:戊:summer",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:丁:summer:ESFP",
+      "myeongriId": "climate:丁:summer",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 1.51,
+      "why": "여름의 정화는 작은 불들이 줄지어 켜져 골목 끝까지 번지는 연등 같아, 사람을 끌어모으는 온기가 큽니다. ESFP는 Se로 지금 이 자리를 그대로 받아들이고, 들어오는 사람마다 바로 웃어 줍니다. 열기에 열기가 붙어 모임은 환해지는데, 식혀 줄 물 없이 몰아치면 사흘 뒤 한꺼번에 지칩니다.",
+      "scene": "여름 축제 날 친구 다섯을 불러 모아 돗자리와 얼음물, 부채까지 챙겨 갑니다. 불꽃놀이가 끝나도 '한 곳만 더'를 외치며 앞장서 걷습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "climate:丁:summer",
+        "mbti:ESFP:functionStack",
+        "mbti:ESFP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:GWASUKSAL:ESFP",
+      "myeongriId": "shinsal:GWASUKSAL",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "intimacyPace",
+      "score": 1.5,
+      "why": "과숙살은 손님이 떠난 뒤 의자를 올리는 찻집 주인처럼 한 걸음 물러나 자기 자리를 지키는 별입니다. ESFP의 Se는 들어오는 사람에게 바로 웃어 주고, 좋아하면 목소리 톤부터 올라갑니다. 다가가는 속도와 물러서는 거리가 한 사람 안에서 엇갈려, 분위기는 가장 먼저 띄우고 마음은 가장 늦게 엽니다.",
+      "scene": "파티에서 처음 본 사람들과 30분 만에 사진을 찍고 춤까지 추지만, 끝날 때 연락처를 묻는 사람에겐 웃으며 '다음에 또 봐요'라고만 하고 먼저 일어납니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "이별 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:GWASUKSAL",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:EARTH:MISSING:ESFP",
+      "myeongriId": "element:EARTH:MISSING",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 1.48,
+      "why": "토가 하나도 없는 구성은 밧줄을 푼 열기구처럼 어디로든 뜨지만 내려앉을 들판을 아직 정하지 않았습니다. ESFP는 Se로 지금 이 순간에 올라타고, 무거운 일은 마감 직전까지 '다음에'로 미루는 편이죠. 낯선 판에서는 누구보다 빨리 숨을 고르지만, 누가 정해 둔 일정표가 없어지는 달엔 카드값과 마감이 한꺼번에 몰려옵니다.",
+      "scene": "워킹홀리데이 첫 주에 이미 동네 펍 직원들과 이름을 트지만, 비자 연장 서류는 마감 사흘 전에야 가방 밑에서 꺼냅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 손실 단정"
+        ]
+      },
+      "sources": [
+        "element:EARTH:MISSING",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:branch:辰:ESFP",
+      "myeongriId": "branch:辰",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 1.42,
+      "why": "진토는 봄비 머금은 못자리처럼 겉은 차분하고 속은 물과 싹으로 바쁜 땅이라, 속내를 몇 주씩 묵혀 둡니다. ESFP의 Se는 느낀 걸 그 자리에서 꺼내고, Ni가 늦어 먼 계획은 일부러 밀어 둡니다. 묵히는 땅과 바로 터뜨리는 감각이 부딪쳐, 겉으로는 신나게 웃으면서 속으론 계획 여러 개를 따로 굴립니다.",
+      "scene": "친구들 앞에선 '난 계획 같은 거 없어' 하고 웃지만, 휴대폰 메모장엔 여행·적금·이사 목록이 따로 세 개 있습니다. 누가 진지하게 물으면 그제야 슬쩍 보여 줍니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "branch:辰",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:yinYang:YIN_HEAVY:MALE:ESFP",
+      "myeongriId": "yinYang:YIN_HEAVY:MALE",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "attentionSeeking",
+      "score": 1.41,
+      "why": "음이 많은 남성은 해 진 뒤에야 꽃잎을 여는 달맞이꽃처럼 판을 조용히 읽는 쪽입니다. ESFP는 누가 들어오면 바로 웃어 주고 자리에 온기를 붙입니다. 사람들 앞에선 밝은데 마음을 고백할 땐 타이밍을 재다 계절을 넘겨, 겉과 속의 속도 차가 생깁니다.",
+      "scene": "회식 자리에선 분위기를 띄우는 사람인데, 좋아하는 사람에게 보낼 메시지는 쓰고 지우기를 일주일째 반복하고 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown",
+          "genderKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "성별 고정관념 단정"
+        ]
+      },
+      "sources": [
+        "yinYang:YIN_HEAVY:MALE",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:乙:ESFP",
+      "myeongriId": "dayMaster:乙",
+      "mbtiTarget": "ESFP",
+      "kind": "conditional",
+      "dimension": "socialEnergy",
+      "score": 1.39,
+      "why": "을목은 철망 틈을 한 칸씩 감아 오르는 나팔꽃이라, 낯선 사람 사이에서 말 걸 자리를 잘 찾습니다. ESFP의 Se도 누가 들어오면 바로 웃어 주니 사람을 잇는 감각은 서로 맞지요. 다만 덩굴은 오래 걸려도 끝까지 오르고 ESFP는 지금 재미있는 쪽으로 몸이 가서, 목표가 길어질수록 둘이 엇갈립니다.",
+      "scene": "엘리베이터에서 만난 옆 팀 사람과 같은 운동화 얘기로 웃다가, 다음 주 점심 약속을 잡아 두 팀 회식까지 이어 붙입니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:乙",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:EARTH:WEAK:ESFP",
+      "myeongriId": "element:EARTH:WEAK",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 1.38,
+      "why": "토가 얇으면 적응은 빠른데, 돌아와 쉴 바닥과 생활 리듬이 얇습니다. ESFP의 Se는 그때그때 즐거운 쪽으로 옮겨 가고, 정리를 맡은 Te는 마감이 눈앞에 와야 켜집니다. 둘이 겹치면 어디서든 금방 발을 붙이는 가벼움이 되지만, 밥·잠·돈의 시간이 흔들리면 기분도 함께 흔들립니다.",
+      "scene": "월급날 저녁 친구들과 즉흥으로 고깃집에 가고, 25일쯤 카드 앱을 열어 보고서야 이번 달 관리비를 아직 안 냈다는 걸 압니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "낭비벽 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "element:EARTH:WEAK",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:HONGYEOMSAL:ESFP",
+      "myeongriId": "shinsal:HONGYEOMSAL",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "intimacyPace",
+      "score": 1.35,
+      "why": "홍염은 해 진 뒤에도 오래 남는 붉은 노을처럼, 가까이 온 사람을 은근히 붙드는 매력입니다. ESFP의 Se는 눈앞 사람에게 바로 웃어 주고 그 순간을 즐거운 장면으로 바꿉니다. 거리가 빨리 좁혀지는 사람이 되는데, 본인은 그냥 친절했을 뿐인데 오해가 따라오기도 합니다.",
+      "scene": "단골 카페 직원에게 '오늘 앞치마 색 예쁘네요' 한마디 했을 뿐인데, 다음 방문부터 음료 옆에 쿠키가 하나씩 따라 나옵니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "외모 평가"
+        ]
+      },
+      "sources": [
+        "shinsal:HONGYEOMSAL",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:乙:spring:ESFP",
+      "myeongriId": "climate:乙:spring",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 1.31,
+      "why": "봄에 난 을목은 비 그친 오후 볕이 들자 한꺼번에 꽃망울을 터뜨리는 철쭉 덤불입니다. ESFP 역시 사람이 모인 자리의 소리와 색을 받아 웃음으로 피어나는 사람이지요. 좋은 사람 곁에서 가장 크게 피는 대신, 반응이 뜸한 주에는 꽃잎이 처지듯 기분도 금세 가라앉습니다.",
+      "scene": "새 동네로 이사 온 첫 주에 꽃집 사장님, 빵집 직원, 옆집 아이 이름까지 외워 둡니다. 주말엔 그 사람들을 불러 베란다에서 차를 마십니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정"
+        ]
+      },
+      "sources": [
+        "climate:乙:spring",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丁:ESFP",
+      "myeongriId": "dayMaster:丁",
+      "mbtiTarget": "ESFP",
+      "kind": "conditional",
+      "dimension": "caretaking",
+      "score": 1.3,
+      "why": "정화는 손으로 감싸면 꺼지지 않는 촛불이라 가까운 몇 사람만 또렷하게 비춥니다. ESFP는 Se로 방 전체에 온기를 붙이고, 구석에 선 사람을 가운데로 끌어옵니다. 챙기는 마음은 같고 비추는 범위가 달라서, 넓게 놀다가도 끝나면 한 사람 곁에 오래 남는 쪽을 택합니다.",
+      "scene": "북적이는 송년회에서 내내 사회를 보다가, 끝날 무렵엔 취한 친구 하나를 택시 앞까지 데려다주고 도착했다는 문자가 올 때까지 기다립니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丁",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    }
+  ]
+}

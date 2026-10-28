@@ -1,0 +1,701 @@
+{
+  "version": "fusion-v5-2",
+  "method": "cross-score 상위 후보(배치 X1~X6, docs/v5/p1-fusion-candidates.json) → 유형별 파일로 재편, 작성자 판단으로 kind 조정",
+  "rules": [
+    {
+      "id": "fusion:dayPillar:庚辰:ESTJ",
+      "myeongriId": "dayPillar:庚辰",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "controlNeed",
+      "score": 2.75,
+      "why": "경진은 젖은 흙에서 벼려 낸 큰 칼이라 결단이 무겁고, 괴강으로 불리는 만큼 통제 범위가 넓어지기 쉽습니다. ESTJ는 Te로 누가 무엇을 언제까지 할지 정해져야 마음이 놓입니다. 그래서 어수선한 판은 가장 빨리 정리하지만, 집에서까지 역할표를 그리다 '내가 알아서 할게'를 듣습니다.",
+      "scene": "가족 여행 계획이 단톡방에서 사흘째 맴돌자 숙소·차량·식사 담당을 표로 만들어 올리고 '이의 없으면 확정'이라고 적습니다. 동생은 답장 대신 한숨 이모티콘을 보냅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "상사 갈등 사건 단정",
+          "가정 불화 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:庚辰",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:戊戌:ESTJ",
+      "myeongriId": "dayPillar:戊戌",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 2.56,
+      "why": "무술은 마른 땅을 한 번 더 다진 일주라 맡은 자리에서 한 발도 물러서지 않습니다. 그 위에 ESTJ의 Te가 담당과 마감을 정하고 Si가 해 봐서 됐던 방식을 기본값으로 꺼냅니다. 위기 때 모두가 찾는 버팀목이 되는 대신, 바꾸자는 말 앞에서는 같은 무게로 성벽이 됩니다.",
+      "scene": "태풍 예보가 뜬 밤, 다들 퇴근한 창고에 남아 출입문과 배수구를 다시 확인하고 단톡방에 '이상 없음' 네 글자를 올립니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:戊戌",
+        "mbti:ESTJ:functionStack",
+        "mbti:ESTJ:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:戊辰:ESTJ",
+      "myeongriId": "dayPillar:戊辰",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 2.49,
+      "why": "봄비를 가득 받아 두고도 둑 하나 흔들리지 않는 흙댐, 그게 무진입니다. ESTJ의 Te-Si는 담당과 마감을 정해 맡은 조직을 굴러가게 만듭니다. 받아 두는 두께와 굴리는 관리가 만나 일이 몰릴수록 중심을 잡지만, 물을 내보내지 않으면 '왜 나만'이 한꺼번에 터집니다.",
+      "scene": "부서 통합 첫 주, 두 팀 업무를 한 장짜리 표로 정리해 칸마다 담당자 이름을 적고 금요일 저녁까지 혼자 남아 빈칸을 채웁니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:戊辰",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:癸丑:ESTJ",
+      "myeongriId": "dayPillar:癸丑",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 2.48,
+      "why": "계축은 얼음을 한여름까지 지키는 석빙고 같은 일주이고, 땅속 주인 글자가 편관이라 압박 속에서 더 단단해집니다. ESTJ의 Te-Si는 할 일과 담당과 마감을 표로 만들어 끝까지 굴립니다. 대비책이 두 겹이라 실수는 드문데, '아직 부족하다'는 기분도 두 겹으로 따라옵니다.",
+      "scene": "다음 주 행사인데 오늘 밤 벌써 비 올 때, 인원이 늘 때, 담당자가 빠질 때의 대안을 시트 탭 세 개로 나눠 만들어 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:癸丑",
+        "mbti:ESTJ:functionStack",
+        "mbti:ESTJ:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:甲戌:ESTJ",
+      "myeongriId": "dayPillar:甲戌",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "ruleAdherence",
+      "score": 2.38,
+      "why": "갑술 일주는 바람이 불어도 화살표가 그대로인 언덕 이정표이고, 땅 밑에 편재와 정관을 숨기고 있습니다. ESTJ의 Te-Si는 할 일·담당·마감을 정한 뒤 지난번 매뉴얼을 기본값으로 꺼내지요. 계획을 예산표와 규칙으로 바꾸는 손이 둘 다 빨라, 한번 정한 기준은 마감이 급해도 빼지 않습니다.",
+      "scene": "팀 워크숍 예산을 짜면서 식대·교통비·예비비 칸부터 만들고, 누가 일정에 없던 2차를 제안하면 '그건 다음 분기 예산으로요'라며 웃으며 자릅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "재산 규모 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:甲戌",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正官:ESTJ",
+      "myeongriId": "tenGod:正官",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 2.31,
+      "why": "정관은 규칙과 약속, 자기 자리를 지키는 것으로 신뢰를 쌓는 힘입니다. ESTJ의 Te는 누가 맡고 언제 끝내는지를 정해야 마음이 놓이고, Si는 지난 매뉴얼을 기본값으로 꺼냅니다. 이 사람의 '하겠습니다'는 이미 일정표에 적힌 문장이라 믿음을 사지만, 예외가 필요한 날엔 원칙이 먼저 나와 차가워 보입니다.",
+      "scene": "부서 회식비 정산이 하루 늦어지자 담당자에게 '규정상 오늘 6시까지예요'라고 보내고, 영수증 사본을 날짜순으로 묶어 직접 제출합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正官",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:甲申:ESTJ",
+      "myeongriId": "dayPillar:甲申",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 2.27,
+      "why": "일지에 편관을 깐 갑신은 누가 시키지 않아도 스스로 기준을 올립니다. ESTJ의 Te-Si는 담당과 마감이 정해져야 마음이 놓이고, 지난번 매뉴얼을 기본값으로 꺼냅니다. 그래서 분담표를 가장 먼저 만드는 사람이 되지만, 같은 기준을 남에게도 요구해 말끝에 날이 섭니다.",
+      "scene": "이사 날짜가 잡히자 가족 단톡방에 '짐 싸기 분담표'를 올리고, 각자 맡은 상자 개수 옆에 마감 날짜까지 적어 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "가족 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:甲申",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:stem:甲:ESTJ",
+      "myeongriId": "stem:甲",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "controlNeed",
+      "score": 2.25,
+      "why": "갑목은 돌 틈을 밀어내고 곧게 솟는 죽순처럼 빈자리에 첫 기둥을 박습니다. ESTJ는 Te로 담당과 마감을 정하고 Si로 해 봐서 된 순서를 지킵니다. 방향을 먼저 세우는 나무에 일정표가 붙으니, 남에게도 그 방향을 그대로 따르라고 밀어붙이는 날이 생깁니다.",
+      "scene": "동네 축구 모임에서 아무도 총무를 안 맡자 그날 밤 회비 계좌와 경기 일정표를 만들어 공지합니다. 다음 달엔 지각 벌금 규칙까지 생겨 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "stem:甲",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏官:ESTJ",
+      "myeongriId": "tenGod:偏官",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 2.25,
+      "why": "위기 때 역할을 나누는 손이 둘입니다. 편관은 경보가 울릴 때 비상문을 잡아 주는 대장이고, ESTJ의 Te는 누가 언제까지 맡는지 정해야 숨이 놓입니다. 다만 위기가 없는 집에서도 그 손이 지시를 멈추지 않을 때가 있습니다.",
+      "scene": "가족 여행 중 렌터카 타이어가 펑크 나자 길가에 차를 세우고 '보험사는 내가, 너는 사진, 엄마는 쉬고 계세요'라고 30초 만에 정리합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "상사와의 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏官",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:庚午:ESTJ",
+      "myeongriId": "dayPillar:庚午",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 2.19,
+      "why": "경오는 한낮 화덕에서 망치질로 모양을 잡는 편자이고, 발밑의 불이 정관이라 원칙이 몸에 뱁니다. ESTJ는 누가 맡고 언제 끝내는지가 정해져야 마음이 놓입니다. 압박이 클수록 더 또박또박해지는 사람이지만, 칭찬이 없으면 더 세게 두드리다 먼저 지칩니다.",
+      "scene": "본부장 보고 전날 밤, 슬라이드마다 담당자와 마감일을 빨간 글씨로 박아 넣고 예상 질문 열 개에 답을 달아 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정",
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:庚午",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:戊午:ESTJ",
+      "myeongriId": "dayPillar:戊午",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 2.18,
+      "why": "무오는 속에 한낮의 불을 품은 숯가마라, 한번 달궈지면 쉽게 식지 않고 오래 열을 냅니다. ESTJ의 Te는 맡은 판을 끝까지 굴리고, 가장 늦게 보이는 Fi는 지친 마음을 뒤로 미룹니다. 양인일주의 고집까지 더해져 '제가 주말에 나올게요'가 입버릇이 되고, 지친 걸 본인보다 동료가 먼저 압니다.",
+      "scene": "장마철 야외 행사장 천막이 바람에 흔들리자 우비를 입고 혼자 밖으로 나가 말뚝을 다시 박습니다. 끝나고는 '별일 아니었어요' 한마디만 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:戊午",
+        "mbti:ESTJ:functionStack",
+        "mbti:ESTJ:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:branch:丑:ESTJ",
+      "myeongriId": "branch:丑",
+      "mbtiTarget": "ESTJ",
+      "kind": "conditional",
+      "dimension": "persistence",
+      "score": 2.12,
+      "why": "언 밭 밑 저장고인 축토는 한번 맡은 일을 겨울을 넘겨서라도 끝냅니다. ESTJ의 Si도 해 봐서 된 방법을 기본값으로 꺼내니 버티는 힘은 서로 맞습니다. 다만 Te는 마감 안에 빨리 정하자고 재촉하고 축토는 석 달쯤 지켜보자고 버텨, 결정 앞에서만 속도가 엇갈립니다.",
+      "scene": "새 결재 시스템이 들어오자 팀원들에게 사용법을 표로 돌리면서도, 자기 서랍엔 옛날 종이 결재 양식을 한 묶음 남겨 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "branch:丑",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGodBalance:OFFICER:STRONG:ESTJ",
+      "myeongriId": "tenGodBalance:OFFICER:STRONG",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 2,
+      "why": "관성 과다는 완장을 세 개 찬 반장처럼 책임과 규칙이 사방에서 눌러 긴장이 잘 안 풀리는 상태입니다. ESTJ는 Te로 기준을 먼저 세우고, Fi가 가장 늦게 깨어 서운함을 꾹 누릅니다. 맡은 일은 흔들림 없이 끝내지만, 쉬는 법을 일정에 넣지 않으면 사소한 실수에 크게 터집니다.",
+      "scene": "가족 여행 첫날 숙소에 들어서자마자 다음 날 동선표를 냉장고에 붙이고, 회사 메일함 안 읽은 숫자를 0으로 만든 뒤에야 짐을 풉니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정",
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "tenGodBalance:OFFICER:STRONG",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:庚戌:ESTJ",
+      "myeongriId": "dayPillar:庚戌",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "directness",
+      "score": 1.99,
+      "why": "경술은 숨은 불에 단련된 쇠라 지킬 선이 분명하고, 괴강답게 한번 굳힌 판단을 잘 다시 열지 않습니다. ESTJ의 Te는 규정과 책임을, Si는 지난 기록을 앞세웁니다. 그래서 '안 되는 건 안 됩니다'에 근거 서류까지 붙어 나오는 사람이 됩니다.",
+      "scene": "동호회 회비를 늦게 낸 사람이 '이번만 봐 달라'고 하자, 회칙 3조를 캡처해 보내고 납부 계좌를 한 번 더 적어 줍니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:庚戌",
+        "mbti:ESTJ:functionStack",
+        "mbti:ESTJ:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGodBalance:OFFICER:WEAK:ESTJ",
+      "myeongriId": "tenGodBalance:OFFICER:WEAK",
+      "mbtiTarget": "ESTJ",
+      "kind": "conditional",
+      "dimension": "ruleAdherence",
+      "score": 1.95,
+      "why": "관성이 약하면 줄 없는 공책처럼 글씨가 점점 비스듬히 올라갑니다. 그런데 ESTJ의 Te-Si는 할 일·담당·마감을 정해야 마음이 놓이는 사람이라, 바깥 선이 약한 자리를 스스로 그은 선으로 메웁니다. 남이 만든 규칙엔 '왜요'가 나오고 자기 규칙엔 엄격한 묘한 모습이 됩니다.",
+      "scene": "회사 결재 규정이 바뀌었다는 공지는 사흘 뒤에야 읽으면서, 자기 팀 마감 표는 밤 열한 시에도 칸을 맞춥니다. 팀원들은 어느 규칙이 진짜인지 헷갈립니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "상사 갈등 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "tenGodBalance:OFFICER:WEAK",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:METAL:STRONG:ESTJ",
+      "myeongriId": "element:METAL:STRONG",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "directness",
+      "score": 1.93,
+      "why": "금 과다는 칼꽂이에 빈틈없이 꽂힌 식칼처럼 자르고 끝맺는 힘이 셉니다. ESTJ의 Te는 사실·기준·결과로 일을 가르고 Si는 지난 규칙을 기본값으로 둡니다. 맞는 말과 빠른 결정이 한꺼번에 나와 일은 깔끔하게 끝나지만, 사람들이 이 사람 앞에서 말을 고르기 시작합니다.",
+      "scene": "주간 회의 안건이 다섯 개를 넘자 '오늘은 위 세 개만 정하고 나머지는 메일로 받겠습니다'라고 자르고, 정확히 40분에 회의를 닫습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "element:METAL:STRONG",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:EARTH:STRONG:ESTJ",
+      "myeongriId": "element:EARTH:STRONG",
+      "mbtiTarget": "ESTJ",
+      "kind": "conditional",
+      "dimension": "dutifulness",
+      "score": 1.84,
+      "why": "토가 많으면 맡고 쌓고 지키는 힘이 큰 대신 나가는 문이 좁은 곳간이 됩니다. ESTJ는 Si로 해 봐서 된 방법을 기본값으로 두고, Te로 쌓인 일을 담당과 마감으로 나눠 내보냅니다. 책임감은 같은 쪽으로 겹치고 꺼내는 손은 반대로 당겨, 바쁠 땐 곳간을 잘 돌리다 지치면 '하던 대로'만 남습니다.",
+      "scene": "연말 대청소 날 창고 물건에 '1년 안 쓴 것'과 '쓸 것' 표를 붙이자고 해 놓고, 정작 자기 상자 세 개는 슬그머니 '쓸 것' 쪽으로 옮깁니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "재산 규모 단정"
+        ]
+      },
+      "sources": [
+        "element:EARTH:STRONG",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:yinYang:YANG_HEAVY:MALE:ESTJ",
+      "myeongriId": "yinYang:YANG_HEAVY:MALE",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "controlNeed",
+      "score": 1.84,
+      "why": "양이 많은 남성은 밀고 나가는 힘에 '남자답다'는 칭찬까지 붙어 아무도 브레이크를 걸어 주지 않습니다. ESTJ의 Te는 책임을 맡고 일정을 당기며, Fi는 가장 늦게 깨어 지침을 숨깁니다. 앞장서는 것이 당연해진 사람이라 집에서도 상의보다 결정이 먼저 나옵니다.",
+      "scene": "명절 귀성 날짜를 가족 단톡방에 묻기도 전에 기차표 네 장을 예매해 캡처를 올리고, 출발 시간에 맞춰 누구를 먼저 깨울지까지 적어 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown",
+          "genderKnown"
+        ],
+        "forbids": [
+          "결혼 생활 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "yinYang:YANG_HEAVY:MALE",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:GOEGANG:ESTJ",
+      "myeongriId": "shinsal:GOEGANG",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "persistence",
+      "score": 1.8,
+      "why": "괴강은 중간 눈금 없이 끝까지 밀어붙이는 세기라 마감과 위기 앞에서 오히려 또렷해집니다. ESTJ의 Te는 누가 언제까지 끝내는지 정해져야 마음이 놓이고, Si는 됐던 방식을 기본값으로 꺼냅니다. 맡은 판은 끝내 닫히지만, 남의 속도를 게으름으로 읽는 순간 말이 한 칸 세게 나갑니다.",
+      "scene": "단체 여행 출발 30분 전 한 명이 안 오자 다섯 번 전화를 걸고, 그래도 안 받자 '10분 뒤 출발, 따로 오세요'를 단톡방에 올립니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:GOEGANG",
+        "mbti:ESTJ:functionStack",
+        "mbti:ESTJ:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:branch:戌:ESTJ",
+      "myeongriId": "branch:戌",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 1.74,
+      "why": "술토는 가을걷이 끝난 들판 끝 초소라 맡은 사람과 자리를 밤새 지킵니다. ESTJ의 Te는 사실과 결과로 일을 나누고, Si는 해 봐서 됐던 방법을 기본값으로 꺼냅니다. 선이 분명한 책임자가 되는 대신, 새 제안을 시험하는 기간이 길어 기회가 먼저 지나가기도 합니다.",
+      "scene": "동네 축구회 총무를 맡아 회비 장부를 분기마다 공개하고, 새 회원이 들어오면 석 달은 지켜본 뒤에야 공지 올리는 권한을 줍니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "branch:戌",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:甲:ESTJ",
+      "myeongriId": "dayMaster:甲",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "controlNeed",
+      "score": 1.73,
+      "why": "곧게 자라는 줄기처럼 갑목은 한번 정한 목표를 몇 년이고 붙듭니다. 해 봐서 됐던 방법을 기본값으로 꺼내는 ESTJ의 Si가 그 줄기에 받침대를 댑니다. 방향과 매뉴얼을 같이 쥔 사람이 되는데, 방향을 바꾸자는 말을 지는 것처럼 듣기 쉽습니다.",
+      "scene": "새로 온 팀원에게 첫날 '우리 팀 일하는 법' 문서를 건네는데, 3년 전 자기가 세운 목표 표가 아직도 그 문서 첫 장에 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:甲",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:twelveStage:帝旺:ESTJ",
+      "myeongriId": "twelveStage:帝旺",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "controlNeed",
+      "score": 1.69,
+      "why": "제왕은 정오의 해처럼 그림자가 발밑에만 남는, 힘이 가장 센 자리입니다. ESTJ는 할 일과 담당, 마감을 정해 놓고 끝까지 굴러가게 만듭니다. 기세와 관리가 겹쳐 흔들리는 조직을 붙들지만, 다 알아서 하다 보니 아무도 반대 의견을 말해 주지 않게 됩니다.",
+      "scene": "동네 축구회 총무를 맡은 지 한 달 만에 회비, 구장 예약, 포지션표를 혼자 다 정하고, 공지는 늘 '이견 없으면 확정'으로 끝납니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "twelveStage:帝旺",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:己:ESTJ",
+      "myeongriId": "dayMaster:己",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 1.66,
+      "why": "기토 일간은 베란다 텃밭처럼 작은 필요를 알아보고 매일 돌봐 길러 내는 흙입니다. ESTJ는 Te로 할 일·담당·마감을 정하고, Si로 해 봐서 된 방법을 기본값으로 꺼냅니다. 둘이 만나면 돌봄이 체크리스트가 되어 생활이 빈틈없이 굴러가지만, 확인을 두세 번 하느라 쉬는 날에도 마음이 바쁩니다.",
+      "scene": "가족 김장 날을 앞두고 배추 포기 수, 양념 분량, 통 개수를 전날 밤 표로 만들어 단톡방에 올리고, 당일엔 고무장갑 여분까지 인원수대로 꺼내 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "가족 관계 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:己",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:EARTH:MISSING:ESTJ",
+      "myeongriId": "element:EARTH:MISSING",
+      "mbtiTarget": "ESTJ",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 1.64,
+      "why": "토가 없으면 남이 정한 틀에서는 잘 지내다 그 틀이 사라지는 순간 붕 뜹니다. ESTJ는 매뉴얼과 결재선이 있어야 마음이 놓이는 사람이라, 그 빈자리를 더 크게 느낍니다. 계획표를 남보다 촘촘히 짜는 이유가 실은 중심이 비어 있어서일 때가 많습니다.",
+      "scene": "조직 개편으로 보고 라인이 사라진 주, 아무도 시키지 않았는데 새 업무 분장표를 혼자 만들어 월요일 아침 회의에 들고 갑니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "주거 이동 단정"
+        ]
+      },
+      "sources": [
+        "element:EARTH:MISSING",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:丁:autumn:ESTJ",
+      "myeongriId": "climate:丁:autumn",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 1.61,
+      "why": "가을의 정화는 불꽃은 작아도 무쇠 팬을 달궈 실속을 남기는 불이고, 쇠 기운이 재물로 들어와 숫자에 밝습니다. ESTJ의 Te는 고정비와 저축을 칸별로 나누고 Si는 이체 날짜까지 달력에 적습니다. 꿈을 말하는 자리에서 '그럼 비용은?'을 묻는 사람인데, 사람까지 손익으로 재면 서운함이 남습니다.",
+      "scene": "동호회 연말 행사 회의에서 다들 장소 얘기를 할 때 혼자 1인당 회비와 남는 돈을 계산해 화면에 띄웁니다. 남는 돈은 다음 행사 칸으로 미리 옮겨 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재물 규모 단정"
+        ]
+      },
+      "sources": [
+        "climate:丁:autumn",
+        "mbti:ESTJ:functionStack",
+        "mbti:ESTJ:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:yinYang:YANG_HEAVY:FEMALE:ESTJ",
+      "myeongriId": "yinYang:YANG_HEAVY:FEMALE",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "directness",
+      "score": 1.61,
+      "why": "여덟 글자 중 양이 많은 여성은 운동장에 먼저 나가 호루라기를 부는 사람처럼 먼저 움직이고 돌려 말하지 않습니다. 할 일·담당·마감을 표로 올리는 ESTJ의 Te가 그 호루라기에 순서를 붙여 주죠. 앞에 서는 자리에서 성과가 크지만, 받고 기다리는 힘이 얇아 혼자 다 하다 지치기 쉽습니다.",
+      "scene": "가족 여행 단톡방에 날짜·숙소·예산 담당을 한 줄씩 정리해 올리고, 답이 늦은 사람에게는 직접 전화를 겁니다. 이틀 만에 예약이 다 끝나 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown",
+          "genderKnown"
+        ],
+        "forbids": [
+          "외모 평가",
+          "결혼 생활 사건 단정"
+        ]
+      },
+      "sources": [
+        "yinYang:YANG_HEAVY:FEMALE",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:branch:酉:ESTJ",
+      "myeongriId": "branch:酉",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "detailFocus",
+      "score": 1.56,
+      "why": "유금은 키질로 쭉정이를 날리고 알곡만 남기는 체라, 결과물을 한 단계 깔끔하게 만듭니다. ESTJ는 Te로 기준을 세우고 Si로 지난 매뉴얼과 대조하며 끝까지 점검하지요. 품질을 맡기면 가장 믿음직한 조합이지만, 화 글자가 약하면 칭찬보다 지적이 먼저 나가 팀이 움츠러듭니다.",
+      "scene": "행사 전날 밤 명찰 120개를 이름순으로 다시 꽂다가 글자 크기가 다른 세 개를 찾아내 새로 뽑습니다. 아침엔 인사보다 '3번 줄 확인했죠?'가 먼저 나옵니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "branch:酉",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:TWELVE_BANANSAL:ESTJ",
+      "myeongriId": "shinsal:TWELVE_BANANSAL",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "ruleAdherence",
+      "score": 1.51,
+      "why": "반안살은 달리는 말 위에 단단히 조인 안장이라 자리와 격식, 체면을 챙깁니다. ESTJ의 Te는 직급과 역할이 정해져야 일을 굴리고, Si는 해 왔던 형식을 기본값으로 둡니다. 정해진 자리에서 속도가 붙는 두 힘이 겹쳐 조직에선 믿음직한데, '힘들다'는 말은 체면 뒤로 밀립니다.",
+      "scene": "주말 동네 봉사 모임에서도 명찰과 역할표부터 만들어 나눠 주고 자기는 '총괄' 칸에 이름을 적습니다. 끝나면 사진과 참석 인원을 정리해 공지합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:TWELVE_BANANSAL",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:辛:autumn:ESTJ",
+      "myeongriId": "climate:辛:autumn",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "decisionSpeed",
+      "score": 1.47,
+      "why": "가을의 신금은 쇠가 가장 단단해지는 때 태어난 보석이라 필요 없는 것을 빨리 잘라 냅니다. ESTJ의 Te는 사실과 결과로 일을 나누고 Si는 기준이 된 기록을 꺼냅니다. 회의의 군살은 이 사람 손에서 빠지는데, 씻어 줄 물이 없으면 맞는 말도 차갑게 들립니다.",
+      "scene": "가족 여행 일정표에서 이동 시간이 긴 관광지 두 곳을 지우고 '여기는 다음에'라고 적어 보냅니다. 단톡방이 잠깐 조용해집니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sources": [
+        "climate:辛:autumn",
+        "mbti:ESTJ:functionStack",
+        "mbti:ESTJ:signals",
+        "추정"
+      ]
+    }
+  ]
+}

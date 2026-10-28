@@ -1,0 +1,385 @@
+{
+  "version": "fusion-v5-2",
+  "method": "cross-score 상위 후보(배치 X1~X6, docs/v5/p1-fusion-candidates.json) → 유형별 파일로 재편, 작성자 판단으로 kind 조정",
+  "rules": [
+    {
+      "id": "fusion:tenGod:偏印:INTP",
+      "myeongriId": "tenGod:偏印",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 2.51,
+      "why": "편인은 교과서 대신 절판된 책을 펴는 옆길의 머리입니다. INTP의 Ti는 누가 말했는지보다 논리 모형에 맞는지를 보고, Ne는 가설에 계속 가지를 칩니다. 질문은 날카롭고 깊어지지만, 시작 버튼은 검토가 다 끝날 때까지 눌리지 않습니다.",
+      "scene": "강의가 끝나고 다들 가방을 쌀 때 교수님께 '그 실험, 표본이 너무 작지 않나요?'를 묻고, 집에 와서 원 논문을 찾아 새벽 두 시까지 읽습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "학업 성취 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏印",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:壬子:INTP",
+      "myeongriId": "dayPillar:壬子",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 2.1,
+      "why": "임자는 물 위에 물이 겹쳐 고요해 보여도 속에 큰 물살을 품고, 땅속 겁재 때문에 남의 지시를 오래 견디지 못합니다. INTP는 Ti로 자기 논리 모형을 세우고, 누가 말했는지보다 그 모형에 맞는지를 봅니다. 둘이 겹치면 혼자 흐름을 따라가는 깊이는 커지고, 둑이 없을 땐 마감과 약속이 자주 흔들립니다.",
+      "scene": "팀장이 정해 준 분석 방식이 영 납득되지 않아, 시키지 않은 방식으로 밤새 한 번 더 돌려 봅니다. 아침 보고 때 결과표 두 장을 나란히 내밉니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "상사 갈등 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:壬子",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:WATER:STRONG:INTP",
+      "myeongriId": "element:WATER:STRONG",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 1.99,
+      "why": "물이 넘치면 장마철 강처럼 생각이 깊고 넓게 불어납니다. INTP의 Ti는 머릿속 논리 모형에 맞는지를 보고, Ne는 '이것도 되고 저것도 되네'로 가설을 늘립니다. 바닥까지 파고드는 사람이 되지만, 열 가지를 보다 하나도 못 고르는 날이 생깁니다.",
+      "scene": "새벽 한 시에 '엘리베이터는 왜 눌러도 빨리 안 오지'가 궁금해져 검색하다, 해가 뜰 무렵 대기행렬 이론 논문 세 편을 읽고 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "element:WATER:STRONG",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:庚子:INTP",
+      "myeongriId": "dayPillar:庚子",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 1.8,
+      "why": "경자는 한겨울 쇠 수도꼭지에서 맑은 물이 곧게 쏟아지듯 생각이 말로 정리돼 나오고, 앉은자리 상관이 그 말을 날카롭게 만듭니다. INTP의 Ti는 머릿속 논리 모형에 맞는지를 보고 Fe는 가장 늦게 깨어납니다. 분석은 정확한데 위로가 필요한 자리에서도 정리표부터 꺼내, 상대는 채점받았다고 느낍니다.",
+      "scene": "친구가 연애 고민을 꺼내자 고개를 끄덕이며 듣다가 '그러니까 문제는 연락 빈도랑 기대치 차이네' 하고 냅킨에 두 줄로 정리해 건넵니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:庚子",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:壬:autumn:INTP",
+      "myeongriId": "climate:壬:autumn",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "learningDrive",
+      "score": 1.74,
+      "why": "가을의 임수는 쇠가 물을 낳는 계절이라 샘이 마르지 않고, 배움과 정보가 끝없이 불어납니다. INTP의 Ti는 머릿속 모형에 맞는지 따지고 Ne는 가설에 계속 가지를 칩니다. 갑목 같은 출구가 없으면 조사는 깊어지는데 결론은 늘 '조금만 더 보고'에 머뭅니다.",
+      "scene": "새벽 두 시, 우연히 본 다큐 한 장면이 궁금해 관련 논문을 세 편째 열어 두고 있습니다. 내일 할 일 목록은 아직 한 줄도 줄지 않았습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "climate:壬:autumn",
+        "mbti:INTP:functionStack",
+        "mbti:INTP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:壬:INTP",
+      "myeongriId": "dayMaster:壬",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "learningDrive",
+      "score": 1.72,
+      "why": "INTP의 '왜'가 밀물을 만났습니다. 임수 일간은 흩어진 웅덩이를 하나로 잇고, Ti-Ne는 하나의 답에서 멈추지 않고 가설에 가지를 칩니다. 배움의 폭은 바다처럼 넓지만 새 정보가 들어올 때마다 결론을 다시 미룹니다.",
+      "scene": "주말에 고양이 털갈이 이유가 궁금해 검색을 시작했다가, 해 질 무렵엔 계절별 일조량과 호르몬 논문 세 편을 탭에 열어 두고 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "학업 성취 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:壬",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGodBalance:OFFICER:WEAK:INTP",
+      "myeongriId": "tenGodBalance:OFFICER:WEAK",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.67,
+      "why": "관성 부족은 줄 없는 공책처럼 나를 묶는 틀이 약해 자유롭지만 마감 앞에서 흔들립니다. INTP는 Ti로 누가 말했는지보다 논리가 맞는지를 보고, '왜 이렇게 하죠?'가 납득돼야 움직입니다. 서열에 눌리지 않는 머리에 바깥 규칙까지 비어 있어, 이유가 분명하면 누구보다 빠르고 아니면 끝없이 미룹니다.",
+      "scene": "출퇴근 시간이 자유로운 연구실에서 밤 11시에 가장 집중이 잘 돼, 동료들이 아침에 출근하면 새벽 3시에 보낸 메일이 이미 와 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "tenGodBalance:OFFICER:WEAK",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:庚:winter:INTP",
+      "myeongriId": "climate:庚:winter",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 1.64,
+      "why": "겨울에 난 경금은 차고 맑은 물을 내는 쇠라, 감정에 휩쓸리지 않고 숫자와 사실로 판을 다시 짭니다. INTP의 Ti는 누가 말했는지보다 그 말이 논리 모형에 맞는지를 보고, Ne는 가설에 계속 가지를 칩니다. 둘이 겹치면 원리를 끝까지 파는 집중이 길어지지만, 맞는 말이 차갑게 도착해 상대가 움츠러듭니다.",
+      "scene": "친구가 새로 산 정수기를 자랑하자 필터 교체 주기와 한 달 유지비를 계산해 단톡방에 표로 올립니다. 칭찬하려던 거였다고 덧붙이는 건 다음 날입니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "climate:庚:winter",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:傷官:INTP",
+      "myeongriId": "tenGod:傷官",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 1.47,
+      "why": "상관은 정해진 악보 위에 연필로 자기 꾸밈음을 적어 넣는 재주입니다. INTP는 누가 말했는지보다 그 말이 논리 모형 안에서 맞는지를 봅니다. '원래 그래'를 못 넘기는 질문이 둘에게서 같이 나오고, 맞는 말이 윗사람을 찌를 때가 잦습니다.",
+      "scene": "새로 바뀐 사내 규정 공지를 읽다가 3조와 7조가 서로 어긋나는 걸 찾아내, 표로 정리해 담당 부서 메일로 보냅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "상사 갈등 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:傷官",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:壬申:INTP",
+      "myeongriId": "dayPillar:壬申",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.44,
+      "why": "임신 일주는 쇠 뱃머리로 큰 물을 가르다 막히면 곧장 항로를 바꾸는 쾌속선입니다. INTP의 Ne는 하나의 답에서 멈추지 않고, Ti는 그 가설들을 자기 모형 안에서 혼자 검증합니다. 정보를 받아들이는 속도와 혼자 가는 힘이 함께 큰 대신, 설명을 건너뛰어 옆 사람이 따라오기 버거워합니다.",
+      "scene": "조별 과제에서 다들 1번 방법으로 가는 중에 혼자 3번 방법으로 결과를 먼저 내고, '이게 더 빠른데' 한마디만 남긴 채 다음 문제로 넘어갑니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "학업 성취 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:壬申",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:HWAGAE:INTP",
+      "myeongriId": "shinsal:HWAGAE",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "learningDrive",
+      "score": 1.44,
+      "why": "화개는 화려한 덮개 아래서 혼자 고요해지며 생각과 손재주가 깊어지는 별입니다. INTP의 Ti는 멀쩡한 것도 뜯어 원리를 봐야 하고, Si는 손에 익은 도구를 몇 년씩 씁니다. 덮개 아래서 한 주제를 끝까지 파는 조합이라 깊이는 해마다 두꺼워지고, 연락은 자주 늦습니다.",
+      "scene": "휴가 사흘 동안 집에서 오래된 라디오를 분해해 부품을 책상 위에 순서대로 늘어놓습니다. 친구들의 단톡방 메시지는 나흘째 날에 한꺼번에 읽습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:HWAGAE",
+        "mbti:INTP:functionStack",
+        "mbti:INTP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:癸:autumn:INTP",
+      "myeongriId": "climate:癸:autumn",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "learningDrive",
+      "score": 1.4,
+      "why": "가을 계수는 쇠가 물을 낳는 철에 바위틈에서 맑게 솟는 약수라 배움을 빨리 흡수합니다. INTP는 Si로 직접 확인한 사실을 기준점 삼고 Ti로 모형을 다듬습니다. 판단은 깨끗하고 핵심을 한 줄로 짚지만, 아는 것을 값으로 바꾸는 일엔 관심이 늦게 옵니다.",
+      "scene": "스터디에서 다들 헷갈려 하는 공식 하나를 칠판에 세 줄로 풀어 주고, 같이 문제집을 내 보자는 제안엔 '그건 좀 귀찮은데' 하고 웃습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "학업 성취 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "climate:癸:autumn",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:癸亥:INTP",
+      "myeongriId": "dayPillar:癸亥",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "learningDrive",
+      "score": 1.34,
+      "why": "계해는 가는 물이 깊은 물 위에 앉은 간여지동이라, 생각이 바닥까지 스며들고 멈출 곳을 잘 찾지 못합니다. INTP의 Ti는 말이 모형 안에서 맞는지 따지고, Ne는 가설에 가지를 칩니다. 남들이 놓친 사실을 늦게라도 건지는 깊이가 있는 대신, 결정을 말해야 할 순간도 자주 지나칩니다.",
+      "scene": "점심 메뉴 투표가 끝나 다들 일어설 때쯤 '근데 그 집 지난주에 주인 바뀌지 않았어요?'라고 묻습니다. 다들 다시 의자에 앉습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:癸亥",
+        "mbti:INTP:functionStack",
+        "mbti:INTP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:甲子:INTP",
+      "myeongriId": "dayPillar:甲子",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "learningDrive",
+      "score": 1.33,
+      "why": "갑자는 벼루의 먹물을 끝까지 머금은 뒤에야 첫 획을 긋는 붓이라, 발밑 정인 덕에 설명을 들으면 바로 구조로 바꿉니다. INTP의 Ti는 자기 논리 모형에 맞아야 받아들이고, Ne는 하나의 답에서 멈추지 않고 가지를 칩니다. 둘이 겹치면 배우는 깊이는 누구보다 깊은데, 준비가 끝없이 늘어 시작 버튼이 늦어집니다.",
+      "scene": "새 취미로 기타를 사 놓고 첫 달은 화성학 책과 강의 영상만 봅니다. 줄을 처음 튕긴 날엔 코드 원리를 친구에게 30분 동안 설명합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "학업 성패 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:甲子",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:辛亥:INTP",
+      "myeongriId": "dayPillar:辛亥",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 1.21,
+      "why": "신해는 파도에 수없이 씻겨 모서리가 둥글어진 유리 조각처럼, 미묘한 차이를 맑게 가려냅니다. 가설이 계속 가지를 치는 INTP의 Ne는 땅속 상관의 갈래 치는 생각과 속도가 맞습니다. 단어 하나의 결까지 따지는 사람이 되고, 비교할 거리가 늘수록 결론은 멀어집니다.",
+      "scene": "친구가 보낸 '괜찮아'와 '괜찮아~'의 차이를 두고 사전을 찾아보다, 물결표 쓰임에 관한 언어학 글까지 읽고 잠듭니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:辛亥",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:WOOD:MISSING:INTP",
+      "myeongriId": "element:WOOD:MISSING",
+      "mbtiTarget": "INTP",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "score": 1.18,
+      "why": "목이 하나도 없는 구성은 선로 위는 정확히 달리지만 갈림길 레버는 당겨 본 적 없는 기차와 같습니다. INTP는 Ne로 '이것도 되고 저것도 되네' 하며 가설의 가지를 끝없이 치는 사람이죠. 머릿속엔 갈림길이 수십 개인데 실제로 판을 여는 손은 잘 안 움직여, 생각의 지도는 넓고 발자국은 같은 길에 찍힙니다.",
+      "scene": "새 프로그래밍 언어 다섯 개의 장단점을 비교한 글을 밤새 읽고는, 다음 날 아침 늘 쓰던 도구를 열어 같은 방식으로 일을 시작합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "element:WOOD:MISSING",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    }
+  ]
+}

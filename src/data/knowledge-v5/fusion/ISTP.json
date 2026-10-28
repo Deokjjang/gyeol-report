@@ -1,0 +1,380 @@
+{
+  "version": "fusion-v5-2",
+  "method": "cross-score 상위 후보(배치 X1~X6, docs/v5/p1-fusion-candidates.json) → 유형별 파일로 재편, 작성자 판단으로 kind 조정",
+  "rules": [
+    {
+      "id": "fusion:dayPillar:丙午:ISTP",
+      "myeongriId": "dayPillar:丙午",
+      "mbtiTarget": "ISTP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 2.14,
+      "why": "병오는 속마음과 겉표정이 같은 불이라 좋고 싫음이 바로 얼굴에 오릅니다. ISTP는 Ti로 안에서 계산이 맞아야 말을 꺼내고, 감정이 큰 자리에서는 Fe가 가장 늦게 켜집니다. 몸은 뜨겁게 반응하는데 입은 짧게 닫혀서, 속상한 날엔 말 대신 손이 먼저 바빠지는 사람이 됩니다.",
+      "scene": "서운한 일이 생겨도 '괜찮아' 한마디로 끝내고, 그날 밤 베란다에서 자전거 바퀴를 분해했다 다시 끼우며 두 시간을 보냅니다. 다음 날 아침엔 아무 일 없던 듯 먼저 인사합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "분노 조절 단정",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丙午",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:stem:丙:ISTP",
+      "myeongriId": "stem:丙",
+      "mbtiTarget": "ISTP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 2.08,
+      "why": "ISTP는 Ti로 계산이 맞아야 움직이고, 감정이 큰 자리에서는 빠져나갈 문부터 찾습니다. 그런데 병화는 좋고 싫음을 숨기지 못하는 빛이라, 속불은 밝은데 나갈 입구가 좁습니다. 그래서 마음이 말보다 행동으로 먼저 새어 나옵니다.",
+      "scene": "친구가 이사하는 날 별말 없이 공구함을 들고 나타나 선반 세 개를 달아 주고, 고맙다는 말에는 '별거 아냐' 하고 먼저 차에 오릅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "stem:丙",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:GOSINSAL:ISTP",
+      "myeongriId": "shinsal:GOSINSAL",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.94,
+      "why": "고신은 고갯마루에 먼저 올라 혼자 선 이정표처럼, 무리에서 한 걸음 앞서 길을 정하는 별입니다. ISTP는 남이 다 맞다고 해도 자기 계산이 안 맞으면 고개를 젓습니다. 혼자 고치고 혼자 회복하는 데 능하지만, 가장 가까운 사람이 '나는 왜 몰랐지' 하고 서운해합니다.",
+      "scene": "출근길 펑크 난 타이어를 혼자 갈아 끼우고 출근해서, 점심때 동료가 손에 묻은 기름을 보고 묻자 그제야 '아침에 좀'이라고 말합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "고독 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:GOSINSAL",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:壬子:ISTP",
+      "myeongriId": "dayPillar:壬子",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.93,
+      "why": "임자는 물 위에 물이 겹쳐 평소엔 감아 둔 소방 호스처럼 조용하다가, 밸브가 열리면 수십 미터를 뻗습니다. ISTP의 Ti도 남이 맞다 해도 내 계산이 맞아야 움직이고, 통제받으면 말없이 거리를 둡니다. 둘이 겹치면 간섭 없는 자리에서 남의 일주일 치를 몰아 해내는 사람이 됩니다.",
+      "scene": "팀장이 진행 상황을 하루 세 번 물으면 대답이 짧아집니다. 아무도 안 찾는 금요일 밤, 혼자 남아 다섯 시간 만에 장비 점검표를 끝내 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:壬子",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丙:ISTP",
+      "myeongriId": "dayMaster:丙",
+      "mbtiTarget": "ISTP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 1.82,
+      "why": "병화 일간은 켜지는 순간 운동장 전체를 밝히는 조명탑이라 생각을 넓게 나누고 싶어 합니다. ISTP는 Ti로 안에서 구조가 맞아야 움직이고, 판을 지켜보다 한마디로 결론만 맞힙니다. 밖으로 비추려는 불과 안에서 계산하는 손이 부딪쳐, 사람 많은 날 뒤엔 꼭 혼자 공구를 만지는 시간이 필요합니다.",
+      "scene": "회사 체육대회에서 진행을 맡아 마이크를 잡고 분위기를 띄운 뒤, 일요일엔 하루 종일 차고에서 자전거 체인을 혼자 닦습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丙",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:壬申:ISTP",
+      "myeongriId": "dayPillar:壬申",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.77,
+      "why": "임신은 쇠 뱃머리로 물을 가르다 막히면 곧장 항로를 트는 쾌속선이라, 내 길을 남에게 잘 맞추지 않습니다. ISTP는 Ti로 내 계산이 맞을 때만 움직이고 Se로 변수가 터진 순간 손이 먼저 나갑니다. 혼자 판단하고 혼자 방향을 바꾸는 속도가 같아, 바꾸기 전에 한 번 알려 주는 것만 챙기면 됩니다.",
+      "scene": "여럿이 간 낚시 여행에서 자리가 별로다 싶으면 말없이 장비를 챙겨 혼자 건너편 방파제로 옮깁니다. 한 시간 뒤 단톡방에 큰 고기 사진 한 장만 올라옵니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:壬申",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:FIRE:STRONG:ISTP",
+      "myeongriId": "element:FIRE:STRONG",
+      "mbtiTarget": "ISTP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 1.76,
+      "why": "화가 많으면 표현과 열정이 먼저 타올라 속도는 빠르고 연료는 빨리 닳습니다. ISTP는 Ti로 계산이 맞아야 말을 꺼내고, 감정이 큰 자리에선 빠져나갈 문부터 찾습니다. 안의 열기와 겉의 과묵함이 따로 놀아, 말은 짧은데 손과 발은 남보다 급한 사람이 됩니다.",
+      "scene": "회의에서는 '네' 두 마디로 끝내 놓고, 끝나자마자 공구함을 들고 현장으로 내려가 점심 전까지 장비 세 대를 고쳐 둡니다. 엘리베이터는 기다리지 않고 계단으로 뜁니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정",
+          "분노 조절 단정"
+        ]
+      },
+      "sources": [
+        "element:FIRE:STRONG",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:乙巳:ISTP",
+      "myeongriId": "dayPillar:乙巳",
+      "mbtiTarget": "ISTP",
+      "kind": "tension",
+      "dimension": "verbalOutput",
+      "score": 1.75,
+      "why": "을사는 축제 조명 아래 쉬지 않고 휘감기는 리본이라 반응이 오는 쪽으로 말과 표현이 흘러나갑니다. ISTP는 말이 짧고 손이 빠르며, 감정이 큰 자리에선 빠져나갈 문부터 찾습니다. 흘러나가려는 리본과 닫아 두려는 손이 같이 있어, 친한 사람 앞에서만 수다가 터집니다.",
+      "scene": "단골 정비소 사장님과는 엔진 얘기로 한 시간을 떠들다가, 회사 송년회에선 건배사를 피해 주차장으로 나가 자기 차 타이어 공기압을 봅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:乙巳",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:辛:autumn:ISTP",
+      "myeongriId": "climate:辛:autumn",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "boundarySetting",
+      "score": 1.58,
+      "why": "쇠가 가장 단단한 가을에 난 신금은 필요 없는 것을 빨리 잘라 내고, 물이 없으면 그 날이 가까운 사람에게 향합니다. ISTP의 Ti는 내 계산이 맞아야 움직이고, 감정 대화는 끝까지 미루는 편이죠. 선 긋기가 깔끔해 일에 군더더기가 없지만, 이유를 생략한 '안 돼'가 상대에겐 무관심으로 남습니다.",
+      "scene": "동아리 단톡방에서 새 행사 제안이 쏟아지자 '저는 장비 담당만 할게요' 한 줄을 남기고 알림을 끕니다. 행사 당일엔 장비가 제일 먼저 와 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 사건 단정"
+        ]
+      },
+      "sources": [
+        "climate:辛:autumn",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:branch:寅:ISTP",
+      "myeongriId": "branch:寅",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.56,
+      "why": "인목은 동트기 전 산길에 헤드랜턴을 켜는 첫 등산객처럼, 아무도 가지 않은 길에 먼저 발을 냅니다. ISTP는 Ti로 내 계산이 맞아야 움직이고, Se로 변수가 터진 순간 몸이 먼저 반응합니다. 둘이 겹치면 혼자 길을 내는 결정이 빠르고 뒤끝이 짧지만, 남의 속도를 기다리지 못해 '같이 가자'는 말을 놓칩니다.",
+      "scene": "동호회 캠핑에서 다들 텐트 설명서를 읽는 동안 혼자 장비를 메고 먼저 올라가 자리를 잡습니다. 다른 사람들이 도착할 땐 이미 불을 피우고 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "이동 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "branch:寅",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:yinYang:YANG_HEAVY:MALE:ISTP",
+      "myeongriId": "yinYang:YANG_HEAVY:MALE",
+      "mbtiTarget": "ISTP",
+      "kind": "conditional",
+      "dimension": "independence",
+      "score": 1.54,
+      "why": "양이 많은 남성은 가속 페달만 닳은 승합차처럼 출발이 빠르고, 몸으로 부딪쳐 배우는 힘이 큽니다. ISTP의 Se는 변수가 터진 순간 몸이 먼저 움직이고, Ti는 남의 지시보다 내 계산을 따릅니다. 속도와 독립은 겹치지만, 앞장서서 사람을 이끌라는 '남자다움'의 기대는 통제를 싫어하는 이 유형에게 버겁습니다.",
+      "scene": "캠핑장에서 텐트 폴이 부러지자 말없이 트렁크의 공구를 꺼내 고쳐 놓습니다. 그런데 '오늘 일정은 네가 정해'라는 말에는 어깨만 으쓱하고 불을 피웁니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown",
+          "genderKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "yinYang:YANG_HEAVY:MALE",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:twelveStage:死:ISTP",
+      "myeongriId": "twelveStage:死",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "boundarySetting",
+      "score": 1.48,
+      "why": "사는 말없이 한 가지를 끝까지 들여다보는 멈춤의 힘입니다. ISTP는 흥미 있는 영역에서는 손이 빠르고, 내 영역만 넘지 않으면 남에게 참견하지 않습니다. 선이 분명하고 한 분야 깊이가 남다르지만, 통제받는 느낌이 들면 설명 없이 거리를 둡니다.",
+      "scene": "주말 내내 오래된 필름 카메라를 분해해 셔터를 고치고, 그 사이 쌓인 친구들 단톡방 알림 백 개는 월요일 아침에 한 번에 읽습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "고독 단정"
+        ]
+      },
+      "sources": [
+        "twelveStage:死",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:branch:午:ISTP",
+      "myeongriId": "branch:午",
+      "mbtiTarget": "ISTP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 1.46,
+      "why": "평소 말수가 적은 ISTP 안에 한낮 핀 조명 같은 오화가 들어 있으면, 열기는 말 대신 행동으로 튀어나옵니다. Fe가 늦게 켜져 감정이 큰 자리에선 말이 막히니, 그 불은 환호나 갑작스러운 선물처럼 짧고 굵게 보입니다.",
+      "scene": "평소 말이 없던 사람이 친구 공연 날엔 맨 앞에서 제일 크게 환호하고, 끝난 뒤 '좋았어?'라는 질문엔 '어, 괜찮던데' 한마디만 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "branch:午",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:比肩:ISTP",
+      "myeongriId": "tenGod:比肩",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.45,
+      "why": "비견은 2인용 자전거 대신 각자 자전거로 나란히 달리는 힘이라, 자기 몫은 자기 손으로 합니다. ISTP는 고장 난 곳을 직접 열어 보고 고쳐 내야 납득합니다. 맡기면 손이 덜 가는 사람이 되는데, 혼자 끌다 일이 커진 뒤에야 도움을 청합니다.",
+      "scene": "새 가구를 사 오면 설명서를 덮어 두고 부품만 늘어놓은 채 조립을 시작합니다. 나사 하나가 남아도 혼자 다시 풀어 찾습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "인간관계 갈등 사건 단정",
+          "재물 규모 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:比肩",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:壬:winter:ISTP",
+      "myeongriId": "climate:壬:winter",
+      "mbtiTarget": "ISTP",
+      "kind": "conditional",
+      "dimension": "independence",
+      "score": 1.44,
+      "why": "겨울의 임수는 물이 가장 왕성한 철의 큰물이라 비겁이 강해 스스로 결정하고 책임집니다. ISTP의 Ti는 남이 맞다 해도 내 계산이 안 맞으면 고개를 젓고, Fe가 늦어 감정 표현은 짧습니다. 혼자 서는 힘과 차가운 겉은 닮았지만, 판을 크게 벌이는 겨울 물과 필요할 때만 움직이는 손은 규모에서 갈립니다.",
+      "scene": "한겨울 주말 아침 혼자 저수지에 나가 얼음낚시 구멍을 뚫고, 해가 머리 위에 올 때까지 휴대폰을 보지 않습니다. 같이 가자던 연락엔 저녁에야 '다음에'라고 답합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "climate:壬:winter",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGodBalance:OUTPUT:WEAK:ISTP",
+      "myeongriId": "tenGodBalance:OUTPUT:WEAK",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "verbalOutput",
+      "score": 1.35,
+      "why": "식상이 얇으면 속은 꽉 찼는데 주둥이가 좁은 꿀단지처럼 실력이 밖으로 잘 안 보입니다. ISTP도 말은 짧고 손이 빨라, 고장 난 곳은 고쳐 두되 고쳤다는 말은 잘 안 합니다. 결과물로 증명하는 힘은 크지만, 평가받는 자리에서 설명을 생략하면 고친 사람이 누군지 아무도 모르게 됩니다.",
+      "scene": "팀 서버가 멈춘 밤 혼자 원인을 찾아 복구해 놓고, 다음 날 회의에서 '좀 손봤어요' 한마디로 넘어갑니다. 감사 메일은 다른 사람이 받습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "tenGodBalance:OUTPUT:WEAK",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    }
+  ]
+}

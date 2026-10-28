@@ -1,0 +1,691 @@
+{
+  "version": "fusion-v5-2",
+  "method": "cross-score 상위 후보(배치 X1~X6, docs/v5/p1-fusion-candidates.json) → 유형별 파일로 재편, 작성자 판단으로 kind 조정",
+  "rules": [
+    {
+      "id": "fusion:dayPillar:癸丑:ENFP",
+      "myeongriId": "dayPillar:癸丑",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 2.73,
+      "why": "계축의 얼음 창고는 서운함까지 녹이지 않고 오래 보관합니다. ENFP는 Ne로 판부터 벌이고 기분이 얼굴에 바로 뜨는 사람이라, 겉과 창고가 서로 반대로 움직입니다. 웃으며 넘긴 일을 속에 얼려 두었다가 어느 날 연락을 한꺼번에 끊는 낙차가 생깁니다.",
+      "scene": "새 동아리를 만들자고 제일 먼저 외쳐 놓고, 밤에는 혼자 회비 장부와 비상 연락망을 정리합니다. 서운한 말을 들은 날도 단톡방에선 이모티콘으로 웃습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정",
+          "관계 단절 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:癸丑",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGodBalance:OUTPUT:STRONG:ENFP",
+      "myeongriId": "tenGodBalance:OUTPUT:STRONG",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "verbalOutput",
+      "score": 2.51,
+      "why": "식상이 강하면 머릿속 생각이 말과 손으로 쉬지 않고 새어 나옵니다. ENFP의 Ne는 간판 하나로 다섯 갈래를 잇고, Fi는 그중 진심이 가는 쪽에 불을 붙입니다. 김 뿜는 압력솥에 연료를 더 넣은 셈이라 시작은 눈부시고, 끝맺음은 따로 챙겨야 남습니다.",
+      "scene": "친구 생일 파티를 의논하다 한 시간 만에 테마와 노래 목록, 깜짝 영상 대본까지 단톡방에 올립니다. 정작 케이크 예약은 다른 친구가 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "tenGodBalance:OUTPUT:STRONG",
+        "mbti:ENFP:functionStack",
+        "mbti:ENFP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丙:ENFP",
+      "myeongriId": "dayMaster:丙",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 2.48,
+      "why": "병화는 밤 운동장 조명탑처럼 켜지는 순간 판 전체를 밝히고 사람을 불러 모읍니다. ENFP는 Ne로 간판 하나에서 계획 다섯 개를 떠올리고 Fi의 진심을 얼굴에 그대로 싣습니다. 떠오른 것을 숨길 이유가 없는 두 힘이 만나, 아이디어가 문서보다 사람 입에 먼저 퍼집니다.",
+      "scene": "퇴근길 지하철에서 떠오른 여행 계획을 단톡방에 올리고, 내릴 역에 닿기 전에 숙소 후보 세 곳과 날짜 투표까지 띄워 놓습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丙",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正財:ENFP",
+      "myeongriId": "tenGod:正財",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "spendingControl",
+      "score": 2.46,
+      "why": "정재는 정해진 수입을 꼼꼼히 모으고 지키는 돈 감각입니다. ENFP는 Ne로 새 경험과 사람에 먼저 손이 가고, 반복과 정리를 맡은 Si는 가장 늦게 켜집니다. 속에서 지갑을 쥐는 손과 여는 손이 동시에 움직여, 충동 결제를 한 날 밤에 가계부를 펴는 사람이 됩니다.",
+      "scene": "친구가 꺼낸 제주 한 달 살기에 그 자리에서 '가자!' 해 놓고, 집에 와서는 적금 만기일과 항공권 가격을 엑셀에 나란히 적어 봅니다. 결국 열흘짜리로 줄여 다녀옵니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정",
+          "낭비벽 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正財",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:甲戌:ENFP",
+      "myeongriId": "dayPillar:甲戌",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "persistence",
+      "score": 2.42,
+      "why": "갑술은 마른 언덕 갈림길에 박힌 이정표라 한번 정한 방향을 쉽게 꺾지 않습니다. ENFP의 Ne는 길에서 본 간판 하나로 다섯 갈래 새 길을 엽니다. 속에서는 '끝까지 지켜'와 '이쪽도 재밌겠다'가 매일 줄다리기를 하고, 그날 이긴 쪽이 그날의 당신입니다.",
+      "scene": "새 취미 모임을 세 개나 신청해 놓고도, 처음 등록한 수영 강습만은 비 오는 아침에도 빠지지 않습니다. 나머지 둘은 한 달 만에 단톡방 알림을 꺼 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:甲戌",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:壬午:ENFP",
+      "myeongriId": "dayPillar:壬午",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 2.4,
+      "why": "임오는 한낮 광장의 바닥분수처럼 솟았다 멈췄다 하며 사람을 모읍니다. ENFP의 Ne는 사람 하나를 보면 다음 판 다섯 개를 떠올리고, Fi는 마음이 가는 쪽에 진심을 겁니다. 둘이 겹치면 모임의 시작 버튼이 되는데, 뜨거울 때 한 약속은 식은 날의 자신이 감당해야 합니다.",
+      "scene": "금요일 밤 '다음 달에 우리 캠핑 가자' 한마디로 단톡방에 열두 명을 모아 놓고, 월요일 아침엔 장소 투표를 누가 올릴지도 모르는 채 출근합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "금전 거래 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:壬午",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:己丑:ENFP",
+      "myeongriId": "dayPillar:己丑",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "score": 2.32,
+      "why": "기축은 언 땅에 묻은 김장독처럼 속을 천천히 익히고, 일지 비견 탓에 검증된 방식을 오래 붙듭니다. ENFP의 Ne는 새 길이 보이면 판부터 벌이고, 반복을 가장 버거워합니다. 묻어 두려는 손과 꺼내 쓰려는 손이 한 사람 안에서 부딪혀, 설렘은 큰데 결제 버튼 앞에서는 의외로 보수적입니다.",
+      "scene": "배우고 싶은 강좌를 다섯 개 찜해 두고, 결제 직전마다 '지난번에 산 책부터 끝내자'며 창을 닫습니다. 장바구니 속 강좌는 반년째 그대로 남아 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "재산 규모 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:己丑",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丁丑:ENFP",
+      "myeongriId": "dayPillar:丁丑",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "persistence",
+      "score": 2.31,
+      "why": "정축의 등불은 언 땅 위에서 밤새 같은 자리를 지키며 탑니다. 반면 ENFP의 Ne는 간판 하나에서 계획 다섯 개를 꺼내 새 판으로 옮겨 가길 좋아합니다. 겉은 들떠 있는데 속은 한 가지를 끝까지 붙들고 싶어서, 시작할 때와 그만둘 때 둘 다 오래 망설입니다.",
+      "scene": "새 취미 동호회 세 곳에 가입해 놓고도, 결국 매주 빠짐없이 나가는 건 5년째 다니는 동네 배드민턴 모임 하나입니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丁丑",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丙寅:ENFP",
+      "myeongriId": "dayPillar:丙寅",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "score": 2.23,
+      "why": "병인은 소나무를 연료 삼아 높이 쳐든 새벽 횃불이라, 망설이는 무리를 출발선에 세웁니다. ENFP는 새 생각과 새 사람을 만나면 눈에 불이 켜지고 일단 판부터 벌입니다. 시동 거는 힘은 누구보다 크지만, 이번 주 떠오른 일이 지난달 일을 자꾸 앞지릅니다.",
+      "scene": "친구가 '요즘 재밌는 거 없나' 한마디 하자 그 자리에서 원데이 도자기 수업 네 자리를 예약하고 단톡방에 링크를 올립니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丙寅",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:壬寅:ENFP",
+      "myeongriId": "dayPillar:壬寅",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "score": 2.18,
+      "why": "임인과 ENFP는 같은 쪽으로 흐르는 물줄기 두 개입니다. 물레방아는 남의 가능성을 알아보고 길을 잇고, Ne는 처음 간 모임에서도 연락처를 수십 개 얻어 옵니다. 시작과 연결은 끝없이 늘고, 끝내야 할 일은 늘 줄을 서 있습니다.",
+      "scene": "친구 결혼식 피로연에서 옆자리 사람과 부업 아이디어로 불이 붙어, 돌아오는 지하철에서 벌써 공유 문서 제목을 짓고 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:壬寅",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:甲午:ENFP",
+      "myeongriId": "dayPillar:甲午",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "verbalOutput",
+      "score": 2.17,
+      "why": "갑오는 나무가 오화 위에서 힘을 다 쏟는 자리라 시작이 뜨겁고 무대에 서면 시선이 모입니다. ENFP는 Ne로 떠오른 생각을 사람들에게 퍼뜨리고 Fi로 진심을 담습니다. 말 한마디로 판을 데우는 힘은 크지만, 바닥도 빨리 드러나 마무리 담당 친구가 꼭 필요합니다.",
+      "scene": "동네 친구 셋에게 '우리 플리마켓 나가자'고 말한 지 일주일 만에 부스 이름과 포스터가 나옵니다. 당일엔 확성기 들고 손님을 부르는 사람도 당신입니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:甲午",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:戊戌:ENFP",
+      "myeongriId": "dayPillar:戊戌",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "score": 2.07,
+      "why": "무술은 씨름판 모래를 한 번 더 다진 땅이라, 밀려도 한 발 물러서지 않습니다. ENFP의 Ne는 늘 다음 가능성으로 옮겨 가고 싶어 합니다. 새 판을 열고 싶은 마음과 지키려는 고집이 줄다리기를 해서, 바꾸자는 말은 쉽게 하고 실제로는 잘 안 바꿉니다.",
+      "scene": "'올해는 진짜 새로운 거 할 거야'라고 새해마다 말하면서, 휴가지는 4년째 같은 펜션 같은 방으로 예약합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:戊戌",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丙午:ENFP",
+      "myeongriId": "dayPillar:丙午",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 2.06,
+      "why": "병오는 불 위에 불이 겹쳐 속마음이 그대로 얼굴로 올라오는 일주입니다. ENFP는 Fi의 진심을 Ne의 연상으로 풀어내, 좋아하는 게 생기면 숨길 생각부터 없습니다. 감정의 볼륨이 한 칸 더 올라가 사람을 금방 데우지만, 화도 같은 속도로 터지고 식어 상대만 그 말을 오래 기억합니다.",
+      "scene": "좋아하는 영화를 보고 나오면 극장 엘리베이터 안에서부터 결말 얘기를 시작해, 지하철역까지 손짓을 섞어 가며 장면을 다시 연기합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "외모 평가"
+        ]
+      },
+      "sources": [
+        "dayPillar:丙午",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏財:ENFP",
+      "myeongriId": "tenGod:偏財",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 2.06,
+      "why": "편재는 사람과 기회가 모이는 길목을 알아보고, 시원하게 쓰며 판을 키웁니다. ENFP는 처음 간 모임에서도 금방 옆 사람 사연을 듣는 Ne에, 마음이 가면 지갑부터 여는 Fi를 씁니다. 연락처가 곧 재산인 사람인데, 사람 좋다는 말 뒤에 빈 통장이 남지 않게 상한선이 필요합니다.",
+      "scene": "새로 알게 된 사람 셋을 한 식당에 불러 '둘이 꼭 만나야 해요'라며 소개하고, 그날 밥값은 자기가 냅니다. 석 달 뒤 둘이 같이 일을 시작했다는 소식을 듣습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재물 손익 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏財",
+        "mbti:ENFP:functionStack",
+        "mbti:ENFP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:branch:丑:ENFP",
+      "myeongriId": "branch:丑",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "score": 1.96,
+      "why": "축토는 언 밭 밑 씨감자 구덩이라, 변화 앞에서 봄이 올 때까지 버팁니다. ENFP는 새 생각이 보이면 일단 판부터 벌이는 쪽입니다. 들뜬 시작과 '조금만 더 보자'는 저장 본능이 부딪혀서, 서운함은 쌓아 두고 새 일은 자꾸 미루는 엇박자가 납니다.",
+      "scene": "친구에게 '우리 같이 여행 영상 찍자!'고 먼저 제안해 놓고, 카메라 결제 직전에 '조금만 더 알아보고'라며 석 달을 보냅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "branch:丑",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:乙丑:ENFP",
+      "myeongriId": "dayPillar:乙丑",
+      "mbtiTarget": "ENFP",
+      "kind": "conditional",
+      "dimension": "emotionalExpression",
+      "score": 1.94,
+      "why": "을축의 풀은 언 땅에 서 있어 불편한 말을 봄이 올 때까지 미루고, 땅속 편관 때문에 참는 걸 미덕으로 압니다. ENFP는 좋은 감정을 바로 밖으로 꺼내지만, 진심이 다치면 이유를 말하지 않고 연락만 줄입니다. 밝게 쏟는 겉과 묵혀 두는 속이 따로 움직여, 웃으며 어울리다가 서운함만은 몇 달 뒤에 꺼냅니다.",
+      "scene": "모임에선 누구보다 크게 웃고 사진도 제일 많이 찍는데, 그날 들은 섭섭한 한마디는 석 달 뒤 산책길에서야 '그때 말이야' 하고 꺼냅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "관계 단절 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:乙丑",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:戊子:ENFP",
+      "myeongriId": "dayPillar:戊子",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 1.85,
+      "why": "무자는 한겨울에도 마르지 않는 돌우물이라 뚜껑을 덮어 두고 쓸 만큼만 퍼 올립니다. ENFP의 Ne는 떠오르는 대로 판을 벌이고, Fi의 진심은 얼굴에 바로 드러납니다. 속으로 최악까지 셈하는 땅과 먼저 뛰어드는 불씨가 한 사람 안에서 줄다리기를 해, 지갑을 열다가도 멈칫합니다.",
+      "scene": "여행 사이트에서 마음에 드는 숙소를 장바구니에 넣어 놓고 사흘째 결제를 못 합니다. 그사이 엑셀로 이번 달 남은 돈을 두 번 계산해 봅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:戊子",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:FIRE:STRONG:ENFP",
+      "myeongriId": "element:FIRE:STRONG",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 1.85,
+      "why": "화가 넘치면 장작더미에 불이 한꺼번에 옮겨붙듯 표현과 열정이 먼저 타오릅니다. ENFP는 새 사람을 만나면 눈에 불이 켜지고, 진심이 다치면 하루 만에 그 불이 꺼집니다. 온도가 높은 만큼 낙차도 커서, 쉬는 법을 일부러 배워 둬야 합니다.",
+      "scene": "새로 사귄 친구와 밤새 통화하며 다음 달 여행까지 정해 놓고, 다음 날 아침엔 목이 쉬어서 출근길 편의점에서 꿀물을 삽니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "element:FIRE:STRONG",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:戊:winter:ENFP",
+      "myeongriId": "climate:戊:winter",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "score": 1.8,
+      "why": "겨울 무토는 볕이 들어야 비로소 흙으로 돌아오는 언 능선이라 새 사람과 새 일에 문을 늦게 엽니다. ENFP의 Ne는 여행 영상 하나에 그 주말 비행기표를 끊게 만듭니다. 마음은 벌써 출발했는데 몸과 지갑이 봄까지 기다리자고 붙잡습니다.",
+      "scene": "새로 생긴 원데이 클래스를 친구들에게 제일 먼저 공유해 놓고, 정작 본인은 신청 마감 전날까지 결제 화면을 열었다 닫았다 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재정 손실 단정"
+        ]
+      },
+      "sources": [
+        "climate:戊:winter",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:TWELVE_NYEONSAL:ENFP",
+      "myeongriId": "shinsal:TWELVE_NYEONSAL",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "score": 1.8,
+      "why": "년살은 막 씻고 단장한 얼굴처럼 꾸밈과 호기심으로 눈길을 붙드는 별이라, 새것을 먼저 써 보고 퍼뜨립니다. ENFP의 Ne는 새 취향을 계속 실험하고 Fi는 '이건 내 거'를 단번에 고릅니다. 유행을 한 철 먼저 입는 사람이지만, 설렘이 식으면 다음 것으로 옮겨 가는 속도도 빠릅니다.",
+      "scene": "새로 생긴 팝업 매장에 첫날 줄을 서서 들어가고, 산 소품을 그날 저녁 방 한쪽에 진열해 사진을 돌립니다. 지난달 산 소품은 서랍 안에 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "외모 평가"
+        ]
+      },
+      "sources": [
+        "shinsal:TWELVE_NYEONSAL",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:己:winter:ENFP",
+      "myeongriId": "climate:己:winter",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "spendingControl",
+      "score": 1.78,
+      "why": "겨울의 기토는 물은 넘치는데 얼어 있어 볕이 들 때까지 움직이지 않고, 가진 것을 쉽게 새지 않게 지킵니다. ENFP는 Ne로 일단 판을 벌이고, Te는 흥미가 식으면 일정표를 서랍에 넣습니다. 지키려는 흙과 벌이려는 불씨가 부딪쳐, 시작 버튼 앞에서 걱정과 설렘이 번갈아 켜집니다.",
+      "scene": "1월 첫 주에 '올해는 이거 배운다'며 학원 상담을 세 곳 받아 놓고, 등록비 앞에서는 날 풀리면 하겠다며 달력의 3월에 동그라미를 칩니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정"
+        ]
+      },
+      "sources": [
+        "climate:己:winter",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:丙:spring:ENFP",
+      "myeongriId": "climate:丙:spring",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 1.7,
+      "why": "봄의 병화는 봄 나무를 땔감 삼아 점점 커지는 불이라 처음 보는 사이도 금세 데웁니다. ENFP는 Ne로 새 사람과 새 계획에 불이 켜지고, Fi의 반가움을 숨기지 않습니다. 둘 다 시작에 강해서 약속이 감당할 크기를 넘기 쉬우니, 벌이기 전에 하루 식히면 불이 오래 갑니다.",
+      "scene": "사월 주말 강변 공원에서 옆 돗자리 사람들과 김밥을 나눠 먹다가, 해 질 무렵엔 다음 달 캠핑 단톡방을 같이 만들고 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "climate:丙:spring",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:branch:午:ENFP",
+      "myeongriId": "branch:午",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 1.65,
+      "why": "오화의 핀 조명과 ENFP의 즉흥이 만나면 무대는 늘 첫날이 가장 뜨겁습니다. Fi는 진심을 숨기지 않고 Ne는 떠오르는 대로 꺼내니, 감정이 투명하게 퍼집니다. 불이 셀 때 다음 단계를 적어 두지 않으면 식는 날 그대로 멈춥니다.",
+      "scene": "노래 모임 첫날 앞에 나가 즉석 화음을 제안하고, 그날 밤 대화방 이름을 바꾸고 다음 달 공연 장소 후보까지 올려 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "branch:午",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:戊:summer:ENFP",
+      "myeongriId": "climate:戊:summer",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 1.65,
+      "why": "여름의 무토는 볕에 달궈져 단단하지만 물 한 줄기가 절실한 땅이라, 감정을 말로 꺼내는 길이 자주 막힙니다. ENFP는 Ne로 새 장소와 사람을 찾고, 좋아하면 하루에 몇 번씩 사진을 보내는 사람입니다. 속은 들썩이는데 겉은 태연해 보여서, 주변은 이 사람이 신났는지 지쳤는지 헷갈립니다.",
+      "scene": "친구들이 새로 생긴 바에 가자고 할 때 마음은 이미 출발했는데 입에서는 '거기 멀지 않아?'가 먼저 나옵니다. 막상 가서는 제일 늦게까지 남아 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정"
+        ]
+      },
+      "sources": [
+        "climate:戊:summer",
+        "mbti:ENFP:functionStack",
+        "mbti:ENFP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:yinYang:YIN_HEAVY:ENFP",
+      "myeongriId": "yinYang:YIN_HEAVY",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "verbalOutput",
+      "score": 1.65,
+      "why": "음 과다는 암실 인화지처럼 천천히 떠오르는 구성이라, 움직이기 전에 보고 모으고 기다립니다. ENFP는 Ne로 떠오르면 바로 꺼내고 Fi의 진심을 얼굴에 싣는 사람입니다. 겉은 밝게 말을 쏟는데 진짜 결정과 속마음은 혼자 돌아와 늦게 내려, 친한 사람도 한 박자 늦게 압니다.",
+      "scene": "모임에서는 누구보다 신나게 계획을 떠들다가, 집에 와서 이불 속에서 메모장에 '진짜 하고 싶은 것' 목록을 따로 적습니다. 그 목록은 아무에게도 안 보여 줍니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "yinYang:YIN_HEAVY",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:傷官:ENFP",
+      "myeongriId": "tenGod:傷官",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "verbalOutput",
+      "score": 1.58,
+      "why": "상관은 굳은 규칙의 빈틈을 보고 더 나은 표현을 꺼내는 날 선 재주입니다. ENFP의 Ne는 하나를 보면 다섯 개가 이어지고, 그 연결을 말과 아이디어로 쏟아 냅니다. 둘이 겹치면 같은 내용도 이 사람이 말하면 귀가 열리지만, 생각보다 말이 먼저 나가 밤에 쓴 메시지를 아침에 후회합니다.",
+      "scene": "회사 신제품 소개 문구가 딱딱하다며 점심시간에 휴대폰으로 열 가지 버전을 써서 팀장에게 보냅니다. 팀장은 그중 두 개에 별표를 쳐서 돌려줍니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "상사 갈등 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:傷官",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:twelveStage:沐浴:ENFP",
+      "myeongriId": "twelveStage:沐浴",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "score": 1.55,
+      "why": "목욕은 처음 씻기고 처음 꾸미는 자리라 감각이 예민하고 마음이 하루에도 여러 번 출렁입니다. ENFP의 Ne는 새 사람과 새 유행에 금방 빠지고, Fi는 마음이 안 움직이면 미련 없이 접습니다. 둘이 만나면 남보다 먼저 아름다운 것을 알아보는 눈이 되는데, 설렘이 식는 시기에 손을 놓기 쉽습니다.",
+      "scene": "새로 생긴 동네 소품 가게를 개업 첫 주에만 세 번 들르고, 한 달 뒤엔 같은 길 끝에 새로 연 다른 가게의 단골이 돼 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "외모 평가"
+        ]
+      },
+      "sources": [
+        "twelveStage:沐浴",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:癸:winter:ENFP",
+      "myeongriId": "climate:癸:winter",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "intimacyPace",
+      "score": 1.54,
+      "why": "겨울 계수는 볕이 닿아야 녹아 흐르는 성에꽃이라 마음을 여는 데 계절 하나가 걸립니다. ENFP는 처음 간 모임에서 30분이면 옆 사람 연애사까지 듣는 Ne-Fi로 삽니다. 밖에선 금방 친해지는데 속마음의 문은 늦게 열려, 가까워진 줄 알았던 사람이 당황합니다.",
+      "scene": "처음 만난 날 밤새 웃고 떠든 사람이 '우리 친해진 거지?' 하고 물으면 웃으며 고개를 끄덕이고, 진짜 고민 얘기는 반년 뒤에야 꺼냅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "climate:癸:winter",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:壬:ENFP",
+      "myeongriId": "dayMaster:壬",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "score": 1.54,
+      "why": "임수 일간은 소리 없이 넓게 밀려와 흩어진 웅덩이를 하나로 잇는 밀물입니다. ENFP의 Ne는 간판 하나에서 사업과 여행과 선물을 동시에 떠올리고, Fi는 그중 마음 가는 것에 시동을 겁니다. 판 전체를 잇는 품은 넓은데, 흙 같은 마감이 없으면 물길이 사방으로 퍼집니다.",
+      "scene": "여행 계획을 짜다 들른 블로그에서 현지 요리 수업을 찾고, 그 강사의 다른 강좌를 구경하다 새벽에 원데이 클래스를 하나 더 예약합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:壬",
+        "mbti:ENFP:functionStack",
+        "mbti:ENFP:signals",
+        "추정"
+      ]
+    }
+  ]
+}

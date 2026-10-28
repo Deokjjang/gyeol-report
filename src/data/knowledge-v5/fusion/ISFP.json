@@ -1,0 +1,574 @@
+{
+  "version": "fusion-v5-2",
+  "method": "cross-score 상위 후보(배치 X1~X6, docs/v5/p1-fusion-candidates.json) → 유형별 파일로 재편, 작성자 판단으로 kind 조정",
+  "rules": [
+    {
+      "id": "fusion:dayPillar:丁卯:ISFP",
+      "myeongriId": "dayPillar:丁卯",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 2.68,
+      "why": "정묘는 창가의 가는 향처럼 방 안 공기를 조용히 바꾸는 불인데, 거절할 문장을 고르다 '응'이 먼저 나갑니다. ISFP 역시 Fi의 기준은 또렷한데 Se로 상대 목소리의 떨림까지 받아 버립니다. 남의 기분을 먼저 데우느라 내 싫음은 연기처럼 흘려보내는 사람입니다.",
+      "scene": "친구가 고른 식당이 사실 별로인데 '여기 좋다' 하고 따라 들어갑니다. 대신 디저트 가게만큼은 몰래 찾아 둔 곳으로 조용히 데려갑니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丁卯",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:己亥:ISFP",
+      "myeongriId": "dayPillar:己亥",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 2.53,
+      "why": "기해는 강 한가운데 모래톱처럼 떠내려온 것을 쉬게 하면서도 물길은 막지 않는 흙입니다. ISFP의 Fi와 Se는 말보다 손으로 마음을 건네는 쪽을 택합니다. 위로를 문장 대신 물건과 온도로 전하고, 그사이 자기 피로는 뒤로 미룹니다.",
+      "scene": "아픈 친구 집 문고리에 죽 한 그릇과 손글씨 쪽지를 걸어 두고 초인종도 누르지 않은 채 돌아섭니다. 집에 와서야 자기 저녁을 거른 걸 압니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:己亥",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:癸卯:ISFP",
+      "myeongriId": "dayPillar:癸卯",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 2.1,
+      "why": "계묘는 봄 개울물이 미나리꽝으로 조금씩 흘러들듯 말과 정을 부드럽게 키우는 일주입니다. ISFP의 Fi는 싫은 말을 끝까지 미루고, Se는 상대 목소리의 작은 떨림까지 잡아냅니다. 그래서 다툼은 드문데, 삼킨 '싫어'가 쌓이면 어느 날 관계를 한 번에 정리하는 쪽으로 기웁니다.",
+      "scene": "단톡방에서 의견이 갈리자 아무 말 없이 둘 다 좋아할 만한 카페 사진을 하나 올립니다. 그 사진 한 장에 대화 방향이 바뀝니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:癸卯",
+        "mbti:ISFP:functionStack",
+        "mbti:ISFP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:twelveStage:帝旺:ISFP",
+      "myeongriId": "twelveStage:帝旺",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "controlNeed",
+      "score": 2.09,
+      "why": "제왕은 열두 단계 중 힘이 가장 센 자리라 밀어붙이고 책임지는 기세가 큽니다. ISFP는 Fi로 자기 속도와 취향을 조용히 지키고, 바깥 틀을 세우는 Te가 가장 늦게 옵니다. 안의 기세와 겉의 순함이 엇갈려, 평소엔 맞춰 주다가 자기 영역이 걸린 일에서만 뜻밖에 단호해집니다.",
+      "scene": "회의에선 대부분 '좋아요'로 넘기다가, 자기가 맡은 시안의 색만큼은 팀장이 바꾸자고 해도 '이건 이대로 갈게요'라고 조용히 말합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "지위 상승 단정",
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "twelveStage:帝旺",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:YANGIN:ISFP",
+      "myeongriId": "shinsal:YANGIN",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "score": 2.08,
+      "why": "양인은 왕좌 옆에서 칼자루에 손을 얹은 호위무사라, 내 것이 흔들리면 '아니'가 빨리 나옵니다. ISFP는 Fi의 기준이 또렷하면서도 싫다는 말을 미루다 한 번에 정리합니다. 속의 칼은 날카롭고 겉의 표현은 순해서, 선을 넘은 순간 단칼에 끊어 주변이 놀랍니다.",
+      "scene": "조별 과제에서 누가 자기 디자인을 말없이 바꾼 걸 발견한 밤, 원본 파일로 되돌려 놓고 단톡방에 '이 부분은 제가 맡을게요' 한 줄만 남깁니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "다툼 사건 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:YANGIN",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:yinYang:YIN_HEAVY:FEMALE:ISFP",
+      "myeongriId": "yinYang:YIN_HEAVY:FEMALE",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 2.07,
+      "why": "음의 글자가 많은 여성은 모으고 기다리는 힘이 '참하다'는 칭찬과 맞물려 목소리가 안쪽에 머물기 쉽습니다. ISFP 역시 Fi의 기준은 또렷한데, 그 기준을 바깥 틀로 세우는 Te가 가장 늦습니다. 취향은 진주처럼 단단히 감겨 있고, 그걸 말로 꺼내는 순간만 자꾸 미뤄집니다.",
+      "scene": "미용실에서 원하는 머리 사진을 휴대폰에 띄워 두고도 '알아서 해 주세요'라고 말합니다. 집에 와서 거울 앞에서 한참 앞머리를 만집니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown",
+          "genderKnown"
+        ],
+        "forbids": [
+          "성별 고정관념 단정",
+          "외모 평가"
+        ]
+      },
+      "sources": [
+        "yinYang:YIN_HEAVY:FEMALE",
+        "mbti:ISFP:functionStack",
+        "mbti:ISFP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丁亥:ISFP",
+      "myeongriId": "dayPillar:丁亥",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 2.06,
+      "why": "물 위에서 바람을 많이 타는 정해의 불은 상대 기준에 쉽게 물들고, 실망은 말없이 거리로 표현합니다. ISFP 역시 Fi의 판단을 겉으로 꺼내지 않고 Se로 분위기의 온도만 먼저 느낍니다. 섬세하게 맞춰 주다 혼자 식는 사람이라, 이유 한 줄을 남기는 연습이 관계를 지킵니다.",
+      "scene": "카페에서 친구가 고른 자리가 에어컨 바로 밑인데 말없이 겉옷을 걸칩니다. 그날 밤 일기장에는 '다음엔 창가 자리 말하기'라고 적습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丁亥",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:stem:庚:ISFP",
+      "myeongriId": "stem:庚",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "conflictApproach",
+      "score": 2.04,
+      "why": "경금은 잘라 말하고 결단을 시원하게 내리는 무쇠입니다. 반면 ISFP의 Fi는 싫어도 조용히 고개만 돌리고, Se는 상대 목소리의 떨림까지 느껴 버립니다. 한 사람 안에서 둘이 당기면, 속으로는 이미 '아니'라고 정했는데 입 밖에는 한참 뒤에야 짧고 세게 나갑니다.",
+      "scene": "같이 일하던 친구의 부탁을 몇 번 말없이 들어주다가, 네 번째에 '이제 못 해' 한마디만 남기고 그 작업에서 빠집니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sources": [
+        "stem:庚",
+        "mbti:ISFP:functionStack",
+        "mbti:ISFP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:庚戌:ISFP",
+      "myeongriId": "dayPillar:庚戌",
+      "mbtiTarget": "ISFP",
+      "kind": "conditional",
+      "dimension": "boundarySetting",
+      "score": 1.99,
+      "why": "경술은 마당을 지키는 진돗개처럼 지킬 것과 들일 것의 선이 분명하고, 괴강이라 한번 굳힌 판단을 잘 다시 열지 않습니다. ISFP도 속 기준은 또렷하지만 싫다는 말을 미루다 참을 만큼 참은 뒤에야 꺼냅니다. 안의 선은 같이 단단한데 밖으로 긋는 손이 늦어, 조용하다가 한 번에 문을 잠그는 사람이 됩니다.",
+      "scene": "옆자리 동료가 세 번째로 말없이 펜을 가져가자 그날은 웃고 넘기고, 다음 날 아침 펜꽂이에 이름 스티커를 붙여 둡니다. 그 뒤로 그 사람과는 업무 말만 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정",
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:庚戌",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:庚:ISFP",
+      "myeongriId": "dayMaster:庚",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "directness",
+      "score": 1.98,
+      "why": "경금은 녹슨 문도 한 번에 비틀어 여는 지렛대라, 아니면 아니라고 끊고 결정을 끝냅니다. ISFP는 Fi의 기준을 조용히 품고, 바깥 틀을 세우는 Te가 가장 늦게 옵니다. 속에는 끊는 쇠가 있는데 겉은 부드럽게 미루니, 참다 한 번 자를 때 날이 예상보다 셉니다.",
+      "scene": "약속을 자꾸 미루는 친구에게 몇 달 동안 '괜찮아'만 보내다가, 어느 날 '이제 내가 먼저 연락하진 않을게' 한 줄을 남기고 대화방을 나옵니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:庚",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:stem:癸:ISFP",
+      "myeongriId": "stem:癸",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 1.9,
+      "why": "계수는 소리 없이 떨어지는 물방울이라 시간이 지나야 자국이 보입니다. 말수 적은 ISFP의 Fi도 남이 좋다 해도 내 마음에 맞지 않으면 조용히 고개를 돌리는 쪽입니다. 둘이 만나면 큰소리 없이 취향과 기준을 지키는 사람이 되지만, 불 글자에 눌린 구성이면 하고 싶은 말이 속에서만 맴돕니다.",
+      "scene": "친구들이 고른 여행지가 마음에 안 들어도 그 자리에선 웃고, 돌아와 혼자 가고 싶던 바닷가 사진을 찾아 메모장에 모아 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정"
+        ]
+      },
+      "sources": [
+        "stem:癸",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:乙亥:ISFP",
+      "myeongriId": "dayPillar:乙亥",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 1.85,
+      "why": "을해는 흙 없이 물컵에서도 뿌리를 내리는 덩굴이라 사람과 분위기를 그대로 흡수합니다. ISFP는 옷감 촉감과 목소리 떨림을 Se로 바로 느끼고, 그 느낌을 Fi로 조용히 품습니다. 처음 간 자리에도 금방 스며드는 대신, 기대는 사람을 따라 내 길까지 휘기 쉽습니다.",
+      "scene": "친구가 다니는 도자기 공방에 한 번 따라갔다가 다음 달 정기권을 끊습니다. 친구가 그만둔 뒤에도 혼자 계속 다닐지 몇 주째 고민합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:乙亥",
+        "mbti:ISFP:functionStack",
+        "mbti:ISFP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:METAL:MISSING:ISFP",
+      "myeongriId": "element:METAL:MISSING",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "boundarySetting",
+      "score": 1.85,
+      "why": "금이 지장간까지 없으면 '여기까지'라는 선을 세워 본 경험이 적어, 부탁과 감정이 다 들어옵니다. ISFP는 속 기준이 분명해도 겉으로 싫다는 말을 미루는 쪽입니다. 둘이 겹치면 누구에게나 문턱 없는 사람이 되지만, 참은 것이 넘치는 날 조용히 관계를 정리해 주변이 놀랍니다.",
+      "scene": "친구가 빌려 간 카메라를 석 달째 안 돌려줘도 먼저 묻지 못합니다. 대신 새 카메라를 알아보다가 그 친구 생일 선물 고르는 창을 같이 열어 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정",
+          "금전 손실 단정"
+        ]
+      },
+      "sources": [
+        "element:METAL:MISSING",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGodBalance:PEER:WEAK:ISFP",
+      "myeongriId": "tenGodBalance:PEER:WEAK",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "competitiveness",
+      "score": 1.85,
+      "why": "같은 편 기운이 적으면 응원석이 빈 원정 경기장의 선수처럼 이기려는 마음보다 맞추는 힘이 앞섭니다. ISFP는 비교와 순위를 싫어하고, 마음에 안 맞으면 다투기보다 조용히 물러서죠. 마찰 없이 섞이는 대신 내 몫을 늦게 말해, 나중에 혼자 아쉬움을 곱씹습니다.",
+      "scene": "공모전 팀에서 자기 시안이 더 낫다고 느끼면서도 다수결에 손을 듭니다. 집에 와서 버려진 시안을 다시 열고 색을 조금 고쳐 저장해 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "tenGodBalance:PEER:WEAK",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:branch:亥:ISFP",
+      "myeongriId": "branch:亥",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 1.79,
+      "why": "해수는 초겨울 밤 멀리서 모여든 물이 크게 고이는 자리라, 남의 감정까지 넓게 받아 품습니다. ISFP는 Fi로 자기 기준을 조용히 지키고, Se로 목소리의 작은 떨림까지 알아챕니다. 둘이 겹치면 말없이 오래 곱씹는 깊이가 생기는데, 경계가 흐려 남의 고민에 잠겨 자기 일을 놓치기 쉽습니다.",
+      "scene": "늦은 밤 회사 일로 지친 친구의 전화를 끊고 나서, 그 친구가 좋아하던 노래만 모은 재생 목록을 만들어 말없이 링크만 보냅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정",
+          "이동 사건 단정"
+        ]
+      },
+      "sources": [
+        "branch:亥",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:TWELVE_JANGSEONGSAL:ISFP",
+      "myeongriId": "shinsal:TWELVE_JANGSEONGSAL",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "controlNeed",
+      "score": 1.75,
+      "why": "장성살은 진영 한복판에 깃발을 꽂는 장수의 기운이라, 이끄는 자리에서 편해지고 지는 걸 못 견딥니다. ISFP는 옆에서 누가 지시하면 손이 굳고, 혼자 맡겨질 때 결과물을 끝까지 다듬습니다. 앞에 서라는 기운과 뒤에서 조용히 만들고 싶은 마음이 당겨, 자기 영역에서만 깃발을 듭니다.",
+      "scene": "회의에선 거의 말이 없다가 자기가 맡은 포스터 시안 얘기가 나오자 '이 색은 바꾸지 말아 주세요'라고 또렷하게 말해 다들 고개를 듭니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:TWELVE_JANGSEONGSAL",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:stem:甲:ISFP",
+      "myeongriId": "stem:甲",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "controlNeed",
+      "score": 1.65,
+      "why": "갑목은 비 온 다음 날 땅을 뚫고 곧게 솟는 죽순이라 먼저 방향을 정하고 첫 기둥을 박습니다. ISFP는 옆에서 계속 지시하면 손이 굳고, 자기 속도대로 흐름을 따라가는 쪽이지요. 한 사람 안에서 곧게 가려는 줄기와 흐르려는 감각이 당겨, 계획은 세우되 남이 대신 짜 주면 바로 흥미를 잃습니다.",
+      "scene": "작업실 벽에 올해 목표를 큰 글씨로 붙여 두고도, 동료가 일정표를 짜 주겠다고 하면 '제 속도로 할게요'라며 조용히 표를 접어 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "stem:甲",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:branch:卯:ISFP",
+      "myeongriId": "branch:卯",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 1.59,
+      "why": "묘목은 철망을 타는 덩굴손처럼 분위기의 결을 먼저 읽고, 부딪히지 않게 일을 돌려놓습니다. ISFP의 Se는 목소리의 작은 떨림까지 알아채고, Fi는 그 느낌을 말보다 취향으로 꺼냅니다. 둘이 만나면 섬세하게 맞춰 주는 손이 되지만, 원하는 걸 돌려 말하다 '알아서 알아주겠지'에 혼자 서운해집니다.",
+      "scene": "같이 사는 친구가 말없이 들어온 날, 아무것도 묻지 않고 거실 조명을 한 단계 낮춘 뒤 그 친구가 좋아하는 캐모마일 차를 식탁에 올려 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "관계 단절 단정"
+        ]
+      },
+      "sources": [
+        "branch:卯",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:twelveStage:病:ISFP",
+      "myeongriId": "twelveStage:病",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 1.55,
+      "why": "병은 몸살로 누운 날 빗소리가 또렷해지듯, 남의 아픔과 작은 소리를 가장 잘 듣는 단계입니다. 상대 목소리의 작은 떨림까지 알아채는 ISFP의 Se가 그 귀를 더 예민하게 만듭니다. 설명 없이 알아듣는 사람이 되지만, 들은 만큼 내 마음이 먼저 앓습니다.",
+      "scene": "통화 중 친구 목소리가 반 톤 낮은 걸 듣고 '오늘 무슨 일 있었어?'라고 묻습니다. 끊고 나서는 그 친구 생각에 그림을 그리다 새벽이 됩니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정",
+          "질병 단정"
+        ]
+      },
+      "sources": [
+        "twelveStage:病",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:癸:ISFP",
+      "myeongriId": "dayMaster:癸",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 1.44,
+      "why": "계수 일간은 화초 잎에 뿌린 물안개처럼 눈에 잘 안 보여도 닿는 곳마다 생기를 돌게 합니다. ISFP의 Se는 상대 목소리의 작은 떨림까지 알아채고, Fi는 그걸 조용히 품습니다. 말하지 않은 마음을 가장 먼저 읽는 대신, 확인하지 않은 짐작으로 혼자 서운해지기도 쉽습니다.",
+      "scene": "친구 목소리가 평소보다 반 톤 낮은 걸 듣고 통화를 끊은 뒤, 그 친구가 좋아하는 향의 핸드크림을 사서 회사 앞에 두고 옵니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:癸",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGodBalance:PEER:STRONG:ISFP",
+      "myeongriId": "tenGodBalance:PEER:STRONG",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "competitiveness",
+      "score": 1.4,
+      "why": "비겁 과다는 국수 한 그릇에 젓가락 다섯 벌이 들어오는 식탁처럼 자존심과 내 몫이 분명한 상태입니다. ISFP의 Fi는 남이 좋다 해도 내 마음에 안 맞으면 조용히 고개를 돌리고, 겨루기보다 혼자 다듬기를 택합니다. 겉으론 다투지 않아도 속의 고집은 단단해서, 경쟁 대신 '내 방식'을 지키는 데 힘을 씁니다.",
+      "scene": "공방 수업에서 강사가 다른 배색을 권하자 웃으며 고개만 끄덕이고, 집에 와서 처음 골랐던 색으로 밤새 다시 칠해 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "동업 사건 단정"
+        ]
+      },
+      "sources": [
+        "tenGodBalance:PEER:STRONG",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:庚:autumn:ISFP",
+      "myeongriId": "climate:庚:autumn",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "competitiveness",
+      "score": 1.38,
+      "why": "가을에 난 경금은 하루 종일 벼를 베고도 이가 안 나간 낫이라, 비교될수록 실력이 오르고 질 싸움에도 끝까지 갑니다. ISFP는 비교와 순위를 싫어하고, 마음에 안 맞으면 다투기보다 조용히 물러나는 쪽이지요. 속의 날 선 승부욕과 겉의 순한 얼굴이 당겨, 평소엔 양보하다 선을 넘으면 차갑게 관계를 정리합니다.",
+      "scene": "그림 동호회 전시에서 순위를 매긴다는 말에 '저는 빠질게요' 했다가, 집에 와서 밤새 같은 그림을 세 번 다시 그립니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 사건 단정"
+        ]
+      },
+      "sources": [
+        "climate:庚:autumn",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:GWIMUN:ISFP",
+      "myeongriId": "shinsal:GWIMUN",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 1.34,
+      "why": "귀문은 작은 바람에도 먼저 울리는 풍경이라, 말로 나오기 전의 분위기를 남보다 일찍 읽습니다. ISFP는 Se로 목소리의 떨림을 잡고, Ni로 모임이 곧 어색해질 것을 먼저 눈치챕니다. 감각의 안테나가 두 개인 셈이라 눈치는 빠른데, 별뜻 없는 말에서도 숨은 뜻을 찾느라 잠이 늦어집니다.",
+      "scene": "단체 사진을 찍을 때 한 사람 표정이 굳은 걸 보고 슬쩍 자리를 바꿔 그 옆에 섭니다. 집에 와서도 그 표정이 자꾸 떠올라 이불을 끌어 덮습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정",
+          "우울 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:GWIMUN",
+        "mbti:ISFP:functionStack",
+        "mbti:ISFP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:GOEGANG:ISFP",
+      "myeongriId": "shinsal:GOEGANG",
+      "mbtiTarget": "ISFP",
+      "kind": "conditional",
+      "dimension": "conflictApproach",
+      "score": 1.32,
+      "why": "괴강은 끓는점과 어는점만 적힌 온도계처럼 중간에서 멈추지 않고 끝까지 밀어붙이는 기운입니다. ISFP는 다툼보다 조용히 고개를 돌리는 쪽이지만, 참을 만큼 참으면 한 번에 관계를 정리합니다. 평소엔 순한데 선을 넘으면 단숨에 끝으로 가서, 주변은 이 사람에게 중간 눈금이 없다는 걸 늦게 압니다.",
+      "scene": "몇 달 동안 약속에 늦어도 웃어 주던 친구에게 어느 날 '이제 그만 볼게' 한 줄을 보내고 연락처를 지웁니다. 친구는 무엇이 마지막이었는지 아직 모릅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정",
+          "분노 조절 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:GOEGANG",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    }
+  ]
+}
