@@ -1,0 +1,88 @@
+# predeploy baseline 2026-10-28T08:19:47Z origin/master=84826020 production=dpl_CHjqN89FwCs9hD4umnyjAuGCSb2Y
+# https://gyeolreport.com 은 모든 경로가 https://www.gyeolreport.com 으로 리다이렉트(apex 실행 시 스크립트가 다른 호스트로 보고 FAIL 처리 = 스크립트 한계). 기준선은 www 호스트로 잡는다.
+# apex / -> 308 https://www.gyeolreport.com/
+# apex /products -> 308 https://www.gyeolreport.com/products
+PASS 200  홈  https://www.gyeolreport.com/  보이는 글자 1477자
+PASS 200  상품 목록  https://www.gyeolreport.com/products  보이는 글자 1653자
+PASS 200  상품 상세(종합)  https://www.gyeolreport.com/products/saju-mbti-full  보이는 글자 1343자
+PASS 200  이벤트  https://www.gyeolreport.com/campaign/gyeol-opening-2026  보이는 글자 1739자
+WARN 404  sitemap  https://www.gyeolreport.com/sitemap.xml  없음(404). 저장소에 파일이 없어 정상
+WARN 404  robots  https://www.gyeolreport.com/robots.txt  없음(404). 저장소에 파일이 없어 정상
+합계 6건: PASS 4, WARN 2, FAIL 0
+exit=0
+
+## post-deploy Release 1 (dpl_48SQUmMh6ntaHRroVoeGvbQdYQXS, 463c4f8e)
+## run 0 08:50:29Z
+PASS 200  홈  https://www.gyeolreport.com/  보이는 글자 1477자
+PASS 200  상품 목록  https://www.gyeolreport.com/products  보이는 글자 1653자
+PASS 200  상품 상세(종합)  https://www.gyeolreport.com/products/saju-mbti-full  보이는 글자 1343자
+PASS 200  이벤트  https://www.gyeolreport.com/campaign/gyeol-opening-2026  보이는 글자 1739자
+WARN 404  sitemap  https://www.gyeolreport.com/sitemap.xml  없음(404). 저장소에 파일이 없어 정상
+WARN 404  robots  https://www.gyeolreport.com/robots.txt  없음(404). 저장소에 파일이 없어 정상
+합계 6건: PASS 4, WARN 2, FAIL 0
+exit=0
+## run 1 08:51:33Z
+PASS 200  홈  https://www.gyeolreport.com/  보이는 글자 1477자
+PASS 200  상품 목록  https://www.gyeolreport.com/products  보이는 글자 1653자
+PASS 200  상품 상세(종합)  https://www.gyeolreport.com/products/saju-mbti-full  보이는 글자 1343자
+PASS 200  이벤트  https://www.gyeolreport.com/campaign/gyeol-opening-2026  보이는 글자 1739자
+WARN 404  sitemap  https://www.gyeolreport.com/sitemap.xml  없음(404). 저장소에 파일이 없어 정상
+WARN 404  robots  https://www.gyeolreport.com/robots.txt  없음(404). 저장소에 파일이 없어 정상
+합계 6건: PASS 4, WARN 2, FAIL 0
+exit=0
+## run 2 08:52:35Z
+PASS 200  홈  https://www.gyeolreport.com/  보이는 글자 1477자
+PASS 200  상품 목록  https://www.gyeolreport.com/products  보이는 글자 1653자
+PASS 200  상품 상세(종합)  https://www.gyeolreport.com/products/saju-mbti-full  보이는 글자 1343자
+PASS 200  이벤트  https://www.gyeolreport.com/campaign/gyeol-opening-2026  보이는 글자 1739자
+WARN 404  sitemap  https://www.gyeolreport.com/sitemap.xml  없음(404). 저장소에 파일이 없어 정상
+WARN 404  robots  https://www.gyeolreport.com/robots.txt  없음(404). 저장소에 파일이 없어 정상
+합계 6건: PASS 4, WARN 2, FAIL 0
+exit=0
+## run 3 08:53:37Z
+PASS 200  홈  https://www.gyeolreport.com/  보이는 글자 1477자
+PASS 200  상품 목록  https://www.gyeolreport.com/products  보이는 글자 1653자
+PASS 200  상품 상세(종합)  https://www.gyeolreport.com/products/saju-mbti-full  보이는 글자 1343자
+PASS 200  이벤트  https://www.gyeolreport.com/campaign/gyeol-opening-2026  보이는 글자 1739자
+WARN 404  sitemap  https://www.gyeolreport.com/sitemap.xml  없음(404). 저장소에 파일이 없어 정상
+WARN 404  robots  https://www.gyeolreport.com/robots.txt  없음(404). 저장소에 파일이 없어 정상
+합계 6건: PASS 4, WARN 2, FAIL 0
+exit=0
+
+## post-deploy Release 2 (dpl_BSFggRAXjiAYuznud8wjDhKZbajJ, 0dde75a8)
+## run 0 10:46:45Z
+PASS 200  홈  https://www.gyeolreport.com/  보이는 글자 1477자
+PASS 200  상품 목록  https://www.gyeolreport.com/products  보이는 글자 1653자
+PASS 200  상품 상세(종합)  https://www.gyeolreport.com/products/saju-mbti-full  보이는 글자 1343자
+PASS 200  이벤트  https://www.gyeolreport.com/campaign/gyeol-opening-2026  보이는 글자 1739자
+WARN 404  sitemap  https://www.gyeolreport.com/sitemap.xml  없음(404). 저장소에 파일이 없어 정상
+WARN 404  robots  https://www.gyeolreport.com/robots.txt  없음(404). 저장소에 파일이 없어 정상
+합계 6건: PASS 4, WARN 2, FAIL 0
+exit=0
+## run 1 10:47:50Z
+PASS 200  홈  https://www.gyeolreport.com/  보이는 글자 1477자
+PASS 200  상품 목록  https://www.gyeolreport.com/products  보이는 글자 1653자
+PASS 200  상품 상세(종합)  https://www.gyeolreport.com/products/saju-mbti-full  보이는 글자 1343자
+PASS 200  이벤트  https://www.gyeolreport.com/campaign/gyeol-opening-2026  보이는 글자 1739자
+WARN 404  sitemap  https://www.gyeolreport.com/sitemap.xml  없음(404). 저장소에 파일이 없어 정상
+WARN 404  robots  https://www.gyeolreport.com/robots.txt  없음(404). 저장소에 파일이 없어 정상
+합계 6건: PASS 4, WARN 2, FAIL 0
+exit=0
+## run 2 10:48:52Z
+PASS 200  홈  https://www.gyeolreport.com/  보이는 글자 1477자
+PASS 200  상품 목록  https://www.gyeolreport.com/products  보이는 글자 1653자
+PASS 200  상품 상세(종합)  https://www.gyeolreport.com/products/saju-mbti-full  보이는 글자 1343자
+PASS 200  이벤트  https://www.gyeolreport.com/campaign/gyeol-opening-2026  보이는 글자 1739자
+WARN 404  sitemap  https://www.gyeolreport.com/sitemap.xml  없음(404). 저장소에 파일이 없어 정상
+WARN 404  robots  https://www.gyeolreport.com/robots.txt  없음(404). 저장소에 파일이 없어 정상
+합계 6건: PASS 4, WARN 2, FAIL 0
+exit=0
+## run 3 10:49:53Z
+PASS 200  홈  https://www.gyeolreport.com/  보이는 글자 1477자
+PASS 200  상품 목록  https://www.gyeolreport.com/products  보이는 글자 1653자
+PASS 200  상품 상세(종합)  https://www.gyeolreport.com/products/saju-mbti-full  보이는 글자 1343자
+PASS 200  이벤트  https://www.gyeolreport.com/campaign/gyeol-opening-2026  보이는 글자 1739자
+WARN 404  sitemap  https://www.gyeolreport.com/sitemap.xml  없음(404). 저장소에 파일이 없어 정상
+WARN 404  robots  https://www.gyeolreport.com/robots.txt  없음(404). 저장소에 파일이 없어 정상
+합계 6건: PASS 4, WARN 2, FAIL 0
+exit=0

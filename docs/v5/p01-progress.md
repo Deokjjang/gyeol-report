@@ -43,6 +43,9 @@
 - [x] 런북: 공유 URL 3개 항목 제거, 음력 미개방·백로그 B1
 - 임시 worktree `~/Developer/gyeol-worktrees/p01-phase0-check`(detached 84826020, 생성기·테스트 사본 미커밋)는 정리 대상
 
-## 5. 승인 대기
-- [ ] "PHASE0 배포 승인" 대기
-- [ ] "만세력 배포 승인" 대기
+## 5. 배포 (조건부 자동 승인, 2026-10-28)
+- [x] 기준선: docs/v5/predeploy-baseline.txt (www 호스트: PASS 4, WARN 2 sitemap·robots 404, FAIL 0). apex는 www로 308 → 스크립트가 다른 호스트로 오판(후속 수정 필요)
+- [x] 릴리스 1: 463c4f8e push 08:47:28Z → dpl_48SQUmMh6ntaHRroVoeGvbQdYQXS READY. 사전: tsc/lint/build 0, 기준선 밖 11파일 단독 PASS. 점검 4회 기준선과 동일, 런타임 오류 0
+- [x] 릴리스 2: 0dde75a8 push 10:43:52Z → dpl_BSFggRAXjiAYuznud8wjDhKZbajJ READY. 사전: tsc/lint/build 0, 기준선 밖 10파일 단독 PASS, 오라클·골든·버전조합 PASS. 점검 4회 동일, 런타임 오류 0
+- 롤백 없음. 롤백 대상: dpl_48SQUmMh6ntaHRroVoeGvbQdYQXS(릴리스 1). 84826020 금지
+- [ ] 임시 worktree p01-phase0-check: 미추적 파일(픽스처·테스트 사본, tools/p01) 때문에 git worktree remove 거부 → 남겨 둠
